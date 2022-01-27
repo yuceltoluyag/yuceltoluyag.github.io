@@ -37,7 +37,7 @@
     "gulp-util": "^3.0.8",
     "gulp-webp": "^4.0.1",
     "imagemin-jpegtran": "^7.0.0",
-    "imagemin-webp": "^6.0.0",
+    "imagemin-webp": "^7.0.0",
     "lighthouse": "^9.2.0",
     "minimist": "^1.2.5",
     "postcss": "^8.4.5",
