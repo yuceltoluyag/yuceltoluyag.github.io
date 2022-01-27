@@ -1,0 +1,69 @@
+{% include lang.html %}
+
+{% assign pinned = site.posts | where: "pin", "true" %}
+{% assign default = site.posts | where_exp: "item", "item.pin != true" %}
+
+{% assign posts = "" | split: "" %}
+
+<!-- Get pinned posts -->
+
+{% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
+{% assign pinned_num = pinned.size | minus: offset %}
+
+{% if pinned_num > 0 %}
+{% for i in (offset..pinned.size) limit: pinned_num %}
+{% assign posts = posts | push: pinned[i] %}
+{% endfor %}
+{% else %}
+{% assign pinned_num = 0 %}
+{% endif %}
+
+
+<!-- Get default posts -->
+
+{% assign default_beg = offset | minus: pinned.size %}
+
+{% if default_beg < 0 %} {% assign default_beg=0 %} {% endif %} {% assign default_num=paginator.posts | size | minus:
+  pinned_num %} {% assign default_end=default_beg | plus: default_num | minus: 1 %} {% if default_num> 0 %}
+  {% for i in (default_beg..default_end) %}
+  {% assign posts = posts | push: default[i] %}
+  {% endfor %}
+  {% endif %}
+
+  <div class="box">
+    {% for post in posts %}
+      <h1>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h1>
+        {% if post.pin %}
+          <span class="alert">{{ site.data.locales[lang].post.pin_prompt }}</span>
+        {% endif %}
+    {% endfor %}
+  </div>
+
+<style>
+  .box {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+
+}
+
+.alert {
+  background-color: firebrick;
+  color: antiquewhite;
+  font-size: 10px;
+  height: 15px;
+  margin-top: 25px
+}
+</style>
+
+

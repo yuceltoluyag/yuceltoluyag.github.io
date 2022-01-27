@@ -1,0 +1,22 @@
+@mixin link($light, $dark) {
+  a,
+  a::before,
+  a::after {
+    text-decoration: none;
+
+    color: if($light, #15171a, $accent);
+
+    [theme="dark"] & {
+      color: if($dark, #dae4ed, $accent-dark);
+    }
+  }
+
+  a:active,
+  a:hover {
+    color: if($light, $accent-light, $single-link-hover-color);
+
+    [theme="dark"] & {
+      color: if($dark, $accent-light-dark, $single-link-hover-color-dark);
+    }
+  }
+}

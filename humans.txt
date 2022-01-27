@@ -1,0 +1,19 @@
+---
+---
+
+/* AUTHOR */
+{{ site.author.name }}, {{ site.description }}
+Contact: {{ site.author.email }}
+Twitter: @{{ site.author.twitter }}
+From: İstanbul, Turkiye
+
+
+/* SITE */
+Last Updated: {{ site.time | date:"%d/%m/%Y" }}
+Language: French
+Tools: Ruby, Sass, Jekyll, Node
+Theme: Minel Jekyll Theme
+IDE: Vscode
+
+/* THANKS */
+Name: babayorum-bot

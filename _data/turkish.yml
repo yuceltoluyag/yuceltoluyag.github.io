@@ -1,0 +1,22 @@
+gunler:
+  - Pazartesi
+  - Salı
+  - Çarşamba
+  - Perşembe
+  - Cuma
+  - Cumartesi
+  - Pazar
+
+aylar:
+  - Ocak
+  - Şubat
+  - Mart
+  - Nisan
+  - Mayıs
+  - Haziran
+  - Temmuz
+  - Agustos
+  - Eylül
+  - Ekim
+  - Kasım
+  - Aralık

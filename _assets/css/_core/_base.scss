@@ -1,0 +1,56 @@
+html {
+  font-family: $sans-font;
+  font-size: $base-fontsize;
+  line-height: $line-height;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+/* scrollbar, only support webkit */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color;
+
+  &:hover {
+    background-color: $scrollbar-hover-color;
+  }
+}
+
+::selection {
+  background-color: $selection-color;
+
+  [theme="dark"] & {
+    background-color: $selection-color-dark;
+  }
+}
+
+body {
+  background-color: $bg;
+  color: $text;
+  @include overflow-wrap(break-word);
+  scrollbar-color: auto;
+  -webkit-font-smoothing: antialiased;
+
+  &[theme="dark"] {
+    color: $text-dark;
+    background-color: $bg-dark;
+  }
+}
+
+@include ms;
+@include link(true, true);
+
+@import "../_partial/mask";
+@import "../_partial/icon";
+@import "../_partial/details";
+@import "../_partial/fixed-button";
+
+img {
+  width: 100%; /* or max-width: 100%; */
+  height: auto;
+  @include object-fit(contain);
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  {% include head.html %}
+</head>
+
+<body header-desktop="{{ site.header.desktopMode }}" header-mobile="{{ site.header.mobileMode }}">
+  {% include svg-icon.html %}
+  <script
+    type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+  <div id="mask"></div>
+  <div class="wrapper">
+    {% if page.title != 'Sayfa Bulunamadı'%}
+    {% include header.html %}
+    {% include search.html %}
+    {% endif%}
+    {% include refactor-content.html content=content %}
+  </div>
+
+  {% include footer.html %}
+  {% include script.html %}
+</body>
+
+</html>

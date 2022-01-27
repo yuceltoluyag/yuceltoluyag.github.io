@@ -1,0 +1,153 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<main class="main">
+  <div class="container">
+    {% if page.toc %}
+    <div class="toc" id="toc-auto"
+      style="left: 1184px; max-width: 344px; visibility: visible; position: fixed; top: 76px;">
+      <h2 class="toc-title">İçinde Gezdir 🙄</h2>
+      <div class="toc-content" id="toc-content-auto">
+        <nav id="TableOfContents">
+          {% assign contentsTitle = page.toc_title | default: 'Gezdirici' %}
+          {% include toc.html html=content class='menu-list' h_min=1 h_max=6 contents_title=contentsTitle %}
+        </nav>
+      </div>
+    </div>
+    {% endif %}
+    <article class="page single" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      <h1 class="single-title animate__animated animate__flipInX">{{ page.title }}</h1>
+      <div class="post-meta">
+
+        <div class="post-meta-line"><svg class="icon icon-calendar">
+            <use xlink:href="#icon-calendar"></use>
+          </svg>&nbsp;
+          {% assign mes_index = page.date | date: "%-m" | minus: 1 %}
+          {% assign mes = site.data.turkish.aylar[mes_index] %}
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%-d" }} {{ mes }} {{ page.date | date: "%Y" }}
+          </time>
+          &nbsp;<svg class="icon icon-calculator">
+            <use xlink:href="#icon-calculator"></use>
+          </svg>&nbsp;{% capture words
+          %}
+          {{ page.content | number_of_words }}
+          {% endcapture %} {{ words }} kelime &nbsp;
+          <svg class="icon icon-clock">
+            <use xlink:href="#icon-clock"></use>
+          </svg>&nbsp;{% unless words contains "-" %}
+          {{ words | plus: 250 | divided_by: 180 | append: " dakika" }}
+          {% endunless %}&nbsp;
+
+
+            {% if site.google_analytics.pv.proxy_endpoint or site.google_analytics.pv.cache_path %}
+            <span class="post">
+              <svg class="icon icon-tv">
+                <use xlink:href="#icon-tv"></use>
+              </svg>
+              <em id="pv" class="pageviews">
+
+              </em>
+              {{ site.data.locales[lang].post.pageview_measure }}
+            </span>
+            {% endif %}
+
+
+        </div>
+      </div>
+      {% if page.toc %}
+      <div class="details toc" id="toc-static" kept="">
+        <div class="details-summary toc-title"><span>Mobil Gezdirici</span>
+          <span><svg class="details-icon icon icon-circle-right">
+              <use xlink:href="#icon-circle-right"></use>
+            </svg></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"></div>
+      </div>
+      {% endif %}
+      <div class="content post-content" id="content" lg-uid="lg0">
+        {% if jekyll.environment == "production" %}
+        {% include advertisements.html %}
+        {% endif %}
+        {{ content }}
+      </div>
+      <div class="post-footer" id="post-footer">
+        {% if jekyll.environment == "production" %}
+        {% include advertisements.html %}
+        {% endif %}
+        <div class="post-info">
+          <div class="post-info-line">
+      <!-- lastmod date -->
+           <div class="post-info-mod">
+              {% if page.last_modified_at %}
+              <span>
+                <i class="fas fa-hashtag fa-fw"></i>{{ site.data.locales[lang].post.updated }} <time
+                  datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">
+                  {% assign mes_index = page.last_modified_at | date: "%-m" | minus: 1 %}
+                  {% assign mes = site.data.turkish.aylar[mes_index] %}
+                  {{page.last_modified_at | date: "%-d" }} {{ mes }} {{ page.date | date: "%Y" }}
+                  {% endif %}
+              </span>
+            </div>
+            <div class="post-info-license"></div>
+          </div>
+          <div class="post-info-line">
+            {% if page.categories.size > 0 %}
+            <div class="post-info-md"><span class="post-category">{% for category in page.categories %} <a
+                  href="{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/"><svg
+                    class="icon icon-folder">
+                    <use xlink:href="#icon-folder"></use>
+                  </svg> {{ category }}</a>{%- unless forloop.last -%}, {%- endunless -%}
+                {% endfor %}</span></div>
+            {% endif %}
+            <div class="post-info-share">
+              {% include share.html %}
+            </div>
+          </div>
+        </div>
+        <div class="post-info-more">
+          {% if page.tags.size > 0 %}
+          <section class="post-tags"><svg class="icon icon-price-tags">
+              <use xlink:href="#icon-price-tags"></use>
+            </svg>&nbsp;
+            <div class="tags">
+              {% for tag in page.tags %}
+              <a class="tag-link" href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+                title="{{ tag | downcase }} tag">{{- tag -}}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </section>
+          <section><span><a href="javascript:void(0);"
+                onclick="window.history.back();">Geri</a></span>&nbsp;|&nbsp;<span><a href="/">Anasayfa</a></span>
+          </section>
+        </div>
+        <div class="post-nav">
+
+          {%- if page.previous -%}
+          <a href="{{ page.previous.url | relative_url }}" class="prev" rel="prev"
+            title="{{ page.title }}"> <svg class="icon icon-circle-left">
+              <use xlink:href="#icon-circle-left"></use>
+            </svg> {{page.previous.title | escape}}</a>
+          {% endif %}
+          {%- if page.next -%}
+          <a href="{{ page.next.url | relative_url }}" class="next" rel="next"
+            title="{{page.next.title | escape}}">{{page.next.title | escape}} <svg
+              class="details-icon icon icon-circle-right">
+              <use xlink:href="#icon-circle-right"></use>
+            </svg></a>
+          {% endif %}
+
+        </div>
+      </div>
+
+      {% if page.comments %}
+      {% include comments.html %}
+      {% endif %}
+
+    </article>
+  </div>
+</main>

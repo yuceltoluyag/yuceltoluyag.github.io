@@ -1,0 +1,23 @@
+{% comment %}
+"note" "icon-pencil"
+"abstract" "icon-diamonds"
+"info" "icon-info"
+"tip" "icon-notification"
+"success" "icon-checkmark2"
+"question" "icon-question"
+"warning" "icon-warning"
+"failure" "icon-blocked"
+"bug" "icon-bug"
+"quote" "icon-quotes-left"
+{% endcomment %}
+
+<div class="details admonition {{ include.icon | default: ''  }} open">
+  <div class="details-summary admonition-title"><svg class="maicon icon {{ include.fai | default: 'icon-pencil'}}">
+    <use xlink:href="#{{ include.fai | default: 'icon-pencil'}}"></use>
+  </svg>{{ include.title | default: "Bilgi" }}<svg class="details-icon icon icon-circle-right">
+    <use xlink:href="#icon-circle-right"></use>
+  </svg></div>
+  <div class="details-content">
+    <div class="admonition-content">{{ include.content | markdownify }}</div>
+  </div>
+</div>

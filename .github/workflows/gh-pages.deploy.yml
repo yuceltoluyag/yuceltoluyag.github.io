@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Get files
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache packages
+        run: npm cache clean --force
+      - name: Install packages
+        run: npm install
+      - name: Jekyll Install
+        run: sudo gem install jekyll
+      - name: Bundler install
+        run: sudo gem install bundler
+      - name: Bundler install Package
+        run: bundler install
+      - name: Build project
+        run: npm run build
+      - name: Run Lighthouse 💡
+        uses: treosh/lighthouse-ci-action@v3
+        with:
+          configPath: "./lighthouserc.json"
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: gh-pages
+          folder: _site

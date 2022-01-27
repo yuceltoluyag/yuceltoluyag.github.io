@@ -1,0 +1,190 @@
+---
+layout: default
+title: Çevrimdışı Gezinme
+hide-in-nav: true
+description: "Okuduğunuz sayfalara çevrimdışıyken de erişilebilir ;)"
+header-style: text
+permalink: /offline.html
+---
+
+<style type="text/css">
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8em;
+    background: #fff;
+    min-height: 800px;
+}
+
+#container {
+    width: 960px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+em {
+  text-align: center;
+  margin-left: 25px;
+  padding-left: 25px;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 22px;
+    line-height: 1.6em;
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+* a {
+    text-decoration: none;
+    color: #222;
+}
+
+ul {
+    list-style: none;
+}
+
+.quest {
+    background-color: #36B05B;
+    color: #fff;
+    display: inline-block;
+    float: left;
+    width: 98%;
+    padding: 1%;
+    cursor: pointer;
+    line-height: 28px;
+    border-bottom:1px solid #fff;
+}
+
+.answ {
+    background-color: #1e2227;
+    color: #dcdcdc;
+    display: inline-block;
+    float:left;
+    width: 100%;
+    max-height: 0px;
+    -webkit-transition: max-height 400ms ease-in-out;
+    -moz-transition: max-height 400ms ease-in-out;
+    transition: max-height 400ms ease-in-out;
+    overflow: hidden;
+}
+
+.answ p {
+    margin: 10px;
+}
+
+.quest h3 {
+    display: inline-block;
+    line-height: 32px;
+    float: left;
+}
+
+.micon {
+    display: inline-block;
+    float: left;
+    height: 20px;
+    width: 20px;
+    padding-top: 14px;
+    margin-right: 10px;
+}
+
+.bar {
+    position: absolute;
+    height: 3px;
+    width: 20px;
+    background-color: #fff;
+    display: block;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+
+}
+
+.bar:first-child {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.active .bar:first-child{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.active {
+    max-height: 500px;
+}
+
+</style>
+<main aria-label="content" class="main">
+  <div class="container">
+      <body>
+        <div id="container">
+          <h1>Çevrimdışı Gezinme Hakkında</h1>
+          <em>Bu sayfayı görüyorsanız muhtemelen internetiniz kapalıdır. Ziyaret etmek istediğiniz sayfa önbelleğe alınmamıştır 😭 </em>
+          <ul class="faq">
+            <li class="quest">
+              <div class="micon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+              <h3>Çevrimdışı Gezinme Nedir ?</h3>
+            </li>
+            <li class="answ">
+              <p>Service Worker teknolojisi kullanılarak gezindiğiniz sayfalar kayıt altına alınır. Sayfaya tekrar geldiğinizde <b>yeni
+                bir bilgi,güncelleme yoksa</b> önceki kayıt üzerinden size gösterim yapar. Bu sayede gezindiğiniz sayfaları
+              internetiniz olmasa dahi ziyaret edebilirsiniz. Mobil kullanıcılar için internet tasarrufu sağlamış olacağız. </p>
+            </li>
+            <li class="quest">
+              <div class="micon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+              <h3>Cihazımın Hafızasında Ne Kadar Yer Kaplar ?</h3>
+            </li>
+            <li class="answ">
+              <p>Mobil kullanıcıları düşündüğümüz için sadece gezindiğiniz sayfaları cihazınıza indirir. Ortalama içerik boyutları 1 mb ile 5 mb arasında değişmektedir. </p>
+            </li>
+            <li class="quest">
+              <div class="micon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+              <h3>Kayıtlı Verileri Nasıl Temizlerim ?</h3>
+            </li>
+            <li class="answ">
+              <p>Tarayıcınızın önbelleğini boşaltığınızda,otamatik olarak tüm kayıtlar silinir.</p>
+            </li>
+          </ul>
+        </div>
+      </body>
+
+  </div>
+</main>
+
+<script>
+
+    var toggleIcon = function () {
+      var question = document.querySelectorAll("li.quest");
+      for (i = 0; i < question.length; i++) {
+        question[i].addEventListener('click', function () {
+          this.nextElementSibling.classList.toggle("active");
+          this.classList.toggle("active");
+        })
+      };
+    }
+    toggleIcon();
+
+</script>

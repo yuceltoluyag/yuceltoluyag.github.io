@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+
+
+<main aria-label="content" class="main">
+  <div class="container">
+    {% include pinned.html %}
+  <div id="post-list" class="flex-container">
+    <div class="flex-card">
+      <h1>🐧 Linux</h1>
+      <div class="post-preview description">
+        <ul class="item">
+          {% for post in site.categories.linux limit:5 %} {% if
+          post.url %}
+          <li><a class="" href="{{ post.url }}">{{
+              post.title }}</a>
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="flex-card">
+      <h1>📚 Kütüphane</h1>
+      <div class="description">
+        <ul class="item">
+          {% for post in site.categories.kutuphane limit:5 %} {% if
+          post.url %}
+          <li><a class="" href="{{ post.url }}">{{
+              post.title }}</a>
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="flex-card">
+      <h1>❤️ Program</h1>
+      <div class="description">
+        <ul class="item">
+          {% for post in site.categories.program limit:5 %} {% if
+          post.url %}
+          <li><a class="" href="{{ post.url }}">{{
+              post.title }}</a>
+          </li>
+          {% endif %} {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="flex-card">
+      <h1>🤖 Facebook</h1>
+      <div class="description">
+      <ul class="item">
+        {% for post in site.categories.facebook limit:5 %} {% if
+        post.url %}
+        <li><a class="" href="{{ post.url }}">{{
+            post.title }}</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      </div>
+    </div>
+    <div class="flex-card">
+      <h1>🎁 Tanıtım</h1>
+      <div class="description">
+      <ul class="item">
+        {% for post in site.categories.tavsiye limit:5 %} {% if
+        post.url %}
+        <li><a class="" href="{{ post.url }}">{{
+            post.title }}</a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</main>
+
