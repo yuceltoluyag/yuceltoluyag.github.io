@@ -3,8 +3,8 @@ layout: post
 title: E-Sigara Tecrübelerim
 description: Smok Nord ile elektronik sigara deneyimlerim
 image: "/assets/images/esigara-yararlimi-zararlimi.webp"
-category: [tanıtım, tavsiye]
-tags: [tanıtım]
+category: [tanitim, tavsiye]
+tags: [tanitim]
 comments: false
 edit_url: true
 toc: true
