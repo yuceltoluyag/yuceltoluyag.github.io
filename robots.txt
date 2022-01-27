@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /404.html
+
+
+Sitemap: https://yuceltoluyag.github.io//sitemap.xml
+Host: yuceltoluyag.github.io

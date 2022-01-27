@@ -1,0 +1,16 @@
+/* AUTHOR */
+Yücel Toluyağ, Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D
+Contact: ytoluyag@gmail.com
+Twitter: @yuceltoluyag
+From: İstanbul, Turkiye
+
+
+/* SITE */
+Last Updated: 27/01/2022
+Language: French
+Tools: Ruby, Sass, Jekyll, Node
+Theme: Minel Jekyll Theme
+IDE: Vscode
+
+/* THANKS */
+Name: babayorum-bot
