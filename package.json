@@ -44,7 +44,7 @@
     "postcss-discard-duplicates": "^5.0.2",
     "postcss-discard-empty": "^5.0.2",
     "postcss-sort-media-queries": "^4.2.1",
-    "sass": "^1.49.0",
+    "sass": "^1.49.4",
     "yargs-parser": "^21.0.0"
   }
 }
