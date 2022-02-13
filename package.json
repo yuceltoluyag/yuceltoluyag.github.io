@@ -16,7 +16,7 @@
     "browser-sync": "^2.27.7",
     "browserlist": "^1.0.1",
     "css-declaration-sorter": "^6.1.4",
-    "cssnano": "^5.0.16",
+    "cssnano": "^5.0.17",
     "del": "^6.0.0",
     "fibers": "^5.0.1",
     "gulp": "^4.0.2",
@@ -38,13 +38,13 @@
     "gulp-webp": "^4.0.1",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-webp": "^6.0.0",
-    "lighthouse": "^9.2.0",
+    "lighthouse": "^9.3.1",
     "minimist": "^1.2.5",
-    "postcss": "^8.4.5",
-    "postcss-discard-duplicates": "^5.0.2",
-    "postcss-discard-empty": "^5.0.2",
+    "postcss": "^8.4.6",
+    "postcss-discard-duplicates": "^5.0.3",
+    "postcss-discard-empty": "^5.0.3",
     "postcss-sort-media-queries": "^4.2.1",
-    "sass": "^1.49.0",
+    "sass": "^1.49.7",
     "yargs-parser": "^21.0.0"
   }
 }

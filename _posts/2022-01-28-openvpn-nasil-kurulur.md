@@ -5,7 +5,7 @@ description: How to set up OpenVPN on AWS EC2 and fix DNS leaks
 image: "/assets/images/duyuru.webp"
 category: linux
 tags: [linux, vpn]
-comments: true
+comments: false
 edit_url: true
 toc: true
 ---
@@ -53,7 +53,7 @@ Paran çok,zamanın azsa kullan tabikide sevgili okurum 🐸 Bazı VPN'ler sudan
 
     ![amazon-openvpn-kurulumu-7](/assets/images/amazon-openvpn-kurulumu-7.webp)
 
-    **"ED25519"** anahtarlarını yalnızca Linux ve Mac 'te kullanabilirsiniz. Bu yüzden RSA seçtik. Kaydettikten sonra pem uzantılı dosyanız inecektir. Kaybetmeyiniz,saklayınız,kimselere göstermeyiniz ;D
+    **"ED25519"** anahtarlarını yalnızca Linux ve Mac 'te kullanabilirsiniz. Bu yüzden RSA seçtik. Kaydettikten sonra pem uzantılı dosyanız inecektir. Kaybetmeyiniz,saklayınız,kimselere göstermeyiniz 😉
 
 8.  Security kısmı ise şöyle
 
@@ -67,7 +67,7 @@ Paran çok,zamanın azsa kullan tabikide sevgili okurum 🐸 Bazı VPN'ler sudan
 
 ## DNS LEAK
 
-Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, dns adreslerimiz halen kendi ISS mizden istek atıyor. Bu durumu umursamayan sitelerde pek sorun yaşamazsın. Ancak bu kabak gibi görünen dns sorgularından ip adresiniz ve bir çok bilgiye erişilebiliyor. Bunun testini otamatik yapabileceğiniz bir adres veriyorum şimdi :D [dnsleaktest.com](https://www.dnsleaktest.com/){:target="\_blank"}{:rel="noopener noreferrer"} Siteye girip Extended test atmanız yeterli. Bu resimdeki upucuz, beleşmi beleş bir vpnin testi XD ![Extended- test](/assets/images/Extended- test.webp) **Peki bunla neler mi yapıyorlar,dilersen bonus bölümünden okuyabilirsin :D** Çözüme devam edelim....
+Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, dns adreslerimiz halen kendi ISS mizden istek atıyor. Saldırganlar genelde fake web siteleri oluşturur,analiz servisleriyle ip adresiniz,konumuz,işletim sisteminiz vb bir çok bilgiyi toplayabiliyor. İp adresinizi aldıktan sonra karşı taraf hiçbir şey yapamasa bile, saldırı yapıp,rahatınızı bozuyor... Vpn açıkken DNS Leak testini otamatik yapabileceğiniz bir adres veriyorum şimdi 😁 [dnsleaktest.com](https://www.dnsleaktest.com/){:target="\_blank"}{:rel="noopener noreferrer"} Siteye girip Extended test atmanız yeterli. Bu resimdeki upucuz, beleşmi beleş bir vpnin testi 😆 ![Extended- test](/assets/images/Extended- test.webp) **Peki bunla neler mi yapıyorlar,dilersen bonus bölümünden okuyabilirsin 😁** Çözüme devam edelim....
 
 ### EC2 Elastik İp
 
@@ -212,7 +212,7 @@ Daha sonra **openvpn** adlı abimizin şifresini değiştiriyoruz.
 sudo passwd openvpn
 ```
 
-SSH bağlantısını kapatmak için `exit` yazın. Daha sonra https://<elastic ipadresiniz>:943/ tarayıcınız üzerinden bağlanın. SSL hatası verebilir,gelişmiş menüsüne tıklayıp devam et diyin. Önünüze gelen ekranda kullanıcı adı openvpn,şifreniz yukarıdaki yaptığınız şifre : ) Daha sonra eğer önünüze gelmez ise [vpn-client](https://openvpn.net/vpn-client/){:target="\_blank"}{:rel="noopener noreferrer"} adresinden işletim sisteminize göre indirme yapabilirsiniz.
+SSH bağlantısını kapatmak için `exit` yazın. Daha sonra **https://elastic ipadresiniz:943/** tarayıcınız üzerinden bağlanın. SSL hatası verebilir,gelişmiş menüsüne tıklayıp devam et diyin. Önünüze gelen ekranda kullanıcı adı openvpn,şifreniz yukarıdaki yaptığınız şifre : ) Daha sonra eğer önünüze gelmez ise [vpn-client](https://openvpn.net/vpn-client/){:target="\_blank"}{:rel="noopener noreferrer"} adresinden işletim sisteminize göre indirme yapabilirsiniz.
 
 ![amazon-openvpn-kurulumu-12](/assets/images/amazon-openvpn-kurulumu-12.webp)
 
