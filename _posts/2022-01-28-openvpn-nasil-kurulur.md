@@ -2,7 +2,7 @@
 layout: post
 title: AWS EC2'de OpenVPN nasıl kurulur ve DNS Leak nasıl düzeltilir
 description: How to set up OpenVPN on AWS EC2 and fix DNS leaks
-image: "/assets/images/duyuru.webp"
+image: "/assets/images/amazon-openvpn-kurulumu-14.webp"
 category: linux
 tags: [linux, vpn]
 comments: false

@@ -2,7 +2,7 @@
 layout: post
 title: Jekyll Staticman Eklentisi Kurulumu
 description: Jekyll Adding Staticman Comments
-image: "/assets/images/duyuru.webp"
+image: "/assets/images/staticman-postman.webp"
 category: kutuphane
 tags: [staticman, jekyll]
 comments: false
