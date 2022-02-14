@@ -1,3 +1,5 @@
+@use "sass:list";
+
 #comments {
   padding: 1rem 0 2rem;
 }
@@ -1200,7 +1202,7 @@ $background-color-dark: #181818 !default;
   textarea,
   label,
   button {
-    font: 400 #{$base-fontsize}/#{$line-height} $sans-font;
+    font: 400 list.slash($base-fontsize, $line-height) $sans-font;
     color: $text-color;
     [theme="dark"] & {
       color: $text-color-dark;
