@@ -1,4 +1,752 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://yuceltoluyag.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://yuceltoluyag.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2022-02-01T18:56:13+03:00</updated><id>https://yuceltoluyag.github.io//feed.xml</id><title type="html">Linux &amp;amp; Ortaya Karışık</title><subtitle>Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D</subtitle><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><entry><title type="html">Önemli Değişiklikler</title><link href="https://yuceltoluyag.github.io//onemli-gelismeler/" rel="alternate" type="text/html" title="Önemli Değişiklikler" /><published>2022-01-07T00:00:00+03:00</published><updated>2022-01-07T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//onemli-gelismeler</id><content type="html" xml:base="https://yuceltoluyag.github.io//onemli-gelismeler/"><![CDATA[<p><img src="/assets/images/duyuru.webp" alt="duyuru" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://yuceltoluyag.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://yuceltoluyag.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2022-02-14T16:16:23+03:00</updated><id>https://yuceltoluyag.github.io//feed.xml</id><title type="html">Linux &amp;amp; Ortaya Karışık</title><subtitle>Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D</subtitle><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><entry><title type="html">Jekyll Google Analytics ile Sayfa Görüntüleme Sayısı</title><link href="https://yuceltoluyag.github.io//jekyll-google-superproxy/" rel="alternate" type="text/html" title="Jekyll Google Analytics ile Sayfa Görüntüleme Sayısı" /><published>2022-01-30T00:00:00+03:00</published><updated>2022-01-30T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//jekyll-google-superproxy</id><content type="html" xml:base="https://yuceltoluyag.github.io//jekyll-google-superproxy/"><![CDATA[<p><strong>Merhaba</strong></p>
+
+<p>Statik websitelerinde sayfa görüntülenmesi nasıl gösterebilirim diye araştırken,<strong>Google Analytics</strong> üzerinden <strong>Super Proxy</strong> kütüphanesi kullanılarak verileri dışarıya açabildiğimizi öğrendim. Konu ile alakalı Google ekibinin çok eski bir videosu var <a href="https://developers.google.com/analytics/solutions/google-analytics-super-proxy" target="\_blank" rel="noopener noreferrer">Google Analytics superProxy</a>. O video üzerinden yola çıkarak mutlu sona ulaştım. 🥰</p>
+
+<h1 id="malzemeler-">Malzemeler 🥗</h1>
+
+<ul>
+  <li>Google Analytics Hesabı</li>
+  <li>Google Console Hesabı</li>
+</ul>
+
+<h1 id="i̇lk-yapılacak">İlk Yapılacak</h1>
+
+<p>GA hesabınızı açtıkten sonra sitenizi eklerken şu ayarı yapmayı unutmayın. Create a Universal Analytics property Kısmını açıp resimdeki gibi işaretleyeceksiniz.</p>
+
+<p><img src="/assets/images/superproxy.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<h1 id="google-app-engine">Google App Engine</h1>
+
+<ul>
+  <li>
+    <p><a href="https://console.cloud.google.com/appengine" target="\_blank" rel="noopener noreferrer">Appengine</a> Siteye gidin.</p>
+  </li>
+  <li>Proje Oluştur’a tıklayın</li>
+  <li>Projenize bir isim verin ve devam edin.</li>
+  <li>Dil olarak Python, ortam olarak standartı seçin.</li>
+  <li>Faturalandırma hesabını etkinleştirin. Evet, kredi kartınızı bağlamanız gerekiyor. Ancak ücretsiz kotanızı aşmadığınız sürece faturalandırılmazsınız. Basit bir blog için ücretsiz kota fazlasıyla yeterli.</li>
+  <li>Sol Menüden <strong>API ve Hizmetler</strong>‘i seçin ardından <strong>API’leri ve Hizmetleri Etkinleştir</strong>i tıklayın</li>
+</ul>
+
+<p><img src="/assets/images/superproxy2.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Google Analytics API</code> seçin ve api yi aktif edin.</li>
+  <li><code class="language-plaintext highlighter-rouge">APIs &amp; Services</code> menüsü altında ki <code class="language-plaintext highlighter-rouge">OAuth consent Screen</code> e tıklayın, gelen <code class="language-plaintext highlighter-rouge">Configure Consent Screen</code> kısmını kabul edip devam edin. Önüze gelen menüde <strong>Harici(External)</strong> yi seçip devam edin.</li>
+</ul>
+
+<p><img src="/assets/images/superproxy3.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<div class="details admonition tip open">
+  <div class="details-summary admonition-title"><svg class="maicon icon icon-diamonds">
+    <use xlink:href="#icon-diamonds"></use>
+  </svg>DipBot<svg class="details-icon icon icon-circle-right">
+    <use xlink:href="#icon-circle-right"></use>
+  </svg></div>
+  <div class="details-content">
+    <div class="admonition-content"><p>Projenizi oluştururken logo eklemeyin,onay sürecine girersiniz. Zaten logoluk bir durumda yok :)</p>
+</div>
+  </div>
+</div>
+
+<ul>
+  <li>
+    <p>Projeyi <strong>yayınlayın</strong>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Credentials</code> kısmından <code class="language-plaintext highlighter-rouge">OAuth 2.0 Client IDs</code> aktif edin.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/superproxy4.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Client ID</code> ve <code class="language-plaintext highlighter-rouge">Client Secret</code> adında oluşan kodları not edin.</p>
+  </li>
+  <li>
+    <p>Oluşan clientid isminizin üzerine tekrar tıklayın şu alanları doldurun. <code class="language-plaintext highlighter-rouge">Authorized JavaScript origins</code> kısmına projenizi oluşturduktan sonra verilen urlyi girin. <code class="language-plaintext highlighter-rouge">Authorized redirect URIs</code>
+kısmına ise sadece <strong><code class="language-plaintext highlighter-rouge">/admin/auth</code></strong> uzantısını dahil edin.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/superproxy5.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<h2 id="cloud-sdk">Cloud SDK</h2>
+
+<ul>
+  <li>
+    <p>İlk Önce <a href="https://cloud.google.com/sdk/docs/quickstart" target="\_blank" rel="noopener noreferrer">Google Cloud CLI</a> adresine gidip <strong>işletim sisteminize</strong> uygun yazılımı indiyorsunuz.</p>
+  </li>
+  <li>
+    <p>Daha sonra <strong>terminalizi</strong> açıp şu komutu giriyorsunuz.</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>gcloud init
+</code></pre></div></div>
+
+<p>Tarayıcınız açılıyor,onaylama işlemini yaptıktan sonra başarıyla giriş yapmış oluyorsunuz. Daha sonra şu komutu çalıştırabilirsiniz.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>gcloud info
+</code></pre></div></div>
+
+<p>Seçtiğiniz <strong>proje</strong> bilgileriniz burada <strong>görüntülenmelidir</strong>.</p>
+
+<ul>
+  <li>Daha sonra <a href="https://github.com/googleanalytics/google-analytics-super-proxy" target="\_blank" rel="noopener noreferrer">google-analytics-super-proxy</a> reposuna gidip,dosyaları indirin.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">src/app.yaml</code></strong> dosyasını editörünüzle açın. İlk başta bulunan şu iki satırı silin.</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="na">application</span><span class="pi">:</span> <span class="s">your-application-id</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
+</code></pre></div></div>
+
+<p>Daha sonra dosyayı <strong>kaydedin</strong>.</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">src/config.py</code></strong> dosyasını açın. <code class="language-plaintext highlighter-rouge">OAUTH_CLIENT_ID</code> <code class="language-plaintext highlighter-rouge">OAUTH_CLIENT_SECRET</code> kısımlarını doldurun(Yukarıda oluşturmuştuk,hani not alın dediğim .) Şöyle görünmelidir.</li>
+</ul>
+
+<p><img src="/assets/images/superproxy6.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">XSRF_KEY</code> kısmına şöyle çorbamı çorba karışıkmı karışık bir şifre yazın.</p>
+  </li>
+  <li>
+    <p><strong>src</strong> klasörünün içindeyken terminali açın ve şu kodu yazın</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>gcloud app deploy
+</code></pre></div></div>
+
+<p>İşlem tamamlandıktan sonra şu komutla log ları takip edebilirsiniz</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>gcloud app logs <span class="nb">tail</span> <span class="nt">-s</span> default
+</code></pre></div></div>
+
+<p>Projenizi tarayıcınızda açmak içinse</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>gcloud app browse
+</code></pre></div></div>
+
+<p>Açılan linkin sonuna <code class="language-plaintext highlighter-rouge">/admin</code> ekleyin. Daha sonra bağlı olduğunuz Analistik hesabına giriş yapın.Herşey yolunda gittiyse şöyle bir ekranla karşılaşırsınız;</p>
+
+<p><img src="/assets/images/superproxy7.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<h2 id="google-analytics-sorgusu">Google Analytics Sorgusu</h2>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Create Query</code> e basın. Orada bekleyin :)</p>
+  </li>
+  <li>
+    <p><a href="https://ga-dev-tools.web.app/query-explorer/" target="\_blank" rel="noopener noreferrer">UA Query Explorer</a> i açın. Reklam engelleyici eklentileri kullanıyorsanız,bu sitede çalışırken kapatın,aksi takdirde hata alırsınız.</p>
+  </li>
+  <li><strong>Start Date</strong> =&gt; En eski yazınızın tarihini giriniz.</li>
+  <li><strong>End Date</strong> =&gt; Today seçin.</li>
+  <li><strong>Metrics</strong> =&gt; Pageviews i seçin</li>
+  <li><strong>Dimensions</strong> =&gt; PagePath ı seçin</li>
+  <li><strong>Filters</strong> =&gt; <code class="language-plaintext highlighter-rouge">ga:pagePath=~^.\*/$;ga:pagePath!@=</code> böyle doldurun</li>
+</ul>
+
+<p><img src="/assets/images/superproxy8.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Run Query</code> tıklayın oluşan urlyi not alın.</li>
+  <li>Daha sonra <code class="language-plaintext highlighter-rouge">Creta Query</code> kısmını şöyle doldurun</li>
+</ul>
+
+<p><img src="/assets/images/superproxy9.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<ul>
+  <li>Daha sonra oluşturduğunuz proje kısmından manage basın <code class="language-plaintext highlighter-rouge">Enable Endpoint</code> ve <code class="language-plaintext highlighter-rouge">Start Scheduling</code> basın,işlem tamam :)</li>
+  <li>Tüm bu süreç bittikten sonra görünüm şöyle olmalıdır</li>
+</ul>
+
+<p><img src="/assets/images/superproxy10.webp" alt="GA-superproxy-kurulumu" /></p>
+
+<ul>
+  <li>_config.yml dosyanızı açın ve şunları ekleyin.</li>
+</ul>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="n">google_analytics</span>:
+  <span class="n">id</span>: <span class="s1">'G-V6XXXXXXX'</span>   <span class="c"># Google Analytics Kimliğinizi girin
+</span>  <span class="n">pv</span>:
+    <span class="n">proxy_endpoint</span>: <span class="s1">'https://PROJE_IDNIZ.appspot.com/query?id=&lt;SUPER PROXY IDNIZ&gt;'</span>
+    <span class="n">cache_path</span>:       <span class="c"># Bölgesel olduğu için boş bırakabilirsiniz.
+</span></code></pre></div></div>
+
+<h2 id="filtereleme">Filtereleme</h2>
+
+<p><a href="https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters" target="\_blank" rel="noopener noreferrer">Core Reporting API Filters</a> Buradan filtreme değişkenlerine bakabilirsiniz.</p>
+
+<h2 id="örnek-dosyalar">Örnek Dosyalar</h2>
+
+<ul>
+  <li><a href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_config.yml#L37" target="\_blank" rel="noopener noreferrer">_Config.yml Dosyam</a></li>
+  <li>
+    <p><a href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_includes/script.html#L35" target="\_blank" rel="noopener noreferrer">Script.html Dosyam</a></p>
+  </li>
+  <li><a href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_layouts/post.html#L46" target="\_blank" rel="noopener noreferrer">Post.html Dosyam</a></li>
+</ul>
+
+<h1 id="sonuç">Sonuç</h1>
+
+<p>Blogumda kullanıyorum. <strong>Google Console</strong> servisi,<strong>Amazon</strong> gibi ücretsiz deyipte ay sonunda kartınızdan para çekmeye <strong>çalışmıyor</strong>,<strong>Yedi ay</strong>dır kullanıyorum,herhangi bir sorun <strong>yaşamadım</strong>. Yinede ne olur ne olmaz diyorsanız, ödeme alarmı kurabilirsiniz. Ödemeler kısmından alarmlara tıklayın <strong>1 TL</strong> yi aşınca beni uyar diyin :)</p>
+
+<p><img src="/assets/images/superproxy11.webp" alt="GA-superproxy-kurulumu" /></p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="kutuphane" /><category term="superproxy" /><category term="jekyll" /><summary type="html"><![CDATA[Jekyll Pageviews with Google Analytics]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/superproxy.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/superproxy.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Jekyll Staticman Eklentisi Kurulumu</title><link href="https://yuceltoluyag.github.io//jekyll-staticman-eklentisi/" rel="alternate" type="text/html" title="Jekyll Staticman Eklentisi Kurulumu" /><published>2022-01-29T00:00:00+03:00</published><updated>2022-01-29T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//jekyll-staticman-eklentisi</id><content type="html" xml:base="https://yuceltoluyag.github.io//jekyll-staticman-eklentisi/"><![CDATA[<p><strong>Merhaba</strong></p>
+
+<p>Blogumda daha önce <strong>Disqus</strong> yorum eklentisini kullanıyordum. Sırf aşağısında <strong>“Do not Sell Data”</strong> yazıyor diye uzun zaman önce gördüğüm ama bir türlü deneyimlemeyediğim <strong>Staticman</strong> ile tanışmış olduk.😌 Kurulum süreci biraz sancılı oldu.😅</p>
+
+<h1 id="staticman-nedir-">Staticman Nedir ?</h1>
+
+<p><strong>Staticman</strong> tamamen sizin tarafınızdan kontrol edilen,<strong>statik</strong> siteler için oluşturulmuş harika bir kütüphanedir. İster <strong>yorum</strong> alanı ister <strong>ziyaretçi</strong> defteri istersenizde <strong>iletişim formu</strong> gibi kullanın 🐒 Repoda ki belgeler <strong>eski</strong> güncel versiyonla alakası yok, oraya bakarak birşeyler yapmaya çalışırsanız duvara toslarsınız. İşte <strong>ben</strong> siz duvara toslamayın diye varım 🥰</p>
+
+<h2 id="malzemeler-">Malzemeler 🥗</h2>
+
+<p>Efenim ilk başta bize gerekli olacak ;</p>
+
+<ul>
+  <li>Heroku Üyeliği</li>
+  <li>Github Uygulaması Oluşturma</li>
+  <li>Github Tokens</li>
+  <li>İkinci Bir Github Hesabı</li>
+</ul>
+
+<h1 id="i̇lk-yapılacak">İlk Yapılacak</h1>
+
+<p><strong>Farklı</strong> bir github hesabı açın. İsmini <code class="language-plaintext highlighter-rouge">benimşekillinickim-bot</code> benzeri birşey yapabilirsiniz. <a href="https://github.com/babayorum-bot" target="\_blank" rel="noopener noreferrer">Babanın Botu</a></p>
+
+<h2 id="heroku-deploy">Heroku Deploy</h2>
+
+<ul>
+  <li>
+    <p><a href="https://herokuapp.com/" target="\_blank" rel="noopener noreferrer">herokuapp</a> Siteye gidip bir üyelik oluşturun</p>
+  </li>
+  <li>
+    <p>Daha sonra bu repoya gidin <a href="https://github.com/eduardoboucas/staticman/tree/dev" target="\_blank" rel="noopener noreferrer">Staticman</a>.</p>
+  </li>
+  <li>
+    <p>Ben dev branchını kullandım. Çünkü ana dalda bazı yenilikler merge edilmemiş.. Dilerseniz ana dalıda kullanabilirsinz. Onuda test ettim çalışıyor :) Bu kısımda alta bulunan <code class="language-plaintext highlighter-rouge">deploy heroku</code> butonuna tıklıyoruz.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/staticman8.webp" alt="heroku-kurulumu" /></p>
+
+<p>Daha sonra ilgili ayarları düzenleyerek uygulamamızı deploy ediyoruz.</p>
+
+<p><img src="/assets/images/staticman9.webp" alt="heroku-kurulumu" /></p>
+
+<p>Şimdilik işlem bu kadar daha sonra ayarları düzenleyeceğiz.</p>
+
+<h1 id="github-apps">Github Apps</h1>
+
+<ul>
+  <li>İlk Önce <a href="https://github.com/settings/apps" target="\_blank" rel="noopener noreferrer">Github Apps</a> Bir uygulama oluşturuyorsunuz. Uygulamayı oluştururken kısımları şöyle dolduruyorsunuz .İsim,açıklama ve heroku adresinizi kendinize göre düzenlemeyi unutmayın :)</li>
+</ul>
+
+<p><img src="/assets/images/staticman.webp" alt="staticman-kurulumu" />
+<img src="/assets/images/staticman2.webp" alt="staticman-kurulumu" /></p>
+
+<h2 id="private-keys">Private Keys</h2>
+
+<p>Private keys kısmından <code class="language-plaintext highlighter-rouge">Generate a private key</code> basın, oluşan dosyayı kaydedin. Bu kısım önemli, bu dosyada yazanları heroku ortam değişkenlerinde kullanacağız.</p>
+
+<p><img src="/assets/images/staticman11.webp" alt="heroku-kurulumu" /></p>
+
+<h2 id="github-tokens">Github Tokens</h2>
+
+<ul>
+  <li><a href="https://github.com/settings/tokens/" target="\_blank" rel="noopener noreferrer">Github Tokens</a> adresinden token oluşturuyoruz. Vereceğiniz yetkiler ise şöyle olacak</li>
+</ul>
+
+<p><img src="/assets/images/staticman3.webp" alt="staticman-kurulumu" />
+<img src="/assets/images/staticman4.webp" alt="staticman-kurulumu" /></p>
+
+<p>Oluşturduktan sonra size kod verecek. O kodu saklayın ileride lazım olacak :) Daha sonra oluşturduğunuz uygulamaya tıklayın <code class="language-plaintext highlighter-rouge">Install App</code> kısmından <code class="language-plaintext highlighter-rouge">Install</code> a basıyoruz.</p>
+
+<p><img src="/assets/images/staticman5.webp" alt="staticman-kurulumu" /></p>
+
+<p>Açılan menüde isterseniz tüm repolarınızda yada tek bir repoda kullanabilirsiniz. Ben tek bir repoda kullanacağım o yüzden seçimimi şu şekilde yapıyorum.</p>
+
+<p><img src="/assets/images/staticman6.webp" alt="staticman-kurulumu" /></p>
+
+<p>Sonrasında <code class="language-plaintext highlighter-rouge">install</code>‘a basıyoruz.</p>
+
+<h2 id="github-bot">Github Bot</h2>
+
+<p>Oluşturduğumuz farklı github adresini repomuza davet edeceğiz. Repomuza gidip <code class="language-plaintext highlighter-rouge">Settings</code> e basıyoruz. <code class="language-plaintext highlighter-rouge">Collaborators</code> kısmından <code class="language-plaintext highlighter-rouge">add people</code> basıp, oluşturduğumuz diğer github hesabının adını yazıp davet ediyoruz. Diğer hesabımızla giriş yapıp daveti kabul ediyoruz 🧠</p>
+
+<p><img src="/assets/images/staticman7.webp" alt="staticman-kurulumu" /></p>
+
+<p>Github ayarları burada bitmiştir 🤯</p>
+
+<h1 id="heroku-ayarları">Heroku Ayarları</h1>
+
+<p>Heroku panelimize gidiyoruz. Oluşturduğumuz uygulamaya tıklıyoruz. <code class="language-plaintext highlighter-rouge">Settings</code> kısmından <code class="language-plaintext highlighter-rouge">Config Vars</code> bölümüne gelip <code class="language-plaintext highlighter-rouge">Reveal Config Vars</code> tıklayın.</p>
+
+<h2 id="ortam-değişkenleri">Ortam Değişkenleri</h2>
+
+<ul>
+  <li>GITHUB_APP_ID</li>
+  <li>GITHUB_PRIVATE_KEY</li>
+  <li>GITHUB_TOKEN</li>
+  <li>RSA_PRIVATE_KEY</li>
+</ul>
+
+<p>isimlerinde dört anahtar ve değişken oluşturmalıyız. <code class="language-plaintext highlighter-rouge">GITHUB_APP_ID</code>,<code class="language-plaintext highlighter-rouge">GITHUB_TOKEN</code> kısmına yukarıda ki adımlarda oluşturulan anahtarlar yazılmalıdır. <code class="language-plaintext highlighter-rouge">GITHUB_PRIVATE_KEY</code> kısmını yukarıda oluşturmuştuk,içerisindekileri yapıştırı 😶‍🌫️ verin . <code class="language-plaintext highlighter-rouge">RSA_PRIVATE_KEY</code> kısmı şöyle dolduracağız ;D</p>
+
+<h2 id="rsa-key">RSA KEY</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>ssh-keygen <span class="nt">-m</span> PEM <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096 <span class="nt">-C</span> <span class="s2">"burayabiseyyazin"</span> <span class="nt">-f</span> ~/.ssh/staticman_key
+</code></pre></div></div>
+
+<p>Daha sonra oluşturduğunuz anahtarı görmek için</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">head</span> <span class="nt">-2</span> ~/.ssh/staticman_key
+</code></pre></div></div>
+
+<p>Yaptığınız işlem doğruysa şöyle bir çıktısı olur</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nt">-----BEGIN</span> RSA PRIVATE KEY-----
+MIDIGOMEDAGLARIBLA12930219312 <span class="c">#karman çurman birşey gelecek 😊</span>
+</code></pre></div></div>
+
+<p>Bazı durumlarda ssh-keygen çalışmayabiliyor,alternatif olarak <code class="language-plaintext highlighter-rouge">openssl</code> kullanabilirsiniz.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>openssl genrsa <span class="nt">-out</span> key.pem
+</code></pre></div></div>
+
+<p>Terminal olmadan yapmak istiyorsanız 😱, <code class="language-plaintext highlighter-rouge">online rsa key</code> oluşturucu sitelerini deneyebilirsiniz. <a href="https://travistidwell.com/jsencrypt/demo/" target="\_blank" rel="noopener noreferrer">Online RSA Key Generator</a> sitesine gidin <code class="language-plaintext highlighter-rouge">Key Size</code> kısmını <strong>4096</strong> yapın, <strong>private</strong> ve <strong>public</strong> key kısımlarını bir yerde saklayın 😜</p>
+
+<div class="details admonition tip open">
+  <div class="details-summary admonition-title"><svg class="maicon icon icon-diamonds">
+    <use xlink:href="#icon-diamonds"></use>
+  </svg>Bilgi<svg class="details-icon icon icon-circle-right">
+    <use xlink:href="#icon-circle-right"></use>
+  </svg></div>
+  <div class="details-content">
+    <div class="admonition-content"><p>Sevgili arkadaşlar Github’dan aldığımız <code class="language-plaintext highlighter-rouge">GITHUB_PRIVATE_KEY</code> ile <code class="language-plaintext highlighter-rouge">RSA Key</code>‘imiz aynı olabilir. İsterseniz RSA Key oluşturma işlemini atlayabilirsiniz</p>
+</div>
+  </div>
+</div>
+
+<h1 id="staticman-ayarları">Staticman Ayarları</h1>
+
+<p>Staticman Ayarları YAML formatında saklanır. <code class="language-plaintext highlighter-rouge">staticman.yml</code> dosyasının içeriği şöyledir ;</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="na">comments</span><span class="pi">:</span>
+  <span class="c1"># (*) Oluşturulacak Alanlar</span>
+  <span class="c1"># Burada yorum formunda isim,eposta,websitesi,mesajı gibi alanların olmasını istedim</span>
+  <span class="c1"># Yanıt id'si, yanıtlama sistemi kullanacağım için yazdım. Restine rest ;)</span>
+  <span class="na">allowedFields</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">isim"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">eposta"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">website"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">mesaj"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">yanit_id"</span><span class="pi">]</span>
+
+  <span class="c1"># Bu kısımda hangi alan adlarından formumuza istek atılabilmesi kısmını ayarlıyoruz.</span>
+  <span class="c1"># Bu sayede belirlediğimiz alan adları dışında formumuza istek atılmasını önlüyoruz.</span>
+  <span class="c1"># Geliştirme yaparken localhost adresinide kullanıyoruz. Projenizi canlıya çıkardığınızda localhost kısmını kaldırmanızı öneririm.</span>
+  <span class="na">allowedOrigins</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">localhost"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">www.yuceltoluyag.github.io"</span><span class="pi">]</span>
+
+  <span class="c1"># Burada reponuzda ki branch i seçiyorsunuz. İstek yapan branch adları eşleşmez ise hata alabilirsiniz. Genelde master'dir</span>
+  <span class="na">branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">master"</span>
+
+  <span class="c1"># Burası ise yorum yapıldıktan sonra gelen Pull Requst mesajını özelleştireceğiniz alandır.</span>
+
+  <span class="na">commitMessage</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Comment</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">{fields.name}</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">{options.slug}"</span>
+
+  <span class="c1"># Oluşturulacak Data dosyalarının adının biçimidir. Burada entry-tarih biçiminde oluşturulmuştur.</span>
+  <span class="na">filename</span><span class="pi">:</span> <span class="s2">"</span><span class="s">entry-{@timestamp}"</span>
+
+  <span class="c1"># Dosya biçimleri hangi formatta olsun. "json", "yaml"</span>
+  <span class="c1"># yada "frontmatter" da kullanabilirsiniz.</span>
+  <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">yaml"</span>
+
+  <span class="c1"># Staticman tarafından otomatik olarak doldurulacak ve dahil edilecek alanların listesi</span>
+  <span class="na">generatedFields</span><span class="pi">:</span>
+    <span class="na">date</span><span class="pi">:</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">date"</span>
+      <span class="na">options</span><span class="pi">:</span>
+        <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">timestamp-seconds"</span>
+
+  <span class="c1"># Burası moderasyon kısmı</span>
+  <span class="c1"># "true" olarak ayarlanırsa, onayınız için bir çekme talebi oluşturulur.</span>
+  <span class="c1"># "false" yorumlar otomatik olarak ana şubeye gönderilecek,onaylanmadan yayınlanacak(tavsiye etmiyorum).</span>
+  <span class="na">moderation</span><span class="pi">:</span> <span class="no">true</span>
+
+  <span class="c1"># Akismet Kullanıyorsanız bu ayarları açabilirsiniz Ama reCaptcha daha etkili bir yöntem(Kişisel görüşüm).</span>
+  <span class="c1"># akismet:</span>
+  <span class="c1">#   enabled: true</span>
+  <span class="c1">#   author: "name"</span>
+  <span class="c1">#   authorEmail: "email"</span>
+  <span class="c1">#   authorUrl: "url"</span>
+  <span class="c1">#   content: "message"</span>
+  <span class="c1">#   type: "comment"</span>
+
+  <span class="c1"># Site Adı</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Yücel</span><span class="nv"> </span><span class="s">Toluyağ"</span>
+
+  <span class="c1"># Bildirim Sistemi. Eğer bırakılan yoruma cevap verildiğinde üye eposta almak istiyorsa bu kısmı aktif edebilirsiniz. E-mail marketin apiniz olsa iyi olur :)  Mailgun,Twilio,mailchimp vb servisleri kullanabilirsiniz.</span>
+  <span class="na">notifications</span><span class="pi">:</span>
+    <span class="c1"># Bildirimler Devre Dışı</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="no">false</span>
+
+  <span class="c1"># Burada gelen yorumları hangi dizinde saklayacağımızı belirtiyoruz.</span>
+  <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">_data/comments/{options.slug}"</span>
+
+  <span class="c1"># Zorunlu alanlar, eğer formu dolduran kişi bu kısımları boş bırakmışşa bir hatayla karşılaşır.</span>
+  <span class="na">requiredFields</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">isim"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">eposta"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">mesaj"</span><span class="pi">]</span>
+
+  <span class="c1"># Burada kullanıcılarımızın eposta adreslerini dümdüz kaydetmek yerine şifreleyerek kaydediyoruz. Şifreleme formatı md5</span>
+  <span class="na">transforms</span><span class="pi">:</span>
+    <span class="na">email</span><span class="pi">:</span> <span class="s">md5</span>
+
+  <span class="c1"># reCaptcha Ayarları</span>
+  <span class="c1"># Bu kısa keylerinizi dimdirek yazmayın,nasıl şifreleneceği konusunda blog yazımı okumaya devam edin.</span>
+  <span class="na">reCaptcha</span><span class="pi">:</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="na">siteKey</span><span class="pi">:</span> <span class="s2">"</span><span class="s">12321321"</span>
+    <span class="na">secret</span><span class="pi">:</span> <span class="s2">"</span><span class="s">123213213213"</span>
+</code></pre></div></div>
+
+<p>Bütün açıklamarı kodların üstünde yaptım.</p>
+
+<h2 id="staticman-form-elemanları">Staticman Form Elemanları</h2>
+
+<p>Size oturum form nedir,nasıl veri gönderilir oturup anlatacak olsam bu yazı çok daha uzun olacak 😔 O yüzden interneti bir pandikleyiverin 🤖 Verilerinizi gönderirken value kısımlarıda <code class="language-plaintext highlighter-rouge">fields</code> tagını kullanıyorsunuz. Staticman.yml dosyamızdaki alanımızla eşletirmek için örneğin</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nt">&lt;input</span>
+  <span class="na">class=</span><span class="s">"textfield__input"</span>
+  <span class="na">name=</span><span class="s">"fields[isim]"</span>
+  <span class="na">type=</span><span class="s">"text"</span>
+  <span class="na">id=</span><span class="s">"comment-form-name"</span>
+  <span class="na">placeholder=</span><span class="s">"Adınız"</span>
+  <span class="na">required</span>
+<span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Diğer extrem alanlara ulaşmak içinse <code class="language-plaintext highlighter-rouge">options</code> tagını kullanıyoruz. Örneğin</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nt">&lt;input</span>
+  <span class="na">type=</span><span class="s">"hidden"</span>
+  <span class="na">name=</span><span class="s">"options[origin]"</span>
+  <span class="na">value=</span><span class="s">"https://yuceltoluyag.github.io//jekyll-staticman-eklentisi/"</span>
+<span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Hatırlayın <code class="language-plaintext highlighter-rouge">origins</code> neydi ?🧐 Hangi alan adlarından sitemize istek atabileceğimiz kısımdı 😏</p>
+
+<h2 id="staticman-şifreleme">Staticman Şifreleme</h2>
+
+<p>Statik sitelerde dosyalar açıkca görüldüğünden, her türlü hassas bilgiyi (anahtarlar ve parolalar gibi) şifreleme kullanarak korumak önemlidir.</p>
+
+<p>Şöyle yapıyoruz ;</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="chroma"><code>https://{HEROKU_ADRESİNİZ}/v3/encrypt/şifrelenecekşey
+</code></pre></div></div>
+
+<p>Çıkan sonucu yapılandırma dosyanıza ekleyebilirsiniz. (Dilerseniz postman da kullabilirsiniz.)</p>
+
+<p>Ardından sonucu yapılandırma dosyasına ekleyin. Örneğin ;</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="chroma"><code>    <span class="n">reCaptcha</span>:
+      <span class="n">secret</span>: <span class="n">SofS3tlOOQ9k</span>/<span class="m">4</span><span class="n">x4v</span>/<span class="n">rA3vKjb8rfm9a2fTUdPHgbkCA9M3QDWf4Z452</span>+<span class="n">OWJ5u1EWGY9BlLEk2suoRTv1usYUfPH8LP2VBnPD</span>/<span class="n">r5pQtJwoR3brQtqO1</span>/<span class="n">AVvG6VRISpGGiK6</span>/<span class="n">dyPGY8RvxfQqV6n45b57SnnPVfQpRYFvH9j</span>+<span class="n">jYE8</span>=
+</code></pre></div></div>
+
+<h2 id="staticman-postman">Staticman Postman</h2>
+
+<p>Postman üzerinden testler yapmak istiyorsanız. Resimde ki gibi ayarlamaları yapmanız gereklidir. Field ve options ayarlarını form elamanları kısmından biliyorsunuz :)</p>
+
+<div class="details admonition tip open">
+  <div class="details-summary admonition-title"><svg class="maicon icon icon-diamonds">
+    <use xlink:href="#icon-diamonds"></use>
+  </svg>Bilgi<svg class="details-icon icon icon-circle-right">
+    <use xlink:href="#icon-circle-right"></use>
+  </svg></div>
+  <div class="details-content">
+    <div class="admonition-content"><p><code class="language-plaintext highlighter-rouge">options[redirect]</code> kısmı işlem başarılıysa yönlendirilecek adres kısmı içindir</p>
+</div>
+  </div>
+</div>
+
+<p><img src="/assets/images/staticman-postman.webp" alt="staticman-kurulumu" /></p>
+
+<p><a href="https://github.com/yuceltoluyag/jekyll-staticman/pull/1" target="\_blank" rel="noopener noreferrer">Gönderdiğimiz Verinin Canlısı</a></p>
+
+<h2 id="staticman-wysiwyg">Staticman WYSIWYG</h2>
+
+<p>Formu oluşturduk ama hiç modern değil. Kullanıcılarımıza gidip</p>
+
+<blockquote>
+  <p>“Markdown öğrenin kardeşim”</p>
+</blockquote>
+
+<p>diyecek halimizde yok 🤭 İlk başlarda <a href="https://github.com/sparksuite/simplemde-markdown-editor" target="\_blank" rel="noopener noreferrer">Simple MDE Editor</a> u denedim. Repo yıllardır güncelleme almamış. Simple MDE den doğan <a href="https://github.com/Ionaru/easy-markdown-editor" target="\_blank" rel="noopener noreferrer">Easy Markdonw Editor</a> e baktım, geliştiriliyor ama çok ağır ilerliyor. Bende daha farklı birşey aramaya başladım. Sonunda <a href="https://github.com/nhn/tui.editor" target="\_blank" rel="noopener noreferrer">Tui Editor</a> u kullanmaya karar verdim. Kullanımı gayet basit,kullanışlı hemde modern daha ne olsun 🤗 Tui Editor ünde kendi içerisinde çözülmesi gereken bazı problemler var ama olsun. Onuda nasıl çözdüğümüde kodlarımın arasında göreceksiniz.😁</p>
+
+<h2 id="staticman-örnek-kodlar">Staticman Örnek Kodlar</h2>
+
+<p>Bu dosyaları inceleyin arkadaşlar,kafanızda ışıkların patlayacağından eminim 🎃</p>
+
+<ul>
+  <li><a href="https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comments.html" target="\_blank">comments.html</a></li>
+  <li><a href="https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment.html" target="\_blank">comment.html</a></li>
+  <li><a href="https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment_form.html" target="\_blank">comment_form.html</a></li>
+  <li><a href="https://github.com/yuceltoluyag/jekyll-staticman/blob/main/assets/js/main.js" target="\_blank">main.js</a></li>
+  <li>
+    <p><a href="https://github.com/yuceltoluyag/jekyll-staticman/blob/main/css/main.scss#L305" target="\_blank">_comment.scss</a></p>
+  </li>
+  <li>Canlı Test =&gt; <a href="https://yuceltoluyag.github.io/jekyll-staticman/" target="\_blank">Yorum Yap</a></li>
+  <li>Kaynak Dosyaları =&gt; <a href="https://github.com/yuceltoluyag/jekyll-staticman" target="\_blank">Beleş İndir</a></li>
+</ul>
+
+<h1 id="sonuç">Sonuç</h1>
+
+<p>Disqus kullanmak zorunda değilsiniz artık :) Staticman reposunun elden geçirilmesi gerekli,eksik ve günümüze uyarlanması gereken bir çok şey var. Mesala e-posta şifrelerken md5 yerine başka bir şifreleme algoritması kullanılabilir. Yorum yaparken kütüphanenin kendi içerisinde önceden oluşturulmuş güvenlik önlemleri yok(XSS ve türevleri için). Burada kendiniz önlemler alıyorsunuz <a href="https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment.html#L40" target="\_blank">Önlem Örneği</a> Yetersiz gelirse <a href="https://jekyllrb.com/docs/liquid/filters/" target="\_blank">Liquid Filters</a> adresinden bazı filtreleme methodlarına bakabilirsiniz. (strip_html vb)</p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="kutuphane" /><category term="staticman" /><category term="jekyll" /><summary type="html"><![CDATA[Jekyll Adding Staticman Comments]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/staticman-postman.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/staticman-postman.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AWS EC2’de OpenVPN nasıl kurulur ve DNS Leak nasıl düzeltilir</title><link href="https://yuceltoluyag.github.io//openvpn-nasil-kurulur/" rel="alternate" type="text/html" title="AWS EC2’de OpenVPN nasıl kurulur ve DNS Leak nasıl düzeltilir" /><published>2022-01-28T00:00:00+03:00</published><updated>2022-01-28T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//openvpn-nasil-kurulur</id><content type="html" xml:base="https://yuceltoluyag.github.io//openvpn-nasil-kurulur/"><![CDATA[<p><strong>Merhaba</strong></p>
+
+<p>Aylarca önce yazmam gereken bir konu daha bugüne nasip oldu 😌</p>
+
+<h1 id="vpn-nedir-">VPN Nedir ?</h1>
+
+<p><strong>Finlandiya</strong>‘da amcanızın oğlu <em>her web sitesine,uygulamaya,oyuna,müziğe,filme</em> kısacası internete bulunan herşeyi <strong>özgürce ulaşabiliyor</strong>. Ülkenizdede, hergün yeni bir siteye <strong>erişim engeli</strong> konuluyor diyelim 😔 Keşke bende amcamın oğlunun yanında olsam,onun internetinden bağlansam ne güzel olurdu diyorsunuz.🥺 Amcanın oğluda size diyor ki, <strong>“Böyle birşey yapabiliriz. Sanal ağ üzerinden bana bağlanırsın,tıpkı yanındaymışşın gibi,internetimi kulllanabilirsin”</strong> diyor ve siz nasıl mutlusunuz 🥳 Yani sanallaştırılmış bir ağa uzaktan bağlantı yoluyla fiziksel olarak bağlanmış oluyorsunuz.🐒</p>
+
+<h2 id="neden-ücretli-vpn-kullanmıyoruz">Neden Ücretli VPN Kullanmıyoruz.</h2>
+
+<p>Paran çok,zamanın azsa kullan tabikide sevgili okurum 🐸 Bazı VPN’ler sudan ucuz gibi görünsede veri güvenliği açısından pek yanaşılacak gibi değil… Verilerinizi satmıyoruz deselerde <strong>“Satarız efendim satarız gayette rahat satarız”</strong> politikası cıncık gibi işliyor. 😅 Gizlilik paronayası olan bir adam değilim, lakin <strong>” Hem paranızı hem verilerinizi kaptırmayın”.</strong> .</p>
+
+<h1 id="kurulum">Kurulum</h1>
+
+<ol>
+  <li>Hesabınız yoksa bir amazon hesabı açın.</li>
+  <li>
+    <p><a href="https://aws.amazon.com/marketplace/pp/prodview-y3m73u6jd5srk" target="\_blank" rel="noopener noreferrer"># OpenVPN Access Server</a> <strong>Continue to Subscribe</strong> tıklayın</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu.webp" alt="amazon-openvpn-kurulumu" /></p>
+  </li>
+  <li>
+    <p>Lisans Sözleşmesini kabul edin</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-2.webp" alt="amazon-openvpn-kurulumu-2" /></p>
+  </li>
+  <li>
+    <p>Lisans bilginiz resimdeki gibi görünecektir.<strong>Continue to Configuration</strong> tıklayıp devam edin</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-3.webp" alt="amazon-openvpn-kurulumu-3" /></p>
+  </li>
+  <li>Yazılım Versiyonu olarak güncel olanı seçiyorum. Lokasyon olarakta <strong>Almanya Frankfurt</strong> bölgesini seçiyorum. Ardından <strong>Continue to Launch</strong> tıklayın.</li>
+</ol>
+
+<p><img src="/assets/images/amazon-openvpn-kurulumu-4.webp" alt="amazon-openvpn-kurulumu-4" /></p>
+
+<ol>
+  <li>
+    <p>Yeni formdaki seçimlerimiz ise şöyle</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-5.webp" alt="amazon-openvpn-kurulumu-5" /></p>
+  </li>
+  <li>
+    <p>Security Group Settings ve Key Pair Settings ayarlarını oluşturmamız gerekiyor. Ben kızımın adını verdim 🏌️‍♂️</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-6.webp" alt="amazon-openvpn-kurulumu-6" /></p>
+
+    <p>Ben daha önceden Key oluşturmuştum ama nasıl oluşturduğumu sizede göstereyim</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-7.webp" alt="amazon-openvpn-kurulumu-7" /></p>
+
+    <p><strong>“ED25519”</strong> anahtarlarını yalnızca Linux ve Mac ‘te kullanabilirsiniz. Bu yüzden RSA seçtik. Kaydettikten sonra pem uzantılı dosyanız inecektir. Kaybetmeyiniz,saklayınız,kimselere göstermeyiniz 😉</p>
+  </li>
+  <li>
+    <p>Security kısmı ise şöyle</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-8.webp" alt="amazon-openvpn-kurulumu-8" /></p>
+
+    <p>İsme ve açıklamaya dilediğinizi yazabilirsiniz. Vpn güvenliğini artırmak için bu bağlantı noktalarına erişimi belirli bir IP adresiyle veya adres bloğuyla (kendi ISS’nizinki gibi) kısıtlamak isteyebilirsiniz. Ancak IP adresiniz sık sık değişiyorsa, bağlantı noktalarını kısıtlamak umduğunuz kadar yardımcı olmayabilir. Vpniniz bağlanmak için SSH anahtarlarına ihtiyaç duyacak ve OpenVPN sunucusuda parola korumalı olacaktır. Başka belirli güvenlik hedefleriniz yoksa, şimdilik varsayılan ayarları kabul etmenizde bir sakınca yoktur. <strong>Launch</strong> yolumuza devam edelim</p>
+  </li>
+  <li>
+    <p>Ta ta makine kurulumu bitti</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-9.webp" alt="amazon-openvpn-kurulumu-9" /></p>
+  </li>
+</ol>
+
+<h2 id="dns-leak">DNS LEAK</h2>
+
+<p>Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, dns adreslerimiz halen kendi ISS mizden istek atıyor. Saldırganlar genelde fake web siteleri oluşturur,analiz servisleriyle ip adresiniz,konumuz,işletim sisteminiz vb bir çok bilgiyi toplayabiliyor. İp adresinizi aldıktan sonra karşı taraf hiçbir şey yapamasa bile, saldırı yapıp,rahatınızı bozuyor… Vpn açıkken DNS Leak testini otamatik yapabileceğiniz bir adres veriyorum şimdi 😁 <a href="https://www.dnsleaktest.com/" target="\_blank" rel="noopener noreferrer">dnsleaktest.com</a> Siteye girip Extended test atmanız yeterli. Bu resimdeki upucuz, beleşmi beleş bir vpnin testi 😆 <img src="/assets/images/Extended- test.webp" alt="Extended- test" /> <strong>Peki bunla neler mi yapıyorlar,dilersen bonus bölümünden okuyabilirsin 😁</strong> Çözüme devam edelim….</p>
+
+<h3 id="ec2-elastik-i̇p">EC2 Elastik İp</h3>
+
+<ol>
+  <li>
+    <p><strong>Network &amp; Security</strong> menüsü altındaki <strong>Elastic IPs</strong> menüsüne tıklıyoruz.</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-10.webp" alt="amazon-openvpn-kurulumu-10" /></p>
+  </li>
+  <li>
+    <p>Daha sonra <strong>Allocate Elastic IP address</strong> menüsüne tıklayıp , amazon havuzlarından 1 adet ipv4 adres talep edin. Oluşturduktan sonra yine aynı sayfadan <strong>Associate address</strong> e tıklayıp,aktif vpn sunucunuzu seçin. Eğer herşeyi doğru şekilde yaptıysanız instance kısmında elastik ip kısmına ip adresinizin atanmış olması gerekli.</p>
+
+    <p><img src="/assets/images/amazon-openvpn-kurulumu-11.webp" alt="amazon-openvpn-kurulumu-11" /></p>
+  </li>
+</ol>
+
+<h2 id="sunucu-ayarları">Sunucu Ayarları</h2>
+
+<p>Terminalinizi açın.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo chmod </span>400 &lt;dosyaisminiz&gt;.pem
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">-r--------</code> Bu, dosya izinlerini yalnızca kullanıcı (siz) tarafından okunabilecek şekilde ayarlar . Özel anahtarın diğer kullanıcılar tarafından yapılan okuma ve yazma işlemlerinden korunmasına yardımcı olabilir, ancak daha da önemlisi, bulut sunucunuza bağlanmaya çalıştığınızda AWS’nin hata vermesini önleyecektir.</p>
+
+<p>Şimdi sunucumuza bağlanalım:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>ssh <span class="nt">-i</span> &lt;dosyaisminiz&gt;.pem openvpnas@&lt;elastic ip adresiniz&gt;
+</code></pre></div></div>
+
+<p>Kullanıcı <code class="language-plaintext highlighter-rouge">openvpnas</code>, örneğinize bağlanmanıza izin vermek için OpenVPN Erişim Sunucusu tarafından ayarlanır. Bağlandıktan sonra windozort vari next nuxt geçiştirebilirsiniz. Ayarları daha sonra panel üzerindende değiştirebilirsiniz. Olurya tam ayar yaparken yanlış birşey yaptınız.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>ovpn-init –ec2
+</code></pre></div></div>
+
+<p>komutuyla kurulum sihirbazını tekrar çalıştırabilirsiniz.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>          OpenVPN Access Server
+          Initial Configuration Tool
+<span class="nt">------------------------------------------------------</span>
+Please enter <span class="s1">'yes'</span> to indicate your agreement <span class="o">[</span>no]: <span class="nb">yes
+
+</span>Once you provide a few initial configuration settings,
+OpenVPN Access Server can be configured by accessing
+its Admin Web UI using your Web browser.
+
+Will this be the primary Access Server node?
+<span class="o">(</span>enter <span class="s1">'no'</span> to configure as a backup or standby node<span class="o">)</span>
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>default <span class="o">[</span><span class="nb">yes</span><span class="o">]</span>:
+
+Please specify the network interface and IP address to be
+used by the Admin Web UI:
+<span class="o">(</span>1<span class="o">)</span> all interfaces: 0.0.0.0
+<span class="o">(</span>2<span class="o">)</span> eth0: ipadresiçıkıcak
+Please enter the option number from the list above <span class="o">(</span>1-2<span class="o">)</span><span class="nb">.</span>
+<span class="o">&gt;</span> Press Enter <span class="k">for </span>default <span class="o">[</span>1]:
+
+Please specify the port number <span class="k">for </span>the Admin Web UI.
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>default <span class="o">[</span>943]:
+
+Please specify the TCP port number <span class="k">for </span>the OpenVPN Daemon
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>default <span class="o">[</span>443]:
+
+Should client traffic be routed by default through the VPN?
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>default <span class="o">[</span>no]:
+
+Should client DNS traffic be routed by default through the VPN?
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>default <span class="o">[</span>no]:
+
+Use <span class="nb">local </span>authentication via internal DB?
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>default <span class="o">[</span><span class="nb">yes</span><span class="o">]</span>:
+
+Private subnets detected: <span class="o">[</span><span class="s1">'1111111'</span><span class="o">]</span>
+
+Should private subnets be accessible to clients by default?
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>EC2 default <span class="o">[</span><span class="nb">yes</span><span class="o">]</span>:
+
+To initially login to the Admin Web UI, you must use a
+username and password that successfully authenticates you
+with the host UNIX system <span class="o">(</span>you can later modify the settings
+so that RADIUS or LDAP is used <span class="k">for </span>authentication instead<span class="o">)</span><span class="nb">.</span>
+
+You can login to the Admin Web UI as <span class="s2">"openvpn"</span> or specify
+a different user account to use <span class="k">for </span>this purpose.
+
+Do you wish to login to the Admin UI as <span class="s2">"openvpn"</span>?
+<span class="o">&gt;</span> Press ENTER <span class="k">for </span>default <span class="o">[</span><span class="nb">yes</span><span class="o">]</span>:
+
+<span class="o">&gt;</span> Please specify your Activation key <span class="o">(</span>or leave blank to specify later<span class="o">)</span>:
+
+
+
+Initializing OpenVPN...
+Removing Cluster Admin user login...
+userdel <span class="s2">"admin_c"</span>
+Adding new user login...
+useradd <span class="nt">-s</span> /sbin/nologin <span class="s2">"openvpn"</span>
+Writing as configuration file...
+Perform sa init...
+Wiping any previous userdb...
+Creating default profile...
+Modifying default profile...
+Adding new user to userdb...
+Modifying new user as superuser <span class="k">in </span>userdb...
+Getting hostname...
+Hostname: elastikip01123
+Preparing web certificates...
+Getting web user account...
+Adding web group account...
+Adding web group...
+Adjusting license directory ownership...
+Initializing confdb...
+Generating PAM config...
+Enabling service
+Starting openvpnas...
+
+NOTE: Your system clock must be correct <span class="k">for </span>OpenVPN Access Server
+to perform correctly.  Please ensure that your <span class="nb">time </span>and <span class="nb">date
+</span>are correct on this system.
+
+Initial Configuration Complete!
+
+You can now <span class="k">continue </span>configuring OpenVPN Access Server by
+directing your Web browser to this URL:
+
+https://elastikip:943/admin
+Login as <span class="s2">"openvpn"</span> with the same password used to authenticate
+to this UNIX host.
+
+During normal operation, OpenVPN AS can be accessed via these URLs:
+Admin  UI: https://elastikip:943/admin
+Client UI: https://elastikip:943/
+
+See the Release Notes <span class="k">for </span>this release at:
+   https://openvpn.net/vpn-server-resources/release-notes/
+
+openvpnas@ip-128392183:~<span class="nv">$ </span>içerdeyiz XD
+</code></pre></div></div>
+
+<p>Daha sonra <strong>openvpn</strong> adlı abimizin şifresini değiştiriyoruz.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>passwd openvpn
+</code></pre></div></div>
+
+<p>SSH bağlantısını kapatmak için <code class="language-plaintext highlighter-rouge">exit</code> yazın. Daha sonra <strong>https://elastic ipadresiniz:943/</strong> tarayıcınız üzerinden bağlanın. SSL hatası verebilir,gelişmiş menüsüne tıklayıp devam et diyin. Önünüze gelen ekranda kullanıcı adı openvpn,şifreniz yukarıdaki yaptığınız şifre : ) Daha sonra eğer önünüze gelmez ise <a href="https://openvpn.net/vpn-client/" target="\_blank" rel="noopener noreferrer">vpn-client</a> adresinden işletim sisteminize göre indirme yapabilirsiniz.</p>
+
+<p><img src="/assets/images/amazon-openvpn-kurulumu-12.webp" alt="amazon-openvpn-kurulumu-12" /></p>
+
+<p>openvpn kendi makinemize yükleyelim.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>yay <span class="nt">-S</span> openvpn
+</code></pre></div></div>
+
+<p>daha sonra</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>openvpn <span class="nt">--config</span> client.ovpn
+</code></pre></div></div>
+
+<h1 id="sonuçlar">Sonuçlar</h1>
+
+<p><img src="/assets/images/amazon-openvpn-kurulumu-13.webp" alt="amazon-openvpn-kurulumu-13" />
+<img src="/assets/images/amazon-openvpn-kurulumu-14.webp" alt="amazon-openvpn-kurulumu-14" /></p>
+
+<h1 id="bonus-cool-story-bro-">Bonus Cool Story Bro 🧿</h1>
+
+<p>Arkadaşım hep ücretli vpnler kullanırdı.😍 Birgün kendisinden denemek için vpn aldım. NORDVPN 🤶🏼 Neyse efendim,gezdik,dolaştık her gece internetim gidiyor. Başlarda Telekomun bölgesel bir arızası var sandım… Telekomu ne zaman arayacak olsam şanstan kendi kendine düzeliyordu. İnternet gittidemi 1-2 saat gelmiyordu. Birgün modem ayarlarını kurcalarken ne göreyim 🤐 Modemin üstünden tüm ülkeler port tarama saldırısı gerçekleştiriyor.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="chroma"><code>[Kernel][Alert] firewall security alert! [Fragment Flooding] attack,possoble.
+</code></pre></div></div>
+
+<p>Hemen Turktelekomda ki arkadaşlara ulaştım. Personel ‘e derdimi bir türlü anlatamadım. Anlamadılarda… Sonra çareyi saldırı ne zaman başlasa modemi kapatarak çözdüm. Daha sonra oradan taşındık, oda bana bir ders oldu. Bu ücretli satılan vpni ister beleş kullanın ister paralı ip adresleriniz belirli kişilerin eline geçiyor,onlarda ne amaçla bunu yapıyorlar bilmiyorum ama bana bir rahatsızlık vermişlerdi. Eski twitter hesabım kapanmasaydı,sizlere görsel göstermek isterdim 🤬</p>
+
+<h2 id="sonuç">Sonuç</h2>
+
+<p>Arkadaşlar ücretli ücretsiz,hangi vpn kullanırsanız kullanın dns leak olayına yakalanmayın. Bol vpnsiz günler.</p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="linux" /><category term="linux" /><category term="vpn" /><summary type="html"><![CDATA[How to set up OpenVPN on AWS EC2 and fix DNS leaks]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/amazon-openvpn-kurulumu-14.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/amazon-openvpn-kurulumu-14.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Önemli Değişiklikler</title><link href="https://yuceltoluyag.github.io//onemli-gelismeler/" rel="alternate" type="text/html" title="Önemli Değişiklikler" /><published>2022-01-07T00:00:00+03:00</published><updated>2022-01-07T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//onemli-gelismeler</id><content type="html" xml:base="https://yuceltoluyag.github.io//onemli-gelismeler/"><![CDATA[<p><img src="/assets/images/duyuru.webp" alt="duyuru" /></p>
 
 <!-- excerpt separator -->
 
@@ -110,8 +858,6 @@
     
     
     
-    
-    
     <li class="folder">
       
       <a href="/facebook-toplu-grup-2021/">Facebook Gruba Toplu Arkadaş Ekleme Yeni Version</a>
@@ -126,6 +872,12 @@
       <i>Facebook 5000 arkadaş ekleme ( süreli)</i>
       
     </li>
+    
+    
+    
+    
+    
+    
     
     
     
@@ -155,7 +907,7 @@ aittir.Kod bilgi amacıyla paylaşılmıştır.</strong></p>
 
 <!-- Feel free to change the width and height to your desired video size. -->
 
-<div class="embed-container">
+<div class="embed-responsive embed-responsive-16by9">
   <iframe class="lazyload" data-src="https://www.youtube.com/embed/poi-oUJbTrc" width="700" height="480" frameborder="0" allowfullscreen="" title="Facebook 5000 arkadaş ekleme">
   </iframe>
 </div>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="facebook" /><category term="facebook" /><summary type="html"><![CDATA[Facebook 5000 arkadaş ekleme kodu versiyon 2]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/facebook-5000-arkadas-ekleme-kodu-v2.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/facebook-5000-arkadas-ekleme-kodu-v2.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Facebook Gruba Toplu Arkadaş Ekleme Yeni Version</title><link href="https://yuceltoluyag.github.io//facebook-toplu-grup-2021/" rel="alternate" type="text/html" title="Facebook Gruba Toplu Arkadaş Ekleme Yeni Version" /><published>2020-11-06T00:00:00+03:00</published><updated>2020-11-06T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//facebook-toplu-grup-2021</id><content type="html" xml:base="https://yuceltoluyag.github.io//facebook-toplu-grup-2021/"><![CDATA[<h1 id="merhaba">Merhaba</h1>
@@ -268,8 +1020,6 @@ aittir.Kod bilgi amacıyla paylaşılmıştır.</strong></p>
     
     
     
-    
-    
     <li class="folder">
       
       <i>Facebook Gruba Toplu Arkadaş Ekleme Yeni Version</i>
@@ -284,6 +1034,12 @@ aittir.Kod bilgi amacıyla paylaşılmıştır.</strong></p>
       <a href="/facebook-5000-arkadas-ekleme-sureli-v2/">Facebook 5000 arkadaş ekleme ( süreli)</a>
       
     </li>
+    
+    
+    
+    
+    
+    
     
     
     
@@ -313,7 +1069,7 @@ konuma göz atın.</li>
 
 <!-- Feel free to change the width and height to your desired video size. -->
 
-<div class="embed-container">
+<div class="embed-responsive embed-responsive-16by9">
   <iframe class="lazyload" data-src="https://www.youtube.com/embed/pggW_tyFG7k" width="700" height="480" frameborder="0" allowfullscreen="" title="Facebook Gruba Toplu Arkadaş Ekleme Yeni Version">
   </iframe>
 </div>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="facebook" /><category term="facebook" /><summary type="html"><![CDATA[Facebook Grubunuza veya katıldığınız gruba topluca arkadaşlarınızı eklemek]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/facebookgrupistatistik.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/facebookgrupistatistik.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">E-Sigara Tecrübelerim</title><link href="https://yuceltoluyag.github.io//elektronik-sigara-zararlimi-faydalimi/" rel="alternate" type="text/html" title="E-Sigara Tecrübelerim" /><published>2020-10-24T00:00:00+03:00</published><updated>2020-10-24T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//elektronik-sigara-zararlimi-faydalimi</id><content type="html" xml:base="https://yuceltoluyag.github.io//elektronik-sigara-zararlimi-faydalimi/"><![CDATA[<h1 id="merhaba">Merhaba</h1>
@@ -427,7 +1183,7 @@ Resimdende anlaşılacağı üzere ben manhattan likitlerini kullanıyorum. Sık
 
 <h1 id="sezon-finali">Sezon finali</h1>
 
-<p>Arkadaşlar eğer ki ben yanımda taşırım,çok içerim,ikide bir şarjı,tankıyla uğraşamam diyorsanız, şarjı,tankı büyük olan modellere yönelmenizi tavsiye ederim. Dolar kurundan ve artan yasaklardan dolayı bu tip cihazlardan bulmak biraz sorun.. Kaliteli kullanılabilir sıfır cihazlar 700 den başlıyor. İkinci el bulabilirsenizde alabilirsiniz. Sonuçta ağzın değdiği yeri(dilersenizde bu kısmı 0 alabilirsiniz) ve tankı sirkeli suyla güzelce temizleyip kullanabilirsiniz. Şu anda bu sektorde tabletli(juul) tarzı olanlar revaçta,bu tarz yanmalı olanlara talep yavaş yavaş azalıyor. Eğer e-sigaraya başlayacaksanız aklınızda deli sorular varsa yorum bırakın,bildiğim kadarıyla yardımcı olmaya çalışırım.</p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="[&quot;tanıtım&quot;, &quot;tavsiye&quot;]" /><category term="tanıtım" /><summary type="html"><![CDATA[Smok Nord ile elektronik sigara deneyimlerim]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/esigara-yararlimi-zararlimi.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/esigara-yararlimi-zararlimi.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Newsboat RSS Feeds Kullanımı</title><link href="https://yuceltoluyag.github.io//newsboat-kullanimi/" rel="alternate" type="text/html" title="Newsboat RSS Feeds Kullanımı" /><published>2020-07-17T00:00:00+03:00</published><updated>2020-07-17T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//newsboat-kullanimi</id><content type="html" xml:base="https://yuceltoluyag.github.io//newsboat-kullanimi/"><![CDATA[<h1 id="merhaba">Merhaba</h1>
+<p>Arkadaşlar eğer ki ben yanımda taşırım,çok içerim,ikide bir şarjı,tankıyla uğraşamam diyorsanız, şarjı,tankı büyük olan modellere yönelmenizi tavsiye ederim. Dolar kurundan ve artan yasaklardan dolayı bu tip cihazlardan bulmak biraz sorun.. Kaliteli kullanılabilir sıfır cihazlar 700 den başlıyor. İkinci el bulabilirsenizde alabilirsiniz. Sonuçta ağzın değdiği yeri(dilersenizde bu kısmı 0 alabilirsiniz) ve tankı sirkeli suyla güzelce temizleyip kullanabilirsiniz. Şu anda bu sektorde tabletli(juul) tarzı olanlar revaçta,bu tarz yanmalı olanlara talep yavaş yavaş azalıyor. Eğer e-sigaraya başlayacaksanız aklınızda deli sorular varsa yorum bırakın,bildiğim kadarıyla yardımcı olmaya çalışırım.</p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="[&quot;tanitim&quot;, &quot;tavsiye&quot;]" /><category term="tanitim" /><summary type="html"><![CDATA[Smok Nord ile elektronik sigara deneyimlerim]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/esigara-yararlimi-zararlimi.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/esigara-yararlimi-zararlimi.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Newsboat RSS Feeds Kullanımı</title><link href="https://yuceltoluyag.github.io//newsboat-kullanimi/" rel="alternate" type="text/html" title="Newsboat RSS Feeds Kullanımı" /><published>2020-07-17T00:00:00+03:00</published><updated>2020-07-17T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//newsboat-kullanimi</id><content type="html" xml:base="https://yuceltoluyag.github.io//newsboat-kullanimi/"><![CDATA[<h1 id="merhaba">Merhaba</h1>
 
 <p>Uzunca bir süre <strong>Feedly</strong> servisini kullandım,Bildirimleri terminal ekranından takip etmek işime daha çok geldiği için newsboat’a geçiş yaptım. Feedly bu süreçte spam mail,premium alsana koçum vs gibi rahatsız edici bildirimlerde bulunmadı.Dileyen feedly servisinide kullanabilir. Windows için QuiteRSS yi kullanabilirsiniz.</p>
 
@@ -888,13 +1644,17 @@ polkit.addRule<span class="o">(</span><span class="k">function</span><span class
     
     
     
-    
-    
     <li class="folder">
       
       <i>Laravel ide helper kullanımı</i>
       
     </li>
+    
+    
+    
+    
+    
+    
     
     
     
@@ -918,7 +1678,7 @@ polkit.addRule<span class="o">(</span><span class="k">function</span><span class
 
 <!-- Feel free to change the width and height to your desired video size. -->
 
-<div class="embed-container">
+<div class="embed-responsive embed-responsive-16by9">
   <iframe class="lazyload" data-src="https://www.youtube.com/embed/0NZHzmAgH-M" width="700" height="480" frameborder="0" allowfullscreen="" title="Laravel ide helper kullanımı">
   </iframe>
 </div>
@@ -1015,496 +1775,4 @@ polkit.addRule<span class="o">(</span><span class="k">function</span><span class
 
 <p>Bu komutla birlikte, composeri her güncellediğinizde,yeni DOC larınız otamatik olarak konfigurasyon dosyanıza yazılacaktır.</p>
 
-<p>Bu şekilde bu tip uyarılardan kurtulmuş oluyoruz. Daha fazlası için <a href="https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md" target="\_blank" rel="noopener noreferrer">laravel ide helper wiki</a> sayfasına bakabilirsiniz. Phpstorm ile ilgili daha fazla yazıya <a href="https://yuceltoluyag.github.io/tag/phpstorm/" target="\_blank" rel="noopener noreferrer">buradan ulaşabilirsiniz</a></p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="kutuphane" /><category term="phpstorm" /><category term="cmder" /><summary type="html"><![CDATA[laravel ide helper nasıl kullanılır]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/laravel_7x_ide_helper.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/laravel_7x_ide_helper.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">İnternetten Para Kazanma &amp;amp; Pasif Gelir Oluşturma Yöntemim</title><link href="https://yuceltoluyag.github.io//internetten-para-kazanma-guncel-yatirimsiz/" rel="alternate" type="text/html" title="İnternetten Para Kazanma &amp;amp; Pasif Gelir Oluşturma Yöntemim" /><published>2020-06-24T00:00:00+03:00</published><updated>2020-06-24T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//internetten-para-kazanma-guncel-yatirimsiz</id><content type="html" xml:base="https://yuceltoluyag.github.io//internetten-para-kazanma-guncel-yatirimsiz/"><![CDATA[<h2 id="merhaba">Merhaba</h2>
-
-<p>Bu konuda yazı yazmayı, araştırmayı yaklaşık iki sene önce bırakmıştım. Telegram adresimden hala yeni bir yöntem var mı gibi sorular gelmeye devam ediyor. <a href="https://yuceltoluyag.github.io/earncom-nedir-nasl-kullanlr/" target="\_blank" rel="noopener noreferrer">Earn.Com ile para kazanma </a> . <strong>Earn</strong> o yıllarda coinbase dönüştü,yine ödüller vermeye devam etti ancak ben devam etmedim :)</p>
-
-<!-- excerpt separator -->
-
-<div class="box">
-  <p>Bu <strong>pasifgelir</strong> serisinin 2. yazısıdır Toplamda 2 bölümden oluşmaktadır.</p>
-
-  <ul class="directory-list">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <a href="/earncom-nedir-nasl-kullanlr/">earn.com nedir nasıl kullanılır</a>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <i>İnternetten Para Kazanma &amp; Pasif Gelir Oluşturma Yöntemim</i>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </ul>
-</div>
-
-<h2 id="neden-">Neden ?</h2>
-
-<p>İnternette <strong>para kazanma yöntemleri</strong> diye arattığınızda genelde karşınıza scam,ptc click gibi uzun uğraşlar isteyen,adsene ile para kazanma konusunda sadece temel bilgiler verip, milyonlarla kazanç elde edeceğinizi ifade eden bir çok blog yada youtuber ile karşılacaksınız. Evet <strong>internetten para kazanma</strong> diye birşey var, ancak arkadaşların iddia ettiği gibi <strong>emek</strong> sarfetmeden yeri geldiğinde sermaya koymadan(hatta başlarda bile gerekebilir) para kazanmak mümkün değildir. İddia eden varsa,net scamdir.. Tanıttığım websitelerinde zaman harcıyoruz, ancak sizden ne ödeme için nede ilerleyebilmeniz için illa ki de ücret istememesidir.</p>
-
-<h2 id="i̇şleyiş">İşleyiş</h2>
-
-<p>Kullandığım hizmetler <strong>Bitcoin</strong> tabanlıdır. İlgili uygulamaya reklamverenler reklam verir, sizde reklamlara tıklayarak,gruplara katılarak kısacası verilen görevleri yaparak belirli bir ücret kazanırsınız.</p>
-
-<h2 id="telegram-botları">Telegram Botları</h2>
-
-<blockquote>
-  <p><strong>Telegram</strong> uygulamasını indirip linklere tıklayın gruplara katılın. Yaşadığınız soru ve sorunlar için <a href="https://t.me/EarnCoinPerDay" target="\_blank" rel="noopener noreferrer">Telegram Grubu</a> bana mesaj atabilirsiniz.</p>
-</blockquote>
-
-<ul>
-  <li><a href="https://bit.ly/3gGmHVM" target="\_blank" rel="noopener noreferrer">https://bit.ly/3gGmHVM</a></li>
-  <li><a href="https://bit.ly/2NmBhoz" target="\_blank" rel="noopener noreferrer">https://bit.ly/2NmBhoz</a></li>
-  <li><a href="https://bit.ly/2BCokok" target="\_blank" rel="noopener noreferrer">https://bit.ly/2BCokok</a></li>
-  <li><a href="https://bit.ly/2Z720ei" target="\_blank" rel="noopener noreferrer">https://bit.ly/2Z720ei</a></li>
-  <li><a href="https://bit.ly/2B3g0hi" target="\_blank" rel="noopener noreferrer">https://bit.ly/2B3g0hi</a></li>
-</ul>
-
-<h3 id="telegram-botlarının-kullanımı">Telegram Botlarının Kullanımı.</h3>
-
-<p>Verdiğim beş botta aynı firmaya ait farklı altcoinlerdir. İster birinden ister beşinden de coin kasabilirsiniz.(tavsiyem hepsinden yararlanmanız) Botların arayüzleri aynı olduğu için ilk girdiğinizde şöyle bir ekran ile karşılacaksınız.</p>
-
-<p><img src="/assets/images/telegrambotmenu.webp" alt="telegram_termux_bot_coin" /></p>
-
-<p>🖥 <strong>Visit sites</strong> e tıkladığınızda size bir link verir bu linke gidip <strong>10</strong> saniye beklerseniz, paranız hesabınıza eklenir.
-🤖 <strong>Message bots</strong> : e tıkladığınızda Bot size bir görev verir, ilgili gruba git ordan bir mesajı bana geri ilet der, ve para hesabınıza geçer.
-📣 <strong>Join chats</strong> : e tıkladığınızda Gruplara katılım sağlayarak para kazanırsınız. Gruba katılıp, bot tarafında joinede basarsanız,bot gruba gidip ismini arar,bulursa parayı hesabınıza yatırır. Bazı grup görevleri süreli olabilir,girer girmez gruptan çıkmayın. Süreli grup görevlerinde <strong>süre dolmadan</strong> gruptan çıkarsanız <strong>ödeme alamazsınız.</strong></p>
-
-<p><img src="/assets/images/telegram_bot_join_group.webp" alt="telegram_join_bot_coin" /></p>
-
-<p>✔ <strong>My Ads</strong> : Bu kısımda ise kazandığınız coinlerle, sitenizin,uygulamanızın reklamını yapabilirsiniz.</p>
-
-<p>🛠 <strong>Settings</strong> kısmında dilerseniz +18 içeriklerinde gösterilmesini açarak,daha fazla reklam görüntüleyebilirsiniz. Başlangıçta kapalı olarak gelir,dileyen açabilir.</p>
-
-<p>🏆 <strong>Balance</strong> kısmına tıkladığınızda şöyle bir ekran gelecek.</p>
-
-<p><img src="/assets/images/balance.webp" alt="telegram_balance_bot_coin" /></p>
-
-<p><strong>Deposit</strong> : my ads yayınladığınız reklamlar için,bakiye yüklemenize yarar.
-<strong>Withdraw</strong> : Hesabınız minimum ödeme tutarına ulaştığında ödeme alacağınız kısım. Bir cüzdan adresi gereklidir. Cüzdan adresi konusunu aşağıda anlatacağım.
-<strong>History</strong> : Yaptığınız ödemeleri ve aldığınız ödeme geçmişini görüntüleyebileceğiniz alandır.</p>
-
-<h2 id="kullandığım-websiteleri">Kullandığım Websiteleri</h2>
-
-<ul>
-  <li><a href="https://bit.ly/2YqbmTt" target="\_blank" rel="noopener noreferrer">https://bit.ly/2YqbmTt</a></li>
-</ul>
-
-<p>Siteye girdiğinizde sol menüde ki şu alanlarla işimiz var.
-<img src="/assets/images/faucetcrypto.webp" alt="telegram_faceut_bot_coin" /></p>
-
-<blockquote>
-  <p>Bu sitede dikkat etmeniz gereken nokta multitab (yani çoklu pencerede işlemleri desteklelemez.) Reklam gösterimleri sayfasında farklı bir sekmeye geçince sayaç durur. O yüzden sadece tek sekmede,bu site içerisinde kalarak işlemlerinizi yapınız.</p>
-
-  <p><strong>Ready to claim</strong> : Site size her 40 dakikada bir bonus verir. 40 dakikada bir girip kontrol etmenizde fayda var.</p>
-</blockquote>
-
-<p><strong>Shortlinks</strong> : Bölümünde linklere tıklarsınız,sol üst köşede ki sayaç saymayı durdurduğu an devam ete basarsınız,o reklamın yayınlanma ücreti hesabınıza aktarılır.</p>
-
-<p><strong>Achievements</strong> : Sitede ki görevleri yaptıkça başarımlarınız açılır. Bu başarımlar size extra para ve level kazandırır.</p>
-
-<p><strong>Ptc-ads</strong> : Bu kısımdada linkere tıklayarak açılan sitelerde belirli bir süre geçirerek ücret kazanırsınız. Her açılan sitenin belirli bir tıklama miktarı,süresi olabilir.</p>
-
-<p><strong>Offerwalls</strong> : Bu kısım 20 levelden sonra açılır,anket doldurma,ilgili uygulamalara üye olma vb gibi işlemlerin yapıldığı kısım. Bu kısım konusunda dikkatli olmanız hususunda uyarır. Burayı yapmak zorunda değilsiniz,ancak becerebilirseniz,reklam verende sözünde durursa güzel coinler kazanabilirsiniz. Site zaten sizi burada uyarıyor bu uygula içinde(Offerwalls) içerisinde yaşadığınız sorunlar beni alakadar etmez diyor :)</p>
-
-<p>Sizin için ufak bir çekme işlemi yaptım. (ödeme kanıtı)</p>
-
-<p><img src="/assets/images/odeme_kaniti.webp" alt="odeme_kaniti" /></p>
-
-<p><a href="https://explorer.zcha.in/accounts/t1e5fzazUDQWMumYkN5X2HU4dYYMvzChi5L" target="\_blank" rel="noopener noreferrer">Ödeme Explorer Bağlantısı</a></p>
-
-<h2 id="hangi-cüzdanı-kullanıyorum">Hangi cüzdanı Kullanıyorum</h2>
-
-<p><a href="https://bit.ly/2VbZa6N" target="\_blank" rel="noopener noreferrer">https://bit.ly/2VbZa6N</a> binance kullanıyorum. Linke tıklayarak cüzdanınızı açabilirsiniz. Kazandığınız,tüm coinleri buraya aktarıp BNB ye çevirip direkt papara hesabınıza atabilirsiniz.</p>
-
-<h2 id="bonus">Bonus</h2>
-
-<p>Linklerimden üye olup ,resimlerini telegramdan gönderirseniz,size pythonla yazılmış telegram scriptini verebilirim. Bu scriptle en başta anlattığım telegram botlarını otamatige alıp kazanç sağlayabilirsiniz. Kendim kullanıyorum.</p>
-
-<blockquote>
-  <p>Dipnot bu sitelere üye olup vpnle sahte referanslar oluşturma yada sahte telefon numarasıyla telegram hesapları açıp çakallık yapmaya çalışmayın emeğiniz hüsran olur 😂🤣</p>
-</blockquote>
-
-<blockquote>
-  <p>Yaşadığınız soru ve sorunlar için <a href="https://t.me/EarnCoinPerDay" target="\_blank" rel="noopener noreferrer">Telegram Grubu</a> bana mesaj atabilirsiniz.</p>
-</blockquote>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="para-kazanma" /><category term="internetten para kazanma" /><summary type="html"><![CDATA[Alt Coinleri kullanarak pasif gelir oluşturmak.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/telegrambotmenu.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/telegrambotmenu.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Arch Linux Laravel Valet Kurulumu</title><link href="https://yuceltoluyag.github.io//archlinux-valet-kurulumu/" rel="alternate" type="text/html" title="Arch Linux Laravel Valet Kurulumu" /><published>2020-06-15T00:00:00+03:00</published><updated>2020-06-15T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//archlinux-valet-kurulumu</id><content type="html" xml:base="https://yuceltoluyag.github.io//archlinux-valet-kurulumu/"><![CDATA[<p><img src="/assets/images/laravel-valet-kurulumu-linux.webp" alt="laravel-valet-kurulumu" /></p>
-
-<h1 id="merhaba">Merhaba</h1>
-
-<p>Valet Linux , minimalist geliştirme ortamını sevenler için Laravel geliştirme ortamıdır. <a href="https://yuceltoluyag.github.io/virtualbox-vagrant-laravel-arch-linux/">Vagrant</a> yok, <code class="language-plaintext highlighter-rouge">/etc/hosts</code>ayarlamak yok . Yerel tünelleri (Ngrok vb gibi) kullanarak sitelerinizi herkese açık olarak da paylaşabilirsiniz.</p>
-
-<!-- excerpt separator -->
-
-<div class="box">
-  <p>Bu <strong>archlampp</strong> serisinin 4. yazısıdır Toplamda 4 bölümden oluşmaktadır.</p>
-
-  <ul class="directory-list">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <a href="/arch-linux-lampp-kurulumuphp7xmariadbmy/">Arch Linux Lampp Kurulumu(PHP7x+MariaDB+Mysql+Phpmyadmin)</a>
-      
-    </li>
-    
-    
-    
-    
-    <li class="folder">
-      
-      <a href="/arch-linux-apachelampp-sanal-sunucu/">Arch Linux Apache(lampp) Sanal Sunucu Kurulumu</a>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <a href="/virtualbox-vagrant-laravel-arch-linux/">Archlinux üzerinde Virtualbox + Vagrant + Laravel + Phpmyadmin Kurulumu(Homestead)</a>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <i>Arch Linux Laravel Valet Kurulumu</i>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </ul>
-</div>
-
-<p>Vale Linux sisteminizi, makineniz başladığında Nginx’i arka planda çalışacak şekilde yapılandırır. Ardından, <strong>DnsMasq</strong> kullanarak Valet <code class="language-plaintext highlighter-rouge">*.test</code>, makinenizde ki siteleri proxy ile tünel oluşturup ilgili domaine yönlendirmesini sağlar.</p>
-
-<p>Başka bir deyişle, kabaca 7mb RAM kullanan çarpıcı ve hızlı bir Laravel geliştirme ortamı. Valet Linux , <a href="https://yuceltoluyag.github.io/virtualbox-vagrant-laravel-arch-linux/">Vagrant</a> veya <a href="https://yuceltoluyag.github.io/virtualbox-vagrant-laravel-arch-linux/">Homestead</a>‘in yerine geçmez, ancak esnek temeller istiyorsanız, aşırı hızı tercih ediyorsanız veya sınırlı miktarda RAM bulunan bir makinede çalışıyorsanız harika bir alternatif sunar.</p>
-
-<ul>
-  <li>Bilgisayarınızda daha önceden kurulum yaptığınız <a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumuphp7xmariadbmy/">Lampp</a> ve türevleri varsa, devredışı bırakın yada kaldırınız. Aksi takdirde hatayla karşılaşırsınız.</li>
-</ul>
-
-<h2 id="kurulum">Kurulum</h2>
-
-<ul>
-  <li>Terminalinizi açıp şu komutu yapıştırın.</li>
-</ul>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>pacman <span class="nt">-S</span> nss jq xsel networkmanager
-
-</code></pre></div></div>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="sb">`</span>pacman <span class="nt">-S</span> php<span class="sb">`</span><span class="c"># php sürümü 5.6 dan yüksek olmalıdır ; `php -v` komutuyla kurulumdan sonra sürümü kontrol edin )</span>
-</code></pre></div></div>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>yay <span class="nt">-S</span> php71-mcrypt <span class="c">#cli, curl, mbstring, xml, zip gibi hatalar alıyorsanız kurmanız gereken paket</span>
-
-</code></pre></div></div>
-
-<p>İsteğe bağlı paketler</p>
-
-<p><a href="https://wiki.archlinux.org/index.php/PHP#Sqlite">php-sqlite</a> , <a href="https://wiki.archlinux.org/index.php/PHP#MySQL.2FMariaDB">mysql / mariadb</a> , <a href="https://wiki.archlinux.org/index.php/PHP#PostgreSQL">php-pgsql</a></p>
-
-<p>Benim kullandıklarım</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>yay <span class="nt">-S</span> php php-dblib php-fpm php-gd php-odbc php-pgsql php-sqlite
-</code></pre></div></div>
-
-<p>Composer kurun</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>yay <span class="nt">-S</span> composer
-
-</code></pre></div></div>
-
-<p>daha sonra .bashrc içerisine yapıştırın</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.config/composer/vendor/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
-</code></pre></div></div>
-
-<p>artık composer hazır. Composer ile ilgili indirme sorunu yaşarsanız <a href="https://yuceltoluyag.github.io/composer-yavas-indirme-sorunu-cozumu/">composer yavaş indirme sorunu çözümü</a></p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>composer global require cpriego/valet-linux
-
-</code></pre></div></div>
-
-<p>Şimdi eğlenme zamanı : )</p>
-
-<p>Ana dizine gidip Sites diye bir klasör oluşturuyorum.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">mkdir</span> ~/Sites
-</code></pre></div></div>
-
-<p>Sitesi içerisinde ki her klasör bir domain ismi potansiyeli taşımaktadır. Lütfen <strong>abudik</strong> <strong>gubidik</strong> isimler atamayın.</p>
-
-<p>Oluşturduğum dizinin içerisine giriyorum.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">cd</span> ~/Sites
-
-</code></pre></div></div>
-
-<p>Dizin içerisinde</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>php valet park
-</code></pre></div></div>
-
-<p>komutunu veriyorum. Bu komutla beraber, bu dizinde ki tüm klasörler kayıt altına alınır. Örneğin ;</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>laravel new blog
-
-</code></pre></div></div>
-
-<p>diyip blog isminde bir laravel projesi oluşturuyorum. Tarayıcımı açıp http://blog.test yazıyorum ta ta : ) İşte bu kadar. Valet park komutunu önceden verdiğimiz için siz Sites dizini içerisinde ahmet diye bir dosya oluştursanız http://ahmet.test adresinden ulaşabilirsiniz.</p>
-
-<h2 id="valet-link-komutu">valet link komutu</h2>
-
-<p>Bu komutla birlikte bir projenizi sunuma açmak istiyorsanız kullanılabilir.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet <span class="nb">link </span>projeadi
-
-</code></pre></div></div>
-
-<p>şeklinde link verebilirsiniz.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet links
-
-</code></pre></div></div>
-
-<p>komutuylada daha önce linklediğini projelerinizi görebilirsiniz.</p>
-
-<p><img src="/assets/images/laravel-valet-link-archlinux.webp" alt="laravel valet link archlinux" /></p>
-
-<h2 id="domain-uzantısını-değiştirme">Domain Uzantısını değiştirme</h2>
-
-<p>İlk kurulumda domain uzantısı .test olarak gelir. Örneğin domain uzantımızı app,dev vb gibi isimler yapmak istiyorsanız</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet domain .app
-</code></pre></div></div>
-
-<p>vermeniz yeterlidir. Domain durumunu kontrol etmek için</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet domain
-
-</code></pre></div></div>
-
-<p>yazmanız yeterlidir.</p>
-
-<p>Valet portunu değiştirmek isterseniz</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet port xxxx <span class="c">#port numarası yazmayı unutmayın</span>
-</code></pre></div></div>
-
-<p>Değiştirdiğiniz port aktif olmuş mu, kontrol etmek için</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet port
-
-</code></pre></div></div>
-
-<p>Domain uzantısını app veya dev koyduğunuzda muhtemelen ssl hatasıyla karşılaşacaksınız.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet secure laravel
-</code></pre></div></div>
-
-<p>ile ssl hatalarından kurtulabilirsiniz, evet bu kadar basit : ) İşlemi geri almak isterseniz</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>valet unsecure projeadi
-
-</code></pre></div></div>
-
-<!-- Feel free to change the width and height to your desired video size. -->
-
-<div class="embed-container">
-  <iframe class="lazyload" data-src="https://www.youtube.com/embed/-Qdxa0XjkgQ" width="700" height="480" frameborder="0" allowfullscreen="" title="Arch Linux Laravel Valet Kurulumu">
-  </iframe>
-</div>
-
-<p>Kaynaklar :</p>
-
-<ul>
-  <li>https://cpriego.github.io/valet-linux/index#installation</li>
-  <li>https://cpriego.github.io/valet-linux/requirements.html#arch</li>
-</ul>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="linux" /><category term="linux" /><category term="laravel" /><summary type="html"><![CDATA[Valet Linux , Linux minimalistleri için bir Laravel geliştirme ortamıdır. Vagrant yok, /etc/hostsdosya yok . Yerel tünelleri kullanarak sitelerinizi herkese açık olarak da paylaşabilirsiniz. Evet, biz de seviyoruz.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/laravel-valet-kurulumu-linux.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/laravel-valet-kurulumu-linux.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Güncel Ücretsiz Oyunlar (Steam &amp;amp; GOG &amp;amp; Epic)</title><link href="https://yuceltoluyag.github.io//guncel-ucretsiz-steam-gog-epic-oyunlari/" rel="alternate" type="text/html" title="Güncel Ücretsiz Oyunlar (Steam &amp;amp; GOG &amp;amp; Epic)" /><published>2020-06-06T00:00:00+03:00</published><updated>2020-06-06T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//guncel-ucretsiz-steam-gog-epic-oyunlari</id><content type="html" xml:base="https://yuceltoluyag.github.io//guncel-ucretsiz-steam-gog-epic-oyunlari/"><![CDATA[<p><img src="/assets/images/ucretsiz-oyunlar.webp" alt="güncel steam epic gog oyunları" />
-Merhaba, Steam,Epic,GOG gibi yayıncıların ücretsiz oyun duyurularını kaçırmak istemiyorsanız discord grubumuza katılabilirsiniz.</p>
-
-<p><a href="https://discord.gg/da3Su8s" title="https://discord.gg/da3Su8s" target="\_blank" rel="noopener noreferrer">Discord Adresimiz</a></p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="program" /><category term="steam" /><category term="discord" /><summary type="html"><![CDATA[Ücretsiz oyun duyurularını kaçırmayın anında haberdar olun.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/ucretsiz-oyunlar.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/ucretsiz-oyunlar.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<p>Bu şekilde bu tip uyarılardan kurtulmuş oluyoruz. Daha fazlası için <a href="https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md" target="\_blank" rel="noopener noreferrer">laravel ide helper wiki</a> sayfasına bakabilirsiniz. Phpstorm ile ilgili daha fazla yazıya <a href="https://yuceltoluyag.github.io/tag/phpstorm/" target="\_blank" rel="noopener noreferrer">buradan ulaşabilirsiniz</a></p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="kutuphane" /><category term="phpstorm" /><category term="cmder" /><summary type="html"><![CDATA[laravel ide helper nasıl kullanılır]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/laravel_7x_ide_helper.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/laravel_7x_ide_helper.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
