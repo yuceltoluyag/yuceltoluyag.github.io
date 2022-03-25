@@ -45,6 +45,6 @@
     "postcss-discard-empty": "^5.0.3",
     "postcss-sort-media-queries": "^4.2.1",
     "sass": "^1.49.9",
-    "yargs-parser": "^21.0.0"
+    "yargs-parser": "^21.0.1"
   }
 }
