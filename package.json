@@ -40,7 +40,7 @@
     "imagemin-webp": "^6.0.0",
     "lighthouse": "^9.4.0",
     "minimist": "^1.2.5",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.12",
     "postcss-discard-duplicates": "^5.0.3",
     "postcss-discard-empty": "^5.0.3",
     "postcss-sort-media-queries": "^4.2.1",
