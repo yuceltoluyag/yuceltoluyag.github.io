@@ -15,7 +15,7 @@
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.9",
     "browserlist": "^1.0.1",
-    "css-declaration-sorter": "^6.1.4",
+    "css-declaration-sorter": "^6.2.2",
     "cssnano": "^5.0.17",
     "del": "^6.0.0",
     "fibers": "^5.0.1",
