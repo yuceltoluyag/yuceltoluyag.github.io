@@ -1015,20 +1015,16 @@ to: /home/vagrant/www/phpmyadmin
 
 <!-- GA -->
 
-<!--
-  The GA snippet
--->
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-9KL9GYLPS5"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9KL9GYLPS5"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('js', new Date());
-    gtag('config', 'G-9KL9GYLPS5');
-  });
+  gtag('config', 'G-9KL9GYLPS5');
 </script>
+
 
 
 <!-- SW -->
