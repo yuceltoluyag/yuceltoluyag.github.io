@@ -38,7 +38,7 @@ google_analytics:
   id: "UA-156927338-1" # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
-    proxy_endpoint: "https://macro-polymer-336309.appspot.com/query?id=ahh6bG1-bWFjcm8tcG9seW1lci0zMzYzMDlyFQsSCEFwaVF1ZXJ5GICAgOjXh4EKDA"
+    proxy_endpoint: "https://macro-polymer-336309.appspot.com/query?id=ahh6bG1-bWFjcm8tcG9seW1lci0zMzYzMDlyFQsSCEFwaVF1ZXJ5GICAgJjFqZMKDA"
     cache_path: false # the local PV cache data, friendly to visitors from GFW region
 
 # Defaults
