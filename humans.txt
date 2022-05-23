@@ -6,7 +6,7 @@ From: İstanbul, Turkiye
 
 
 /* SITE */
-Last Updated: 05/05/2022
+Last Updated: 23/05/2022
 Language: French
 Tools: Ruby, Sass, Jekyll, Node
 Theme: Minel Jekyll Theme
