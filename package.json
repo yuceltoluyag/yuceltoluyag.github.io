@@ -12,7 +12,7 @@
   "author": "yuceltoluyag",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.5",
+    "autoprefixer": "^10.4.7",
     "browser-sync": "^2.27.10",
     "browserlist": "^1.0.1",
     "css-declaration-sorter": "^6.2.2",
