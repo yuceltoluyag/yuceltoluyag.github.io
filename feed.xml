@@ -1,4 +1,916 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://yuceltoluyag.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://yuceltoluyag.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2022-07-02T03:25:49+03:00</updated><id>https://yuceltoluyag.github.io//feed.xml</id><title type="html">Linux &amp;amp; Ortaya Karışık</title><subtitle>Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D</subtitle><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><entry><title type="html">Jekyll Google Analytics ile Sayfa Görüntüleme Sayısı</title><link href="https://yuceltoluyag.github.io//jekyll-google-superproxy/" rel="alternate" type="text/html" title="Jekyll Google Analytics ile Sayfa Görüntüleme Sayısı" /><published>2022-01-30T00:00:00+03:00</published><updated>2022-01-30T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//jekyll-google-superproxy</id><content type="html" xml:base="https://yuceltoluyag.github.io//jekyll-google-superproxy/"><![CDATA[<p><strong>Merhaba</strong></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://yuceltoluyag.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://yuceltoluyag.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2022-07-26T08:03:40+03:00</updated><id>https://yuceltoluyag.github.io//feed.xml</id><title type="html">Linux &amp;amp; Ortaya Karışık</title><subtitle>Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D</subtitle><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><entry><title type="html">Windows Terminalimi Nasıl Özelleştiriyorum</title><link href="https://yuceltoluyag.github.io//windows-terminal-ozellestirme/" rel="alternate" type="text/html" title="Windows Terminalimi Nasıl Özelleştiriyorum" /><published>2022-06-26T00:00:00+03:00</published><updated>2022-06-26T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//windows-terminal-ozellestirme</id><content type="html" xml:base="https://yuceltoluyag.github.io//windows-terminal-ozellestirme/"><![CDATA[<p><strong>Merhaba</strong></p>
+
+<p><a href="https://www.instagram.com/yuceltoluyag/" target="\_blank" rel="noopener noreferrer">İnstagram</a> üzerinden <strong>hikaye</strong>lerimi takip edenler <strong>Windows Terminal</strong>imi nasıl özelleştirdiğim konusunda sorular soruyordu. 🙄 Bu konu hakkında blog yazımı bekleyin dedim ve o beklenen an geldi 😂🥱</p>
+
+<h1 id="malzemeler-">Malzemeler 🥗</h1>
+
+<ul>
+  <li>
+    <p>Nerd Fonts</p>
+  </li>
+  <li>
+    <p>Windows Terminal Preview</p>
+  </li>
+  <li>
+    <p>Windows PowerShell</p>
+  </li>
+  <li>
+    <p>Scoop</p>
+  </li>
+  <li>
+    <p>Git</p>
+  </li>
+  <li>
+    <p>Oh My Posh</p>
+  </li>
+  <li>
+    <p>Terminal Icons</p>
+  </li>
+  <li>
+    <p>PSReadLine</p>
+  </li>
+  <li>
+    <p>Z</p>
+  </li>
+  <li>
+    <p>PSFzf</p>
+  </li>
+</ul>
+
+<h2 id="font">Font</h2>
+
+<p>Eğer terminalinizde <strong>ikon</strong>ların doğru şekilde <strong>görüntülenmesini</strong> istiyorsanız ;</p>
+
+<ul>
+  <li><a href="https://github.com/ryanoasis/nerd-fonts" target="\_blank" rel="noopener noreferrer">Nerd Fonts</a> <strong>kullanmalısınız</strong>.</li>
+  <li>Nerd fonts’un tamamı 2 GB’dan daha fazladır. Hepsini indirmek zorunda değilsiniz,beğendiğiniz fontu seçip kurun keyfinize bakın =)</li>
+</ul>
+
+<h2 id="microsoft-mağaza">Microsoft Mağaza</h2>
+
+<ul>
+  <li>
+    <p><a href="https://www.microsoft.com/store/productId/9N0DX20HK701" target="\_blank" rel="noopener noreferrer">Windows Terminal</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.microsoft.com/store/productId/9MZ1SNWT0N5D" target="\_blank" rel="noopener noreferrer">PowerShell</a></p>
+  </li>
+</ul>
+
+<p>Mağazan bu iki uygulamayı <strong>kuruyoruz</strong>. Kurduktan sonra <strong>Windows Terminal</strong> uygulamamızı <strong>açıyoruz</strong> ve <strong>ayarlara</strong> giriyoruz.</p>
+
+<p><img src="/assets/images/windows-terminal.webp" alt="windows-terminal" /></p>
+
+<p>Ayarlara girdikten sonra <strong>görünüm</strong> sekmesindeki ayarlarınız şu şekilde <strong>olmalı</strong>.</p>
+
+<p><img src="/assets/images/windows-terminal2.webp" alt="windows-terminal2" /></p>
+
+<p>Ayarları <strong>kaydettikten</strong> sonra <strong>Startup</strong> kısmına tıklayın. Yüklemiş olduğumuz <strong>Powershell</strong> ‘i <strong>varsayılan</strong> olarak ayarlayın</p>
+
+<p><img src="/assets/images/windows-terminal3.webp" alt="windows-terminal3" /></p>
+
+<p>Ayarları <strong>kaydedin</strong> ve <strong>Defaults</strong> sekmesine gelin, oradan <strong>Apperance</strong> kısmından <strong>Font</strong> ayarlarınızı yapın.</p>
+
+<p><img src="/assets/images/windows-terminal4.webp" alt="windows-terminal4" /></p>
+
+<p><strong>Font</strong> ayarlarınızı yaptıktan sonra yine aynı ekranda bulunan “<strong>Enable Acrylic</strong>” i <strong>aktif</strong> konuma <strong>getirin</strong> ve ayarlarınızı <strong>kaydedin</strong>.</p>
+
+<p><img src="/assets/images/windows-terminal5.webp" alt="windows-terminal5" /></p>
+
+<p>Tüm bunları yaptıktan sonra <strong>Terminal</strong>inizi <strong>kapatıp</strong> yeniden <strong>açın</strong>.</p>
+
+<h2 id="scoop">Scoop</h2>
+
+<p>Scoop u kurmak için sırasıyla aşağıdaki komutları yazın.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Set-ExecutionPolicy RemoteSigned <span class="nt">-Scope</span> CurrentUser
+
+irm get.scoop.sh | iex
+
+</code></pre></div></div>
+
+<p>Scoop’u kurduktan sonra paket <strong>bulunamadı</strong> gibi <strong>hatal</strong>arla <strong>karşılaşmamak</strong> için şu komutları çalıştırın.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+scoop bucket add main
+
+scoop bucket add extras
+
+</code></pre></div></div>
+
+<p>Veritabanını <strong>güncelleyecektir</strong>. Bu işlem biraz <strong>zaman</strong> alabilir..</p>
+
+<p>Kurulum Tamamlandıktan sonra</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+scoop <span class="nb">install </span>curl <span class="nb">sudo </span>jq
+
+</code></pre></div></div>
+
+<p>paketlerini kurun.</p>
+
+<p>output</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Installing <span class="s1">'7zip'</span>  <span class="o">(</span>21.07<span class="o">)</span>  <span class="o">[</span>64bit]
+
+7z2107-x64.msi <span class="o">(</span>1,8 MB<span class="o">)</span>  <span class="o">[=========================================]</span> 100%
+
+Checking <span class="nb">hash </span>of 7z2107-x64.msi ... ok.
+
+Extracting 7z2107-x64.msi ... <span class="k">done</span><span class="nb">.</span>
+
+Linking ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\7</span>zip<span class="se">\c</span>urrent <span class="o">=&gt;</span>  ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\7</span>zip<span class="se">\2</span>1.07
+
+Creating shim <span class="k">for</span>  <span class="s1">'7z'</span><span class="nb">.</span>
+
+Creating shortcut <span class="k">for </span>7-Zip <span class="o">(</span>7zFM.exe<span class="o">)</span>
+
+Persisting Codecs
+
+Persisting Formats
+
+Running post-install script...
+
+<span class="s1">'7zip'</span>  <span class="o">(</span>21.07<span class="o">)</span> was installed successfully!
+
+Notes
+
+<span class="nt">-----</span>
+
+Add 7-Zip as a context menu option by running:
+
+<span class="s2">"C:</span><span class="se">\U</span><span class="s2">sers</span><span class="se">\F</span><span class="s2">riday13</span><span class="se">\s</span><span class="s2">coop</span><span class="se">\a</span><span class="s2">pps</span><span class="se">\7</span><span class="s2">zip</span><span class="se">\c</span><span class="s2">urrent</span><span class="se">\i</span><span class="s2">nstall-context.reg"</span>
+
+Installing <span class="s1">'curl'</span>  <span class="o">(</span>7.83.1_1<span class="o">)</span>  <span class="o">[</span>64bit]
+
+curl-7.83.1_1-win64-mingw.tar.xz <span class="o">(</span>2,6 MB<span class="o">)</span>  <span class="o">[=======================]</span> 100%
+
+Checking <span class="nb">hash </span>of curl-7.83.1_1-win64-mingw.tar.xz ... ok.
+
+Extracting curl-7.83.1_1-win64-mingw.tar.xz ... <span class="k">done</span><span class="nb">.</span>
+
+Linking ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\c</span>url<span class="se">\c</span>urrent <span class="o">=&gt;</span>  ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\c</span>url<span class="se">\7</span>.83.1_1
+
+Creating shim <span class="k">for</span>  <span class="s1">'curl'</span><span class="nb">.</span>
+
+<span class="s1">'curl'</span>  <span class="o">(</span>7.83.1_1<span class="o">)</span> was installed successfully!
+
+Installing <span class="s1">'jq'</span>  <span class="o">(</span>1.6<span class="o">)</span>  <span class="o">[</span>64bit]
+
+jq-win64.exe <span class="o">(</span>3,4 MB<span class="o">)</span>  <span class="o">[===========================================]</span> 100%
+
+Checking <span class="nb">hash </span>of jq-win64.exe ... ok.
+
+Linking ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\j</span>q<span class="se">\c</span>urrent <span class="o">=&gt;</span>  ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\j</span>q<span class="se">\1</span>.6
+
+Creating shim <span class="k">for</span>  <span class="s1">'jq'</span><span class="nb">.</span>
+
+<span class="s1">'jq'</span>  <span class="o">(</span>1.6<span class="o">)</span> was installed successfully!
+
+Installing <span class="s1">'sudo'</span>  <span class="o">(</span>0.2020.01.26<span class="o">)</span>  <span class="o">[</span>64bit]
+
+sudo.ps1 <span class="o">(</span>2,2 KB<span class="o">)</span>  <span class="o">[===============================================]</span> 100%
+
+Checking <span class="nb">hash </span>of sudo.ps1 ... ok.
+
+Linking ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\s</span>udo<span class="se">\c</span>urrent <span class="o">=&gt;</span>  ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\s</span>udo<span class="se">\0</span>.2020.01.26
+
+Creating shim <span class="k">for</span>  <span class="s1">'sudo'</span><span class="nb">.</span>
+
+<span class="s1">'sudo'</span>  <span class="o">(</span>0.2020.01.26<span class="o">)</span> was installed successfully!
+
+</code></pre></div></div>
+
+<p>Daha sonra <strong>neovim</strong> ve <strong>gcc</strong> paketlerini kuruyoruz.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+scoop <span class="nb">install </span>neovim gcc
+
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Installing <span class="s1">'gcc'</span>  <span class="o">(</span>11.2.0<span class="o">)</span>  <span class="o">[</span>64bit]
+
+components-18.0.7z <span class="o">(</span>96,4 MB<span class="o">)</span>  <span class="o">[====================================]</span> 100%
+
+Checking <span class="nb">hash </span>of components-18.0.7z ... ok.
+
+Extracting components-18.0.7z ... <span class="k">done</span><span class="nb">.</span>
+
+Running pre-install script...
+
+Linking ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\g</span>cc<span class="se">\c</span>urrent <span class="o">=&gt;</span>  ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\g</span>cc<span class="se">\1</span>1.2.0
+
+<span class="s1">'gcc'</span>  <span class="o">(</span>11.2.0<span class="o">)</span> was installed successfully!
+
+Installing <span class="s1">'neovim'</span>  <span class="o">(</span>0.7.0<span class="o">)</span>  <span class="o">[</span>64bit]
+
+nvim-win64.zip <span class="o">(</span>36,4 MB<span class="o">)</span>  <span class="o">[========================================]</span> 100%
+
+Checking <span class="nb">hash </span>of nvim-win64.zip ... ok.
+
+Extracting nvim-win64.zip ... <span class="k">done</span><span class="nb">.</span>
+
+Linking ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\n</span>eovim<span class="se">\c</span>urrent <span class="o">=&gt;</span>  ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\n</span>eovim<span class="se">\0</span>.7.0
+
+Creating shim <span class="k">for</span>  <span class="s1">'nvim'</span><span class="nb">.</span>
+
+Creating shim <span class="k">for</span>  <span class="s1">'nvim-qt'</span><span class="nb">.</span>
+
+Creating shortcut <span class="k">for </span>Neovim <span class="o">(</span>nvim-qt.exe<span class="o">)</span>
+
+<span class="s1">'neovim'</span>  <span class="o">(</span>0.7.0<span class="o">)</span> was installed successfully!
+
+<span class="s1">'neovim'</span> suggests installing <span class="s1">'extras/vcredist2022'</span><span class="nb">.</span>
+
+</code></pre></div></div>
+
+<h2 id="git-kurulumu">Git Kurulumu</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+winget <span class="nb">install</span> <span class="nt">-e</span> <span class="nt">--id</span> Git.Git
+
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+winget <span class="nb">install</span> <span class="nt">-e</span> <span class="nt">--id</span> Git.Git
+
+The <span class="sb">`</span>msstore<span class="sb">`</span>  <span class="nb">source </span>requires that you view the following agreements before using.
+
+Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
+
+The <span class="nb">source </span>requires the current machine<span class="s1">'s 2-letter geographic region to be sent to the backend service to function properly (ex. "US").
+
+
+
+Do you agree to all the source agreements terms?
+
+[Y] Yes [N] No: Y
+
+Found Git [Git.Git] Version 2.36.1
+
+This application is licensed to you by its owner.
+
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+
+Downloading https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe
+
+██████████████████████████████ 47.3 MB / 47.3 MB
+
+Successfully verified installer hash
+
+Starting package install...
+
+Successfully installed
+
+</span></code></pre></div></div>
+
+<p>Kurulum tamamlandıktan <strong>Git</strong> <strong>ayarlarınızı</strong> yapınız. <strong>Bilmiyorsanız</strong></p>
+
+<p><a href="https://yuceltoluyag.github.io/git-ssh-key-olusturma-windows/" target="\_blank" rel="noopener noreferrer">Git ssh-key oluşturma (windows&amp;linux)</a></p>
+
+<h2 id="powershell-config">Powershell Config</h2>
+
+<p><strong>Kullanıcı dizini</strong>nde olduğunuzdan emin olun. <code class="language-plaintext highlighter-rouge">C:\Users\KullanıcıAdınız</code>. Bu dizindeyken bu işlemleri yapın. <strong>Terminal</strong>i açtığınızda varsayılan olarak bu dizin açılır,eğer <strong>değiştirdiyseniz</strong> diye söylüyorum. Sonra vay efendim bizde <strong>olmuyor</strong> <strong>demeyin</strong> :)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+<span class="nb">mkdir</span> .config/powershell
+
+</code></pre></div></div>
+
+<p>Sonra oluşturduğumuz bu dizin altına <strong>user_profile</strong> adında dosya <strong>oluşturuyoruz</strong>. Bu işlemleri <strong>dosya yöneticisi</strong>ndede yapabilirsiniz.(Sağ tık dosya oluştur vs)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+nvim .<span class="se">\.</span>config<span class="se">\p</span>owershell<span class="se">\u</span>ser_profile.ps1
+
+</code></pre></div></div>
+
+<p>içerisine</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+<span class="c"># set PowerShell to UTF-8</span>
+
+<span class="o">[</span>console]::InputEncoding <span class="o">=</span> <span class="o">[</span>console]::OutputEncoding <span class="o">=</span> New-Object System.Text.UTF8Encoding
+
+
+
+Import-Module posh-git
+
+<span class="c"># Get-PoshThemes</span>
+
+<span class="nv">$omp_config</span> <span class="o">=</span> <span class="s2">".</span><span class="se">\m</span><span class="s2">aterial.omp.json"</span>
+
+oh-my-posh init pwsh <span class="nt">--config</span> <span class="s2">"</span><span class="nv">$env</span><span class="s2">:POSH_THEMES_PATH</span><span class="se">\$</span><span class="s2">omp_config"</span>  | Invoke-Expression
+
+<span class="c"># oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression</span>
+
+<span class="c"># oh-my-posh init pwsh --config C:\Users\Friday13\AppData\Local\Programs\oh-my-posh\themes/jandedobbeleer.omp.json | Invoke-Expression</span>
+
+
+
+Import-Module <span class="nt">-Name</span> Terminal-Icons
+
+<span class="c"># PSReadLine</span>
+
+Set-PSReadLineOption <span class="nt">-EditMode</span> Vi
+
+Set-PSReadLineOption <span class="nt">-BellStyle</span> None
+
+Set-PSReadLineKeyHandler <span class="nt">-Chord</span> <span class="s1">'Ctrl+d'</span> <span class="nt">-Function</span> DeleteChar
+
+Set-PSReadLineOption <span class="nt">-PredictionSource</span> History
+
+
+
+<span class="c"># Fzf</span>
+
+Import-Module PSFzf
+
+Set-PsFzfOption <span class="nt">-PSReadlineChordProvider</span> <span class="s1">'Ctrl+f'</span> <span class="nt">-PSReadlineChordReverseHistory</span> <span class="s1">'Ctrl+r'</span>
+
+
+
+<span class="c"># Env</span>
+
+<span class="nv">$env</span>:GIT_SSH <span class="o">=</span> <span class="s2">"C:</span><span class="se">\W</span><span class="s2">indows</span><span class="se">\s</span><span class="s2">ystem32</span><span class="se">\O</span><span class="s2">penSSH</span><span class="se">\s</span><span class="s2">sh.exe"</span>
+
+
+
+<span class="c"># Alias</span>
+
+Set-Alias <span class="nt">-Name</span> vim <span class="nt">-Value</span> nvim
+
+Set-Alias ll <span class="nb">ls
+
+</span>Set-Alias g git
+
+Set-Alias <span class="nb">grep </span>findstr
+
+Set-Alias tig <span class="s1">'C:\Program Files\Git\usr\bin\tig.exe'</span>
+
+Set-Alias less <span class="s1">'C:\Program Files\Git\usr\bin\less.exe'</span>
+
+
+
+<span class="c"># Utilities</span>
+
+<span class="k">function  </span>which  <span class="o">(</span><span class="nv">$command</span><span class="o">)</span> <span class="o">{</span>
+
+Get-Command <span class="nt">-Name</span> <span class="nv">$command</span> <span class="nt">-ErrorAction</span> SilentlyContinue |
+
+Select-Object <span class="nt">-ExpandProperty</span> Path <span class="nt">-ErrorAction</span> SilentlyContinue
+
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<p>daha sonra bu ayarları yaptıktan sonra</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+nvim <span class="nv">$PROFILE</span>.CurrentUserCurrentHost
+
+</code></pre></div></div>
+
+<p>içerisine şunu yazın.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+<span class="nb">.</span>  <span class="nv">$env</span>:USERPROFILE<span class="se">\.</span>config<span class="se">\p</span>owershell<span class="se">\u</span>ser_profile.ps1
+
+</code></pre></div></div>
+
+<p>terminalizi kapatıp açın. Test edelim.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+ll
+
+</code></pre></div></div>
+
+<p>yazın size renkli bir biçimde dizinin çıktısını verecektir. Unutmadan <code class="language-plaintext highlighter-rouge">user_profile</code> içerisinde ki bazı paketleri <strong>kurmadık</strong>, ekranda <strong>hatalar</strong> çıkması <strong>normaldir</strong> 💀Paketleri kurmaya başlayalım.</p>
+
+<h2 id="paketler">Paketler</h2>
+
+<p><strong>Oh My Posh</strong> paketimizi kuralım.Sırasıyla iki komutuda <strong>terminal</strong>e yapıştırıp entere basın 😏</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Install-Module posh-git <span class="nt">-Scope</span> CurrentUser <span class="nt">-Force</span>
+
+winget <span class="nb">install </span>oh-my-posh
+
+</code></pre></div></div>
+
+<p><strong>Terminal</strong>i kapatıp açın.</p>
+
+<p><strong>NVM (NodeJS Version Manager)</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+scoop <span class="nb">install </span>nvm <span class="c"># kurduktan sonra terminali kapatıp açın</span>
+
+nvm <span class="nb">install </span>lts
+
+nvm use lts <span class="c"># Hata verirse</span>
+
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">nvm use lts</code> yazdığınızda şöyle bir uyarı alıyorsanız.</p>
+
+<p><code class="language-plaintext highlighter-rouge">exit status 1: You do not have sufficient privilege to perform this operation.</code></p>
+
+<p>Terminali kapatıp yönetici olarak çalıştırın. Tekrardan <code class="language-plaintext highlighter-rouge">nvm use lts</code> yazın ve terminali kapatıp normal olarak başlatın.</p>
+
+<p><strong>Terminal Icons</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Install-Module <span class="nt">-Name</span> Terminal-Icons <span class="nt">-Repository</span> PSGallery <span class="nt">-Force</span>
+
+</code></pre></div></div>
+
+<p><strong>terminal</strong>i kapatıp açın, <strong>test</strong> etmek için</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+ll
+
+</code></pre></div></div>
+
+<p>komutunu yazın ve <strong>dosya</strong> isimlerinin yanında <strong>ikonlar</strong> görmelisiniz.</p>
+
+<p><strong>Z</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Install-Module <span class="nt">-Name</span> z <span class="nt">-Force</span>
+
+</code></pre></div></div>
+
+<p><strong>PSReadLine</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Install-Module <span class="nt">-Name</span> PSReadLine <span class="nt">-AllowPrerelease</span> <span class="nt">-Scope</span> CurrentUser <span class="nt">-Force</span> <span class="nt">-SkipPublisherCheck</span>
+
+</code></pre></div></div>
+
+<p><strong>FZF</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+scoop <span class="nb">install </span>fzf
+
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Installing <span class="s1">'fzf'</span>  <span class="o">(</span>0.30.0<span class="o">)</span>  <span class="o">[</span>64bit]
+
+fzf-0.30.0-windows_amd64.zip <span class="o">(</span>1,3 MB<span class="o">)</span>  <span class="o">[=====================]</span> 100%
+
+Checking <span class="nb">hash </span>of fzf-0.30.0-windows_amd64.zip ... ok.
+
+Extracting fzf-0.30.0-windows_amd64.zip ... <span class="k">done</span><span class="nb">.</span>
+
+Linking ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\f</span>zf<span class="se">\c</span>urrent <span class="o">=&gt;</span>  ~<span class="se">\s</span>coop<span class="se">\a</span>pps<span class="se">\f</span>zf<span class="se">\0</span>.30.0
+
+Creating shim <span class="k">for</span>  <span class="s1">'fzf'</span><span class="nb">.</span>
+
+<span class="s1">'fzf'</span>  <span class="o">(</span>0.30.0<span class="o">)</span> was installed successfully!
+
+</code></pre></div></div>
+
+<p><strong>PSFzf</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Install-Module <span class="nt">-Name</span> PSFzf <span class="nt">-Scope</span> CurrentUser <span class="nt">-Force</span>
+
+</code></pre></div></div>
+
+<h1 id="sonuç">Sonuç</h1>
+
+<p><img src="/assets/images/windows-terminal-son.webp" alt="windows-terminal6" /></p>
+
+<h3 id="bana-balık-tutmasını-öğretmebana-balık-ver">Bana Balık Tutmasını öğretme,bana balık ver</h3>
+
+<p>Bu yazımı okuyorsanız muhtemelen Git nedir biliyorsunuzdur 👊 Linux tarafında ki sorunsuz çalışan araçlar <strong>Windows</strong> ta <strong>sorunlu</strong> çalışabiliyor. Örneğin <strong>GPG</strong> kullanırken sorun <strong>yaşamıyorsanız</strong> kullanmaya devam edin 🧠 Ama sorun <strong>yaşıyorsanız</strong> “<strong>gpg4win</strong>” kullanmanızı tavsiye ederim. <strong>Scoop</strong> ile kurulum yaparken <strong>terminal</strong>inizi <strong>yönetici</strong> olarak çalıştırın aksi halde <strong>sorun</strong> yaşarsınız.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+scoop <span class="nb">install </span>gpg4win
+
+</code></pre></div></div>
+
+<p><a href="https://github.com/yuceltoluyag/WindowsTerminal" target="\_blank" rel="noopener noreferrer">Windows Terminal DotFiles</a> ayarlarıma buradan ulaşabilir,kendinize göre düzenleyebilirsiniz.</p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="program" /><category term="windows10" /><category term="linux" /><summary type="html"><![CDATA[How to set up PowerShell prompt with Oh My Posh on Windows 11]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/windows-terminal-son.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/windows-terminal-son.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">WSL üzerinde Arch Linux Kurulumu</title><link href="https://yuceltoluyag.github.io//wsl-archlinux-kurulumu/" rel="alternate" type="text/html" title="WSL üzerinde Arch Linux Kurulumu" /><published>2022-06-26T00:00:00+03:00</published><updated>2022-06-26T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//wsl-archlinux-kurulumu</id><content type="html" xml:base="https://yuceltoluyag.github.io//wsl-archlinux-kurulumu/"><![CDATA[<p><strong>Merhaba</strong></p>
+
+<p><a href="https://www.instagram.com/yuceltoluyag/" target="\_blank" rel="noopener noreferrer">İnstagram</a> üzerinden <strong>hikaye</strong>lerimi takip edenler <strong>WSL</strong>‘ye nasıl <strong>Arch Linux</strong> Kurduğumu soruyorlardı. Kurulum yapabilenler ise <strong>sürekli çöktüğünden</strong> yakındılar. Uzun süredir kullanıyorum. Çökme patlama yanma yakılma gibi şeyler <strong>yaşamadım</strong>. 😎</p>
+
+<h1 id="wsl-nedir-windows-subsytem-linux-">WSL Nedir (Windows Subsytem Linux) ?</h1>
+
+<p>Windows altında Üçüncü parti yazılım olmadan Linux çalıştırmamızı sağlar. <strong>WSL 1</strong> ve <strong>WSL 2</strong> arasında ne fark var ? <strong>WSL 2</strong> de <strong>Hyper -V</strong> teknolojisinin kullanıldığı için daha <strong>performanslı</strong> çalışıyor. Şu an resmi olarak grafik(<strong>Desktop</strong>) arabirimi desteklenmesede bir çok kullanıcı <strong>DE</strong> dahil kurulum yapıp kullanıyor. <strong>Ömrünü</strong> <strong>Linux</strong> camiasında geçiren arkadaşlara kesinlikle <strong>tavsiye ediyorum</strong> 🤩</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Özellik</th>
+      <th>WSL 1</th>
+      <th>WSL 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Windows ve Linux arasında entegrasyon</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Hızlı önyükleme süreleri</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Geleneksel Sanal Makinelere kıyasla küçük kaynak ayak izi</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>VMware ve VirtualBox’ın güncel sürümleriyle çalışır</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Sanal makine Yönetimi</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Tam Linux Çekirdeği</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Tam sistem çağrı uyumluluğu</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>OS dosya sistemlerinde performans</td>
+      <td>✅</td>
+      <td>❌</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="malzemeler-">Malzemeler 🥗</h1>
+
+<ul>
+  <li>WSL 2 için Windows 10 versionunuz <strong>2004</strong> veya <strong>daha üstü olmalı</strong> (<strong>19041</strong>) yada <strong>Windows 11</strong> kullanıyor olmalısınız. Sürümünüzü şu şekilde hızlıca öğrenebilirsiniz. <code class="language-plaintext highlighter-rouge">Windows + R</code>, tuşuna basın gelen ekrana <code class="language-plaintext highlighter-rouge">winver</code> yazın size sürüm numaranızı gösterecektir.</li>
+</ul>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu.webp" alt="wsl2-archlinux-kurulumu" /></p>
+
+<ul>
+  <li>
+    <p>Eğerki <strong>sürümünüz eski</strong> ise şuradaki adımları takip edebilirsiniz. <a href="https://docs.microsoft.com/en-us/windows/wsl/install-manual" target="\_blank" rel="noopener noreferrer">Install Linux on Windows with WSL</a></p>
+  </li>
+  <li>
+    <p><a href="https://yuceltoluyag.github.io/windows-terminal-ozellestirme/" target="\_blank" rel="noopener noreferrer">Windows Terminal Özelleştirme</a></p>
+  </li>
+  <li>
+    <p>WSL</p>
+  </li>
+</ul>
+
+<h2 id="wsl2-kurulumu">WSL2 Kurulumu</h2>
+
+<p>Terminalinizi <strong>Yönetici</strong> olarak başlatın. Ve şu komutu girin.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+wsl <span class="nt">--install</span>
+
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Installing: Virtual Machine Platform
+
+Virtual Machine Platform has been installed.
+
+Installing: Windows Subsystem <span class="k">for </span>Linux
+
+Windows Subsystem <span class="k">for </span>Linux has been installed.
+
+Downloading: WSL Kernel
+
+Installing: WSL Kernel
+
+WSL Kernel has been installed.
+
+Downloading: Ubuntu
+
+İstenen işlem başarılı. Değişiklikler sistem yeniden önyükleninceye kadar etkili olmayacak.
+
+</code></pre></div></div>
+
+<p>Daha sonra <strong>sistemi yeniden başlatın</strong> 👀 Bilgisayarınız <strong>yeniden başladıktan sonra</strong> <strong>WSL2</strong> <strong>kernel update</strong> paketi ve <strong>Ubuntu Linux</strong> dağıtımı <strong>otomatik</strong> olarak yüklenecektir. Kurulum internet hızınıza göre değişiklik gösterecektir.Dondu kaldımı acaba diye şey edip <strong>terminali kapatmayın</strong> 🤡</p>
+
+<p>Kurulum tamamlandıktan sonra sizden <strong>kullanıcı adı</strong> ve <strong>şifre</strong> oluşturmanızı isteyecek. O kısımları doldurun.</p>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu2.webp" alt="wsl2-archlinux-kurulumu2" /></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Enter new UNIX username: kullanıcıadıgirin
+
+New password:Şifre Girin
+
+Retype new password: Şifrenizi Tekrar Girin
+
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+Installing, this may take a few minutes...
+
+Please create a default UNIX user account. The username does not need to match your Windows username.
+
+For more information visit: https://aka.ms/wslusers
+
+Enter new UNIX username: friday13
+
+New password:
+
+Retype new password:
+
+passwd: password updated successfully
+
+Installation successful!
+
+To run a <span class="nb">command </span>as administrator <span class="o">(</span>user <span class="s2">"root"</span><span class="o">)</span>, use <span class="s2">"sudo &lt;command&gt;"</span><span class="nb">.</span>
+
+See <span class="s2">"man sudo_root"</span>  <span class="k">for </span>details.
+
+
+
+Welcome to Ubuntu 20.04 LTS <span class="o">(</span>GNU/Linux 5.10.16.3-microsoft-standard-WSL2 x86_64<span class="o">)</span>
+
+
+
+<span class="k">*</span> Documentation: https://help.ubuntu.com
+
+<span class="k">*</span> Management: https://landscape.canonical.com
+
+<span class="k">*</span> Support: https://ubuntu.com/advantage
+
+
+
+System information as of Tue May 24 03:07:17 +03 2022
+
+
+
+System load: 0.18 Processes: 8
+
+Usage of /: 0.4% of 250.98GB Users logged <span class="k">in</span>: 0
+
+Memory usage: 0% IPv4 address <span class="k">for </span>eth0: 172.30.160.142
+
+Swap usage: 0%
+
+
+
+0 updates can be installed immediately.
+
+0 of these updates are security updates.
+
+
+
+
+The list of available updates is more than a week old.
+
+To check <span class="k">for </span>new updates run: <span class="nb">sudo </span>apt update
+
+
+
+
+This message is shown once once a day. To disable it please create the
+
+/home/friday13/.hushlogin file.
+
+</code></pre></div></div>
+
+<p>WSL kurulumumuz buraya kadardı.Artık <strong>terminal</strong> sekmenizde <strong>Ubuntu</strong> dağıtımını görebilirsiniz.</p>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu3.webp" alt="wsl2-archlinux-kurulumu3" /></p>
+
+<p>Adettendir diyerek ubuntumuzu bir güncelleyelim 🤭</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt upgrade
+
+</code></pre></div></div>
+
+<h2 id="archlinux-kurulumu">Archlinux Kurulumu</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">wsl --set-default-version 2</code> komutunu çalıştırın. Bazı kullanıcılar yukarıdaki kısımları atlayarak yapabilir 😏 Sistemde hangi <strong>WSL</strong> sürümünü kullandığınızı merak ediyorsanız</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+wsl <span class="nt">-l</span> <span class="nt">-v</span>
+
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+NAME STATE VERSION
+
+<span class="k">*</span> Ubuntu Running 2
+
+</code></pre></div></div>
+
+<p>komutunu yazın hangi <strong>distro</strong>nun hangi sürümü kullandığını görebilirsiniz.</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/yuk7/ArchWSL/releases" target="\_blank" rel="noopener noreferrer">ArchWSL</a> Reposuna gidip son sürümü indirin. (Arch.zip)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">C</code> Dizini altında <code class="language-plaintext highlighter-rouge">archlinux</code> adında bir klasör oluşturun.</p>
+  </li>
+  <li>
+    <p>İndirdiğiniz dosyayı zipten çıkartın. İçerisinde <code class="language-plaintext highlighter-rouge">Arch.exe</code> ve <code class="language-plaintext highlighter-rouge">rootfs.tar.gz</code> adlı iki dosyayı kopyalayın ve <code class="language-plaintext highlighter-rouge">C:\archlinux</code> klasörüne yapıştırın.</p>
+  </li>
+  <li>
+    <p>Archlinux.exe yi çalıştırın.</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu4.webp" alt="wsl2-archlinux-kurulumu4" /></p>
+
+<ul>
+  <li>Kurulum Bittikten sonra terminalinizden <strong>Arch Linux</strong>u başlatın.</li>
+</ul>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu5.webp" alt="wsl2-archlinux-kurulumu5" /></p>
+
+<ul>
+  <li>Hemen kullanıcı oluşturalım ve kendimize sudo yetkisi verelim 🤖 <strong>Friday13</strong> benim yerli ve milli nickimdir. Siz oraya <strong>ali</strong> yazın <strong>mehmet</strong> yazın ne yazarsanız yazın ☠️</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+useradd <span class="nt">-m</span> <span class="nt">-g</span> <span class="nb">users</span> <span class="nt">-G</span> optical,storage,wheel,video,audio,users,power,network,log <span class="nt">-s</span> /bin/bash friday13 <span class="c">#OLUŞTACAĞINIZKULLANICIADINIGİRİN#</span>
+
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+passwd friday13 <span class="c">#oluşturduğunuz kullanıcının şifresini belirleyin.#</span>
+
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+groupadd <span class="nb">sudo</span> <span class="c">#sudo grubu ekleyelim#</span>
+
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+nano /etc/sudoers
+
+</code></pre></div></div>
+
+<p>dosyamızı açıyoruz resimdeki gibi oluşturduğumuz kullanıcıyıda ekliyoruz.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+%wheel <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> NOPASSWD:
+
+%sudo <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span> ALL
+
+</code></pre></div></div>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu6.webp" alt="wsl2-archlinux-kurulumu6" /></p>
+
+<p>Bu satırların başında bulunan <strong>diez(#)</strong> işaretlerini <strong>kaldırıyoruz</strong>. <strong>F3</strong> ardından <strong>enter</strong> ve <strong>F2</strong> ye basarak çıkıyoruz.</p>
+
+<ul>
+  <li>Sistem açıldığında oluşturduğumuz kullanıcıyı varsayılan olarak aktif etmek için</li>
+</ul>
+
+<p>(<strong>Uyarı</strong> burada ki komutları <strong>Arch</strong> terminaline <strong>değil</strong>,<strong>normal terminal</strong>e gireceksiniz. 🎃)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+<span class="nb">cd </span>C:<span class="se">\a</span>rchlinux <span class="c">#dizinine gidin</span>
+
+Arch.exe config <span class="nt">--default-user</span> friday13
+
+</code></pre></div></div>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu7.webp" alt="wsl2-archlinux-kurulumu7" /></p>
+
+<p>Daha sonra açık tüm terminalleri <strong>kapatıp</strong> yeniden <strong>açın</strong> ve <strong>Arch</strong> sekmesinden <strong>Arch</strong> seçin. Tada :)</p>
+
+<p><img src="/assets/images/wls-archlinux-kurulumu8.webp" alt="wsl2-archlinux-kurulumu8" /></p>
+
+<p>Bundan sonra içerisinde at mı koşturursunuz deveye hendek mi atlatırsınız bilmem : ) Keyfinize göre takılın.</p>
+
+<h2 id="yerel-dosyalarınızı-nasıl-i̇çer-aktarırsınız">Yerel Dosyalarınızı Nasıl İçer aktarırsınız.</h2>
+
+<p>Hali hazırda bulunan dosyalarınızı <strong>Arch</strong> içine aktarmak istiyorsanız. <code class="language-plaintext highlighter-rouge">Windows + R </code>tuşuna basın <code class="language-plaintext highlighter-rouge">\\wsl$</code> yazın artık dosya dizinindesiniz 🤙</p>
+
+<h2 id="ram-ve-cpu-yönetimi">Ram ve CPU Yönetimi</h2>
+
+<ul>
+  <li>Bu komutla sistemde <strong>aktif</strong> çalışan işletim sistemlerini listelersiniz. 👨‍💻</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+wsl <span class="nt">--list</span> <span class="nt">--verbose</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Daha sonra <strong>WSL</strong> kapatıyoruz.</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+wsl <span class="nt">--shutdown</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Kullanıcı dizinize gidin <code class="language-plaintext highlighter-rouge">C:\Users\&lt;KullanıcıAdınız&gt;</code> içerisine <code class="language-plaintext highlighter-rouge">.wslconfig</code> adında bir dosya <strong>oluşturun</strong>. Ve dosyanın içerisini şöyle <strong>doldurun</strong> :</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+<span class="c"># Ayarlar, WSL 2 üzerinde çalışan tüm Linux dağıtımlarında geçerlidir</span>
+
+<span class="c"># "free -m" ile wsl2'de Ram hafızasını görebilirsiniz.</span>
+
+<span class="o">[</span>wsl2]
+
+
+
+<span class="c"># VM belleğini en fazla 12 GB kullanacak şekilde sınırlar, varsayılan olarak RAM'in %50'si</span>
+
+<span class="nv">memory</span><span class="o">=</span>12GB
+
+
+
+<span class="c"># VM'yi 8 sanal işlemci kullanacak şekilde ayarlar(Çekirdek sayınıza göre düzenleyin)</span>
+
+<span class="nv">processors</span><span class="o">=</span>4
+
+
+
+<span class="c"># Takas depolama alanı miktarını 4 GB olarak ayarlar, varsayılan olarak kullanılabilir RAM'in %25'i</span>
+
+<span class="c"># Kullanmak istemiyorsanız 0 yazabilirsiniz.</span>
+
+<span class="nv">swap</span><span class="o">=</span>4GB
+
+
+
+</code></pre></div></div>
+
+<p>Bu ayarları sistem özelliklerinize göre <strong>değiştirmeyi unutmayın</strong>..</p>
+
+<h2 id="paketler-ve-özelleştirme">Paketler ve Özelleştirme</h2>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">/etc/pacman.conf</code> dosyamı düzenledim.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">sudo pacman -S git openssh base base-devel wget htop neovim curl ruby nodejs python </code> temel ihtiyaç paketlerini kurdum.</p>
+  </li>
+  <li>
+    <p>Paket kurarken şu uyarıyı görürseniz</p>
+  </li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>fakeroot is <span class="k">in </span>IgnorePkg/IgnoreGroup. Install anyway? <span class="o">[</span>Y/n] n<span class="se">\*\*</span>
+</code></pre></div></div>
+
+<p><strong>kesinlikle kaldırmayın</strong> aklınızda bulunsun. Ne zaman görseniz <strong>n</strong> yapin 🐧</p>
+
+<ul>
+  <li><strong>YAY</strong> paket yöneticisini kurdum</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
+git clone https://aur.archlinux.org/yay-git.git
+
+<span class="nb">cd </span>yay-git/
+
+makepkg <span class="nt">-sri</span>
+
+<span class="nb">cd</span> ..
+
+<span class="nb">rm</span> <span class="nt">-rf</span> yay-git/
+
+yay <span class="nt">-Syyu</span>
+
+</code></pre></div></div>
+
+<p>Ayarlarıma <strong>Github</strong> Sayfamdan ulaşabilirsiniz.</p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="program" /><category term="windows10" /><category term="linux" /><summary type="html"><![CDATA[Arch Linux on Windows Subsystem for Linux (WSL)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/windows-terminal-son.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/windows-terminal-son.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Jekyll Google Analytics ile Sayfa Görüntüleme Sayısı</title><link href="https://yuceltoluyag.github.io//jekyll-google-superproxy/" rel="alternate" type="text/html" title="Jekyll Google Analytics ile Sayfa Görüntüleme Sayısı" /><published>2022-01-30T00:00:00+03:00</published><updated>2022-01-30T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//jekyll-google-superproxy</id><content type="html" xml:base="https://yuceltoluyag.github.io//jekyll-google-superproxy/"><![CDATA[<p><strong>Merhaba</strong></p>
 
 <p>Statik websitelerinde sayfa görüntülenmesi nasıl gösterebilirim diye araştırken,<strong>Google Analytics</strong> üzerinden <strong>Super Proxy</strong> kütüphanesi kullanılarak verileri dışarıya açabildiğimizi öğrendim. Konu ile alakalı Google ekibinin çok eski bir videosu var <a href="https://developers.google.com/analytics/solutions/google-analytics-super-proxy" target="\_blank" rel="noopener noreferrer">Google Analytics superProxy</a>. O video üzerinden yola çıkarak mutlu sona ulaştım. 🥰</p>
 
@@ -882,6 +1794,10 @@ openvpnas@ip-128392183:~<span class="nv">$ </span>içerdeyiz XD
     
     
     
+    
+    
+    
+    
   </ul>
 </div>
 
@@ -1034,6 +1950,10 @@ aittir.Kod bilgi amacıyla paylaşılmıştır.</strong></p>
       <a href="/facebook-5000-arkadas-ekleme-sureli-v2/">Facebook 5000 arkadaş ekleme ( süreli)</a>
       
     </li>
+    
+    
+    
+    
     
     
     
@@ -1450,329 +2370,4 @@ http://feeds.feedburner.com/TammerSaleh
     <div class="admonition-content"><p><a href="https://github.com/yuceltoluyag/dotfiles/tree/master/dotfiles/config/newsboat" target="_blank" rel="noopener noreferrer">NewsBoat Ayarlarım!</a></p>
 </div>
   </div>
-</div>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="linux" /><category term="linux" /><category term="newsboat" /><summary type="html"><![CDATA[Muhteşem Rss Okuyucusu ile tanışın]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/newsboat.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/newsboat.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Arch Linux’ta NTFS Nasıl Yapılandırılır</title><link href="https://yuceltoluyag.github.io//archlinux-ntfs-nasil-yapilandirilir/" rel="alternate" type="text/html" title="Arch Linux’ta NTFS Nasıl Yapılandırılır" /><published>2020-07-05T00:00:00+03:00</published><updated>2020-07-05T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//archlinux-ntfs-nasil-yapilandirilir</id><content type="html" xml:base="https://yuceltoluyag.github.io//archlinux-ntfs-nasil-yapilandirilir/"><![CDATA[<p><img src="/assets/images/ntfs_yetki_hatasi.webp" alt="Laravel İde Helper" /></p>
-
-<h1 id="sorun-nedir-">Sorun nedir ?</h1>
-
-<p>Linux’un dosya formatı ext(ext1,ext2,ext3,ext4) olduğundan, yeni kurulan sistemlerde farklı bir birimde ki disk türüne bağlandığımızda <strong>failed to mount diskadiniz -&gt; not authorized to perform operation</strong> gibi bir hatası ile karşılaşıyoruz. Daha modern bir dosya yöneticisi kullanıyorsanız, diske bağlanmak istediğinizde sizden <strong>parola</strong> isteyebilir. Aslında diğer birimleri linux tanıyor ancak işlem yapabilmek için,yetki istiyor. (Bağlanma,kopyalama,yapıştırma,silme,geri getirme vs gibi)</p>
-
-<!-- excerpt separator -->
-
-<h2 id="çözüm--1-yöntem-">Çözüm : 1. Yöntem ?</h2>
-
-<p>Terminali açıp şu uygulamaları kuruyoruz.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> gvfs ntfs-3g dosfstools
-
-</code></pre></div></div>
-
-<p>Daha sonra</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>su
-<span class="nb">cd</span> /usr/share/polkit-1/rules.d
-<span class="nb">touch </span>10-drives.rules
-vim 10-drives.rules <span class="c"># siz düzenlemek istediğiniz başka bir editörle açabilirsiniz nano,sublime vs</span>
-</code></pre></div></div>
-
-<p>bu dosyanın içerisine şunları yapıştırıyorsunuz.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>
-polkit.addRule<span class="o">(</span><span class="k">function</span><span class="o">(</span>action, subject<span class="o">)</span> <span class="o">{</span>
-<span class="k">if</span> <span class="o">(</span>action.id.indexOf<span class="o">(</span><span class="s2">"org.freedesktop.udisks2."</span><span class="o">)</span> <span class="o">==</span> 0<span class="o">){</span>
-<span class="k">return </span>polkit.Result.YES<span class="p">;</span>
-<span class="o">}</span>
-<span class="o">}</span>
-<span class="o">)</span><span class="p">;</span>
-
-</code></pre></div></div>
-
-<p>yapılan ayarların yeniden okutulması için (bazen bugda kalıyor yapmadabilirsiniz,eğer sorun yaşarsanız yaparsınız)</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> gvfs ntfs-3g dosfstools
-</code></pre></div></div>
-
-<p>Şimdi kullanıcımızı disk grubuna ekleyelim.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> <span class="nv">$USER</span> disk
-
-</code></pre></div></div>
-
-<p>Bilgisayarınızı yeniden başlatın,sorun çözülmüş olacaktır.</p>
-
-<h2 id="ekstra-bilgiler-2yöntem">Ekstra Bilgiler 2.Yöntem</h2>
-
-<p>Takılı HDD/SDD/NVM lerin listelerini ve id(uuid)lerini görmek isterseniz şu komutu kullanabilirsiniz</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>blkid
-</code></pre></div></div>
-
-<p>İstediğiniz bir klasöre,bağlamak istediğiniz depolayıcıyı(hardiskinizde ki verileri) aktarabilirsiniz.</p>
-
-<p>Örneğin :</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo mkdir</span> /burayabagla
-
-</code></pre></div></div>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>mount <span class="nt">-t</span> ntfs-3g /dev/sdXX /burayabagla
-</code></pre></div></div>
-
-<p><strong>sdXX</strong> kısmına yukarıda verdiğim <strong>blkid</strong> komutuyla aldığınız disk adını yazacaksınız.(sda1 sda2 sdb vs vs) Artık bağlamak istediğim hardiskimde ki verileri ana dizine oluşturmuş olduğum <strong>burayabagla</strong> klasöründe görebileceğim.</p>
-
-<p>Diski geri çıkarmak istersem</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>umount /burayabagla
-
-</code></pre></div></div>
-
-<p>Başlangıçta otomatik olarak,takılı şekilde gelmesini istersem</p>
-
-<p>fstab dosyasını düzenlememiz gerekiyor</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="nb">sudo </span>vim /etc/fstab <span class="c"># siz düzenlemek istediğiniz başka bir editörle açabilirsiniz nano,sublime vs</span>
-</code></pre></div></div>
-
-<p>bu dosyanın en altına</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="chroma"><code>/dev/sdXX /mirror ntfs-3g <span class="nv">uid</span><span class="o">=</span>kullaniciadiniz,gid<span class="o">=</span><span class="nb">users</span>,umask<span class="o">=</span>0022 0 0
-
-</code></pre></div></div>
-
-<p>ekleyiniz. Daha sonra sistemi yeniden başlattıığınızda,diskin takılı olarak geldiğini görebilirsiniz. Bu işlemler ekstrem durumlarda yapılabilir. Birinci yöntemi uyguladıktan sonra ,taktığınız her hdd otomatik olarak algılanacaktır. Eğer algınlanmazsa 2 yöntem ile bu sorunuda aşabilirsiniz.</p>
-
-<p><a href="https://wiki.archlinux.org/index.php/NTFS-3G" target="\_blank" rel="noopener noreferrer">Daha Fazla Bilgi için</a> Arch linux belgelerinden yararlanabilirsiniz.</p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="linux" /><category term="linux" /><category term="ntfs" /><summary type="html"><![CDATA[How To configure NTFS in Arch Linux]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/ntfs_yetki_hatasi.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/ntfs_yetki_hatasi.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Laravel ide helper kullanımı</title><link href="https://yuceltoluyag.github.io//laravel-ide-helper-kullanimi/" rel="alternate" type="text/html" title="Laravel ide helper kullanımı" /><published>2020-07-03T00:00:00+03:00</published><updated>2020-07-03T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//laravel-ide-helper-kullanimi</id><content type="html" xml:base="https://yuceltoluyag.github.io//laravel-ide-helper-kullanimi/"><![CDATA[<p><img src="/assets/images/laravel_7x_ide_helper.webp" alt="Laravel İde Helper" /></p>
-
-<h2 id="nedir-">Nedir ?</h2>
-
-<p>İDE: Rahat bir şekilde geliştirme yapmanızı sağlayan,içerisinde birçok tool(araçlar) barındıran ve geliştirme sürecini organize eden yazılımlara denir.Örnek vericek olursam : Eclipse, Microsoft Visual Studio, Code Blocks, Dev-C++, Anjuta, KDevelop, NetBeans,Jetbrains ürünleri</p>
-
-<!-- excerpt separator -->
-
-<div class="box">
-  <p>Bu <strong>phpstorm</strong> serisinin 3. yazısıdır Toplamda 3 bölümden oluşmaktadır.</p>
-
-  <ul class="directory-list">
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <a href="/phpstorm-icerisinde-cmder-kullanmak/">PHPStorm içerisinde cmder kullanmak</a>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <a href="/phpstorm-icerisinde-phpcsfixer/">Phpstorm içerisinde CS Fixer Kullanmak</a>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <li class="folder">
-      
-      <i>Laravel ide helper kullanımı</i>
-      
-    </li>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </ul>
-</div>
-
-<h2 id="laravel-ide-helper-nedir-">Laravel ide helper Nedir ?</h2>
-
-<p>PHP geliştiricilerinin en çok kullandığı ide : <strong>PHPStorm</strong> dur. Şu sitede en çok kullanılan ide ve kod editörleri listenmiş <a href="https://www.cloudways.com/blog/top-ide-and-code-editors-php-development/#phpstorm" target="\_blank" rel="noopener noreferrer">Top Code Editors and IDE for PHP Development of 2020</a> <strong>PHPStorm</strong> kodları otomatik olarak algılayabilsede,bazı model,class,route vb verilerini göremeyebiliyor. Bu çalışması için bir sorun teşkil etmesede,benim gibi takıntısı olan insanlar için üretilmiş bir pakettir. Eğer laravel ide paketi olmasa idi , <strong>PHPDoc</strong> yardımıyla bu verileri elinizle girmeniz gerekecekti. PHPDoc nedir, bilmiyorsanız. <strong>Abdulkadir Dılo Sürücü</strong>‘nün anlatımına şuradan ulaşabilirsiniz :</p>
-
-<!-- Feel free to change the width and height to your desired video size. -->
-
-<div class="embed-responsive embed-responsive-16by9">
-  <iframe class="lazyload" data-src="https://www.youtube.com/embed/0NZHzmAgH-M" width="700" height="480" frameborder="0" allowfullscreen="" title="Laravel ide helper kullanımı">
-  </iframe>
-</div>
-
-<p>Bu sayede laravel ide paketinin temelini anlayabilirsiniz.</p>
-
-<h2 id="laravel-ide-helper-kullanımı">Laravel ide helper kullanımı</h2>
-
-<ul>
-  <li>Composer yardımıyla projenize şu paketi kuruyorsunuz.</li>
-</ul>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="n">composer</span> <span class="k">require</span> <span class="o">--</span><span class="n">dev</span> <span class="n">barryvdh</span><span class="o">/</span><span class="n">laravel</span><span class="o">-</span><span class="n">ide</span><span class="o">-</span><span class="n">helper</span>
-
-</code></pre></div></div>
-
-<p>Daha sonra</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="n">php</span> <span class="n">artisan</span> <span class="n">ide</span><span class="o">-</span><span class="n">helper</span><span class="o">:</span><span class="n">generate</span>
-</code></pre></div></div>
-
-<p>Komutunu çalıştırıyorsunuz. Bu komutla birlikte proje dizinizde . <strong>_ide_helper.php</strong> isminde dosya oluşuyor.</p>
-
-<p>Bu dosyayı configure etmek isterseniz</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="n">php</span> <span class="n">artisan</span> <span class="n">vendor</span><span class="o">:</span><span class="n">publish</span> <span class="o">--</span><span class="n">provider</span><span class="o">=</span><span class="s2">"Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider"</span> <span class="o">--</span><span class="n">tag</span><span class="o">=</span><span class="n">config</span>
-
-</code></pre></div></div>
-
-<p>Komutundan sonra <strong>Config</strong> klasörünüzün altına <strong>ide-helper.php</strong> adlı dosya oluşacaktır.</p>
-
-<p>Diyelim ki</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="n">user</span><span class="o">::</span><span class="nf">create</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p>create üzerine geldiğinizde sanki bu fonksiyon yokmuş gibi altı çizili bir uyarı gösterir.(Bu uyarı temanıza göre üstünü renklendirebilir,altını çizebilir yada sağ kolonda sarı bir uyarı gösterebilir) Normalde bu uyarının projenin çalışıp çalışmamasına bir etkisi yoktur, ancak yukarıda dediğim gibi kişisel bir takıntı =) Bu sorunsalı aşmak için</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="n">php</span> <span class="n">artisan</span> <span class="n">ide</span><span class="o">-</span><span class="n">helper</span><span class="o">:</span><span class="n">models</span> <span class="nc">User</span>
-
-</code></pre></div></div>
-
-<p>eğer model dosyalarınızı ayrı bir dizinde tutuyorsanız</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="n">php</span> <span class="n">artisan</span> <span class="n">ide</span><span class="o">-</span><span class="n">helper</span><span class="o">:</span><span class="n">models</span> <span class="nc">Model\User</span>
-</code></pre></div></div>
-
-<p>Bu sayede verdiğiniz model dosyasıyla ilgili tüm model,class,view,routeleri tarar ona göre bir docblock oluşturur. Komutun işlemini tamamlamasıyla Post model dosyasını açarsanız başında şöyle açıklamalar göreceksiniz.</p>
-
-<p>UserModel</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="o">/</span><span class="err">\</span><span class="o">*</span><span class="err">\</span><span class="o">*</span>
-
-<span class="o">-</span> <span class="nc">App\User</span> <span class="err">\</span><span class="o">*</span> <span class="err">\</span><span class="o">*</span> <span class="o">@</span><span class="n">property</span> <span class="n">int</span> <span class="nv">$id</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="n">string</span> <span class="nv">$name</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="n">string</span> <span class="nv">$email</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="err">\</span><span class="nc">Illuminate\Support\Carbon</span><span class="o">|</span><span class="kc">null</span> <span class="nv">$email_verified_at</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="n">string</span> <span class="nv">$password</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="n">int</span> <span class="nv">$branch_id</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="n">int</span> <span class="nv">$role_id</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="n">string</span><span class="o">|</span><span class="kc">null</span> <span class="nv">$remember_token</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="err">\</span><span class="nc">Illuminate\Support\Carbon</span><span class="o">|</span><span class="kc">null</span> <span class="nv">$created_at</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span> <span class="err">\</span><span class="nc">Illuminate\Support\Carbon</span><span class="o">|</span><span class="kc">null</span> <span class="nv">$updated_at</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span><span class="o">-</span><span class="n">read</span> <span class="err">\</span><span class="nc">Illuminate\Notifications\DatabaseNotificationCollection</span><span class="o">|</span><span class="err">\</span><span class="nc">Illuminate\Notifications\DatabaseNotification</span><span class="p">[]</span> <span class="nv">$notifications</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">property</span><span class="o">-</span><span class="n">read</span> <span class="n">int</span><span class="o">|</span><span class="kc">null</span> <span class="nv">$notifications_count</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">newModelQuery</span><span class="p">()</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">newQuery</span><span class="p">()</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">query</span><span class="p">()</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereBranchId</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereCreatedAt</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereEmail</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereEmailVerifiedAt</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereId</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereName</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">wherePassword</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereRememberToken</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereRoleId</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">method</span> <span class="k">static</span> <span class="err">\</span><span class="nc">Illuminate\Database\Eloquent\Builder</span><span class="o">|</span><span class="err">\</span><span class="nc">App\User</span> <span class="nf">whereUpdatedAt</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-<span class="o">-</span> <span class="o">@</span><span class="n">mixin</span> <span class="err">\</span><span class="nc">Eloquent</span>
-  <span class="err">\</span><span class="o">*/</span>
-
-</code></pre></div></div>
-
-<p>Composer.json dosyanıza, şu script komutlarını eklerseniz</p>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="chroma"><code><span class="s2">"scripts"</span><span class="o">:</span> <span class="p">{</span>
-<span class="s2">"post-update-cmd"</span><span class="o">:</span> <span class="p">[</span>
-<span class="s2">"Illuminate</span><span class="se">\\</span><span class="s2">Foundation</span><span class="se">\\</span><span class="s2">ComposerScripts::postUpdate"</span><span class="p">,</span>
-<span class="s2">"@php artisan ide-helper:generate"</span><span class="p">,</span>
-<span class="s2">"@php artisan ide-helper:meta"</span>
-<span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Bu komutla birlikte, composeri her güncellediğinizde,yeni DOC larınız otamatik olarak konfigurasyon dosyanıza yazılacaktır.</p>
-
-<p>Bu şekilde bu tip uyarılardan kurtulmuş oluyoruz. Daha fazlası için <a href="https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md" target="\_blank" rel="noopener noreferrer">laravel ide helper wiki</a> sayfasına bakabilirsiniz. Phpstorm ile ilgili daha fazla yazıya <a href="https://yuceltoluyag.github.io/tag/phpstorm/" target="\_blank" rel="noopener noreferrer">buradan ulaşabilirsiniz</a></p>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="kutuphane" /><category term="phpstorm" /><category term="cmder" /><summary type="html"><![CDATA[laravel ide helper nasıl kullanılır]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/laravel_7x_ide_helper.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/laravel_7x_ide_helper.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+</div>]]></content><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><category term="linux" /><category term="linux" /><category term="newsboat" /><summary type="html"><![CDATA[Muhteşem Rss Okuyucusu ile tanışın]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://yuceltoluyag.github.io//assets/images/newsboat.webp" /><media:content medium="image" url="https://yuceltoluyag.github.io//assets/images/newsboat.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
