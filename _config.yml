@@ -3,19 +3,19 @@ title: Linux & Ortaya Karışık
 email: ytoluyag@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D
-baseurl: ""
-url: "https://yuceltoluyag.github.io/"
-permalink: "/:title/"
+baseurl: ''
+url: 'https://yuceltoluyag.github.io/'
+permalink: '/:title/'
 safe: false
 port: 4000
 lang: en
 repository: https://github.com/yuceltoluyag/yuceltoluyag.github.io
 timezone: Europe/Istanbul
 lazyimages: true
-default_img: /assets/svg/icon-logo.svg
+default_img: /assets/images/svg/logo.svg
 header:
-  desktopMode: "fixed"
-  mobileMode: "auto"
+  desktopMode: 'fixed'
+  mobileMode: 'auto'
 
 author:
   name: Yücel Toluyağ
@@ -35,23 +35,23 @@ verification:
   bing: 831DA09069414E7869C3F877F6417B6E
 
 google_analytics:
-  id: "UA-156927338-1" # fill in your Google Analytics ID
+  id: 'UA-156927338-1' # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
-    proxy_endpoint: "https://macro-polymer-336309.appspot.com/query?id=ahh6bG1-bWFjcm8tcG9seW1lci0zMzYzMDlyFQsSCEFwaVF1ZXJ5GICAgJjFqZMKDA"
+    proxy_endpoint: 'https://macro-polymer-336309.appspot.com/query?id=ahh6bG1-bWFjcm8tcG9seW1lci0zMzYzMDlyFQsSCEFwaVF1ZXJ5GICAgJjFqZMKDA'
     cache_path: false # the local PV cache data, friendly to visitors from GFW region
 
 # Defaults
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: ''
       type: posts
     values:
       layout: post
   # _pages
   - scope:
-      path: "_pages"
+      path: '_pages'
       type: pages # 参考 `site.collections`
     values:
       layout: page
@@ -82,7 +82,7 @@ kramdown:
     block:
       line_numbers: false
       start_line: 1
-
+keep_files: ['assets']
 service-worker: true
 pwa:
   sw_src_filepath: sw.js # Optional
@@ -91,14 +91,14 @@ pwa:
   precache_recent_posts_num: 8 # Optional
   precache_glob_directory: / # Optional
   precache_glob_patterns: # Optional
-    - "/**/*.{js,json,css}"
-    - "/**/*.{ico,jpg,jpeg,png,svg,webp}"
-    - "/**/*.html"
+    - '/**/*.{js,json,css}'
+    - '/**/*.{ico,jpg,jpeg,png,svg,webp}'
+    - '/**/*.html'
   precache_glob_ignores: # Optional
-    - "sw.js"
-    - "assets/fonts/**/*"
+    - 'sw.js'
+    - 'assets/fonts/**/*'
 
-include: ["_pages"]
+include: ['_pages']
 plugins:
   - jekyll-feed
   - jekyll-paginate
@@ -126,3 +126,7 @@ exclude:
   - sass
   - scss
   - validate
+  - gulp_tasks
+  - api_data
+  - ruby-version
+  - .editorconfig

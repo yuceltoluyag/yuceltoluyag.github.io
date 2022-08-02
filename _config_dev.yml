@@ -1,0 +1,41 @@
+# Routes
+name: Development Modu
+domain: localhost
+url: "http://localhost:8888"
+permalink: "/:title/"
+# Publishing
+show_drafts: true
+future: true
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: chroma
+    # default_lang: console
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+# Disable some things for development
+google_analytics:
+  id: false
+  domain: false
+
+google_ads:
+  id: false
+
+# Build settings
+keep_files: ["assets"]
+
+exclude:
+  [
+    "gulp_tasks",
+    "api_data",
+    ".ruby-version",
+    ".editorconfig",
+    "package.json",
+    "package-lock.json",
+    "gulpfile.babel.js",
+    "README.md",
+  ]
