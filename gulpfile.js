@@ -24,7 +24,8 @@ const svgmin = require("gulp-svgmin");
 const cheerio = require("gulp-cheerio");
 
 const uglify = require("gulp-uglify");
-const del = require("del");
+// const del = require("del");
+import {deleteAsync} from 'del';
 const browserSync = require("browser-sync");
 const dependents = require("gulp-dependents");
 
@@ -48,7 +49,7 @@ const postCssPlugins = [
 
 // Delete the _site directory.
 gulp.task("cleanup-build", () => {
-  return del(["_site", "./assets"], { read: false, allowEmpty: true });
+  return deleteAsync(["_site", "./assets"], { read: false, allowEmpty: true });
 });
 
 // Optimize images.
