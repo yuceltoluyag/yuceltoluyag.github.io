@@ -18,7 +18,7 @@
     "css-declaration-sorter": "^6.3.0",
     "cssnano": "^5.1.12",
     "del": "^7.0.0",
-    "fibers": "^5.0.1",
+    "fibers": "^5.0.2",
     "gulp": "^4.0.2",
     "gulp-cheerio": "^1.0.0",
     "gulp-clean-css": "^4.3.0",
