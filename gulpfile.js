@@ -24,12 +24,11 @@ const svgmin = require("gulp-svgmin");
 const cheerio = require("gulp-cheerio");
 
 const uglify = require("gulp-uglify");
-// const del = require("del");
-import {deleteAsync} from 'del';
 const browserSync = require("browser-sync");
 const dependents = require("gulp-dependents");
 
 // ! Exec
+import {deleteAsync}  = require("del");
 const { promisify } = require("util");
 const { exec } = require("child_process");
 const execAsync = promisify(exec);
