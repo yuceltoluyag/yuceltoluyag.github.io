@@ -1,0 +1,24 @@
+# Routes
+domain: 'https://yuceltoluyag.github.io/'
+url: 'https://yuceltoluyag.github.io/'
+assets_root: /assets/
+assets_media: /assets/images/
+permalink: '/:title/'
+debug: false
+
+# Publishing
+future: false
+show_drafts: false
+keep_files: ['assets']
+# Build settings
+exclude:
+  [
+    'gulp_tasks',
+    'api_data',
+    '.ruby-version',
+    '.editorconfig',
+    'package.json',
+    'package-lock.json',
+    'gulpfile.babel.js',
+    'README.md',
+  ]
