@@ -6,8 +6,8 @@ From: İstanbul, Turkiye
 
 
 /* SITE */
-Last Updated: 02/08/2022
-Language: French
+Last Updated: 14/08/2022
+Language: Turkish
 Tools: Ruby, Sass, Jekyll, Node
 Theme: Minel Jekyll Theme
 IDE: Vscode
