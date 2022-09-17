@@ -47,7 +47,7 @@
     "@babel/register": "^7.18.9",
     "broken-link-checker": "^0.7.8",
     "browser-sync": "^2.27.10",
-    "canvas": "^2.9.3",
+    "canvas": "^2.10.1",
     "chalk": "^5.0.1",
     "del": "^7.0.0",
     "dotenv": "^16.0.2",
