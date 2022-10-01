@@ -50,7 +50,7 @@
     "canvas": "^2.10.1",
     "chalk": "^5.0.1",
     "del": "^7.0.0",
-    "dotenv": "^16.0.2",
+    "dotenv": "^16.0.3",
     "eslint": "^8.23.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
