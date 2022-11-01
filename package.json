@@ -51,7 +51,7 @@
     "chalk": "^5.0.1",
     "del": "^7.0.0",
     "dotenv": "^16.0.3",
-    "eslint": "^8.24.0",
+    "eslint": "^8.26.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
