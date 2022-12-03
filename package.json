@@ -42,12 +42,12 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.19.6",
+    "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.19.4",
     "@babel/register": "^7.18.9",
     "broken-link-checker": "^0.7.8",
     "browser-sync": "^2.27.10",
-    "canvas": "^2.10.1",
+    "canvas": "^2.10.2",
     "chalk": "^5.1.2",
     "del": "^7.0.0",
     "dotenv": "^16.0.3",
@@ -74,16 +74,16 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
     "imagemin-webp": "^7.0.0",
-    "jsdom": "^20.0.1",
+    "jsdom": "^20.0.3",
     "lodash.merge": "^4.6.2",
     "mkdirp": "^1.0.4",
     "ngrok": "^4.3.3",
     "nodemon": "^2.0.20",
     "postcss": "^8.4.18",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "rimraf": "^3.0.2",
     "sass": "^1.55.0",
     "sync-request": "^6.1.0",
-    "yargs": "^17.6.0"
+    "yargs": "^17.6.2"
   }
 }
