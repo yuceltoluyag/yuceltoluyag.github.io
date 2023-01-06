@@ -23,8 +23,6 @@ jobs:
         run: npm cache clean --force
       - name: Install packages
         run: npm install
-      - name: RUBY Install
-        run: gem update --system '3.1.2'
       - name: Jekyll Install
         run: sudo gem install jekyll
       - name: Bundler install
