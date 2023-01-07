@@ -42,11 +42,11 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.19.4",
     "@babel/register": "^7.18.9",
     "broken-link-checker": "^0.7.8",
-    "browser-sync": "^2.27.10",
+    "browser-sync": "^2.27.11",
     "canvas": "^2.10.2",
     "chalk": "^5.1.2",
     "del": "^7.0.0",
@@ -79,10 +79,10 @@
     "mkdirp": "^1.0.4",
     "ngrok": "^4.3.3",
     "nodemon": "^2.0.20",
-    "postcss": "^8.4.18",
-    "prettier": "^2.8.0",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.2",
     "rimraf": "^3.0.2",
-    "sass": "^1.55.0",
+    "sass": "^1.57.1",
     "sync-request": "^6.1.0",
     "yargs": "^17.6.2"
   }

@@ -192,7 +192,7 @@ export const optimize_prod = gulp.series(
   optimize_media_prod,
   optimize_styles_prod,
   optimize_scripts_prod,
-  optimize_html_prod,
+  //optimize_html_prod,
   optimize_inline_prod
 )
 
