@@ -28,9 +28,9 @@ jobs:
       - name: Bundler install
         run: sudo gem install bundler
       - name: Bundler install Package
-        run: bundler install
+        run: sudo bundler install
       - name: Bundler Update Package
-        run: bundle update
+        run: sudo bundle update
       - name: Build project
         run: npm run build
       - name: Run Lighthouse 💡
