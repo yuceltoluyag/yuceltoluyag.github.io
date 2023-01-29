@@ -181,7 +181,7 @@ function optimize_inline_prod() {
     .pipe(
       inline({
         rootpath: configProd.buildDir,
-      })
+      }
     )
     .pipe(duration('Inlining CSS into HTML for production'))
     .pipe(gulp.dest(configProd.optimize.html.dest))
@@ -192,8 +192,8 @@ export const optimize_prod = gulp.series(
   optimize_media_prod,
   optimize_styles_prod,
   optimize_scripts_prod,
-  //optimize_html_prod,
-  //optimize_inline_prod
+  optimize_html_prod,
+  optimize_inline_prod
 )
 
 /**
