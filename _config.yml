@@ -35,7 +35,7 @@ verification:
   bing: 831DA09069414E7869C3F877F6417B6E
 
 google_analytics:
-  id: 'UA-156927338-1' # fill in your Google Analytics ID
+  id: 'G-9KL9GYLPS5' # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint: 'https://macro-polymer-336309.appspot.com/query?id=ahh6bG1-bWFjcm8tcG9seW1lci0zMzYzMDlyFQsSCEFwaVF1ZXJ5GICAgJjFqZMKDA'
