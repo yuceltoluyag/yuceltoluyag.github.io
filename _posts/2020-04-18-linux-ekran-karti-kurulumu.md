@@ -55,7 +55,7 @@ GF106 olarak işaretlediğim kısım kartınıızn ailesini(kod adı) belirtiyor
 - **Nouveau** : Açık kaynak sürücülerdir. Eğer ki grafik tarafında çok fazla işlemleriniz yoksa kullanabilirsiniz. (Prime veya optimus kullanırken gerektiği durumlar olabiliyor)
 
 ```shell
-sudo pacman -S xf86-video-intel mesa xf86-video-nouveau # paketlerini kurabilirsiniz
+yay -Syyu xf86-video-intel mesa xf86-video-nouveau opengl-man-pages lib32-mesa-vdpau lib32-libva-mesa-driver  # paketlerini kurabilirsiniz
 
 ```
 
@@ -72,7 +72,7 @@ sudo pacman -S xf86-video-intel mesa xf86-video-nouveau # paketlerini kurabilirs
 Benim kartım gibi 390 sürümüne sahip olanlar var ise şu paketleri kurmalıdır.
 
 ```shell
-nvidia-390xx nvidia-390xx-settings nvidia-390xx-utils opencl-nvidia-390xx lib32-nvidia-390xx-utils lib32-opencl-nvidia-390xx
+yay -Syyu nvidia-390xx-dkms nvidia-390xx-utils opencl-nvidia-390xx nvidia-390xx-settings lib32-opencl-nvidia-390xx lib32-nvidia-390xx-utils
 ```
 
 daha sonra
