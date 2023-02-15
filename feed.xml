@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://yuceltoluyag.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://yuceltoluyag.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2023-02-05T08:50:52+03:00</updated><id>https://yuceltoluyag.github.io//feed.xml</id><title type="html">Linux &amp;amp; Ortaya Karışık</title><subtitle>Bilgi 5 harflidir. 5 te 4&apos;ü  İlgidir ;D</subtitle><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><entry><title type="html">Windows Terminalimi Nasıl Özelleştiriyorum</title><link href="https://yuceltoluyag.github.io//windows-terminal-ozellestirme/" rel="alternate" type="text/html" title="Windows Terminalimi Nasıl Özelleştiriyorum" /><published>2022-06-26T00:00:00+03:00</published><updated>2022-06-26T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//windows-terminal-ozellestirme</id><content type="html" xml:base="https://yuceltoluyag.github.io//windows-terminal-ozellestirme/"><![CDATA[<p><strong>Merhaba</strong></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://yuceltoluyag.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://yuceltoluyag.github.io//" rel="alternate" type="text/html" hreflang="en" /><updated>2023-02-15T04:33:17+03:00</updated><id>https://yuceltoluyag.github.io//feed.xml</id><title type="html">Linux &amp;amp; Ortaya Karışık</title><subtitle>Bilgi 5 harflidir. 5 te 4&apos;ü  İlgidir ;D</subtitle><author><name>Yücel Toluyağ</name><email>ytoluyag@gmail.com</email></author><entry><title type="html">Windows Terminalimi Nasıl Özelleştiriyorum</title><link href="https://yuceltoluyag.github.io//windows-terminal-ozellestirme/" rel="alternate" type="text/html" title="Windows Terminalimi Nasıl Özelleştiriyorum" /><published>2022-06-26T00:00:00+03:00</published><updated>2022-06-26T00:00:00+03:00</updated><id>https://yuceltoluyag.github.io//windows-terminal-ozellestirme</id><content type="html" xml:base="https://yuceltoluyag.github.io//windows-terminal-ozellestirme/"><![CDATA[<p><strong>Merhaba</strong></p>
 
 <p><a href="https://www.instagram.com/yuceltoluyag/" target="\_blank" rel="noopener noreferrer">İnstagram</a> üzerinden <strong>hikaye</strong>lerimi takip edenler <strong>Windows Terminal</strong>imi nasıl özelleştirdiğim konusunda sorular soruyordu. 🙄 Bu konu hakkında blog yazımı bekleyin dedim ve o beklenen an geldi 😂🥱</p>
 
@@ -1285,7 +1285,7 @@ MIDIGOMEDAGLARIBLA12930219312 <span class="c">#karman çurman birşey gelecek �
   <span class="c1"># Burası moderasyon kısmı</span>
   <span class="c1"># "true" olarak ayarlanırsa, onayınız için bir çekme talebi oluşturulur.</span>
   <span class="c1"># "false" yorumlar otomatik olarak ana şubeye gönderilecek,onaylanmadan yayınlanacak(tavsiye etmiyorum).</span>
-  <span class="na">moderation</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">moderation</span><span class="pi">:</span> <span class="kc">true</span>
 
   <span class="c1"># Akismet Kullanıyorsanız bu ayarları açabilirsiniz Ama reCaptcha daha etkili bir yöntem(Kişisel görüşüm).</span>
   <span class="c1"># akismet:</span>
@@ -1302,7 +1302,7 @@ MIDIGOMEDAGLARIBLA12930219312 <span class="c">#karman çurman birşey gelecek �
   <span class="c1"># Bildirim Sistemi. Eğer bırakılan yoruma cevap verildiğinde üye eposta almak istiyorsa bu kısmı aktif edebilirsiniz. E-mail marketin apiniz olsa iyi olur :)  Mailgun,Twilio,mailchimp vb servisleri kullanabilirsiniz.</span>
   <span class="na">notifications</span><span class="pi">:</span>
     <span class="c1"># Bildirimler Devre Dışı</span>
-    <span class="na">enabled</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="kc">false</span>
 
   <span class="c1"># Burada gelen yorumları hangi dizinde saklayacağımızı belirtiyoruz.</span>
   <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">_data/comments/{options.slug}"</span>
@@ -1317,7 +1317,7 @@ MIDIGOMEDAGLARIBLA12930219312 <span class="c">#karman çurman birşey gelecek �
   <span class="c1"># reCaptcha Ayarları</span>
   <span class="c1"># Bu kısa keylerinizi dimdirek yazmayın,nasıl şifreleneceği konusunda blog yazımı okumaya devam edin.</span>
   <span class="na">reCaptcha</span><span class="pi">:</span>
-    <span class="na">enabled</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="kc">false</span>
     <span class="na">siteKey</span><span class="pi">:</span> <span class="s2">"</span><span class="s">12321321"</span>
     <span class="na">secret</span><span class="pi">:</span> <span class="s2">"</span><span class="s">123213213213"</span>
 </code></pre></div></div>
