@@ -78,7 +78,7 @@
     "lodash.merge": "^4.6.2",
     "mkdirp": "^3.0.1",
     "ngrok": "^4.3.3",
-    "nodemon": "^2.0.22",
+    "nodemon": "^3.1.0",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "rimraf": "^5.0.5",
