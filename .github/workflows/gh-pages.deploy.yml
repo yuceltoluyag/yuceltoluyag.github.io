@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
       - name: Checkout repository
@@ -24,10 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Jekyll and Bundler
+      - name: Set up Ruby and Bundler
         run: |
-          sudo gem install jekyll
-          sudo gem install bundler -v 2.4.22
+          gem install bundler -v 2.4.22
+          echo 'GEM_HOME=$HOME/.gem' >> $GITHUB_ENV
+          echo 'PATH=$HOME/.gem/bin:$PATH' >> $GITHUB_ENV
+          bundle config set path 'vendor/bundle'
+
+      - name: Install Jekyll
+        run: gem install jekyll
 
       - name: Install Ruby dependencies
         run: bundle _2.4.22_ install
