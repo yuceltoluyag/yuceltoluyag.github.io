@@ -13,31 +13,32 @@ jobs:
         node-version: [16.x]
 
     steps:
-      - name: Get files
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Cache packages
-        run: npm cache clean --force
-      - name: Install packages
+
+      - name: Install dependencies
         run: npm install
-      - name: Jekyll Install
-        run: sudo gem install jekyll
-      - name: Bundler install
-        run: sudo gem install bundler
-      - name: Bundler install Package
-        run: sudo bundler install
-      - name: Bundler Update Package
-        run: sudo bundle update
+
+      - name: Install Jekyll
+        run: |
+          sudo gem install jekyll bundler
+          bundler install
+          bundle update
+
       - name: Build project
         run: npm run build
-      - name: Run Lighthouse 💡
+
+      - name: Run Lighthouse
         uses: treosh/lighthouse-ci-action@v3
         with:
           configPath: "./lighthouserc.json"
-      - name: Deploy
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
