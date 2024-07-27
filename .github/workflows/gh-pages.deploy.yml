@@ -1,58 +1,79 @@
-name: Deploy to GitHub Pages
+name: Build and deploy Jekyll site to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build:
+  github-pages:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
+      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "18"
+          cache: "npm"
 
-      - name: Install dependencies
-        run: npm install
+      # Set up Ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0"
+          bundler-cache: true
 
-      - name: Set up Ruby and Bundler
-        env:
-          GEM_HOME: ${{ github.workspace }}/.gem
-          PATH: ${{ github.workspace }}/.gem/ruby/3.0.0/bin:${{ env.PATH }}
-        run: |
-          gem install bundler -v 2.4.22 --user-install
+      # Caching npm dependencies
+      - uses: actions/cache@v2
+        id: npm_cache
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
-      - name: Install Jekyll
-        env:
-          GEM_HOME: ${{ github.workspace }}/.gem
-          PATH: ${{ github.workspace }}/.gem/ruby/3.0.0/bin:${{ env.PATH }}
-        run: gem install jekyll --user-install
+      # Install NPM dependencies
+      - name: Install NPM dependencies
+        if: steps.npm_cache.outputs.cache-hit != 'true'
+        run: npm ci --ignore-scripts --no-audit --no-fund --legacy-peer-deps
 
+      # Install Jekyll and Bundler
+      - name: Install Jekyll and Bundler
+        run: gem install bundler:2.4.22 jekyll
+
+      # Install Ruby dependencies
       - name: Install Ruby dependencies
+        run: bundle install
+
+      # Build the Jekyll site
+      - name: Build Jekyll site
+        run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d build
         env:
-          GEM_HOME: ${{ github.workspace }}/.gem
-          PATH: ${{ github.workspace }}/.gem/ruby/3.0.0/bin:${{ env.PATH }}
-        run: bundle _2.4.22_ install
+          EXECJS_RUNTIME: Node
+          JEKYLL_ENV: production
 
-      - name: Build project
-        run: npm run build
+      # Build project with Gulp
+      - name: Build project with Gulp
+        run: BUILD_DIR=build npx  run build
 
-      - name: Run Lighthouse
-        uses: treosh/lighthouse-ci-action@v3
-        with:
-          configPath: "./lighthouserc.json"
+      # Copy additional files
+      - name: Copy CNAME file
+        run: cp CNAME ./build
 
+      - name: Copy robots.txt file
+        run: cp robots.txt ./build
+
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: _site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
