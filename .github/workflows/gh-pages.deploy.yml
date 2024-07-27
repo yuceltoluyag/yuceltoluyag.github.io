@@ -27,17 +27,19 @@ jobs:
       - name: Set up Ruby and Bundler
         run: |
           gem install bundler -v 2.4.22 --user-install
-          echo 'GEM_HOME=$HOME/.gem' >> $GITHUB_ENV
-          echo 'PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH' >> $GITHUB_ENV
+          echo 'export GEM_HOME=$HOME/.gem' >> $BASH_ENV
+          echo 'export PATH=$HOME/.gem/ruby/3.0.0/bin:$PATH' >> $BASH_ENV
+          source $BASH_ENV
 
       - name: Install Jekyll
-        run: gem install jekyll --user-install
+        run: |
+          source $BASH_ENV
+          gem install jekyll --user-install
 
       - name: Install Ruby dependencies
-        env:
-          GEM_HOME: ${{ secrets.GEM_HOME }}
-          PATH: ${{ secrets.PATH }}
-        run: bundle _2.4.22_ install
+        run: |
+          source $BASH_ENV
+          bundle _2.4.22_ install
 
       - name: Build project
         run: npm run build
