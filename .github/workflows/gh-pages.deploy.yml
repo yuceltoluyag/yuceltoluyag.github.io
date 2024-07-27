@@ -46,25 +46,19 @@ jobs:
 
       # Build Jekyll site
       - name: Build Jekyll site
-        run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d build
+        run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d _site
         env:
           EXECJS_RUNTIME: Node
           JEKYLL_ENV: production
 
       # Build project with Gulp
       - name: Build project with Gulp
-        run: BUILD_DIR=build npx gulp build_prod
-
-      # Copy CNAME file
-      - name: Copy CNAME file
-        run: cp CNAME ./build
-
-      - name: Copy robots.txt file
-        run: cp robots.txt ./build
+        run: BUILD_DIR=_site npx gulp build_prod
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          branch: gh-pages
+          folder: _site
