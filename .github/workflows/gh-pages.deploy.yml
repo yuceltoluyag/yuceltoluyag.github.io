@@ -10,35 +10,55 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
-      - name: Get files
+      # Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+
+      # Set up Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Cache packages
-        run: npm cache clean --force
-      - name: Install packages
+
+      # Install NPM dependencies
+      - name: Install NPM dependencies
         run: npm install
-      - name: Jekyll Install
-        run: sudo gem install jekyll
-      - name: Bundler install
-        run: sudo gem install bundler
-      - name: Bundler install Package
-        run: sudo bundler install
-      - name: Bundler Update Package
-        run: sudo bundle update
-      - name: Build project
-        run: npm run build
-      - name: Run Lighthouse 💡
-        uses: treosh/lighthouse-ci-action@v3
+
+      # Set up Ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          configPath: "./lighthouserc.json"
-      - name: Deploy
+          ruby-version: '3.0'
+          bundler-cache: true
+
+      # Install Bundler
+      - name: Install Bundler
+        run: |
+          gem install bundler -v 2.4.22
+          bundle _2.4.22_ install
+
+      # Install Jekyll
+      - name: Install Jekyll
+        run: gem install jekyll
+
+      # Build Jekyll site
+      - name: Build Jekyll site
+        run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d _site
+        env:
+          EXECJS_RUNTIME: Node
+          JEKYLL_ENV: production
+
+      # Build project with Gulp
+      - name: Build project with Gulp
+        run: BUILD_DIR=_site npx gulp build_prod
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: _site
