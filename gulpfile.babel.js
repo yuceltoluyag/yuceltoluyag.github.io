@@ -43,18 +43,21 @@ let ngrokURL = null;
 let browsersyncLocalURL = null;
 let browsersyncExternalURL = null;
 
-export function browser_sync(cb) {
+export async function browser_sync(cb) {
   const bsOptions = Object.assign({}, configDev.browsersync, {
     callbacks: {
       ready: async (_, bs) => {
         try {
           browsersyncLocalURL = bs.options.getIn(['urls', 'local']);
           browsersyncExternalURL = bs.options.getIn(['urls', 'external']);
+          console.log(`Attempting to start ngrok on port: ${bs.options.get('port')}`);
           ngrokURL = await ngrok.connect(bs.options.get('port'));
           console.log(`Your ngrok URL is:`);
           console.log(`└── ${ngrokURL}`);
+          cb();
         } catch (err) {
           console.error(`Failed to start ngrok: ${err.message}`);
+          console.error(`Error details:`, err);
           cb(err);
         }
       },
