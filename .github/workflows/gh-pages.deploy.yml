@@ -27,36 +27,27 @@ jobs:
       - name: Install NPM dependencies
         run: npm install
 
-      # Set up Ruby and Bundler
-      - name: Set up Ruby and Bundler
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-full
-          gem install bundler -v 2.4.22 --user-install
-        env:
-          GEM_HOME: ${{ github.workspace }}/.gem
-          PATH: ${{ github.workspace }}/.gem/ruby/3.0.0/bin:${{ env.PATH }}
+      # Set up Ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
 
-      # Install Jekyll
-      - name: Install Jekyll
-        run: gem install jekyll --user-install
-        env:
-          GEM_HOME: ${{ github.workspace }}/.gem
-          PATH: ${{ github.workspace }}/.gem/ruby/3.0.0/bin:${{ env.PATH }}
+      # Install Jekyll and Bundler
+      - name: Install Jekyll and Bundler
+        run: |
+          gem install bundler -v 2.4.22
+          gem install jekyll
 
       # Install Ruby dependencies
       - name: Install Ruby dependencies
         run: bundle _2.4.22_ install
-        env:
-          GEM_HOME: ${{ github.workspace }}/.gem
-          PATH: ${{ github.workspace }}/.gem/ruby/3.0.0/bin:${{ env.PATH }}
 
       # Build the Jekyll site
       - name: Build Jekyll site
         run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d build
         env:
-          GEM_HOME: ${{ github.workspace }}/.gem
-          PATH: ${{ github.workspace }}/.gem/ruby/3.0.0/bin:${{ env.PATH }}
           EXECJS_RUNTIME: Node
           JEKYLL_ENV: production
 
