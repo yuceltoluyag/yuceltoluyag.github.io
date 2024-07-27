@@ -13,58 +13,48 @@ jobs:
         node-version: [18.x]
 
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      # Install NPM dependencies
       - name: Install NPM dependencies
         run: npm install
+        env:
+          NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
 
-      # Set up Ruby
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
           bundler-cache: true
 
-      # Install the correct version of Bundler
       - name: Install Bundler
-        run: gem install bundler -v 2.4.22
+        run: |
+          gem install bundler -v 2.4.22
+          bundle _2.4.22_ install
 
-      # Install Jekyll
       - name: Install Jekyll
         run: gem install jekyll
 
-      # Install Ruby dependencies
-      - name: Install Ruby dependencies
-        run: bundle _2.4.22_ install
-
-      # Build the Jekyll site
       - name: Build Jekyll site
         run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d build
         env:
           EXECJS_RUNTIME: Node
           JEKYLL_ENV: production
 
-      # Run Gulp tasks
       - name: Build project with Gulp
         run: BUILD_DIR=build npx gulp
 
-      # Copy additional files
       - name: Copy CNAME file
         run: cp CNAME ./build
 
       - name: Copy robots.txt file
         run: cp robots.txt ./build
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
