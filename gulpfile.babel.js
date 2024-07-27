@@ -1,7 +1,6 @@
 import { spawn } from 'child_process';
 import path from 'path';
 
-import browsersync from 'browser-sync';
 import { deleteAsync } from 'del';
 import gulp from 'gulp';
 import autoprefixer from 'gulp-autoprefixer';
@@ -21,7 +20,6 @@ import rename from 'gulp-rename';
 import size from 'gulp-size';
 import sourcemaps from 'gulp-sourcemaps';
 import terser from 'gulp-terser';
-import ngrok from 'ngrok';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
@@ -34,37 +32,6 @@ const argv = yargs(hideBin(process.argv)).argv;
 // We might not want to register the serviceworker for local dev.
 // Very hacky way to do this!
 process.env.SERVICEWORKER = argv.noserviceworker ? 'false' : 'true';
-
-/**
- * Browsersync
- */
-const bsServer = browsersync.create();
-let ngrokURL = null;
-let browsersyncLocalURL = null;
-let browsersyncExternalURL = null;
-
-export async function browser_sync(cb) {
-  const bsOptions = Object.assign({}, configDev.browsersync, {
-    callbacks: {
-      ready: async (_, bs) => {
-        try {
-          browsersyncLocalURL = bs.options.getIn(['urls', 'local']);
-          browsersyncExternalURL = bs.options.getIn(['urls', 'external']);
-          console.log(`Attempting to start ngrok on port: ${bs.options.get('port')}`);
-          ngrokURL = await ngrok.connect(bs.options.get('port'));
-          console.log(`Your ngrok URL is:`);
-          console.log(`└── ${ngrokURL}`);
-          cb();
-        } catch (err) {
-          console.error(`Failed to start ngrok: ${err.message}`);
-          console.error(`Error details:`, err);
-          cb(err);
-        }
-      },
-    },
-  });
-  bsServer.init(bsOptions, cb);
-}
 
 /**
  * Copy media and other files
@@ -204,8 +171,7 @@ export function scripts_dev() {
     .pipe(babel())
     .pipe(sourcemaps.write())
     .pipe(duration('Compiling ES6 js for development'))
-    .pipe(gulp.dest(configDev.scripts.dest))
-    .pipe(bsServer.stream());
+    .pipe(gulp.dest(configDev.scripts.dest));
 }
 
 export function scripts_prod() {
@@ -229,8 +195,7 @@ export function styles_dev() {
     .pipe(sass())
     .pipe(autoprefixer(configDev.styles.autoprefixer))
     .pipe(duration('Compiling SASS and vendor prefixing CSS for development'))
-    .pipe(gulp.dest(configDev.styles.dest))
-    .pipe(bsServer.stream());
+    .pipe(gulp.dest(configDev.styles.dest));
 }
 
 export function styles_prod() {
@@ -304,19 +269,7 @@ function jekyll_build_prod(cb) {
  * Watch
  */
 export function watch() {
-  gulp.watch(
-    configDev.watch.jekyll,
-    gulp.series(jekyll_build_dev, function browsersync_reload(cb) {
-      bsServer.reload();
-      console.log(`** Reminder **`);
-      console.log(`BrowserSync URLs`);
-      console.log(`├── ${browsersyncLocalURL}`);
-      console.log(`└── ${browsersyncExternalURL}`);
-      console.log(`ngrok URL`);
-      console.log(`└── ${ngrokURL}`);
-      cb();
-    })
-  );
+  gulp.watch(configDev.watch.jekyll, gulp.series(jekyll_build_dev));
   gulp.watch(configDev.watch.styles, styles_dev);
   gulp.watch(configDev.watch.scripts, scripts_dev);
 }
@@ -324,4 +277,4 @@ export function watch() {
 /**
  * Build the development environment and watch files for changes
  */
-export default gulp.series(build_dev, browser_sync, watch);
+export default gulp.series(build_dev, watch);
