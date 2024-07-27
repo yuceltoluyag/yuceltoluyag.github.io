@@ -53,7 +53,7 @@ jobs:
 
       # Build project with Gulp
       - name: Build project with Gulp
-        run: BUILD_DIR=build npx gulp
+        run: BUILD_DIR=build npx gulp build_prod
 
       # Copy CNAME file
       - name: Copy CNAME file
