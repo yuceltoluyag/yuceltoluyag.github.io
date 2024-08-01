@@ -42,7 +42,7 @@
     }
   },
   "devDependencies": {
-    "@babel/core": "^7.23.0",
+    "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.22.20",
     "@babel/register": "^7.22.15",
     "broken-link-checker": "^0.7.8",
