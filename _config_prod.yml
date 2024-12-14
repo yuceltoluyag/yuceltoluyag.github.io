@@ -21,4 +21,5 @@ exclude:
     'package-lock.json',
     'gulpfile.babel.js',
     'README.md',
+    '_config.yml'
   ]
