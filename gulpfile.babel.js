@@ -41,8 +41,13 @@ export function copy_media_dev() {
 }
 
 export function copy_media_prod() {
-  return gulp.src(configProd.copy.media.src).pipe(gulp.dest(configProd.copy.media.dest));
+  return gulp
+    .src(configProd.copy.media.src, { allowEmpty: true }) 
+    .pipe(plumber({ errorHandler }))
+    .on('error', (err) => console.error('Missing File/Directory:', err)) 
+    .pipe(gulp.dest(configProd.copy.media.dest));
 }
+
 
 export function copy_fonts_dev() {
   return gulp.src(configDev.copy.fonts.src).pipe(gulp.dest(configDev.copy.fonts.dest));
