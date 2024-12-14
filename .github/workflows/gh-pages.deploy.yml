@@ -10,55 +10,46 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
-      # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      # Install NPM dependencies
       - name: Install NPM dependencies
         run: npm install
 
-      # Set up Ruby
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
           bundler-cache: true
 
-      # Install Bundler
       - name: Install Bundler
         run: |
           gem install bundler -v 2.4.22
           bundle _2.4.22_ install
 
-      # Install Jekyll
       - name: Install Jekyll
         run: gem install jekyll
 
-      # Build Jekyll site
       - name: Build Jekyll site
-        run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d _site
+        run: bundle exec jekyll build --incremental -s "${GITHUB_WORKSPACE}/" -d _site
         env:
           EXECJS_RUNTIME: Node
           JEKYLL_ENV: production
 
-      # Build project with Gulp
       - name: Build project with Gulp
         run: BUILD_DIR=_site npx gulp build_prod
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: _site
