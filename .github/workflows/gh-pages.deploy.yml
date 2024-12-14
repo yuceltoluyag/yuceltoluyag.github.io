@@ -1,55 +1,71 @@
-name: Deploy to GitHub Pages
+name: Jekyll site CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
-
-    strategy:
-      matrix:
-        node-version: [20.x]
-
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          ref: ${{ github.event.inputs.branch }}
 
-      - name: Install NPM dependencies
-        run: npm install
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1.196.0
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.3'
           bundler-cache: true
+          cache-version: 0
 
-      - name: Install Bundler
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v2
+
+      - name: Install dependencies
         run: |
-          gem install bundler -v 2.4.22
-          bundle _2.4.22_ install
+          bundle install
 
-      - name: Install Jekyll
-        run: gem install jekyll
-
-      - name: Build Jekyll site
-        run: bundle exec jekyll build --incremental -s "${GITHUB_WORKSPACE}/" -d _site
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: |
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
-          EXECJS_RUNTIME: Node
+          PAGES_REPO_NWO: ${{ github.repository }}
           JEKYLL_ENV: production
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JEKYLL_BUILD_BRANCH: ${{ github.ref_name }}
+          JEKYLL_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
-      - name: Build project with Gulp
-        run: BUILD_DIR=_site npx gulp build_prod
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && github.event.repository.default_branch == github.ref_name)
+    concurrency:
+      group: "pages"
+      cancel-in-progress: true
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.6.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: _site
+        id: deployment
+        uses: actions/deploy-pages@v1
