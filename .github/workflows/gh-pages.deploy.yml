@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -48,7 +48,7 @@ jobs:
         run: BUILD_DIR=_site npx gulp build_prod
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@v4.6.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
