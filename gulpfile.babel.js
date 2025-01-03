@@ -285,23 +285,9 @@ export const build_prod = gulp.series(
   gulp.parallel(styles_prod, scripts_prod, copy_prod, optimize_svg_prod)
 )
 
-export function generate_share_images() {
-  return spawn('node', ['gulp_tasks/generate-share-images.js'], {
-    stdio: 'inherit',
-  })
-}
+export const deploy_dryrun = gulp.series(build_prod, optimize_prod)
 
-export const deploy_dryrun = gulp.series(
-  build_prod,
-  generate_share_images,
-  optimize_prod
-)
-
-export const deploy = gulp.series(
-  build_prod,
-  generate_share_images,
-  optimize_prod
-)
+export const deploy = gulp.series(build_prod, optimize_prod)
 
 /**
  * Jekyll
