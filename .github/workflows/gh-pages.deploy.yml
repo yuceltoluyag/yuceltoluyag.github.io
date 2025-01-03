@@ -47,6 +47,7 @@ jobs:
           bundle install
           gem install jekyll
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          npm ci
           npm run build
         env:
           JEKYLL_ENV: production
