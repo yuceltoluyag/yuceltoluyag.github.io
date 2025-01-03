@@ -1,3 +1,5 @@
+@use "../../_core/variables";
+
 .categories-card {
   margin: 0 auto;
   margin-top: 3rem;
@@ -52,21 +54,21 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  color: $preformatted;
+  color: variables.$preformatted;
   [theme="dark"] & {
-    color: $preformatted-dark;
+    color: variables.$preformatted-dark;
   }
 
   &:hover {
-    color: $accent-light;
+    color: variables.$accent-light;
     background-color: transparent;
   }
 
   [theme="dark"] & {
-    color: $preformatted-dark;
+    color: variables.$preformatted-dark;
 
     &:hover {
-      color: $accent-light-dark;
+      color: variables.$accent-light-dark;
     }
   }
 }
@@ -74,10 +76,10 @@
 .archive-item-date {
   width: 4em;
   text-align: right;
-  color: $global-font-secondary-color;
+  color: variables.$global-font-secondary-color;
 
   [theme="dark"] & {
-    color: $global-font-secondary-color-dark;
+    color: variables.$global-font-secondary-color-dark;
   }
 }
 

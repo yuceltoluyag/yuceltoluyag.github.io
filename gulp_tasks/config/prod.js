@@ -33,8 +33,8 @@ const baseProdConfig = {
   copy: {
     media: {
       src: [
-        `${srcAssets}/images/*.{png,jpg,jpeg,ico}`,
-        // `${srcAssets}/images/ad/*`, // "ad" dizini hariç bırakıldı
+        `${srcAssets}/images/**/*.{png,jpg,jpeg,ico}`,
+        `${srcAssets}/images/touch/*`,
         `${srcAssets}/images/**/*.{gif,mp4}`,
       ],
       dest: `${buildAssets}/images`,

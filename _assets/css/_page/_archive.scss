@@ -1,3 +1,4 @@
+@use "sass:meta";
 .archive {
   .single-title {
     text-align: right;
@@ -8,6 +9,6 @@
     margin-bottom: 1rem;
   }
 
-  @import "../_partial/_archive/terms";
-  @import "../_partial/_archive/tags";
+  @include meta.load-css("../_partial/_archive/terms");
+  @include meta.load-css("../_partial/_archive/tags");
 }

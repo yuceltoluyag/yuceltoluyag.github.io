@@ -41,22 +41,6 @@ google_analytics:
     proxy_endpoint: 'https://macro-polymer-336309.appspot.com/query?id=ahh6bG1-bWFjcm8tcG9seW1lci0zMzYzMDlyFQsSCEFwaVF1ZXJ5GICAgJjFqZMKDA'
     cache_path: false # the local PV cache data, friendly to visitors from GFW region
 
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ''
-      type: posts
-    values:
-      layout: post
-  # _pages
-  - scope:
-      path: '_pages'
-      type: pages # 参考 `site.collections`
-    values:
-      layout: page
-      permalink: /:title/
-
 collections:
   pages:
     output: true

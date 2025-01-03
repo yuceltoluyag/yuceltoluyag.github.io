@@ -1,50 +1,90 @@
-name: Deploy Jekyll site to Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
     steps:
-      - name: Checkout
+      # Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@2a18b06812b0e15bb916e1df298d3e740422c47e # v1.203.0
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          ruby-version: '3.3'
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      # Install NPM dependencies
+      - name: Install NPM dependencies
+        run: npm install
+
+      # Set up Ruby
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3'
           bundler-cache: true
-          cache-version: 0
-      - name: Install specific Bundler version
-        run: gem install bundler:2.2.34
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+
+      # Install Bundler and Ruby dependencies
+      - name: Install ruby dependencies
+        run: |
+          gem install bundler && bundle install
+
+      # Install Jekyll
+      - name: Install Jekyll
+        run: gem install jekyll
+
+      # Build Jekyll site
+      - name: Build Jekyll site
+        run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d _site
         env:
+          EXECJS_RUNTIME: Node
           JEKYLL_ENV: production
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+
+      # Build project with Gulp
+      - name: Build project with Gulp
+        run: BUILD_DIR=_site npx gulp build
+
+  lint_and_test:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+    needs: build # Ensure lint and test only run after build job
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install JS dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint:nofix
 
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    needs: build
+    needs: build # Ensure deploy runs after build job
+
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: _site
