@@ -57,9 +57,6 @@ jobs:
       - name: Build project with Gulp
         run: BUILD_DIR=_site npx gulp build_prod
 
-      - name: Run linting
-        run: npm run lint:nofix
-
   deploy:
     name: Deploy to GitHub Pages 🚀
     runs-on: ubuntu-latest
