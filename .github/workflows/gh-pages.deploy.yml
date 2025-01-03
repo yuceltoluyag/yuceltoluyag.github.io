@@ -52,7 +52,7 @@ jobs:
 
       # Build project with Gulp
       - name: Build project with Gulp
-        run: BUILD_DIR=_site npx gulp build_prod
+        run: BUILD_DIR=_site npm run build
 
         # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
