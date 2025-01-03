@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://yuceltoluyag.github.io//categories/</loc>
-<lastmod>2024-12-14T19:47:22+03:00</lastmod>
-</url>
-<url>
-<loc>https://yuceltoluyag.github.io//tags/</loc>
-<lastmod>2024-12-14T19:47:22+03:00</lastmod>
-</url>
-<url>
-<loc>https://yuceltoluyag.github.io//about/</loc>
-<lastmod>2024-12-14T19:47:22+03:00</lastmod>
-</url>
-<url>
 <loc>https://yuceltoluyag.github.io//kullandgm-enfes-sublime-text-eklentileri/</loc>
 <lastmod>2018-09-10T00:00:00+03:00</lastmod>
 </url>
@@ -212,7 +200,7 @@
 <loc>https://yuceltoluyag.github.io//about/</loc>
 </url>
 <url>
-<loc>https://yuceltoluyag.github.io//:title/</loc>
+<loc>https://yuceltoluyag.github.io//pages/categories/</loc>
 </url>
 <url>
 <loc>https://yuceltoluyag.github.io//</loc>
@@ -221,7 +209,7 @@
 <loc>https://yuceltoluyag.github.io//offline.html</loc>
 </url>
 <url>
-<loc>https://yuceltoluyag.github.io//:title/</loc>
+<loc>https://yuceltoluyag.github.io//pages/tags/</loc>
 </url>
 <url>
 <loc>https://yuceltoluyag.github.io//tags/ipucu/</loc>
