@@ -282,7 +282,13 @@ export const build_dev = gulp.series(
 export const build_prod = gulp.series(
   clean_prod,
   jekyll_build_prod,
-  gulp.parallel(styles_prod, scripts_prod, copy_prod, optimize_svg_prod)
+  gulp.parallel(
+    styles_prod,
+    scripts_prod,
+    copy_prod,
+    convert_media_webp,
+    optimize_svg_prod
+  )
 )
 
 export const deploy_dryrun = gulp.series(build_prod, optimize_prod)
