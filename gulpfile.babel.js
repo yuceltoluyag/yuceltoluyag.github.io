@@ -282,7 +282,7 @@ export const build_dev = gulp.series(
 export const build_prod = gulp.series(
   clean_prod,
   jekyll_build_prod,
-  gulp.parallel(styles_prod, scripts_prod, copy_prod)
+  gulp.parallel(styles_prod, scripts_prod, copy_prod, optimize_svg_prod)
 )
 
 export function generate_share_images() {
