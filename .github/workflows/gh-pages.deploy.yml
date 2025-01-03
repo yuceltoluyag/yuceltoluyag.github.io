@@ -26,7 +26,7 @@ jobs:
 
       # Install NPM dependencies
       - name: Install NPM dependencies
-        run: npm install
+        run: npm install --no-package-lock
 
       # Set up Ruby
       - name: Set up Ruby
