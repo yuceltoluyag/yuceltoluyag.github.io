@@ -1,26 +1,30 @@
+@use "../../_core/variables";
+@use "../../_mixin/compatibility";
+@use "../../_mixin/link";
+
 .tag-cloud-tags {
   margin: 10px 0;
 
-  @include link(true, true);
+  @include link.link(true, true);
 
   a {
     display: inline-block;
     position: relative;
     margin: 5px 10px;
-    @include overflow-wrap(break-word);
-    @include transition(all ease-out 0.3s);
+    @include compatibility.overflow-wrap(break-word);
+    @include compatibility.transition(all ease-out 0.3s);
 
     &:active,
     &:focus,
     &:hover {
-      @include transform(scale(1.2));
+      @include compatibility.transform(scale(1.2));
     }
 
     sup {
-      color: $global-font-secondary-color;
+      color: variables.$global-font-secondary-color;
 
       [theme=dark] & {
-        color: $global-font-secondary-color-dark;
+        color: variables.$global-font-secondary-color-dark;
       }
     }
   }

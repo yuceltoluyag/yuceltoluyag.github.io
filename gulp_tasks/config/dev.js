@@ -48,6 +48,7 @@ const baseDevConfig = {
   styles: {
     src: `${srcAssets}/css/style.scss`,
     dest: `${buildAssets}/css`,
+    autoprefixer: { overrideBrowserslist: ['last 2 versions'], cascade: false },
   },
   scripts: {
     src: `${srcAssets}/js/*.js`,
@@ -57,7 +58,6 @@ const baseDevConfig = {
     media: {
       src: [
         `${srcAssets}/images/*.{png,jpg,jpeg,ico,svg}`,
-        `${srcAssets}/images/ad/*`,
         `${srcAssets}/images/**/*.{gif,mp4}`,
       ],
       dest: `${buildAssets}/images`,
