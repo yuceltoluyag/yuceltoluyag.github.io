@@ -46,6 +46,21 @@ collections:
     output: true
     sort_by: order
 
+defaults:
+  - scope:
+      path: "" 
+      type: posts
+    values:
+      layout: post
+      comments: true #
+      toc: true 
+      permalink: /:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+
+
 jekyll-archives:
   enabled: [categories, tags]
   layouts:
