@@ -1,12 +1,17 @@
+@use "sass:color";
+@use "../../_core/variables";
+@use "../../_mixin/blur";
+@use "../../_mixin/compatibility";
+
 .toc {
   .toc-title {
-    font-size: $toc-title-font-size;
+    font-size: variables.$toc-title-font-size;
     font-weight: bold;
     text-transform: uppercase;
   }
 
   .toc-content {
-    font-size: $toc-content-font-size;
+    font-size: variables.$toc-content-font-size;
 
     ul {
       text-indent: -0.85rem;
@@ -17,10 +22,10 @@
         content: "|";
         font-weight: bolder;
         margin-right: 0.5rem;
-        color: $accent;
+        color: variables.$accent;
 
         [theme="dark"] & {
-          color: $accent-dark;
+          color: variables.$accent-dark;
         }
       }
 
@@ -31,17 +36,17 @@
   }
 
   ruby {
-    background: $code-background-color;
+    background: variables.$code-background-color;
 
     rt {
-      color: $global-font-secondary-color;
+      color: variables.$global-font-secondary-color;
     }
 
     [theme="dark"] & {
-      background: $code-background-color-dark;
+      background: variables.$code-background-color-dark;
 
       rt {
-        color: $global-font-secondary-color-dark;
+        color: variables.$global-font-secondary-color-dark;
       }
     }
   }
@@ -50,11 +55,11 @@
 #toc-auto {
   display: block;
   position: absolute;
-  width: $MAX_LENGTH;
+  width: variables.$MAX_LENGTH;
   max-width: 0;
   padding: 0 0.8rem;
-  border-left: 4px solid $border;
-  @include overflow-wrap(break-word);
+  border-left: 4px solid variables.$border;
+  @include compatibility.overflow-wrap(break-word);
   box-sizing: border-box;
   top: 10rem;
   left: 0;
@@ -64,10 +69,10 @@
     top: 5rem;
   }
 
-  @include blur;
+  @include blur.blur;
 
   [theme="dark"] & {
-    border-left-color: $border-dark;
+    border-left-color: variables.$border-dark;
   }
 
   .toc-title {
@@ -95,17 +100,17 @@
 
     a.active {
       font-weight: bold;
-      color: $accent;
+      color: variables.$accent;
 
       [theme="dark"] & {
-        color: $accent-dark;
+        color: variables.$accent-dark;
       }
 
       &::before {
-        color: $single-link-hover-color;
+        color: variables.$single-link-hover-color;
 
         [theme="dark"] & {
-          color: $single-link-hover-color-dark;
+          color: variables.$single-link-hover-color-dark;
         }
       }
     }
@@ -125,15 +130,15 @@
     justify-content: space-between;
     line-height: 2em;
     padding: 0 0.75rem;
-    background: darken($code-background-color, 6%);
+    background: color.adjust(variables.$code-background-color, $lightness: -6%);
 
     [theme="dark"] & {
-      background: darken($code-background-color-dark, 6%);
+      background: color.adjust(variables.$code-background-color-dark, $lightness: -6%);
     }
   }
 
   .toc-content {
-    background-color: $code-background-color;
+    background-color: variables.$code-background-color;
 
     > nav > ul {
       margin: 0;
@@ -141,16 +146,16 @@
     }
 
     [theme="dark"] & {
-      background-color: $code-background-color-dark;
+      background-color: variables.$code-background-color-dark;
     }
   }
 
   &.open {
     .toc-title {
-      background: darken($code-background-color, 3%);
+      background: color.adjust(variables.$code-background-color, $lightness: -3%);
 
       [theme="dark"] & {
-        background: darken($code-background-color-dark, 3%);
+        background: color.adjust(variables.$code-background-color-dark, $lightness: -3%);
       }
     }
   }

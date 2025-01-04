@@ -1,3 +1,5 @@
+@use "variables";
+
 @media only screen and (max-width: 1440px) {
   .page {
     width: 56%;
@@ -53,7 +55,7 @@
     width: 100%;
 
     [header-mobile] & {
-      padding-top: $header-height;
+      padding-top: variables.$header-height;
     }
 
     [header-mobile=normal] & {

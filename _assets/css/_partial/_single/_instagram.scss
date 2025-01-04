@@ -1,3 +1,6 @@
+@use "../../_core/variables";
+@use "../../_mixin/compatibility";
+
 iframe.instagram-media {
   [theme="dark"] & {
     border: none !important;
@@ -7,13 +10,13 @@ iframe.instagram-media {
 .box {
   background: #fff;
   [theme="dark"] & {
-    background-color: $bg-dark;
+    background-color: variables.$bg-dark;
   }
   margin: 30px 5%;
   padding: 5%;
-  @include border-radius(10%);
-  @include box-shadow(0 0 0 0.3618em rgba(0, 0, 0, 0.05));
-  @include transition(all 0.4s ease);
+  @include compatibility.border-radius(10%);
+  @include compatibility.box-shadow(0 0 0 0.3618em rgba(0, 0, 0, 0.05));
+  @include compatibility.transition(all 0.4s ease);
 }
 @media (min-width: 544px) {
   .box {
@@ -37,7 +40,7 @@ iframe.instagram-media {
     i {
       color: red;
       [theme="dark"] & {
-        color: $marked;
+        color: variables.$marked;
       }
     }
     a {
@@ -51,13 +54,13 @@ iframe.instagram-media {
 
 .directory-list .folder,
 .directory-list .folder > a {
-  color: $accent;
+  color: variables.$accent;
   [theme="dark"] & {
-    color: $accent-dark;
+    color: variables.$accent-dark;
     &:hover,
     &:active {
       border-color: #eee;
-      color: $accent-light-dark;
+      color: variables.$accent-light-dark;
     }
   }
 }

@@ -1,3 +1,5 @@
+@use "../_mixin/blur";
+
 footer {
   height: 2rem;
   width: 100%;
@@ -17,5 +19,5 @@ footer {
     }
   }
 
-  @include blur;
+  @include blur.blur;
 }

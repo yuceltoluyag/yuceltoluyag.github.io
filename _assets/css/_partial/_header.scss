@@ -1,12 +1,17 @@
+@use "sass:color";
+@use "../_core/variables";
+@use "../_mixin/compatibility";
+@use "../_mixin/link";
+
 header {
   width: 100%;
   z-index: 150;
-  font-family: $serif-font !important;
-  background-color: $header-background-color;
-  @include transition(box-shadow 0.3s ease);
+  font-family: variables.$serif-font !important;
+  background-color: variables.$header-background-color;
+  @include compatibility.transition(box-shadow 0.3s ease);
 
   [theme="dark"] & {
-    background-color: $header-background-color-dark;
+    background-color: variables.$header-background-color-dark;
   }
 
   .logo {
@@ -25,7 +30,7 @@ header {
   }
 
   &:hover {
-    @include box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, 0.1));
+    @include compatibility.box-shadow(0 0 1.5rem 0 rgba(0, 0, 0, 0.1));
   }
 }
 
@@ -38,14 +43,14 @@ header {
 }
 
 .header-title {
-  font-family: $serif-font;
+  font-family: variables.$serif-font;
   font-weight: bold;
   margin-right: 0.5rem;
   min-width: 10%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  @include flex(10);
+  @include compatibility.flex(10);
 }
 
 .menu .menu-item {
@@ -73,19 +78,19 @@ header {
     box-sizing: border-box;
     height: 2.5rem;
     width: 2.5rem;
-    @include border-radius(0.5rem);
+    @include compatibility.border-radius(0.5rem);
     border: none;
     outline: none;
-    background-color: $header-background-color;
+    background-color: variables.$header-background-color;
     vertical-align: baseline !important;
-    @include transition(width 0.3s ease);
+    @include compatibility.transition(width 0.3s ease);
 
     [theme="dark"] & {
-      background-color: $header-background-color-dark;
+      background-color: variables.$header-background-color-dark;
     }
   }
 
-  @include placeholder(transparent);
+  @include compatibility.placeholder(transparent);
 
   .search-button {
     margin: 0;
@@ -111,27 +116,27 @@ header {
   .open &,
   &.mobile {
     input {
-      color: $text;
-      background-color: $search-background-color;
+      color: variables.$text;
+      background-color: variables.$search-background-color;
       padding: 0 2rem 0 2rem;
     }
 
     [theme="dark"] & {
       input {
-        color: $text-dark;
-        background-color: $search-background-color-dark;
+        color: variables.$text-dark;
+        background-color: variables.$search-background-color-dark;
       }
 
-      @include placeholder($global-font-secondary-color-dark);
+      @include compatibility.placeholder(variables.$global-font-secondary-color-dark);
     }
 
-    @include placeholder($global-font-secondary-color);
+    @include compatibility.placeholder(variables.$global-font-secondary-color);
 
     .search-button {
-      color: $global-font-secondary-color;
+      color: variables.$global-font-secondary-color;
 
       [theme="dark"] & {
-        color: $global-font-secondary-color-dark;
+        color: variables.$global-font-secondary-color-dark;
       }
     }
 
@@ -148,18 +153,18 @@ header {
 .theme-switch {
   cursor: pointer;
   i {
-    @include transform(rotate(225deg));
+    @include compatibility.transform(rotate(225deg));
   }
 }
 
 #header-desktop {
   display: block;
   position: fixed;
-  height: $header-height;
-  line-height: $header-height;
+  height: variables.$header-height;
+  line-height: variables.$header-height;
 
   [theme="dark"] & {
-    background-color: $bg-dark;
+    background-color: variables.$bg-dark;
   }
 
   [header-desktop="normal"] & {
@@ -170,7 +175,7 @@ header {
     padding: 0 2rem 0 10vh;
 
     .header-title {
-      font-size: $header-title-font-size;
+      font-size: variables.$header-title-font-size;
     }
 
     .menu {
@@ -185,10 +190,10 @@ header {
         margin: 0 0.5rem;
 
         &.delimiter {
-          border-left: 1.5px solid $text;
+          border-left: 1.5px solid variables.$text;
 
           [theme="dark"] & {
-            border-left-color: $border-dark;
+            border-left-color: variables.$border-dark;
           }
         }
 
@@ -203,10 +208,10 @@ header {
 
       a.active {
         font-weight: 900;
-        color: $header-hover-color;
+        color: variables.$header-hover-color;
 
         [theme="dark"] & {
-          color: $header-hover-color-dark;
+          color: variables.$header-hover-color-dark;
         }
       }
     }
@@ -224,8 +229,8 @@ header {
 #header-mobile {
   display: none;
   position: fixed;
-  height: $header-height;
-  line-height: $header-height;
+  height: variables.$header-height;
+  line-height: variables.$header-height;
 
   [header-mobile="normal"] & {
     position: static;
@@ -238,28 +243,28 @@ header {
     .header-wrapper {
       padding: 0 1rem;
       font-size: 1.125rem;
-      @include transition(margin-top 0.3s ease);
+      @include compatibility.transition(margin-top 0.3s ease);
 
       .header-title {
-        font-size: $header-title-font-size;
+        font-size: variables.$header-title-font-size;
         max-width: 80%;
       }
 
       .menu-toggle {
         line-height: 4rem;
         cursor: pointer;
-        @include transition(width 0.3s ease);
+        @include compatibility.transition(width 0.3s ease);
 
         span {
           display: block;
-          background: $text;
+          background: variables.$text;
           width: 1.5rem;
           height: 2px;
-          @include border-radius(3px);
-          @include transition(all 0.3s ease-in-out);
+          @include compatibility.border-radius(3px);
+          @include compatibility.transition(all 0.3s ease-in-out);
 
           [theme="dark"] & {
-            background: $text-dark;
+            background: variables.$text-dark;
           }
         }
 
@@ -273,7 +278,7 @@ header {
 
         &.active {
           span:nth-child(1) {
-            @include transform(rotate(45deg) translate(0.4rem, 0.5rem));
+            @include compatibility.transform(rotate(45deg) translate(0.4rem, 0.5rem));
           }
 
           span:nth-child(2) {
@@ -281,7 +286,7 @@ header {
           }
 
           span:nth-child(3) {
-            @include transform(rotate(-45deg) translate(0.4rem, -0.5rem));
+            @include compatibility.transform(rotate(-45deg) translate(0.4rem, -0.5rem));
           }
         }
       }
@@ -289,18 +294,18 @@ header {
 
     .menu {
       text-align: center;
-      background: $header-background-color;
-      border-top: 2px solid $border;
+      background: variables.$header-background-color;
+      border-top: 2px solid variables.$border;
       display: none;
       padding-top: 0.5rem;
-      @include box-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.1));
+      @include compatibility.box-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.1));
 
       .search-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
-        padding: ($header-height - 2.5rem) * 0.5 1rem;
+        padding: (variables.$header-height - 2.5rem) * 0.5 1rem;
         line-height: 2.5rem;
       }
 
@@ -332,15 +337,15 @@ header {
       }
 
       [theme="dark"] & {
-        background: $header-background-color-dark;
-        border-top-color: $border-dark;
+        background: variables.$header-background-color-dark;
+        border-top-color: variables.$border-dark;
       }
     }
   }
 
   &.open {
     .header-wrapper {
-      margin-top: -$header-height;
+      margin-top: -(variables.$header-height);
     }
 
     .menu {
@@ -361,8 +366,8 @@ header {
 .search-dropdown {
   position: fixed;
   z-index: 200;
-  top: $header-height;
-  @include box-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.1));
+  top: variables.$header-height;
+  @include compatibility.box-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.1));
 
   &.desktop {
     right: 2rem;
@@ -376,15 +381,15 @@ header {
 
   .dropdown-menu {
     right: 0 !important;
-    background-color: $bg;
+    background-color: variables.$bg;
 
     [theme="dark"] & {
-      background-color: $bg-dark;
+      background-color: variables.$bg-dark;
     }
 
     .suggestions {
       overflow-y: auto;
-      max-height: calc(100vh - #{$header-height});
+      max-height: calc(100vh - #{variables.$header-height});
 
       .suggestion {
         padding: 0.75rem 1rem;
@@ -403,41 +408,41 @@ header {
           font-size: 0.875rem;
           float: right;
           text-align: right;
-          color: $global-font-secondary-color;
+          color: variables.$global-font-secondary-color;
 
           [theme="dark"] & {
-            color: $global-font-secondary-color-dark;
+            color: variables.$global-font-secondary-color-dark;
           }
         }
 
         .suggestion-context {
           line-height: 1.25rem;
-          @include box(vertical);
+          @include compatibility.box(vertical);
           -webkit-line-clamp: 2;
           overflow: hidden;
           text-overflow: ellipsis;
-          @include overflow-wrap(break-word);
-          color: $global-font-secondary-color;
+          @include compatibility.overflow-wrap(break-word);
+          color: variables.$global-font-secondary-color;
 
           [theme="dark"] & {
-            color: $global-font-secondary-color-dark;
+            color: variables.$global-font-secondary-color-dark;
           }
         }
 
         em {
           font-style: normal;
-          background-color: $selection-color;
+          background-color: variables.$selection-color;
 
           [theme="dark"] & {
-            background-color: $selection-color-dark;
+            background-color: variables.$selection-color-dark;
           }
         }
 
         &.cursor {
-          background: darken($code-background-color, 5%);
+          background: color.adjust(variables.$code-background-color, $lightness: -5%);
 
           [theme="dark"] & {
-            background: lighten($code-background-color-dark, 5%);
+            background: color.adjust(variables.$code-background-color-dark, $lightness: 5%);
           }
         }
 
@@ -464,13 +469,13 @@ header {
       padding: 0.5rem 1rem;
       float: right;
       font-size: 0.8rem;
-      color: $global-font-secondary-color;
+      color: variables.$global-font-secondary-color;
 
       [theme="dark"] {
-        color: $global-font-secondary-color-dark;
+        color: variables.$global-font-secondary-color-dark;
       }
 
-      @include link(false, false);
+      @include link.link(false, false);
 
       a {
         font-size: 1rem;

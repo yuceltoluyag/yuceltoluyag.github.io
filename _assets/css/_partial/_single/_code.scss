@@ -1,22 +1,28 @@
+@use "sass:color";
+@use "../../_core/variables";
+@use "../../_mixin/compatibility";
+@use "../../_mixin/details";
+@use "../../_mixin/link";
+
 code {
   display: inline-block;
   max-width: 100%;
   padding: 0 0.4rem;
-  @include overflow-wrap(break-word);
-  @include line-break(anywhere);
-  font-size: $code-font-size;
-  font-family: $mono-font;
-  color: $code-color;
+  @include compatibility.overflow-wrap(break-word);
+  @include compatibility.line-break(anywhere);
+  font-size: variables.$code-font-size;
+  font-family: variables.$mono-font;
+  color: variables.$code-color;
 
   [theme="dark"] & {
-    color: $code-color-dark;
+    color: variables.$code-color-dark;
   }
 }
 
 pre {
   margin: 0;
   padding: 0.25rem 0 0.25rem 0.5rem;
-  @include tab-size(4);
+  @include compatibility.tab-size(4);
 
   code {
     padding: 0;
@@ -34,17 +40,17 @@ pre,
 .highlight table,
 .highlight tr,
 .highlight td {
-  background: $code-background-color;
+  background: variables.$code-background-color;
 
   [theme="dark"] & {
-    background: $code-background-color-dark;
+    background: variables.$code-background-color-dark;
   }
 }
 
 .highlight,
 .gist {
-  font-family: $mono-font;
-  font-size: $code-font-size;
+  font-family: variables.$mono-font;
+  font-size: variables.$code-font-size;
 
   .table-wrapper {
     > table,
@@ -72,14 +78,14 @@ pre,
       align-items: center;
       box-sizing: border-box;
       width: 100%;
-      font-family: $sans-font;
+      font-family: variables.$sans-font;
       font-weight: bold;
-      color: $code-info-color;
-      background: darken($code-background-color, 8%);
+      color: variables.$code-info-color;
+      background: color.adjust(variables.$code-background-color, $lightness: -8%);
 
       [theme="dark"] & {
-        color: $code-info-color-dark;
-        background: darken($code-background-color-dark, 6%);
+        color: variables.$code-info-color-dark;
+        background: color.adjust(variables.$code-background-color-dark, $lightness: -6%);
       }
 
       &:hover {
@@ -96,9 +102,9 @@ pre,
         content: "Kod";
       }
 
-      @each $type, $text in $code-type-map {
+      @each $type, $text in variables.$code-type-map {
         &.#{$type} .code-title::after {
-          content: $text;
+          content: variables.$text;
         }
       }
     }
@@ -112,7 +118,7 @@ pre,
       width: 100%;
 
       pre {
-        @include max-content(min-width);
+        @include compatibility.max-content(min-width);
       }
     }
 
@@ -122,25 +128,25 @@ pre,
 
     .hl {
       display: block;
-      background-color: darken($code-background-color, 10%);
+      background-color: color.adjust(variables.$code-background-color, $lightness: -10%);
 
       [theme="dark"] & {
-        background-color: darken($code-background-color-dark, 5%);
+        background-color: color.adjust(variables.$code-background-color-dark, $lightness: -5%);
       }
     }
 
     .ln,
     .lnt {
-      color: $global-font-secondary-color;
+      color: variables.$global-font-secondary-color;
 
       [theme="dark"] & {
-        color: $global-font-secondary-color-dark;
+        color: variables.$global-font-secondary-color-dark;
       }
     }
 
     .arrow {
       padding: 0 0.2rem;
-      @include transition(transform 0.2s ease);
+      @include compatibility.transition(transform 0.2s ease);
     }
 
     .ellipses {
@@ -153,10 +159,10 @@ pre,
 
       &:hover {
         cursor: pointer;
-        color: $accent-light;
+        color: variables.$accent-light;
 
         [theme="dark"] & {
-          color: $accent-light-dark;
+          color: variables.$accent-light-dark;
         }
       }
     }
@@ -164,25 +170,25 @@ pre,
     .table-wrapper {
       max-height: 0;
       overflow-y: hidden;
-      @include details-transition-open;
+      @include details.details-transition-open;
     }
 
     &.open {
       .code-header {
-        background: darken($code-background-color, 3%);
+        background: color.adjust(variables.$code-background-color, $lightness: -3%);
 
         [theme="dark"] & {
-          background: darken($code-background-color-dark, 3%);
+          background: color.adjust(variables.$code-background-color-dark, $lightness: -3%);
         }
       }
 
       .table-wrapper {
-        max-height: $MAX_LENGTH;
-        @include details-transition-close;
+        max-height: variables.$MAX_LENGTH;
+        @include details.details-transition-close;
       }
 
       .arrow {
-        @include transform(rotate(90deg));
+        @include compatibility.transform(rotate(90deg));
       }
 
       .ellipses {
@@ -210,14 +216,14 @@ pre,
     text-decoration: underline;
   }
 
-  @each $class, $color in $code-highlight-color-map {
+  @each $class, $color in variables.$code-highlight-color-map {
     .#{$class} {
       color: $color;
     }
   }
 
   [theme="dark"] & {
-    @each $class, $color in $code-highlight-color-map-dark {
+    @each $class, $color in variables.$code-highlight-color-map-dark {
       .#{$class} {
         color: $color;
       }
@@ -234,12 +240,12 @@ pre,
 
   .gist-meta {
     padding: 0.4rem 0.8rem;
-    background-color: darken($code-background-color, 5%);
+    background-color: color.adjust(variables.$code-background-color, $lightness: -5%);
 
-    @include link(false, false);
+    @include link.link(false, false);
 
     [theme="dark"] & {
-      background-color: darken($code-background-color-dark, 5%);
+      background-color: color.adjust(variables.$code-background-color-dark, $lightness: -5%);
     }
   }
 
