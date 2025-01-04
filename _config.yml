@@ -12,7 +12,7 @@ lang: en
 repository: https://github.com/yuceltoluyag/yuceltoluyag.github.io
 timezone: Europe/Istanbul
 lazyimages: true
-default_img: /assets/images/svg/logo.svg
+default_img: /assets/images/logo.svg
 header:
   desktopMode: 'fixed'
   mobileMode: 'auto'
