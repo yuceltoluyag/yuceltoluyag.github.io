@@ -153,7 +153,7 @@ function optimize_svg_prod() {
         }),
       ])
     )
-    .pipe(gulp.dest('assets/images/svg/')) // Optimize edilmiş SVG dosyalarını hedefe çıkar
+    .pipe(gulp.dest(configProd.optimize.media.dest))
     .pipe(size(configProd.size)) // Dosya boyutlarını yazdırma
 }
 
