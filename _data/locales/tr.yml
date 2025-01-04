@@ -1,0 +1,94 @@
+# Site düzeni metni
+
+# ----- Genel etiketler -----
+
+layout:
+  post: Yazı
+  category: Kategori
+  tag: Etiket
+
+cookieConsent:
+  tr: "Bu web sitesinin işlevselliğini geliştirmek için üçüncü taraf çerezleri ve komut dosyalarını kullanmak istiyoruz."
+
+# Yan menü sekmeleri
+tabs:
+  # format: <dosya_adı_uzantısız>: <değer>
+  home: Anasayfa
+  categories: Kategoriler
+  tags: Etiketler
+  archives: Arşivler
+  about: Hakkında
+
+# Arama çubuğunda ve arama sonuçlarında gösterilen metin
+search:
+  hint: ara
+  cancel: İptal
+  no_results: Hups! Sonuç bulunamadı.
+
+panel:
+  lastmod: Son Güncelleme
+  trending_tags: Popüler Etiketler
+  toc: İçindekiler
+
+# Liquid tarih formatı › http://strftime.net/
+date_format:
+  tooltip: "%a, %b %e, %Y, %l:%M %p %z"
+  post:
+    long: "%b %e, %Y"
+    short: "%b %e"
+    archive_month: "%b"
+
+copyright:
+  # Yazının altında gösterilir
+  license:
+    template: Bu yazı, yazar tarafından :LICENSE_NAME lisansı altında yayınlanmıştır.
+    name: CC BY 4.0
+    link: https://creativecommons.org/licenses/by/4.0/
+
+  # Alt kısımda gösterilir
+  brief: Bazı haklar saklıdır.
+  verbose: >-
+    Aksi belirtilmedikçe, bu sitedeki blog yazıları, yazar tarafından
+    Creative Commons Atıf 4.0 Uluslararası (CC BY 4.0) Lisansı altında yayınlanmaktadır.
+
+meta: :PLATFORM tarafından güçlendirilmiştir ve :THEME temasıyla sunulmaktadır.
+
+not_found:
+  statment: Üzgünüz, bu URL'yi kaybettik veya var olmayan bir yere işaret ediyor.
+  hint_template: :HEAD_BAK tekrar bulmaya çalışmak için, ya da :ARCHIVES_PAGE sayfasında arama yapın.
+  head_back: Anasayfaya dön
+  archives_page: Arşivler sayfası
+
+# ----- Yazılarla ilgili etiketler -----
+
+post:
+  written_by: Yazarı
+  posted: Yayınlanma Tarihi
+  updated: Güncelleme Tarihi
+  timeago:
+    day: gün önce
+    hour: saat önce
+    minute: dakika önce
+    just_now: az önce
+  words: kelimeler
+  pageview_measure: Ziyaretçi
+  read_time:
+    unit: dk
+    prompt: oku
+  relate_posts: Daha Fazla Okuma
+  share: Paylaş
+  button:
+    next: Yeni
+    previous: Eski
+    copy_code:
+      succeed: Kopyalandı!
+    share_link:
+      title: Linki Kopyala
+      succeed: Link başarıyla kopyalandı!
+  # Anasayfada yazılar listesinde sabitlenen duyuru
+  pin_prompt: Önemli Duyuru
+
+# Kategoriler sayfası
+categories:
+  category_measure: Kategori
+  post_measure: Yazı

@@ -7,6 +7,9 @@ layout:
   category: Category
   tag: Tag
 
+cookieConsent:
+  en: "We would like to use third party cookies and scripts to improve the functionality of this website."
+
 # The tabs of sidebar
 tabs:
   # format: <filename_without_extension>: <value>
