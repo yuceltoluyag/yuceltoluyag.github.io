@@ -1,3 +1,7 @@
+@use "../_core/variables";
+@use "../_mixin/compatibility";
+@use "../_mixin/details";
+
 .details {
   .details-summary {
     &:hover {
@@ -6,28 +10,28 @@
   }
 
   svg.details-icon {
-    color: $global-font-secondary-color;
-    @include transition(transform 0.2s ease);
+    color: variables.$global-font-secondary-color;
+    @include compatibility.transition(transform 0.2s ease);
 
     [theme="dark"] & {
-      color: $global-font-secondary-color-dark;
+      color: variables.$global-font-secondary-color-dark;
     }
   }
 
   .details-content {
     max-height: 0;
     overflow-y: hidden;
-    @include details-transition-open;
+    @include details.details-transition-open;
   }
 
   &.open {
     svg.details-icon {
-      @include transform(rotate(90deg));
+      @include compatibility.transform(rotate(90deg));
     }
 
     .details-content {
-      max-height: $MAX_LENGTH;
-      @include details-transition-close;
+      max-height: variables.$MAX_LENGTH;
+      @include details.details-transition-close;
     }
   }
 }

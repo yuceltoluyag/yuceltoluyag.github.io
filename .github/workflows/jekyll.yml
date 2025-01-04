@@ -1,3 +1,4 @@
+
 name: Deploy to GitHub Pages
 
 on:
@@ -7,58 +8,50 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
 
     steps:
       # Checkout the repository
-      - name: Checkout repository
+      - name: Checkout repository 🛎️
         uses: actions/checkout@v3
 
       # Set up Node.js
-      - name: Set up Node.js
+      - name: Set up Node.js 🐍
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'npm'
 
       # Install NPM dependencies
-      - name: Install NPM dependencies
-        run: npm install
+      - name: Install NPM dependencies ⚙️
+        run: npm ci
 
       # Set up Ruby
-      - name: Set up Ruby
+      - name: Set up Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.3.5'
           bundler-cache: true
 
-      # Install Bundler
-      - name: Install Bundler
+      # Install Bundler and Ruby dependencies
+      - name: Install ruby dependencies 🔧
         run: |
-          gem install bundler -v 2.4.22
-          bundle _2.4.22_ install
+          gem install bundler && bundle install
 
       # Install Jekyll
-      - name: Install Jekyll
+      - name: Install Jekyll 🧹
         run: gem install jekyll
-
-      # Build Jekyll site
-      - name: Build Jekyll site
-        run: bundle exec jekyll build -s "${GITHUB_WORKSPACE}/" -d _site
-        env:
-          EXECJS_RUNTIME: Node
-          JEKYLL_ENV: production
 
       # Build project with Gulp
       - name: Build project with Gulp
-        run: BUILD_DIR=_site npx gulp build_prod
+        run: BUILD_DIR=_site npm run build
 
-      # Deploy to GitHub Pages
+        # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: _site

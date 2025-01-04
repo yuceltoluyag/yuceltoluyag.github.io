@@ -1,4 +1,9 @@
-@import "../_partial/_single/toc";
+@use "sass:color";
+@use "sass:meta";
+@use "../_partial/_single/toc";
+@use "../_core/variables";
+@use "../_mixin/compatibility";
+@use "../_mixin/link";
 
 .single {
   .single-title {
@@ -28,7 +33,7 @@
       color: #c5c5f0;
     }
 
-    @include link(false, true);
+    @include link.link(false, true);
 
     .author {
       font-size: 1.05rem;
@@ -105,10 +110,10 @@
       > .header-mark::before {
         content: "|";
         margin-right: 0.3125rem;
-        color: $accent;
+        color: variables.$accent;
 
         [theme="dark"] & {
-          color: $accent-dark;
+          color: variables.$accent-dark;
         }
       }
     }
@@ -130,20 +135,20 @@
       }
     }
 
-    @include link(false, false);
+    @include link.link(false, false);
 
     a {
-      @include overflow-wrap(break-word);
+      @include compatibility.overflow-wrap(break-word);
 
       [theme="dark"] & b,
       [theme="dark"] & strong {
-        color: $accent-dark;
+        color: variables.$accent-dark;
       }
     }
 
     [theme="dark"] a:hover b,
     [theme="dark"] a:hover strong {
-      color: $single-link-hover-color-dark;
+      color: variables.$single-link-hover-color-dark;
     }
 
     ul,
@@ -157,17 +162,17 @@
     }
 
     ruby {
-      background: $code-background-color;
+      background: variables.$code-background-color;
 
       rt {
-        color: $global-font-secondary-color;
+        color: variables.$global-font-secondary-color;
       }
 
       [theme="dark"] & {
-        background: $code-background-color-dark;
+        background: variables.$code-background-color-dark;
 
         rt {
-          color: $global-font-secondary-color-dark;
+          color: variables.$global-font-secondary-color-dark;
         }
       }
     }
@@ -176,10 +181,10 @@
       overflow-x: auto;
 
       &::-webkit-scrollbar {
-        background-color: $table-background-color;
+        background-color: variables.$table-background-color;
 
         [theme="dark"] & {
-          background-color: $table-background-color-dark;
+          background-color: variables.$table-background-color-dark;
         }
       }
 
@@ -188,28 +193,28 @@
         max-width: 100%;
         margin: 0.625rem 0;
         border-spacing: 0;
-        background: $table-background-color;
+        background: variables.$table-background-color;
         border-collapse: collapse;
 
         [theme="dark"] & {
-          background: $table-background-color-dark;
+          background: variables.$table-background-color-dark;
         }
 
         thead {
-          background: $table-thead-color;
+          background: variables.$table-thead-color;
 
           [theme="dark"] & {
-            background-color: $table-thead-color-dark;
+            background-color: variables.$table-thead-color-dark;
           }
         }
 
         th,
         td {
           padding: 0.3rem 1rem;
-          border: 1px solid darken($table-thead-color, 2%);
+          border: 1px solid color.adjust(variables.$table-thead-color, $lightness: -2%);
 
           [theme="dark"] & {
-            border-color: darken($table-thead-color-dark, 2%);
+            border-color: color.adjust(variables.$table-thead-color-dark, $lightness: -2%);
           }
         }
       }
@@ -243,27 +248,27 @@
     }
 
     .lazyloading {
-      @include object-fit(none);
+      @include compatibility.object-fit(none);
     }
 
     blockquote {
       display: block;
-      border-left: 0.5rem solid $blockquote-color;
-      background-color: rgba($blockquote-color, 0.2);
+      border-left: 0.5rem solid variables.$blockquote-color;
+      background-color: rgba(variables.$blockquote-color, 0.2);
       padding: 0.25rem 0.75rem;
       margin: 1rem 0;
 
       [theme="dark"] & {
-        border-left-color: $blockquote-color-dark;
-        background-color: rgba($blockquote-color-dark, 0.2);
+        border-left-color: variables.$blockquote-color-dark;
+        background-color: rgba(variables.$blockquote-color-dark, 0.2);
       }
     }
 
     .footnotes {
-      color: $global-font-secondary-color;
+      color: variables.$global-font-secondary-color;
 
       [theme="dark"] & {
-        color: $global-font-secondary-color-dark;
+        color: variables.$global-font-secondary-color-dark;
       }
 
       p {
@@ -271,41 +276,41 @@
       }
     }
 
-    @import "../_partial/_single/code";
-    @import "../_partial/_single/instagram";
-    @import "../_partial/_single/admonition";
-    @import "../_partial/_single/comment";
-    @import "../_partial/_single/snackbar";
+    @include meta.load-css("../_partial/_single/code");
+    @include meta.load-css("../_partial/_single/instagram");
+    @include meta.load-css("../_partial/_single/admonition");
+    @include meta.load-css("../_partial/_single/comment");
+    @include meta.load-css("../_partial/_single/snackbar");
 
     hr {
       margin: 1rem 0;
       position: relative;
-      border-top: 1px dashed $border;
+      border-top: 1px dashed variables.$border;
       border-bottom: none;
 
       [theme="dark"] & {
-        border-top: 1px dashed $border-dark;
+        border-top: 1px dashed variables.$border-dark;
       }
     }
 
     kbd {
       display: inline-block;
       padding: 0.25rem;
-      background-color: $bg;
-      border: 1px solid $border;
-      border-bottom-color: $border;
-      @include border-radius(3px);
-      @include box-shadow(inset 0 -1px 0 $border);
+      background-color: variables.$bg;
+      border: 1px solid variables.$border;
+      border-bottom-color: variables.$border;
+      @include compatibility.border-radius(3px);
+      @include compatibility.box-shadow(inset 0 -1px 0 variables.$border);
       font-size: 0.8rem;
-      font-family: $mono-font;
-      color: $code-color;
+      font-family: variables.$mono-font;
+      color: variables.$code-color;
 
       [theme="dark"] & {
-        background-color: $bg-dark;
-        border: 1px solid $border-dark;
-        border-bottom-color: $border-dark;
-        @include box-shadow(inset 0 -1px 0 $border-dark);
-        color: $code-color-dark;
+        background-color: variables.$bg-dark;
+        border: 1px solid variables.$border-dark;
+        border-bottom-color: variables.$border-dark;
+        @include compatibility.box-shadow(inset 0 -1px 0 variables.$border-dark);
+        color: variables.$code-color-dark;
       }
     }
 
@@ -313,7 +318,7 @@
       .code {
         padding: 0.375rem;
         font-size: 0.875rem;
-        font-family: $mono-font;
+        font-family: variables.$mono-font;
         font-weight: bold;
         word-break: break-all;
       }
@@ -325,8 +330,8 @@
     }
   }
 
-  @import "../_partial/_single/footer";
-  @import "../_partial/_single/comment";
+  @include meta.load-css("../_partial/_single/footer");
+  @include meta.load-css("../_partial/_single/comment");
 }
 
 .lg-toolbar .lg-icon::after {

@@ -1,3 +1,5 @@
+@use "../../_core/variables";
+
 @use "sass:list";
 
 #comments {
@@ -901,7 +903,7 @@
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
     min-width: 0;
-    background-color: $bg;
+    background-color: variables.$bg;
     [theme="dark"] & {
       background-color: #b7bbb9;
       color: #161616;
@@ -1202,7 +1204,7 @@ $background-color-dark: #181818 !default;
   textarea,
   label,
   button {
-    font: 400 list.slash($base-fontsize, $line-height) $sans-font;
+    font: 400 list.slash(variables.$base-fontsize, variables.$line-height) variables.$sans-font;
     color: $text-color;
     [theme="dark"] & {
       color: $text-color-dark;
@@ -1246,7 +1248,7 @@ $background-color-dark: #181818 !default;
     border: 1px solid rgba(0, 0, 0, 0.12);
     padding: 4px 5px;
     width: 100%;
-    font-size: $sans-font;
+    font-size: variables.$sans-font;
     resize: none;
     &:focus,
     &::selection {
@@ -1277,7 +1279,7 @@ $background-color-dark: #181818 !default;
     margin: 4px 0px 0px 0px;
   }
   button:hover {
-    background-color: $color-pink;
+    background-color: variables.$color-pink;
     color: white;
   }
 
@@ -1288,11 +1290,11 @@ $background-color-dark: #181818 !default;
     padding: 0px 0px 14px 0px;
   }
   .comment__author {
-    color: ld-select(#6b6b6b, $color-red);
+    color: ld-select(#6b6b6b, variables.$color-red);
   }
   .comment__admin_tag {
     font-size: 0.8em;
-    border-color: $color-orange;
+    border-color: variables.$color-orange;
     border-style: solid;
     border-width: 1px;
     background-color: ld-select(#bfb, #050);
@@ -1304,18 +1306,18 @@ $background-color-dark: #181818 !default;
     font-size: 0.8rem;
   }
   .comment__body {
-    font-size: $sans-font;
+    font-size: variables.$sans-font;
   }
   .comment__meta {
     text-align: left;
-    color: $color-yellow;
+    color: variables.$color-yellow;
     font-size: 0.8rem;
   }
   .comments__existing {
     padding: 8px 0px 0px 0px;
   }
   .comment {
-    border-top: 0px solid $color-teal;
+    border-top: 0px solid variables.$color-teal;
     padding: 0px 0px 0px 0px;
     margin-bottom: 1em;
   }
@@ -1323,7 +1325,7 @@ $background-color-dark: #181818 !default;
     margin-left: 3em;
   }
   .comment__reply-link {
-    color: $color-green;
+    color: variables.$color-green;
     font-size: 0.8rem;
     cursor: pointer;
   }
@@ -1361,7 +1363,7 @@ $background-color-dark: #181818 !default;
   margin-top: -150px;
   min-height: 0;
   z-index: 9999;
-  box-shadow: 2px 2px 2px 2px rgba($color-cyan, 0.5);
+  box-shadow: 2px 2px 2px 2px rgba(variables.$color-cyan, 0.5);
   padding: 16px;
   border-radius: 2px;
   background: $background-color;
