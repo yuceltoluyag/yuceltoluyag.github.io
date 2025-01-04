@@ -35,6 +35,7 @@ const baseProdConfig = {
       src: [
         `${srcAssets}/images/**/*.{png,jpg,jpeg,ico}`,
         `${srcAssets}/images/touch/*`,
+        `${srcAssets}/images/svg/*`,
         `${srcAssets}/images/**/*.{gif,mp4}`,
       ],
       dest: `${buildAssets}/images`,
