@@ -67,7 +67,7 @@ const baseProdConfig = {
       },
     },
     media: {
-      src: `${buildAssets}/images/**/*`,
+      src: `${buildAssets}/images/**/**/*`,
       dest: `${buildAssets}/images`,
       options: {
         optimizationLevel: 3,
