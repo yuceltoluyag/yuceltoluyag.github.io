@@ -105,7 +105,12 @@
 
         <!-- Global JavaScript -->
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/theme.js"></script>
-        {% block seo %} {% endblock %}
+        {% block seo %} {% endblock %} {% if GOOGLE_ADSENSE %}
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+        {% endif %}
     </head>
     <body class="bg-site-bg text-text-primary min-h-screen flex flex-col">
         <!-- İlerleme çubuğu -->
