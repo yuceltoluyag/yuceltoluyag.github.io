@@ -42,6 +42,14 @@
             }
         </script>
 
+        <!-- Google AdSense -->
+        {% if GOOGLE_ADSENSE %}
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ GOOGLE_ADSENSE }}"
+            crossorigin="anonymous"></script>
+        {% endif %}
+
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
