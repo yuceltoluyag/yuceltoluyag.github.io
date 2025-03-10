@@ -217,6 +217,9 @@ def reserve(ctx: Context) -> None:
 @duty(post=[cache_bust, minify])
 def publish(ctx: Context) -> None:
     """Publish the project."""
+    # PUBLISH ortam değişkenini ayarla
+    os.environ["PUBLISH"] = "1"
+    print("PUBLISH ortam değişkeni ayarlandı: 1")
     ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]))
 
 
