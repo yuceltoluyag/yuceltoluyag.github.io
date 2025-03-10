@@ -20,15 +20,20 @@ jobs:
                   submodules: true # Temalar için submodule'leri de al
                   fetch-depth: 0 # Tam git geçmişini al
 
-            - name: Set up Python
+            - name: Set up Python 3.11
               uses: actions/setup-python@v5
               with:
-                  python-version: "3.11"
+                  python-version: "3.11.11"
                   cache: "pip"
+                  cache-dependency-path: |
+                      requirements.txt
+                      pyproject.toml
 
             - name: Install dependencies
               run: |
                   python -m pip install --upgrade pip
+                  pip install pip-tools
+                  pip-compile --upgrade pyproject.toml -o requirements.txt
                   pip install -r requirements.txt
 
             - name: Build site
