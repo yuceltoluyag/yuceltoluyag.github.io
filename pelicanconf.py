@@ -353,3 +353,4 @@ FORMATTED_FIELDS = ["summary", "content"]
 # feed.json şablonunun çıktı yolu
 FEED_JSON = "feed.json"
 FEED_SAVE_AS = "feed.json"
+OUTPUT_PATH = "output"
