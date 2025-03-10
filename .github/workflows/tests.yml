@@ -68,9 +68,9 @@ jobs:
 
             - name: Confirm files were created
               run: |
-                  ls -al _site
-                  if [ ! -e "_site/index.html" ]; then
-                      echo "_site/index.html not found"
+                  ls -al output
+                  if [ ! -e "output/index.html" ]; then
+                      echo "output/index.html not found"
                       exit 1
                   fi
 
