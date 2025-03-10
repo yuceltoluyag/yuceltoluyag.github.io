@@ -324,19 +324,13 @@ def update(ctx: Context) -> None:
 def lint(ctx: Context) -> None:
     """Run all linting duties."""
     ctx.run(
-        ["typos", "--config", ".typos.toml"],
-        title=pyprefix("typos check"),
-        command="typos --config .typos.toml",
-    )
-
-    ctx.run(
         "djlint --configuration pyproject.toml theme",
         title=pyprefix("djlint check"),
         command="djlint --configuration pyproject.toml theme",
     )
 
     ctx.run(
-        "SKIP=typos,djlint pre-commit run --all-files",
+        "SKIP=djlint pre-commit run --all-files",
         title=pyprefix("pre-commit hooks"),
-        command="SKIP=typos,djlint pre-commit run --all-files",
+        command="SKIP=djlint pre-commit run --all-files",
     )
