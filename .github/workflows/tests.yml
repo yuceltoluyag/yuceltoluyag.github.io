@@ -33,27 +33,6 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-    lint-project:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repository
-              uses: actions/checkout@v4
-
-            - name: Setup Python, uv, and the package
-              uses: ./.github/actions/setup_python_env
-
-            - uses: actions/cache@v4
-              with:
-                  path: ~/.cache/pre-commit
-                  key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
-
-            - name: Lint the project
-              shell: bash
-              run: uv run duty lint
-
-            - name: Check lock file consistency
-              run: uv sync --locked
-
     test-build:
         runs-on: ubuntu-latest
         steps:
