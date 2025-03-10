@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Etiketler - {{ SITENAME }}{% endblock %} {% block content %}
+<div class="bg-site-card rounded-lg p-8">
+    <h1 class="text-3xl font-bold mb-8 text-text-primary">Etiketler</h1>
+
+    <div class="flex flex-wrap gap-4">
+        {% for tag, articles in tags|sort %}
+        <a
+            href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
+            class="px-4 py-2 bg-site-card-alt rounded-full hover:text-primary transition-colors">
+            #{{ tag }}
+            <span class="text-text-secondary">({{ articles|length }})</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

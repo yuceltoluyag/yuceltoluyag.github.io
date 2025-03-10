@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Kategoriler - {{ SITENAME }}{% endblock %} {% block content %}
+<div class="bg-site-card rounded-lg p-8">
+    <h1 class="text-3xl font-bold mb-8 text-text-primary">Kategoriler</h1>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {% for category, articles in categories|sort %}
+        <a href="{{ SITEURL }}/kategori/{{ category.slug }}/" class="card hover:scale-[1.02] transition-transform">
+            <div class="flex items-center justify-between">
+                <h2 class="text-lg font-semibold text-text-primary">{{ category }}</h2>
+                <span class="text-sm text-text-secondary">{{ articles|length }} yazı</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

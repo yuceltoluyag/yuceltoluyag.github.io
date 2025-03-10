@@ -1,0 +1,31 @@
+---
+name: Check External Links
+
+on:
+    workflow_dispatch:
+    pull_request:
+        types:
+            - opened
+            - reopened
+            - synchronize
+        paths:
+            - "content/**.md"
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    markdown-link-check:
+        runs-on: ubuntu-22.04
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v4
+
+            - name: Run linkspector
+              uses: umbrelladocs/action-linkspector@v1
+              with:
+                  github_token: ${{ secrets.github_token }}
+                  reporter: github-pr-check
+                  fail_on_error: true
+                  config_file: .linkspector.yml

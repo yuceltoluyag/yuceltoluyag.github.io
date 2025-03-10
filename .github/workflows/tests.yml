@@ -1,0 +1,80 @@
+---
+name: "Tests"
+
+on:
+    workflow_dispatch:
+    push:
+        paths:
+            - ".github/workflows/tests.yml"
+            - "content/**"
+            - "pelicanconf.py"
+            - "publishconf.py"
+            - "theme/**"
+            - "pyproject.toml"
+            - "uv.lock"
+        branches:
+            - main
+    pull_request:
+        types:
+            - opened
+            - reopened
+            - synchronize
+        paths:
+            - ".github/workflows/tests.yml"
+            - "content/**"
+            - "pelicanconf.py"
+            - "publishconf.py"
+            - "theme/**"
+            - "pyproject.toml"
+            - "uv.lock"
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    lint-project:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Python, uv, and the package
+              uses: ./.github/actions/setup_python_env
+
+            - uses: actions/cache@v4
+              with:
+                  path: ~/.cache/pre-commit
+                  key: pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}
+
+            - name: Lint the project
+              shell: bash
+              run: uv run duty lint
+
+            - name: Check lock file consistency
+              run: uv sync --locked
+
+    test-build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Python, uv, and the package
+              uses: ./.github/actions/setup_python_env
+
+            - name: Build the site
+              run: uv run duty publish
+
+            - name: Confirm files were created
+              run: |
+                  ls -al _site
+                  if [ ! -e "_site/index.html" ]; then
+                      echo "_site/index.html not found"
+                      exit 1
+                  fi
+
+            - name: Run htmltest
+              uses: wjdp/htmltest-action@master
+              with:
+                  config: .htmltest.yml

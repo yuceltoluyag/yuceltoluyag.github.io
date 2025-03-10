@@ -1,54 +1,95 @@
-# Minel
+# Minel - Minimal Pelican Theme
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+Minel, Pelican blog motoru için Tailwind CSS ile geliştirilmiş minimal bir temadır.
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
+## Özellikler
 
-TODO: Delete this and the text above, and describe your gem
+- Tailwind CSS ile modern tasarım
+- Karanlık/Aydınlık mod desteği
+- Mobil uyumlu (responsive) tasarım
+- İçindekiler tablosu
+- Kod vurgulama (syntax highlighting)
+- SEO optimizasyonu
+- Yapısal veri (Schema.org) desteği
+- Arama özelliği
 
-[![Deploy to GitHub Pages](https://github.com/yuceltoluyag/yuceltoluyag.github.io/actions/workflows/gh-pages.deploy.yml/badge.svg)](https://github.com/yuceltoluyag/yuceltoluyag.github.io/actions/workflows/gh-pages.deploy.yml)
+## Kurulum
 
-[![pages-build-deployment](https://github.com/yuceltoluyag/yuceltoluyag.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/yuceltoluyag/yuceltoluyag.github.io/actions/workflows/pages/pages-build-deployment)
+1. Tema dosyalarını Pelican projenizin `themes/Minel` dizinine kopyalayın
+2. `pelicanconf.py` dosyanızda temayı etkinleştirin:
 
-## Installation
-
-Add this line to your Jekyll site's `Gemfile`:
-
-```ruby
-gem "Minel"
+```python
+THEME = 'themes/Minel'
 ```
 
-And add this line to your Jekyll site's `_config.yml`:
+## Geliştirme
 
-```yaml
-theme: Minel
+### Bağımlılıkları Yükleme
+
+```bash
+cd themes/Minel
+npm install
 ```
 
-And then execute:
+### CSS Geliştirme
 
-    $ bundle
+CSS dosyalarını geliştirme modunda derlemek için:
 
-Or install it yourself as:
+```bash
+npm run watch
+```
 
-    $ gem install Minel
+### CSS Derleme
 
-## Usage
+CSS dosyalarını normal boyutta derlemek için:
 
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+```bash
+npm run build
+```
 
-## Contributing
+### CSS Minimize Etme (Üretim için)
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/yuceltoluyag/yuceltoluyag.github.io. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/CODE_OF_CONDUCT.md) code of conduct.
+CSS dosyalarını sıkıştırılmış ve optimize edilmiş şekilde derlemek için:
 
-## Development
+```bash
+npm run build:prod
+```
 
-To set up your environment to develop this theme, run `npm run setup`.
+Bu komut, CSS dosyasını minimize eder, gereksiz boşlukları ve yorumları kaldırır, böylece dosya boyutu küçülür ve site daha hızlı yüklenir.
 
-Your theme is setup just like a normal Jekyll site! To test your theme, run `npm run start` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
+## Yapılandırma
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_assets` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `Minel.gemspec` accordingly.
+Tema için `pelicanconf.py` dosyanızda aşağıdaki ayarları kullanabilirsiniz:
 
-## License
+```python
+# Temel Ayarlar
+SITENAME = 'Site Adınız'
+SITEURL = 'https://example.com'
+DESCRIPTION = 'Site açıklamanız'
+AUTHOR = 'Adınız'
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+# Sosyal Medya Bağlantıları
+SOCIAL = {
+    'github': 'kullanıcı-adınız',
+    'instagram': 'kullanıcı-adınız',
+    'youtube': 'kullanıcı-adınız',
+    'twitch': 'kullanıcı-adınız',
+    'discord': 'kullanıcı-adınız',
+    'mastodon': 'kullanıcı-adınız',
+    'matrix': 'kullanıcı-adınız',
+    'kick': 'kullanıcı-adınız'
+}
+
+# Navbar Linkleri
+NAVBAR_LINKS = [
+    {'name': 'Ana Sayfa', 'url': '/'},
+    {'name': 'Hakkımda', 'url': '/pages/about.html'},
+    {'name': 'Kategoriler', 'url': '/categories.html'},
+    {'name': 'Etiketler', 'url': '/tags.html'},
+    {'name': 'Bağış', 'url': '/pages/donate.html'}
+]
+```
+
+## Lisans
+
+MIT

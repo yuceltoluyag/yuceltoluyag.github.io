@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="max-w-4xl mx-auto">
+    <!-- Hero Bölümü -->
+    <div class="card mb-8">
+        <div class="relative bg-gradient-to-br from-primary to-primary bg-opacity-10 p-8 md:p-12">
+            <!-- İçerik -->
+            <div class="relative z-10">
+                <h1 class="text-4xl md:text-5xl font-bold text-text-primary mb-4">{{ page.title }}</h1>
+                <div class="flex items-center gap-4 text-sm text-text-secondary">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>Son güncelleme: {{ page.locale_date }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana İçerik -->
+    <div class="card">
+        <div class="prose max-w-none">
+            {{ page.content }}
+        </div>
+
+        <!-- Alt Bilgi -->
+        <div class="mt-12 pt-8 border-t border-border-card">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <!-- Sol Taraf -->
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-primary bg-opacity-10 rounded-xl">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-text-primary">Yasal Belge</h3>
+                        <p class="text-sm text-text-secondary">Bu belge yasal olarak bağlayıcıdır</p>
+                    </div>
+                </div>
+
+                <!-- Sağ Taraf -->
+                <div class="flex items-center gap-4">
+                    <a href="mailto:{{ AUTHOR_EMAIL }}" 
+                       class="flex items-center gap-3 px-6 py-3 bg-primary bg-opacity-10 hover:bg-opacity-20 rounded-xl text-text-primary transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span>İletişime Geçin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Diğer Yasal Belgeler -->
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="{{ SITEURL }}/privacy-policy/" 
+           class="card p-6 hover:border-primary transition-colors {% if page.slug == 'privacy-policy' %}opacity-50 pointer-events-none{% endif %}">
+            <h3 class="text-lg font-semibold text-text-primary mb-2">Gizlilik Politikası</h3>
+            <p class="text-sm text-text-secondary">Verilerinizi nasıl koruduğumuzu öğrenin</p>
+        </a>
+        <a href="{{ SITEURL }}/terms/" 
+           class="card p-6 hover:border-primary transition-colors {% if page.slug == 'terms' %}opacity-50 pointer-events-none{% endif %}">
+            <h3 class="text-lg font-semibold text-text-primary mb-2">Kullanım Koşulları</h3>
+            <p class="text-sm text-text-secondary">Site kullanım şartlarını inceleyin</p>
+        </a>
+    </div>
+</article>
+{% endblock %} 
