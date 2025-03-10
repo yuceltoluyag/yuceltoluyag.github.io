@@ -1,4 +1,4 @@
-# Do something here
+# Robots.txt for {{ SITENAME }}
 
 Sitemap: {{ SITEURL }}/sitemap.xml
 
