@@ -289,11 +289,11 @@ wheels = [
 
 [[package]]
 name = "identify"
-version = "2.6.8"
+version = "2.6.9"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/f9/fa/5eb460539e6f5252a7c5a931b53426e49258cde17e3d50685031c300a8fd/identify-2.6.8.tar.gz", hash = "sha256:61491417ea2c0c5c670484fd8abbb34de34cdae1e5f39a73ee65e48e4bb663fc", size = 99249 }
+sdist = { url = "https://files.pythonhosted.org/packages/9b/98/a71ab060daec766acc30fb47dfca219d03de34a70d616a79a38c6066c5bf/identify-2.6.9.tar.gz", hash = "sha256:d40dfe3142a1421d8518e3d3985ef5ac42890683e32306ad614a29490abeb6bf", size = 99249 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/78/8c/4bfcab2d8286473b8d83ea742716f4b79290172e75f91142bc1534b05b9a/identify-2.6.8-py2.py3-none-any.whl", hash = "sha256:83657f0f766a3c8d0eaea16d4ef42494b39b34629a4b3192a9d020d349b3e255", size = 99109 },
+    { url = "https://files.pythonhosted.org/packages/07/ce/0845144ed1f0e25db5e7a79c2354c1da4b5ce392b8966449d5db8dca18f1/identify-2.6.9-py2.py3-none-any.whl", hash = "sha256:c98b4322da415a8e5a70ff6e51fbc2d2932c015532d77e9f8537b4ba7813b150", size = 99101 },
 ]
 
 [[package]]
@@ -307,14 +307,14 @@ wheels = [
 
 [[package]]
 name = "jinja2"
-version = "3.1.5"
+version = "3.1.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "markupsafe" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz", hash = "sha256:8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb", size = 244674 }
+sdist = { url = "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz", hash = "sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d", size = 245115 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bd/0f/2ba5fbcd631e3e88689309dbe978c5769e883e4b84ebfe7da30b43275c5a/jinja2-3.1.5-py3-none-any.whl", hash = "sha256:aba0f4dc9ed8013c424088f68a5c226f7d6097ed89b246d7749c2ec4175c6adb", size = 134596 },
+    { url = "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl", hash = "sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67", size = 134899 },
 ]
 
 [[package]]
@@ -489,6 +489,19 @@ wheels = [
 ]
 
 [[package]]
+name = "minchin-pelican-plugins-autoloader"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pelican" },
+    { name = "semantic-version" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b0/4f/42a95cf7c37fd4b4f00df3872488294713d0a5e4827a4c8648fca1f35cf4/minchin.pelican.plugins.autoloader-1.2.1.tar.gz", hash = "sha256:74a7e9bdac33461900b8bdb81c33423409e35c9c7cece193491abf7356d9cd95", size = 7472 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/0f/58/99693e37dc3abf7a0cd022090c666fca79c6a556eb921bed41717e7ad70c/minchin.pelican.plugins.autoloader-1.2.1-py3-none-any.whl", hash = "sha256:d73cec6b28ab6d83356415f99b2d899e0737d7f8955f8c2938f363e442ee035a", size = 7361 },
+]
+
+[[package]]
 name = "minify-html"
 version = "0.15.0"
 source = { registry = "https://pypi.org/simple" }
@@ -504,59 +517,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/0f/5a/9b53f0215237f1693242cd6fbafe73dd88050454f2715b6d5123ca444da0/minify_html-0.15.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:1056819ea46e9080db6fed678d03511c7e94c2a615e72df82190ea898dc82609", size = 2240974 },
     { url = "https://files.pythonhosted.org/packages/a0/ae/786cd6775d8891fe2a4b5774753a00c95fd6ec3013086c92c2970c4371dc/minify_html-0.15.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ea315ad6ac33d7463fac3f313bba8c8d9a55f4811971c203eed931203047e5c8", size = 2395919 },
     { url = "https://files.pythonhosted.org/packages/90/f0/23ea4cbaff3f83c4f8802bfda2aebbdd02fb84595567aeb86be84f6aa055/minify_html-0.15.0-cp312-none-win_amd64.whl", hash = "sha256:01ea40dc5ae073c47024f02758d5e18e55d853265eb9c099040a6c00ab0abb99", size = 2382578 },
-]
-
-[[package]]
-name = "natelandau-com"
-version = "0.4.0"
-source = { virtual = "." }
-dependencies = [
-    { name = "duty" },
-    { name = "livereload" },
-    { name = "markdown" },
-    { name = "minify-html" },
-    { name = "pelican" },
-    { name = "pelican-image-process" },
-    { name = "pelican-neighbors" },
-    { name = "pelican-sitemap" },
-    { name = "pelican-tag-cloud" },
-    { name = "pelican-yaml-metadata" },
-    { name = "pymdown-extensions" },
-    { name = "rcssmin" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "commitizen" },
-    { name = "djlint" },
-    { name = "pre-commit" },
-    { name = "typos" },
-    { name = "yamllint" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "duty", specifier = ">=1.6.0" },
-    { name = "livereload", specifier = ">=2.7.1" },
-    { name = "markdown", specifier = ">=3.7" },
-    { name = "minify-html", specifier = ">=0.15.0" },
-    { name = "pelican", specifier = ">=4.11.0" },
-    { name = "pelican-image-process", specifier = ">=3.0.4" },
-    { name = "pelican-neighbors", specifier = ">=1.2.0" },
-    { name = "pelican-sitemap", specifier = ">=1.2.0" },
-    { name = "pelican-tag-cloud", specifier = ">=1.0.1" },
-    { name = "pelican-yaml-metadata", specifier = ">=2.1.2" },
-    { name = "pymdown-extensions", specifier = ">=10.14.3" },
-    { name = "rcssmin", specifier = ">=1.2.1" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "commitizen", specifier = ">=4.4.1" },
-    { name = "djlint", specifier = ">=1.36.4" },
-    { name = "pre-commit", specifier = ">=4.1.0" },
-    { name = "typos", specifier = ">=1.30.0" },
-    { name = "yamllint", specifier = ">=1.35.1" },
 ]
 
 [[package]]
@@ -633,6 +593,19 @@ wheels = [
 ]
 
 [[package]]
+name = "pelican-minify"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "minify-html" },
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c6/f1/451947740435feadb51e957c30cf4d4fa0c543571c23a9203f6406b99529/pelican_minify-2.0.0.tar.gz", hash = "sha256:50a1e33a5f2acb8ce8a8c2e4223327745d7d61fe90f6c4a6dfe726bea9f1d503", size = 9566 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/58/ce/f16ad38ec4467de4dbf80c225e0f9afc3cf09216b33e65bee524d554cac6/pelican_minify-2.0.0-py3-none-any.whl", hash = "sha256:49359d91f18c289dced9b47ebea828c12ad53154e80f880b186056b13410d392", size = 6217 },
+]
+
+[[package]]
 name = "pelican-neighbors"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -642,6 +615,69 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/31/e1/d5dfde3080c9ef32984da5001ecdec181d135013edeef2931532d7dcd855/pelican-neighbors-1.2.0.tar.gz", hash = "sha256:1cbeee08f4d2e135452c044924c3f8e5e39ff083dcfb7485e8eeafdab9d2e445", size = 16834 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8d/ad/f2ad5fa3c1d35681707cf809a4573dda85a67dac007c59ff9371dae87b29/pelican_neighbors-1.2.0-py3-none-any.whl", hash = "sha256:963df1d27dd8b34ac7b85320e63184d3f4e396e4570a3d49f5911246387a35bb", size = 16792 },
+]
+
+[[package]]
+name = "pelican-readtime"
+version = "0.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d8/fc/a8384503aae7ac947ccf3a8fbe612a2d24ab1099e08ede64ae43ba3864eb/pelican_readtime-0.2.1.tar.gz", hash = "sha256:d83fda594e05ba53ade767d1d702b79f2b1074a2f09eda69380b1ea32b71598a", size = 7106 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/95/86/b8ad83fd38d6ac6736f5082e18b17d40c2f5c801e14ae4b05d3ff8a86e0f/pelican_readtime-0.2.1-py2.py3-none-any.whl", hash = "sha256:22497c9dc83554f188d13af6a362d023b2c6e811af703553d99dfc404c52feec", size = 7196 },
+]
+
+[[package]]
+name = "pelican-related-posts"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3f/f3/d8beebc2c39c7b95d3711bea72d3c7dfd6913169eb150b2dc29fed7230fa/pelican-related-posts-1.0.0.tar.gz", hash = "sha256:e106487e279368ccc7ab74609197a5f298d54f6d4e1eeb36f8bc0c2291227222", size = 3734 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/51/db/680ae2076b7caa5abcaa1234ea08e8fed98569752198d2d221f5e8d8e425/pelican_related_posts-1.0.0-py3-none-any.whl", hash = "sha256:0f1dcdf34f90c41f275aba428879a5fde24e166cf0154d3a07d59cc5071976d5", size = 3449 },
+]
+
+[[package]]
+name = "pelican-search"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pelican" },
+    { name = "rtoml" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ac/44/5db6efe345d70a31cc79d7bd59cc10108c54550fefa1aa28f4a3c7113899/pelican_search-1.1.0.tar.gz", hash = "sha256:9bdfb37a69404335c6b510fc4f73341c9f140e3e7320dd3868d4f045812a8d18", size = 6445 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4c/60/a9b369249d023a9d2c98b3ab0dffa1b6cecde619db036507e1e709d9fed1/pelican_search-1.1.0-py3-none-any.whl", hash = "sha256:943032372c363bf670d677b2162f32f1b5307a4881efa3a7415897b0d7e6f039", size = 6595 },
+]
+
+[[package]]
+name = "pelican-seo"
+version = "1.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8b/93/0ef113c5eedf2b8ce6e3a16b7d2f4299ce3b8e5344e4a7ac627f8cd28633/pelican_seo-1.3.0.tar.gz", hash = "sha256:7543cc71f1c8265a13a055388e337962a6940f7db34adf621fd2e09d18db6c4f", size = 26783 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/75/15/5d23bf793253a0b611c435757cb9c7445dd42c7b17cac0feb9d1899e97aa/pelican_seo-1.3.0-py3-none-any.whl", hash = "sha256:c3a9fed871033669ec3bd5aaf8ca015874cc2a0d348390c6b7723164e7ddea98", size = 35287 },
+]
+
+[[package]]
+name = "pelican-series"
+version = "3.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "docutils" },
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/44/13/bc65ef34fbb921a8a0c56f4fc77b33fd0ebf1e8e989ef2fa24ce42e9453b/pelican_series-3.0.0.tar.gz", hash = "sha256:e44ced55b8f1459b02392a55c77f19d3e449f75cf120d5b1de6705819781e3f3", size = 8205 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/73/d1/07daf1c643cc090f15641e8160bd7e5a8687cb6f71b121f789069829b154/pelican_series-3.0.0-py3-none-any.whl", hash = "sha256:dc6cd93690afeb5336d867e702070396ca0a465fba1976083281e01a346ed882", size = 10842 },
 ]
 
 [[package]]
@@ -655,6 +691,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/4d/e5/51aef5c206c3e5000360f71bb04f7fe2d867afad94a993c9a60c1c6116b7/pelican_sitemap-1.2.0.tar.gz", hash = "sha256:d4016c9ebdf4bd87776f48fd5a36f9c3af1c3bca01cda22a83c840c9669df7e1", size = 7220 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/18/e4/97f6e1d900194d713c59752d5facc0f8b815ef6fc34faa064d6a856ffc74/pelican_sitemap-1.2.0-py3-none-any.whl", hash = "sha256:9e5bba7c98bae8e0e94c8fa72bbc49673ceaed5c5bb934e23d675572572a9fb2", size = 7232 },
+]
+
+[[package]]
+name = "pelican-statistics"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+    { name = "pelican" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5e/b5/ff348ea371553423afd666bc6544509b6b4ed267f77887972088cac0109f/pelican_statistics-1.0.0.tar.gz", hash = "sha256:d9d20b262bb8e9af975c68fb73169fd9d588f26ff340260387ec4dc81f2d13b0", size = 5410 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/89/94/cea69c4042022106cf9ae93c6d1af32770bf8f154903d09a63d305f01043/pelican_statistics-1.0.0-py3-none-any.whl", hash = "sha256:f2397fc1cee0731e65057d755c5aa8811d075b20c11b2bdc07a88ea7b7dc40e1", size = 6242 },
 ]
 
 [[package]]
@@ -967,12 +1016,47 @@ wheels = [
 ]
 
 [[package]]
+name = "rtoml"
+version = "0.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d5/53/ac68f06b42de70958f0ddb2c6a9109054fc208951e4d61af86f0c7186254/rtoml-0.9.0.tar.gz", hash = "sha256:113f2e133d152d9424269c475b4a7d0679987078b543e88fcb16c870dc2c460d", size = 23401 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/67/24/b3ba1370711e754fe1d1509713fd418f81a279335699c229630d5378ed52/rtoml-0.9.0-cp311-cp311-macosx_10_7_x86_64.whl", hash = "sha256:91a25c5ab2a518b5126a52300d1a6ced0e363510e9b6e64cb36b19275083b441", size = 373350 },
+    { url = "https://files.pythonhosted.org/packages/20/58/ab572a0487a47d43c4e83a0f65a193da120b692af391dde56151272cb5ec/rtoml-0.9.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:85d8abf6eb1da262a26f15d97de6ec83960172095e627dadf1ee7a32b70a367b", size = 354889 },
+    { url = "https://files.pythonhosted.org/packages/98/37/5eb4239f792462bfbc63998eb7cd8eddd49b8a7147607ca366303e839678/rtoml-0.9.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:363d41f1f69d415ced4c6be8c5feb6680c2330406ca2f0ba8ea04318857b8ca3", size = 704173 },
+    { url = "https://files.pythonhosted.org/packages/8b/54/b8b297e92460f280ff8dc37b9270342606533df17d72197dcbab33a8356f/rtoml-0.9.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e31bec5a3d7b56966130ba2a68be7bef608822063ff8b9a6362c5001a2a4c82b", size = 706810 },
+    { url = "https://files.pythonhosted.org/packages/54/3b/e49263c0dd89593a8bede5add1f4a775f0996417eb476a2cba043fcef508/rtoml-0.9.0-cp311-cp311-manylinux_2_24_armv7l.whl", hash = "sha256:9eb42c8af0300c0e3c11057a7ace894247f3f9d265b10bedde72e1008bf09634", size = 720276 },
+    { url = "https://files.pythonhosted.org/packages/dd/75/c792abc22610f19f1212ad6371161003ddf79dbbab741b7b107ba5a27d1f/rtoml-0.9.0-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:604782f36701d8b7df9b7f928e054e2a62dde828860e828377b2c8db550afb28", size = 728403 },
+    { url = "https://files.pythonhosted.org/packages/94/df/ed88ad3abff31eb73f4f77415ae0d464f86a13b795facafc9c13d95138ee/rtoml-0.9.0-cp311-cp311-musllinux_1_1_aarch64.whl", hash = "sha256:13dc836d84fe987ddc00b6ec8683002eb53ffa59dc13d5a9ef51a1409539bea7", size = 846027 },
+    { url = "https://files.pythonhosted.org/packages/3c/b7/f863b974e8c5e595a3e0139f3c9cf13e78d43ab3b72ce1c70eb75ddfd460/rtoml-0.9.0-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:2f4e7841ab7cbdfaa15cbc5f0b049b154a68644fa39fc27a1f72a0dc23012e40", size = 837905 },
+    { url = "https://files.pythonhosted.org/packages/12/8e/09410b2e171f950586d8630d7a7bcaae5b3040c109f10285c780b404845e/rtoml-0.9.0-cp311-none-win32.whl", hash = "sha256:9ca09643e9ffdebcbb27a095ffca86e32c3fb0a63c8788c5d40890065962eb65", size = 248873 },
+    { url = "https://files.pythonhosted.org/packages/ad/43/442f1c0f58ff4e1085c52c2da8ee78168ea5070d3a240940a0d8b8d588ca/rtoml-0.9.0-cp311-none-win_amd64.whl", hash = "sha256:5c91c99f5646e81c677133b3740a8e6b25cbe6fbf33fefd749c85e031f7716b9", size = 264039 },
+]
+
+[[package]]
+name = "semantic-version"
+version = "2.10.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz", hash = "sha256:bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c", size = 52289 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6a/23/8146aad7d88f4fcb3a6218f41a60f6c2d4e3a72de72da1825dc7c8f7877c/semantic_version-2.10.0-py2.py3-none-any.whl", hash = "sha256:de78a3b8e0feda74cabc54aab2da702113e33ac9d9eb9d2389bcf1f58b7d9177", size = 15552 },
+]
+
+[[package]]
 name = "six"
 version = "1.17.0"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz", hash = "sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81", size = 34031 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl", hash = "sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274", size = 11050 },
+]
+
+[[package]]
+name = "smartypants"
+version = "2.0.1"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/da/ed/1da76d11aa858ee23dac5b52d9ac2db7df02b89f7679d5d8970bcd44b59c/smartypants-2.0.1-py2.py3-none-any.whl", hash = "sha256:8db97f7cbdf08d15b158a86037cd9e116b4cf37703d24e0419a0d64ca5808f0d", size = 9875 },
 ]
 
 [[package]]
@@ -1051,20 +1135,15 @@ wheels = [
 ]
 
 [[package]]
-name = "typos"
-version = "1.30.0"
+name = "typogrify"
+version = "2.1.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d3/95/aadfbeb78e632b7a2d2fddd9891f8018f73c85b4b4867fa9a5dfe4134a73/typos-1.30.0.tar.gz", hash = "sha256:fe20191b791685deef668a52f65f47afe7be410b9218a48f3e7d4bc49200f27c", size = 1496767 }
+dependencies = [
+    { name = "smartypants" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/93/8c/b73fe0050bbf67c172b7c6d0c74c356939de0e891e669667f20381c099a8/typogrify-2.1.0.tar.gz", hash = "sha256:f0aa004e98032a6e6be4c9da65e7eb7150e36ca3bf508adbcda82b4d003e61ee", size = 28622 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/10/67/0b325c8de8eb0d81387429e90fe3913fab2f020cf91f2a2f7faf13ef36f0/typos-1.30.0-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:46fb93c7fc0ab9bb51e2124e5f1697416453119a1aca4cd16a8115c4e07e11f0", size = 3117940 },
-    { url = "https://files.pythonhosted.org/packages/bc/d3/fe04605a2fffdc0c37d2074458d4753157d693b887072d8ca03449efc473/typos-1.30.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:f0e60ff3ebfeb9d392165539aae8ae12329364502042760647475b0baa1bfc11", size = 3002174 },
-    { url = "https://files.pythonhosted.org/packages/e0/75/3ba3743725c5a82bae46ce044c654ab84ea560d4d60c7fe86ddd106b89b3/typos-1.30.0-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:c9fd9df27ebab8b3a7dae09451b9af4609e574717e21014d04e898576e99a9d7", size = 7561788 },
-    { url = "https://files.pythonhosted.org/packages/6a/ae/3b30ec7203a38d90061fd7a899ffeaaa9c93a6a60fabd8869ddae955414b/typos-1.30.0-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:f066a72dd9b0c8cfe43de88e57fec6bba4419981a264d5a869adb06ee252ddb2", size = 6751369 },
-    { url = "https://files.pythonhosted.org/packages/17/5f/1bd3c947f7bf850ff42851f8ab4464ac86a6177b7e6d8c8eecba9f26bfbb/typos-1.30.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fc54a9f3485b9a5aac55aa0d15e718fc26e8a20507f3a6b68defaba3ead9d813", size = 7458707 },
-    { url = "https://files.pythonhosted.org/packages/15/33/7f90769560fbf87fda535d9a8f5086e40c3f89f46b2adaa8e228761d6afd/typos-1.30.0-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:f24e2cc02186f20df05348692c3e76c4e50b996d5ddf0597f080178460596182", size = 6689316 },
-    { url = "https://files.pythonhosted.org/packages/0e/71/dda4418ff351ebb160cc7a0bc8efa23568a3b2c71e0c6f43f7e8957d6080/typos-1.30.0-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:9d69d96fd4daf1a805bef5378428c6ea48a80577b3b8a1bc50350b1435ae467c", size = 7544914 },
-    { url = "https://files.pythonhosted.org/packages/74/c4/25f71856f89da131aca54b07b869594fa15a4cef35649a69a63868980d84/typos-1.30.0-py3-none-win32.whl", hash = "sha256:a28fda092ae412640b8127a32499bdd1c97ac3249f39a8d88790c2d16c53b94e", size = 2739332 },
-    { url = "https://files.pythonhosted.org/packages/f6/87/939d1817a92a8b89e9eeb78021e987caaf9e1c093ef95d23c7a7d472fada/typos-1.30.0-py3-none-win_amd64.whl", hash = "sha256:00f7679f3a1939ecabe9ae95f4803e551a14ca8cc1b28d194447d87174a93897", size = 2890127 },
+    { url = "https://files.pythonhosted.org/packages/ab/7f/3221bc6bd429a78e37b96aac309a66512af35360b69c67d20bb5e4ef4e5b/typogrify-2.1.0-py3-none-any.whl", hash = "sha256:fdfd2bf8ad3df7296074187e89a890b68b116263bd4e0f4aefe768291b0d854e", size = 12411 },
 ]
 
 [[package]]
@@ -1087,16 +1166,16 @@ wheels = [
 
 [[package]]
 name = "virtualenv"
-version = "20.29.2"
+version = "20.29.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "distlib" },
     { name = "filelock" },
     { name = "platformdirs" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f1/88/dacc875dd54a8acadb4bcbfd4e3e86df8be75527116c91d8f9784f5e9cab/virtualenv-20.29.2.tar.gz", hash = "sha256:fdaabebf6d03b5ba83ae0a02cfe96f48a716f4fae556461d180825866f75b728", size = 4320272 }
+sdist = { url = "https://files.pythonhosted.org/packages/c7/9c/57d19fa093bcf5ac61a48087dd44d00655f85421d1aa9722f8befbf3f40a/virtualenv-20.29.3.tar.gz", hash = "sha256:95e39403fcf3940ac45bc717597dba16110b74506131845d9b687d5e73d947ac", size = 4320280 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/93/fa/849483d56773ae29740ae70043ad88e068f98a6401aa819b5d6bee604683/virtualenv-20.29.2-py3-none-any.whl", hash = "sha256:febddfc3d1ea571bdb1dc0f98d7b45d24def7428214d4fb73cc486c9568cce6a", size = 4301478 },
+    { url = "https://files.pythonhosted.org/packages/c2/eb/c6db6e3001d58c6a9e67c74bb7b4206767caa3ccc28c6b9eaf4c23fb4e34/virtualenv-20.29.3-py3-none-any.whl", hash = "sha256:3e3d00f5807e83b234dfb6122bf37cfadf4be216c53a49ac059d02414f819170", size = 4301458 },
 ]
 
 [[package]]
@@ -1168,4 +1247,73 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/da/06/d8cee5c3dfd550cc0a466ead8b321138198485d1034130ac1393cc49d63e/yamllint-1.35.1.tar.gz", hash = "sha256:7a003809f88324fd2c877734f2d575ee7881dd9043360657cc8049c809eba6cd", size = 134583 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/09/28/2abf1ec14df2d584b9e7ce3b0be458838741e6aaff7a540374ba9af83916/yamllint-1.35.1-py3-none-any.whl", hash = "sha256:2e16e504bb129ff515b37823b472750b36b6de07963bd74b307341ef5ad8bdc3", size = 66738 },
+]
+
+[[package]]
+name = "yuceltoluyag-github-io"
+version = "0.0.1"
+source = { virtual = "." }
+dependencies = [
+    { name = "duty" },
+    { name = "livereload" },
+    { name = "markdown" },
+    { name = "minchin-pelican-plugins-autoloader" },
+    { name = "minify-html" },
+    { name = "pelican" },
+    { name = "pelican-image-process" },
+    { name = "pelican-minify" },
+    { name = "pelican-neighbors" },
+    { name = "pelican-readtime" },
+    { name = "pelican-related-posts" },
+    { name = "pelican-search" },
+    { name = "pelican-seo" },
+    { name = "pelican-series" },
+    { name = "pelican-sitemap" },
+    { name = "pelican-statistics" },
+    { name = "pelican-tag-cloud" },
+    { name = "pelican-yaml-metadata" },
+    { name = "pymdown-extensions" },
+    { name = "rcssmin" },
+    { name = "typogrify" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "commitizen" },
+    { name = "djlint" },
+    { name = "pre-commit" },
+    { name = "yamllint" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "duty", specifier = ">=1.6.0" },
+    { name = "livereload", specifier = ">=2.7.1" },
+    { name = "markdown", specifier = ">=3.7" },
+    { name = "minchin-pelican-plugins-autoloader", specifier = ">=1.2.1" },
+    { name = "minify-html", specifier = ">=0.15.0" },
+    { name = "pelican", specifier = ">=4.11.0" },
+    { name = "pelican-image-process", specifier = ">=3.0.4" },
+    { name = "pelican-minify", specifier = ">=2.0.0" },
+    { name = "pelican-neighbors", specifier = ">=1.2.0" },
+    { name = "pelican-readtime", specifier = ">=0.2.1" },
+    { name = "pelican-related-posts", specifier = ">=1.0.0" },
+    { name = "pelican-search", specifier = ">=1.1.0" },
+    { name = "pelican-seo", specifier = ">=1.3.0" },
+    { name = "pelican-series", specifier = ">=3.0.0" },
+    { name = "pelican-sitemap", specifier = ">=1.2.0" },
+    { name = "pelican-statistics", specifier = ">=1.0.0" },
+    { name = "pelican-tag-cloud", specifier = ">=1.0.1" },
+    { name = "pelican-yaml-metadata", specifier = ">=2.1.2" },
+    { name = "pymdown-extensions", specifier = ">=10.14.3" },
+    { name = "rcssmin", specifier = ">=1.2.1" },
+    { name = "typogrify", specifier = ">=2.1.0" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "commitizen", specifier = ">=4.4.1" },
+    { name = "djlint", specifier = ">=1.36.4" },
+    { name = "pre-commit", specifier = ">=4.1.0" },
+    { name = "yamllint", specifier = ">=1.35.1" },
 ]
