@@ -4,6 +4,10 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+# Uyarıları gidermek için TIMEZONE ve LOCALE ayarlarını tekrar belirtelim
+TIMEZONE = "Asia/Istanbul"
+LOCALE = ("tr_TR.UTF-8", "tr_TR")
+
 PLUGINS += [
     "seo",
 ]

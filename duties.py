@@ -226,10 +226,8 @@ def publish(ctx: Context) -> None:
 
     # publishconf.py ile build işlemi
     print("publishconf.py ile build işlemi başlatılıyor...")
-    result = ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]), capture=False)
-
-    # Build işlemi başarılı mı kontrol edelim
-    if result.returncode == 0:
+    try:
+        ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]), capture=False)
         print("Build işlemi başarıyla tamamlandı.")
 
         # Çıktı klasörünü kontrol edelim
@@ -245,8 +243,8 @@ def publish(ctx: Context) -> None:
                 print(".nojekyll dosyası oluşturuldu.")
         else:
             print(f"HATA: Çıktı klasörü ({output_path}) oluşturulamadı!")
-    else:
-        print("HATA: Build işlemi başarısız oldu!")
+    except Exception as e:
+        print(f"HATA: Build işlemi başarısız oldu! Hata: {e}")
 
 
 @duty
