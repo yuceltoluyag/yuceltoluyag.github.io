@@ -1,6 +1,6 @@
-# Robots.txt for {{ SITENAME }}
+# Robots.txt for Babanın Yeni Evi
 
-Sitemap: {{ SITEURL }}/sitemap.xml
+Sitemap: https://yuceltoluyag.github.io/sitemap.xml
 
 User-agent: *
 Allow: /
