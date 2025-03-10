@@ -301,11 +301,6 @@ def update(ctx: Context) -> None:
         command="uv lock --upgrade",
     )
     ctx.run(
-        ["pre-commit", "autoupdate"],
-        title="pre-commit autoupdate",
-        command="pre-commit autoupdate",
-    )
-    ctx.run(
         [
             "uv",
             "-q",
@@ -317,20 +312,4 @@ def update(ctx: Context) -> None:
         ],
         title="update requirements.txt",
         command="uv -q pip compile pyproject.toml -o requirements.txt",
-    )
-
-
-@duty(capture=CI)
-def lint(ctx: Context) -> None:
-    """Run all linting duties."""
-    ctx.run(
-        "djlint --configuration pyproject.toml theme",
-        title=pyprefix("djlint check"),
-        command="djlint --configuration pyproject.toml theme",
-    )
-
-    ctx.run(
-        "SKIP=djlint pre-commit run --all-files",
-        title=pyprefix("pre-commit hooks"),
-        command="SKIP=djlint pre-commit run --all-files",
     )
