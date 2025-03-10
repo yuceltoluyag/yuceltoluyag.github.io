@@ -220,7 +220,33 @@ def publish(ctx: Context) -> None:
     # PUBLISH ortam değişkenini ayarla
     os.environ["PUBLISH"] = "1"
     print("PUBLISH ortam değişkeni ayarlandı: 1")
-    ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]))
+
+    # Önce temiz bir build yapalım
+    clean(ctx)
+
+    # publishconf.py ile build işlemi
+    print("publishconf.py ile build işlemi başlatılıyor...")
+    result = ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]), capture=False)
+
+    # Build işlemi başarılı mı kontrol edelim
+    if result.returncode == 0:
+        print("Build işlemi başarıyla tamamlandı.")
+
+        # Çıktı klasörünü kontrol edelim
+        output_path = SETTINGS["OUTPUT_PATH"]
+        if os.path.exists(output_path):
+            print(f"Çıktı klasörü ({output_path}) başarıyla oluşturuldu.")
+
+            # .nojekyll dosyasını oluşturalım
+            nojekyll_path = os.path.join(output_path, ".nojekyll")
+            if not os.path.exists(nojekyll_path):
+                with open(nojekyll_path, "w") as f:
+                    pass
+                print(".nojekyll dosyası oluşturuldu.")
+        else:
+            print(f"HATA: Çıktı klasörü ({output_path}) oluşturulamadı!")
+    else:
+        print("HATA: Build işlemi başarısız oldu!")
 
 
 @duty
