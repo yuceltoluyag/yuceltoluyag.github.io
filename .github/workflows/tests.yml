@@ -42,11 +42,11 @@ jobs:
             - name: Setup Python, uv, and the package
               uses: ./.github/actions/setup_python_env
 
+            - name: Create .nojekyll file
+              run: touch .nojekyll
+
             - name: Build the site
               run: uv run duty publish
-
-            - name: Create .nojekyll file
-              run: touch output/.nojekyll
 
             - name: Confirm files were created
               run: |
@@ -55,3 +55,23 @@ jobs:
                       echo "output/index.html not found"
                       exit 1
                   fi
+
+            - name: Upload Pages artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: output/
+
+    deploy:
+        needs: test-build
+        if: github.ref == 'refs/heads/main'
+        permissions:
+            pages: write
+            id-token: write
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
