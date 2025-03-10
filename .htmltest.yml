@@ -1,5 +1,5 @@
 ---
-DirectoryPath: "_output"
+DirectoryPath: "output"
 CheckFavicon: true
 EnforceHTML5: true
 CheckExternal: false
