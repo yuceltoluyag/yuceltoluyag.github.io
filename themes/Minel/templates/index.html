@@ -187,35 +187,17 @@
         </div>
     </article>
 
-    {% if loop.index is divisibleby(6) %}
+    {% if loop.index is divisibleby(2) and loop.index < 10 %}
     <!-- Reklam alanı -->
     {% if GOOGLE_ADSENSE %}
-    <div class="group relative overflow-hidden rounded-lg transition-all duration-300 hover:-translate-y-1">
-        <!-- Arka plan gradient -->
-        <div class="absolute inset-0 bg-gradient-to-br from-site-card via-site-card-alt to-site-card opacity-90"></div>
-        <!-- Hover efekti için gradient overlay -->
-        <div
-            class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <!-- Animasyonlu border efekti -->
-        <div class="absolute inset-0">
-            <div class="absolute inset-0 rounded-lg overflow-hidden">
-                <div
-                    class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent group-hover:via-primary transition-all duration-300"></div>
-                <div
-                    class="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent group-hover:via-primary transition-all duration-300"></div>
-                <div
-                    class="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/50 to-transparent group-hover:via-primary transition-all duration-300"></div>
-                <div
-                    class="absolute right-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/50 to-transparent group-hover:via-primary transition-all duration-300"></div>
-            </div>
-        </div>
-        <!-- Reklam içeriği -->
-        <div class="relative p-6">
-            <div class="flex justify-center items-center w-full min-h-[250px]">
+    <div class="relative overflow-hidden bg-site-card rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
+        <div class="relative p-6 text-center w-full min-h-[250px]">
+            <div class="flex justify-center items-center w-full">
                 <!-- Google AdSense -->
                 <script
                     async
-                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ GOOGLE_ADSENSE }}"
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
                     crossorigin="anonymous"></script>
             </div>
         </div>
