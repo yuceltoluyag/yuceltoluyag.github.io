@@ -123,432 +123,443 @@
             </div>
         </div>
     </div>
+</div>
 
-    <!-- İçindekiler - Sadece geniş ekranlarda sidebar'da göster -->
-    {% if article.toc %}
-    <div class="card mb-6 toc-wrapper hidden lg:block">
-        <h3 class="text-lg font-bold mb-4 text-text-primary">İçindekiler</h3>
-        <nav class="toc">
-            <div class="toc-container">{{ article.toc }}</div>
-        </nav>
-    </div>
-    {% endif %}
+<!-- İçindekiler - Sadece geniş ekranlarda sidebar'da göster -->
+{% if article.toc %}
+<div class="card mb-6 toc-wrapper hidden lg:block">
+    <h3 class="text-lg font-bold mb-4 text-text-primary">İçindekiler</h3>
+    <nav class="toc">
+        <div class="toc-container">{{ article.toc }}</div>
+    </nav>
+</div>
 
-    <!-- Mobil ve tablet görünümü için sabit butonlar -->
-    <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 lg:hidden">
-        <!-- İçindekiler butonu -->
-        <button
-            onclick="toggleTOC()"
-            aria-label="İçindekiler menüsünü aç"
-            class="flex items-center justify-center w-12 h-12 rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-            </svg>
-        </button>
+<!-- Mobil ve tablet görünümü için sabit butonlar -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 lg:hidden">
+    <!-- İçindekiler butonu -->
+    <button
+        onclick="toggleTOC()"
+        aria-label="İçindekiler menüsünü aç"
+        class="flex items-center justify-center w-12 h-12 rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+        </svg>
+    </button>
 
-        <!-- Yukarı git butonu -->
-        <button
-            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-            aria-label="Sayfanın başına git"
-            class="flex items-center justify-center w-12 h-12 rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-            </svg>
-        </button>
-    </div>
+    <!-- Yukarı git butonu -->
+    <button
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        aria-label="Sayfanın başına git"
+        class="flex items-center justify-center w-12 h-12 rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+</div>
 
-    <!-- Mobil ve tablet için İçindekiler Kartı -->
-    <div id="tocModal" class="fixed bottom-28 right-8 z-40 w-64 hidden lg:hidden">
-        <div class="bg-site-card rounded-lg shadow-xl border border-border-card overflow-hidden">
-            <div class="p-4">
-                <div class="flex items-center justify-between mb-2">
-                    <h3 class="text-sm font-bold text-text-primary">İçindekiler</h3>
-                    <button
-                        onclick="toggleTOC()"
-                        aria-label="İçindekiler menüsünü kapat"
-                        class="text-text-secondary hover:text-primary">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <nav class="toc max-h-[50vh] overflow-y-auto text-sm">
-                    <div class="toc-container">{{ article.toc }}</div>
-                </nav>
+<!-- Mobil ve tablet için İçindekiler Kartı -->
+<div id="tocModal" class="fixed bottom-28 right-8 z-40 w-64 hidden lg:hidden">
+    <div class="bg-site-card rounded-lg shadow-xl border border-border-card overflow-hidden">
+        <div class="p-4">
+            <div class="flex items-center justify-between mb-2">
+                <h3 class="text-sm font-bold text-text-primary">İçindekiler</h3>
+                <button
+                    onclick="toggleTOC()"
+                    aria-label="İçindekiler menüsünü kapat"
+                    class="text-text-secondary hover:text-primary">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
+            <nav class="toc max-h-[50vh] overflow-y-auto text-sm">
+                <div class="toc-container">{{ article.toc }}</div>
+            </nav>
         </div>
     </div>
+</div>
+{% endif %}
 
-    <!-- İstatistikler -->
-    <div class="card mb-6 overflow-hidden">
-        <div class="relative">
-            <!-- Arkaplan gradient efekti -->
+<!-- İstatistikler -->
+<div class="card mb-6 overflow-hidden">
+    <div class="relative">
+        <!-- Arkaplan gradient efekti -->
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent pointer-events-none"></div>
+
+        <h3 class="text-lg font-bold mb-6 text-text-primary flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            İstatistikler
+        </h3>
+
+        <div class="grid grid-cols-3 gap-4">
+            <!-- Yazı sayısı -->
             <div
-                class="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent pointer-events-none"></div>
-
-            <h3 class="text-lg font-bold mb-6 text-text-primary flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-                İstatistikler
-            </h3>
-
-            <div class="grid grid-cols-3 gap-4">
-                <!-- Yazı sayısı -->
+                class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
                 <div
-                    class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
+                    class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div class="relative flex flex-col items-center gap-1">
+                    <svg
+                        class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-.586-1.414l-4.5-4.5A2 2 0 0015.5 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2z" />
+                    </svg>
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                    <div class="relative flex flex-col items-center gap-1">
-                        <svg
-                            class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-.586-1.414l-4.5-4.5A2 2 0 0015.5 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2z" />
-                        </svg>
-                        <div
-                            class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-                            {{ articles|length }}
-                        </div>
-                        <div class="text-sm text-text-secondary">Yazı</div>
+                        class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                        {{ articles|length }}
                     </div>
-                </div>
-
-                <!-- Kategori sayısı -->
-                <div
-                    class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                    <div class="relative flex flex-col items-center gap-1">
-                        <svg
-                            class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                        </svg>
-                        <div
-                            class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-                            {{ categories|length }}
-                        </div>
-                        <div class="text-sm text-text-secondary">Kategori</div>
-                    </div>
-                </div>
-
-                <!-- Etiket sayısı -->
-                <div
-                    class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-                    <div class="relative flex flex-col items-center gap-1">
-                        <svg
-                            class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                        </svg>
-                        <div
-                            class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-                            {{ tags|length }}
-                        </div>
-                        <div class="text-sm text-text-secondary">Etiket</div>
-                    </div>
+                    <div class="text-sm text-text-secondary">Yazı</div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    {% endif %} {% endblock %} {% block content %}
-    <article class="bg-site-card rounded-lg overflow-hidden">
-        <!-- Makale başlığı ve meta bilgileri -->
-        <div class="p-8 border-b border-border-card">
-            <h1 class="text-3xl font-bold mb-4 text-text-primary">{{ article.title }}</h1>
-
-            <div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
-                <time datetime="{{ article.date.isoformat() }}" class="flex items-center">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    {{ article.locale_date }}
-                </time>
-
-                {% if article.modified %}
-                <time datetime="{{ article.modified.isoformat() }}" class="flex items-center">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                    </svg>
-                    {{ article.modified.strftime('%-d %B %Y') }}
-                </time>
-                {% endif %} {% if article.category %}
-                <span class="flex items-center">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Kategori sayısı -->
+            <div
+                class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div class="relative flex flex-col items-center gap-1">
+                    <svg
+                        class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             stroke-width="2"
                             d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                     </svg>
-                    <a
-                        href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
-                        class="hover:text-primary transition-colors">
-                        {{ article.category }}
-                    </a>
-                </span>
-                {% endif %}
-
-                <span class="flex items-center" title="~{{ article.statistics.wc }} kelime">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    {{ article.statistics.wc }} kelime
-                </span>
-
-                <span class="flex items-center" title="Yaklaşık okuma süresi">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {{ article.statistics.read_mins }} dakika
-                </span>
-
-                <span class="flex items-center" title="Flesch Reading Ease: {{ article.statistics.fi }}">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
-                    Seviye {{ article.statistics.fk }}
-                </span>
-
-                {% if article.tags %}
-                <div class="flex flex-wrap items-center gap-2">
-                    {% for tag in article.tags %}
-                    <a
-                        href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-                        class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors">
-                        #{{ tag }}
-                    </a>
-                    {% endfor %}
-                </div>
-                {% endif %}
-            </div>
-        </div>
-
-        {% if article.series %}
-        <div class="p-8 border-t border-border-card">
-            <div class="flex flex-col gap-4">
-                <p class="text-sm text-text-secondary">
-                    Bu "{{ article.series.name }}" serisinin {{ article.series.index }}. yazısıdır. Seri toplamda {{
-                    article.series.all|length }} bölümden oluşmaktadır.
-                </p>
-                <div class="flex flex-col gap-2">
-                    {% for article_in_series in article.series.all %}
-                    <div class="flex items-center gap-2">
-                        {% if article_in_series == article %}
-                        <span
-                            class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full text-xs">
-                            {{ loop.index }}
-                        </span>
-                        <span class="text-primary font-medium">{{ article_in_series.title }} (Şu anki yazı)</span>
-                        {% else %}
-                        <span
-                            class="w-6 h-6 flex items-center justify-center bg-site-card-alt text-text-secondary rounded-full text-xs">
-                            {{ loop.index }}
-                        </span>
-                        <a
-                            href="{{ SITEURL }}/{{ article_in_series.url }}"
-                            class="text-text-secondary hover:text-primary transition-colors">
-                            {{ article_in_series.title }}
-                        </a>
-                        {% endif %}
+                    <div
+                        class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                        {{ categories|length }}
                     </div>
-                    {% endfor %}
+                    <div class="text-sm text-text-secondary">Kategori</div>
+                </div>
+            </div>
+
+            <!-- Etiket sayısı -->
+            <div
+                class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div class="relative flex flex-col items-center gap-1">
+                    <svg
+                        class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                    </svg>
+                    <div
+                        class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+                        {{ tags|length }}
+                    </div>
+                    <div class="text-sm text-text-secondary">Etiket</div>
                 </div>
             </div>
         </div>
-        {% endif %}
+    </div>
+</div>
 
-        <!-- Makale içeriği -->
-        <div class="p-8">
-            <div class="prose prose-lg dark:prose-invert max-w-none post-content">
-                <script>
-                    // Makale içindeki tüm resimlere lazy loading ekle
-                    document.addEventListener("DOMContentLoaded", function () {
-                        const images = document.querySelectorAll(".post-content img");
-                        images.forEach((img) => {
-                            img.setAttribute("loading", "lazy");
-                            img.setAttribute("decoding", "async");
-                        });
+<!-- Reklam Alanı -->
+{% if GOOGLE_ADSENSE %}
+<div class="card mb-6 relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
+    <div class="relative flex justify-center items-center w-full min-h-[250px] p-6">
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+    </div>
+</div>
+{% endif %} {% endblock %} {% block content %}
+<article class="bg-site-card rounded-lg overflow-hidden">
+    <!-- Makale başlığı ve meta bilgileri -->
+    <div class="p-8 border-b border-border-card">
+        <h1 class="text-3xl font-bold mb-4 text-text-primary">{{ article.title }}</h1>
+
+        <div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
+            <time datetime="{{ article.date.isoformat() }}" class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                {{ article.locale_date }}
+            </time>
+
+            {% if article.modified %}
+            <time datetime="{{ article.modified.isoformat() }}" class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                {{ article.modified.strftime('%-d %B %Y') }}
+            </time>
+            {% endif %} {% if article.category %}
+            <span class="flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                </svg>
+                <a
+                    href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
+                    class="hover:text-primary transition-colors">
+                    {{ article.category }}
+                </a>
+            </span>
+            {% endif %}
+
+            <span class="flex items-center" title="~{{ article.statistics.wc }} kelime">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                {{ article.statistics.wc }} kelime
+            </span>
+
+            <span class="flex items-center" title="Yaklaşık okuma süresi">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {{ article.statistics.read_mins }} dakika
+            </span>
+
+            <span class="flex items-center" title="Flesch Reading Ease: {{ article.statistics.fi }}">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+                Seviye {{ article.statistics.fk }}
+            </span>
+
+            {% if article.tags %}
+            <div class="flex flex-wrap items-center gap-2">
+                {% for tag in article.tags %}
+                <a
+                    href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
+                    class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors">
+                    #{{ tag }}
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    {% if article.series %}
+    <div class="p-8 border-t border-border-card">
+        <div class="flex flex-col gap-4">
+            <p class="text-sm text-text-secondary">
+                Bu "{{ article.series.name }}" serisinin {{ article.series.index }}. yazısıdır. Seri toplamda {{
+                article.series.all|length }} bölümden oluşmaktadır.
+            </p>
+            <div class="flex flex-col gap-2">
+                {% for article_in_series in article.series.all %}
+                <div class="flex items-center gap-2">
+                    {% if article_in_series == article %}
+                    <span class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full text-xs">
+                        {{ loop.index }}
+                    </span>
+                    <span class="text-primary font-medium">{{ article_in_series.title }} (Şu anki yazı)</span>
+                    {% else %}
+                    <span
+                        class="w-6 h-6 flex items-center justify-center bg-site-card-alt text-text-secondary rounded-full text-xs">
+                        {{ loop.index }}
+                    </span>
+                    <a
+                        href="{{ SITEURL }}/{{ article_in_series.url }}"
+                        class="text-text-secondary hover:text-primary transition-colors">
+                        {{ article_in_series.title }}
+                    </a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Makale içeriği -->
+    <div class="p-8">
+        <div class="prose prose-lg dark:prose-invert max-w-none post-content">
+            <script>
+                // Makale içindeki tüm resimlere lazy loading ekle
+                document.addEventListener("DOMContentLoaded", function () {
+                    const images = document.querySelectorAll(".post-content img");
+                    images.forEach((img) => {
+                        img.setAttribute("loading", "lazy");
+                        img.setAttribute("decoding", "async");
                     });
-                </script>
-                {{ article.content[:article.content|length//2]|safe }}
+                });
+            </script>
+            {{ article.content[:article.content|length//2]|safe }}
 
-                <!-- Makale Ortası Reklam Alanı -->
-                {% if GOOGLE_ADSENSE %}
-                <div class="my-8 flex justify-center items-center w-full min-h-[250px]">
+            <!-- Makale Ortası Reklam Alanı -->
+            {% if GOOGLE_ADSENSE %}
+            <div class="my-8 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
+                <div class="relative flex justify-center items-center w-full min-h-[250px] p-6">
                     <!-- Google AdSense -->
                     <script
                         async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ GOOGLE_ADSENSE }}"
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
                         crossorigin="anonymous"></script>
                 </div>
-                {% endif %} {{ article.content[article.content|length//2:]|safe }}
             </div>
+            {% endif %} {{ article.content[article.content|length//2:]|safe }}
         </div>
+    </div>
 
-        <!-- Bağış Çağrısı -->
-        <div class="p-8 border-t border-border-card bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
-            <div class="flex flex-col items-center text-center space-y-6">
-                <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
-                    <svg
-                        class="w-8 h-8 text-primary"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true">
+    <!-- Bağış Çağrısı -->
+    <div class="p-8 border-t border-border-card bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
+        <div class="flex flex-col items-center text-center space-y-6">
+            <div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
+                <svg
+                    class="w-8 h-8 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+            </div>
+
+            <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-text-primary">Bu Tür İçeriklerin Devamı İçin Destek Olun!</h3>
+                <p class="text-text-secondary max-w-2xl">
+                    Eğer paylaştığım içerikler size fayda sağlıyorsa ve aklınızdaki sorunların çözümlerine dair daha
+                    fazla makale görmek istiyorsanız, bağış yaparak bu yolculukta bana destek olabilirsiniz. Her
+                    katkınız, daha fazla içerik üretmem için motivasyon kaynağı olacaktır.
+                </p>
+            </div>
+
+            <a
+                href="{{ SITEURL }}/bagis/"
+                aria-label="Bağış sayfasına git"
+                class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary-dark px-8 py-3 font-bold text-white transition duration-300 ease-out hover:scale-105">
+                <span
+                    class="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark transition-transform duration-300 ease-out group-hover:translate-y-12"></span>
+                <span class="relative flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             stroke-width="2"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                </div>
-
-                <div class="space-y-3">
-                    <h3 class="text-2xl font-bold text-text-primary">Bu Tür İçeriklerin Devamı İçin Destek Olun!</h3>
-                    <p class="text-text-secondary max-w-2xl">
-                        Eğer paylaştığım içerikler size fayda sağlıyorsa ve aklınızdaki sorunların çözümlerine dair daha
-                        fazla makale görmek istiyorsanız, bağış yaparak bu yolculukta bana destek olabilirsiniz. Her
-                        katkınız, daha fazla içerik üretmem için motivasyon kaynağı olacaktır.
-                    </p>
-                </div>
-
-                <a
-                    href="{{ SITEURL }}/bagis/"
-                    aria-label="Bağış sayfasına git"
-                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary-dark px-8 py-3 font-bold text-white transition duration-300 ease-out hover:scale-105">
-                    <span
-                        class="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark transition-transform duration-300 ease-out group-hover:translate-y-12"></span>
-                    <span class="relative flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        Destek Ol
-                    </span>
-                </a>
-            </div>
+                    Destek Ol
+                </span>
+            </a>
         </div>
+    </div>
 
-        <!-- Makale sonu - Önceki/Sonraki bağlantılar -->
-        <div class="p-8 border-t border-border-card">
-            <div class="flex flex-col sm:flex-row justify-between gap-4">
-                {% if article.prev_article %}
-                <a
-                    href="{{ SITEURL }}/{{ article.prev_article.url }}"
-                    aria-label="Önceki yazı: {{ article.prev_article.title }}"
-                    class="flex items-center text-primary hover:text-primary-dark transition-colors group">
-                    <svg
-                        class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                    <span class="line-clamp-1">{{ article.prev_article.title }}</span>
-                </a>
-                {% endif %} {% if article.next_article %}
-                <a
-                    href="{{ SITEURL }}/{{ article.next_article.url }}"
-                    aria-label="Sonraki yazı: {{ article.next_article.title }}"
-                    class="flex items-center text-primary hover:text-primary-dark transition-colors group ml-auto">
-                    <span class="line-clamp-1">{{ article.next_article.title }}</span>
-                    <svg
-                        class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </a>
-                {% endif %}
-            </div>
+    <!-- Makale sonu - Önceki/Sonraki bağlantılar -->
+    <div class="p-8 border-t border-border-card">
+        <div class="flex flex-col sm:flex-row justify-between gap-4">
+            {% if article.prev_article %}
+            <a
+                href="{{ SITEURL }}/{{ article.prev_article.url }}"
+                aria-label="Önceki yazı: {{ article.prev_article.title }}"
+                class="flex items-center text-primary hover:text-primary-dark transition-colors group">
+                <svg
+                    class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                <span class="line-clamp-1">{{ article.prev_article.title }}</span>
+            </a>
+            {% endif %} {% if article.next_article %}
+            <a
+                href="{{ SITEURL }}/{{ article.next_article.url }}"
+                aria-label="Sonraki yazı: {{ article.next_article.title }}"
+                class="flex items-center text-primary hover:text-primary-dark transition-colors group ml-auto">
+                <span class="line-clamp-1">{{ article.next_article.title }}</span>
+                <svg
+                    class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+            {% endif %}
         </div>
-    </article>
-    {% endblock %} {% block extra_js %}
-    <!-- TOC JavaScript -->
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/toc.js"></script>
-    <!-- Kod kopyalama JavaScript -->
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy-code.js"></script>
-    <script>
-        function toggleTOC() {
-            const modal = document.getElementById("tocModal");
-            modal.classList.toggle("hidden");
+    </div>
+</article>
+{% endblock %} {% block extra_js %}
+<!-- TOC JavaScript -->
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/toc.js"></script>
+<!-- Kod kopyalama JavaScript -->
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy-code.js"></script>
+<script>
+    function toggleTOC() {
+        const modal = document.getElementById("tocModal");
+        modal.classList.toggle("hidden");
+    }
+
+    // Sayfa dışına tıklandığında içindekiler kartını kapat
+    document.addEventListener("click", function (event) {
+        const modal = document.getElementById("tocModal");
+        const tocButton = document.querySelector('[onclick="toggleTOC()"]');
+        if (!modal.contains(event.target) && !tocButton.contains(event.target) && !modal.classList.contains("hidden")) {
+            modal.classList.add("hidden");
         }
+    });
 
-        // Sayfa dışına tıklandığında içindekiler kartını kapat
-        document.addEventListener("click", function (event) {
-            const modal = document.getElementById("tocModal");
-            const tocButton = document.querySelector('[onclick="toggleTOC()"]');
-            if (
-                !modal.contains(event.target) &&
-                !tocButton.contains(event.target) &&
-                !modal.classList.contains("hidden")
-            ) {
-                modal.classList.add("hidden");
-            }
+    // TOC linklerine tıklandığında kartı kapat
+    document.querySelectorAll("#tocModal .toc a").forEach((link) => {
+        link.addEventListener("click", () => {
+            document.getElementById("tocModal").classList.add("hidden");
         });
-
-        // TOC linklerine tıklandığında kartı kapat
-        document.querySelectorAll("#tocModal .toc a").forEach((link) => {
-            link.addEventListener("click", () => {
-                document.getElementById("tocModal").classList.add("hidden");
-            });
-        });
-    </script>
-    {% endblock %}
-</div>
+    });
+</script>
+{% endblock %}
