@@ -73,6 +73,7 @@ STATIC_PATHS = [
 EXTRA_PATH_METADATA = {
     "extra/SW.js": {"path": "SW.js"},
     "extra/robots.txt": {"path": "robots.txt"},
+    "extra/humans.txt": {"path": "humans.txt"},
     "extra/ads.txt": {"path": "ads.txt"},
     "extra/favicon.ico": {"path": "favicon.ico"},
     "extra/favicon.webp": {"path": "favicon.webp"},
