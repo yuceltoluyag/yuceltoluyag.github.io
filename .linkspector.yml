@@ -1,0 +1,21 @@
+---
+# Configuration for check-external-links.yml github action
+# https://github.com/UmbrellaDocs/action-linkspector
+
+dirs:
+  - content
+files:
+  - README.md
+aliveStatusCodes:
+  - 200
+  - 201
+  - 204
+  - 429
+ignorePatterns:
+  - pattern: "\\{static\\}"
+  - pattern: "\\{filename\\}"
+  - pattern: "^mailto:"
+  - pattern: "^/"
+  - pattern: "^https://www.nypr.org" # Lapsed SSL cert
+  - pattern: "^https://zeropointzero.com" # Lapsed SSL cert
+  - pattern: "^#"

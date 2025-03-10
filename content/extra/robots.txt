@@ -1,0 +1,25 @@
+# Do something here
+
+Sitemap: {{ SITEURL }}/sitemap.xml
+
+User-agent: *
+Allow: /
+
+# Google Image
+User-agent: Googlebot-Image
+Disallow:
+Allow: /*
+
+User-agent: Mediapartners-Google
+Disallow:
+
+# digg mirror
+User-agent: duggmirror
+Disallow: /
+
+# Crawl Delays
+User-agent: msnbot
+Crawl-delay: 10
+
+User-agent: Slurp
+Crawl-delay: 10

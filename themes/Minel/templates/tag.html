@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block title %}#{{ tag }} Etiketli Yazılar - {{ SITENAME }}{% endblock %} {% block content
+%}
+<div class="bg-site-card rounded-lg p-8">
+    <div class="mb-8">
+        <h1 class="text-3xl font-bold text-text-primary mb-2">#{{ tag }} Etiketli Yazılar</h1>
+        <p class="text-text-secondary">Bu etikete sahip {{ articles|length }} yazı bulundu</p>
+    </div>
+
+    <div class="grid gap-6">
+        {% for article in articles_page.object_list %}
+        <article class="card hover:scale-[1.01] transition-transform">
+            <h2 class="text-xl font-bold text-text-primary mb-2">
+                <a href="{{ SITEURL }}/{{ article.url }}" class="hover:text-primary transition-colors">
+                    {{ article.title }}
+                </a>
+            </h2>
+
+            <div class="flex items-center gap-4 text-sm text-text-secondary mb-4">
+                <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                {% if article.category %}
+                <a
+                    href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
+                    class="hover:text-primary transition-colors">
+                    {{ article.category }}
+                </a>
+                {% endif %}
+            </div>
+
+            <p class="text-text-secondary">{{ article.summary }}</p>
+        </article>
+        {% endfor %}
+    </div>
+
+    {% if articles_page.has_other_pages() %}
+    <div class="flex justify-center gap-2 mt-8">
+        {% if articles_page.has_previous() %}
+        <a
+            href="{{ SITEURL }}/{{ articles_previous_page.url }}"
+            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-primary transition-colors">
+            Önceki
+        </a>
+        {% endif %} {% if articles_page.has_next() %}
+        <a
+            href="{{ SITEURL }}/{{ articles_next_page.url }}"
+            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-primary transition-colors">
+            Sonraki
+        </a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

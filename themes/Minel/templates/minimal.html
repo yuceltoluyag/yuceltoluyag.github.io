@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% block main %}
+<div
+	class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %}"
+>
+	{% block content %}{% endblock %}
+</div>
+{% endblock %}

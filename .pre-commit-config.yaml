@@ -1,0 +1,76 @@
+---
+# https://pre-commit.com
+default_install_hook_types: [commit-msg, pre-commit]
+default_stages: [pre-commit, manual]
+fail_fast: true
+repos:
+  - repo: "https://github.com/commitizen-tools/commitizen"
+    rev: v4.4.1
+    hooks:
+      - id: commitizen
+      - id: commitizen-branch
+        stages:
+          - pre-push
+
+  - repo: "https://github.com/pre-commit/pre-commit-hooks"
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-json
+        exclude: .devcontainer/|.vscode/|tests/|feed\.json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-vcs-permalinks
+      - id: check-xml
+      - id: check-yaml
+      - id: debug-statements
+      - id: detect-private-key
+      - id: fix-byte-order-marker
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+        types: [python]
+      - id: no-commit-to-branch
+        args: [--branch, staging, --branch, production]
+
+  - repo: "https://github.com/adrienverge/yamllint.git"
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        files: ^.*\.(yaml|yml)$
+        entry: yamllint --strict --config-file .yamllint.yml
+
+  - repo: "https://github.com/crate-ci/typos"
+    rev: v1.30.0
+    hooks:
+      - id: typos
+        args: ["--force-exclude"]
+
+  - repo: "https://github.com/gitleaks/gitleaks"
+    rev: v8.24.0
+    hooks:
+      - id: gitleaks
+
+  - repo: "https://github.com/djlint/djLint"
+    rev: v1.36.4
+    hooks:
+      - id: djlint
+        args: ["--configuration", "pyproject.toml"]
+
+ci:
+  autofix_commit_msg: |
+    fix: auto fixes from pre-commit.com hooks
+
+    for more information, see https://pre-commit.ci
+  autofix_prs: false
+  autoupdate_commit_msg: "build: pre-commit autoupdate"
+  autoupdate_schedule: quarterly
+  skip: []
+  submodules: false

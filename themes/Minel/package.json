@@ -1,0 +1,21 @@
+{
+  "name": "minel-theme",
+  "version": "1.0.0",
+  "description": "Minimal Pelican theme with Tailwind CSS",
+  "scripts": {
+    "build": "postcss ./static/css/input.css -o ./static/css/style.css",
+    "build:prod": "cross-env NODE_ENV=production postcss ./static/css/input.css -o ./static/css/style.css",
+    "watch": "postcss ./static/css/input.css -o ./static/css/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
+    "cssnano": "^6.0.5",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-nesting": "^13.0.1",
+    "tailwindcss": "^3.4.17"
+  }
+}

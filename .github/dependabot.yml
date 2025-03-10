@@ -1,17 +1,35 @@
+---
 version: 2
 
 updates:
-  - package-ecosystem: "bundler"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    allow:
-      - dependency-type: "all"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    allow:
-      - dependency-type: "all"
-    versioning-strategy: increase
+    - package-ecosystem: github-actions
+      directory: /
+      schedule:
+          interval: monthly
+      commit-message:
+          prefix: "ci"
+          prefix-development: "ci"
+          include: scope
+      groups:
+          ci-deps:
+              patterns:
+                  - "*"
+      reviewers:
+          - "yuceltoluyag"
+    - package-ecosystem: pip
+      directory: /
+      schedule:
+          interval: monthly
+      commit-message:
+          prefix: "build"
+          prefix-development: "build"
+          include: scope
+      versioning-strategy: increase
+      allow:
+          - dependency-type: production
+      groups:
+          runtime-deps:
+              patterns:
+                  - "*"
+      reviewers:
+          - "yuceltoluyag"

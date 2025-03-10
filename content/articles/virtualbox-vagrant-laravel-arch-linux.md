@@ -1,0 +1,198 @@
+Title: Arch Linux Üzerinde VirtualBox + Vagrant + Laravel + PhpMyAdmin Kurulumu (Homestead)
+Date: 2019-09-16 00:00 10:00
+Modified: 2025-03-08 12:00
+Category: linux
+Tags: linux, laravel
+Slug: archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu
+Series: ArchLampp
+Series_index: 3
+Authors: yuceltoluyag
+Summary: Arch Linux üzerinde VirtualBox, Vagrant, Laravel ve PhpMyAdmin kurulumunu adım adım anlatan detaylı rehber.
+Translation: false
+Status: published
+Template: article
+
+![Kurulum Görseli](/images/pic-selected-190916-0747-49.png)
+
+## VirtualBox Kurulumu 🚀
+
+Öncelikle VirtualBox'ı yükleyelim:
+
+```shell
+sudo pacman -S virtualbox
+```
+
+Kurulum sırasında aşağıdaki seçenekler karşınıza çıkacaktır:
+
+1. **virtualbox-host-dkms**
+2. **virtualbox-host-modules-arch**
+
+Hangi seçeneği kullanacağınızı bilmiyorsanız:
+
+- Eğer **Linux kerneli** kullanıyorsanız **2. seçeneği** (**virtualbox-host-modules-arch**) seçmelisiniz.
+- **Farklı bir kernel** kullanıyorsanız **1. seçeneği** (**virtualbox-host-dkms**) tercih etmelisiniz.
+
+Ben **2. seçeneği** seçerek devam ediyorum.
+
+Kurulum tamamlandıktan sonra VirtualBox'ı başlatmadan önce modülü etkinleştirelim:
+
+```shell
+sudo modprobe vboxdrv
+```
+
+VirtualBox'ı bir kez çalıştırarak **hata olup olmadığını kontrol edin**. Eğer hata alırsanız, hata mesajını paylaşarak destek alabilirsiniz.
+
+Modülün her açılışta otomatik yüklenmesi için:
+
+```shell
+sudo nano /etc/modules-load.d/virtualbox.conf
+```
+
+Dosyaya **vboxdrv** ekleyin ve kaydedip çıkın (**F3** -> **Enter** -> **F2**).
+
+Son olarak, kullanıcınızı **vboxusers** grubuna ekleyin:
+
+```shell
+sudo usermod -aG vboxusers KULLANICI_ADINIZ
+```
+
+Bilgisayarınızı yeniden başlattıktan sonra aşağıdaki komutla modülün yüklü olup olmadığını doğrulayabilirsiniz:
+
+```shell
+sudo lsmod | grep vboxdrv
+```
+
+## Vagrant Kurulumu 🏗️
+
+Vagrant'ı yüklemek için:
+
+```shell
+yay -S vagrant
+```
+
+Eğer **Vagrant plugin** ve **plugin manager** yüklemek isterseniz:
+
+```shell
+vagrant plugin install vagrant-vbguest vagrant-share
+```
+
+Şimdi, Vagrant tarafından sağlanan hazır imajı indirelim:
+
+```shell
+vagrant box add laravel/homestead
+```
+
+Başarıyla eklendiğini belirten mesajı gördüğünüzde, sanal makine imajı oluşturulmuş olacaktır.
+
+## Homestead Kurulumu 🏡
+
+Ev dizininizde **www** adında bir klasör oluşturup, içine Homestead dosyalarını çekelim:
+
+```shell
+mkdir ~/www
+cd ~/www
+git clone https://github.com/laravel/homestead.git Homestead
+```
+
+Homestead'i başlatmak için:
+
+```shell
+cd ~/www/Homestead
+bash init.sh
+```
+
+**"Homestead initialized!"** mesajını gördüğünüzde başarıyla kurulmuş demektir.
+
+Şimdi **Homestead.yaml** dosyasını düzenlememiz gerekiyor:
+
+```shell
+sudo nano ~/www/Homestead/Homestead.yaml
+```
+
+<script src="https://gist.github.com/yuceltoluyag/5e0dac9ef4c2da7c27cd278cac7140e4.js"></script>
+
+Dosyanın başında **ip: \"192.168.10.10\"** adresini göreceksiniz. Laravel projemizi bu IP üzerinden çalıştırmak için **hosts** dosyamıza ekleme yapalım:
+
+```shell
+sudo nano /etc/hosts
+```
+
+Dosyanın içine şunu ekleyin:
+
+```shell
+192.168.10.10 laravel6.test
+```
+
+Kaydedip çıkın (**F3** -> **Enter** -> **F2**).
+
+Sonrasında sanal makineyi başlatalım:
+
+```shell
+cd ~/www/Homestead
+vagrant up
+```
+
+İlk açılış biraz uzun sürebilir. Eğer hata alırsanız yorum bırakabilirsiniz.
+
+Bağlanmak için:
+
+```shell
+vagrant ssh
+```
+
+![SSH Bağlantısı](/images/pic-selected-190916-0818-54.png)
+
+## Laravel Kurulumu 🌐
+
+SSH ile sanal makineye bağlandıktan sonra Laravel'i kurmak için:
+
+```shell
+cd www
+composer create-project --prefer-dist laravel/laravel
+```
+
+Bu işlem tamamlandığında **www** klasörünüzün içinde **laravel** adında bir klasör oluşacaktır.
+
+![Laravel Kurulumu](/images/pic-full-190916-0808-36.png)
+
+## PhpMyAdmin Kurulumu 🛠️
+
+SSH ile bağlı olduğunuzdan emin olun ve **www** dizininde çalıştığınızdan emin olun:
+
+```shell
+curl -sS https://raw.githubusercontent.com/grrnikos/pma/master/pma.sh | sh
+```
+
+PhpMyAdmin'e erişim için hosts dosyanıza yeni bir satır ekleyelim:
+
+```shell
+sudo nano /etc/hosts
+```
+
+İçerisine şunu ekleyin:
+
+```shell
+192.168.10.10 phpmyadmin.test
+```
+
+Kaydedip çıkın (**F3** -> **Enter** -> **F2**).
+
+Şimdi **Homestead.yaml** dosyamızı düzenleyelim ve yeni bir site ekleyelim:
+
+```yaml
+sites:
+  - map: laravel6.test
+    to: /home/vagrant/www/laravel6/public
+  - map: phpmyadmin.test
+    to: /home/vagrant/www/phpmyadmin
+```
+
+Tüm ayarlamalar tamamlandı! 🚀 **PhpMyAdmin'e erişmek için:**
+
+[http://phpmyadmin.test/](http://phpmyadmin.test/)
+
+Kullanıcı adı: **homestead**
+Şifre: **secret**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d9ITbD5Mn3w?si=P-Yu-QzqK_856zC5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+

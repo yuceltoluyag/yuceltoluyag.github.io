@@ -1,0 +1,254 @@
+{% extends "base.html" %} {% block content %}
+
+<!-- Öne Çıkarılan Makale -->
+{% if FEATURED_ARTICLE %}
+<div class="featured-article mb-8">
+    <div class="bg-site-card border border-border-card rounded-lg p-6">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-xl font-bold text-text-primary">📌 Öne Çıkarılan Makale</h2>
+            <span class="text-sm text-text-secondary">{{ FEATURED_ARTICLE.date }}</span>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">
+            <a href="{{ SITEURL }}/{{ FEATURED_ARTICLE.slug }}/" class="text-primary hover:opacity-80">
+                {{ FEATURED_ARTICLE.title }}
+            </a>
+        </h3>
+        <p class="text-text-secondary">{{ FEATURED_ARTICLE.summary }}</p>
+    </div>
+</div>
+{% endif %}
+
+<!-- Kategori filtreleri -->
+<div class="bg-site-card/95 backdrop-blur-sm border-b border-border-card mb-8" id="category-filters">
+    <div class="container mx-auto px-6 lg:px-8">
+        <div class="relative flex items-center">
+            <!-- Sol gradient ve kaydırma butonu -->
+            <div class="absolute left-0 top-0 bottom-0 flex items-center">
+                <div
+                    class="absolute inset-0 w-12 bg-gradient-to-r from-site-card to-transparent pointer-events-none"></div>
+                <button
+                    id="scroll-left"
+                    onclick="scrollCategories('left')"
+                    class="relative z-20 p-2.5 text-text-secondary hover:text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-sm rounded-full mr-2 opacity-0 pointer-events-none shadow-lg hover:shadow-primary/10 hover:-translate-x-0.5 active:scale-95">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Kaydırılabilir alan -->
+            <div
+                id="categories-scroll"
+                class="flex items-center overflow-x-auto whitespace-nowrap py-4 gap-4 scrollbar-none scroll-smooth flex-grow">
+                <a
+                    href="{{ SITEURL }}/kategoriler"
+                    class="flex items-center gap-2 px-4 py-2.5 {% if output_file == 'categories.html' %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-second hover:text-primary bg-site-card-alt/50 hover:bg-site-card-alt{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                    <span>Kategoriler</span>
+                </a>
+
+                {% for category, _ in categories %}
+                <a
+                    href="{{ SITEURL }}/kategori/{{ category.slug }}/"
+                    class="flex items-center gap-2 px-4 py-2.5 {% if category == current_category %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-second hover:text-primary bg-site-card-alt/50 hover:bg-site-card-alt{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                    </svg>
+                    <span>{{ category }}</span>
+                </a>
+                {% endfor %}
+            </div>
+
+            <!-- Sağ gradient ve kaydırma butonu -->
+            <div class="absolute right-0 top-0 bottom-0 flex items-center">
+                <div
+                    class="absolute inset-0 w-12 bg-gradient-to-l from-site-card to-transparent pointer-events-none"></div>
+                <button
+                    id="scroll-right"
+                    onclick="scrollCategories('right')"
+                    class="relative z-20 p-2.5 text-text-secondary hover:text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-sm rounded-full ml-2 shadow-lg hover:shadow-primary/10 hover:translate-x-0.5 active:scale-95">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kaydırma için JavaScript -->
+<script>
+    const container = document.getElementById("categories-scroll");
+    const leftButton = document.getElementById("scroll-left");
+    const rightButton = document.getElementById("scroll-right");
+    const scrollAmount = 200;
+
+    function scrollCategories(direction) {
+        if (direction === "right") {
+            container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        } else {
+            container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        }
+    }
+
+    function updateScrollButtons() {
+        // Sol buton görünürlüğü
+        if (container.scrollLeft > 0) {
+            leftButton.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+            leftButton.classList.add("opacity-0", "pointer-events-none");
+        }
+
+        // Sağ buton görünürlüğü
+        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+            rightButton.classList.add("opacity-0", "pointer-events-none");
+        } else {
+            rightButton.classList.remove("opacity-0", "pointer-events-none");
+        }
+    }
+
+    // Scroll event listener
+    container.addEventListener("scroll", updateScrollButtons);
+
+    // Sayfa yüklendiğinde ve pencere boyutu değiştiğinde kontrol et
+    window.addEventListener("load", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
+</script>
+
+<!-- Blog gönderileri -->
+<div class="space-y-6">
+    {% for article in articles_page.object_list %}
+    <!-- Blog kartı -->
+    <article
+        class="bg-site-card rounded-lg overflow-hidden hover:bg-site-card-alt transition-all duration-300 group relative">
+        <!-- Arka plan resmi -->
+        <div class="absolute inset-0 z-0">
+            {% if article.image %}
+            <img
+                src="{{ SITEURL }}/{{ article.image }}"
+                alt="{{ article.title }}"
+                class="w-full h-full object-cover opacity-10 transition-all duration-500 group-hover:scale-110 group-hover:opacity-15" />
+            {% endif %}
+            <div class="absolute inset-0 bg-gradient-to-b from-site-card/80 to-site-card"></div>
+        </div>
+
+        <!-- İçerik -->
+        <div class="relative z-10 p-6">
+            <h2 class="text-xl font-semibold mb-2">
+                <a href="{{ SITEURL }}/{{ article.url }}" class="hover:text-primary transition-colors">
+                    {{ article.title }}
+                </a>
+            </h2>
+            <p class="text-text-secondary mb-3">{{ article.summary|striptags|truncate(150) }}</p>
+            <div class="flex items-center gap-2 text-sm">
+                <!-- Kategori linki için -->
+                <a
+                    href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
+                    class="hover:text-primary transition-colors">
+                    {{ article.category }}
+                </a>
+
+                <!-- Tag linkleri için -->
+                {% if article.tags %}
+                <div class="flex flex-wrap gap-2">
+                    {% for tag in article.tags %}
+                    <a
+                        href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
+                        class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors">
+                        #{{ tag }}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <span class="ml-auto text-text-secondary">{{ article.locale_date }}</span>
+            </div>
+        </div>
+
+        <!-- Kenar çizgileri -->
+        <div class="absolute inset-0 rounded-lg overflow-hidden pointer-events-none">
+            <div
+                class="absolute top-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-primary transition-colors duration-300"></div>
+            <div
+                class="absolute left-0 top-0 bottom-0 w-[2px] bg-transparent group-hover:bg-primary transition-colors duration-300"></div>
+            <div
+                class="absolute bottom-0 left-0 right-0 h-[2px] bg-transparent group-hover:bg-primary transition-colors duration-300"></div>
+            <div
+                class="absolute right-0 top-0 bottom-0 w-[2px] bg-transparent group-hover:bg-primary transition-colors duration-300"></div>
+        </div>
+    </article>
+
+    {% if loop.index is divisibleby(2) and loop.index < 6 %}
+    <!-- Reklam alanı -->
+    {% if PUBLISH and GOOGLE_ADSENSE %}
+    <div class="bg-site-card rounded-lg overflow-hidden p-6 text-center">
+        <div class="flex justify-center items-center">
+            {% if loop.index == 2 %}
+            <!-- İlk reklam alanı -->
+            <script
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ GOOGLE_ADSENSE }}"
+                crossorigin="anonymous"></script>
+            <ins
+                class="adsbygoogle"
+                style="display: block; min-height: 280px"
+                data-ad-client="{{ GOOGLE_ADSENSE }}"
+                data-ad-slot="index_ad_1"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            {% elif loop.index == 4 %}
+            <!-- İkinci reklam alanı -->
+            <script
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ GOOGLE_ADSENSE }}"
+                crossorigin="anonymous"></script>
+            <ins
+                class="adsbygoogle"
+                style="display: block; min-height: 280px"
+                data-ad-client="{{ GOOGLE_ADSENSE }}"
+                data-ad-slot="index_ad_2"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %} {% endif %} {% endfor %}
+</div>
+
+<!-- Sayfalama -->
+{% if articles_page.has_other_pages() %}
+<div class="flex justify-center space-x-2 mt-8">
+    {% if articles_page.has_previous() %}
+    <a
+        href="{{ SITEURL }}/{{ articles_previous_page.url }}"
+        class="px-4 py-2 bg-site-card rounded-md hover:bg-site-card-alt transition-colors">
+        Önceki
+    </a>
+    {% endif %}
+
+    <span class="px-4 py-2 bg-primary text-white rounded-md">{{ articles_page.number }}</span>
+
+    {% if articles_page.has_next() %}
+    <a
+        href="{{ SITEURL }}/{{ articles_next_page.url }}"
+        class="px-4 py-2 bg-site-card rounded-md hover:bg-site-card-alt transition-colors">
+        Sonraki
+    </a>
+    {% endif %}
+</div>
+{% endif %} {% endblock %}
