@@ -32,3 +32,6 @@ SEO_REPORT = True  # SEO report is enabled by default
 SEO_ENHANCER = True  # SEO enhancer is disabled by default
 SEO_ENHANCER_OPEN_GRAPH = True  # Subfeature of SEO enhancer
 SEO_ENHANCER_TWITTER_CARDS = True  # Subfeature of SEO enhancer
+
+# Google AdSense
+GOOGLE_ADSENSE = "ca-pub-6089943780218266"
