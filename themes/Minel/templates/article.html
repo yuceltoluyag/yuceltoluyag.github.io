@@ -281,19 +281,7 @@
     </div>
 </div>
 
-<!-- Reklam Alanı -->
-{% if GOOGLE_ADSENSE %}
-<div class="card mb-6 relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-    <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
-    <div class="relative flex justify-center items-center w-full min-h-[250px] p-6">
-        <!-- Google AdSense -->
-        <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
-            crossorigin="anonymous"></script>
-    </div>
-</div>
-{% endif %} {% endblock %} {% block content %}
+{% endblock %} {% block content %}
 <article class="bg-site-card rounded-lg overflow-hidden">
     <!-- Makale başlığı ve meta bilgileri -->
     <div class="p-8 border-b border-border-card">
@@ -432,22 +420,7 @@
                     });
                 });
             </script>
-            {{ article.content[:article.content|length//2]|safe }}
-
-            <!-- Makale Ortası Reklam Alanı -->
-            {% if GOOGLE_ADSENSE %}
-            <div class="my-8 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <div
-                    class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
-                <div class="relative flex justify-center items-center w-full min-h-[250px] p-6">
-                    <!-- Google AdSense -->
-                    <script
-                        async
-                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
-                        crossorigin="anonymous"></script>
-                </div>
-            </div>
-            {% endif %} {{ article.content[article.content|length//2:]|safe }}
+            {{ article.content|safe }}
         </div>
     </div>
 

@@ -186,29 +186,7 @@
                 class="absolute right-0 top-0 bottom-0 w-[2px] bg-transparent group-hover:bg-primary transition-colors duration-300"></div>
         </div>
     </article>
-
-    {% if loop.index is divisibleby(2) and loop.index < 10 %}
-    <!-- Reklam alanı -->
-    {% if GOOGLE_ADSENSE %}
-    <div class="relative overflow-hidden bg-site-card rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-50"></div>
-        <div class="relative p-6 text-center w-full min-h-[250px]">
-            <div class="flex justify-center items-center w-full">
-                <!-- Google AdSense -->
-                <ins
-                    class="adsbygoogle"
-                    style="display: block; min-width: 250px; width: 100%; min-height: 250px"
-                    data-ad-client="ca-pub-6089943780218266"
-                    data-ad-slot="6307583586"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-        </div>
-    </div>
-    {% endif %} {% endif %} {% endfor %}
+    {% endfor %}
 </div>
 
 <!-- Sayfalama -->
