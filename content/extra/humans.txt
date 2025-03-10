@@ -1,18 +1,15 @@
----
----
-
 /* AUTHOR */
-{{ site.author.name }}, {{ site.description }}
-Contact: {{ site.author.email }}
-Twitter: @{{ site.author.twitter }}
+yuceltoluyag, Babanın Yeni Evi
+Contact: info@yuceltoluyag.com
+Twitter: @yuceltoluyag
 From: İstanbul, Turkiye
 
 
 /* SITE */
-Last Updated: {{ site.time | date:"%d/%m/%Y" }}
+Last Updated: 01/05/2024
 Language: Turkish
-Tools: Ruby, Sass, Jekyll, Node
-Theme: Minel Jekyll Theme
+Tools: Python, Pelican, Sass, Node
+Theme: Pelican Theme
 IDE: Vscode
 
 /* THANKS */
