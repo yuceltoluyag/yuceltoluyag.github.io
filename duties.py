@@ -223,50 +223,128 @@ def publish(ctx: Context) -> None:
 @duty
 def livereload(ctx: Context):
     """Automatically reload browser tab upon file modification."""
-    from livereload import Server
+    try:
+        from livereload import Server
+        import os
 
-    def cached_build():
-        ctx.run(
-            run_pelican(
-                [
-                    "-s",
-                    SETTINGS_FILE_BASE,
-                    "-e",
-                    "CACHE_CONTENT=true",
-                    "LOAD_CONTENT_CACHE=true",
-                ]
+        print("LiveReload başlatılıyor...")
+
+        def cached_build():
+            try:
+                print("Değişiklik algılandı, site yeniden oluşturuluyor...")
+                # Daha basit bir build komutu deneyelim
+                cmd = ["-s", SETTINGS_FILE_BASE]
+                print(f"Çalıştırılan komut: pelican {' '.join(cmd)}")
+                # capture=False ekleyerek çıktıyı görelim
+                ctx.run(run_pelican(cmd), capture=False)
+                print("Site yeniden oluşturuldu!")
+                return True
+            except Exception as e:
+                print(f"Site oluşturulurken hata: {e}")
+                return False
+
+        theme_path = SETTINGS["THEME"]
+        output_path = SETTINGS["OUTPUT_PATH"]
+
+        # Çıktı klasörünün varlığını kontrol et
+        if not os.path.exists(output_path):
+            print(
+                f"UYARI: Çıktı klasörü ({output_path}) bulunamadı. Önce bir build işlemi gerçekleştiriliyor."
             )
-        )
+            try:
+                print("İlk build işlemi başlatılıyor...")
+                ctx.run(run_pelican(["-s", SETTINGS_FILE_BASE]), capture=False)
+                print("İlk build işlemi tamamlandı.")
 
-    theme_path = SETTINGS["THEME"]
-    watched_globs = [
-        SETTINGS_FILE_BASE,
-        f"{theme_path}/templates/**/*.html",
-    ]
+                if not os.path.exists(output_path):
+                    print(
+                        f"HATA: Build işlemi tamamlandı ancak çıktı klasörü ({output_path}) hala bulunamadı."
+                    )
+                    print("Pelican yapılandırmanızı kontrol edin.")
+                    return
+            except Exception as e:
+                print(f"İlk build işlemi sırasında hata: {e}")
+                print("LiveReload başlatılamıyor.")
+                return
 
-    cached_build()
-    server = Server()
+        # İzlenecek dosya ve klasörleri tanımla
+        watched_globs = [
+            SETTINGS_FILE_BASE,
+            f"{theme_path}/templates/**/*.html",
+        ]
 
-    content_file_extensions = [".md", ".rst"]
-    for extension in content_file_extensions:
-        content_glob = f"{SETTINGS['PATH']}/**/*{extension}"
-        watched_globs.append(content_glob)
+        content_file_extensions = [".md", ".rst"]
+        for extension in content_file_extensions:
+            content_glob = f"{SETTINGS['PATH']}/**/*{extension}"
+            watched_globs.append(content_glob)
 
-    static_file_extensions = [".css", ".js"]
-    for extension in static_file_extensions:
-        static_file_glob = f"{theme_path}/static/**/*{extension}"
-        watched_globs.append(static_file_glob)
+        static_file_extensions = [".css", ".js"]
+        for extension in static_file_extensions:
+            static_file_glob = f"{theme_path}/static/**/*{extension}"
+            watched_globs.append(static_file_glob)
 
-    for glob in watched_globs:
-        server.watch(glob, cached_build)
+        # İzlenen dosyaları göster
+        print("İzlenen dosya ve klasörler:")
+        for glob in watched_globs:
+            print(f" - {glob}")
 
-    if OPEN_BROWSER_ON_SERVE:
-        # Open site in default browser
-        import webbrowser
+        # İlk build işlemini gerçekleştir
+        print("İlk site oluşturma işlemi başlatılıyor...")
+        if not cached_build():
+            print("İlk build başarısız oldu, ancak devam ediyoruz...")
 
-        webbrowser.open(f"http://{HOST}:{PORT}")
+        # Server'ı oluştur
+        server = Server()
 
-    server.serve(host=HOST, port=PORT, root=SETTINGS["OUTPUT_PATH"])
+        # İzleme işlemlerini ekle
+        for glob in watched_globs:
+            server.watch(glob, cached_build)
+
+        # Tarayıcıyı aç
+        if OPEN_BROWSER_ON_SERVE:
+            import webbrowser
+
+            site_url = f"http://{HOST}:{PORT}"
+            print(f"Tarayıcı açılıyor: {site_url}")
+            webbrowser.open(site_url)
+
+        # Sunucuyu başlat
+        print(f"LiveReload sunucusu başlatıldı: http://{HOST}:{PORT}")
+        print("Çıkmak için Ctrl+C tuşlarına basın.")
+        try:
+            print(
+                f"Sunucu başlatılıyor: {output_path} klasöründen servis ediliyor"
+            )
+            # Alternatif olarak daha basit bir sunucu kullanmayı deneyelim
+            try:
+                server.serve(host=HOST, port=PORT, root=output_path)
+            except Exception as server_error:
+                print(f"LiveReload sunucusu başlatılamadı: {server_error}")
+                print("Alternatif bir sunucu başlatılıyor...")
+
+                # Basit bir HTTP sunucusu başlat
+                import http.server
+                import socketserver
+
+                os.chdir(output_path)
+                handler = http.server.SimpleHTTPRequestHandler
+
+                with socketserver.TCPServer((HOST, PORT), handler) as httpd:
+                    print(
+                        f"Basit HTTP sunucusu başlatıldı: http://{HOST}:{PORT}"
+                    )
+                    httpd.serve_forever()
+
+        except KeyboardInterrupt:
+            print("Kullanıcı tarafından durduruldu.")
+        except Exception as e:
+            print(f"Sunucu başlatılırken hata: {e}")
+
+    except ImportError:
+        print("HATA: 'livereload' paketi bulunamadı.")
+        print("Lütfen şu komutu çalıştırın: pip install livereload")
+    except Exception as e:
+        print(f"LiveReload başlatılırken bir hata oluştu: {e}")
 
 
 @duty
