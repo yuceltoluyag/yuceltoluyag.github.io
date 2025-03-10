@@ -4,14 +4,6 @@ name: "Tests"
 on:
     workflow_dispatch:
     push:
-        paths:
-            - ".github/workflows/tests.yml"
-            - "content/**"
-            - "pelicanconf.py"
-            - "publishconf.py"
-            - "theme/**"
-            - "pyproject.toml"
-            - "uv.lock"
         branches:
             - main
     pull_request:
@@ -19,14 +11,6 @@ on:
             - opened
             - reopened
             - synchronize
-        paths:
-            - ".github/workflows/tests.yml"
-            - "content/**"
-            - "pelicanconf.py"
-            - "publishconf.py"
-            - "theme/**"
-            - "pyproject.toml"
-            - "uv.lock"
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
