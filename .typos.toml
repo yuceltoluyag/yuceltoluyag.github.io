@@ -1,5 +1,5 @@
 [default]
-    default.locale = "en_us"
+    default.locale = "tr"
 
     [default.extend-words]
         Froms      = "Froms"      # Apple property key "kMDItemWhereFroms"
