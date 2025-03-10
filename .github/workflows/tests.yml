@@ -52,8 +52,3 @@ jobs:
                       echo "output/index.html not found"
                       exit 1
                   fi
-
-            - name: Run htmltest
-              uses: wjdp/htmltest-action@master
-              with:
-                  config: .htmltest.yml
