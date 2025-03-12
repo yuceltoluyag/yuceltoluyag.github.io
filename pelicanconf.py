@@ -34,7 +34,7 @@ YEAR = TODAY.year
 # Yıl değişkeni
 SITEYEAR = datetime.now().year
 OG_LOCALE = "tr_TR"
-LOCALE = "tr_TR.UTF-8"
+LOCALE = ("tr_TR.UTF-8", "tr_TR")  # Tuple olarak tanımlıyoruz
 DATE_FORMATS = {
     "tr": "%-d %B %Y",
 }
@@ -63,7 +63,7 @@ USE_LESS = True
 # --- Paths & Directories ---
 THEME_STATIC_DIR = "assets"
 THEME = "themes/Minel"
-DIRECT_TEMPLATES = ["index", "tags", "feed"]
+DIRECT_TEMPLATES = ["index", "tags", "categories", "archives"]
 
 PATH = "content"
 STATIC_PATHS = [
@@ -268,21 +268,26 @@ PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
 
 # Kategori URL'leri
-CATEGORY_URL = "kategori/{slug}/"
-CATEGORY_SAVE_AS = "kategori/{slug}/index.html"
+CATEGORY_URL = "kategoriler/{slug}/"
+CATEGORY_SAVE_AS = "kategoriler/{slug}/index.html"
 CATEGORIES_URL = "kategoriler/"
 CATEGORIES_SAVE_AS = "kategoriler/index.html"
 
 # Tag URL'leri
-TAG_URL = "etiket/{slug}/"
-TAG_SAVE_AS = "etiket/{slug}/index.html"
+TAG_URL = "etiketler/{slug}/"
+TAG_SAVE_AS = "etiketler/{slug}/index.html"
 TAGS_URL = "etiketler/"
 TAGS_SAVE_AS = "etiketler/index.html"
 TAG_CLOUD_SORTING = "alphabetically"
+
 # Yazar URL'leri
 AUTHOR_URL = "yazar/{slug}/"
 AUTHOR_SAVE_AS = "yazar/{slug}/index.html"
 AUTHOR_EMAIL = "yuceltoluyag@gmail.com"
+
+# Arşiv URL'leri
+ARCHIVES_SAVE_AS = "arsiv/index.html"
+ARCHIVES_URL = "arsiv/"
 
 # URL sonlarındaki .html'i kaldır
 ARTICLE_LANG_URL = "{slug}-{lang}/"
@@ -355,3 +360,21 @@ FORMATTED_FIELDS = ["summary", "content"]
 # feed.json şablonunun çıktı yolu
 FEED_JSON = "feed.json"
 FEED_SAVE_AS = "feed.json"
+
+# --- URL Settings ---
+ARTICLE_URL = "{slug}/"
+ARTICLE_SAVE_AS = "{slug}/index.html"
+PAGE_URL = "{slug}/"
+PAGE_SAVE_AS = "{slug}/index.html"
+CATEGORY_URL = "kategoriler/{slug}/"
+CATEGORY_SAVE_AS = "kategoriler/{slug}/index.html"
+TAG_URL = "etiketler/{slug}/"
+TAG_SAVE_AS = "etiketler/{slug}/index.html"
+CATEGORIES_SAVE_AS = "kategoriler/index.html"
+CATEGORIES_URL = "kategoriler/"
+TAGS_URL = "etiketler/"
+TAGS_SAVE_AS = "etiketler/index.html"
+ARCHIVES_SAVE_AS = "arsiv/index.html"
+ARCHIVES_URL = "arsiv/"
+AUTHORS_SAVE_AS = "yazarlar/index.html"
+AUTHORS_URL = "yazarlar/"
