@@ -44,23 +44,23 @@ Eğer terminalinizde **ikon**ların doğru şekilde **görüntülenmesini** isti
 
 Bu iki uygulamayı **kuruyoruz**. Kurduktan sonra **Windows Terminal** uygulamamızı **açıyoruz** ve **ayarlara** giriyoruz.
 
-![windows-terminal](/images/windows-terminal.png)
+![windows-terminal](/images/windows-terminal.webp)
 
 Ayarlara girdikten sonra **görünüm** sekmesindeki ayarlarınız şu şekilde **olmalı**.
 
-![windows-terminal2](/images/windows-terminal2.png)
+![windows-terminal2](/images/windows-terminal2.webp)
 
 Ayarları **kaydettikten** sonra **Startup** kısmına tıklayın. Yüklemiş olduğumuz **Powershell**'i **varsayılan** olarak ayarlayın.
 
-![windows-terminal3](/images/windows-terminal3.png)
+![windows-terminal3](/images/windows-terminal3.webp)
 
 Ayarları **kaydedin** ve **Defaults** sekmesine gelin, oradan **Appearance** kısmından **Font** ayarlarınızı yapın.
 
-![windows-terminal4](/images/windows-terminal4.png)
+![windows-terminal4](/images/windows-terminal4.webp)
 
 **Font** ayarlarınızı yaptıktan sonra aynı ekranda bulunan "**Enable Acrylic**"i **aktif** hale getirin ve ayarları **kaydedin**.
 
-![windows-terminal5](/images/windows-terminal5.png)
+![windows-terminal5](/images/windows-terminal5.webp)
 
 Tüm bunları yaptıktan sonra **Terminal**inizi **kapatıp** yeniden **açın**.
 
@@ -375,7 +375,7 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 
 # Sonuç
 
-![windows-terminal6](/images/windows-terminal-son.png)
+![windows-terminal6](/images/windows-terminal-son.webp)
 
 ### Bana Balık Tutmasını Öğretme, Bana Balık Ver
 

@@ -11,7 +11,7 @@ Status: published
 Template: article
 
 
-![RetroArch](/images/retroarch.png)
+![RetroArch](/images/retroarch.webp)
 
 
 ## RetroArch Kurulumu ve Yapılandırılması 🎮

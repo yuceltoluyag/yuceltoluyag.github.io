@@ -29,7 +29,7 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 1. **[VLC Media Player](https://www.videolan.org/vlc/index.tr.html){: target="_blank" rel="noopener noreferrer"}** programını indirin ve kurun. (Tamamen ücretsiz ve açık kaynak kodludur.)
 2. Eğer **Görünüm** menüsü altında **VLSub** seçeneğini göremiyorsanız, şu adımları izleyin:
 
-   ![VLSub Kurulumu](/images/vlsub0.png)
+   ![VLSub Kurulumu](/images/vlsub0.webp)
 
    - **[Buradan](https://addons.videolan.org/p/1154045/){: target="_blank" rel="noopener noreferrer"}** eklentiyi indirin.
    - **C:\Program Files\VideoLAN\VLC\lua\extensions** dizinine kopyalayın.
@@ -53,13 +53,13 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 1. **İzleyeceğiniz videoyu açın.**
 2. **Menüden**: `Görünüm -> VLSub` seçeneğine tıklayın.
 
-   ![VLSub Açma](/images/vlbsub.png)
+   ![VLSub Açma](/images/vlbsub.webp)
 
 3. Açılan pencerede film ya da dizi ismini otomatik arayabilir veya manuel olarak girebilirsiniz.
 4. **Sonuçlardan birine tıklayın** ve **Download Selection** butonuna basın.
 5. Altyazı **otomatik olarak aynı klasöre** indirilecektir.
 
-   ![VLSub Altyazı Bulma](/images/vlsub1.png)
+   ![VLSub Altyazı Bulma](/images/vlsub1.webp)
 
 ---
 

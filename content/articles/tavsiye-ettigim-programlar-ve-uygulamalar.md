@@ -21,7 +21,7 @@ Uzun zamandır bu tür bir yazı yazmayı planlıyordum ama bir türlü fırsat 
 Bu yazıyı bir seri haline getirmek istiyorum. Bakalım başarabilecek miyim? 🤞</div>
 ## **Comodo Firewall (Güvenlik Duvarı) 🔥**
 
-![Ekran Görüntüsü](/images/comodo_firewall.png)
+![Ekran Görüntüsü](/images/comodo_firewall.webp)
 
 **Ücretsiz** versiyonunu kullanıyorum ve içerisinde **container (sanal ortam), antivirüs, güvenli tarayıcı** gibi birçok özellik barındırıyor. Güvenmediğiniz dosyaları sanal ortamda çalıştırabilirsiniz. Benzer bir özellik Windows 10'da **Windows Defender** ile de sunulmaya başlandı.
 
@@ -33,8 +33,8 @@ Bu program, klavyede bastığınız tuşları anlık olarak şifreleyerek olası
 
 Programı [buradan indirebilirsiniz](https://www.qfxsoftware.com/download.htm){: target="_blank" rel="noopener noreferrer"}. Kurulumdan sonra bilgisayarınızı yeniden başlatın ve ekranın herhangi bir köşesinde şifreleme işlemini görüntüleyin.
 
-![Program Aktif](/images/keyscrambler.png)
-![Şifreleme Ekranı](/images/keyscrambler2.png)
+![Program Aktif](/images/keyscrambler.webp)
+![Şifreleme Ekranı](/images/keyscrambler2.webp)
 
 ## **0patch 🛠️**
 

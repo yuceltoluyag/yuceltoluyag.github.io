@@ -33,7 +33,7 @@ ssh-keygen
 6. [GitHub SSH Keys Ayarları](https://github.com/settings/keys){: target="_blank" rel="noopener noreferrer"} sayfasına giderek **New SSH Key** butonuna tıklayın ve kopyaladığınız kodları yapıştırıp kaydedin.
 
 
-![gitbash](/images/git_bash.png)
+![gitbash](/images/git_bash.webp)
 
 ### Linux İçin SSH-Key Oluşturma
 

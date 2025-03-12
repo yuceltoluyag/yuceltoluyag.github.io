@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![Vagrant VirtualBox Windows Linux Güncelleme](/images/ol_vbox_vagrant-min.png)
+![Vagrant VirtualBox Windows Linux Güncelleme](/images/ol_vbox_vagrant-min.webp)
 
 2019-12-11'da VirtualBox'un yeni sürümü yayınlandı. Ancak bu güncellemeyle birlikte Vagrant ile VirtualBox arasında bir uyumsuzluk sorunu ortaya çıktı. Vagrant'ı çalıştırdığınızda aşağıdaki hata mesajını alabilirsiniz:
 

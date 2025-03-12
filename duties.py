@@ -224,6 +224,14 @@ def publish(ctx: Context) -> None:
     # Önce temiz bir build yapalım
     clean(ctx)
 
+    # Gulp build işlemini çalıştır
+    print("Gulp build işlemi başlatılıyor...")
+    try:
+        ctx.run("npm run prod", capture=False)
+        print("Gulp build işlemi tamamlandı.")
+    except Exception as e:
+        print(f"HATA: Gulp build işlemi başarısız oldu! Hata: {e}")
+
     # publishconf.py ile build işlemi
     print("publishconf.py ile build işlemi başlatılıyor...")
     try:

@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![Redshift Windows](/images/redshift_windows.png)
+![Redshift Windows](/images/redshift_windows.webp)
 
 ## 🌙 Redshift Nedir?
 

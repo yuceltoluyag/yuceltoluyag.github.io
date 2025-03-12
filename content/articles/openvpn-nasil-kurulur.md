@@ -27,57 +27,57 @@ Paranız çok, zamanınız azsa, kullan tabii ki sevgili okurum 🐸 Bazı VPN'l
 1.  Hesabınız yoksa bir Amazon hesabı açın.
 2.  [OpenVPN Access Server](https://aws.amazon.com/marketplace/pp/prodview-y3m73u6jd5srk){: target="_blank" rel="noopener noreferrer"} **Continue to Subscribe** tıklayın
 
-    ![amazon-openvpn-kurulumu](/images/amazon-openvpn-kurulumu.png)
+    ![amazon-openvpn-kurulumu](/images/amazon-openvpn-kurulumu.webp)
 
 3.  Lisans Sözleşmesini kabul edin
 
-    ![amazon-openvpn-kurulumu-2](/images/amazon-openvpn-kurulumu-2.png)
+    ![amazon-openvpn-kurulumu-2](/images/amazon-openvpn-kurulumu-2.webp)
 
 4.  Lisans bilgisi resimdeki gibi görünecektir. **Continue to Configuration** tıklayıp devam edin
 
-    ![amazon-openvpn-kurulumu-3](/images/amazon-openvpn-kurulumu-3.png)
+    ![amazon-openvpn-kurulumu-3](/images/amazon-openvpn-kurulumu-3.webp)
 
 5.  Yazılım versiyonunu seçin ve lokasyon olarak **Almanya Frankfurt** bölgesini seçin. Ardından **Continue to Launch** tıklayın.
 
-    ![amazon-openvpn-kurulumu-4](/images/amazon-openvpn-kurulumu-4.png)
+    ![amazon-openvpn-kurulumu-4](/images/amazon-openvpn-kurulumu-4.webp)
 
 6.  Yeni formdaki seçimlerimiz şöyle olmalı:
 
-    ![amazon-openvpn-kurulumu-5](/images/amazon-openvpn-kurulumu-5.png)
+    ![amazon-openvpn-kurulumu-5](/images/amazon-openvpn-kurulumu-5.webp)
 
 7.  Security Group Settings ve Key Pair Settings ayarlarını oluşturmanız gerekiyor. Ben kızımın adını verdim 🏌️‍♂️
 
-    ![amazon-openvpn-kurulumu-6](/images/amazon-openvpn-kurulumu-6.png)
+    ![amazon-openvpn-kurulumu-6](/images/amazon-openvpn-kurulumu-6.webp)
 
     Key oluşturma işlemine dair örneği de göstereyim
 
-    ![amazon-openvpn-kurulumu-7](/images/amazon-openvpn-kurulumu-7.png)
+    ![amazon-openvpn-kurulumu-7](/images/amazon-openvpn-kurulumu-7.webp)
 
     **"ED25519"** anahtarları yalnızca Linux ve Mac'te kullanılabilir. Bu yüzden RSA seçtik. Kaydettikten sonra pem uzantılı dosyanız indirilecektir. Kaybetmeyiniz, saklayınız, kimseye göstermeyiniz 😉
 
 8.  Security kısmı ise şöyle:
 
-    ![amazon-openvpn-kurulumu-8](/images/amazon-openvpn-kurulumu-8.png)
+    ![amazon-openvpn-kurulumu-8](/images/amazon-openvpn-kurulumu-8.webp)
 
     İsme ve açıklamaya dilediğiniz gibi yazabilirsiniz. VPN güvenliğini artırmak için bu bağlantı noktalarına erişimi belirli bir IP adresiyle veya adres bloğuyla (kendi ISS'nizinki gibi) kısıtlamak isteyebilirsiniz. Ancak IP adresiniz sık sık değişiyorsa, bağlantı noktalarını kısıtlamak yeterli olmayabilir. VPN'iniz bağlanmak için SSH anahtarlarına ihtiyaç duyacak ve OpenVPN sunucusu da parola korumalı olacaktır. Başka belirli güvenlik hedefleriniz yoksa, şimdilik varsayılan ayarları kabul etmenizde bir sakınca yoktur. **Launch** yolumuza devam edelim.
 
 9.  Ta ta, makine kurulumu bitti
 
-    ![amazon-openvpn-kurulumu-9](/images/amazon-openvpn-kurulumu-9.png)
+    ![amazon-openvpn-kurulumu-9](/images/amazon-openvpn-kurulumu-9.webp)
 
 ## DNS LEAK
 
-Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, DNS adreslerimiz halen kendi ISS'mizden istek atıyor. Saldırganlar genelde sahte web siteleri oluşturur, analiz servisleriyle IP adresinizi, konumunuzu, işletim sisteminizi vb. birçok bilgiyi toplayabilirler. IP adresinizi aldıktan sonra karşı taraf hiçbir şey yapamasa bile saldırı yapıp rahatınızı bozabiliyor. VPN açıkken DNS Leak testini otomatik yapabileceğiniz bir adres veriyorum şimdi 😁 [dnsleaktest.com](https://www.dnsleaktest.com/){: target="_blank" rel="noopener noreferrer"} Siteye girip Extended test yapmanız yeterli. Bu resimdeki ucuz, ücretsiz bir VPN'in testi 😆 ![Extended-test](/images/Extended-test.png) **Peki bunla neler mi yapıyorlar? Dilerseniz bonus bölümünden okuyabilirsiniz 😁** Çözüme devam edelim...
+Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, DNS adreslerimiz halen kendi ISS'mizden istek atıyor. Saldırganlar genelde sahte web siteleri oluşturur, analiz servisleriyle IP adresinizi, konumunuzu, işletim sisteminizi vb. birçok bilgiyi toplayabilirler. IP adresinizi aldıktan sonra karşı taraf hiçbir şey yapamasa bile saldırı yapıp rahatınızı bozabiliyor. VPN açıkken DNS Leak testini otomatik yapabileceğiniz bir adres veriyorum şimdi 😁 [dnsleaktest.com](https://www.dnsleaktest.com/){: target="_blank" rel="noopener noreferrer"} Siteye girip Extended test yapmanız yeterli. Bu resimdeki ucuz, ücretsiz bir VPN'in testi 😆 ![Extended-test](/images/Extended-test.webp) **Peki bunla neler mi yapıyorlar? Dilerseniz bonus bölümünden okuyabilirsiniz 😁** Çözüme devam edelim...
 
 ### EC2 Elastik IP
 
 1.  **Network & Security** menüsü altındaki **Elastic IPs** menüsüne tıklıyoruz.
 
-    ![amazon-openvpn-kurulumu-10](/images/amazon-openvpn-kurulumu-10.png)
+    ![amazon-openvpn-kurulumu-10](/images/amazon-openvpn-kurulumu-10.webp)
 
 2.  Daha sonra **Allocate Elastic IP address** menüsüne tıklayıp, Amazon havuzlarından bir adet IPv4 adresi talep edin. Oluşturduktan sonra aynı sayfadan **Associate address** e tıklayıp, aktif VPN sunucunuzu seçin. Eğer her şeyi doğru şekilde yaptıysanız, instance kısmında elastik IP kısmına IP adresiniz atanmış olmalı.
 
-    ![amazon-openvpn-kurulumu-11](/images/amazon-openvpn-kurulumu-11.png)
+    ![amazon-openvpn-kurulumu-11](/images/amazon-openvpn-kurulumu-11.webp)
 
 ## Sunucu Ayarları
 
@@ -119,12 +119,12 @@ sudo passwd openvpn
 
 SSH bağlantısını kapatmak için `exit` yazın. Ardından **https://elastic-ip-adresiniz:943/** adresinden web paneline bağlanabilirsiniz. SSL hatası alırsanız, gelişmiş menüsüne tıklayıp devam edin.
 
-![amazon-openvpn-kurulumu-12](/images/amazon-openvpn-kurulumu-12.png)
+![amazon-openvpn-kurulumu-12](/images/amazon-openvpn-kurulumu-12.webp)
 
 ## Sonuçlar
 
-![amazon-openvpn-kurulumu-13](/images/amazon-openvpn-kurulumu-13.png)
-![amazon-openvpn-kurulumu-14](/images/amazon-openvpn-kurulumu-14.png)
+![amazon-openvpn-kurulumu-13](/images/amazon-openvpn-kurulumu-13.webp)
+![amazon-openvpn-kurulumu-14](/images/amazon-openvpn-kurulumu-14.webp)
 
 ## Bonus: Cool Story Bro 🧿
 

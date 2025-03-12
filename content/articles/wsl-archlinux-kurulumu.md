@@ -33,7 +33,7 @@ Windows altında Üçüncü parti yazılım olmadan Linux çalıştırmamızı s
 
 - WSL 2 için Windows 10 versionunuz **2004** veya **daha üstü olmalı** (**19041**) yada **Windows 11** kullanıyor olmalısınız. Sürümünüzü şu şekilde hızlıca öğrenebilirsiniz. `Windows + R`, tuşuna basın gelen ekrana `winver` yazın size sürüm numaranızı gösterecektir.
 
-![wsl2-archlinux-kurulumu](/images/wls-archlinux-kurulumu.png)
+![wsl2-archlinux-kurulumu](/images/wls-archlinux-kurulumu.webp)
 
 - Eğerki **sürümünüz eski** ise şuradaki adımları takip edebilirsiniz. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual){: target="_blank" rel="noopener noreferrer"}
 
@@ -79,7 +79,7 @@ Daha sonra **sistemi yeniden başlatın** 👀 Bilgisayarınız **yeniden başla
 
 Kurulum tamamlandıktan sonra sizden **kullanıcı adı** ve **şifre** oluşturmanızı isteyecek. O kısımları doldurun.
 
-![wsl2-archlinux-kurulumu2](/images/wls-archlinux-kurulumu2.png)
+![wsl2-archlinux-kurulumu2](/images/wls-archlinux-kurulumu2.webp)
 
 ```bash
 
@@ -165,7 +165,7 @@ This message is shown once once a day. To disable it please create the
 
 WSL kurulumumuz buraya kadardı.Artık **terminal** sekmenizde **Ubuntu** dağıtımını görebilirsiniz.
 
-![wsl2-archlinux-kurulumu3](/images/wls-archlinux-kurulumu3.png)
+![wsl2-archlinux-kurulumu3](/images/wls-archlinux-kurulumu3.webp)
 
 Adettendir diyerek ubuntumuzu bir güncelleyelim 🤭
 
@@ -205,11 +205,11 @@ komutunu yazın hangi **distro**nun hangi sürümü kullandığını görebilirs
 
 - Archlinux.exe yi çalıştırın.
 
-![wsl2-archlinux-kurulumu4](/images/wls-archlinux-kurulumu4.png)
+![wsl2-archlinux-kurulumu4](/images/wls-archlinux-kurulumu4.webp)
 
 - Kurulum Bittikten sonra terminalinizden **Arch Linux**u başlatın.
 
-![wsl2-archlinux-kurulumu5](/images/wls-archlinux-kurulumu5.png)
+![wsl2-archlinux-kurulumu5](/images/wls-archlinux-kurulumu5.webp)
 
 - Hemen kullanıcı oluşturalım ve kendimize sudo yetkisi verelim 🤖 **Friday13** benim yerli ve milli nickimdir. Siz oraya **ali** yazın **mehmet** yazın ne yazarsanız yazın ☠️
 
@@ -247,7 +247,7 @@ dosyamızı açıyoruz resimdeki gibi oluşturduğumuz kullanıcıyıda ekliyoru
 
 ```
 
-![wsl2-archlinux-kurulumu6](/images/wls-archlinux-kurulumu6.png)
+![wsl2-archlinux-kurulumu6](/images/wls-archlinux-kurulumu6.webp)
 
 Bu satırların başında bulunan **diez(#)** işaretlerini **kaldırıyoruz**. **F3** ardından **enter** ve **F2** ye basarak çıkıyoruz.
 
@@ -263,11 +263,11 @@ Arch.exe config --default-user friday13
 
 ```
 
-![wsl2-archlinux-kurulumu7](/images/wls-archlinux-kurulumu7.png)
+![wsl2-archlinux-kurulumu7](/images/wls-archlinux-kurulumu7.webp)
 
 Daha sonra açık tüm terminalleri **kapatıp** yeniden **açın** ve **Arch** sekmesinden **Arch** seçin. Tada :)
 
-![wsl2-archlinux-kurulumu8](/images/wls-archlinux-kurulumu8.png)
+![wsl2-archlinux-kurulumu8](/images/wls-archlinux-kurulumu8.webp)
 
 Bundan sonra içerisinde at mı koşturursunuz deveye hendek mi atlatırsınız bilmem : ) Keyfinize göre takılın.
 

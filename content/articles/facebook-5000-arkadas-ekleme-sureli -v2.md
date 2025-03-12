@@ -12,7 +12,7 @@ Translation: false
 Status: published
 Template: article
 
-![Facebook 5000 Arkadaş Ekleme](/images/facebook-5000-arkadas-ekleme-kodu-v2.jpg)
+![Facebook 5000 Arkadaş Ekleme](/images/facebook-5000-arkadas-ekleme-kodu-v2.webp)
 
 
 ## Facebook 5000 Arkadaş Ekleme (Süreli)

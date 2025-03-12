@@ -1,76 +1,67 @@
-{% extends "base.html" %}
-
-{% block title %}{{ page.title }} | Yücel Toluyağ{% endblock %}
-
-{% block seo %}
+{% extends "base.html" %} {% block title %}{{ page.title }} | Yücel Toluyağ{% endblock %} {% block seo %}
 <meta name="description" content="{% if page.summary %}{{ page.summary | striptags }}{% endif %}" />
 <link rel="canonical" href="{{ SITEURL }}/{{ page.url }}" />
-<link rel="author" href="{{ SITEURL }}/about-nathaniel-landau/" />
-<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="author" href="{{ SITEURL }}/yazar/yuceltoluyag/" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
 <script type="application/ld+json">
-{
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "{{ page.title }}",
-        "name": "{{ page.title }}",
-        "url": "{{ SITEURL }}/{{ page.url }}",
-        "datePublished": "{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
-        {% if page.modified -%}
-        "dateModified": "{{ page.modified | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
-        {% else -%}
-        "dateModified": "{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
-        {% endif -%}
-        {% if page.summary -%}
-        "description": "{{ page.summary | striptags }}",
-        {% endif -%}
-        {% if page.tags -%}
-        "keywords": ["{{ page.tags | join(',') }}"],
-        {% endif -%}
-        "author": {
-            "@type": "Person",
-            "name": "Yücel Toluyağ",
-            "alternateName": "yucel toluyag",
-            "url": "{{ SITEURL }}",
-            "image": "{{ SITEURL }}/static/images/nate-landau.jpg",
-            "sameAs": ["https://facebook.com/yuceltoluyag", "https://twitter.com/yuceltoluyag", "https://www.linkedin.com/in/yuceltoluyag/"]
-        },
-        "publisher": {
-            "@type": "Person",
-            "name": "Yücel Toluyağ",
-            "alternateName": "yucel toluyag",
-            "url": "{{ SITEURL }}",
-            "image": "{{ SITEURL }}/static/images/nate-landau.jpg",
-            "sameAs": ["https://facebook.com/yuceltoluyag", "https://twitter.com/yuceltoluyag", "https://www.linkedin.com/in/yuceltoluyag/"]
-        },
-        "copyrightYear": "{{ YEAR }}",
-        "copyrightHolder": {
-            "@type": "Person",
-            "name": "Yücel Toluyağ",
-            "alternateName": "yucel toluyag"
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ SITEURL }}{{ page.url }}"
+    {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "{{ page.title }}",
+            "name": "{{ page.title }}",
+            "url": "{{ SITEURL }}/{{ page.url }}",
+            "datePublished": "{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
+            {% if page.modified -%}
+            "dateModified": "{{ page.modified | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
+            {% else -%}
+            "dateModified": "{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
+            {% endif -%}
+            {% if page.summary -%}
+            "description": "{{ page.summary | striptags }}",
+            {% endif -%}
+            {% if page.tags -%}
+            "keywords": ["{{ page.tags | join(',') }}"],
+            {% endif -%}
+            "author": {
+                "@type": "Person",
+                "name": "Yücel Toluyağ",
+                "alternateName": "yucel toluyag",
+                "url": "{{ SITEURL }}",
+                "image": "{{ SITEURL }}/static/images/avatar.webp",
+                "sameAs": ["https://facebook.com/yuceltoluyag", "https://twitter.com/yuceltoluyag", "https://www.linkedin.com/in/yuceltoluyag/"]
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Yücel Toluyağ",
+                "alternateName": "yucel toluyag",
+                "url": "{{ SITEURL }}",
+                "image": "{{ SITEURL }}/static/images/avatar.webp",
+                "sameAs": ["https://facebook.com/yuceltoluyag", "https://twitter.com/yuceltoluyag", "https://www.linkedin.com/in/yuceltoluyag/"]
+            },
+            "copyrightYear": "{{ YEAR }}",
+            "copyrightHolder": {
+                "@type": "Person",
+                "name": "Yücel Toluyağ",
+                "alternateName": "yucel toluyag"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ SITEURL }}{{ page.url }}"
+            }
         }
-    }
 </script>
 <meta content="{{ page.title }}" property="og:title" />
-<meta content="{{ SITEURL }}/about-nathaniel-landau/" property="article:author" />
+<meta content="{{ SITEURL }}/yazar/yuceltoluyag/" property="article:author" />
 <meta property="og:type" content="article" />
 <meta property="og:description" content="{% if page.summary %}{{ page.summary | striptags }}{% endif %}" />
 <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
-<meta property="article:published_time" content="{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}" />
-{% if page.modified -%}
-<meta property="article:modified_time" content="{{ page.modified | strftime("%Y-%m-%dT%H:%M:%S%z") }}" />
-<meta property="og:updated_time" content="{{ page.modified | strftime("%Y-%m-%dT%H:%M:%S%z") }}" />
-{% endif -%}
-{% if page.tags -%}
+<meta property="article:published_time" content="{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}" /> {% if
+page.modified -%} <meta property="article:modified_time" content="{{ page.modified | strftime("%Y-%m-%dT%H:%M:%S%z") }}"
+/> <meta property="og:updated_time" content="{{ page.modified | strftime("%Y-%m-%dT%H:%M:%S%z") }}" /> {% endif -%} {%
+if page.tags -%}
 <meta content="{{ page.tags[0] }}" property="article:section" />
 <meta property="article:tag" content="{{ page.tags | join(',') }}" />
-{% endif -%}
-{% endblock seo %}
-
-{% block content %}
+{% endif -%} {% endblock seo %} {% block content %}
 <article>
     <h1 class="headline">{{ page.title }}</h1>
     {{ page.content }}

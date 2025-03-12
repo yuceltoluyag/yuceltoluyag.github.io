@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![Newsboat](/images/newsboat.png)
+![Newsboat](/images/newsboat.webp)
 
 # Newsboat Nedir? 📰
 

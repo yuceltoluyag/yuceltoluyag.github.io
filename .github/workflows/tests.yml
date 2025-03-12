@@ -23,6 +23,20 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Install Node.js dependencies
+              run: npm ci
+
+            - name: Build assets
+              env:
+                  NODE_ENV: production
+              run: npm run prod
+
             - name: Setup Python, uv, and the package
               uses: ./.github/actions/setup_python_env
 
