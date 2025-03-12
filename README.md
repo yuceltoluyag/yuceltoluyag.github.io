@@ -1,95 +1,215 @@
-# Minel - Minimal Pelican Theme
+
+#  Minel - Minimal Pelican Theme
+
+  
 
 Minel, Pelican blog motoru için Tailwind CSS ile geliştirilmiş minimal bir temadır.
 
-## Özellikler
+  
+
+##  Özellikler
+
+  
 
 - Tailwind CSS ile modern tasarım
+
 - Karanlık/Aydınlık mod desteği
+
 - Mobil uyumlu (responsive) tasarım
+
 - İçindekiler tablosu
+
 - Kod vurgulama (syntax highlighting)
+
 - SEO optimizasyonu
+
 - Yapısal veri (Schema.org) desteği
+
 - Arama özelliği
 
-## Kurulum
+- İstatistik özellikleri
+
+- Resim optimizasyonu
+
+- Minify desteği
+
+- PWA desteği
+
+- Çoklu dil desteği
+
+- Öne çıkan makale desteği
+
+- RSS ve Atom feed desteği
+
+  
+
+##  Kurulum
+
+  
 
 1. Tema dosyalarını Pelican projenizin `themes/Minel` dizinine kopyalayın
-2. `pelicanconf.py` dosyanızda temayı etkinleştirin:
+2. Kaynak Dosyalarınızı **_assets** klasörüne atınız. (css,js,images) Nodejs betiği dosyaları işlemden geçirdikten sonra gerekli yerlere kendisi otomatik çıkartacaktır.
+
+3.  `pelicanconf.py` dosyanızda temayı etkinleştirin:
+
+  
 
 ```python
-THEME = 'themes/Minel'
+
+THEME  =  'themes/Minel'
+
 ```
 
-## Geliştirme
+  
 
-### Bağımlılıkları Yükleme
+3. Gerekli npm paketlerini yükleyin:
+
+  
 
 ```bash
-cd themes/Minel
-npm install
+
+npm  install
+
 ```
 
-### CSS Geliştirme
+  
 
-CSS dosyalarını geliştirme modunda derlemek için:
+4. Gerekli Python paketlerini yükleyin:
+
+  
 
 ```bash
-npm run watch
+
+pip  install  -r  requirements.txt
+
 ```
 
-### CSS Derleme
+  
 
-CSS dosyalarını normal boyutta derlemek için:
+##  Geliştirme
+
+  Bu temayı kodladığımda Tailwind köklü bir değişikliğe giderek 4.0 sürümünü çıkardı.Henüz yeni sürümle uyumlu değildir.
+
+###  Geliştirme Modu
+
+  
+
+Dosyaları izlemek ve değişiklikleri otomatik derlemek için:
+
+  
 
 ```bash
-npm run build
+
+npm  run  dev
+
 ```
 
-### CSS Minimize Etme (Üretim için)
+  
 
-CSS dosyalarını sıkıştırılmış ve optimize edilmiş şekilde derlemek için:
+veya
+
+  
 
 ```bash
-npm run build:prod
+
+duty  watch
+
 ```
 
-Bu komut, CSS dosyasını minimize eder, gereksiz boşlukları ve yorumları kaldırır, böylece dosya boyutu küçülür ve site daha hızlı yüklenir.
+  
 
-## Yapılandırma
+###  Üretim için Derleme
+
+  
+
+Tüm dosyaları optimize edilmiş şekilde derlemek için:
+
+  
+
+```bash
+
+npm  run  build # dev
+npm run publish # production
+# Üretimden sonra
+duty livereload # dev
+```
+
+  
+
+veya
+
+  
+
+```bash
+
+duty  build
+
+```
+
+  
+
+Bu komut aşağıdaki işlemleri yapar:
+
+- CSS dosyalarını minimize eder
+
+- JavaScript dosyalarını minimize eder
+
+- Resimleri optimize eder
+
+- WebP formatına dönüştürür
+
+- Service Worker dosyasını oluşturur
+
+- Manifest dosyasını oluşturur
+
+  
+
+###  Temizleme
+
+  
+
+Derlenen dosyaları temizlemek için:
+
+  
+
+```bash
+
+npm  run  clean
+
+```
+
+  
+
+veya
+
+  
+
+```bash
+
+duty  clean
+
+```
+
+  
+
+##  Yapılandırma
+
+  
 
 Tema için `pelicanconf.py` dosyanızda aşağıdaki ayarları kullanabilirsiniz:
 
-```python
-# Temel Ayarlar
-SITENAME = 'Site Adınız'
-SITEURL = 'https://example.com'
-DESCRIPTION = 'Site açıklamanız'
-AUTHOR = 'Adınız'
+  
 
-# Sosyal Medya Bağlantıları
-SOCIAL = {
-    'github': 'kullanıcı-adınız',
-    'instagram': 'kullanıcı-adınız',
-    'youtube': 'kullanıcı-adınız',
-    'twitch': 'kullanıcı-adınız',
-    'discord': 'kullanıcı-adınız',
-    'mastodon': 'kullanıcı-adınız',
-    'matrix': 'kullanıcı-adınız',
-    'kick': 'kullanıcı-adınız'
-}
+##  Yeni makale oluşturmak için
 
-# Navbar Linkleri
-NAVBAR_LINKS = [
-    {'name': 'Ana Sayfa', 'url': '/'},
-    {'name': 'Hakkımda', 'url': '/pages/about.html'},
-    {'name': 'Kategoriler', 'url': '/categories.html'},
-    {'name': 'Etiketler', 'url': '/tags.html'},
-    {'name': 'Bağış', 'url': '/pages/donate.html'}
-]
+```bash
+
+# Create a new post
+
+duty new "My New Post"`
+
 ```
 
-## Lisans
+##  Lisans
 
 MIT
