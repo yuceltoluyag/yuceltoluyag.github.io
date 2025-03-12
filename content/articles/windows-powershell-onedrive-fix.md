@@ -28,13 +28,13 @@ Eğer OneDrive'ı kaldırmış olmanıza rağmen PowerShell gibi uygulamalar hâ
 1. **Windows + R** tuşlarına basın ve **regedit** yazıp **Enter** tuşuna basın.
 2. Aşağıdaki yolu açın:
 
-```
+```powershell
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
 ```
 
 3. **"Personal"** anahtarına çift tıklayın ve değeri şu şekilde değiştirin:
 
-```
+```powershell
 C:\Users\KullanıcıAdı\Documents
 ```
 
@@ -181,7 +181,7 @@ Windows, özel klasör yollarını Kayıt Defteri (Registry) üzerinden yönetir
 - `regedit` yaz ve Enter tuşuna bas
 
 ### 📌 Adım 2: Aşağıdaki Yolu Aç
-```
+```powershell
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
 ```
 

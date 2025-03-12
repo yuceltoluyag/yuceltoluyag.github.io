@@ -20,7 +20,7 @@ Newsboat, terminal tabanlı güçlü bir RSS / Atom besleme okuyucusudur. Blog y
 
 Aşağıdaki komutlarla Newsboat ve ek araçları kurabilirsiniz:
 
-```shell
+```bash
 yay -S newsboat mpv youtube-dl dunst
 ```
 
@@ -32,7 +32,7 @@ yay -S newsboat mpv youtube-dl dunst
 
 Newsboat'un yapılandırma dosyası `~/.config/newsboat/config` içinde yer alır. Örnek bir yapılandırma:
 
-```shell
+```bash
 browser "xdg-open"
 
 macro o set browser "/usr/bin/mpv %u > /dev/null 2>&1 &" ; open-in-browser ; set browser "xdg-open"
@@ -148,7 +148,7 @@ highlight article "\\[image\\ [0-9]+\\]" green default
 
 RSS besleme adresleri `~/.config/newsboat/urls` dosyasına eklenir. Örnek:
 
-```shell
+```bash
 
 # Blog
 
@@ -194,11 +194,11 @@ http://feeds.feedburner.com/TammerSaleh
 
 Abone olduğunuz YouTube kanallarını Newsboat'a eklemek için:
 
-1. [YouTube Abonelikler Sayfası](https://www.youtube.com/subscription_manager)'na gidin.
+1. [YouTube Abonelikler Sayfası](https://www.youtube.com/subscription_manager){: target="_blank" rel="noopener noreferrer"}'na gidin.
 2. "RSS okuyuculara dışa aktar" seçeneğiyle dosyanızı indirin.
 3. Aşağıdaki komutla RSS adreslerini içeri aktarın:
 
-```shell
+```bash
 youtubebotu -i subscription_manager
 ```
 
@@ -206,12 +206,12 @@ youtubebotu -i subscription_manager
 
 Yoğun RSS kullanımı için alias tanımlayabilirsiniz. Örneğin:
 
-```shell
+```bash
 alias haberbotu="newsboat -u ~/.config/newsboat/haberurls -C ~/.config/newsboat/config"
 alias youtubebotu="newsboat -u ~/.config/newsboat/yturls -C ~/.config/newsboat/ytconfig"
 ```
 
 Bu şekilde terminalde `haberbotu` veya `youtubebotu` komutlarını kullanarak doğrudan belirli RSS beslemelerine erişebilirsiniz.
 
-Daha fazla bilgi için [Newsboat Belgeleri](https://newsboat.org/releases/2.19/docs/newsboat.html) sayfasına göz atabilirsiniz. 📖
+Daha fazla bilgi için [Newsboat Belgeleri](https://newsboat.org/releases/2.19/docs/newsboat.html){: target="_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖
 

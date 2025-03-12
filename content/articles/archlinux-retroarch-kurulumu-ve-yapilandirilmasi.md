@@ -13,6 +13,7 @@ Template: article
 
 ![RetroArch](/images/retroarch.png)
 
+
 ## RetroArch Kurulumu ve Yapılandırılması 🎮
 
 Arch Linux üzerinde RetroArch'ı kurmak ve yapılandırmak isteyenler için kapsamlı bir rehber hazırladık. RetroArch, geniş platform desteği ve esnek yapısıyla oyun severlere benzersiz bir deneyim sunuyor. İşte öne çıkan özellikleri:
@@ -176,6 +177,6 @@ audio_out_rate = 48000
 
 ---
 
-Bu rehber, Arch Linux üzerinde RetroArch'ı kurup optimize etmek isteyenler için kapsamlı bir kaynak sunuyor. Daha fazla bilgi için [Arch Wiki: RetroArch](https://wiki.archlinux.org/title/RetroArch) sayfasına göz atabilirsiniz. 📖
+Bu rehber, Arch Linux üzerinde RetroArch'ı kurup optimize etmek isteyenler için kapsamlı bir kaynak sunuyor. Daha fazla bilgi için [Arch Wiki: RetroArch](https://wiki.archlinux.org/title/RetroArch){: target="_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖
 
 Keyifli oyunlar! 🎮

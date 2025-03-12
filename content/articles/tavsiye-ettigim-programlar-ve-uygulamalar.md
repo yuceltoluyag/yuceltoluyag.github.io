@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
----
+
 
 # Merhaba! 👋
 
@@ -31,7 +31,7 @@ Ayrıca ağ trafiğinizi takip edebilir, hangi uygulamanın nereye veri gönderd
 
 Bu program, klavyede bastığınız tuşları anlık olarak şifreleyerek olası **keylogger saldırılarına** karşı koruma sağlar. Eğer bilgisayarınıza zararlı bir yazılım bulaşmışsa, **şifrelerinizi ve hassas verilerinizi koruyabilirsiniz.** 💻🛡️
 
-Programı [buradan indirebilirsiniz](https://www.qfxsoftware.com/download.htm). Kurulumdan sonra bilgisayarınızı yeniden başlatın ve ekranın herhangi bir köşesinde şifreleme işlemini görüntüleyin.
+Programı [buradan indirebilirsiniz](https://www.qfxsoftware.com/download.htm){: target="_blank" rel="noopener noreferrer"}. Kurulumdan sonra bilgisayarınızı yeniden başlatın ve ekranın herhangi bir köşesinde şifreleme işlemini görüntüleyin.
 
 ![Program Aktif](/images/keyscrambler.png)
 ![Şifreleme Ekranı](/images/keyscrambler2.png)
@@ -46,7 +46,7 @@ Güvenlik konusunda "Ben kimim ki?" demeyin, önlem almak her zaman iyidir! 😊
 
 **AdBlock** gibi popüler reklam engelleyicilerin kullanıcı verilerini topladığı iddialarından sonra, açık kaynak bir alternatif olan **uBlock Origin**'i kullanmaya başladım. Son derece hafif ve güçlü bir reklam engelleyici!
 
-Son zamanlarda ayrıca **[Pi-hole](https://pi-hole.net/)** kullanıyorum ve gerçekten memnunum. Eğer ağ bazlı bir reklam engelleyici arıyorsanız kesinlikle göz atmalısınız. 😁
+Son zamanlarda ayrıca **[Pi-hole](https://pi-hole.net/){: target="_blank" rel="noopener noreferrer"}** kullanıyorum ve gerçekten memnunum. Eğer ağ bazlı bir reklam engelleyici arıyorsanız kesinlikle göz atmalısınız. 😁
 
 ## **Mobilde Reklamsız YouTube Deneyimi: Vanced App 📺**
 

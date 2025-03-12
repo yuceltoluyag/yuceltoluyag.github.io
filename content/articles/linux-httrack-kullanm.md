@@ -19,7 +19,7 @@ Adım 1: HTTrack Kurulumu
 
 Öncelikle HTTrack’i kurmamız gerekiyor. Aşağıdaki komutla yazılımı kurabilirsiniz:
 
-```shell
+```bash
 sudo apt-get install httrack  # Programı kuruyoruz
 ```
 
@@ -27,7 +27,7 @@ Adım 2: Proje Bilgilerini Girin
 
 HTTrack kurulduktan sonra, aşağıdaki bilgileri girmeniz istenecektir:
 
-```shell
+```bash
 project name :  # Projenin ismi
 Base path (return=/home/baba/websites/):  # Projenin indirileceği dizin
 Enter URLs (separated by commas or blank spaces) :  # Kaydedeceğiniz websitesinin adresi
@@ -46,6 +46,6 @@ Adım 3: Aksiyon Seçimi
 
 Genellikle 1. seçeneği kullanıyorum, çünkü diğer seçeneklere ihtiyaç duymadım. Bazı web siteleri HTTrack karşı önlem almış olabilir, dolayısıyla her URL'yi indireceksiniz diye bir kural yok. Çevrimdışı olarak indirdiğiniz siteyi sağ tıklayıp "Öğeyi İncele" menüsünden incelemeniz faydalı olacaktır. Eğer kırmızı renk ile yazılmış hata mesajları görürseniz, bunları düzeltmeniz gerekebilir.
 
-Adım 4: [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber)
+Adım 4: [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber){: target="_blank" rel="noopener noreferrer"}
 
 Daha fazla rehber ve video için kanalımı ziyaret edebilirsiniz.

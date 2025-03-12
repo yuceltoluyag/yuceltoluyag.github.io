@@ -39,10 +39,10 @@ DATE_FORMATS = {
     "tr": "%-d %B %Y",
 }
 AUTHOR = "yuceltoluyag"
-SITENAME = "Babanın Yeni Evi"
-DESCRIPTION = "Ceviz Kelle Ağlama Yeter Artık"
-SITESUBTITLE = "Ceviz Kelle Ağlama Yeter Artık"
-KEYWORDS = "your, keywords, here"
+SITENAME = "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D"
+DESCRIPTION = "Ortaya Karışık"
+SITESUBTITLE = "Linux, Python ve Web Geliştirme Rehberleri"
+KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
 SITEURL = (
     "https://yuceltoluyag.github.io" if PUBLISH else "http://localhost:8000"
 )
@@ -175,6 +175,7 @@ MARKDOWN = {
         "pymdownx.inlinehilite",
         "pymdownx.emoji",
         "pymdownx.extra",
+        "markdown.extensions.attr_list",
     ],
     "extension_configs": {
         "pymdownx.emoji": {"emoji_generator": emoji.to_png_sprite}

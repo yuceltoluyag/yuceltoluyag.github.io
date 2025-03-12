@@ -11,13 +11,13 @@ Status: published
 Template: article
 ---
 
-Gökhan Kandemir’in [CodeIgniter Kitabı](http://kablosuzkedi.com/index.php/2017/10/24/codeigniter-3-kitabi-cikti/)’nı aldıktan sonra, çalışma yapabilmek için CodeIgniter’ı kurmam gerekti. Kurulum işlemi oldukça basit ve lokal geliştirme ortamında çalışmak için ekstra bir ayar gerekmiyor. Ancak, sunucu tarafında bazı ek yapılandırmalar yapmanız gerekebilir. Bu yazıda, temel kurulum işlemi ile ilgili detayları paylaşıyorum. Sunucu ayarları ile ilgili isteyenlere ayrıca yardımcı olabilirim.
+Gökhan Kandemir’in [CodeIgniter Kitabı](http://kablosuzkedi.com/index.php/2017/10/24/codeigniter-3-kitabi-cikti/){: target="_blank" rel="noopener noreferrer"}’nı aldıktan sonra, çalışma yapabilmek için CodeIgniter’ı kurmam gerekti. Kurulum işlemi oldukça basit ve lokal geliştirme ortamında çalışmak için ekstra bir ayar gerekmiyor. Ancak, sunucu tarafında bazı ek yapılandırmalar yapmanız gerekebilir. Bu yazıda, temel kurulum işlemi ile ilgili detayları paylaşıyorum. Sunucu ayarları ile ilgili isteyenlere ayrıca yardımcı olabilirim.
 
 <!-- excerpt separator -->
 
-Adım 1: [Apache Kurulumu](https://yuceltoluyag.github.io/linux-uzerinde-apache2-mysql-phpmyadmin) (Arch Linux için [tıklayın](https://yuceltoluyag.github.io/arch-linux-lampp-kurulumuphp7xmariadbmy/))
+Adım 1: [Apache Kurulumu](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="_blank" rel="noopener noreferrer"} (Arch Linux için [tıklayın](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/){: target="_blank" rel="noopener noreferrer"}))
 
-Adım 2: [CodeIgniter İndirme Bağlantısı](https://codeigniter.com/download)
+Adım 2: [CodeIgniter İndirme Bağlantısı](https://codeigniter.com/download){: target="_blank" rel="noopener noreferrer"}
 
 Mevcut versiyon: 3.1.9
 
@@ -32,8 +32,8 @@ cp -R codeigniter /var/www/html/codeigniter
 service apache2 restart
 ```
 
-Kurulum tamamlandıktan sonra, [http://localhost/codeigniter](http://localhost/codeigniter) adresinden CodeIgniter’a ulaşabilirsiniz.
+Kurulum tamamlandıktan sonra, [http://localhost/codeigniter](http://localhost/codeigniter){: target="_blank" rel="noopener noreferrer"} adresinden CodeIgniter’a ulaşabilirsiniz.
 
-Adım 3: [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber)
+Adım 3: [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber){: target="_blank" rel="noopener noreferrer"}
 
 Burada daha fazla video ve rehber bulabilirsiniz.

@@ -12,7 +12,7 @@ Template: article
 Image: images/php_morris.png
 
 
-Merhaba! MySQL (phpMyAdmin) üzerinde bir tablodaki belirli sütunların toplamını almak için keşfettiğim basit ve etkili bir fonksiyonun kullanımını ele alacağız. Ayrıca, en sevdiğim grafik kütüphanelerinden biri olan [morris.js](http://morrisjs.github.io/morris.js/) ile bu verileri görselleştireceğiz. 🎨📊
+Merhaba! MySQL (phpMyAdmin) üzerinde bir tablodaki belirli sütunların toplamını almak için keşfettiğim basit ve etkili bir fonksiyonun kullanımını ele alacağız. Ayrıca, en sevdiğim grafik kütüphanelerinden biri olan [morris.js](http://morrisjs.github.io/morris.js/){: target="_blank" rel="noopener noreferrer"} ile bu verileri görselleştireceğiz. 🎨📊
 
 ## Veri Toplama
 

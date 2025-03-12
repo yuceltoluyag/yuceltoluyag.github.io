@@ -29,12 +29,12 @@ Blogumda daha önce **Disqus** yorum eklentisini kullanıyordum. Fakat uzun zama
 
 ## İlk Adım: Farklı Bir Github Hesabı Oluşturun
 
-Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-bot` gibi bir isimle oluşturabilirsiniz. [Babanın Botu](https://github.com/babayorum-bot){:target="_blank"}{:rel="noopener noreferrer"}
+Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-bot` gibi bir isimle oluşturabilirsiniz. [Babanın Botu](https://github.com/babayorum-bot){: target="_blank" rel="noopener noreferrer"}
 
 ## Heroku Üzerinde Deploy
 
-1. [Heroku](https://herokuapp.com/){:target="_blank"} sitesine gidip bir üyelik oluşturun.
-2. Ardından, [Staticman Repo](https://github.com/eduardoboucas/staticman/tree/dev){:target="_blank"}'ya gidin ve burada **dev** branch'ini seçin. Çünkü ana dalda bazı güncellemeler henüz merge edilmemiş durumda. Bu kısımda alt kısımda bulunan **Deploy Heroku** butonuna tıklayın.
+1. [Heroku](https://herokuapp.com/){: target="_blank" rel="noopener noreferrer"} sitesine gidip bir üyelik oluşturun.
+2. Ardından, [Staticman Repo](https://github.com/eduardoboucas/staticman/tree/dev){: target="_blank" rel="noopener noreferrer"}'ya gidin ve burada **dev** branch'ini seçin. Çünkü ana dalda bazı güncellemeler henüz merge edilmemiş durumda. Bu kısımda alt kısımda bulunan **Deploy Heroku** butonuna tıklayın.
 
 ![heroku-kurulumu](/images/staticman8.png)
 
@@ -46,7 +46,7 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 
 # Github Uygulamaları
 
-1. İlk önce [Github Apps](https://github.com/settings/apps)'dan bir uygulama oluşturun. Uygulama ismini, açıklamasını ve Heroku adresinizi kendinize göre düzenlemeyi unutmayın.
+1. İlk önce [Github Apps](https://github.com/settings/apps){: target="_blank" rel="noopener noreferrer"}'dan bir uygulama oluşturun. Uygulama ismini, açıklamasını ve Heroku adresinizi kendinize göre düzenlemeyi unutmayın.
 
 ![staticman-kurulumu](/images/staticman.png)
 ![staticman-kurulumu](/images/staticman2.png)
@@ -59,7 +59,7 @@ Private keys kısmından **Generate a private key** butonuna tıklayın ve oluş
 
 ## Github Token'ları
 
-1. [Github Tokens](https://github.com/settings/tokens/) sayfasına giderek yeni bir token oluşturun. Token'ınıza şu yetkileri verin:
+1. [Github Tokens](https://github.com/settings/tokens/){: target="_blank" rel="noopener noreferrer"} sayfasına giderek yeni bir token oluşturun. Token'ınıza şu yetkileri verin:
 
 ![staticman-kurulumu](/images/staticman3.png)
 ![staticman-kurulumu](/images/staticman4.png)
@@ -99,30 +99,30 @@ Bu değerleri, daha önce oluşturduğumuz token ve private key'lerle doldurun.
 
 ## RSA Key Oluşturma
 
-```shell
+```bash
 ssh-keygen -m PEM -t rsa -b 4096 -C "burayabiseyyazin" -f ~/.ssh/staticman_key
 ```
 
 Daha sonra oluşturduğunuz anahtarı görmek için:
 
-```shell
+```bash
 head -2 ~/.ssh/staticman_key
 ```
 
 Çıktı şu şekilde olmalıdır:
 
-```shell
+```bash
 -----BEGIN RSA PRIVATE KEY-----
 MIDIGOMEDAGLARIBLA12930219312
 ```
 
 Alternatif olarak **openssl** kullanarak da RSA key oluşturabilirsiniz:
 
-```shell
+```bash
 openssl genrsa -out key.pem
 ```
 
-Eğer terminal kullanamıyorsanız, çevrimiçi RSA anahtar üreticilerini kullanabilirsiniz. [Online RSA Key Generator](https://travistidwell.com/jsencrypt/demo/){:target="_blank"} sitesini ziyaret ederek anahtarınızı oluşturabilirsiniz.
+Eğer terminal kullanamıyorsanız, çevrimiçi RSA anahtar üreticilerini kullanabilirsiniz. [Online RSA Key Generator](https://travistidwell.com/jsencrypt/demo/){: target="_blank" rel="noopener noreferrer"} sitesini ziyaret ederek anahtarınızı oluşturabilirsiniz.
 
 {% include info.html content="Github'dan aldığımız `GITHUB_PRIVATE_KEY` ile `RSA Key`'imiz aynı olabilir. Bu yüzden RSA Key oluşturma adımını atlayabilirsiniz." title="Bilgi" icon="tip" fai="icon-diamonds" %}
 
@@ -186,25 +186,25 @@ Postman üzerinden testler yapmak için doğru ayarları yapmanız gerekecek. Fo
 
 ![staticman-kurulumu](/images/staticman-postman.png)
 
-[Canlı Test](https://github.com/yuceltoluyag/jekyll-staticman/pull/1)
+[Canlı Test](https://github.com/yuceltoluyag/jekyll-staticman/pull/1){: target="_blank" rel="noopener noreferrer"}
 
 
 ## Staticman Örnek Kodlar
 
 Bu dosyaları inceleyin arkadaşlar, kafanızda ışıkların patlayacağından eminim 🎃
 
-- [comments.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comments.html){:target="\_blank"}
-- [comment.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment.html){:target="\_blank"}
-- [comment_form.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment_form.html){:target="\_blank"}
-- [main.js](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/assets/js/main.js){:target="\_blank"}
-- [\_comment.scss](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/css/main.scss#L305){:target="\_blank"}
+- [comments.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comments.html){: target="_blank" rel="noopener noreferrer"}
+- [comment.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment.html){: target="_blank" rel="noopener noreferrer"}
+- [comment_form.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment_form.html){: target="_blank" rel="noopener noreferrer"}
+- [main.js](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/assets/js/main.js){: target="_blank" rel="noopener noreferrer"}
+- [\_comment.scss](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/css/main.scss#L305){: target="_blank" rel="noopener noreferrer"}
 
-* Canlı Test => [Yorum Yap](https://yuceltoluyag.github.io/jekyll-staticman/){:target="\_blank"}
-* Kaynak Dosyaları => [Beleş İndir](https://github.com/yuceltoluyag/jekyll-staticman){:target="\_blank"}
+* Canlı Test => [Yorum Yap](https://yuceltoluyag.github.io/jekyll-staticman/){: target="_blank" rel="noopener noreferrer"}
+* Kaynak Dosyaları => [Beleş İndir](https://github.com/yuceltoluyag/jekyll-staticman){: target="_blank" rel="noopener noreferrer"}
 
 
 # Sonuç
 
 Artık Disqus kullanmak zorunda değilsiniz! Staticman, eksiklikleri olsa da oldukça kullanışlı ve özelleştirilebilir bir sistem. Geliştirilmesi gereken alanlar olsa da, şimdilik statik sitelerinizde yorumları rahatça yönetebilirsiniz. ✨
 
-[Kaynak Dosyalar](https://github.com/yuceltoluyag/jekyll-staticman)
+[Kaynak Dosyalar](https://github.com/yuceltoluyag/jekyll-staticman){: target="_blank" rel="noopener noreferrer"}

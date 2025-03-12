@@ -25,8 +25,8 @@ OBS'e eklenti ekleyip test olarak **Discord StreamKit** entegrasyonu gerçekleş
 
 
 
-- ~~[obs-linuxbrowser](https://github.com/bazukas/obs-linuxbrowser/releases)~~ (Eski yöntem, artık gerekli değil. Yüklemeyin!)
-- [Discord StreamKit](https://discordapp.com/streamkit)
+- ~~[obs-linuxbrowser](https://github.com/bazukas/obs-linuxbrowser/releases){: target="_blank" rel="noopener noreferrer"}~~ (Eski yöntem, artık gerekli değil. Yüklemeyin!)
+- [Discord StreamKit](https://discordapp.com/streamkit){: target="_blank" rel="noopener noreferrer"}
 
 Bu işlemleri elle de yapabilirsiniz, ancak ben terminal üzerinden yapmayı tercih ediyorum.
 
@@ -86,7 +86,7 @@ OBS'te **Linux Browser** kaynağını açın ve **URL alanına Discord StreamKit
 
 Linux ile ilgili sohbet etmek ve destek almak için **Discord sunucumuza katılabilirsiniz!**
 
-👉 [Discord Sunucumuza Katılın](https://discordapp.com/invite/da3Su8s)
+👉 [Discord Sunucumuza Katılın](https://discordapp.com/invite/da3Su8s){: target="_blank" rel="noopener noreferrer"}
 
 
 Bu rehberin Linux kullanıcıları için faydalı olacağını umuyorum. Herhangi bir sorunuz varsa yorumlarda belirtebilirsiniz! 📢

@@ -14,14 +14,14 @@ Template: article
 
 
 
-[# Modern bir mutt kurulumu 1. bölüm](https://yuceltoluyag.github.io/modern-mutt-kurulumu/) anlatırken **remote** kısımlarının çok önemli olduğunu söylemiştim. Her e-postanın kendi arayüzü, kendi remote tag'ı hatta dile göre değişen tag'lar varken, biz bunları nasıl öğreneceğiz? IMAP ve OpenSSL kullanarak bunu öğrenebileceğiz.
+[# Modern bir mutt kurulumu 1. bölüm](/modern-bir-mutt-kurulumu-1-bolum){: target="_blank" rel="noopener noreferrer"} anlatırken **remote** kısımlarının çok önemli olduğunu söylemiştim. Her e-postanın kendi arayüzü, kendi remote tag'ı hatta dile göre değişen tag'lar varken, biz bunları nasıl öğreneceğiz? IMAP ve OpenSSL kullanarak bunu öğrenebileceğiz.
 
 Windows kullanan arkadaşlar için öneriler:
 
-- [nmap](https://nmap.org/)
-- [ncat](https://nmap.org/ncat/)
-- telnet
-- Cmder terminali Windows kullananlara tavsiye ederim. [Cmder](https://cmder.app/) adresinden full sürümünü indirip istediğiniz dizine çıkarabilirsiniz. İsveç çakısı gibi bir terminaldir, isteğe göre düzenlenebilir, yeni uygulamalar eklenebilir vs. Bu uygulamalara gerek bile duymayabilirsiniz 😃
+- [nmap](https://nmap.org/){: target="_blank" rel="noopener noreferrer"}
+- [ncat](https://nmap.org/ncat/){: target="_blank" rel="noopener noreferrer"}
+- [telnet](https://www.gnu.org/software/inetutils/manual/html_node/telnet-invocation.html){: target="_blank" rel="noopener noreferrer"}
+- Cmder terminali Windows kullananlara tavsiye ederim. [Cmder](https://cmder.app/){: target="_blank" rel="noopener noreferrer"} adresinden full sürümünü indirip istediğiniz dizine çıkarabilirsiniz. İsveç çakısı gibi bir terminaldir, isteğe göre düzenlenebilir, yeni uygulamalar eklenebilir vs. Bu uygulamalara gerek bile duymayabilirsiniz 😃
 
 ## Başlayalım 🥗
 
@@ -29,19 +29,19 @@ Windows kullanan arkadaşlar için öneriler:
 
 Terminali açıp şu komutu girin. IMAP adreslerini ve portlarını ilk bölümde paylaşmıştım.
 
-```shell
+```bash
 openssl s_client -crlf -connect imapadresi:imapportu
 ```
 
 Örneğin, Gmail için:
 
-```shell
+```bash
 openssl s_client -crlf -connect imap.gmail.com:993
 ```
 
 Bağlantıyı kurduğunuzda çıktısı aşağıdaki gibi olacaktır:
 
-```shell
+```bash
 openssl s_client -crlf -connect imap.gmail.com:993 #bağlantısını kurduğumuzda çıktısı altaki gibidir
 CONNECTED(00000003)
 depth=2 OU = GlobalSign Root CA - R2, O = GlobalSign, CN = GlobalSign
@@ -212,19 +212,19 @@ read R BLOCK
 
 Bağlantıyı kurduktan sonra, kullanıcı adı ve şifrenizi girmeniz istenecektir.
 
-```shell
+```bash
 tag login gmailadresiniz@gmail.com şifreniz
 ```
 
 Bağlantı kurduktan sonra, mail kutularını görmek için aşağıdaki komutu kullanabilirsiniz:
 
-```shell
+```bash
 tag LIST "" "\*"
 ```
 
 Bu komut ile remote isimlerini ve klasör yapısını görebilirsiniz. Türkçe arayüz kullandığım için liste şu şekilde görünmektedir:
 
-```shell
+```bash
 - LIST (\HasNoChildren) "/" "INBOX"
 - LIST (\HasChildren \Noselect) "/" "[Gmail]"
 - LIST (\HasNoChildren \Sent) "/" "[Gmail]/Gönderilmiş Postalar"
@@ -246,20 +246,20 @@ Bu komut ile remote isimlerini ve klasör yapısını görebilirsiniz. Türkçe 
 
 Birde outlook/hotmail e bakalım klasör yapısı ve tagları nasılmış
 
-```shell
+```bash
 openssl s_client -crlf -connect Outlook.office365.com:993
 ```
 
-```shell
+```bash
 tag login benim@hotmailadresim.com şifreniz
 ```
 
-```shell
+```bash
 tag LIST "" "\*"
 
 ```
 
-```shell
+```bash
 
 - LIST (\HasNoChildren) "/" +INBOX
 - LIST (\HasNoChildren) "/" Ar&AV8-iv
@@ -281,34 +281,34 @@ Bu şekilde imap ve port adresini bildiğiniz tüm eposta arayüzlerinin remote 
 
 İlgili eposta kutusunu seçebilirizi
 
-```shell
+```bash
 tag SELECT INBOX
 
 ```
 
 Seçilen kutuda kaç tane ileti var görebiliriz
 
-```shell
+```bash
 tag STATUS INBOX (MESSAGES)
 ```
 
 İletinin üst bilgilerini almak
 Yukarıda ki işlemde sonuç 15 çıktı varsayalım.Son 10 mailin üst bilgisini alalım
 
-```shell
+```bash
 tag FETCH 5:15 (BODY[HEADER])
 
 ```
 
 Sadece içerik kısımlarını getirtmek istersek
 
-```shell
+```bash
 tag FETCH 15 (BODY)
 ```
 
 İçerik kısımları çok parçalı(yanıtla yanıtla yaptığımız durumlar oluyor) olduğu için indexs numaralarını görmek istersek
 
-```shell
+```bash
 tag FETCH 6388 (BODY[n])
 
 ```

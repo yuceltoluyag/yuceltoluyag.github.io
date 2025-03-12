@@ -22,17 +22,17 @@ Merhaba! Bu yazımızın ilk bölümünde, harika bir e-posta istemcisi olan Mut
 
 Aşağıdaki yazılımlar, mutt'ı kullanabilmek için gereklidir:
 
-1. [Mbsync/isync](https://wiki.archlinux.org/index.php/Isync#Installing)
-2. [Msmtp](https://wiki.archlinux.org/index.php/Msmtp)
-3. [Mu](https://aur.archlinux.org/packages/mu/)
+1. [Mbsync/isync](https://wiki.archlinux.org/index.php/Isync#Installing){: target="_blank" rel="noopener noreferrer"}
+2. [Msmtp](https://wiki.archlinux.org/index.php/Msmtp){: target="_blank" rel="noopener noreferrer"}
+3. [Mu](https://aur.archlinux.org/packages/mu/){: target="_blank" rel="noopener noreferrer"}
 4. Vim ya da türevleri
-5. [NeoMutt](https://www.archlinux.org/packages/community/x86_64/neomutt/)
-6. [Vdirsyncer](https://aur.archlinux.org/packages/vdirsyncer-git/)
-7. [Khard](https://www.archlinux.org/packages/community/any/khard/)
-8. [Ripmime](https://aur.archlinux.org/packages/ripmime/)
-9. [UrlScan](https://www.archlinux.org/packages/community/any/urlscan/)
-10. [W3m](https://www.archlinux.org/packages/extra/x86_64/w3m/)
-11. [Gpgme](https://www.archlinux.org/packages/core/x86_64/gpgme/)
+5. [NeoMutt](https://www.archlinux.org/packages/community/x86_64/neomutt/){: target="_blank" rel="noopener noreferrer"}
+6. [Vdirsyncer](https://aur.archlinux.org/packages/vdirsyncer-git/){: target="_blank" rel="noopener noreferrer"}
+7. [Khard](https://www.archlinux.org/packages/community/any/khard/){: target="_blank" rel="noopener noreferrer"}
+8. [Ripmime](https://aur.archlinux.org/packages/ripmime/){: target="_blank" rel="noopener noreferrer"}
+9. [UrlScan](https://www.archlinux.org/packages/community/any/urlscan/){: target="_blank" rel="noopener noreferrer"}
+10. [W3m](https://www.archlinux.org/packages/extra/x86_64/w3m/){: target="_blank" rel="noopener noreferrer"}
+11. [Gpgme](https://www.archlinux.org/packages/core/x86_64/gpgme/){: target="_blank" rel="noopener noreferrer"}
 
 ## Yukarıdaki Programlar Ne İşe Yarar?
 
@@ -55,7 +55,7 @@ Yukarıdaki yazılımlar, mail alıp gönderebilmemiz için gerekli araçlardır
 
 Yukarıdaki paketleri kendi dağıtımınıza göre kurabilirsiniz. Arch Linux kullanıcıları için kolaylık olması adına, aşağıdaki komutla tüm paketleri kurabilirsiniz. 🤣
 
-```shell
+```bash
 yay -S msmtp msmtp-mta isync mu-git neovim neomutt-git vdirsyncer-git khard ripmime urlscan w3m gpgme
 ```
 
@@ -63,7 +63,7 @@ Klasör yapımızı oluşturalım. Ben, ana dizinde klasör yapısını sevmedi�
 
 Ayrıca, Gmail ile yaşanabilecek sorunlara da dikkat etmeliyiz. Gmail'in aldığı güvenlik önlemleri nedeniyle bazı ayarlar yapmamız gerekebilir. Eğer Gmail ile ilgili bir sorun yaşarsanız, yorumda belirterek çözüm bulmaya çalışalım.
 
-```shell
+```bash
 mkdir .Contacts
 mkdir .Mail
 mkdir .Mail/ytoluyagmail
@@ -73,13 +73,13 @@ mkdir .Mail/yuceltoluyaghotmail
 
 Ana dizine bir dosya daha oluşturalım:
 
-```shell
+```bash
 touch ~/.mbsyncrc
 ```
 
 Bu dosyada, e-posta hesaplarımızı IMAP üzerinden senkronize edilecek şekilde yapılandıracağız. Örnek olarak Gmail hesabımız için:
 
-```shell
+```bash
 #################################
 ######## Gmail Hesabım ########
 #################################
@@ -153,24 +153,24 @@ Burada, ilgili e-postaları oluşturduğunuz klasörlere yönlendirdik. **Remote
 
 Şifre kısmını ise şu şekilde yapılandırabilirsiniz:
 
-```shell
+```bash
 #PassCmd "security find-internet-password -s 'imap.gmail.com' -a 'ytoluyag@gmail.com' -w"
 PassCmd "/usr/bin/gpg2 -q --for-your-eyes-only --no-tty -d ~/.password-store/ytoluyag.gpg"
 ```
 
 Şimdi, bir dosya daha oluşturalım:
 
-```shell
+```bash
 touch ~/.msmtprc
 ```
 
 Bu dosyada ise mail bağlantı ayarlarını yapıyoruz. Eğer mail bağlantınızın imap, port, ssl gibi bilgilerini bilmiyorsanız, aşağıdaki kaynaklara göz atabilirsiniz:
 
-- [Gmail İMAP Ayarları](https://support.google.com/mail/answer/7126229?hl=tr)
-- [Yandex İMAP Ayarları](https://yandex.com.tr/support/mail/mail-clients.html)
-- [Hotmail İMAP Ayarları](https://support.office.com/tr-tr/article/outlook-com-i%C3%A7in-pop-imap-ve-smtp-ayarlar%C4%B1-d088b986-291d-42b8-9564-9c414e2aa040)
+- [Gmail İMAP Ayarları](https://support.google.com/mail/answer/7126229?hl=tr){: target="_blank" rel="noopener noreferrer"}
+- [Yandex İMAP Ayarları](https://yandex.com.tr/support/mail/mail-clients.html){: target="_blank" rel="noopener noreferrer"}
+- [Hotmail İMAP Ayarları](https://support.office.com/tr-tr/article/outlook-com-i%C3%A7in-pop-imap-ve-smtp-ayarlar%C4%B1-d088b986-291d-42b8-9564-9c414e2aa040){: target="_blank" rel="noopener noreferrer"}
 
-```shell
+```bash
 account ytoluyagmail
 host smtp.gmail.com
 port 465
@@ -196,7 +196,7 @@ tls_trust_file /etc/ssl/certs/ca-certificates.crt
 
 Bu ayarları test edelim:
 
-```shell
+```bash
 echo "Mail Test Ediyoruz" | msmtp -a ytoluyagmail ytoluyag@gmail.com
 ```
 ![Test Sonucu](/images/uygulama_sifresi_gmail.png)
@@ -206,15 +206,15 @@ Eğer hata alırsanız, çözüm için tekrar gözden geçirebilirsiniz. Özelli
 
 Eğer bağlantınız başarılı olduysa, Muttr'ı başlatalım.
 
-```shell
+```bash
 neomutt
 ```
 
 Burada göreceğiniz hata loglarını da düzeltmek gerekebilir. Eğer hata alıyorsanız, dosyanızı tekrar gözden geçirebilirsiniz. 
-```shell
+```bash
 mbsync -a
 ```
 ![neomutt_senkron](/images/neomutt_senkron.png)
-Bu yazı dizisinin [2.Bölüm](https://yuceltoluyag.github.io/imap-openssl-terminalde-kullanim/)'ünde, e-posta istemcinizi daha ayrıntılı olarak yapılandırmaya devam edeceğiz. 🙂
+Bu yazı dizisinin [2.Bölüm](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="_blank" rel="noopener noreferrer"}'ünde, e-posta istemcinizi daha ayrıntılı olarak yapılandırmaya devam edeceğiz. 🙂
 
 

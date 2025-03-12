@@ -12,7 +12,7 @@ Template: article
 
 **Merhaba**
 
-[İnstagram](https://www.instagram.com/yuceltoluyag/){:target="\_blank"} üzerinden **hikaye**lerimi takip edenler **WSL**'ye nasıl **Arch Linux** Kurduğumu soruyorlardı. Kurulum yapabilenler ise **sürekli çöktüğünden** yakındılar. Uzun süredir kullanıyorum. Çökme patlama yanma yakılma gibi şeyler **yaşamadım**. 😎
+[İnstagram](https://www.instagram.com/yuceltoluyag/){: target="_blank" rel="noopener noreferrer"} üzerinden **hikaye**lerimi takip edenler **WSL**'ye nasıl **Arch Linux** Kurduğumu soruyorlardı. Kurulum yapabilenler ise **sürekli çöktüğünden** yakındılar. Uzun süredir kullanıyorum. Çökme patlama yanma yakılma gibi şeyler **yaşamadım**. 😎
 
 # WSL Nedir (Windows Subsytem Linux) ?
 
@@ -35,9 +35,9 @@ Windows altında Üçüncü parti yazılım olmadan Linux çalıştırmamızı s
 
 ![wsl2-archlinux-kurulumu](/images/wls-archlinux-kurulumu.png)
 
-- Eğerki **sürümünüz eski** ise şuradaki adımları takip edebilirsiniz. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual){:target="\_blank"}
+- Eğerki **sürümünüz eski** ise şuradaki adımları takip edebilirsiniz. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual){: target="_blank" rel="noopener noreferrer"}
 
-- [Windows Terminal Özelleştirme](https://yuceltoluyag.github.io/windows-terminal-ozellestirme/){:target="\_blank"}
+- [Windows Terminal Özelleştirme](/windows-terminalimi-nasil-ozellestiriyorum){: target="_blank" rel="noopener noreferrer"}
 
 - WSL
 
@@ -45,7 +45,7 @@ Windows altında Üçüncü parti yazılım olmadan Linux çalıştırmamızı s
 
 Terminalinizi **Yönetici** olarak başlatın. Ve şu komutu girin.
 
-```shell
+```bash
 
 wsl --install
 
@@ -53,7 +53,7 @@ wsl --install
 
 output
 
-```shell
+```bash
 
 Installing: Virtual Machine Platform
 
@@ -81,7 +81,7 @@ Kurulum tamamlandıktan sonra sizden **kullanıcı adı** ve **şifre** oluştur
 
 ![wsl2-archlinux-kurulumu2](/images/wls-archlinux-kurulumu2.png)
 
-```shell
+```bash
 
 Enter new UNIX username: kullanıcıadıgirin
 
@@ -93,7 +93,7 @@ Retype new password: Şifrenizi Tekrar Girin
 
 output
 
-```shell
+```bash
 
 Installing, this may take a few minutes...
 
@@ -179,7 +179,7 @@ sudo apt update && sudo apt upgrade
 
 - `wsl --set-default-version 2` komutunu çalıştırın. Bazı kullanıcılar yukarıdaki kısımları atlayarak yapabilir 😏 Sistemde hangi **WSL** sürümünü kullandığınızı merak ediyorsanız
 
-```shell
+```bash
 
 wsl -l -v
 
@@ -187,7 +187,7 @@ wsl -l -v
 
 output
 
-```shell
+```bash
 
 NAME STATE VERSION
 
@@ -197,7 +197,7 @@ NAME STATE VERSION
 
 komutunu yazın hangi **distro**nun hangi sürümü kullandığını görebilirsiniz.
 
-- [ArchWSL](https://github.com/yuk7/ArchWSL/releases){:target="\_blank"} Reposuna gidip son sürümü indirin. (Arch.zip)
+- [ArchWSL](https://github.com/yuk7/ArchWSL/releases){: target="_blank" rel="noopener noreferrer"} Reposuna gidip son sürümü indirin. (Arch.zip)
 
 - `C` Dizini altında `archlinux` adında bir klasör oluşturun.
 
@@ -279,7 +279,7 @@ Hali hazırda bulunan dosyalarınızı **Arch** içine aktarmak istiyorsanız. `
 
 - Bu komutla sistemde **aktif** çalışan işletim sistemlerini listelersiniz. 👨‍💻
 
-```shell
+```bash
 
 wsl --list --verbose
 
@@ -287,7 +287,7 @@ wsl --list --verbose
 
 - Daha sonra **WSL** kapatıyoruz.
 
-```shell
+```bash
 
 wsl --shutdown
 
@@ -295,7 +295,7 @@ wsl --shutdown
 
 - Kullanıcı dizinize gidin `C:\Users\<KullanıcıAdınız>` içerisine `.wslconfig` adında bir dosya **oluşturun**. Ve dosyanın içerisini şöyle **doldurun** :
 
-```shell
+```bash
 
 # Ayarlar, WSL 2 üzerinde çalışan tüm Linux dağıtımlarında geçerlidir
 
@@ -361,4 +361,4 @@ yay -Syyu
 
 ```
 
-Ayarlarıma **Github** Sayfamdan ulaşabilirsiniz.
+Ayarlarıma **[Github](https://github.com/yuceltoluyag/WindowsTerminal){: target="_blank" rel="noopener noreferrer"}**  Sayfamdan ulaşabilirsiniz.

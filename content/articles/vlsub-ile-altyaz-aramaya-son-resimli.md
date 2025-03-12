@@ -26,12 +26,12 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 
 ## 🛠 Kurulum
 
-1. **[VLC Media Player](https://www.videolan.org/vlc/index.tr.html)** programını indirin ve kurun. (Tamamen ücretsiz ve açık kaynak kodludur.)
+1. **[VLC Media Player](https://www.videolan.org/vlc/index.tr.html){: target="_blank" rel="noopener noreferrer"}** programını indirin ve kurun. (Tamamen ücretsiz ve açık kaynak kodludur.)
 2. Eğer **Görünüm** menüsü altında **VLSub** seçeneğini göremiyorsanız, şu adımları izleyin:
 
    ![VLSub Kurulumu](/images/vlsub0.png)
 
-   - **[Buradan](https://addons.videolan.org/p/1154045/)** eklentiyi indirin.
+   - **[Buradan](https://addons.videolan.org/p/1154045/){: target="_blank" rel="noopener noreferrer"}** eklentiyi indirin.
    - **C:\Program Files\VideoLAN\VLC\lua\extensions** dizinine kopyalayın.
    - **VLC kapalı olmalıdır!** Kopyalama işlemini yaptıktan sonra VLC'yi yeniden başlatın.
 

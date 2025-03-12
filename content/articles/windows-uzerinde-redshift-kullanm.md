@@ -26,14 +26,14 @@ Redshift kullanmadan önce birkaç alternatif program denedim:
 
 ## 🔧 Redshift Nasıl Kurulur?
 
-1. [Redshift'in en son sürümünü](https://github.com/jonls/redshift/releases) indirin.
+1. [Redshift'in en son sürümünü](https://github.com/jonls/redshift/releases){: target="_blank" rel="noopener noreferrer"} indirin.
 2. **C:\Program Files (x86)** içine **Redshift** adında bir klasör oluşturun.
 3. İndirdiğiniz dosyaları bu klasörün içine çıkarın.
-4. Gamma sınırlarını kaldırmak için gerekli kayıt defteri (reg) dosyalarına ihtiyacınız var. [Buradan](http://www.mediafire.com/file/ylw89legwkyp04t/redshift.7z/file) indirebilirsiniz.
+4. Gamma sınırlarını kaldırmak için gerekli kayıt defteri (reg) dosyalarına ihtiyacınız var. [Buradan](http://www.mediafire.com/file/ylw89legwkyp04t/redshift.7z/file){: target="_blank" rel="noopener noreferrer"} indirebilirsiniz.
 
 📂 **Klasör düzeni şu şekilde olmalı:**
 
-```
+```powershell
 C:\Program Files (x86)\Redshift
  ├── redshift.exe
  ├── redshift.conf
@@ -47,7 +47,7 @@ Redshift'i başlatmadan önce bazı yapılandırmalar yapmanız gerekiyor:
 1. **Windows + R** tuşlarına basarak çalıştır penceresini açın.
 2. **%USERPROFILE%\AppData\Local\** dizinine gidin.
 3. **redshift.conf** adında yeni bir dosya oluşturun.
-4. [LatLong.net](https://www.latlong.net/) sitesine giderek bulunduğunuz konumun enlem (latitude) ve boylam (longitude) bilgilerini alın.
+4. [LatLong.net](https://www.latlong.net/){: target="_blank" rel="noopener noreferrer"} sitesine giderek bulunduğunuz konumun enlem (latitude) ve boylam (longitude) bilgilerini alın.
 5. **redshift.conf** dosyanızı aşağıdaki gibi düzenleyin:
 
 ```conf
