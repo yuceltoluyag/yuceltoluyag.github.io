@@ -36,11 +36,11 @@ USB diskimizi hazırlamak için şu adımları takip edelim:
 1. **USB diskinizi biçimlendirin.**
 2. **Format olarak NTFS seçin.** (FAT32 kullanırsanız büyük dosyalarda hata alabilirsiniz.)
 
-![USB Formatlama](/images/linux_windows10_uefi_format.jpeg)
+![USB Formatlama](/images/linux_windows10_uefi_format.webp)
 
 Eğer USB'yi yanlış formatta biçimlendirirseniz aşağıdaki gibi bir hata ile karşılaşabilirsiniz:
 
-![Format Hatası](/images/linux_windows10_uefi_format_error.jpeg)
+![Format Hatası](/images/linux_windows10_uefi_format_error.webp)
 
 ## 3. WoeUSB Kullanımı
 
@@ -50,13 +50,13 @@ WoeUSB'yi açın ve şu adımları takip edin:
 2. **USB diskinizi seçin.**
 3. **Başlat düğmesine basarak işlemi başlatın.**
 
-![WoeUSB Arayüzü](/images/linux_windows10_uefi_disk.jpeg)
+![WoeUSB Arayüzü](/images/linux_windows10_uefi_disk.webp)
 
 ## 4. USB'den Boot Etme
 
 İşlem tamamlandıktan sonra bilgisayarınızı yeniden başlatın ve **BIOS/UEFI ayarlarından USB disk ile boot edin.**
 
-![Boot Ekranı](/images/linux_windows10_uefi_boot.jpeg)
+![Boot Ekranı](/images/linux_windows10_uefi_boot.webp)
 
 ## 5. Sonuç
 

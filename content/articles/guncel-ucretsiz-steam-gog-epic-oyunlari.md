@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![Güncel Steam, Epic, GOG Oyunları](/images/ucretsiz-oyunlar.jpg)
+![Güncel Steam, Epic, GOG Oyunları](/images/ucretsiz-oyunlar.webp)
 
 ## Güncel Ücretsiz Oyunlar 🎮🚀
 

@@ -12,7 +12,7 @@ Translation: false
 Status: published
 Template: article
 
-![Laravel IDE Helper](/images/laravel_7x_ide_helper.png)
+![Laravel IDE Helper](/images/laravel_7x_ide_helper.webp)
 
 ## Laravel IDE Helper Nedir? 🚀
 

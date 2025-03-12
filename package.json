@@ -1,0 +1,43 @@
+{
+    "name": "minel-theme",
+    "version": "1.0.0",
+    "description": "Minimal Pelican theme with Tailwind CSS",
+    "type": "commonjs",
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "scripts": {
+        "css": "gulp styles",
+        "js": "gulp scripts",
+        "images": "gulp images",
+        "build": "gulp",
+        "watch": "gulp watch",
+        "dev": "gulp watch",
+        "prod": "cross-env NODE_ENV=production gulp"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.24.0",
+        "@babel/preset-env": "^7.24.0",
+        "@tailwindcss/typography": "^0.5.16",
+        "autoprefixer": "^10.4.20",
+        "cross-env": "^7.0.3",
+        "cssnano": "^6.0.5",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-postcss": "^9.1.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-terser": "^2.1.0",
+        "gulp-webp": "^4.0.1",
+        "imagemin-mozjpeg": "^9.0.0",
+        "imagemin-pngquant": "^9.0.2",
+        "postcss": "^8.4.35",
+        "postcss-cli": "^11.0.0",
+        "postcss-import": "^16.1.0",
+        "postcss-nesting": "^12.0.2",
+        "postcss-preset-env": "^9.3.0",
+        "tailwindcss": "^3.4.17"
+    }
+}

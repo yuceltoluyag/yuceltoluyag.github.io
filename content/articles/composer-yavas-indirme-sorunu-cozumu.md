@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![Composer Hızlandırma](/images/composer.jpeg)
+![Composer Hızlandırma](/images/composer.webp)
 
 ## Composer Yavaş İndirme Sorunu ve Çözümleri ⚡
 

@@ -26,11 +26,11 @@ PHPStorm içerisinde terminali kullanabilmek için **ortam değişkenleri**ne yo
 📌 **Değişken Adı:** `CMDER_ROOT`  
 📌 **Yol:** `C:\cmder`
 
-![Ortam Değişkenleri](/images/ortam_degiskenleri1.png)
+![Ortam Değişkenleri](/images/ortam_degiskenleri1.webp)
 
 Ben Cmder'in full sürümünü indirip `C:` dizinine çıkarmıştım. Siz nereye kurduysanız, o dizini gösterin.
 
-![Ortam Değişkenleri Ayarı](/images/ortam_degiskenleri3.png)
+![Ortam Değişkenleri Ayarı](/images/ortam_degiskenleri3.webp)
 
 ### PHPStorm İçin Terminal Ayarı 🛠️
 
@@ -42,13 +42,13 @@ Ben Cmder'in full sürümünü indirip `C:` dizinine çıkarmıştım. Siz nerey
 "cmd" /k ""%CMDER_ROOT%\vendor\init.bat""
 ```
 
-![PHPStorm Cmder Ayarı](/images/phpstorm_terminal.png)
+![PHPStorm Cmder Ayarı](/images/phpstorm_terminal.webp)
 
 ### PHPStorm'u Yeniden Başlatma 🔄
 
 Ayarları uyguladıktan sonra PHPStorm'u yeniden başlatın. Yeniden açıldığında **Terminal** sekmesine tıklayarak Cmder’in çalıştığını görebilirsiniz. 🎉
 
-![PHPStorm Cmder Terminal](/images/phpstorm_terminal2.png)
+![PHPStorm Cmder Terminal](/images/phpstorm_terminal2.webp)
 
 Cmder terminali, Windows kullanıcıları için oldukça pratik bir araçtır. Full sürümünü [buradan](https://cmder.app/){: target="_blank" rel="noopener noreferrer"} indirerek istediğiniz dizine çıkarabilirsiniz. 😊
 

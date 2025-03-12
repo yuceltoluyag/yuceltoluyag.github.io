@@ -52,7 +52,7 @@ Bir butona tıklandığında uyarı penceresinin açılmasını sağlayalım:
         cancelButtonText: "Geri Git", // İptal butonu metni
         closeOnConfirm: true, // Onaya basıldığında pencere kapanır
         closeOnCancel: true, // İptale basıldığında pencere kapanır
-        imageUrl: "/images/sweetalert.png", // Uyarı penceresinin resmi
+        imageUrl: "/images/sweetalert.webp", // Uyarı penceresinin resmi
         imageSize: "100x100", // Resim boyutu
         timer: 10000, // 10 saniye sonra otomatik kapanır
         html: true
@@ -90,7 +90,7 @@ Bir butona tıklandığında uyarı penceresinin açılmasını sağlayalım:
 
 ## Örnek Görsel
 
-![SweetAlert Örneği](/images/sweetalert.png)
+![SweetAlert Örneği](/images/sweetalert.webp)
 
 ## İndirme Bağlantısı
 

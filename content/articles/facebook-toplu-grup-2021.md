@@ -21,7 +21,7 @@ Yaklaşık iki yıl önce yayınladığım videolardan sonra bu konuda bana sık
 
 ## Güncellenmiş Facebook Grup Arkadaş Ekleme Yöntemi 🚀
 
-![Facebook Yeni Grup Eklentisi](/images/facebookgrupkodu.png)
+![Facebook Yeni Grup Eklentisi](/images/facebookgrupkodu.webp)
 
 Yukarıdaki resimde gösterildiği gibi:
 

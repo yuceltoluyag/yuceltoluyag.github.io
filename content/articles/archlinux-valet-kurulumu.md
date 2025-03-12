@@ -12,7 +12,7 @@ Translation: false
 Status: published
 Template: article
 
-![Laravel Valet Kurulumu](/images/laravel-valet-kurulumu-linux.jpeg)
+![Laravel Valet Kurulumu](/images/laravel-valet-kurulumu-linux.webp)
 
 # Merhaba 👋
 
@@ -100,7 +100,7 @@ Bağlantıları listelemek için:
 valet links
 ```
 
-![Laravel Valet Link Arch Linux](/images/laravel-valet-link-archlinux.png)
+![Laravel Valet Link Arch Linux](/images/laravel-valet-link-archlinux.webp)
 
 ## 🔧 Domain Uzantısını Değiştirme
 

@@ -59,7 +59,7 @@ Diyelim ki **son coiliniz** ömrünü doldurmak üzere ya da yandı, sipariş ve
 
 # Kullandığım Tatlar
 
-![Manhattan Likit](/images/esigara-yararlimi-zararlimi.jpg)
+![Manhattan Likit](/images/esigara-yararlimi-zararlimi.webp)
 
 Resimden de anlaşılacağı üzere ben Manhattan likitlerini kullanıyorum. Sık kullandıklarım:
 

@@ -62,7 +62,7 @@ GitGutter, projenizde yaptığınız değişiklikleri gösteren bir eklentidir. 
 
 Bu eklenti, seçtiğiniz alanı doğrudan GitHub reposunda aramanıza yardımcı olur. Artık "Acaba bunu nerede yazmışım?" sorusu ortadan kalkıyor.
 
-![GitHubinator](/images/GitHubinator.png)
+![GitHubinator](/images/GitHubinator.webp)
 
 ## GitOpenChangedFiles
 
@@ -74,7 +74,7 @@ GitGutter'dan farkı, yalnızca değişiklik yapılan satırları gösterip, rep
 
 SublimeLinter, kod hatalarını ve uyarılarını göstermek için harika bir araçtır. [SublimeLinter Dökümantasyonu](http://www.sublimelinter.com){: target="_blank" rel="noopener noreferrer"} adresini mutlaka inceleyin.
 
-![SublimeLinter](/images/SublimeLinter.png)
+![SublimeLinter](/images/SublimeLinter.webp)
 
 ## ChangeQuotes
 
@@ -84,25 +84,25 @@ Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok
 
 Bu eklentiyle birlikte, sol taraftaki sidebarda sağ tıkladığınızda pek çok ek özellik eklenir.
 
-![SidebarEnhancements](/images/Side​Bar​Enhancements.png)
+![SidebarEnhancements](/images/Side​Bar​Enhancements.webp)
 
 ## BracketHighlighter
 
 Bu eklenti, seçtiğiniz etiketi veya parantezi nerede açıp nerede kapandığını görmenizi sağlar.
 
-![BracketHighlighter](/images/BracketHighlighter.png)
+![BracketHighlighter](/images/BracketHighlighter.webp)
 
 ## Gutter Color
 
 Renk seçimlerinizi ekstra bir program kullanmadan rahatça yapabilirsiniz. Ayrıca **Color Highlighter** kullanarak renklerinizi doğrudan görmek mümkündür.
 
-![GutterColor](/images/GutterColor.png)
+![GutterColor](/images/GutterColor.webp)
 
 ## AlignTab
 
 Vim editöründeki tabuler hizalamayı taklit eden bu eklenti, çok sayıda özellik sunuyor.
 
-![AlignTab](/images/AlignTab.png)
+![AlignTab](/images/AlignTab.webp)
 
 ## AutoFileName
 
@@ -122,7 +122,7 @@ Bu eklenti, kod bloklarınızın üzerine açıklamalar eklemenizi sağlar.
 
 Dosya uzantılarına göre simgeler ekler, böylece dosyalarınız daha düzenli görünür.
 
-![AFileIcon](/images/AFileIcon.png)
+![AFileIcon](/images/AFileIcon.webp)
 
 ## Tema
 

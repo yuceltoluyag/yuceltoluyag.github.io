@@ -9,7 +9,7 @@ Summary: XAMPP kullanarak localhost ortamında özel bir alan adı nasıl oluşt
 Translation: false
 Status: published
 Template: article
-Image: images/hosts.png
+Image: images/hosts.webp
 
 
 Linux tarafında kullanmak isteyenleri böyle alalım: [Arch Linux](/arch-linux-apache-lampp-sanal-sunucu-kurulumu/){: target="_blank" rel="noopener noreferrer"} + [Debian](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="_blank" rel="noopener noreferrer"}
@@ -28,7 +28,7 @@ Açılan dosyanın en alt satırına şu formatta ekleme yapın:
 127.0.0.1 eticaret.test
 ```
 
-![Hosts Dosyası Düzenleme](/images/hosts.png)
+![Hosts Dosyası Düzenleme](/images/hosts.webp)
 
 ## Adım 2: Apache Virtual Hosts Yapılandırması
 

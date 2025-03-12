@@ -101,7 +101,7 @@ Aşağıdaki komutla paylaşımı bağlayabilirsiniz:
 sudo mount -t cifs //ipadresi/paylasilanklasor /mnt/virtual -o username=olusturulankullaniciadi,password=olusturulansifre,workgroup=workgroup,iocharset=utf8,uid=olusturulankullaniciadi,gid=root
 ```
 
-![linux_samba_worked](/images/linux_samba.png)
+![linux_samba_worked](/images/linux_samba.webp)
 
 ## İsteğe Bağlı Özellikler
 

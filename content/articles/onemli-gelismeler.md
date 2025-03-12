@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![Duyuru](/images/duyuru.jpg)
+![Duyuru](/images/duyuru.webp)
 
 ---
 # Akıllı Semboller

@@ -11,7 +11,7 @@ Summary: Neomutt, mbsync, msmtp ve mu ile modern bir mutt kurulumu yapmayı adı
 Translation: false
 Status: published
 Template: article
-Image: images/neomutt_senkron.png
+Image: images/neomutt_senkron.webp
 
 Merhaba! Bu yazımızın ilk bölümünde, harika bir e-posta istemcisi olan Mutt ayarlarımızı yapılandıracağız. 😊
 
@@ -199,7 +199,7 @@ Bu ayarları test edelim:
 ```bash
 echo "Mail Test Ediyoruz" | msmtp -a ytoluyagmail ytoluyag@gmail.com
 ```
-![Test Sonucu](/images/uygulama_sifresi_gmail.png)
+![Test Sonucu](/images/uygulama_sifresi_gmail.webp)
 Eğer hata alırsanız, çözüm için tekrar gözden geçirebilirsiniz. Özellikle Gmail'in iki
 
  faktörlü doğrulama gereksinimlerini göz önünde bulundurmalısınız.
@@ -214,7 +214,7 @@ Burada göreceğiniz hata loglarını da düzeltmek gerekebilir. Eğer hata alı
 ```bash
 mbsync -a
 ```
-![neomutt_senkron](/images/neomutt_senkron.png)
+![neomutt_senkron](/images/neomutt_senkron.webp)
 Bu yazı dizisinin [2.Bölüm](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="_blank" rel="noopener noreferrer"}'ünde, e-posta istemcinizi daha ayrıntılı olarak yapılandırmaya devam edeceğiz. 🙂
 
 

@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![NTFS Yetki Hatası](/images/ntfs_yetki_hatasi.png)
+![NTFS Yetki Hatası](/images/ntfs_yetki_hatasi.webp)
 
 ## Sorun Nedir? ⚠️
 

@@ -36,11 +36,11 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 1. [Heroku](https://herokuapp.com/){: target="_blank" rel="noopener noreferrer"} sitesine gidip bir üyelik oluşturun.
 2. Ardından, [Staticman Repo](https://github.com/eduardoboucas/staticman/tree/dev){: target="_blank" rel="noopener noreferrer"}'ya gidin ve burada **dev** branch'ini seçin. Çünkü ana dalda bazı güncellemeler henüz merge edilmemiş durumda. Bu kısımda alt kısımda bulunan **Deploy Heroku** butonuna tıklayın.
 
-![heroku-kurulumu](/images/staticman8.png)
+![heroku-kurulumu](/images/staticman8.webp)
 
 3. İlgili ayarları yaparak uygulamanızı deploy edin.
 
-![heroku-kurulumu](/images/staticman9.png)
+![heroku-kurulumu](/images/staticman9.webp)
 
 Şimdilik işlem bu kadar, ilerleyen adımlarda ayarları detaylıca düzenleyeceğiz.
 
@@ -48,29 +48,29 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 
 1. İlk önce [Github Apps](https://github.com/settings/apps){: target="_blank" rel="noopener noreferrer"}'dan bir uygulama oluşturun. Uygulama ismini, açıklamasını ve Heroku adresinizi kendinize göre düzenlemeyi unutmayın.
 
-![staticman-kurulumu](/images/staticman.png)
-![staticman-kurulumu](/images/staticman2.png)
+![staticman-kurulumu](/images/staticman.webp)
+![staticman-kurulumu](/images/staticman2.webp)
 
 ## Private Keys (Özel Anahtarlar)
 
 Private keys kısmından **Generate a private key** butonuna tıklayın ve oluşan dosyayı kaydedin. Bu dosyadaki bilgileri Heroku ortam değişkenlerinde kullanacağız.
 
-![heroku-kurulumu](/images/staticman11.png)
+![heroku-kurulumu](/images/staticman11.webp)
 
 ## Github Token'ları
 
 1. [Github Tokens](https://github.com/settings/tokens/){: target="_blank" rel="noopener noreferrer"} sayfasına giderek yeni bir token oluşturun. Token'ınıza şu yetkileri verin:
 
-![staticman-kurulumu](/images/staticman3.png)
-![staticman-kurulumu](/images/staticman4.png)
+![staticman-kurulumu](/images/staticman3.webp)
+![staticman-kurulumu](/images/staticman4.webp)
 
 Oluşturduktan sonra size bir kod verilecektir. Bu kodu kaydedin çünkü ilerleyen aşamalarda kullanacağız. Daha sonra oluşturduğunuz uygulamaya tıklayın ve **Install App** kısmından **Install**'a basın.
 
-![staticman-kurulumu](/images/staticman5.png)
+![staticman-kurulumu](/images/staticman5.webp)
 
 Bu adımda, token'ı tüm repolarınızda mı yoksa sadece belirli bir repoda mı kullanmak istediğinizi seçebilirsiniz. Ben sadece tek bir repoda kullanmayı tercih ediyorum.
 
-![staticman-kurulumu](/images/staticman6.png)
+![staticman-kurulumu](/images/staticman6.webp)
 
 Sonrasında **Install** butonuna tıklayın.
 
@@ -78,7 +78,7 @@ Sonrasında **Install** butonuna tıklayın.
 
 Yeni oluşturduğumuz Github hesabını, repomuza davet edeceğiz. Repomuza gidin, **Settings** sekmesine tıklayın. Ardından **Collaborators** kısmından **add people** diyerek oluşturduğunuz bot hesabını ekleyin. Diğer hesabınızla giriş yaparak daveti kabul edin.
 
-![staticman-kurulumu](/images/staticman7.png)
+![staticman-kurulumu](/images/staticman7.webp)
 
 Github ayarlarımız burada tamamlandı! 🤯
 
@@ -184,7 +184,7 @@ https://{HEROKU_ADRESİNİZ}/v3/encrypt/şifrelenecekşey
 
 Postman üzerinden testler yapmak için doğru ayarları yapmanız gerekecek. Form elemanları kısmındaki `field` ve `options` ayarlarını doğru şekilde yapılandırmalısınız.
 
-![staticman-kurulumu](/images/staticman-postman.png)
+![staticman-kurulumu](/images/staticman-postman.webp)
 
 [Canlı Test](https://github.com/yuceltoluyag/jekyll-staticman/pull/1){: target="_blank" rel="noopener noreferrer"}
 

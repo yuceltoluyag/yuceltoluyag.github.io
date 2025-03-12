@@ -313,4 +313,4 @@ tag FETCH 6388 (BODY[n])
 
 ```
 
-![imap_openssl_terminal](/images/imap_openssl_terminal.png)
+![imap_openssl_terminal](/images/imap_openssl_terminal.webp)

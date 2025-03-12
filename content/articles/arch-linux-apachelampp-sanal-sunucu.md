@@ -11,7 +11,7 @@ Summary: Bu yazıda, Arch Linux üzerinde Apache (LAMPP) sanal sunucu kurulumu a
 Translation: false
 Status: published
 Template: article
-Image: images/baba.test.png
+Image: images/baba.test.webp
 
 
 Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sıkça kullandığım bir yöntemin **Türkçe Dökümantasyonu**nu yazmak istedim. Bu yöntemin adı **Virtual Host** olarak bilinir. Her projeye bir domain atayarak, kodlama ve proje isimlerinin akılda kalmasını sağlar. Bu yöntem, CSS, JS gibi dosyaların entegrasyonu sırasında rahatlık da sağlar.
@@ -136,6 +136,6 @@ sudo systemctl restart httpd
 
 ## Sonuç ;)
 
-![its work](/images/baba.test.png)
+![its work](/images/baba.test.webp)
 
 

@@ -12,7 +12,7 @@ Translation: false
 Status: published
 Template: article
 
-![Kurulum Görseli](/images/pic-selected-190916-0747-49.png)
+![Kurulum Görseli](/images/pic-selected-190916-0747-49.webp)
 
 ## VirtualBox Kurulumu 🚀
 
@@ -140,7 +140,7 @@ Bağlanmak için:
 vagrant ssh
 ```
 
-![SSH Bağlantısı](/images/pic-selected-190916-0818-54.png)
+![SSH Bağlantısı](/images/pic-selected-190916-0818-54.webp)
 
 ## Laravel Kurulumu 🌐
 
@@ -153,7 +153,7 @@ composer create-project --prefer-dist laravel/laravel
 
 Bu işlem tamamlandığında **www** klasörünüzün içinde **laravel** adında bir klasör oluşacaktır.
 
-![Laravel Kurulumu](/images/pic-full-190916-0808-36.png)
+![Laravel Kurulumu](/images/pic-full-190916-0808-36.webp)
 
 ## PhpMyAdmin Kurulumu 🛠️
 

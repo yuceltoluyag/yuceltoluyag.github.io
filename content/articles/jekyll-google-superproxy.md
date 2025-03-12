@@ -24,7 +24,7 @@ Statik web sitelerinizde sayfa görüntülenmesini nasıl gösterebileceğinizi 
 
 Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı yapmayı unutmayın: "Create a Universal Analytics property" kısmını açıp, resimdeki gibi işaretleyin.
 
-![GA-superproxy-kurulumu](/images/superproxy.png)
+![GA-superproxy-kurulumu](/images/superproxy.webp)
 
 # Google App Engine Kurulumu
 
@@ -35,12 +35,12 @@ Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı ya
 5. Faturalandırma hesabınızı etkinleştirin. Kredi kartınızı bağlamanız gerekecek, ancak ücretsiz kotayı aşmadığınız sürece ücretlendirilmezsiniz. Basit bir blog için bu kota fazlasıyla yeterlidir.
 6. Sol menüden **API ve Hizmetler** kısmını seçin ve ardından **API'leri ve Hizmetleri Etkinleştir**i tıklayın.
 
-![GA-superproxy-kurulumu](/images/superproxy2.png)
+![GA-superproxy-kurulumu](/images/superproxy2.webp)
 
 - `Google Analytics API`'yi seçin ve API'yi aktif edin.
 - `APIs & Services` menüsünde, `OAuth consent Screen`e tıklayın ve gelen pencerede **Harici (External)** seçeneğini işaretleyerek devam edin.
 
-![GA-superproxy-kurulumu](/images/superproxy3.png)
+![GA-superproxy-kurulumu](/images/superproxy3.webp)
 
 
 
@@ -51,14 +51,14 @@ Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz.
 
 * `Credentials` kısmından `OAuth 2.0 Client IDs` kısmını aktif edin.
 
-![GA-superproxy-kurulumu](/images/superproxy4.png)
+![GA-superproxy-kurulumu](/images/superproxy4.webp)
 
 - `Client ID` ve `Client Secret` adında oluşan kodları not edin.
 - `Client ID` üzerine tekrar tıklayın ve şu alanları doldurun:
   - `Authorized JavaScript origins` kısmına projenizi oluşturduktan sonra verilen URL'yi girin.
   - `Authorized redirect URIs` kısmına ise sadece **`/admin/auth`** uzantısını dahil edin.
 
-![GA-superproxy-kurulumu](/images/superproxy5.png)
+![GA-superproxy-kurulumu](/images/superproxy5.webp)
 
 ## Cloud SDK
 
@@ -89,7 +89,7 @@ Dosyayı kaydedin.
 
 5. **`src/config.py`** dosyasını açın. `OAUTH_CLIENT_ID` ve `OAUTH_CLIENT_SECRET` kısımlarını yukarıda oluşturduğunuz Client ID ve Secret ile doldurun.
 
-![GA-superproxy-kurulumu](/images/superproxy6.png)
+![GA-superproxy-kurulumu](/images/superproxy6.webp)
 
 6. `XSRF_KEY` kısmına rastgele güçlü bir şifre yazın.
 7. **src** klasöründe terminali açın ve şu komutu çalıştırın:
@@ -112,7 +112,7 @@ gcloud app browse
 
 Açılan linkin sonuna `/admin` ekleyin ve bağlı olduğunuz Analytics hesabınıza giriş yapın. Her şey yolunda gitmişse, şu ekranla karşılaşmalısınız:
 
-![GA-superproxy-kurulumu](/images/superproxy7.png)
+![GA-superproxy-kurulumu](/images/superproxy7.webp)
 
 ## Google Analytics Sorgusu
 
@@ -124,18 +124,18 @@ Açılan linkin sonuna `/admin` ekleyin ve bağlı olduğunuz Analytics hesabın
 6. **Dimensions** => "PagePath" seçin.
 7. **Filters** => `ga:pagePath=~^.\*/$;ga:pagePath!@=` olarak doldurun.
 
-![GA-superproxy-kurulumu](/images/superproxy8.png)
+![GA-superproxy-kurulumu](/images/superproxy8.webp)
 
 8. `Run Query` butonuna tıklayın ve oluşan URL'yi not alın.
 9. `Create Query` kısmını aşağıdaki gibi doldurun.
 
-![GA-superproxy-kurulumu](/images/superproxy9.png)
+![GA-superproxy-kurulumu](/images/superproxy9.webp)
 
 10. Ardından proje kısmından `Manage` seçeneğine tıklayın, `Enable Endpoint` ve `Start Scheduling` butonlarına basın. İşlem tamam! 🎉
 
 11. Son olarak, tüm bu süreç bittikten sonra görünüm şu şekilde olmalıdır:
 
-![GA-superproxy-kurulumu](/images/superproxy10.png)
+![GA-superproxy-kurulumu](/images/superproxy10.webp)
 
 12. `_config.yml` dosyanızı açın ve şu kodları ekleyin:
 
@@ -161,4 +161,4 @@ google_analytics:
 
 Bu çözümü blogumda kullanıyorum. **Google Console** servisi, **Amazon** gibi ücretsiz deyip de ay sonunda kartınızdan para çekmeye **çalışmıyor**, **yedi aydır** sorunsuz kullanıyorum. Yine de, tedbir amaçlı ödeme alarmı kurabilirsiniz. Ödemeler kısmından alarmlara tıklayıp **1 TL**'yi aşınca beni uyar diye ayarlayabilirsiniz. 😉
 
-![GA-superproxy-kurulumu](/images/superproxy11.png)
+![GA-superproxy-kurulumu](/images/superproxy11.webp)

@@ -12,7 +12,7 @@ Template: article
 
 # Arch Linux'ta Conda Kurulumu ve Yönetimi
 
-![Conda AI](/images/conda.png)
+![Conda AI](/images/conda.webp)
 Conda, yazılım paketlerini ve ortamlarını yönetmek için kullanılan popüler bir açık kaynaklı araçtır. Python geliştirme ortamlarında özellikle kullanılır, ancak başka diller için de destek sunar. Bu makalede, Conda'nın kurulumu ve temel kullanımı adım adım açıklanacak, ayrıca Arch Linux üzerinde en verimli şekilde Conda nasıl kurulmalı ve yönetilmeli, en iyi uygulamalarla birlikte ele alınacaktır.
 
 ## 1. Conda Kurulumu

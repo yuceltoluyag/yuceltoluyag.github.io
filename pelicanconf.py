@@ -95,7 +95,7 @@ TOC = {
 # --- Social Media ---
 SOCIAL = {
     "mastodon": "yuceltoluyag",
-    "matrix": "friday13",
+    "matrix": "fatpip:matrix.org",
     "discord": "188034964879573003",
     "github": "yuceltoluyag",
     "instagram": "yuceltoluyag",
