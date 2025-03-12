@@ -12,11 +12,11 @@ Template: article
 
 # Sweet Alert Nedir?
 
-Klasik uyarı pencerelerinden sıkıldıysanız, modern ve mobil uyumlu bir alternatif olan **SweetAlert** kütüphanesini kullanabilirsiniz. Eğer PHP ile nasıl kullanabileceğinizi merak ediyorsanız, [PHP Morris Js](https://yuceltoluyag.github.io/pdo-sum-fonksiyonu-kullanmmorrisjs/) yazısını inceleyebilirsiniz.
+Klasik uyarı pencerelerinden sıkıldıysanız, modern ve mobil uyumlu bir alternatif olan **SweetAlert** kütüphanesini kullanabilirsiniz. Eğer PHP ile nasıl kullanabileceğinizi merak ediyorsanız, [PHP Morris Js](/pdo-sum-fonksiyonu-kullanimi-morris-js/){: target="_blank" rel="noopener noreferrer"} yazısını inceleyebilirsiniz.
 
 Öncelikle, kütüphaneyi projenize dahil etmelisiniz.
 
-<!-- excerpt separator -->
+
 
 ## SweetAlert Kütüphanesini Dahil Etme
 
@@ -94,5 +94,5 @@ Bir butona tıklandığında uyarı penceresinin açılmasını sağlayalım:
 
 ## İndirme Bağlantısı
 
-[Örnek Dosyayı İndirin](http://www.mediafire.com/file/aelw1zkhwcv17b7/sweetalertadamcoder.zip)
+[Örnek Dosyayı İndirin](http://www.mediafire.com/file/aelw1zkhwcv17b7/sweetalertadamcoder.zip){: target="_blank" rel="noopener noreferrer"}
 

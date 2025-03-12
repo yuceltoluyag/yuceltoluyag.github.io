@@ -14,25 +14,25 @@ Template: article
 
 Merhaba! 😊
 
-Shopt komutu nedir? `shopt` komutu, shell (kabuk) içerisindeki bazı eylemleri değiştirmenize olanak tanır. Bir bakıma alias komutuna benzer işlev görür. Şimdi bir örnek üzerinden açıklayalım.
+Shopt komutu nedir? `shopt` komutu, bash (kabuk) içerisindeki bazı eylemleri değiştirmenize olanak tanır. Bir bakıma alias komutuna benzer işlev görür. Şimdi bir örnek üzerinden açıklayalım.
 
 Bir dizine `cd dizin` komutuyla girerken, bashrc dosyasına ekleyeceğiniz `shopt` komutuyla direkt olarak **dizin** ismini yazıp bu dizine girebilirsiniz. Tabi ki `shopt` komutunun kullanım alanları bunlarla sınırlı değildir. Daha fazla bilgi için [Detaylar](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html) adresini ziyaret edebilirsiniz.
 
 # Zsh İçerisinde Kullanım
 
-Shopt, bash temelli çalıştığı için zsh shell'inde doğal olarak **'shopt command not found'** hatası alırsınız. Bunun çözümü ise oldukça basittir.
+Shopt, bash temelli çalıştığı için zsh bash'inde doğal olarak **'shopt command not found'** hatası alırsınız. Bunun çözümü ise oldukça basittir.
 
 ## Çözüm
 
 Öncelikle, terminalinizde aşağıdaki komutu girin:
 
-```shell
+```bash
 touch shopt
 ```
 
 Sonrasında oluşturduğunuz dosyayı şu kodla güncelleyin:
 
-```shell
+```bash
 #!/bin/bash
 args='';
 for item in $@
@@ -44,13 +44,13 @@ shopt $args;
 
 Daha sonra bu dosyayı aşağıdaki komutla sisteme taşıyın:
 
-```shell
+```bash
 sudo mv shopt /usr/bin/
 ```
 
 Son olarak `.zshrc` dosyanıza şu komutu ekleyin:
 
-```shell
+```bash
 alias shopt='/usr/bin/shopt'
 ```
 
@@ -60,18 +60,18 @@ Bu kadar! Artık Zsh içerisinde `shopt` komutunu sorunsuz şekilde kullanabilir
 
 Yedek alırken, oluşturduğunuz script'leri unutmamanız oldukça önemli. Özellikle sistem taşımaları sırasında ben bazen unutabiliyorum. 🤣
 
-Eğer script'leri unutmamak istiyorsanız, [Oto Script Oluşturucuyu](https://github.com/yuceltoluyag/otoscript) kullanabilirsiniz.
+Eğer script'leri unutmamak istiyorsanız, [Oto Script Oluşturucuyu](https://github.com/yuceltoluyag/otoscript){: target="_blank" rel="noopener noreferrer"} kullanabilirsiniz.
 
-```shell
+```bash
 alias shopt='ScriptDizinim/shopt'
 ```
 
-Yararlanılan Kaynak: [larz258](https://github.com/larz258/Zshopt)
+Yararlanılan Kaynak: [larz258](https://github.com/larz258/Zshopt){: target="_blank" rel="noopener noreferrer"}
 
 Aşağıdaki `shopt` ayarlarını `.zshrc` veya `.bashrc` dosyanıza ekleyerek test edebilirsiniz:
 
-```shell
-#shell opts
+```bash
+#bash opts
 shopt -s autocd
 shopt -s cdspell
 shopt -s cmdhist
@@ -85,4 +85,4 @@ shopt -s dirspell 2> /dev/null
 shopt -s cdspell 2> /dev/null
 ```
 
-[Zsh Ayarlarım!](https://github.com/yuceltoluyag/WindowsTerminal/blob/main/WSL/.zshrc) +  [Script Oluşturucu!](https://github.com/yuceltoluyag/otoscript)
+[Zsh Ayarlarım!](https://github.com/yuceltoluyag/WindowsTerminal/blob/main/WSL/.zshrc){: target="_blank" rel="noopener noreferrer"} +  [Script Oluşturucu!](https://github.com/yuceltoluyag/otoscript){: target="_blank" rel="noopener noreferrer"}

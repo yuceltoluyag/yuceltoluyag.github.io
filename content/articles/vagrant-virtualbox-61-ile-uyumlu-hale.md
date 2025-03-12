@@ -14,7 +14,7 @@ Template: article
 
 2019-12-11'da VirtualBox'un yeni sürümü yayınlandı. Ancak bu güncellemeyle birlikte Vagrant ile VirtualBox arasında bir uyumsuzluk sorunu ortaya çıktı. Vagrant'ı çalıştırdığınızda aşağıdaki hata mesajını alabilirsiniz:
 
-```shell
+```bash
 The provider 'virtualbox' that was requested to back the machine 'homestead' is reporting that it isn't usable on this system.
 The reason is shown below:
 Vagrant has detected that you have a version of VirtualBox installed that is not supported by this version of Vagrant. Please install one of the supported versions listed below to use Vagrant:
@@ -56,8 +56,8 @@ driver_map = {
 
 Aynı dizinde `version_6_1.rb` adında bir dosya oluşturun. Eğer uğraşmak istemiyorsanız, hazır dosyayı aşağıdaki bağlantılardan indirebilirsiniz:
 
-- [version_6_1.rb (Alternatif 1)](http://www.coter.net/upload/version_6_1.rb)
-- [version_6_1.rb (Alternatif 2)](http://www.mediafire.com/file/wzq4l2xe6ul2dnw/version_6_1.rb/file)
+- [version_6_1.rb (Alternatif 1)](http://www.coter.net/upload/version_6_1.rb){: target="_blank" rel="noopener noreferrer"}
+- [version_6_1.rb (Alternatif 2)](http://www.mediafire.com/file/wzq4l2xe6ul2dnw/version_6_1.rb/file){: target="_blank" rel="noopener noreferrer"}
 
 ## Adım 3: plugin.rb Dosyasına Gerekli Satırı Ekleyin
 

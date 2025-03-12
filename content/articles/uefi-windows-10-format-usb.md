@@ -20,10 +20,10 @@ Windows'tan Linux'a geçiş yaparken, Rufus gibi programlar ile USB'den format o
 
 Öncelikle, aşağıdaki gereksinimlere sahip olmalısınız:
 
-- **Windows 10 ISO dosyası:** Eğer elinizde yoksa, [resmi Microsoft sitesinden](https://www.microsoft.com/tr-tr/software-download/windows10) indirebilirsiniz.
+- **Windows 10 ISO dosyası:** Eğer elinizde yoksa, [resmi Microsoft sitesinden](https://www.microsoft.com/tr-tr/software-download/windows10){: target="_blank" rel="noopener noreferrer"} indirebilirsiniz.
 - **WoeUSB programı:** Aşağıdaki komutlarla WoeUSB'yi kurabilirsiniz:
 
-```shell
+```bash
 sudo add-apt-repository ppa:nilarimogard/webupd8
 sudo apt update
 sudo apt install woeusb
@@ -60,7 +60,7 @@ WoeUSB'yi açın ve şu adımları takip edin:
 
 ## 5. Sonuç
 
-Gördüğünüz gibi, Linux üzerinden UEFI destekli Windows 10 format USB'si oluşturduk. Eğer Linux'a yeni başladıysanız, aniden tam geçiş yapmak yerine çift işletim sistemi kullanarak aşamalı bir geçiş yapmanız daha iyi olabilir. **Daha fazla bilgi için şu makaleyi okuyabilirsiniz:** [Yeni Başlayanlar İçin Linux](https://yuceltoluyag.github.io/yeni-baslayanlar-hangi-linux-surumunu/)
+Gördüğünüz gibi, Linux üzerinden UEFI destekli Windows 10 format USB'si oluşturduk. Eğer Linux'a yeni başladıysanız, aniden tam geçiş yapmak yerine çift işletim sistemi kullanarak aşamalı bir geçiş yapmanız daha iyi olabilir. **Daha fazla bilgi için şu makaleyi okuyabilirsiniz:** [Yeni Başlayanlar İçin Linux](/yeni-baslayanlar-linux-surumu/){: target="_blank" rel="noopener noreferrer"}
 
 Eğer sorularınız veya kurulum sırasında aldığınız hatalar varsa yorum bırakabilirsiniz. İyi çalışmalar!
 

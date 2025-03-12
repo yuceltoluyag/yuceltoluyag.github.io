@@ -13,6 +13,30 @@ Template: article
 ![Duyuru](/images/duyuru.jpg)
 
 ---
+# Akıllı Semboller
+* ==Word==
+* ++"Word"++
+* ++delete++
+* ~~Word~~
+* Inline code
+     #!py3 import pymdownx; pymdownx.__version__  
+     #!js var test = 0;
+* Emoji testi :emoji_name: as in I have a :smile: here. and here is a :tada: :smile: :heart: :thumbsup:
+* [Smart symbols are enabled by default](https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/){: target="_blank" rel="noopener noreferrer"}
+
+(tm)
+(c)
+(r)
+c/o
++/-	
+-->	
+<--	
+<-->
+=/=	
+1/4, etc.
+1st 2nd etc.
+
+
 
 # Kod Bloğu Dil Testi
 

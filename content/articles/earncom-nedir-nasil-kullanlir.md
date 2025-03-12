@@ -11,20 +11,24 @@ Status: published
 Template: article
 
 
+<div class="info-box warning">
+<b>Not:</b> 
+<a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" target="_blank" rel="noopener noreferrer"> Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı </a>bu sebeple bu makalenin artık geçerli olmadığını unutmayın.Coinbase üzerinden kazanç elde edebilirsiniz ancak sistemimizin artık geçerli olmadığını unutmayın.
+</div>
 Merhaba, internet üzerinden **para kazanmak** isteyenler için benim de kullandığım bir sistemden bahsedeceğim. Earn.com, yatırım yapmadan kazanç sağlayabileceğiniz bir platformdur. Kullanıcılara, anket doldurarak veya gruplara katılarak para kazanma fırsatı sunar.
 
 ### Earn.com Nasıl Çalışır?
 Earn.com, anketör şirketlerle anlaşarak size anketler gönderir. Bu anketleri tamamladıktan sonra en az 1 dolar kazanç sağlarsınız. Peki, bu süreç nasıl işliyor?
 
 ### Cüzdan Oluşturma
-Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kripto cüzdanına ihtiyacınız olabilir. Cüzdanınızı şu adresten oluşturabilirsiniz: [MyEtherWallet](https://www.myetherwallet.com/). Cüzdan kodunuzu kimseyle paylaşmayın ve güvenli bir yerde saklayın.
+Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kripto cüzdanına ihtiyacınız olabilir. Cüzdanınızı şu adresten oluşturabilirsiniz: [MyEtherWallet](https://www.myetherwallet.com/){: target="_blank" rel="noopener noreferrer"}. Cüzdan kodunuzu kimseyle paylaşmayın ve güvenli bir yerde saklayın.
 
 ![cüzdan-oluşturma](/images/cuzdan-olusturma.gif)
 
 ### Asıl Kazanç Nerede?
 
 - Yetkinliklerinize göre gruplara katılarak yüksek gelir elde edebilirsiniz. Örneğin, PHP grubu gibi teknik gruplarda soru başına 100 $ kazanmak mümkündür.
-- Katılmak istediğiniz gruplarda doğrulama sürecinden geçmeniz gerekir. Örneğin, [Earn.com Grupları](https://earn.com/lists/) sayfasında başvururken yeteneklerinizi kanıtlamanız istenir.
+- Katılmak istediğiniz gruplarda doğrulama sürecinden geçmeniz gerekir. Örneğin, [Earn.com Grupları](https://earn.com/lists/){: target="_blank" rel="noopener noreferrer"} sayfasında başvururken yeteneklerinizi kanıtlamanız istenir.
 - Kullanıcılar soru sormak için ödeme yapar, siz de bu soruları yanıtlayarak para kazanırsınız.
 
 ### Neden Earn.com?
@@ -36,11 +40,11 @@ Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kr
 ### Gerekli Olan Hesaplar
 Earn.com’dan verimli şekilde yararlanabilmek için aşağıdaki hesaplara sahip olmanız önerilir:
 
-- [LinkedIn](https://www.linkedin.com/in/yuceltoluyag/) → Profilinizin eksiksiz ve doğru bilgilerle doldurulmuş olması gereklidir.
-- [GitHub](https://github.com/yuceltoluyag) → Teknik gruplara katılım için önemlidir.
-- [Telegram](https://t.me/yuceltoluyag) → Anketler ve iletişim için gereklidir.
+- [LinkedIn](https://www.linkedin.com/in/yuceltoluyag/){: target="_blank" rel="noopener noreferrer"} → Profilinizin eksiksiz ve doğru bilgilerle doldurulmuş olması gereklidir.
+- [GitHub](https://github.com/yuceltoluyag){: target="_blank" rel="noopener noreferrer"} → Teknik gruplara katılım için önemlidir.
+- [Telegram](https://t.me/yuceltoluyag){: target="_blank" rel="noopener noreferrer"} → Anketler ve iletişim için gereklidir.
 
 Sisteme kaydolmak için referans bağlantısı kullanırsanız onay süreciniz hızlanır. Eğer referansınız yoksa aşağıdaki bağlantıyı kullanabilirsiniz:
 
-[Earn.com Referans Bağlantısı](http://earn.com/friday13/referral/?a=b6bpe21djavw2sar)
+[Earn.com Referans Bağlantısı](http://earn.com/friday13/referral/?a=b6bpe21djavw2sar){: target="_blank" rel="noopener noreferrer"}
 ![örnek cevaplama](/images/ornek-cevaplama.gif)

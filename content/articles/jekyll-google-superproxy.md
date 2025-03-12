@@ -13,7 +13,7 @@ Template: article
 
 **Merhaba!** 🌟
 
-Statik web sitelerinizde sayfa görüntülenmesini nasıl gösterebileceğinizi araştırırken, **Google Analytics** üzerinden **Super Proxy** kütüphanesini kullanarak verileri dışarıya açabileceğimizi öğrendim. Konuyla ilgili, Google ekibinin eski bir videosunu buldum: [Google Analytics Super Proxy](https://developers.google.com/analytics/solutions/google-analytics-super-proxy){:target="\_blank"}. Bu video üzerinden ilerleyerek çözümümü buldum. 🥰
+Statik web sitelerinizde sayfa görüntülenmesini nasıl gösterebileceğinizi araştırırken, **Google Analytics** üzerinden **Super Proxy** kütüphanesini kullanarak verileri dışarıya açabileceğimizi öğrendim. Konuyla ilgili, Google ekibinin eski bir videosunu buldum: [Google Analytics Super Proxy](https://developers.google.com/analytics/solutions/google-analytics-super-proxy){: target="_blank" rel="noopener noreferrer"}. Bu video üzerinden ilerleyerek çözümümü buldum. 🥰
 
 # Malzemeler 🥗
 
@@ -28,7 +28,7 @@ Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı ya
 
 # Google App Engine Kurulumu
 
-1. [Appengine](https://console.cloud.google.com/appengine){:target="\_blank"} sitesine gidin.
+1. [Appengine](https://console.cloud.google.com/appengine){: target="_blank" rel="noopener noreferrer"} sitesine gidin.
 2. "Proje Oluştur" seçeneğine tıklayın.
 3. Projenize bir isim verin ve devam edin.
 4. Dil olarak Python, ortam olarak ise "standart"ı seçin.
@@ -62,7 +62,7 @@ Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz.
 
 ## Cloud SDK
 
-1. İlk olarak [Google Cloud CLI](https://cloud.google.com/sdk/docs/quickstart){:target="\_blank"} adresine gidin ve işletim sisteminize uygun yazılımı indirin.
+1. İlk olarak [Google Cloud CLI](https://cloud.google.com/sdk/docs/quickstart){: target="_blank" rel="noopener noreferrer"} adresine gidin ve işletim sisteminize uygun yazılımı indirin.
 2. Daha sonra terminali açın ve şu komutu girin:
 
 ```bash
@@ -77,7 +77,7 @@ gcloud info
 
 Seçtiğiniz proje bilgileri burada görüntülenmelidir.
 
-3. Şimdi [google-analytics-super-proxy](https://github.com/googleanalytics/google-analytics-super-proxy){:target="\_blank"} reposuna gidin ve dosyaları indirin.
+3. Şimdi [google-analytics-super-proxy](https://github.com/googleanalytics/google-analytics-super-proxy){: target="_blank" rel="noopener noreferrer"} reposuna gidin ve dosyaları indirin.
 4. **`src/app.yaml`** dosyasını editörle açın ve ilk başta bulunan şu iki satırı silin:
 
 ```yaml
@@ -117,7 +117,7 @@ Açılan linkin sonuna `/admin` ekleyin ve bağlı olduğunuz Analytics hesabın
 ## Google Analytics Sorgusu
 
 1. `Create Query` butonuna tıklayın ve orada bekleyin.
-2. [UA Query Explorer](https://ga-dev-tools.web.app/query-explorer/){:target="\_blank"}'ı açın. Reklam engelleyici eklentileri kullanıyorsanız, bu sitede çalışırken kapatmayı unutmayın.
+2. [UA Query Explorer](https://ga-dev-tools.web.app/query-explorer/){: target="_blank" rel="noopener noreferrer"}'ı açın. Reklam engelleyici eklentileri kullanıyorsanız, bu sitede çalışırken kapatmayı unutmayın.
 3. **Start Date** => En eski yazınızın tarihini girin.
 4. **End Date** => "Today" seçeneğini seçin.
 5. **Metrics** => "Pageviews" seçin.
@@ -149,13 +149,13 @@ google_analytics:
 
 ## Filtreleme
 
-[Core Reporting API Filters](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters){:target="\_blank"} sayfasından filtreleme değişkenlerini inceleyebilirsiniz.
+[Core Reporting API Filters](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters){: target="_blank" rel="noopener noreferrer"} sayfasından filtreleme değişkenlerini inceleyebilirsiniz.
 
 ## Örnek Dosyalar
 
-- [\_Config.yml Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_config.yml#L37){:target="\_blank"}
-- [Script.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_includes/script.html#L35){:target="\_blank"}
-- [Post.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_layouts/post.html#L46){:target="\_blank"}
+- [\_Config.yml Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_config.yml#L37){: target="_blank" rel="noopener noreferrer"}
+- [Script.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_includes/script.html#L35){: target="_blank" rel="noopener noreferrer"}
+- [Post.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_layouts/post.html#L46){: target="_blank" rel="noopener noreferrer"}
 
 # Sonuç
 

@@ -21,14 +21,14 @@ Merhaba! Uzun süredir **fish shell** kullanıyordum ancak **Oh My ZSH**'yi dene
 
 ## Kurulum
 
-```shell
+```bash
 sudo apt-get install zsh # Debian tabanlı sistemler için
 sudo pacman -S zsh # Arch tabanlı sistemler için
 ```
 
 Şimdi, resmi sitede yer alan **curl** veya **wget** yöntemlerinden birini kullanarak yüklemeyi gerçekleştirebiliriz. Ben **curl** kullandım:
 
-```shell
+```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 chsh -s /usr/bin/zsh
 ```
@@ -42,7 +42,7 @@ Eğer kabuk değişmiyorsa, aşağıdaki adımları izleyin:
 1. Önceden **fish** veya başka bir terminal eklentisi kurduysanız, bu durum soruna neden olabilir.
 2. Aşağıdaki komut ile `/etc/passwd` dosyasını düzenleyerek varsayılan kabuğu değiştirebilirsiniz:
 
-```shell
+```bash
 sudo nano /etc/passwd
 ```
 
@@ -50,41 +50,41 @@ Burada kullanıcı satırınızın sonunda `/bin/zsh` yazdığından emin olun. 
 
 ⚠️ **Uyarı:** Geçiş yaparken eski kabuğunuzu direkt silmeyin! Öncelikle aşağıdaki komutla varsayılan kabuğunuzu değiştirin, ardından eski kabuğunuzu kaldırabilirsiniz:
 
-```shell
+```bash
 chsh -s /bin/bash
 ```
 ![oh-my-zsh](/images/oh_my_zsh.png)
 ## Oh My ZSH Tema Kurulumu 🎨
 
-```shell
+```bash
 nano ~/.zshrc
 ```
 
 Dosyanın içinde **ZSH_THEME="robbyrussell"** satırını bulun ve **beğendiğiniz temanın adını** girin. Örneğin:
 
-```shell
+```bash
 ZSH_THEME="agnoster"
 ```
 
-[ZSH Temaları](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes) arasından seçim yapabilirsiniz.
+[ZSH Temaları](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes){: target="_blank" rel="noopener noreferrer"} arasından seçim yapabilirsiniz.
 
 ## Oh My ZSH Eklenti Kurulumu 🔌
 
 Eklenti yüklemek için yine `~/.zshrc` dosyasını düzenleyin:
 
-```shell
+```bash
 nano ~/.zshrc
 ```
 
 Varsayılan olarak **plugins=(git)** şeklinde gelen satırı eklentilerle güncelleyin. Örneğin:
 
-```shell
+```bash
 plugins=(git extract)
 ```
 
 Burada `extract` eklentisini eklemiş olduk. Kaydedip çıktıktan sonra aşağıdaki komutu çalıştırarak değişiklikleri etkinleştirin:
 
-```shell
+```bash
 source ~/.zshrc
 ```
 

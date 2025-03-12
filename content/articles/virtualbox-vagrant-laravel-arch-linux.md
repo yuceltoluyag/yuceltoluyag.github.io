@@ -18,7 +18,7 @@ Template: article
 
 Öncelikle VirtualBox'ı yükleyelim:
 
-```shell
+```bash
 sudo pacman -S virtualbox
 ```
 
@@ -36,7 +36,7 @@ Ben **2. seçeneği** seçerek devam ediyorum.
 
 Kurulum tamamlandıktan sonra VirtualBox'ı başlatmadan önce modülü etkinleştirelim:
 
-```shell
+```bash
 sudo modprobe vboxdrv
 ```
 
@@ -44,7 +44,7 @@ VirtualBox'ı bir kez çalıştırarak **hata olup olmadığını kontrol edin**
 
 Modülün her açılışta otomatik yüklenmesi için:
 
-```shell
+```bash
 sudo nano /etc/modules-load.d/virtualbox.conf
 ```
 
@@ -52,13 +52,13 @@ Dosyaya **vboxdrv** ekleyin ve kaydedip çıkın (**F3** -> **Enter** -> **F2**)
 
 Son olarak, kullanıcınızı **vboxusers** grubuna ekleyin:
 
-```shell
+```bash
 sudo usermod -aG vboxusers KULLANICI_ADINIZ
 ```
 
 Bilgisayarınızı yeniden başlattıktan sonra aşağıdaki komutla modülün yüklü olup olmadığını doğrulayabilirsiniz:
 
-```shell
+```bash
 sudo lsmod | grep vboxdrv
 ```
 
@@ -66,19 +66,19 @@ sudo lsmod | grep vboxdrv
 
 Vagrant'ı yüklemek için:
 
-```shell
+```bash
 yay -S vagrant
 ```
 
 Eğer **Vagrant plugin** ve **plugin manager** yüklemek isterseniz:
 
-```shell
+```bash
 vagrant plugin install vagrant-vbguest vagrant-share
 ```
 
 Şimdi, Vagrant tarafından sağlanan hazır imajı indirelim:
 
-```shell
+```bash
 vagrant box add laravel/homestead
 ```
 
@@ -88,7 +88,7 @@ Başarıyla eklendiğini belirten mesajı gördüğünüzde, sanal makine imajı
 
 Ev dizininizde **www** adında bir klasör oluşturup, içine Homestead dosyalarını çekelim:
 
-```shell
+```bash
 mkdir ~/www
 cd ~/www
 git clone https://github.com/laravel/homestead.git Homestead
@@ -96,7 +96,7 @@ git clone https://github.com/laravel/homestead.git Homestead
 
 Homestead'i başlatmak için:
 
-```shell
+```bash
 cd ~/www/Homestead
 bash init.sh
 ```
@@ -105,7 +105,7 @@ bash init.sh
 
 Şimdi **Homestead.yaml** dosyasını düzenlememiz gerekiyor:
 
-```shell
+```bash
 sudo nano ~/www/Homestead/Homestead.yaml
 ```
 
@@ -113,13 +113,13 @@ sudo nano ~/www/Homestead/Homestead.yaml
 
 Dosyanın başında **ip: \"192.168.10.10\"** adresini göreceksiniz. Laravel projemizi bu IP üzerinden çalıştırmak için **hosts** dosyamıza ekleme yapalım:
 
-```shell
+```bash
 sudo nano /etc/hosts
 ```
 
 Dosyanın içine şunu ekleyin:
 
-```shell
+```bash
 192.168.10.10 laravel6.test
 ```
 
@@ -127,7 +127,7 @@ Kaydedip çıkın (**F3** -> **Enter** -> **F2**).
 
 Sonrasında sanal makineyi başlatalım:
 
-```shell
+```bash
 cd ~/www/Homestead
 vagrant up
 ```
@@ -136,7 +136,7 @@ vagrant up
 
 Bağlanmak için:
 
-```shell
+```bash
 vagrant ssh
 ```
 
@@ -146,7 +146,7 @@ vagrant ssh
 
 SSH ile sanal makineye bağlandıktan sonra Laravel'i kurmak için:
 
-```shell
+```bash
 cd www
 composer create-project --prefer-dist laravel/laravel
 ```
@@ -159,19 +159,19 @@ Bu işlem tamamlandığında **www** klasörünüzün içinde **laravel** adınd
 
 SSH ile bağlı olduğunuzdan emin olun ve **www** dizininde çalıştığınızdan emin olun:
 
-```shell
+```bash
 curl -sS https://raw.githubusercontent.com/grrnikos/pma/master/pma.sh | sh
 ```
 
 PhpMyAdmin'e erişim için hosts dosyanıza yeni bir satır ekleyelim:
 
-```shell
+```bash
 sudo nano /etc/hosts
 ```
 
 İçerisine şunu ekleyin:
 
-```shell
+```bash
 192.168.10.10 phpmyadmin.test
 ```
 
@@ -189,7 +189,7 @@ sites:
 
 Tüm ayarlamalar tamamlandı! 🚀 **PhpMyAdmin'e erişmek için:**
 
-[http://phpmyadmin.test/](http://phpmyadmin.test/)
+[http://phpmyadmin.test/](http://phpmyadmin.test/){: target="_blank" rel="noopener noreferrer"}
 
 Kullanıcı adı: **homestead**
 Şifre: **secret**

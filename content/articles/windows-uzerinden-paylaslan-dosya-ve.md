@@ -19,7 +19,7 @@ Merhaba! Windows üzerinden paylaşılan dosya, yazıcı gibi kaynaklara Linux �
 
 Samba kurulumunu gerçekleştirmek için aşağıdaki komutu kullanabilirsiniz:
 
-```shell
+```bash
 sudo pacman -S samba
 ```
 
@@ -27,13 +27,13 @@ sudo pacman -S samba
 
 Samba'nın yapılandırma dosyasını düzenlemek için aşağıdaki komutla açabilirsiniz:
 
-```shell
+```bash
 sudo nano /etc/samba/smb.conf
 ```
 
 Dosyayı oluşturup içerisine şu ayarları yapıştırıyoruz:
 
-```shell
+```bash
 [global]
 usershare path = /mnt/virtual/
 usershare max shares = 100
@@ -55,7 +55,7 @@ guest only = yes
 
 Şimdi sanal bir dizin oluşturalım:
 
-```shell
+```bash
 sudo mkdir /mnt/virtual
 ```
 
@@ -65,7 +65,7 @@ F3 tuşuna basarak dosyayı kaydedip, ardından F2 tuşuyla çıkıyoruz. Bu aya
 
 Samba'ya erişim sağlayacak yeni bir kullanıcı oluşturmak için aşağıdaki komutu kullanabilirsiniz:
 
-```shell
+```bash
 sudo useradd paylas
 ```
 
@@ -73,19 +73,19 @@ sudo useradd paylas
 
 Yeni oluşturduğumuz kullanıcıya yetki ve şifre vermek için şu komutu kullanın:
 
-```shell
+```bash
 sudo pdbedit -a -u paylas
 ```
 
 Şifreyi mutlaka belirleyin, aksi takdirde bazı problemlerle karşılaşabilirsiniz. Eğer şifreyi unuttuysanız, şu komutla şifreyi değiştirebilirsiniz:
 
-```shell
+```bash
 sudo smbpasswd paylas
 ```
 
 Son olarak, Samba servisini yeniden başlatıp aktif hale getirelim:
 
-```shell
+```bash
 sudo systemctl restart smb.service nmb.service
 sudo systemctl start smb.service nmb.service
 sudo systemctl enable smb.service nmb.service
@@ -97,7 +97,7 @@ Windows üzerinde dosya paylaşımı yaparken, mutlaka gelişmiş paylaşım aya
 
 Aşağıdaki komutla paylaşımı bağlayabilirsiniz:
 
-```shell
+```bash
 sudo mount -t cifs //ipadresi/paylasilanklasor /mnt/virtual -o username=olusturulankullaniciadi,password=olusturulansifre,workgroup=workgroup,iocharset=utf8,uid=olusturulankullaniciadi,gid=root
 ```
 
@@ -107,13 +107,13 @@ sudo mount -t cifs //ipadresi/paylasilanklasor /mnt/virtual -o username=olusturu
 
 "**Usershares**" özelliği, root olmayan kullanıcılara kendi paylaşım ayarlarını ekleme, değiştirme ve silme yeteneği tanır. Eğer Thunar dosya yöneticisini kullanıyorsanız (XFCE masaüstü ortamında), aşağıdaki komutla gerekli paketi yükleyebilirsiniz:
 
-```shell
+```bash
 sudo pacman -S thunar-shares-plugin
 ```
 
 Sonrasında şu adımları takip edelim:
 
-```shell
+```bash
 sudo mkdir -p /var/lib/samba/usershares
 sudo groupadd -r sambashare
 sudo chown root:sambashare /var/lib/samba/usershares
@@ -122,7 +122,7 @@ sudo chmod 1770 /var/lib/samba/usershares
 
 Samba yapılandırma dosyasının en üst kısmına şu satırı ekleyelim:
 
-```shell
+```bash
 usershare path = /var/lib/samba/usershares
 usershare max shares = 100
 usershare allow guests = yes
@@ -131,7 +131,7 @@ usershare owner only = yes
 
 Son olarak, kullanıcıyı "sambashare" grubuna ekleyelim:
 
-```shell
+```bash
 sudo gpasswd sambashare -a paylas
 sudo systemctl restart smb.service nmb.service
 ```

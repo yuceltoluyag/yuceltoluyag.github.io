@@ -12,21 +12,21 @@ Template: article
 
 Merhaba, uzun süredir bloga bir şeyler yazmıyordum. Daha önce Unity kullanırken video çekmiştim, ancak sabit diskimin bozulması ve sıcak hava derken günler hızla geçti. 😃 Linux'ta tema yükleme işlemi oldukça kolaydır. Hangi dağıtımı veya masaüstü ortamını kullanıyor olursanız olun, süreç genellikle benzerdir. Örneğin, Unity için `unity-tweak-tool` kullanılırken, Gnome için `gnome-tweak-tool` tercih edilmektedir. XFCE kullandığım dönemde, özelleştirmeleri doğrudan yapabiliyorduk (yanılıyor olabilirim 🤔).
 
----
+
 
 ### 🌄 Arka Plan (Wallpaper) için Kullandığım Siteler
 
-1. [Alpha](https://alpha.wallhaven.cc/latest)
-2. [InterfaceLIFT](https://interfacelift.com/wallpaper/downloads/date/any/)
-3. [DeviantArt (Sık Kullanılmıyor)](https://www.deviantart.com/customization/wallpaper/popular-24-hours/)
+1. [Alpha](https://alpha.wallhaven.cc/latest){: target="_blank" rel="noopener noreferrer"}
+2. [InterfaceLIFT](https://interfacelift.com/wallpaper/downloads/date/any/){: target="_blank" rel="noopener noreferrer"}
+3. [DeviantArt (Sık Kullanılmıyor)](https://www.deviantart.com/customization/wallpaper/popular-24-hours/){: target="_blank" rel="noopener noreferrer"}
 
 ---
 
 ### 🎨 Tema, İkon, İmleç ve Shell İçin Kaynaklar
 
-1. [DeviantArt](https://www.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/newest/?offset=0)
-2. [Gnome-Look](https://www.gnome-look.org/)
-3. [XFCE Masaüstü İçin](https://www.xfce-look.org/)
+1. [DeviantArt](https://www.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/newest/?offset=0){: target="_blank" rel="noopener noreferrer"}
+2. [Gnome-Look](https://www.gnome-look.org/){: target="_blank" rel="noopener noreferrer"}
+3. [XFCE Masaüstü İçin](https://www.xfce-look.org/){: target="_blank" rel="noopener noreferrer"}
 
 Özellikle DeviantArt'ta doğru aramalar yaparak veya menüleri kullanarak istediğiniz içeriğe kolayca ulaşabilirsiniz. Yukarıda belirttiğim siteler genellikle güncel ve organize edilmiş kaynaklardır. 
 
@@ -36,7 +36,7 @@ Ubuntu 17.10 beta sürümünden itibaren Gnome 3.x kullanmaya başladım. Bu ned
 
 ### 🔌 Gnome Eklentileri
 
-Gnome'un bir eklenti sistemi bulunmaktadır. [Gnome Eklentileri](https://extensions.gnome.org/) sitesinden nasıl eklenti ekleyebileceğinizi ve yönetebileceğinizi öğrenebilirsiniz.
+Gnome'un bir eklenti sistemi bulunmaktadır. [Gnome Eklentileri](https://extensions.gnome.org/){: target="_blank" rel="noopener noreferrer"} sitesinden nasıl eklenti ekleyebileceğinizi ve yönetebileceğinizi öğrenebilirsiniz.
 
 #### 📌 Kurulumla İlgili Notlar
 
@@ -49,14 +49,14 @@ Gnome'un bir eklenti sistemi bulunmaktadır. [Gnome Eklentileri](https://extensi
   - **Temalar:**  `~/.themes`
   - **Kurulum öncesi indirdiğiniz dosyaların nereye gittiğini kontrol edin!** 😏
 
-```shell
+```bash
 cat /etc/*release  # Sürüm bilgisi almak için
 gnome-shell --version  # Gnome sürümünü öğrenmek için
 ```
 
 - **Bir pencere küçültüldüğünde tekrar tıkladığınızda açılmıyorsa**, aşağıdaki komutu terminalde çalıştırın:
 
-```shell
+```bash
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 ```
 

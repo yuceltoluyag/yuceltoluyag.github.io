@@ -17,7 +17,7 @@ Template: article
 
 ## Facebook 5000 Arkadaş Ekleme (Süreli)
 
-[Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli](/facebook-otomatik-arkadas-ekleme-sureli-secimli/)
+[Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli](/facebook-otomatik-arkadas-ekleme-sureli-secimli/){: target="_blank" rel="noopener noreferrer"}
 versiyon 1 sürümü, Facebook'un yeni tasarıma geçmesiyle birlikte çalışmaz hale geldi. Birçok kişiden kodun güncellenmesi yönünde talepler aldım, ancak yoğunluk nedeniyle geri dönüş yapamadım. 
 
 Bu kod, yaklaşık **3 yıl** boyunca ücretsiz olarak kullanıldı ve birçok olumlu geri bildirim aldım. 😊 Tabii arada, başarısız olup öfkesini benden çıkaranlar da oldu ama bu hayatın bir parçası. **Bir şeyler üretmeyen insanlar için eleştirmek her zaman kolaydır.** Neyse, konumuza dönelim. 🚀
@@ -35,10 +35,10 @@ Facebook'un son güncellemesiyle birlikte, bu tür uygulamaları kullanırken di
 </div>
 
 Önerilen yazıyı mutlaka okuyun, sonra buraya dönün: 
-[Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli](/facebook-otomatik-arkadas-ekleme-sureli-secimli)
+[Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli](/facebook-otomatik-arkadas-ekleme-sureli-secimli){: target="_blank" rel="noopener noreferrer"}
 
 ## 📌 Kodu Satın Almak İçin
 
-[Kodu satın almak için tıklayın](https://instagram.com/yuceltoluyag).
+[Kodu satın almak için tıklayın](https://instagram.com/yuceltoluyag){: target="_blank" rel="noopener noreferrer"}.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/poi-oUJbTrc?si=8oAPSsULEvMv4yEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

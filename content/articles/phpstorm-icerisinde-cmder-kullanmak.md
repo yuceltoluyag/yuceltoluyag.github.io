@@ -38,7 +38,7 @@ Ben Cmder'in full sürümünü indirip `C:` dizinine çıkarmıştım. Siz nerey
 2. **Tools** menüsü altında **Terminal** sekmesine tıklayın.
 3. **Shell Path** kısmına aşağıdaki komutu yazın:
 
-```shell
+```bash
 "cmd" /k ""%CMDER_ROOT%\vendor\init.bat""
 ```
 
@@ -50,7 +50,7 @@ Ayarları uyguladıktan sonra PHPStorm'u yeniden başlatın. Yeniden açıldığ
 
 ![PHPStorm Cmder Terminal](/images/phpstorm_terminal2.png)
 
-Cmder terminali, Windows kullanıcıları için oldukça pratik bir araçtır. Full sürümünü [buradan](https://cmder.app/) indirerek istediğiniz dizine çıkarabilirsiniz. 😊
+Cmder terminali, Windows kullanıcıları için oldukça pratik bir araçtır. Full sürümünü [buradan](https://cmder.app/){: target="_blank" rel="noopener noreferrer"} indirerek istediğiniz dizine çıkarabilirsiniz. 😊
 
 Bir sonraki rehberde görüşmek üzere! 🚀
 

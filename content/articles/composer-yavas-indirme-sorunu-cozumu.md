@@ -53,7 +53,7 @@ Bu sorunu çözmek için:
 composer self-update --update-keys
 ```
 
-Alternatif olarak, `~/.config/composer/` dizinine gidip aşağıdaki iki dosyayı oluşturun ve [Composer Public Key](https://composer.github.io/pubkeys.html) sayfasından aldığınız güncel anahtarları ekleyin:
+Alternatif olarak, `~/.config/composer/` dizinine gidip aşağıdaki iki dosyayı oluşturun ve [Composer Public Key](https://composer.github.io/pubkeys.html){: target="_blank" rel="noopener noreferrer"} sayfasından aldığınız güncel anahtarları ekleyin:
 
 - `keys.dev.pub`
 - `keys.tags.pub`

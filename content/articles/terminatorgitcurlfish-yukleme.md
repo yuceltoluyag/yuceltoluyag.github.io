@@ -11,9 +11,6 @@ Status: published
 Template: article
 
 
-
-
-
 Merhaba! Linux’ta en çok vakit geçirdiğimiz alanlardan biri terminaldir. Peki terminalimizi nasıl daha işlevsel ve estetik hale getirebiliriz? İşte bu rehber tam size göre! 💪🚀
 
 Terminali daha verimli ve keyifli hale getirmek için **Terminator** ve **Fish Shell** kombinasyonunu kullanacağız. Bu sayede:
@@ -31,7 +28,7 @@ Terminali daha verimli ve keyifli hale getirmek için **Terminator** ve **Fish S
 
 ### Terminator Kurulumu
 
-```shell
+```bash
 sudo apt-get install terminator
 ```
 
@@ -39,14 +36,14 @@ sudo apt-get install terminator
 
 ### Fish Shell Kurulumu
 
-```shell
+```bash
 sudo apt-get install fish
 fish
 ```
 
 Fish’e geçtiğinizde, simgenin değiştiğini görebilirsiniz. Varsayılan shell olarak Fish'i ayarlamak için:
 
-```shell
+```bash
 chsh -s /usr/bin/fish
 ```
 
@@ -58,10 +55,10 @@ Bu işlemden sonra çıkış yapıp tekrar giriş yaptığınızda Fish varsayı
 
 Görselliğe önem veriyorsanız, aşağıdaki adımları takip ederek terminalinizin temasını değiştirebilirsiniz.
 
-1. **İterm2 Color Schemes** sitesinden [beğendiğiniz bir temayı seçin](http://iterm2colorschemes.com/).
+1. **İterm2 Color Schemes** sitesinden [beğendiğiniz bir temayı seçin](http://iterm2colorschemes.com/){: target="_blank" rel="noopener noreferrer"}.
 2. Terminator yapılandırma dosyasına erişmek için şu komutu çalıştırın:
 
-```shell
+```bash
 sudo gedit ~/.config/terminator/config
 ```
 
@@ -74,15 +71,15 @@ sudo gedit ~/.config/terminator/config
 
 Fish’i daha da özelleştirmek için **Oh My Fish** kullanabilirsiniz:
 
-```shell
+```bash
 curl -L https://get.oh-my.fish | fish
 ```
 
 ### 🎭 Tema Seçimi
 
-[Oh My Fish temalarına](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md) göz atarak beğendiğiniz bir temayı yükleyebilirsiniz. Örneğin:
+[Oh My Fish temalarına](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md){: target="_blank" rel="noopener noreferrer"} göz atarak beğendiğiniz bir temayı yükleyebilirsiniz. Örneğin:
 
-```shell
+```bash
 omf install bobthefish
 ```
 
@@ -90,11 +87,11 @@ omf install bobthefish
 
 Oh My Fish, çeşitli eklentiler sunmaktadır. Beğendiğiniz bir eklentiyi yüklemek için:
 
-```shell
+```bash
 omf install eklenti-adı
 ```
 
-[Eklentileri keşfetmek için buraya göz atabilirsiniz](https://github.com/oh-my-fish). 🤩
+[Eklentileri keşfetmek için buraya göz atabilirsiniz](https://github.com/oh-my-fish){: target="_blank" rel="noopener noreferrer"}. 🤩
 
 ---
 

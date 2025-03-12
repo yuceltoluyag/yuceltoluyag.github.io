@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 
-![Güncel Steam, Epic, GOG Oyunları](/images/ucretsiz-oyunlar.png)
+![Güncel Steam, Epic, GOG Oyunları](/images/ucretsiz-oyunlar.jpg)
 
 ## Güncel Ücretsiz Oyunlar 🎮🚀
 
@@ -25,6 +25,6 @@ Birden fazla kaynağı tarayan ve şu özelliklere sahip bir sistem geliştirdim
 **Oyun** ve **DLC** kampanyalarını tarayarak anlık olarak **Telegram grubuna** göndermektedir.
 
 ### Katılmak ister misiniz? 🤩
-[Güncel Ücretsiz Oyunlar Telegram Kanalı](https://discord.gg/da3Su8s "https://discord.gg/da3Su8s")
+[Güncel Ücretsiz Oyunlar Telegram Kanalı](https://discord.gg/da3Su8s "https://discord.gg/da3Su8s"){: target="_blank" rel="noopener noreferrer"}
 
 **Steam, Epic, GOG, Keylol, Reddit** ve daha bir çok kaynağı tarayarak en yeni ücretsiz oyun duyurularından haberdar olun! 🚀

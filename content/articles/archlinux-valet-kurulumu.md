@@ -16,12 +16,13 @@ Template: article
 
 # Merhaba 👋
 
-Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel geliştirme ortamıdır. [Vagrant](https://yuceltoluyag.github.io/virtualbox-vagrant-laravel-arch-linux/) veya `/etc/hosts` ayarlamaya gerek yoktur. Yerel tünelleri (Ngrok vb.) kullanarak sitelerinizi herkese açık olarak paylaşabilirsiniz. 🚀
+Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel geliştirme ortamıdır. [Vagrant](/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu){: target="_blank" rel="noopener noreferrer"} veya `/etc/hosts` ayarlamaya gerek yoktur. Yerel tünelleri (Ngrok vb.) kullanarak sitelerinizi herkese açık olarak paylaşabilirsiniz. 🚀
 
 Valet, sisteminizi makine açıldığında **Nginx'i arka planda çalıştıracak şekilde yapılandırır**. Ardından, **DnsMasq** kullanarak `*.test` uzantılı domainlerinizi ilgili dizinlere yönlendirir. **Sadece 7MB RAM kullanarak çalışan, hızlı ve hafif bir Laravel geliştirme ortamı sunar.** 🎯
 
 <div class="info-box error">
-<b>Not:</b> Daha önce [Lampp](https://yuceltoluyag.github.io/arch-linux-lampp-kurulumuphp7xmariadbmy/) veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.
+<b>Not:</b> Daha önce 
+<a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" target="_blank" rel="noopener noreferrer"> Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin) </a>veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.
 </div>
 ## 🛠 Kurulum
 
@@ -137,12 +138,12 @@ valet unsecure projeadi
 
 ## 📺 Video Anlatım
 
-{% include youtubePlayer.html id="-Qdxa0XjkgQ" title="Arch Linux Laravel Valet Kurulumu" %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-Qdxa0XjkgQ?si=VA6YUYm0A3q2lciz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## 📚 Kaynaklar
 
-- [Valet Linux Resmi Belgeleri](https://cpriego.github.io/valet-linux/index#installation)
-- [Valet Linux Gereksinimler](https://cpriego.github.io/valet-linux/requirements.html#arch)
+- [Valet Linux Resmi Belgeleri](https://cpriego.github.io/valet-linux/index#installation){: target="_blank" rel="noopener noreferrer"}
+- [Valet Linux Gereksinimler](https://cpriego.github.io/valet-linux/requirements.html#arch){: target="_blank" rel="noopener noreferrer"}
 
 🎯 Artık Valet ile Laravel projelerinizi hızla geliştirebilir ve yerel ortamınızı optimize edebilirsiniz! 🚀
 

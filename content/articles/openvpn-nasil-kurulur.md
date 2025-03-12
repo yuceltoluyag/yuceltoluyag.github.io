@@ -25,7 +25,7 @@ Paranız çok, zamanınız azsa, kullan tabii ki sevgili okurum 🐸 Bazı VPN'l
 ## Kurulum
 
 1.  Hesabınız yoksa bir Amazon hesabı açın.
-2.  [# OpenVPN Access Server](https://aws.amazon.com/marketplace/pp/prodview-y3m73u6jd5srk) **Continue to Subscribe** tıklayın
+2.  [OpenVPN Access Server](https://aws.amazon.com/marketplace/pp/prodview-y3m73u6jd5srk){: target="_blank" rel="noopener noreferrer"} **Continue to Subscribe** tıklayın
 
     ![amazon-openvpn-kurulumu](/images/amazon-openvpn-kurulumu.png)
 
@@ -67,7 +67,7 @@ Paranız çok, zamanınız azsa, kullan tabii ki sevgili okurum 🐸 Bazı VPN'l
 
 ## DNS LEAK
 
-Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, DNS adreslerimiz halen kendi ISS'mizden istek atıyor. Saldırganlar genelde sahte web siteleri oluşturur, analiz servisleriyle IP adresinizi, konumunuzu, işletim sisteminizi vb. birçok bilgiyi toplayabilirler. IP adresinizi aldıktan sonra karşı taraf hiçbir şey yapamasa bile saldırı yapıp rahatınızı bozabiliyor. VPN açıkken DNS Leak testini otomatik yapabileceğiniz bir adres veriyorum şimdi 😁 [dnsleaktest.com](https://www.dnsleaktest.com/) Siteye girip Extended test yapmanız yeterli. Bu resimdeki ucuz, ücretsiz bir VPN'in testi 😆 ![Extended-test](/images/Extended-test.png) **Peki bunla neler mi yapıyorlar? Dilerseniz bonus bölümünden okuyabilirsiniz 😁** Çözüme devam edelim...
+Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, DNS adreslerimiz halen kendi ISS'mizden istek atıyor. Saldırganlar genelde sahte web siteleri oluşturur, analiz servisleriyle IP adresinizi, konumunuzu, işletim sisteminizi vb. birçok bilgiyi toplayabilirler. IP adresinizi aldıktan sonra karşı taraf hiçbir şey yapamasa bile saldırı yapıp rahatınızı bozabiliyor. VPN açıkken DNS Leak testini otomatik yapabileceğiniz bir adres veriyorum şimdi 😁 [dnsleaktest.com](https://www.dnsleaktest.com/){: target="_blank" rel="noopener noreferrer"} Siteye girip Extended test yapmanız yeterli. Bu resimdeki ucuz, ücretsiz bir VPN'in testi 😆 ![Extended-test](/images/Extended-test.png) **Peki bunla neler mi yapıyorlar? Dilerseniz bonus bölümünden okuyabilirsiniz 😁** Çözüme devam edelim...
 
 ### EC2 Elastik IP
 

@@ -42,7 +42,6 @@ function createSearchModal() {
           type="search"
           placeholder="Aramak istediğiniz kelimeyi yazın..."
           class="w-full px-4 py-2 bg-site-card-alt rounded-lg border border-border-card focus:outline-none focus:border-primary"
-          autofocus
         />
       </div>
       <div id="search-results" class="mt-4 max-h-[60vh] overflow-y-auto">
@@ -58,6 +57,11 @@ function createSearchModal() {
     // Arama inputunu dinle
     const searchInput = modal.querySelector("#search-input");
     const searchResults = modal.querySelector("#search-results");
+
+    // Modal görünür olduğunda input'a odaklan
+    setTimeout(() => {
+        searchInput.focus();
+    }, 100);
 
     // Debounce fonksiyonu
     let debounceTimeout;

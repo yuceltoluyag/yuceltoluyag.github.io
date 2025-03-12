@@ -5,6 +5,8 @@ Category: program
 Tags: [windows10, linux]
 Slug: windows-terminalimi-nasil-ozellestiriyorum
 Authors: yuceltoluyag
+Series: Git
+Series_index: 2
 Summary: Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağını keşfedin.
 Translation: false
 Status: published

@@ -110,5 +110,5 @@ Bilgisayarınızı yeniden başlattığınızda, disk otomatik olarak bağlanaca
 ---
 
 ## Daha Fazla Bilgi 📚
-Daha detaylı bilgi için [Arch Linux NTFS-3G Wiki](https://wiki.archlinux.org/index.php/NTFS-3G) sayfasına göz atabilirsiniz. 💡
+Daha detaylı bilgi için [Arch Linux NTFS-3G Wiki](https://wiki.archlinux.org/index.php/NTFS-3G){: target="_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 💡
 

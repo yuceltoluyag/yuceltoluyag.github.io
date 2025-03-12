@@ -21,8 +21,8 @@ Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika ek
 
 <!-- excerpt separator -->
 
-Ayarlarımı GitHub'dan alabilirsiniz: [Sublime Repom](https://github.com/yuceltoluyag/sublime-text-3) ve [Alternatif Ayarlarım](https://gist.github.com/yuceltoluyag/51b4391d44cfc353aad0d1731b56c39f).
-
+Ayarlarımı GitHub'dan alabilirsiniz: [Sublime Repom](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"} ve **Alternatif Ayarlarım**
+<script src="https://gist.github.com/yuceltoluyag/51b4391d44cfc353aad0d1731b56c39f.js"></script>
 ## EMMET
 
 Emmet, kod yazma hızınızı önemli ölçüde artırabilecek harika bir eklentidir. Ancak, kod yazmaya yeni başlayanlara önerilmez.
@@ -50,7 +50,7 @@ Düzen takıntınız varsa, bu eklenti tam size göre! Kodlarınızı hizalamak 
 
 ## SublimeGit
 
-Sublime Text için Git entegrasyonu sağlayan harika bir eklentidir. Dökümantasyon için [SublimeGit Dökümantasyon](https://sublimegit.readthedocs.io/en/latest/) sayfasını ziyaret edebilirsiniz.
+Sublime Text için Git entegrasyonu sağlayan harika bir eklentidir. Dökümantasyon için [SublimeGit Dökümantasyon](https://sublimegit.readthedocs.io/en/latest/){: target="_blank" rel="noopener noreferrer"} sayfasını ziyaret edebilirsiniz.
 
 ## GitGutter
 
@@ -72,7 +72,7 @@ GitGutter'dan farkı, yalnızca değişiklik yapılan satırları gösterip, rep
 
 ## SublimeLinter
 
-SublimeLinter, kod hatalarını ve uyarılarını göstermek için harika bir araçtır. [SublimeLinter Dökümantasyonu](http://www.sublimelinter.com) adresini mutlaka inceleyin.
+SublimeLinter, kod hatalarını ve uyarılarını göstermek için harika bir araçtır. [SublimeLinter Dökümantasyonu](http://www.sublimelinter.com){: target="_blank" rel="noopener noreferrer"} adresini mutlaka inceleyin.
 
 ![SublimeLinter](/images/SublimeLinter.png)
 
@@ -126,11 +126,11 @@ Dosya uzantılarına göre simgeler ekler, böylece dosyalarınız daha düzenli
 
 ## Tema
 
-Material Tema kullanıyorum: [Material Theme GitHub Sayfası](https://github.com/equinusocio/material-theme).
+Material Tema kullanıyorum: [Material Theme GitHub Sayfası](https://github.com/equinusocio/material-theme){: target="_blank" rel="noopener noreferrer"}.
 
 ![Material-Theme](/images/material-theme.gif)
 
-Yeni kullandığım temalar ve pluginler hakkında bilgi almak için [GitHub Repo](https://github.com/yuceltoluyag/sublime-text-3)
+Yeni kullandığım temalar ve pluginler hakkında bilgi almak için [GitHub Repo](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"}
 
 ### Ayarlarım
 

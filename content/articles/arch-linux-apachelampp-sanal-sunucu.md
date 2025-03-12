@@ -18,9 +18,12 @@ Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sık�
 
 
 
-{% include series.html %}
 
-1. [Arch Linux XAMPP/LAMPP Kurulumu](https://yuceltoluyag.github.io/arch-linux-lampp-kurulumuphp7xmariadbmy/) yapılmalıdır.
+
+1. [Arch Linux XAMPP/LAMPP Kurulumu](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin){: target="_blank" rel="noopener noreferrer"} yapılmalıdır.
+
+
+
 
 **baba.test** adında bir domain oluşturacağız.
 
@@ -134,4 +137,5 @@ sudo systemctl restart httpd
 ## Sonuç ;)
 
 ![its work](/images/baba.test.png)
+
 

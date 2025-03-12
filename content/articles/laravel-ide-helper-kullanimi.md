@@ -97,7 +97,7 @@ Bu işlemin sonunda, **User.php** gibi model dosyalarının başında şu şekil
 
 ## Sonuç 🎯
 
-**Laravel IDE Helper**, **PHPStorm** gibi IDE'lerde kod tamamlama ve otomatik önerileri iyileştirerek geliştirme deneyimini çok daha verimli hale getirir. Daha fazla bilgi için [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md) sayfasını ziyaret edebilirsiniz.
+**Laravel IDE Helper**, **PHPStorm** gibi IDE'lerde kod tamamlama ve otomatik önerileri iyileştirerek geliştirme deneyimini çok daha verimli hale getirir. Daha fazla bilgi için [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){: target="_blank" rel="noopener noreferrer"} sayfasını ziyaret edebilirsiniz.
 
-PhpStorm ile ilgili daha fazla yazıya [buradan ulaşabilirsiniz](https://yuceltoluyag.github.io/tag/phpstorm/). 🚀
+PhpStorm ile ilgili daha fazla yazıya [buradan ulaşabilirsiniz](/etiket/phpstorm/). 🚀
 
