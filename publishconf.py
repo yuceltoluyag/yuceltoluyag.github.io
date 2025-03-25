@@ -5,16 +5,16 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 # Uyarıları gidermek için TIMEZONE ve LOCALE ayarlarını tekrar belirtelim
-TIMEZONE = "Asia/Istanbul"
+TIMEZONE = "Europe/Istanbul"
 LOCALE = ("tr_TR.UTF-8", "tr_TR")
 
-PLUGINS += [
-    "seo",
-]
+PLUGINS += ["seo", "gzip_cache"]
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
-
+# Leave the cache alone when publishing
+CACHE_CONTENT = False
+LOAD_CONTENT_CACHE = False
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
@@ -39,3 +39,26 @@ SEO_ENHANCER_TWITTER_CARDS = True  # Subfeature of SEO enhancer
 
 # Google AdSense
 GOOGLE_ADSENSE = "ca-pub-6089943780218266"
+SITEMAP = {
+    "format": "xml",
+    "priorities": {
+        "articles": 0.7,
+        "indexes": 0.5,
+        "pages": 0.5,
+    },
+    "changefreqs": {
+        "articles": "daily",
+        "indexes": "weekly",
+        "pages": "monthly",
+    },
+    "exclude": [
+        "^noindex/",  # starts with "/noindex/"
+        "^tag/",  # contains "/tag/"
+        r"\.json$",  # ends with ".json"
+        r"\.txt$",  # ends with ".txt"
+        "_redirects",
+        "404.html",
+        "^category/",  # we use tags, not categories
+        "^author/",  # we don't use author pages
+    ],
+}
