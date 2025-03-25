@@ -80,6 +80,9 @@ EXTRA_PATH_METADATA = {
     "extra/sitemap.xml": {"path": "sitemap.xml"},
     "extra/_redirects": {"path": "_redirects"},
     "extra/manifest.json": {"path": "manifest.json"},
+    "extra/google9ebea4e71f971453.html": {
+        "path": "google9ebea4e71f971453.html"
+    },
 }
 
 # 404.html dosyasını içerik işleme sürecinden çıkar
