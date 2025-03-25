@@ -1,0 +1,47 @@
+<!-- Profil kartı -->
+<div class="card mb-6">
+    <div class="flex flex-col items-center text-center">
+        <div class="w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-primary/20">
+            <img
+                src="{{ SITEURL }}/images/avatar.webp"
+                alt="{{ AUTHOR }}"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-full object-cover" />
+        </div>
+        <div class="space-y-2">
+            <h2 class="text-xl font-bold text-text-primary">{{ AUTHOR }}</h2>
+            <p class="text-sm text-text-secondary">{{ DESCRIPTION }}</p>
+            <div class="flex flex-wrap justify-center gap-3 pt-2">{% include 'partials/social-icons.html' %}</div>
+        </div>
+    </div>
+</div>
+
+{% if article and article.toc %}
+<!-- İçindekiler - Sadece makale sayfalarında göster -->
+<div class="card mb-6 toc-wrapper hidden lg:block">
+    <h3 class="text-lg font-bold mb-4 text-text-primary">İçindekiler</h3>
+    <nav class="toc">
+        <div class="toc-container">{{ article.toc }}</div>
+    </nav>
+</div>
+{% endif %}
+
+<!-- İstatistikler -->
+<div class="card mb-6 overflow-hidden">
+    <div class="relative">
+        <div
+            class="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent pointer-events-none"></div>
+        <h3 class="text-lg font-bold mb-6 text-text-primary flex items-center gap-2">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            İstatistikler
+        </h3>
+        <div class="grid grid-cols-3 gap-4">{% include 'partials/statistics-cards.html' %}</div>
+    </div>
+</div>
