@@ -9,7 +9,9 @@ _site/
 output/
 node_modules/
 .DS_Store
-
+content/images/
+themes/Minel/static/css/*.css
+themes/Minel/static/js/*.js
 # C extensions
 *.so
 

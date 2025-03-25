@@ -25,7 +25,7 @@ set_locale()
 PUBLISH = os.environ.get("PUBLISH")
 
 # --- Basic Settings ---
-TIMEZONE = "Asia/Istanbul"
+TIMEZONE = "Europe/Istanbul"
 I18N_TEMPLATES_LANG = "tr"
 DEFAULT_LANG = "tr"
 # DEFAULT_DATE_FORMAT = "%a %d %B %Y"
@@ -47,12 +47,23 @@ SITEURL = (
     "https://yuceltoluyag.github.io" if PUBLISH else "http://localhost:8000"
 )
 CANONICAL_URL = SITEURL
+# Do we want to wipe the /output folder every build,
+# or just accumulate new stuff?
 DELETE_OUTPUT_DIRECTORY = True
 DISABLE_URL_HASH = True
 BROWSER_COLOR = "#333333"
 PYGMENTS_STYLE = "dracula"
 ROBOTS = "index, follow"
+#################################
+#
+# Cache Settings
+#
+#################################
 
+CACHE_CONTENT = True
+CHECK_MODIFIED_METHOD = "sha1"
+LOAD_CONTENT_CACHE = True
+GZIP_CACHE = False
 
 # Version değişkeni
 VERSION = "1.0.0"
@@ -80,9 +91,6 @@ EXTRA_PATH_METADATA = {
     "extra/sitemap.xml": {"path": "sitemap.xml"},
     "extra/_redirects": {"path": "_redirects"},
     "extra/manifest.json": {"path": "manifest.json"},
-    "extra/google9ebea4e71f971453.html": {
-        "path": "google9ebea4e71f971453.html"
-    },
 }
 
 # 404.html dosyasını içerik işleme sürecinden çıkar
@@ -139,15 +147,26 @@ WITH_FUTURE_DATES = False
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 HOME_HIDE_TAGS = True
-# USE_FOLDER_AS_CATEGORY = False
+USE_FOLDER_AS_CATEGORY = True
+WEBASSETS_DEBUG = False
 MAIN_MENU = True
+# Settings for the related_posts plugin
+RELATED_POSTS_MAX = 4
 # FEED_MAX_ITEMS = 15
 # FEED_APPEND_REF = True
 DRAFT_SAVE_AS = DRAFT_PAGE_SAVE_AS = "drafts/{slug}/index.html"
 DRAFT_URL = DRAFT_PAGE_URL = "drafts/{slug}/"
-JINJA_ENVIRONMENT = {"trim_blocks": True, "lstrip_blocks": True}
+JINJA_ENVIRONMENT = {
+    "trim_blocks": True,
+    "lstrip_blocks": True,
+    "extensions": ["jinja2.ext.i18n"],
+}
 # --- Pagination Settings ---
 DEFAULT_PAGINATION = 6
+DEFAULT_ORPHANS = 1
+OPEN_GRAPH_METADATA = True
+DUBLIN_CORE_METADATA = True
+DEFAULT_PAGESCHEMA = "article"
 PAGINATION_PATTERNS = (
     (1, "{base_name}/", "{base_name}/index.html"),
     (2, "{base_name}/page/{number}/", "{base_name}/page/{number}/index.html"),
@@ -210,7 +229,7 @@ IMAGE_PROCESS = {
 }
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 # --- Plugin Settings ---
 PLUGIN_PATHS = ["plugins"]
@@ -381,3 +400,14 @@ ARCHIVES_SAVE_AS = "arsiv/index.html"
 ARCHIVES_URL = "arsiv/"
 AUTHORS_SAVE_AS = "yazarlar/index.html"
 AUTHORS_URL = "yazarlar/"
+
+# ----------------- <GENERATION> -----------------
+
+import logging
+
+LOG_FILTER = [
+    # (logging.WARN, 'Empty alt attribute for image %s in %s'),
+    # (logging.WARN, '{filename} used for linking to static content %s in %s. Use {static} instead'),
+    # (logging.WARN, "Meta tag in file %s does not have a 'name' attribute, skipping. Attributes: %s"),
+    # (logging.WARN, "Unable to find '%s', skipping url replacement."),
+]
