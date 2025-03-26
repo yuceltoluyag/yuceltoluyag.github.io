@@ -20,7 +20,7 @@ Pelican Redirect eklentisi, iki temel yönlendirme mekanizması sunar:
 
 1. **.302 uzantılı** dosyalar aracılığıyla yönlendirme
 2. **REDIRECTS** yapılandırma değişkeni ile yönlendirme
-
+3. İşte örnek kaynak dosyalar: [pelican_redirect.py](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/plugins/pelican_redirect.py){: target="_blank" rel="noopener noreferrer"} + [redirect.html](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/themes/Minel/templates/redirect.html){: target="_blank" rel="noopener noreferrer"}
 Her iki yöntem de HTML meta-refresh ve JavaScript location yönlendirmelerini kullanarak ziyaretçileri belirttiğiniz yeni URL'lere yönlendirir.
 
 ## Kurulum 💻
