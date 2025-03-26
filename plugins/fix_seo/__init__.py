@@ -7,8 +7,12 @@ from pelican import signals
 logger = logging.getLogger(__name__)
 
 
-def patch_seo_plugin():
-    """SEO eklentisinin hatalarını düzeltir."""
+def patch_seo_plugin(sender):
+    """SEO eklentisinin hatalarını düzeltir.
+
+    Args:
+        sender: Sinyal gönderen nesne (Pelican örneği).
+    """
     try:
         # ArticleSchemaCreator'ı düzelt
         from pelican.plugins.seo.seo_enhancer.html_enhancer.article_schema_creator import (
