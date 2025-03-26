@@ -2,7 +2,7 @@ Title: IMAP Sunucusuna OpenSSL Kullanarak Terminal ile Erişin
 Date: 2020-02-04 12:00 10:00
 Modified: 2025-03-08 12:00
 Category: linux
-Tags: [linux, e-mail, imap]
+Tags: linux, e-mail, imap
 Slug: imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin
 Authors: yuceltoluyag
 Series: mutt

@@ -460,5 +460,10 @@ kullanicilar:
 
 [Bağlantı örneği](https://example.com)
 
+![Resim açıklaması](resim.jpg)
+
 > Alıntı örneği
 ```
+
+Bu sayfada farklı programlama dillerinin kod bloklarını test ettik. Dil etiketlerinin doğru şekilde görüntülendiğinden emin olmak için bu örnekleri kullanabilirsiniz.
+

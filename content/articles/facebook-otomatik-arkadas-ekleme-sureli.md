@@ -1,8 +1,8 @@
 Title: Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli
 Date: 2019-05-10 00:00 10:00
 Modified: 2025-03-08 12:00
-Category: facebook
-Tags: [facebook]
+Category: Facebook
+Tags: facebook
 Series: Facebook
 Series_index: 2
 Slug: facebook-otomatik-arkadas-ekleme-sureli-secimli

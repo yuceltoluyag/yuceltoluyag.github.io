@@ -1,7 +1,7 @@
 Title: Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme  
 Date: 2025-03-03 10:00 10:00 
 Modified: 2025-03-11 10:00  
-Category: Git  
+Category: kutuphane  
 Tags: git, gpg, imzalama, etiketleme, güvenlik  
 Slug: git-gpg-imzali-etiket  
 Authors: yuceltoluyag  

@@ -2,7 +2,7 @@ Title: AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir
 Date: 2022-01-28 12:00 10:00
 Modified: 2025-03-08 12:00
 Category: linux
-Tags: [linux, vpn]
+Tags: linux, vpn
 Slug: aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi
 Authors: yuceltoluyag
 Summary: AWS EC2 üzerinde OpenVPN kurulumunun nasıl yapılacağı ve DNS leak probleminin nasıl çözüleceği hakkında adım adım rehber.

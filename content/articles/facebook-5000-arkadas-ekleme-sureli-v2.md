@@ -3,7 +3,7 @@ Date: 2021-02-09 12:00 10:00
 Modified: 2025-03-08 12:00
 Category: Facebook
 Tags: facebook
-Slug: facebook-5000-arkadas-ekleme-sureli-v2
+Slug: facebook-5000-arkadas-ekleme-sureli
 Authors: yuceltoluyag
 Series: Facebook
 Series_index: 4
