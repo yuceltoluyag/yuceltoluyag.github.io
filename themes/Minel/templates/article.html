@@ -140,7 +140,7 @@
     </div>
 
     {% if article.series %}
-    <div class="p-8 border-t border-border-card">
+    <div class="p-8 border-t border-border-card min-h-[100px]">
         <div class="flex flex-col gap-4">
             <p class="text-sm text-text-secondary">
                 Bu "{{ article.series.name }}" serisinin {{ article.series.index }}. yazısıdır. Seri toplamda {{
@@ -182,6 +182,19 @@
                     images.forEach((img) => {
                         img.setAttribute("loading", "lazy");
                         img.setAttribute("decoding", "async");
+
+                        // Resim boyutları önceden belirlenmemişse, varsayılan genişlik ve yükseklik ata
+                        if (!img.getAttribute("width") && !img.getAttribute("height")) {
+                            img.setAttribute("width", "100%");
+                            img.setAttribute("height", "auto");
+                            img.style.aspectRatio = "auto";
+                        }
+                    });
+
+                    // Paragraf elementlerine min-height değeri ekle
+                    const paragraphs = document.querySelectorAll(".post-content p");
+                    paragraphs.forEach((p) => {
+                        p.style.minHeight = "1.5em";
                     });
                 });
             </script>
@@ -190,17 +203,16 @@
     </div>
 
     <!-- Paylaşım Butonları -->
-    <div class="p-8 border-t border-border-card">
+    <div class="p-8 border-t border-border-card min-h-[150px]">
         <div class="flex flex-col items-center space-y-4">
             <h3 class="text-xl font-bold text-text-primary">Bu Yazıyı Paylaşın</h3>
             <div class="flex flex-wrap justify-center gap-3">
                 <!-- Twitter/X Paylaşım -->
                 <a
-                    href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url|urlencode }}&text={{ article.title|urlencode }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Twitter'da paylaş"
-                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#1da1f2]/10 text-[#1da1f2] hover:bg-[#1da1f2] hover:text-white transition-colors duration-300">
+                    href="javascript:void(0);"
+                    onclick="shareWithConsent('twitter', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
+                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#1da1f2]/10 text-[#1da1f2] hover:bg-[#1da1f2] hover:text-white transition-colors duration-300"
+                    aria-label="Twitter'da paylaş">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
@@ -209,11 +221,10 @@
 
                 <!-- Mastodon Paylaşım -->
                 <a
-                    href="https://mastodonshare.com/?text={{ article.title|urlencode }}%20{{ SITEURL }}/{{ article.url|urlencode }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Mastodon'da paylaş"
-                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#6364FF]/10 text-[#6364FF] hover:bg-[#6364FF] hover:text-white transition-colors duration-300">
+                    href="javascript:void(0);"
+                    onclick="shareWithConsent('mastodon', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
+                    class="flex items-center justify-center w-10 h-10 rounded-full bg-[#6364FF]/10 text-[#6364FF] hover:bg-[#6364FF] hover:text-white transition-colors duration-300"
+                    aria-label="Mastodon'da paylaş">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545z" />
@@ -294,7 +305,7 @@
                     class="flex items-center justify-center w-10 h-10 rounded-full bg-[#0088cc]/10 text-[#0088cc] hover:bg-[#0088cc] hover:text-white transition-colors duration-300">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
-                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.366.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                     </svg>
                 </a>
 
@@ -534,6 +545,77 @@
                 console.error("Bağlantı kopyalanamadı:", err);
                 alert("Bağlantı kopyalanamadı. Lütfen tekrar deneyin.");
             });
+    }
+
+    // Sosyal medya paylaşımı için çerez izin kontrolü
+    function shareWithConsent(platform, url, title) {
+        // Çerez izni kontrolü
+        const cookieConsent = localStorage.getItem("cookie-consent");
+
+        if (cookieConsent === "accepted") {
+            // İzin verilmiş, doğrudan paylaş
+            shareContent(platform, url, title);
+        } else {
+            // İzin alınmamış, uyarı göster ve izin iste
+            const confirmShare = confirm(
+                "Sosyal medyada paylaşım yapabilmek için çerez kullanım iznine ihtiyacımız var. " +
+                    "Çerez kullanımına izin vermek istiyor musunuz?"
+            );
+
+            if (confirmShare) {
+                // Kullanıcı izin verdi
+                localStorage.setItem("cookie-consent", "accepted");
+
+                // Google Analytics ve diğer üçüncü taraf çerezlerini etkinleştir
+                if (typeof gtag === "function") {
+                    gtag("consent", "update", {
+                        analytics_storage: "granted",
+                        ad_storage: "granted",
+                    });
+                }
+
+                // Paylaş
+                shareContent(platform, url, title);
+            }
+        }
+    }
+
+    // Platforma göre paylaşım yap
+    function shareContent(platform, url, title) {
+        let shareUrl = "";
+
+        switch (platform) {
+            case "twitter":
+                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                break;
+            case "mastodon":
+                shareUrl = `https://mastodonshare.com/?text=${title}%20${url}`;
+                break;
+            case "facebook":
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                break;
+            case "linkedin":
+                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                break;
+            case "reddit":
+                shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;
+                break;
+            case "whatsapp":
+                shareUrl = `https://wa.me/?text=${title}%20${url}`;
+                break;
+            case "telegram":
+                shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
+                break;
+            case "bluesky":
+                shareUrl = `https://bsky.app/intent/compose?text=${title}%20${url}`;
+                break;
+            default:
+                console.error("Bilinmeyen platform:", platform);
+                return;
+        }
+
+        // Paylaşım penceresini aç
+        window.open(shareUrl, "_blank", "width=600,height=400");
     }
 </script>
 {% endblock %}
