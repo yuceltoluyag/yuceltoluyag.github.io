@@ -25,7 +25,7 @@ set_locale()
 PUBLISH = os.environ.get("PUBLISH")
 
 # --- Basic Settings ---
-TIMEZONE = "Europe/Istanbul"
+TIMEZONE = "UTC"
 I18N_TEMPLATES_LANG = "tr"
 DEFAULT_LANG = "tr"
 # DEFAULT_DATE_FORMAT = "%a %d %B %Y"
@@ -80,6 +80,14 @@ PATH = "content"
 STATIC_PATHS = [
     "images",
     "extra",
+    "extra/SW.js",
+    "extra/robots.txt",
+    "extra/humans.txt",
+    "extra/ads.txt",
+    "extra/favicon.ico",
+    "extra/favicon.webp",
+    "extra/sitemap.xml",
+    "extra/manifest.json",
 ]
 EXTRA_PATH_METADATA = {
     "extra/SW.js": {"path": "SW.js"},
@@ -89,10 +97,8 @@ EXTRA_PATH_METADATA = {
     "extra/favicon.ico": {"path": "favicon.ico"},
     "extra/favicon.webp": {"path": "favicon.webp"},
     "extra/sitemap.xml": {"path": "sitemap.xml"},
-    "extra/_redirects": {"path": "_redirects"},
     "extra/manifest.json": {"path": "manifest.json"},
 }
-
 # 404.html dosyasını içerik işleme sürecinden çıkar
 IGNORE_FILES = ["404.html"]
 
@@ -143,7 +149,7 @@ CC_LICENSE = {
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 TRANSLATION_FEED_ATOM = None
-WITH_FUTURE_DATES = False
+WITH_FUTURE_DATES = True
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 HOME_HIDE_TAGS = True
@@ -245,6 +251,8 @@ common_plugins = [
     "pelican.plugins.series",
     "plugins.markdown_lang_fix",
     "plugins.search",
+    "plugins.pelican_redirect",
+    "plugins.minify",
 ]
 
 dev_plugins = common_plugins.copy()
@@ -357,20 +365,36 @@ SITEMAP = {
     ],
 }
 
-# Creates a `_redirects` file in the root of the site.
-# See [Cloudflare Pages documentation](https://developers.cloudflare.com/pages/configuration/redirects/) for more information.
+
 REDIRECTS = {
     # "/source_url": "/destination_url"
+    # Etiket ve kategori yönlendirmeleri
     "/tags/facebook.html": "/etiket/facebook/",
     "/tags/ntfs.html": "/etiket/ntfs/",
     "/tags/linux.html": "/etiket/linux/",
     "/tags/zsh.html": "/etiket/zsh/",
     "/tags/sweetalert.html": "/etiket/sweetalert/",
+    "/category/tanitim.html": "/etiket/tanitim/",
+    "/categories/facebook/": "/kategori/facebook/",
     "/category/tan%C4%B1t%C4%B1m.html": "/etiket/tanitim/",
     "/series/phpstorm.html": "/etiket/phpstorm/",
-    "/linuxta-uefi-windows-10-format-usb_14/": "/linuxta-uefi-windows-10-format-usb/",
-    "/guncel-ucretsiz-steam-gog-epic-oyunlari-Kopya": "/guncel-ucretsiz-steam-gog-epic-oyunlari/",
-    "/felix-coin-guvenlimidir": "/onemli-gelismeler/",
+    # Makale yönlendirmeleri - uzantısız olarak tanımlayarak dizin olarak oluşturulacak
+    "/linuxta-uefi-windows-10-format-usb_14": "/linux-uefi-windows10-usb/",
+    "/linuxta-uefi-windows-10-format-usb": "/linux-uefi-windows10-usb/",
+    "/guncel-ucretsiz-steam-gog-epic-oyunlari-Kopya": "/guncel-ucretsiz-oyunlar/",
+    "/felix-coin-guvenlimidir": "/onemli-degisiklikler/",
+    "/vlsub-ile-altyaz-aramaya-son-resimli": "/vlsub-ile-altyazi-aramaya-son/",
+    "/terminatorgitcurlfish-yukleme": "/terminator-git-curl-fish-kurulumu",
+    "/linux-tema-nasl-yuklenir-gnome-shell-ve": "/linux-tema-nasil-yuklenir",
+    "/facebook-toplu-grup-2021": "/facebook-gruba-toplu-arkadas-ekleme",
+    "/linux-ekran-karti-kurulumu": "/arch-linux-nvidia-ekran-karti-kurulumu",
+    "/wsl-archlinux-kurulumu": "/wsl-uzerinde-arch-linux-kurulumu/",
+    "/elektronik-sigara-zararlimi-faydalimi": "/e-sigara-tecrubelerim",
+    "/git-ssh-key-olusturma-windows": "/git-ssh-key-olusturma/",
+    "/modern-mutt-kurulumu": "/modern-bir-mutt-kurulumu-1-bolum",
+    "/openvpn-nasil-kurulur": "/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi",
+    "/linux-ozellestirebilir-mp3-oynatcs": "/linux-ozellestirilebilir-mp3-oynaticisi-audacious/",
+    "/vagrant-virtualbox-61-ile-uyumlu-hale": "/vagrant-virtualbox-6-1-uyumluluk",
 }
 
 # Arama eklentisi ayarları

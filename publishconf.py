@@ -8,7 +8,9 @@ from pelicanconf import *
 TIMEZONE = "Europe/Istanbul"
 LOCALE = ("tr_TR.UTF-8", "tr_TR")
 
-PLUGINS += ["seo", "gzip_cache"]
+PLUGINS += [
+    "seo",
+]
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False

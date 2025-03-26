@@ -1,0 +1,116 @@
+/* Kod blokları için custom stiller */
+.code-block-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.code-block-wrapper pre {
+    padding-bottom: 1.5rem;
+    max-height: none;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Kopyalama butonu */
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--main-card-background);
+    color: var(--main-font-second-color);
+    border: 1px solid var(--main-card-border);
+    font-size: 0.7rem;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.code-block-wrapper:hover .copy-button {
+    opacity: 1;
+}
+
+.copy-button:hover {
+    background-color: rgba(var(--main-color-rgb), 0.1);
+    color: var(--main-color);
+    border-color: rgba(var(--main-color-rgb), 0.2);
+}
+
+.copy-button.copied {
+    background-color: var(--main-color) !important;
+    color: white !important;
+    border-color: var(--main-color) !important;
+}
+
+/* Daralt/Genişlet butonu */
+.code-toggle-button {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    background-color: var(--main-site-background);
+    color: var(--main-font-second-color);
+    border: 1px solid var(--main-card-border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.code-toggle-button:hover {
+    background-color: rgba(var(--main-color-rgb), 0.1);
+    color: var(--main-color);
+}
+
+/* Daraltılmış kod bloğuna gölge efekti - Açık tema için */
+:root:not(.dark) .code-block-wrapper pre::after {
+    content: "";
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.05));
+    pointer-events: none;
+}
+
+/* Daraltılmış kod bloğuna gölge efekti - Koyu tema için */
+.dark .code-block-wrapper pre::after {
+    content: "";
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    height: 2rem;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.05));
+    pointer-events: none;
+}
+
+/* Kod renklendirme iyileştirmeleri */
+.code-block-wrapper .highlight pre code {
+    font-feature-settings: "calt" 1;
+}
+
+/* Satır numaraları için stil iyileştirmeleri */
+.linenodiv pre {
+    color: var(--main-font-second-color) !important;
+    opacity: 0.5;
+    font-size: 0.8rem !important;
+}
+
+/* Kod bloklarında satır vurgusu */
+.highlight .hll {
+    background-color: rgba(var(--main-color-rgb), 0.1) !important;
+}

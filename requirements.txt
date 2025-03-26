@@ -62,7 +62,7 @@ pelican==4.11.0
     #   pelican-minify
     #   pelican-neighbors
     #   pelican-readtime
-    #   pelican-related-posts
+pelican-related-posts==1.0.0
     #   pelican-search
     #   pelican-seo
     #   pelican-series

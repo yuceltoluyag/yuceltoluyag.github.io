@@ -179,7 +179,7 @@ Unutmayın, Conda'yı düzgün kurmak ve kullanmak, uzun vadede başınızı ağ
 
 ## Output
 
-```sh
+```bash
 [friday13@archlinux ~]$ curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
