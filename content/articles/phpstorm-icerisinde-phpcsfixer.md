@@ -1,7 +1,7 @@
 Title: Phpstorm içerisinde CS Fixer Kullanmak
 Date: 2020-02-06 14:30 10:00
 Modified: 2025-03-08 12:00
-Category: program
+Category: Geliştirme Araçları
 Tags: phpstorm, cmder
 Slug: phpstorm-icinde-cs-fixer-kullanmak
 Authors: yuceltoluyag

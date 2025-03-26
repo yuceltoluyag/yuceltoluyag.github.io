@@ -1,7 +1,7 @@
 Title: PHPStorm içerisinde Cmder Kullanmak
 Date: 2019-11-06 12:00 10:00
 Modified: 2025-03-08 12:00
-Category: program
+Category: Geliştirme Araçları
 Tags: phpstorm
 Slug: phpstorm-icinde-cmder-kullanmak
 Authors: yuceltoluyag

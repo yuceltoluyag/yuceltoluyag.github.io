@@ -1,7 +1,7 @@
 Title: Kullandığım Enfes Sublime Text Eklentileri
 Date: 2018-09-10 10:00 10:00
 Modified: 2025-03-08 12:00
-Category: editor
+Category: Geliştirme Araçları
 Tags: ipucu, sublime
 Slug: sublime-text-eklentileri
 Authors: yuceltoluyag

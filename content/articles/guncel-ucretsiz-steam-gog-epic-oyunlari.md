@@ -1,7 +1,7 @@
 Title: Güncel Ücretsiz Oyunlar (Steam & GOG & Epic)
 Date: 2020-06-06 12:00 10:00
 Modified: 2025-03-08 12:00
-Category: program
+Category: Oyun
 Tags: steam, discord, oyunlar, gog, epic
 Slug: guncel-ucretsiz-oyunlar
 Authors: yuceltoluyag
