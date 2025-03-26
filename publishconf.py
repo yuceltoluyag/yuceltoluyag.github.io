@@ -1,24 +1,37 @@
+# -*- coding: utf-8 -*- #
 import os
 import sys
+from datetime import timezone
 
-sys.path.append(os.curdir)
-from pelicanconf import *
-
-# Uyarıları gidermek için TIMEZONE ve LOCALE ayarlarını tekrar belirtelim
+# Doğrudan Pelican tarafından kullanılacak değişkenleri kesin olarak tanımlıyoruz
+# DİKKAT: Bu değerler her şekilde geçerli olacaktır
 TIMEZONE = "Europe/Istanbul"
 LOCALE = ("tr_TR.UTF-8", "tr_TR")
 
-PLUGINS += [
-    "seo",
-]
-# If your site is available via HTTPS, make sure SITEURL begins with https://
+# pelicanconf.py'den diğer ayarları içe aktarıyoruz
+sys.path.append(os.curdir)
+from pelicanconf import *
+
+# Kritik değişkenleri pelicanconf.py'den aldıktan sonra tekrar açıkça tanımlıyoruz
+# (Bu, Pelican'ın TIMEZONE ve SITEURL ayarlarını doğru algılamasını garantiler)
+TIMEZONE = "Europe/Istanbul"
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
+
+# Environment değişkenleri aracılığıyla ayarları zorlamak
+os.environ["PELICAN_SITEURL"] = SITEURL
+os.environ["PELICAN_TIMEZONE"] = TIMEZONE
+
+# Feed ayarlarını açıkça belirtelim
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
+
+# SEO eklentisini geçici olarak kaldırdım (hata veriyordu)
+PLUGINS = [p for p in PLUGINS if "seo" not in p]
+
 # Leave the cache alone when publishing
 CACHE_CONTENT = False
 LOAD_CONTENT_CACHE = False
-FEED_ALL_ATOM = "feeds/all.atom.xml"
-CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
 
@@ -33,11 +46,12 @@ STORK_INPUT_OPTIONS = {
 MICROSOFT_CLARITY = True
 
 
+# SEO ayarları geçici olarak devre dışı bırakıldı
 # https://github.com/pelican-plugins/seo#usage
-SEO_REPORT = True  # SEO report is enabled by default
-SEO_ENHANCER = True  # SEO enhancer is disabled by default
-SEO_ENHANCER_OPEN_GRAPH = True  # Subfeature of SEO enhancer
-SEO_ENHANCER_TWITTER_CARDS = True  # Subfeature of SEO enhancer
+SEO_REPORT = False  # SEO report is disabled
+SEO_ENHANCER = False  # SEO enhancer is disabled
+SEO_ENHANCER_OPEN_GRAPH = False  # Subfeature of SEO enhancer
+SEO_ENHANCER_TWITTER_CARDS = False  # Subfeature of SEO enhancer
 
 # Google AdSense
 GOOGLE_ADSENSE = "ca-pub-6089943780218266"

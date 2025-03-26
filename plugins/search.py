@@ -33,7 +33,11 @@ def create_search_index(generator, writer):
             "url": article.url,
             "date": article.date.isoformat(),
             "summary": getattr(article, "summary", ""),
-            "category": article.category.name if article.category else "",
+            "category": (
+                getattr(article.category, "name", "")
+                if article.category
+                else ""
+            ),
             "tags": [tag.name for tag in getattr(article, "tags", [])],
             "content": getattr(article, "content", ""),
         }

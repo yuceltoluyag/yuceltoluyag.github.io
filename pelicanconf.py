@@ -2,11 +2,20 @@
 # Pelican configuration file
 
 # --- Imports ---
-from datetime import datetime, timezone
 import os
 import locale
 from pelican import signals
 from pymdownx import emoji
+from datetime import datetime, timezone
+
+# --- Basic Settings (En Başta Tanımlanacaklar) ---
+TIMEZONE = "Europe/Istanbul"
+I18N_TEMPLATES_LANG = "tr"
+DEFAULT_LANG = "tr"
+LOCALE = ("tr_TR.UTF-8", "tr_TR")  # Tuple olarak tanımlıyoruz
+DATE_FORMATS = {
+    "tr": "%-d %B %Y",
+}
 
 
 # --- Set Locale ---
@@ -24,20 +33,14 @@ set_locale()
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
 
-# --- Basic Settings ---
-TIMEZONE = "UTC"
-I18N_TEMPLATES_LANG = "tr"
-DEFAULT_LANG = "tr"
+# --- Date Related Settings ---
 # DEFAULT_DATE_FORMAT = "%a %d %B %Y"
 TODAY = datetime.now(tz=timezone.utc).date()
 YEAR = TODAY.year
 # Yıl değişkeni
 SITEYEAR = datetime.now().year
 OG_LOCALE = "tr_TR"
-LOCALE = ("tr_TR.UTF-8", "tr_TR")  # Tuple olarak tanımlıyoruz
-DATE_FORMATS = {
-    "tr": "%-d %B %Y",
-}
+
 AUTHOR = "yuceltoluyag"
 SITENAME = "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D"
 DESCRIPTION = "Ortaya Karışık"
