@@ -9,7 +9,6 @@ TIMEZONE = "Europe/Istanbul"
 LOCALE = ("tr_TR.UTF-8", "tr_TR")
 
 PLUGINS += [
-    "plugins.fix_seo",
     "seo",
 ]
 # If your site is available via HTTPS, make sure SITEURL begins with https://

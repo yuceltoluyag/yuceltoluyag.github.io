@@ -2,7 +2,7 @@ Title: Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu
 Date: 2018-11-18 12:00 10:00
 Modified: 2025-03-08 12:00
 Category: linux
-Tags: [linux, apache]
+Tags: linux, apache
 Series: ArchLampp
 Series_index: 2
 Slug: arch-linux-apache-lampp-sanal-sunucu-kurulumu

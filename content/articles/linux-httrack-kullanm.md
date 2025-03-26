@@ -2,7 +2,7 @@ Title: Linux'ta HTTrack Kullanımı
 Date: 2018-12-01 12:00 10:00
 Modified: 2025-03-08 12:00
 Category: linux
-Tags: [httrack, linux]
+Tags: httrack, linux
 Slug: linux-ta-httrack-kullanimi
 Authors: yuceltoluyag
 Summary: Bu yazıda, Linux üzerinde HTTrack kullanarak web sitelerini çevrimdışı olarak nasıl indirebileceğinizi adım adım anlatıyorum.
