@@ -235,7 +235,10 @@ def publish(ctx: Context) -> None:
     # publishconf.py ile build işlemi
     print("publishconf.py ile build işlemi başlatılıyor...")
     try:
-        ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]), capture=False)
+        # Debug modunda çalıştır
+        ctx.run(
+            run_pelican(["-s", SETTINGS_FILE_PUBLISH, "--debug"]), capture=False
+        )
         print("Build işlemi başarıyla tamamlandı.")
 
         # Çıktı klasörünü kontrol edelim
@@ -252,7 +255,15 @@ def publish(ctx: Context) -> None:
         else:
             print(f"HATA: Çıktı klasörü ({output_path}) oluşturulamadı!")
     except Exception as e:
-        print(f"HATA: Build işlemi başarısız oldu! Hata: {e}")
+        try:
+            error_message = str(e)
+        except Exception:
+            error_message = (
+                "Hata mesajı alınamadı (istisna nesnesi yazdırılamadı)"
+            )
+
+        print(f"HATA: Build işlemi başarısız oldu! Hata: {error_message}")
+        print("Detaylı hata ayıklaması için console çıktısını kontrol edin.")
 
 
 @duty
