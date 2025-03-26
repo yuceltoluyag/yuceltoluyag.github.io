@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %} {% block sidebar %} {%
-include 'partials/sidebar.html' %} {% if article.toc %}
+{% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {% block sidebar %} {% include
+'partials/sidebar.html' %} {% if article.toc %}
 <!-- Mobil ve tablet görünümü için sabit butonlar -->
 <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 lg:hidden">
     <!-- İçindekiler butonu -->
@@ -92,8 +92,7 @@ include 'partials/sidebar.html' %} {% if article.toc %}
                     {{ article.category }}
                 </a>
             </span>
-            {% endif %}
-
+            {% endif %} {% if article.statistics is defined %}
             <span class="flex items-center" title="~{{ article.statistics.wc }} kelime">
                 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -126,8 +125,7 @@ include 'partials/sidebar.html' %} {% if article.toc %}
                 </svg>
                 Seviye {{ article.statistics.fk }}
             </span>
-
-            {% if article.tags %}
+            {% endif %} {% if article.tags %}
             <div class="flex flex-wrap items-center gap-2">
                 {% for tag in article.tags %}
                 <a
@@ -436,6 +434,54 @@ include 'partials/sidebar.html' %} {% if article.toc %}
             {% endif %}
         </div>
     </div>
+
+    <!-- Benzer Yazılar Bölümü -->
+    {% if article.related_posts %}
+    <div class="p-8 border-t border-border-card">
+        <div class="space-y-6">
+            <h3 class="text-xl font-bold text-text-primary flex items-center gap-2">
+                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                Benzer Yazılar
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {% for related_post in article.related_posts %}
+                <a href="{{ SITEURL }}/{{ related_post.url }}" class="group">
+                    <div
+                        class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
+                        <h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+                            {{ related_post.title }}
+                        </h4>
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <span class="flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                {{ related_post.locale_date }}
+                            </span>
+
+                            {% if related_post.category %}
+                            <span class="mx-2">•</span>
+                            <span class="flex items-center">{{ related_post.category }}</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
 </article>
 {% endblock %} {% block extra_js %}
 <!-- TOC JavaScript -->

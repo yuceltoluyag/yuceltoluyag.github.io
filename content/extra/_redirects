@@ -1,3 +1,0 @@
-{%- for src, dst in REDIRECTS.items() %}
-{{ src }} {{dst}} 301
-{% endfor -%}

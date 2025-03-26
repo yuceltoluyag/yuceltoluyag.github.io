@@ -120,8 +120,13 @@ function styles() {
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.styles.dest));
 
-    // Her iki görevi de paralel olarak çalıştır
-    return Promise.all([styleTask, pygmentsTask]);
+    // custom-code.css -> custom-code.css (doğrudan kopyalama)
+    const customCodeTask = gulp
+        .src(path.join(BASE_PATHS.assets, "css", "custom-code.css"), { allowEmpty: true })
+        .pipe(gulp.dest(paths.styles.dest));
+
+    // Her üç görevi de paralel olarak çalıştır
+    return Promise.all([styleTask, pygmentsTask, customCodeTask]);
 }
 
 // JavaScript işleme görevi

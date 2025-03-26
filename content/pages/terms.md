@@ -17,7 +17,7 @@ Bu kullanım koşulları, **{{ yuceltoluyag }}** web sitesini kullanırken uyman
 
 ## ⚖️ Telif Hakkı ve Lisans
 
-Site içeriği [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) lisansı altında sunulmaktadır:
+Site içeriği [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/){: target="_blank" rel="noopener noreferrer"} lisansı altında sunulmaktadır:
 
 | İzin Verilenler | Koşullar |
 |-----------------|----------|

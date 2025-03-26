@@ -477,13 +477,13 @@
 
     /* Fix vertical alignment of inline code */
     .prose :not(pre) > code {
-        vertical-align: baseline;
-        display: inline-block;
-        line-height: 1.2;
+        display: inline;
         position: relative;
-        top: -0.05em;
-        padding: 0.1em 0.3em;
+        vertical-align: baseline;
+        line-height: 1.2;
         margin: 0 0.1em;
+        padding: 0.1em 0.3em;
+        top: -0.05em;
     }
 
     /* Override Tailwind Typography list styles */
@@ -526,12 +526,12 @@
 
     /* Fix code inside list items */
     .prose li code {
-        vertical-align: baseline !important;
         display: inline !important;
-        line-height: inherit !important;
+        vertical-align: baseline !important;
         position: static !important;
-        padding: 0.1em 0.3em !important;
         margin: 0 0.1em !important;
+        padding: 0.1em 0.3em !important;
+        line-height: inherit !important;
     }
 
     /* Fix links inside list items */
@@ -544,9 +544,9 @@
 
     /* Fix links with code inside */
     .prose a code {
-        color: inherit !important;
-        text-decoration: inherit !important;
         display: inline !important;
+        text-decoration: inherit !important;
+        color: inherit !important;
     }
 
     /* Dark mode text styles */
@@ -831,30 +831,33 @@
 
 /* Satır içi kod stilleri */
 :not(pre) > code {
-    @apply rounded px-1.5 py-0.5 bg-site-card-alt text-sm font-mono text-primary;
-    vertical-align: baseline;
     display: inline;
-    line-height: inherit;
-    position: static;
-    padding: 0.1em 0.3em;
+    background-color: var(--main-card-second-background);
+    color: var(--main-color);
+    border-radius: 0.25rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
     margin: 0 0.1em;
+    padding: 0.1em 0.3em;
+    position: static;
+    vertical-align: baseline;
 }
 
 /* Liste öğeleri içindeki kod stilleri */
 li code {
-    vertical-align: baseline !important;
     display: inline !important;
-    line-height: inherit !important;
+    vertical-align: baseline !important;
     position: static !important;
-    padding: 0.1em 0.3em !important;
     margin: 0 0.1em !important;
+    padding: 0.1em 0.3em !important;
+    line-height: inherit !important;
 }
 
 /* Link içindeki kod stilleri */
 a code {
-    color: inherit !important;
-    text-decoration: inherit !important;
     display: inline !important;
+    text-decoration: inherit !important;
+    color: inherit !important;
 }
 
 /* Tek başına pre tagı için stiller (highlight class'ı olmayan) */

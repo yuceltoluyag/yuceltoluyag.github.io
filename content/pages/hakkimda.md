@@ -33,4 +33,4 @@ Aktif olarak kullandığım bazı teknolojiler:
 
 ## Blog Hakkında
 
-Bu blog [Pelican](https://getpelican.com/) ile oluşturuldu ve [GitHub Pages](https://pages.github.com/) üzerinde barındırılıyor. Tema olarak kendi geliştirdiğim Minel temasını kullanıyorum.
+Bu blog [Pelican](https://getpelican.com/){: target="_blank" rel="noopener noreferrer"} ile oluşturuldu ve [GitHub Pages](https://pages.github.com/){: target="_blank" rel="noopener noreferrer"} üzerinde barındırılıyor. Tema olarak kendi geliştirdiğim Minel temasını kullanıyorum.
