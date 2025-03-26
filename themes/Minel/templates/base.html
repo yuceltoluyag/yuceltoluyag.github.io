@@ -9,6 +9,51 @@
         <meta name="theme-static-dir" content="{{ THEME_STATIC_DIR }}" />
         <meta name="is-homepage" content="{% if output_file == 'index.html' %}true{% else %}false{% endif %}" />
         <meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+
+        <!-- Kritik CSS önce yüklenir -->
+        <style>
+            /* Kritik CSS - Sadece ilk görünüm için gereken minimum stil */
+            :root {
+                --main-color: #333;
+                --text-primary: #333;
+                --text-secondary: #666;
+                --site-bg: #f9f9f9;
+                --site-card: #fff;
+                --border-card: rgba(0, 0, 0, 0.1);
+            }
+
+            /* Sayfa layout'u için temel tanımlamalar */
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+                    sans-serif;
+                background-color: var(--site-bg);
+                color: var(--text-primary);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Layout shift önleme */
+            .p-8.border-t.border-border-card {
+                min-height: 120px;
+            }
+
+            footer.bg-site-card-95 {
+                min-height: 300px;
+            }
+
+            p {
+                min-height: 1.5em;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+
         <!-- Meta Description -->
         {% if article %}
         <meta name="description" content="{{ article.summary|striptags|truncate(160) }}" />
@@ -99,15 +144,76 @@
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ SITEURL }}/favicon.ico" />
 
-        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.min.css" />
-        <!-- Pygments CSS -->
-        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.min.css" />
-        <!-- Custom Code CSS -->
-        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.css" />
+        <!-- CSS dosyaları non-blocking olarak yüklenir -->
+        <link
+            rel="stylesheet"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.min.css" /></noscript>
 
-        <!-- Global JavaScript -->
-        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/theme.min.js"></script>
+        <!-- Pygments CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.min.css" /></noscript>
+
+        <!-- Custom Code CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.css" /></noscript>
+
+        <!-- Global JavaScript - defer edilmiş -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/theme.min.js" defer></script>
+
+        <!-- Debug Log Fonksiyonu -->
+        <script>
+            window.debugLog = function (tag, message) {
+                // Geliştirme modunda olup olmadığını kontrol et (opsiyonel)
+                const isDev = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+                // Debug modunu açmak için localStorage'ı kontrol et
+                const debugEnabled = localStorage.getItem("debug-enabled") === "true";
+
+                // Geliştirme modunda veya debug etkin ise loglama yap
+                if (isDev || debugEnabled) {
+                    console.log(`[${tag}] ${message}`);
+                }
+
+                // Etkin değilse de hatayı önlemek için fonksiyon var olmalı
+            };
+        </script>
+
         {% block seo %} {% endblock %} {% if GOOGLE_ADSENSE %}
+        <!-- Google Analytics ve Reklam Ayarları (GDPR Uyumlu) -->
+        <script>
+            // Çerez rıza durumunu ayarla
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            // Varsayılan olarak izlemeyi reddet (kullanıcı kabul edene kadar)
+            gtag("consent", "default", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                wait_for_update: 500, // kullanıcı tercihlerini bekle (milisaniye)
+            });
+
+            // Google Analytics'i konfigüre et
+            gtag("js", new Date());
+            gtag("config", "G-297061439"); // Google Analytics ID'nizi buraya ekleyin
+        </script>
+
+        <!-- Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-PHW52JF"></script>
+
+        <!-- Google AdSense -->
         <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
@@ -367,5 +473,106 @@
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.min.js"></script>
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy-code.min.js"></script>
         {% block extra_js %} {% endblock %}
+
+        <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
+        <script>
+            // Fontların düzgün yüklenmesini kontrol eder
+            if ("fonts" in document) {
+                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
+                    document.documentElement.classList.add("fonts-loaded");
+                });
+            }
+        </script>
+
+        <!-- Çerez Bildirimi -->
+        <div
+            id="cookie-consent"
+            class="fixed bottom-0 left-0 right-0 bg-site-card border-t border-border-card p-4 shadow-lg z-50 transform translate-y-full transition-transform duration-500 ease-in-out">
+            <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="text-sm text-text-secondary">
+                    <p>
+                        Bu site deneyiminizi iyileştirmek için çerezler kullanır.
+                        <a href="{{ SITEURL }}/privacy-policy/" class="text-primary hover:underline">
+                            Gizlilik Politikası
+                        </a>
+                        'nı inceleyebilir veya çerezleri kabul edebilirsiniz.
+                    </p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        id="cookie-accept"
+                        class="px-4 py-2 bg-primary text-white rounded-lg text-sm hover:bg-primary-dark transition-colors duration-300">
+                        Kabul Et
+                    </button>
+                    <button
+                        id="cookie-reject"
+                        class="px-4 py-2 bg-site-card-alt border border-border-card rounded-lg text-sm hover:bg-site-card transition-colors duration-300">
+                        Reddet
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Çerez bildirimi işlemleri
+            document.addEventListener("DOMContentLoaded", function () {
+                const cookieConsent = document.getElementById("cookie-consent");
+                const acceptButton = document.getElementById("cookie-accept");
+                const rejectButton = document.getElementById("cookie-reject");
+
+                // Daha önce seçim yapılmış mı kontrol et
+                const cookieChoice = localStorage.getItem("cookie-consent");
+
+                if (!cookieChoice) {
+                    // Çerez bildirimini göster
+                    setTimeout(() => {
+                        cookieConsent.classList.remove("translate-y-full");
+                    }, 1000);
+                }
+
+                // Kabul et butonuna tıklandığında
+                acceptButton.addEventListener("click", function () {
+                    localStorage.setItem("cookie-consent", "accepted");
+                    cookieConsent.classList.add("translate-y-full");
+
+                    // Google Analytics ve diğer üçüncü taraf çerezlerini etkinleştir
+                    enableThirdPartyCookies();
+                });
+
+                // Reddet butonuna tıklandığında
+                rejectButton.addEventListener("click", function () {
+                    localStorage.setItem("cookie-consent", "rejected");
+                    cookieConsent.classList.add("translate-y-full");
+
+                    // Google Analytics ve diğer üçüncü taraf çerezlerini devre dışı bırak
+                    disableThirdPartyCookies();
+                });
+
+                // Kullanıcı kabul ettiyse üçüncü taraf çerezlerini etkinleştir
+                if (cookieChoice === "accepted") {
+                    enableThirdPartyCookies();
+                }
+
+                function enableThirdPartyCookies() {
+                    // Google Analytics'i etkinleştir
+                    if (typeof gtag === "function") {
+                        gtag("consent", "update", {
+                            analytics_storage: "granted",
+                            ad_storage: "granted",
+                        });
+                    }
+                }
+
+                function disableThirdPartyCookies() {
+                    // Google Analytics'i devre dışı bırak
+                    if (typeof gtag === "function") {
+                        gtag("consent", "update", {
+                            analytics_storage: "denied",
+                            ad_storage: "denied",
+                        });
+                    }
+                }
+            });
+        </script>
     </body>
 </html>

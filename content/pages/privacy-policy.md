@@ -16,7 +16,7 @@ Kişisel verilerinizin gizliliği bizim için önemlidir. Bu gizlilik politikas�
 - **Ziyaret Edilen Sayfalar**: İçerik iyileştirmesi için
 - **Ziyaret Süresi**: Kullanıcı deneyimini anlamak için
 
-### 🍪 Çerezler
+### 🍪 Çerezler ve Üçüncü Taraf Çerezleri
 Sitemizde kullanılan çerezler şunlardır:
 
 | Çerez Tipi | Amaç | Süre |
@@ -24,6 +24,31 @@ Sitemizde kullanılan çerezler şunlardır:
 | Oturum Çerezleri | Geçici site tercihleri | Tarayıcı kapanınca silinir |
 | Tercih Çerezleri | Tema seçimi, dil ayarları | 1 yıl |
 | Analitik Çerezler | Site kullanım analizi | 2 yıl |
+| Üçüncü Taraf Çerezleri | Analitik ve reklam hizmetleri | Değişken |
+
+#### Üçüncü Taraf Çerezleri Hakkında Bilgi
+
+Sitemiz, aşağıdaki üçüncü taraf hizmetleri kullanmaktadır ve bunlar kendi çerezlerini ayarlayabilir:
+
+1. **Google Analytics**: Site trafiğini ve kullanıcı davranışlarını analiz etmek için kullanılır. [Google'ın Gizlilik Politikası](https://policies.google.com/privacy)
+2. **Google AdSense**: Kişiselleştirilmiş reklamlar göstermek için kullanılır. [Google'ın Gizlilik Politikası](https://policies.google.com/privacy)
+3. **Sosyal Medya Paylaşım Butonları**: Bu butonlar, ilgili sosyal medya platformlarından çerezler yükleyebilir.
+
+#### Üçüncü Taraf Çerezlerini Yönetme
+
+Chrome ve diğer modern tarayıcılar, üçüncü taraf çerezlerini varsayılan olarak engelleyecek şekilde güncellenmiştir. Sitemizi kullanırken, çerez tercihlerinizi yönetmek için şunları yapabilirsiniz:
+
+1. Sitemizdeki çerez onay bildiriminden tercihlerinizi belirtin
+2. Tarayıcı ayarlarınızdan çerez tercihlerinizi düzenleyin
+3. Google Analytics'ten çıkmak için [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout)'u kullanın
+
+#### Üçüncü Taraf Çerezleri Olmadan Site Kullanımı
+
+Üçüncü taraf çerezlerini reddetmeniz durumunda:
+- Çoğu site içeriği normal çalışacaktır
+- Analitik verileriniz toplanmayacaktır
+- Kişiselleştirilmiş reklam görmeyebilirsiniz
+- Sosyal medya paylaşım özellikleri sınırlı çalışabilir
 
 ## 🛡️ Veri Güvenliği
 
