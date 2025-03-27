@@ -18,6 +18,16 @@ TIMEZONE = "Europe/Istanbul"
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
 
+# Google Analytics - Yayın modunda gerçek ID'yi kullanın
+GOOGLE_ANALYTICS = (
+    "G-9KL9GYLPS5"  # Gerçek Google Analytics ID'nizi buraya yazın
+)
+
+# Google Tag Manager
+GOOGLE_TAGMANAGER = (
+    "GTM-PHW52JF"  # Gerçek Google Tag Manager ID'nizi buraya yazın
+)
+
 # Environment değişkenleri aracılığıyla ayarları zorlamak
 os.environ["PELICAN_SITEURL"] = SITEURL
 os.environ["PELICAN_TIMEZONE"] = TIMEZONE

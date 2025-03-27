@@ -10,8 +10,8 @@ output/
 node_modules/
 .DS_Store
 content/images/
-themes/Minel/static/css/*.css
-themes/Minel/static/js/*.js
+themes/Minel/static/css/
+themes/Minel/static/js/
 # C extensions
 *.so
 .cursorignore

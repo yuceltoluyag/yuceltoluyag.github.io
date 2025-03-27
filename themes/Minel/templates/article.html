@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {% block seo %}
+{% extends "base.html" %} {% import '_includes/translations.html' as translations with context %} {% block title %}{{
+article.title }}{% endblock %} {% block seo %}
 <!-- Makale içeriğinden ilk resmi Open Graph için çıkar -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -91,6 +92,9 @@
     <!-- Makale başlığı ve meta bilgileri -->
     <div class="p-8 border-b border-border-card">
         <h1 class="text-3xl font-bold mb-4 text-text-primary">{{ article.title }}</h1>
+
+        <!-- Çeviriler -->
+        {{ translations.translations_for(article) }}
 
         <div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
             <time datetime="{{ article.date.isoformat() }}" class="flex items-center">
