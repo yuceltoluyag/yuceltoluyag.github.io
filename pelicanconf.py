@@ -15,7 +15,25 @@ DEFAULT_LANG = "tr"
 LOCALE = ("tr_TR.UTF-8", "tr_TR")  # Tuple olarak tanımlıyoruz
 DATE_FORMATS = {
     "tr": "%-d %B %Y",
+    "en": "%B %-d, %Y",
 }
+
+# --- Translation Settings ---
+DEFAULT_LANG = "tr"
+# Desteklenen diller (varsa)
+ARTICLE_TRANSLATION_ID = "slug"
+PAGE_TRANSLATION_ID = "slug"
+# Çeviri ayarlarını aktif et
+TRANSLATE_CONTENT = True
+TRANSLATION_FEED_ATOM = "feeds/{lang}/all.atom.xml"
+
+# --- Google Analytics ---
+GOOGLE_ANALYTICS = (
+    "G-XXXXXXXXXX"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
+)
+
+# --- Google Tag Manager ---
+GOOGLE_TAGMANAGER = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
 
 
 # --- Set Locale ---
@@ -80,6 +98,10 @@ THEME = "themes/Minel"
 DIRECT_TEMPLATES = ["index", "tags", "categories", "archives"]
 
 PATH = "content"
+# İçerik yolları
+ARTICLE_PATHS = ["articles"]
+PAGE_PATHS = ["pages"]
+
 STATIC_PATHS = [
     "images",
     "extra",
@@ -131,10 +153,12 @@ MENUITEMS = [
     ("Ana Sayfa", "/"),
     ("Kategoriler", "/kategoriler/"),
     ("Etiketler", "/etiketler/"),
+    ("Arşiv", "/arsiv/"),
 ]
 
 NAVBAR_LINKS = [
     {"name": "Ana Sayfa", "url": "/", "target": "_self"},
+    {"name": "Arşiv", "url": "/arsiv", "target": "_self"},
     {"name": "Hakkımda", "url": "/hakkimda", "target": "_self"},
     {"name": "Bağış", "url": "/bagis", "target": "_self"},
 ]
@@ -295,9 +319,6 @@ ARTICLE_URL = "{slug}/"
 ARTICLE_SAVE_AS = "{slug}/index.html"
 
 # Sayfaların dizini
-PAGE_PATHS = ["pages"]
-
-# URL yapıları
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
 
