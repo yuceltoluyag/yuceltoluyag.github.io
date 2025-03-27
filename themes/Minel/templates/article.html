@@ -1,5 +1,43 @@
-{% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {% block sidebar %} {% include
-'partials/sidebar.html' %} {% if article.toc %}
+{% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {% block seo %}
+<!-- Makale içeriğinden ilk resmi Open Graph için çıkar -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Makale içeriğini al
+        const articleContent = document.querySelector(".post-content");
+        if (articleContent) {
+            // İlk resmi bul
+            const firstImage = articleContent.querySelector("img");
+            if (firstImage) {
+                // Resim URL'sini al
+                let imgSrc = firstImage.getAttribute("src");
+
+                // Tam URL oluştur
+                if (imgSrc && !imgSrc.startsWith("http")) {
+                    // Göreceli URL ise mutlak URL'ye çevir
+                    const siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
+                    imgSrc = imgSrc.startsWith("/") ? `${siteUrl}${imgSrc}` : `${siteUrl}/${imgSrc}`;
+                }
+
+                // Meta etiketini oluştur
+                if (imgSrc) {
+                    // Varsa mevcut og:image etiketini bul
+                    let ogImage = document.querySelector('meta[property="og:image"]');
+
+                    // Yoksa yeni oluştur
+                    if (!ogImage) {
+                        ogImage = document.createElement("meta");
+                        ogImage.setAttribute("property", "og:image");
+                        document.head.appendChild(ogImage);
+                    }
+
+                    // Değeri ayarla
+                    ogImage.setAttribute("content", imgSrc);
+                }
+            }
+        }
+    });
+</script>
+{% endblock %} {% block sidebar %} {% include 'partials/sidebar.html' %} {% if article.toc %}
 <!-- Mobil ve tablet görünümü için sabit butonlar -->
 <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 lg:hidden">
     <!-- İçindekiler butonu -->

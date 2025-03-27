@@ -10,6 +10,65 @@
         <meta name="is-homepage" content="{% if output_file == 'index.html' %}true{% else %}false{% endif %}" />
         <meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
 
+        <!-- Open Graph Resim Etiketi -->
+        {% if article and article.image %}
+        <meta property="og:image" content="{{ SITEURL }}/{{ article.image }}" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="{{ article.title }}" />
+        {% elif page and page.image %}
+        <meta property="og:image" content="{{ SITEURL }}/{{ page.image }}" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="{{ page.title }}" />
+        {% elif article and article.content %}
+        <!-- İçerikten resim çıkarma kontrolü yapılmıyor, varsayılan resim kullanılıyor -->
+        <meta property="og:image" content="{{ SITEURL }}/images/logo.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="{{ article.title }}" />
+        {% else %}
+        <meta property="og:image" content="{{ SITEURL }}/images/logo.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="{{ SITENAME }}" />
+        {% endif %}
+
+        <!-- Open Graph Tip ve URL Etiketleri -->
+        {% if article %}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+        <meta property="og:title" content="{{ article.title }}" />
+        <!-- Article Özel Etiketleri -->
+        <meta property="article:published_time" content="{{ article.date.isoformat() }}" />
+        {% if article.modified %}
+        <meta property="article:modified_time" content="{{ article.modified.isoformat() }}" />
+        {% endif %}
+        <meta property="article:author" content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/" />
+        {% if article.category %}
+        <meta property="article:section" content="{{ article.category }}" />
+        {% endif %} {% if article.tags %} {% for tag in article.tags %}
+        <meta property="article:tag" content="{{ tag }}" />
+        {% endfor %} {% endif %} {% elif page %}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+        <meta property="og:title" content="{{ page.title }}" />
+        {% if page.date %}
+        <meta property="article:published_time" content="{{ page.date.isoformat() }}" />
+        {% endif %} {% if page.modified %}
+        <meta property="article:modified_time" content="{{ page.modified.isoformat() }}" />
+        {% endif %}
+        <meta property="article:author" content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/" />
+        {% if page.tags %} {% for tag in page.tags %}
+        <meta property="article:tag" content="{{ tag }}" />
+        {% endfor %} {% endif %} {% else %}
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="{{ SITEURL }}{% if output_file != 'index.html' %}/{{ output_file }}{% endif %}" />
+        <meta property="og:title" content="{{ SITENAME }}{% if page_name %} - {{ page_name }}{% endif %}" />
+        {% endif %}
+
         <!-- Kritik CSS önce yüklenir -->
         <style>
             /* Kritik CSS - Sadece ilk görünüm için gereken minimum stil */
