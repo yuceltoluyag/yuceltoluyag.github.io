@@ -11,13 +11,13 @@ Summary: SSH ve GPG anahtarlarını güvenli bir şekilde yedekleme ve geri yük
 Translation: false  
 Status: published  
 Template: article  
+Image: images/ssh-gpg-yedekleme-geri-yukleme.webp
 
----
 
 # SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme 🔑
 
 SSH ve GPG anahtarları, kimlik doğrulama ve veri güvenliği açısından kritik öneme sahiptir. **Bu makalede, SSH ve GPG anahtarlarını nasıl yedekleyip geri yükleyebileceğinizi öğreneceksiniz.** 💾
-
+![ssh-gpg-yedekleme-geri-yukleme](/images/ssh-gpg-yedekleme-geri-yukleme.webp)
 ## 1️⃣ Yedekleme
 
 Öncelikle, **SSH özel ve genel anahtarlarınızı** güvenli bir yere yedekleyin.

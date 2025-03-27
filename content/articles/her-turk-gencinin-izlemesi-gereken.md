@@ -9,10 +9,13 @@ Summary: Yakın tarihimizle ilgili izlenmesi gereken en önemli belgeselleri der
 Translation: false
 Status: published
 Template: article
+Image: images/her-turk-gencinin-izlemesi-gereken-belgeseller-1.webp
+
 
 📽️ **Her Türk Gencinin İzlemesi Gereken Belgeseller Serisi 1**
 
 Belgeselleri izlerken yorumlara **bakmadan** izlemenizi tavsiye ederim. Yine de bakacaksınız, biliyorum. 😅 Ancak unutmayın, yorumlarda genellikle ideolojik tartışmalar, **Mehmet Ali Birand**'ın tarafsızlığı konusunda tartışmalar ve tarihsel olayları farklı yönlerden yorumlayan insanlar bulunuyor.
+![her-turk-gencinin-izlemesi-gereken-belgeseller-1](/images/her-turk-gencinin-izlemesi-gereken-belgeseller-1.webp)
 
 Yine de tüm yorumlara rağmen bu belgesellerin izlenmesi gerektiğini düşünüyorum. Son yıllarda sıkça duyduğunuz **gizli eller, dış güçler, hainler, cuntacılar, irticacılar** gibi kavramların ne zaman ve nasıl ortaya çıktığını bu belgesellerle daha iyi anlayacaksınız. 📽️
 <div class="info-box important">

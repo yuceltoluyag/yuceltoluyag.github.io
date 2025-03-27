@@ -9,6 +9,7 @@ Summary: Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken 
 Translation: false
 Status: published
 Template: article
+Image: images/conda.webp
 
 # Arch Linux'ta Conda Kurulumu ve Yönetimi
 

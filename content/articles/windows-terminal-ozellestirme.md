@@ -11,7 +11,7 @@ Summary: Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağ
 Translation: false
 Status: published
 Template: article
-
+Image: images/windows-terminal.webp
 
 **Merhaba**
 

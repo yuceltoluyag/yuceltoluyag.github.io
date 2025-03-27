@@ -11,6 +11,7 @@ Summary: IMAP sunucusuna OpenSSL kullanarak terminal ile nasıl bağlanabileceğ
 Translation: false
 Status: published
 Template: article
+Image: images/imap_openssl_terminal.webp
 
 
 

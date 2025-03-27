@@ -9,6 +9,7 @@ Summary: Linux kullanarak UEFI destekli Windows 10 format USB'si nasıl oluştur
 Translation: false
 Status: published
 Template: article
+Image: images/linux_windows10_uefi_format.webp
 
 # Linux'ta UEFI Windows 10 Format USB Oluşturma
 

@@ -9,6 +9,7 @@ Summary: Vagrant'ın VirtualBox 6.1 ile yaşadığı uyumsuzluk sorununu nasıl 
 Translation: false
 Status: published
 Template: article
+Image: images/ol_vbox_vagrant-min.webp
 
 ![Vagrant VirtualBox Windows Linux Güncelleme](/images/ol_vbox_vagrant-min.webp)
 

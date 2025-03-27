@@ -9,6 +9,8 @@ Summary: Steam, GOG ve Epic gibi platformlardaki güncel ücretsiz oyun duyurula
 Translation: false
 Status: published
 Template: article
+Image: images/ucretsiz-oyunlar.webp
+
 
 ![Güncel Steam, Epic, GOG Oyunları](/images/ucretsiz-oyunlar.webp)
 

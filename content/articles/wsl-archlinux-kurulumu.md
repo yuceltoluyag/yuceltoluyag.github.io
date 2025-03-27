@@ -9,6 +9,7 @@ Summary: Windows Subsystem for Linux (WSL) üzerinde Arch Linux kurulumunu adım
 Translation: false
 Status: published
 Template: article
+Image: images/wls-archlinux-kurulumu.webp
 
 **Merhaba**
 

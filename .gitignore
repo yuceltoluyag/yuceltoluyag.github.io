@@ -14,6 +14,7 @@ themes/Minel/static/css/*.css
 themes/Minel/static/js/*.js
 # C extensions
 *.so
+.cursorignore
 
 # Distribution / packaging
 .Python

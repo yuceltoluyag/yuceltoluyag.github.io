@@ -9,6 +9,7 @@ Summary: VLC medya oynatıcısı için VLSub eklentisiyle kolayca altyazı bulma
 Translation: false
 Status: published
 Template: article
+Image: images/vlsub0.webp
 
 # VLSub ile Altyazı Aramaya Son (Resimli Anlatım) 🎬
 

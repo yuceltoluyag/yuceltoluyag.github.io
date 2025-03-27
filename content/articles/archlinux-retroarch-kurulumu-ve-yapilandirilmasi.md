@@ -9,7 +9,7 @@ Summary: Arch Linux üzerinde RetroArch kurulumu ve yapılandırmasını adım a
 Translation: false
 Status: published
 Template: article
-
+Image: images/retroarch.webp
 
 ![RetroArch](/images/retroarch.webp)
 

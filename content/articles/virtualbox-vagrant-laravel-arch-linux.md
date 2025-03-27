@@ -11,6 +11,7 @@ Summary: Arch Linux üzerinde VirtualBox, Vagrant, Laravel ve PhpMyAdmin kurulum
 Translation: false
 Status: published
 Template: article
+Image: images/pic-selected-190916-0747-49.webp
 
 ![Kurulum Görseli](/images/pic-selected-190916-0747-49.webp)
 

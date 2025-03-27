@@ -11,6 +11,7 @@ Summary: PhpStorm içerisinde CS Fixer kullanımını adım adım anlatan rehber
 Translation: false
 Status: published
 Template: article
+Image: images/php_phpstorm_csfixer.webp
 
 # PSR Standartı Nedir?
 

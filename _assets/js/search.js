@@ -13,6 +13,49 @@ function toggleSearch() {
     }
 }
 
+// Feed önbelleğini kontrol et ve gerekirse temizle
+function checkFeedCache() {
+    const cacheKey = "feedDataLastCheck";
+    const lastCheckTime = localStorage.getItem(cacheKey) || 0;
+    const now = Date.now();
+    const checkInterval = 1000 * 60 * 60; // 1 saat
+
+    // Son kontrolden bu yana yeterince zaman geçtiyse
+    if (now - lastCheckTime > checkInterval) {
+        console.log("Feed önbelleği kontrol ediliyor...");
+        localStorage.setItem(cacheKey, now.toString());
+
+        // Site URL'sini al
+        const siteUrl = document.querySelector('meta[name="siteurl"]')?.getAttribute("content");
+        if (!siteUrl) return;
+
+        // Feed URL'sini oluştur
+        const feedUrl = `${siteUrl}/feed.json`;
+
+        // Önce feed.json dosyasının başlık bilgilerini al (HEAD isteği)
+        fetch(feedUrl, { method: "HEAD" })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Feed dosyasına erişilemedi: ${response.status}`);
+                }
+
+                // Son değişiklik tarihini al
+                const lastModified = response.headers.get("last-modified");
+                const cachedLastModified = localStorage.getItem("feedLastModified");
+
+                // Son değişiklik tarihi değişmişse veya yoksa önbelleği temizle
+                if (!cachedLastModified || cachedLastModified !== lastModified) {
+                    console.log("Feed değişmiş, önbellek temizleniyor...");
+                    localStorage.removeItem("feedData");
+                    localStorage.setItem("feedLastModified", lastModified);
+                }
+            })
+            .catch((error) => {
+                console.warn("Feed kontrolünde hata:", error);
+            });
+    }
+}
+
 function createSearchModal() {
     // Arama modalını oluştur
     const modal = document.createElement("div");
@@ -142,6 +185,12 @@ async function performSearch(query, resultsContainer) {
                 // Cache'e kaydet
                 try {
                     localStorage.setItem("feedData", responseText);
+
+                    // Son değişiklik tarihini kaydet
+                    const lastModified = response.headers.get("last-modified");
+                    if (lastModified) {
+                        localStorage.setItem("feedLastModified", lastModified);
+                    }
                 } catch (cacheError) {
                     console.warn("Feed verisi cache'e kaydedilemedi", cacheError);
                 }
@@ -333,3 +382,8 @@ function formatDate(dateStr) {
         day: "numeric",
     });
 }
+
+// Sayfa yüklendiğinde feed önbelleğini kontrol et
+document.addEventListener("DOMContentLoaded", () => {
+    checkFeedCache();
+});

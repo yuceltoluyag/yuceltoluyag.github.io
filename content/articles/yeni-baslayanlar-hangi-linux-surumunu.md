@@ -9,11 +9,13 @@ Summary: Linux'a yeni başlayanlar için en uygun dağıtımları ve seçim krit
 Translation: false
 Status: published
 Template: article
+Image: images/ubuntu-logo.webp
 
 # Yeni Başlayanlar İçin En İyi Linux Dağıtımları
 
 Linux dünyasına yeni adım atan kullanıcılar için doğru dağıtımı seçmek, öğrenme sürecini kolaylaştıran önemli bir adımdır. Kullanıcı dostu arayüze sahip, geniş topluluk desteği olan ve stabil çalışan bir sürüm tercih edilmelidir. İşte yeni başlayanlar için en iyi Linux dağıtımları:
 
+![ubuntu-logo](/images/ubuntu-logo.webp)
 ## 1. Ubuntu
 
 **Özellikler:**

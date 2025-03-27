@@ -9,10 +9,11 @@ Summary: Linux terminalinizi daha işlevsel ve estetik hale getirmek için Termi
 Translation: false
 Status: published
 Template: article
-
+Image: images/terminator-git-curl-fish-kurulumu.webp
 
 Merhaba! Linux’ta en çok vakit geçirdiğimiz alanlardan biri terminaldir. Peki terminalimizi nasıl daha işlevsel ve estetik hale getirebiliriz? İşte bu rehber tam size göre! 💪🚀
 
+![terminator-git-curl-fish-kurulumu](/images/terminator-git-curl-fish-kurulumu.webp)
 Terminali daha verimli ve keyifli hale getirmek için **Terminator** ve **Fish Shell** kombinasyonunu kullanacağız. Bu sayede:
 
 - Terminalinizi yatay ve dikey olarak bölebilirsiniz.

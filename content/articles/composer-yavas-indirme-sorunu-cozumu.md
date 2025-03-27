@@ -9,6 +9,8 @@ Summary: Composer kullanırken yavaş indirme sorunu mu yaşıyorsunuz? Bu rehbe
 Translation: false
 Status: published
 Template: article
+Image: images/composer.webp
+
 
 ![Composer Hızlandırma](/images/composer.webp)
 

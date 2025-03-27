@@ -11,7 +11,7 @@ Summary: Git üzerinde çalışırken SSH anahtarı oluşturma konusunda yaşana
 Translation: false
 Status: published
 Template: article
-
+Image: images/git_bash.webp
 
 Git üzerinde çalışırken SSH anahtarı oluşturma konusunda sorun yaşayanlar için bu rehberde, Windows ve Linux kullanıcıları için adım adım SSH anahtarı oluşturma sürecini ele alacağız. 🛠️
 

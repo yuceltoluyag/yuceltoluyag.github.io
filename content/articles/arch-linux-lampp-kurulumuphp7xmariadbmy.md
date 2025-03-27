@@ -11,15 +11,18 @@ Summary: Bu rehberde, Arch Linux üzerinde Apache, PHP, MariaDB, MySQL ve PhpMyA
 Translation: false
 Status: published
 Template: article
+Image: images/archlinuxlampp.webp
+
+
 
 
 Merhaba! Çok uzun bir süre önce  Arch Linux'a geçiş yaptım. Ancak notlarımı bir türlü bloguma aktarma fırsatım olmadı. Bundan sonraki yazılarım, Arch Linux üzerine olacaktır. Sorular gelirse Ubuntu, Linux Mint gibi dağıtımlar için de ara ara yazılar paylaşacağım.
-
+![archlinuxlampp](/images/archlinuxlampp.webp)
 # Apache Kurulumu
 
 Apache kurulumu için aşağıdaki komutları kullanabilirsiniz:
 
-```shell
+```bash
 sudo pacman -S apache
 sudo nano /etc/httpd/conf/httpd.conf
 ```
@@ -31,7 +34,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 MySQL ve MariaDB kurulumu için şu adımları takip edin:
 
-```shell
+```bash
 sudo systemctl enable httpd
 sudo systemctl restart httpd
 sudo pacman -S mysql
@@ -47,7 +50,7 @@ mysql_secure_installation
 
 PHP kurulumu için şu komutları kullanabilirsiniz:
 
-```shell
+```bash
 sudo pacman -S php php-apache
 sudo nano /etc/httpd/conf/httpd.conf
 ```
@@ -57,7 +60,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 ### Apache Konfigurasyonu
 
-```shell
+```bash
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 LoadModule php7_module modules/libphp7.so
 AddHandler php7-script php
@@ -73,7 +76,7 @@ PHPMyAdmin kurulumu için şu adımları takip edin:
 
 - F3 ardından F2'ye basarak kaydediyoruz.
   
-```shell
+```bash
 sudo pacman -S phpmyadmin
 sudo nano /etc/php/php.ini
 ```
@@ -82,7 +85,7 @@ sudo nano /etc/php/php.ini
 
 - `php.ini` dosyasının içerisinde şu satırları aktif hale getirin:
 
-```shell
+```bash
 extension=mysqli.so
 extension=curl
 extension=mysqli
@@ -98,7 +101,7 @@ Başındaki `;` işaretlerini kaldırıyoruz. Ekstra olarak aktif etmek istediğ
 
 ### Hataları Gösterme
 
-```shell
+```bash
 display_errors = On
 ```
 
@@ -106,13 +109,13 @@ Bu ayar normalde `Off` durumundadır. `On` yaparak, yerel geliştirme sırasınd
 
 #### PHPMyAdmin Konfigurasyonu
 
-```shell
+```bash
 sudo nano /etc/httpd/conf/extra/phpmyadmin.conf
 ```
 
 - Bu dosyaya şu satırları ekleyin:
 
-```shell
+```bash
 Alias /phpmyadmin "/usr/share/webapps/phpMyAdmin"
 <Directory "/usr/share/webapps/phpMyAdmin">
 DirectoryIndex index.php
@@ -124,7 +127,7 @@ Require all granted
 
 Ardından Apache'yi yeniden başlatın:
 
-```shell
+```bash
 sudo systemctl restart httpd
 ```
 
@@ -132,7 +135,7 @@ sudo systemctl restart httpd
 
 PHP ile düzgün çalışması için bazı ek eklentileri yüklememiz gerekecek:
 
-```shell
+```bash
 sudo pacman -S php-dblib
 sudo pacman -S php-pgsql php-sqlite php-gd php-odbc
 sudo pacman -Syu
@@ -140,13 +143,13 @@ sudo pacman -Syu
 
 PHP sürümünü kontrol etmek için şu komutu kullanabilirsiniz:
 
-```shell
+```bash
 php -v
 ```
 
 Eğer `error` ifadesini görmüyorsanız, kurulumunuz başarıyla tamamlanmıştır.
 
-```shell
+```bash
 PHP 7.2.2 (cli) (built: Jan 30 2018 19:18:38) ( NTS )
 ```
 
@@ -156,7 +159,7 @@ Projelerinizi kaydedeceğiniz dizin: **/srv/http/**
 
 Dosya yazma izinleriyle ilgili sorun yaşamamak için şu komutları kullanabilirsiniz:
 
-```shell
+```bash
 sudo chmod o+w /srv/http/ # veya
 sudo chown -R friday13:friday13 /srv/http/
 ```
