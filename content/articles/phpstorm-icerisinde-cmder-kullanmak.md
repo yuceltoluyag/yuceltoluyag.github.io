@@ -11,6 +11,7 @@ Summary: PHPStorm içerisinde terminal olarak Cmder kullanmak için ortam deği�
 Translation: false
 Status: published
 Template: article
+Image: images/phpstorm_terminal.webp
 
 ## PHPStorm İçerisinde Cmder Kullanmak 🚀
 

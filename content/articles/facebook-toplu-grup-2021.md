@@ -11,6 +11,8 @@ Summary: Facebook grubunuza veya katıldığınız bir gruba topluca arkadaş ek
 Translation: false
 Status: published
 Template: article
+Image: images/facebookgrupkodu.webp
+
 
 # Merhaba 👋
 

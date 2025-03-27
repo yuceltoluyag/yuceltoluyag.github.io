@@ -9,6 +9,8 @@ Summary: Site hakkında önemli gelişmeleri ve yenilikleri bu sayfadan takip ed
 Translation: false
 Status: published
 Template: article
+Image: images/duyuru.webp
+
 
 ![Duyuru](/images/duyuru.webp)
 

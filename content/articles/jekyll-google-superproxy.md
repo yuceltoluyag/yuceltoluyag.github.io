@@ -9,7 +9,7 @@ Summary: Jekyll sitenizde Google Analytics ile sayfa görüntüleme sayısını 
 Translation: false
 Status: published
 Template: article
-
+Image: images/superproxy.webp
 
 **Merhaba!** 🌟
 

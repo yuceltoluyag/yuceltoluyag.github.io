@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Summary: Spotify’dan müzik indirme yöntemlerini resimli ve güncel anlatımla keşfedin.
 Status: published
 Template: article
-
+Image: images/spotify.webp
 
 
 # Neden?

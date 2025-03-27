@@ -11,6 +11,8 @@ Summary: Laravel IDE Helper paketi ile PHPStorm'da otomatik tamamlama ve kod yar
 Translation: false
 Status: published
 Template: article
+Image: images/laravel_7x_ide_helper.webp
+
 
 ![Laravel IDE Helper](/images/laravel_7x_ide_helper.webp)
 

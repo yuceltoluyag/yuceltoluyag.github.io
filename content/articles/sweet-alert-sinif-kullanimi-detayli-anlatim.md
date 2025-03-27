@@ -9,6 +9,7 @@ Summary: Sweet Alert sınıfının kullanımını, tüm argümanlarıyla birlikt
 Translation: false
 Status: published
 Template: article
+Image: images/sweetalert.webp
 
 # Sweet Alert Nedir?
 

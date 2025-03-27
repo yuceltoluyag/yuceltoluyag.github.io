@@ -9,6 +9,7 @@ Summary: Arch Linux'ta Nvidia ekran kartı kurulumunu, sürücü uyumsuzlukları
 Translation: false
 Status: published
 Template: article
+Image: images/nvidia-linux-performans-ayari.webp
 
 # Merhaba
 

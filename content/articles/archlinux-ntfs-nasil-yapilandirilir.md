@@ -9,6 +9,7 @@ Summary: Arch Linux'ta NTFS dosya sistemine sahip disklerin nasıl bağlanacağ�
 Translation: false
 Status: published
 Template: article
+Image: images/ntfs_yetki_hatasi.webp
 
 ![NTFS Yetki Hatası](/images/ntfs_yetki_hatasi.webp)
 

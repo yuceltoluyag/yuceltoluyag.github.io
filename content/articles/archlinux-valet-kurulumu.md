@@ -11,6 +11,7 @@ Summary: Valet Linux, minimalist geliştirme ortamını sevenler için ideal bir
 Translation: false
 Status: published
 Template: article
+Image: images/laravel-valet-kurulumu-linux.webp
 
 ![Laravel Valet Kurulumu](/images/laravel-valet-kurulumu-linux.webp)
 

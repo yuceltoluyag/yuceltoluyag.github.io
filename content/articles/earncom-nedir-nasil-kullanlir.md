@@ -9,14 +9,16 @@ Summary: Earn.com, anket doldurarak ve gruplara katılarak kazanç elde edebilec
 Translation: false
 Status: published
 Template: article
-
+Image: images/earncom.webp
 
 <div class="info-box warning">
 <b>Not:</b> 
-<a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" target="_blank" rel="noopener noreferrer"> Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı </a>bu sebeple bu makalenin artık geçerli olmadığını unutmayın.Coinbase üzerinden kazanç elde edebilirsiniz ancak sistemimizin artık geçerli olmadığını unutmayın.
+<a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" target="_blank" rel="noopener noreferrer"> Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı </a>bu sebeple bu makalenin artık geçerli olmadığını unutmayın.Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil.Yeni sistemde yatırım  yap kazan-kaybet mantığı ile çalışıyor.
 </div>
-Merhaba, internet üzerinden **para kazanmak** isteyenler için benim de kullandığım bir sistemden bahsedeceğim. Earn.com, yatırım yapmadan kazanç sağlayabileceğiniz bir platformdur. Kullanıcılara, anket doldurarak veya gruplara katılarak para kazanma fırsatı sunar.
 
+
+Merhaba, internet üzerinden **para kazanmak** isteyenler için benim de kullandığım bir sistemden bahsedeceğim. Earn.com, yatırım yapmadan kazanç sağlayabileceğiniz bir platformdur. Kullanıcılara, anket doldurarak veya gruplara katılarak para kazanma fırsatı sunar.
+![earncom](/images/earncom.webp)
 ### Earn.com Nasıl Çalışır?
 Earn.com, anketör şirketlerle anlaşarak size anketler gönderir. Bu anketleri tamamladıktan sonra en az 1 dolar kazanç sağlarsınız. Peki, bu süreç nasıl işliyor?
 

@@ -9,7 +9,7 @@ Summary: Windows, Linux ve Android platformlarında sıkça kullandığım progr
 Translation: false
 Status: published
 Template: article
-
+Image: /images/comodo_firewall.webp
 
 
 # Merhaba! 👋

@@ -9,6 +9,7 @@ Summary: Smok Nord ile elektronik sigara deneyimlerim.
 Translation: false
 Status: published
 Template: article
+Image: images/esigara-yararlimi-zararlimi.webp
 
 # Merhaba
 

@@ -9,6 +9,7 @@ Summary: Windows işletim sisteminde Redshift programını nasıl kullanacağın
 Translation: false
 Status: published
 Template: article
+Image: images/redshift_windows.webp
 
 ![Redshift Windows](/images/redshift_windows.webp)
 

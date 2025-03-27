@@ -248,6 +248,7 @@ common_plugins = [
     "pelican.plugins.sitemap",
     "pelican.plugins.related_posts",
     "plugins.fix_sitemap",
+    "plugins.json_feed",
     "pelican.plugins.neighbors",
     "pelican.plugins.seo",
     "pelican.plugins.statistics",

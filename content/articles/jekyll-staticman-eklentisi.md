@@ -9,6 +9,7 @@ Summary: Jekyll blog sitesinde yorumlar için Staticman eklentisini kurma sürec
 Translation: false
 Status: published
 Template: article
+Image: images/staticman.webp
 
 **Merhaba** 😄
 

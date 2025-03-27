@@ -8,6 +8,7 @@ Authors: yuceltoluyag
 Summary: PowerShell profil dosyası ile ilgili yaşanan hata mesajları, OneDrive kaldırıldıktan sonra bile dizinlerin görünmeye devam etmesi ve eksik modüller nedeniyle alınan hataların çözümü.
 Status: published
 Template: article
+Image: images/windows11-onedrive-sorunu.webp
 
 ![Hosts Dosyası Düzenleme](/images/windows11-onedrive-sorunu.webp)
 

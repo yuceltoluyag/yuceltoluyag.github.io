@@ -9,7 +9,7 @@ Summary: Kullandığım en faydalı Sublime Text eklentilerini ve temalarını t
 Translation: false
 Status: published
 Template: article
-
+Image: images/AFileIcon.webp
 
 Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika eklenti ve temaları sizlerle paylaşacağım. 🥳
 

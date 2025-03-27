@@ -12,6 +12,7 @@ Template: article
 Image: images/hosts.webp
 
 
+
 Linux tarafında kullanmak isteyenleri böyle alalım: [Arch Linux](/arch-linux-apache-lampp-sanal-sunucu-kurulumu/){: target="_blank" rel="noopener noreferrer"} + [Debian](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="_blank" rel="noopener noreferrer"}
 
 ## Adım 1: Hosts Dosyasını Düzenleme

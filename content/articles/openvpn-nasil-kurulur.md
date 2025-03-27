@@ -9,6 +9,8 @@ Summary: AWS EC2 üzerinde OpenVPN kurulumunun nasıl yapılacağı ve DNS leak 
 Translation: false
 Status: published
 Template: article
+Image: images/amazon-openvpn-kurulumu.webp
+
 
 # Merhaba
 

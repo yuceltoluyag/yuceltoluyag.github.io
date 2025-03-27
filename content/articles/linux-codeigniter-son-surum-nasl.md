@@ -9,11 +9,12 @@ Summary: Bu yazıda, Linux üzerinde CodeIgniter kurulumunu adım adım anlatıy
 Translation: false
 Status: published
 Template: article
----
+Image: images/codeigniter.webp
+
 
 Gökhan Kandemir’in [CodeIgniter Kitabı](http://kablosuzkedi.com/index.php/2017/10/24/codeigniter-3-kitabi-cikti/){: target="_blank" rel="noopener noreferrer"}’nı aldıktan sonra, çalışma yapabilmek için CodeIgniter’ı kurmam gerekti. Kurulum işlemi oldukça basit ve lokal geliştirme ortamında çalışmak için ekstra bir ayar gerekmiyor. Ancak, sunucu tarafında bazı ek yapılandırmalar yapmanız gerekebilir. Bu yazıda, temel kurulum işlemi ile ilgili detayları paylaşıyorum. Sunucu ayarları ile ilgili isteyenlere ayrıca yardımcı olabilirim.
 
-<!-- excerpt separator -->
+![codeigniter](/images/codeigniter.webp)
 
 Adım 1: [Apache Kurulumu](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="_blank" rel="noopener noreferrer"} (Arch Linux için [tıklayın](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/){: target="_blank" rel="noopener noreferrer"}))
 
