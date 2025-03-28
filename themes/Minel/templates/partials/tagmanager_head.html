@@ -1,6 +1,26 @@
 <!-- Google Tag Manager -->
-{% if GOOGLE_TAGMANAGER %}
+{% if GTM_ID %}
 <script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "{% if article %}{{ article.title }}{% elif page %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}",
+        pageTypeGTM: "{% if article %}article{% elif page %}page{% else %}home{% endif %}",
+        pageLanguage: "{{ DEFAULT_LANG }}",
+        pageUrl: window.location.href,
+    });
+
     (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -10,7 +30,7 @@
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-    })(window, document, "script", "dataLayer", "{{ GOOGLE_TAGMANAGER }}");
+    })(window, document, "script", "dataLayer", "{{ GTM_ID }}");
 </script>
 {% endif %}
 <!-- End Google Tag Manager -->

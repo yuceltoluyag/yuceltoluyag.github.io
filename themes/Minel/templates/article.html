@@ -55,8 +55,8 @@ article.title }}{% endblock %} {% block seo %}
     <button
         onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
         aria-label="Sayfanın başına git"
-        class="flex items-center justify-center w-12 h-12 rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        class="flex items-center justify-center w-14 h-14 rounded-full bg-primary-dark border border-primary-dark/30 shadow-lg text-white hover:bg-primary-darker transition-all duration-300 hover:scale-110">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
     </button>
@@ -251,8 +251,10 @@ article.title }}{% endblock %} {% block seo %}
             <div class="flex flex-wrap justify-center gap-3">
                 <!-- Twitter/X Paylaşım -->
                 <a
-                    href="javascript:void(0);"
-                    onclick="shareWithConsent('twitter', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
+                    href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url|urlencode }}&text={{ article.title|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('twitter', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="flex items-center justify-center w-10 h-10 rounded-full bg-[#1da1f2]/10 text-[#1da1f2] hover:bg-[#1da1f2] hover:text-white transition-colors duration-300"
                     aria-label="Twitter'da paylaş">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -263,8 +265,10 @@ article.title }}{% endblock %} {% block seo %}
 
                 <!-- Mastodon Paylaşım -->
                 <a
-                    href="javascript:void(0);"
-                    onclick="shareWithConsent('mastodon', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
+                    href="https://mastodonshare.com/?text={{ article.title|urlencode }}%20{{ SITEURL }}/{{ article.url|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('mastodon', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="flex items-center justify-center w-10 h-10 rounded-full bg-[#6364FF]/10 text-[#6364FF] hover:bg-[#6364FF] hover:text-white transition-colors duration-300"
                     aria-label="Mastodon'da paylaş">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -276,6 +280,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- Bluesky Paylaşım -->
                 <a
                     href="https://bsky.app/intent/compose?text={{ article.title|urlencode }}%20{{ SITEURL }}/{{ article.url|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('bluesky', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Bluesky'da paylaş"
@@ -289,6 +294,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- Facebook Paylaşım -->
                 <a
                     href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('facebook', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook'ta paylaş"
@@ -302,6 +308,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- LinkedIn Paylaşım -->
                 <a
                     href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('linkedin', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn'de paylaş"
@@ -315,6 +322,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- Reddit Paylaşım -->
                 <a
                     href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url|urlencode }}&title={{ article.title|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('reddit', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Reddit'te paylaş"
@@ -328,6 +336,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- WhatsApp Paylaşım -->
                 <a
                     href="https://wa.me/?text={{ article.title|urlencode }}%20{{ SITEURL }}/{{ article.url|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('whatsapp', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="WhatsApp'ta paylaş"
@@ -341,6 +350,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- Telegram Paylaşım -->
                 <a
                     href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url|urlencode }}&text={{ article.title|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('telegram', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Telegram'da paylaş"
@@ -354,6 +364,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- Tumblr Paylaşım -->
                 <a
                     href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url|urlencode }}&title={{ article.title|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('tumblr', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Tumblr'da paylaş"
@@ -367,6 +378,7 @@ article.title }}{% endblock %} {% block seo %}
                 <!-- Email Paylaşım -->
                 <a
                     href="mailto:?subject={{ article.title|urlencode }}&body={{ article.title|urlencode }}%20{{ SITEURL }}/{{ article.url|urlencode }}"
+                    onclick="event.preventDefault(); shareWithConsent('email', '{{ SITEURL }}/{{ article.url|urlencode }}', '{{ article.title|urlencode }}')"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="E-posta ile paylaş"
@@ -650,6 +662,12 @@ article.title }}{% endblock %} {% block seo %}
                 break;
             case "bluesky":
                 shareUrl = `https://bsky.app/intent/compose?text=${title}%20${url}`;
+                break;
+            case "tumblr":
+                shareUrl = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&title=${title}`;
+                break;
+            case "email":
+                shareUrl = `mailto:?subject=${title}&body=${title}%20${url}`;
                 break;
             default:
                 console.error("Bilinmeyen platform:", platform);
