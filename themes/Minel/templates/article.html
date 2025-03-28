@@ -218,18 +218,51 @@ article.title }}{% endblock %} {% block seo %}
     <div class="p-8">
         <div class="prose prose-lg dark:prose-invert max-w-none post-content">
             <script>
-                // Makale içindeki tüm resimlere lazy loading ekle
+                // Makale içindeki tüm resimlere ve iframe'lere lazysizes için gerekli değişiklikleri uygula
                 document.addEventListener("DOMContentLoaded", function () {
+                    // Resimleri lazysizes ile optimize et
                     const images = document.querySelectorAll(".post-content img");
                     images.forEach((img) => {
-                        img.setAttribute("loading", "lazy");
-                        img.setAttribute("decoding", "async");
+                        // Eğer henüz lazyload sınıfı yoksa ekle
+                        if (!img.classList.contains("lazyload")) {
+                            img.classList.add("lazyload");
+
+                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
+                            if (img.hasAttribute("src") && !img.hasAttribute("data-src")) {
+                                const srcValue = img.getAttribute("src");
+                                // Placeholder olmayan gerçek bir görüntüyse
+                                if (!srcValue.startsWith("data:image")) {
+                                    img.setAttribute("data-src", srcValue);
+                                    // Küçük bir placeholder kullan
+                                    img.setAttribute(
+                                        "src",
+                                        "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    );
+                                }
+                            }
+                        }
 
                         // Resim boyutları önceden belirlenmemişse, varsayılan genişlik ve yükseklik ata
                         if (!img.getAttribute("width") && !img.getAttribute("height")) {
                             img.setAttribute("width", "100%");
                             img.setAttribute("height", "auto");
                             img.style.aspectRatio = "auto";
+                        }
+                    });
+
+                    // iframe'leri lazysizes ile optimize et
+                    const iframes = document.querySelectorAll(".post-content iframe");
+                    iframes.forEach((iframe) => {
+                        // Eğer henüz lazyload sınıfı yoksa ekle
+                        if (!iframe.classList.contains("lazyload")) {
+                            iframe.classList.add("lazyload");
+
+                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
+                            if (iframe.hasAttribute("src") && !iframe.hasAttribute("data-src")) {
+                                const srcValue = iframe.getAttribute("src");
+                                iframe.setAttribute("data-src", srcValue);
+                                iframe.setAttribute("src", "about:blank");
+                            }
                         }
                     });
 
