@@ -13,6 +13,9 @@
 
         {% include 'partials/tagmanager_head.html' %} {% include 'partials/analytics.html' %}
 
+        <!-- Lazy loading özelleştirmesi -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/lazysizes-config.min.js"></script>
+
         <!-- Open Graph Resim Etiketi -->
         {% if article and article.image %}
         <meta property="og:image" content="{{ SITEURL }}/{{ article.image }}" />
@@ -168,6 +171,9 @@
                 ]
             }
         </script>
+
+        <!-- Lazy Load için lazysizes kütüphanesi -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" async></script>
 
         {% if article %}
         <script type="application/ld+json">

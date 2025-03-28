@@ -114,3 +114,66 @@
 .highlight .hll {
     background-color: rgba(var(--main-color-rgb), 0.1) !important;
 }
+
+/* Lazy Loading için CSS */
+.lazyload,
+.lazyloading {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.lazyloaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+
+/* Yükleme sırasında görüntülenecek arkaplan */
+.lazyloading {
+    background: #f6f7f8;
+    background: linear-gradient(90deg, #f6f7f8 0%, #f6f7f8 20%, #e9ecef 40%, #f6f7f8 60%, #f6f7f8 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear forwards;
+}
+
+/* Yükleme animasyonu */
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* iframe için özel stiller */
+iframe.lazyload,
+iframe.lazyloading {
+    min-height: 200px;
+    display: block;
+    background: #f6f7f8;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Resim yükleme efekti */
+img.lazyloading {
+    filter: blur(5px);
+}
+
+img.lazyloaded {
+    filter: blur(0);
+    transition: filter 500ms ease-out;
+}
+
+/* Koyu tema için yükleme arkaplanı */
+.dark .lazyloading {
+    background: #2d3748;
+    background: linear-gradient(90deg, #2d3748 0%, #2d3748 20%, #4a5568 40%, #2d3748 60%, #2d3748 100%);
+    background-size: 200% 100%;
+}
+
+.dark iframe.lazyload,
+.dark iframe.lazyloading {
+    background: #2d3748;
+}
