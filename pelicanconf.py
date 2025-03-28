@@ -468,3 +468,8 @@ LOG_FILTER = [
     # (logging.WARN, "Meta tag in file %s does not have a 'name' attribute, skipping. Attributes: %s"),
     # (logging.WARN, "Unable to find '%s', skipping url replacement."),
 ]
+
+ARTICLE_EDIT_LINK = (
+    "https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/"
+    "%(slug)s.md"
+)
