@@ -33,7 +33,7 @@ GOOGLE_ANALYTICS = (
 )
 
 # --- Google Tag Manager ---
-GOOGLE_TAGMANAGER = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
+GTM_ID = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
 
 
 # --- Set Locale ---
@@ -395,6 +395,9 @@ REDIRECTS = {
     # "/source_url": "/destination_url"
     # Etiket ve kategori yönlendirmeleri
     "/tags/facebook.html": "/etiket/facebook/",
+    "/tags/facebook/": "/etiket/facebook/",
+    "/tags/github/": "/etiket/github/",
+    "/tags/mp3/": "/etiket/mp3",
     "/tags/ntfs.html": "/etiket/ntfs/",
     "/tags/linux.html": "/etiket/linux/",
     "/tags/zsh.html": "/etiket/zsh/",
@@ -420,6 +423,11 @@ REDIRECTS = {
     "/openvpn-nasil-kurulur": "/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi",
     "/linux-ozellestirebilir-mp3-oynatcs": "/linux-ozellestirilebilir-mp3-oynaticisi-audacious/",
     "/vagrant-virtualbox-61-ile-uyumlu-hale": "/vagrant-virtualbox-6-1-uyumluluk",
+    "/archlinux-ntfs-nasil-yapilandirilir": "/arch-linux-ntfs-yapilandirma",
+    "/earncom-nedir-nasl-kullanlr": "/earn-com-nedir-nasil-kullanilir",
+    "/linux-httrack-kullanm": "/linux-ta-httrack-kullanimi/",
+    "/newsboat-kullanimi": "/newsboat-rss-feeds-kullanimi",
+    "/newsboat-kullanimi": "/newsboat-rss-feeds-kullanimi",
 }
 
 # Arama eklentisi ayarları

@@ -1,14 +1,5 @@
 <!-- Google Analytics -->
 {% if GOOGLE_ANALYTICS %}
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "{{ GOOGLE_ANALYTICS }}");
-</script>
+<!-- Google tag (gtag.js) - Artık tagmanager.html içinde bulunuyor -->
+<!-- Bu dosya eski sürüm compatibility için korunmuştur -->
 {% endif %}

@@ -9,6 +9,7 @@
         <meta name="theme-static-dir" content="{{ THEME_STATIC_DIR }}" />
         <meta name="is-homepage" content="{% if output_file == 'index.html' %}true{% else %}false{% endif %}" />
         <meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+        <meta name="cookie-consent-default" content="denied" />
 
         {% include 'partials/tagmanager_head.html' %} {% include 'partials/analytics.html' %}
 
@@ -495,10 +496,10 @@
         <!-- Yukarı git butonu -->
         <button
             id="back-to-top"
-            class="fixed bottom-8 right-8 z-50 p-2 rounded-full bg-primary/90 backdrop-blur-sm text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary hover:scale-110 focus:outline-none"
+            class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary-dark backdrop-blur-sm text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-none"
             aria-label="Yukarı git">
             <svg
-                class="w-6 h-6"
+                class="w-7 h-7"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -559,14 +560,24 @@
                         <a href="{{ SITEURL }}/privacy-policy/" class="text-primary hover:underline">
                             Gizlilik Politikası
                         </a>
-                        'nı inceleyebilir veya çerezleri kabul edebilirsiniz.
+                        'nı inceleyebilir veya çerez tercihlerinizi yapabilirsiniz.
                     </p>
                 </div>
                 <div class="flex gap-3">
                     <button
-                        id="cookie-accept"
-                        class="px-4 py-2 bg-primary text-white rounded-lg text-sm hover:bg-primary-dark transition-colors duration-300">
-                        Kabul Et
+                        id="cookie-settings"
+                        class="px-4 py-2 bg-site-card-alt border border-border-card rounded-lg text-sm hover:bg-site-card transition-colors duration-300">
+                        Ayarlar
+                    </button>
+                    <button
+                        id="cookie-accept-all"
+                        class="px-4 py-2 bg-primary-dark text-white rounded-lg text-sm hover:bg-primary-darker transition-colors duration-300 font-medium">
+                        Tümünü Kabul Et
+                    </button>
+                    <button
+                        id="cookie-accept-essential"
+                        class="px-4 py-2 bg-site-card-alt border border-border-card rounded-lg text-sm hover:bg-site-card transition-colors duration-300">
+                        Yalnızca Gerekli Olanlar
                     </button>
                     <button
                         id="cookie-reject"
@@ -577,15 +588,126 @@
             </div>
         </div>
 
+        <!-- Çerez Ayarları Modal -->
+        <div id="cookie-settings-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center">
+            <div class="bg-site-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-text-primary">Çerez Tercihleriniz</h2>
+                    <button id="close-settings" class="text-text-secondary hover:text-primary">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="text-text-secondary mb-4">
+                    Her kategorinin açıklamasını okuyabilir ve hangi çerezlere izin vereceğinizi seçebilirsiniz.
+                </p>
+
+                <div class="space-y-4 mb-6">
+                    <!-- Gerekli Çerezler -->
+                    <div class="p-4 border border-border-card rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-medium text-text-primary">Gerekli Çerezler</h3>
+                            <span class="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                                Her Zaman Aktif
+                            </span>
+                        </div>
+                        <p class="text-sm text-text-secondary">
+                            Bu çerezler sitenin doğru şekilde çalışması için gereklidir ve devre dışı bırakılamaz.
+                        </p>
+                    </div>
+
+                    <!-- Analitik Çerezler -->
+                    <div class="p-4 border border-border-card rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-medium text-text-primary">Analitik Çerezler</h3>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="analytics-consent" class="sr-only peer" />
+                                <div
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <p class="text-sm text-text-secondary">
+                            Bu çerezler, ziyaretçilerin siteyi nasıl kullandığı hakkında bilgi toplar. Bu veriler, site
+                            performansını analiz etmek ve iyileştirmek için kullanılır.
+                        </p>
+                    </div>
+
+                    <!-- Pazarlama Çerezleri -->
+                    <div class="p-4 border border-border-card rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-medium text-text-primary">Pazarlama Çerezleri</h3>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="marketing-consent" class="sr-only peer" />
+                                <div
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <p class="text-sm text-text-secondary">
+                            Bu çerezler, size ve ilgi alanlarınıza uygun reklamlar göstermek için kullanılır.
+                        </p>
+                    </div>
+
+                    <!-- Kişiselleştirme Çerezleri -->
+                    <div class="p-4 border border-border-card rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="font-medium text-text-primary">Kişiselleştirme Çerezleri</h3>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="personalization-consent" class="sr-only peer" />
+                                <div
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                        <p class="text-sm text-text-secondary">
+                            Bu çerezler, içerik ve özellikleri kişiselleştirmek için tercihlerinizi hatırlar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-3">
+                    <button
+                        id="save-preferences"
+                        class="px-4 py-2 bg-primary-dark text-white rounded-lg text-sm hover:bg-primary-darker transition-colors duration-300">
+                        Tercihleri Kaydet
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <script>
             // Çerez bildirimi işlemleri
             document.addEventListener("DOMContentLoaded", function () {
                 const cookieConsent = document.getElementById("cookie-consent");
-                const acceptButton = document.getElementById("cookie-accept");
+                const cookieSettingsModal = document.getElementById("cookie-settings-modal");
+                const acceptAllButton = document.getElementById("cookie-accept-all");
+                const acceptEssentialButton = document.getElementById("cookie-accept-essential");
                 const rejectButton = document.getElementById("cookie-reject");
+                const settingsButton = document.getElementById("cookie-settings");
+                const closeSettingsButton = document.getElementById("close-settings");
+                const savePreferencesButton = document.getElementById("save-preferences");
+
+                // Çerez seçenekleri
+                const analyticsConsent = document.getElementById("analytics-consent");
+                const marketingConsent = document.getElementById("marketing-consent");
+                const personalizationConsent = document.getElementById("personalization-consent");
 
                 // Daha önce seçim yapılmış mı kontrol et
                 const cookieChoice = localStorage.getItem("cookie-consent");
+                const cookiePreferences = localStorage.getItem("cookie-preferences")
+                    ? JSON.parse(localStorage.getItem("cookie-preferences"))
+                    : null;
+
+                // Varsa tercihleri kontrol kutularına yansıt
+                if (cookiePreferences) {
+                    analyticsConsent.checked = cookiePreferences.analytics;
+                    marketingConsent.checked = cookiePreferences.marketing;
+                    personalizationConsent.checked = cookiePreferences.personalization;
+                }
 
                 if (!cookieChoice) {
                     // Çerez bildirimini göster
@@ -594,48 +716,100 @@
                     }, 1000);
                 }
 
-                // Kabul et butonuna tıklandığında
-                acceptButton.addEventListener("click", function () {
-                    localStorage.setItem("cookie-consent", "accepted");
+                // Tümünü kabul et butonuna tıklandığında
+                acceptAllButton.addEventListener("click", function () {
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: true,
+                        marketing: true,
+                        personalization: true,
+                    });
                     cookieConsent.classList.add("translate-y-full");
+                });
 
-                    // Google Analytics ve diğer üçüncü taraf çerezlerini etkinleştir
-                    enableThirdPartyCookies();
+                // Yalnızca gerekli olanlar butonuna tıklandığında
+                acceptEssentialButton.addEventListener("click", function () {
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: false,
+                        marketing: false,
+                        personalization: false,
+                    });
+                    cookieConsent.classList.add("translate-y-full");
                 });
 
                 // Reddet butonuna tıklandığında
                 rejectButton.addEventListener("click", function () {
-                    localStorage.setItem("cookie-consent", "rejected");
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: false,
+                        marketing: false,
+                        personalization: false,
+                    });
                     cookieConsent.classList.add("translate-y-full");
-
-                    // Google Analytics ve diğer üçüncü taraf çerezlerini devre dışı bırak
-                    disableThirdPartyCookies();
                 });
 
-                // Kullanıcı kabul ettiyse üçüncü taraf çerezlerini etkinleştir
-                if (cookieChoice === "accepted") {
-                    enableThirdPartyCookies();
+                // Ayarlar butonuna tıklandığında
+                settingsButton.addEventListener("click", function () {
+                    cookieSettingsModal.classList.remove("hidden");
+                    cookieSettingsModal.classList.add("flex");
+                });
+
+                // Kapat butonuna tıklandığında
+                closeSettingsButton.addEventListener("click", function () {
+                    cookieSettingsModal.classList.add("hidden");
+                    cookieSettingsModal.classList.remove("flex");
+                });
+
+                // Tercihleri kaydet butonuna tıklandığında
+                savePreferencesButton.addEventListener("click", function () {
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: analyticsConsent.checked,
+                        marketing: marketingConsent.checked,
+                        personalization: personalizationConsent.checked,
+                    });
+                    cookieSettingsModal.classList.add("hidden");
+                    cookieSettingsModal.classList.remove("flex");
+                    cookieConsent.classList.add("translate-y-full");
+                });
+
+                // Çerez tercihlerini kaydet ve uygula
+                function saveCookiePreferences(preferences) {
+                    localStorage.setItem("cookie-consent", "custom");
+                    localStorage.setItem("cookie-preferences", JSON.stringify(preferences));
+
+                    // Google Analytics ve diğer üçüncü taraf çerezleri tercihlere göre ayarla
+                    updateGoogleConsent(preferences);
                 }
 
-                function enableThirdPartyCookies() {
-                    // Google Analytics'i etkinleştir
+                // Google Tag Manager'a çerez tercihlerini bildir
+                function updateGoogleConsent(preferences) {
                     if (typeof gtag === "function") {
                         gtag("consent", "update", {
-                            analytics_storage: "granted",
-                            ad_storage: "granted",
+                            analytics_storage: preferences.analytics ? "granted" : "denied",
+                            ad_storage: preferences.marketing ? "granted" : "denied",
+                            functionality_storage: preferences.personalization ? "granted" : "denied",
+                            personalization_storage: preferences.personalization ? "granted" : "denied",
+                        });
+
+                        // Tercihlerin değiştiğini takip et
+                        gtag("event", "cookie_consent_updated", {
+                            consent_status: "custom",
+                            analytics_enabled: preferences.analytics,
+                            marketing_enabled: preferences.marketing,
+                            personalization_enabled: preferences.personalization,
                         });
                     }
                 }
 
-                function disableThirdPartyCookies() {
-                    // Google Analytics'i devre dışı bırak
-                    if (typeof gtag === "function") {
-                        gtag("consent", "update", {
-                            analytics_storage: "denied",
-                            ad_storage: "denied",
-                        });
+                // Modal dışına tıklandığında kapat
+                cookieSettingsModal.addEventListener("click", function (e) {
+                    if (e.target === cookieSettingsModal) {
+                        cookieSettingsModal.classList.add("hidden");
+                        cookieSettingsModal.classList.remove("flex");
                     }
-                }
+                });
             });
         </script>
 
