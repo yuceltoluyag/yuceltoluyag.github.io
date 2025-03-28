@@ -25,6 +25,8 @@ Bu kararı almamın iki büyük sebebi var:
 💻 **Teknik Engeller:** Mevcut bilgisayarım artık modern oyunları ve emülatörleri kaldırmıyor. FPS düşüşleri o kadar büyük ki, oyunu test etmek neredeyse imkânsız hale geldi. YouTube için video kaydederken bile 25-30 FPS almak için saatlerce uğraşmak zorunda kalıyordum. Ancak son oyun ve emülatör güncellemeleriyle birlikte durum daha da kötüleşti. Grafikler işlenirken FPS neredeyse sıfıra düşüyor ve hiçbir optimizasyon bunu düzeltemiyor. 🥶
 ![rok0fps](/images/rok0fps.webp)
 
+<div class="info-box important">Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad’imle vedalaştık. 😄</div>
+
 Aslında yeni bir **GUI tasarlamak ve yeni özellikler eklemek** için oldukça hevesliydim. Fakat test süreci bu kadar zorlaşınca, kullanıcılara yeterince stabil ve güvenilir bir şey sunamamak beni rahatsız etti. **Eksik ya da hatalı bir iş paylaşmak istemediğim için, projeyi bırakmaya karar verdim.**
 ![rokbot-gui](/images/rokbot-gui.webp)
 
@@ -70,7 +72,7 @@ Bu projede bazı özellikleri benden talep edip, daha sonra kendi **ücretli** s
 
 Bu projeyi geliştirirken ve diğer botları incelerken, insanların aslında sadece "ücretsiz" bir alternatif istediklerini fark ettim. Çünkü piyasadaki diğer botlar gerçekten pahalı ve haftalık abonelik gerektiriyor. Sadece farm işlevine odaklanan botlar daha ucuz, ancak satıcının ne kadar güvenilir olduğu konusunda hiçbir fikrim yok.
 
-Bu nedenle projeyi devam ettirmek istemiyorum. Ayrıca bu oyun bana gerçekten bir oyun oynuyormuşum gibi hissettirmiyor. **Ne beni oynamaya teşvik ediyor ne de sponsor bulmamı sağlıyor.**
+Bu nedenle projeyi devam ettirmek istemiyorum. Ayrıca bu oyun bana gerçekten bir oyun oynuyormuşum gibi hissettirmiyor. **Ne beni oynamaya teşvik eden var ne de insanlar şevk için destek sağlıyor.**
 ![its work](/images/rok-youtube-istatistik.webp)
 YouTube'daki videolarım şu an yaklaşık **30 bin görüntülemeye sahip**, ancak abone sayım oldukça düşük. İnsanlar destek konusunda hiç yardımcı olmuyor, sadece ücretsiz bir alternatif arıyorlar. Şimdi, neden asıl geliştiricinin bu projeyi terk ettiğini çok daha iyi anlıyorum. **Rip @Dylan-Zheng**
 
