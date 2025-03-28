@@ -25,11 +25,11 @@ Bu kararı almamın iki büyük sebebi var:
 💻 **Teknik Engeller:** Mevcut bilgisayarım artık modern oyunları ve emülatörleri kaldırmıyor. FPS düşüşleri o kadar büyük ki, oyunu test etmek neredeyse imkânsız hale geldi. YouTube için video kaydederken bile 25-30 FPS almak için saatlerce uğraşmak zorunda kalıyordum. Ancak son oyun ve emülatör güncellemeleriyle birlikte durum daha da kötüleşti. Grafikler işlenirken FPS neredeyse sıfıra düşüyor ve hiçbir optimizasyon bunu düzeltemiyor. 🥶
 ![rok0fps](/images/rok0fps.webp)
 
-<div class="info-box important">Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad’imle vedalaştık. 😄</div>
+
 
 Aslında yeni bir **GUI tasarlamak ve yeni özellikler eklemek** için oldukça hevesliydim. Fakat test süreci bu kadar zorlaşınca, kullanıcılara yeterince stabil ve güvenilir bir şey sunamamak beni rahatsız etti. **Eksik ya da hatalı bir iş paylaşmak istemediğim için, projeyi bırakmaya karar verdim.**
 ![rokbot-gui](/images/rokbot-gui.webp)
-
+<div class="info-box important">Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad’imle vedalaştık. 😄</div>
 # Nasıl Başladım?  
 
 Bu oyunu oynamıyorum çünkü **pay-to-win (P2W)** sistemine sahip. Oyunlarda para harcamaya karşı değilim; sonuçta bu bir eğlence sektörü ve eğleniyorsan harcama yapmak tamamen senin tercihin. Ancak, bir arkadaşım benden bir bot geliştirip geliştiremeyeceğimi sorduğunda, internette küçük bir araştırma yapmaya karar verdim. Karşıma birçok hileli içerik çıktı. Daha sonra açık kaynaklı bir bot buldum ve onun üzerinde çalışmaya başladım. Ancak bir süre sonra projenin gelişimi yavaşladı. Ortaya çıkan bazı hataları düzelttim, fakat sonrasında projeye ara verdim.  
@@ -87,7 +87,7 @@ Bu oyunu anlamak için zaten 1 yıl harcadım.
 
 Yakın zamanda **Rise of Kingdoms ekibinden yasal bir uyarı aldım** (botun geliştirilmemesi yönünde). Ben sadece eğitim amaçlı olarak geliştirmeye devam ettim, ancak sanırım son iki commit’ten sonra hala aktif olduğumu düşündüler. 🙂 
 
-Bu yüzden üzgünüm, sadece verdiğim sözü tutmak için güncelleme yapıyordum, ama sanırım duvara tosladık. 😅 **Projeyi fork eden ve geliştirmeye devam eden arkadaşların dikkatli olmasını öneririm:** [Forklara göz atın](https://github.com/yuceltoluyag/Rise-of-Kingdoms-Bot/forks).
+Bu yüzden üzgünüm, sadece verdiğim sözü tutmak için güncelleme yapıyordum, ama sanırım duvara tosladık. 😅 **Projeyi fork eden ve geliştirmeye devam eden arkadaşların dikkatli olmasını öneririm:** 
 
 Her şey için teşekkürler. 🙏
 
@@ -96,6 +96,6 @@ Sevgiyle kalın,
 
 
 
-Çok fazla mail ve Instagram mesajı aldım. Projeyle ilgili tüm detaylar linkte mevcut.
+Çok fazla mail ve [Instagram](https://www.instagram.com/yuceltoluyag/){: target="_blank" rel="noopener noreferrer"} mesajı aldım. Projeyle ilgili tüm detaylar linkte mevcut.
 
 [Rise Of Kingdom Bot](https://github.com/yuceltoluyag/Rise-of-Kingdoms-Bot/issues/24){: target="_blank" rel="noopener noreferrer"}
