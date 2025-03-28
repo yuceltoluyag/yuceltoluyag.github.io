@@ -45,8 +45,8 @@ article.title }}{% endblock %} {% block seo %}
     <button
         onclick="toggleTOC()"
         aria-label="İçindekiler menüsünü aç"
-        class="flex items-center justify-center w-12 h-12 rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110 touch-manipulation p-4">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
         </svg>
     </button>
@@ -55,8 +55,8 @@ article.title }}{% endblock %} {% block seo %}
     <button
         onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
         aria-label="Sayfanın başına git"
-        class="flex items-center justify-center w-14 h-14 rounded-full bg-primary-dark border border-primary-dark/30 shadow-lg text-white hover:bg-primary-darker transition-all duration-300 hover:scale-110">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-primary-dark border border-primary-dark/30 shadow-lg text-white hover:bg-primary-darker transition-all duration-300 hover:scale-110 touch-manipulation p-4">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
     </button>
@@ -284,7 +284,7 @@ article.title }}{% endblock %} {% block seo %}
                 href="{{ ARTICLE_EDIT_LINK % {'slug': article.slug} }}"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary-dark transition-colors duration-300">
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-blue dark:text-red-900 bg-[#24292F] dark:bg-[#2D333B] rounded-md hover:bg-[#1b1f24] dark:hover:bg-[#444c56] hover:text-white transition-colors duration-300 border border-gray-300 dark:border-gray-700">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                         stroke-linecap="round"
