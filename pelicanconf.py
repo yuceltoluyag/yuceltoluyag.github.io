@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*- #
+from __future__ import unicode_literals
+
 # Pelican configuration file
 
 # --- Imports ---
@@ -8,18 +10,64 @@ from pelican import signals
 from pymdownx import emoji
 from datetime import datetime, timezone
 
+
+# --- Set Locale ---
+def set_locale():
+    """Her platformda çalışacak şekilde yerel ayarları yapılandırır."""
+    locale_candidates = [
+        # Linux locale adları
+        "tr_TR.UTF-8",
+        "tr_TR",
+        # Windows locale adları
+        "Turkish_Turkey.1254",
+        "turkish",
+        "tr",
+    ]
+
+    for loc in locale_candidates:
+        try:
+            locale.setlocale(locale.LC_ALL, loc)
+            print(f"Locale ayarlandı: {loc}")
+            return
+        except locale.Error:
+            continue
+
+    print(
+        "Hiçbir Türkçe yerel ayar bulunamadı. Varsayılan yerel ayarlar kullanılacak."
+    )
+
+
+set_locale()
+
 # --- Basic Settings (En Başta Tanımlanacaklar) ---
 TIMEZONE = "Europe/Istanbul"
-I18N_TEMPLATES_LANG = "tr"
-DEFAULT_LANG = "tr"
-LOCALE = ("tr_TR.UTF-8", "tr_TR")  # Tuple olarak tanımlıyoruz
+I18N_TEMPLATES_LANG = "tr"  # Docutils için İngilizce kullan
+DEFAULT_LANG = "tr"  # Site dili Türkçe kalacak
+
+
+# Windows ve Linux platformları için locale ayarları
+LOCALE = (
+    "tr_TR.UTF-8",
+    "tr_TR",
+    "turkish",
+    "tr",
+    "Turkish_Turkey.1254",
+)  # Hem Linux hem Windows için
+
+# Tarih formatları - (locale, format) şeklinde tuple kullanımı
 DATE_FORMATS = {
-    "tr": "%-d %B %Y",
-    "en": "%B %-d, %Y",
+    "tr": ("tr_TR.UTF-8", "%-d %B %Y"),  # Gün (sıfırsız), Ay adı, Yıl
+    "en": ("en_US.UTF-8", "%B %-d, %Y"),  # Ay adı, Gün (sıfırsız), Yıl
 }
 
-# --- Translation Settings ---
-DEFAULT_LANG = "tr"
+DEFAULT_DATE = "fs"  # Dosya sistemindeki tarih bilgisini kullan
+DEFAULT_DATE_FORMAT = "%a %d %B %Y"
+TODAY = datetime.now(tz=timezone.utc).date()
+YEAR = TODAY.year
+# Yıl değişkeni
+SITEYEAR = datetime.now().year
+OG_LOCALE = "tr_TR"
+
 # Desteklenen diller (varsa)
 ARTICLE_TRANSLATION_ID = "slug"
 PAGE_TRANSLATION_ID = "slug"
@@ -29,35 +77,14 @@ TRANSLATION_FEED_ATOM = "feeds/{lang}/all.atom.xml"
 
 # --- Google Analytics ---
 GOOGLE_ANALYTICS = (
-    "G-XXXXXXXXXX"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
+    "G-9KL9GYLPS5"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
 )
-
 # --- Google Tag Manager ---
 GTM_ID = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
-
-
-# --- Set Locale ---
-def set_locale():
-    try:
-        locale.setlocale(locale.LC_ALL, "tr_TR.UTF-8")
-    except locale.Error:
-        print(
-            "Yerel ayar desteklenmiyor. Varsayılan yerel ayarlar kullanılacak."
-        )
-
-
-set_locale()
 
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
 
-# --- Date Related Settings ---
-# DEFAULT_DATE_FORMAT = "%a %d %B %Y"
-TODAY = datetime.now(tz=timezone.utc).date()
-YEAR = TODAY.year
-# Yıl değişkeni
-SITEYEAR = datetime.now().year
-OG_LOCALE = "tr_TR"
 
 AUTHOR = "yuceltoluyag"
 SITENAME = "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D"
@@ -304,14 +331,6 @@ SEO_ENHANCER_OPEN_GRAPH = False  # Subfeature of SEO enhancer
 SEO_ENHANCER_TWITTER_CARDS = False  # Subfeature of SEO enhancer
 SEO_ARTICLES_LIMIT = 10
 SEO_PAGES_LIMIT = 10
-
-# --- Google Analytics ---
-GTAG = "G-9VKX48YDBH" if PUBLISH else None
-
-# --- Google AdSense ---
-GOOGLE_ADSENSE = "ca-pub-6089943780218266" if PUBLISH else None
-
-# --- Google Affiliate Settings ---
 
 # URL Ayarları
 ARTICLE_URL = "{slug}/"

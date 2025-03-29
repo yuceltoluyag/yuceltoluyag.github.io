@@ -386,7 +386,7 @@ def livereload(ctx: Context):
 def new(ctx: Context, title: str) -> None:
     """Create a new post."""
 
-    newYorkTz = pytz.timezone("America/New_York")
+    newYorkTz = pytz.timezone("Europe/Istanbul")
     now = datetime.now(newYorkTz)
 
     new_post_path = POST_PATH.joinpath(
