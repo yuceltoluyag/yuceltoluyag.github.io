@@ -30,8 +30,8 @@ Sitemizde kullanılan çerezler şunlardır:
 
 Sitemiz, aşağıdaki üçüncü taraf hizmetleri kullanmaktadır ve bunlar kendi çerezlerini ayarlayabilir:
 
-1. **Google Analytics**: Site trafiğini ve kullanıcı davranışlarını analiz etmek için kullanılır. [Google'ın Gizlilik Politikası](https://policies.google.com/privacy)
-2. **Google AdSense**: Kişiselleştirilmiş reklamlar göstermek için kullanılır. [Google'ın Gizlilik Politikası](https://policies.google.com/privacy)
+1. **Google Analytics**: Site trafiğini ve kullanıcı davranışlarını analiz etmek için kullanılır. [Google'ın Gizlilik Politikası](https://policies.google.com/privacy){: target="_blank" rel="noopener noreferrer"}
+2. **Google AdSense**: Kişiselleştirilmiş reklamlar göstermek için kullanılır. [Google'ın Gizlilik Politikası](https://policies.google.com/privacy){: target="_blank" rel="noopener noreferrer"}
 3. **Sosyal Medya Paylaşım Butonları**: Bu butonlar, ilgili sosyal medya platformlarından çerezler yükleyebilir.
 
 #### Üçüncü Taraf Çerezlerini Yönetme
@@ -40,7 +40,7 @@ Chrome ve diğer modern tarayıcılar, üçüncü taraf çerezlerini varsayılan
 
 1. Sitemizdeki çerez onay bildiriminden tercihlerinizi belirtin
 2. Tarayıcı ayarlarınızdan çerez tercihlerinizi düzenleyin
-3. Google Analytics'ten çıkmak için [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout)'u kullanın
+3. Google Analytics'ten çıkmak için [Google Analytics Opt-out Browser Add-on](https://tools.google.com/dlpage/gaoptout){: target="_blank" rel="noopener noreferrer"}'u kullanın
 
 #### Üçüncü Taraf Çerezleri Olmadan Site Kullanımı
 
