@@ -17,8 +17,6 @@ Klasik uyarı pencerelerinden sıkıldıysanız, modern ve mobil uyumlu bir alte
 
 Öncelikle, kütüphaneyi projenize dahil etmelisiniz.
 
-
-
 ## SweetAlert Kütüphanesini Dahil Etme
 
 ```html
@@ -65,29 +63,29 @@ Bir butona tıklandığında uyarı penceresinin açılmasını sağlayalım:
 
 ## SweetAlert Argümanları
 
-| Argüman | Açıklama |
-|---------|---------|
-| **title** | Uyarının başlık kısmıdır. |
-| **text** | Uyarı penceresindeki açıklama metnidir. |
-| **type** | "warning", "error", "success", "info" gibi tipleri belirler. |
-| **allowEscapeKey** | ESC tuşuyla pencerenin kapanmasını sağlar. |
-| **customClass** | Özel CSS sınıfı eklemenize olanak tanır. |
-| **allowOutsideClick** | Dışarı tıklanırsa pencerenin kapanmasını belirler. |
-| **showCancelButton** | İptal butonunu gösterir. |
-| **showConfirmButton** | Onay butonunu gösterir. |
-| **confirmButtonText** | Onay butonu metnini belirler. |
-| **confirmButtonColor** | Onay butonunun rengini değiştirir. |
-| **cancelButtonText** | İptal butonunun metnini değiştirir. |
-| **imageUrl** | Uyarı penceresine özel bir resim ekler. |
-| **imageSize** | Resmin genişlik ve yükseklik değerlerini belirler. |
-| **timer** | Belirtilen süre sonunda pencereyi otomatik olarak kapatır. |
-| **html** | HTML etiketlerini kullanmanıza olanak tanır. |
-| **animation** | Açılış animasyonunu değiştirir. |
-| **inputType** | "text", "password", "submit" gibi giriş alanı türlerini belirler. |
-| **inputPlaceholder** | Giriş alanına ipucu metni ekler. |
-| **inputValue** | Giriş alanına varsayılan bir değer ekler. |
-| **closeOnConfirm** | Onay butonuna basılınca pencerenin kapanmasını sağlar. |
-| **closeOnCancel** | İptal butonuna basılınca pencerenin kapanmasını sağlar. |
+Aşağıda SweetAlert kütüphanesinde kullanabileceğiniz tüm argümanların listesi yer almaktadır:
+
+- **title**: Uyarının başlık kısmıdır.
+- **text**: Uyarı penceresindeki açıklama metnidir.
+- **type**: "warning", "error", "success", "info" gibi tipleri belirler.
+- **allowEscapeKey**: ESC tuşuyla pencerenin kapanmasını sağlar.
+- **customClass**: Özel CSS sınıfı eklemenize olanak tanır.
+- **allowOutsideClick**: Dışarı tıklanırsa pencerenin kapanmasını belirler.
+- **showCancelButton**: İptal butonunu gösterir.
+- **showConfirmButton**: Onay butonunu gösterir.
+- **confirmButtonText**: Onay butonu metnini belirler.
+- **confirmButtonColor**: Onay butonunun rengini değiştirir.
+- **cancelButtonText**: İptal butonunun metnini değiştirir.
+- **imageUrl**: Uyarı penceresine özel bir resim ekler.
+- **imageSize**: Resmin genişlik ve yükseklik değerlerini belirler.
+- **timer**: Belirtilen süre sonunda pencereyi otomatik olarak kapatır.
+- **html**: HTML etiketlerini kullanmanıza olanak tanır.
+- **animation**: Açılış animasyonunu değiştirir.
+- **inputType**: "text", "password", "submit" gibi giriş alanı türlerini belirler.
+- **inputPlaceholder**: Giriş alanına ipucu metni ekler.
+- **inputValue**: Giriş alanına varsayılan bir değer ekler.
+- **closeOnConfirm**: Onay butonuna basılınca pencerenin kapanmasını sağlar.
+- **closeOnCancel**: İptal butonuna basılınca pencerenin kapanmasını sağlar.
 
 ## Örnek Görsel
 
