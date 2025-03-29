@@ -280,14 +280,11 @@ common_plugins = [
     "plugins.markdown_lang_fix",
     "plugins.search",
     "plugins.pelican_redirect",
-    "plugins.minify",
 ]
 
 dev_plugins = common_plugins.copy()
 
-prod_extra_plugins = [
-    "plugins.minify",
-]
+prod_extra_plugins = []
 
 prod_plugins = common_plugins + prod_extra_plugins
 
