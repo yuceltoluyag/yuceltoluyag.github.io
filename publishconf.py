@@ -11,19 +11,6 @@ from pelicanconf import *
 # Doğrudan Pelican tarafından kullanılacak değişkenleri kesin olarak tanımlıyoruz
 # DİKKAT: Bu değerler her şekilde geçerli olacaktır
 TIMEZONE = "Europe/Istanbul"
-I18N_TEMPLATES_LANG = "tr"  # Docutils için İngilizce kullan
-DEFAULT_LANG = "tr"  # Site dili Türkçe kalacak
-# Basit tarih formatları - Tüm ortamlarda çalışır
-DATE_FORMATS = {
-    "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
-}
-LOCALE = ("tr", "tr_TR")  # On Windows  # On Unix/Linux
-
-DEFAULT_DATE = "fs"
-DEFAULT_DATE_FORMAT = "%a %d %B %Y"
-TODAY = datetime.now(tz=timezone.utc).date()
-YEAR = TODAY.year
-SITEYEAR = datetime.now().year
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
 # Google Analytics - Yayın modunda gerçek ID'yi kullanın
