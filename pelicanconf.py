@@ -9,6 +9,20 @@ from pelican import signals
 from pymdownx import emoji
 from datetime import datetime, timezone
 
+TIMEZONE = "Europe/Istanbul"
+I18N_TEMPLATES_LANG = "tr"  # Docutils için İngilizce kullan
+DEFAULT_LANG = "tr"  # Site dili Türkçe kalacak
+# Basit tarih formatları - Tüm ortamlarda çalışır
+DATE_FORMATS = {
+    "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
+}
+LOCALE = ("tr", "tr_TR")  # On Windows  # On Unix/Linux
+
+
+DEFAULT_DATE_FORMAT = "%d %B %Y %a "
+TODAY = datetime.now(tz=timezone.utc).date()
+YEAR = TODAY.year
+SITEYEAR = datetime.now().year
 
 # Desteklenen diller (varsa)
 ARTICLE_TRANSLATION_ID = "slug"
