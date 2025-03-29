@@ -8,14 +8,12 @@ import uuid
 from datetime import datetime
 from pathlib import Path
 
-import minify_html
 import pytz
 from duty import duty, tools
 from duty.context import Context
 from pelican import main as pelican_main
 from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
-from rcssmin import cssmin
 
 CI = os.environ.get("CI", "0") in {"1", "true", "yes", ""}
 
@@ -85,66 +83,6 @@ def slugify(s):
     return s
 
 
-@duty
-def cache_bust(ctx: Context) -> None:
-    """Cache bust links to CSS files within the HEAD by appending a unique ID to the URL."""
-    site_dir = Path(SETTINGS["OUTPUT_PATH"]).resolve()
-    unique_id = str(uuid.uuid4())[:8]
-
-    i = 0
-    for file in site_dir.glob("**/*.html"):
-        with open(file, "r") as f:
-            content = f.read()
-
-        if re.search(
-            r'<link href="?/static/css/[a-zA-Z0-9\.-_]+\.css', content
-        ):
-            i += 1
-            content = re.sub(
-                r'(<link href="?/static/css/[a-zA-Z0-9\.-_]+\.css)',
-                rf"\1?v={unique_id}",
-                content,
-            )
-
-        with open(file, "w") as f:
-            f.write(content)
-
-    print(f"Cache busted CSS files in {i} files")
-
-
-@duty
-def minify(ctx: Context):
-    """Minify all HTML and CSS files after Pelican has built the site."""
-    site_dir = Path(SETTINGS["OUTPUT_PATH"]).resolve()
-
-    for file in site_dir.glob("**/*.html"):
-        with open(file, "r") as f:
-            content = f.read()
-        minified = minify_html.minify(
-            content,
-            do_not_minify_doctype=True,
-            keep_closing_tags=True,
-            keep_html_and_head_opening_tags=True,
-            minify_css=True,
-            minify_js=True,
-            preserve_brace_template_syntax=True,
-            remove_processing_instructions=True,
-        )
-        with open(file, "w") as f:
-            f.write(minified)
-
-    print("Minified all HTML files")
-
-    for file in site_dir.glob("**/*.css"):
-        with open(file, "r") as f:
-            content = f.read()
-        minified = cssmin(content)
-        with open(file, "w") as f:
-            f.write(minified)
-
-    print("Minified all CSS files")
-
-
 @duty(silent=True)
 def clean(ctx: Context) -> None:
     """Clean the project."""
@@ -166,13 +104,13 @@ def clean(ctx: Context) -> None:
     os.makedirs(SETTINGS["OUTPUT_PATH"])
 
 
-@duty(post=[cache_bust, minify])
+@duty
 def build(ctx: Context) -> None:
     """Build the project."""
     ctx.run(run_pelican(["-s", SETTINGS_FILE_BASE]))
 
 
-@duty(post=[cache_bust, minify])
+@duty
 def rebuild(ctx: Context) -> None:
     """Rebuild the project."""
     ctx.run(run_pelican(["-d", "-s", SETTINGS_FILE_BASE]))
@@ -214,7 +152,7 @@ def reserve(ctx: Context) -> None:
     serve(ctx)
 
 
-@duty(post=[cache_bust, minify])
+@duty
 def publish(ctx: Context) -> None:
     """Publish the project."""
     # PUBLISH ortam değişkenini ayarla
