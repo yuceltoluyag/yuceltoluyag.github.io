@@ -78,13 +78,14 @@ SITEMAP = {
         "pages": "monthly",
     },
     "exclude": [
-        "^noindex/",  # starts with "/noindex/"
-        "^tag/",  # contains "/tag/"
-        r"\.json$",  # ends with ".json"
-        r"\.txt$",  # ends with ".txt"
+        "^noindex/",  # noindex ile başlayan URL'ler
+        "^tag/",  # eski tag URL'leri - şimdi etiket/ kullanıyoruz
+        r"\.json$",  # .json ile biten dosyalar
+        r"\.txt$",  # .txt ile biten dosyalar
         "_redirects",
         "404.html",
-        "^category/",  # we use tags, not categories
-        "^author/",  # we don't use author pages
+        # Kategori sayfalarını dışlamayı kaldırıyoruz çünkü kullanıyoruz
+        # "^category/",  # eski kategori URL'leri - şimdi kategori/ kullanıyoruz
+        # "^author/",  # yazar sayfaları kullanılmıyorsa bunu dışlayabilirsiniz
     ],
 }
