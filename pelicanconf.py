@@ -396,16 +396,17 @@ REDIRECTS = {
     # "/source_url": "/destination_url"
     # Etiket ve kategori yönlendirmeleri
     "/tags/facebook.html": "/etiket/facebook/",
-    "/tags/facebook/": "/etiket/facebook/",
-    "/tags/github/": "/etiket/github/",
-    "/tags/mp3/": "/etiket/mp3",
+    "/tags/facebook": "/etiket/facebook/",
+    "/tags/github": "/etiket/github/",
+    "/tags/mp3": "/etiket/mp3",
     "/tags/ntfs.html": "/etiket/ntfs/",
     "/tags/linux.html": "/etiket/linux/",
     "/tags/zsh.html": "/etiket/zsh/",
     "/tags/sweetalert.html": "/etiket/sweetalert/",
-    "/category/tanitim.html": "/etiket/tanitim/",
-    "/categories/facebook/": "/kategori/facebook/",
-    "/category/tan%C4%B1t%C4%B1m.html": "/etiket/tanitim/",
+    "/category/tanitim.html": "/kategori/tanitim/",
+    "/categories/facebook": "/kategori/facebook/",
+    "/category/tan%C4%B1t%C4%B1m.html": "/kategori/tanitim",
+    "category/tan%C4%B1t%C4%B1m.html": "/kategori/tanitim",
     "/series/phpstorm.html": "/etiket/phpstorm/",
     # Makale yönlendirmeleri - uzantısız olarak tanımlayarak dizin olarak oluşturulacak
     "/linuxta-uefi-windows-10-format-usb_14": "/linux-uefi-windows10-usb/",
@@ -427,7 +428,6 @@ REDIRECTS = {
     "/archlinux-ntfs-nasil-yapilandirilir": "/arch-linux-ntfs-yapilandirma",
     "/earncom-nedir-nasl-kullanlr": "/earn-com-nedir-nasil-kullanilir",
     "/linux-httrack-kullanm": "/linux-ta-httrack-kullanimi/",
-    "/newsboat-kullanimi": "/newsboat-rss-feeds-kullanimi",
     "/newsboat-kullanimi": "/newsboat-rss-feeds-kullanimi",
 }
 
