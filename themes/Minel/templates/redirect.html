@@ -1,17 +1,41 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="tr">
     <head>
         <meta charset="utf-8" />
-        <title>Redirecting...</title>
+        <title>Yönlendiriliyor...</title>
         <link rel="canonical" href="{{ page.location }}" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <script>
-            location = "{{ page.location }}";
+            window.location.href = "{{ page.location }}";
         </script>
         <meta http-equiv="refresh" content="{{ page.delay }}; url={{ page.location }}" />
         <meta name="robots" content="noindex" />
+        <style>
+            body {
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+                    sans-serif;
+                text-align: center;
+                margin: 100px auto;
+                max-width: 600px;
+                line-height: 1.6;
+                padding: 0 20px;
+            }
+            a {
+                color: #0066cc;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
     <body>
-        <h1>Redirecting...</h1>
-        <a href="{{ page.location }}">Click here if you are not redirected.</a>
+        <h1>Yönlendiriliyor...</h1>
+        <p>
+            Bu sayfa
+            <a href="{{ page.location }}">{{ page.location }}</a>
+            adresine taşınmıştır.
+        </p>
+        <p><a href="{{ page.location }}">Otomatik olarak yönlendirilmezseniz buraya tıklayın.</a></p>
     </body>
 </html>

@@ -14,12 +14,20 @@ Allow: /*
 User-agent: Mediapartners-Google
 Allow: /
 
-# Belirli yavaş botlar için gecikme
+# Not: Google botları (Googlebot) Crawl-delay direktifini tanımaz.
+# Google tarama hızını kontrol etmek için Google Search Console kullanın.
+
+# Diğer botlar için gecikme ayarları
 User-agent: msnbot
 Crawl-delay: 10
 
-# Semrush Bot
+User-agent: Bingbot
+Crawl-delay: 10
+
 User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: Yandex
 Crawl-delay: 10
 
 # Sosyal medya önbellekleme
