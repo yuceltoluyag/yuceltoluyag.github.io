@@ -62,7 +62,7 @@ pelican==4.11.0
     #   pelican-minify
     #   pelican-neighbors
     #   pelican-readtime
-pelican-related-posts==1.0.0
+    #   pelican-related-posts
     #   pelican-search
     #   pelican-seo
     #   pelican-series
@@ -129,7 +129,9 @@ soupsieve==2.6
 tornado==6.4.2
     # via livereload
 typing-extensions==4.12.2
-    # via beautifulsoup4
+    # via
+    #   anyio
+    #   beautifulsoup4
 typogrify==2.1.0
     # via yuceltoluyag-github-io (pyproject.toml)
 tzdata==2025.1
