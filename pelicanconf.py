@@ -10,24 +10,6 @@ from pymdownx import emoji
 from datetime import datetime, timezone
 
 
-# --- Basic Settings (En Başta Tanımlanacaklar) ---
-TIMEZONE = "Europe/Istanbul"
-I18N_TEMPLATES_LANG = "en"  # Docutils için İngilizce kullan
-DEFAULT_LANG = "tr"  # Site dili Türkçe kalacak
-# Basit tarih formatları - Tüm ortamlarda çalışır
-DATE_FORMATS = {
-    "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
-    "en": "%B %-d, %Y",  # Ay adı, Gün (sıfırsız), Yıl
-}
-LOCALE = ("usa", "tr", "en_US", "tr_TR")  # On Windows  # On Unix/Linux
-
-DEFAULT_DATE = "fs"
-DEFAULT_DATE_FORMAT = "%a %d %B %Y"
-TODAY = datetime.now(tz=timezone.utc).date()
-YEAR = TODAY.year
-# Yıl değişkeni
-SITEYEAR = datetime.now().year
-
 # Desteklenen diller (varsa)
 ARTICLE_TRANSLATION_ID = "slug"
 PAGE_TRANSLATION_ID = "slug"
