@@ -168,6 +168,11 @@ class RedirectGenerator(Generator):
 
             template = self.get_template("redirect")
 
+            # Tüm URL'leri tutarlı hale getir
+            # Başlangıçta / varsa, kaldır
+            if dest.startswith("/"):
+                dest = dest[1:]
+
             # Check if path is a directory (doesn't end with .html or /)
             if not dest.endswith(".html") and not dest.endswith("/"):
                 # Create a directory with index.html
@@ -177,7 +182,14 @@ class RedirectGenerator(Generator):
                 if not os.path.exists(dir_path):
                     os.makedirs(dir_path)
             else:
-                full_dest = dest
+                if dest.endswith("/"):
+                    # Dizin için index.html oluştur
+                    dir_path = os.path.join(writer.output_path, dest)
+                    if not os.path.exists(dir_path):
+                        os.makedirs(dir_path)
+                    full_dest = os.path.join(dest, "index.html")
+                else:
+                    full_dest = dest
 
             # For .302 files that might have been processed by other generators
             if hasattr(source, "source_path") and source.source_path:
@@ -187,10 +199,17 @@ class RedirectGenerator(Generator):
                 except (KeyError, AttributeError):
                     pass
 
+            # Ek bağlam bilgisi ekleyin
+            extra_context = {
+                "content_type": "text/html",  # Content-Type header'ı için
+            }
+            context = self.context.copy()
+            context.update(extra_context)
+
             writer.write_file(
                 full_dest,
                 template,
-                self.context,
+                context,
                 page=source,
                 relative_urls=self.settings["RELATIVE_URLS"],
                 override_output=True,
