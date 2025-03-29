@@ -188,13 +188,13 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell 
 
 Burada, aşağıdaki anahtarları göreceksin. OneDrive ile başlayan yolları düzeltmelisin:
 
-**Düzeltilmesi gereken anahtar yolları:**
-
-- **Desktop**: C:\Users\KullanıcıAdı\Desktop
-- **Personal**: C:\Users\KullanıcıAdı\Documents
-- **My Pictures**: C:\Users\KullanıcıAdı\Pictures
-- **My Video**: C:\Users\KullanıcıAdı\Videos
-- **My Music**: C:\Users\KullanıcıAdı\Music
+| Anahtar Adı       | Varsayılan Yol                          |
+|-------------------|-----------------------------------------|
+| Desktop           | C:\Users\KullanıcıAdı\Desktop           |
+| Personal          | C:\Users\KullanıcıAdı\Documents         |
+| My Pictures       | C:\Users\KullanıcıAdı\Pictures          |
+| My Video          | C:\Users\KullanıcıAdı\Videos            |
+| My Music          | C:\Users\KullanıcıAdı\Music             |
 
 ### 📌 Adım 3: Yanlış Olan Yolları Düzelt
 - OneDrive içeren yolları bulun. (Örneğin: `C:\Users\KullanıcıAdı\OneDrive\Belgeler`)
