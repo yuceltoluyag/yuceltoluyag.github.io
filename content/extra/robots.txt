@@ -1,25 +1,30 @@
-# Robots.txt for Babanın Yeni Evi
+# Robots.txt for yuceltoluyag.github.io
 
 Sitemap: https://yuceltoluyag.github.io/sitemap.xml
 
+# Tüm botlar için yönergeler
 User-agent: *
 Allow: /
 
 # Google Image
 User-agent: Googlebot-Image
-Disallow:
 Allow: /*
 
+# Google AdSense
 User-agent: Mediapartners-Google
-Disallow:
+Allow: /
 
-# digg mirror
-User-agent: duggmirror
-Disallow: /
-
-# Crawl Delays
+# Belirli yavaş botlar için gecikme
 User-agent: msnbot
 Crawl-delay: 10
 
-User-agent: Slurp
+# Semrush Bot
+User-agent: SemrushBot
 Crawl-delay: 10
+
+# Sosyal medya önbellekleme
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /

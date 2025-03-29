@@ -380,13 +380,14 @@ SITEMAP = {
     },
     "exclude": [
         "^noindex/",  # starts with "/noindex/"
-        "^tag/",  # contains "/tag/"
+        "^tag/",  # eski tag URL'leri
         r"\.json$",  # ends with ".json"
         r"\.txt$",  # ends with ".txt"
         "_redirects",
         "404.html",
-        "^category/",  # we use tags, not categories
-        "^author/",  # we don't use author pages
+        # Kategori sayfalarını dışlamayı kaldırıyoruz çünkü kullanıyoruz
+        # "^category/",  # eski kategori URL'leri
+        # "^author/",  # kullanılmıyorsa dışlanabilir
     ],
 }
 
