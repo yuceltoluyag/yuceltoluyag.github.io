@@ -79,13 +79,14 @@ SITEMAP = {
     },
     "exclude": [
         "^noindex/",  # noindex ile başlayan URL'ler
-        "^tag/",  # eski tag URL'leri - şimdi etiket/ kullanıyoruz
+        "^tags/",  # Eski tags URL'leri - şimdi etiket/ kullanıyoruz
+        "^tag/",  # Eski tag URL'leri
         r"\.json$",  # .json ile biten dosyalar
         r"\.txt$",  # .txt ile biten dosyalar
         "_redirects",
         "404.html",
-        # Kategori sayfalarını dışlamayı kaldırıyoruz çünkü kullanıyoruz
-        # "^category/",  # eski kategori URL'leri - şimdi kategori/ kullanıyoruz
+        "^categories/",  # Eski kategori URL'leri - şimdi kategori/ kullanıyoruz
+        "^category/",  # Eski kategori URL'leri
         # "^author/",  # yazar sayfaları kullanılmıyorsa bunu dışlayabilirsiniz
     ],
 }

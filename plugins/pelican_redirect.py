@@ -158,6 +158,9 @@ class RedirectGenerator(Generator):
         self.context["redirects"] = redirects
 
     def generate_output(self, writer):
+        # Bu çakışmaları önlemek için benzersiz yolları izle
+        unique_paths = set()
+
         for source in self.context["redirects"]:
             # If we have a source_path, use the original path mechanism
             if hasattr(source, "save_as") and source.save_as:
@@ -190,6 +193,19 @@ class RedirectGenerator(Generator):
                     full_dest = os.path.join(dest, "index.html")
                 else:
                     full_dest = dest
+
+            # Normalize full_dest path
+            norm_full_dest = os.path.normpath(full_dest).replace("\\", "/")
+
+            # Eğer bu yol daha önce işlendiyse, atla
+            if norm_full_dest in unique_paths:
+                logger.warning(
+                    f"Skipping duplicate redirect path: {norm_full_dest}"
+                )
+                continue
+
+            # Yolu işlenmiş olarak işaretle
+            unique_paths.add(norm_full_dest)
 
             # For .302 files that might have been processed by other generators
             if hasattr(source, "source_path") and source.source_path:
