@@ -3,35 +3,25 @@ import os
 import sys
 from datetime import timezone
 
-# Doğrudan Pelican tarafından kullanılacak değişkenleri kesin olarak tanımlıyoruz
-# DİKKAT: Bu değerler her şekilde geçerli olacaktır
-TIMEZONE = "Europe/Istanbul"
-LOCALE = ("tr_TR.UTF-8", "tr_TR")
-
 # pelicanconf.py'den diğer ayarları içe aktarıyoruz
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-# Kritik değişkenleri pelicanconf.py'den aldıktan sonra tekrar açıkça tanımlıyoruz
-# (Bu, Pelican'ın TIMEZONE ve SITEURL ayarlarını doğru algılamasını garantiler)
+# Doğrudan Pelican tarafından kullanılacak değişkenleri kesin olarak tanımlıyoruz
+# DİKKAT: Bu değerler her şekilde geçerli olacaktır
 TIMEZONE = "Europe/Istanbul"
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
-
 # Google Analytics - Yayın modunda gerçek ID'yi kullanın
 GOOGLE_ANALYTICS = (
     "G-9KL9GYLPS5"  # Gerçek Google Analytics ID'nizi buraya yazın
 )
-
 # Google Tag Manager
 GOOGLE_TAGMANAGER = (
     "GTM-PHW52JF"  # Gerçek Google Tag Manager ID'nizi buraya yazın
 )
-
-# Environment değişkenleri aracılığıyla ayarları zorlamak
-os.environ["PELICAN_SITEURL"] = SITEURL
-os.environ["PELICAN_TIMEZONE"] = TIMEZONE
-
+# Google AdSense
+GOOGLE_ADSENSE = "ca-pub-6089943780218266"
 # Feed ayarlarını açıkça belirtelim
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
@@ -42,7 +32,6 @@ PLUGINS = [p for p in PLUGINS if "seo" not in p]
 # Leave the cache alone when publishing
 CACHE_CONTENT = False
 LOAD_CONTENT_CACHE = False
-
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
@@ -54,8 +43,6 @@ STORK_INPUT_OPTIONS = {
 
 # DISQUS_SITENAME = ""
 MICROSOFT_CLARITY = True
-
-
 # SEO ayarları geçici olarak devre dışı bırakıldı
 # https://github.com/pelican-plugins/seo#usage
 SEO_REPORT = False  # SEO report is disabled
@@ -63,8 +50,6 @@ SEO_ENHANCER = False  # SEO enhancer is disabled
 SEO_ENHANCER_OPEN_GRAPH = False  # Subfeature of SEO enhancer
 SEO_ENHANCER_TWITTER_CARDS = False  # Subfeature of SEO enhancer
 
-# Google AdSense
-GOOGLE_ADSENSE = "ca-pub-6089943780218266"
 SITEMAP = {
     "format": "xml",
     "priorities": {

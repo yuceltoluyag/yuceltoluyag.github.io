@@ -5,68 +5,28 @@ from __future__ import unicode_literals
 
 # --- Imports ---
 import os
-import locale
 from pelican import signals
 from pymdownx import emoji
 from datetime import datetime, timezone
 
 
-# --- Set Locale ---
-def set_locale():
-    """Her platformda çalışacak şekilde yerel ayarları yapılandırır."""
-    locale_candidates = [
-        # Linux locale adları
-        "tr_TR.UTF-8",
-        "tr_TR",
-        # Windows locale adları
-        "Turkish_Turkey.1254",
-        "turkish",
-        "tr",
-    ]
-
-    for loc in locale_candidates:
-        try:
-            locale.setlocale(locale.LC_ALL, loc)
-            print(f"Locale ayarlandı: {loc}")
-            return
-        except locale.Error:
-            continue
-
-    print(
-        "Hiçbir Türkçe yerel ayar bulunamadı. Varsayılan yerel ayarlar kullanılacak."
-    )
-
-
-set_locale()
-
 # --- Basic Settings (En Başta Tanımlanacaklar) ---
 TIMEZONE = "Europe/Istanbul"
-I18N_TEMPLATES_LANG = "tr"  # Docutils için İngilizce kullan
+I18N_TEMPLATES_LANG = "en"  # Docutils için İngilizce kullan
 DEFAULT_LANG = "tr"  # Site dili Türkçe kalacak
-
-
-# Windows ve Linux platformları için locale ayarları
-LOCALE = (
-    "tr_TR.UTF-8",
-    "tr_TR",
-    "turkish",
-    "tr",
-    "Turkish_Turkey.1254",
-)  # Hem Linux hem Windows için
-
-# Tarih formatları - (locale, format) şeklinde tuple kullanımı
+# Basit tarih formatları - Tüm ortamlarda çalışır
 DATE_FORMATS = {
-    "tr": ("tr_TR.UTF-8", "%-d %B %Y"),  # Gün (sıfırsız), Ay adı, Yıl
-    "en": ("en_US.UTF-8", "%B %-d, %Y"),  # Ay adı, Gün (sıfırsız), Yıl
+    "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
+    "en": "%B %-d, %Y",  # Ay adı, Gün (sıfırsız), Yıl
 }
+LOCALE = ("usa", "tr", "en_US", "tr_TR")  # On Windows  # On Unix/Linux
 
-DEFAULT_DATE = "fs"  # Dosya sistemindeki tarih bilgisini kullan
+DEFAULT_DATE = "fs"
 DEFAULT_DATE_FORMAT = "%a %d %B %Y"
 TODAY = datetime.now(tz=timezone.utc).date()
 YEAR = TODAY.year
 # Yıl değişkeni
 SITEYEAR = datetime.now().year
-OG_LOCALE = "tr_TR"
 
 # Desteklenen diller (varsa)
 ARTICLE_TRANSLATION_ID = "slug"
