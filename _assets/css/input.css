@@ -454,7 +454,7 @@
 
     /* Light mode prose code styles */
     :root:not(.dark) .prose :not(pre) > code {
-        @apply bg-gray-100 text-red-600 px-1.5 py-0.5 rounded border border-gray-200 text-sm;
+        @apply bg-gray-100 text-red-700 px-1.5 py-0.5 rounded border border-gray-200 text-sm;
     }
 
     /* Dark mode prose code styles */
@@ -467,6 +467,10 @@
         --tw-prose-code: theme("colors.red.400");
         --tw-prose-pre-code: theme("colors.gray.200");
         --tw-prose-pre-bg: theme("colors.gray.900");
+    }
+
+    :root:not(.dark) .prose {
+        --tw-prose-code: theme("colors.red.700");
     }
 
     /* Disable backticks on code elements */
@@ -832,8 +836,8 @@
 /* Satır içi kod stilleri */
 :not(pre) > code {
     display: inline;
-    background-color: var(--main-card-second-background);
-    color: var(--main-color);
+    background-color: #e2e2e7; /* Daha koyu bir arka plan rengi */
+    color: #b91c1c; /* Daha koyu ve kontrastlı bir kırmızı */
     border-radius: 0.25rem;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 0.875rem;
@@ -841,6 +845,14 @@
     padding: 0.1em 0.3em;
     position: static;
     vertical-align: baseline;
+    border: 1px solid #d1d1d8;
+}
+
+/* Dark tema için satır içi kod */
+.dark :not(pre) > code {
+    background-color: #2d2d3a; /* Dark tema için daha koyu arka plan */
+    color: #f56565; /* Dark tema için daha parlak kırmızı - kontrast için */
+    border-color: #4a4a57;
 }
 
 /* Liste öğeleri içindeki kod stilleri */
