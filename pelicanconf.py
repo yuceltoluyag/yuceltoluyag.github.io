@@ -113,6 +113,7 @@ STATIC_PATHS = [
     "extra/favicon.webp",
     "extra/sitemap.xml",
     "extra/manifest.json",
+    "extra/BingSiteAuth.xml",
 ]
 EXTRA_PATH_METADATA = {
     "extra/SW.js": {"path": "SW.js"},
@@ -123,6 +124,7 @@ EXTRA_PATH_METADATA = {
     "extra/favicon.webp": {"path": "favicon.webp"},
     "extra/sitemap.xml": {"path": "sitemap.xml"},
     "extra/manifest.json": {"path": "manifest.json"},
+    "extra/BingSiteAuth.xml": {"path": "BingSiteAuth.xml"},
 }
 # 404.html dosyasını içerik işleme sürecinden çıkar
 IGNORE_FILES = ["404.html"]
