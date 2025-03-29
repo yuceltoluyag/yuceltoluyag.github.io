@@ -622,25 +622,6 @@
         .prose table {
             @apply block max-w-full overflow-x-auto;
         }
-
-        /* Mobil ekranlar için ek tablo düzenlemeleri */
-        .prose table {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            border-spacing: 0;
-        }
-
-        .prose thead {
-            @apply sticky top-0 z-10;
-        }
-
-        .prose th,
-        .prose td {
-            @apply whitespace-normal break-words;
-            min-width: 120px;
-        }
     }
 }
 
