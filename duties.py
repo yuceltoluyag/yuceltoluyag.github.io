@@ -7,6 +7,7 @@ import sys
 import uuid
 from datetime import datetime
 from pathlib import Path
+import locale
 
 import pytz
 from duty import duty, tools
@@ -159,6 +160,16 @@ def publish(ctx: Context) -> None:
     os.environ["PUBLISH"] = "1"
     print("PUBLISH ortam değişkeni ayarlandı: 1")
 
+    # Locale ayarlarını Python içinde etkinleştir
+    try:
+        locale.setlocale(locale.LC_ALL, "tr_TR.UTF-8")
+        print(f"Python locale ayarı başarılı: {locale.getlocale()}")
+    except Exception as e:
+        print(f"Python locale ayarı başarısız: {e}")
+
+    # Bash üzerinden locale ayarlarını göster
+    ctx.run("locale", capture=False)
+
     # Önce temiz bir build yapalım
     clean(ctx)
 
@@ -173,7 +184,21 @@ def publish(ctx: Context) -> None:
     # publishconf.py ile build işlemi
     print("publishconf.py ile build işlemi başlatılıyor...")
     try:
-        ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]), capture=False)
+        # Türkçe locale ve timezone ayarlarını ortam değişkenleri ile zorla
+        env = {
+            "LANG": "tr_TR.UTF-8",
+            "LC_ALL": "tr_TR.UTF-8",
+            "LC_TIME": "tr_TR.UTF-8",
+            "TZ": "Europe/Istanbul",
+        }
+        print("Build öncesi ortam değişkenleri ayarlandı:")
+        for k, v in env.items():
+            print(f"{k}={v}")
+
+        # Pelican'ı ortam değişkenleriyle çalıştır
+        ctx.run(
+            run_pelican(["-s", SETTINGS_FILE_PUBLISH]), env=env, capture=False
+        )
         print("Build işlemi başarıyla tamamlandı.")
 
         # Çıktı klasörünü kontrol edelim

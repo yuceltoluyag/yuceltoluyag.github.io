@@ -5,11 +5,18 @@ import sys
 import locale
 from datetime import timezone
 
-# Sistem locale ve zaman dilimi ayarlarını zorla
+# Zaman dilimi ve locale ayarlarını zorla
+os.environ["TZ"] = "Europe/Istanbul"
+os.environ["LANG"] = "tr_TR.UTF-8"
+os.environ["LC_ALL"] = "tr_TR.UTF-8"
+os.environ["LC_TIME"] = "tr_TR.UTF-8"
+
+# Python içinde locale ayarla
 try:
     locale.setlocale(locale.LC_ALL, "tr_TR.UTF-8")
-except:
-    pass  # Başarısız olursa sessizce devam et
+    print(f"Locale ayarı başarılı: {locale.getlocale()}")
+except Exception as e:
+    print(f"Locale ayarı hatası: {e}")
 
 # pelicanconf.py'den diğer ayarları içe aktarıyoruz
 sys.path.append(os.curdir)
@@ -23,7 +30,7 @@ I18N_TEMPLATES_LANG = "en"  # Docutils için İngilizce kullan
 DATE_FORMATS = {
     "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
 }
-LOCALE = ("tr", "tr_TR")
+LOCALE = ("tr_TR.UTF-8", "tr_TR")
 
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
