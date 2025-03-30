@@ -34,35 +34,32 @@ jobs:
 
             - name: Setup Türkçe Locale
               run: |
-                  sudo apt-get update && sudo apt-get install tzdata locales -y
+                  # Gerekli paketleri yükle
+                  sudo apt-get update && sudo apt-get install -y locales tzdata
 
-                  # Locale tanımlarını oluştur
-                  sudo bash -c 'cat << EOF > /etc/locale.gen
-                  tr_TR.UTF-8 UTF-8
-                  EOF'
-                  sudo locale-gen
+                  # Tüm desteklenen locale'leri listele ve Türkçe'yi etkinleştir
+                  sudo sed -i 's/# tr_TR.UTF-8 UTF-8/tr_TR.UTF-8 UTF-8/' /etc/locale.gen
+                  sudo dpkg-reconfigure --frontend=noninteractive locales
 
                   # Zaman dilimini ayarla
                   sudo timedatectl set-timezone Europe/Istanbul
 
-                  # Locale'i /etc/default/locale dosyasına yazarak kalıcı hale getiriyoruz
-                  sudo bash -c 'cat << EOF > /etc/default/locale
-                  LANG=tr_TR.UTF-8
-                  LC_ALL=tr_TR.UTF-8
-                  LANGUAGE=tr_TR:tr
-                  EOF'
+                  # Sistem genelinde locale ayarla
+                  sudo update-locale LANG=tr_TR.UTF-8 LC_ALL=tr_TR.UTF-8
 
-                  # Environment değişkenlerini locale bilgileriyle ayarlıyoruz
+                  # Mevcut kabuk için locale ayarla
                   export LANG=tr_TR.UTF-8
                   export LC_ALL=tr_TR.UTF-8
                   export TZ=Europe/Istanbul
 
-                  # Locale'i tamamen uygula
-                  source /etc/default/locale
+                  # Oluşturulan locale'leri göster
+                  echo "Oluşturulan locale'ler:"
+                  locale -a | grep tr_TR
 
-                  echo "Tarih ayarları kontrol:"
+                  echo "Tarih ayarları:"
                   date
-                  echo "Locale ayarları kontrol:"
+
+                  echo "Locale ayarları:"
                   locale
 
             - name: Setup Python, uv, and the package
@@ -82,11 +79,6 @@ jobs:
                   LC_ALL: tr_TR.UTF-8
                   TZ: Europe/Istanbul
               run: |
-                  # Locale durumunu kontrol et
-                  echo "Build öncesi locale kontrol:"
-                  locale
-                  echo "Build öncesi tarih kontrol:"
-                  date
                   # Site inşa sürecini başlat
                   uv run duty publish
 
