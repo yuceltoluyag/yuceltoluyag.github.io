@@ -35,16 +35,31 @@ jobs:
             - name: Setup Türkçe Locale
               run: |
                   sudo apt-get update && sudo apt-get install tzdata locales -y
-                  sudo locale-gen tr_TR.UTF-8
+
+                  # Locale tanımlarını oluştur
+                  sudo bash -c 'cat << EOF > /etc/locale.gen
+                  tr_TR.UTF-8 UTF-8
+                  EOF'
+                  sudo locale-gen
+
+                  # Zaman dilimini ayarla
                   sudo timedatectl set-timezone Europe/Istanbul
+
                   # Locale'i /etc/default/locale dosyasına yazarak kalıcı hale getiriyoruz
-                  sudo bash -c 'echo "LANG=tr_TR.UTF-8" > /etc/default/locale'
-                  sudo bash -c 'echo "LC_ALL=tr_TR.UTF-8" >> /etc/default/locale'
-                  sudo bash -c 'echo "LANGUAGE=tr_TR:tr" >> /etc/default/locale'
-                  # Environment değişkenlerinide locale bilgilerini ayarlıyoruz
+                  sudo bash -c 'cat << EOF > /etc/default/locale
+                  LANG=tr_TR.UTF-8
+                  LC_ALL=tr_TR.UTF-8
+                  LANGUAGE=tr_TR:tr
+                  EOF'
+
+                  # Environment değişkenlerini locale bilgileriyle ayarlıyoruz
                   export LANG=tr_TR.UTF-8
                   export LC_ALL=tr_TR.UTF-8
                   export TZ=Europe/Istanbul
+
+                  # Locale'i tamamen uygula
+                  source /etc/default/locale
+
                   echo "Tarih ayarları kontrol:"
                   date
                   echo "Locale ayarları kontrol:"
