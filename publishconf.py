@@ -18,21 +18,21 @@ try:
 except Exception as e:
     print(f"Locale ayarı hatası: {e}")
 
+# Önemli ayarları doğrudan burada tanımla (pelicanconf'dan yüklenmeden önce)
+TIMEZONE = "Europe/Istanbul"
+SITEURL = "https://yuceltoluyag.github.io"
+LOCALE = ("tr_TR.UTF-8", "tr_TR")
 # pelicanconf.py'den diğer ayarları içe aktarıyoruz
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-# Doğrudan Pelican tarafından kullanılacak değişkenleri kesin olarak tanımlıyoruz
+# Önemli değişkenleri yeniden tanımla (pelicanconf değerleri ezebilir)
 # DİKKAT: Bu değerler her şekilde geçerli olacaktır
-TIMEZONE = "Europe/Istanbul"
 DEFAULT_LANG = "tr"
 I18N_TEMPLATES_LANG = "en"  # Docutils için İngilizce kullan
 DATE_FORMATS = {
     "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
 }
-LOCALE = ("tr_TR.UTF-8", "tr_TR")
-
-SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
 # Google Analytics - Yayın modunda gerçek ID'yi kullanın
 GOOGLE_ANALYTICS = (
@@ -71,6 +71,10 @@ SEO_REPORT = False  # SEO report is disabled
 SEO_ENHANCER = False  # SEO enhancer is disabled
 SEO_ENHANCER_OPEN_GRAPH = False  # Subfeature of SEO enhancer
 SEO_ENHANCER_TWITTER_CARDS = False  # Subfeature of SEO enhancer
+
+# Debug için ayarları yazdır
+print(f"DEBUG - TIMEZONE: {TIMEZONE}")
+print(f"DEBUG - SITEURL: {SITEURL}")
 
 SITEMAP = {
     "format": "xml",
