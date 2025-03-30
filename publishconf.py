@@ -2,7 +2,14 @@
 # -*- coding: utf-8 -*- #
 import os
 import sys
+import locale
 from datetime import timezone
+
+# Sistem locale ve zaman dilimi ayarlarını zorla
+try:
+    locale.setlocale(locale.LC_ALL, "tr_TR.UTF-8")
+except:
+    pass  # Başarısız olursa sessizce devam et
 
 # pelicanconf.py'den diğer ayarları içe aktarıyoruz
 sys.path.append(os.curdir)
@@ -11,6 +18,13 @@ from pelicanconf import *
 # Doğrudan Pelican tarafından kullanılacak değişkenleri kesin olarak tanımlıyoruz
 # DİKKAT: Bu değerler her şekilde geçerli olacaktır
 TIMEZONE = "Europe/Istanbul"
+DEFAULT_LANG = "tr"
+I18N_TEMPLATES_LANG = "en"  # Docutils için İngilizce kullan
+DATE_FORMATS = {
+    "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
+}
+LOCALE = ("tr", "tr_TR")
+
 SITEURL = "https://yuceltoluyag.github.io"
 RELATIVE_URLS = False
 # Google Analytics - Yayın modunda gerçek ID'yi kullanın
