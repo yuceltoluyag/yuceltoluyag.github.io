@@ -88,15 +88,6 @@ PAGE_PATHS = ["pages"]
 STATIC_PATHS = [
     "images",
     "extra",
-    "extra/SW.js",
-    "extra/robots.txt",
-    "extra/humans.txt",
-    "extra/ads.txt",
-    "extra/favicon.ico",
-    "extra/favicon.webp",
-    "extra/sitemap.xml",
-    "extra/manifest.json",
-    "extra/BingSiteAuth.xml",
 ]
 EXTRA_PATH_METADATA = {
     "extra/SW.js": {"path": "SW.js"},
