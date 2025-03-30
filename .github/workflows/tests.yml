@@ -32,6 +32,18 @@ jobs:
             - name: Install Node.js dependencies
               run: npm ci
 
+            - name: Setup Türkçe Locale
+              run: |
+                  sudo apt-get update && sudo apt-get install tzdata locales -y
+                  sudo locale-gen tr_TR.UTF-8
+                  sudo update-locale LANG=tr_TR.UTF-8 LC_ALL=tr_TR.UTF-8 LANGUAGE=tr_TR
+                  echo "Europe/Istanbul" | sudo tee /etc/timezone
+                  sudo dpkg-reconfigure --frontend noninteractive tzdata
+                  echo "Mevcut locale ayarları:"
+                  locale
+                  echo "Tarih ayarları:"
+                  date
+
             - name: Setup Python, uv, and the package
               uses: ./.github/actions/setup_python_env
 
@@ -41,6 +53,9 @@ jobs:
             - name: Build the site
               env:
                   NODE_ENV: production
+                  LANG: tr_TR.UTF-8
+                  LC_ALL: tr_TR.UTF-8
+                  TZ: Europe/Istanbul
               run: uv run duty publish
 
             - name: Confirm files were created
