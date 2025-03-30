@@ -36,16 +36,26 @@ jobs:
               run: |
                   sudo apt-get update && sudo apt-get install tzdata locales -y
                   sudo locale-gen tr_TR.UTF-8
-                  sudo update-locale LANG=tr_TR.UTF-8 LC_ALL=tr_TR.UTF-8 LANGUAGE=tr_TR
-                  echo "Europe/Istanbul" | sudo tee /etc/timezone
-                  sudo dpkg-reconfigure --frontend noninteractive tzdata
-                  echo "Mevcut locale ayarları:"
-                  locale
-                  echo "Tarih ayarları:"
+                  sudo timedatectl set-timezone Europe/Istanbul
+                  # Locale'i /etc/default/locale dosyasına yazarak kalıcı hale getiriyoruz
+                  sudo bash -c 'echo "LANG=tr_TR.UTF-8" > /etc/default/locale'
+                  sudo bash -c 'echo "LC_ALL=tr_TR.UTF-8" >> /etc/default/locale'
+                  sudo bash -c 'echo "LANGUAGE=tr_TR:tr" >> /etc/default/locale'
+                  # Environment değişkenlerinide locale bilgilerini ayarlıyoruz
+                  export LANG=tr_TR.UTF-8
+                  export LC_ALL=tr_TR.UTF-8
+                  export TZ=Europe/Istanbul
+                  echo "Tarih ayarları kontrol:"
                   date
+                  echo "Locale ayarları kontrol:"
+                  locale
 
             - name: Setup Python, uv, and the package
               uses: ./.github/actions/setup_python_env
+              env:
+                  LANG: tr_TR.UTF-8
+                  LC_ALL: tr_TR.UTF-8
+                  TZ: Europe/Istanbul
 
             - name: Create .nojekyll file
               run: touch .nojekyll
@@ -56,7 +66,14 @@ jobs:
                   LANG: tr_TR.UTF-8
                   LC_ALL: tr_TR.UTF-8
                   TZ: Europe/Istanbul
-              run: uv run duty publish
+              run: |
+                  # Locale durumunu kontrol et
+                  echo "Build öncesi locale kontrol:"
+                  locale
+                  echo "Build öncesi tarih kontrol:"
+                  date
+                  # Site inşa sürecini başlat
+                  uv run duty publish
 
             - name: Confirm files were created
               run: |
