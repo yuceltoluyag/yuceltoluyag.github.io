@@ -185,20 +185,20 @@ def publish(ctx: Context) -> None:
     print("publishconf.py ile build işlemi başlatılıyor...")
     try:
         # Türkçe locale ve timezone ayarlarını ortam değişkenleri ile zorla
-        env = {
-            "LANG": "tr_TR.UTF-8",
-            "LC_ALL": "tr_TR.UTF-8",
-            "LC_TIME": "tr_TR.UTF-8",
-            "TZ": "Europe/Istanbul",
-        }
-        print("Build öncesi ortam değişkenleri ayarlandı:")
-        for k, v in env.items():
-            print(f"{k}={v}")
+        # ctx.run() env parametresini desteklemediği için os.environ ile ayarlıyoruz
+        os.environ["LANG"] = "tr_TR.UTF-8"
+        os.environ["LC_ALL"] = "tr_TR.UTF-8"
+        os.environ["LC_TIME"] = "tr_TR.UTF-8"
+        os.environ["TZ"] = "Europe/Istanbul"
 
-        # Pelican'ı ortam değişkenleriyle çalıştır
-        ctx.run(
-            run_pelican(["-s", SETTINGS_FILE_PUBLISH]), env=env, capture=False
-        )
+        print("Build öncesi ortam değişkenleri ayarlandı:")
+        print(f"LANG={os.environ['LANG']}")
+        print(f"LC_ALL={os.environ['LC_ALL']}")
+        print(f"LC_TIME={os.environ['LC_TIME']}")
+        print(f"TZ={os.environ['TZ']}")
+
+        # Pelican'ı çalıştır
+        ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]), capture=False)
         print("Build işlemi başarıyla tamamlandı.")
 
         # Çıktı klasörünü kontrol edelim
