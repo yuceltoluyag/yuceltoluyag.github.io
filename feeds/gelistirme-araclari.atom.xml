@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bilgi 5 harflidir. 5 te 4'ü İlgidir ;D - Geliştirme Araçları</title><link href="https://yuceltoluyag.dev/" rel="alternate"></link><link href="https://yuceltoluyag.dev/feeds/gelistirme-araclari.atom.xml" rel="self"></link><id>https://yuceltoluyag.dev/</id><updated>2025-03-08T12:00:00+03:00</updated><subtitle>Linux, Python ve Web Geliştirme Rehberleri</subtitle><entry><title>Phpstorm içerisinde CS Fixer Kullanmak</title><link href="https://yuceltoluyag.dev/phpstorm-icinde-cs-fixer-kullanmak/" rel="alternate"></link><published>2020-02-06T10:00:00+03:00</published><updated>2025-03-08T12:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2020-02-06:/phpstorm-icinde-cs-fixer-kullanmak/</id><summary type="html">&lt;p&gt;PhpStorm içerisinde CS Fixer kullanımını adım adım anlatan rehber.&lt;/p&gt;</summary><content type="html">&lt;h1 id="psr-standarti-nedir"&gt;PSR Standart&amp;inodot; Nedir?&lt;/h1&gt;
+&lt;p&gt;PSR, "PHP Standards Recommendations" anlam&amp;inodot;na gelir ve PHP ile yaz&amp;inodot;lan kodlar&amp;inodot;n belirli bir formatta yaz&amp;inodot;lmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;layan standartlard&amp;inodot;r. G&amp;uuml;n&amp;uuml;m&amp;uuml;z IDE'leri &lt;strong&gt;code refactor&lt;/strong&gt; ad&amp;inodot; alt&amp;inodot;nda bu i&amp;scedil;lemi &lt;strong&gt;otomatik&lt;/strong&gt; hale getirdi&amp;gbreve;i i&amp;ccedil;in &amp;ccedil;o&amp;gbreve;u yaz&amp;inodot;l&amp;inodot;mc&amp;inodot; bu standartlardan habersiz olabilir (bu durum genelde freelance &amp;ccedil;al&amp;inodot;&amp;scedil;anlar i&amp;ccedil;in ge&amp;ccedil;erlidir). Ba&amp;scedil;lang&amp;inodot;&amp;ccedil;ta, IDE'ler standartlar de&amp;gbreve;i&amp;scedil;tik&amp;ccedil;e otomatik i&amp;scedil;lemi kullan&amp;inodot;c&amp;inodot;ya b&amp;inodot;rakabiliyor.&lt;/p&gt;
+&lt;div class="info-box note"&gt;
+&lt;b&gt;Deprecated&lt;/b&gt; - 2019-08-10 tarihi itibariyle PSR-2 standartlar&amp;inodot; kullan&amp;inodot;m d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rak&amp;inodot;lm&amp;inodot;&amp;scedil;t&amp;inodot;r. &lt;a href="https://www.php-fig.org/psr/psr-12/" rel="noopener noreferrer" target="_blank"&gt;PSR-12 &lt;/a&gt; &amp;scedil;u anda alternatif olarak tavsiye edilmektedir.&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://www.php-fig.org/psr/psr-2/" rel="noopener noreferrer" target="_blank"&gt;PSR-2&lt;/a&gt; kod standartlar&amp;inodot;n&amp;inodot;n kullan&amp;inodot;m&amp;inodot; art&amp;inodot;k tavsiye edilmemektedir. Ancak bu i&amp;scedil;lemi IDE ile yap&amp;inodot;yorsan&amp;inodot;z, do&amp;gbreve;rudan &lt;a href="https://www.php-fig.org/psr/psr-12/" rel="noopener noreferrer" target="_blank"&gt;PSR-12&lt;/a&gt; standartlar&amp;inodot;na ge&amp;ccedil;menizi tavsiye etmiyorum, &amp;ccedil;&amp;uuml;nk&amp;uuml; hala baz&amp;inodot; problemleri mevcut gibi g&amp;ouml;r&amp;uuml;n&amp;uuml;yor. PSR-12 hakk&amp;inodot;nda daha fazla bilgiye &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4502" rel="noopener noreferrer" target="_blank"&gt;buradan&lt;/a&gt; ula&amp;scedil;abilirsiniz.&lt;/p&gt;
+&lt;h1 id="phpstorm-icerisinde-cs-fixer-kullanmak"&gt;PhpStorm &amp;Idot;&amp;ccedil;erisinde CS Fixer Kullanmak&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Daha &amp;ouml;nce ekstra ayarlar yapman&amp;inodot;z gerekse de, PhpStorm 2018.3 versiyonundan itibaren bu &amp;ouml;zellik varsay&amp;inodot;lan olarak eklenmi&amp;scedil;tir. &lt;a href="https://blog.jetbrains.com/phpstorm/2018/09/phpstorm-2018-3-early-access-program-is-open/" rel="noopener noreferrer" target="_blank"&gt;PHP CS Fixer Deste&amp;gbreve;i&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://getcomposer.org/download/" rel="noopener noreferrer" target="_blank"&gt;Composer&lt;/a&gt;'&amp;inodot; kurunuz.&lt;/li&gt;
+&lt;li&gt;Php CS Fixer'&amp;inodot; Composer yard&amp;inodot;m&amp;inodot;yla kurun:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;global&lt;span class="w"&gt; &lt;/span&gt;require&lt;span class="w"&gt; &lt;/span&gt;friendsofphp/php-cs-fixer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;PhpStorm ayarlar&amp;inodot;nda, &lt;code&gt;Settings -&amp;gt; Languages &amp;amp; Frameworks -&amp;gt; PHP -&amp;gt; Quality Tools -&amp;gt; PHP CS Fixer&lt;/code&gt; men&amp;uuml;s&amp;uuml;ne gidin ve CS Fixer'&amp;inodot;n kurulu oldu&amp;gbreve;u yeri belirtin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\k&lt;/span&gt;ullaniciadiniz&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\R&lt;/span&gt;oaming&lt;span class="se"&gt;\C&lt;/span&gt;omposer&lt;span class="se"&gt;\v&lt;/span&gt;endor&lt;span class="se"&gt;\b&lt;/span&gt;in&lt;span class="se"&gt;\p&lt;/span&gt;hp-cs-fixer.bat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Windows i&amp;ccedil;in&lt;/span&gt;
+/home/kullaniciadiniz/.composer/vendor/bin/php-cs-fixer&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Linux i&amp;ccedil;in&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu yollar&amp;inodot; yazd&amp;inodot;ktan sonra, &lt;code&gt;Validate&lt;/code&gt; (Do&amp;gbreve;rulama) butonuna basarak CS Fixer'&amp;inodot;n s&amp;uuml;r&amp;uuml;m bilgisini kontrol edebilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="phpstorm_inside_phpcsfixer" src="/images/php_phpstorm_csfixer.webp"/&gt;
+&lt;img alt="phpstorm_inside_phpcsfixer" src="/images/php_phpstorm_csfixer2.webp"/&gt;
+&lt;img alt="phpstorm_inside_phpcsfixer" src="/images/php_phpstorm_csfixer3.webp"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Settings -&amp;gt; Tools -&amp;gt; +&lt;/code&gt; butonuna basarak yeni bir ara&amp;ccedil; ekleyin.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Name&lt;/code&gt;: Bu k&amp;inodot;sma istedi&amp;gbreve;iniz ismi yazabilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Description&lt;/code&gt;: Bu k&amp;inodot;sma a&amp;ccedil;&amp;inodot;klama ekleyebilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Program&lt;/code&gt;: CS Fixer'&amp;inodot;n kurulu oldu&amp;gbreve;u yolu buraya yaz&amp;inodot;n. Yolu &amp;uuml;stte vermi&amp;scedil;tim.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Arguments&lt;/code&gt;: Kulland&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z arg&amp;uuml;manlar&amp;inodot; buraya yaz&amp;inodot;n. Arg&amp;uuml;manlar&amp;inodot;n ne i&amp;scedil;e yarad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; &amp;ouml;&amp;gbreve;renmek i&amp;ccedil;in &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage" rel="noopener noreferrer" target="_blank"&gt;Cs Fixer Kullan&amp;inodot;m&amp;inodot;&lt;/a&gt; k&amp;inodot;sm&amp;inodot;ndan bilgi edinebilirsiniz. Burada t&amp;uuml;m arg&amp;uuml;manlar&amp;inodot; yazmak yerine, config dosyas&amp;inodot;n&amp;inodot;n yolunu g&amp;ouml;stererek t&amp;uuml;m ayarlar&amp;inodot;n&amp;inodot;z&amp;inodot; bu dosya i&amp;ccedil;inde yapabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;fix&lt;span class="w"&gt; &lt;/span&gt;--verbose&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;C:&lt;span class="se"&gt;\x&lt;/span&gt;ampp&lt;span class="se"&gt;\h&lt;/span&gt;tdocs&lt;span class="se"&gt;\u&lt;/span&gt;runsat&lt;span class="se"&gt;\.&lt;/span&gt;php_cs.dist&lt;span class="w"&gt; &lt;/span&gt;--path-mode&lt;span class="o"&gt;=&lt;/span&gt;intersection&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$FileDir&lt;/span&gt;$&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$FileName&lt;/span&gt;$&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Working Directory&lt;/code&gt;: Bu i&amp;scedil;lemi sadece bu dosyada &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak yerine, di&amp;gbreve;er projelerde de kullanabilmek i&amp;ccedil;in &lt;strong&gt;insert macro&lt;/strong&gt; k&amp;inodot;sm&amp;inodot;ndan&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$ProjectFileDir&lt;/span&gt;$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Se&amp;ccedil;ene&amp;gbreve;ini kullanabilirsiniz. Bu sayede, di&amp;gbreve;er projelerde de CS Fixer i&amp;scedil;lemini kolayca kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="phpstorm_inside_phpcsfixer" src="/images/php_phpstorm_csfixer4.webp"/&gt;&lt;/p&gt;
+&lt;p&gt;&amp;Ouml;rnek &lt;code&gt;.php_cs&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/.php_cs.dist" rel="noopener noreferrer" target="_blank"&gt;buradan&lt;/a&gt; inceleyebilirsiniz. Daha fazla bilgi i&amp;ccedil;in &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage" rel="noopener noreferrer" target="_blank"&gt;Cs Fixer Kullan&amp;inodot;m&amp;inodot;&lt;/a&gt; k&amp;inodot;sm&amp;inodot;na g&amp;ouml;z atabilirsiniz. Ayr&amp;inodot;ca ba&amp;scedil;ka bir &amp;ouml;rnek i&amp;ccedil;in &lt;a href="https://gist.github.com/azdanov/8f637142115feebf4b44e11a0971e5cb" rel="noopener noreferrer" target="_blank"&gt;Doctrine coding style&lt;/a&gt;'&amp;inodot; kontrol edebilirsiniz.&lt;/p&gt;
+&lt;p&gt;PhpStorm'u yeniden ba&amp;scedil;lat&amp;inodot;n. &lt;code&gt;Tools -&amp;gt; External Tools&lt;/code&gt; men&amp;uuml;s&amp;uuml;nde, ekledi&amp;gbreve;iniz ara&amp;ccedil; ismini g&amp;ouml;receksiniz. K&amp;inodot;sayol eklemek isterseniz, &lt;code&gt;Settings -&amp;gt; Keymap -&amp;gt; External Tools&lt;/code&gt; men&amp;uuml;s&amp;uuml;nden istedi&amp;gbreve;iniz k&amp;inodot;sayolu ekleyebilirsiniz. Ben &lt;code&gt;Alt + F&lt;/code&gt; k&amp;inodot;sayolunu ekledim, siz diledi&amp;gbreve;inizi ekleyebilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="phpstorm_inside_phpcsfixer" src="/images/php_phpstorm_csfixer5.webp"/&gt;&lt;/p&gt;</content><category term="Geliştirme Araçları"></category><category term="phpstorm"></category><category term="cmder"></category></entry><entry><title>Composer Yavaş İndirme Sorunu Çözümü</title><link href="https://yuceltoluyag.dev/composer-yavas-indirme-sorunu-cozumu/" rel="alternate"></link><published>2019-12-04T10:00:00+03:00</published><updated>2025-03-08T12:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2019-12-04:/composer-yavas-indirme-sorunu-cozumu/</id><summary type="html">&lt;p&gt;Composer kullanırken yavaş indirme sorunu mu yaşıyorsunuz? Bu rehberde, hız sorunlarını çözmek için kullanabileceğiniz yöntemleri adım adım açıklıyoruz. 🚀&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Composer H&amp;inodot;zland&amp;inodot;rma" src="/images/composer.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="composer-yavas-indirme-sorunu-ve-cozumleri"&gt;Composer Yava&amp;scedil; &amp;Idot;ndirme Sorunu ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri ⚡&lt;/h2&gt;
+&lt;p&gt;Composer kullan&amp;inodot;rken paketlerin yava&amp;scedil; indirildi&amp;gbreve;ini mi fark ettiniz? Endi&amp;scedil;elenmeyin! A&amp;scedil;a&amp;gbreve;&amp;inodot;daki y&amp;ouml;ntemleri kullanarak h&amp;inodot;z&amp;inodot;n&amp;inodot;z&amp;inodot; art&amp;inodot;rabilirsiniz. 💨&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;diagnose
+Checking&lt;span class="w"&gt; &lt;/span&gt;platform&lt;span class="w"&gt; &lt;/span&gt;settings:&lt;span class="w"&gt; &lt;/span&gt;OK
+Checking&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;settings:&lt;span class="w"&gt; &lt;/span&gt;OK
+Checking&lt;span class="w"&gt; &lt;/span&gt;http&lt;span class="w"&gt; &lt;/span&gt;connectivity&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;packagist:&lt;span class="w"&gt; &lt;/span&gt;OK
+Checking&lt;span class="w"&gt; &lt;/span&gt;https&lt;span class="w"&gt; &lt;/span&gt;connectivity&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;packagist:&lt;span class="w"&gt; &lt;/span&gt;OK
+Checking&lt;span class="w"&gt; &lt;/span&gt;github.com&lt;span class="w"&gt; &lt;/span&gt;rate&lt;span class="w"&gt; &lt;/span&gt;limit:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;OK
+Checking&lt;span class="w"&gt; &lt;/span&gt;disk&lt;span class="w"&gt; &lt;/span&gt;free&lt;span class="w"&gt; &lt;/span&gt;space:&lt;span class="w"&gt; &lt;/span&gt;OK
+Checking&lt;span class="w"&gt; &lt;/span&gt;pubkeys:&lt;span class="w"&gt; &lt;/span&gt;FAIL&lt;span class="w"&gt; &lt;/span&gt;Missing&lt;span class="w"&gt; &lt;/span&gt;pubkey&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;tags&lt;span class="w"&gt; &lt;/span&gt;verification
+Missing&lt;span class="w"&gt; &lt;/span&gt;pubkey&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;verification
+Run&lt;span class="w"&gt; &lt;/span&gt;composer&lt;span class="w"&gt; &lt;/span&gt;self-update&lt;span class="w"&gt; &lt;/span&gt;--update-keys&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;them&lt;span class="w"&gt; &lt;/span&gt;up&lt;span class="w"&gt; &lt;/span&gt;Checking&lt;span class="w"&gt; &lt;/span&gt;composer&lt;span class="w"&gt; &lt;/span&gt;version:&lt;span class="w"&gt; &lt;/span&gt;OK
+Composer&lt;span class="w"&gt; &lt;/span&gt;version:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.9.1&lt;span class="w"&gt; &lt;/span&gt;PHP&lt;span class="w"&gt; &lt;/span&gt;version:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;7&lt;/span&gt;.4.0&lt;span class="w"&gt; &lt;/span&gt;PHP&lt;span class="w"&gt; &lt;/span&gt;binary&lt;span class="w"&gt; &lt;/span&gt;path:&lt;span class="w"&gt; &lt;/span&gt;/usr/bin/php
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="1-sorun-teshisi-composer-diagnose"&gt;1️⃣ Sorun Te&amp;scedil;hisi: &lt;code&gt;composer diagnose&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&amp;Idot;lk olarak, mevcut sorunlar&amp;inodot; tespit etmek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;diagnose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi bir hata mesaj&amp;inodot; al&amp;inodot;yorsan&amp;inodot;z, Composer'&amp;inodot;n g&amp;uuml;ncel &lt;code&gt;public key&lt;/code&gt;'lere ihtiyac&amp;inodot; olabilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Checking&lt;span class="w"&gt; &lt;/span&gt;pubkeys:&lt;span class="w"&gt; &lt;/span&gt;FAIL&lt;span class="w"&gt; &lt;/span&gt;Missing&lt;span class="w"&gt; &lt;/span&gt;pubkey&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;tags&lt;span class="w"&gt; &lt;/span&gt;verification
+Missing&lt;span class="w"&gt; &lt;/span&gt;pubkey&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;verification
+Run&lt;span class="w"&gt; &lt;/span&gt;composer&lt;span class="w"&gt; &lt;/span&gt;self-update&lt;span class="w"&gt; &lt;/span&gt;--update-keys&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;them&lt;span class="w"&gt; &lt;/span&gt;up
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu sorunu &amp;ccedil;&amp;ouml;zmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;self-update&lt;span class="w"&gt; &lt;/span&gt;--update-keys
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alternatif olarak, &lt;code&gt;~/.config/composer/&lt;/code&gt; dizinine gidip a&amp;scedil;a&amp;gbreve;&amp;inodot;daki iki dosyay&amp;inodot; olu&amp;scedil;turun ve &lt;a href="https://composer.github.io/pubkeys.html" rel="noopener noreferrer" target="_blank"&gt;Composer Public Key&lt;/a&gt; sayfas&amp;inodot;ndan ald&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z g&amp;uuml;ncel anahtarlar&amp;inodot; ekleyin:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;keys.dev.pub&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;keys.tags.pub&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ard&amp;inodot;ndan terminalinizi kapat&amp;inodot;p tekrar a&amp;ccedil;&amp;inodot;n ve &lt;code&gt;composer diagnose&lt;/code&gt; komutunu yeniden &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n. ✅&lt;/p&gt;
+&lt;h3 id="2-ipv6-sorunu-ve-cozumu"&gt;2️⃣ IPv6 Sorunu ve &amp;Ccedil;&amp;ouml;z&amp;uuml;m&amp;uuml; 🌍&lt;/h3&gt;
+&lt;p&gt;Baz&amp;inodot; a&amp;gbreve;larda IPv6 ba&amp;gbreve;lant&amp;inodot;s&amp;inodot; zaman a&amp;scedil;&amp;inodot;m&amp;inodot;na neden olabilir. E&amp;gbreve;er Composer i&amp;scedil;lemleriniz beklenenden uzun s&amp;uuml;r&amp;uuml;yorsa, IPv6'y&amp;inodot; devre d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rakmay&amp;inodot; deneyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;sh&lt;span class="w"&gt; &lt;/span&gt;-c&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"echo 'precedence ::ffff:0:0/96 100' &amp;gt;&amp;gt; /etc/gai.conf"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu i&amp;scedil;lemi yapt&amp;inodot;ktan sonra Composer'&amp;inodot; tekrar test edin. 🚀&lt;/p&gt;
+&lt;h3 id="3-composer-paket-kaynagini-guncelleme"&gt;3️⃣ Composer Paket Kayna&amp;gbreve;&amp;inodot;n&amp;inodot; G&amp;uuml;ncelleme 🔄&lt;/h3&gt;
+&lt;p&gt;Varsay&amp;inodot;lan olarak Composer, &lt;code&gt;packagist.org&lt;/code&gt; &amp;uuml;zerinden &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r. E&amp;gbreve;er ba&amp;gbreve;lant&amp;inodot;n&amp;inodot;z yava&amp;scedil;sa, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komut ile &lt;code&gt;packagist&lt;/code&gt; adresini g&amp;uuml;ncelleyebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;repo.packagist&lt;span class="w"&gt; &lt;/span&gt;composer&lt;span class="w"&gt; &lt;/span&gt;https://packagist.org
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu i&amp;scedil;lem, paketlerin daha h&amp;inodot;zl&amp;inodot; y&amp;uuml;klenmesini sa&amp;gbreve;layabilir. 🔥&lt;/p&gt;
+&lt;h3 id="4-paralel-indirme-kullanimi"&gt;4️⃣ Paralel &amp;Idot;ndirme Kullan&amp;inodot;m&amp;inodot; ⏩&lt;/h3&gt;
+&lt;p&gt;Composer i&amp;scedil;lemlerini h&amp;inodot;zland&amp;inodot;rmak i&amp;ccedil;in &lt;code&gt;prestissimo&lt;/code&gt; eklentisini y&amp;uuml;kleyebilirsiniz. Bu eklenti, paketlerin e&amp;scedil;zamanl&amp;inodot; indirilmesini sa&amp;gbreve;lar:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;global&lt;span class="w"&gt; &lt;/span&gt;require&lt;span class="w"&gt; &lt;/span&gt;hirak/prestissimo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ancak unutmay&amp;inodot;n, &lt;code&gt;prestissimo&lt;/code&gt; Composer 2.0 ve &amp;uuml;zeri s&amp;uuml;r&amp;uuml;mlerde gereksiz hale gelmi&amp;scedil;tir. E&amp;gbreve;er Composer 1.x kullan&amp;inodot;yorsan&amp;inodot;z bu y&amp;ouml;ntemi deneyebilirsiniz. 😉&lt;/p&gt;
+&lt;h3 id="5-derinlemesine-hata-ayiklama"&gt;5️⃣ Derinlemesine Hata Ay&amp;inodot;klama 🕵️&amp;zwj;&amp;male;️&lt;/h3&gt;
+&lt;p&gt;Composer'&amp;inodot;n ne yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; ayr&amp;inodot;nt&amp;inodot;l&amp;inodot; g&amp;ouml;rmek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;-vvv&lt;span class="w"&gt; &lt;/span&gt;require&lt;span class="w"&gt; &lt;/span&gt;phpunit/phpunit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, indirilen dosyalar&amp;inodot; ve a&amp;gbreve; ba&amp;gbreve;lant&amp;inodot;lar&amp;inodot;n&amp;inodot; detayl&amp;inodot; bir &amp;scedil;ekilde g&amp;ouml;sterecektir. E&amp;gbreve;er bir sorun fark ederseniz, hata mesajlar&amp;inodot;na g&amp;ouml;re yukar&amp;inodot;daki &amp;ccedil;&amp;ouml;z&amp;uuml;mleri uygulayabilirsiniz. 🛠️&lt;/p&gt;
+&lt;h2 id="sonuc_1"&gt;Sonu&amp;ccedil; 🎯&lt;/h2&gt;
+&lt;p&gt;Composer ile yava&amp;scedil; indirme sorunlar&amp;inodot; can s&amp;inodot;k&amp;inodot;c&amp;inodot; olabilir, ancak yukar&amp;inodot;daki y&amp;ouml;ntemleri uygulayarak b&amp;uuml;y&amp;uuml;k &amp;ouml;l&amp;ccedil;&amp;uuml;de h&amp;inodot;z kazanabilirsiniz. &amp;Ouml;zetle:&lt;/p&gt;
+&lt;p&gt;✅ &lt;code&gt;composer diagnose&lt;/code&gt; ile hatalar&amp;inodot; kontrol edin
+✅ IPv6 ba&amp;gbreve;lant&amp;inodot;s&amp;inodot;n&amp;inodot; kapat&amp;inodot;n
+✅ Packagist adresini g&amp;uuml;ncelleyin
+✅ Paralel indirme eklentisini kullan&amp;inodot;n
+✅ Ayr&amp;inodot;nt&amp;inodot;l&amp;inodot; hata ay&amp;inodot;klama yap&amp;inodot;n&lt;/p&gt;
+&lt;p&gt;Umar&amp;inodot;m bu rehber Composer kullan&amp;inodot;m&amp;inodot;n&amp;inodot;z&amp;inodot; daha keyifli hale getirir! 🎉
+Herhangi bir hata al&amp;inodot;rsan&amp;inodot;z yorum b&amp;inodot;rakmay&amp;inodot; unutmay&amp;inodot;n! 👇&lt;/p&gt;</content><category term="Geliştirme Araçları"></category><category term="composer"></category><category term="hızlandırma"></category><category term="çözüm"></category></entry><entry><title>PHPStorm içerisinde Cmder Kullanmak</title><link href="https://yuceltoluyag.dev/phpstorm-icinde-cmder-kullanmak/" rel="alternate"></link><published>2019-11-06T10:00:00+03:00</published><updated>2025-03-08T12:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2019-11-06:/phpstorm-icinde-cmder-kullanmak/</id><summary type="html">&lt;p&gt;PHPStorm içerisinde terminal olarak Cmder kullanmak için ortam değişkenlerini ayarlama ve gerekli konfigürasyonları yapma adımları.&lt;/p&gt;</summary><content type="html">&lt;h2 id="phpstorm-icerisinde-cmder-kullanmak"&gt;PHPStorm &amp;Idot;&amp;ccedil;erisinde Cmder Kullanmak 🚀&lt;/h2&gt;
+&lt;p&gt;PHPStorm i&amp;ccedil;erisinde terminali kullanabilmek i&amp;ccedil;in &lt;strong&gt;ortam de&amp;gbreve;i&amp;scedil;kenleri&lt;/strong&gt;ne yolu belirtmemiz gereklidir. Windows ortam&amp;inodot;nda ortam de&amp;gbreve;i&amp;scedil;keni eklemek i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; izleyebilirsiniz:&lt;/p&gt;
+&lt;h3 id="ortam-degiskenlerini-ayarlama"&gt;Ortam De&amp;gbreve;i&amp;scedil;kenlerini Ayarlama ⚙️&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Bilgisayar&amp;inodot;ma sa&amp;gbreve; t&amp;inodot;klay&amp;inodot;n ve &lt;strong&gt;&amp;Ouml;zellikler&lt;/strong&gt; se&amp;ccedil;ene&amp;gbreve;ine gidin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Geli&amp;scedil;mi&amp;scedil; Sistem Ayarlar&amp;inodot;&lt;/strong&gt;na t&amp;inodot;klay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ba&amp;scedil;lang&amp;inodot;&amp;ccedil; ve Kurtarma&lt;/strong&gt; b&amp;ouml;l&amp;uuml;m&amp;uuml;n&amp;uuml;n hemen alt&amp;inodot;nda &lt;strong&gt;Ortam De&amp;gbreve;i&amp;scedil;kenleri&lt;/strong&gt;ni g&amp;ouml;receksiniz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ortam De&amp;gbreve;i&amp;scedil;kenleri&lt;/strong&gt;ne t&amp;inodot;klay&amp;inodot;n ve &lt;strong&gt;Yeni&lt;/strong&gt; butonuna bas&amp;inodot;n.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;📌 &lt;strong&gt;De&amp;gbreve;i&amp;scedil;ken Ad&amp;inodot;:&lt;/strong&gt; &lt;code&gt;CMDER_ROOT&lt;/code&gt;&lt;br/&gt;
+📌 &lt;strong&gt;Yol:&lt;/strong&gt; &lt;code&gt;C:\cmder&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Ortam De&amp;gbreve;i&amp;scedil;kenleri" src="/images/ortam_degiskenleri1.webp"/&gt;&lt;/p&gt;
+&lt;p&gt;Ben Cmder'in full s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; indirip &lt;code&gt;C:&lt;/code&gt; dizinine &amp;ccedil;&amp;inodot;karm&amp;inodot;&amp;scedil;t&amp;inodot;m. Siz nereye kurduysan&amp;inodot;z, o dizini g&amp;ouml;sterin.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Ortam De&amp;gbreve;i&amp;scedil;kenleri Ayar&amp;inodot;" src="/images/ortam_degiskenleri3.webp"/&gt;&lt;/p&gt;
+&lt;h3 id="phpstorm-icin-terminal-ayari"&gt;PHPStorm &amp;Idot;&amp;ccedil;in Terminal Ayar&amp;inodot; 🛠️&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;PHPStorm i&amp;ccedil;erisinden &lt;strong&gt;Ayarlar (Settings)&lt;/strong&gt; sekmesine girin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tools&lt;/strong&gt; men&amp;uuml;s&amp;uuml; alt&amp;inodot;nda &lt;strong&gt;Terminal&lt;/strong&gt; sekmesine t&amp;inodot;klay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shell Path&lt;/strong&gt; k&amp;inodot;sm&amp;inodot;na a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu yaz&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="s2"&gt;"cmd"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/k&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;%CMDER_ROOT%&lt;span class="se"&gt;\v&lt;/span&gt;endor&lt;span class="se"&gt;\i&lt;/span&gt;nit.bat&lt;span class="s2"&gt;""&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="PHPStorm Cmder Ayar&amp;inodot;" src="/images/phpstorm_terminal.webp"/&gt;&lt;/p&gt;
+&lt;h3 id="phpstormu-yeniden-baslatma"&gt;PHPStorm'u Yeniden Ba&amp;scedil;latma 🔄&lt;/h3&gt;
+&lt;p&gt;Ayarlar&amp;inodot; uygulad&amp;inodot;ktan sonra PHPStorm'u yeniden ba&amp;scedil;lat&amp;inodot;n. Yeniden a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda &lt;strong&gt;Terminal&lt;/strong&gt; sekmesine t&amp;inodot;klayarak Cmder&amp;rsquo;in &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;rebilirsiniz. 🎉&lt;/p&gt;
+&lt;p&gt;&lt;img alt="PHPStorm Cmder Terminal" src="/images/phpstorm_terminal2.webp"/&gt;&lt;/p&gt;
+&lt;p&gt;Cmder terminali, Windows kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in olduk&amp;ccedil;a pratik bir ara&amp;ccedil;t&amp;inodot;r. Full s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; &lt;a href="https://cmder.app/" rel="noopener noreferrer" target="_blank"&gt;buradan&lt;/a&gt; indirerek istedi&amp;gbreve;iniz dizine &amp;ccedil;&amp;inodot;karabilirsiniz. 😊&lt;/p&gt;
+&lt;p&gt;Bir sonraki rehberde g&amp;ouml;r&amp;uuml;&amp;scedil;mek &amp;uuml;zere! 🚀&lt;/p&gt;</content><category term="Geliştirme Araçları"></category><category term="phpstorm"></category></entry><entry><title>XAMPP Kullanarak Localhost'a Özel Alan Adı Oluşturma</title><link href="https://yuceltoluyag.dev/xampp-ozel-alan-adi/" rel="alternate"></link><published>2019-03-06T10:00:00+03:00</published><updated>2025-03-08T12:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2019-03-06:/xampp-ozel-alan-adi/</id><summary type="html">&lt;p&gt;XAMPP kullanarak localhost ortamında özel bir alan adı nasıl oluşturulur? Adım adım rehber.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Linux taraf&amp;inodot;nda kullanmak isteyenleri b&amp;ouml;yle alal&amp;inodot;m: &lt;a href="/arch-linux-apache-lampp-sanal-sunucu-kurulumu/" rel="noopener noreferrer" target="_blank"&gt;Arch Linux&lt;/a&gt; + &lt;a href="/linux-apache2-mysql-phpmyadmin-kurulumu/" rel="noopener noreferrer" target="_blank"&gt;Debian&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="adim-1-hosts-dosyasini-duzenleme"&gt;Ad&amp;inodot;m 1: Hosts Dosyas&amp;inodot;n&amp;inodot; D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki dizine gidin ve &lt;code&gt;hosts&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; Not Defteri veya herhangi bir metin edit&amp;ouml;r&amp;uuml; ile a&amp;ccedil;&amp;inodot;n:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dosya Konumu:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Windows&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;System32&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Drivers&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;hosts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;A&amp;ccedil;&amp;inodot;lan dosyan&amp;inodot;n en alt sat&amp;inodot;r&amp;inodot;na &amp;scedil;u formatta ekleme yap&amp;inodot;n:
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;127.0.0.1 eticaret.test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hosts Dosyas&amp;inodot; D&amp;uuml;zenleme" src="/images/hosts.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="adim-2-apache-virtual-hosts-yapilandirmasi"&gt;Ad&amp;inodot;m 2: Apache Virtual Hosts Yap&amp;inodot;land&amp;inodot;rmas&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;XAMPP dizinine gidin ve &lt;code&gt;httpd-vhosts.conf&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; bir edit&amp;ouml;rle a&amp;ccedil;&amp;inodot;n:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dosya Konumu:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;xampp&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;extra&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;httpd-vhosts&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki ayarlar&amp;inodot; kendinize g&amp;ouml;re d&amp;uuml;zenleyerek dosyan&amp;inodot;n en alt&amp;inodot;na ekleyin:
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;VirtualHost&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;*:80&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ServerAdmin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;webmaster@eticaret.test
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;DocumentRoot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"C:/xampp/htdocs/eticaret/"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ServerName&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;eticaret.test
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ServerAlias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;www.eticaret.test
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ErrorLog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"logs/eticaret.test-error.log"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;CustomLog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"logs/eticaret.test-access.log"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;common
+&lt;span class="nt"&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id="adim-3-xamppyi-yeniden-baslatma"&gt;Ad&amp;inodot;m 3: XAMPP'yi Yeniden Ba&amp;scedil;latma&lt;/h2&gt;
+&lt;p&gt;Yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z de&amp;gbreve;i&amp;scedil;ikliklerin aktif olmas&amp;inodot; i&amp;ccedil;in XAMPP'yi yeniden ba&amp;scedil;lat&amp;inodot;n:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;XAMPP Kontrol Panelini a&amp;ccedil;&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Apache servisini durdurup tekrar ba&amp;scedil;lat&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Taray&amp;inodot;c&amp;inodot;n&amp;inodot;zda &lt;code&gt;http://eticaret.test&lt;/code&gt; adresine giderek ayarlar&amp;inodot;n&amp;inodot;z&amp;inodot; test edin.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Art&amp;inodot;k kendi lokal alan ad&amp;inodot;n&amp;inodot;z ile projelerinizi &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz! 🚀&lt;/p&gt;</content><category term="Geliştirme Araçları"></category><category term="windows10"></category><category term="apache"></category></entry><entry><title>Kullandığım Enfes Sublime Text Eklentileri</title><link href="https://yuceltoluyag.dev/sublime-text-eklentileri/" rel="alternate"></link><published>2018-09-10T10:00:00+03:00</published><updated>2025-03-08T12:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2018-09-10:/sublime-text-eklentileri/</id><summary type="html">&lt;p&gt;Kullandığım en faydalı Sublime Text eklentilerini ve temalarını tanıtıyorum.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! Bug&amp;uuml;n, Sublime Text edit&amp;ouml;r&amp;uuml; &amp;uuml;zerinde kulland&amp;inodot;&amp;gbreve;&amp;inodot;m baz&amp;inodot; harika eklenti ve temalar&amp;inodot; sizlerle payla&amp;scedil;aca&amp;gbreve;&amp;inodot;m. 🥳&lt;/p&gt;
+&lt;h2 id="sublime-text-eklenti-kurulumu"&gt;Sublime Text Eklenti Kurulumu&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;ncelikle Sublime Text 3 s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; kulland&amp;inodot;&amp;gbreve;&amp;inodot;m&amp;inodot; belirtmek isterim. Edit&amp;ouml;re paket y&amp;uuml;klemek i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; izleyebilirsiniz: &lt;strong&gt;view -&amp;gt; show console&lt;/strong&gt; men&amp;uuml;s&amp;uuml;n&amp;uuml; a&amp;ccedil;&amp;inodot;n ve s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;ze uygun gerekli kodlar&amp;inodot; yap&amp;inodot;&amp;scedil;t&amp;inodot;rarak Enter tu&amp;scedil;una bas&amp;inodot;n. Paket y&amp;uuml;klendikten sonra &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; kombinasyonu ile paket y&amp;ouml;neticisini a&amp;ccedil;abilir ve &lt;code&gt;Install&lt;/code&gt; yaz&amp;inodot;p Enter&amp;rsquo;a basarak kurmak istedi&amp;gbreve;iniz paketi se&amp;ccedil;ebilirsiniz.  &lt;/p&gt;
+&lt;p&gt;{% include info.html content="&lt;code&gt;Ctrl + Shift + P&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na basarak 'Install Package Manager' se&amp;ccedil;ene&amp;gbreve;iyle paket y&amp;ouml;neticisini kolayca y&amp;uuml;kleyebilirsiniz." title="G&amp;uuml;ncelleme" icon="tip" fai="icon-diamonds" %}&lt;/p&gt;
+&lt;!-- excerpt separator --&gt;
+&lt;p&gt;Ayarlar&amp;inodot;m&amp;inodot; GitHub'dan alabilirsiniz: &lt;a href="https://github.com/yuceltoluyag/sublime-text-3" rel="noopener noreferrer" target="_blank"&gt;Sublime Repom&lt;/a&gt; ve &lt;strong&gt;Alternatif Ayarlar&amp;inodot;m&lt;/strong&gt;&lt;/p&gt;
+&lt;script src="https://gist.github.com/yuceltoluyag/51b4391d44cfc353aad0d1731b56c39f.js"&gt;&lt;/script&gt;
+&lt;h2 id="emmet"&gt;EMMET&lt;/h2&gt;
+&lt;p&gt;Emmet, kod yazma h&amp;inodot;z&amp;inodot;n&amp;inodot;z&amp;inodot; &amp;ouml;nemli &amp;ouml;l&amp;ccedil;&amp;uuml;de art&amp;inodot;rabilecek harika bir eklentidir. Ancak, kod yazmaya yeni ba&amp;scedil;layanlara &amp;ouml;nerilmez.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;#page&amp;gt;div.logo+ul#navigation&amp;gt;li*5&amp;gt;a{Item $} #&amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot; &amp;scedil;u &amp;scedil;ekilde olacakt&amp;inodot;r.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"page"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"logo"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"navigation"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 1&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 2&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 3&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 4&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 5&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="alignment"&gt;Alignment&lt;/h2&gt;
+&lt;p&gt;D&amp;uuml;zen tak&amp;inodot;nt&amp;inodot;n&amp;inodot;z varsa, bu eklenti tam size g&amp;ouml;re! Kodlar&amp;inodot;n&amp;inodot;z&amp;inodot; hizalamak ve d&amp;uuml;zenlemek i&amp;ccedil;in kullanabilirsiniz. &lt;code&gt;Ctrl + Alt + A&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na basarak d&amp;uuml;zenlemeleri kolayca yapabilirsiniz.&lt;/p&gt;
+&lt;h2 id="sublimegit"&gt;SublimeGit&lt;/h2&gt;
+&lt;p&gt;Sublime Text i&amp;ccedil;in Git entegrasyonu sa&amp;gbreve;layan harika bir eklentidir. D&amp;ouml;k&amp;uuml;mantasyon i&amp;ccedil;in &lt;a href="https://sublimegit.readthedocs.io/en/latest/" rel="noopener noreferrer" target="_blank"&gt;SublimeGit D&amp;ouml;k&amp;uuml;mantasyon&lt;/a&gt; sayfas&amp;inodot;n&amp;inodot; ziyaret edebilirsiniz.&lt;/p&gt;
+&lt;h2 id="gitgutter"&gt;GitGutter&lt;/h2&gt;
+&lt;p&gt;GitGutter, projenizde yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z de&amp;gbreve;i&amp;scedil;iklikleri g&amp;ouml;steren bir eklentidir. &lt;code&gt;git status&lt;/code&gt; komutunun Sublime'deki halini d&amp;uuml;&amp;scedil;&amp;uuml;nebilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GitGutter" src="/images/GitGutter.gif"/&gt;&lt;/p&gt;
+&lt;h2 id="githubinator"&gt;GitHubinator&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, se&amp;ccedil;ti&amp;gbreve;iniz alan&amp;inodot; do&amp;gbreve;rudan GitHub reposunda araman&amp;inodot;za yard&amp;inodot;mc&amp;inodot; olur. Art&amp;inodot;k "Acaba bunu nerede yazm&amp;inodot;&amp;scedil;&amp;inodot;m?" sorusu ortadan kalk&amp;inodot;yor.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GitHubinator" src="/images/GitHubinator.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="gitopenchangedfiles"&gt;GitOpenChangedFiles&lt;/h2&gt;
+&lt;p&gt;GitGutter'dan fark&amp;inodot;, yaln&amp;inodot;zca de&amp;gbreve;i&amp;scedil;iklik yap&amp;inodot;lan sat&amp;inodot;rlar&amp;inodot; g&amp;ouml;sterip, repo i&amp;ccedil;inde arama yapabilmesidir. &lt;code&gt;Ctrl + Shift + O&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na basarak h&amp;inodot;zl&amp;inodot;ca kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GitOpenChangedFiles" src="/images/GitOpenChangedFiles.gif"/&gt;&lt;/p&gt;
+&lt;h2 id="sublimelinter"&gt;SublimeLinter&lt;/h2&gt;
+&lt;p&gt;SublimeLinter, kod hatalar&amp;inodot;n&amp;inodot; ve uyar&amp;inodot;lar&amp;inodot;n&amp;inodot; g&amp;ouml;stermek i&amp;ccedil;in harika bir ara&amp;ccedil;t&amp;inodot;r. &lt;a href="http://www.sublimelinter.com" rel="noopener noreferrer" target="_blank"&gt;SublimeLinter D&amp;ouml;k&amp;uuml;mantasyonu&lt;/a&gt; adresini mutlaka inceleyin.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SublimeLinter" src="/images/SublimeLinter.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="changequotes"&gt;ChangeQuotes&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, &amp;ouml;zellikle &amp;ccedil;ift t&amp;inodot;rnaklar&amp;inodot; tek t&amp;inodot;rnakla de&amp;gbreve;i&amp;scedil;tirme i&amp;scedil;ini &amp;ccedil;ok kolayla&amp;scedil;t&amp;inodot;r&amp;inodot;yor. H&amp;inodot;zl&amp;inodot; bir i&amp;scedil;lem i&amp;ccedil;in m&amp;uuml;kemmel bir yard&amp;inodot;mc&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;h2 id="sidebarenhancements"&gt;SidebarEnhancements&lt;/h2&gt;
+&lt;p&gt;Bu eklentiyle birlikte, sol taraftaki sidebarda sa&amp;gbreve; t&amp;inodot;klad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda pek &amp;ccedil;ok ek &amp;ouml;zellik eklenir.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SidebarEnhancements" src="/images/Side&amp;ZeroWidthSpace;Bar&amp;ZeroWidthSpace;Enhancements.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="brackethighlighter"&gt;BracketHighlighter&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, se&amp;ccedil;ti&amp;gbreve;iniz etiketi veya parantezi nerede a&amp;ccedil;&amp;inodot;p nerede kapand&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;rmenizi sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="BracketHighlighter" src="/images/BracketHighlighter.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="gutter-color"&gt;Gutter Color&lt;/h2&gt;
+&lt;p&gt;Renk se&amp;ccedil;imlerinizi ekstra bir program kullanmadan rahat&amp;ccedil;a yapabilirsiniz. Ayr&amp;inodot;ca &lt;strong&gt;Color Highlighter&lt;/strong&gt; kullanarak renklerinizi do&amp;gbreve;rudan g&amp;ouml;rmek m&amp;uuml;mk&amp;uuml;nd&amp;uuml;r.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GutterColor" src="/images/GutterColor.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="aligntab"&gt;AlignTab&lt;/h2&gt;
+&lt;p&gt;Vim edit&amp;ouml;r&amp;uuml;ndeki tabuler hizalamay&amp;inodot; taklit eden bu eklenti, &amp;ccedil;ok say&amp;inodot;da &amp;ouml;zellik sunuyor.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AlignTab" src="/images/AlignTab.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="autofilename"&gt;AutoFileName&lt;/h2&gt;
+&lt;p&gt;Dosya yollar&amp;inodot;n&amp;inodot;z&amp;inodot; otomatik olarak tamamlar. Eksik dosya yollar&amp;inodot; yaz&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda &amp;ouml;neri gelmez, b&amp;ouml;ylece hatalar&amp;inodot; azaltabilirsiniz.&lt;/p&gt;
+&lt;h2 id="html-css-js-prettify"&gt;HTML-CSS-JS Prettify&lt;/h2&gt;
+&lt;p&gt;HTML, CSS, JavaScript ve JSON kodlar&amp;inodot;n&amp;inodot; formatlamak i&amp;ccedil;in kullan&amp;inodot;lan bir eklentidir.&lt;/p&gt;
+&lt;h2 id="docblockr"&gt;DocBlockr&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, kod bloklar&amp;inodot;n&amp;inodot;z&amp;inodot;n &amp;uuml;zerine a&amp;ccedil;&amp;inodot;klamalar eklemenizi sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="DocBlockr" src="/images/DocBlockr.gif"/&gt;&lt;/p&gt;
+&lt;h2 id="a-file-icon"&gt;A File Icon&lt;/h2&gt;
+&lt;p&gt;Dosya uzant&amp;inodot;lar&amp;inodot;na g&amp;ouml;re simgeler ekler, b&amp;ouml;ylece dosyalar&amp;inodot;n&amp;inodot;z daha d&amp;uuml;zenli g&amp;ouml;r&amp;uuml;n&amp;uuml;r.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AFileIcon" src="/images/AFileIcon.webp"/&gt;&lt;/p&gt;
+&lt;h2 id="tema"&gt;Tema&lt;/h2&gt;
+&lt;p&gt;Material Tema kullan&amp;inodot;yorum: &lt;a href="https://github.com/equinusocio/material-theme" rel="noopener noreferrer" target="_blank"&gt;Material Theme GitHub Sayfas&amp;inodot;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Material-Theme" src="/images/material-theme.gif"/&gt;&lt;/p&gt;
+&lt;p&gt;Yeni kulland&amp;inodot;&amp;gbreve;&amp;inodot;m temalar ve pluginler hakk&amp;inodot;nda bilgi almak i&amp;ccedil;in &lt;a href="https://github.com/yuceltoluyag/sublime-text-3" rel="noopener noreferrer" target="_blank"&gt;GitHub Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="ayarlarim"&gt;Ayarlar&amp;inodot;m&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;{
+"always_show_minimap_viewport": true,
+"bold_folder_labels": true,
+"color_scheme": "Packages/MaterialTheme/schemes/Material-Theme.tmTheme",
+"font_face":"Hack",
+"font_options": ["gray_antialias",
+"subpixel_antialias"],
+"font_size": 18,
+"ignored_packages": ["Vintage"],
+"indent_guide_options": ["draw_normal",
+"draw_active"],
+"line_padding_bottom": 3,
+"line_padding_top": 3,
+"material_theme_accent_acid-lime": true,
+"material_theme_accent_blue": true,
+"material_theme_accent_brba": true,
+"material_theme_accent_bright-teal": true,
+"material_theme_accent_cyan": true,
+"material_theme_accent_graphite": true,
+"material_theme_accent_indigo": true,
+"material_theme_accent_lime": true,
+"material_theme_accent_orange": true,
+"material_theme_accent_pink": true,
+"material_theme_accent_purple": true,
+"material_theme_accent_red": true,
+"material_theme_accent_scrollbars": true,
+"material_theme_accent_sky": true,
+"material_theme_accent_titlebar": true,
+"material_theme_accent_tomato": true,
+"material_theme_accent_yellow": true,
+"material_theme_arrow_folders": true,
+"material_theme_big_fileicons": true,
+"material_theme_bold_tab": true,
+"material_theme_bright_scrollbars": true,
+"material_theme_bullet_tree_indicator": true,
+"material_theme_compact_panel": true,
+"material_theme_compact_sidebar": true,
+"material_theme_contrast_mode": true,
+"material_theme_disable_fileicons": true,
+"material_theme_disable_folder_animation": true,
+"material_theme_disable_tree_indicator": true,
+"material_theme_panel_separator": true,
+"material_theme_small_statusbar": true,
+"material_theme_small_tab": true,
+"material_theme_tabs_autowidth": true,
+"material_theme_tabs_separator": true,
+"material_theme_titlebar": true,
+"material_theme_tree_headings": true,
+"overlay_scroll_bars": "enabled",
+"theme": "Material-Theme.sublime-theme"
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Geliştirme Araçları"></category><category term="ipucu"></category><category term="sublime"></category></entry></feed>

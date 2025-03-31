@@ -1,15 +1,15 @@
 /* AUTHOR */
-Yücel Toluyağ, Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D
-Contact: ytoluyag@gmail.com
+yuceltoluyag, Babanın Yeni Evi
+Contact: info@yuceltoluyag.com
 Twitter: @yuceltoluyag
 From: İstanbul, Turkiye
 
 
 /* SITE */
-Last Updated: 04/01/2025
+Last Updated: 01/05/2024
 Language: Turkish
-Tools: Ruby, Sass, Jekyll, Node
-Theme: Minel Jekyll Theme
+Tools: Python, Pelican, Sass, Node
+Theme: Pelican Theme
 IDE: Vscode
 
 /* THANKS */

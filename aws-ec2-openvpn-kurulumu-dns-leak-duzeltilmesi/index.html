@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+
+<html lang="en" prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb#">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="tr_TR" property="og:locale"/>
+<meta content="Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D" property="og:site_name"/>
+<meta content="https://yuceltoluyag.dev" name="siteurl"/>
+<meta content="assets" name="theme-static-dir"/>
+<meta content="false" name="is-homepage"/>
+<meta content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" name="google-site-verification"/>
+<meta content="denied" name="cookie-consent-default"/>
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir",
+        pageTypeGTM: "article",
+        pageLanguage: "en",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-PHW52JF");
+</script>
+<!-- End Google Tag Manager --> <!-- Google Analytics -->
+<!-- Google tag (gtag.js) - Artık tagmanager.html içinde bulunuyor -->
+<!-- Bu dosya eski sürüm compatibility için korunmuştur -->
+<!-- Lazy loading özelleştirmesi -->
+<script src="https://yuceltoluyag.dev/assets/js/lazysizes-config.min.js"></script>
+<!-- Open Graph Resim Etiketi -->
+<meta content="https://yuceltoluyag.dev/images/amazon-openvpn-kurulumu.webp" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir" property="og:image:alt"/>
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta content="article" property="og:type"/>
+<meta content="https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/" property="og:url"/>
+<meta content="AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir" property="og:title"/>
+<!-- Article Özel Etiketleri -->
+<meta content="2022-01-28T10:00:00+03:00" property="article:published_time"/>
+<meta content="2025-03-08T12:00:00+03:00" property="article:modified_time"/>
+<meta content="https://yuceltoluyag.dev/yazar/yuceltoluyag/" property="article:author"/>
+<meta content="linux" property="article:section"/>
+<meta content="linux" property="article:tag"/>
+<meta content="vpn" property="article:tag"/>
+<!-- Kritik CSS önce yüklenir -->
+<style>
+            /* Kritik CSS - Sadece ilk görünüm için gereken minimum stil */
+            :root {
+                --main-color: #333;
+                --text-primary: #333;
+                --text-secondary: #666;
+                --site-bg: #f9f9f9;
+                --site-card: #fff;
+                --border-card: rgba(0, 0, 0, 0.1);
+            }
+
+            /* Sayfa layout'u için temel tanımlamalar */
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+                    sans-serif;
+                background-color: var(--site-bg);
+                color: var(--text-primary);
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Layout shift önleme */
+            .p-8.border-t.border-border-card {
+                min-height: 120px;
+            }
+
+            footer.bg-site-card-95 {
+                min-height: 300px;
+            }
+
+            p {
+                min-height: 1.5em;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+<!-- Meta Description -->
+<meta content="AWS EC2 üzerinde OpenVPN kurulumunun nasıl yapılacağı ve DNS leak probleminin nasıl çözüleceği hakkında adım adım rehber." name="description"/>
+<meta content="AWS EC2 üzerinde OpenVPN kurulumunun nasıl yapılacağı ve DNS leak probleminin nasıl çözüleceği hakkında adım adım rehber." property="og:description"/>
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D",
+                "description": "Ortaya Karışık",
+                "url": "https://yuceltoluyag.dev"
+            }
+        </script>
+<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D",
+                "url": "https://yuceltoluyag.dev",
+                "logo": "https://yuceltoluyag.dev/images/logo.svg",
+                "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://mastodon.social/@yuceltoluyag","https://matrix.to/#/@fatpip:matrix.org","https://kick.com/babapy"                ]
+            }
+        </script>
+<!-- Lazy Load için lazysizes kütüphanesi -->
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+<script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": "AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir",
+                "description": "AWS EC2 üzerinde OpenVPN kurulumunun nasıl yapılacağı ve DNS leak probleminin nasıl çözüleceği hakkında adım adım rehber.",
+                "author": {
+                    "@type": "Person",
+                    "name": "yuceltoluyag"
+                },
+                "datePublished": "2022-01-28T10:00:00+03:00",
+"dateModified": "2025-03-08T12:00:00+03:00",                "publisher": {
+                    "@type": "Organization",
+                    "name": "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://yuceltoluyag.dev/images/logo.svg"
+                    }
+                },
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/"
+                },
+"articleSection": "linux","keywords": "linux, vpn",                "url": "https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/"
+            }
+        </script>
+<title>AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir</title>
+<!-- Favicon -->
+<link href="https://yuceltoluyag.dev/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- CSS dosyaları non-blocking olarak yüklenir -->
+<link href="https://yuceltoluyag.dev/assets/css/style.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://yuceltoluyag.dev/assets/css/style.min.css" rel="stylesheet"/></noscript>
+<!-- Pygments CSS -->
+<link href="https://yuceltoluyag.dev/assets/css/pygments.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://yuceltoluyag.dev/assets/css/pygments.min.css" rel="stylesheet"/></noscript>
+<!-- Custom Code CSS -->
+<link href="https://yuceltoluyag.dev/assets/css/custom-code.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://yuceltoluyag.dev/assets/css/custom-code.css" rel="stylesheet"/></noscript>
+<!-- Global JavaScript - defer edilmiş -->
+<script defer="" src="https://yuceltoluyag.dev/assets/js/theme.min.js"></script>
+<!-- Debug Log Fonksiyonu -->
+<script>
+            window.debugLog = function (tag, message) {
+                // Geliştirme modunda olup olmadığını kontrol et (opsiyonel)
+                const isDev = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+
+                // Debug modunu açmak için localStorage'ı kontrol et
+                const debugEnabled = localStorage.getItem("debug-enabled") === "true";
+
+                // Geliştirme modunda veya debug etkin ise loglama yap
+                if (isDev || debugEnabled) {
+                    console.log(`[${tag}] ${message}`);
+                }
+
+                // Etkin değilse de hatayı önlemek için fonksiyon var olmalı
+            };
+        </script>
+<!-- Makale içeriğinden ilk resmi Open Graph için çıkar -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Makale içeriğini al
+        const articleContent = document.querySelector(".post-content");
+        if (articleContent) {
+            // İlk resmi bul
+            const firstImage = articleContent.querySelector("img");
+            if (firstImage) {
+                // Resim URL'sini al
+                let imgSrc = firstImage.getAttribute("src");
+
+                // Tam URL oluştur
+                if (imgSrc && !imgSrc.startsWith("http")) {
+                    // Göreceli URL ise mutlak URL'ye çevir
+                    const siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
+                    imgSrc = imgSrc.startsWith("/") ? `${siteUrl}${imgSrc}` : `${siteUrl}/${imgSrc}`;
+                }
+
+                // Meta etiketini oluştur
+                if (imgSrc) {
+                    // Varsa mevcut og:image etiketini bul
+                    let ogImage = document.querySelector('meta[property="og:image"]');
+
+                    // Yoksa yeni oluştur
+                    if (!ogImage) {
+                        ogImage = document.createElement("meta");
+                        ogImage.setAttribute("property", "og:image");
+                        document.head.appendChild(ogImage);
+                    }
+
+                    // Değeri ayarla
+                    ogImage.setAttribute("content", imgSrc);
+                }
+            }
+        }
+    });
+</script>
+<!-- Google AdSense -->
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"></script>
+</head>
+<body class="bg-site-bg text-text-primary min-h-screen flex flex-col">
+<!-- İlerleme çubuğu -->
+<div class="fixed top-0 left-0 w-full h-1 z-[60]">
+<div class="h-full bg-gradient-to-r from-primary via-primary/80 to-primary shadow-lg transform origin-left scale-x-0 transition-transform duration-200" id="progress-bar"></div>
+</div>
+<!-- Paralax Header -->
+<!-- Navbar -->
+<nav class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-sm border-b border-border-card" id="navbar">
+<div class="container mx-auto px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo - Mobilde gizli -->
+<a class="hidden md:flex items-center gap-2" href="https://yuceltoluyag.dev/">
+<img alt="Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D" class="h-10 w-auto transition-transform duration-300 hover:scale-110" src="https://yuceltoluyag.dev/images/logo.svg"/>
+</a>
+<!-- Menü -->
+<div class="flex items-center gap-6 flex-1 md:flex-none">
+<!-- Ana menü -->
+<div class="flex-1 overflow-x-auto scrollbar-none">
+<div class="flex items-center gap-6 whitespace-nowrap px-2">
+<a aria-label="Ana Sayfa" class="text-text-secondary hover:text-primary transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/">
+<!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
+<svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden md:inline">Ana Sayfa</span>
+</a>
+<a aria-label="Arşiv" class="text-text-secondary hover:text-primary transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/arsiv">
+<!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
+<svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden md:inline">Arşiv</span>
+</a>
+<a aria-label="Hakkımda" class="text-text-secondary hover:text-primary transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/hakkimda">
+<!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
+<svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden md:inline">Hakkımda</span>
+</a>
+<a aria-label="Bağış" class="text-text-secondary hover:text-primary transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/bagis">
+<!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
+<svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden md:inline">Bağış</span>
+</a>
+</div>
+</div>
+<!-- Sağ taraftaki butonlar -->
+<div class="flex items-center gap-2">
+<!-- Arama butonu -->
+<button aria-label="Ara" class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors" onclick="toggleSearch()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Tema değiştirme butonu -->
+<button aria-label="Tema değiştir" class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors" id="theme-toggle" onclick="toggleTheme()">
+<svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Ana içerik -->
+<div class="relative z-20">
+<main class="container mx-auto px-6 lg:px-8 pt-24 pb-8">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sol sidebar -->
+<aside class="w-full lg:w-1/4 order-2 lg:order-1">
+<div class="sticky top-24 space-y-6">
+<!-- Profil kartı -->
+<div class="card mb-6">
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 ring-4 ring-primary/20">
+<img alt="yuceltoluyag" class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://yuceltoluyag.dev/images/avatar.webp"/>
+</div>
+<div class="space-y-2">
+<h2 class="text-xl font-bold text-text-primary">yuceltoluyag</h2>
+<p class="text-sm text-text-secondary">Ortaya Karışık</p>
+<div class="flex flex-wrap justify-center gap-3 pt-2"><a class="text-text-secondary hover:text-primary transition-colors" href="https://github.com/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="GitHub">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://instagram.com/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Instagram">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://youtube.com/@yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="YouTube">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://twitch.tv/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Twitch">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M2.149 0l-1.612 4.119v16.836h5.731v3.045h3.224l3.045-3.045h4.657l6.269-6.269v-14.686h-21.314zm19.164 13.612l-3.582 3.582h-5.731l-3.045 3.045v-3.045h-4.836v-15.045h17.194v11.463zm-3.582-7.343v6.262h-2.149v-6.262h2.149zm-5.731 0v6.262h-2.149v-6.262h2.149z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://discord.com/users/188034964879573003" rel="me noopener noreferrer" target="_blank" title="Discord">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"></path>
+</svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://mastodon.social/@yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Mastodon">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545z"></path>
+</svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://matrix.to/#/@fatpip:matrix.org" rel="me noopener noreferrer" target="_blank" title="Matrix">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"></path>
+</svg>
+</a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://kick.com/babapy" rel="me noopener noreferrer" target="_blank" title="Kick">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.312 13.037l-3.955 3.955a1.063 1.063 0 0 1-1.503 0l-3.955-3.955a1.064 1.064 0 0 1 0-1.503l3.955-3.955a1.064 1.064 0 0 1 1.503 0l3.955 3.955a1.064 1.064 0 0 1 0 1.503z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- İçindekiler - Sadece makale sayfalarında göster -->
+<div class="card mb-6 toc-wrapper hidden lg:block">
+<h3 class="text-lg font-bold mb-4 text-text-primary">İçindekiler</h3>
+<nav class="toc">
+<div class="toc-container"><div id="toc"><ul><li><a class="toc-href" href="#merhaba" title="Merhaba">Merhaba</a><ul><li><a class="toc-href" href="#vpn-nedir" title="VPN Nedir?">VPN Nedir?</a></li><li><a class="toc-href" href="#neden-ucretli-vpn-kullanmiyoruz" title="Neden Ücretli VPN Kullanmıyoruz?">Neden Ücretli VPN Kullanmıyoruz?</a></li><li><a class="toc-href" href="#kurulum" title="Kurulum">Kurulum</a></li><li><a class="toc-href" href="#dns-leak" title="DNS LEAK">DNS LEAK</a><ul><li><a class="toc-href" href="#ec2-elastik-ip" title="EC2 Elastik IP">EC2 Elastik IP</a></li></ul></li><li><a class="toc-href" href="#sunucu-ayarlari_1" title="Sunucu Ayarları">Sunucu Ayarları</a></li><li><a class="toc-href" href="#sonuclar" title="Sonuçlar">Sonuçlar</a></li><li><a class="toc-href" href="#bonus-cool-story-bro" title="Bonus: Cool Story Bro 🧿">Bonus: Cool Story Bro 🧿</a></li></ul></li></ul></div></div>
+</nav>
+</div>
+<!-- İstatistikler -->
+<div class="card mb-6 overflow-hidden">
+<div class="relative">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent pointer-events-none"></div>
+<h3 class="text-lg font-bold mb-6 text-text-primary flex items-center gap-2">
+<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+            İstatistikler
+        </h3>
+<div class="grid grid-cols-3 gap-4"><!-- Yazı sayısı -->
+<div class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+<div class="relative flex flex-col items-center gap-1">
+<svg class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-.586-1.414l-4.5-4.5A2 2 0 0015.5 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+            59
+        </div>
+<div class="text-sm text-text-secondary">Yazı</div>
+</div>
+</div>
+<!-- Kategori sayısı -->
+<div class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+<div class="relative flex flex-col items-center gap-1">
+<svg class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+            10
+        </div>
+<div class="text-sm text-text-secondary">Kategori</div>
+</div>
+</div>
+<!-- Etiket sayısı -->
+<div class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+<div class="relative flex flex-col items-center gap-1">
+<svg class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+            103
+        </div>
+<div class="text-sm text-text-secondary">Etiket</div>
+</div>
+</div></div>
+</div>
+</div>
+<!-- Buraya diğer sidebar bileşenleri yerleştirilebilir --> <!-- Mobil ve tablet görünümü için sabit butonlar -->
+<div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 lg:hidden">
+<!-- İçindekiler butonu -->
+<button aria-label="İçindekiler menüsünü aç" class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110 touch-manipulation p-4" onclick="toggleTOC()">
+<svg aria-hidden="true" class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16M4 18h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Yukarı git butonu -->
+<button aria-label="Sayfanın başına git" class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-primary-dark border border-primary-dark/30 shadow-lg text-white hover:bg-primary-darker transition-all duration-300 hover:scale-110 touch-manipulation p-4" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<svg aria-hidden="true" class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Mobil ve tablet için İçindekiler Kartı -->
+<div class="fixed bottom-28 right-8 z-40 w-64 hidden lg:hidden" id="tocModal">
+<div class="bg-site-card rounded-lg shadow-xl border border-border-card overflow-hidden">
+<div class="p-4">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-sm font-bold text-text-primary">İçindekiler</h3>
+<button aria-label="İçindekiler menüsünü kapat" class="text-text-secondary hover:text-primary" onclick="toggleTOC()">
+<svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<nav class="toc max-h-[50vh] overflow-y-auto text-sm">
+<div class="toc-container"><div id="toc"><ul><li><a class="toc-href" href="#merhaba" title="Merhaba">Merhaba</a><ul><li><a class="toc-href" href="#vpn-nedir" title="VPN Nedir?">VPN Nedir?</a></li><li><a class="toc-href" href="#neden-ucretli-vpn-kullanmiyoruz" title="Neden Ücretli VPN Kullanmıyoruz?">Neden Ücretli VPN Kullanmıyoruz?</a></li><li><a class="toc-href" href="#kurulum" title="Kurulum">Kurulum</a></li><li><a class="toc-href" href="#dns-leak" title="DNS LEAK">DNS LEAK</a><ul><li><a class="toc-href" href="#ec2-elastik-ip" title="EC2 Elastik IP">EC2 Elastik IP</a></li></ul></li><li><a class="toc-href" href="#sunucu-ayarlari_1" title="Sunucu Ayarları">Sunucu Ayarları</a></li><li><a class="toc-href" href="#sonuclar" title="Sonuçlar">Sonuçlar</a></li><li><a class="toc-href" href="#bonus-cool-story-bro" title="Bonus: Cool Story Bro 🧿">Bonus: Cool Story Bro 🧿</a></li></ul></li></ul></div></div>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Ana içerik -->
+<div class="lg:w-3/4 order-1 lg:order-2">
+<article class="bg-site-card rounded-lg overflow-hidden">
+<!-- Makale başlığı ve meta bilgileri -->
+<div class="p-8 border-b border-border-card">
+<h1 class="text-3xl font-bold mb-4 text-text-primary">AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir</h1>
+<!-- Çeviriler -->
+<div class="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
+<time class="flex items-center" datetime="2022-01-28T10:00:00+03:00">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                28 Ocak 2022 10:00
+            </time>
+<time class="flex items-center" datetime="2025-03-08T12:00:00+03:00">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                8 Mart 2025
+            </time>
+<span class="flex items-center">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/kategori/linux/">
+                    linux
+                </a>
+</span>
+<span class="flex items-center" title="~683 kelime">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                683 kelime
+            </span>
+<span class="flex items-center" title="Yaklaşık okuma süresi">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                3 dakika
+            </span>
+<span class="flex items-center" title="Flesch Reading Ease: 15.98">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                Seviye 13.60
+            </span>
+<div class="flex flex-wrap items-center gap-2">
+<a class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors" href="https://yuceltoluyag.dev/etiket/linux/">
+                    #linux
+                </a>
+<a class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors" href="https://yuceltoluyag.dev/etiket/vpn/">
+                    #vpn
+                </a>
+</div>
+</div>
+</div>
+<!-- Makale içeriği -->
+<div class="p-8">
+<div class="prose prose-lg dark:prose-invert max-w-none post-content">
+<script>
+                // Makale içindeki tüm resimlere ve iframe'lere lazysizes için gerekli değişiklikleri uygula
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Resimleri lazysizes ile optimize et
+                    const images = document.querySelectorAll(".post-content img");
+                    images.forEach((img) => {
+                        // Eğer henüz lazyload sınıfı yoksa ekle
+                        if (!img.classList.contains("lazyload")) {
+                            img.classList.add("lazyload");
+
+                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
+                            if (img.hasAttribute("src") && !img.hasAttribute("data-src")) {
+                                const srcValue = img.getAttribute("src");
+                                // Placeholder olmayan gerçek bir görüntüyse
+                                if (!srcValue.startsWith("data:image")) {
+                                    img.setAttribute("data-src", srcValue);
+                                    // Küçük bir placeholder kullan
+                                    img.setAttribute(
+                                        "src",
+                                        "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    );
+                                }
+                            }
+                        }
+
+                        // Resim boyutları önceden belirlenmemişse, varsayılan genişlik ve yükseklik ata
+                        if (!img.getAttribute("width") && !img.getAttribute("height")) {
+                            img.setAttribute("width", "100%");
+                            img.setAttribute("height", "auto");
+                            img.style.aspectRatio = "auto";
+                        }
+                    });
+
+                    // iframe'leri lazysizes ile optimize et
+                    const iframes = document.querySelectorAll(".post-content iframe");
+                    iframes.forEach((iframe) => {
+                        // Eğer henüz lazyload sınıfı yoksa ekle
+                        if (!iframe.classList.contains("lazyload")) {
+                            iframe.classList.add("lazyload");
+
+                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
+                            if (iframe.hasAttribute("src") && !iframe.hasAttribute("data-src")) {
+                                const srcValue = iframe.getAttribute("src");
+                                iframe.setAttribute("data-src", srcValue);
+                                iframe.setAttribute("src", "about:blank");
+                            }
+                        }
+                    });
+
+                    // Paragraf elementlerine min-height değeri ekle
+                    const paragraphs = document.querySelectorAll(".post-content p");
+                    paragraphs.forEach((p) => {
+                        p.style.minHeight = "1.5em";
+                    });
+                });
+            </script>
+<h1 id="merhaba">Merhaba</h1>
+<p>Aylarca önce yazmam gereken bir konu daha bugün nasip oldu 😌</p>
+<h2 id="vpn-nedir">VPN Nedir?</h2>
+<p><strong>Finlandiya</strong>'da amcanızın oğlu <em>her web sitesine, uygulamaya, oyuna, müziğe, filme</em> kısacası internete bulunan her şeye <strong>özgürce ulaşabiliyor</strong>. Ülkenizde ise her gün yeni bir siteye <strong>erişim engeli</strong> konuluyor diyelim 😔 Keşke ben de amcamın oğlunun yanında olsam, onun internetinden bağlansam ne güzel olurdu diyorsunuz.🥺 Amcanızın oğlu size diyor ki, <strong>"Böyle bir şey yapabiliriz. Sanal ağ üzerinden bana bağlanırsın, tıpkı yanındaymışsın gibi, internetimi kullanabilirsin"</strong> ve siz nasıl mutlusunuz 🥳 Yani sanallaştırılmış bir ağa uzaktan bağlantı yoluyla fiziksel olarak bağlanmış oluyorsunuz.🐒</p>
+<h2 id="neden-ucretli-vpn-kullanmiyoruz">Neden Ücretli VPN Kullanmıyoruz?</h2>
+<p>Paranız çok, zamanınız azsa, kullan tabii ki sevgili okurum 🐸 Bazı VPN'ler ucuz gibi görünsede veri güvenliği açısından pek güvenilir değiller. Verilerinizi satmıyoruz deseler de, <strong>"Satarız efendim, satarız, gayet rahat satarız"</strong> politikası işliyor. 😅 Gizlilik paranoyası olan bir adam değilim, ancak <strong>"Hem paranızı hem verilerinizi kaptırmayın."</strong></p>
+<h2 id="kurulum">Kurulum</h2>
+<ol>
+<li>Hesabınız yoksa bir Amazon hesabı açın.</li>
+<li>
+<p><a href="https://aws.amazon.com/marketplace/pp/prodview-y3m73u6jd5srk" rel="noopener noreferrer" target="_blank">OpenVPN Access Server</a> <strong>Continue to Subscribe</strong> tıklayın</p>
+<p><img alt="amazon-openvpn-kurulumu" src="/images/amazon-openvpn-kurulumu.webp"/></p>
+</li>
+<li>
+<p>Lisans Sözleşmesini kabul edin</p>
+<p><img alt="amazon-openvpn-kurulumu-2" src="/images/amazon-openvpn-kurulumu-2.webp"/></p>
+</li>
+<li>
+<p>Lisans bilgisi resimdeki gibi görünecektir. <strong>Continue to Configuration</strong> tıklayıp devam edin</p>
+<p><img alt="amazon-openvpn-kurulumu-3" src="/images/amazon-openvpn-kurulumu-3.webp"/></p>
+</li>
+<li>
+<p>Yazılım versiyonunu seçin ve lokasyon olarak <strong>Almanya Frankfurt</strong> bölgesini seçin. Ardından <strong>Continue to Launch</strong> tıklayın.</p>
+<p><img alt="amazon-openvpn-kurulumu-4" src="/images/amazon-openvpn-kurulumu-4.webp"/></p>
+</li>
+<li>
+<p>Yeni formdaki seçimlerimiz şöyle olmalı:</p>
+<p><img alt="amazon-openvpn-kurulumu-5" src="/images/amazon-openvpn-kurulumu-5.webp"/></p>
+</li>
+<li>
+<p>Security Group Settings ve Key Pair Settings ayarlarını oluşturmanız gerekiyor. Ben kızımın adını verdim 🏌️‍♂️</p>
+<p><img alt="amazon-openvpn-kurulumu-6" src="/images/amazon-openvpn-kurulumu-6.webp"/></p>
+<p>Key oluşturma işlemine dair örneği de göstereyim</p>
+<p><img alt="amazon-openvpn-kurulumu-7" src="/images/amazon-openvpn-kurulumu-7.webp"/></p>
+<p><strong>"ED25519"</strong> anahtarları yalnızca Linux ve Mac'te kullanılabilir. Bu yüzden RSA seçtik. Kaydettikten sonra pem uzantılı dosyanız indirilecektir. Kaybetmeyiniz, saklayınız, kimseye göstermeyiniz 😉</p>
+</li>
+<li>
+<p>Security kısmı ise şöyle:</p>
+<p><img alt="amazon-openvpn-kurulumu-8" src="/images/amazon-openvpn-kurulumu-8.webp"/></p>
+<p>İsme ve açıklamaya dilediğiniz gibi yazabilirsiniz. VPN güvenliğini artırmak için bu bağlantı noktalarına erişimi belirli bir IP adresiyle veya adres bloğuyla (kendi ISS'nizinki gibi) kısıtlamak isteyebilirsiniz. Ancak IP adresiniz sık sık değişiyorsa, bağlantı noktalarını kısıtlamak yeterli olmayabilir. VPN'iniz bağlanmak için SSH anahtarlarına ihtiyaç duyacak ve OpenVPN sunucusu da parola korumalı olacaktır. Başka belirli güvenlik hedefleriniz yoksa, şimdilik varsayılan ayarları kabul etmenizde bir sakınca yoktur. <strong>Launch</strong> yolumuza devam edelim.</p>
+</li>
+<li>
+<p>Ta ta, makine kurulumu bitti</p>
+<p><img alt="amazon-openvpn-kurulumu-9" src="/images/amazon-openvpn-kurulumu-9.webp"/></p>
+</li>
+</ol>
+<h2 id="dns-leak">DNS LEAK</h2>
+<p>Amcaoğlunun ağına bağlandıkta, bir siteye istek attığımızda, DNS adreslerimiz halen kendi ISS'mizden istek atıyor. Saldırganlar genelde sahte web siteleri oluşturur, analiz servisleriyle IP adresinizi, konumunuzu, işletim sisteminizi vb. birçok bilgiyi toplayabilirler. IP adresinizi aldıktan sonra karşı taraf hiçbir şey yapamasa bile saldırı yapıp rahatınızı bozabiliyor. VPN açıkken DNS Leak testini otomatik yapabileceğiniz bir adres veriyorum şimdi 😁 <a href="https://www.dnsleaktest.com/" rel="noopener noreferrer" target="_blank">dnsleaktest.com</a> Siteye girip Extended test yapmanız yeterli. Bu resimdeki ucuz, ücretsiz bir VPN'in testi 😆 <img alt="Extended-test" src="/images/Extended-test.webp"/> <strong>Peki bunla neler mi yapıyorlar? Dilerseniz bonus bölümünden okuyabilirsiniz 😁</strong> Çözüme devam edelim...</p>
+<h3 id="ec2-elastik-ip">EC2 Elastik IP</h3>
+<ol>
+<li>
+<p><strong>Network &amp; Security</strong> menüsü altındaki <strong>Elastic IPs</strong> menüsüne tıklıyoruz.</p>
+<p><img alt="amazon-openvpn-kurulumu-10" src="/images/amazon-openvpn-kurulumu-10.webp"/></p>
+</li>
+<li>
+<p>Daha sonra <strong>Allocate Elastic IP address</strong> menüsüne tıklayıp, Amazon havuzlarından bir adet IPv4 adresi talep edin. Oluşturduktan sonra aynı sayfadan <strong>Associate address</strong> e tıklayıp, aktif VPN sunucunuzu seçin. Eğer her şeyi doğru şekilde yaptıysanız, instance kısmında elastik IP kısmına IP adresiniz atanmış olmalı.</p>
+<p><img alt="amazon-openvpn-kurulumu-11" src="/images/amazon-openvpn-kurulumu-11.webp"/></p>
+</li>
+</ol>
+<h2 id="sunucu-ayarlari_1">Sunucu Ayarları</h2>
+<p>Terminalinizi açın.</p>
+<div class="highlight" data-language="BASH"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>&lt;dosyaisminiz&gt;.pem
+</code></pre></div>
+<p><code>-r--------</code> Bu, dosya izinlerini yalnızca kullanıcı (siz) tarafından okunabilecek şekilde ayarlar. Özel anahtarın diğer kullanıcılar tarafından yapılan okuma ve yazma işlemlerinden korunmasına yardımcı olabilir, ancak daha da önemlisi, bulut sunucunuza bağlanmaya çalıştığınızda AWS'nin hata vermesini önleyecektir.</p>
+<p>Şimdi sunucumuza bağlanalım:</p>
+<div class="highlight" data-language="BASH"><pre><span></span><code>ssh<span class="w"> </span>-i<span class="w"> </span>&lt;dosyaisminiz&gt;.pem<span class="w"> </span>openvpnas@&lt;elastic<span class="w"> </span>ip<span class="w"> </span>adresiniz&gt;
+</code></pre></div>
+<p>Kullanıcı <code>openvpnas</code>, örneğinize bağlanmanıza izin vermek için OpenVPN Erişim Sunucusu tarafından ayarlanır. Bağlandıktan sonra istediğiniz gibi ayarları yapabilirsiniz. Yanlış bir şey yaparsanız, panel üzerinden ayarları değiştirebilirsiniz. Ayrıca, kurulumu yeniden yapmak isterseniz şu komutu kullanabilirsiniz:</p>
+<div class="highlight" data-language="BASH"><pre><span></span><code>sudo<span class="w"> </span>ovpn-init<span class="w"> </span>–ec2
+</code></pre></div>
+<p><strong>Kurulum Sihirbazı</strong> ile ilgili daha fazla detaylı yapılandırma adımları:</p>
+<div class="highlight" data-language="BASH"><pre><span></span><code><span class="w"> </span>OpenVPN<span class="w"> </span>Access<span class="w"> </span>Server
+<span class="w"> </span>Initial<span class="w"> </span>Configuration<span class="w"> </span>Tool
+------------------------------------------------------
+Please<span class="w"> </span>enter<span class="w"> </span><span class="s1">'yes'</span><span class="w"> </span>to<span class="w"> </span>indicate<span class="w"> </span>your<span class="w"> </span>agreement<span class="w"> </span><span class="o">[</span>no<span class="o">]</span>:<span class="w"> </span>yes
+...
+</code></pre></div>
+<p>Daha sonra <strong>openvpn</strong> adlı kullanıcının şifresini değiştirin:</p>
+<div class="highlight" data-language="BASH"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>openvpn
+</code></pre></div>
+<p>SSH bağlantısını kapatmak için <code>exit</code> yazın. Ardından <strong>https://elastic-ip-adresiniz:943/</strong> adresinden web paneline bağlanabilirsiniz. SSL hatası alırsanız, gelişmiş menüsüne tıklayıp devam edin.</p>
+<p><img alt="amazon-openvpn-kurulumu-12" src="/images/amazon-openvpn-kurulumu-12.webp"/></p>
+<h2 id="sonuclar">Sonuçlar</h2>
+<p><img alt="amazon-openvpn-kurulumu-13" src="/images/amazon-openvpn-kurulumu-13.webp"/>
+<img alt="amazon-openvpn-kurulumu-14" src="/images/amazon-openvpn-kurulumu-14.webp"/></p>
+<h2 id="bonus-cool-story-bro">Bonus: Cool Story Bro 🧿</h2>
+<p>Arkadaşım hep ücretli VPN'ler kullanırdı.😍 Bir gün kendisinden denemek için VPN aldım: NORDVPN 🤶🏼. Başlarda Telekom'un bölgesel bir arızası var sandım... Ancak bir gün modem ayarlarını kurcalarken ne göreyim 🤐 Modemin üstünden tüm ülkeler port tarama saldırısı gerçekleştiriyor.</p>
+<div class="highlight" data-language="TEXT"><pre><span></span><code>[Kernel][Alert] firewall security alert! [Fragment Flooding] attack, possible.
+</code></pre></div>
+<p>Hemen Türk Telekom'daki arkadaşlara ulaştım, ancak derdimi bir türlü anlatamadım. Neyse ki saldırı başladığında modemi kapatarak sorunu çözdüm. Bu olaydan sonra şunu öğrendim: Ücretli veya ücretsiz VPN kullanın, DNS Leak'e yakalanmayın. Bol VPN'siz günler! </p>
+</div>
+</div>
+<div class="p-4 border-t border-border-card bg-site-card-alt/30">
+<div class="flex justify-end">
+<a class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[#24292F] dark:bg-[#2D333B] rounded-md hover:bg-[#1b1f24] dark:hover:bg-[#444c56] hover:text-white transition-colors duration-300 border border-gray-300 dark:border-gray-700" href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi.md" rel="noopener noreferrer" target="_blank">
+<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                GitHub'da düzenle
+            </a>
+</div>
+</div>
+<!-- Paylaşım Butonları -->
+<div class="p-8 border-t border-border-card min-h-[150px]">
+<div class="flex flex-col items-center space-y-4">
+<h3 class="text-xl font-bold text-text-primary">Bu Yazıyı Paylaşın</h3>
+<div class="flex flex-wrap justify-center gap-3">
+<!-- Twitter/X Paylaşım -->
+<a aria-label="Twitter'da paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#1da1f2]/10 text-[#1da1f2] hover:bg-[#1da1f2] hover:text-white transition-colors duration-300" href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/&amp;text=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir" onclick="event.preventDefault(); shareWithConsent('twitter', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+</svg>
+</a>
+<!-- Mastodon Paylaşım -->
+<a aria-label="Mastodon'da paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#6364FF]/10 text-[#6364FF] hover:bg-[#6364FF] hover:text-white transition-colors duration-300" href="https://mastodonshare.com/?text=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir%20https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/" onclick="event.preventDefault(); shareWithConsent('mastodon', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545z"></path>
+</svg>
+</a>
+<!-- Bluesky Paylaşım -->
+<a aria-label="Bluesky'da paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#0085FF]/10 text-[#0085FF] hover:bg-[#0085FF] hover:text-white transition-colors duration-300" href="https://bsky.app/intent/compose?text=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir%20https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/" onclick="event.preventDefault(); shareWithConsent('bluesky', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"></path>
+</svg>
+</a>
+<!-- Facebook Paylaşım -->
+<a aria-label="Facebook'ta paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#3b5998]/10 text-[#3b5998] hover:bg-[#3b5998] hover:text-white transition-colors duration-300" href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/" onclick="event.preventDefault(); shareWithConsent('facebook', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+</svg>
+</a>
+<!-- LinkedIn Paylaşım -->
+<a aria-label="LinkedIn'de paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#0077b5]/10 text-[#0077b5] hover:bg-[#0077b5] hover:text-white transition-colors duration-300" href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/" onclick="event.preventDefault(); shareWithConsent('linkedin', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+</svg>
+</a>
+<!-- Reddit Paylaşım -->
+<a aria-label="Reddit'te paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#FF4500]/10 text-[#FF4500] hover:bg-[#FF4500] hover:text-white transition-colors duration-300" href="https://www.reddit.com/submit?url=https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/&amp;title=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir" onclick="event.preventDefault(); shareWithConsent('reddit', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"></path>
+</svg>
+</a>
+<!-- WhatsApp Paylaşım -->
+<a aria-label="WhatsApp'ta paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#25d366]/10 text-[#25d366] hover:bg-[#25d366] hover:text-white transition-colors duration-300" href="https://wa.me/?text=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir%20https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/" onclick="event.preventDefault(); shareWithConsent('whatsapp', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+<!-- Telegram Paylaşım -->
+<a aria-label="Telegram'da paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#0088cc]/10 text-[#0088cc] hover:bg-[#0088cc] hover:text-white transition-colors duration-300" href="https://t.me/share/url?url=https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/&amp;text=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir" onclick="event.preventDefault(); shareWithConsent('telegram', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.366.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path>
+</svg>
+</a>
+<!-- Tumblr Paylaşım -->
+<a aria-label="Tumblr'da paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#36465D]/10 text-[#36465D] hover:bg-[#36465D] hover:text-white transition-colors duration-300" href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/&amp;title=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir" onclick="event.preventDefault(); shareWithConsent('tumblr', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.325 1.594-4.06 1.594l-.178.002z"></path>
+</svg>
+</a>
+<!-- Email Paylaşım -->
+<a aria-label="E-posta ile paylaş" class="flex items-center justify-center w-10 h-10 rounded-full bg-[#EA4335]/10 text-[#EA4335] hover:bg-[#EA4335] hover:text-white transition-colors duration-300" href="mailto:?subject=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir&amp;body=AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir%20https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/" onclick="event.preventDefault(); shareWithConsent('email', 'https://yuceltoluyag.dev/aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi/', 'AWS%20EC2%27de%20OpenVPN%20Nas%C4%B1l%20Kurulur%20ve%20DNS%20Leak%20Nas%C4%B1l%20D%C3%BCzeltilir')" rel="noopener noreferrer" target="_blank">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<!-- Kopyala butonu -->
+<button aria-label="Bağlantıyı kopyala" class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300" onclick="copyArticleLink()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Kopyalandı bildirimi -->
+<div class="hidden fixed bottom-16 left-1/2 transform -translate-x-1/2 py-2 px-4 bg-primary text-white rounded-full shadow-lg transition-opacity duration-300" id="copyNotification">
+                Bağlantı kopyalandı!
+            </div>
+</div>
+</div>
+<!-- Bağış Çağrısı -->
+<div class="p-8 border-t border-border-card bg-gradient-to-br from-primary/5 via-transparent to-primary/5">
+<div class="flex flex-col items-center text-center space-y-6">
+<div class="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10">
+<svg aria-hidden="true" class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="space-y-3">
+<h3 class="text-2xl font-bold text-text-primary">Bu Tür İçeriklerin Devamı İçin Destek Olun!</h3>
+<p class="text-text-secondary max-w-2xl">
+                    Eğer paylaştığım içerikler size fayda sağlıyorsa ve aklınızdaki sorunların çözümlerine dair daha
+                    fazla makale görmek istiyorsanız, bağış yaparak bu yolculukta bana destek olabilirsiniz. Her
+                    katkınız, daha fazla içerik üretmem için motivasyon kaynağı olacaktır.
+                </p>
+</div>
+<a aria-label="Bağış sayfasına git" class="group relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-primary-dark px-8 py-3 font-bold text-white transition duration-300 ease-out hover:scale-105" href="https://yuceltoluyag.dev/bagis/">
+<span class="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark transition-transform duration-300 ease-out group-hover:translate-y-12"></span>
+<span class="relative flex items-center gap-2">
+<svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                    Destek Ol
+                </span>
+</a>
+</div>
+</div>
+<!-- Makale sonu - Önceki/Sonraki bağlantılar -->
+<div class="p-8 border-t border-border-card">
+<div class="flex flex-col sm:flex-row justify-between gap-4">
+<a aria-label="Önceki yazı: Facebook 5000 Arkadaş Ekleme (Süreli)" class="flex items-center text-primary hover:text-primary-dark transition-colors group" href="https://yuceltoluyag.dev/facebook-5000-arkadas-ekleme-sureli/">
+<svg aria-hidden="true" class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="line-clamp-1">Facebook 5000 Arkadaş Ekleme (Süreli)</span>
+</a>
+<a aria-label="Sonraki yazı: Jekyll Staticman Eklentisi Kurulumu" class="flex items-center text-primary hover:text-primary-dark transition-colors group ml-auto" href="https://yuceltoluyag.dev/jekyll-staticman-eklentisi-kurulumu/">
+<span class="line-clamp-1">Jekyll Staticman Eklentisi Kurulumu</span>
+<svg aria-hidden="true" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- Benzer Yazılar Bölümü -->
+<div class="p-8 border-t border-border-card">
+<div class="space-y-6">
+<h3 class="text-xl font-bold text-text-primary flex items-center gap-2">
+<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                Benzer Yazılar
+            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<a class="group" href="https://yuceltoluyag.dev/windows-terminalimi-nasil-ozellestiriyorum/">
+<div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+                            Windows Terminalimi Nasıl Özelleştiriyorum
+                        </h4>
+<div class="flex items-center text-sm text-text-secondary">
+<span class="flex items-center">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                26 Haziran 2022 10:00
+                            </span>
+<span class="mx-2">•</span>
+<span class="flex items-center">kutuphane</span>
+</div>
+</div>
+</a>
+<a class="group" href="https://yuceltoluyag.dev/wsl-uzerinde-arch-linux-kurulumu/">
+<div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+                            WSL Üzerinde Arch Linux Kurulumu
+                        </h4>
+<div class="flex items-center text-sm text-text-secondary">
+<span class="flex items-center">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                26 Haziran 2022 10:00
+                            </span>
+<span class="mx-2">•</span>
+<span class="flex items-center">linux</span>
+</div>
+</div>
+</a>
+<a class="group" href="https://yuceltoluyag.dev/newsboat-rss-feeds-kullanimi/">
+<div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+                            Newsboat RSS Feeds Kullanımı
+                        </h4>
+<div class="flex items-center text-sm text-text-secondary">
+<span class="flex items-center">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                17 Temmuz 2020 10:00
+                            </span>
+<span class="mx-2">•</span>
+<span class="flex items-center">linux</span>
+</div>
+</div>
+</a>
+<a class="group" href="https://yuceltoluyag.dev/arch-linux-ntfs-yapilandirma/">
+<div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+                            Arch Linux'ta NTFS Nasıl Yapılandırılır
+                        </h4>
+<div class="flex items-center text-sm text-text-secondary">
+<span class="flex items-center">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                                05 Temmuz 2020 12:00
+                            </span>
+<span class="mx-2">•</span>
+<span class="flex items-center">linux</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<script data-isso="//rupoli.pythonanywhere.com/" src="//rupoli.pythonanywhere.com/js/embed.min.js"></script>
+<section id="isso-thread">
+<noscript>Javascript yorum bölümünü görüntülemek için aktif olmalıdır.</noscript>
+</section>
+</article>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-site-card-95 backdrop-blur-sm border-t border-border-card mt-auto min-h-[300px]">
+<div class="container mx-auto px-6 py-12">
+<!-- Üst Kısım -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 min-h-[150px]">
+<!-- Site Bölümü -->
+<div class="min-h-[100px]">
+<h3 class="text-lg font-bold text-text-primary mb-4">Site</h3>
+<div class="flex flex-wrap gap-4">
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/hakkimda/">
+                        Hakkımda
+                    </a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/bagis/">
+                        Bağış
+                    </a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/kategoriler/">
+                        Kategoriler
+                    </a>
+<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/etiketler/">
+                        Etiketler
+                    </a>
+</div>
+</div>
+<!-- Geliştiriciler İçin -->
+<div class="min-h-[100px]">
+<h3 class="text-lg font-bold text-text-primary mb-4">Geliştiriciler İçin</h3>
+<div class="space-y-3">
+<div class="p-4 bg-site-card rounded-lg border border-border-card">
+<p class="text-text-secondary text-sm">
+<span class="text-primary font-mono">const</span>
+                            tip =
+                            <span class="text-text-primary">"Python, her zaman basit olanı tercih eder."</span>
+</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<a class="text-text-secondary hover:text-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm border border-border-card" href="https://github.com/yuceltoluyag/yuceltoluyag.github.io">
+<span class="font-mono">git clone</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Alt Kısım -->
+<div class="pt-8 border-t border-border-card min-h-[80px]">
+<div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="text-text-secondary text-sm flex items-center gap-2 flex-wrap justify-center">
+<span>©  Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D.</span>
+<a class="hover:text-primary transition-colors" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer" target="_blank">
+                        CC BY-SA 4.0
+                    </a>
+</div>
+<div class="flex items-center gap-4 text-sm text-text-secondary flex-wrap justify-center">
+<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/privacy-policy/">
+                        Gizlilik Politikası
+                    </a>
+<span class="text-border-card">•</span>
+<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/terms/">Kullanım Koşulları</a>
+<span class="text-border-card">•</span>
+<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/sitemap.xml">Site Haritası</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Yukarı git butonu -->
+<button aria-label="Yukarı git" class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-sm text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-none min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation" id="back-to-top">
+<svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 20V4M5 11L12 4L19 11" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- Navbar scroll efekti -->
+<script>
+            const navbar = document.getElementById("navbar");
+            const isHomePage = document.querySelector('meta[name="is-homepage"]').content === "true";
+
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add("bg-site-card-95", "backdrop-blur-sm", "border-b", "border-border-card");
+                } else {
+                    if (isHomePage) {
+                        navbar.classList.remove(
+                            "bg-site-card-95",
+                            "backdrop-blur-sm",
+                            "border-b",
+                            "border-border-card"
+                        );
+                    }
+                }
+            });
+        </script>
+<!-- JavaScript dosyaları -->
+<script src="https://yuceltoluyag.dev/assets/js/toc.min.js"></script>
+<script src="https://yuceltoluyag.dev/assets/js/back-to-top.min.js"></script>
+<script src="https://yuceltoluyag.dev/assets/js/progress-bar.min.js"></script>
+<script src="https://yuceltoluyag.dev/assets/js/search.min.js"></script>
+<script src="https://yuceltoluyag.dev/assets/js/copy-code.min.js"></script>
+<!-- TOC JavaScript -->
+<script src="https://yuceltoluyag.dev/assets/js/toc.min.js"></script>
+<!-- Kod kopyalama JavaScript -->
+<script src="https://yuceltoluyag.dev/assets/js/copy-code.min.js"></script>
+<script>
+    function toggleTOC() {
+        const modal = document.getElementById("tocModal");
+        modal.classList.toggle("hidden");
+    }
+
+    // Sayfa dışına tıklandığında içindekiler kartını kapat
+    document.addEventListener("click", function (event) {
+        const modal = document.getElementById("tocModal");
+        const tocButton = document.querySelector('[onclick="toggleTOC()"]');
+        if (!modal.contains(event.target) && !tocButton.contains(event.target) && !modal.classList.contains("hidden")) {
+            modal.classList.add("hidden");
+        }
+    });
+
+    // TOC linklerine tıklandığında kartı kapat
+    document.querySelectorAll("#tocModal .toc a").forEach((link) => {
+        link.addEventListener("click", () => {
+            document.getElementById("tocModal").classList.add("hidden");
+        });
+    });
+
+    // Makale bağlantısını kopyala
+    function copyArticleLink() {
+        const articleUrl = window.location.href;
+        navigator.clipboard
+            .writeText(articleUrl)
+            .then(() => {
+                // Kopyalama başarılı olduğunda bildirim göster
+                const notification = document.getElementById("copyNotification");
+                notification.classList.remove("hidden");
+                notification.classList.add("opacity-100");
+
+                // 2 saniye sonra bildirimi gizle
+                setTimeout(() => {
+                    notification.classList.add("opacity-0");
+                    setTimeout(() => {
+                        notification.classList.add("hidden");
+                        notification.classList.remove("opacity-0");
+                    }, 300);
+                }, 2000);
+            })
+            .catch((err) => {
+                console.error("Bağlantı kopyalanamadı:", err);
+                alert("Bağlantı kopyalanamadı. Lütfen tekrar deneyin.");
+            });
+    }
+
+    // Sosyal medya paylaşımı için çerez izin kontrolü
+    function shareWithConsent(platform, url, title) {
+        // Çerez izni kontrolü
+        const cookieConsent = localStorage.getItem("cookie-consent");
+
+        if (cookieConsent === "accepted") {
+            // İzin verilmiş, doğrudan paylaş
+            shareContent(platform, url, title);
+        } else {
+            // İzin alınmamış, uyarı göster ve izin iste
+            const confirmShare = confirm(
+                "Sosyal medyada paylaşım yapabilmek için çerez kullanım iznine ihtiyacımız var. " +
+                    "Çerez kullanımına izin vermek istiyor musunuz?"
+            );
+
+            if (confirmShare) {
+                // Kullanıcı izin verdi
+                localStorage.setItem("cookie-consent", "accepted");
+
+                // Google Analytics ve diğer üçüncü taraf çerezlerini etkinleştir
+                if (typeof gtag === "function") {
+                    gtag("consent", "update", {
+                        analytics_storage: "granted",
+                        ad_storage: "granted",
+                    });
+                }
+
+                // Paylaş
+                shareContent(platform, url, title);
+            }
+        }
+    }
+
+    // Platforma göre paylaşım yap
+    function shareContent(platform, url, title) {
+        let shareUrl = "";
+
+        switch (platform) {
+            case "twitter":
+                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                break;
+            case "mastodon":
+                shareUrl = `https://mastodonshare.com/?text=${title}%20${url}`;
+                break;
+            case "facebook":
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                break;
+            case "linkedin":
+                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                break;
+            case "reddit":
+                shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;
+                break;
+            case "whatsapp":
+                shareUrl = `https://wa.me/?text=${title}%20${url}`;
+                break;
+            case "telegram":
+                shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
+                break;
+            case "bluesky":
+                shareUrl = `https://bsky.app/intent/compose?text=${title}%20${url}`;
+                break;
+            case "tumblr":
+                shareUrl = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&title=${title}`;
+                break;
+            case "email":
+                shareUrl = `mailto:?subject=${title}&body=${title}%20${url}`;
+                break;
+            default:
+                console.error("Bilinmeyen platform:", platform);
+                return;
+        }
+
+        // Paylaşım penceresini aç
+        window.open(shareUrl, "_blank", "width=600,height=400");
+    }
+</script>
+<!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
+<script>
+            // Fontların düzgün yüklenmesini kontrol eder
+            if ("fonts" in document) {
+                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
+                    document.documentElement.classList.add("fonts-loaded");
+                });
+            }
+        </script>
+<!-- Çerez Bildirimi -->
+<div class="fixed bottom-0 left-0 right-0 bg-site-card border-t border-border-card p-4 shadow-lg z-50 transform translate-y-full transition-transform duration-500 ease-in-out" id="cookie-consent">
+<div class="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="text-sm text-text-secondary">
+<p>
+                        Bu site deneyiminizi iyileştirmek için çerezler kullanır.
+                        <a class="text-primary hover:underline" href="https://yuceltoluyag.dev/privacy-policy/">
+                            Gizlilik Politikası
+                        </a>
+                        'nı inceleyebilir veya çerez tercihlerinizi yapabilirsiniz.
+                    </p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-site-card-alt border border-border-card rounded-lg text-sm hover:bg-site-card transition-colors duration-300" id="cookie-settings">
+                        Ayarlar
+                    </button>
+<button class="px-4 py-2 bg-primary-dark text-white rounded-lg text-sm hover:bg-primary-darker transition-colors duration-300 font-medium" id="cookie-accept-all">
+                        Tümünü Kabul Et
+                    </button>
+<button class="px-4 py-2 bg-site-card-alt border border-border-card rounded-lg text-sm hover:bg-site-card transition-colors duration-300" id="cookie-accept-essential">
+                        Yalnızca Gerekli Olanlar
+                    </button>
+<button class="px-4 py-2 bg-site-card-alt border border-border-card rounded-lg text-sm hover:bg-site-card transition-colors duration-300" id="cookie-reject">
+                        Reddet
+                    </button>
+</div>
+</div>
+</div>
+<!-- Çerez Ayarları Modal -->
+<div class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center" id="cookie-settings-modal">
+<div class="bg-site-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-xl">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold text-text-primary">Çerez Tercihleriniz</h2>
+<button class="text-text-secondary hover:text-primary" id="close-settings">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<p class="text-text-secondary mb-4">
+                    Her kategorinin açıklamasını okuyabilir ve hangi çerezlere izin vereceğinizi seçebilirsiniz.
+                </p>
+<div class="space-y-4 mb-6">
+<!-- Gerekli Çerezler -->
+<div class="p-4 border border-border-card rounded-lg">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-text-primary">Gerekli Çerezler</h3>
+<span class="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                                Her Zaman Aktif
+                            </span>
+</div>
+<p class="text-sm text-text-secondary">
+                            Bu çerezler sitenin doğru şekilde çalışması için gereklidir ve devre dışı bırakılamaz.
+                        </p>
+</div>
+<!-- Analitik Çerezler -->
+<div class="p-4 border border-border-card rounded-lg">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-text-primary">Analitik Çerezler</h3>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="analytics-consent" type="checkbox"/>
+<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="text-sm text-text-secondary">
+                            Bu çerezler, ziyaretçilerin siteyi nasıl kullandığı hakkında bilgi toplar. Bu veriler, site
+                            performansını analiz etmek ve iyileştirmek için kullanılır.
+                        </p>
+</div>
+<!-- Pazarlama Çerezleri -->
+<div class="p-4 border border-border-card rounded-lg">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-text-primary">Pazarlama Çerezleri</h3>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="marketing-consent" type="checkbox"/>
+<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="text-sm text-text-secondary">
+                            Bu çerezler, size ve ilgi alanlarınıza uygun reklamlar göstermek için kullanılır.
+                        </p>
+</div>
+<!-- Kişiselleştirme Çerezleri -->
+<div class="p-4 border border-border-card rounded-lg">
+<div class="flex justify-between items-center mb-2">
+<h3 class="font-medium text-text-primary">Kişiselleştirme Çerezleri</h3>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="personalization-consent" type="checkbox"/>
+<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<p class="text-sm text-text-secondary">
+                            Bu çerezler, içerik ve özellikleri kişiselleştirmek için tercihlerinizi hatırlar.
+                        </p>
+</div>
+</div>
+<div class="flex justify-end gap-3">
+<button class="px-4 py-2 bg-primary-dark text-white rounded-lg text-sm hover:bg-primary-darker transition-colors duration-300" id="save-preferences">
+                        Tercihleri Kaydet
+                    </button>
+</div>
+</div>
+</div>
+<script>
+            // Çerez bildirimi işlemleri
+            document.addEventListener("DOMContentLoaded", function () {
+                const cookieConsent = document.getElementById("cookie-consent");
+                const cookieSettingsModal = document.getElementById("cookie-settings-modal");
+                const acceptAllButton = document.getElementById("cookie-accept-all");
+                const acceptEssentialButton = document.getElementById("cookie-accept-essential");
+                const rejectButton = document.getElementById("cookie-reject");
+                const settingsButton = document.getElementById("cookie-settings");
+                const closeSettingsButton = document.getElementById("close-settings");
+                const savePreferencesButton = document.getElementById("save-preferences");
+
+                // Çerez seçenekleri
+                const analyticsConsent = document.getElementById("analytics-consent");
+                const marketingConsent = document.getElementById("marketing-consent");
+                const personalizationConsent = document.getElementById("personalization-consent");
+
+                // Daha önce seçim yapılmış mı kontrol et
+                const cookieChoice = localStorage.getItem("cookie-consent");
+                const cookiePreferences = localStorage.getItem("cookie-preferences")
+                    ? JSON.parse(localStorage.getItem("cookie-preferences"))
+                    : null;
+
+                // Varsa tercihleri kontrol kutularına yansıt
+                if (cookiePreferences) {
+                    analyticsConsent.checked = cookiePreferences.analytics;
+                    marketingConsent.checked = cookiePreferences.marketing;
+                    personalizationConsent.checked = cookiePreferences.personalization;
+                }
+
+                if (!cookieChoice) {
+                    // Çerez bildirimini göster
+                    setTimeout(() => {
+                        cookieConsent.classList.remove("translate-y-full");
+                    }, 1000);
+                }
+
+                // Tümünü kabul et butonuna tıklandığında
+                acceptAllButton.addEventListener("click", function () {
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: true,
+                        marketing: true,
+                        personalization: true,
+                    });
+                    cookieConsent.classList.add("translate-y-full");
+                });
+
+                // Yalnızca gerekli olanlar butonuna tıklandığında
+                acceptEssentialButton.addEventListener("click", function () {
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: false,
+                        marketing: false,
+                        personalization: false,
+                    });
+                    cookieConsent.classList.add("translate-y-full");
+                });
+
+                // Reddet butonuna tıklandığında
+                rejectButton.addEventListener("click", function () {
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: false,
+                        marketing: false,
+                        personalization: false,
+                    });
+                    cookieConsent.classList.add("translate-y-full");
+                });
+
+                // Ayarlar butonuna tıklandığında
+                settingsButton.addEventListener("click", function () {
+                    cookieSettingsModal.classList.remove("hidden");
+                    cookieSettingsModal.classList.add("flex");
+                });
+
+                // Kapat butonuna tıklandığında
+                closeSettingsButton.addEventListener("click", function () {
+                    cookieSettingsModal.classList.add("hidden");
+                    cookieSettingsModal.classList.remove("flex");
+                });
+
+                // Tercihleri kaydet butonuna tıklandığında
+                savePreferencesButton.addEventListener("click", function () {
+                    saveCookiePreferences({
+                        essential: true,
+                        analytics: analyticsConsent.checked,
+                        marketing: marketingConsent.checked,
+                        personalization: personalizationConsent.checked,
+                    });
+                    cookieSettingsModal.classList.add("hidden");
+                    cookieSettingsModal.classList.remove("flex");
+                    cookieConsent.classList.add("translate-y-full");
+                });
+
+                // Çerez tercihlerini kaydet ve uygula
+                function saveCookiePreferences(preferences) {
+                    localStorage.setItem("cookie-consent", "custom");
+                    localStorage.setItem("cookie-preferences", JSON.stringify(preferences));
+
+                    // Google Analytics ve diğer üçüncü taraf çerezleri tercihlere göre ayarla
+                    updateGoogleConsent(preferences);
+                }
+
+                // Google Tag Manager'a çerez tercihlerini bildir
+                function updateGoogleConsent(preferences) {
+                    if (typeof gtag === "function") {
+                        gtag("consent", "update", {
+                            analytics_storage: preferences.analytics ? "granted" : "denied",
+                            ad_storage: preferences.marketing ? "granted" : "denied",
+                            functionality_storage: preferences.personalization ? "granted" : "denied",
+                            personalization_storage: preferences.personalization ? "granted" : "denied",
+                        });
+
+                        // Tercihlerin değiştiğini takip et
+                        gtag("event", "cookie_consent_updated", {
+                            consent_status: "custom",
+                            analytics_enabled: preferences.analytics,
+                            marketing_enabled: preferences.marketing,
+                            personalization_enabled: preferences.personalization,
+                        });
+                    }
+                }
+
+                // Modal dışına tıklandığında kapat
+                cookieSettingsModal.addEventListener("click", function (e) {
+                    if (e.target === cookieSettingsModal) {
+                        cookieSettingsModal.classList.add("hidden");
+                        cookieSettingsModal.classList.remove("flex");
+                    }
+                });
+            });
+        </script>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+<iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-PHW52JF" style="display: none; visibility: hidden" width="0"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9KL9GYLPS5"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-9KL9GYLPS5", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+</body>
+</html>
