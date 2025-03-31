@@ -129,10 +129,7 @@ CC_LICENSE = {
 }
 
 # Static Paths
-STATIC_PATHS = [
-    "images",
-    "extra",
-]
+STATIC_PATHS = ["images", "extra", "extra/CNAME"]
 EXTRA_PATH_METADATA = {
     "extra/SW.js": {"path": "SW.js"},
     "extra/robots.txt": {"path": "robots.txt", "template": True},
@@ -143,6 +140,7 @@ EXTRA_PATH_METADATA = {
     "extra/sitemap.xml": {"path": "sitemap.xml"},
     "extra/manifest.json": {"path": "manifest.json"},
     "extra/BingSiteAuth.xml": {"path": "BingSiteAuth.xml"},
+    "extra/CNAME": {"path": "CNAME"},
 }
 
 WIDGETS = [

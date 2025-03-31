@@ -90,22 +90,55 @@ jobs:
                       exit 1
                   fi
 
-            - name: Upload Pages artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: output/
-
     deploy:
         needs: test-build
         if: github.ref == 'refs/heads/main'
-        permissions:
-            pages: write
-            id-token: write
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+
+            - name: Install Node.js dependencies
+              run: npm ci
+
+            - name: Setup Türkçe Locale
+              run: |
+                  # Gerekli paketleri yükle
+                  sudo apt-get update && sudo apt-get install -y locales tzdata
+                  sudo sed -i 's/# tr_TR.UTF-8 UTF-8/tr_TR.UTF-8 UTF-8/' /etc/locale.gen
+                  sudo dpkg-reconfigure --frontend=noninteractive locales
+                  sudo update-locale LANG=tr_TR.UTF-8 LC_ALL=tr_TR.UTF-8
+                  export LANG=tr_TR.UTF-8
+                  export LC_ALL=tr_TR.UTF-8
+                  export TZ=Europe/Istanbul
+
+            - name: Setup Python, uv, and the package
+              uses: ./.github/actions/setup_python_env
+              env:
+                  LANG: tr_TR.UTF-8
+                  LC_ALL: tr_TR.UTF-8
+                  TZ: Europe/Istanbul
+
+            - name: Build the site
+              env:
+                  NODE_ENV: production
+                  LANG: tr_TR.UTF-8
+                  LC_ALL: tr_TR.UTF-8
+                  TZ: Europe/Istanbul
+              run: |
+                  # Site inşa sürecini başlat
+                  uv run duty publish
+
             - name: Deploy to GitHub Pages
-              id: deployment
-              uses: actions/deploy-pages@v4
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./output
+                  publish_branch: gh-pages
+                  cname: yuceltoluyag.github.io
