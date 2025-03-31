@@ -1,114 +1,102 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
-
-# Pelican configuration file
-
-# --- Imports ---
 import os
-from pelican import signals
 from pymdownx import emoji
-from datetime import datetime, timezone
-
-TIMEZONE = "Europe/Istanbul"
-I18N_TEMPLATES_LANG = "tr"  # Docutils için İngilizce kullan
-DEFAULT_LANG = "tr"  # Site dili Türkçe kalacak
-# Basit tarih formatları - Tüm ortamlarda çalışır
-DATE_FORMATS = {
-    "tr": "%-d %B %Y",  # Gün (sıfırsız), Ay adı, Yıl
-}
-LOCALE = ("tr", "tr_TR")  # On Windows  # On Unix/Linux
-
-
-DEFAULT_DATE_FORMAT = "%d %B %Y %a "
-TODAY = datetime.now(tz=timezone.utc).date()
-YEAR = TODAY.year
-SITEYEAR = datetime.now().year
-
-# Desteklenen diller (varsa)
-ARTICLE_TRANSLATION_ID = "slug"
-PAGE_TRANSLATION_ID = "slug"
-# Çeviri ayarlarını aktif et
-TRANSLATE_CONTENT = True
-TRANSLATION_FEED_ATOM = "feeds/{lang}/all.atom.xml"
-
-# --- Google Analytics ---
-GOOGLE_ANALYTICS = (
-    "G-9KL9GYLPS5"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
-)
-# --- Google Tag Manager ---
-GTM_ID = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
 
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
-
-
 AUTHOR = "yuceltoluyag"
 SITENAME = "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D"
 DESCRIPTION = "Ortaya Karışık"
-SITESUBTITLE = "Linux, Python ve Web Geliştirme Rehberleri"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
 SITEURL = (
     "https://yuceltoluyag.github.io" if PUBLISH else "http://localhost:8000"
 )
 CANONICAL_URL = SITEURL
+SITESUBTITLE = "Linux, Python ve Web Geliştirme Rehberleri"
+PATH = "content"
+ARTICLE_PATHS = ["articles"]
+PAGE_PATHS = ["pages"]
+OUTPUT_PATH = "output"
+TIMEZONE = "Europe/Istanbul"
+# English is still default for now due to localization issues
+DEFAULT_LANG = "en"
+# Feed generation is usually not desired when developing
+FEED_ALL_ATOM = "feeds/all.atom.xml"
+CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
+HOME_HIDE_TAGS = True
+
+DEFAULT_PAGINATION = 6
+DEFAULT_ORPHANS = 1
+OPEN_GRAPH_METADATA = True
+DUBLIN_CORE_METADATA = True
+DEFAULT_PAGESCHEMA = "article"
+PAGINATION_PATTERNS = (
+    (1, "{base_name}/", "{base_name}/index.html"),
+    (2, "{base_name}/page/{number}/", "{base_name}/page/{number}/index.html"),
+)
+PAGINATED_TEMPLATES = {
+    "index": None,
+    "tag": None,
+    "category": None,
+    "author": None,
+}
+# Uncomment following line if you want document-relative URLs when developing
+RELATIVE_URLS = True
+
+# Theme settings - Use our new Buldu theme
+THEME_STATIC_DIR = "assets"
+THEME = "themes/Minel"
+WITH_FUTURE_DATES = True
+USE_FOLDER_AS_CATEGORY = True
+WEBASSETS_DEBUG = False
+MAIN_MENU = True
+RELATED_POSTS_MAX = 4
+DRAFT_SAVE_AS = DRAFT_PAGE_SAVE_AS = "drafts/{slug}/index.html"
+DRAFT_URL = DRAFT_PAGE_URL = "drafts/{slug}/"
+DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "authors"]
 # Do we want to wipe the /output folder every build,
 # or just accumulate new stuff?
 DELETE_OUTPUT_DIRECTORY = True
 DISABLE_URL_HASH = True
+DELETE_OUTPUT_DIRECTORY = True
 BROWSER_COLOR = "#333333"
 PYGMENTS_STYLE = "dracula"
 ROBOTS = "index, follow"
-#################################
-#
-# Cache Settings
-#
-#################################
 
+# Extra Settings for the theme
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
+COPYRIGHT_YEAR = 1989
+
+# Cache Settings
 CACHE_CONTENT = True
 CHECK_MODIFIED_METHOD = "sha1"
 LOAD_CONTENT_CACHE = True
 GZIP_CACHE = False
-
-# Version değişkeni
 VERSION = "1.0.0"
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 USE_LESS = True
 
-# --- Paths & Directories ---
-THEME_STATIC_DIR = "assets"
-THEME = "themes/Minel"
-DIRECT_TEMPLATES = ["index", "tags", "categories", "archives"]
-
-PATH = "content"
-# İçerik yolları
-ARTICLE_PATHS = ["articles"]
-PAGE_PATHS = ["pages"]
-
-STATIC_PATHS = [
-    "images",
-    "extra",
+# --- Menu Items ---
+MENUITEMS = [
+    ("Ana Sayfa", "/"),
+    ("Kategoriler", "/kategoriler/"),
+    ("Etiketler", "/etiketler/"),
+    ("Arşiv", "/arsiv/"),
+    ("Yazarlar", "/yazarlar/"),
 ]
-EXTRA_PATH_METADATA = {
-    "extra/SW.js": {"path": "SW.js"},
-    "extra/robots.txt": {"path": "robots.txt", "template": True},
-    "extra/humans.txt": {"path": "humans.txt", "template": True},
-    "extra/ads.txt": {"path": "ads.txt"},
-    "extra/favicon.ico": {"path": "favicon.ico"},
-    "extra/favicon.webp": {"path": "favicon.webp"},
-    "extra/sitemap.xml": {"path": "sitemap.xml"},
-    "extra/manifest.json": {"path": "manifest.json"},
-    "extra/BingSiteAuth.xml": {"path": "BingSiteAuth.xml"},
-}
-# 404.html dosyasını içerik işleme sürecinden çıkar
-IGNORE_FILES = ["404.html"]
 
-# --- Table of Content Plugin ---
-TOC = {
-    "TOC_HEADERS": "^h[1-3]",
-    "TOC_RUN": "true",
-    "TOC_INCLUDE_TITLE": "false",
-}
+# Blogroll
+LINKS = (
+    ("Pelican", "https://getpelican.com/"),
+    ("Python.org", "https://www.python.org/"),
+    ("Jinja2", "https://palletsprojects.com/p/jinja/"),
+)
 
 # --- Social Media ---
 SOCIAL = {
@@ -123,14 +111,6 @@ SOCIAL = {
     "papara": "yuceltoluyag",
     "github_sponsor": "yuceltoluyag",
 }
-
-# --- Menu Items ---
-MENUITEMS = [
-    ("Ana Sayfa", "/"),
-    ("Kategoriler", "/kategoriler/"),
-    ("Etiketler", "/etiketler/"),
-    ("Arşiv", "/arsiv/"),
-]
 
 NAVBAR_LINKS = [
     {"name": "Ana Sayfa", "url": "/", "target": "_self"},
@@ -148,43 +128,21 @@ CC_LICENSE = {
     "language": "en_US",
 }
 
-# --- Feed Settings ---
-FEED_ALL_ATOM = "feeds/all.atom.xml"
-CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
-TRANSLATION_FEED_ATOM = None
-WITH_FUTURE_DATES = True
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
-HOME_HIDE_TAGS = True
-USE_FOLDER_AS_CATEGORY = True
-WEBASSETS_DEBUG = False
-MAIN_MENU = True
-# Settings for the related_posts plugin
-RELATED_POSTS_MAX = 4
-# FEED_MAX_ITEMS = 15
-# FEED_APPEND_REF = True
-DRAFT_SAVE_AS = DRAFT_PAGE_SAVE_AS = "drafts/{slug}/index.html"
-DRAFT_URL = DRAFT_PAGE_URL = "drafts/{slug}/"
-JINJA_ENVIRONMENT = {
-    "trim_blocks": True,
-    "lstrip_blocks": True,
-    "extensions": ["jinja2.ext.i18n"],
-}
-# --- Pagination Settings ---
-DEFAULT_PAGINATION = 6
-DEFAULT_ORPHANS = 1
-OPEN_GRAPH_METADATA = True
-DUBLIN_CORE_METADATA = True
-DEFAULT_PAGESCHEMA = "article"
-PAGINATION_PATTERNS = (
-    (1, "{base_name}/", "{base_name}/index.html"),
-    (2, "{base_name}/page/{number}/", "{base_name}/page/{number}/index.html"),
-)
-PAGINATED_TEMPLATES = {
-    "index": None,
-    "tag": None,
-    "category": None,
-    "author": None,
+# Static Paths
+STATIC_PATHS = [
+    "images",
+    "extra",
+]
+EXTRA_PATH_METADATA = {
+    "extra/SW.js": {"path": "SW.js"},
+    "extra/robots.txt": {"path": "robots.txt", "template": True},
+    "extra/humans.txt": {"path": "humans.txt", "template": True},
+    "extra/ads.txt": {"path": "ads.txt"},
+    "extra/favicon.ico": {"path": "favicon.ico"},
+    "extra/favicon.webp": {"path": "favicon.webp"},
+    "extra/sitemap.xml": {"path": "sitemap.xml"},
+    "extra/manifest.json": {"path": "manifest.json"},
+    "extra/BingSiteAuth.xml": {"path": "BingSiteAuth.xml"},
 }
 
 WIDGETS = [
@@ -194,6 +152,17 @@ WIDGETS = [
     "tag.html",
     "tagcloud.html",
 ]
+
+# 404.html dosyasını içerik işleme sürecinden çıkar
+IGNORE_FILES = ["404.html"]
+
+# --- Table of Content Plugin ---
+TOC = {
+    "TOC_HEADERS": "^h[1-3]",
+    "TOC_RUN": "true",
+    "TOC_INCLUDE_TITLE": "false",
+}
+
 PYGMENTS_RST_OPTIONS = {"classprefix": "pgcss", "linenos": "table"}
 # --- Markdown Extensions ---
 MARKDOWN = {
@@ -211,6 +180,11 @@ MARKDOWN = {
     "extension_configs": {
         "pymdownx.emoji": {"emoji_generator": emoji.to_png_sprite}
     },
+}
+
+# Türkçe tarih formatı ayarları
+DATE_FORMATS = {
+    "en": "%d %B %Y %H:%M",  # örnek: 30 March 2025
 }
 
 IMAGE_PROCESS = {
@@ -237,8 +211,16 @@ IMAGE_PROCESS = {
     },
 }
 
-# Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+# --- Google Analytics ---
+GOOGLE_ANALYTICS = (
+    "G-9KL9GYLPS5"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
+)
+# --- Google Tag Manager ---
+GTM_ID = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
+GOOGLE_ADSENSE = "ca-pub-6089943780218266"
+# Docutils için gerekli ayarlar
+DOCUTILS_SETTINGS = {"language_code": "en"}
+
 
 # --- Plugin Settings ---
 PLUGIN_PATHS = ["plugins"]
@@ -303,6 +285,8 @@ TAG_CLOUD_SORTING = "alphabetically"
 # Yazar URL'leri
 AUTHOR_URL = "yazar/{slug}/"
 AUTHOR_SAVE_AS = "yazar/{slug}/index.html"
+AUTHORS_URL = "yazarlar/"
+AUTHORS_SAVE_AS = "yazarlar/index.html"
 AUTHOR_EMAIL = "yuceltoluyag@gmail.com"
 
 # Arşiv URL'leri
@@ -314,6 +298,7 @@ ARTICLE_LANG_URL = "{slug}-{lang}/"
 ARTICLE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
 PAGE_LANG_URL = "{slug}-{lang}/"
 PAGE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
+
 
 # Özel sayfa şablonları
 PAGE_TEMPLATES = {
@@ -376,6 +361,8 @@ REDIRECTS = {
     "/category/tan%C4%B1t%C4%B1m.html": "/kategori/tanitim/",
     "/category/tan%C4%B1t%C4%B1m": "/kategori/tanitim/",  # Sonda / olmayan versiyonu koru
     "/series/phpstorm.html": "/etiket/phpstorm/",
+    # Yazarlar yönlendirmesi
+    "/yazar/": "/yazarlar/",  # yazar/ dizinini yazarlar/ dizinine yönlendir
     # Makale yönlendirmeleri - uzantısız olarak tanımlayarak dizin olarak oluşturulacak
     "/linuxta-uefi-windows-10-format-usb_14": "/linux-uefi-windows10-usb/",
     "/linuxta-uefi-windows-10-format-usb": "/linux-uefi-windows10-usb/",
@@ -415,7 +402,9 @@ REDIRECTS = {
     "/her-turk-gencinin-izlemesi-gereken": "/her-turk-gencinin-izlemesi-gereken-belgeseller-1",
     "/linux-codeigniter-son-surum-nasl": "/linux-ta-codeigniter-nasil-kurulur",
     "/sweet-alert-snf-kullanm-detayl-anlatm": "/sweet-alert-kullanimi",
+    "/archlinux-valet-kurulumu": "/arch-linux-laravel-valet-kurulumu",
 }
+
 
 # Arama eklentisi ayarları
 SEARCH_MODE = "output"
@@ -426,35 +415,6 @@ FORMATTED_FIELDS = ["summary", "content"]
 # feed.json şablonunun çıktı yolu
 FEED_JSON = "feed.json"
 FEED_SAVE_AS = "feed.json"
-
-# --- URL Settings ---
-ARTICLE_URL = "{slug}/"
-ARTICLE_SAVE_AS = "{slug}/index.html"
-PAGE_URL = "{slug}/"
-PAGE_SAVE_AS = "{slug}/index.html"
-CATEGORY_URL = "kategori/{slug}/"
-CATEGORY_SAVE_AS = "kategori/{slug}/index.html"
-TAG_URL = "etiket/{slug}/"
-TAG_SAVE_AS = "etiket/{slug}/index.html"
-CATEGORIES_SAVE_AS = "kategoriler/index.html"
-CATEGORIES_URL = "kategoriler/"
-TAGS_URL = "etiketler/"
-TAGS_SAVE_AS = "etiketler/index.html"
-ARCHIVES_SAVE_AS = "arsiv/index.html"
-ARCHIVES_URL = "arsiv/"
-AUTHORS_SAVE_AS = "yazarlar/index.html"
-AUTHORS_URL = "yazarlar/"
-
-# ----------------- <GENERATION> -----------------
-
-import logging
-
-LOG_FILTER = [
-    # (logging.WARN, 'Empty alt attribute for image %s in %s'),
-    # (logging.WARN, '{filename} used for linking to static content %s in %s. Use {static} instead'),
-    # (logging.WARN, "Meta tag in file %s does not have a 'name' attribute, skipping. Attributes: %s"),
-    # (logging.WARN, "Unable to find '%s', skipping url replacement."),
-]
 
 ARTICLE_EDIT_LINK = (
     "https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/"
