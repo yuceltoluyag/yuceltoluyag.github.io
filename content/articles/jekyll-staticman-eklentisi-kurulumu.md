@@ -125,7 +125,10 @@ openssl genrsa -out key.pem
 
 Eğer terminal kullanamıyorsanız, çevrimiçi RSA anahtar üreticilerini kullanabilirsiniz. [Online RSA Key Generator](https://travistidwell.com/jsencrypt/demo/){: target="_blank" rel="noopener noreferrer"} sitesini ziyaret ederek anahtarınızı oluşturabilirsiniz.
 
-{% include info.html content="Github'dan aldığımız `GITHUB_PRIVATE_KEY` ile `RSA Key`'imiz aynı olabilir. Bu yüzden RSA Key oluşturma adımını atlayabilirsiniz." title="Bilgi" icon="tip" fai="icon-diamonds" %}
+<div class="info-box important">
+    <strong>Bilgi:</strong> Github'dan aldığımız <code>GITHUB_PRIVATE_KEY</code> ile <code>RSA Key</code>'imiz aynı olabilir. Bu yüzden RSA Key oluşturma adımını atlayabilirsiniz.
+</div>
+
 
 # Staticman Ayarları
 

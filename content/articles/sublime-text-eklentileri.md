@@ -17,9 +17,12 @@ Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika ek
 
 Öncelikle Sublime Text 3 sürümünü kullandığımı belirtmek isterim. Editöre paket yüklemek için şu adımları izleyebilirsiniz: **view -> show console** menüsünü açın ve sürümünüze uygun gerekli kodları yapıştırarak Enter tuşuna basın. Paket yüklendikten sonra `Ctrl + Shift + P` kombinasyonu ile paket yöneticisini açabilir ve `Install` yazıp Enter’a basarak kurmak istediğiniz paketi seçebilirsiniz.  
 
-{% include info.html content="`Ctrl + Shift + P` tuşlarına basarak 'Install Package Manager' seçeneğiyle paket yöneticisini kolayca yükleyebilirsiniz." title="Güncelleme" icon="tip" fai="icon-diamonds" %}
+<div class="info-box important">
+    <strong>Güncelleme:</strong> <code>Ctrl + Shift + P</code> tuşlarına basarak 'Install Package Manager' seçeneğiyle paket yöneticisini kolayca yükleyebilirsiniz.
+</div>
 
-<!-- excerpt separator -->
+
+
 
 Ayarlarımı GitHub'dan alabilirsiniz: [Sublime Repom](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"} ve **Alternatif Ayarlarım**
 <script src="https://gist.github.com/yuceltoluyag/51b4391d44cfc353aad0d1731b56c39f.js"></script>
