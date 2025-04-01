@@ -972,7 +972,9 @@ MIDIGOMEDAGLARIBLA12930219312
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;openssl&lt;span class="w"&gt; &lt;/span&gt;genrsa&lt;span class="w"&gt; &lt;/span&gt;-out&lt;span class="w"&gt; &lt;/span&gt;key.pem
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;E&amp;gbreve;er terminal kullanam&amp;inodot;yorsan&amp;inodot;z, &amp;ccedil;evrimi&amp;ccedil;i RSA anahtar &amp;uuml;reticilerini kullanabilirsiniz. &lt;a href="https://travistidwell.com/jsencrypt/demo/" rel="noopener noreferrer" target="_blank"&gt;Online RSA Key Generator&lt;/a&gt; sitesini ziyaret ederek anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; olu&amp;scedil;turabilirsiniz.&lt;/p&gt;
-&lt;p&gt;{% include info.html content="Github'dan ald&amp;inodot;&amp;gbreve;&amp;inodot;m&amp;inodot;z &lt;code&gt;GITHUB_PRIVATE_KEY&lt;/code&gt; ile &lt;code&gt;RSA Key&lt;/code&gt;'imiz ayn&amp;inodot; olabilir. Bu y&amp;uuml;zden RSA Key olu&amp;scedil;turma ad&amp;inodot;m&amp;inodot;n&amp;inodot; atlayabilirsiniz." title="Bilgi" icon="tip" fai="icon-diamonds" %}&lt;/p&gt;
+&lt;div class="info-box important"&gt;
+&lt;strong&gt;Bilgi:&lt;/strong&gt; Github'dan ald&amp;inodot;&amp;gbreve;&amp;inodot;m&amp;inodot;z &lt;code&gt;GITHUB_PRIVATE_KEY&lt;/code&gt; ile &lt;code&gt;RSA Key&lt;/code&gt;'imiz ayn&amp;inodot; olabilir. Bu y&amp;uuml;zden RSA Key olu&amp;scedil;turma ad&amp;inodot;m&amp;inodot;n&amp;inodot; atlayabilirsiniz.
+&lt;/div&gt;
 &lt;h1 id="staticman-ayarlari_1"&gt;Staticman Ayarlar&amp;inodot;&lt;/h1&gt;
 &lt;p&gt;Staticman ayarlar&amp;inodot; YAML format&amp;inodot;nda saklan&amp;inodot;r. &lt;code&gt;staticman.yml&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot;n i&amp;ccedil;eri&amp;gbreve;i &amp;scedil;u &amp;scedil;ekilde olmal&amp;inodot;d&amp;inodot;r:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
