@@ -236,6 +236,7 @@ common_plugins = [
     "plugins.markdown_lang_fix",
     "plugins.search",
     "plugins.pelican_redirect",
+    "plugins.markdown_filter",
 ]
 
 dev_plugins = common_plugins.copy()

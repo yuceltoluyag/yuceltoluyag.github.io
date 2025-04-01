@@ -1,0 +1,106 @@
+{% import '_includes/comment.html' as comment_renderer %} {% import '_includes/comment_form.html' as form_renderer %} {%
+macro render_comments(article) %}
+<section class="comments" id="comment-section">
+    <hr />
+    {% if article.comments %}
+    <!-- Mevcut yorumlar -->
+    <main class="timeline">
+        <h1 class="timeline-header">
+            {% if article.comments|length > 1 %}{{ article.comments|length }} {% endif %}Komik
+            <em>Yorum Var</em>
+        </h1>
+        {% set comments = article.comments|selectattr('fields.replying_to_uid', 'equalto', '')|list %} {% set
+        comments_by_date = comments|sort(attribute='date')|reverse %}
+        <!-- Ana yorumları ters tarih sırasında listele, en yeniler önce. Yanıtları tarih sırasında listele, en eskiler önce. -->
+        {% for comment in comments_by_date %} {{ comment_renderer.render_comment(comment) }} {% endfor %}
+    </main>
+    {% endif %}
+
+    <!-- Yeni yorum formu -->
+    <div id="respond" class="comment__new">{{ form_renderer.render_comment_form(article) }}</div>
+</section>
+
+<!-- Stil ve Script Dosyaları -->
+<link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/comments.min.css" />
+<!-- jQuery Kütüphanesi -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script src="https://uicdn.toast.com/editor/latest/i18n/tr-tr.min.js"></script>
+<!-- <script src="https://uicdn.toast.com/tui-color-picker/latest/tui-color-picker.min.js"></script> -->
+<!-- <script src="https://uicdn.toast.com/editor-plugin-color-syntax/latest/toastui-editor-plugin-color-syntax.min.js"></script> -->
+
+<!-- Önce comments.js'i yükleyelim, addComment değişkenini tanımlasın -->
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/comments.min.js"></script>
+
+<script>
+    const Editor = toastui.Editor;
+    const editor = new Editor({
+        el: document.querySelector("#editor"),
+        height: "auto",
+        placeholder: "İyi bir insan ol fakat bunu ispatlamak için sakın olan vakit harcama.",
+        initialEditType: "markdown",
+        hideModeSwitch: true,
+        previewStyle: "vertical",
+        toolbarItems: [
+            ["bold", "italic", "strike"],
+            ["hr", "quote"],
+            ["ul", "ol", "task"],
+            ["table", "link"],
+            ["codeblock"],
+        ],
+        language: "tr-TR",
+        theme: "dark",
+        // plugins: [
+        //   Editor.plugin.colorSyntax,
+        // ],
+    });
+
+    editor.removeToolbarItem("image");
+    let insertBodyHtml = document.createElement("div");
+    insertBodyHtml.innerHTML = `
+    <label>Resim URL</label>
+    <input
+      id="imageUrl"
+      type="text"
+    />
+    <label>Resim Açıklaması</label>
+    <input
+      id="imageAltText"
+      type="text"
+    />
+    <br/><br/>
+    <div class="toastui-editor-button-container">
+      <button type="button" class="toastui-editor-close-button" onClick="javascript:editor.eventEmitter.emit('closePopup'); editor.focus();">
+        İptal
+      </button>
+      <button type="button" class="toastui-editor-ok-button" onClick="javascript:editor.exec('addImage', { imageUrl: document.getElementById('imageUrl').value, altText: document.getElementById('imageAltText').value }); editor.eventEmitter.emit('closePopup'); editor.focus();">
+        Ekle
+      </button>
+    </div>
+  `;
+    editor.insertToolbarItem(
+        { groupIndex: 3, itemIndex: 0 },
+        {
+            name: "imageUrl",
+            tooltip: "Resim Ekle",
+            popup: {
+                body: insertBodyHtml,
+            },
+            text: "",
+            className: "image toastui-editor-toolbar-icons",
+            style: {},
+        }
+    );
+
+    $(function () {
+        $("#comment-form-submit").click(function () {
+            var mysave = ($("#editor").value = editor.getMarkdown());
+            $("#hiddeninput").val(mysave);
+            console.log(mysave);
+        });
+    });
+</script>
+
+{% if RECAPTCHA_ENABLED %}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+{% endif %} {% endmacro %}
