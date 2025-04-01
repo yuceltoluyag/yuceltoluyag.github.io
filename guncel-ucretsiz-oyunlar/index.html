@@ -803,64 +803,7 @@
 
     <!-- Makale içeriği -->
     <div class="p-8">
-        <div class="prose prose-lg dark:prose-invert max-w-none post-content">
-            <script>
-                // Makale içindeki tüm resimlere ve iframe'lere lazysizes için gerekli değişiklikleri uygula
-                document.addEventListener("DOMContentLoaded", function () {
-                    // Resimleri lazysizes ile optimize et
-                    const images = document.querySelectorAll(".post-content img");
-                    images.forEach((img) => {
-                        // Eğer henüz lazyload sınıfı yoksa ekle
-                        if (!img.classList.contains("lazyload")) {
-                            img.classList.add("lazyload");
-
-                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
-                            if (img.hasAttribute("src") && !img.hasAttribute("data-src")) {
-                                const srcValue = img.getAttribute("src");
-                                // Placeholder olmayan gerçek bir görüntüyse
-                                if (!srcValue.startsWith("data:image")) {
-                                    img.setAttribute("data-src", srcValue);
-                                    // Küçük bir placeholder kullan
-                                    img.setAttribute(
-                                        "src",
-                                        "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    );
-                                }
-                            }
-                        }
-
-                        // Resim boyutları önceden belirlenmemişse, varsayılan genişlik ve yükseklik ata
-                        if (!img.getAttribute("width") && !img.getAttribute("height")) {
-                            img.setAttribute("width", "100%");
-                            img.setAttribute("height", "auto");
-                            img.style.aspectRatio = "auto";
-                        }
-                    });
-
-                    // iframe'leri lazysizes ile optimize et
-                    const iframes = document.querySelectorAll(".post-content iframe");
-                    iframes.forEach((iframe) => {
-                        // Eğer henüz lazyload sınıfı yoksa ekle
-                        if (!iframe.classList.contains("lazyload")) {
-                            iframe.classList.add("lazyload");
-
-                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
-                            if (iframe.hasAttribute("src") && !iframe.hasAttribute("data-src")) {
-                                const srcValue = iframe.getAttribute("src");
-                                iframe.setAttribute("data-src", srcValue);
-                                iframe.setAttribute("src", "about:blank");
-                            }
-                        }
-                    });
-
-                    // Paragraf elementlerine min-height değeri ekle
-                    const paragraphs = document.querySelectorAll(".post-content p");
-                    paragraphs.forEach((p) => {
-                        p.style.minHeight = "1.5em";
-                    });
-                });
-            </script>
-            <p><img alt="G&uuml;ncel Steam, Epic, GOG Oyunlar&inodot;" src="/images/ucretsiz-oyunlar.webp"/></p>
+        <div class="prose prose-lg dark:prose-invert max-w-none post-content"><p><img alt="G&uuml;ncel Steam, Epic, GOG Oyunlar&inodot;" src="/images/ucretsiz-oyunlar.webp"/></p>
 <h2 id="guncel-ucretsiz-oyunlar">G&uuml;ncel &Uuml;cretsiz Oyunlar 🎮🚀</h2>
 <p>Selamlar! 🎉 <strong>Discord</strong> &uuml;zerinde <strong>g&uuml;ncel &uuml;cretsiz oyun</strong> duyurular&inodot;n&inodot; payla&scedil;&inodot;yordum. Ancak ya&scedil;ad&inodot;&gbreve;&inodot;m rahats&inodot;zl&inodot;k ve <strong>Discord</strong>'a yeterince vakit ay&inodot;ramamam nedeniyle bu payla&scedil;&inodot;mlara ara vermek zorunda kald&inodot;m. Neyse, s&ouml;z&uuml; fazla uzatmayal&inodot;m. 😃</p>
 <p>Birden fazla kayna&gbreve;&inodot; tarayan ve &scedil;u &ouml;zelliklere sahip bir sistem geli&scedil;tirdim:</p>
@@ -872,28 +815,187 @@
 <p><strong>Oyun</strong> ve <strong>DLC</strong> kampanyalar&inodot;n&inodot; tarayarak anl&inodot;k olarak <strong>Telegram grubuna</strong> g&ouml;ndermektedir.</p>
 <h3 id="katilmak-ister-misiniz">Kat&inodot;lmak ister misiniz? 🤩</h3>
 <p><a href="https://discord.gg/da3Su8s" rel="noopener noreferrer" target="_blank" title="https://discord.gg/da3Su8s">G&uuml;ncel &Uuml;cretsiz Oyunlar Telegram Kanal&inodot;</a></p>
-<p><strong>Steam, Epic, GOG, Keylol, Reddit</strong> ve daha bir &ccedil;ok kayna&gbreve;&inodot; tarayarak en yeni &uuml;cretsiz oyun duyurular&inodot;ndan haberdar olun! 🚀</p>
-        </div>
+<p><strong>Steam, Epic, GOG, Keylol, Reddit</strong> ve daha bir &ccedil;ok kayna&gbreve;&inodot; tarayarak en yeni &uuml;cretsiz oyun duyurular&inodot;ndan haberdar olun! 🚀</p></div>
     </div>
 
-    <div class="p-4 border-t border-border-card bg-site-card-alt/30">
-        <div class="flex justify-end">
-            <a
-                href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/guncel-ucretsiz-oyunlar.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[#24292F] dark:bg-[#2D333B] rounded-md hover:bg-[#1b1f24] dark:hover:bg-[#444c56] hover:text-white transition-colors duration-300 border border-gray-300 dark:border-gray-700">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                </svg>
-                GitHub'da düzenle
-            </a>
+    <!-- Yorumlar Bölümü -->
+    <div class="comments-section"><section class="comments" id="comment-section">
+    <hr />
+
+    <!-- Yeni yorum formu -->
+    <div id="respond" class="comment__new"><!-- Editor Eklentileri -->
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+<link rel="stylesheet" href="https://nhn.github.io/tui.editor/latest/dist/cdn/theme/toastui-editor-dark.css" />
+<link rel="stylesheet" href="https://uicdn.toast.com/tui-color-picker/latest/tui-color-picker.css" />
+<link
+    rel="stylesheet"
+    href="https://uicdn.toast.com/editor-plugin-color-syntax/latest/toastui-editor-plugin-color-syntax.min.css" />
+
+<div id="comments">
+    <form
+        class="js-form form"
+        method="post"
+        action="https://incandescent-rugelach-38e174.netlify.app/v3/entry/github/yuceltoluyag/yuceltoluyag.github.io/main/comments">
+        <input type="hidden" name="options[origin]" value="/guncel-ucretsiz-oyunlar/" />
+        <input type="hidden" name="options[parent]" value="/guncel-ucretsiz-oyunlar/" />
+        <input
+            type="hidden"
+            id="comment-replying-to-uid"
+            name="fields[replying_to_uid]"
+            value="None" />
+        <input type="hidden" name="options[slug]" value="guncel-ucretsiz-oyunlar" />
+        <div class="textfield">
+            <label for="comment-form-message">
+                <h2>Muhteşem Yorumunuz</h2>
+                <textarea id="hiddeninput" name="fields[message]" style="display: none"></textarea>
+                <div id="editor"></div>
+            </label>
         </div>
+
+        <div class="textfield narrowfield">
+            <label for="comment-form-name">
+                Adınız
+                <input
+                    class="textfield__input"
+                    name="fields[name]"
+                    type="text"
+                    id="comment-form-name"
+                    placeholder="Adınız"
+                    required />
+            </label>
+        </div>
+
+        <div class="textfield narrowfield">
+            <label for="comment-form-email">
+                E-posta Adresiniz
+                <input
+                    class="textfield__input"
+                    name="fields[email]"
+                    type="email"
+                    id="comment-form-email"
+                    placeholder="Eposta adresiniz(Şifrelenerek Saklanır)"
+                    required />
+            </label>
+        </div>
+
+        <div class="textfield narrowfield hp">
+            <label for="hp">
+                <input class="textfield__input" name="fields[hp]" id="hp" type="text" placeholder="Leave blank" />
+            </label>
+        </div>
+
+
+        <button type="button" class="button" id="cancel-comment-reply-link" style="display: none">İptal</button>
+
+        <button class="button" id="comment-form-submit">Gönder</button>
+    </form>
+
+    <article class="modal">
+        <div>
+            <h3 class="modal-title js-modal-title"></h3>
+        </div>
+        <div class="mdl-card__supporting-text js-modal-text"></div>
+        <div class="mdl-card__actions mdl-card--border">
+            <button class="button mdl-button--colored mdl-js-button mdl-js-ripple-effect js-close-modal">Kapat</button>
+        </div>
+    </article>
+
+    <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="display: none">
+        <symbol id="icon-loading" viewBox="149.8 37.8 499.818 525">
+            <path
+                d="M557.8 187.8c13.8 0 24.601-10.8 24.601-24.6S571.6 138.6 557.8 138.6s-24.6 10.8-24.6 24.6c0 13.2 10.8 24.6 24.6 24.6zm61.2 90.6c-16.8 0-30.6 13.8-30.6 30.6s13.8 30.6 30.6 30.6 30.6-13.8 30.6-30.6c.6-16.8-13.2-30.6-30.6-30.6zm-61.2 145.2c-20.399 0-36.6 16.2-36.6 36.601 0 20.399 16.2 36.6 36.6 36.6 20.4 0 36.601-16.2 36.601-36.6C595 439.8 578.2 423.6 557.8 423.6zM409 476.4c-24 0-43.2 19.199-43.2 43.199s19.2 43.2 43.2 43.2 43.2-19.2 43.2-43.2S433 476.4 409 476.4zM260.8 411c-27 0-49.2 22.2-49.2 49.2s22.2 49.2 49.2 49.2 49.2-22.2 49.2-49.2-22.2-49.2-49.2-49.2zm-10.2-102c0-27.6-22.8-50.4-50.4-50.4-27.6 0-50.4 22.8-50.4 50.4 0 27.6 22.8 50.4 50.4 50.4 27.6 0 50.4-22.2 50.4-50.4zm10.2-199.8c-30 0-54 24-54 54s24 54 54 54 54-24 54-54-24.6-54-54-54zM409 37.8c-35.4 0-63.6 28.8-63.6 63.6S374.2 165 409 165s63.6-28.8 63.6-63.6-28.2-63.6-63.6-63.6z" />
+        </symbol>
+    </svg>
+</div>
+</div>
+</section>
+
+<!-- Stil ve Script Dosyaları -->
+<link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/comments.min.css" />
+<!-- jQuery Kütüphanesi -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+<script src="https://uicdn.toast.com/editor/latest/i18n/tr-tr.min.js"></script>
+<!-- <script src="https://uicdn.toast.com/tui-color-picker/latest/tui-color-picker.min.js"></script> -->
+<!-- <script src="https://uicdn.toast.com/editor-plugin-color-syntax/latest/toastui-editor-plugin-color-syntax.min.js"></script> -->
+
+<!-- Önce comments.js'i yükleyelim, addComment değişkenini tanımlasın -->
+<script src="https://yuceltoluyag.dev/assets/js/comments.min.js"></script>
+
+<script>
+    const Editor = toastui.Editor;
+    const editor = new Editor({
+        el: document.querySelector("#editor"),
+        height: "auto",
+        placeholder: "İyi bir insan ol fakat bunu ispatlamak için sakın olan vakit harcama.",
+        initialEditType: "markdown",
+        hideModeSwitch: true,
+        previewStyle: "vertical",
+        toolbarItems: [
+            ["bold", "italic", "strike"],
+            ["hr", "quote"],
+            ["ul", "ol", "task"],
+            ["table", "link"],
+            ["codeblock"],
+        ],
+        language: "tr-TR",
+        theme: "dark",
+        // plugins: [
+        //   Editor.plugin.colorSyntax,
+        // ],
+    });
+
+    editor.removeToolbarItem("image");
+    let insertBodyHtml = document.createElement("div");
+    insertBodyHtml.innerHTML = `
+    <label>Resim URL</label>
+    <input
+      id="imageUrl"
+      type="text"
+    />
+    <label>Resim Açıklaması</label>
+    <input
+      id="imageAltText"
+      type="text"
+    />
+    <br/><br/>
+    <div class="toastui-editor-button-container">
+      <button type="button" class="toastui-editor-close-button" onClick="javascript:editor.eventEmitter.emit('closePopup'); editor.focus();">
+        İptal
+      </button>
+      <button type="button" class="toastui-editor-ok-button" onClick="javascript:editor.exec('addImage', { imageUrl: document.getElementById('imageUrl').value, altText: document.getElementById('imageAltText').value }); editor.eventEmitter.emit('closePopup'); editor.focus();">
+        Ekle
+      </button>
     </div>
+  `;
+    editor.insertToolbarItem(
+        { groupIndex: 3, itemIndex: 0 },
+        {
+            name: "imageUrl",
+            tooltip: "Resim Ekle",
+            popup: {
+                body: insertBodyHtml,
+            },
+            text: "",
+            className: "image toastui-editor-toolbar-icons",
+            style: {},
+        }
+    );
+
+    $(function () {
+        $("#comment-form-submit").click(function () {
+            var mysave = ($("#editor").value = editor.getMarkdown());
+            $("#hiddeninput").val(mysave);
+            console.log(mysave);
+        });
+    });
+</script>
+
+ </div>
 
     <!-- Paylaşım Butonları -->
     <div class="p-8 border-t border-border-card min-h-[150px]">
