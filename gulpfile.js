@@ -120,53 +120,26 @@ function styles() {
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.styles.dest));
 
-    // comments.css -> comments.min.css
-    const commentsTask = gulp
-        .src(path.join(BASE_PATHS.assets, "css", "comments.css"), { allowEmpty: true })
-        .pipe(sourcemaps.init())
-        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
-        .pipe(rename({ suffix: ".min" }))
-        .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(paths.styles.dest));
-
     // custom-code.css -> custom-code.css (doğrudan kopyalama)
     const customCodeTask = gulp
         .src(path.join(BASE_PATHS.assets, "css", "custom-code.css"), { allowEmpty: true })
         .pipe(gulp.dest(paths.styles.dest));
 
     // Tüm görevleri paralel olarak çalıştır
-    return Promise.all([styleTask, pygmentsTask, commentsTask, customCodeTask]);
+    return Promise.all([styleTask, pygmentsTask, customCodeTask]);
 }
 
 // JavaScript işleme görevi
 function scripts() {
-    // comments.js dosyasını biraz daha az sıkıştıralım (debug için)
-    const commentsJsTask = gulp
-        .src(path.join(BASE_PATHS.assets, "js", "comments.js"), { allowEmpty: true })
-        .pipe(sourcemaps.init())
-        .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
-        .pipe(terser({ compress: { drop_console: false } })) // console.log'ları koru
-        .pipe(rename({ suffix: ".min" }))
-        .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(paths.scripts.dest));
-
-    // Diğer tüm JS dosyaları
-    const otherJsTask = gulp
-        .src(
-            [
-                paths.scripts.src,
-                "!" + path.join(BASE_PATHS.assets, "js", "comments.js"), // comments.js'i hariç tut
-            ],
-            { allowEmpty: true }
-        )
+    // Tüm JS dosyaları
+    return gulp
+        .src(paths.scripts.src, { allowEmpty: true })
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
         .pipe(terser({ compress: { drop_console: true } }))
         .pipe(rename({ suffix: ".min" }))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.scripts.dest));
-
-    return Promise.all([commentsJsTask, otherJsTask]);
 }
 
 // Resim optimizasyonu görevi

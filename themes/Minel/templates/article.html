@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% import '_includes/translations.html' as translations with context %} {% import
-'_includes/comments.html' as comments with context %} {% block title %}{{ article.title }}{% endblock %} {% block seo %}
+{% extends "base.html" %} {% import '_includes/translations.html' as translations with context %} {% block title %}{{
+article.title }}{% endblock %} {% block seo %}
 <!-- Makale içeriğinden ilk resmi Open Graph için çıkar -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -218,9 +218,6 @@
     <div class="p-8">
         <div class="prose prose-lg dark:prose-invert max-w-none post-content">{{ article.content }}</div>
     </div>
-
-    <!-- Yorumlar Bölümü -->
-    <div class="comments-section">{{ comments.render_comments(article) }}</div>
 
     <!-- Paylaşım Butonları -->
     <div class="p-8 border-t border-border-card min-h-[150px]">
