@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% import '_includes/translations.html' as translations with context %} {% block title %}{{
-article.title }}{% endblock %} {% block seo %}
+{% extends "base.html" %} {% import '_includes/translations.html' as translations with context %} {% import
+'_includes/comments.html' as comments with context %} {% block title %}{{ article.title }}{% endblock %} {% block seo %}
 <!-- Makale içeriğinden ilk resmi Open Graph için çıkar -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -216,87 +216,11 @@ article.title }}{% endblock %} {% block seo %}
 
     <!-- Makale içeriği -->
     <div class="p-8">
-        <div class="prose prose-lg dark:prose-invert max-w-none post-content">
-            <script>
-                // Makale içindeki tüm resimlere ve iframe'lere lazysizes için gerekli değişiklikleri uygula
-                document.addEventListener("DOMContentLoaded", function () {
-                    // Resimleri lazysizes ile optimize et
-                    const images = document.querySelectorAll(".post-content img");
-                    images.forEach((img) => {
-                        // Eğer henüz lazyload sınıfı yoksa ekle
-                        if (!img.classList.contains("lazyload")) {
-                            img.classList.add("lazyload");
-
-                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
-                            if (img.hasAttribute("src") && !img.hasAttribute("data-src")) {
-                                const srcValue = img.getAttribute("src");
-                                // Placeholder olmayan gerçek bir görüntüyse
-                                if (!srcValue.startsWith("data:image")) {
-                                    img.setAttribute("data-src", srcValue);
-                                    // Küçük bir placeholder kullan
-                                    img.setAttribute(
-                                        "src",
-                                        "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    );
-                                }
-                            }
-                        }
-
-                        // Resim boyutları önceden belirlenmemişse, varsayılan genişlik ve yükseklik ata
-                        if (!img.getAttribute("width") && !img.getAttribute("height")) {
-                            img.setAttribute("width", "100%");
-                            img.setAttribute("height", "auto");
-                            img.style.aspectRatio = "auto";
-                        }
-                    });
-
-                    // iframe'leri lazysizes ile optimize et
-                    const iframes = document.querySelectorAll(".post-content iframe");
-                    iframes.forEach((iframe) => {
-                        // Eğer henüz lazyload sınıfı yoksa ekle
-                        if (!iframe.classList.contains("lazyload")) {
-                            iframe.classList.add("lazyload");
-
-                            // Eğer src varsa ve data-src yoksa, src'yi data-src'ye taşı
-                            if (iframe.hasAttribute("src") && !iframe.hasAttribute("data-src")) {
-                                const srcValue = iframe.getAttribute("src");
-                                iframe.setAttribute("data-src", srcValue);
-                                iframe.setAttribute("src", "about:blank");
-                            }
-                        }
-                    });
-
-                    // Paragraf elementlerine min-height değeri ekle
-                    const paragraphs = document.querySelectorAll(".post-content p");
-                    paragraphs.forEach((p) => {
-                        p.style.minHeight = "1.5em";
-                    });
-                });
-            </script>
-            {{ article.content|safe }}
-        </div>
+        <div class="prose prose-lg dark:prose-invert max-w-none post-content">{{ article.content }}</div>
     </div>
 
-    {% if ARTICLE_EDIT_LINK %}
-    <div class="p-4 border-t border-border-card bg-site-card-alt/30">
-        <div class="flex justify-end">
-            <a
-                href="{{ ARTICLE_EDIT_LINK % {'slug': article.slug} }}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-[#24292F] dark:bg-[#2D333B] rounded-md hover:bg-[#1b1f24] dark:hover:bg-[#444c56] hover:text-white transition-colors duration-300 border border-gray-300 dark:border-gray-700">
-                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                </svg>
-                GitHub'da düzenle
-            </a>
-        </div>
-    </div>
-    {% endif %}
+    <!-- Yorumlar Bölümü -->
+    <div class="comments-section">{{ comments.render_comments(article) }}</div>
 
     <!-- Paylaşım Butonları -->
     <div class="p-8 border-t border-border-card min-h-[150px]">

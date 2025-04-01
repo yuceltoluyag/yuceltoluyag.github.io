@@ -1,0 +1,50 @@
+{% macro render_comment(comment, is_reply=false) %}
+<article
+    id="comment-{{ comment._id }}"
+    class="js-comment comment{% if is_reply %} child{% endif %}"
+    uid="{{ comment._id }}">
+    {% if comment.fields.url %}
+    <noscript><img src="{{ comment.fields.url }}" alt="" /></noscript>
+    <a class="avatar" href="#comment-{{ comment._id }}">
+        <img class="avatar rounded-1" alt="{{ comment.fields.name }}" data-src="{{ comment.fields.url }}" />
+    </a>
+    {% else %}
+    <noscript><img src="/theme/images/avatar-60.png" alt="" /></noscript>
+    <a class="avatar" href="#comment-{{ comment._id }}">
+        <img
+            class="avatar rounded-1"
+            alt="{{ comment.fields.name }}"
+            src="https://www.gravatar.com/avatar/{{ comment.fields.email|md5 }}?s=80&d=identicon" />
+    </a>
+    {% endif %}
+
+    <div class="comment">
+        <header class="comment-header">
+            <span class="comment-meta">
+                <a class="text-link" href="#comment-{{ comment._id }}">
+                    <strong>{{ comment.fields.name }}</strong>
+                </a>
+                <relative-time class="text-link" datetime="{{ comment.date|strftime('%Y-%m-%dT%H:%M:%S') }}">
+                    {{ comment.date|strftime('%-d %B %Y %H:%M') }}
+                </relative-time>
+            </span>
+            <div class="comment-actions">
+                <details class="details-overlay details-popover reactions-popover">
+                    <summary aria-label="Reactions Menu">
+                        <a
+                            rel="nofollow"
+                            class="comment__reply-link"
+                            onclick="return addComment.moveForm('comment-{{ comment._id }}', 'respond', '{{ comment._id }}')">
+                            ↪&#xFE0E; Yanıtla {{ comment.fields.name }}
+                        </a>
+                    </summary>
+                </details>
+            </div>
+        </header>
+        <div class="markdown-body markdown-body-scrollable">{{ comment.fields.message|markdown }}</div>
+    </div>
+
+    {% if not is_reply %} {% set replies = comments|selectattr('fields.replying_to_uid', 'equalto', comment._id)|list %}
+    {% for reply in replies|sort(attribute='date') %} {{ render_comment(reply, true) }} {% endfor %} {% endif %}
+</article>
+{% endmacro %}
