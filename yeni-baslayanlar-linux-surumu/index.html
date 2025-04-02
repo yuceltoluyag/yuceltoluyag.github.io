@@ -144,6 +144,23 @@
             article {
                 min-height: 100px;
             }
+
+            /* LCP için görüntülenmesi gereken ilk büyük içerik öğesi */
+            .primary-content {
+                display: block !important; /* Asla gizlenme */
+                visibility: visible !important; /* Her zaman görünür */
+            }
+
+            /* Ana içerik konteynerı */
+            .main-container {
+                min-height: 100vh; /* En az sayfa yüksekliği kadar */
+            }
+
+            /* Görünür alanda olan görseller için lazy loading'i devre dışı bırakma */
+            .no-lazy {
+                display: block !important;
+                opacity: 1 !important;
+            }
         </style>
 
         <!-- Lazysizes için preload -->
@@ -339,6 +356,11 @@
                 background-size: 200% 100%;
                 animation: skeleton-loading 1.5s infinite;
                 border-radius: 0.5rem;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                right: 0;
             }
 
             @keyframes skeleton-loading {
@@ -355,30 +377,226 @@
                 display: none;
             }
 
-            /* Sayfa tamamen yüklendiğinde gösterilen içeriği önce gizle */
+            /* Gerçek içerik her zaman görünür olsun, sadece iskelet yükleyici üstte */
             .content-loaded {
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
+                position: relative;
+                z-index: 2;
             }
 
-            .js-loaded .content-loaded {
-                opacity: 1;
+            /* İçerik konteynerı göreceli konumlandırma için */
+            .content-container {
+                position: relative;
             }
         </style>
 
         <script>
-            // Sayfa yüklenmesi tamamlandığında iskelet yükleyicileri gizle
+            // Görünür alandaki önemli içerikleri erken yükleme
             document.addEventListener("DOMContentLoaded", function () {
-                // JavaScript ile yüklenen içeriğin tamamlanmasını bekle
-                window.addEventListener("load", function () {
-                    document.body.classList.add("js-loaded");
+                // Hero bölümündeki görseller ve ana içerik için lazy loading'i devre dışı bırak
+                var visibleImages = document.querySelectorAll(".primary-content img");
+                visibleImages.forEach(function (img) {
+                    // lazyload sınıfını kaldır ve no-lazy ekle
+                    img.classList.remove("lazyload");
+                    img.classList.add("no-lazy");
+
+                    // data-src değerini src'ye taşı
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        delete img.dataset.src;
+                    }
+
+                    // srcset için de aynısını yap
+                    if (img.dataset.srcset) {
+                        img.srcset = img.dataset.srcset;
+                        delete img.dataset.srcset;
+                    }
                 });
 
-                // 3 saniye sonra zorla yüklenmiş say (bazı kaynaklar yüklenemese bile)
-                setTimeout(function () {
-                    document.body.classList.add("js-loaded");
-                }, 3000);
+                // İskelet yükleyicinin kaldırılması
+                document.body.classList.add("js-loaded");
+
+                // JavaScript dosyalarını yüklemeye başla
+                loadJsFiles();
             });
+
+            // JavaScript dosyalarını asenkron olarak yükle
+            function loadJsFiles() {
+                var siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
+                var themeDir = document.querySelector('meta[name="theme-static-dir"]').getAttribute("content");
+                var isArticle = "true";
+
+                // Ortak JS dosyaları - öncelik sırasına göre yüklenir
+                setTimeout(function () {
+                    loadScript("https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js");
+
+                    // Biraz gecikmeyle diğer JS dosyalarını yükle
+                    setTimeout(function () {
+                        loadScript(siteUrl + "/" + themeDir + "/js/back-to-top.min.js");
+                        loadScript(siteUrl + "/" + themeDir + "/js/progress-bar.min.js");
+                        loadScript(siteUrl + "/" + themeDir + "/js/search.min.js");
+                        loadScript(siteUrl + "/" + themeDir + "/js/copy-code.min.js");
+
+                        // Makale sayfasına özel JS dosyaları
+                        if (isArticle === "true") {
+                            loadScript(siteUrl + "/" + themeDir + "/js/toc.min.js");
+                        }
+                    }, 50); // 50ms gecikme
+                }, 0);
+            }
+
+            // JS dosyalarını asenkron yükleyen yardımcı fonksiyon
+            function loadScript(url, callback) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = url;
+                script.async = true;
+
+                if (callback) {
+                    script.onload = callback;
+                }
+
+                document.head.appendChild(script);
+            }
+        </script>
+
+<!-- TOC JavaScript -->
+<script src="https://yuceltoluyag.dev/assets/js/toc.min.js"></script>
+<!-- Kod kopyalama JavaScript -->
+<script src="https://yuceltoluyag.dev/assets/js/copy-code.min.js"></script>
+<script>
+    function toggleTOC() {
+        const modal = document.getElementById("tocModal");
+        modal.classList.toggle("hidden");
+    }
+
+    // Sayfa dışına tıklandığında içindekiler kartını kapat
+    document.addEventListener("click", function (event) {
+        const modal = document.getElementById("tocModal");
+        const tocButton = document.querySelector('[onclick="toggleTOC()"]');
+        if (!modal.contains(event.target) && !tocButton.contains(event.target) && !modal.classList.contains("hidden")) {
+            modal.classList.add("hidden");
+        }
+    });
+
+    // TOC linklerine tıklandığında kartı kapat
+    document.querySelectorAll("#tocModal .toc a").forEach((link) => {
+        link.addEventListener("click", () => {
+            document.getElementById("tocModal").classList.add("hidden");
+        });
+    });
+
+    // Makale bağlantısını kopyala
+    function copyArticleLink() {
+        const articleUrl = window.location.href;
+        navigator.clipboard
+            .writeText(articleUrl)
+            .then(() => {
+                // Kopyalama başarılı olduğunda bildirim göster
+                const notification = document.getElementById("copyNotification");
+                notification.classList.remove("hidden");
+                notification.classList.add("opacity-100");
+
+                // 2 saniye sonra bildirimi gizle
+                setTimeout(() => {
+                    notification.classList.add("opacity-0");
+                    setTimeout(() => {
+                        notification.classList.add("hidden");
+                        notification.classList.remove("opacity-0");
+                    }, 300);
+                }, 2000);
+            })
+            .catch((err) => {
+                console.error("Bağlantı kopyalanamadı:", err);
+                alert("Bağlantı kopyalanamadı. Lütfen tekrar deneyin.");
+            });
+    }
+
+    // Sosyal medya paylaşımı için çerez izin kontrolü
+    function shareWithConsent(platform, url, title) {
+        // Çerez izni kontrolü
+        const cookieConsent = localStorage.getItem("cookie-consent");
+
+        if (cookieConsent === "accepted") {
+            // İzin verilmiş, doğrudan paylaş
+            shareContent(platform, url, title);
+        } else {
+            // İzin alınmamış, uyarı göster ve izin iste
+            const confirmShare = confirm(
+                "Sosyal medyada paylaşım yapabilmek için çerez kullanım iznine ihtiyacımız var. " +
+                    "Çerez kullanımına izin vermek istiyor musunuz?"
+            );
+
+            if (confirmShare) {
+                // Kullanıcı izin verdi
+                localStorage.setItem("cookie-consent", "accepted");
+
+                // Google Analytics ve diğer üçüncü taraf çerezlerini etkinleştir
+                if (typeof gtag === "function") {
+                    gtag("consent", "update", {
+                        analytics_storage: "granted",
+                        ad_storage: "granted",
+                    });
+                }
+
+                // Paylaş
+                shareContent(platform, url, title);
+            }
+        }
+    }
+
+    // Platforma göre paylaşım yap
+    function shareContent(platform, url, title) {
+        let shareUrl = "";
+
+        switch (platform) {
+            case "twitter":
+                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+                break;
+            case "mastodon":
+                shareUrl = `https://mastodonshare.com/?text=${title}%20${url}`;
+                break;
+            case "facebook":
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                break;
+            case "linkedin":
+                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+                break;
+            case "reddit":
+                shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;
+                break;
+            case "whatsapp":
+                shareUrl = `https://wa.me/?text=${title}%20${url}`;
+                break;
+            case "telegram":
+                shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
+                break;
+            case "bluesky":
+                shareUrl = `https://bsky.app/intent/compose?text=${title}%20${url}`;
+                break;
+            case "tumblr":
+                shareUrl = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&title=${title}`;
+                break;
+            case "email":
+                shareUrl = `mailto:?subject=${title}&body=${title}%20${url}`;
+                break;
+            default:
+                console.error("Bilinmeyen platform:", platform);
+                return;
+        }
+
+        // Paylaşım penceresini aç
+        window.open(shareUrl, "_blank", "width=600,height=400");
+    }
+</script>
+
+        <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
+        <script>
+            // Fontların düzgün yüklenmesini kontrol eder
+            if ("fonts" in document) {
+                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
+                    document.documentElement.classList.add("fonts-loaded");
+                });
+            }
         </script>
 
         <!-- Paralax Header -->
@@ -394,7 +612,8 @@
                         <img
                             src="https://yuceltoluyag.dev/images/logo.svg"
                             alt="Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D"
-                            class="h-10 w-auto transition-transform duration-300 hover:scale-110" />
+                            class="h-10 w-auto transition-transform duration-300 hover:scale-110 no-lazy"
+                            fetchpriority="high" />
                     </a>
 
                     <!-- Menü -->
@@ -531,32 +750,34 @@
         <!-- Ana içerik -->
         <div
             class="relative z-20 ">
-            <!-- İskelet yükleyici -->
-            <div
-                class="container mx-auto px-6 lg:px-8 pt-24 pb-8 content-skeleton">
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <!-- Sidebar iskelet -->
-                    <div class="w-full lg:w-1/4 order-2 lg:order-1">
-                        <div class="sticky top-24 space-y-6">
-                            <div class="h-[200px] w-full rounded-lg"></div>
-                            <div class="h-[300px] w-full rounded-lg"></div>
+            <!-- İçerik konteynerı -->
+            <div class="content-container">
+                <!-- İskelet yükleyici -->
+                <div
+                    class="container mx-auto px-6 lg:px-8 pt-24 pb-8 content-skeleton">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Sidebar iskelet -->
+                        <div class="w-full lg:w-1/4 order-2 lg:order-1">
+                            <div class="sticky top-24 space-y-6">
+                                <div class="h-[200px] w-full rounded-lg"></div>
+                                <div class="h-[300px] w-full rounded-lg"></div>
+                            </div>
+                        </div>
+
+                        <!-- Ana içerik iskelet -->
+                        <div class="lg:w-3/4 order-1 lg:order-2">
+                            <div class="h-[500px] w-full rounded-lg"></div>
                         </div>
                     </div>
-
-                    <!-- Ana içerik iskelet -->
-                    <div class="lg:w-3/4 order-1 lg:order-2">
-                        <div class="h-[500px] w-full rounded-lg"></div>
-                    </div>
                 </div>
-            </div>
 
-            <!-- Gerçek içerik -->
-            <main
-                class="container mx-auto px-6 lg:px-8 pt-24 pb-8 content-loaded">
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <!-- Sol sidebar -->
-                    <aside class="w-full lg:w-1/4 order-2 lg:order-1">
-                        <div class="sticky top-24 space-y-6">
+                <!-- Gerçek içerik -->
+                <main
+                    class="container mx-auto px-6 lg:px-8 pt-24 pb-8 content-loaded main-container">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Sol sidebar -->
+                        <aside class="w-full lg:w-1/4 order-2 lg:order-1">
+                            <div class="sticky top-24 space-y-6">
   <!-- Profil kartı -->
 <div class="card mb-6">
     <div class="flex flex-col items-center text-center">
@@ -817,14 +1038,15 @@
         </div>
     </div>
 </div>
-                          </div>
-                    </aside>
+                              </div>
+                        </aside>
 
-                    <!-- Ana içerik -->
-                    <div class="lg:w-3/4 order-1 lg:order-2">
+                        <!-- Ana içerik -->
+                        <div
+                            class="lg:w-3/4 order-1 lg:order-2 primary-content">
 <article class="bg-site-card rounded-lg overflow-hidden">
     <!-- Makale başlığı ve meta bilgileri -->
-    <div class="p-8 border-b border-border-card">
+    <div class="p-8 border-b border-border-card primary-content">
         <h1 class="text-3xl font-bold mb-4 text-text-primary">Yeni Başlayanlar Hangi Linux Sürümünü Kurmalı?</h1>
 
         <!-- Çeviriler -->
@@ -925,7 +1147,7 @@
 
 
     <!-- Makale içeriği -->
-    <div class="p-8">
+    <div class="p-8 primary-content">
         <div class="prose prose-lg dark:prose-invert max-w-none post-content"><h1 id="yeni-baslayanlar-icin-en-iyi-linux-dagitimlari">Yeni Ba&scedil;layanlar &Idot;&ccedil;in En &Idot;yi Linux Da&gbreve;&inodot;t&inodot;mlar&inodot;</h1>
 <p>Linux d&uuml;nyas&inodot;na yeni ad&inodot;m atan kullan&inodot;c&inodot;lar i&ccedil;in do&gbreve;ru da&gbreve;&inodot;t&inodot;m&inodot; se&ccedil;mek, &ouml;&gbreve;renme s&uuml;recini kolayla&scedil;t&inodot;ran &ouml;nemli bir ad&inodot;md&inodot;r. Kullan&inodot;c&inodot; dostu aray&uuml;ze sahip, geni&scedil; topluluk deste&gbreve;i olan ve stabil &ccedil;al&inodot;&scedil;an bir s&uuml;r&uuml;m tercih edilmelidir. &Idot;&scedil;te yeni ba&scedil;layanlar i&ccedil;in en iyi Linux da&gbreve;&inodot;t&inodot;mlar&inodot;:</p>
 <p><img alt="ubuntu-logo" src="/images/ubuntu-logo.webp"/></p>
@@ -1409,9 +1631,10 @@ KONU ESK&Idot;D&Idot;&Gbreve;&Idot; &Idot;&Ccedil;&Idot;N V&Idot;DEO &Ccedil;EK&
         </div>
     </div>
 </article>
+                        </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -1522,182 +1745,6 @@ KONU ESK&Idot;D&Idot;&Gbreve;&Idot; &Idot;&Ccedil;&Idot;N V&Idot;DEO &Ccedil;EK&
                     }
                 }
             });
-        </script>
-
-        <!-- JavaScript dosyaları -->
-        <script>
-            // JS dosyalarını asenkron yükleyen yardımcı fonksiyon
-            function loadScript(url, callback) {
-                var script = document.createElement("script");
-                script.type = "text/javascript";
-                script.src = url;
-                script.async = true;
-
-                if (callback) {
-                    script.onload = callback;
-                }
-
-                document.head.appendChild(script);
-            }
-
-            // Sayfa yüklendiğinde JS dosyalarını asenkron olarak yükle
-            document.addEventListener("DOMContentLoaded", function () {
-                var siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
-                var themeDir = document.querySelector('meta[name="theme-static-dir"]').getAttribute("content");
-                var isArticle = "true";
-
-                // Ortak JS dosyaları
-                loadScript("https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/back-to-top.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/progress-bar.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/search.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/copy-code.min.js");
-
-                // Makale sayfasına özel JS dosyaları
-                if (isArticle === "true") {
-                    loadScript(siteUrl + "/" + themeDir + "/js/toc.min.js");
-                }
-            });
-        </script>
-
-<!-- TOC JavaScript -->
-<script src="https://yuceltoluyag.dev/assets/js/toc.min.js"></script>
-<!-- Kod kopyalama JavaScript -->
-<script src="https://yuceltoluyag.dev/assets/js/copy-code.min.js"></script>
-<script>
-    function toggleTOC() {
-        const modal = document.getElementById("tocModal");
-        modal.classList.toggle("hidden");
-    }
-
-    // Sayfa dışına tıklandığında içindekiler kartını kapat
-    document.addEventListener("click", function (event) {
-        const modal = document.getElementById("tocModal");
-        const tocButton = document.querySelector('[onclick="toggleTOC()"]');
-        if (!modal.contains(event.target) && !tocButton.contains(event.target) && !modal.classList.contains("hidden")) {
-            modal.classList.add("hidden");
-        }
-    });
-
-    // TOC linklerine tıklandığında kartı kapat
-    document.querySelectorAll("#tocModal .toc a").forEach((link) => {
-        link.addEventListener("click", () => {
-            document.getElementById("tocModal").classList.add("hidden");
-        });
-    });
-
-    // Makale bağlantısını kopyala
-    function copyArticleLink() {
-        const articleUrl = window.location.href;
-        navigator.clipboard
-            .writeText(articleUrl)
-            .then(() => {
-                // Kopyalama başarılı olduğunda bildirim göster
-                const notification = document.getElementById("copyNotification");
-                notification.classList.remove("hidden");
-                notification.classList.add("opacity-100");
-
-                // 2 saniye sonra bildirimi gizle
-                setTimeout(() => {
-                    notification.classList.add("opacity-0");
-                    setTimeout(() => {
-                        notification.classList.add("hidden");
-                        notification.classList.remove("opacity-0");
-                    }, 300);
-                }, 2000);
-            })
-            .catch((err) => {
-                console.error("Bağlantı kopyalanamadı:", err);
-                alert("Bağlantı kopyalanamadı. Lütfen tekrar deneyin.");
-            });
-    }
-
-    // Sosyal medya paylaşımı için çerez izin kontrolü
-    function shareWithConsent(platform, url, title) {
-        // Çerez izni kontrolü
-        const cookieConsent = localStorage.getItem("cookie-consent");
-
-        if (cookieConsent === "accepted") {
-            // İzin verilmiş, doğrudan paylaş
-            shareContent(platform, url, title);
-        } else {
-            // İzin alınmamış, uyarı göster ve izin iste
-            const confirmShare = confirm(
-                "Sosyal medyada paylaşım yapabilmek için çerez kullanım iznine ihtiyacımız var. " +
-                    "Çerez kullanımına izin vermek istiyor musunuz?"
-            );
-
-            if (confirmShare) {
-                // Kullanıcı izin verdi
-                localStorage.setItem("cookie-consent", "accepted");
-
-                // Google Analytics ve diğer üçüncü taraf çerezlerini etkinleştir
-                if (typeof gtag === "function") {
-                    gtag("consent", "update", {
-                        analytics_storage: "granted",
-                        ad_storage: "granted",
-                    });
-                }
-
-                // Paylaş
-                shareContent(platform, url, title);
-            }
-        }
-    }
-
-    // Platforma göre paylaşım yap
-    function shareContent(platform, url, title) {
-        let shareUrl = "";
-
-        switch (platform) {
-            case "twitter":
-                shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
-                break;
-            case "mastodon":
-                shareUrl = `https://mastodonshare.com/?text=${title}%20${url}`;
-                break;
-            case "facebook":
-                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                break;
-            case "linkedin":
-                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-                break;
-            case "reddit":
-                shareUrl = `https://www.reddit.com/submit?url=${url}&title=${title}`;
-                break;
-            case "whatsapp":
-                shareUrl = `https://wa.me/?text=${title}%20${url}`;
-                break;
-            case "telegram":
-                shareUrl = `https://t.me/share/url?url=${url}&text=${title}`;
-                break;
-            case "bluesky":
-                shareUrl = `https://bsky.app/intent/compose?text=${title}%20${url}`;
-                break;
-            case "tumblr":
-                shareUrl = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${url}&title=${title}`;
-                break;
-            case "email":
-                shareUrl = `mailto:?subject=${title}&body=${title}%20${url}`;
-                break;
-            default:
-                console.error("Bilinmeyen platform:", platform);
-                return;
-        }
-
-        // Paylaşım penceresini aç
-        window.open(shareUrl, "_blank", "width=600,height=400");
-    }
-</script>
-
-        <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
-        <script>
-            // Fontların düzgün yüklenmesini kontrol eder
-            if ("fonts" in document) {
-                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
-                    document.documentElement.classList.add("fonts-loaded");
-                });
-            }
         </script>
 
         <!-- Çerez Bildirimi -->
