@@ -182,7 +182,8 @@
                 "description": "{{ article.summary|striptags|truncate(160) }}",
                 "author": {
                     "@type": "Person",
-                    "name": "{{ AUTHOR }}"
+                    "name": "{{ AUTHOR }}",
+                    "url": "{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/"
                 },
                 "datePublished": "{{ article.date.isoformat() }}",
                 {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}
@@ -200,7 +201,9 @@
                 },
                 {% if article.category %}"articleSection": "{{ article.category }}",{% endif %}
                 {% if article.tags %}"keywords": "{{ article.tags|join(', ') }}",{% endif %}
-                "url": "{{ SITEURL }}/{{ article.url }}"
+                "url": "{{ SITEURL }}/{{ article.url }}",
+                {% if article.image %}"image": "{{ SITEURL }}/{{ article.image }}",{% endif %}
+                "homepage": "{{ SITEURL }}/"
             }
         </script>
         {% endif %}
