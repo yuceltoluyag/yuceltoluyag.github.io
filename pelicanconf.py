@@ -211,7 +211,7 @@ IMAGE_PROCESS = {
 
 # --- Google Analytics ---
 GOOGLE_ANALYTICS = (
-    "G-9KL9GYLPS5"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
+    "G-JLZ9JH5GKD"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
 )
 # --- Google Tag Manager ---
 GTM_ID = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
