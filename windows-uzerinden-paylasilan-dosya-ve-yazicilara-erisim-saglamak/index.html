@@ -90,6 +90,14 @@
                 flex-direction: column;
             }
 
+            /* Ana içerik alanı için sabit yükseklik belirlemesi */
+            .container {
+                width: 100%;
+                max-width: 1280px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
             /* Layout shift önleme */
             .p-8.border-t.border-border-card {
                 min-height: 120px;
@@ -107,7 +115,34 @@
                 max-width: 100%;
                 height: auto;
             }
+
+            /* Ana içerik alanı için başlangıç boyutu */
+            .relative.z-20 {
+                min-height: 80vh;
+            }
+
+            /* Sidebar için sabit genişlik ve yükseklik */
+            aside {
+                min-height: 200px;
+            }
+
+            /* Navbar için sabit yükseklik */
+            nav#navbar {
+                height: 64px;
+            }
+
+            /* Script yüklenirken içerik için yer ayrılması */
+            main {
+                min-height: 70vh;
+            }
+
+            /* Makale kartları için minimum boyut */
+            article {
+                min-height: 100px;
+            }
         </style>
+<!-- Lazysizes için preload -->
+<link as="script" href="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js" rel="preload"/>
 <!-- Meta Description -->
 <meta content="Bu rehberde, Windows üzerinden paylaşılan dosya ve yazıcılara Linux ile nasıl erişileceği anlatılmaktadır. Samba kullanımı ve ayarları detaylı bir şekilde..." name="description"/>
 <meta content="Bu rehberde, Windows üzerinden paylaşılan dosya ve yazıcılara Linux ile nasıl erişileceği anlatılmaktadır. Samba kullanımı ve ayarları detaylı bir şekilde..." property="og:description"/>
@@ -165,6 +200,10 @@
 <title>Windows Üzerinden Paylaşılan Dosya ve Yazıcılara Erişim Sağlamak (Samba Kullanımı)</title>
 <!-- Favicon -->
 <link href="https://yuceltoluyag.dev/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- CSS dosyaları preload -->
+<link as="style" href="https://yuceltoluyag.dev/assets/css/style.min.css" rel="preload"/>
+<link as="style" href="https://yuceltoluyag.dev/assets/css/pygments.min.css" rel="preload"/>
+<link as="style" href="https://yuceltoluyag.dev/assets/css/custom-code.css" rel="preload"/>
 <!-- CSS dosyaları non-blocking olarak yüklenir -->
 <link href="https://yuceltoluyag.dev/assets/css/style.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
 <noscript><link href="https://yuceltoluyag.dev/assets/css/style.min.css" rel="stylesheet"/></noscript>
@@ -176,6 +215,12 @@
 <noscript><link href="https://yuceltoluyag.dev/assets/css/custom-code.css" rel="stylesheet"/></noscript>
 <!-- Global JavaScript - defer edilmiş -->
 <script defer="" src="https://yuceltoluyag.dev/assets/js/theme.min.js"></script>
+<!-- JS dosyaları için preload -->
+<link as="script" href="https://yuceltoluyag.dev/assets/js/back-to-top.min.js" rel="preload"/>
+<link as="script" href="https://yuceltoluyag.dev/assets/js/progress-bar.min.js" rel="preload"/>
+<link as="script" href="https://yuceltoluyag.dev/assets/js/search.min.js" rel="preload"/>
+<link as="script" href="https://yuceltoluyag.dev/assets/js/copy-code.min.js" rel="preload"/>
+<link as="script" href="https://yuceltoluyag.dev/assets/js/toc.min.js" rel="preload"/>
 <!-- Debug Log Fonksiyonu -->
 <script>
             window.debugLog = function (tag, message) {
@@ -239,6 +284,60 @@
 <div class="fixed top-0 left-0 w-full h-1 z-[60]">
 <div class="h-full bg-gradient-to-r from-primary via-primary/80 to-primary shadow-lg transform origin-left scale-x-0 transition-transform duration-200" id="progress-bar"></div>
 </div>
+<!-- Sayfa düzeni için iskelet yapı -->
+<style>
+            /* Sayfa yüklenirken düzen kaymasını önleyen iskelet yükleyici */
+            .content-skeleton {
+                display: block;
+                background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.03) 0%,
+                    rgba(0, 0, 0, 0.06) 50%,
+                    rgba(0, 0, 0, 0.03) 100%
+                );
+                background-size: 200% 100%;
+                animation: skeleton-loading 1.5s infinite;
+                border-radius: 0.5rem;
+            }
+
+            @keyframes skeleton-loading {
+                0% {
+                    background-position: 200% 0;
+                }
+                100% {
+                    background-position: -200% 0;
+                }
+            }
+
+            /* Sayfa yüklendiğinde iskelet yükleyicileri gizle */
+            .js-loaded .content-skeleton {
+                display: none;
+            }
+
+            /* Sayfa tamamen yüklendiğinde gösterilen içeriği önce gizle */
+            .content-loaded {
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .js-loaded .content-loaded {
+                opacity: 1;
+            }
+        </style>
+<script>
+            // Sayfa yüklenmesi tamamlandığında iskelet yükleyicileri gizle
+            document.addEventListener("DOMContentLoaded", function () {
+                // JavaScript ile yüklenen içeriğin tamamlanmasını bekle
+                window.addEventListener("load", function () {
+                    document.body.classList.add("js-loaded");
+                });
+
+                // 3 saniye sonra zorla yüklenmiş say (bazı kaynaklar yüklenemese bile)
+                setTimeout(function () {
+                    document.body.classList.add("js-loaded");
+                }, 3000);
+            });
+        </script>
 <!-- Paralax Header -->
 <!-- Navbar -->
 <nav class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-sm border-b border-border-card" id="navbar">
@@ -307,7 +406,24 @@
 </nav>
 <!-- Ana içerik -->
 <div class="relative z-20">
-<main class="container mx-auto px-6 lg:px-8 pt-24 pb-8">
+<!-- İskelet yükleyici -->
+<div class="container mx-auto px-6 lg:px-8 pt-24 pb-8 content-skeleton">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Sidebar iskelet -->
+<div class="w-full lg:w-1/4 order-2 lg:order-1">
+<div class="sticky top-24 space-y-6">
+<div class="h-[200px] w-full rounded-lg"></div>
+<div class="h-[300px] w-full rounded-lg"></div>
+</div>
+</div>
+<!-- Ana içerik iskelet -->
+<div class="lg:w-3/4 order-1 lg:order-2">
+<div class="h-[500px] w-full rounded-lg"></div>
+</div>
+</div>
+</div>
+<!-- Gerçek içerik -->
+<main class="container mx-auto px-6 lg:px-8 pt-24 pb-8 content-loaded">
 <div class="flex flex-col lg:flex-row gap-8">
 <!-- Sol sidebar -->
 <aside class="w-full lg:w-1/4 order-2 lg:order-1">
@@ -920,11 +1036,40 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class=
             });
         </script>
 <!-- JavaScript dosyaları -->
-<script src="https://yuceltoluyag.dev/assets/js/toc.min.js"></script>
-<script src="https://yuceltoluyag.dev/assets/js/back-to-top.min.js"></script>
-<script src="https://yuceltoluyag.dev/assets/js/progress-bar.min.js"></script>
-<script src="https://yuceltoluyag.dev/assets/js/search.min.js"></script>
-<script src="https://yuceltoluyag.dev/assets/js/copy-code.min.js"></script>
+<script>
+            // JS dosyalarını asenkron yükleyen yardımcı fonksiyon
+            function loadScript(url, callback) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = url;
+                script.async = true;
+
+                if (callback) {
+                    script.onload = callback;
+                }
+
+                document.head.appendChild(script);
+            }
+
+            // Sayfa yüklendiğinde JS dosyalarını asenkron olarak yükle
+            document.addEventListener("DOMContentLoaded", function () {
+                var siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
+                var themeDir = document.querySelector('meta[name="theme-static-dir"]').getAttribute("content");
+                var isArticle = "true";
+
+                // Ortak JS dosyaları
+                loadScript("https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js");
+                loadScript(siteUrl + "/" + themeDir + "/js/back-to-top.min.js");
+                loadScript(siteUrl + "/" + themeDir + "/js/progress-bar.min.js");
+                loadScript(siteUrl + "/" + themeDir + "/js/search.min.js");
+                loadScript(siteUrl + "/" + themeDir + "/js/copy-code.min.js");
+
+                // Makale sayfasına özel JS dosyaları
+                if (isArticle === "true") {
+                    loadScript(siteUrl + "/" + themeDir + "/js/toc.min.js");
+                }
+            });
+        </script>
 <!-- TOC JavaScript -->
 <script src="https://yuceltoluyag.dev/assets/js/toc.min.js"></script>
 <!-- Kod kopyalama JavaScript -->
