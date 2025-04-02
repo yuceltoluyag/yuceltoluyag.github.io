@@ -90,7 +90,7 @@ article.title }}{% endblock %} {% block seo %}
 {% endif %} {% endblock %} {% block content %}
 <article class="bg-site-card rounded-lg overflow-hidden">
     <!-- Makale başlığı ve meta bilgileri -->
-    <div class="p-8 border-b border-border-card">
+    <div class="p-8 border-b border-border-card primary-content">
         <h1 class="text-3xl font-bold mb-4 text-text-primary">{{ article.title }}</h1>
 
         <!-- Çeviriler -->
@@ -215,7 +215,7 @@ article.title }}{% endblock %} {% block seo %}
     {% endif %}
 
     <!-- Makale içeriği -->
-    <div class="p-8">
+    <div class="p-8 primary-content">
         <div class="prose prose-lg dark:prose-invert max-w-none post-content">{{ article.content }}</div>
     </div>
 

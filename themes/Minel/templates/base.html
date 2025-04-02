@@ -148,6 +148,23 @@
             article {
                 min-height: 100px;
             }
+
+            /* LCP için görüntülenmesi gereken ilk büyük içerik öğesi */
+            .primary-content {
+                display: block !important; /* Asla gizlenme */
+                visibility: visible !important; /* Her zaman görünür */
+            }
+
+            /* Ana içerik konteynerı */
+            .main-container {
+                min-height: 100vh; /* En az sayfa yüksekliği kadar */
+            }
+
+            /* Görünür alanda olan görseller için lazy loading'i devre dışı bırakma */
+            .no-lazy {
+                display: block !important;
+                opacity: 1 !important;
+            }
         </style>
 
         <!-- Lazysizes için preload -->
@@ -341,6 +358,11 @@
                 background-size: 200% 100%;
                 animation: skeleton-loading 1.5s infinite;
                 border-radius: 0.5rem;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                right: 0;
             }
 
             @keyframes skeleton-loading {
@@ -357,30 +379,98 @@
                 display: none;
             }
 
-            /* Sayfa tamamen yüklendiğinde gösterilen içeriği önce gizle */
+            /* Gerçek içerik her zaman görünür olsun, sadece iskelet yükleyici üstte */
             .content-loaded {
-                opacity: 0;
-                transition: opacity 0.3s ease-in-out;
+                position: relative;
+                z-index: 2;
             }
 
-            .js-loaded .content-loaded {
-                opacity: 1;
+            /* İçerik konteynerı göreceli konumlandırma için */
+            .content-container {
+                position: relative;
             }
         </style>
 
         <script>
-            // Sayfa yüklenmesi tamamlandığında iskelet yükleyicileri gizle
+            // Görünür alandaki önemli içerikleri erken yükleme
             document.addEventListener("DOMContentLoaded", function () {
-                // JavaScript ile yüklenen içeriğin tamamlanmasını bekle
-                window.addEventListener("load", function () {
-                    document.body.classList.add("js-loaded");
+                // Hero bölümündeki görseller ve ana içerik için lazy loading'i devre dışı bırak
+                var visibleImages = document.querySelectorAll(".primary-content img");
+                visibleImages.forEach(function (img) {
+                    // lazyload sınıfını kaldır ve no-lazy ekle
+                    img.classList.remove("lazyload");
+                    img.classList.add("no-lazy");
+
+                    // data-src değerini src'ye taşı
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        delete img.dataset.src;
+                    }
+
+                    // srcset için de aynısını yap
+                    if (img.dataset.srcset) {
+                        img.srcset = img.dataset.srcset;
+                        delete img.dataset.srcset;
+                    }
                 });
 
-                // 3 saniye sonra zorla yüklenmiş say (bazı kaynaklar yüklenemese bile)
-                setTimeout(function () {
-                    document.body.classList.add("js-loaded");
-                }, 3000);
+                // İskelet yükleyicinin kaldırılması
+                document.body.classList.add("js-loaded");
+
+                // JavaScript dosyalarını yüklemeye başla
+                loadJsFiles();
             });
+
+            // JavaScript dosyalarını asenkron olarak yükle
+            function loadJsFiles() {
+                var siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
+                var themeDir = document.querySelector('meta[name="theme-static-dir"]').getAttribute("content");
+                var isArticle = "{% if article %}true{% else %}false{% endif %}";
+
+                // Ortak JS dosyaları - öncelik sırasına göre yüklenir
+                setTimeout(function () {
+                    loadScript("https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js");
+
+                    // Biraz gecikmeyle diğer JS dosyalarını yükle
+                    setTimeout(function () {
+                        loadScript(siteUrl + "/" + themeDir + "/js/back-to-top.min.js");
+                        loadScript(siteUrl + "/" + themeDir + "/js/progress-bar.min.js");
+                        loadScript(siteUrl + "/" + themeDir + "/js/search.min.js");
+                        loadScript(siteUrl + "/" + themeDir + "/js/copy-code.min.js");
+
+                        // Makale sayfasına özel JS dosyaları
+                        if (isArticle === "true") {
+                            loadScript(siteUrl + "/" + themeDir + "/js/toc.min.js");
+                        }
+                    }, 50); // 50ms gecikme
+                }, 0);
+            }
+
+            // JS dosyalarını asenkron yükleyen yardımcı fonksiyon
+            function loadScript(url, callback) {
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = url;
+                script.async = true;
+
+                if (callback) {
+                    script.onload = callback;
+                }
+
+                document.head.appendChild(script);
+            }
+        </script>
+
+        {% block extra_js %} {% endblock %}
+
+        <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
+        <script>
+            // Fontların düzgün yüklenmesini kontrol eder
+            if ("fonts" in document) {
+                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
+                    document.documentElement.classList.add("fonts-loaded");
+                });
+            }
         </script>
 
         <!-- Paralax Header -->
@@ -391,7 +481,8 @@
                 <img
                     src="{{ SITEURL }}/images/header-parallax.webp"
                     alt="Header Background"
-                    class="w-full h-full object-cover transform scale-110 parallax-bg" />
+                    class="w-full h-full object-cover transform scale-110 parallax-bg no-lazy primary-content"
+                    fetchpriority="high" />
                 <!-- Karartma Katmanı -->
                 <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
             </div>
@@ -403,7 +494,8 @@
             </div>
 
             <!-- Header İçeriği -->
-            <div class="relative z-10 h-full flex flex-col items-center justify-center text-white px-6 header-content">
+            <div
+                class="relative z-10 h-full flex flex-col items-center justify-center text-white px-6 header-content primary-content">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 text-shadow-lg">
                     {{ SITENAME }}
                 </h1>
@@ -423,7 +515,8 @@
                         <img
                             src="{{ SITEURL }}/images/logo.svg"
                             alt="{{ SITENAME }}"
-                            class="h-10 w-auto transition-transform duration-300 hover:scale-110" />
+                            class="h-10 w-auto transition-transform duration-300 hover:scale-110 no-lazy"
+                            fetchpriority="high" />
                     </a>
 
                     <!-- Menü -->
@@ -585,45 +678,49 @@
         <!-- Ana içerik -->
         <div
             class="relative z-20 {% if output_file == 'index.html' %}bg-site-bg -mt-20 rounded-t-[2.5rem] shadow-lg{% endif %}">
-            <!-- İskelet yükleyici -->
-            <div
-                class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %} content-skeleton">
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <!-- Sidebar iskelet -->
-                    <div class="w-full lg:w-1/4 order-2 lg:order-1">
-                        <div class="sticky top-24 space-y-6">
-                            <div class="h-[200px] w-full rounded-lg"></div>
-                            <div class="h-[300px] w-full rounded-lg"></div>
+            <!-- İçerik konteynerı -->
+            <div class="content-container">
+                <!-- İskelet yükleyici -->
+                <div
+                    class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %} content-skeleton">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Sidebar iskelet -->
+                        <div class="w-full lg:w-1/4 order-2 lg:order-1">
+                            <div class="sticky top-24 space-y-6">
+                                <div class="h-[200px] w-full rounded-lg"></div>
+                                <div class="h-[300px] w-full rounded-lg"></div>
+                            </div>
+                        </div>
+
+                        <!-- Ana içerik iskelet -->
+                        <div class="lg:w-3/4 order-1 lg:order-2">
+                            <div class="h-[500px] w-full rounded-lg"></div>
                         </div>
                     </div>
-
-                    <!-- Ana içerik iskelet -->
-                    <div class="lg:w-3/4 order-1 lg:order-2">
-                        <div class="h-[500px] w-full rounded-lg"></div>
-                    </div>
                 </div>
+
+                <!-- Gerçek içerik -->
+                <main
+                    class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %} content-loaded main-container">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <!-- Sol sidebar -->
+                        {% if not page %}
+                        <aside class="w-full lg:w-1/4 order-2 lg:order-1">
+                            <div class="sticky top-24 space-y-6">
+                                {% if article %} {% block sidebar %}{% endblock %} {% else %} {% include
+                                'partials/sidebar.html' %} {% endif %}
+                            </div>
+                        </aside>
+                        {% endif %}
+
+                        <!-- Ana içerik -->
+                        <div
+                            class="{% if not page %}lg:w-3/4{% else %}w-full{% endif %} order-1 lg:order-2 primary-content">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                </main>
             </div>
-
-            <!-- Gerçek içerik -->
-            <main
-                class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %} content-loaded">
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <!-- Sol sidebar -->
-                    {% if not page %}
-                    <aside class="w-full lg:w-1/4 order-2 lg:order-1">
-                        <div class="sticky top-24 space-y-6">
-                            {% if article %} {% block sidebar %}{% endblock %} {% else %} {% include
-                            'partials/sidebar.html' %} {% endif %}
-                        </div>
-                    </aside>
-                    {% endif %}
-
-                    <!-- Ana içerik -->
-                    <div class="{% if not page %}lg:w-3/4{% else %}w-full{% endif %} order-1 lg:order-2">
-                        {% block content %}{% endblock %}
-                    </div>
-                </div>
-            </main>
         </div>
 
         <!-- Footer -->
@@ -663,54 +760,6 @@
                     }
                 }
             });
-        </script>
-
-        <!-- JavaScript dosyaları -->
-        <script>
-            // JS dosyalarını asenkron yükleyen yardımcı fonksiyon
-            function loadScript(url, callback) {
-                var script = document.createElement("script");
-                script.type = "text/javascript";
-                script.src = url;
-                script.async = true;
-
-                if (callback) {
-                    script.onload = callback;
-                }
-
-                document.head.appendChild(script);
-            }
-
-            // Sayfa yüklendiğinde JS dosyalarını asenkron olarak yükle
-            document.addEventListener("DOMContentLoaded", function () {
-                var siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
-                var themeDir = document.querySelector('meta[name="theme-static-dir"]').getAttribute("content");
-                var isArticle = "{% if article %}true{% else %}false{% endif %}";
-
-                // Ortak JS dosyaları
-                loadScript("https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/back-to-top.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/progress-bar.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/search.min.js");
-                loadScript(siteUrl + "/" + themeDir + "/js/copy-code.min.js");
-
-                // Makale sayfasına özel JS dosyaları
-                if (isArticle === "true") {
-                    loadScript(siteUrl + "/" + themeDir + "/js/toc.min.js");
-                }
-            });
-        </script>
-
-        {% block extra_js %} {% endblock %}
-
-        <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
-        <script>
-            // Fontların düzgün yüklenmesini kontrol eder
-            if ("fonts" in document) {
-                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
-                    document.documentElement.classList.add("fonts-loaded");
-                });
-            }
         </script>
 
         <!-- Çerez Bildirimi -->
