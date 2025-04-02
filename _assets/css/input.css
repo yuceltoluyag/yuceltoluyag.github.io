@@ -632,7 +632,7 @@
 @layer components {
     /* Prose özelleştirmeleri */
     .prose a {
-        @apply no-underline hover:text-primary transition-colors;
+        @apply text-primary border-b border-primary border-opacity-50 hover:border-opacity-100 transition-colors;
     }
 
     .prose a:hover {
@@ -693,7 +693,7 @@
     }
 
     .prose a {
-        @apply text-primary hover:opacity-80 transition-colors font-medium;
+        @apply text-primary border-b border-primary border-opacity-50 hover:border-opacity-100 transition-colors font-medium;
     }
 
     .prose blockquote {
@@ -794,7 +794,7 @@
 }
 
 .prose a {
-    @apply text-primary hover:opacity-80 transition-colors;
+    @apply text-primary border-b border-primary border-opacity-50 hover:border-opacity-100 transition-colors;
 }
 
 /* Sayfa kartları için hover efektleri */
