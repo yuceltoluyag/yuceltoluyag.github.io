@@ -214,7 +214,7 @@ GOOGLE_ANALYTICS = (
     "G-JLZ9JH5GKD"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
 )
 # --- Google Tag Manager ---
-GTM_ID = "GTM-PHW52JF"  # Google Tag Manager ID'nizi buraya yazın
+GTM_ID = "GTM-KPLBQPPJ"  # Google Tag Manager ID'nizi buraya yazın
 GOOGLE_ADSENSE = "ca-pub-6089943780218266"
 # Docutils için gerekli ayarlar
 DOCUTILS_SETTINGS = {"language_code": "en"}
