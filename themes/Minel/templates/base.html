@@ -326,7 +326,7 @@
                                 <a
                                     href="{{ SITEURL }}{{ link.url }}"
                                     aria-label="{{ link.name }}"
-                                    class="text-text-secondary hover:text-primary transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     {% if link.name == 'Ana Sayfa' or link.name == 'Home' %}
                                     <svg
@@ -564,7 +564,7 @@
                 <div class="text-sm text-text-secondary">
                     <p>
                         Bu site deneyiminizi iyileştirmek için çerezler kullanır.
-                        <a href="{{ SITEURL }}/privacy-policy/" class="text-primary hover:underline">
+                        <a href="{{ SITEURL }}/privacy-policy/" class="text-primary underline hover:opacity-80">
                             Gizlilik Politikası
                         </a>
                         'nı inceleyebilir veya çerez tercihlerinizi yapabilirsiniz.
