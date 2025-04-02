@@ -98,14 +98,6 @@
                 flex-direction: column;
             }
 
-            /* Ana içerik alanı için sabit yükseklik belirlemesi */
-            .container {
-                width: 100%;
-                max-width: 1280px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
             /* Layout shift önleme */
             .p-8.border-t.border-border-card {
                 min-height: 120px;
@@ -123,55 +115,7 @@
                 max-width: 100%;
                 height: auto;
             }
-
-            /* Ana içerik alanı için başlangıç boyutu */
-            .relative.z-20 {
-                min-height: 80vh;
-            }
-
-            /* Sidebar için sabit genişlik ve yükseklik */
-            aside {
-                min-height: 200px;
-            }
-
-            /* Navbar için sabit yükseklik */
-            nav#navbar {
-                height: 64px;
-            }
-
-            /* Script yüklenirken içerik için yer ayrılması */
-            main {
-                min-height: 70vh;
-            }
-
-            /* Makale kartları için minimum boyut */
-            article {
-                min-height: 100px;
-            }
-
-            /* LCP için görüntülenmesi gereken ilk büyük içerik öğesi */
-            .primary-content {
-                display: block !important; /* Asla gizlenme */
-                visibility: visible !important; /* Her zaman görünür */
-            }
-
-            /* Ana içerik konteynerı */
-            .main-container {
-                min-height: 100vh; /* En az sayfa yüksekliği kadar */
-            }
-
-            /* Görünür alanda olan görseller için lazy loading'i devre dışı bırakma */
-            .no-lazy {
-                display: block !important;
-                opacity: 1 !important;
-            }
         </style>
-
-        <!-- Lazysizes için preload -->
-        <link
-            rel="preload"
-            href="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
-            as="script" />
 
         <!-- Meta Description -->
         {% if article %}
@@ -269,11 +213,6 @@
         <!-- Favicon -->
         <link rel="icon" type="image/x-icon" href="{{ SITEURL }}/favicon.ico" />
 
-        <!-- CSS dosyaları preload -->
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.min.css" as="style" />
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.min.css" as="style" />
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.css" as="style" />
-
         <!-- CSS dosyaları non-blocking olarak yüklenir -->
         <link
             rel="stylesheet"
@@ -300,15 +239,6 @@
 
         <!-- Global JavaScript - defer edilmiş -->
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/theme.min.js" defer></script>
-
-        <!-- JS dosyaları için preload -->
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/back-to-top.min.js" as="script" />
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/progress-bar.min.js" as="script" />
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.min.js" as="script" />
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy-code.min.js" as="script" />
-        {% if article %}
-        <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/toc.min.js" as="script" />
-        {% endif %}
 
         <!-- Debug Log Fonksiyonu -->
         <script>
@@ -344,135 +274,6 @@
                 class="h-full bg-gradient-to-r from-primary via-primary/80 to-primary shadow-lg transform origin-left scale-x-0 transition-transform duration-200"></div>
         </div>
 
-        <!-- Sayfa düzeni için iskelet yapı -->
-        <style>
-            /* Sayfa yüklenirken düzen kaymasını önleyen iskelet yükleyici */
-            .content-skeleton {
-                display: block;
-                background: linear-gradient(
-                    90deg,
-                    rgba(0, 0, 0, 0.03) 0%,
-                    rgba(0, 0, 0, 0.06) 50%,
-                    rgba(0, 0, 0, 0.03) 100%
-                );
-                background-size: 200% 100%;
-                animation: skeleton-loading 1.5s infinite;
-                border-radius: 0.5rem;
-                position: absolute;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                right: 0;
-            }
-
-            @keyframes skeleton-loading {
-                0% {
-                    background-position: 200% 0;
-                }
-                100% {
-                    background-position: -200% 0;
-                }
-            }
-
-            /* Sayfa yüklendiğinde iskelet yükleyicileri gizle */
-            .js-loaded .content-skeleton {
-                display: none;
-            }
-
-            /* Gerçek içerik her zaman görünür olsun, sadece iskelet yükleyici üstte */
-            .content-loaded {
-                position: relative;
-                z-index: 2;
-            }
-
-            /* İçerik konteynerı göreceli konumlandırma için */
-            .content-container {
-                position: relative;
-            }
-        </style>
-
-        <script>
-            // Görünür alandaki önemli içerikleri erken yükleme
-            document.addEventListener("DOMContentLoaded", function () {
-                // Hero bölümündeki görseller ve ana içerik için lazy loading'i devre dışı bırak
-                var visibleImages = document.querySelectorAll(".primary-content img");
-                visibleImages.forEach(function (img) {
-                    // lazyload sınıfını kaldır ve no-lazy ekle
-                    img.classList.remove("lazyload");
-                    img.classList.add("no-lazy");
-
-                    // data-src değerini src'ye taşı
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        delete img.dataset.src;
-                    }
-
-                    // srcset için de aynısını yap
-                    if (img.dataset.srcset) {
-                        img.srcset = img.dataset.srcset;
-                        delete img.dataset.srcset;
-                    }
-                });
-
-                // İskelet yükleyicinin kaldırılması
-                document.body.classList.add("js-loaded");
-
-                // JavaScript dosyalarını yüklemeye başla
-                loadJsFiles();
-            });
-
-            // JavaScript dosyalarını asenkron olarak yükle
-            function loadJsFiles() {
-                var siteUrl = document.querySelector('meta[name="siteurl"]').getAttribute("content");
-                var themeDir = document.querySelector('meta[name="theme-static-dir"]').getAttribute("content");
-                var isArticle = "{% if article %}true{% else %}false{% endif %}";
-
-                // Ortak JS dosyaları - öncelik sırasına göre yüklenir
-                setTimeout(function () {
-                    loadScript("https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js");
-
-                    // Biraz gecikmeyle diğer JS dosyalarını yükle
-                    setTimeout(function () {
-                        loadScript(siteUrl + "/" + themeDir + "/js/back-to-top.min.js");
-                        loadScript(siteUrl + "/" + themeDir + "/js/progress-bar.min.js");
-                        loadScript(siteUrl + "/" + themeDir + "/js/search.min.js");
-                        loadScript(siteUrl + "/" + themeDir + "/js/copy-code.min.js");
-
-                        // Makale sayfasına özel JS dosyaları
-                        if (isArticle === "true") {
-                            loadScript(siteUrl + "/" + themeDir + "/js/toc.min.js");
-                        }
-                    }, 50); // 50ms gecikme
-                }, 0);
-            }
-
-            // JS dosyalarını asenkron yükleyen yardımcı fonksiyon
-            function loadScript(url, callback) {
-                var script = document.createElement("script");
-                script.type = "text/javascript";
-                script.src = url;
-                script.async = true;
-
-                if (callback) {
-                    script.onload = callback;
-                }
-
-                document.head.appendChild(script);
-            }
-        </script>
-
-        {% block extra_js %} {% endblock %}
-
-        <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
-        <script>
-            // Fontların düzgün yüklenmesini kontrol eder
-            if ("fonts" in document) {
-                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
-                    document.documentElement.classList.add("fonts-loaded");
-                });
-            }
-        </script>
-
         <!-- Paralax Header -->
         {% if output_file == 'index.html' %}
         <header class="relative h-[60vh] overflow-hidden">
@@ -481,8 +282,7 @@
                 <img
                     src="{{ SITEURL }}/images/header-parallax.webp"
                     alt="Header Background"
-                    class="w-full h-full object-cover transform scale-110 parallax-bg no-lazy primary-content"
-                    fetchpriority="high" />
+                    class="w-full h-full object-cover transform scale-110 parallax-bg" />
                 <!-- Karartma Katmanı -->
                 <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
             </div>
@@ -494,8 +294,7 @@
             </div>
 
             <!-- Header İçeriği -->
-            <div
-                class="relative z-10 h-full flex flex-col items-center justify-center text-white px-6 header-content primary-content">
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-white px-6 header-content">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 text-shadow-lg">
                     {{ SITENAME }}
                 </h1>
@@ -515,8 +314,7 @@
                         <img
                             src="{{ SITEURL }}/images/logo.svg"
                             alt="{{ SITENAME }}"
-                            class="h-10 w-auto transition-transform duration-300 hover:scale-110 no-lazy"
-                            fetchpriority="high" />
+                            class="h-10 w-auto transition-transform duration-300 hover:scale-110" />
                     </a>
 
                     <!-- Menü -->
@@ -678,49 +476,25 @@
         <!-- Ana içerik -->
         <div
             class="relative z-20 {% if output_file == 'index.html' %}bg-site-bg -mt-20 rounded-t-[2.5rem] shadow-lg{% endif %}">
-            <!-- İçerik konteynerı -->
-            <div class="content-container">
-                <!-- İskelet yükleyici -->
-                <div
-                    class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %} content-skeleton">
-                    <div class="flex flex-col lg:flex-row gap-8">
-                        <!-- Sidebar iskelet -->
-                        <div class="w-full lg:w-1/4 order-2 lg:order-1">
-                            <div class="sticky top-24 space-y-6">
-                                <div class="h-[200px] w-full rounded-lg"></div>
-                                <div class="h-[300px] w-full rounded-lg"></div>
-                            </div>
+            <main
+                class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %}">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Sol sidebar -->
+                    {% if not page %}
+                    <aside class="w-full lg:w-1/4 order-2 lg:order-1">
+                        <div class="sticky top-24 space-y-6">
+                            {% if article %} {% block sidebar %}{% endblock %} {% else %} {% include
+                            'partials/sidebar.html' %} {% endif %}
                         </div>
+                    </aside>
+                    {% endif %}
 
-                        <!-- Ana içerik iskelet -->
-                        <div class="lg:w-3/4 order-1 lg:order-2">
-                            <div class="h-[500px] w-full rounded-lg"></div>
-                        </div>
+                    <!-- Ana içerik -->
+                    <div class="{% if not page %}lg:w-3/4{% else %}w-full{% endif %} order-1 lg:order-2">
+                        {% block content %}{% endblock %}
                     </div>
                 </div>
-
-                <!-- Gerçek içerik -->
-                <main
-                    class="container mx-auto px-6 lg:px-8 {% if output_file == 'index.html' %}py-8{% else %}pt-24 pb-8{% endif %} content-loaded main-container">
-                    <div class="flex flex-col lg:flex-row gap-8">
-                        <!-- Sol sidebar -->
-                        {% if not page %}
-                        <aside class="w-full lg:w-1/4 order-2 lg:order-1">
-                            <div class="sticky top-24 space-y-6">
-                                {% if article %} {% block sidebar %}{% endblock %} {% else %} {% include
-                                'partials/sidebar.html' %} {% endif %}
-                            </div>
-                        </aside>
-                        {% endif %}
-
-                        <!-- Ana içerik -->
-                        <div
-                            class="{% if not page %}lg:w-3/4{% else %}w-full{% endif %} order-1 lg:order-2 primary-content">
-                            {% block content %}{% endblock %}
-                        </div>
-                    </div>
-                </main>
-            </div>
+            </main>
         </div>
 
         <!-- Footer -->
@@ -760,6 +534,26 @@
                     }
                 }
             });
+        </script>
+
+        <!-- JavaScript dosyaları -->
+        {% if article %}
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/toc.min.js"></script>
+        {% endif %}
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/back-to-top.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/progress-bar.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy-code.min.js"></script>
+        {% block extra_js %} {% endblock %}
+
+        <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
+        <script>
+            // Fontların düzgün yüklenmesini kontrol eder
+            if ("fonts" in document) {
+                Promise.all([document.fonts.load("1em 'Your-Main-Font'")]).then(() => {
+                    document.documentElement.classList.add("fonts-loaded");
+                });
+            }
         </script>
 
         <!-- Çerez Bildirimi -->
