@@ -20,7 +20,8 @@ Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi p
 # Dreame D10 Plus Gen 2 İnceleme
 
 Herkese merhaba! 🎉 Robot süpürge deneyimimi sizlerle paylaşmak istiyorum. Daha önce hiç robot süpürge kullanmamış biri olarak, başlangıçta bazı çekincelerim vardı. Ancak Dreame D10 Plus Gen 2'yi aldıktan sonra tüm endişelerim kayboldu. İşte deneyimlerim ve ürünün öne çıkan özellikleri! 👇
-![its work](/images/dreame-d10-plus-gen-2.webp)
+![dreame-d10-plus-gen-2](/images/dreame-d10-plus-gen-2.webp)
+
 ## Haritalandırma Performansı 🗺️
 
 Robot süpürge, evi yaklaşık 6-7 dakika içinde haritalandırdı. 90 metrekarelik bir alanı, standart modda sadece yarım saatte temizledi. Haritalandırmayı birkaç kez sıfırlamama rağmen, her seferinde sorunsuz şekilde çalıştı. 👍
