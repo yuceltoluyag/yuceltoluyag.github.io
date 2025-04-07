@@ -1,73 +1,103 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw.js");
 
-//workbox.routing.registerRoute(
-//    ({ request }) => request.destination === 'image',
-//    new workbox.strategies.NetworkFirst()
-//);
+// Workbox'ın kullanılabilir olup olmadığını kontrol edelim
+if (workbox) {
+    console.log(`Workbox yüklendi!`);
 
-// Cache page navigations (html) with a Network First strategy
-workbox.routing.registerRoute(
-    // Check to see if the request is a navigation to a new page
-    ({ request }) => request.mode === "navigate",
-    // Use a Network First caching strategy
-    new workbox.strategies.NetworkFirst({
-        // Put all cached files in a cache named 'pages'
-        cacheName: "pages",
-        plugins: [
-            // Store caches for 1 week
-            new workbox.expiration.ExpirationPlugin({
-                maxEntries: 128,
-                maxAgeSeconds: 7 * 24 * 60 * 60, // 1 week
-                purgeOnQuotaError: true, // Opt-in to automatic cleanup
-            }),
-            // Ensure that only requests that result in a 200 status are cached
-            new workbox.cacheableResponse.CacheableResponsePlugin({
-                statuses: [200],
-            }),
-        ],
-    })
-);
+    // Cache'leme stratejilerini belirleyelim
+    const { registerRoute } = workbox.routing;
+    const { CacheFirst, NetworkFirst, StaleWhileRevalidate } = workbox.strategies;
+    const { ExpirationPlugin } = workbox.expiration;
+    const { CacheableResponsePlugin } = workbox.cacheableResponse;
 
-// Cache CSS, JS, and Web Worker requests with a Stale While Revalidate strategy
-workbox.routing.registerRoute(
-    // Check to see if the request's destination is style for stylesheets, script for JavaScript, or worker for web worker
-    ({ request }) =>
-        request.destination === "style" || request.destination === "script" || request.destination === "worker",
-    // Use a Stale While Revalidate caching strategy
-    new workbox.strategies.StaleWhileRevalidate({
-        // Put all cached files in a cache named 'assets'
-        cacheName: "assets",
-        plugins: [
-            // Ensure that only requests that result in a 200 status are cached
-            new workbox.cacheableResponse.CacheableResponsePlugin({
-                statuses: [200],
-            }),
-        ],
-    })
-);
+    // HTML sayfaları için NetworkFirst stratejisi (sayfa navigasyonları)
+    registerRoute(
+        ({ request }) => request.mode === "navigate",
+        new NetworkFirst({
+            cacheName: "pages",
+            plugins: [
+                new ExpirationPlugin({
+                    maxEntries: 50,
+                    maxAgeSeconds: 7 * 24 * 60 * 60, // 1 hafta
+                    purgeOnQuotaError: true,
+                }),
+                new CacheableResponsePlugin({
+                    statuses: [0, 200],
+                }),
+            ],
+        })
+    );
 
-// Cache images with a Cache First strategy
-workbox.routing.registerRoute(
-    // Check to see if the request's destination is style for an image
-    ({ request }) => request.destination === "image",
-    // Use a Cache First caching strategy
-    new workbox.strategies.CacheFirst({
-        // Put all cached files in a cache named 'images'
-        cacheName: "images",
-        plugins: [
-            // Ensure that only requests that result in a 200 status are cached
-            new workbox.cacheableResponse.CacheableResponsePlugin({
-                statuses: [200],
-            }),
-            // Don't cache more than 50 items, and expire them after 30 days
-            new workbox.expiration.ExpirationPlugin({
-                maxEntries: 50,
-                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 Days
-            }),
-        ],
-    })
-);
+    // CSS, JS ve Worker için StaleWhileRevalidate stratejisi
+    registerRoute(
+        ({ request }) =>
+            request.destination === "style" || request.destination === "script" || request.destination === "worker",
+        new StaleWhileRevalidate({
+            cacheName: "assets",
+            plugins: [
+                new CacheableResponsePlugin({
+                    statuses: [0, 200],
+                }),
+                new ExpirationPlugin({
+                    maxEntries: 60,
+                    maxAgeSeconds: 30 * 24 * 60 * 60, // 30 gün
+                }),
+            ],
+        })
+    );
 
-workbox.routing.registerRoute(new RegExp(/.*\.(?:js|css)/g), new workbox.strategies.NetworkFirst());
+    // Görseller için CacheFirst stratejisi
+    registerRoute(
+        ({ request }) => request.destination === "image",
+        new CacheFirst({
+            cacheName: "images",
+            plugins: [
+                new CacheableResponsePlugin({
+                    statuses: [0, 200],
+                }),
+                new ExpirationPlugin({
+                    maxEntries: 60,
+                    maxAgeSeconds: 30 * 24 * 60 * 60, // 30 gün
+                }),
+            ],
+        })
+    );
 
-workbox.routing.registerRoute(new RegExp(/.*\.(?:png|jpg|jpeg|svg|gif|webp)/g), new workbox.strategies.CacheFirst());
+    // Fontlar için CacheFirst stratejisi
+    registerRoute(
+        ({ request }) => request.destination === "font",
+        new CacheFirst({
+            cacheName: "fonts",
+            plugins: [
+                new CacheableResponsePlugin({
+                    statuses: [0, 200],
+                }),
+                new ExpirationPlugin({
+                    maxEntries: 30,
+                    maxAgeSeconds: 60 * 24 * 60 * 60, // 60 gün
+                }),
+            ],
+        })
+    );
+
+    // Offline sayfası için fallback
+    const networkWithOfflineFallback = async ({ event }) => {
+        try {
+            return await fetch(event.request);
+        } catch (error) {
+            return caches.match(workbox.precaching.getCacheKeyForURL("/offline.html"));
+        }
+    };
+
+    // Diğer istekler için offline fallback ekleyelim
+    registerRoute(({ request }) => request.mode === "navigate", networkWithOfflineFallback);
+
+    // Önceden önbelleğe alınacak sayfaları belirleyelim
+    workbox.precaching.precacheAndRoute([
+        { url: "/index.html", revision: "1" },
+        { url: "/offline.html", revision: "1" },
+        { url: "/404.html", revision: "1" },
+    ]);
+} else {
+    console.log(`Workbox yüklenemedi!`);
+}
