@@ -1,14 +1,6 @@
 {
-    "theme_color": "#0c101a",
-    "background_color": "#f1f5ff",
-    "display": "standalone",
-    "scope": "/",
-    "splash_pages": null,
-    "start_url": "/",
-    "name": "yuceltoluyag",
-    "short_name": "minel",
-    "description": "Linux & Ortaya Karışık",
-    "orientation": "portrait",
+    "name": "Yücel Blog",
+    "short_name": "Minel",
     "icons": [
         {
             "src": "images/web-app-manifest-192x192.png",
@@ -22,5 +14,8 @@
             "type": "image/png",
             "purpose": "maskable"
         }
-    ]
+    ],
+    "theme_color": "#0c101a",
+    "background_color": "#f1f5ff",
+    "display": "standalone"
 }
