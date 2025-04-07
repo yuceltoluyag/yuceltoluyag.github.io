@@ -820,6 +820,24 @@
             });
         </script>
 
+        <!-- Service Worker Kaydı -->
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", function () {
+                    navigator.serviceWorker
+                        .register("/SW.js")
+                        .then(function (registration) {
+                            console.log("ServiceWorker kaydı başarılı, kapsam:", registration.scope);
+                        })
+                        .catch(function (error) {
+                            console.error("ServiceWorker kaydı başarısız:", error);
+                        });
+                });
+            } else {
+                console.log("ServiceWorker bu tarayıcıda desteklenmiyor.");
+            }
+        </script>
+
         {% include 'partials/tagmanager.html' %}
     </body>
 </html>
