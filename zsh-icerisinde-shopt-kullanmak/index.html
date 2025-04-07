@@ -1306,20 +1306,284 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
         </script>
 <!-- Service Worker Kaydı -->
 <script>
-            if ("serviceWorker" in navigator) {
-                window.addEventListener("load", function () {
-                    navigator.serviceWorker
-                        .register("/SW.js")
-                        .then(function (registration) {
-                            console.log("ServiceWorker kaydı başarılı, kapsam:", registration.scope);
-                        })
-                        .catch(function (error) {
-                            console.error("ServiceWorker kaydı başarısız:", error);
+            // Workbox Window kütüphanesini dinamik olarak yükle
+            const scriptTag = document.createElement("script");
+            // Kullanıcının belirttiği çalışan CDN adresi
+            scriptTag.src = "https://cdn.jsdelivr.net/npm/workbox-window@7.3.0/build/workbox-window.prod.umd.min.js";
+            document.head.appendChild(scriptTag);
+
+            scriptTag.onload = () => {
+                if ("serviceWorker" in navigator) {
+                    console.log("ServiceWorker destekleniyor, başlatılıyor...");
+
+                    // Workbox-window yüklendikten sonra Service Worker'ı kaydet
+                    const wb = new workbox.Workbox("/SW.js");
+
+                    // DEBUG: Service Worker durumunu konsola yazdır
+                    navigator.serviceWorker.getRegistration().then((reg) => {
+                        if (reg) {
+                            console.log("Mevcut Service Worker durumu:", reg.active ? "aktif" : "aktif değil");
+                            console.log("Bekleyen Service Worker var mı:", reg.waiting ? "evet" : "hayır");
+                            console.log("Yüklenen Service Worker var mı:", reg.installing ? "evet" : "hayır");
+                        } else {
+                            console.log("Henüz kayıtlı Service Worker yok");
+                        }
+                    });
+
+                    // Güncelleme bildirimi gösterilecek mi?
+                    let refreshing = false;
+
+                    // Güncelleme bildirimi göster
+                    function showUpdateNotification(forced = false) {
+                        console.log(`Güncelleme bildirimi gösteriliyor... (Zorla: ${forced})`);
+
+                        // Eğer daha önce gösterilmiş ve kapatılmamışsa gösterme
+                        const notificationShown = localStorage.getItem("sw-notification-shown");
+                        const notificationExpires = localStorage.getItem("sw-notification-expires");
+
+                        // Sadece bildirim gösterilmemişse veya süresi dolmuşsa göster
+                        if (notificationShown && notificationExpires && parseInt(notificationExpires) > Date.now()) {
+                            console.log("Bildirim zaten gösterilmiş ve süresi dolmamış, tekrar gösterilmeyecek");
+                            return;
+                        }
+
+                        // Bildirimi gösterdiğimizi ve süresini kaydet
+                        localStorage.setItem("sw-notification-shown", "true");
+                        // 1 gün süreyle geçerli (ms cinsinden)
+                        localStorage.setItem("sw-notification-expires", (Date.now() + 24 * 60 * 60 * 1000).toString());
+
+                        // İlk önce mevcut bildirimi kontrol et
+                        const existingNotification = document.getElementById("sw-update-notification");
+                        if (existingNotification) {
+                            console.log("Zaten bir bildirim gösteriliyor, yeni bildirim gösterilmeyecek");
+                            existingNotification.remove(); // Mevcut bildirimi kaldır ve yenisini göster
+                        }
+
+                        // Bildirim elementini oluştur
+                        const notification = document.createElement("div");
+                        notification.id = "sw-update-notification";
+                        notification.style.cssText = `
+                            position: fixed;
+                            top: 100px;
+                            right: 20px;
+                            background-color: #1e40af;
+                            color: white;
+                            padding: 16px;
+                            border-radius: 8px;
+                            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                            z-index: 999999;
+                            display: flex;
+                            align-items: center;
+                            min-width: 300px;
+                            border: 2px solid #60a5fa;
+                            animation: slideInRight 0.3s ease-out forwards;
+                            transition: opacity 0.5s ease-out;
+                        `;
+
+                        notification.innerHTML = `
+                            <div style="margin-right: 12px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                </svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <p style="font-weight: 600; margin: 0 0 5px 0; font-size: 16px;">Yeni içerik hazır!</p>
+                                <p style="margin: 0; opacity: 0.9; font-size: 14px;">Site güncellendi, son değişiklikleri görmek için yenileyin.</p>
+                            </div>
+                            <button id="sw-update-button" style="margin-left: 16px; padding: 8px 16px; background: white; color: #1e40af; border: none; border-radius: 4px; font-weight: 600; cursor: pointer;">
+                                Yenile
+                            </button>
+                            <button id="sw-update-close" style="margin-left: 8px; background: transparent; border: none; color: white; cursor: pointer;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        `;
+
+                        // Bildirim stilini CSS'e ekle
+                        const style = document.createElement("style");
+                        style.textContent = `
+                            @keyframes slideInRight {
+                                from {
+                                    transform: translateX(100%);
+                                    opacity: 0;
+                                }
+                                to {
+                                    transform: translateX(0);
+                                    opacity: 1;
+                                }
+                            }
+                            
+                            @keyframes fadeOut {
+                                from {
+                                    opacity: 1;
+                                }
+                                to {
+                                    opacity: 0;
+                                }
+                            }
+                            
+                            #sw-update-button:hover {
+                                background-color: #f0f0f0;
+                            }
+                            
+                            #sw-update-close:hover {
+                                opacity: 0.8;
+                            }
+                        `;
+                        document.head.appendChild(style);
+
+                        // Bildirimi ekle
+                        document.body.appendChild(notification);
+                        console.log("Bildirim başarıyla DOM'a eklendi");
+
+                        // Bildirim kapatma zamanlayıcısı - 2 dakika (120 saniye) sonra otomatik kapanır
+                        let closeTimeout = setTimeout(() => {
+                            fadeOutNotification();
+                        }, 120000); // 2 dakika
+
+                        // Fade out efekti ile bildirimi kapat
+                        function fadeOutNotification() {
+                            notification.style.animation = "fadeOut 0.5s ease-out forwards";
+                            setTimeout(() => {
+                                if (notification.parentNode) {
+                                    notification.parentNode.removeChild(notification);
+                                }
+                            }, 500);
+                        }
+
+                        // Yenile butonuna tıklanınca
+                        document.getElementById("sw-update-button").addEventListener("click", () => {
+                            if (refreshing) return;
+                            refreshing = true;
+                            clearTimeout(closeTimeout); // Zamanlayıcıyı temizle
+
+                            // Bildirimi temizle
+                            localStorage.removeItem("sw-notification-shown");
+                            localStorage.removeItem("sw-notification-expires");
+
+                            console.log("Sayfa yenileniyor...");
+                            window.location.reload();
                         });
-                });
-            } else {
-                console.log("ServiceWorker bu tarayıcıda desteklenmiyor.");
-            }
+
+                        // Kapat butonuna tıklanınca
+                        document.getElementById("sw-update-close").addEventListener("click", () => {
+                            clearTimeout(closeTimeout); // Zamanlayıcıyı temizle
+
+                            // Bildirimi kapattığını kaydet
+                            localStorage.setItem("sw-notification-dismissed", "true");
+
+                            console.log("Bildirim kapatılıyor");
+                            fadeOutNotification();
+                        });
+
+                        // Fareyi bildirim üzerine getirince zamanlayıcıyı durdur
+                        notification.addEventListener("mouseenter", () => {
+                            clearTimeout(closeTimeout);
+                        });
+
+                        // Fare bildirimden ayrılınca zamanlayıcıyı yeniden başlat
+                        notification.addEventListener("mouseleave", () => {
+                            closeTimeout = setTimeout(() => {
+                                fadeOutNotification();
+                            }, 120000); // 2 dakika
+                        });
+                    }
+
+                    // Sayfa yüklendiğinde daha önce gösterilmiş bir bildirim varsa yine göster
+                    document.addEventListener("DOMContentLoaded", () => {
+                        const notificationShown = localStorage.getItem("sw-notification-shown");
+                        const notificationExpires = localStorage.getItem("sw-notification-expires");
+                        const notificationDismissed = localStorage.getItem("sw-notification-dismissed");
+
+                        // Bildirim gösterilmişse, süresi dolmamışsa ve kullanıcı tarafından kapatılmamışsa
+                        if (
+                            notificationShown &&
+                            notificationExpires &&
+                            parseInt(notificationExpires) > Date.now() &&
+                            !notificationDismissed
+                        ) {
+                            console.log("Önceki bildirim yeniden gösteriliyor");
+                            showUpdateNotification();
+                        }
+                    });
+
+                    // Service Worker'dan yayın güncelleme mesajlarını dinle
+                    navigator.serviceWorker.addEventListener("message", (event) => {
+                        console.log("Service Worker'dan mesaj alındı:", event.data);
+                        if (event.data && event.data.type === "SW_ACTIVATED") {
+                            console.log("Service Worker aktifleştirildi, versiyon:", event.data.version);
+                            showUpdateNotification();
+                        }
+                    });
+
+                    // Workbox BroadcastUpdate mesajlarını dinle
+                    const broadcastChannel = new BroadcastChannel("workbox-broadcast-update");
+                    broadcastChannel.addEventListener("message", (event) => {
+                        console.log("İçerik güncellendi:", event.data);
+                        // Eğer HTML içeriği güncellendiyse bildirimi göster
+                        if (event.data.payload && event.data.payload.updatedURL.endsWith(".html")) {
+                            showUpdateNotification();
+                        }
+                    });
+
+                    // Service Worker olaylarını dinle
+                    wb.addEventListener("waiting", (event) => {
+                        console.log("Yeni Service Worker kuruldu ve bekliyor");
+                        showUpdateNotification();
+                    });
+
+                    wb.addEventListener("controlling", (event) => {
+                        console.log("Service Worker sayfayı kontrol ediyor");
+                    });
+
+                    wb.addEventListener("installed", (event) => {
+                        console.log("Service Worker kuruldu:", event.type);
+                        if (event.isUpdate) {
+                            console.log("Bu bir güncelleme");
+                        }
+                    });
+
+                    wb.addEventListener("activated", (event) => {
+                        console.log("Service Worker aktifleştirildi:", event.type);
+                    });
+
+                    // Service Worker'ı kaydet
+                    wb.register()
+                        .then((registration) => {
+                            console.log("Service Worker kaydı başarılı:", registration);
+
+                            // Her 30 dakikada bir Service Worker'ı güncelle
+                            setInterval(() => {
+                                console.log("Service Worker güncellemesi kontrol ediliyor...");
+                                registration.update();
+                            }, 30 * 60 * 1000); // 30 dakika
+                        })
+                        .catch((error) => {
+                            console.error("Service Worker kaydı başarısız:", error);
+                        });
+                } else {
+                    console.log("ServiceWorker bu tarayıcıda desteklenmiyor.");
+                }
+            };
+
+            scriptTag.onerror = () => {
+                console.error("Workbox-window kütüphanesi yüklenemedi");
+
+                // Workbox yüklenemezse standart Service Worker kodunu çalıştır
+                if ("serviceWorker" in navigator) {
+                    window.addEventListener("load", function () {
+                        navigator.serviceWorker
+                            .register("/SW.js")
+                            .then(function (registration) {
+                                console.log("ServiceWorker kaydı başarılı (fallback):", registration.scope);
+                            })
+                            .catch(function (error) {
+                                console.error("ServiceWorker kaydı başarısız:", error);
+                            });
+                    });
+                }
+            };
         </script>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
