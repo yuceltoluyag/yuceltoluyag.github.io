@@ -853,7 +853,7 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
 <h6 class="comment-name">
 <a href="#">Örnek Kullanıcı</a>
 </h6>
-<span>09 Nisan 2025, 01:04</span>
+<span>09 Nisan 2025, 02:09</span>
 <i class="fa fa-reply reply-button" data-comment-id="comment-1"></i>
 </div>
 <div class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
@@ -876,7 +876,7 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
 <h6 class="comment-name by-author">
 <a href="#">Yücel Toluyağ</a>
 </h6>
-<span>08 Nisan 2025, 01:04</span>
+<span>08 Nisan 2025, 02:09</span>
 <i class="fa fa-reply reply-button" data-comment-id="author-1"></i>
 </div>
 <div class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
@@ -888,30 +888,6 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
 <div class="reply-form-container" id="reply-form-container-author-1"></div>
 </li>
 </ul>
-</div>
-<!-- Yorum Bırakın Formu -->
-<div class="mb-12 mt-8 bg-site-card dark:bg-site-card p-6 rounded-lg shadow-sm">
-<h2 class="text-xl font-semibold mb-6 text-text-primary dark:text-[#e4e5e7]">Yorum Bırakın</h2>
-<form class="space-y-4" id="comment-form">
-<input name="options[slug]" type="hidden" value="zsh-icerisinde-shopt-kullanmak"/>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div>
-<input class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7]" name="fields[name]" placeholder="İsminiz *" required="" type="text"/>
-</div>
-<div>
-<input class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7]" name="fields[email]" placeholder="E-posta adresiniz (gizli) *" required="" type="email"/>
-</div>
-</div>
-<div>
-<textarea class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] resize-y" name="fields[message]" placeholder="Yorumunuz *" required="" rows="4"></textarea>
-</div>
-<div class="flex justify-end">
-<button class="px-4 py-2 bg-primary hover:bg-primary/80 text-white rounded-md transition-colors" type="submit">
-                Gönder
-            </button>
-</div>
-<div class="hidden p-4 rounded-md" id="confirmation-message"></div>
-</form>
 </div>
 <!-- Yorum yanıtlama için form şablonu (gizli) -->
 <template id="reply-form-template">
@@ -933,6 +909,8 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
 <input class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm" name="fields[email]" placeholder="E-posta (gizli) *" required="" type="email"/>
 </div>
 <textarea class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm resize-y" name="fields[message]" placeholder="Yanıtınız *" required="" rows="3"></textarea>
+<!-- Yanıt formu için Cloudflare Turnstile -->
+<div class="cf-turnstile" data-sitekey="0x4AAAAAABF5KzbNxGlrw5_N" data-theme="auto"></div>
 <div class="flex justify-between items-center">
 <button class="text-xs text-[#3c3c43cc] hover:text-text-primary dark:text-[#909296] dark:hover:text-[#e4e5e7] cancel-reply" type="button">
                                 İptal
@@ -1269,80 +1247,23 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
     }
 </style>
 <script>
+    // Cloudflare Turnstile script
+    document.head.insertAdjacentHTML(
+        "beforeend",
+        '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer><\/script>'
+    );
+
     document.addEventListener("DOMContentLoaded", function () {
-        // Ana yorum formu
-        const commentForm = document.getElementById("comment-form");
-        const confirmationMessage = document.getElementById("confirmation-message");
+        // Widget ID'lerini saklamak için obje
+        const turnstileWidgets = {};
 
-        if (commentForm) {
-            commentForm.addEventListener("submit", function (e) {
-                e.preventDefault();
+        // Sabit değerler
+        const TURNSTILE_SITEKEY = "0x4AAAAAABF5KzbNxGlrw5_N";
+        const TURNSTILE_SECRET = "0x4AAAAAAAJLs2ETEX7wr5xKcl_LsP_hwSjCQ-";
 
-                // Form verilerini al
-                const name = this.querySelector('input[name="fields[name]"]').value;
-                const email = this.querySelector('input[name="fields[email]"]').value;
-                const message = this.querySelector('textarea[name="fields[message]"]').value;
-                const slug = this.querySelector('input[name="options[slug]"]').value;
-
-                // Form verilerini doğrula
-                if (!name || !email || !message) {
-                    alert("Lütfen tüm alanları doldurun.");
-                    return;
-                }
-
-                // Staticman'e gönderilecek veri
-                const formData = {
-                    fields: {
-                        name: name,
-                        email: email,
-                        message: message,
-                    },
-                    options: {
-                        slug: slug,
-                    },
-                };
-
-                // Yükleniyor mesajı göster
-                showMessage("Yorumunuz gönderiliyor...", "info");
-
-                // Staticman API'ye gönder
-                fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
-                    method: "POST",
-                    body: JSON.stringify(formData),
-                    headers: { "Content-Type": "application/json" },
-                })
-                    .then((response) => {
-                        if (response.ok) {
-                            showMessage("Teşekkürler! Yorumunuz incelendikten sonra yayınlanacaktır.", "success");
-                            commentForm.reset();
-                        } else {
-                            showMessage("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.", "error");
-                        }
-                    })
-                    .catch((error) => {
-                        console.error("Error:", error);
-                        showMessage("Bir hata oluştu: " + error.message, "error");
-                    });
-            });
-        }
-
-        function showMessage(message, type) {
-            if (!confirmationMessage) return;
-
-            confirmationMessage.textContent = message;
-            confirmationMessage.classList.remove("hidden");
-
-            // Mesaj tipine göre tailwind sınıfları ekle
-            if (type === "success") {
-                confirmationMessage.className =
-                    "p-4 rounded-md text-sm bg-green-100 text-green-600 dark:bg-green-800/20 dark:text-green-400";
-            } else if (type === "error") {
-                confirmationMessage.className =
-                    "p-4 rounded-md text-sm bg-red-100 text-red-600 dark:bg-red-800/20 dark:text-red-400";
-            } else if (type === "info") {
-                confirmationMessage.className =
-                    "p-4 rounded-md text-sm bg-blue-100 text-primary dark:bg-blue-800/20 dark:text-primary";
-            }
+        // Turnstile scriptinin yüklenip yüklenmediğini kontrol et
+        function isTurnstileLoaded() {
+            return typeof turnstile !== "undefined";
         }
 
         // Tüm yanıtla butonlarını seç
@@ -1354,9 +1275,29 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
                 // Tıklanan yorumun ID'sini al
                 const commentId = this.getAttribute("data-comment-id");
 
+                // Önceki widget varsa temizle
+                if (turnstileWidgets[commentId]) {
+                    try {
+                        turnstile.remove(turnstileWidgets[commentId]);
+                        delete turnstileWidgets[commentId];
+                    } catch (err) {
+                        console.log("Widget temizleme hatası:", err);
+                    }
+                }
+
                 // Tüm açık yanıt formlarını kapat
                 document.querySelectorAll(".reply-form-container").forEach((container) => {
-                    if (container.id !== `reply-form-container-${commentId}` && container.innerHTML !== "") {
+                    const containerId = container.id.replace("reply-form-container-", "");
+                    if (containerId !== commentId && container.innerHTML !== "") {
+                        // Bu container kapanıyorsa içindeki widget'ı temizle
+                        if (turnstileWidgets[containerId]) {
+                            try {
+                                turnstile.remove(turnstileWidgets[containerId]);
+                                delete turnstileWidgets[containerId];
+                            } catch (err) {
+                                console.log("Widget temizleme hatası:", err);
+                            }
+                        }
                         container.innerHTML = "";
                     }
                 });
@@ -1387,14 +1328,88 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
                 formContainer.innerHTML = "";
                 formContainer.appendChild(formContent);
 
+                // Turnstile container için benzersiz ID oluştur
+                const turnstileContainer = formContainer.querySelector(".cf-turnstile");
+                if (turnstileContainer) {
+                    turnstileContainer.id = `cf-turnstile-${commentId}`;
+
+                    // Turnstile scriptini yüklemeyi bekle
+                    function initTurnstile() {
+                        if (isTurnstileLoaded()) {
+                            try {
+                                // Eğer widget oluşturulduysa önce temizle
+                                if (turnstileWidgets[commentId]) {
+                                    turnstile.remove(turnstileWidgets[commentId]);
+                                }
+
+                                // Yeni widget oluştur
+                                turnstileWidgets[commentId] = turnstile.render(`#cf-turnstile-${commentId}`, {
+                                    sitekey: TURNSTILE_SITEKEY,
+                                    theme: "auto",
+                                });
+                            } catch (err) {
+                                console.error("Turnstile widget oluşturma hatası:", err);
+                                formContainer.innerHTML =
+                                    "<p class='p-4 text-red-600 dark:text-red-400'>Doğrulama sistemi yüklenemedi. Sayfayı yenileyip tekrar deneyin.</p>";
+                            }
+                        } else {
+                            // Turnstile yüklenmemişse tekrar dene
+                            setTimeout(initTurnstile, 100);
+                        }
+                    }
+
+                    // Turnstile widget'ını başlat
+                    initTurnstile();
+                }
+
                 // İptal butonuna olay dinleyicisi ekle
                 formContainer.querySelector(".cancel-reply").addEventListener("click", function () {
+                    if (turnstileWidgets[commentId]) {
+                        try {
+                            turnstile.remove(turnstileWidgets[commentId]);
+                            delete turnstileWidgets[commentId];
+                        } catch (err) {
+                            console.log("Widget temizleme hatası:", err);
+                        }
+                    }
                     formContainer.innerHTML = "";
                 });
 
                 // Form gönderimini izle
                 formContainer.querySelector(".reply-comment-form").addEventListener("submit", function (e) {
                     e.preventDefault();
+
+                    // Turnstile token doğrulaması
+                    if (!isTurnstileLoaded()) {
+                        formContainer.innerHTML =
+                            "<p class='p-4 text-red-600 dark:text-red-400'>Doğrulama sistemi yüklenemedi. Sayfayı yenileyip tekrar deneyin.</p>";
+                        return;
+                    }
+
+                    const replyTurnstileResponse = turnstile.getResponse(turnstileWidgets[commentId]);
+
+                    if (!replyTurnstileResponse) {
+                        const errorMsg =
+                            formContainer.querySelector(".turnstile-error") || document.createElement("div");
+                        errorMsg.className =
+                            "turnstile-error p-3 my-2 text-sm text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/20 rounded";
+                        errorMsg.textContent = "Lütfen insan olduğunuzu doğrulayın.";
+
+                        // Mesajı forma ekle (eğer yoksa)
+                        if (!formContainer.querySelector(".turnstile-error")) {
+                            const submitButton = formContainer.querySelector('button[type="submit"]').parentNode;
+                            submitButton.parentNode.insertBefore(errorMsg, submitButton);
+                        }
+                        return;
+                    }
+
+                    // Hata mesajını kaldır (varsa)
+                    const errorMsg = formContainer.querySelector(".turnstile-error");
+                    if (errorMsg) errorMsg.remove();
+
+                    // Yükleniyor mesajı göster
+                    formContainer.innerHTML =
+                        "<p class='p-4 text-primary dark:text-primary'>Yanıtınız gönderiliyor...</p>";
 
                     // Form verilerini al
                     const name = this.querySelector('input[name="fields[name]"]').value;
@@ -1405,54 +1420,84 @@ Bir dizine <code>cd dizin</code> komutuyla girerken, bashrc dosyasına ekleyece�
 
                     // Form verilerini doğrula
                     if (!name || !email || !message) {
-                        alert("Lütfen tüm alanları doldurun.");
+                        formContainer.innerHTML =
+                            "<p class='p-4 text-red-600 dark:text-red-400'>Lütfen tüm alanları doldurun.</p>";
                         return;
                     }
 
-                    // Staticman'e gönderilecek veri
+                    // Form verilerini hazırla
                     const formData = {
                         fields: {
-                            name: name,
-                            email: email,
-                            message: message,
-                            parent_id: parentId,
+                            name: name.trim(),
+                            email: email.trim(),
+                            message: message.trim(),
+                            parent_id: parentId.trim(),
                         },
                         options: {
-                            slug: slug,
+                            slug: slug.trim(),
                         },
                     };
 
-                    // Yükleniyor mesajı göster
-                    formContainer.innerHTML =
-                        "<p class='p-4 text-primary dark:text-primary'>Yanıtınız gönderiliyor...</p>";
+                    // Turnstile token'ı ekle
+                    formData["cf-turnstile-response"] = replyTurnstileResponse;
 
-                    // Staticman API'ye gönder
-                    fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
-                        method: "POST",
-                        body: JSON.stringify(formData),
-                        headers: { "Content-Type": "application/json" },
-                    })
-                        .then((response) => {
-                            if (response.ok) {
-                                formContainer.innerHTML =
-                                    "<p class='p-4 text-green-600 dark:text-green-400'>Teşekkürler! Yanıtınız incelendikten sonra yayınlanacaktır.</p>";
+                    // Debug için
+                    console.log("Gönderilen veriler:", formData);
 
-                                // 3 saniye sonra mesajı kapat
-                                setTimeout(() => {
-                                    formContainer.innerHTML = "";
-                                }, 3000);
-                            } else {
-                                formContainer.innerHTML =
-                                    "<p class='p-4 text-red-600 dark:text-red-400'>Bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>";
-                            }
-                        })
-                        .catch((error) => {
-                            console.error("Error:", error);
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("POST", "https://comment-worker.ytoluyag.workers.dev/api/handle/form");
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    xhr.setRequestHeader("Accept", "application/json");
+
+                    xhr.onload = function () {
+                        console.log("XHR yanıt durumu:", xhr.status);
+                        console.log("XHR yanıt metni:", xhr.responseText);
+                        console.log("XHR tüm başlıklar:", xhr.getAllResponseHeaders());
+
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            // Başarılı yanıt
                             formContainer.innerHTML =
-                                "<p class='p-4 text-red-600 dark:text-red-400'>Bir hata oluştu: " +
-                                error.message +
-                                "</p>";
+                                "<p class='p-4 text-green-600 dark:text-green-400'>Teşekkürler! Yanıtınız incelendikten sonra yayınlanacaktır.</p>";
+
+                            // 3 saniye sonra mesajı kapat
+                            setTimeout(() => {
+                                formContainer.innerHTML = "";
+                            }, 3000);
+                        } else {
+                            // Hata yanıtı
+                            let errorMessage = "Yanıt gönderirken bir hata oluştu. ";
+
+                            try {
+                                const errorResponse = JSON.parse(xhr.responseText);
+                                errorMessage += errorResponse.message || xhr.responseText;
+                            } catch (e) {
+                                errorMessage += xhr.responseText;
+                            }
+
+                            formContainer.innerHTML = `<p class='p-4 text-red-600 dark:text-red-400'>${errorMessage}</p>`;
+
+                            console.error("Yanıt gönderimi başarısız:", {
+                                status: xhr.status,
+                                statusText: xhr.statusText,
+                                response: xhr.responseText,
+                                headers: xhr.getAllResponseHeaders(),
+                            });
+                        }
+                    };
+
+                    xhr.onerror = function () {
+                        console.error("XHR bağlantı hatası:", {
+                            status: xhr.status,
+                            statusText: xhr.statusText,
+                            response: xhr.responseText,
+                            headers: xhr.getAllResponseHeaders(),
                         });
+                        formContainer.innerHTML =
+                            "<p class='p-4 text-red-600 dark:text-red-400'>Sunucuya bağlanırken bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>";
+                    };
+
+                    // Form verilerini JSON olarak gönder
+                    xhr.send(JSON.stringify(formData));
                 });
 
                 // Form alanına odaklan
