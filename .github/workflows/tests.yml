@@ -17,7 +17,25 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
+    check-if-comment-pr:
+        runs-on: ubuntu-latest
+        outputs:
+            is_comment_pr: ${{ steps.check_pr_title.outputs.is_comment_pr }}
+        steps:
+            - name: Check if PR is a comment submission
+              id: check_pr_title
+              # PR başlığı "chore: new comment on" ile başlıyorsa, yorum PR'ı olarak kabul et
+              run: |
+                  if [[ "${{ github.event.pull_request.title }}" == chore:\ new\ comment\ on* ]]; then
+                    echo "is_comment_pr=true" >> $GITHUB_OUTPUT
+                  else
+                    echo "is_comment_pr=false" >> $GITHUB_OUTPUT
+                  fi
+
     test-build:
+        needs: check-if-comment-pr
+        # Eğer bu bir yorum PR'ı ise ve PR açılmışsa test işini çalıştırma
+        if: ${{ needs.check-if-comment-pr.outputs.is_comment_pr != 'true' || github.event_name != 'pull_request' }}
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
