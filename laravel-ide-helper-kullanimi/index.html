@@ -805,6 +805,127 @@
 </div>
 </div>
 </div>
+<!-- Yorum Formu -->
+<section class="comment-section mt-10">
+<h2 class="text-2xl font-bold mb-4 text-text-primary">Yorum Yap</h2>
+<!-- Yorum Formu -->
+<div class="bg-site-card-alt p-6 rounded-lg shadow-md" id="comment-form-container">
+<form class="mb-4" data-slug="laravel-ide-helper-kullanimi" id="comment-form">
+<div class="mb-4">
+<label class="block text-sm font-bold mb-2" for="comment-name">
+                    İsim
+                    <span class="text-red-500">*</span>
+</label>
+<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="comment-name" placeholder="İsminiz" required="" type="text"/>
+</div>
+<div class="mb-4">
+<label class="block text-sm font-bold mb-2" for="comment-email">
+                    E-posta
+                    <span class="text-red-500">*</span>
+</label>
+<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="comment-email" placeholder="E-posta adresiniz (yayınlanmayacak)" required="" type="email"/>
+</div>
+<div class="mb-4">
+<label class="block text-sm font-bold mb-2" for="comment-message">
+                    Mesaj
+                    <span class="text-red-500">*</span>
+</label>
+<textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight resize-none focus:outline-none focus:shadow-outline" id="comment-message" placeholder="Yorumunuz" required="" rows="6"></textarea>
+</div>
+<div class="flex items-center justify-between">
+<button class="w-full text-white bg-primary hover:bg-primary-dark transition-colors duration-200 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="comment-submit" type="submit">
+                    Gönder
+                </button>
+</div>
+</form>
+<div class="mt-4 text-green-500" id="comment-confirmation"></div>
+</div>
+<!-- Yükleniyor Mesajı -->
+<div class="hidden bg-site-card-alt p-6 rounded-lg shadow-md text-center" id="comment-loader">
+<div class="flex flex-col items-center justify-center">
+<div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mb-4"></div>
+<h3 class="font-bold text-center">Yorumunuz işleniyor!</h3>
+</div>
+</div>
+<!-- Yorum Formu JavaScript Kodu -->
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const commentForm = document.getElementById("comment-form");
+            if (!commentForm) return;
+
+            const nameInput = document.getElementById("comment-name");
+            const emailInput = document.getElementById("comment-email");
+            const messageInput = document.getElementById("comment-message");
+            const submitButton = document.getElementById("comment-submit");
+            const confirmationMessage = document.getElementById("comment-confirmation");
+            const loaderElement = document.getElementById("comment-loader");
+            const formContainer = document.getElementById("comment-form-container");
+            const slug = commentForm.getAttribute("data-slug");
+
+            function showLoader() {
+                formContainer.classList.add("hidden");
+                loaderElement.classList.remove("hidden");
+            }
+
+            function hideLoader() {
+                formContainer.classList.remove("hidden");
+                loaderElement.classList.add("hidden");
+            }
+
+            function resetInputData() {
+                nameInput.value = "";
+                emailInput.value = "";
+                messageInput.value = "";
+            }
+
+            function showConfirmation(message, isError = false) {
+                confirmationMessage.textContent = message;
+                confirmationMessage.className = isError ? "mt-4 text-red-500" : "mt-4 text-green-500";
+            }
+
+            commentForm.addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                showConfirmation("");
+
+                // Validation
+                if (!nameInput.value || !emailInput.value || !messageInput.value) {
+                    showConfirmation("Tüm alanların doldurulması zorunludur.", true);
+                    return;
+                }
+
+                showLoader();
+
+                try {
+                    const response = await fetch("https://comment-worker.ytoluyag.workers.dev//api/handle/form", {
+                        method: "POST",
+                        body: JSON.stringify({
+                            fields: {
+                                slug: slug,
+                                name: nameInput.value,
+                                email: emailInput.value,
+                                message: messageInput.value,
+                            },
+                        }),
+                        headers: { "Content-Type": "application/json" },
+                    });
+
+                    if (response.status === 200 || response.status === 201) {
+                        resetInputData();
+                        showConfirmation("Teşekkürler! Yorumunuz incelendikten sonra yayınlanacaktır.");
+                    } else {
+                        showConfirmation("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.", true);
+                    }
+                } catch (error) {
+                    console.error("Error submitting comment:", error);
+                    showConfirmation("Yorumunuz gönderilirken bir hata oluştu.", true);
+                } finally {
+                    hideLoader();
+                }
+            });
+        });
+    </script>
+</section>
 </article>
 </div>
 </div>
