@@ -156,14 +156,41 @@
                 }
 
                 // Slug'ı meta etiketinden veya URL'den al
-                const slug =
-                    document.querySelector('meta[name="slug"]')?.content ||
-                    window.location.pathname.replace(/\/$/, "").split("/").pop();
+                let slug = "";
+                try {
+                    // İlk olarak meta etiketini kontrol et
+                    const metaSlug = document.querySelector('meta[name="slug"]');
+                    if (metaSlug && metaSlug.content) {
+                        slug = metaSlug.content;
+                    } else {
+                        // URL'den slug almayı dene
+                        const path = window.location.pathname;
+                        if (path) {
+                            // URL'deki sondaki eğik çizgiyi kaldır ve son segmenti al
+                            const cleanPath = path.endsWith("/") ? path.slice(0, -1) : path;
+                            const segments = cleanPath.split("/");
+                            if (segments.length > 0) {
+                                slug = segments[segments.length - 1];
+                            }
+                        }
+                    }
+
+                    // Slug hala boşsa, URL'nin tamamını kullan
+                    if (!slug) {
+                        slug = window.location.href;
+                    }
+
+                    console.log("Kullanılan slug:", slug);
+                } catch (error) {
+                    console.error("Slug oluşturma hatası:", error);
+                    slug = "unknown-page";
+                }
 
                 statusElement.classList.add("hidden");
                 showLoader();
 
                 try {
+                    console.log("Turnstile token:", turnstileToken);
                     console.log("Sending request with data:", {
                         fields: {
                             slug: slug,
