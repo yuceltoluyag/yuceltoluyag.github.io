@@ -133,15 +133,18 @@
                         credentials: "omit",
                     });
 
+                    const responseData = await response.json();
+                    console.log("Server response:", responseData);
+
                     if (response.status === 200 || response.status === 201) {
                         resetInputData();
                         showConfirmation("Teşekkürler! Yorumunuz incelendikten sonra yayınlanacaktır.");
                     } else {
-                        showConfirmation("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.", true);
+                        showConfirmation(`Bir hata oluştu: ${responseData.error || "Bilinmeyen hata"}`, true);
                     }
                 } catch (error) {
                     console.error("Error submitting comment:", error);
-                    showConfirmation("Yorumunuz gönderilirken bir hata oluştu.", true);
+                    showConfirmation(`Yorumunuz gönderilirken bir hata oluştu: ${error.message}`, true);
                 } finally {
                     hideLoader();
                 }
