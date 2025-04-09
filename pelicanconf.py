@@ -17,6 +17,9 @@ SITESUBTITLE = "Linux, Python ve Web Geliştirme Rehberleri"
 PATH = "content"
 ARTICLE_PATHS = ["articles"]
 PAGE_PATHS = ["pages"]
+CONTENT_DIR = PATH
+CONTENT_BASE_URL = os.path.abspath(os.path.dirname(__file__))
+PATH_METADATA = ""
 OUTPUT_PATH = "output"
 TIMEZONE = "Europe/Istanbul"
 # English is still default for now due to localization issues
@@ -240,6 +243,7 @@ common_plugins = [
     "plugins.search",
     "plugins.pelican_redirect",
     "plugins.video_schema",
+    "plugins.comments",
 ]
 
 dev_plugins = common_plugins.copy()

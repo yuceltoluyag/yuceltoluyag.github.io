@@ -580,8 +580,12 @@ article.title }}{% endblock %} {% block seo %}
     </div>
     {% endif %}
 
-    <!-- Yorum Formu -->
-    {% include 'partials/comment-form.html' %}
+    <!-- Yorumlar ve Yorum Formu -->
+    <div class="py-10 bg-gray-100 dark:bg-gray-800/20">
+        <div class="container mx-auto px-4">
+            {% include 'partials/comments.html' %} {% include 'partials/comment-form.html' %}
+        </div>
+    </div>
 </article>
 {% endblock %} {% block extra_js %}
 <!-- TOC JavaScript -->
