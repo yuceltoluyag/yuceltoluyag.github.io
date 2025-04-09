@@ -823,7 +823,7 @@ service<span class="w"> </span>apache2<span class="w"> </span>restart
                 showLoader();
 
                 try {
-                    const response = await fetch("https://comment-worker.ytoluyag.workers.dev//api/handle/form", {
+                    const response = await fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
                         method: "POST",
                         body: JSON.stringify({
                             fields: {
@@ -833,7 +833,12 @@ service<span class="w"> </span>apache2<span class="w"> </span>restart
                                 message: messageInput.value,
                             },
                         }),
-                        headers: { "Content-Type": "application/json" },
+                        headers: {
+                            "Content-Type": "application/json",
+                            Origin: "https://yuceltoluyag.dev",
+                        },
+                        mode: "cors",
+                        credentials: "omit",
                     });
 
                     if (response.status === 200 || response.status === 201) {

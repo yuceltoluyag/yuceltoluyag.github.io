@@ -906,7 +906,7 @@ A<span class="w"> </span>Vagrant<span class="w"> </span>update<span class="w"> <
                 showLoader();
 
                 try {
-                    const response = await fetch("https://comment-worker.ytoluyag.workers.dev//api/handle/form", {
+                    const response = await fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
                         method: "POST",
                         body: JSON.stringify({
                             fields: {
@@ -916,7 +916,12 @@ A<span class="w"> </span>Vagrant<span class="w"> </span>update<span class="w"> <
                                 message: messageInput.value,
                             },
                         }),
-                        headers: { "Content-Type": "application/json" },
+                        headers: {
+                            "Content-Type": "application/json",
+                            Origin: "https://yuceltoluyag.dev",
+                        },
+                        mode: "cors",
+                        credentials: "omit",
                     });
 
                     if (response.status === 200 || response.status === 201) {
