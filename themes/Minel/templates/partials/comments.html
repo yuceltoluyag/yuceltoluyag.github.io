@@ -1,0 +1,710 @@
+{% if article %} {% set comments_path = 'comments/' + article.slug %} {# Yorumları liste olarak al #} {% set comments =
+get_article_comments(article.slug) %} {% if comments %}
+<!-- Yorumlar Container -->
+<div class="comments-container bg-site-card dark:bg-site-card">
+    <h1 class="text-text-primary dark:text-[#e4e5e7]">
+        Yorumlar
+        <a
+            href="#"
+            class="text-primary dark:text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-colors">
+            {{ article.title }}
+        </a>
+    </h1>
+
+    <ul id="comments-list" class="comments-list">
+        {% for comment in comments %}
+        <li>
+            <div class="comment-main-level">
+                <!-- Avatar -->
+                <div class="comment-avatar">
+                    {% if comment.id.startswith('author') %}
+                    <div class="avatar-image bg-primary dark:bg-[#f5a623]">{{ comment.name[:1]|upper }}</div>
+                    {% else %}
+                    <img
+                        class="avatar-image w-full h-full object-cover"
+                        src="https://www.gravatar.com/avatar/{{ comment.email|default('00000000000000000000000000000000')|md5_hash }}?s=65&d=identicon"
+                        alt="{{ comment.name }}"
+                        loading="lazy" />
+                    {% endif %}
+                </div>
+                <!-- Yorum Kutusu -->
+                <div class="comment-box">
+                    <div
+                        class="comment-head bg-site-card dark:bg-[#1b1c20] border-b border-[#e3e8f7] dark:border-[#2c2d30]">
+                        <h6 class="comment-name {% if comment.id.startswith('author') %}by-author{% endif %}">
+                            <a href="#">{{ comment.name }}</a>
+                        </h6>
+                        <span>{{ comment.date|strftime('%d %B %Y, %H:%M') }}</span>
+                        <i class="fa fa-reply reply-button" data-comment-id="{{ comment.id }}"></i>
+                    </div>
+                    <div class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
+                        {% if comment.message %} {% for line in comment.message.split('\n') %}
+                        <p>{{ line }}</p>
+                        {% endfor %} {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yanıt formu için boş alan - JavaScript ile doldurulacak -->
+            <div id="reply-form-container-{{ comment.id }}" class="reply-form-container"></div>
+
+            {% if comment.replies %}
+            <!-- Yanıtlar -->
+            <ul class="comments-list reply-list">
+                {% for reply in comment.replies %}
+                <li>
+                    <!-- Avatar -->
+                    <div class="comment-avatar">
+                        {% if reply.id.startswith('author') %}
+                        <div class="avatar-image bg-primary dark:bg-[#f5a623]">{{ reply.name[:1]|upper }}</div>
+                        {% else %}
+                        <img
+                            class="avatar-image w-full h-full object-cover"
+                            src="https://www.gravatar.com/avatar/{{ reply.email|default('00000000000000000000000000000000')|md5_hash }}?s=50&d=identicon"
+                            alt="{{ reply.name }}"
+                            loading="lazy" />
+                        {% endif %}
+                    </div>
+                    <!-- Yorum Kutusu -->
+                    <div class="comment-box">
+                        <div
+                            class="comment-head bg-site-card dark:bg-[#1b1c20] border-b border-[#e3e8f7] dark:border-[#2c2d30]">
+                            <h6 class="comment-name {% if reply.id.startswith('author') %}by-author{% endif %}">
+                                <a href="#">{{ reply.name }}</a>
+                            </h6>
+                            <span>{{ reply.date|strftime('%d %B %Y, %H:%M') }}</span>
+                        </div>
+                        <div
+                            class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
+                            {% if reply.message %} {% for line in reply.message.split('\n') %}
+                            <p>{{ line }}</p>
+                            {% endfor %} {% endif %}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Yorum Bırakın Formu -->
+<div class="mb-12 mt-8 bg-site-card dark:bg-site-card p-6 rounded-lg shadow-sm">
+    <h2 class="text-xl font-semibold mb-6 text-text-primary dark:text-[#e4e5e7]">Yorum Bırakın</h2>
+
+    <form id="comment-form" class="space-y-4">
+        <input type="hidden" name="options[slug]" value="{{ article.slug }}" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <input
+                    type="text"
+                    name="fields[name]"
+                    placeholder="İsminiz *"
+                    required
+                    class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7]" />
+            </div>
+            <div>
+                <input
+                    type="email"
+                    name="fields[email]"
+                    placeholder="E-posta adresiniz (gizli) *"
+                    required
+                    class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7]" />
+            </div>
+        </div>
+
+        <div>
+            <textarea
+                name="fields[message]"
+                rows="4"
+                placeholder="Yorumunuz *"
+                required
+                class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] resize-y"></textarea>
+        </div>
+
+        <div class="flex justify-end">
+            <button
+                type="submit"
+                class="px-4 py-2 bg-primary hover:bg-primary/80 text-white rounded-md transition-colors">
+                Gönder
+            </button>
+        </div>
+
+        <div id="confirmation-message" class="hidden p-4 rounded-md"></div>
+    </form>
+</div>
+
+<!-- Yorum yanıtlama için form şablonu (gizli) -->
+<template id="reply-form-template">
+    <ul class="comments-list reply-list">
+        <li>
+            <div class="comment-avatar">
+                <div class="avatar-image bg-gray-400 dark:bg-gray-600">?</div>
+            </div>
+            <div class="comment-box">
+                <div
+                    class="comment-head bg-site-card dark:bg-[#1b1c20] border-b border-[#e3e8f7] dark:border-[#2c2d30]">
+                    <h6 class="comment-name"><a href="#">Yanıt Yaz</a></h6>
+                </div>
+                <div class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
+                    <form class="reply-comment-form space-y-3">
+                        <input type="hidden" name="options[slug]" value="{{ article.slug }}" />
+                        <input type="hidden" name="fields[parent_id]" class="parent-id-field" />
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <input
+                                type="text"
+                                name="fields[name]"
+                                placeholder="İsminiz *"
+                                required
+                                class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm" />
+                            <input
+                                type="email"
+                                name="fields[email]"
+                                placeholder="E-posta (gizli) *"
+                                required
+                                class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm" />
+                        </div>
+                        <textarea
+                            name="fields[message]"
+                            rows="3"
+                            placeholder="Yanıtınız *"
+                            required
+                            class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm resize-y"></textarea>
+                        <div class="flex justify-between items-center">
+                            <button
+                                type="button"
+                                class="text-xs text-[#3c3c43cc] hover:text-text-primary dark:text-[#909296] dark:hover:text-[#e4e5e7] cancel-reply">
+                                İptal
+                            </button>
+                            <button
+                                type="submit"
+                                class="px-3 py-1.5 bg-primary hover:bg-primary/80 text-white rounded transition-colors">
+                                Yanıtı Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+</template>
+
+<style>
+    /* Yorumlar stil tanımları - Tema renklerine uyarlanmış */
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary-color: var(--main-color, #425aef);
+        --primary-dark: var(--main-color, #425aef);
+        --bg-color: var(--main-site-background, #f8f9fa);
+        --bg-card: var(--main-card-background, #ffffff);
+        --bg-card-alt: var(--main-card-second-background, #f7f7f9);
+        --text-primary: var(--main-font-color, #363636);
+        --text-secondary: var(--main-font-second-color, #3c3c43cc);
+        --border-color: var(--main-card-border, #e3e8f7);
+    }
+
+    .dark {
+        --primary-color: var(--main-color, #f5a623);
+        --primary-dark: var(--main-color, #f5a623);
+        --bg-color: var(--main-site-background, #18171d);
+        --bg-card: var(--main-card-background, #1b1c20);
+        --bg-card-alt: var(--main-card-second-background, #21232a);
+        --text-primary: var(--main-font-color, #e4e5e7);
+        --text-secondary: var(--main-font-second-color, #909296);
+        --border-color: var(--main-card-border, #2c2d30);
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    /* Font Awesome simülasyonu */
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 sans-serif;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .fa-reply:before {
+        content: "↩";
+    }
+
+    .comments-container {
+        margin: 0 auto 15px;
+        width: 100%;
+        max-width: 768px;
+        padding: 30px;
+        border-radius: 0.5rem;
+    }
+
+    .comments-container h1 {
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    .comments-container h1 a {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .comments-list {
+        margin-top: 30px;
+        position: relative;
+    }
+
+    /**
+ * Dikey çizgi
+ -----------------------*/
+    .comments-list:before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background: var(--border-color);
+        position: absolute;
+        left: 32px;
+        top: 0;
+    }
+
+    .comments-list:after {
+        content: "";
+        position: absolute;
+        background: var(--border-color);
+        bottom: 0;
+        left: 27px;
+        width: 7px;
+        height: 7px;
+        border: 3px solid var(--bg-card);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    .reply-list:before,
+    .reply-list:after {
+        display: none;
+    }
+    .reply-list li:before {
+        content: "";
+        width: 60px;
+        height: 2px;
+        background: var(--border-color);
+        position: absolute;
+        top: 25px;
+        left: -55px;
+    }
+
+    .comments-list li {
+        margin-bottom: 15px;
+        display: block;
+        position: relative;
+    }
+
+    .comments-list li:after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+        width: 0;
+    }
+
+    .reply-list {
+        padding-left: 88px;
+        clear: both;
+        margin-top: 15px;
+    }
+    /**
+ * Avatar
+ ---------------------------*/
+    .comments-list .comment-avatar {
+        width: 65px;
+        height: 65px;
+        position: relative;
+        z-index: 99;
+        float: left;
+        border: 3px solid var(--bg-card);
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    .avatar-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .reply-list .comment-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .comment-main-level:after {
+        content: "";
+        width: 0;
+        height: 0;
+        display: block;
+        clear: both;
+    }
+    /**
+ * Yorum Kutusu
+ ---------------------------*/
+    .comments-list .comment-box {
+        width: calc(100% - 85px);
+        float: right;
+        position: relative;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .comments-list .comment-box:before,
+    .comments-list .comment-box:after {
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        display: block;
+        border-width: 10px 12px 10px 0;
+        border-style: solid;
+        border-color: transparent var(--bg-card);
+        top: 8px;
+        left: -11px;
+    }
+
+    .comments-list .comment-box:before {
+        border-width: 11px 13px 11px 0;
+        border-color: transparent rgba(0, 0, 0, 0.05);
+        left: -12px;
+    }
+
+    .reply-list .comment-box {
+        width: calc(100% - 65px);
+    }
+
+    .comment-box .comment-head {
+        padding: 10px 12px;
+        overflow: hidden;
+        -webkit-border-radius: 4px 4px 0 0;
+        -moz-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .comment-box .comment-head i {
+        float: right;
+        margin-left: 14px;
+        position: relative;
+        top: 2px;
+        color: var(--text-secondary);
+        cursor: pointer;
+        -webkit-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+    }
+
+    .comment-box .comment-head i:hover {
+        color: var(--primary-color);
+    }
+
+    .comment-box .comment-name {
+        font-size: 14px;
+        font-weight: 700;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .comment-box .comment-name a {
+        color: inherit;
+    }
+
+    .comment-box .comment-head span {
+        float: left;
+        color: var(--text-secondary);
+        font-size: 13px;
+        position: relative;
+        top: 1px;
+    }
+
+    .comment-box .comment-content {
+        padding: 12px;
+        font-size: 15px;
+        -webkit-border-radius: 0 0 4px 4px;
+        -moz-border-radius: 0 0 4px 4px;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .comment-box .comment-name.by-author,
+    .comment-box .comment-name.by-author a {
+        color: var(--primary-color);
+    }
+    .comment-box .comment-name.by-author:after {
+        content: "yazar";
+        background: var(--primary-color);
+        color: white;
+        font-size: 12px;
+        padding: 3px 5px;
+        font-weight: 700;
+        margin-left: 10px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    /** =====================
+ * Responsive
+ ========================*/
+    @media only screen and (max-width: 766px) {
+        .comments-container {
+            width: 100%;
+        }
+
+        .comments-list .comment-box {
+            width: calc(100% - 85px);
+        }
+
+        .reply-list .comment-box {
+            width: calc(100% - 65px);
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .comments-container {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .comments-list .comment-box {
+            width: calc(100% - 75px);
+        }
+
+        .reply-list {
+            padding-left: 40px;
+        }
+
+        .reply-list .comment-box {
+            width: calc(100% - 55px);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Ana yorum formu
+        const commentForm = document.getElementById("comment-form");
+        const confirmationMessage = document.getElementById("confirmation-message");
+
+        if (commentForm) {
+            commentForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // Form verilerini al
+                const name = this.querySelector('input[name="fields[name]"]').value;
+                const email = this.querySelector('input[name="fields[email]"]').value;
+                const message = this.querySelector('textarea[name="fields[message]"]').value;
+                const slug = this.querySelector('input[name="options[slug]"]').value;
+
+                // Form verilerini doğrula
+                if (!name || !email || !message) {
+                    alert("Lütfen tüm alanları doldurun.");
+                    return;
+                }
+
+                // Staticman'e gönderilecek veri
+                const formData = {
+                    fields: {
+                        name: name,
+                        email: email,
+                        message: message,
+                    },
+                    options: {
+                        slug: slug,
+                    },
+                };
+
+                // Yükleniyor mesajı göster
+                showMessage("Yorumunuz gönderiliyor...", "info");
+
+                // Staticman API'ye gönder
+                fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
+                    method: "POST",
+                    body: JSON.stringify(formData),
+                    headers: { "Content-Type": "application/json" },
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            showMessage("Teşekkürler! Yorumunuz incelendikten sonra yayınlanacaktır.", "success");
+                            commentForm.reset();
+                        } else {
+                            showMessage("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.", "error");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        showMessage("Bir hata oluştu: " + error.message, "error");
+                    });
+            });
+        }
+
+        function showMessage(message, type) {
+            if (!confirmationMessage) return;
+
+            confirmationMessage.textContent = message;
+            confirmationMessage.classList.remove("hidden");
+
+            // Mesaj tipine göre tailwind sınıfları ekle
+            if (type === "success") {
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-green-100 text-green-600 dark:bg-green-800/20 dark:text-green-400";
+            } else if (type === "error") {
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-red-100 text-red-600 dark:bg-red-800/20 dark:text-red-400";
+            } else if (type === "info") {
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-blue-100 text-primary dark:bg-blue-800/20 dark:text-primary";
+            }
+        }
+
+        // Tüm yanıtla butonlarını seç
+        const replyButtons = document.querySelectorAll(".fa-reply");
+
+        // Her yanıtla butonu için olay dinleyicisi ekle
+        replyButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+                // Tıklanan yorumun ID'sini al
+                const commentId = this.getAttribute("data-comment-id");
+
+                // Tüm açık yanıt formlarını kapat
+                document.querySelectorAll(".reply-form-container").forEach((container) => {
+                    if (container.id !== `reply-form-container-${commentId}` && container.innerHTML !== "") {
+                        container.innerHTML = "";
+                    }
+                });
+
+                // Yanıt formunun konumunu al
+                const formContainer = document.getElementById(`reply-form-container-${commentId}`);
+
+                // Eğer form container bulunamazsa işlemi durdur
+                if (!formContainer) {
+                    console.error(`Form container bulunamadı: reply-form-container-${commentId}`);
+                    return;
+                }
+
+                // Form zaten açıksa, kapat
+                if (formContainer.innerHTML !== "") {
+                    formContainer.innerHTML = "";
+                    return;
+                }
+
+                // Form şablonunu al ve içeriğini kopyala
+                const template = document.getElementById("reply-form-template");
+                const formContent = template.content.cloneNode(true);
+
+                // Parent ID'yi ayarla
+                formContent.querySelector(".parent-id-field").value = commentId;
+
+                // Formu göster
+                formContainer.innerHTML = "";
+                formContainer.appendChild(formContent);
+
+                // İptal butonuna olay dinleyicisi ekle
+                formContainer.querySelector(".cancel-reply").addEventListener("click", function () {
+                    formContainer.innerHTML = "";
+                });
+
+                // Form gönderimini izle
+                formContainer.querySelector(".reply-comment-form").addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Form verilerini al
+                    const name = this.querySelector('input[name="fields[name]"]').value;
+                    const email = this.querySelector('input[name="fields[email]"]').value;
+                    const message = this.querySelector('textarea[name="fields[message]"]').value;
+                    const parentId = this.querySelector('input[name="fields[parent_id]"]').value;
+                    const slug = this.querySelector('input[name="options[slug]"]').value;
+
+                    // Form verilerini doğrula
+                    if (!name || !email || !message) {
+                        alert("Lütfen tüm alanları doldurun.");
+                        return;
+                    }
+
+                    // Staticman'e gönderilecek veri
+                    const formData = {
+                        fields: {
+                            name: name,
+                            email: email,
+                            message: message,
+                            parent_id: parentId,
+                        },
+                        options: {
+                            slug: slug,
+                        },
+                    };
+
+                    // Yükleniyor mesajı göster
+                    formContainer.innerHTML =
+                        "<p class='p-4 text-primary dark:text-primary'>Yanıtınız gönderiliyor...</p>";
+
+                    // Staticman API'ye gönder
+                    fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
+                        method: "POST",
+                        body: JSON.stringify(formData),
+                        headers: { "Content-Type": "application/json" },
+                    })
+                        .then((response) => {
+                            if (response.ok) {
+                                formContainer.innerHTML =
+                                    "<p class='p-4 text-green-600 dark:text-green-400'>Teşekkürler! Yanıtınız incelendikten sonra yayınlanacaktır.</p>";
+
+                                // 3 saniye sonra mesajı kapat
+                                setTimeout(() => {
+                                    formContainer.innerHTML = "";
+                                }, 3000);
+                            } else {
+                                formContainer.innerHTML =
+                                    "<p class='p-4 text-red-600 dark:text-red-400'>Bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>";
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                            formContainer.innerHTML =
+                                "<p class='p-4 text-red-600 dark:text-red-400'>Bir hata oluştu: " +
+                                error.message +
+                                "</p>";
+                        });
+                });
+
+                // Form alanına odaklan
+                formContainer.querySelector('input[name="fields[name]"]').focus();
+            });
+        });
+    });
+</script>
+{% endif %} {% endif %}
