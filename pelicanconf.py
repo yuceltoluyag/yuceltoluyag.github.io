@@ -422,3 +422,6 @@ ARTICLE_EDIT_LINK = (
     "https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/"
     "%(slug)s.md"
 )
+
+# Comments
+COMMENTS_ENABLED = True
