@@ -39,6 +39,7 @@ jobs:
                       build
                       ci
                       post
+                      chore
                   requireScope: false
                   subjectPattern: ^(?![A-Z]).+$
                   subjectPatternError: |
