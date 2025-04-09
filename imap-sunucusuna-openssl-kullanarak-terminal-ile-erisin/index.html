@@ -1155,6 +1155,16 @@ Yukarıda ki işlemde sonuç 15 çıktı varsayalım.Son 10 mailin üst bilgisin
                 showLoader();
 
                 try {
+                    console.log("Sending request with data:", {
+                        fields: {
+                            slug: slug,
+                            name: nameInput.value,
+                            email: emailInput.value,
+                            message: messageInput.value,
+                        },
+                        "cf-turnstile-response": turnstileToken,
+                    });
+
                     const response = await fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
                         method: "POST",
                         body: JSON.stringify({
@@ -1173,6 +1183,9 @@ Yukarıda ki işlemde sonuç 15 çıktı varsayalım.Son 10 mailin üst bilgisin
                         mode: "cors",
                         credentials: "omit",
                     });
+
+                    console.log("Response status:", response.status);
+                    console.log("Response headers:", Object.fromEntries([...response.headers.entries()]));
 
                     let responseData;
                     const contentType = response.headers.get("content-type");
