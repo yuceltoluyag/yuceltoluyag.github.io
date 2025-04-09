@@ -1176,96 +1176,750 @@
         </div>
     </div>
 
-    <!-- Yorum Formu -->
-<section class="mt-8">
-    <div class="bg-site-card rounded-lg overflow-hidden shadow-md">
-        <div class="p-6 border-b border-border-card">
-            <h2 class="text-2xl font-bold text-text-primary">Yorum Bırakın</h2>
-            <p class="text-sm text-text-secondary mt-2">
-                Yorumunuz incelendikten sonra yayınlanacaktır. E-posta adresiniz gizli tutulacak ve yayınlanmayacaktır.
-            </p>
+    <!-- Yorumlar ve Yorum Formu -->
+    <div class="py-10 bg-gray-100 dark:bg-gray-800/20">
+        <div class="container mx-auto px-4">
+    <!-- Yorumlar Container -->
+<div class="comments-container bg-site-card dark:bg-site-card">
+    <h1 class="text-text-primary dark:text-[#e4e5e7]">
+        Yorumlar
+        <a
+            href="#"
+            class="text-primary dark:text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-colors">
+            Güncel Ücretsiz Oyunlar (Steam & GOG & Epic)
+        </a>
+    </h1>
+
+    <ul id="comments-list" class="comments-list">
+        <li>
+            <div class="comment-main-level">
+                <!-- Avatar -->
+                <div class="comment-avatar">
+                    <img
+                        class="avatar-image w-full h-full object-cover"
+                        src="https://www.gravatar.com/avatar/3908de1af8e5e23426abc9f68546b01c?s=65&d=identicon"
+                        alt="Örnek Kullanıcı"
+                        loading="lazy" />
+                </div>
+                <!-- Yorum Kutusu -->
+                <div class="comment-box">
+                    <div
+                        class="comment-head bg-site-card dark:bg-[#1b1c20] border-b border-[#e3e8f7] dark:border-[#2c2d30]">
+                        <h6 class="comment-name ">
+                            <a href="#">Örnek Kullanıcı</a>
+                        </h6>
+                        <span>09 Nisan 2025, 01:04</span>
+                        <i class="fa fa-reply reply-button" data-comment-id="comment-1"></i>
+                    </div>
+                    <div class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
+                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure distinctio illo?</p>
+                     </div>
+                </div>
+            </div>
+
+            <!-- Yanıt formu için boş alan - JavaScript ile doldurulacak -->
+            <div id="reply-form-container-comment-1" class="reply-form-container"></div>
+
+        </li>
+        <li>
+            <div class="comment-main-level">
+                <!-- Avatar -->
+                <div class="comment-avatar">
+                    <div class="avatar-image bg-primary dark:bg-[#f5a623]">Y</div>
+                </div>
+                <!-- Yorum Kutusu -->
+                <div class="comment-box">
+                    <div
+                        class="comment-head bg-site-card dark:bg-[#1b1c20] border-b border-[#e3e8f7] dark:border-[#2c2d30]">
+                        <h6 class="comment-name by-author">
+                            <a href="#">Yücel Toluyağ</a>
+                        </h6>
+                        <span>08 Nisan 2025, 01:04</span>
+                        <i class="fa fa-reply reply-button" data-comment-id="author-1"></i>
+                    </div>
+                    <div class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
+                         <p>Harika bir yazı olmuş. Bu konuda daha fazla içerik paylaşmanızı umuyorum. Özellikle performans optimizasyonu kısmını çok beğendim!</p>
+                     </div>
+                </div>
+            </div>
+
+            <!-- Yanıt formu için boş alan - JavaScript ile doldurulacak -->
+            <div id="reply-form-container-author-1" class="reply-form-container"></div>
+
+        </li>
+    </ul>
+</div>
+
+<!-- Yorum Bırakın Formu -->
+<div class="mb-12 mt-8 bg-site-card dark:bg-site-card p-6 rounded-lg shadow-sm">
+    <h2 class="text-xl font-semibold mb-6 text-text-primary dark:text-[#e4e5e7]">Yorum Bırakın</h2>
+
+    <form id="comment-form" class="space-y-4">
+        <input type="hidden" name="options[slug]" value="guncel-ucretsiz-oyunlar" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <input
+                    type="text"
+                    name="fields[name]"
+                    placeholder="İsminiz *"
+                    required
+                    class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7]" />
+            </div>
+            <div>
+                <input
+                    type="email"
+                    name="fields[email]"
+                    placeholder="E-posta adresiniz (gizli) *"
+                    required
+                    class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7]" />
+            </div>
         </div>
 
-        <div class="p-6">
-            <form id="comment-form" class="space-y-5">
-                <input id="fields_slug" name="options[slug]" type="hidden" value="guncel-ucretsiz-oyunlar" />
+        <div>
+            <textarea
+                name="fields[message]"
+                rows="4"
+                placeholder="Yorumunuz *"
+                required
+                class="w-full px-4 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded-md bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] resize-y"></textarea>
+        </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <!-- İsim alanı -->
-                    <div class="relative">
-                        <label for="fields_name" class="block text-sm font-medium text-text-primary mb-1">
-                            İsim
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="w-full px-3 py-2 border border-border-card rounded-lg bg-site-bg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-text-primary placeholder-text-secondary/70"
-                            id="fields_name"
-                            name="fields[name]"
-                            type="text"
-                            placeholder="Adınız"
-                            required />
-                    </div>
+        <div class="flex justify-end">
+            <button
+                type="submit"
+                class="px-4 py-2 bg-primary hover:bg-primary/80 text-white rounded-md transition-colors">
+                Gönder
+            </button>
+        </div>
 
-                    <!-- E-posta alanı -->
-                    <div class="relative">
-                        <label for="fields_email" class="block text-sm font-medium text-text-primary mb-1">
-                            E-posta
-                            <span class="text-red-500">*</span>
-                        </label>
-                        <input
-                            class="w-full px-3 py-2 border border-border-card rounded-lg bg-site-bg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-text-primary placeholder-text-secondary/70"
-                            id="fields_email"
-                            name="fields[email]"
-                            type="email"
-                            placeholder="E-posta adresiniz"
-                            required />
-                        <p class="mt-1 text-xs text-text-secondary/80">E-posta adresiniz yayınlanmayacaktır</p>
-                    </div>
-                </div>
+        <div id="confirmation-message" class="hidden p-4 rounded-md"></div>
+    </form>
+</div>
 
-                <!-- Mesaj alanı -->
-                <div class="relative">
-                    <label for="fields_message" class="block text-sm font-medium text-text-primary mb-1">
-                        Mesajınız
-                        <span class="text-red-500">*</span>
-                    </label>
-                    <div class="relative">
-                        <div
-                            class="grid after:whitespace-pre-wrap after:invisible after:content-[attr(data-replicated-value)] after:[grid-area:1/1/2/2]"
-                            data-replicated-value="">
-                            <textarea
-                                class="w-full p-3 border border-border-card rounded-lg bg-site-bg focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors text-text-primary placeholder-text-secondary/70 resize-none overflow-hidden [grid-area:1/1/2/2] min-h-[120px]"
-                                id="fields_message"
-                                name="fields[message]"
-                                placeholder="Yorumunuzu buraya yazın..."
-                                rows="4"
-                                required></textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cloudflare Turnstile widget -->
+<!-- Yorum yanıtlama için form şablonu (gizli) -->
+<template id="reply-form-template">
+    <ul class="comments-list reply-list">
+        <li>
+            <div class="comment-avatar">
+                <div class="avatar-image bg-gray-400 dark:bg-gray-600">?</div>
+            </div>
+            <div class="comment-box">
                 <div
-                    class="cf-turnstile mb-4"
-                    data-sitekey="0x4AAAAAABF5KzbNxGlrw5_N"
-                    data-callback="javascriptCallback"></div>
-
-                <!-- Gönder butonu -->
-                <div class="flex items-center justify-between">
-                    <button
-                        type="submit"
-                        id="submit-comment"
-                        class="relative px-6 py-3 rounded-lg bg-primary hover:bg-primary-dark text-white font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2">
-                        Yorum Gönder
-                    </button>
+                    class="comment-head bg-site-card dark:bg-[#1b1c20] border-b border-[#e3e8f7] dark:border-[#2c2d30]">
+                    <h6 class="comment-name"><a href="#">Yanıt Yaz</a></h6>
                 </div>
-            </form>
+                <div class="comment-content bg-site-card dark:bg-[#1b1c20] text-text-primary dark:text-[#e4e5e7]">
+                    <form class="reply-comment-form space-y-3">
+                        <input type="hidden" name="options[slug]" value="guncel-ucretsiz-oyunlar" />
+                        <input type="hidden" name="fields[parent_id]" class="parent-id-field" />
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <input
+                                type="text"
+                                name="fields[name]"
+                                placeholder="İsminiz *"
+                                required
+                                class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm" />
+                            <input
+                                type="email"
+                                name="fields[email]"
+                                placeholder="E-posta (gizli) *"
+                                required
+                                class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm" />
+                        </div>
+                        <textarea
+                            name="fields[message]"
+                            rows="3"
+                            placeholder="Yanıtınız *"
+                            required
+                            class="w-full px-3 py-2 border border-[#e3e8f7] dark:border-[#2c2d30] rounded bg-white dark:bg-[#21232a] text-text-primary dark:text-[#e4e5e7] text-sm resize-y"></textarea>
+                        <div class="flex justify-between items-center">
+                            <button
+                                type="button"
+                                class="text-xs text-[#3c3c43cc] hover:text-text-primary dark:text-[#909296] dark:hover:text-[#e4e5e7] cancel-reply">
+                                İptal
+                            </button>
+                            <button
+                                type="submit"
+                                class="px-3 py-1.5 bg-primary hover:bg-primary/80 text-white rounded transition-colors">
+                                Yanıtı Gönder
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+</template>
 
-            <!-- Bildirim mesajı -->
-            <div id="confirmation-message" class="mt-4 py-3 px-4 rounded-lg hidden"></div>
+<style>
+    /* Yorumlar stil tanımları - Tema renklerine uyarlanmış */
+    * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary-color: var(--main-color, #425aef);
+        --primary-dark: var(--main-color, #425aef);
+        --bg-color: var(--main-site-background, #f8f9fa);
+        --bg-card: var(--main-card-background, #ffffff);
+        --bg-card-alt: var(--main-card-second-background, #f7f7f9);
+        --text-primary: var(--main-font-color, #363636);
+        --text-secondary: var(--main-font-second-color, #3c3c43cc);
+        --border-color: var(--main-card-border, #e3e8f7);
+    }
+
+    .dark {
+        --primary-color: var(--main-color, #f5a623);
+        --primary-dark: var(--main-color, #f5a623);
+        --bg-color: var(--main-site-background, #18171d);
+        --bg-card: var(--main-card-background, #1b1c20);
+        --bg-card-alt: var(--main-card-second-background, #21232a);
+        --text-primary: var(--main-font-color, #e4e5e7);
+        --text-secondary: var(--main-font-second-color, #909296);
+        --border-color: var(--main-card-border, #2c2d30);
+    }
+
+    a {
+        color: var(--primary-color);
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    /* Font Awesome simülasyonu */
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 sans-serif;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .fa-reply:before {
+        content: "↩";
+    }
+
+    .comments-container {
+        margin: 0 auto 15px;
+        width: 100%;
+        max-width: 768px;
+        padding: 30px;
+        border-radius: 0.5rem;
+    }
+
+    .comments-container h1 {
+        font-size: 28px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    .comments-container h1 a {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .comments-list {
+        margin-top: 30px;
+        position: relative;
+    }
+
+    /**
+ * Dikey çizgi
+ -----------------------*/
+    .comments-list:before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background: var(--border-color);
+        position: absolute;
+        left: 32px;
+        top: 0;
+    }
+
+    .comments-list:after {
+        content: "";
+        position: absolute;
+        background: var(--border-color);
+        bottom: 0;
+        left: 27px;
+        width: 7px;
+        height: 7px;
+        border: 3px solid var(--bg-card);
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+    }
+
+    .reply-list:before,
+    .reply-list:after {
+        display: none;
+    }
+    .reply-list li:before {
+        content: "";
+        width: 60px;
+        height: 2px;
+        background: var(--border-color);
+        position: absolute;
+        top: 25px;
+        left: -55px;
+    }
+
+    .comments-list li {
+        margin-bottom: 15px;
+        display: block;
+        position: relative;
+    }
+
+    .comments-list li:after {
+        content: "";
+        display: block;
+        clear: both;
+        height: 0;
+        width: 0;
+    }
+
+    .reply-list {
+        padding-left: 88px;
+        clear: both;
+        margin-top: 15px;
+    }
+    /**
+ * Avatar
+ ---------------------------*/
+    .comments-list .comment-avatar {
+        width: 65px;
+        height: 65px;
+        position: relative;
+        z-index: 99;
+        float: left;
+        border: 3px solid var(--bg-card);
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+    }
+
+    .avatar-image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .reply-list .comment-avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .comment-main-level:after {
+        content: "";
+        width: 0;
+        height: 0;
+        display: block;
+        clear: both;
+    }
+    /**
+ * Yorum Kutusu
+ ---------------------------*/
+    .comments-list .comment-box {
+        width: calc(100% - 85px);
+        float: right;
+        position: relative;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .comments-list .comment-box:before,
+    .comments-list .comment-box:after {
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        display: block;
+        border-width: 10px 12px 10px 0;
+        border-style: solid;
+        border-color: transparent var(--bg-card);
+        top: 8px;
+        left: -11px;
+    }
+
+    .comments-list .comment-box:before {
+        border-width: 11px 13px 11px 0;
+        border-color: transparent rgba(0, 0, 0, 0.05);
+        left: -12px;
+    }
+
+    .reply-list .comment-box {
+        width: calc(100% - 65px);
+    }
+
+    .comment-box .comment-head {
+        padding: 10px 12px;
+        overflow: hidden;
+        -webkit-border-radius: 4px 4px 0 0;
+        -moz-border-radius: 4px 4px 0 0;
+        border-radius: 4px 4px 0 0;
+    }
+
+    .comment-box .comment-head i {
+        float: right;
+        margin-left: 14px;
+        position: relative;
+        top: 2px;
+        color: var(--text-secondary);
+        cursor: pointer;
+        -webkit-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+    }
+
+    .comment-box .comment-head i:hover {
+        color: var(--primary-color);
+    }
+
+    .comment-box .comment-name {
+        font-size: 14px;
+        font-weight: 700;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .comment-box .comment-name a {
+        color: inherit;
+    }
+
+    .comment-box .comment-head span {
+        float: left;
+        color: var(--text-secondary);
+        font-size: 13px;
+        position: relative;
+        top: 1px;
+    }
+
+    .comment-box .comment-content {
+        padding: 12px;
+        font-size: 15px;
+        -webkit-border-radius: 0 0 4px 4px;
+        -moz-border-radius: 0 0 4px 4px;
+        border-radius: 0 0 4px 4px;
+    }
+
+    .comment-box .comment-name.by-author,
+    .comment-box .comment-name.by-author a {
+        color: var(--primary-color);
+    }
+    .comment-box .comment-name.by-author:after {
+        content: "yazar";
+        background: var(--primary-color);
+        color: white;
+        font-size: 12px;
+        padding: 3px 5px;
+        font-weight: 700;
+        margin-left: 10px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+
+    /** =====================
+ * Responsive
+ ========================*/
+    @media only screen and (max-width: 766px) {
+        .comments-container {
+            width: 100%;
+        }
+
+        .comments-list .comment-box {
+            width: calc(100% - 85px);
+        }
+
+        .reply-list .comment-box {
+            width: calc(100% - 65px);
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .comments-container {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .comments-list .comment-box {
+            width: calc(100% - 75px);
+        }
+
+        .reply-list {
+            padding-left: 40px;
+        }
+
+        .reply-list .comment-box {
+            width: calc(100% - 55px);
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Ana yorum formu
+        const commentForm = document.getElementById("comment-form");
+        const confirmationMessage = document.getElementById("confirmation-message");
+
+        if (commentForm) {
+            commentForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // Form verilerini al
+                const name = this.querySelector('input[name="fields[name]"]').value;
+                const email = this.querySelector('input[name="fields[email]"]').value;
+                const message = this.querySelector('textarea[name="fields[message]"]').value;
+                const slug = this.querySelector('input[name="options[slug]"]').value;
+
+                // Form verilerini doğrula
+                if (!name || !email || !message) {
+                    alert("Lütfen tüm alanları doldurun.");
+                    return;
+                }
+
+                // Staticman'e gönderilecek veri
+                const formData = {
+                    fields: {
+                        name: name,
+                        email: email,
+                        message: message,
+                    },
+                    options: {
+                        slug: slug,
+                    },
+                };
+
+                // Yükleniyor mesajı göster
+                showMessage("Yorumunuz gönderiliyor...", "info");
+
+                // Staticman API'ye gönder
+                fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
+                    method: "POST",
+                    body: JSON.stringify(formData),
+                    headers: { "Content-Type": "application/json" },
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            showMessage("Teşekkürler! Yorumunuz incelendikten sonra yayınlanacaktır.", "success");
+                            commentForm.reset();
+                        } else {
+                            showMessage("Bir hata oluştu. Lütfen daha sonra tekrar deneyin.", "error");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        showMessage("Bir hata oluştu: " + error.message, "error");
+                    });
+            });
+        }
+
+        function showMessage(message, type) {
+            if (!confirmationMessage) return;
+
+            confirmationMessage.textContent = message;
+            confirmationMessage.classList.remove("hidden");
+
+            // Mesaj tipine göre tailwind sınıfları ekle
+            if (type === "success") {
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-green-100 text-green-600 dark:bg-green-800/20 dark:text-green-400";
+            } else if (type === "error") {
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-red-100 text-red-600 dark:bg-red-800/20 dark:text-red-400";
+            } else if (type === "info") {
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-blue-100 text-primary dark:bg-blue-800/20 dark:text-primary";
+            }
+        }
+
+        // Tüm yanıtla butonlarını seç
+        const replyButtons = document.querySelectorAll(".fa-reply");
+
+        // Her yanıtla butonu için olay dinleyicisi ekle
+        replyButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+                // Tıklanan yorumun ID'sini al
+                const commentId = this.getAttribute("data-comment-id");
+
+                // Tüm açık yanıt formlarını kapat
+                document.querySelectorAll(".reply-form-container").forEach((container) => {
+                    if (container.id !== `reply-form-container-${commentId}` && container.innerHTML !== "") {
+                        container.innerHTML = "";
+                    }
+                });
+
+                // Yanıt formunun konumunu al
+                const formContainer = document.getElementById(`reply-form-container-${commentId}`);
+
+                // Eğer form container bulunamazsa işlemi durdur
+                if (!formContainer) {
+                    console.error(`Form container bulunamadı: reply-form-container-${commentId}`);
+                    return;
+                }
+
+                // Form zaten açıksa, kapat
+                if (formContainer.innerHTML !== "") {
+                    formContainer.innerHTML = "";
+                    return;
+                }
+
+                // Form şablonunu al ve içeriğini kopyala
+                const template = document.getElementById("reply-form-template");
+                const formContent = template.content.cloneNode(true);
+
+                // Parent ID'yi ayarla
+                formContent.querySelector(".parent-id-field").value = commentId;
+
+                // Formu göster
+                formContainer.innerHTML = "";
+                formContainer.appendChild(formContent);
+
+                // İptal butonuna olay dinleyicisi ekle
+                formContainer.querySelector(".cancel-reply").addEventListener("click", function () {
+                    formContainer.innerHTML = "";
+                });
+
+                // Form gönderimini izle
+                formContainer.querySelector(".reply-comment-form").addEventListener("submit", function (e) {
+                    e.preventDefault();
+
+                    // Form verilerini al
+                    const name = this.querySelector('input[name="fields[name]"]').value;
+                    const email = this.querySelector('input[name="fields[email]"]').value;
+                    const message = this.querySelector('textarea[name="fields[message]"]').value;
+                    const parentId = this.querySelector('input[name="fields[parent_id]"]').value;
+                    const slug = this.querySelector('input[name="options[slug]"]').value;
+
+                    // Form verilerini doğrula
+                    if (!name || !email || !message) {
+                        alert("Lütfen tüm alanları doldurun.");
+                        return;
+                    }
+
+                    // Staticman'e gönderilecek veri
+                    const formData = {
+                        fields: {
+                            name: name,
+                            email: email,
+                            message: message,
+                            parent_id: parentId,
+                        },
+                        options: {
+                            slug: slug,
+                        },
+                    };
+
+                    // Yükleniyor mesajı göster
+                    formContainer.innerHTML =
+                        "<p class='p-4 text-primary dark:text-primary'>Yanıtınız gönderiliyor...</p>";
+
+                    // Staticman API'ye gönder
+                    fetch("https://comment-worker.ytoluyag.workers.dev/api/handle/form", {
+                        method: "POST",
+                        body: JSON.stringify(formData),
+                        headers: { "Content-Type": "application/json" },
+                    })
+                        .then((response) => {
+                            if (response.ok) {
+                                formContainer.innerHTML =
+                                    "<p class='p-4 text-green-600 dark:text-green-400'>Teşekkürler! Yanıtınız incelendikten sonra yayınlanacaktır.</p>";
+
+                                // 3 saniye sonra mesajı kapat
+                                setTimeout(() => {
+                                    formContainer.innerHTML = "";
+                                }, 3000);
+                            } else {
+                                formContainer.innerHTML =
+                                    "<p class='p-4 text-red-600 dark:text-red-400'>Bir hata oluştu. Lütfen daha sonra tekrar deneyin.</p>";
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                            formContainer.innerHTML =
+                                "<p class='p-4 text-red-600 dark:text-red-400'>Bir hata oluştu: " +
+                                error.message +
+                                "</p>";
+                        });
+                });
+
+                // Form alanına odaklan
+                formContainer.querySelector('input[name="fields[name]"]').focus();
+            });
+        });
+    });
+</script>
+  <!-- Yorum Formu -->
+<div class="max-w-4xl mx-auto mb-10 bg-gray-100 dark:bg-gray-900 rounded-lg p-6">
+    <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-6">Yorum Bırakın</h3>
+
+    <form id="comment-form" class="flex flex-col space-y-4">
+        <input id="fields_slug" name="options[slug]" type="hidden" value="guncel-ucretsiz-oyunlar" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <input
+                    type="text"
+                    id="fields_name"
+                    name="fields[name]"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"
+                    placeholder="İsminiz *"
+                    required />
+            </div>
+
+            <div>
+                <input
+                    type="email"
+                    id="fields_email"
+                    name="fields[email]"
+                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all"
+                    placeholder="E-posta adresiniz (gizli) *"
+                    required />
+            </div>
         </div>
-    </div>
-</section>
+
+        <div>
+            <textarea
+                id="fields_message"
+                name="fields[message]"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all resize-y min-h-[120px]"
+                placeholder="Yorumunuz *"
+                rows="4"
+                required></textarea>
+        </div>
+
+        <div class="cf-turnstile mb-2" data-sitekey="0x4AAAAAABF5KzbNxGlrw5_N" data-callback="javascriptCallback"></div>
+
+        <div class="flex justify-end">
+            <button
+                type="submit"
+                id="submit-comment"
+                class="px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-md transition-colors font-medium">
+                Gönder
+            </button>
+        </div>
+
+        <div id="confirmation-message" class="hidden p-4 rounded-md text-sm"></div>
+    </form>
+</div>
 
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
@@ -1282,22 +1936,18 @@
         // Mesaj gösterme fonksiyonu
         function showMessage(message, type) {
             confirmationMessage.textContent = message;
-            confirmationMessage.classList.remove(
-                "hidden",
-                "bg-green-100",
-                "text-green-800",
-                "bg-red-100",
-                "text-red-800",
-                "bg-blue-100",
-                "text-blue-800"
-            );
+            confirmationMessage.classList.remove("hidden");
 
+            // Mesaj tipine göre tailwind sınıflarını ekle
             if (type === "success") {
-                confirmationMessage.classList.add("bg-green-100", "text-green-800");
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-green-100 text-green-800 dark:bg-green-800/20 dark:text-green-200";
             } else if (type === "error") {
-                confirmationMessage.classList.add("bg-red-100", "text-red-800");
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-red-100 text-red-800 dark:bg-red-800/20 dark:text-red-200";
             } else if (type === "info") {
-                confirmationMessage.classList.add("bg-blue-100", "text-blue-800");
+                confirmationMessage.className =
+                    "p-4 rounded-md text-sm bg-blue-100 text-blue-800 dark:bg-blue-800/20 dark:text-blue-200";
             }
         }
 
@@ -1354,14 +2004,10 @@
                 showMessage("Yorumunuz gönderilirken bir hata oluştu: " + error.message, "error");
             }
         });
-
-        // Textarea otomatik yükseklik ayarlama
-        const textarea = document.querySelector("textarea");
-        textarea.addEventListener("input", function () {
-            textarea.parentNode.dataset.replicatedValue = textarea.value;
-        });
     });
 </script>
+        </div>
+    </div>
 </article>
                     </div>
                 </div>
