@@ -169,10 +169,52 @@
         <!-- Custom Code CSS -->
         <link
             rel="stylesheet"
-            href="https://yuceltoluyag.dev/assets/css/custom-code.css"
+            href="https://yuceltoluyag.dev/assets/css/custom-code.min.css"
             media="print"
             onload="this.media='all'" />
-        <noscript><link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/custom-code.css" /></noscript>
+        <noscript>
+            <link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/custom-code.min.css" />
+        </noscript>
+
+        <!-- Custom Theme Switch CSS -->
+        <link
+            rel="stylesheet"
+            href="https://yuceltoluyag.dev/assets/css/custom-theme-switch.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/custom-theme-switch.min.css" />
+        </noscript>
+
+        <!-- Custom Typography CSS -->
+        <link
+            rel="stylesheet"
+            href="https://yuceltoluyag.dev/assets/css/custom-typography.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/custom-typography.min.css" />
+        </noscript>
+
+        <!-- Internal Links CSS -->
+        <link
+            rel="stylesheet"
+            href="https://yuceltoluyag.dev/assets/css/internal-links.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/internal-links.min.css" />
+        </noscript>
+
+        <!-- TOC Enhancements CSS -->
+        <link
+            rel="stylesheet"
+            href="https://yuceltoluyag.dev/assets/css/toc-enhancements.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/toc-enhancements.min.css" />
+        </noscript>
 
         <!-- Global JavaScript - defer edilmiş -->
         <script src="https://yuceltoluyag.dev/assets/js/theme.min.js" defer></script>
@@ -325,12 +367,18 @@
                                 </svg>
                             </button>
 
-                            <!-- Tema değiştirme butonu -->
-                            <button
-                                id="theme-toggle"
-                                onclick="toggleTheme()"
-                                class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors"
-                                aria-label="Tema değiştir">
+                            <!-- Yeni Tema değiştirme düğmesi -->
+                            <div class="theme-switch-container">
+                                <span class="theme-label dark:hidden" id="theme-mode-label">Aydınlık</span>
+                                <span class="theme-label hidden dark:inline" id="theme-mode-label">Karanlık</span>
+                                <label class="theme-switch-wrapper">
+                                    <input type="checkbox" id="theme-switch" class="theme-switch" />
+                                    <span class="theme-slider"></span>
+                                </label>
+                            </div>
+
+                            <!-- Eski tema düğmesi (Arkaplanda işlev sağlaması için saklanıyor) -->
+                            <button id="theme-toggle" class="hidden" aria-label="Tema değiştir">
                                 <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path
                                         stroke-linecap="round"
@@ -538,7 +586,7 @@
                 d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
         </svg>
         <div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-            10
+            11
         </div>
         <div class="text-sm text-text-secondary">Kategori</div>
     </div>
@@ -562,7 +610,7 @@
                 d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
         </svg>
         <div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
-            103
+            116
         </div>
         <div class="text-sm text-text-secondary">Etiket</div>
     </div>
@@ -629,6 +677,168 @@
         <!-- Footer -->
 <footer class="bg-site-card-95 backdrop-blur-sm border-t border-border-card mt-auto min-h-[300px]">
     <div class="container mx-auto px-6 py-12">
+        <!-- Newsletter Bileşeni -->
+<!-- Newsletter abonelik formu -->
+<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-sm">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+        <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Blog Güncellemelerini Takip Et</h3>
+            <p class="text-text-secondary text-sm">
+                Yeni yazılar, güncellemeler ve daha fazlası için haber bültenimize abone ol.
+            </p>
+        </div>
+        <div class="shrink-0">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-primary opacity-80"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+        </div>
+    </div>
+    <form
+        id="newsletter-form"
+        class="subscription-form listmonk-form"
+        action="https://listmonk.minel.yuceltoluyag.dev/subscription/form"
+        method="post">
+        <input type="hidden" name="nonce" />
+        <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" />
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-3">
+            <div class="flex-grow">
+                <label for="newsletter-email" class="sr-only">E-posta Adresin</label>
+                <input
+                    id="newsletter-email"
+                    type="email"
+                    name="email"
+                    placeholder="E-posta adresin"
+                    required
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+            <div class="flex-grow">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="İsim (opsiyonel)"
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+            </div>
+            <div>
+                <button
+                    type="submit"
+                    class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Abone Ol
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-3 text-xs text-text-secondary">
+            <p class="leading-relaxed">
+                Spam göndermiyoruz. E-postanı paylaşmıyoruz. İstediğin zaman abonelikten çıkabilirsin.
+                <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-primary hover:underline">Gizlilik Politikamız</a>
+                'ı inceleyerek daha fazla bilgi alabilirsin.
+            </p>
+        </div>
+    </form>
+</div>
+
+<!-- Newsletter Başarılı Popup -->
+<div id="newsletter-success" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center">
+    <div class="bg-site-card rounded-xl max-w-md w-full p-6 shadow-xl relative">
+        <button
+            id="close-newsletter-success"
+            class="absolute top-4 right-4 text-text-secondary hover:text-primary transition-colors"
+            aria-label="Kapat">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="text-center">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-8 h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Abone Oldun!</h3>
+            <p class="text-text-secondary mb-4">
+                Teşekkürler! Haber bültenimize başarıyla abone oldun. Yeni bir yazı yayınlandığında seni
+                bilgilendireceğiz.
+            </p>
+            <button
+                id="confirm-newsletter-success"
+                class="px-4 py-2 bg-primary text-white rounded-lg text-sm hover:bg-primary-darker transition-colors duration-300">
+                Tamam
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const newsletterForm = document.getElementById("newsletter-form");
+        const successPopup = document.getElementById("newsletter-success");
+        const closeSuccessBtn = document.getElementById("close-newsletter-success");
+        const confirmSuccessBtn = document.getElementById("confirm-newsletter-success");
+
+        // Form gönderildiğinde
+        if (newsletterForm) {
+            newsletterForm.addEventListener("submit", function (e) {
+                // ButtonDown'a göndermeye devam et, ama popup'ı da göster
+                // e.preventDefault kullanmıyoruz çünkü form normal şekilde gönderilmeli
+
+                // E-posta adresini localStorage'a kaydet (tercihe bağlı)
+                const emailInput = document.getElementById("newsletter-email");
+                if (emailInput && emailInput.value) {
+                    localStorage.setItem("subscribedEmail", emailInput.value);
+                }
+
+                // 2 saniye sonra başarı popup'ını göster
+                setTimeout(function () {
+                    if (successPopup) {
+                        successPopup.classList.remove("hidden");
+                        successPopup.classList.add("flex");
+                    }
+                }, 2000);
+            });
+        }
+
+        // Popup kapatma butonları
+        if (closeSuccessBtn) {
+            closeSuccessBtn.addEventListener("click", function () {
+                successPopup.classList.add("hidden");
+                successPopup.classList.remove("flex");
+            });
+        }
+
+        if (confirmSuccessBtn) {
+            confirmSuccessBtn.addEventListener("click", function () {
+                successPopup.classList.add("hidden");
+                successPopup.classList.remove("flex");
+            });
+        }
+
+        // Escap tuşu ile popup'ı kapat
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && successPopup && !successPopup.classList.contains("hidden")) {
+                successPopup.classList.add("hidden");
+                successPopup.classList.remove("flex");
+            }
+        });
+    });
+</script>
         <!-- Üst Kısım -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 min-h-[150px]">
             <!-- Site Bölümü -->
@@ -666,7 +876,7 @@
                     <div class="flex flex-wrap gap-2">
                         <a
                             href="https://github.com/yuceltoluyag/yuceltoluyag.github.io"
-                            class="text-text-secondary hover:text-primary border-b border-dashed border-text-secondary hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm border border-border-card">
+                            class="text-text-secondary hover:text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm">
                             <span class="font-mono">git clone</span>
                         </a>
                     </div>
@@ -741,6 +951,10 @@
         <script src="https://yuceltoluyag.dev/assets/js/progress-bar.min.js"></script>
         <script src="https://yuceltoluyag.dev/assets/js/search.min.js"></script>
         <script src="https://yuceltoluyag.dev/assets/js/copy-code.min.js"></script>
+        <script src="https://yuceltoluyag.dev/assets/js/theme-switcher.min.js"></script>
+        <script src="https://yuceltoluyag.dev/assets/js/internal-links.min.js"></script>
+        <script src="https://yuceltoluyag.dev/assets/js/performance.min.js"></script>
+        <script src="https://yuceltoluyag.dev/assets/js/web-vitals.min.js" defer></script>
  
         <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->
         <script>
