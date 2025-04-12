@@ -238,10 +238,52 @@
         <!-- Custom Code CSS -->
         <link
             rel="stylesheet"
-            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.css"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.min.css"
             media="print"
             onload="this.media='all'" />
-        <noscript><link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.css" /></noscript>
+        <noscript>
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-code.min.css" />
+        </noscript>
+
+        <!-- Custom Theme Switch CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-theme-switch.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-theme-switch.min.css" />
+        </noscript>
+
+        <!-- Custom Typography CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-typography.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom-typography.min.css" />
+        </noscript>
+
+        <!-- Internal Links CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/internal-links.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/internal-links.min.css" />
+        </noscript>
+
+        <!-- TOC Enhancements CSS -->
+        <link
+            rel="stylesheet"
+            href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/toc-enhancements.min.css"
+            media="print"
+            onload="this.media='all'" />
+        <noscript>
+            <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/toc-enhancements.min.css" />
+        </noscript>
 
         <!-- Global JavaScript - defer edilmiş -->
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/theme.min.js" defer></script>
@@ -448,12 +490,18 @@
                                 </svg>
                             </button>
 
-                            <!-- Tema değiştirme butonu -->
-                            <button
-                                id="theme-toggle"
-                                onclick="toggleTheme()"
-                                class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors"
-                                aria-label="Tema değiştir">
+                            <!-- Yeni Tema değiştirme düğmesi -->
+                            <div class="theme-switch-container">
+                                <span class="theme-label dark:hidden" id="theme-mode-label">Aydınlık</span>
+                                <span class="theme-label hidden dark:inline" id="theme-mode-label">Karanlık</span>
+                                <label class="theme-switch-wrapper">
+                                    <input type="checkbox" id="theme-switch" class="theme-switch" />
+                                    <span class="theme-slider"></span>
+                                </label>
+                            </div>
+
+                            <!-- Eski tema düğmesi (Arkaplanda işlev sağlaması için saklanıyor) -->
+                            <button id="theme-toggle" class="hidden" aria-label="Tema değiştir">
                                 <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path
                                         stroke-linecap="round"
@@ -545,11 +593,16 @@
         <!-- JavaScript dosyaları -->
         {% if article %}
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/toc.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/toc-enhancements.min.js"></script>
         {% endif %}
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/back-to-top.min.js"></script>
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/progress-bar.min.js"></script>
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.min.js"></script>
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy-code.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/theme-switcher.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/internal-links.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/performance.min.js"></script>
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/web-vitals.min.js" defer></script>
         {% block extra_js %} {% endblock %}
 
         <!-- Sayfa yüklendiğinde çalışacak Font Optimizasyon kodu -->

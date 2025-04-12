@@ -120,26 +120,142 @@ function styles() {
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.styles.dest));
 
-    // custom-code.css -> custom-code.css (doğrudan kopyalama)
+    // custom-code.css -> custom-code.min.css
     const customCodeTask = gulp
         .src(path.join(BASE_PATHS.assets, "css", "custom-code.css"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.styles.dest));
+
+    // Yeni eklenen CSS dosyaları için işlemler
+    const customThemeSwitchTask = gulp
+        .src(path.join(BASE_PATHS.assets, "css", "custom-theme-switch.css"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.styles.dest));
+
+    const customTypographyTask = gulp
+        .src(path.join(BASE_PATHS.assets, "css", "custom-typography.css"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.styles.dest));
+
+    const tocEnhancementsTask = gulp
+        .src(path.join(BASE_PATHS.assets, "css", "toc-enhancements.css"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.styles.dest));
+
+    const internalLinksTask = gulp
+        .src(path.join(BASE_PATHS.assets, "css", "internal-links.css"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.styles.dest));
 
     // Tüm görevleri paralel olarak çalıştır
-    return Promise.all([styleTask, pygmentsTask, customCodeTask]);
+    return Promise.all([
+        styleTask,
+        pygmentsTask,
+        customCodeTask,
+        customThemeSwitchTask,
+        customTypographyTask,
+        tocEnhancementsTask,
+        internalLinksTask,
+    ]);
 }
 
 // JavaScript işleme görevi
 function scripts() {
-    // Tüm JS dosyaları
-    return gulp
-        .src(paths.scripts.src, { allowEmpty: true })
+    // Tema değiştirici JS
+    const themeSwitcherTask = gulp
+        .src(path.join(BASE_PATHS.assets, "js", "theme-switcher.js"), { allowEmpty: true })
         .pipe(sourcemaps.init())
         .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
         .pipe(terser({ compress: { drop_console: true } }))
         .pipe(rename({ suffix: ".min" }))
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.scripts.dest));
+
+    // İç bağlantılar JS
+    const internalLinksTask = gulp
+        .src(path.join(BASE_PATHS.assets, "js", "internal-links.js"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
+        .pipe(terser({ compress: { drop_console: true } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.scripts.dest));
+
+    // TOC Geliştirmeleri JS
+    const tocEnhancementsTask = gulp
+        .src(path.join(BASE_PATHS.assets, "js", "toc-enhancements.js"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
+        .pipe(terser({ compress: { drop_console: true } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.scripts.dest));
+
+    // Performans JS
+    const performanceTask = gulp
+        .src(path.join(BASE_PATHS.assets, "js", "performance.js"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
+        .pipe(terser({ compress: { drop_console: true } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.scripts.dest));
+
+    // Web Vitals JS
+    const webVitalsTask = gulp
+        .src(path.join(BASE_PATHS.assets, "js", "web-vitals.js"), { allowEmpty: true })
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
+        .pipe(terser({ compress: { drop_console: false } })) // Web Vitals'te console çıktılarını koru
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.scripts.dest));
+
+    // Diğer tüm JS dosyaları
+    const otherJsTask = gulp
+        .src(
+            [
+                paths.scripts.src,
+                // Yeni eklenen dosyaları hariç tut
+                `!${path.join(BASE_PATHS.assets, "js", "theme-switcher.js")}`,
+                `!${path.join(BASE_PATHS.assets, "js", "internal-links.js")}`,
+                `!${path.join(BASE_PATHS.assets, "js", "toc-enhancements.js")}`,
+                `!${path.join(BASE_PATHS.assets, "js", "performance.js")}`,
+                `!${path.join(BASE_PATHS.assets, "js", "web-vitals.js")}`,
+            ],
+            { allowEmpty: true }
+        )
+        .pipe(sourcemaps.init())
+        .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
+        .pipe(terser({ compress: { drop_console: true } }))
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(sourcemaps.write("."))
+        .pipe(gulp.dest(paths.scripts.dest));
+
+    // Tüm JS görevlerini paralel olarak çalıştır
+    return Promise.all([
+        themeSwitcherTask,
+        internalLinksTask,
+        tocEnhancementsTask,
+        performanceTask,
+        webVitalsTask,
+        otherJsTask,
+    ]);
 }
 
 // Resim optimizasyonu görevi

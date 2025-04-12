@@ -1,5 +1,8 @@
 <footer class="bg-site-card-95 backdrop-blur-sm border-t border-border-card mt-auto min-h-[300px]">
     <div class="container mx-auto px-6 py-12">
+        <!-- Newsletter Bileşeni -->
+        {% include 'partials/newsletter.html' %}
+
         <!-- Üst Kısım -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 min-h-[150px]">
             <!-- Site Bölümü -->
@@ -37,7 +40,7 @@
                     <div class="flex flex-wrap gap-2">
                         <a
                             href="https://github.com/{{ SOCIAL.github }}/yuceltoluyag.github.io"
-                            class="text-text-secondary hover:text-primary border-b border-dashed border-text-secondary hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm border border-border-card">
+                            class="text-text-secondary hover:text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm">
                             <span class="font-mono">git clone</span>
                         </a>
                     </div>

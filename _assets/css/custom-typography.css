@@ -1,0 +1,227 @@
+/* Özel Tipografi ve Başlık Stilleri */
+
+/* Modern font ailesini tanımla */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&display=swap");
+
+/* Başlıklar için özel font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* İçerik metni için özel font */
+body,
+p,
+.prose p,
+.prose li {
+    font-family: "Nunito", sans-serif;
+}
+
+/* Büyük başlıklar için özel stil */
+h1,
+.prose h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+/* Başlık altı çizgisi */
+h1:after,
+.prose h1:after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 4rem;
+    height: 0.25rem;
+    background: var(--main-color);
+    border-radius: 0.125rem;
+}
+
+h2,
+.prose h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+h2:after,
+.prose h2:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3rem;
+    height: 0.15rem;
+    background: var(--main-color);
+    opacity: 0.7;
+    border-radius: 0.125rem;
+}
+
+h3,
+.prose h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+h4,
+.prose h4 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Özel metin vurgusu */
+.highlight-text {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    padding: 0 0.25rem;
+}
+
+.highlight-text:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5em;
+    background-color: var(--main-color);
+    opacity: 0.3;
+    z-index: -1;
+    transition: height 0.3s ease;
+}
+
+.highlight-text:hover:before {
+    height: 0.8em;
+}
+
+/* Blok Alıntı Stillerini Geliştir */
+blockquote,
+.prose blockquote {
+    border-left: 0.25rem solid var(--main-color);
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: var(--main-font-second-color);
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+blockquote:before,
+.prose blockquote:before {
+    content: "\201C";
+    font-family: "Georgia", serif;
+    font-size: 4rem;
+    position: absolute;
+    left: -0.5rem;
+    top: -1.5rem;
+    opacity: 0.2;
+    color: var(--main-color);
+}
+
+/* Abonelik forma için stil */
+.subscribe-form {
+    background: var(--main-card-background);
+    border: 1px solid var(--main-card-border);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.subscribe-form h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.subscribe-form input[type="email"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--main-card-border);
+    border-radius: 0.25rem;
+    background-color: var(--main-site-background);
+    color: var(--main-font-color);
+}
+
+.subscribe-form button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+    background-color: var(--main-color-darker, #2563eb);
+}
+
+/* Özel liste işaretleri */
+.prose ul:not(.toc) li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    list-style-type: none;
+}
+
+.prose ul:not(.toc) li::before {
+    content: "•";
+    color: var(--main-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Özel Numara listesi işaretleri */
+.prose ol {
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.prose ol li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.5rem;
+    counter-increment: item;
+    list-style-type: none;
+}
+
+.prose ol li::before {
+    content: counter(item);
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    background-color: var(--main-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}

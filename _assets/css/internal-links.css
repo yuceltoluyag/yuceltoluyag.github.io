@@ -1,0 +1,109 @@
+/* İç bağlantılar için özel stiller */
+
+/* Tüm bağlantılar için temel stil */
+a {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Ziyaret edilmemiş bağlantılar için vurgu */
+a.unvisited-link {
+    font-weight: 500;
+    color: var(--main-color) !important;
+}
+
+/* İçerik içindeki bağlantılar */
+.prose a:not(.btn) {
+    text-decoration: none;
+    color: var(--main-color);
+    position: relative;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Altı çizgili animasyon efekti */
+.prose a:not(.btn):after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+    opacity: 0.7;
+}
+
+.prose a:not(.btn):hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Makale sayfası içindeki bağlantılar */
+.single-article .article-content a:not(.btn) {
+    border-bottom: 1px dotted rgba(var(--main-color-rgb), 0.4);
+}
+
+.single-article .article-content a:not(.btn):hover {
+    border-bottom: 1px solid rgba(var(--main-color-rgb), 0.8);
+    background-color: rgba(var(--main-color-rgb), 0.1);
+    padding: 0 2px;
+    margin: 0 -2px;
+    border-radius: 2px;
+}
+
+/* İlgili içerik bağlantıları */
+.related-post-title {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    color: var(--main-font-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.related-post-title:hover {
+    color: var(--main-color);
+}
+
+.related-post-title:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.related-post-title:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Harici bağlantılar için işaretleyici */
+a[href^="http"]:not([href*="yuceltoluyag.github.io"]):after {
+    content: "↗";
+    display: inline-block;
+    margin-left: 3px;
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
+/* İç bağlantı vurgusu - (anchor targets for headings) */
+:target {
+    animation: highlight-target 2s ease;
+}
+
+@keyframes highlight-target {
+    0% {
+        background-color: rgba(var(--main-color-rgb), 0.2);
+    }
+    100% {
+        background-color: transparent;
+    }
+}

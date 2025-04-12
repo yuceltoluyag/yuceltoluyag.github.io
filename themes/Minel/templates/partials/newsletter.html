@@ -1,0 +1,161 @@
+<!-- Newsletter abonelik formu -->
+<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-sm">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+        <div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Blog Güncellemelerini Takip Et</h3>
+            <p class="text-text-secondary text-sm">
+                Yeni yazılar, güncellemeler ve daha fazlası için haber bültenimize abone ol.
+            </p>
+        </div>
+        <div class="shrink-0">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12 text-primary opacity-80"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+        </div>
+    </div>
+    <form
+        id="newsletter-form"
+        class="subscription-form listmonk-form"
+        action="https://listmonk.minel.yuceltoluyag.dev/subscription/form"
+        method="post">
+        <input type="hidden" name="nonce" />
+        <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" />
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-3">
+            <div class="flex-grow">
+                <label for="newsletter-email" class="sr-only">E-posta Adresin</label>
+                <input
+                    id="newsletter-email"
+                    type="email"
+                    name="email"
+                    placeholder="E-posta adresin"
+                    required
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+            <div class="flex-grow">
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="İsim (opsiyonel)"
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+            </div>
+            <div>
+                <button
+                    type="submit"
+                    class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Abone Ol
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-3 text-xs text-text-secondary">
+            <p class="leading-relaxed">
+                Spam göndermiyoruz. E-postanı paylaşmıyoruz. İstediğin zaman abonelikten çıkabilirsin.
+                <a href="{{ SITEURL }}/privacy-policy/" class="text-primary hover:underline">Gizlilik Politikamız</a>
+                'ı inceleyerek daha fazla bilgi alabilirsin.
+            </p>
+        </div>
+    </form>
+</div>
+
+<!-- Newsletter Başarılı Popup -->
+<div id="newsletter-success" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center">
+    <div class="bg-site-card rounded-xl max-w-md w-full p-6 shadow-xl relative">
+        <button
+            id="close-newsletter-success"
+            class="absolute top-4 right-4 text-text-secondary hover:text-primary transition-colors"
+            aria-label="Kapat">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="text-center">
+            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-8 h-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3 class="text-xl font-bold text-text-primary mb-2">Abone Oldun!</h3>
+            <p class="text-text-secondary mb-4">
+                Teşekkürler! Haber bültenimize başarıyla abone oldun. Yeni bir yazı yayınlandığında seni
+                bilgilendireceğiz.
+            </p>
+            <button
+                id="confirm-newsletter-success"
+                class="px-4 py-2 bg-primary text-white rounded-lg text-sm hover:bg-primary-darker transition-colors duration-300">
+                Tamam
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const newsletterForm = document.getElementById("newsletter-form");
+        const successPopup = document.getElementById("newsletter-success");
+        const closeSuccessBtn = document.getElementById("close-newsletter-success");
+        const confirmSuccessBtn = document.getElementById("confirm-newsletter-success");
+
+        // Form gönderildiğinde
+        if (newsletterForm) {
+            newsletterForm.addEventListener("submit", function (e) {
+                // ButtonDown'a göndermeye devam et, ama popup'ı da göster
+                // e.preventDefault kullanmıyoruz çünkü form normal şekilde gönderilmeli
+
+                // E-posta adresini localStorage'a kaydet (tercihe bağlı)
+                const emailInput = document.getElementById("newsletter-email");
+                if (emailInput && emailInput.value) {
+                    localStorage.setItem("subscribedEmail", emailInput.value);
+                }
+
+                // 2 saniye sonra başarı popup'ını göster
+                setTimeout(function () {
+                    if (successPopup) {
+                        successPopup.classList.remove("hidden");
+                        successPopup.classList.add("flex");
+                    }
+                }, 2000);
+            });
+        }
+
+        // Popup kapatma butonları
+        if (closeSuccessBtn) {
+            closeSuccessBtn.addEventListener("click", function () {
+                successPopup.classList.add("hidden");
+                successPopup.classList.remove("flex");
+            });
+        }
+
+        if (confirmSuccessBtn) {
+            confirmSuccessBtn.addEventListener("click", function () {
+                successPopup.classList.add("hidden");
+                successPopup.classList.remove("flex");
+            });
+        }
+
+        // Escap tuşu ile popup'ı kapat
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && successPopup && !successPopup.classList.contains("hidden")) {
+                successPopup.classList.add("hidden");
+                successPopup.classList.remove("flex");
+            }
+        });
+    });
+</script>
