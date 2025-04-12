@@ -132,7 +132,7 @@ CC_LICENSE = {
 }
 
 # Static Paths
-STATIC_PATHS = ["images", "extra"]
+STATIC_PATHS = ["images", "extra", "files"]
 EXTRA_PATH_METADATA = {
     "extra/SW.js": {"path": "SW.js"},
     "extra/robots.txt": {"path": "robots.txt", "template": True},
@@ -244,6 +244,7 @@ common_plugins = [
     "plugins.pelican_redirect",
     "plugins.video_schema",
     "plugins.comments",
+    "plugins.seo_meta_enhancer",
 ]
 
 dev_plugins = common_plugins.copy()
@@ -429,3 +430,6 @@ ARTICLE_EDIT_LINK = (
 
 # Comments
 COMMENTS_ENABLED = True
+
+# SEO ayarları
+ENHANCE_META = True  # Meta geliştiricisini etkinleştir

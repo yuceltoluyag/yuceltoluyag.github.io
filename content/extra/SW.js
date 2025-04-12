@@ -1,6 +1,6 @@
 // Service Worker kodumuz - Workbox ile güçlendirilmiş
 // Versiyon: 1.9.0 - Son güncellenme: 2024-05-22
-const CACHE_VERSION = "1.9.0";
+const CACHE_VERSION = "1.9.1";
 
 // Kullanıcının belirttiği çalışan CDN adresi
 importScripts("https://cdn.jsdelivr.net/npm/workbox-sw@7.0.0/build/workbox-sw.min.js");

@@ -22,6 +22,48 @@ Minel, Pelican blog motoru için Tailwind CSS ile geliştirilmiş minimal bir te
 - RSS ve Atom feed desteği
 - WCAG erişilebilirlik standartlarına uygunluk
 
+## Blog İyileştirmeleri - 2024
+
+Bu güncellemede bloğun çeşitli yönlerini iyileştirmek için aşağıdaki özellikler eklenmiştir:
+
+### 1. Koyu/Açık Tema Geçişi İyileştirmesi
+- Animasyonlu tema değişimi
+- Özelleştirilmiş tema geçiş butonu
+- Kullanıcı tercihi hatırlama
+
+### 2. Tipografi ve Görsel İyileştirmeler
+- Özel başlık fontları ve stilleri
+- Vurgu efektleri
+- Blockquote, liste ve diğer içerik öğeleri için geliştirilmiş stiller
+
+### 3. SEO Optimizasyonu
+- Otomatik meta açıklamaları ve anahtar kelimeler oluşturma
+- Türkçe içerik analizi ve anahtar kelime çıkarma
+- Stop-word filtreleme
+
+### 4. İç Bağlantı Yapısı
+- Zenginleştirilmiş iç bağlantı görünümü
+- Geçiş animasyonları
+- Ziyaret edilmiş bağlantı izleme
+- Bağlantı başlık öznitelikleri otomatik ekleme
+
+### 5. E-posta Aboneliği
+- Özelleştirilmiş haber bülteni kayıt formu
+- Buttondown entegrasyonu
+- Abone olduktan sonra teşekkür bildirimi
+
+### 6. İçindekiler Tablosu İyileştirmeleri
+- Otomatik aktif bölüm vurgulama
+- Animasyonlu kaydırma
+- Görsel olarak geliştirilmiş içindekiler tablosu
+- Mobil cihazlar için optimize edilmiş görünüm
+
+### 7. Performans İyileştirmeleri
+- Lazy loading
+- Kritik olmayan JS erteleme
+- Core Web Vitals izleme ve raporlama
+- Önbelleğe alma stratejileri
+
 ## Kurulum
 
 1. Tema dosyalarını Pelican projenizin `themes/Minel` dizinine kopyalayın
