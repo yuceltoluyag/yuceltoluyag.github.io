@@ -9,7 +9,7 @@ Summary: Philips Avent Natural Response Cam Biberon 1 Ay+ 240 ml SCY933/01 ile i
 Translation: false
 Status: published
 Template: article
-Image: images/Philips-Avent-Natural- Response-Cam-Biberon.webp
+Image: images/philips-biberon.webp
 
 
 <div class="info-box warning">
@@ -32,7 +32,7 @@ Bebeğiniz için doğru biberonu seçmek, konforlu ve sağlıklı beslenme alı�
 Başlangıçta çift kulplu, klasik bir biberon arayışındaydık. Hafif plastikten yapılmış, Türk evlerinde sıkça bulunan modellerden birini denemiştik. Ancak çocuğumuzun rahatça tutamaması nedeniyle farklı bir alternatif arıyorduk.
 
 Burak isimli bir yakınımız, bize **Philips Avent'in cam biberon modelini** önerdi. Ürünü kullanmaya başladığımız andan itibaren farkı net bir şekilde gördük. Gerçekten memnun kaldık! Şimdi neden bu biberonu gönül rahatlığıyla tavsiye ettiğimi sıralayacağım. 👇
-
+ ![philips-biberon](/images/philips-biberon.webp)
 ---
 
 ## ⭐ Bu Biberonu Neden Tercih Etmelisiniz?

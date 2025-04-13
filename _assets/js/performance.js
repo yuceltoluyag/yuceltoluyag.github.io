@@ -37,22 +37,38 @@ function lazyLoadImages() {
 // Kritik olmayan scriptleri gecikmeli yükle
 function deferNonCriticalJS() {
     const nonCriticalScripts = [
-        // Örnek kritik olmayan script'ler
-        "/assets/js/analytics.min.js",
-        "/assets/js/social-share.min.js",
-        "/assets/js/comments.min.js",
+        // Kritik olmayan JS dosyaları
+        "/assets/js/back-to-top.min.js",
+        "/assets/js/copy-code.min.js",
+        "/assets/js/progress-bar.min.js",
+        "/assets/js/search.min.js",
+        "/assets/js/web-vitals.min.js",
+        "/assets/js/internal-links.min.js",
+        "/assets/js/sticky-filters.min.js",
     ];
 
     setTimeout(() => {
         nonCriticalScripts.forEach((scriptSrc) => {
-            if (!document.querySelector(`script[src*="${scriptSrc}"]`)) {
+            // Önce min versiyonu dene, yoksa normal versiyonu yükle
+            const scriptPath = scriptSrc;
+            const fallbackPath = scriptSrc.replace(".min.js", ".js");
+
+            if (
+                !document.querySelector(`script[src*="${scriptPath}"]`) &&
+                !document.querySelector(`script[src*="${fallbackPath}"]`)
+            ) {
                 const script = document.createElement("script");
-                script.src = scriptSrc;
+                script.src = scriptPath;
                 script.defer = true;
+                script.onerror = function () {
+                    // Min dosya bulunamazsa normal dosyayı yükle
+                    this.onerror = null;
+                    this.src = fallbackPath;
+                };
                 document.body.appendChild(script);
             }
         });
-    }, 3000); // 3 saniye sonra yükle
+    }, 2000); // 2 saniye sonra yükle (daha hızlı)
 }
 
 // Intersection Observer ile lazy loading
