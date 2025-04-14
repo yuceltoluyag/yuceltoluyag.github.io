@@ -1,7 +1,7 @@
 Title: YunoHost Kurulumu Sırasında Karşılaşılan APT Kilitlenme Hatası ve Çözümü
 Date: 2025-04-11 15:45
 Modified: 2025-04-11 15:45
-Category: Sunucu Yönetimi
+Category: kutuphane
 Tags: yunohost, ssh, debian, apt, linux
 Slug: yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu
 Authors: yuceltoluyag
@@ -14,7 +14,7 @@ Image: images/yunohost-hata-cozumu.webp
 
 ## 🚀 Giriş
 
-Debian tabanlı bir sunucuya [YunoHost](https://yunohost.org) kurmaya çalışırken "`Could not get lock /var/lib/dpkg/lock-frontend`" hatasıyla karşılaşabilirsiniz. Bu hata, genellikle sistemde çalışan başka bir `apt` işlemi nedeniyle oluşur ve kurulumu kesintiye uğratır.
+Debian tabanlı bir sunucuya [YunoHost](https://yunohost.org){: target="_blank" rel="noopener noreferrer"} kurmaya çalışırken "`Could not get lock /var/lib/dpkg/lock-frontend`" hatasıyla karşılaşabilirsiniz. Bu hata, genellikle sistemde çalışan başka bir `apt` işlemi nedeniyle oluşur ve kurulumu kesintiye uğratır.
 
 Bu makalede, bu hatanın neden oluştuğunu, nasıl tespit edileceğini ve güvenli bir şekilde nasıl çözülebileceğini adım adım anlatacağız. ✅
 
