@@ -9,9 +9,7 @@ AUTHOR = "yuceltoluyag"
 SITENAME = "Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D"
 DESCRIPTION = "Ortaya Karışık"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
-SITEURL = (
-    "https://yuceltoluyag.github.io" if PUBLISH else "http://localhost:8000"
-)
+SITEURL = "https://yuceltoluyag.dev" if PUBLISH else "http://localhost:8000"
 CANONICAL_URL = SITEURL
 SITESUBTITLE = "Linux, Python ve Web Geliştirme Rehberleri"
 PATH = "content"

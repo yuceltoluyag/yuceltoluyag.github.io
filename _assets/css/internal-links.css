@@ -86,7 +86,7 @@ a.unvisited-link {
 }
 
 /* Harici bağlantılar için işaretleyici */
-a[href^="http"]:not([href*="yuceltoluyag.github.io"]):after {
+a[href^="http"]:not([href*="yuceltoluyag.dev"]):after {
     content: "↗";
     display: inline-block;
     margin-left: 3px;

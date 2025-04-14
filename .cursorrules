@@ -1,0 +1,726 @@
+# AI Editor Rules for Tailwind CSS v4
+
+This document contains rules that AI editors should follow when generating or editing code to ensure compatibility with the changes introduced in Tailwind CSS v4. Based on the [Tailwind CSS v4 Upgrade Guide](https://tailwindcss.com/docs/upgrade-guide), these rules help maintain consistency with the latest version.
+
+## 1. Import Syntax
+
+### Old Rule
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### New Rule
+
+```css
+@import "tailwindcss";
+```
+
+-   AI should use standard CSS `@import` statement instead of the `@tailwind` directives.
+-   When using a prefix: `@import "tailwindcss" prefix(tw);`
+
+## 2. Package Structure Changes
+
+### PostCSS Usage
+
+-   AI should recommend the dedicated package for PostCSS:
+
+```js
+// Old
+export default {
+  plugins: {
+    "postcss-import": {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+
+// New
+export default {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+```
+
+### Vite Usage
+
+-   AI should suggest the dedicated Vite plugin:
+
+```js
+// Old
+import { defineConfig } from "vite";
+// No direct Tailwind import
+
+// New
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+    plugins: [tailwindcss()],
+});
+```
+
+### CLI Usage
+
+-   AI should recommend the dedicated CLI package:
+
+```bash
+# Old
+npx tailwindcss -i input.css -o output.css
+
+# New
+npx @tailwindcss/cli -i input.css -o output.css
+```
+
+## 3. Removed Deprecated Utilities
+
+AI should avoid using these deprecated utilities and suggest the modern alternatives:
+
+| Deprecated              | Replacement                                   |
+| ----------------------- | --------------------------------------------- |
+| `bg-opacity-*`          | Opacity modifiers like `bg-black/50`          |
+| `text-opacity-*`        | Opacity modifiers like `text-black/50`        |
+| `border-opacity-*`      | Opacity modifiers like `border-black/50`      |
+| `divide-opacity-*`      | Opacity modifiers like `divide-black/50`      |
+| `ring-opacity-*`        | Opacity modifiers like `ring-black/50`        |
+| `placeholder-opacity-*` | Opacity modifiers like `placeholder-black/50` |
+| `flex-shrink-*`         | `shrink-*`                                    |
+| `flex-grow-*`           | `grow-*`                                      |
+| `overflow-ellipsis`     | `text-ellipsis`                               |
+| `decoration-slice`      | `box-decoration-slice`                        |
+| `decoration-clone`      | `box-decoration-clone`                        |
+
+## 4. Renamed Utilities
+
+AI should use the new names for these utility classes:
+
+| v3                 | v4                 |
+| ------------------ | ------------------ |
+| `shadow-sm`        | `shadow-xs`        |
+| `shadow`           | `shadow-sm`        |
+| `drop-shadow-sm`   | `drop-shadow-xs`   |
+| `drop-shadow`      | `drop-shadow-sm`   |
+| `blur-sm`          | `blur-xs`          |
+| `blur`             | `blur-sm`          |
+| `backdrop-blur-sm` | `backdrop-blur-xs` |
+| `backdrop-blur`    | `backdrop-blur-sm` |
+| `rounded-sm`       | `rounded-xs`       |
+| `rounded`          | `rounded-sm`       |
+| `outline-none`     | `outline-hidden`   |
+| `ring`             | `ring-3`           |
+
+## 5. Default Color and Width Changes
+
+### Border Colors
+
+-   AI should always specify a color when adding a border: `border border-gray-200`
+-   The default color is now `currentColor` instead of `gray-200`.
+-   To preserve v3 behavior, suggest adding these base styles:
+
+```css
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+```
+
+### Ring Properties
+
+-   The default `ring` width changed from 3px to 1px. AI should use `ring-3` to maintain the old behavior.
+-   The default color changed from `blue-500` to `currentColor`. Always specify `ring-blue-500` if expecting the old behavior.
+-   To preserve v3 behavior, suggest these theme variables:
+
+```css
+@theme {
+    --default-ring-width: 3px;
+    --default-ring-color: var(--color-blue-500);
+}
+```
+
+## 6. Space-Between Selector Changes
+
+### Old Style
+
+```css
+.space-y-4 > :not([hidden]) ~ :not([hidden])
+```
+
+### New Style
+
+```css
+.space-y-4>: not(: last-child);
+```
+
+-   AI should warn about potential issues with `space-x-*` and `space-y-*` utilities, especially with inline elements.
+-   Recommend using flex/grid layouts with `gap` instead:
+
+```html
+<!-- Old -->
+<div class="space-y-4 p-4">
+    <!-- content -->
+</div>
+
+<!-- New (recommended) -->
+<div class="flex flex-col gap-4 p-4">
+    <!-- content -->
+</div>
+```
+
+## 7. Gradient Variants Behavior
+
+-   AI should note that overriding part of a gradient with a variant no longer resets the entire gradient:
+
+```html
+<!-- In v4, the to-yellow-400 is preserved in dark mode -->
+<div class="bg-gradient-to-r from-red-500 to-yellow-400 dark:from-blue-500">
+    <!-- ... -->
+</div>
+```
+
+-   Suggest using explicit `via-none` when removing a stop in a variant:
+
+```html
+<div class="bg-linear-to-r from-red-500 via-orange-400 to-yellow-400 dark:via-none dark:from-blue-500 dark:to-teal-400">
+    <!-- ... -->
+</div>
+```
+
+## 8. Container Configuration
+
+### Old Method
+
+```js
+// tailwind.config.js
+module.exports = {
+    theme: {
+        container: {
+            center: true,
+            padding: "2rem",
+        },
+    },
+};
+```
+
+### New Method
+
+```css
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+```
+
+-   AI should use the `@utility` directive to customize the container class instead of JavaScript configuration.
+
+## 9. CSS Variables and Arbitrary Values
+
+### Variable Syntax
+
+-   For CSS variables in arbitrary values, AI should use parentheses instead of square brackets:
+
+```html
+<!-- Old -->
+<div class="bg-[--brand-color]"></div>
+
+<!-- New -->
+<div class="bg-(--brand-color)"></div>
+```
+
+### Theme Function
+
+-   AI should prefer CSS variables over the `theme()` function when possible:
+
+```css
+/* Old */
+background-color: theme(colors.red.500);
+
+/* New */
+background-color: var(--color-red-500);
+```
+
+-   In media queries, use CSS variable names:
+
+```css
+/* Old */
+@media (width >= theme(screens.xl)) {
+    ...;
+}
+
+/* New */
+@media (width >= theme(--breakpoint-xl)) {
+    ...;
+}
+```
+
+## 10. Variant Stacking Order
+
+-   AI should apply nested variants from left to right instead of right to left:
+
+```html
+<!-- Old -->
+<ul class="py-4 first:*:pt-0 last:*:pb-0">
+    <!-- New -->
+    <ul class="py-4 *:first:pt-0 *:last:pb-0"></ul>
+</ul>
+```
+
+## 11. Custom Utilities Creation
+
+### Old Method
+
+```css
+@layer utilities {
+    .tab-4 {
+        tab-size: 4;
+    }
+}
+```
+
+### New Method
+
+```css
+@utility tab-4 {
+    tab-size: 4;
+}
+```
+
+-   AI should use the `@utility` directive instead of `@layer utilities` for defining custom utilities.
+-   Note that component-like utilities are now automatically sorted based on property count:
+
+```css
+@utility btn {
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: ButtonFace;
+}
+```
+
+## 12. Hover Styles on Mobile
+
+-   AI should be aware that hover variants now only apply on devices that support hover:
+
+```css
+@media (hover: hover) {
+    .hover\:underline:hover {
+        text-decoration: underline;
+    }
+}
+```
+
+-   For maintaining the old behavior, suggest a custom variant:
+
+```css
+@custom-variant hover (&:hover);
+```
+
+-   Recommend treating hover as an enhancement rather than critical functionality for touch devices.
+
+## 13. Preflight Changes
+
+### Placeholder Color
+
+-   Default placeholder color changed to current text color at 50% opacity instead of `gray-400`.
+-   For v3 behavior, suggest:
+
+```css
+@layer base {
+    input::placeholder,
+    textarea::placeholder {
+        color: var(--color-gray-400);
+    }
+}
+```
+
+### Button Cursor
+
+-   Buttons now use `cursor: default` instead of `cursor: pointer`.
+-   For v3 behavior, suggest:
+
+```css
+@layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
+```
+
+### Dialog Margins
+
+-   Dialog margins are now reset to be consistent with other elements.
+-   For centered dialogs, suggest:
+
+```css
+@layer base {
+    dialog {
+        margin: auto;
+    }
+}
+```
+
+## 14. Using @apply with Component Frameworks
+
+-   AI should recommend `@reference` when using `@apply` in separate style files:
+
+```vue
+<style>
+@reference "../../app.css";
+
+h1 {
+    @apply text-2xl font-bold text-red-500;
+}
+</style>
+```
+
+-   Alternatively, suggest using CSS variables directly:
+
+```vue
+<style>
+h1 {
+    color: var(--text-red-500);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-2xl);
+}
+</style>
+```
+
+## 15. Transitioning Outline Color
+
+-   AI should warn that `transition` and `transition-color` now include the `outline-color` property.
+-   Recommend setting outline color unconditionally or for both states to avoid unexpected transitions:
+
+```html
+<!-- Better usage -->
+<button class="outline-cyan-500 transition hover:outline-2"></button>
+```
+
+## 16. JavaScript Configuration
+
+-   AI should note that JS config files are no longer detected automatically.
+-   For projects still using JS config, recommend explicit loading:
+
+```css
+@config "../../tailwind.config.js";
+```
+
+-   Note that `corePlugins`, `safelist`, and `separator` options are not supported in v4.
+
+## 17. Theme Values in JavaScript
+
+-   Instead of `resolveConfig`, recommend using CSS variables directly in JavaScript:
+
+```js
+// Old approach (no longer available)
+// import resolveConfig from 'tailwindcss/resolveConfig'
+// const config = resolveConfig(tailwindConfig)
+
+// New approach
+let styles = getComputedStyle(document.documentElement);
+let shadow = styles.getPropertyValue("--shadow-xl");
+```
+
+## 18. Browser Requirements
+
+-   AI should emphasize that Tailwind CSS v4 is designed for Safari 16.4+, Chrome 111+, and Firefox 128+.
+-   It relies on modern CSS features like `@property` and `color-mix()`.
+-   For older browser support, recommend staying with v3.4.
+
+## 19. Prefix Usage
+
+-   Prefixes now look like variants and appear at the beginning of class names:
+
+```html
+<!-- Old -->
+<div class="tw-flex tw-bg-red-500 hover:tw-bg-red-600">
+    <!-- ... -->
+</div>
+
+<!-- New -->
+<div class="tw:flex tw:bg-red-500 tw:hover:bg-red-600">
+    <!-- ... -->
+</div>
+```
+
+-   CSS variables will include the prefix to avoid conflicts:
+
+```css
+:root {
+    --tw-font-display: "Satoshi", "sans-serif";
+    --tw-color-red-500: #ef4444;
+}
+```
+
+## 20. Core Plugin Disabling
+
+-   AI should note that the `corePlugins` option to disable utilities is no longer supported in v4.
+
+# Disabling Core Plugins
+
+Tailwind includes a number of core plugins that generate utility classes for specific CSS properties. If you don't need certain utilities, you can disable them to reduce the size of your generated CSS.
+
+## Disabling via `corePlugins` Configuration
+
+You can disable specific core plugins by adding a `corePlugins` section to your Tailwind configuration file:
+
+```js
+// tailwind.config.js
+module.exports = {
+    corePlugins: {
+        float: false,
+        objectFit: false,
+        opacity: false,
+    },
+};
+```
+
+## Disabling All and Enabling Specific Plugins
+
+You can also use an array syntax to specify which core plugins should be enabled:
+
+```js
+// tailwind.config.js
+module.exports = {
+    corePlugins: [
+        "margin",
+        "padding",
+        "backgroundColor",
+        // ...
+    ],
+};
+```
+
+# Using the theme() Function
+
+The `theme()` function allows you to access your Tailwind theme values from within CSS files. This is particularly useful when you need to reference your theme values in custom CSS.
+
+## Basic Usage
+
+```css
+.custom-element {
+    background-color: theme("colors.blue.500");
+    padding: theme("spacing.4");
+    margin-top: theme("spacing.8");
+    border-radius: theme("borderRadius.lg");
+}
+```
+
+## Accessing Nested Values
+
+The `theme()` function accepts dot notation to access deeply nested values:
+
+```css
+.custom-header {
+    font-size: theme("fontSize.2xl.0"); /* Accessing the first item in the array */
+    line-height: theme("fontSize.2xl.1.lineHeight"); /* Accessing a property in a nested object */
+}
+```
+
+## Using Default Values
+
+You can provide a default value as a second argument to the `theme()` function:
+
+```css
+.custom-element {
+    padding: theme("spacing.brand", "1rem"); /* If 'spacing.brand' doesn't exist, use '1rem' */
+}
+```
+
+# Using a JavaScript Config File
+
+While Tailwind's default configuration is in JavaScript, you can take full advantage of JavaScript's capabilities to make your config more dynamic and maintainable.
+
+## Variables and Helper Functions
+
+```js
+// tailwind.config.js
+const colors = require("tailwindcss/colors");
+const spacing = {
+    sm: "0.5rem",
+    md: "1rem",
+    lg: "1.5rem",
+    xl: "2rem",
+};
+
+function createScale(values) {
+    return Object.fromEntries(Object.entries(values).map(([key, value]) => [key, value]));
+}
+
+module.exports = {
+    theme: {
+        colors: {
+            primary: colors.indigo,
+            secondary: colors.pink,
+            neutral: colors.slate,
+        },
+        spacing: createScale(spacing),
+    },
+};
+```
+
+## Extending the Default Config Dynamically
+
+```js
+// tailwind.config.js
+const defaultTheme = require("tailwindcss/defaultTheme");
+
+module.exports = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+            },
+            screens: Object.fromEntries(
+                Object.entries(defaultTheme.screens).map(([key, value]) => {
+                    // Convert pixel values to em values
+                    const pixelValue = parseInt(value.replace("px", ""));
+                    const emValue = `${pixelValue / 16}em`;
+                    return [key, emValue];
+                })
+            ),
+        },
+    },
+};
+```
+
+# Theme Values in JavaScript
+
+You can access your theme values in JavaScript files, which is useful for maintaining consistency between CSS and JS.
+
+## Using the resolveConfig Utility
+
+```js
+// myScript.js
+const resolveConfig = require("tailwindcss/resolveConfig");
+const tailwindConfig = require("./tailwind.config.js");
+
+const fullConfig = resolveConfig(tailwindConfig);
+
+const primaryColor = fullConfig.theme.colors.primary[500];
+const largeScreenBreakpoint = fullConfig.theme.screens.lg;
+
+console.log(`Primary color: ${primaryColor}`);
+console.log(`Large screen breakpoint: ${largeScreenBreakpoint}`);
+```
+
+## Creating a Theme Export File
+
+You can create a dedicated file to export theme values for use in JavaScript:
+
+```js
+// theme.js
+const resolveConfig = require("tailwindcss/resolveConfig");
+const tailwindConfig = require("./tailwind.config.js");
+
+const fullConfig = resolveConfig(tailwindConfig);
+
+module.exports = {
+    colors: fullConfig.theme.colors,
+    spacing: fullConfig.theme.spacing,
+    screens: fullConfig.theme.screens,
+    // Add other theme sections as needed
+};
+```
+
+Then import it where needed:
+
+```js
+// anyJSFile.js
+const theme = require("./theme");
+
+const modalBackgroundColor = theme.colors.gray[100];
+```
+
+# Using @apply with Vue, Svelte, or CSS Modules
+
+The `@apply` directive is a powerful feature that allows you to compose utility classes into custom CSS classes. When working with component-based frameworks, there are some considerations and best practices.
+
+## Vue with Scoped Styles
+
+When using `@apply` in Vue's scoped styles, you'll need to use the `:deep()` selector for certain utility classes:
+
+```vue
+<style scoped>
+/* Basic usage */
+.btn {
+    @apply bg-blue-500 text-white py-2 px-4 rounded;
+}
+
+/* For utilities that target child elements */
+.custom-list :deep(li) {
+    @apply my-2 pl-4 border-l-2 border-gray-300;
+}
+</style>
+```
+
+## Svelte Styles
+
+Svelte automatically scopes styles, so you can use `@apply` directly:
+
+```svelte
+<style>
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+
+  .card-title {
+    @apply text-xl font-bold mb-4 text-gray-800;
+  }
+</style>
+```
+
+## CSS Modules
+
+When using CSS Modules with React or other frameworks, `@apply` works seamlessly:
+
+```css
+/* Button.module.css */
+.button {
+    @apply bg-blue-500 text-white py-2 px-4 rounded;
+}
+
+.button:hover {
+    @apply bg-blue-600;
+}
+```
+
+## Performance Considerations
+
+When using `@apply` extensively in component frameworks:
+
+1. Consider enabling Tailwind's JIT mode for faster build times
+2. Use `@apply` for commonly repeated utility combinations
+3. Don't over-abstract; sometimes using utility classes directly in templates is clearer
+4. Be cautious with global styles, as they can increase CSS bundle size
+
+## Example: Component Library Pattern
+
+When building a component library with Vue/Svelte/React:
+
+```css
+/* base-components.css */
+.btn {
+    @apply px-4 py-2 rounded font-medium focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+    @apply bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500;
+}
+
+.btn-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-500;
+}
+
+.input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500;
+}
+```
+
+Then import these styles in your component framework of choice and apply the classes to your components.
