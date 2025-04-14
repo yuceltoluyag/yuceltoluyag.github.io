@@ -114,24 +114,7 @@ def get_article_comments(slug):
 
     # Test amaçlı yorumlar (geliştirme aşamasında)
     if not comments:
-        comments = [
-            {
-                "id": "author-1",
-                "name": "Yücel Toluyağ",
-                "email": "info@yuceltoluyag.com",
-                "date": datetime.now() - timedelta(days=2),
-                "message": "Harika bir yazı olmuş. Bu konuda daha fazla içerik paylaşmanızı umuyorum. Özellikle performans optimizasyonu kısmını çok beğendim!",
-                "parent_id": None,
-            },
-            {
-                "id": "comment-1",
-                "name": "Örnek Kullanıcı",
-                "email": "ornek@kullanici.com",
-                "date": datetime.now() - timedelta(days=1),
-                "message": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure distinctio illo?",
-                "parent_id": None,
-            },
-        ]
+        comments = []
 
     # Yanıtları düzenle
     comment_map = {comment["id"]: comment for comment in comments}
