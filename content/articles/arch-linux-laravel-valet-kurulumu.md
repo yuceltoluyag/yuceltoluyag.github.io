@@ -23,7 +23,7 @@ Valet, sisteminizi makine açıldığında **Nginx'i arka planda çalıştıraca
 
 <div class="info-box error">
 <b>Not:</b> Daha önce 
-<a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" target="_blank" rel="noopener noreferrer"> Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin) </a>veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.
+<a href="https://yuceltoluyag.dev/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" target="_blank" rel="noopener noreferrer"> Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin) </a>veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.
 </div>
 ## 🛠 Kurulum
 

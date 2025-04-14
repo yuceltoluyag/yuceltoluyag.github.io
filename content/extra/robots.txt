@@ -1,6 +1,6 @@
-# Robots.txt for yuceltoluyag.github.io
+# Robots.txt for yuceltoluyag.dev
 
-Sitemap: https://yuceltoluyag.github.io/sitemap.xml
+Sitemap: https://yuceltoluyag.dev/sitemap.xml
 
 # Tüm botlar için yönergeler
 User-agent: *

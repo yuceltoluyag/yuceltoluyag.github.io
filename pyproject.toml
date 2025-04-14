@@ -23,7 +23,7 @@
         "rcssmin>=1.2.1",
     ]
     description = "Yücel Toluyağ'ın kişisel blog sitesi - Yazılım, teknoloji ve kişisel deneyimler üzerine içerikler"
-    name = "yuceltoluyag.github.io"
+    name = "yuceltoluyag.dev"
     readme = "README.md"
     requires-python = ">=3.11"
     version = "0.0.1"
