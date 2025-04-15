@@ -1,5 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Bilgi 5 harflidir. 5 te 4'ü İlgidir ;D</title><link href="https://yuceltoluyag.dev/" rel="alternate"></link><link href="https://yuceltoluyag.dev/feeds/all.atom.xml" rel="self"></link><id>https://yuceltoluyag.dev/</id><updated>2025-04-13T16:00:00+03:00</updated><subtitle>Linux, Python ve Web Geliştirme Rehberleri</subtitle><entry><title>Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu</title><link href="https://yuceltoluyag.dev/pelican-ile-staticman-alternatifi-comment-worker-kurulumu/" rel="alternate"></link><published>2025-04-12T15:30:00+03:00</published><updated>2025-04-13T16:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2025-04-12:/pelican-ile-staticman-alternatifi-comment-worker-kurulumu/</id><summary type="html">&lt;p&gt;Pelican tabanlı statik blogunuza yorum sistemi entegre etmek istiyorsanız, Staticman alternatifi olan comment-worker kurulumu ve Cloudflare Workers ile nasıl kullanılacağını adım adım anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="pelican-ile-statik-yorum-sistemi-comment-worker-kurulumu"&gt;Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu ✨&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bilgi 5 harflidir. 5 te 4'ü İlgidir ;D</title><link href="https://yuceltoluyag.dev/" rel="alternate"></link><link href="https://yuceltoluyag.dev/feeds/all.atom.xml" rel="self"></link><id>https://yuceltoluyag.dev/</id><updated>2025-04-15T12:00:00+03:00</updated><subtitle>Linux, Python ve Web Geliştirme Rehberleri</subtitle><entry><title>Arch Linux Eski Depoların Temizlenmesi: Ne Yapmanız Gerekiyor?</title><link href="https://yuceltoluyag.dev/arch-linux-eski-depolar-temizlenmesi/" rel="alternate"></link><published>2025-04-15T12:00:00+03:00</published><updated>2025-04-15T12:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2025-04-15:/arch-linux-eski-depolar-temizlenmesi/</id><summary type="html">&lt;h2 id="arch-linux-kullanicilari-icin-eski-depolarin-temizlenmesi-hakkinda-bilmeniz-gereken-her-sey"&gt;Arch Linux Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; &amp;Idot;&amp;ccedil;in Eski Depolar&amp;inodot;n Temizlenmesi Hakk&amp;inodot;nda Bilmeniz Gereken Her &amp;Scedil;ey&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt; kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in yeni bir duyuru geldi: Eskimi&amp;scedil; ve art&amp;inodot;k kullan&amp;inodot;lmayan depolar&amp;inodot;n temizlenmesi i&amp;scedil;lemi ba&amp;scedil;l&amp;inodot;yor! Bu yaz&amp;inodot;da, eski depolar&amp;inodot;n sisteminizden nas&amp;inodot;l kald …&lt;/p&gt;</summary><content type="html">&lt;h2 id="arch-linux-kullanicilari-icin-eski-depolarin-temizlenmesi-hakkinda-bilmeniz-gereken-her-sey"&gt;Arch Linux Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; &amp;Idot;&amp;ccedil;in Eski Depolar&amp;inodot;n Temizlenmesi Hakk&amp;inodot;nda Bilmeniz Gereken Her &amp;Scedil;ey&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt; kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in yeni bir duyuru geldi: Eskimi&amp;scedil; ve art&amp;inodot;k kullan&amp;inodot;lmayan depolar&amp;inodot;n temizlenmesi i&amp;scedil;lemi ba&amp;scedil;l&amp;inodot;yor! Bu yaz&amp;inodot;da, eski depolar&amp;inodot;n sisteminizden nas&amp;inodot;l kald&amp;inodot;r&amp;inodot;laca&amp;gbreve;&amp;inodot;n&amp;inodot; ve bu de&amp;gbreve;i&amp;scedil;ikli&amp;gbreve;in ne anlama geldi&amp;gbreve;ini inceleyece&amp;gbreve;iz. E&amp;gbreve;er Arch Linux kullan&amp;inodot;yorsan&amp;inodot;z ve sisteminizde hala eski depo referanslar&amp;inodot; varsa, bu yaz&amp;inodot;y&amp;inodot; dikkatle okuman&amp;inodot;zda fayda var.&lt;/p&gt;
+&lt;h3 id="eski-depolarin-temizlenmesi-neden-simdi"&gt;Eski Depolar&amp;inodot;n Temizlenmesi: Neden &amp;Scedil;imdi?&lt;/h3&gt;
+&lt;p&gt;Arch Linux, s&amp;uuml;rekli g&amp;uuml;ncel ve stabil bir sistem sa&amp;gbreve;lamaya y&amp;ouml;nelik yapt&amp;inodot;&amp;gbreve;&amp;inodot; yeniliklerle tan&amp;inodot;n&amp;inodot;r. Ancak, baz&amp;inodot; depo de&amp;gbreve;i&amp;scedil;iklikleri zamanla gereksiz hale gelir. &amp;Ouml;rne&amp;gbreve;in, iki y&amp;inodot;l &amp;ouml;nce &lt;strong&gt;[community]&lt;/strong&gt; deposu, &lt;strong&gt;[extra]&lt;/strong&gt; deposuyla birle&amp;scedil;tirildi ve bununla birlikte baz&amp;inodot; eski depolar kullan&amp;inodot;lmaz hale geldi. Bu depolar sistem &amp;uuml;zerinde hala mevcut olabilir, fakat art&amp;inodot;k i&amp;scedil;levselli&amp;gbreve;i yoktur.&lt;/p&gt;
+&lt;p&gt;2025-03-01 tarihinden itibaren Arch Linux, eski &lt;strong&gt;[community]&lt;/strong&gt;, &lt;strong&gt;[community-testing]&lt;/strong&gt;, &lt;strong&gt;[testing]&lt;/strong&gt;, &lt;strong&gt;[testing-debug]&lt;/strong&gt;, &lt;strong&gt;[staging]&lt;/strong&gt; ve &lt;strong&gt;[staging-debug]&lt;/strong&gt; depolar&amp;inodot;n&amp;inodot; tamamen kald&amp;inodot;racak. Bu de&amp;gbreve;i&amp;scedil;iklik, sisteminizi g&amp;uuml;ncel tutman&amp;inodot;za yard&amp;inodot;mc&amp;inodot; olurken, gereksiz dosya ve ayarlar&amp;inodot; da ortadan kald&amp;inodot;racak.&lt;/p&gt;
+&lt;h3 id="depo-temizligi-ne-gibi-sorunlara-yol-acabilir"&gt;Depo Temizli&amp;gbreve;i Ne Gibi Sorunlara Yol A&amp;ccedil;abilir?&lt;/h3&gt;
+&lt;p&gt;Eski depolar&amp;inodot;n sisteminizde kalmas&amp;inodot;, baz&amp;inodot; sorunlara yol a&amp;ccedil;abilir. &amp;Ouml;zellikle, &lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyan&amp;inodot;zda hala eski depolar varsa, &lt;strong&gt;pacman -Sy&lt;/strong&gt; komutuyla depo verilerini senkronize etmeye &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda hata alabilirsiniz.&lt;/p&gt;
+&lt;h4&gt;Temizlik &amp;Idot;&amp;scedil;leminden Etkilenen Depolar:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[community]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[community-testing]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[testing]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[testing-debug]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[staging]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[staging-debug]&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;E&amp;gbreve;er bu depolar&amp;inodot;n sisteminizde hala yer ald&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; fark ediyorsan&amp;inodot;z, bir an &amp;ouml;nce g&amp;uuml;ncelleme yapmal&amp;inodot;s&amp;inodot;n&amp;inodot;z.&lt;/p&gt;
+&lt;h3 id="eski-depolari-sisteminizden-kaldirma-adimlari"&gt;Eski Depolar&amp;inodot; Sisteminizden Kald&amp;inodot;rma Ad&amp;inodot;mlar&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Eski depolar&amp;inodot; kald&amp;inodot;rmak i&amp;ccedil;in, &lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyan&amp;inodot;zda gerekli de&amp;gbreve;i&amp;scedil;iklikleri yapman&amp;inodot;z gerekiyor. &amp;Idot;&amp;scedil;te ad&amp;inodot;m ad&amp;inodot;m nas&amp;inodot;l yapaca&amp;gbreve;&amp;inodot;n&amp;inodot;z:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; a&amp;ccedil;&amp;inodot;n:
+   &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/pacman.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Eski depolar&amp;inodot;n (&amp;ouml;rne&amp;gbreve;in, &lt;strong&gt;[community]&lt;/strong&gt;, &lt;strong&gt;[testing]&lt;/strong&gt;) bulundu&amp;gbreve;u sat&amp;inodot;rlar&amp;inodot; bulun.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bu sat&amp;inodot;rlar&amp;inodot; silin veya yorum sat&amp;inodot;r&amp;inodot; haline getirin (ba&amp;scedil;lar&amp;inodot;na # ekleyerek).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dosyay&amp;inodot; kaydedin ve &amp;ccedil;&amp;inodot;k&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;pacman -Sy&lt;/strong&gt; komutunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak depo verilerini g&amp;uuml;ncelleyin:
+   &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-Sy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bu i&amp;scedil;lemi yapt&amp;inodot;ktan sonra, sisteminizde eski depo referanslar&amp;inodot; kalmayacak ve hata almayacaks&amp;inodot;n&amp;inodot;z.&lt;/p&gt;
+&lt;h3 id="guncel-pacman-ve-depo-yapilandirmasi"&gt;G&amp;uuml;ncel Pacman ve Depo Yap&amp;inodot;land&amp;inodot;rmas&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Arch Linux, &lt;strong&gt;pacman&lt;/strong&gt; 6.0.2-7 ve sonras&amp;inodot;yla birlikte, eski depo yap&amp;inodot;land&amp;inodot;rmalar&amp;inodot;n&amp;inodot; temizlemek i&amp;ccedil;in bir &lt;strong&gt;.pacnew&lt;/strong&gt; dosyas&amp;inodot; g&amp;ouml;ndermi&amp;scedil;tir. E&amp;gbreve;er bu dosya sisteminizde varsa, gerekli yap&amp;inodot;land&amp;inodot;rma de&amp;gbreve;i&amp;scedil;ikliklerini yaparak sisteminizi g&amp;uuml;ncel tutabilirsiniz.&lt;/p&gt;
+&lt;h3 id="depo-temizliginin-faydalari"&gt;Depo Temizli&amp;gbreve;inin Faydalar&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Eski depolar&amp;inodot;n kald&amp;inodot;r&amp;inodot;lmas&amp;inodot;, sisteminizdeki gereksiz verilerin temizlenmesini sa&amp;gbreve;lar ve disk alan&amp;inodot;ndan tasarruf etmenize yard&amp;inodot;mc&amp;inodot; olur. Ayr&amp;inodot;ca, sistem g&amp;uuml;ncellemelerini yaparken kar&amp;scedil;&amp;inodot;la&amp;scedil;abilece&amp;gbreve;iniz hatalar&amp;inodot;n &amp;ouml;n&amp;uuml;ne ge&amp;ccedil;er ve Arch Linux'un en g&amp;uuml;ncel s&amp;uuml;r&amp;uuml;mlerine sorunsuz eri&amp;scedil;im sa&amp;gbreve;laman&amp;inodot;z&amp;inodot; garanti eder.&lt;/p&gt;
+&lt;h3 id="sonuc-eski-depolari-kaldirin-sisteminizi-temizleyin"&gt;Sonu&amp;ccedil;: Eski Depolar&amp;inodot; Kald&amp;inodot;r&amp;inodot;n, Sisteminizi Temizleyin!&lt;/h3&gt;
+&lt;p&gt;Arch Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in, eski depolar&amp;inodot;n kald&amp;inodot;r&amp;inodot;lmas&amp;inodot; &amp;ouml;nemli bir ad&amp;inodot;md&amp;inodot;r. &lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyan&amp;inodot;zdaki eski depo sat&amp;inodot;rlar&amp;inodot;n&amp;inodot; kald&amp;inodot;rarak, sisteminizin stabilitesini ve h&amp;inodot;z&amp;inodot;n&amp;inodot; art&amp;inodot;rabilirsiniz. Unutmay&amp;inodot;n, bu ad&amp;inodot;mlar&amp;inodot; att&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda herhangi bir hata ile kar&amp;scedil;&amp;inodot;la&amp;scedil;mazs&amp;inodot;n&amp;inodot;z ve sisteminiz her zaman en g&amp;uuml;ncel haliyle &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hemen &amp;scedil;imdi eski depolar&amp;inodot; kald&amp;inodot;r&amp;inodot;n ve sisteminizi temizleyin!&lt;/strong&gt; Daha fazla bilgi ve Arch Linux'un en son g&amp;uuml;ncellemeleri i&amp;ccedil;in bizi takip etmeye devam edin.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="Eski depolar&amp;inodot; kald&amp;inodot;rarak sisteminizi h&amp;inodot;zland&amp;inodot;r&amp;inodot;n." src="/images/arch-linux-yeni-pacman-ayarlari.webp"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Bu yaz&amp;inodot;y&amp;inodot; be&amp;gbreve;endiniz mi? &lt;strong&gt;Yorumlar&amp;inodot;n&amp;inodot;z&amp;inodot;&lt;/strong&gt; a&amp;scedil;a&amp;gbreve;&amp;inodot;da bizimle payla&amp;scedil;abilirsiniz! Ayr&amp;inodot;ca, Arch Linux ile ilgili daha fazla ipucu ve rehber i&amp;ccedil;in &lt;strong&gt;sosyal medya hesaplar&amp;inodot;m&amp;inodot;z&amp;inodot;&lt;/strong&gt; takip edebilirsiniz. E&amp;gbreve;er bu yaz&amp;inodot;y&amp;inodot; faydal&amp;inodot; bulduysan&amp;inodot;z, arkada&amp;scedil;lar&amp;inodot;n&amp;inodot;zla payla&amp;scedil;may&amp;inodot; unutmay&amp;inodot;n!&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er bu t&amp;uuml;r i&amp;ccedil;erikler ilginizi &amp;ccedil;ekiyorsa, &lt;strong&gt;e-posta b&amp;uuml;ltenimize abone olmay&amp;inodot;&lt;/strong&gt; unutmay&amp;inodot;n!&lt;/p&gt;</content><category term="linux"></category><category term="Arch Linux"></category><category term="Depo Temizliği"></category><category term="Pacman"></category><category term="Sistem Yönetimi"></category><category term="Linux"></category><category term="Yazılım Güncellemeleri"></category></entry><entry><title>Yunohost'ta robots.txt Dosyası Oluşturmak</title><link href="https://yuceltoluyag.dev/yunohost-robots-txt-olusturmak/" rel="alternate"></link><published>2025-04-14T10:00:00+03:00</published><updated>2025-04-14T10:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2025-04-14:/yunohost-robots-txt-olusturmak/</id><summary type="html">&lt;p&gt;🚀 &lt;strong&gt;Web sitenizin arama motorlar&amp;inodot; taraf&amp;inodot;ndan nas&amp;inodot;l tarand&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol etmek ister misiniz?&lt;/strong&gt; Yunohost &amp;uuml;zerinde bar&amp;inodot;nd&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z uygulamalara &amp;ouml;zel &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot; olu&amp;scedil;turarak bu kontrol&amp;uuml; tamamen elinize alabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bu yaz&amp;inodot;da, &amp;ouml;zellikle &lt;strong&gt;Yunohost'ta robots.txt dosyas&amp;inodot; olu&amp;scedil;turmak&lt;/strong&gt; konusunda ad&amp;inodot;m ad&amp;inodot;m bir rehber …&lt;/p&gt;</summary><content type="html">&lt;p&gt;🚀 &lt;strong&gt;Web sitenizin arama motorlar&amp;inodot; taraf&amp;inodot;ndan nas&amp;inodot;l tarand&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol etmek ister misiniz?&lt;/strong&gt; Yunohost &amp;uuml;zerinde bar&amp;inodot;nd&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z uygulamalara &amp;ouml;zel &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot; olu&amp;scedil;turarak bu kontrol&amp;uuml; tamamen elinize alabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bu yaz&amp;inodot;da, &amp;ouml;zellikle &lt;strong&gt;Yunohost'ta robots.txt dosyas&amp;inodot; olu&amp;scedil;turmak&lt;/strong&gt; konusunda ad&amp;inodot;m ad&amp;inodot;m bir rehber sunaca&amp;gbreve;&amp;inodot;m. Ayr&amp;inodot;ca SEO uyumlu yap&amp;inodot;land&amp;inodot;rma tekniklerini de &amp;ouml;&amp;gbreve;reneceksiniz. Hedefimiz, Google gibi arama motorlar&amp;inodot;n&amp;inodot;n sitenizi &lt;strong&gt;istenmeyen &amp;scedil;ekilde dizine eklemesini engellemek&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="robotstxt-nedir-ve-neden-onemlidir"&gt;🤖 Robots.txt Nedir ve Neden &amp;Ouml;nemlidir?&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;robots.txt&lt;/code&gt;, bir sitenin k&amp;ouml;k dizininde yer alan ve arama motorlar&amp;inodot;na hangi sayfalar&amp;inodot; &lt;strong&gt;tarayabileceklerini veya tarayamayacaklar&amp;inodot;n&amp;inodot;&lt;/strong&gt; bildiren d&amp;uuml;z metin dosyas&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="ne-ise-yarar"&gt;Ne &amp;Idot;&amp;scedil;e Yarar?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Arama motorlar&amp;inodot;n&amp;inodot;n &amp;ouml;zel alanlara eri&amp;scedil;imini s&amp;inodot;n&amp;inodot;rlar.&lt;/li&gt;
+&lt;li&gt;Sunucu y&amp;uuml;k&amp;uuml;n&amp;uuml; azalt&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;Gizli i&amp;ccedil;eriklerin yanl&amp;inodot;&amp;scedil;l&amp;inodot;kla dizine al&amp;inodot;nmas&amp;inodot;n&amp;inodot; &amp;ouml;nler.&lt;/li&gt;
+&lt;li&gt;SEO stratejinizin bir par&amp;ccedil;as&amp;inodot; olarak &amp;ouml;nemli rol oynar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="yunohostta-robotstxt-dosyasi-olusturmak_1"&gt;⚙️ Yunohost&amp;rsquo;ta Robots.txt Dosyas&amp;inodot; Olu&amp;scedil;turmak&lt;/h2&gt;
+&lt;p&gt;Yunohost, yap&amp;inodot;land&amp;inodot;rmalar&amp;inodot; daha farkl&amp;inodot; bir &amp;scedil;ekilde ele al&amp;inodot;r. Robots.txt eklemek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; izleyin:&lt;/p&gt;
+&lt;h3 id="1-dosyayi-olustur"&gt;1. Dosyay&amp;inodot; Olu&amp;scedil;tur&lt;/h3&gt;
+&lt;p&gt;&amp;Ouml;ncelikle &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; uygulaman&amp;inodot;z&amp;inodot;n dizininde olu&amp;scedil;turun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/var/www/listmonk/robots.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki i&amp;ccedil;eri&amp;gbreve;i &amp;ouml;rnek olarak ekleyebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;User-agent: *
+Disallow: /private/
+Allow: /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Bu &amp;ouml;rnekte &lt;code&gt;/private/&lt;/code&gt; dizini hari&amp;ccedil; t&amp;uuml;m i&amp;ccedil;erik taramaya a&amp;ccedil;&amp;inodot;k.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="googlein-sitene-erisimini-engellemek_1"&gt;🔐 Google'&amp;inodot;n Sitene Eri&amp;scedil;imini Engellemek&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er Google botlar&amp;inodot;n&amp;inodot;n sitenizi hi&amp;ccedil; dizine almamas&amp;inodot;n&amp;inodot; istiyorsan&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;User-agent: Googlebot
+Disallow: /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, yaln&amp;inodot;zca Googlebot'u engeller. T&amp;uuml;m botlar&amp;inodot; engellemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;User-agent: *
+Disallow: /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;❗ Not: Bu sadece &lt;strong&gt;dizinlemeyi&lt;/strong&gt; engeller, sayfalar&amp;inodot;n taranmas&amp;inodot;n&amp;inodot; de&amp;gbreve;il. Tam koruma i&amp;ccedil;in HTTP authentication veya &lt;code&gt;noindex&lt;/code&gt; meta etiketleri de kullan&amp;inodot;labilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="nginx-uzerinden-robotstxt-sunmak"&gt;🔧 Nginx &amp;Uuml;zerinden robots.txt Sunmak&lt;/h2&gt;
+&lt;p&gt;Dosyay&amp;inodot; olu&amp;scedil;turduktan sonra Nginx sunucusuna bu dosyay&amp;inodot; d&amp;uuml;zg&amp;uuml;n bir &amp;scedil;ekilde tan&amp;inodot;tmak gerekiyor.&lt;/p&gt;
+&lt;h3 id="1-gerekli-nginx-konfigurasyonunu-bul"&gt;1. Gerekli Nginx Konfig&amp;uuml;rasyonunu Bul&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;find&lt;span class="w"&gt; &lt;/span&gt;/&lt;span class="w"&gt; &lt;/span&gt;-type&lt;span class="w"&gt; &lt;/span&gt;f&lt;span class="w"&gt; &lt;/span&gt;-name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'listmonk'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Gelen sonu&amp;ccedil;lardan ilgili Nginx config dosyas&amp;inodot;n&amp;inodot; se&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/nginx/conf.d/listmonk.minel.yuceltoluyag.dev.d/listmonk.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="2-asagidaki-location-blogunu-ekleyin"&gt;2. A&amp;scedil;a&amp;gbreve;&amp;inodot;daki &lt;code&gt;location&lt;/code&gt; blo&amp;gbreve;unu ekleyin&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/robots.txt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/var/www/listmonk/robots.txt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="3-nginxi-yeniden-baslat"&gt;3. Nginx&amp;rsquo;i Yeniden Ba&amp;scedil;lat&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="dogrulama-dosya-dogru-calisiyor-mu_1"&gt;✅ Do&amp;gbreve;rulama: Dosya Do&amp;gbreve;ru &amp;Ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor mu?&lt;/h2&gt;
+&lt;p&gt;Taray&amp;inodot;c&amp;inodot;n&amp;inodot;zdan &amp;scedil;u URL'yi ziyaret edin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;https://listmonk.minel.yuceltoluyag.dev/robots.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosya d&amp;uuml;zg&amp;uuml;n g&amp;ouml;r&amp;uuml;nt&amp;uuml;leniyorsa, yap&amp;inodot;land&amp;inodot;rman&amp;inodot;z ba&amp;scedil;ar&amp;inodot;yla tamamlanm&amp;inodot;&amp;scedil; demektir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="unohost &amp;uuml;zerinde olu&amp;scedil;turulmu&amp;scedil; &amp;ouml;rnek robots.txt dosyas&amp;inodot;" src="/images/yunohost-robotstxt.webp"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="ipuclari-dikkat-edilmesi-gerekenler"&gt;🎓 &amp;Idot;pu&amp;ccedil;lar&amp;inodot; &amp;amp; Dikkat Edilmesi Gerekenler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;robots.txt&lt;/code&gt; yaln&amp;inodot;zca &lt;strong&gt;kibar botlar&lt;/strong&gt; i&amp;ccedil;indir. K&amp;ouml;t&amp;uuml; niyetli botlar bu dosyay&amp;inodot; yok sayabilir.&lt;/li&gt;
+&lt;li&gt;Dosyay&amp;inodot; de&amp;gbreve;i&amp;scedil;tirdikten sonra Google Search Console &amp;uuml;zerinden test edin.&lt;/li&gt;
+&lt;li&gt;Siteye &amp;ouml;zg&amp;uuml; i&amp;ccedil;erikler i&amp;ccedil;in ayr&amp;inodot; kurallar yazabilirsiniz.&lt;/li&gt;
+&lt;li&gt;E&amp;gbreve;er uygulaman&amp;inodot;zda bir &lt;strong&gt;public&lt;/strong&gt; dizini varsa, &lt;strong&gt;robots.txt&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; direkt oraya koyun&amp;mdash;&lt;strong&gt;%90&lt;/strong&gt; ihtimalle sorunsuz &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r.Burada anlatt&amp;inodot;&amp;gbreve;&amp;inodot;m y&amp;ouml;ntem ise public dizini olmadan, do&amp;gbreve;rudan nginx &amp;uuml;zerinden robots.txt tan&amp;inodot;mlama y&amp;ouml;ntemi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;✍️ Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Yunohost'ta &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot; olu&amp;scedil;turmak olduk&amp;ccedil;a kolay bir i&amp;scedil;lemdir ama do&amp;gbreve;ru yap&amp;inodot;land&amp;inodot;r&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda sitenizin SEO stratejisini ciddi &amp;scedil;ekilde etkileyebilir. &amp;Ouml;zellikle belirli dizinleri gizlemek veya sadece belirli botlara izin vermek isteyenler i&amp;ccedil;in vazge&amp;ccedil;ilmezdir.&lt;/p&gt;</content><category term="kutuphane"></category><category term="yunohost"></category><category term="robots.txt"></category><category term="nginx"></category><category term="seo"></category><category term="listeleme engelleme"></category></entry><entry><title>Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu</title><link href="https://yuceltoluyag.dev/pelican-ile-staticman-alternatifi-comment-worker-kurulumu/" rel="alternate"></link><published>2025-04-12T15:30:00+03:00</published><updated>2025-04-13T16:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.dev,2025-04-12:/pelican-ile-staticman-alternatifi-comment-worker-kurulumu/</id><summary type="html">&lt;p&gt;Pelican tabanlı statik blogunuza yorum sistemi entegre etmek istiyorsanız, Staticman alternatifi olan comment-worker kurulumu ve Cloudflare Workers ile nasıl kullanılacağını adım adım anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="pelican-ile-statik-yorum-sistemi-comment-worker-kurulumu"&gt;Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu ✨&lt;/h1&gt;
 &lt;p&gt;Statik blog altyap&amp;inodot;s&amp;inodot; kullanan geli&amp;scedil;tiriciler i&amp;ccedil;in dinamik yorum sistemleri her zaman bir sorun olmu&amp;scedil;tur. Bu yaz&amp;inodot;da, &lt;strong&gt;Pelican&lt;/strong&gt; tabanl&amp;inodot; bir bloga, &lt;strong&gt;Staticman&lt;/strong&gt; alternatifi olarak geli&amp;scedil;tirilen &lt;strong&gt;comment-worker&lt;/strong&gt; arac&amp;inodot; ile nas&amp;inodot;l yorum sistemi entegre edece&amp;gbreve;inizi detayl&amp;inodot; olarak anlataca&amp;gbreve;&amp;inodot;z. ✨&lt;/p&gt;
 &lt;h2 id="comment-worker-nedir"&gt;comment-worker Nedir? 🧵&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;comment-worker&lt;/code&gt;, Cloudflare Workers &amp;uuml;zerinde &amp;ccedil;al&amp;inodot;&amp;scedil;an, kullan&amp;inodot;c&amp;inodot; yorumlar&amp;inodot;n&amp;inodot; GitHub ya da GitLab gibi platformlara JSON dosyas&amp;inodot; olarak pushlayan modern bir yorum altyap&amp;inodot;s&amp;inodot; &amp;ccedil;&amp;ouml;z&amp;uuml;m&amp;uuml;d&amp;uuml;r. Statik sitelere dinamik i&amp;ccedil;erik eklemenin g&amp;uuml;venli ve s&amp;uuml;rd&amp;uuml;r&amp;uuml;lebilir bir yoludur.&lt;/p&gt;
