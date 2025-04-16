@@ -45,7 +45,7 @@ article.title }}{% endblock %} {% block seo %}
     <button
         onclick="toggleTOC()"
         aria-label="İçindekiler menüsünü aç"
-        class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110 touch-manipulation p-4">
+        class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-text-primary transition-all duration-300 hover:scale-110 touch-manipulation p-4">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
         </svg>
@@ -71,7 +71,7 @@ article.title }}{% endblock %} {% block seo %}
                 <button
                     onclick="toggleTOC()"
                     aria-label="İçindekiler menüsünü kapat"
-                    class="text-text-secondary hover:text-primary">
+                    class="text-text-secondary hover:text-text-primary">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path
                             stroke-linecap="round"
@@ -130,7 +130,7 @@ article.title }}{% endblock %} {% block seo %}
                 </svg>
                 <a
                     href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
-                    class="hover:text-primary transition-colors">
+                    class="hover:text-text-primary transition-colors">
                     {{ article.category }}
                 </a>
             </span>
@@ -172,7 +172,7 @@ article.title }}{% endblock %} {% block seo %}
                 {% for tag in article.tags %}
                 <a
                     href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-                    class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors">
+                    class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-text-primary transition-colors">
                     #{{ tag }}
                 </a>
                 {% endfor %}
@@ -195,7 +195,7 @@ article.title }}{% endblock %} {% block seo %}
                     <span class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full text-xs">
                         {{ loop.index }}
                     </span>
-                    <span class="text-primary font-medium">{{ article_in_series.title }} (Şu anki yazı)</span>
+                    <span class="text-text-primary font-medium">{{ article_in_series.title }} (Şu anki yazı)</span>
                     {% else %}
                     <span
                         class="w-6 h-6 flex items-center justify-center bg-site-card-alt text-text-secondary rounded-full text-xs">
@@ -203,7 +203,7 @@ article.title }}{% endblock %} {% block seo %}
                     </span>
                     <a
                         href="{{ SITEURL }}/{{ article_in_series.url }}"
-                        class="text-text-secondary hover:text-primary transition-colors">
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         {{ article_in_series.title }}
                     </a>
                     {% endif %}
@@ -228,7 +228,7 @@ article.title }}{% endblock %} {% block seo %}
                 <div class="flex flex-col items-center text-center space-y-4">
                     <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
                         <svg
-                            class="w-6 h-6 text-primary"
+                            class="w-6 h-6 text-text-primary"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -270,7 +270,7 @@ article.title }}{% endblock %} {% block seo %}
                 <div class="flex flex-col items-center text-center space-y-4">
                     <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
                         <svg
-                            class="w-6 h-6 text-primary"
+                            class="w-6 h-6 text-text-primary"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -475,7 +475,7 @@ article.title }}{% endblock %} {% block seo %}
                 <button
                     onclick="copyArticleLink()"
                     aria-label="Bağlantıyı kopyala"
-                    class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300">
+                    class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-text-primary hover:bg-primary hover:text-white transition-colors duration-300">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                             stroke-linecap="round"
@@ -502,7 +502,7 @@ article.title }}{% endblock %} {% block seo %}
             <a
                 href="{{ SITEURL }}/{{ article.prev_article.url }}"
                 aria-label="Önceki yazı: {{ article.prev_article.title }}"
-                class="flex items-center text-primary hover:text-primary-dark transition-colors group">
+                class="flex items-center text-text-primary hover:text-text-primary-dark transition-colors group">
                 <svg
                     class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
                     fill="none"
@@ -517,7 +517,7 @@ article.title }}{% endblock %} {% block seo %}
             <a
                 href="{{ SITEURL }}/{{ article.next_article.url }}"
                 aria-label="Sonraki yazı: {{ article.next_article.title }}"
-                class="flex items-center text-primary hover:text-primary-dark transition-colors group ml-auto">
+                class="flex items-center text-text-primary hover:text-text-primary-dark transition-colors group ml-auto">
                 <span class="line-clamp-1">{{ article.next_article.title }}</span>
                 <svg
                     class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
@@ -537,7 +537,7 @@ article.title }}{% endblock %} {% block seo %}
     <div class="p-8 border-t border-border-card">
         <div class="space-y-6">
             <h3 class="text-xl font-bold text-text-primary flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
@@ -552,7 +552,7 @@ article.title }}{% endblock %} {% block seo %}
                 <a href="{{ SITEURL }}/{{ related_post.url }}" class="group">
                     <div
                         class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
-                        <h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+                        <h4 class="font-medium mb-2 text-text-primary group-hover:text-text-primary transition-colors">
                             {{ related_post.title }}
                         </h4>
                         <div class="flex items-center text-sm text-text-secondary">

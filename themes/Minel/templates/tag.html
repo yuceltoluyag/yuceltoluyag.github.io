@@ -9,7 +9,7 @@
         {% for article in articles_page.object_list %}
         <article class="card hover:scale-[1.01] transition-transform">
             <h2 class="text-xl font-bold text-text-primary mb-2">
-                <a href="{{ SITEURL }}/{{ article.url }}" class="hover:text-primary transition-colors">
+                <a href="{{ SITEURL }}/{{ article.url }}" class="hover:text-text-primary transition-colors">
                     {{ article.title }}
                 </a>
             </h2>
@@ -19,7 +19,7 @@
                 {% if article.category %}
                 <a
                     href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
-                    class="hover:text-primary transition-colors">
+                    class="hover:text-text-primary transition-colors">
                     {{ article.category }}
                 </a>
                 {% endif %}
@@ -35,13 +35,13 @@
         {% if articles_page.has_previous() %}
         <a
             href="{{ SITEURL }}/{{ articles_previous_page.url }}"
-            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-primary transition-colors">
+            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-text-primary transition-colors">
             Önceki
         </a>
         {% endif %} {% if articles_page.has_next() %}
         <a
             href="{{ SITEURL }}/{{ articles_next_page.url }}"
-            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-primary transition-colors">
+            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-text-primary transition-colors">
             Sonraki
         </a>
         {% endif %}

@@ -73,50 +73,6 @@
         <meta property="og:title" content="{{ SITENAME }}{% if page_name %} - {{ page_name }}{% endif %}" />
         {% endif %}
 
-        <!-- Kritik CSS önce yüklenir -->
-        <style>
-            /* Kritik CSS - Sadece ilk görünüm için gereken minimum stil */
-            :root {
-                --main-color: #333;
-                --text-primary: #333;
-                --text-secondary: #666;
-                --site-bg: #f9f9f9;
-                --site-card: #fff;
-                --border-card: rgba(0, 0, 0, 0.1);
-            }
-
-            /* Sayfa layout'u için temel tanımlamalar */
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-                    sans-serif;
-                background-color: var(--site-bg);
-                color: var(--text-primary);
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-            }
-
-            /* Layout shift önleme */
-            .p-8.border-t.border-border-card {
-                min-height: 120px;
-            }
-
-            footer.bg-site-card-95 {
-                min-height: 300px;
-            }
-
-            p {
-                min-height: 1.5em;
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
-
         <!-- Meta Description -->
         {% if article %}
         <meta name="description" content="{{ article.summary|striptags|truncate(160) }}" />
@@ -314,7 +270,7 @@
             crossorigin="anonymous"></script>
         {% endif %}
     </head>
-    <body class="bg-site-bg text-text-primary min-h-screen flex flex-col">
+    <body class="bg-site-background text-text-primary min-h-screen flex flex-col">
         <!-- İlerleme çubuğu -->
         <div class="fixed top-0 left-0 w-full h-1 z-[60]">
             <div
@@ -332,7 +288,7 @@
                     alt="Header Background"
                     class="w-full h-full object-cover transform scale-110 parallax-bg" />
                 <!-- Karartma Katmanı -->
-                <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+                <div class="absolute inset-0 bg-black/50 backdrop-blur-xs"></div>
             </div>
 
             <!-- Paralax katmanları -->
@@ -354,7 +310,7 @@
         <!-- Navbar -->
         <nav
             id="navbar"
-            class="fixed top-0 inset-x-0 z-50 {% if not output_file == 'index.html' %}bg-site-card-95 backdrop-blur-sm border-b border-border-card{% endif %}">
+            class="fixed top-0 inset-x-0 z-50 {% if not output_file == 'index.html' %}bg-site-card-95 backdrop-blur-xs border-b border-border-card{% endif %}">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <!-- Logo - Mobilde gizli -->
@@ -374,7 +330,7 @@
                                 <a
                                     href="{{ SITEURL }}{{ link.url }}"
                                     aria-label="{{ link.name }}"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     {% if link.name == 'Ana Sayfa' or link.name == 'Home' %}
                                     <svg
@@ -479,7 +435,7 @@
                             <!-- Arama butonu -->
                             <button
                                 onclick="toggleSearch()"
-                                class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors"
+                                class="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors"
                                 aria-label="Ara">
                                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path
@@ -557,7 +513,7 @@
         <!-- Yukarı git butonu -->
         <button
             id="back-to-top"
-            class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-sm text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-none min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation"
+            class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-xs text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-hidden min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation"
             aria-label="Yukarı git">
             <svg
                 class="w-10 h-10"
@@ -576,12 +532,12 @@
 
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 50) {
-                    navbar.classList.add("bg-site-card-95", "backdrop-blur-sm", "border-b", "border-border-card");
+                    navbar.classList.add("bg-site-card-95", "backdrop-blur-xs", "border-b", "border-border-card");
                 } else {
                     if (isHomePage) {
                         navbar.classList.remove(
                             "bg-site-card-95",
-                            "backdrop-blur-sm",
+                            "backdrop-blur-xs",
                             "border-b",
                             "border-border-card"
                         );
@@ -623,7 +579,7 @@
                 <div class="text-sm text-text-secondary">
                     <p>
                         Bu site deneyiminizi iyileştirmek için çerezler kullanır.
-                        <a href="{{ SITEURL }}/privacy-policy/" class="text-primary underline hover:opacity-80">
+                        <a href="{{ SITEURL }}/privacy-policy/" class="text-text-primary underline hover:opacity-80">
                             Gizlilik Politikası
                         </a>
                         'nı inceleyebilir veya çerez tercihlerinizi yapabilirsiniz.
@@ -659,7 +615,7 @@
             <div class="bg-site-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-xl">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-xl font-bold text-text-primary">Çerez Tercihleriniz</h2>
-                    <button id="close-settings" class="text-text-secondary hover:text-primary">
+                    <button id="close-settings" class="text-text-secondary hover:text-text-primary">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                                 stroke-linecap="round"
@@ -679,7 +635,7 @@
                     <div class="p-4 border border-border-card rounded-lg">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="font-medium text-text-primary">Gerekli Çerezler</h3>
-                            <span class="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                            <span class="px-2 py-1 text-xs bg-primary/10 text-text-primary rounded-full">
                                 Her Zaman Aktif
                             </span>
                         </div>
@@ -695,7 +651,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="analytics-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">
@@ -711,7 +667,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="marketing-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">
@@ -726,7 +682,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="personalization-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">

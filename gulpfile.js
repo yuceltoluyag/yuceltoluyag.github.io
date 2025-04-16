@@ -75,13 +75,7 @@ function clean(cb) {
 }
 
 // PostCSS eklentilerini önceden yükle
-const postcssPlugins = [
-    require("postcss-import"),
-    require("tailwindcss/nesting"),
-    require("tailwindcss"),
-    require("postcss-preset-env")({ features: { "nesting-rules": false } }),
-    require("autoprefixer")({ grid: true, flexbox: true }),
-];
+const postcssPlugins = [require("@tailwindcss/postcss")];
 
 if (process.env.NODE_ENV === "production") {
     postcssPlugins.push(
@@ -101,15 +95,28 @@ if (process.env.NODE_ENV === "production") {
 
 // CSS işleme görevi
 function styles() {
-    // input.css -> style.min.css
+    // Tailwind CSS işleme görevi
     const styleTask = gulp
         .src(path.join(BASE_PATHS.assets, "css", "input.css"), { allowEmpty: true })
         .pipe(sourcemaps.init())
-        .pipe(postcss(postcssPlugins))
-        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
-        .pipe(rename({ basename: "style", suffix: ".min" }))
-        .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(paths.styles.dest));
+        .pipe(gulp.dest(paths.styles.dest)) // Önce hedef dizine kopyala
+        .on("end", function () {
+            // Tailwind CLI ile CSS oluştur
+            const { exec } = require("child_process");
+            exec(
+                `npx @tailwindcss/cli -i ${path.join(BASE_PATHS.assets, "css", "input.css")} -o ${path.join(
+                    paths.styles.dest,
+                    "style.min.css"
+                )}`,
+                (err, stdout, stderr) => {
+                    if (err) {
+                        console.error(`Hata: ${stderr}`);
+                        return;
+                    }
+                    console.log(stdout);
+                }
+            );
+        });
 
     // pygments.css -> pygments.min.css
     const pygmentsTask = gulp
@@ -261,7 +268,7 @@ function scripts() {
 // Resim optimizasyonu görevi
 function optimizeImages() {
     return gulp
-        .src(paths.images.src, { allowEmpty: true })
+        .src(paths.images.src, { allowEmpty: true, encoding: false })
         .pipe(
             imagemin([
                 mozjpeg({ quality: 80, progressive: true }),
@@ -272,13 +279,13 @@ function optimizeImages() {
                 }),
             ])
         )
-        .pipe(gulp.dest(paths.images.dest + "_temp")); // Geçici klasöre kaydet
+        .pipe(gulp.dest(paths.images.dest + "_temp"));
 }
 
 // WebP dönüşüm görevi
 function convertToWebp() {
     return gulp
-        .src(paths.images.src, { allowEmpty: true })
+        .src(paths.images.src, { allowEmpty: true, encoding: false })
         .pipe(webp({ quality: 80, method: 6, metadata: "all" }))
         .pipe(gulp.dest(paths.images.dest));
 }

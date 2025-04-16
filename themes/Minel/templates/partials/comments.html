@@ -6,7 +6,7 @@ get_article_comments(article.slug) %} {% if comments %}
         Yorumlar
         <a
             href="#"
-            class="text-primary dark:text-primary hover:text-primary/80 dark:hover:text-primary/80 transition-colors">
+            class="text-text-primary dark:text-text-primary hover:text-text-primary/80 dark:hover:text-text-primary/80 transition-colors">
             {{ article.title }}
         </a>
     </h1>
@@ -634,7 +634,7 @@ get_article_comments(article.slug) %} {% if comments %}
 
                     // Yükleniyor mesajı göster
                     formContainer.innerHTML =
-                        "<p class='p-4 text-primary dark:text-primary'>Yanıtınız gönderiliyor...</p>";
+                        "<p class='p-4 text-text-primary dark:text-text-primary'>Yanıtınız gönderiliyor...</p>";
 
                     // Form verilerini al
                     const name = this.querySelector('input[name="fields[name]"]').value;

@@ -25,7 +25,9 @@ Earn.com, anketör şirketlerle anlaşarak size anketler gönderir. Bu anketleri
 ### Cüzdan Oluşturma
 Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kripto cüzdanına ihtiyacınız olabilir. Cüzdanınızı şu adresten oluşturabilirsiniz: [MyEtherWallet](https://www.myetherwallet.com/){: target="_blank" rel="noopener noreferrer"}. Cüzdan kodunuzu kimseyle paylaşmayın ve güvenli bir yerde saklayın.
 
-![cüzdan-oluşturma](/images/cuzdan-olusturma.gif)
+<video autoplay loop muted playsinline>
+  <source src="/images/cuzdan-olusturma.webm" type="video/webm" />
+</video>
 
 ### Asıl Kazanç Nerede?
 
@@ -49,4 +51,8 @@ Earn.com’dan verimli şekilde yararlanabilmek için aşağıdaki hesaplara sah
 Sisteme kaydolmak için referans bağlantısı kullanırsanız onay süreciniz hızlanır. Eğer referansınız yoksa aşağıdaki bağlantıyı kullanabilirsiniz:
 
 [Earn.com Referans Bağlantısı](http://earn.com/friday13/referral/?a=b6bpe21djavw2sar){: target="_blank" rel="noopener noreferrer"}
-![örnek cevaplama](/images/ornek-cevaplama.gif)
+
+
+<video autoplay loop muted playsinline>
+  <source src="/images/ornek-cevaplama.webm" type="video/webm" />
+</video>

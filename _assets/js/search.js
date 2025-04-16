@@ -60,7 +60,7 @@ function createSearchModal() {
     // Arama modalını oluştur
     const modal = document.createElement("div");
     modal.id = "search-modal";
-    modal.className = "fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm";
+    modal.className = "fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs";
 
     // Modal dışına tıklamayı dinle
     modal.addEventListener("click", (e) => {
@@ -73,7 +73,7 @@ function createSearchModal() {
     <div class="bg-site-card w-full max-w-2xl rounded-lg shadow-lg p-6 transform transition-all" onclick="event.stopPropagation()">
       <div class="flex items-center justify-between mb-4">
         <h3 class="text-lg font-semibold">Ara</h3>
-        <button onclick="toggleSearch()" class="text-text-secondary hover:text-primary">
+        <button onclick="toggleSearch()" class="text-text-secondary hover:text-text-primary">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -84,7 +84,7 @@ function createSearchModal() {
           id="search-input"
           type="search"
           placeholder="Aramak istediğiniz kelimeyi yazın..."
-          class="w-full px-4 py-2 bg-site-card-alt rounded-lg border border-border-card focus:outline-none focus:border-primary"
+          class="w-full px-4 py-2 bg-site-card/80 rounded-lg border border-border-card focus:outline-hidden focus:border-primary"
         />
       </div>
       <div id="search-results" class="mt-4 max-h-[60vh] overflow-y-auto">
@@ -138,7 +138,7 @@ function createSearchModal() {
 async function performSearch(query, resultsContainer) {
     resultsContainer.innerHTML = `
     <div class="text-center text-text-secondary py-8">
-      <svg class="animate-spin h-8 w-8 mx-auto mb-2 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <svg class="animate-spin h-8 w-8 mx-auto mb-2 text-text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
       </svg>
@@ -224,8 +224,8 @@ async function performSearch(query, resultsContainer) {
                   (result) => `
             <a href="${
                 result.url
-            }" class="block p-4 rounded-lg border border-border-card hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:bg-site-card-alt">
-              <h4 class="text-lg font-semibold mb-1 text-primary">${highlightText(result.title, query)}</h4>
+            }" class="block p-4 rounded-lg border border-border-card hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:bg-site-card/80">
+              <h4 class="text-lg font-semibold mb-1 text-text-primary">${highlightText(result.title, query)}</h4>
               
               <div class="flex flex-wrap items-center gap-2 mb-2 text-sm">
                 <span class="text-text-secondary">${formatDate(result.date_published)}</span>
@@ -234,7 +234,7 @@ async function performSearch(query, resultsContainer) {
                     result.category
                         ? `
                 <span class="text-text-secondary">•</span>
-                <span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-xs">
+                <span class="px-2 py-0.5 rounded-full bg-primary/10 text-text-primary text-xs">
                   ${result.category}
                 </span>
                 `
@@ -250,7 +250,7 @@ async function performSearch(query, resultsContainer) {
                       .slice(0, 3)
                       .map(
                           (tag) => `
-                    <span class="px-2 py-0.5 rounded-full bg-site-card-alt text-text-secondary text-xs">
+                    <span class="px-2 py-0.5 rounded-full bg-site-card/80 text-text-secondary text-xs">
                       ${tag}
                     </span>
                   `
@@ -365,7 +365,7 @@ function highlightText(text, query) {
 
     queryTerms.forEach((term) => {
         const regex = new RegExp(`(${term})`, "gi");
-        result = result.replace(regex, '<span class="bg-primary/20 text-primary font-medium">$1</span>');
+        result = result.replace(regex, '<span class="bg-primary/20 text-text-primary font-medium">$1</span>');
     });
 
     return result;

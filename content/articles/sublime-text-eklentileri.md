@@ -59,7 +59,7 @@ Sublime Text için Git entegrasyonu sağlayan harika bir eklentidir. Dökümanta
 
 GitGutter, projenizde yaptığınız değişiklikleri gösteren bir eklentidir. `git status` komutunun Sublime'deki halini düşünebilirsiniz.
 
-![GitGutter](/images/GitGutter.gif)
+
 
 ## GitHubinator
 
@@ -71,7 +71,7 @@ Bu eklenti, seçtiğiniz alanı doğrudan GitHub reposunda aramanıza yardımcı
 
 GitGutter'dan farkı, yalnızca değişiklik yapılan satırları gösterip, repo içinde arama yapabilmesidir. `Ctrl + Shift + O` tuşlarına basarak hızlıca kullanabilirsiniz.
 
-![GitOpenChangedFiles](/images/GitOpenChangedFiles.gif)
+
 
 ## SublimeLinter
 
@@ -119,7 +119,7 @@ HTML, CSS, JavaScript ve JSON kodlarını formatlamak için kullanılan bir ekle
 
 Bu eklenti, kod bloklarınızın üzerine açıklamalar eklemenizi sağlar.
 
-![DocBlockr](/images/DocBlockr.gif)
+
 
 ## A File Icon
 
@@ -131,7 +131,7 @@ Dosya uzantılarına göre simgeler ekler, böylece dosyalarınız daha düzenli
 
 Material Tema kullanıyorum: [Material Theme GitHub Sayfası](https://github.com/equinusocio/material-theme){: target="_blank" rel="noopener noreferrer"}.
 
-![Material-Theme](/images/material-theme.gif)
+
 
 Yeni kullandığım temalar ve pluginler hakkında bilgi almak için [GitHub Repo](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"}
 

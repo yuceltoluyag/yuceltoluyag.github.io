@@ -12,16 +12,16 @@ const initNavbar = () => {
                     window.requestAnimationFrame(() => {
                         if (window.scrollY > 50) {
                             navbar.classList.add(
-                                "bg-site-card-95",
-                                "backdrop-blur-sm",
+                                "bg-(--bg-site-card)-95",
+                                "backdrop-blur-xs",
                                 "border-b",
                                 "border-border-card"
                             );
                         } else {
                             if (window.location.pathname === "/") {
                                 navbar.classList.remove(
-                                    "bg-site-card-95",
-                                    "backdrop-blur-sm",
+                                    "bg-(--bg-site-card)-95",
+                                    "backdrop-blur-xs",
                                     "border-b",
                                     "border-border-card"
                                 );

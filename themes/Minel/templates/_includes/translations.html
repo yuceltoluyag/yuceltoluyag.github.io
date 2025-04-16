@@ -5,7 +5,7 @@
     Bu yazı aşağıdaki dillerde de mevcuttur: {% for translation in article.translations|sort(attribute = 'lang') %}
     <a
         href="{{ SITEURL }}/{{ translation.url }}"
-        class="text-primary hover:underline"
+        class="text-text-primary hover:underline"
         hreflang="{{ translation.lang }}">
         {{ translation.lang }}
     </a>

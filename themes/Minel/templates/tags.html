@@ -6,7 +6,7 @@
         {% for tag, articles in tags|sort %}
         <a
             href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-            class="px-4 py-2 bg-site-card-alt rounded-full hover:text-primary transition-colors">
+            class="px-4 py-2 bg-site-card-alt rounded-full hover:text-text-primary transition-colors">
             #{{ tag }}
             <span class="text-text-secondary">({{ articles|length }})</span>
         </a>

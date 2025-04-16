@@ -6,13 +6,15 @@
         class="bg-site-card border border-border-card rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
         <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
-                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Öne Çıkan</span>
+                <span class="px-3 py-1 bg-primary/10 text-text-primary rounded-full text-sm font-medium">
+                    Öne Çıkan
+                </span>
                 <span class="text-sm text-text-secondary">{{ FEATURED_ARTICLE.date }}</span>
             </div>
             <h2 class="text-2xl font-bold mb-3">
                 <a
                     href="{{ SITEURL }}/{{ FEATURED_ARTICLE.slug }}/"
-                    class="text-text-primary hover:text-primary transition-colors">
+                    class="text-text-primary hover:text-text-primary transition-colors">
                     {{ FEATURED_ARTICLE.title }}
                 </a>
             </h2>
@@ -31,7 +33,7 @@
 {% endif %}
 
 <!-- Kategori Filtreleri -->
-<div class="sticky top-0 z-10 bg-site-card/95 backdrop-blur-sm border-b border-border-card mb-8" id="category-filters">
+<div class="sticky top-0 z-10 bg-site-card/95 backdrop-blur-xs border-b border-border-card mb-8" id="category-filters">
     <div class="container mx-auto px-4">
         <div class="relative flex items-center py-4">
             <!-- Sol gradient ve kaydırma butonu -->
@@ -41,7 +43,7 @@
                 <button
                     id="scroll-left"
                     onclick="scrollCategories('left')"
-                    class="relative z-20 p-2 text-text-secondary hover:text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-sm rounded-full mr-2 opacity-0 pointer-events-none shadow-lg hover:shadow-primary/10 hover:-translate-x-0.5 active:scale-95">
+                    class="relative z-20 p-2 text-text-secondary hover:text-text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-xs rounded-full mr-2 opacity-0 pointer-events-none shadow-lg hover:shadow-primary/10 hover:-translate-x-0.5 active:scale-95">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
@@ -51,10 +53,10 @@
             <!-- Kaydırılabilir alan -->
             <div
                 id="categories-scroll"
-                class="flex items-center overflow-x-auto whitespace-nowrap gap-3 scrollbar-none scroll-smooth flex-grow">
+                class="flex items-center overflow-x-auto whitespace-nowrap gap-3 scrollbar-none scroll-smooth grow">
                 <a
                     href="{{ SITEURL }}/kategoriler"
-                    class="flex items-center gap-2 px-4 py-2 {% if output_file == 'categories.html' %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-secondary hover:text-primary bg-site-card-alt/50 hover:bg-site-card-alt{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+                    class="flex items-center gap-2 px-4 py-2 {% if output_file == 'categories.html' %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-secondary hover:text-text-primary bg-site-card/50 hover:bg-site-card{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                             stroke-linecap="round"
@@ -68,7 +70,7 @@
                 {% for category, _ in categories %}
                 <a
                     href="{{ SITEURL }}/kategori/{{ category.slug }}/"
-                    class="flex items-center gap-2 px-4 py-2 {% if category == current_category %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-secondary hover:text-primary bg-site-card-alt/50 hover:bg-site-card-alt{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
+                    class="flex items-center gap-2 px-4 py-2 {% if category == current_category %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-secondary hover:text-text-primary bg-site-card/50 hover:bg-site-card{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                             stroke-linecap="round"
@@ -88,7 +90,7 @@
                 <button
                     id="scroll-right"
                     onclick="scrollCategories('right')"
-                    class="relative z-20 p-2 text-text-secondary hover:text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-sm rounded-full ml-2 shadow-lg hover:shadow-primary/10 hover:translate-x-0.5 active:scale-95">
+                    class="relative z-20 p-2 text-text-secondary hover:text-text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-xs rounded-full ml-2 shadow-lg hover:shadow-primary/10 hover:translate-x-0.5 active:scale-95">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
@@ -118,7 +120,7 @@
             <div class="flex items-center gap-2 mb-4">
                 <a
                     href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
-                    class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">
+                    class="px-3 py-1 bg-primary/10 text-text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">
                     {{ article.category }}
                 </a>
                 <span class="text-sm text-text-secondary">{{ article.locale_date }}</span>
@@ -127,7 +129,7 @@
             <h2 class="text-2xl font-bold mb-4">
                 <a
                     href="{{ SITEURL }}/{{ article.url }}"
-                    class="text-text-primary hover:text-primary transition-colors">
+                    class="text-text-primary hover:text-text-primary transition-colors">
                     {{ article.title }}
                 </a>
             </h2>
@@ -139,14 +141,14 @@
                     {% if article.tags %} {% for tag in article.tags %}
                     <a
                         href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-                        class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors">
+                        class="px-2 py-1 text-xs bg-site-card/80 rounded-full hover:text-text-primary transition-colors">
                         #{{ tag }}
                     </a>
                     {% endfor %} {% endif %}
                 </div>
                 <a
                     href="{{ SITEURL }}/{{ article.url }}"
-                    class="inline-flex items-center gap-2 text-primary hover:underline">
+                    class="inline-flex items-center gap-2 text-text-primary hover:underline">
                     Devamını oku
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -164,7 +166,7 @@
     {% if articles_page.has_previous() %}
     <a
         href="{{ SITEURL }}/{{ articles_previous_page.url }}"
-        class="px-6 py-2 bg-site-card rounded-lg hover:bg-site-card-alt transition-colors flex items-center gap-2">
+        class="px-6 py-2 bg-site-card rounded-lg hover:bg-site-card/80 transition-colors flex items-center gap-2">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
@@ -177,7 +179,7 @@
     {% if articles_page.has_next() %}
     <a
         href="{{ SITEURL }}/{{ articles_next_page.url }}"
-        class="px-6 py-2 bg-site-card rounded-lg hover:bg-site-card-alt transition-colors flex items-center gap-2">
+        class="px-6 py-2 bg-site-card rounded-lg hover:bg-site-card/80 transition-colors flex items-center gap-2">
         Sonraki
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
