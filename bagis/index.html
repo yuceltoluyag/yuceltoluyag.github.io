@@ -63,50 +63,6 @@
          <meta property="article:modified_time" content="2025-03-08T12:00:00+03:00" />
         <meta property="article:author" content="https://yuceltoluyag.dev/yazar/yuceltoluyag/" />
  
-        <!-- Kritik CSS önce yüklenir -->
-        <style>
-            /* Kritik CSS - Sadece ilk görünüm için gereken minimum stil */
-            :root {
-                --main-color: #333;
-                --text-primary: #333;
-                --text-secondary: #666;
-                --site-bg: #f9f9f9;
-                --site-card: #fff;
-                --border-card: rgba(0, 0, 0, 0.1);
-            }
-
-            /* Sayfa layout'u için temel tanımlamalar */
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-                    sans-serif;
-                background-color: var(--site-bg);
-                color: var(--text-primary);
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-            }
-
-            /* Layout shift önleme */
-            .p-8.border-t.border-border-card {
-                min-height: 120px;
-            }
-
-            footer.bg-site-card-95 {
-                min-height: 300px;
-            }
-
-            p {
-                min-height: 1.5em;
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
-
         <!-- Meta Description -->
         <meta name="description" content="" />
         <meta property="og:description" content="" />
@@ -242,7 +198,7 @@
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
             crossorigin="anonymous"></script>
     </head>
-    <body class="bg-site-bg text-text-primary min-h-screen flex flex-col">
+    <body class="bg-site-background text-text-primary min-h-screen flex flex-col">
         <!-- İlerleme çubuğu -->
         <div class="fixed top-0 left-0 w-full h-1 z-[60]">
             <div
@@ -255,7 +211,7 @@
         <!-- Navbar -->
         <nav
             id="navbar"
-            class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-sm border-b border-border-card">
+            class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-xs border-b border-border-card">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <!-- Logo - Mobilde gizli -->
@@ -274,7 +230,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/"
                                     aria-label="Ana Sayfa"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -293,7 +249,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/arsiv"
                                     aria-label="Arşiv"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -312,7 +268,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/hakkimda"
                                     aria-label="Hakkımda"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -331,7 +287,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/bagis"
                                     aria-label="Bağış"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -355,7 +311,7 @@
                             <!-- Arama butonu -->
                             <button
                                 onclick="toggleSearch()"
-                                class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors"
+                                class="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors"
                                 aria-label="Ara">
                                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path
@@ -414,396 +370,289 @@
                     <!-- Ana içerik -->
                     <div class="w-full order-1 lg:order-2">
 <article class="prose prose-lg dark:prose-invert max-w-none">
-	<!-- Hero Section -->
-	<div
-		class="relative overflow-hidden rounded-xl mb-8 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur"
-	>
-		<div class="absolute inset-0 bg-grid-white/10"></div>
-		<div class="relative px-6 py-10 sm:px-12 sm:py-12 text-center">
-			<div class="w-24 h-24 mx-auto mb-8 relative">
-				<div
-					class="absolute inset-0 bg-gradient-to-br from-primary to-primary/60 rounded-full animate-pulse"
-				></div>
-				<div
-					class="absolute inset-2 bg-site-card rounded-full flex items-center justify-center"
-				>
-					<svg
-						class="w-12 h-12 text-primary transform transition-transform group-hover:rotate-12"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-						/>
-					</svg>
-				</div>
-			</div>
-			<h1
-				class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text"
-			>
-				Bağış Yap
-			</h1>
-			<div class="max-w-3xl mx-auto space-y-6">
-				<p class="text-lg text-text-secondary leading-relaxed">
-					Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı
-					desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış
-					yapabilirsiniz.
-				</p>
-				<div class="flex flex-wrap justify-center gap-4">
-					<div
-						class="bg-site-card px-4 py-2 rounded-full text-sm font-medium"
-					>
-						✍️ İçerik
-					</div>
-					<div
-						class="bg-site-card px-4 py-2 rounded-full text-sm font-medium"
-					>
-						🎥 Eğitim
-					</div>
-					<div
-						class="bg-site-card px-4 py-2 rounded-full text-sm font-medium"
-					>
-						💻 Açık
-					Kaynak
-					</div>
-					<div
-						class="bg-site-card px-4 py-2 rounded-full text-sm font-medium"
-					>
-						🚀 Topluluk
-					</div>
-				</div>
-			</div>
-		</div>
-		<div
-			class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-site-bg to-transparent"
-		></div>
-	</div>
+    <!-- Hero Section -->
+    <div
+        class="relative overflow-hidden rounded-xl mb-8 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm">
+        <div class="absolute inset-0 bg-grid-white/10"></div>
+        <div class="relative px-6 py-10 sm:px-12 sm:py-12 text-center">
+            <div class="w-24 h-24 mx-auto mb-8 relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary to-primary/60 rounded-full animate-pulse"></div>
+                <div class="absolute inset-2 bg-site-card rounded-full flex items-center justify-center">
+                    <svg
+                        class="w-12 h-12 text-text-primary transform transition-transform group-hover:rotate-12"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </div>
+            </div>
+            <h1
+                class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
+                Bağış Yap
+            </h1>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <p class="text-lg text-text-secondary leading-relaxed">
+                    Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki
+                    yöntemlerle bağış yapabilirsiniz.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-site-card px-4 py-2 rounded-full text-sm font-medium">✍️ İçerik</div>
+                    <div class="bg-site-card px-4 py-2 rounded-full text-sm font-medium">🎥 Eğitim</div>
+                    <div class="bg-site-card px-4 py-2 rounded-full text-sm font-medium">💻 Açık Kaynak</div>
+                    <div class="bg-site-card px-4 py-2 rounded-full text-sm font-medium">🚀 Topluluk</div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-site-bg to-transparent"></div>
+    </div>
 
-	<!-- İçerik Bölümü -->
-	<div class="mb-12">
-		<div class="bg-site-card rounded-xl p-8 shadow-lg">
-			<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-				<!-- Neden Bağış? -->
-				<div class="space-y-6">
-					<div class="flex items-center gap-3">
-						<div
-							class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
-						>
-							<svg
-								class="w-6 h-6 text-primary"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-								/>
-							</svg>
-						</div>
-						<h3 class="text-xl font-bold">Neden Bağış?</h3>
-					</div>
-					<div class="space-y-4 text-text-secondary">
-						<div class="flex items-center gap-3">
-							<svg
-								class="w-5 h-5 text-primary flex-shrink-0"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M5 13l4 4L19 7"
-								/>
-							</svg>
-							<p>Daha fazla içerik üretebiliyorum</p>
-						</div>
-						<div class="flex items-center gap-3">
-							<svg
-								class="w-5 h-5 text-primary flex-shrink-0"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M5 13l4 4L19 7"
-								/>
-							</svg>
-							<p>
-								Daha kaliteli eğitim videoları
-								hazırlayabiliyorum
-							</p>
-						</div>
-						<div class="flex items-center gap-3">
-							<svg
-								class="w-5 h-5 text-primary flex-shrink-0"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M5 13l4 4L19 7"
-								/>
-							</svg>
-							<p>
-								Açık kaynak projelere daha fazla zaman
-								ayırabiliyorum
-							</p>
-						</div>
-					</div>
-				</div>
+    <!-- İçerik Bölümü -->
+    <div class="mb-12">
+        <div class="bg-site-card rounded-xl p-8 shadow-lg">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Neden Bağış? -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                            <svg
+                                class="w-6 h-6 text-text-primary"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Neden Bağış?</h3>
+                    </div>
+                    <div class="space-y-4 text-text-secondary">
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="w-5 h-5 text-text-primary shrink-0"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p>Daha fazla içerik üretebiliyorum</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="w-5 h-5 text-text-primary shrink-0"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p>Daha kaliteli eğitim videoları hazırlayabiliyorum</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg
+                                class="w-5 h-5 text-text-primary shrink-0"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p>Açık kaynak projelere daha fazla zaman ayırabiliyorum</p>
+                        </div>
+                    </div>
+                </div>
 
-				<!-- Bağış Seçenekleri -->
-				<div class="lg:col-span-3 space-y-6">
-					<div class="flex items-center gap-3">
-						<div
-							class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center"
-						>
-							<svg
-								class="w-6 h-6 text-primary"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-								/>
-							</svg>
-						</div>
-						<h3 class="text-xl font-bold">Bağış Seçenekleri</h3>
-					</div>
+                <!-- Bağış Seçenekleri -->
+                <div class="lg:col-span-3 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                            <svg
+                                class="w-6 h-6 text-text-primary"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Bağış Seçenekleri</h3>
+                    </div>
 
-					<!-- Papara ve GitHub Sponsors -->
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						<!-- Papara -->
-						<a
-							href="https://www.papara.com/donate/yuceltoluyag"
-							target="_blank"
-							class="group bg-site-card-alt rounded-lg p-6 hover:bg-primary/5 transition-all duration-300"
-						>
-							<div class="flex items-center gap-4 mb-4">
-								<div
-									class="w-12 h-12 rounded-xl bg-[#21D9B6] flex items-center justify-center"
-								>
-									<svg
-										class="w-6 h-6 text-white"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-										/>
-									</svg>
-								</div>
-								<div>
-									<h4 class="text-lg font-bold">Papara</h4>
-									<p class="text-sm text-text-secondary">
-										Hızlı ve Güvenli Bağış
-									</p>
-								</div>
-							</div>
-							<div
-								class="flex items-center text-[#21D9B6] group-hover:translate-x-1 transition-transform"
-							>
-								<span class="text-sm font-medium"
-									>Bağış Yap</span
-								>
-								<svg
-									class="w-4 h-4 ml-1"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M9 5l7 7-7 7"
-									/>
-								</svg>
-							</div>
-						</a>
+                    <!-- Papara ve GitHub Sponsors -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Papara -->
+                        <a
+                            href="https://www.papara.com/donate/yuceltoluyag"
+                            target="_blank"
+                            class="group bg-site-card-alt rounded-lg p-6 hover:bg-primary/5 transition-all duration-300">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-[#21D9B6] flex items-center justify-center">
+                                    <svg
+                                        class="w-6 h-6 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold">Papara</h4>
+                                    <p class="text-sm text-text-secondary">Hızlı ve Güvenli Bağış</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center text-[#21D9B6] group-hover:translate-x-1 transition-transform">
+                                <span class="text-sm font-medium">Bağış Yap</span>
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </a>
 
-						<!-- GitHub Sponsors -->
-						<a
-							href="https://github.com/sponsors/yuceltoluyag"
-							target="_blank"
-							class="group bg-site-card-alt rounded-lg p-6 hover:bg-primary/5 transition-all duration-300"
-						>
-							<div class="flex items-center gap-4 mb-4">
-								<div
-									class="w-12 h-12 rounded-xl bg-[#EA4AAA] flex items-center justify-center"
-								>
-									<svg
-										class="w-6 h-6 text-white"
-										fill="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											fill-rule="evenodd"
-											d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-										/>
-									</svg>
-								</div>
-								<div>
-									<h4 class="text-lg font-bold">
-										GitHub Sponsors
-									</h4>
-									<p class="text-sm text-text-secondary">
-										Aylık Destek
-									</p>
-								</div>
-							</div>
-							<div
-								class="flex items-center text-[#EA4AAA] group-hover:translate-x-1 transition-transform"
-							>
-								<span class="text-sm font-medium"
-									>Sponsor Ol</span
-								>
-								<svg
-									class="w-4 h-4 ml-1"
-									fill="none"
-									stroke="currentColor"
-									viewBox="0 0 24 24"
-								>
-									<path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M9 5l7 7-7 7"
-									/>
-								</svg>
-							</div>
-						</a>
-					</div>
+                        <!-- GitHub Sponsors -->
+                        <a
+                            href="https://github.com/sponsors/yuceltoluyag"
+                            target="_blank"
+                            class="group bg-site-card-alt rounded-lg p-6 hover:bg-primary/5 transition-all duration-300">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-[#EA4AAA] flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            fill-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold">GitHub Sponsors</h4>
+                                    <p class="text-sm text-text-secondary">Aylık Destek</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center text-[#EA4AAA] group-hover:translate-x-1 transition-transform">
+                                <span class="text-sm font-medium">Sponsor Ol</span>
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
 
-					<!-- Kripto Adresler -->
-					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						<div
-							class="group bg-site-card-alt rounded-lg p-4 hover:bg-primary/5 transition-all duration-300"
-						>
-							<div class="flex items-center gap-3 mb-3">
-								<div
-									class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-								>
-									<svg
-										class="w-5 h-5 text-primary"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-										/>
-									</svg>
-								</div>
-								<div class="font-bold">Bitcoin (BTC)</div>
-							</div>
-							<div class="relative group">
-								<div
-									class="bg-site-card p-3 rounded-lg font-mono text-sm break-all"
-								>
-									bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-								</div>
-								<button
-									onclick="navigator.clipboard.writeText('bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')"
-									class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity"
-								>
-									<svg
-										class="w-5 h-5 text-text-secondary hover:text-primary transition-colors"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
-										/>
-									</svg>
-								</button>
-							</div>
-						</div>
-						<div
-							class="group bg-site-card-alt rounded-lg p-4 hover:bg-primary/5 transition-all duration-300"
-						>
-							<div class="flex items-center gap-3 mb-3">
-								<div
-									class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-								>
-									<svg
-										class="w-5 h-5 text-primary"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-										/>
-									</svg>
-								</div>
-								<div class="font-bold">Ethereum
-						(ETH)</div>
-							</div>
-							<div class="relative group">
-								<div
-									class="bg-site-card p-3 rounded-lg font-mono text-sm break-all"
-								>
-									0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-								</div>
-								<button
-									onclick="navigator.clipboard.writeText('0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')"
-									class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity"
-								>
-									<svg
-										class="w-5 h-5 text-text-secondary hover:text-primary transition-colors"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"
-										/>
-									</svg>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <!-- Kripto Adresler -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            class="group bg-site-card-alt rounded-lg p-4 hover:bg-primary/5 transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                    <svg
+                                        class="w-5 h-5 text-text-primary"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div class="font-bold">Bitcoin (BTC)</div>
+                            </div>
+                            <div class="relative group">
+                                <div class="bg-site-card p-3 rounded-lg font-mono text-sm break-all">bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                <button
+                                    onclick="navigator.clipboard.writeText('bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')"
+                                    class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <svg
+                                        class="w-5 h-5 text-text-secondary hover:text-text-primary transition-colors"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="group bg-site-card-alt rounded-lg p-4 hover:bg-primary/5 transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                    <svg
+                                        class="w-5 h-5 text-text-primary"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div class="font-bold">Ethereum (ETH)</div>
+                            </div>
+                            <div class="relative group">
+                                <div class="bg-site-card p-3 rounded-lg font-mono text-sm break-all">0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                                <button
+                                    onclick="navigator.clipboard.writeText('0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')"
+                                    class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <svg
+                                        class="w-5 h-5 text-text-secondary hover:text-text-primary transition-colors"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </article>
                     </div>
                 </div>
@@ -811,11 +660,11 @@
         </div>
 
         <!-- Footer -->
-<footer class="bg-site-card-95 backdrop-blur-sm border-t border-border-card mt-auto min-h-[300px]">
+<footer class="bg-site-card-95 backdrop-blur-xs border-t border-border-card mt-auto min-h-[300px]">
     <div class="container mx-auto px-6 py-12">
         <!-- Newsletter Bileşeni -->
 <!-- Newsletter abonelik formu -->
-<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-sm">
+<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-xs">
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
         <div>
             <h3 class="text-xl font-bold text-text-primary mb-2">Blog Güncellemelerini Takip Et</h3>
@@ -826,7 +675,7 @@
         <div class="shrink-0">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-12 h-12 text-primary opacity-80"
+                class="w-12 h-12 text-text-primary opacity-80"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -847,7 +696,7 @@
         <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" />
 
         <div class="flex flex-col sm:flex-row gap-3 mb-3">
-            <div class="flex-grow">
+            <div class="grow">
                 <label for="newsletter-email" class="sr-only">E-posta Adresin</label>
                 <input
                     id="newsletter-email"
@@ -855,22 +704,22 @@
                     name="email"
                     placeholder="E-posta adresin"
                     required
-                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
             </div>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3">
-            <div class="flex-grow">
+            <div class="grow">
                 <input
                     type="text"
                     name="name"
                     placeholder="İsim (opsiyonel)"
-                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
             </div>
             <div>
                 <button
                     type="submit"
-                    class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                     Abone Ol
                 </button>
             </div>
@@ -879,7 +728,9 @@
         <div class="mt-3 text-xs text-text-secondary">
             <p class="leading-relaxed">
                 Spam göndermiyoruz. E-postanı paylaşmıyoruz. İstediğin zaman abonelikten çıkabilirsin.
-                <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-primary hover:underline">Gizlilik Politikamız</a>
+                <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-text-primary hover:underline">
+                    Gizlilik Politikamız
+                </a>
                 'ı inceleyerek daha fazla bilgi alabilirsin.
             </p>
         </div>
@@ -887,18 +738,19 @@
 </div>
 
 <!-- Newsletter Başarılı Popup -->
-<div id="newsletter-success" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center">
+<div id="newsletter-success" class="fixed inset-0 bg-black/30 backdrop-blur-xs z-50 hidden items-center justify-center">
     <div class="bg-site-card rounded-xl max-w-md w-full p-6 shadow-xl relative">
         <button
             id="close-newsletter-success"
-            class="absolute top-4 right-4 text-text-secondary hover:text-primary transition-colors"
+            class="absolute top-4 right-4 text-text-secondary hover:text-text-primary transition-colors"
             aria-label="Kapat">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
         <div class="text-center">
-            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
+            <div
+                class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-text-primary">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-8 h-8"
@@ -981,18 +833,24 @@
             <div class="min-h-[100px]">
                 <h3 class="text-lg font-bold text-text-primary mb-4">Site</h3>
                 <div class="flex flex-wrap gap-4">
-                    <a href="https://yuceltoluyag.dev/hakkimda/" class="text-text-secondary hover:text-primary transition-colors">
+                    <a
+                        href="https://yuceltoluyag.dev/hakkimda/"
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Hakkımda
                     </a>
-                    <a href="https://yuceltoluyag.dev/bagis/" class="text-text-secondary hover:text-primary transition-colors">
+                    <a
+                        href="https://yuceltoluyag.dev/bagis/"
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Bağış
                     </a>
                     <a
                         href="https://yuceltoluyag.dev/kategoriler/"
-                        class="text-text-secondary hover:text-primary transition-colors">
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Kategoriler
                     </a>
-                    <a href="https://yuceltoluyag.dev/etiketler/" class="text-text-secondary hover:text-primary transition-colors">
+                    <a
+                        href="https://yuceltoluyag.dev/etiketler/"
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Etiketler
                     </a>
                 </div>
@@ -1004,7 +862,7 @@
                 <div class="space-y-3">
                     <div class="p-4 bg-site-card rounded-lg border border-border-card">
                         <p class="text-text-secondary text-sm">
-                            <span class="text-primary font-mono">const</span>
+                            <span class="text-text-primary font-mono">const</span>
                             tip =
                             <span class="text-text-primary">"Python, her zaman basit olanı tercih eder."</span>
                         </p>
@@ -1012,7 +870,7 @@
                     <div class="flex flex-wrap gap-2">
                         <a
                             href="https://github.com/yuceltoluyag/yuceltoluyag.github.io"
-                            class="text-text-secondary hover:text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm">
+                            class="text-text-secondary hover:text-text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm">
                             <span class="font-mono">git clone</span>
                         </a>
                     </div>
@@ -1027,20 +885,24 @@
                     <span>&copy;  Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D.</span>
                     <a
                         href="https://creativecommons.org/licenses/by-sa/4.0/"
-                        class="hover:text-primary transition-colors"
+                        class="hover:text-text-primary transition-colors"
                         target="_blank"
                         rel="license noopener noreferrer">
                         CC BY-SA 4.0
                     </a>
                 </div>
                 <div class="flex items-center gap-4 text-sm text-text-secondary flex-wrap justify-center">
-                    <a href="https://yuceltoluyag.dev/privacy-policy/" class="hover:text-primary transition-colors">
+                    <a href="https://yuceltoluyag.dev/privacy-policy/" class="hover:text-text-primary transition-colors">
                         Gizlilik Politikası
                     </a>
                     <span class="text-border-card">•</span>
-                    <a href="https://yuceltoluyag.dev/terms/" class="hover:text-primary transition-colors">Kullanım Koşulları</a>
+                    <a href="https://yuceltoluyag.dev/terms/" class="hover:text-text-primary transition-colors">
+                        Kullanım Koşulları
+                    </a>
                     <span class="text-border-card">•</span>
-                    <a href="https://yuceltoluyag.dev/sitemap.xml" class="hover:text-primary transition-colors">Site Haritası</a>
+                    <a href="https://yuceltoluyag.dev/sitemap.xml" class="hover:text-text-primary transition-colors">
+                        Site Haritası
+                    </a>
                 </div>
             </div>
         </div>
@@ -1049,7 +911,7 @@
         <!-- Yukarı git butonu -->
         <button
             id="back-to-top"
-            class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-sm text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-none min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation"
+            class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-xs text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-hidden min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation"
             aria-label="Yukarı git">
             <svg
                 class="w-10 h-10"
@@ -1068,12 +930,12 @@
 
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 50) {
-                    navbar.classList.add("bg-site-card-95", "backdrop-blur-sm", "border-b", "border-border-card");
+                    navbar.classList.add("bg-site-card-95", "backdrop-blur-xs", "border-b", "border-border-card");
                 } else {
                     if (isHomePage) {
                         navbar.classList.remove(
                             "bg-site-card-95",
-                            "backdrop-blur-sm",
+                            "backdrop-blur-xs",
                             "border-b",
                             "border-border-card"
                         );
@@ -1110,7 +972,7 @@
                 <div class="text-sm text-text-secondary">
                     <p>
                         Bu site deneyiminizi iyileştirmek için çerezler kullanır.
-                        <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-primary underline hover:opacity-80">
+                        <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-text-primary underline hover:opacity-80">
                             Gizlilik Politikası
                         </a>
                         'nı inceleyebilir veya çerez tercihlerinizi yapabilirsiniz.
@@ -1146,7 +1008,7 @@
             <div class="bg-site-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-xl">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-xl font-bold text-text-primary">Çerez Tercihleriniz</h2>
-                    <button id="close-settings" class="text-text-secondary hover:text-primary">
+                    <button id="close-settings" class="text-text-secondary hover:text-text-primary">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                                 stroke-linecap="round"
@@ -1166,7 +1028,7 @@
                     <div class="p-4 border border-border-card rounded-lg">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="font-medium text-text-primary">Gerekli Çerezler</h3>
-                            <span class="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                            <span class="px-2 py-1 text-xs bg-primary/10 text-text-primary rounded-full">
                                 Her Zaman Aktif
                             </span>
                         </div>
@@ -1182,7 +1044,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="analytics-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">
@@ -1198,7 +1060,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="marketing-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">
@@ -1213,7 +1075,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="personalization-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">

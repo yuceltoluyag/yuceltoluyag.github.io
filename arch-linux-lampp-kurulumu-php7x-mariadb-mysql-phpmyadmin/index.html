@@ -65,49 +65,6 @@
 <meta content="linux" property="article:section"/>
 <meta content="linux" property="article:tag"/>
 <meta content="apache" property="article:tag"/>
-<!-- Kritik CSS önce yüklenir -->
-<style>
-            /* Kritik CSS - Sadece ilk görünüm için gereken minimum stil */
-            :root {
-                --main-color: #333;
-                --text-primary: #333;
-                --text-secondary: #666;
-                --site-bg: #f9f9f9;
-                --site-card: #fff;
-                --border-card: rgba(0, 0, 0, 0.1);
-            }
-
-            /* Sayfa layout'u için temel tanımlamalar */
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-                    sans-serif;
-                background-color: var(--site-bg);
-                color: var(--text-primary);
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-            }
-
-            /* Layout shift önleme */
-            .p-8.border-t.border-border-card {
-                min-height: 120px;
-            }
-
-            footer.bg-site-card-95 {
-                min-height: 300px;
-            }
-
-            p {
-                min-height: 1.5em;
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
 <!-- Meta Description -->
 <meta content="Bu rehberde, Arch Linux üzerinde Apache, PHP, MariaDB, MySQL ve PhpMyAdmin kurulumlarını adım adım öğreneceksiniz." name="description"/>
 <meta content="Bu rehberde, Arch Linux üzerinde Apache, PHP, MariaDB, MySQL ve PhpMyAdmin kurulumlarını adım adım öğreneceksiniz." property="og:description"/>
@@ -262,14 +219,14 @@
 <!-- Google AdSense -->
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"></script>
 </head>
-<body class="bg-site-bg text-text-primary min-h-screen flex flex-col">
+<body class="bg-site-background text-text-primary min-h-screen flex flex-col">
 <!-- İlerleme çubuğu -->
 <div class="fixed top-0 left-0 w-full h-1 z-[60]">
 <div class="h-full bg-gradient-to-r from-primary via-primary/80 to-primary shadow-lg transform origin-left scale-x-0 transition-transform duration-200" id="progress-bar"></div>
 </div>
 <!-- Paralax Header -->
 <!-- Navbar -->
-<nav class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-sm border-b border-border-card" id="navbar">
+<nav class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-xs border-b border-border-card" id="navbar">
 <div class="container mx-auto px-6 lg:px-8">
 <div class="flex items-center justify-between h-16">
 <!-- Logo - Mobilde gizli -->
@@ -281,28 +238,28 @@
 <!-- Ana menü -->
 <div class="flex-1 overflow-x-auto scrollbar-none">
 <div class="flex items-center gap-6 whitespace-nowrap px-2">
-<a aria-label="Ana Sayfa" class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/">
+<a aria-label="Ana Sayfa" class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/">
 <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
 <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 <span class="hidden md:inline">Ana Sayfa</span>
 </a>
-<a aria-label="Arşiv" class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/arsiv">
+<a aria-label="Arşiv" class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/arsiv">
 <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
 <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 <span class="hidden md:inline">Arşiv</span>
 </a>
-<a aria-label="Hakkımda" class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/hakkimda">
+<a aria-label="Hakkımda" class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/hakkimda">
 <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
 <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 <span class="hidden md:inline">Hakkımda</span>
 </a>
-<a aria-label="Bağış" class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/bagis">
+<a aria-label="Bağış" class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2" href="https://yuceltoluyag.dev/bagis">
 <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
 <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
@@ -314,7 +271,7 @@
 <!-- Sağ taraftaki butonlar -->
 <div class="flex items-center gap-2">
 <!-- Arama butonu -->
-<button aria-label="Ara" class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors" onclick="toggleSearch()">
+<button aria-label="Ara" class="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors" onclick="toggleSearch()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -358,42 +315,42 @@
 <div class="space-y-2">
 <h2 class="text-xl font-bold text-text-primary">yuceltoluyag</h2>
 <p class="text-sm text-text-secondary">Ortaya Karışık</p>
-<div class="flex flex-wrap justify-center gap-3 pt-2"><a class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://github.com/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="GitHub">
+<div class="flex flex-wrap justify-center gap-3 pt-2"><a class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://github.com/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="GitHub">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill-rule="evenodd"></path>
 </svg>
 </a>
-<a class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://instagram.com/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Instagram">
+<a class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://instagram.com/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Instagram">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.214c0 2.717-.012 3.056-.06 4.122-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.214c-2.717 0-3.056-.012-4.122-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" fill-rule="evenodd"></path>
 </svg>
 </a>
-<a class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://youtube.com/@yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="YouTube">
+<a class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://youtube.com/@yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="YouTube">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path clip-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" fill-rule="evenodd"></path>
 </svg>
 </a>
-<a class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://twitch.tv/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Twitch">
+<a class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors" href="https://twitch.tv/yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Twitch">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path clip-rule="evenodd" d="M2.149 0l-1.612 4.119v16.836h5.731v3.045h3.224l3.045-3.045h4.657l6.269-6.269v-14.686h-21.314zm19.164 13.612l-3.582 3.582h-5.731l-3.045 3.045v-3.045h-4.836v-15.045h17.194v11.463zm-3.582-7.343v6.262h-2.149v-6.262h2.149zm-5.731 0v6.262h-2.149v-6.262h2.149z" fill-rule="evenodd"></path>
 </svg>
 </a>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://discord.com/users/188034964879573003" rel="me noopener noreferrer" target="_blank" title="Discord">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://discord.com/users/188034964879573003" rel="me noopener noreferrer" target="_blank" title="Discord">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"></path>
 </svg>
 </a>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://mastodon.social/@yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Mastodon">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://mastodon.social/@yuceltoluyag" rel="me noopener noreferrer" target="_blank" title="Mastodon">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.304-5.004C17.51.242 15.792 0 11.813 0h-.03c-3.98 0-4.835.242-5.288.309C3.882.692 1.496 2.518.917 5.127.64 6.412.61 7.837.661 9.143c.074 1.874.088 3.745.26 5.611.118 1.24.325 2.47.62 3.68.55 2.237 2.777 4.098 4.96 4.857 2.336.792 4.849.923 7.256.38.265-.061.527-.132.786-.213.585-.184 1.27-.39 1.774-.753a.057.057 0 0 0 .023-.043v-1.809a.052.052 0 0 0-.02-.041.053.053 0 0 0-.046-.01 20.282 20.282 0 0 1-4.709.545c-2.73 0-3.463-1.284-3.674-1.818a5.593 5.593 0 0 1-.319-1.433.053.053 0 0 1 .066-.054c1.517.363 3.072.546 4.632.546.376 0 .75 0 1.125-.01 1.57-.044 3.224-.124 4.768-.422.038-.008.077-.015.11-.024 2.435-.464 4.753-1.92 4.989-5.604.008-.145.03-1.52.03-1.67.002-.512.167-3.63-.024-5.545z"></path>
 </svg>
 </a>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://matrix.to/#/@fatpip:matrix.org" rel="me noopener noreferrer" target="_blank" title="Matrix">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://matrix.to/#/@fatpip:matrix.org" rel="me noopener noreferrer" target="_blank" title="Matrix">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.314.448.208.785.582 1.02 1.108.254-.374.6-.706 1.034-.992.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.245.489.559.646.951.152.392.23.863.23 1.417v5.728h-2.349V11.52c0-.286-.01-.559-.032-.812a1.755 1.755 0 0 0-.18-.66 1.106 1.106 0 0 0-.438-.448c-.194-.11-.457-.166-.785-.166-.332 0-.6.064-.803.189a1.38 1.38 0 0 0-.48.499 1.946 1.946 0 0 0-.231.696 5.56 5.56 0 0 0-.06.785v4.768h-2.35v-4.8c0-.254-.004-.503-.018-.752a2.074 2.074 0 0 0-.143-.688 1.052 1.052 0 0 0-.415-.503c-.194-.125-.476-.19-.854-.19-.111 0-.259.024-.439.074-.18.051-.36.143-.53.282-.171.138-.319.337-.439.595-.12.259-.18.6-.18 1.02v4.966H5.46V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z"></path>
 </svg>
 </a>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://kick.com/babapy" rel="me noopener noreferrer" target="_blank" title="Kick">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://kick.com/babapy" rel="me noopener noreferrer" target="_blank" title="Kick">
 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.312 13.037l-3.955 3.955a1.063 1.063 0 0 1-1.503 0l-3.955-3.955a1.064 1.064 0 0 1 0-1.503l3.955-3.955a1.064 1.064 0 0 1 1.503 0l3.955 3.955a1.064 1.064 0 0 1 0 1.503z"></path>
 </svg>
@@ -414,7 +371,7 @@
 <div class="relative">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent pointer-events-none"></div>
 <h3 class="text-lg font-bold mb-6 text-text-primary flex items-center gap-2">
-<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
             İstatistikler
@@ -423,10 +380,10 @@
 <div class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 <div class="relative flex flex-col items-center gap-1">
-<svg class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 text-text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-.586-1.414l-4.5-4.5A2 2 0 0015.5 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
-<div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+<div class="text-2xl font-bold text-text-primary transition-transform duration-300 group-hover:scale-110">
             65
         </div>
 <div class="text-sm text-text-secondary">Yazı</div>
@@ -436,10 +393,10 @@
 <div class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 <div class="relative flex flex-col items-center gap-1">
-<svg class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 text-text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
-<div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+<div class="text-2xl font-bold text-text-primary transition-transform duration-300 group-hover:scale-110">
             10
         </div>
 <div class="text-sm text-text-secondary">Kategori</div>
@@ -449,10 +406,10 @@
 <div class="group relative overflow-hidden rounded-lg bg-site-card-alt/50 p-4 transition-all duration-300 hover:bg-site-card-alt hover:shadow-lg">
 <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 <div class="relative flex flex-col items-center gap-1">
-<svg class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 text-text-primary mb-1 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
-<div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+<div class="text-2xl font-bold text-text-primary transition-transform duration-300 group-hover:scale-110">
             126
         </div>
 <div class="text-sm text-text-secondary">Etiket</div>
@@ -463,7 +420,7 @@
 <!-- Buraya diğer sidebar bileşenleri yerleştirilebilir --> <!-- Mobil ve tablet görünümü için sabit butonlar -->
 <div class="fixed bottom-8 right-8 z-50 flex flex-col gap-3 lg:hidden">
 <!-- İçindekiler butonu -->
-<button aria-label="İçindekiler menüsünü aç" class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-primary transition-all duration-300 hover:scale-110 touch-manipulation p-4" onclick="toggleTOC()">
+<button aria-label="İçindekiler menüsünü aç" class="flex items-center justify-center w-16 h-16 min-w-[48px] min-h-[48px] rounded-full bg-site-card border border-border-card shadow-lg text-text-secondary hover:text-text-primary transition-all duration-300 hover:scale-110 touch-manipulation p-4" onclick="toggleTOC()">
 <svg aria-hidden="true" class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M4 6h16M4 12h16M4 18h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -481,7 +438,7 @@
 <div class="p-4">
 <div class="flex items-center justify-between mb-2">
 <h3 class="text-sm font-bold text-text-primary">İçindekiler</h3>
-<button aria-label="İçindekiler menüsünü kapat" class="text-text-secondary hover:text-primary" onclick="toggleTOC()">
+<button aria-label="İçindekiler menüsünü kapat" class="text-text-secondary hover:text-text-primary" onclick="toggleTOC()">
 <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -519,7 +476,7 @@
 <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
-<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/kategori/linux/">
+<a class="hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/kategori/linux/">
                     linux
                 </a>
 </span>
@@ -542,10 +499,10 @@
                 Seviye 14.82
             </span>
 <div class="flex flex-wrap items-center gap-2">
-<a class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors" href="https://yuceltoluyag.dev/etiket/linux/">
+<a class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/etiket/linux/">
                     #linux
                 </a>
-<a class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors" href="https://yuceltoluyag.dev/etiket/apache/">
+<a class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/etiket/apache/">
                     #apache
                 </a>
 </div>
@@ -561,13 +518,13 @@
 <span class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full text-xs">
                         1
                     </span>
-<span class="text-primary font-medium">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin) (Şu anki yazı)</span>
+<span class="text-text-primary font-medium">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin) (Şu anki yazı)</span>
 </div>
 <div class="flex items-center gap-2">
 <span class="w-6 h-6 flex items-center justify-center bg-site-card-alt text-text-secondary rounded-full text-xs">
                         2
                     </span>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/arch-linux-apache-lampp-sanal-sunucu-kurulumu/">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/arch-linux-apache-lampp-sanal-sunucu-kurulumu/">
                         Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu
                     </a>
 </div>
@@ -575,7 +532,7 @@
 <span class="w-6 h-6 flex items-center justify-center bg-site-card-alt text-text-secondary rounded-full text-xs">
                         3
                     </span>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu/">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu/">
                         Arch Linux Üzerinde VirtualBox + Vagrant + Laravel + PhpMyAdmin Kurulumu (Homestead)
                     </a>
 </div>
@@ -583,7 +540,7 @@
 <span class="w-6 h-6 flex items-center justify-center bg-site-card-alt text-text-secondary rounded-full text-xs">
                         4
                     </span>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/arch-linux-laravel-valet-kurulumu/">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/arch-linux-laravel-valet-kurulumu/">
                         Arch Linux Laravel Valet Kurulumu
                     </a>
 </div>
@@ -707,7 +664,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="bg-site-card-alt/30 rounded-lg p-6">
 <div class="flex flex-col items-center text-center space-y-4">
 <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-<svg aria-hidden="true" class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg aria-hidden="true" class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
@@ -730,7 +687,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="bg-gradient-to-br from-primary/5 via-transparent to-primary/5 rounded-lg p-6">
 <div class="flex flex-col items-center text-center space-y-4">
 <div class="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10">
-<svg aria-hidden="true" class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg aria-hidden="true" class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
@@ -822,7 +779,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 </svg>
 </a>
 <!-- Kopyala butonu -->
-<button aria-label="Bağlantıyı kopyala" class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors duration-300" onclick="copyArticleLink()">
+<button aria-label="Bağlantıyı kopyala" class="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-text-primary hover:bg-primary hover:text-white transition-colors duration-300" onclick="copyArticleLink()">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -837,13 +794,13 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <!-- Makale sonu - Önceki/Sonraki bağlantılar -->
 <div class="p-8 border-t border-border-card">
 <div class="flex flex-col sm:flex-row justify-between gap-4">
-<a aria-label="Önceki yazı: OBS Linux Browser Eklentisi Kurulumu ve Discord Chat Entegrasyonu" class="flex items-center text-primary hover:text-primary-dark transition-colors group" href="https://yuceltoluyag.dev/obs-linux-browser-eklentisi-kurulumu/">
+<a aria-label="Önceki yazı: OBS Linux Browser Eklentisi Kurulumu ve Discord Chat Entegrasyonu" class="flex items-center text-text-primary hover:text-text-primary-dark transition-colors group" href="https://yuceltoluyag.dev/obs-linux-browser-eklentisi-kurulumu/">
 <svg aria-hidden="true" class="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 <span class="line-clamp-1">OBS Linux Browser Eklentisi Kurulumu ve Discord Chat Entegrasyonu</span>
 </a>
-<a aria-label="Sonraki yazı: Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu" class="flex items-center text-primary hover:text-primary-dark transition-colors group ml-auto" href="https://yuceltoluyag.dev/arch-linux-apache-lampp-sanal-sunucu-kurulumu/">
+<a aria-label="Sonraki yazı: Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu" class="flex items-center text-text-primary hover:text-text-primary-dark transition-colors group ml-auto" href="https://yuceltoluyag.dev/arch-linux-apache-lampp-sanal-sunucu-kurulumu/">
 <span class="line-clamp-1">Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu</span>
 <svg aria-hidden="true" class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
@@ -855,7 +812,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="p-8 border-t border-border-card">
 <div class="space-y-6">
 <h3 class="text-xl font-bold text-text-primary flex items-center gap-2">
-<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
                 Benzer Yazılar
@@ -863,7 +820,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <a class="group" href="https://yuceltoluyag.dev/arch-linux-apache-lampp-sanal-sunucu-kurulumu/">
 <div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
-<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-text-primary transition-colors">
                             Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu
                         </h4>
 <div class="flex items-center text-sm text-text-secondary">
@@ -880,7 +837,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 </a>
 <a class="group" href="https://yuceltoluyag.dev/linux-apache2-mysql-phpmyadmin-kurulumu/">
 <div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
-<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-text-primary transition-colors">
                             Linux Üzerinde Apache2, MySQL ve PhpMyAdmin Kurulumu (Debian ve Türevleri)
                         </h4>
 <div class="flex items-center text-sm text-text-secondary">
@@ -897,7 +854,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 </a>
 <a class="group" href="https://yuceltoluyag.dev/arch-linux-eski-depolar-temizlenmesi/">
 <div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
-<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-text-primary transition-colors">
                             Arch Linux Eski Depoların Temizlenmesi: Ne Yapmanız Gerekiyor?
                         </h4>
 <div class="flex items-center text-sm text-text-secondary">
@@ -914,7 +871,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 </a>
 <a class="group" href="https://yuceltoluyag.dev/yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu/">
 <div class="bg-site-card-alt/50 rounded-lg overflow-hidden p-4 hover:bg-site-card-alt transition-all duration-300 group-hover:shadow-md border border-transparent group-hover:border-primary/10">
-<h4 class="font-medium mb-2 text-text-primary group-hover:text-primary transition-colors">
+<h4 class="font-medium mb-2 text-text-primary group-hover:text-text-primary transition-colors">
                             YunoHost Kurulumu Sırasında Karşılaşılan APT Kilitlenme Hatası ve Çözümü
                         </h4>
 <div class="flex items-center text-sm text-text-secondary">
@@ -942,14 +899,14 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <input id="fields_slug" name="options[slug]" type="hidden" value="arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin"/>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div>
-<input class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all" id="fields_name" name="fields[name]" placeholder="İsminiz *" required="" type="text"/>
+<input class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-hidden transition-all" id="fields_name" name="fields[name]" placeholder="İsminiz *" required="" type="text"/>
 </div>
 <div>
-<input class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all" id="fields_email" name="fields[email]" placeholder="E-posta adresiniz (gizli) *" required="" type="email"/>
+<input class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-hidden transition-all" id="fields_email" name="fields[email]" placeholder="E-posta adresiniz (gizli) *" required="" type="email"/>
 </div>
 </div>
 <div>
-<textarea class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all resize-y min-h-[120px]" id="fields_message" name="fields[message]" placeholder="Yorumunuz *" required="" rows="4"></textarea>
+<textarea class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-hidden transition-all resize-y min-h-[120px]" id="fields_message" name="fields[message]" placeholder="Yorumunuz *" required="" rows="4"></textarea>
 </div>
 <div class="cf-turnstile mb-2" data-callback="javascriptCallback" data-sitekey="0x4AAAAAABF5KzbNxGlrw5_N"></div>
 <div class="flex justify-end">
@@ -1053,11 +1010,11 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 </main>
 </div>
 <!-- Footer -->
-<footer class="bg-site-card-95 backdrop-blur-sm border-t border-border-card mt-auto min-h-[300px]">
+<footer class="bg-site-card-95 backdrop-blur-xs border-t border-border-card mt-auto min-h-[300px]">
 <div class="container mx-auto px-6 py-12">
 <!-- Newsletter Bileşeni -->
 <!-- Newsletter abonelik formu -->
-<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-sm">
+<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-xs">
 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
 <div>
 <h3 class="text-xl font-bold text-text-primary mb-2">Blog Güncellemelerini Takip Et</h3>
@@ -1066,7 +1023,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
             </p>
 </div>
 <div class="shrink-0">
-<svg class="w-12 h-12 text-primary opacity-80" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<svg class="w-12 h-12 text-text-primary opacity-80" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
 </svg>
 </div>
@@ -1075,17 +1032,17 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <input name="nonce" type="hidden"/>
 <input name="l" type="hidden" value="54f72a45-a9d6-44ad-a688-430c1806785a"/>
 <div class="flex flex-col sm:flex-row gap-3 mb-3">
-<div class="flex-grow">
+<div class="grow">
 <label class="sr-only" for="newsletter-email">E-posta Adresin</label>
-<input class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" id="newsletter-email" name="email" placeholder="E-posta adresin" required="" type="email"/>
+<input class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" id="newsletter-email" name="email" placeholder="E-posta adresin" required="" type="email"/>
 </div>
 </div>
 <div class="flex flex-col sm:flex-row gap-3">
-<div class="flex-grow">
-<input class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" name="name" placeholder="İsim (opsiyonel)" type="text"/>
+<div class="grow">
+<input class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" name="name" placeholder="İsim (opsiyonel)" type="text"/>
 </div>
 <div>
-<button class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
+<button class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-primary" type="submit">
                     Abone Ol
                 </button>
 </div>
@@ -1093,22 +1050,24 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="mt-3 text-xs text-text-secondary">
 <p class="leading-relaxed">
                 Spam göndermiyoruz. E-postanı paylaşmıyoruz. İstediğin zaman abonelikten çıkabilirsin.
-                <a class="text-primary hover:underline" href="https://yuceltoluyag.dev/privacy-policy/">Gizlilik Politikamız</a>
+                <a class="text-text-primary hover:underline" href="https://yuceltoluyag.dev/privacy-policy/">
+                    Gizlilik Politikamız
+                </a>
                 'ı inceleyerek daha fazla bilgi alabilirsin.
             </p>
 </div>
 </form>
 </div>
 <!-- Newsletter Başarılı Popup -->
-<div class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center" id="newsletter-success">
+<div class="fixed inset-0 bg-black/30 backdrop-blur-xs z-50 hidden items-center justify-center" id="newsletter-success">
 <div class="bg-site-card rounded-xl max-w-md w-full p-6 shadow-xl relative">
-<button aria-label="Kapat" class="absolute top-4 right-4 text-text-secondary hover:text-primary transition-colors" id="close-newsletter-success">
+<button aria-label="Kapat" class="absolute top-4 right-4 text-text-secondary hover:text-text-primary transition-colors" id="close-newsletter-success">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </button>
 <div class="text-center">
-<div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
+<div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-text-primary">
 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -1183,16 +1142,16 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="min-h-[100px]">
 <h3 class="text-lg font-bold text-text-primary mb-4">Site</h3>
 <div class="flex flex-wrap gap-4">
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/hakkimda/">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/hakkimda/">
                         Hakkımda
                     </a>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/bagis/">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/bagis/">
                         Bağış
                     </a>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/kategoriler/">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/kategoriler/">
                         Kategoriler
                     </a>
-<a class="text-text-secondary hover:text-primary transition-colors" href="https://yuceltoluyag.dev/etiketler/">
+<a class="text-text-secondary hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/etiketler/">
                         Etiketler
                     </a>
 </div>
@@ -1203,13 +1162,13 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="space-y-3">
 <div class="p-4 bg-site-card rounded-lg border border-border-card">
 <p class="text-text-secondary text-sm">
-<span class="text-primary font-mono">const</span>
+<span class="text-text-primary font-mono">const</span>
                             tip =
                             <span class="text-text-primary">"Python, her zaman basit olanı tercih eder."</span>
 </p>
 </div>
 <div class="flex flex-wrap gap-2">
-<a class="text-text-secondary hover:text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm" href="https://github.com/yuceltoluyag/yuceltoluyag.github.io">
+<a class="text-text-secondary hover:text-text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm" href="https://github.com/yuceltoluyag/yuceltoluyag.github.io">
 <span class="font-mono">git clone</span>
 </a>
 </div>
@@ -1221,25 +1180,29 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
 <div class="text-text-secondary text-sm flex items-center gap-2 flex-wrap justify-center">
 <span>©  Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D.</span>
-<a class="hover:text-primary transition-colors" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer" target="_blank">
+<a class="hover:text-text-primary transition-colors" href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license noopener noreferrer" target="_blank">
                         CC BY-SA 4.0
                     </a>
 </div>
 <div class="flex items-center gap-4 text-sm text-text-secondary flex-wrap justify-center">
-<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/privacy-policy/">
+<a class="hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/privacy-policy/">
                         Gizlilik Politikası
                     </a>
 <span class="text-border-card">•</span>
-<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/terms/">Kullanım Koşulları</a>
+<a class="hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/terms/">
+                        Kullanım Koşulları
+                    </a>
 <span class="text-border-card">•</span>
-<a class="hover:text-primary transition-colors" href="https://yuceltoluyag.dev/sitemap.xml">Site Haritası</a>
+<a class="hover:text-text-primary transition-colors" href="https://yuceltoluyag.dev/sitemap.xml">
+                        Site Haritası
+                    </a>
 </div>
 </div>
 </div>
 </div>
 </footer>
 <!-- Yukarı git butonu -->
-<button aria-label="Yukarı git" class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-sm text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-none min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation" id="back-to-top">
+<button aria-label="Yukarı git" class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-xs text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-hidden min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation" id="back-to-top">
 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 20V4M5 11L12 4L19 11" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -1251,12 +1214,12 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 50) {
-                    navbar.classList.add("bg-site-card-95", "backdrop-blur-sm", "border-b", "border-border-card");
+                    navbar.classList.add("bg-site-card-95", "backdrop-blur-xs", "border-b", "border-border-card");
                 } else {
                     if (isHomePage) {
                         navbar.classList.remove(
                             "bg-site-card-95",
-                            "backdrop-blur-sm",
+                            "backdrop-blur-xs",
                             "border-b",
                             "border-border-card"
                         );
@@ -1419,7 +1382,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="text-sm text-text-secondary">
 <p>
                         Bu site deneyiminizi iyileştirmek için çerezler kullanır.
-                        <a class="text-primary underline hover:opacity-80" href="https://yuceltoluyag.dev/privacy-policy/">
+                        <a class="text-text-primary underline hover:opacity-80" href="https://yuceltoluyag.dev/privacy-policy/">
                             Gizlilik Politikası
                         </a>
                         'nı inceleyebilir veya çerez tercihlerinizi yapabilirsiniz.
@@ -1446,7 +1409,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="bg-site-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-xl">
 <div class="flex justify-between items-center mb-4">
 <h2 class="text-xl font-bold text-text-primary">Çerez Tercihleriniz</h2>
-<button class="text-text-secondary hover:text-primary" id="close-settings">
+<button class="text-text-secondary hover:text-text-primary" id="close-settings">
 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -1460,7 +1423,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <div class="p-4 border border-border-card rounded-lg">
 <div class="flex justify-between items-center mb-2">
 <h3 class="font-medium text-text-primary">Gerekli Çerezler</h3>
-<span class="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
+<span class="px-2 py-1 text-xs bg-primary/10 text-text-primary rounded-full">
                                 Her Zaman Aktif
                             </span>
 </div>
@@ -1474,7 +1437,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <h3 class="font-medium text-text-primary">Analitik Çerezler</h3>
 <label class="relative inline-flex items-center cursor-pointer">
 <input class="sr-only peer" id="analytics-consent" type="checkbox"/>
-<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
 </label>
 </div>
 <p class="text-sm text-text-secondary">
@@ -1488,7 +1451,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <h3 class="font-medium text-text-primary">Pazarlama Çerezleri</h3>
 <label class="relative inline-flex items-center cursor-pointer">
 <input class="sr-only peer" id="marketing-consent" type="checkbox"/>
-<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
 </label>
 </div>
 <p class="text-sm text-text-secondary">
@@ -1501,7 +1464,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <h3 class="font-medium text-text-primary">Kişiselleştirme Çerezleri</h3>
 <label class="relative inline-flex items-center cursor-pointer">
 <input class="sr-only peer" id="personalization-consent" type="checkbox"/>
-<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<div class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
 </label>
 </div>
 <p class="text-sm text-text-secondary">

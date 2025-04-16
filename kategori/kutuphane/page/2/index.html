@@ -62,50 +62,6 @@
             content="https://yuceltoluyag.dev/kategori/kutuphane/page/2/index.html" />
         <meta property="og:title" content="Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D - kategori/kutuphane/" />
 
-        <!-- Kritik CSS önce yüklenir -->
-        <style>
-            /* Kritik CSS - Sadece ilk görünüm için gereken minimum stil */
-            :root {
-                --main-color: #333;
-                --text-primary: #333;
-                --text-secondary: #666;
-                --site-bg: #f9f9f9;
-                --site-card: #fff;
-                --border-card: rgba(0, 0, 0, 0.1);
-            }
-
-            /* Sayfa layout'u için temel tanımlamalar */
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-                    sans-serif;
-                background-color: var(--site-bg);
-                color: var(--text-primary);
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-            }
-
-            /* Layout shift önleme */
-            .p-8.border-t.border-border-card {
-                min-height: 120px;
-            }
-
-            footer.bg-site-card-95 {
-                min-height: 300px;
-            }
-
-            p {
-                min-height: 1.5em;
-            }
-
-            img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
-
         <!-- Meta Description -->
         <meta name="description" content="kutuphane kategorisindeki tüm yazılar. Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D blog yazıları." />
         <meta
@@ -243,7 +199,7 @@
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
             crossorigin="anonymous"></script>
     </head>
-    <body class="bg-site-bg text-text-primary min-h-screen flex flex-col">
+    <body class="bg-site-background text-text-primary min-h-screen flex flex-col">
         <!-- İlerleme çubuğu -->
         <div class="fixed top-0 left-0 w-full h-1 z-[60]">
             <div
@@ -256,7 +212,7 @@
         <!-- Navbar -->
         <nav
             id="navbar"
-            class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-sm border-b border-border-card">
+            class="fixed top-0 inset-x-0 z-50 bg-site-card-95 backdrop-blur-xs border-b border-border-card">
             <div class="container mx-auto px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <!-- Logo - Mobilde gizli -->
@@ -275,7 +231,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/"
                                     aria-label="Ana Sayfa"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -294,7 +250,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/arsiv"
                                     aria-label="Arşiv"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -313,7 +269,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/hakkimda"
                                     aria-label="Hakkımda"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -332,7 +288,7 @@
                                 <a
                                     href="https://yuceltoluyag.dev/bagis"
                                     aria-label="Bağış"
-                                    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
+                                    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-md px-2 py-1 transition-colors flex items-center gap-2">
                                     <!-- Mobilde sadece ikon, masaüstünde ikon + metin -->
                                     <svg
                                         class="w-5 h-5"
@@ -356,7 +312,7 @@
                             <!-- Arama butonu -->
                             <button
                                 onclick="toggleSearch()"
-                                class="p-2 rounded-lg text-text-secondary hover:text-primary transition-colors"
+                                class="p-2 rounded-lg text-text-secondary hover:text-text-primary transition-colors"
                                 aria-label="Ara">
                                 <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path
@@ -431,7 +387,7 @@
     href="https://github.com/yuceltoluyag"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors"
+    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors"
     title="GitHub">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -444,7 +400,7 @@
     href="https://instagram.com/yuceltoluyag"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors"
+    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors"
     title="Instagram">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -457,7 +413,7 @@
     href="https://youtube.com/@yuceltoluyag"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors"
+    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors"
     title="YouTube">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -470,7 +426,7 @@
     href="https://twitch.tv/yuceltoluyag"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary rounded-full transition-colors"
+    class="text-text-secondary hover:text-text-primary focus:outline-hidden focus:ring-2 focus:ring-primary rounded-full transition-colors"
     title="Twitch">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -483,7 +439,7 @@
     href="https://discord.com/users/188034964879573003"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary transition-colors"
+    class="text-text-secondary hover:text-text-primary transition-colors"
     title="Discord">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -494,7 +450,7 @@
     href="https://mastodon.social/@yuceltoluyag"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary transition-colors"
+    class="text-text-secondary hover:text-text-primary transition-colors"
     title="Mastodon">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -505,7 +461,7 @@
     href="https://matrix.to/#/@fatpip:matrix.org"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary transition-colors"
+    class="text-text-secondary hover:text-text-primary transition-colors"
     title="Matrix">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -516,7 +472,7 @@
     href="https://kick.com/babapy"
     target="_blank"
     rel="me noopener noreferrer"
-    class="text-text-secondary hover:text-primary transition-colors"
+    class="text-text-secondary hover:text-text-primary transition-colors"
     title="Kick">
     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path
@@ -535,7 +491,7 @@
         <div
             class="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent pointer-events-none"></div>
         <h3 class="text-lg font-bold mb-6 text-text-primary flex items-center gap-2">
-            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -551,7 +507,7 @@
         class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
     <div class="relative flex flex-col items-center gap-1">
         <svg
-            class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
+            class="w-6 h-6 text-text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24">
@@ -561,7 +517,7 @@
                 stroke-width="2"
                 d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2 2 0 00-.586-1.414l-4.5-4.5A2 2 0 0015.5 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2z" />
         </svg>
-        <div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+        <div class="text-2xl font-bold text-text-primary transition-transform duration-300 group-hover:scale-110">
             16
         </div>
         <div class="text-sm text-text-secondary">Yazı</div>
@@ -575,7 +531,7 @@
         class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
     <div class="relative flex flex-col items-center gap-1">
         <svg
-            class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
+            class="w-6 h-6 text-text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24">
@@ -585,7 +541,7 @@
                 stroke-width="2"
                 d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
         </svg>
-        <div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+        <div class="text-2xl font-bold text-text-primary transition-transform duration-300 group-hover:scale-110">
             10
         </div>
         <div class="text-sm text-text-secondary">Kategori</div>
@@ -599,7 +555,7 @@
         class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
     <div class="relative flex flex-col items-center gap-1">
         <svg
-            class="w-6 h-6 text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
+            class="w-6 h-6 text-text-primary mb-1 transition-transform duration-300 group-hover:scale-110"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24">
@@ -609,7 +565,7 @@
                 stroke-width="2"
                 d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
         </svg>
-        <div class="text-2xl font-bold text-primary transition-transform duration-300 group-hover:scale-110">
+        <div class="text-2xl font-bold text-text-primary transition-transform duration-300 group-hover:scale-110">
             126
         </div>
         <div class="text-sm text-text-secondary">Etiket</div>
@@ -628,9 +584,12 @@
     <div class="bg-site-card rounded-xl p-8 mb-8 border border-border-card">
         <div class="flex items-center gap-4 mb-4">
             <div class="p-3 bg-primary/10 rounded-lg">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                 </svg>
             </div>
             <div>
@@ -643,193 +602,225 @@
     <!-- Yazı Listesi -->
     <div class="bg-site-card rounded-xl border border-border-card divide-y divide-border-card">
         <article class="group">
-            <a href="https://yuceltoluyag.dev/yunohost-robots-txt-olusturmak/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/yunohost-robots-txt-olusturmak/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Yunohost'ta robots.txt Dosyası Oluşturmak
                 </h2>
-                <time datetime="2025-04-14" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-04-14"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     14 Nis 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/pelican-ile-staticman-alternatifi-comment-worker-kurulumu/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/pelican-ile-staticman-alternatifi-comment-worker-kurulumu/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu
                 </h2>
-                <time datetime="2025-04-12" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-04-12"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     12 Nis 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     YunoHost Kurulumu Sırasında Karşılaşılan APT Kilitlenme Hatası ve Çözümü
                 </h2>
-                <time datetime="2025-04-11" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-04-11"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     11 Nis 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/git-commit-geri-donme-cherry-pick/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/git-commit-geri-donme-cherry-pick/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı
                 </h2>
-                <time datetime="2025-03-28" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-03-28"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     28 Mar 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/powershell-pyenv-win-kurulum-hatasi-cozumu/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/powershell-pyenv-win-kurulum-hatasi-cozumu/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü
                 </h2>
-                <time datetime="2025-03-28" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-03-28"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     28 Mar 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/pelican-redirect-eklentisi/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/pelican-redirect-eklentisi/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Pelican Redirect Eklentisi: Eski URL'leri Sorunsuz Yönlendirin 🔄
                 </h2>
-                <time datetime="2025-03-26" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-03-26"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     26 Mar 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/ssh-gpg-yedekleme-geri-yukleme/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/ssh-gpg-yedekleme-geri-yukleme/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme
                 </h2>
-                <time datetime="2025-03-04" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-03-04"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     04 Mar 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/git-gpg-imzali-etiket/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/git-gpg-imzali-etiket/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme
                 </h2>
-                <time datetime="2025-03-03" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-03-03"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     03 Mar 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/powershell-profil-onedrive-hatasi-cozumu/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/powershell-profil-onedrive-hatasi-cozumu/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     PowerShell Profil Sorunları ve OneDrive Kaldırma Sonrası Dizin Hatası Çözümü
                 </h2>
-                <time datetime="2025-03-02" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2025-03-02"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     02 Mar 2025
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/windows-terminalimi-nasil-ozellestiriyorum/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/windows-terminalimi-nasil-ozellestiriyorum/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Windows Terminalimi Nasıl Özelleştiriyorum
                 </h2>
-                <time datetime="2022-06-26" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2022-06-26"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     26 Haz 2022
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/jekyll-google-analytics-sayfa-goruntuleme/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/jekyll-google-analytics-sayfa-goruntuleme/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Jekyll ile Google Analytics Sayfa Görüntüleme Sayısı Takibi
                 </h2>
-                <time datetime="2022-01-30" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2022-01-30"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     30 Oca 2022
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/jekyll-staticman-eklentisi-kurulumu/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/jekyll-staticman-eklentisi-kurulumu/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Jekyll Staticman Eklentisi Kurulumu
                 </h2>
-                <time datetime="2022-01-29" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2022-01-29"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     29 Oca 2022
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/laravel-ide-helper-kullanimi/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/laravel-ide-helper-kullanimi/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Laravel IDE Helper Kullanımı
                 </h2>
-                <time datetime="2020-07-03" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2020-07-03"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     03 Tem 2020
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/pdo-sum-fonksiyonu-kullanimi-morris-js/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/pdo-sum-fonksiyonu-kullanimi-morris-js/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     PDO Sum Fonksiyonu Kullanımı (morris.js İçerir)
                 </h2>
-                <time datetime="2018-12-07" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2018-12-07"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     07 Ara 2018
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/git-ssh-key-olusturma/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/git-ssh-key-olusturma/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Git SSH-Key Oluşturma (Windows & Linux)
                 </h2>
-                <time datetime="2018-09-21" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2018-09-21"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     21 Eyl 2018
                 </time>
             </a>
         </article>
         <article class="group">
-            <a href="https://yuceltoluyag.dev/sweet-alert-kullanimi/" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
+            <a
+                href="https://yuceltoluyag.dev/sweet-alert-kullanimi/"
+                class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
+                <h2 class="text-lg font-medium text-text-primary group-hover:text-text-primary transition-colors">
                     Sweet Alert Sınıfı Kullanımı: Detaylı Anlatım ve Tüm Argümanları
                 </h2>
-                <time datetime="2018-09-10" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
+                <time
+                    datetime="2018-09-10"
+                    class="text-sm text-text-secondary whitespace-nowrap ml-4">
                     10 Eyl 2018
                 </time>
             </a>
@@ -842,11 +833,11 @@
         </div>
 
         <!-- Footer -->
-<footer class="bg-site-card-95 backdrop-blur-sm border-t border-border-card mt-auto min-h-[300px]">
+<footer class="bg-site-card-95 backdrop-blur-xs border-t border-border-card mt-auto min-h-[300px]">
     <div class="container mx-auto px-6 py-12">
         <!-- Newsletter Bileşeni -->
 <!-- Newsletter abonelik formu -->
-<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-sm">
+<div class="newsletter-box bg-site-card border border-border-card rounded-xl p-6 mb-8 shadow-xs">
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
         <div>
             <h3 class="text-xl font-bold text-text-primary mb-2">Blog Güncellemelerini Takip Et</h3>
@@ -857,7 +848,7 @@
         <div class="shrink-0">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-12 h-12 text-primary opacity-80"
+                class="w-12 h-12 text-text-primary opacity-80"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -878,7 +869,7 @@
         <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" />
 
         <div class="flex flex-col sm:flex-row gap-3 mb-3">
-            <div class="flex-grow">
+            <div class="grow">
                 <label for="newsletter-email" class="sr-only">E-posta Adresin</label>
                 <input
                     id="newsletter-email"
@@ -886,22 +877,22 @@
                     name="email"
                     placeholder="E-posta adresin"
                     required
-                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
             </div>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3">
-            <div class="flex-grow">
+            <div class="grow">
                 <input
                     type="text"
                     name="name"
                     placeholder="İsim (opsiyonel)"
-                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
+                    class="w-full px-4 py-3 bg-site-bg border border-border-card rounded-lg focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-text-primary" />
             </div>
             <div>
                 <button
                     type="submit"
-                    class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    class="w-full sm:w-auto px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-darker transition-colors duration-300 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                     Abone Ol
                 </button>
             </div>
@@ -910,7 +901,9 @@
         <div class="mt-3 text-xs text-text-secondary">
             <p class="leading-relaxed">
                 Spam göndermiyoruz. E-postanı paylaşmıyoruz. İstediğin zaman abonelikten çıkabilirsin.
-                <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-primary hover:underline">Gizlilik Politikamız</a>
+                <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-text-primary hover:underline">
+                    Gizlilik Politikamız
+                </a>
                 'ı inceleyerek daha fazla bilgi alabilirsin.
             </p>
         </div>
@@ -918,18 +911,19 @@
 </div>
 
 <!-- Newsletter Başarılı Popup -->
-<div id="newsletter-success" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden items-center justify-center">
+<div id="newsletter-success" class="fixed inset-0 bg-black/30 backdrop-blur-xs z-50 hidden items-center justify-center">
     <div class="bg-site-card rounded-xl max-w-md w-full p-6 shadow-xl relative">
         <button
             id="close-newsletter-success"
-            class="absolute top-4 right-4 text-text-secondary hover:text-primary transition-colors"
+            class="absolute top-4 right-4 text-text-secondary hover:text-text-primary transition-colors"
             aria-label="Kapat">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
         <div class="text-center">
-            <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary">
+            <div
+                class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-text-primary">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="w-8 h-8"
@@ -1012,18 +1006,24 @@
             <div class="min-h-[100px]">
                 <h3 class="text-lg font-bold text-text-primary mb-4">Site</h3>
                 <div class="flex flex-wrap gap-4">
-                    <a href="https://yuceltoluyag.dev/hakkimda/" class="text-text-secondary hover:text-primary transition-colors">
+                    <a
+                        href="https://yuceltoluyag.dev/hakkimda/"
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Hakkımda
                     </a>
-                    <a href="https://yuceltoluyag.dev/bagis/" class="text-text-secondary hover:text-primary transition-colors">
+                    <a
+                        href="https://yuceltoluyag.dev/bagis/"
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Bağış
                     </a>
                     <a
                         href="https://yuceltoluyag.dev/kategoriler/"
-                        class="text-text-secondary hover:text-primary transition-colors">
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Kategoriler
                     </a>
-                    <a href="https://yuceltoluyag.dev/etiketler/" class="text-text-secondary hover:text-primary transition-colors">
+                    <a
+                        href="https://yuceltoluyag.dev/etiketler/"
+                        class="text-text-secondary hover:text-text-primary transition-colors">
                         Etiketler
                     </a>
                 </div>
@@ -1035,7 +1035,7 @@
                 <div class="space-y-3">
                     <div class="p-4 bg-site-card rounded-lg border border-border-card">
                         <p class="text-text-secondary text-sm">
-                            <span class="text-primary font-mono">const</span>
+                            <span class="text-text-primary font-mono">const</span>
                             tip =
                             <span class="text-text-primary">"Python, her zaman basit olanı tercih eder."</span>
                         </p>
@@ -1043,7 +1043,7 @@
                     <div class="flex flex-wrap gap-2">
                         <a
                             href="https://github.com/yuceltoluyag/yuceltoluyag.github.io"
-                            class="text-text-secondary hover:text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm">
+                            class="text-text-secondary hover:text-text-primary border border-border-card hover:border-primary transition-colors px-3 py-1 bg-site-card rounded-full text-sm">
                             <span class="font-mono">git clone</span>
                         </a>
                     </div>
@@ -1058,20 +1058,24 @@
                     <span>&copy;  Bilgi 5 harflidir. 5 te 4'ü  İlgidir ;D.</span>
                     <a
                         href="https://creativecommons.org/licenses/by-sa/4.0/"
-                        class="hover:text-primary transition-colors"
+                        class="hover:text-text-primary transition-colors"
                         target="_blank"
                         rel="license noopener noreferrer">
                         CC BY-SA 4.0
                     </a>
                 </div>
                 <div class="flex items-center gap-4 text-sm text-text-secondary flex-wrap justify-center">
-                    <a href="https://yuceltoluyag.dev/privacy-policy/" class="hover:text-primary transition-colors">
+                    <a href="https://yuceltoluyag.dev/privacy-policy/" class="hover:text-text-primary transition-colors">
                         Gizlilik Politikası
                     </a>
                     <span class="text-border-card">•</span>
-                    <a href="https://yuceltoluyag.dev/terms/" class="hover:text-primary transition-colors">Kullanım Koşulları</a>
+                    <a href="https://yuceltoluyag.dev/terms/" class="hover:text-text-primary transition-colors">
+                        Kullanım Koşulları
+                    </a>
                     <span class="text-border-card">•</span>
-                    <a href="https://yuceltoluyag.dev/sitemap.xml" class="hover:text-primary transition-colors">Site Haritası</a>
+                    <a href="https://yuceltoluyag.dev/sitemap.xml" class="hover:text-text-primary transition-colors">
+                        Site Haritası
+                    </a>
                 </div>
             </div>
         </div>
@@ -1080,7 +1084,7 @@
         <!-- Yukarı git butonu -->
         <button
             id="back-to-top"
-            class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-sm text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-none min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation"
+            class="fixed bottom-8 right-8 z-50 p-4 rounded-full bg-primary-dark backdrop-blur-xs text-white shadow-lg transform -translate-y-2 opacity-0 transition-all duration-300 hover:bg-primary-darker hover:scale-110 focus:outline-hidden min-w-[48px] min-h-[48px] w-20 h-20 touch-manipulation"
             aria-label="Yukarı git">
             <svg
                 class="w-10 h-10"
@@ -1099,12 +1103,12 @@
 
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 50) {
-                    navbar.classList.add("bg-site-card-95", "backdrop-blur-sm", "border-b", "border-border-card");
+                    navbar.classList.add("bg-site-card-95", "backdrop-blur-xs", "border-b", "border-border-card");
                 } else {
                     if (isHomePage) {
                         navbar.classList.remove(
                             "bg-site-card-95",
-                            "backdrop-blur-sm",
+                            "backdrop-blur-xs",
                             "border-b",
                             "border-border-card"
                         );
@@ -1141,7 +1145,7 @@
                 <div class="text-sm text-text-secondary">
                     <p>
                         Bu site deneyiminizi iyileştirmek için çerezler kullanır.
-                        <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-primary underline hover:opacity-80">
+                        <a href="https://yuceltoluyag.dev/privacy-policy/" class="text-text-primary underline hover:opacity-80">
                             Gizlilik Politikası
                         </a>
                         'nı inceleyebilir veya çerez tercihlerinizi yapabilirsiniz.
@@ -1177,7 +1181,7 @@
             <div class="bg-site-card rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 shadow-xl">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-xl font-bold text-text-primary">Çerez Tercihleriniz</h2>
-                    <button id="close-settings" class="text-text-secondary hover:text-primary">
+                    <button id="close-settings" class="text-text-secondary hover:text-text-primary">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                                 stroke-linecap="round"
@@ -1197,7 +1201,7 @@
                     <div class="p-4 border border-border-card rounded-lg">
                         <div class="flex justify-between items-center mb-2">
                             <h3 class="font-medium text-text-primary">Gerekli Çerezler</h3>
-                            <span class="px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                            <span class="px-2 py-1 text-xs bg-primary/10 text-text-primary rounded-full">
                                 Her Zaman Aktif
                             </span>
                         </div>
@@ -1213,7 +1217,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="analytics-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">
@@ -1229,7 +1233,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="marketing-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">
@@ -1244,7 +1248,7 @@
                             <label class="relative inline-flex items-center cursor-pointer">
                                 <input type="checkbox" id="personalization-consent" class="sr-only peer" />
                                 <div
-                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                    class="w-11 h-6 bg-site-card-alt peer-focus:outline-hidden rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-border-card after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>
                         <p class="text-sm text-text-secondary">
