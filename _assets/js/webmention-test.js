@@ -30,6 +30,14 @@
             line-height: 1.5;
         `;
 
+        // URL düzenleme fonksiyonu
+        function formatTestUrl(url) {
+            if (url.includes("localhost:8000")) {
+                return url.replace("http://localhost:8000", "https://yuceltoluyag.dev");
+            }
+            return url;
+        }
+
         // Başlık
         const title = document.createElement("h3");
         title.textContent = "Webmention Test Aracı";
@@ -49,10 +57,22 @@
 
         const urlInput = document.createElement("input");
         urlInput.type = "text";
-        urlInput.value = window.location.href.split("#")[0].split("?")[0];
+        urlInput.value = formatTestUrl(window.location.href.split("#")[0].split("?")[0]);
         urlInput.style.cssText =
             "width: 100%; padding: 10px; box-sizing: border-box; margin-bottom: 15px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px;";
         inputWrapper.appendChild(urlInput);
+
+        // URL bilgi metni
+        const urlInfo = document.createElement("div");
+        urlInfo.style.cssText = "margin-bottom: 15px; font-size: 13px; color: #718096;";
+        if (window.location.href.includes("localhost")) {
+            urlInfo.innerHTML = `
+                <strong style="color: #4a5568;">Not:</strong> Localhost ortamında test yapıyorsunuz. 
+                URL otomatik olarak production adresine çevrildi. Production URL: 
+                <span style="color: #2b6cb0;">${formatTestUrl(window.location.href)}</span>
+            `;
+        }
+        inputWrapper.appendChild(urlInfo);
 
         // Buton konteyner
         const buttonContainer = document.createElement("div");

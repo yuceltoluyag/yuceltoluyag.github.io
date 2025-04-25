@@ -126,8 +126,18 @@ function buildMainCss() {
     // Ana CSS dosyası - @import ifadeleri ile tüm dosyaları içinde barındırır
     return gulp
         .src(path.join(BASE_PATHS.assets, "css", "main.css"), { allowEmpty: true })
-        .pipe(postcss(postcssPlugins))
-        .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
+        .pipe(
+            postcss(postcssPlugins).on("error", function (err) {
+                console.error("PostCSS Hatası:", err.message);
+                this.emit("end");
+            })
+        )
+        .pipe(
+            cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }).on("error", function (err) {
+                console.error("CleanCSS Hatası:", err.message);
+                this.emit("end");
+            })
+        )
         .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest(paths.styles.dest));
 }

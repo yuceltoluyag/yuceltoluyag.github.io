@@ -6,7 +6,7 @@ from pymdownx import emoji
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
 SITEURL = "https://yuceltoluyag.dev" if PUBLISH else "http://localhost:8000"
-CANONICAL_URL = SITEURL
+CANONICAL_URL = "https://yuceltoluyag.dev"  # Her zaman production URL'i kullan
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
@@ -20,7 +20,8 @@ OUTPUT_PATH = "output"
 TIMEZONE = "Europe/Istanbul"
 
 # Webmention Testi için
-DEVELOPMENT_MODE = False
+DEVELOPMENT_MODE = True
+WEBMENTION_TEST_MODE = True  # Webmention test modu
 
 DEFAULT_LANG = "tr"
 
@@ -136,12 +137,10 @@ common_plugins = [
     "plugins.fix_sitemap",
     "plugins.json_feed",
     "responsive_image_shortcode",  # Responsive Image Shortcode
-    "pelican.plugins.seo",
     "plugins.search",
     "plugins.pelican_redirect",
     "plugins.video_schema",
     "plugins.comments",
-    "plugins.seo_meta_enhancer",
     "plugins.pelican-toc",  # İçindekiler tablosu eklentisi
 ]
 
@@ -156,9 +155,11 @@ PLUGINS = prod_plugins if PUBLISH else dev_plugins
 # SEO Ayarları (sadece yayınlama sırasında kullanılır)
 if PUBLISH:
     SEO_REPORT = True  # SEO raporu oluşturmayı etkinleştir
-    SEO_ENHANCER = True  # SEO geliştirici özellikleri etkinleştir
-    SEO_ENHANCER_OPEN_GRAPH = True  # Open Graph meta taglerini ekle
-    SEO_ENHANCER_TWITTER_CARDS = True  # Twitter Cards meta taglerini ekle
+    SEO_ENHANCER = False  # SEO geliştirici özellikleri devre dışı
+    SEO_ENHANCER_OPEN_GRAPH = False  # Open Graph meta taglerini devre dışı
+    SEO_ENHANCER_TWITTER_CARDS = (
+        False  # Twitter Cards meta taglerini devre dışı
+    )
 
 # Extra ayarlar
 SUMMARY_MAX_LENGTH = 50
