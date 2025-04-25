@@ -21,6 +21,7 @@ Minel, Pelican blog motoru için Tailwind CSS ile geliştirilmiş minimal bir te
 - Öne çıkan makale desteği
 - RSS ve Atom feed desteği
 - WCAG erişilebilirlik standartlarına uygunluk
+- Webmention.io desteği
 
 ## Blog İyileştirmeleri - 2024
 
@@ -64,6 +65,11 @@ Bu güncellemede bloğun çeşitli yönlerini iyileştirmek için aşağıdaki �
 - Core Web Vitals izleme ve raporlama
 - Önbelleğe alma stratejileri
 
+### 8. Webmention Desteği
+- webmention.io entegrasyonu
+- Makale sayfalarında webmention gösterimi
+- Webmention test aracı (geliştirme modunda)
+
 ## Kurulum
 
 1. Tema dosyalarını Pelican projenizin `themes/Minel` dizinine kopyalayın
@@ -95,6 +101,32 @@ Bu tema, YouTube videolarını içeren makaleleriniz için otomatik olarak Video
 `pelicanconf.py` dosyasını inceleyin.
 
 Bu eklenti, makalelerinizde bulunan YouTube iframe'lerini otomatik olarak tespit eder ve uygun VideoObject şemasını ekler.
+
+### Webmention Entegrasyonu
+
+Webmention.io kullanarak sitenize webmention desteği eklemek için:
+
+1. [Webmention.io](https://webmention.io/)'da bir hesap oluşturun
+2. Aldığınız API token'ını `_assets/js/webmention.js` dosyasındaki `apiToken` değişkenine atayın
+3. Webmention ve Pingback link'lerini `themes/Minel/templates/base.html` dosyasına ekleyin (varsayılanda mevcuttur)
+
+#### Webmention Test Aracı
+
+Geliştirme modunda, sitenize gelen webmention'ları test etmek için bir test aracı kullanabilirsiniz. Testi etkinleştirmek için:
+
+1. `pelicanconf.py` dosyanıza aşağıdaki ayarı ekleyin:
+
+```python
+# Webmention Test Aracı için
+DEVELOPMENT_MODE = True
+```
+
+2. Sitenizi derleyin ve çalıştırın
+3. Herhangi bir makale sayfasında sağ alt köşede "Webmention Test" butonu göreceksiniz
+
+Bu test aracı sayesinde sitenize gelen webmention'ları kontrol edebilir ve test amacıyla yeni webmention'lar gönderebilirsiniz.
+
+Üretim ortamında `DEVELOPMENT_MODE = False` yaparak test aracını devre dışı bırakın.
 
 ## Geliştirme
 

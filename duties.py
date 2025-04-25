@@ -5,15 +5,140 @@ import re
 import shutil
 import sys
 import uuid
+import atexit
 from datetime import datetime
 from pathlib import Path
 
 import pytz
 from duty import duty, tools
 from duty.context import Context
+from duty import cli as duty_cli
 from pelican import main as pelican_main
 from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
+
+
+# Output klasöründe duties.py symlink oluşturalım
+# Bu sayede duty modülü duties.py'yi output klasöründe bulabilecek
+def ensure_duties_symlink():
+    try:
+        current_file = os.path.abspath(__file__)
+        output_path = os.path.join(os.path.dirname(current_file), "output")
+        output_duties = os.path.join(output_path, "duties.py")
+
+        # Output klasörü yoksa oluştur
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
+
+        # Windows'ta symlink oluşturmak için farklı bir yaklaşım gerekiyor
+        if os.name == "nt":  # Windows
+            # Önce duties.py dosyasını output klasörüne kopyalayalım
+            # Sembolik bağlantıdan daha güvenilir bir yöntem
+            shutil.copy2(current_file, output_duties)
+            print(
+                f"duties.py dosyası output klasörüne kopyalandı: {output_duties}"
+            )
+        else:  # Unix/Linux/MacOS
+            # Symlink'i oluştur (symlink varsa önce kaldır)
+            if os.path.exists(output_duties):
+                os.remove(output_duties)
+            os.symlink(current_file, output_duties)
+            print(f"duties.py symlink oluşturuldu: {output_duties}")
+
+        return True
+    except Exception as e:
+        print(f"Dosya kopyalama/sembolik bağlantı oluşturma hatası: {e}")
+        return False
+
+
+# Her zaman güncel bir kopya olduğundan emin olalım - program başlangıcında
+ensure_duties_symlink()
+
+# Program bitiminde de bir kez daha kontrol edelim
+atexit.register(ensure_duties_symlink)
+
+# Duty modülünün çalışma şeklini değiştirmek için orijinal main fonksiyonunu yedekleyelim
+original_main = duty_cli.main
+
+
+# Duty modülünü düzeltmek için bir wrapper fonksiyon yazalım
+def fixed_main():
+    try:
+        # duties.py dosyasını output klasörüne kopyalayalım (hata olmasına karşı)
+        ensure_duties_symlink()
+
+        # Mevcut dizini Python path'ine ekleyelim
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        if current_dir not in sys.path:
+            sys.path.insert(0, current_dir)
+
+        # Çalışma dizinini de ekleyelim
+        if os.getcwd() not in sys.path:
+            sys.path.insert(0, os.getcwd())
+
+        # Output dizinini Python path'ine ekleyelim
+        output_dir = os.path.join(current_dir, "output")
+        if os.path.exists(output_dir) and output_dir not in sys.path:
+            sys.path.insert(0, output_dir)
+
+        # Orijinal main fonksiyonunu çağıralım
+        return original_main()
+    except Exception as e:
+        print(f"Duty çalıştırılırken bir hata oluştu: {e}")
+        return 1
+
+
+# Main fonksiyonunu değiştirelim
+duty_cli.main = fixed_main
+
+
+# Duty livereload komutunu manuel olarak da çalıştırabiliriz
+def run_livereload():
+    # Gerekli modülleri import et
+    try:
+        from livereload import Server
+        import webbrowser
+
+        print("LiveReload manuel olarak başlatılıyor...")
+
+        # Output klasörünü belirle
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        output_path = os.path.join(current_dir, "output")
+
+        # Pelican'ı çalıştır
+        pelican_main(["-s", "pelicanconf.py"])
+
+        # Server'ı oluştur
+        server = Server()
+
+        # Dosyaları izle
+        server.watch(
+            "pelicanconf.py", lambda: pelican_main(["-s", "pelicanconf.py"])
+        )
+        server.watch(
+            "content/**/*.md", lambda: pelican_main(["-s", "pelicanconf.py"])
+        )
+        server.watch(
+            "themes/**/*.html", lambda: pelican_main(["-s", "pelicanconf.py"])
+        )
+
+        # Tarayıcıyı aç
+        webbrowser.open(f"http://localhost:8000")
+
+        # Sunucuyu başlat
+        print("LiveReload sunucusu başlatıldı: http://localhost:8000")
+        server.serve(root=output_path, port=8000, host="localhost")
+
+    except ImportError:
+        print("HATA: 'livereload' paketi bulunamadı.")
+        print("Lütfen şu komutu çalıştırın: pip install livereload")
+    except Exception as e:
+        print(f"LiveReload başlatılırken bir hata oluştu: {e}")
+
+
+# Eğer bu dosya doğrudan çalıştırılırsa, livereload başlat
+if __name__ == "__main__" and len(sys.argv) > 1 and sys.argv[1] == "livereload":
+    run_livereload()
 
 CI = os.environ.get("CI", "0") in {"1", "true", "yes", ""}
 
@@ -200,8 +325,19 @@ def livereload(ctx: Context):
     try:
         from livereload import Server
         import os
+        import sys
 
         print("LiveReload başlatılıyor...")
+
+        # Proje kök dizinini belirleyelim
+        # Bu, duties.py dosyasını arayan kodu düzeltmek için gerekli
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        print(f"Proje kök dizini: {current_dir}")
+
+        # Eğer bu dizinden duties.py dosyasına erişilemiyorsa, mevcut dizini Python yolu olarak ekleyelim
+        if current_dir not in sys.path:
+            sys.path.insert(0, current_dir)
+            print(f"Python yoluna eklendi: {current_dir}")
 
         def cached_build():
             try:
