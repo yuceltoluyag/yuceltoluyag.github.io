@@ -7,7 +7,6 @@ const babel = require("gulp-babel");
 const terser = require("gulp-terser");
 const cleanCSS = require("gulp-clean-css");
 const postcss = require("gulp-postcss");
-const sourcemaps = require("gulp-sourcemaps");
 const rename = require("gulp-rename");
 const path = require("path");
 const fs = require("fs");
@@ -101,7 +100,10 @@ function createFolders(cb) {
 }
 
 // PostCSS eklentilerini önceden yükle
-const postcssPlugins = [require("postcss-import"), require("autoprefixer")({ grid: true, flexbox: true })];
+const postcssPlugins = [
+    require("postcss-import"), // Önce @import ifadelerini işle
+    require("autoprefixer")({ grid: true, flexbox: true }),
+];
 
 if (process.env.NODE_ENV === "production") {
     postcssPlugins.push(
@@ -121,22 +123,12 @@ if (process.env.NODE_ENV === "production") {
 
 // CSS işleme görevi
 function buildMainCss() {
-    // Ana CSS dosyaları
-    const baseCss = [
-        path.join(BASE_PATHS.assets, "css", "base", "**", "*.css"),
-        path.join(BASE_PATHS.assets, "css", "components", "**", "*.css"),
-        path.join(BASE_PATHS.assets, "css", "layouts", "**", "*.css"),
-        path.join(BASE_PATHS.assets, "css", "pages", "**", "*.css"),
-        path.join(BASE_PATHS.assets, "css", "utils", "**", "*.css"),
-    ];
-
+    // Ana CSS dosyası - @import ifadeleri ile tüm dosyaları içinde barındırır
     return gulp
-        .src(baseCss, { allowEmpty: true })
-        .pipe(sourcemaps.init())
+        .src(path.join(BASE_PATHS.assets, "css", "main.css"), { allowEmpty: true })
         .pipe(postcss(postcssPlugins))
         .pipe(cleanCSS({ compatibility: "ie11", level: { 1: { specialComments: 0 } } }))
-        .pipe(rename({ basename: "main", suffix: ".min" }))
-        .pipe(sourcemaps.write("."))
+        .pipe(rename({ suffix: ".min" }))
         .pipe(gulp.dest(paths.styles.dest));
 }
 
@@ -144,11 +136,9 @@ function buildMainCss() {
 function buildScripts() {
     return gulp
         .src(paths.scripts.src, { allowEmpty: true })
-        .pipe(sourcemaps.init())
         .pipe(babel({ presets: ["@babel/preset-env"], comments: false }))
         .pipe(terser({ compress: { drop_console: true } }))
         .pipe(rename({ suffix: ".min" }))
-        .pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.scripts.dest));
 }
 

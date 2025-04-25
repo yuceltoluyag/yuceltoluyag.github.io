@@ -66,7 +66,7 @@ Yaptığımız mikrofon testinde hafif bir **dip ses** fark ettik. Ancak bu ses,
 - Örneğin; evde çocuk ağlamasını neredeyse hiç duymadım. 🎧
 - Müzik dinlenmediği durumlarda bile dış ses izolasyonu tatmin edici seviyede.
 
-> 
+
 
 <div class="info-box tip">
     Not: Kafa yapınız büyükse bile kulaklığı rahatlıkla kullanabilirsiniz. Deneyen biri olarak söylüyorum, Türkiye'de benden büyük kafa bulmak zor! 😄
