@@ -9,7 +9,7 @@ Summary: XAMPP kullanarak localhost ortamında özel bir alan adı nasıl oluşt
 Translation: false
 Status: published
 Template: article
-Image: images/hosts.webp
+Image: images/hosts-lg.webp
 
 
 
@@ -29,8 +29,8 @@ Açılan dosyanın en alt satırına şu formatta ekleme yapın:
 127.0.0.1 eticaret.test
 ```
 
-![Hosts Dosyası Düzenleme](/images/hosts.webp)
 
+[responsive_img src="/images/hosts-lg.webp" alt="Hosts Dosyası Düzenleme" /]
 ## Adım 2: Apache Virtual Hosts Yapılandırması
 
 XAMPP dizinine gidin ve `httpd-vhosts.conf` dosyasını bir editörle açın:

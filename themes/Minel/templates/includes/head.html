@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="{{ DEFAULT_LANG|default('tr') }}" />
+    <meta name="language" content="{{ DEFAULT_LANG|default('tr') }}" />
+
+    {% include 'includes/metadata.html' %}
+
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    {% if FEED_ALL_ATOM %}
+    <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }}" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" />
+    {% endif %}
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/modern-normalize.css" />
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/styles.css" />
+    <!-- Arama CSS -->
+    <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/search.css" />
+</head>

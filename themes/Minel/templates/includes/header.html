@@ -1,0 +1,91 @@
+<header class="site-header">
+    <div class="container">
+        <div class="site-header-inner">
+            <nav class="site-navigation" id="site-navigation">{% include 'includes/navigation.html' %}</nav>
+
+            <button
+                id="menu-toggle"
+                aria-controls="site-navigation"
+                aria-expanded="false"
+                style="
+                    display: none;
+                    position: fixed;
+                    top: 15px;
+                    right: 15px;
+                    z-index: 9999;
+                    width: 40px;
+                    height: 40px;
+                    border: none;
+                    background-color: rgba(0, 0, 0, 0.3);
+                    border-radius: 4px;
+                    cursor: pointer;
+                    padding: 8px;
+                ">
+                <span
+                    style="
+                        display: block;
+                        width: 24px;
+                        height: 2px;
+                        background-color: white;
+                        position: relative;
+                        margin: 6px auto;
+                    ">
+                    <span
+                        style="
+                            display: block;
+                            width: 24px;
+                            height: 2px;
+                            background-color: white;
+                            position: absolute;
+                            top: -8px;
+                            left: 0;
+                        "></span>
+                    <span
+                        style="
+                            display: block;
+                            width: 24px;
+                            height: 2px;
+                            background-color: white;
+                            position: absolute;
+                            bottom: -8px;
+                            left: 0;
+                        "></span>
+                </span>
+                <span class="screen-reader-text">Menü</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const siteNavigation = document.getElementById("site-navigation");
+
+        // Mobil görünümde menü butonunu göster
+        function checkScreenSize() {
+            const isMobile = window.innerWidth <= 768;
+
+            if (isMobile) {
+                menuToggle.style.display = "block"; // Mobilde görünür
+                siteNavigation.classList.remove("toggled");
+                menuToggle.setAttribute("aria-expanded", "false");
+            } else {
+                menuToggle.style.display = "none"; // Masaüstü ve tablette gizli
+            }
+        }
+
+        // Sayfa yüklendiğinde kontrol et
+        checkScreenSize();
+
+        // Pencere boyutu değiştiğinde kontrol et
+        window.addEventListener("resize", checkScreenSize);
+
+        // Menü butonuna tıklandığında
+        menuToggle.addEventListener("click", function () {
+            const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+            menuToggle.setAttribute("aria-expanded", !expanded);
+            siteNavigation.classList.toggle("toggled");
+        });
+    });
+</script>

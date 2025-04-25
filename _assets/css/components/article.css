@@ -1,0 +1,146 @@
+/* Makale Ana Stili */
+.article {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    font-size: 1.125rem;
+}
+
+/* Audio Player Stilleri */
+.audio-player {
+    margin: 2rem 0;
+    background: var(--color-bg-alt);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.audio-tip {
+    margin-top: 0.75rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.audio-caption {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+}
+
+/* Önemli Metin Stileri */
+.article .text-highlight {
+    font-weight: 700;
+    background-color: var(--article-blockquote-bg);
+    color: var(--color-text-primary);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    border-left: 3px solid var(--color-primary);
+}
+
+/* Responsive Video Stilleri */
+.article video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    margin: 2rem 0;
+    display: block;
+}
+
+/* Video Kapsayıcı */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 oranı için */
+    height: 0;
+    overflow: hidden;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.video-container video,
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 0.5rem;
+}
+
+/* Karanlık Tema */
+@media (prefers-color-scheme: dark) {
+    .article {
+        color: var(--color-text);
+        background-color: var(--color-bg);
+    }
+
+    .audio-player {
+        background: var(--color-bg-alt);
+    }
+
+    .audio-tip {
+        color: var(--color-text-light);
+    }
+
+    .audio-caption {
+        color: var(--color-text);
+    }
+
+    .article video,
+    .video-container {
+        box-shadow: var(--shadow-sm);
+        background-color: var(--color-bg);
+    }
+
+    .video-container video,
+    .video-container iframe {
+        border-color: var(--color-border);
+    }
+
+    .article .text-highlight {
+        background-color: var(--color-bg-primary);
+        color: var(--color-text);
+        border-left-color: var(--color-primary);
+    }
+}
+
+/* Erişilebilirlik İyileştirmeleri */
+.article a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.article a:hover,
+.article a:focus {
+    color: var(--color-primary-hover);
+    text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    .article a {
+        color: var(--color-primary-light);
+    }
+
+    .article a:hover,
+    .article a:focus {
+        color: var(--color-primary-lighter);
+    }
+}
+
+/* Metin Seçimi */
+.article ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+@media (prefers-color-scheme: dark) {
+    .article ::selection {
+        background-color: var(--color-primary-light);
+        color: var(--color-bg);
+    }
+}

@@ -1,16 +1,39 @@
-{% extends "base.html" %} {% block title %}Kategoriler{% endblock %} {% block content %}
-<div class="bg-site-card rounded-lg p-8">
-    <h1 class="text-3xl font-bold mb-8 text-text-primary">Kategoriler</h1>
+{% extends "base.html" %} {% block title %}Kategoriler - {{ SITENAME }}{% endblock title %} {% block seo %}
+<meta
+    name="description"
+    content="Bu sayfada {{ SITENAME }} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz." />
+<link rel="canonical" href="{{ SITEURL }}/kategoriler.html" />
+{% endblock seo %} {% block content %}
+<div class="container">
+    <div class="categories-header">
+        <h1 class="categories-title">Kategoriler</h1>
+        <p class="categories-description">
+            Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara
+            ulaşabilirsiniz.
+        </p>
+    </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="categories-grid">
         {% for category, articles in categories|sort %}
-        <a href="{{ SITEURL }}/kategori/{{ category.slug }}/" class="card hover:scale-[1.02] transition-transform">
-            <div class="flex items-center justify-between">
-                <h2 class="text-lg font-semibold text-text-primary">{{ category }}</h2>
-                <span class="text-sm text-text-secondary">{{ articles|length }} yazı</span>
+        <a
+            href="{{ SITEURL }}/kategori/{{ category.slug }}/"
+            class="category-card"
+            aria-label="{{ category }} kategorisine git">
+            <div class="category-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                </svg>
+            </div>
+            <div class="category-details">
+                <h2 class="category-name">{{ category }}</h2>
+                <span class="category-count">{{ articles|length }} yazı</span>
             </div>
         </a>
         {% endfor %}
     </div>
 </div>
-{% endblock %}
+{% endblock content %}

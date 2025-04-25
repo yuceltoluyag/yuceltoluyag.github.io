@@ -1,0 +1,178 @@
+/**
+ * Ana CSS Dosyası
+ * 
+ * CSS dosyaları şu sırada yüklenir:
+ * 
+ * 1. /base
+ *    - reset.css      (Önce)
+ *    - variables.css  (Değişkenler)
+ *    - base.css      (Temel stiller)
+ *    - typography.css (Tipografi)
+ * 
+ * 2. /components
+ *    - buttons.css
+ *    - forms.css
+ *    - cards.css
+ *    - tables.css
+ *    - code.css
+ *    - icons.css
+ *    - pagination.css
+ *    - search.css
+ * 
+ * 3. /layouts
+ *    - header.css
+ *    - footer.css
+ *    - sidebar.css
+ *    - article.css
+ * 
+ * 4. /pages
+ *    - home.css
+ *    - post.css
+ *    - archive.css
+ * 
+ * 5. /utils
+ *    - helpers.css
+ *    - animations.css
+ */
+
+/* Yardımcı Sınıflar */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.container-narrow {
+    width: 100%;
+    max-width: var(--container-narrow-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.container-wide {
+    width: 100%;
+    max-width: var(--container-wide-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.4s ease-out;
+}
+
+/* Responsive Ayarlamalar */
+@media (max-width: 1200px) {
+    /* :root değişkenleri variables.css'e taşındı */
+}
+
+@media (max-width: 992px) {
+    /* :root değişkenleri variables.css'e taşındı */
+}
+
+@media (max-width: 768px) {
+    /* :root değişkenleri variables.css'e taşındı */
+
+    .container,
+    .container-narrow,
+    .container-wide {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+@media (max-width: 576px) {
+    /* :root değişkenleri variables.css'e taşındı */
+}
+
+/* Daha büyük telefon ekranları için */
+@media (max-width: 475px) {
+    .article-title {
+        font-size: var(--text-xl) !important;
+    }
+
+    .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .article {
+        padding: var(--spacing-sm);
+    }
+
+    .footer-info {
+        gap: var(--spacing-xs);
+    }
+}

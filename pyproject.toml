@@ -5,7 +5,6 @@
         "markdown>=3.7",
         "typogrify>=2.1.0",
         "minify-html>=0.15.0",
-        "pelican-image-process>=3.0.4",
         "pelican-neighbors>=1.2.0",
         "pelican-readtime>=0.2.1",
         "pelican-related-posts>=1.0.0",
@@ -21,6 +20,7 @@
         "pelican>=4.11.0",
         "pymdown-extensions>=10.14.3",
         "rcssmin>=1.2.1",
+        "uv>=0.6.16",
     ]
     description = "Yücel Toluyağ'ın kişisel blog sitesi - Yazılım, teknoloji ve kişisel deneyimler üzerine içerikler"
     name = "yuceltoluyag.dev"

@@ -9,9 +9,10 @@ Summary: Terminal tabanlı güçlü bir RSS okuyucu olan Newsboat'u nasıl yapı
 Translation: false
 Status: published
 Template: article
-Image: images/newsboat.webp
+Image: images/newsboat-lg.webp
 
-![Newsboat](/images/newsboat.webp)
+
+[responsive_img src="/images/newsboat-lg.webp" alt="Newsboat" /]
 
 # Newsboat Nedir? 📰
 

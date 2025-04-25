@@ -9,11 +9,12 @@ Summary: Bu yazıda, Linux üzerinde HTTrack kullanarak web sitelerini çevrimd�
 Translation: false
 Status: published
 Template: article
-Image: images/httrack.webp
+Image: images/httrack-lg.webp
 
 Merhaba! HTTrack, internet bağlantınız olmadığında bile web sitelerini kullanabilmenizi sağlayan bir yazılımdır. Windows tarafında sıkça kullandığım bu yazılımı, Linux terminali üzerinden nasıl kullanabileceğinizi anlatan bir döküman hazırlamak istedim.
 
-![httrack](/images/httrack.webp)
+
+[responsive_img src="/images/httrack-lg.webp" alt="httrack" /]
 
 
 Adım 1: HTTrack Kurulumu

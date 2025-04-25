@@ -9,7 +9,7 @@ Summary: Jekyll blog sitesinde yorumlar için Staticman eklentisini kurma sürec
 Translation: false
 Status: published
 Template: article
-Image: images/staticman.webp
+Image: images/staticman-lg.webp
 
 **Merhaba** 😄
 
@@ -37,11 +37,13 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 1. [Heroku](https://herokuapp.com/){: target="_blank" rel="noopener noreferrer"} sitesine gidip bir üyelik oluşturun.
 2. Ardından, [Staticman Repo](https://github.com/eduardoboucas/staticman/tree/dev){: target="_blank" rel="noopener noreferrer"}'ya gidin ve burada **dev** branch'ini seçin. Çünkü ana dalda bazı güncellemeler henüz merge edilmemiş durumda. Bu kısımda alt kısımda bulunan **Deploy Heroku** butonuna tıklayın.
 
-![heroku-kurulumu](/images/staticman8.webp)
+
+[responsive_img src="/images/staticman8-lg.webp" alt="heroku-kurulumu]" /]
 
 3. İlgili ayarları yaparak uygulamanızı deploy edin.
 
-![heroku-kurulumu](/images/staticman9.webp)
+
+[responsive_img src="/images/staticman9-lg.webp" alt="heroku-kurulumu]" /]
 
 Şimdilik işlem bu kadar, ilerleyen adımlarda ayarları detaylıca düzenleyeceğiz.
 
@@ -49,29 +51,30 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 
 1. İlk önce [Github Apps](https://github.com/settings/apps){: target="_blank" rel="noopener noreferrer"}'dan bir uygulama oluşturun. Uygulama ismini, açıklamasını ve Heroku adresinizi kendinize göre düzenlemeyi unutmayın.
 
-![staticman-kurulumu](/images/staticman.webp)
-![staticman-kurulumu](/images/staticman2.webp)
+[responsive_img src="/images/staticman-lg.webp" alt="heroku-kurulumu]" /]
+[responsive_img src="/images/staticman2-lg.webp" alt="heroku-kurulumu]" /]
 
 ## Private Keys (Özel Anahtarlar)
 
 Private keys kısmından **Generate a private key** butonuna tıklayın ve oluşan dosyayı kaydedin. Bu dosyadaki bilgileri Heroku ortam değişkenlerinde kullanacağız.
 
-![heroku-kurulumu](/images/staticman11.webp)
+[responsive_img src="/images/staticman11-lg.webp" alt="heroku-kurulumu]" /]
 
 ## Github Token'ları
 
 1. [Github Tokens](https://github.com/settings/tokens/){: target="_blank" rel="noopener noreferrer"} sayfasına giderek yeni bir token oluşturun. Token'ınıza şu yetkileri verin:
 
-![staticman-kurulumu](/images/staticman3.webp)
-![staticman-kurulumu](/images/staticman4.webp)
+
+[responsive_img src="/images/staticman3-lg.webp" alt="staticman-kurulumu]" /]
+[responsive_img src="/images/staticman4-lg.webp" alt="staticman-kurulumu]" /]
 
 Oluşturduktan sonra size bir kod verilecektir. Bu kodu kaydedin çünkü ilerleyen aşamalarda kullanacağız. Daha sonra oluşturduğunuz uygulamaya tıklayın ve **Install App** kısmından **Install**'a basın.
 
-![staticman-kurulumu](/images/staticman5.webp)
+[responsive_img src="/images/staticman5-lg.webp" alt="staticman-kurulumu]" /]
 
 Bu adımda, token'ı tüm repolarınızda mı yoksa sadece belirli bir repoda mı kullanmak istediğinizi seçebilirsiniz. Ben sadece tek bir repoda kullanmayı tercih ediyorum.
 
-![staticman-kurulumu](/images/staticman6.webp)
+[responsive_img src="/images/staticman6-lg.webp" alt="staticman-kurulumu]" /]
 
 Sonrasında **Install** butonuna tıklayın.
 
@@ -79,7 +82,7 @@ Sonrasında **Install** butonuna tıklayın.
 
 Yeni oluşturduğumuz Github hesabını, repomuza davet edeceğiz. Repomuza gidin, **Settings** sekmesine tıklayın. Ardından **Collaborators** kısmından **add people** diyerek oluşturduğunuz bot hesabını ekleyin. Diğer hesabınızla giriş yaparak daveti kabul edin.
 
-![staticman-kurulumu](/images/staticman7.webp)
+[responsive_img src="/images/staticman7-lg.webp" alt="staticman-kurulumu]" /]
 
 Github ayarlarımız burada tamamlandı! 🤯
 
@@ -188,23 +191,24 @@ https://{HEROKU_ADRESİNİZ}/v3/encrypt/şifrelenecekşey
 
 Postman üzerinden testler yapmak için doğru ayarları yapmanız gerekecek. Form elemanları kısmındaki `field` ve `options` ayarlarını doğru şekilde yapılandırmalısınız.
 
-![staticman-kurulumu](/images/staticman-postman.webp)
 
-[Canlı Test](https://github.com/yuceltoluyag/jekyll-staticman/pull/1){: target="_blank" rel="noopener noreferrer"}
+[responsive_img src="/images/staticman-postman-lg.webp" alt="staticman-kurulumu]" /]
+
+[Canlı Test](https://github.com/Baba-Project/jekyll-staticman/pull/1){: target="_blank" rel="noopener noreferrer"}
 
 
 ## Staticman Örnek Kodlar
 
 Bu dosyaları inceleyin arkadaşlar, kafanızda ışıkların patlayacağından eminim 🎃
 
-- [comments.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comments.html){: target="_blank" rel="noopener noreferrer"}
-- [comment.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment.html){: target="_blank" rel="noopener noreferrer"}
-- [comment_form.html](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/_includes/comment_form.html){: target="_blank" rel="noopener noreferrer"}
-- [main.js](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/assets/js/main.js){: target="_blank" rel="noopener noreferrer"}
-- [\_comment.scss](https://github.com/yuceltoluyag/jekyll-staticman/blob/main/css/main.scss#L305){: target="_blank" rel="noopener noreferrer"}
+- [comments.html](https://github.com/Baba-Project/jekyll-staticman/blob/main/_includes/comments.html){: target="_blank" rel="noopener noreferrer"}
+- [comment.html](https://github.com/Baba-Project/jekyll-staticman/blob/main/_includes/comment.html){: target="_blank" rel="noopener noreferrer"}
+- [comment_form.html](https://github.com/Baba-Project/jekyll-staticman/blob/main/_includes/comment_form.html){: target="_blank" rel="noopener noreferrer"}
+- [main.js](https://github.com/Baba-Project/jekyll-staticman/blob/main/assets/js/main.js){: target="_blank" rel="noopener noreferrer"}
+- [\_comment.scss](https://github.com/Baba-Project/jekyll-staticman/blob/main/css/main.scss#L305){: target="_blank" rel="noopener noreferrer"}
 
-* Canlı Test => [Yorum Yap](https://yuceltoluyag.github.io/jekyll-staticman/){: target="_blank" rel="noopener noreferrer"}
-* Kaynak Dosyaları => [Beleş İndir](https://github.com/yuceltoluyag/jekyll-staticman){: target="_blank" rel="noopener noreferrer"}
+* Canlı Test => [Yorum Yap](https://baba-project.github.io/jekyll-staticman/){: target="_blank" rel="noopener noreferrer"}
+* Kaynak Dosyaları => [Beleş İndir](https://github.com/Baba-Project/jekyll-staticman){: target="_blank" rel="noopener noreferrer"}
 
 
 # Sonuç

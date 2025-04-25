@@ -1,0 +1,71 @@
+{% macro translations_for(article) %} {% if article.translations %}
+<div id="list-of-translations" class="translations-box">
+    <span class="translations-label">Bu yazı aşağıdaki dillerde de mevcuttur:</span>
+    <div class="translations-links">
+        {% for translation in article.translations|sort(attribute='lang') %}
+        <a href="{{ SITEURL }}/{{ translation.url }}" class="translation-link" hreflang="{{ translation.lang }}">
+            <span class="translation-icon">🌐</span>
+            {{ translation.lang }}
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .translations-box {
+        margin: var(--spacing-md) 0;
+        padding: var(--spacing-sm) var(--spacing-md);
+        background-color: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    .translations-label {
+        font-size: var(--font-size-sm);
+        color: var(--color-text-light);
+        font-weight: 500;
+    }
+
+    .translations-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+
+    .translation-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        background-color: rgba(var(--color-primary-rgb), 0.1);
+        color: var(--color-primary);
+        font-size: var(--font-size-xs);
+        font-weight: 500;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all var(--animation-duration) ease;
+    }
+
+    .translation-link:hover {
+        background-color: var(--color-primary);
+        color: #fff;
+        text-decoration: none;
+        transform: translateY(-2px);
+    }
+
+    .translation-icon {
+        margin-right: 4px;
+        font-size: var(--font-size-xs);
+    }
+
+    @media (max-width: 768px) {
+        .translations-box {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+{% endif %} {% endmacro %}

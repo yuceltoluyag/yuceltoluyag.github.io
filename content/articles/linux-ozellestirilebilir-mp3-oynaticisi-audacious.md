@@ -9,14 +9,13 @@ Summary: Audacious, Linux için özelleştirilebilir ve güçlü bir MP3 oynatı
 Translation: false
 Status: published
 Template: article
-Image: images/audacious.webp
+Image: images/audacious-lg.webp
 
 
 Yılların efsane müzik  🎵 oynatıcıları **Winamp**  ve **AIMP**, Windows kullanıcıları için vazgeçilmezdi. Ancak Linux ortamında benzer bir deneyim sunan en iyi alternatiflerden biri **Audacious** oldu. Piyasadaki birçok MP3 oynatıcıyı denedikten sonra, en fazla özelleştirme sunanı Audacious olduğu için tercih ettim.
 
 "CMUS var abi!" diyenler olabilir ama ben görsellik ve kullanım kolaylığı açısından Audacious'u daha çok beğeniyorum. 😎
 
-![audacious](/images/audacious.webp)
 
 ## Audacious'un Öne Çıkan Özellikleri 🚀
 
@@ -38,3 +37,4 @@ Yılların efsane müzik  🎵 oynatıcıları **Winamp**  ve **AIMP**, Windows 
 
 Audacious, Linux ortamında müzik dinleme deneyiminizi daha keyifli ve kişiselleştirilmiş hale getirecek harika bir oynatıcıdır. 🎧 Kullanım deneyimlerinizi paylaşmayı unutmayın! 😊
 
+[responsive_img src="/images/audacious-lg.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]

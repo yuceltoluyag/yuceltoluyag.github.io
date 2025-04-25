@@ -9,11 +9,13 @@ Summary: Linux terminalinizi daha işlevsel ve estetik hale getirmek için Termi
 Translation: false
 Status: published
 Template: article
-Image: images/terminator-git-curl-fish-kurulumu.webp
+Image: images/terminator-git-curl-fish-kurulumu-lg.webp
 
 Merhaba! Linux’ta en çok vakit geçirdiğimiz alanlardan biri terminaldir. Peki terminalimizi nasıl daha işlevsel ve estetik hale getirebiliriz? İşte bu rehber tam size göre! 💪🚀
 
-![terminator-git-curl-fish-kurulumu](/images/terminator-git-curl-fish-kurulumu.webp)
+
+
+
 Terminali daha verimli ve keyifli hale getirmek için **Terminator** ve **Fish Shell** kombinasyonunu kullanacağız. Bu sayede:
 
 - Terminalinizi yatay ve dikey olarak bölebilirsiniz.
@@ -98,4 +100,8 @@ omf install eklenti-adı
 
 ## 📺 Video Anlatım
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/h78f3V4p09E?si=bY3jyCUZZTJswlcj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="h78f3V4p09E"></lite-youtube>
+
+[responsive_img src="/images/terminator-git-curl-fish-kurulumu-lg.webp" alt="terminator-git-curl-fish-kurulumu" /]

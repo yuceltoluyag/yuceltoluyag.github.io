@@ -11,13 +11,15 @@ Summary: Zsh içerisinde shopt komutunun nasıl kullanılacağını ve bash uyum
 Translation: false
 Status: published
 Template: article
-Image: images/shopt.webp
+Image: images/shopt-lg.webp
 
 Merhaba! 😊
 
 Shopt komutu nedir? `shopt` komutu, bash (kabuk) içerisindeki bazı eylemleri değiştirmenize olanak tanır. Bir bakıma alias komutuna benzer işlev görür. Şimdi bir örnek üzerinden açıklayalım.
 
-![shopt](/images/shopt.webp)
+
+
+
 Bir dizine `cd dizin` komutuyla girerken, bashrc dosyasına ekleyeceğiniz `shopt` komutuyla direkt olarak **dizin** ismini yazıp bu dizine girebilirsiniz. Tabi ki `shopt` komutunun kullanım alanları bunlarla sınırlı değildir. Daha fazla bilgi için [Detaylar](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html) adresini ziyaret edebilirsiniz.
 
 # Zsh İçerisinde Kullanım
@@ -88,3 +90,5 @@ shopt -s cdspell 2> /dev/null
 ```
 
 [Zsh Ayarlarım!](https://github.com/yuceltoluyag/WindowsTerminal/blob/main/WSL/.zshrc){: target="_blank" rel="noopener noreferrer"} +  [Script Oluşturucu!](https://github.com/yuceltoluyag/otoscript){: target="_blank" rel="noopener noreferrer"}
+
+[responsive_img src="/images/shopt-lg.webp" alt="shopt" /]

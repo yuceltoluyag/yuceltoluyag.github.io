@@ -1,0 +1,330 @@
+/**
+ * Yasal Sayfalar
+ * 
+ * Gizlilik Politikası, Telif Hakkı, Çerez Politikası ve Hizmet Şartları sayfaları için stiller
+ */
+
+.legal-page {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+/* Hero Bölümü */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    position: relative;
+}
+
+.legal-icon-container {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.legal-icon-pulse {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: var(--radius-full);
+    background-color: rgba(var(--color-primary-rgb), 0.1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+.legal-icon-wrapper {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.legal-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--color-white);
+}
+
+.page-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+/* İçerik Bölümü */
+.legal-content {
+    margin-top: var(--spacing-md);
+}
+
+.legal-card {
+    background-color: var(--color-background);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.page-content {
+    line-height: 1.8;
+    color: var(--color-text);
+}
+
+.legal-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: var(--text-xl);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+    padding-bottom: var(--spacing-xs);
+    color: var(--color-text);
+}
+
+.section-content {
+    margin-bottom: var(--spacing-lg);
+}
+
+.text-highlight {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Liste Stilleri */
+.legal-list {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-xs);
+    list-style: none;
+}
+
+.legal-item {
+    display: flex;
+    margin-bottom: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.legal-bullet {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+    margin-top: 0.6rem;
+    margin-right: var(--spacing-md);
+}
+
+.legal-item p {
+    margin: 0;
+    flex: 1;
+}
+
+.page-content h2 {
+    font-size: var(--text-xl);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+    padding-bottom: var(--spacing-xs);
+    color: var(--color-text);
+}
+
+.page-content h3 {
+    font-size: var(--text-lg);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.page-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.page-content ul,
+.page-content ol {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+}
+
+.page-content li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.page-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--color-primary);
+}
+
+.page-content a:hover {
+    color: var(--color-primary-dark);
+    border-bottom: 1px solid var(--color-primary-dark);
+}
+
+.page-content blockquote {
+    border-left: var(--border-width-thick) solid var(--color-primary);
+    padding-left: var(--spacing-md);
+    margin-left: 0;
+    color: var(--color-text-light);
+    font-style: italic;
+}
+
+/* İletişim Bölümü CSS */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.contact-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+}
+
+.contact-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--color-white);
+}
+
+.contact-text {
+    font-size: var(--text-base);
+    color: var(--color-text);
+}
+
+.last-updated {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-top: var(--spacing-md);
+}
+
+/* Karanlık Tema Uyumluluğu */
+@media (prefers-color-scheme: dark) {
+    .legal-card {
+        background-color: var(--color-background);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .page-content h2,
+    .section-title {
+        border-bottom-color: var(--color-border);
+    }
+
+    .legal-icon-pulse {
+        background-color: rgba(var(--color-primary-rgb), 0.3);
+    }
+
+    .contact-text,
+    .text-highlight {
+        color: var(--color-text);
+    }
+
+    .last-updated {
+        color: var(--color-text-light);
+    }
+}
+
+/* Mobil Duyarlı Düzenlemeler */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: var(--text-3xl);
+    }
+
+    .legal-card {
+        padding: var(--spacing-md);
+    }
+
+    .page-content h2,
+    .section-title {
+        font-size: var(--text-lg);
+    }
+
+    .page-content h3 {
+        font-size: var(--text-md);
+    }
+
+    .contact-info {
+        gap: var(--spacing-sm);
+    }
+
+    .legal-bullet {
+        width: 6px;
+        height: 6px;
+        margin-top: 0.7rem;
+        margin-right: var(--spacing-sm);
+    }
+}
+
+/* Baskı için Stil */
+@media print {
+    .legal-page {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .legal-card {
+        box-shadow: none;
+        border: var(--border-width-thin) solid var(--color-border);
+    }
+
+    .legal-icon-container,
+    .legal-icon-pulse {
+        display: none;
+    }
+
+    .contact-icon-container {
+        background-color: transparent;
+        border: var(--border-width-thin) solid var(--color-text);
+    }
+
+    .contact-icon {
+        color: var(--color-text);
+    }
+
+    .legal-bullet {
+        background-color: var(--color-text);
+    }
+}

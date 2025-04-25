@@ -1,39 +1,50 @@
-{% extends "base.html" %}
-
-{% block content %}
-<div class="container py-8">
-    <!-- Header Bölümü -->
-    <div class="bg-site-card rounded-xl p-8 mb-8 border border-border-card">
-        <div class="flex items-center gap-4 mb-4">
-            <div class="p-3 bg-primary/10 rounded-lg">
-                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                          d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
-                </svg>
-            </div>
-            <div>
-                <h1 class="text-3xl font-bold text-text-primary">{{ category }}</h1>
-                <p class="text-text-secondary mt-1">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
-            </div>
+{% extends "base.html" %} {% block title %}{{ category }} - {{ SITENAME }}{% endblock title %} {% block seo %}
+<meta
+    name="description"
+    content="{{ category }} kategorisindeki tüm yazılar. Bu kategoride {{ articles|length }} adet yazı bulabilirsiniz." />
+<link rel="canonical" href="{{ SITEURL }}/kategori/{{ category.slug }}/" />
+<meta property="og:title" content="{{ category }} - {{ SITENAME }}" />
+<meta
+    property="og:description"
+    content="{{ category }} kategorisindeki tüm yazılar. Bu kategoride {{ articles|length }} adet yazı bulabilirsiniz." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/kategori/{{ category.slug }}/" />
+{% endblock seo %} {% block content %}
+<div class="container">
+    <!-- Kategori Başlığı -->
+    <div class="category-header">
+        <div class="category-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
+        </div>
+        <div class="category-info">
+            <h1 class="category-title">{{ category }}</h1>
+            <p class="category-count">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
         </div>
     </div>
 
     <!-- Yazı Listesi -->
-    <div class="bg-site-card rounded-xl border border-border-card divide-y divide-border-card">
+    <div class="articles-container">
         {% for article in articles %}
-        <article class="group">
-            <a href="{{ SITEURL }}/{{ article.url }}" 
-               class="flex items-center justify-between p-6 hover:bg-site-card-alt transition-colors">
-                <h2 class="text-lg font-medium text-text-primary group-hover:text-primary transition-colors">
-                    {{ article.title }}
-                </h2>
-                <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" 
-                      class="text-sm text-text-secondary whitespace-nowrap ml-4">
-                    {{ article.date.strftime('%d %b %Y') }}
-                </time>
+        <article class="article-card">
+            <a href="{{ SITEURL }}/{{ article.url }}" class="article-link">
+                <div class="article-metadata">
+                    <h2 class="article-title">{{ article.title }}</h2>
+                    <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" class="article-date">
+                        {{ article.date.strftime('%d %b %Y') }}
+                    </time>
+                </div>
+                {% if article.summary %}
+                <div class="article-summary">{{ article.summary|striptags|truncate(150) }}</div>
+                {% endif %}
             </a>
         </article>
         {% endfor %}
     </div>
 </div>
-{% endblock %} 
+{% endblock content %}

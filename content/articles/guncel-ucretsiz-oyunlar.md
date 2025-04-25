@@ -9,10 +9,7 @@ Summary: Steam, GOG ve Epic gibi platformlardaki güncel ücretsiz oyun duyurula
 Translation: false
 Status: published
 Template: article
-Image: images/ucretsiz-oyunlar.webp
-
-
-![Güncel Steam, Epic, GOG Oyunları](/images/ucretsiz-oyunlar.webp)
+Image: images/ucretsiz-oyunlar-lg.webp
 
 ## Güncel Ücretsiz Oyunlar 🎮🚀
 
@@ -30,3 +27,5 @@ Birden fazla kaynağı tarayan ve şu özelliklere sahip bir sistem geliştirdim
 [Güncel Ücretsiz Oyunlar Telegram Kanalı](https://discord.gg/da3Su8s "https://discord.gg/da3Su8s"){: target="_blank" rel="noopener noreferrer"}
 
 **Steam, Epic, GOG, Keylol, Reddit** ve daha bir çok kaynağı tarayarak en yeni ücretsiz oyun duyurularından haberdar olun! 🚀
+
+[responsive_img src="/images/ucretsiz-oyunlar-lg.webp" alt="Güncel Steam, Epic, GOG Oyunları" /]

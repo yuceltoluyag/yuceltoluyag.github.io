@@ -9,7 +9,7 @@ Summary: Arch Linux'ta Nvidia ekran kartı kurulumunu, sürücü uyumsuzlukları
 Translation: false
 Status: published
 Template: article
-Image: images/nvidia-linux-performans-ayari.webp
+Image: images/nvidia-linux-performans-ayari-lg.webp
 
 # Merhaba
 
@@ -44,8 +44,11 @@ GF106 olarak işaretlediğim kısım kartınıızn ailesini(kod adı) belirtiyor
 
 - [Nvidia Sürücü İndirme](https://www.nvidia.com/Download/index.aspx){: target="_blank" rel="noopener noreferrer"} Adresine gidip,doğru şekilde seçimlerinizi yaptıktan sonra arama kısmına basın size en son yayımlanan sürücüyü getirecektir. Çıkan sonuca göre benim sürücüm 390.1320 dır. Benim aurda nvidia-390xx paketlerine bakmam gerektiğini gösteriyor. [Archlinux Nvidia Belge](https://wiki.archlinux.org/index.php/NVIDIA#Installation){: target="_blank" rel="noopener noreferrer"} sine baktığınızda 390xx ve 340xx için sürücüleri için ayrı paketler var.
 
-![Nvidia_Sürücü_Seçme](/images/nvidia-grafik-karti-indirme.webp)
-![Nvidia_Sürücü_Bilgisi](/images/nvidia-grafik-karti-indirme2.webp)
+
+
+
+[responsive_img src="/images/nvidia-grafik-karti-indirme-lg.webp" alt="Nvidia_Sürücü_Seçme" /]
+[responsive_img src="/images/nvidia-grafik-karti-indirme2-lg.webp" alt="Nvidia_Sürücü_Bilgisi" /]
 
 ## Hangisi Nouveau,Optimus,Prime,Bumblebee
 
@@ -124,14 +127,17 @@ killall picom compton xcompmgr
 
 daha sonra
 
-![Nvidia_Performans_Ayari](/images/nvidia-linux-performans-ayari.webp)
+
+[responsive_img src="/images/nvidia-linux-performans-ayari-lg.webp" alt="Nvidia_Performans_Ayari" /]
 tiklerini kaldırın. Daha sonra powermizer altında ki auto ayarını resimde ki gibi değiştirin. "Preferer maxium performance seçili"
 
-![Nvidia_Performans_Ayari](/images/nvidia-grafik-ayari-maximum-performans.webp)
+
+[responsive_img src="/images/nvidia-grafik-ayari-maximum-performans-lg.webp" alt="Nvidia_Performans_Ayari" /]
 
 buda verdiği performans bir de en altaki görselde bumblebee performansına bakın :D
 
-![Nvidia_optirun_performansı](/images/primeperformansi.webp)
+
+[responsive_img src="/images/primeperformansi-lg.webp" alt="Nvidia_optirun_performansı" /]
 
 **Bumblebee** : Yerli yabancı tüm kaynaklardan [Bumblebee Kurulumu](https://wiki.archlinux.org/index.php/Bumblebee){: target="_blank" rel="noopener noreferrer"} anlatılır. 26 Nisan 2013 son commitini almış [Bumblebee Github](https://github.com/Bumblebee-Project/Bumblebee){: target="_blank" rel="noopener noreferrer"}. Yıla göre bakarsak en stabil buymuş gibi görünebilir fakat oyun oynayan,render yapan kısacası GPU'yu tam anlamıyla kullanmak isteyen arkadaşlar için verdiği performans tatmin edici gelmeyecektir.Benim ekran kartım için Bumblebee verdiği performans **Windows 'un yarısı kadardı**, bu kimileri için yeterli olabilir ancak benim için değil :)
 
@@ -166,12 +172,14 @@ shutdown -r now
 ```
 
 **Bumblebee** performans vermesiniz istediğimiz uygulamalarda **optirun uygulamaadi** gibi başlatıyoruz. Örneğin **optirun gputest**
+- Dahili Gpu Performansı
 
-Dahili Gpu Performansı
-![Nvidia_optirun_performansı](/images/optirun-dahili-gpu.webp)
-Harici Gpu Performansı
-![Nvidia_optirun_performansı](/images/optirun-performansi.webp)
+[responsive_img src="/images/optirun-dahili-gpu-lg.webp" alt="Dahili Gpu Performansı" /]
+- Harici Gpu Performansı
+[responsive_img src="/images/optirun-performansi-lg.webp" alt="Harici Gpu Performansı" /]
 
 # Videolu Anlatım 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DhCUPntoKSg?si=aKhraa08-ubh2-gq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="DhCUPntoKSg"></lite-youtube>

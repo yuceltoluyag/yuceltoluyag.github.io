@@ -11,10 +11,10 @@ Summary: Laravel IDE Helper paketi ile PHPStorm'da otomatik tamamlama ve kod yar
 Translation: false
 Status: published
 Template: article
-Image: images/laravel_7x_ide_helper.webp
+Image: images/laravel_7x_ide_helper-lg.webp
 
 
-![Laravel IDE Helper](/images/laravel_7x_ide_helper.webp)
+
 
 ## Laravel IDE Helper Nedir? 🚀
 
@@ -24,7 +24,11 @@ Laravel projeleri geliştirirken **PHPStorm** sıkça tercih edilen bir IDE'dir.
 
 Eğer bu paket olmasaydı, **PHPDoc** kullanarak bu bilgileri elle eklemek gerekecekti. Konu hakkında daha fazla bilgi almak için **Abdulkadir Dılo Sürücü**'nün açıklamalarına şuradan ulaşabilirsiniz:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0NZHzmAgH-M?si=F9ZXp2n7Qq_Wzvkv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="0NZHzmAgH-M"></lite-youtube>
+
+
 
 ## Laravel IDE Helper Nasıl Kurulur? 🛠️
 
@@ -34,7 +38,7 @@ Laravel projelerinde **Laravel IDE Helper** paketini kurmak için aşağıdaki a
 
 Terminal veya komut satırınızda aşağıdaki komutu çalıştırın:
 
-```sh
+```bash
 composer require --dev barryvdh/laravel-ide-helper
 ```
 
@@ -42,7 +46,7 @@ composer require --dev barryvdh/laravel-ide-helper
 
 Aşağıdaki komutu çalıştırarak proje dizininize **_ide_helper.php** dosyasını oluşturabilirsiniz:
 
-```sh
+```bash
 php artisan ide-helper:generate
 ```
 
@@ -50,7 +54,7 @@ php artisan ide-helper:generate
 
 Konfigürasyonu yayınlamak için aşağıdaki komutu kullanabilirsiniz:
 
-```sh
+```bash
 php artisan vendor:publish --provider="Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider" --tag=config
 ```
 
@@ -58,13 +62,13 @@ php artisan vendor:publish --provider="Barryvdh\LaravelIdeHelper\IdeHelperServic
 
 Bazı modellerde **"fonksiyon bulunamadı"** uyarısı ile karşılaşabilirsiniz. Bunu çözmek için aşağıdaki komutu kullanabilirsiniz:
 
-```sh
+```bash
 php artisan ide-helper:models User
 ```
 
 Eğer model dosyalarınız farklı bir klasördeyse, tam yolu belirtmelisiniz:
 
-```sh
+```bash
 php artisan ide-helper:models Model\User
 ```
 
@@ -103,3 +107,4 @@ Bu işlemin sonunda, **User.php** gibi model dosyalarının başında şu şekil
 
 PhpStorm ile ilgili daha fazla yazıya [buradan ulaşabilirsiniz](/etiket/phpstorm/). 🚀
 
+[responsive_img src="/images/laravel_7x_ide_helper-lg.webp" alt="Laravel IDE Helper" /]

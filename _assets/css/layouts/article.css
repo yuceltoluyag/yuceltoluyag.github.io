@@ -1,0 +1,588 @@
+/**
+ * Makale Layout
+ * 
+ * Makale sayfası düzenleri için stiller
+ */
+
+/* Makale Sayfa Düzeni - Grid Yapısı */
+.article-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: var(--spacing-lg);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.article-main {
+    width: 100%;
+    min-width: 0; /* İçerik taşmasını önlemek için */
+}
+
+.article-sidebar {
+    position: sticky;
+    top: calc(var(--spacing-xl) + 60px); /* Header yüksekliği + ekstra boşluk */
+    align-self: start;
+    height: max-content;
+    width: 300px; /* Sabit genişlik */
+}
+
+/* Makale Düzeni */
+.article {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    background-color: var(--color-background);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    color: var(--color-text-primary, #121212);
+    line-height: 1.8;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.article-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.article-title {
+    font-size: var(--text-4xl);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Makale Meta Bilgileri */
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    padding: var(--spacing-md);
+    background: linear-gradient(to right, var(--color-background), var(--color-background-alt));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-background);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.meta-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.meta-item i {
+    font-size: 1.2em;
+    color: var(--color-primary);
+    width: 1.5em;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.meta-item:hover i {
+    transform: scale(1.1);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.meta-date time,
+.meta-modified time,
+.meta-category a,
+.meta-series span,
+.meta-wordcount span,
+.meta-readtime span,
+.meta-difficulty span {
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.meta-category a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+}
+
+.meta-category a:hover {
+    color: var(--color-primary-hover);
+}
+
+.meta-tags,
+.article-tag,
+.article-tag:hover,
+.tags-list {
+    display: none;
+}
+
+.article-content {
+    font-size: var(--text-md);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-xl);
+    color: var(--color-text-primary, #121212);
+}
+
+.article-content p,
+.article-content ul,
+.article-content ol,
+.article-content li,
+.article-content blockquote {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary, #121212);
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+.article-content blockquote {
+    border-left: var(--border-width-thick) solid var(--article-blockquote-border);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: linear-gradient(135deg, var(--article-blockquote-bg) 0%, var(--article-blockquote-bg-end) 100%);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+    margin: var(--spacing-lg) 0;
+    position: relative;
+    color: var(--article-blockquote-text);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.article-content blockquote::before {
+    content: "\201C";
+    position: absolute;
+    top: -20px;
+    left: var(--spacing-sm);
+    font-size: var(--text-4xl);
+    color: var(--color-primary-light);
+    opacity: 0.6;
+    font-family: serif;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.article-content blockquote p {
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.article-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.article-content blockquote cite {
+    display: block;
+    font-size: var(--text-sm);
+    font-style: normal;
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+    color: var(--color-text-light);
+    text-align: right;
+}
+
+.article-content a {
+    color: var(--article-link-color);
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-size: 0 1px;
+    background-repeat: no-repeat;
+    background-position: left 100%;
+    padding-bottom: 2px;
+}
+
+.article-content a:hover,
+.article-content a:focus {
+    color: var(--article-link-hover);
+    background-size: 100% 1px;
+    outline: none;
+}
+
+.article-content a:focus-visible {
+    outline: 2px solid var(--article-link-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Karanlık tema için link stilleri */
+@media (prefers-color-scheme: dark) {
+    .article-content a {
+        color: var(--color-primary-light);
+        background: linear-gradient(to right, var(--color-primary-light) 0%, var(--color-primary-light) 100%);
+        background-size: 0 1px;
+        background-repeat: no-repeat;
+        background-position: left 100%;
+    }
+
+    .article-content a:hover,
+    .article-content a:focus {
+        color: var(--color-primary-lighter);
+        background: linear-gradient(to right, var(--color-primary-lighter) 0%, var(--color-primary-lighter) 100%);
+        background-size: 100% 1px;
+    }
+
+    .article-content a:focus-visible {
+        outline-color: var(--color-primary-light);
+    }
+}
+
+/* İçindekiler Bölümü */
+.toc-container {
+    margin: 0;
+    background-color: var(--color-background);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    width: 100%;
+    max-width: 300px; /* Maksimum genişlik sınırlaması */
+    position: sticky;
+    top: calc(var(--spacing-xl) + 60px);
+    position: relative; /* toc-marker için pozisyon referansı */
+}
+
+.toc-header {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-background-alt);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.toc-title {
+    font-size: var(--text-md);
+    margin: 0;
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.toc-content {
+    padding: var(--spacing-sm);
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    position: relative; /* toc-marker için pozisyon referansı */
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list-item {
+    margin-bottom: var(--spacing-xs);
+    padding-left: 0;
+    position: relative; /* toc-reading ve toc-already-read için gerekli */
+}
+
+.toc-level-h3 {
+    padding-left: var(--spacing-md);
+}
+
+.toc-level-h4 {
+    padding-left: calc(var(--spacing-md) * 2);
+}
+
+.toc-link,
+.toc-href {
+    color: var(--color-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xs2) 0;
+    transition: all var(--transition-fast);
+    font-size: var(--text-sm);
+    position: relative;
+}
+
+.toc-link:hover,
+.toc-link:focus,
+.toc-href:hover,
+.toc-href:focus {
+    color: var(--color-primary);
+    transform: translateX(2px);
+}
+
+.toc-link.active,
+.toc-href.toc-reading {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* TOC İşaretleyicisi */
+.toc-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 1.5em;
+    background-color: var(--color-primary);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+/* TOC icon */
+.toc-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: var(--spacing-xs);
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: all var(--transition-fast);
+}
+
+.toc-href:hover .toc-icon {
+    opacity: 1;
+}
+
+.toc-dot {
+    fill: var(--color-primary);
+    stroke: var(--color-primary);
+    stroke-width: 2;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.toc-line {
+    stroke: var(--color-border);
+    stroke-width: 1.5;
+}
+
+/* Aktif ve Okunmuş Durumlar */
+.toc-href.toc-reading {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.toc-href.toc-reading .toc-dot {
+    stroke-dashoffset: 0;
+    fill: var(--color-primary);
+}
+
+.toc-href.toc-already-read .toc-dot {
+    fill: var(--color-primary-light);
+    opacity: 0.7;
+}
+
+.toc-href.toc-already-read {
+    color: var(--color-text-light);
+}
+
+/* Karanlık Tema için Uyarlamalar */
+@media (prefers-color-scheme: dark) {
+    .article {
+        background-color: var(--color-bg-card, #1f2937);
+        color: var(--color-text, #e5e7eb);
+    }
+
+    .article-content {
+        color: var(--color-text, #e5e7eb);
+    }
+
+    .article-content p,
+    .article-content ul,
+    .article-content ol,
+    .article-content li,
+    .article-content blockquote {
+        color: var(--color-text, #e5e7eb);
+    }
+
+    .article-meta {
+        background: linear-gradient(to right, var(--color-bg-card), var(--color-background-alt));
+    }
+
+    .meta-item {
+        background-color: var(--color-bg-card);
+    }
+
+    .meta-item i {
+        background-color: rgba(var(--color-primary-rgb), 0.1);
+    }
+
+    .meta-date time,
+    .meta-modified time,
+    .meta-category a,
+    .meta-series span,
+    .meta-wordcount span,
+    .meta-readtime span,
+    .meta-difficulty span {
+        color: var(--color-text-light);
+    }
+
+    .meta-category a {
+        color: var(--color-primary-light);
+    }
+
+    .meta-category a:hover {
+        color: var(--color-primary-lighter);
+    }
+
+    .article-tag {
+        background-color: var(--color-primary-dark);
+    }
+
+    .article-tag:hover {
+        background-color: var(--color-primary);
+    }
+
+    .toc-container {
+        background-color: var(--color-bg-card);
+        border-color: var(--color-border);
+    }
+
+    .toc-link,
+    .toc-href {
+        color: var(--color-text-light);
+    }
+
+    .toc-link:hover,
+    .toc-link.active,
+    .toc-href:hover,
+    .toc-href.toc-reading {
+        color: var(--color-primary-light);
+    }
+
+    .toc-marker {
+        background-color: var(--color-primary-light);
+    }
+
+    .toc-line {
+        stroke: var(--color-border-dark, #374151);
+    }
+
+    .toc-dot {
+        fill: var(--color-primary-light);
+        stroke: var(--color-primary-light);
+    }
+
+    .toc-href.toc-already-read .toc-dot {
+        fill: var(--color-primary-dark);
+        opacity: 0.6;
+    }
+}
+
+/* Responsive Ayarlamalar */
+@media (max-width: 768px) {
+    .article-title {
+        font-size: var(--text-3xl);
+    }
+
+    .article-meta {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .meta-item {
+        font-size: var(--text-xs);
+    }
+
+    /* Mobil cihazlar için liste öğelerini optimize et */
+    .article-content ol,
+    .article-content ul {
+        padding-left: var(--spacing-md);
+    }
+
+    .article-content ol > li,
+    .article-content ul > li {
+        padding-left: 0;
+    }
+
+    .article-content ol > li::before {
+        left: -1.2rem;
+    }
+
+    .article-content ul > li::before {
+        left: -1rem;
+    }
+
+    .article-content ol > li a[rel="noopener noreferrer"][target="_blank"] {
+        display: inline-flex;
+        width: 100%;
+        margin: var(--spacing-xs) 0;
+    }
+
+    /* Responsive tablolar article bileşeni içinde özel olarak düzenlenir */
+    .article-content .table:not(.table-responsive) {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Dokümantasyon notları:
+ * 1. Tekli sütun düzeni basit ve esnek bir makale sayfası düzeni tanımlar
+ * 2. İçindekiler bölümü makale içeriğinden sonra ayrı bir bölüm olarak gösterilir
+ */
+
+/* Makale İçindeki Tablolar */
+/* 
+ * Tablolar için stiller tables.css dosyasında tanımlanmıştır.
+ * Makale içindeki tablolar otomatik olarak bu stilleri kullanır.
+ * Özel makale tabloları için gerekirse burada ek sınıflar tanımlanabilir.
+ */
+
+/* Responsive tablo stilleri için de tables.css kullanılır */
+
+/* Meta bilgilerdeki linkler için özel stiller */
+.article-meta a {
+    text-decoration: none;
+}
+
+.article-meta a:hover,
+.article-meta a:focus {
+    text-decoration: none;
+}
+
+/* Responsive Düzen */
+@media (max-width: 992px) {
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-sidebar {
+        order: -1; /* TOC'yi içerik üzerine taşı */
+        position: relative;
+        top: 0;
+        margin-bottom: var(--spacing-md);
+        width: 100%; /* Mobil görünümde tam genişlik */
+    }
+
+    .toc-container {
+        position: relative;
+        top: 0;
+        max-width: 100%; /* Mobil görünümde tam genişlik */
+    }
+}

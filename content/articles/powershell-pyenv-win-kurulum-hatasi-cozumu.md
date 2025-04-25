@@ -9,9 +9,10 @@ Summary: PowerShell 7.5.0 sürümünde Pyenv-Win kurulumu sırasında karşıla�
 Translation: false
 Status: published
 Template: article
-Image: images/Microsoft-PowerShell-Archive.webp
+Image: images/Microsoft-PowerShell-Archive-lg.webp
 
-![Microsoft-PowerShell-Archive](/images/Microsoft-PowerShell-Archive.webp)
+
+
 ## PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü 🎯  
 Python sürümlerini yönetmek için kullanılan **Pyenv-Win**, PowerShell 7.5.0 sürümünde bazı kullanıcılar için kurulum hatası verebilir. Özellikle `Microsoft.PowerShell.Archive` modülü eksik olduğunda aşağıdaki hata ile karşılaşabilirsiniz:  
 
@@ -93,3 +94,4 @@ PowerShell 7.5.0'da Pyenv-Win kurulumu sırasında `Expand-Archive` hatası alı
 
 Başka hata veya sorularınız olursa yorum bırakabilirsiniz. Happy coding! 🚀
 
+[responsive_img src="/images/Microsoft-PowerShell-Archive-lg.webp" alt="Microsoft-PowerShell-Archive" /]

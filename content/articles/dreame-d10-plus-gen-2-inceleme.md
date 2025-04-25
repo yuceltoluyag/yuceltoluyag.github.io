@@ -9,7 +9,7 @@ Summary: Dreame D10 Plus Gen 2'yi deneyimledik! Akıllı haritalama, güçlü ç
 Translation: false
 Status: published
 Template: article
-Image: images/dreame-d10-plus-gen-2.webp
+Image: images/dreame-d10-plus-gen-2-lg.webp
 
 
 <div class="info-box warning">
@@ -20,7 +20,6 @@ Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi p
 # Dreame D10 Plus Gen 2 İnceleme
 
 Herkese merhaba! 🎉 Robot süpürge deneyimimi sizlerle paylaşmak istiyorum. Daha önce hiç robot süpürge kullanmamış biri olarak, başlangıçta bazı çekincelerim vardı. Ancak Dreame D10 Plus Gen 2'yi aldıktan sonra tüm endişelerim kayboldu. İşte deneyimlerim ve ürünün öne çıkan özellikleri! 👇
-![dreame-d10-plus-gen-2](/images/dreame-d10-plus-gen-2.webp)
 
 ## Haritalandırma Performansı 🗺️
 
@@ -77,5 +76,6 @@ Bu durumda iki seçenek var: Ya Roborge’ye baskı yapılacak ya da yurt dış�
 
 Genel olarak Dreame D10 Plus Gen 2, güçlü çekiş gücü, akıllı haritalama ve kullanıcı dostu tasarımıyla beklentilerimi fazlasıyla karşıladı. Eğer bir robot süpürge almayı düşünüyorsanız, kesinlikle göz atmalısınız! 💡
 
+[responsive_img src="/images/dreame-d10-plus-gen-2-lg.webp" alt="dreame-d10-plus-gen-2" /]
 
 

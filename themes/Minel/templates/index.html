@@ -1,223 +1,92 @@
 {% extends "base.html" %} {% block content %}
-<!-- Öne Çıkarılan Makale -->
-{% if FEATURED_ARTICLE %}
-<div class="mb-8">
-    <div
-        class="bg-site-card border border-border-card rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300">
-        <div class="p-6">
-            <div class="flex items-center gap-2 mb-3">
-                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">Öne Çıkan</span>
-                <span class="text-sm text-text-secondary">{{ FEATURED_ARTICLE.date }}</span>
-            </div>
-            <h2 class="text-2xl font-bold mb-3">
-                <a
-                    href="{{ SITEURL }}/{{ FEATURED_ARTICLE.slug }}/"
-                    class="text-text-primary hover:text-primary transition-colors">
-                    {{ FEATURED_ARTICLE.title }}
-                </a>
-            </h2>
-            <p class="text-text-secondary mb-4">{{ FEATURED_ARTICLE.summary }}</p>
-            <a
-                href="{{ SITEURL }}/{{ FEATURED_ARTICLE.slug }}/"
-                class="inline-flex items-center justify-center gap-2 px-6 py-3 text-white bg-gradient-to-r from-blue-500 to-purple-500 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                <span class="font-semibold">Devamını oku</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-            </a>
-        </div>
-    </div>
-</div>
-{% endif %}
+<div class="container">
+    <section class="hero">
+        <h1 class="hero-title">{{ SITENAME }}</h1>
+        {% if DESCRIPTION %}
+        <p class="hero-description">{{ DESCRIPTION }}</p>
+        {% endif %}
+    </section>
 
-<!-- Kategori Filtreleri -->
-<div class="sticky top-0 z-10 bg-site-card/95 backdrop-blur-sm border-b border-border-card mb-8" id="category-filters">
-    <div class="container mx-auto px-4">
-        <div class="relative flex items-center py-4">
-            <!-- Sol gradient ve kaydırma butonu -->
-            <div class="absolute left-0 top-0 bottom-0 flex items-center">
-                <div
-                    class="absolute inset-0 w-12 bg-gradient-to-r from-site-card to-transparent pointer-events-none"></div>
-                <button
-                    id="scroll-left"
-                    onclick="scrollCategories('left')"
-                    class="relative z-20 p-2 text-text-secondary hover:text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-sm rounded-full mr-2 opacity-0 pointer-events-none shadow-lg hover:shadow-primary/10 hover:-translate-x-0.5 active:scale-95">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-            </div>
+    <section class="index-list">
+        <h2>İçerikler</h2>
 
-            <!-- Kaydırılabilir alan -->
-            <div
-                id="categories-scroll"
-                class="flex items-center overflow-x-auto whitespace-nowrap gap-3 scrollbar-none scroll-smooth flex-grow">
-                <a
-                    href="{{ SITEURL }}/kategoriler"
-                    class="flex items-center gap-2 px-4 py-2 {% if output_file == 'categories.html' %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-secondary hover:text-primary bg-site-card-alt/50 hover:bg-site-card-alt{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <span>Kategoriler</span>
-                </a>
-
-                {% for category, _ in categories %}
-                <a
-                    href="{{ SITEURL }}/kategori/{{ category.slug }}/"
-                    class="flex items-center gap-2 px-4 py-2 {% if category == current_category %}bg-primary text-white ring-2 ring-primary/20 shadow-lg shadow-primary/10{% else %}text-text-secondary hover:text-primary bg-site-card-alt/50 hover:bg-site-card-alt{% endif %} rounded-full text-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 active:scale-95">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                    </svg>
-                    <span>{{ category }}</span>
-                </a>
-                {% endfor %}
-            </div>
-
-            <!-- Sağ gradient ve kaydırma butonu -->
-            <div class="absolute right-0 top-0 bottom-0 flex items-center">
-                <div
-                    class="absolute inset-0 w-12 bg-gradient-to-l from-site-card to-transparent pointer-events-none"></div>
-                <button
-                    id="scroll-right"
-                    onclick="scrollCategories('right')"
-                    class="relative z-20 p-2 text-text-secondary hover:text-primary transition-all duration-300 bg-site-card/50 hover:bg-site-card backdrop-blur-sm rounded-full ml-2 shadow-lg hover:shadow-primary/10 hover:translate-x-0.5 active:scale-95">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Blog Gönderileri -->
-<div class="space-y-8">
-    {% for article in articles_page.object_list %}
-    <article class="bg-site-card rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 group relative">
-        <!-- Arka plan resmi -->
-        <div class="absolute inset-0 z-0">
-            {% if article.image %}
-            <img
-                src="{{ SITEURL }}/{{ article.image }}"
-                alt="{{ article.title }}"
-                class="w-full h-full object-cover opacity-10 transition-all duration-500 group-hover:scale-110 group-hover:opacity-15" />
-            {% endif %}
-            <div class="absolute inset-0 bg-gradient-to-b from-site-card/80 to-site-card"></div>
-        </div>
-
-        <!-- İçerik -->
-        <div class="relative z-10 p-8">
-            <div class="flex items-center gap-2 mb-4">
-                <a
-                    href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
-                    class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors">
-                    {{ article.category }}
-                </a>
-                <span class="text-sm text-text-secondary">{{ article.locale_date }}</span>
-            </div>
-
-            <h2 class="text-2xl font-bold mb-4">
-                <a
-                    href="{{ SITEURL }}/{{ article.url }}"
-                    class="text-text-primary hover:text-primary transition-colors">
-                    {{ article.title }}
-                </a>
-            </h2>
-
-            <p class="text-text-secondary mb-6">{{ article.summary|striptags|truncate(150) }}</p>
-
-            <div class="flex items-center justify-between">
-                <div class="flex flex-wrap gap-2">
-                    {% if article.tags %} {% for tag in article.tags %}
-                    <a
-                        href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-                        class="px-2 py-1 text-xs bg-site-card-alt rounded-full hover:text-primary transition-colors">
-                        #{{ tag }}
-                    </a>
-                    {% endfor %} {% endif %}
+        <div class="index-list-container">
+            {% if FEATURED_ARTICLE %}
+            <article class="index-list-item featured">
+                <div class="index-title-area">
+                    <p class="index-title">
+                        <a href="{{ SITEURL }}/{{ FEATURED_ARTICLE.slug }}">{{ FEATURED_ARTICLE.title }}</a>
+                    </p>
                 </div>
-                <a
-                    href="{{ SITEURL }}/{{ article.url }}"
-                    class="inline-flex items-center gap-2 text-primary hover:underline">
-                    Devamını oku
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </a>
-            </div>
+                <div class="index-meta-area">
+                    <span class="index-author">
+                        <i class="icon-user"></i>
+                        {{ SITENAME }}
+                    </span>
+                    <span class="index-category">
+                        <i class="icon-star"></i>
+                        <span>{{ FEATURED_ARTICLE.category }}</span>
+                    </span>
+                    <time datetime="{{ FEATURED_ARTICLE.date }}" class="index-date">
+                        <i class="icon-calendar"></i>
+                        {{ FEATURED_ARTICLE.date|strftime('%d %B %Y') }}
+                    </time>
+                </div>
+            </article>
+            {% endif %} {% for article in articles_page.object_list %}
+            <article class="index-list-item">
+                <div class="index-title-area">
+                    <p class="index-title">
+                        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                    </p>
+                </div>
+                <div class="index-meta-area">
+                    {% if article.author %}
+                    <span class="index-author">
+                        <i class="icon-user"></i>
+                        {{ article.author }}
+                    </span>
+                    {% endif %} {% if article.category %}
+                    <span class="index-category">
+                        <i class="icon-folder"></i>
+                        <a
+                            href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
+                            aria-label="Kategori: {{ article.category }}">
+                            {{ article.category }}
+                        </a>
+                    </span>
+                    {% endif %}
+                    <time datetime="{{ article.date.isoformat() }}" class="index-date">
+                        <i class="icon-calendar"></i>
+                        {{ article.date|strftime('%d %B %Y') }}
+                    </time>
+                </div>
+            </article>
+            {% endfor %}
         </div>
-    </article>
-    {% endfor %}
+
+        {% if articles_page.has_other_pages() %}
+        <nav class="pagination" aria-label="Sayfa Navigasyonu">
+            {% if articles_page.has_previous() %}
+            <a
+                class="pagination-previous"
+                href="{{ SITEURL }}/{{ articles_previous_page.url }}"
+                aria-label="Önceki Sayfa">
+                &laquo; Önceki
+            </a>
+            {% endif %}
+
+            <span class="pagination-current" aria-current="page">
+                Sayfa {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+            </span>
+
+            {% if articles_page.has_next() %}
+            <a class="pagination-next" href="{{ SITEURL }}/{{ articles_next_page.url }}" aria-label="Sonraki Sayfa">
+                Sonraki &raquo;
+            </a>
+            {% endif %}
+        </nav>
+        {% endif %}
+    </section>
 </div>
-
-<!-- Sayfalama -->
-{% if articles_page.has_other_pages() %}
-<div class="flex justify-center gap-3 mt-12">
-    {% if articles_page.has_previous() %}
-    <a
-        href="{{ SITEURL }}/{{ articles_previous_page.url }}"
-        class="px-6 py-2 bg-site-card rounded-lg hover:bg-site-card-alt transition-colors flex items-center gap-2">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-        Önceki
-    </a>
-    {% endif %}
-
-    <span class="px-6 py-2 bg-primary text-white rounded-lg">{{ articles_page.number }}</span>
-
-    {% if articles_page.has_next() %}
-    <a
-        href="{{ SITEURL }}/{{ articles_next_page.url }}"
-        class="px-6 py-2 bg-site-card rounded-lg hover:bg-site-card-alt transition-colors flex items-center gap-2">
-        Sonraki
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-    </a>
-    {% endif %}
-</div>
-{% endif %}
-
-<!-- Kaydırma için JavaScript -->
-<script>
-    const container = document.getElementById("categories-scroll");
-    const leftButton = document.getElementById("scroll-left");
-    const rightButton = document.getElementById("scroll-right");
-    const scrollAmount = 200;
-
-    function scrollCategories(direction) {
-        if (direction === "right") {
-            container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        } else {
-            container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-        }
-    }
-
-    function updateScrollButtons() {
-        if (container.scrollLeft > 0) {
-            leftButton.classList.remove("opacity-0", "pointer-events-none");
-        } else {
-            leftButton.classList.add("opacity-0", "pointer-events-none");
-        }
-
-        if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
-            rightButton.classList.add("opacity-0", "pointer-events-none");
-        } else {
-            rightButton.classList.remove("opacity-0", "pointer-events-none");
-        }
-    }
-
-    container.addEventListener("scroll", updateScrollButtons);
-    window.addEventListener("load", updateScrollButtons);
-    window.addEventListener("resize", updateScrollButtons);
-</script>
 {% endblock %}

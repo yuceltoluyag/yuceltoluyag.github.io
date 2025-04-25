@@ -11,7 +11,7 @@ Summary: Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağ
 Translation: false
 Status: published
 Template: article
-Image: images/windows-terminal.webp
+Image: images/windows-terminal-lg.webp
 
 **Merhaba**
 
@@ -44,23 +44,25 @@ Eğer terminalinizde **ikon**ların doğru şekilde **görüntülenmesini** isti
 
 Bu iki uygulamayı **kuruyoruz**. Kurduktan sonra **Windows Terminal** uygulamamızı **açıyoruz** ve **ayarlara** giriyoruz.
 
-![windows-terminal](/images/windows-terminal.webp)
+
+[responsive_img src="/images/windows-terminal-lg.webp" alt="windows-terminal" /]
 
 Ayarlara girdikten sonra **görünüm** sekmesindeki ayarlarınız şu şekilde **olmalı**.
 
-![windows-terminal2](/images/windows-terminal2.webp)
+
+[responsive_img src="/images/windows-terminal2-lg.webp" alt="windows-terminal2" /]
+
 
 Ayarları **kaydettikten** sonra **Startup** kısmına tıklayın. Yüklemiş olduğumuz **Powershell**'i **varsayılan** olarak ayarlayın.
-
-![windows-terminal3](/images/windows-terminal3.webp)
-
+[responsive_img src="/images/windows-terminal3-lg.webp" alt="windows-terminal3" /]
 Ayarları **kaydedin** ve **Defaults** sekmesine gelin, oradan **Appearance** kısmından **Font** ayarlarınızı yapın.
 
-![windows-terminal4](/images/windows-terminal4.webp)
 
+[responsive_img src="/images/windows-terminal4-lg.webp" alt="windows-terminal4" /]
 **Font** ayarlarınızı yaptıktan sonra aynı ekranda bulunan "**Enable Acrylic**"i **aktif** hale getirin ve ayarları **kaydedin**.
 
-![windows-terminal5](/images/windows-terminal5.webp)
+
+[responsive_img src="/images/windows-terminal5-lg.webp" alt="windows-terminal5" /]
 
 Tüm bunları yaptıktan sonra **Terminal**inizi **kapatıp** yeniden **açın**.
 
@@ -375,9 +377,8 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 
 # Sonuç
 
-![windows-terminal6](/images/windows-terminal-son.webp)
-
-### Bana Balık Tutmasını Öğretme, Bana Balık Ver
+[responsive_img src="/images/windows-terminal-son-lg.webp" alt="windows-terminal6" /]
+## Bana Balık Tutmasını Öğretme, Bana Balık Ver
 
 Bu yazımı okuyorsanız, muhtemelen **Git** nedir biliyorsunuzdur 👊 Linux tarafında sorunsuz çalışan araçlar **Windows**ta bazen sorunlu olabiliyor. Örneğin, **GPG** kullanırken sorun yaşamıyorsanız, kullanmaya devam edin 🧠 Ancak sorun yaşıyorsanız, "**gpg4win**" kullanmanızı tavsiye ederim.
 

@@ -9,7 +9,7 @@ Summary: VLC medya oynatıcısı için VLSub eklentisiyle kolayca altyazı bulma
 Translation: false
 Status: published
 Template: article
-Image: images/vlsub0.webp
+Image: images/vlsub0-lg.webp
 
 # VLSub ile Altyazı Aramaya Son (Resimli Anlatım) 🎬
 
@@ -30,8 +30,8 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 1. **[VLC Media Player](https://www.videolan.org/vlc/index.tr.html){: target="_blank" rel="noopener noreferrer"}** programını indirin ve kurun. (Tamamen ücretsiz ve açık kaynak kodludur.)
 2. Eğer **Görünüm** menüsü altında **VLSub** seçeneğini göremiyorsanız, şu adımları izleyin:
 
-   ![VLSub Kurulumu](/images/vlsub0.webp)
 
+[responsive_img src="/images/vlsub0-lg.webp" alt="VLSub Kurulumu" /]
    - **[Buradan](https://addons.videolan.org/p/1154045/){: target="_blank" rel="noopener noreferrer"}** eklentiyi indirin.
    - **C:\Program Files\VideoLAN\VLC\lua\extensions** dizinine kopyalayın.
    - **VLC kapalı olmalıdır!** Kopyalama işlemini yaptıktan sonra VLC'yi yeniden başlatın.
@@ -53,15 +53,11 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 
 1. **İzleyeceğiniz videoyu açın.**
 2. **Menüden**: `Görünüm -> VLSub` seçeneğine tıklayın.
-
-   ![VLSub Açma](/images/vlbsub.webp)
-
+[responsive_img src="/images/vlbsub-lg.webp" alt="VLSub Açma" /]
 3. Açılan pencerede film ya da dizi ismini otomatik arayabilir veya manuel olarak girebilirsiniz.
 4. **Sonuçlardan birine tıklayın** ve **Download Selection** butonuna basın.
 5. Altyazı **otomatik olarak aynı klasöre** indirilecektir.
-
-   ![VLSub Altyazı Bulma](/images/vlsub1.webp)
-
+[responsive_img src="/images/vlsub1-lg.webp" alt="VLSub Altyazı Bulma" /]
 ---
 
 ## ℹ️ Ekstra Bilgi

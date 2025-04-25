@@ -11,9 +11,9 @@ Summary: Git'te belirli bir commit'e geri dönmek ve git cherry-pick komutuyla s
 Translation: false
 Status: published
 Template: article
-Image: images/git-chery.webp
+Image: images/git-chery-lg.webp
 
-![git-chery](/images/git-chery.webp)
+
 
 ## Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı 🎯  
 Version kontrol sistemleri, özellikle Git, projelerinizdeki değişiklikleri yönetmek için oldukça güçlü araçlar sunar. **Bazen bir commit'e geri dönmek veya belirli bir commit'in içeriğini farklı bir branch'e taşımak isteyebilirsiniz.** Bu makalede, `git reset`, `git checkout` ve `git cherry-pick` komutlarının nasıl kullanılacağını anlatacağız. 🛠️  
@@ -23,24 +23,24 @@ Version kontrol sistemleri, özellikle Git, projelerinizdeki değişiklikleri y�
 ### **1. Geçici Olarak Geri Dönmek (Detached HEAD Modu)**  
 Eğer sadece belirli bir commit'in içeriğini incelemek istiyorsanız, şu komutu kullanabilirsiniz:  
 
-```sh  
+```bash  
 git checkout 86d538b  
 ```
 Bu komut **projenizi o commit'in olduğu duruma getirir** ancak **detached HEAD** modunda çalışırsınız. Eğer bu commit üzerinde çalışmak istiyorsanız yeni bir branch oluşturabilirsiniz:  
 
-```sh  
+```bash  
 git checkout -b eski-versiyon 86d538b  
 ```
 
 ### **2. Kalıcı Olarak Geri Dönmek (`git reset`)**  
 Eğer **geçmişi değiştirerek** tamamen eski bir commit'e geri dönmek istiyorsanız şu komutu kullanabilirsiniz:  
 
-```sh  
+```bash  
 git reset --hard 86d538b  
 ```
 Bu komut tüm değişiklikleri **kalıcı olarak** siler ve projeyi o commit'e döndürür. **Dikkat:** Eğer değişiklikleri uzak depoya (`git push`) gönderdiyseniz, bunu zorla güncellemeniz gerekir:  
 
-```sh  
+```bash  
 git push --force  
 ```
 ⚠️ **Uyarı:** `--force` parametresi, ekibinizle çalışıyorsanız dikkatli kullanılmalıdır.  
@@ -48,7 +48,7 @@ git push --force
 ### **3. Belirli Bir Commit'i Geri Alma (`git revert`)**  
 Eğer sadece bir commit'in yaptığı değişiklikleri geri almak istiyorsanız:  
 
-```sh  
+```bash  
 git revert 86d538b  
 ```
 Bu komut, belirtilen commit'in yaptığı değişiklikleri **tersine çeviren yeni bir commit** oluşturur. **Mevcut geçmiş korunur**, böylece ekip çalışmasında daha güvenlidir. 🤝  
@@ -61,7 +61,7 @@ Bazen, bir branch'teki belirli bir commit'i başka bir branch'e taşımak isteye
 ### **1. Tek Bir Commit'i Başka Bir Branch'e Taşımak**  
 Diyelim ki `feature` branch'indesiniz ve `main` branch'inde bulunan `86d538b` commit'ini almak istiyorsunuz:  
 
-```sh  
+```bash  
 git cherry-pick 86d538b  
 ```
 Bu işlem, belirtilen commit'i **şu an bulunduğunuz branch'e ekler**.  
@@ -69,14 +69,14 @@ Bu işlem, belirtilen commit'i **şu an bulunduğunuz branch'e ekler**.
 ### **2. Birden Fazla Commit'i Seçerek Taşımak**  
 Eğer birden fazla commit'i almak istiyorsanız, aralarına boşluk koyarak şu komutu çalıştırabilirsiniz:  
 
-```sh  
+```bash  
 git cherry-pick 86d538b 12a4ef9 f45c8d7  
 ```
 
 ### **3. Belirli Bir Commit Aralığını Seçmek**  
 Eğer bir commit aralığını almak istiyorsanız:  
 
-```sh  
+```bash  
 git cherry-pick 86d538b..f45c8d7  
 ```
 Bu komut, `86d538b` ile `f45c8d7` arasındaki tüm commit'leri alıp mevcut branch'e uygular. 🚀  
@@ -88,13 +88,13 @@ Eğer `git cherry-pick` sırasında bir **çakışma (merge conflict)** oluşurs
 2. Çakışmaları manuel olarak çözün.
 3. Çözüm bittikten sonra commit'i tamamlamak için şu komutu çalıştırın:
    
-   ```sh  
+   ```bash  
    git cherry-pick --continue  
    ```  
 
 Eğer işlemi iptal etmek isterseniz:  
 
-```sh  
+```bash  
 git cherry-pick --abort  
 ```
 Bu komut, cherry-pick işlemini geri alarak eski haline döndürür.  
@@ -112,3 +112,4 @@ Git'te belirli bir commit'e geri dönmek veya belirli commit'leri farklı branch
 
 Eğer Git ile ilgili başka sorularınız varsa yorum bırakabilirsiniz! Happy coding! 🎉
 
+[responsive_img src="/images/git-chery-lg.webp" alt="git-commit-geri-donme-cherry-pick" /]

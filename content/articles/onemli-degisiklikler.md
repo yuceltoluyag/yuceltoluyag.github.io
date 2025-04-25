@@ -9,10 +9,10 @@ Summary: Site hakkında önemli gelişmeleri ve yenilikleri bu sayfadan takip ed
 Translation: false
 Status: published
 Template: article
-Image: images/duyuru.webp
+Image: images/duyuru-lg.webp
 
 
-![Duyuru](/images/duyuru.webp)
+
 
 ---
 # Akıllı Semboller
@@ -38,7 +38,21 @@ c/o
 1/4, etc.
 1st 2nd etc.
 
+<div class="info-box info">
+    Bu bir bilgi kutusudur.
+</div>
 
+<div class="info-box warning">
+    Bu bir uyarı kutusudur.
+</div>
+
+<div class="info-box important">
+    Bu önemli bir bilgidir!
+</div>
+
+<div class="info-box tip">
+    Faydalı bir ipucu.
+</div>
 
 # Kod Bloğu Dil Testi
 
@@ -469,3 +483,4 @@ kullanicilar:
 
 Bu sayfada farklı programlama dillerinin kod bloklarını test ettik. Dil etiketlerinin doğru şekilde görüntülendiğinden emin olmak için bu örnekleri kullanabilirsiniz.
 
+[responsive_img src="/images/duyuru-lg.webp" alt="Duyuru" /]
