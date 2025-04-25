@@ -12,15 +12,15 @@
     margin-right: auto;
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
-    max-width: var(--container-max-width, 1280px);
+    max-width: var(--container-max-width);
 }
 
 .container-narrow {
-    max-width: var(--container-narrow-max-width, 960px);
+    max-width: var(--container-narrow-max-width);
 }
 
 .container-wide {
-    max-width: var(--container-wide-max-width, 1440px);
+    max-width: var(--container-wide-max-width);
 }
 
 .container-full {
@@ -449,21 +449,27 @@
     align-items: stretch;
 }
 
-/* Responsive Düzenlemeler */
-@media (max-width: 1200px) {
+/* Responsif Medya Sorguları */
+@media (width >= var(--breakpoint-2xl)) {
     .container {
-        max-width: 1140px;
+        max-width: var(--container-wide-max-width);
     }
 }
 
-@media (max-width: 992px) {
+@media (width >= var(--breakpoint-xl)) {
     .container {
-        max-width: 960px;
+        max-width: var(--container-max-width);
+    }
+}
+
+@media (width >= var(--breakpoint-lg)) {
+    .container {
+        max-width: var(--container-narrow-max-width);
     }
 
     .section-lg,
     .section-xl {
-        --section-padding-y: 4rem;
+        --section-padding-y: 5rem;
     }
 
     .two-column-layout {
@@ -472,27 +478,26 @@
 
     .two-column-layout .sidebar {
         width: 100%;
-        order: 2;
+        margin-top: var(--spacing-xl);
     }
 
     .two-column-layout .main-content {
         width: 100%;
-        order: 1;
     }
 }
 
-@media (max-width: 768px) {
+@media (width >= var(--breakpoint-md)) {
     .container {
-        max-width: 720px;
+        max-width: var(--breakpoint-md);
     }
 
     .section {
-        --section-padding-y: 3rem;
+        padding: var(--spacing-xl) 0;
     }
 
     .section-lg,
     .section-xl {
-        --section-padding-y: 3.5rem;
+        --section-padding-y: 4rem;
     }
 
     .w-1-2,
@@ -504,13 +509,30 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (width >= var(--breakpoint-sm)) {
     .container {
-        max-width: 540px;
+        max-width: var(--breakpoint-sm);
     }
 
     .section {
-        --section-padding-y: 2rem;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .section-lg,
+    .section-xl {
+        --section-padding-y: 3rem;
+    }
+}
+
+@media (width < var(--breakpoint-sm)) {
+    .container {
+        max-width: 100%;
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .section {
+        padding: var(--spacing-md) 0;
     }
 
     .section-lg,
@@ -579,10 +601,11 @@
     line-height: 1.6;
 }
 
-/* Hero bölümü için duyarlı tasarım ayarlamaları */
-@media (max-width: 768px) {
+/* Hero Bölümü Responsif Stilleri */
+@media (width >= var(--breakpoint-md)) {
     .hero {
-        padding: var(--spacing-lg) 0;
+        min-height: 400px;
+        padding: var(--spacing-2xl) 0;
     }
 
     .hero-title {
@@ -590,13 +613,14 @@
     }
 
     .hero-description {
-        font-size: var(--text-md);
+        font-size: var(--text-lg);
     }
 }
 
-@media (max-width: 576px) {
+@media (width < var(--breakpoint-sm)) {
     .hero-title {
         font-size: var(--text-2xl);
+        margin-bottom: var(--spacing-md);
     }
 }
 
@@ -748,17 +772,18 @@
     font-size: var(--text-2xl);
 }
 
-@media (max-width: 992px) {
+/* Featured Posts Responsif Stilleri */
+@media (width >= var(--breakpoint-lg)) {
     .featured-post-large {
-        height: 350px;
+        width: 100%;
     }
 
     .featured-post-small {
-        height: 250px;
+        width: calc(50% - var(--spacing-md));
     }
 
     .featured-post-large .featured-post-title {
-        font-size: var(--text-xl);
+        font-size: var(--text-2xl);
     }
 
     .featured-post-title {
@@ -766,22 +791,19 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (width >= var(--breakpoint-md)) {
     .featured-posts-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
-    .featured-post-large {
-        grid-column: 1;
-        height: 300px;
-    }
-
+    .featured-post-large,
     .featured-post-small {
-        height: 250px;
+        width: 100%;
+        margin-bottom: var(--spacing-lg);
     }
 
     .featured-post-content {
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg);
     }
 }
 

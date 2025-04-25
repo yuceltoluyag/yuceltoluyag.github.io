@@ -15,10 +15,11 @@
 
 .article-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 300px;
-    gap: var(--spacing-lg);
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: var(--spacing-xl);
     width: 100%;
-    margin: 0 auto;
+    margin: var(--spacing-xl) auto 0;
+    position: relative;
 }
 
 .article-main {

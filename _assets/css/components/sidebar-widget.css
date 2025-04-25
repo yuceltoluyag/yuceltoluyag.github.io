@@ -1,0 +1,386 @@
+/**
+ * Sidebar Widget Bileşeni
+ * Kullanım: Makale sayfasında sidebar widget'ları
+ */
+
+/* Genel Sidebar Widget Stilleri */
+.sidebar-widget {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-2xl);
+    box-shadow: var(--shadow-md);
+    border: var(--border-width-thin) solid var(--color-border);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Özel Widget Boşlukları */
+.toc-container.sidebar-widget {
+    margin-bottom: var(--spacing-3xl);
+    padding-bottom: 0;
+}
+
+.recent-posts.sidebar-widget {
+    margin-top: var(--spacing-3xl);
+    padding-top: var(--spacing-xl);
+    position: relative;
+}
+
+.recent-posts.sidebar-widget::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: var(--spacing-md);
+    right: var(--spacing-md);
+    height: 3px;
+    background: linear-gradient(to right, transparent, var(--color-primary), transparent);
+    opacity: 0.2;
+}
+
+.sidebar-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.widget-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.widget-title iconify-icon {
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+}
+
+/* Son ve Benzer Yazılar Widget'ları */
+.recent-posts-list,
+.related-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.recent-post-item,
+.related-post-item {
+    transition: transform var(--transition-fast);
+}
+
+.recent-post-item:hover,
+.related-post-item:hover {
+    transform: translateX(var(--spacing-xs));
+}
+
+.recent-post-link,
+.related-post-link {
+    display: block;
+    color: var(--sidebar-link-color);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    background: var(--sidebar-link-bg);
+    transition: all var(--transition-fast);
+    font-weight: 500;
+}
+
+.recent-post-link:hover,
+.related-post-link:hover {
+    color: var(--sidebar-link-hover-color);
+    background: var(--sidebar-link-hover-bg);
+}
+
+.post-date {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--sidebar-date-color);
+    margin-top: var(--spacing-xs);
+    font-weight: 500;
+}
+
+/* Her bir widget'ı kendi içinde tamamla */
+.recent-posts,
+.related-posts {
+    margin-bottom: var(--spacing-xl);
+    isolation: isolate;
+}
+
+/* TOC Konteyneri ve Ana Yapı */
+.toc-container {
+    isolation: isolate;
+    background: var(--color-bg-card);
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    max-height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.toc-header {
+    background-color: var(--color-bg-alt);
+    padding: var(--spacing-md);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.toc-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.toc-title-icon {
+    color: var(--color-primary);
+    font-size: var(--text-xl);
+}
+
+.toc-content {
+    padding: var(--spacing-md);
+    max-height: 250px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+/* TOC İçeriği ve Listeler */
+.toc-content ul {
+    list-style: none;
+    padding-left: var(--spacing-sm);
+    margin: 0;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.toc-content > ul > li {
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    border-left: 3px solid transparent;
+    transition: border-color var(--transition-fast);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.toc-content > ul > li:hover {
+    border-left-color: var(--color-primary);
+}
+
+.toc-content > ul > li > ul {
+    padding-left: var(--spacing-md);
+    margin-top: var(--spacing-xs);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.toc-content > ul > li > ul > li {
+    font-size: 0.9em;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+.toc-content a {
+    color: var(--sidebar-link-color);
+    text-decoration: none;
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-xs);
+    font-size: var(--text-sm);
+    line-height: 1.4;
+    transition: color var(--transition-fast), background var(--transition-fast);
+    border-radius: var(--radius-sm);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-weight: 500;
+}
+
+.toc-content a:hover {
+    color: var(--sidebar-link-hover-color);
+    background-color: var(--sidebar-link-hover-bg);
+}
+
+.toc-content a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Sabit genişlik için sidebar düzenlemeleri */
+.article-sidebar {
+    width: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+/* Widget'lar arası ayırıcı */
+.article-sidebar > div + div {
+    position: relative;
+}
+
+/* TOC İçerik Kaydırma Çubuğu */
+.toc-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-content::-webkit-scrollbar-track {
+    background: var(--color-bg-alt);
+    border-radius: 10px;
+}
+
+.toc-content::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
+}
+
+.toc-content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Karanlık Tema için Uyarlamalar */
+@media (prefers-color-scheme: dark) {
+    .sidebar-widget {
+        background: var(--color-bg-card);
+        border-color: var(--color-border);
+    }
+
+    .widget-title {
+        color: var(--color-text-primary);
+        border-color: var(--color-border);
+    }
+
+    .recent-post-link,
+    .related-post-link {
+        color: var(--sidebar-link-color);
+        background: var(--sidebar-link-bg);
+    }
+
+    .recent-post-link:hover,
+    .related-post-link:hover {
+        color: var(--sidebar-link-hover-color);
+        background: var(--sidebar-link-hover-bg);
+    }
+
+    .post-date {
+        color: var(--sidebar-date-color);
+    }
+
+    .toc-container {
+        background: var(--color-bg-card);
+        border-color: var(--color-border);
+    }
+
+    .toc-header {
+        background-color: var(--color-bg-alt);
+        border-color: var(--color-border);
+    }
+
+    .toc-content a {
+        color: var(--sidebar-link-color);
+    }
+
+    .toc-content a:hover {
+        color: var(--sidebar-link-hover-color);
+        background-color: var(--sidebar-link-hover-bg);
+    }
+
+    .toc-content a.active {
+        color: var(--color-primary-light);
+    }
+
+    .toc-content::-webkit-scrollbar-track {
+        background: var(--color-background-alt);
+    }
+
+    .toc-content::-webkit-scrollbar-thumb {
+        background: var(--color-border-dark);
+    }
+
+    .recent-posts.sidebar-widget::before {
+        background: linear-gradient(to right, transparent, var(--color-primary-light), transparent);
+    }
+}
+
+/* Mobil Uyarlamalar */
+@media (max-width: 768px) {
+    .article-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .article-sidebar {
+        order: 2 !important;
+        position: static !important;
+        margin-top: var(--spacing-xl);
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        gap: var(--spacing-xl);
+    }
+
+    .sidebar-widget {
+        margin-bottom: var(--spacing-lg);
+        width: 100%;
+    }
+
+    .toc-container {
+        max-height: none;
+        width: 100%;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .toc-content {
+        max-height: 300px;
+        width: 100%;
+    }
+
+    .toc-title {
+        font-size: var(--text-md);
+    }
+
+    .toc-content a {
+        padding: var(--spacing-xs2) var(--spacing-xs);
+        font-size: 0.9em;
+    }
+
+    .recent-posts.sidebar-widget {
+        margin-top: 0;
+    }
+}

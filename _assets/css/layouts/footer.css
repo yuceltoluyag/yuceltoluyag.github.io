@@ -277,29 +277,80 @@
     }
 }
 
-/* Responsive Ayarlar */
-@media (max-width: 768px) {
+/* Responsive Medya Sorguları */
+@media (width >= var(--breakpoint-lg)) {
+    .footer-info {
+        flex-wrap: nowrap;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-subscribe {
+        flex: 1;
+        min-width: 250px;
+    }
+}
+
+@media (width >= var(--breakpoint-md)) {
+    .footer-info {
+        flex-wrap: wrap;
+        gap: var(--spacing-xl);
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-subscribe {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+@media (width < var(--breakpoint-md)) {
     .footer-info {
         flex-direction: column;
-        gap: var(--spacing-md);
+        gap: var(--spacing-lg);
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-subscribe {
+        width: 100%;
+        min-width: 100%;
     }
 
     .footer-bottom {
         flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-xs);
+        gap: var(--spacing-sm);
         text-align: center;
     }
 }
 
-@media (max-width: 480px) {
+@media (width < var(--breakpoint-sm)) {
     .social-links {
         justify-content: center;
         gap: var(--spacing-xs);
     }
 
     .social-link {
-        width: 28px;
-        height: 28px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .footer-links,
+    .footer-social,
+    .footer-subscribe {
+        text-align: center;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
