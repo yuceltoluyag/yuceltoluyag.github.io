@@ -346,41 +346,15 @@
     }
 
     .article-sidebar {
-        order: 2 !important;
-        position: static !important;
-        margin-top: var(--spacing-xl);
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-        gap: var(--spacing-xl);
+        display: none !important; /* Sidebar'ı mobil görünümde tamamen gizle */
     }
+}
 
-    .sidebar-widget {
-        margin-bottom: var(--spacing-lg);
-        width: 100%;
-    }
-
-    .toc-container {
-        max-height: none;
-        width: 100%;
-        margin-bottom: var(--spacing-lg);
-    }
-
-    .toc-content {
-        max-height: 300px;
-        width: 100%;
-    }
-
-    .toc-title {
-        font-size: var(--text-md);
-    }
-
-    .toc-content a {
-        padding: var(--spacing-xs2) var(--spacing-xs);
-        font-size: 0.9em;
-    }
-
-    .recent-posts.sidebar-widget {
-        margin-top: 0;
+/* Tablet ve Küçük Ekranlar İçin */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .article-sidebar {
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
     }
 }
