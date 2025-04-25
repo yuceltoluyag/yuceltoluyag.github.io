@@ -134,6 +134,73 @@
                 {% endif %}
 
                 <div class="article-content">{{ article.content }}</div>
+
+                <!-- Webmention Bölümü -->
+                <div class="webmentions-container">
+                    <h3 class="webmentions-title">
+                        <iconify-icon icon="tabler:messages"></iconify-icon>
+                        Webmentionlar
+                    </h3>
+
+                    <div class="webmentions-content">
+                        {% if article.webmentions %}
+                        <div class="webmentions-list">
+                            {% for webmention in article.webmentions %}
+                            <div class="webmention-item">
+                                <div class="webmention-author">
+                                    {% if webmention.author.photo %}
+                                    <img
+                                        src="{{ webmention.author.photo }}"
+                                        alt="{{ webmention.author.name }}"
+                                        class="webmention-avatar" />
+                                    {% else %}
+                                    <div class="webmention-avatar-placeholder">
+                                        <iconify-icon icon="tabler:user"></iconify-icon>
+                                    </div>
+                                    {% endif %}
+                                    <div class="webmention-author-info">
+                                        <a
+                                            href="{{ webmention.author.url }}"
+                                            class="webmention-author-name"
+                                            target="_blank"
+                                            rel="noopener">
+                                            {{ webmention.author.name }}
+                                        </a>
+                                        <div class="webmention-date">
+                                            <time datetime="{{ webmention.published }}">
+                                                {{ webmention.published|strftime('%d %B %Y') }}
+                                            </time>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="webmention-content">{{ webmention.content|safe }}</div>
+                                <div class="webmention-source">
+                                    <a href="{{ webmention.source }}" target="_blank" rel="noopener">
+                                        <iconify-icon icon="tabler:external-link"></iconify-icon>
+                                        Kaynağa git
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="webmentions-empty">
+                            <p>
+                                Henüz webmention yok. Bu makaleye yanıt vermek için kendi web sitenizden bir bağlantı
+                                oluşturun.
+                            </p>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="webmentions-info">
+                        <p>
+                            Bu sitede
+                            <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener">Webmention</a>
+                            desteklenmektedir. Kendi sitenizden bu sayfaya bağlantı vererek yanıt yazabilirsiniz.
+                        </p>
+                    </div>
+                </div>
             </article>
         </div>
     </div>
@@ -177,5 +244,126 @@
         align-items: center;
         gap: 0.3rem;
     }
+
+    /* Webmention Stilleri */
+    .webmentions-container {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--color-border, #eee);
+    }
+
+    .webmentions-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .webmentions-content {
+        margin-bottom: 1.5rem;
+    }
+
+    .webmentions-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .webmention-item {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background-color: var(--color-bg-alt, #f9fafb);
+    }
+
+    .webmention-author {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .webmention-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .webmention-avatar-placeholder {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--color-bg-muted, #e2e8f0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-text-muted, #64748b);
+    }
+
+    .webmention-author-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .webmention-author-name {
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--color-primary, #3182ce);
+    }
+
+    .webmention-date {
+        font-size: 0.8rem;
+        color: var(--color-text-light, #718096);
+    }
+
+    .webmention-content {
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+    }
+
+    .webmention-source {
+        font-size: 0.85rem;
+    }
+
+    .webmention-source a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        color: var(--color-text-light, #718096);
+        text-decoration: none;
+    }
+
+    .webmention-source a:hover {
+        color: var(--color-primary, #3182ce);
+    }
+
+    .webmentions-empty {
+        padding: 1.5rem;
+        background-color: var(--color-bg-alt, #f9fafb);
+        border-radius: 0.5rem;
+        text-align: center;
+        color: var(--color-text-light, #718096);
+    }
+
+    .webmentions-info {
+        font-size: 0.85rem;
+        color: var(--color-text-light, #718096);
+        padding: 1rem;
+        background-color: var(--color-bg-alt, #f9fafb);
+        border-radius: 0.5rem;
+    }
+
+    .webmentions-info a {
+        color: var(--color-primary, #3182ce);
+        text-decoration: none;
+    }
 </style>
-{% endblock %}
+{% endblock %} {% block scripts %}
+<!-- Webmention JS -->
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention.min.js" defer></script>
+
+<!-- Webmention Test Aracı (Geliştirme sırasında) -->
+{% if DEVELOPMENT_MODE %}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention-test.min.js" defer></script>
+{% endif %} {% endblock %}

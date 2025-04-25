@@ -19,6 +19,9 @@ CONTENT_BASE_URL = os.path.abspath(os.path.dirname(__file__))
 OUTPUT_PATH = "output"
 TIMEZONE = "Europe/Istanbul"
 
+# Webmention Testi için
+DEVELOPMENT_MODE = False
+
 DEFAULT_LANG = "tr"
 
 
