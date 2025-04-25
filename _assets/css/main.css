@@ -51,8 +51,7 @@
 @import "./components/pagination.css";
 @import "./components/search.css";
 @import "./components/article.css";
-@import "./components/toc.css";
-@import "./components/toc-markers.css";
+@import "./components/sidebar-widget.css";
 
 /* Layout Dosyaları */
 @import "./layouts/header.css";

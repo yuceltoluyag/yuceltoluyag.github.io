@@ -3,6 +3,57 @@
 {% endblock %} {% block content %}
 <div class="container article-container">
     <div class="article-grid">
+        <aside class="article-sidebar">
+            {% if article.toc %}
+            <div class="toc-container sidebar-widget">
+                <div class="toc-header">
+                    <h3 class="toc-title">
+                        <iconify-icon icon="tabler:list" class="toc-title-icon"></iconify-icon>
+                        İçindekiler
+                    </h3>
+                </div>
+                <div class="toc-content">{{ article.toc }}</div>
+            </div>
+            {% endif %}
+
+            <div class="sidebar-widget recent-posts">
+                <h3 class="widget-title">
+                    <iconify-icon icon="tabler:article"></iconify-icon>
+                    Son Yazılar
+                </h3>
+                <ul class="recent-posts-list">
+                    {% for article in articles[:5] %}
+                    <li class="recent-post-item">
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="recent-post-link">
+                            {{ article.title }}
+                            <span class="post-date">{{ article.date|strftime('%d %B %Y') }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% if article.category %}
+            <div class="sidebar-widget related-posts">
+                <h3 class="widget-title">
+                    <iconify-icon icon="tabler:copy"></iconify-icon>
+                    Benzer Yazılar
+                </h3>
+                <ul class="related-posts-list">
+                    {% for related in articles if related.category == article.category and related != article %} {% if
+                    loop.index <= 5 %}
+                    <li class="related-post-item">
+                        <a href="{{ SITEURL }}/{{ related.url }}" class="related-post-link">
+                            {{ related.title }}
+                            <span class="post-date">{{ related.date|strftime('%d %B %Y') }}</span>
+                        </a>
+                    </li>
+                    {% endif %} {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </aside>
+
         <div class="article-main">
             <article class="article">
                 <header class="article-header">
@@ -83,18 +134,6 @@
                 <div class="article-content">{{ article.content }}</div>
             </article>
         </div>
-
-        {% if article.toc %}
-        <aside class="article-sidebar">
-            <div class="toc-container">
-                <div class="toc-header">
-                    <h3 class="toc-title">İçindekiler</h3>
-                </div>
-                <div class="toc-content">{{ article.toc }}</div>
-            </div>
-        </aside>
-        {% endif %}
     </div>
 </div>
-
 {% endblock %}

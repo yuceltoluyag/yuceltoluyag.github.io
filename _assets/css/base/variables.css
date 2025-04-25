@@ -19,8 +19,8 @@
 
     /* Nötr Renkler */
     --color-text: #333333;
-    --color-text-light: #666666;
-    --color-text-lighter: #999999;
+    --color-text-light: #555555; /* Kontrast artırımı için değiştirildi */
+    --color-text-lighter: #777777; /* Kontrast artırımı için değiştirildi */
     --color-text-primary: #222222; /* Ana metin rengi */
     --color-text-secondary: #555555; /* İkincil metin rengi */
     --color-text-dark: #f5f5f5;
@@ -42,6 +42,13 @@
     --color-bg-secondary: #f0f2f5; /* İkincil arka plan */
     --color-bg-hover: #f0f0f0; /* Hover durumu arka planı */
     --color-bg-code: #f7f7f7; /* Kod bloğu arka planı */
+
+    /* Sidebar Widget Özel Renkleri */
+    --sidebar-link-bg: #f0f4f8; /* Daha koyu arka plan */
+    --sidebar-link-color: #222222; /* Daha koyu metin rengi */
+    --sidebar-date-color: #555555; /* Daha koyu tarih rengi */
+    --sidebar-link-hover-bg: #e0e8f0; /* Daha belirgin hover arka planı */
+    --sidebar-link-hover-color: #0066bb; /* Daha koyu hover rengi */
 
     /* Kod ve Syntax Renkleri */
     --color-code-key: #c5200c;
@@ -159,10 +166,17 @@
     --transition-normal: 0.3s ease-in-out;
     --transition-slow: 0.5s ease-in-out;
 
+    /* Breakpoint Değişkenleri */
+    --breakpoint-sm: 40rem; /* 640px */
+    --breakpoint-md: 48rem; /* 768px */
+    --breakpoint-lg: 64rem; /* 1024px */
+    --breakpoint-xl: 80rem; /* 1280px */
+    --breakpoint-2xl: 96rem; /* 1536px */
+
     /* Konteyner Boyutları */
-    --container-max-width: 1200px;
-    --container-narrow-max-width: 960px;
-    --container-wide-max-width: 1440px;
+    --container-max-width: var(--breakpoint-xl); /* 1280px - xl breakpoint */
+    --container-narrow-max-width: var(--breakpoint-lg); /* 1024px - lg breakpoint */
+    --container-wide-max-width: var(--breakpoint-2xl); /* 1536px - 2xl breakpoint */
 
     /* Z-indeks Katmanları */
     --z-index-dropdown: 1000;
@@ -191,8 +205,8 @@
     :root {
         /* Temel Renkler */
         --color-text: #f5f5f5;
-        --color-text-light: #aaaaaa;
-        --color-text-lighter: #777777;
+        --color-text-light: #cccccc; /* Kontrast artırımı için değiştirildi */
+        --color-text-lighter: #aaaaaa; /* Kontrast artırımı için değiştirildi */
         --color-text-primary: #e0e0e0; /* Ana metin rengi - dark mode */
         --color-text-secondary: #b0b0b0; /* İkincil metin rengi - dark mode */
         --color-text-dark: #333333;
@@ -276,36 +290,85 @@
         --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
         --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
         --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.15);
+
+        /* Sidebar Widget Karanlık Mod Renkleri */
+        --sidebar-link-bg: #2a2e35; /* Daha koyu arka plan */
+        --sidebar-link-color: #e0e0e0; /* Daha açık metin rengi */
+        --sidebar-date-color: #b0b0b0; /* Daha açık tarih rengi */
+        --sidebar-link-hover-bg: #3a414d; /* Daha belirgin hover arka planı */
+        --sidebar-link-hover-color: #79c0ff; /* Daha açık hover rengi */
     }
 }
 
-/* Mobil cihazlar için değişkenler */
-@media (max-width: 1200px) {
+/* Breakpoint Değişkenleri */
+@media (width >= var(--breakpoint-2xl)) {
+    /* 2xl - 1536px */
     :root {
-        --container-max-width: 960px;
+        --container-max-width: var(--container-wide-max-width);
     }
 }
 
-@media (max-width: 992px) {
+@media (width >= var(--breakpoint-xl)) {
+    /* xl - 1280px */
     :root {
-        --container-max-width: 720px;
+        --container-max-width: var(--container-max-width);
+        --text-4xl: var(--text-4xl);
+        --text-3xl: var(--text-3xl);
+        --text-2xl: var(--text-2xl);
+        --text-xl: var(--text-xl);
+        --text-lg: var(--text-lg);
+        --text-md: var(--text-md);
     }
 }
 
-@media (max-width: 768px) {
+@media (width >= var(--breakpoint-lg)) {
+    /* lg - 1024px */
     :root {
-        --text-4xl: 2rem; /* h1 */
-        --text-3xl: 1.75rem; /* h2 */
-        --text-2xl: 1.5rem; /* h3 */
-        --text-xl: 1.25rem; /* h4 */
-        --text-lg: 1.125rem; /* h5 */
-        --text-md: 1rem; /* h6 */
-        --container-max-width: 540px;
+        --container-max-width: var(--container-narrow-max-width);
+        --text-4xl: var(--text-4xl);
+        --text-3xl: var(--text-3xl);
+        --text-2xl: var(--text-2xl);
+        --text-xl: var(--text-xl);
+        --text-lg: var(--text-lg);
+        --text-md: var(--text-md);
     }
 }
 
-@media (max-width: 576px) {
+@media (width >= var(--breakpoint-md)) {
+    /* md - 768px */
+    :root {
+        --container-max-width: var(--breakpoint-md);
+        --text-4xl: calc(var(--text-4xl) * 0.833);
+        --text-3xl: calc(var(--text-3xl) * 0.889);
+        --text-2xl: calc(var(--text-2xl) * 0.933);
+        --text-xl: calc(var(--text-xl) * 0.917);
+        --text-lg: var(--text-lg);
+        --text-md: var(--text-base);
+    }
+}
+
+@media (width >= var(--breakpoint-sm)) {
+    /* sm - 640px */
+    :root {
+        --container-max-width: var(--breakpoint-sm);
+        --text-4xl: calc(var(--text-4xl) * 0.667);
+        --text-3xl: calc(var(--text-3xl) * 0.778);
+        --text-2xl: calc(var(--text-2xl) * 0.8);
+        --text-xl: calc(var(--text-xl) * 0.833);
+        --text-lg: var(--text-lg);
+        --text-md: var(--text-base);
+    }
+}
+
+@media (width < var(--breakpoint-sm)) {
+    /* xs - mobil */
     :root {
         --container-max-width: 100%;
+        --text-4xl: calc(var(--text-4xl) * 0.667);
+        --text-3xl: calc(var(--text-3xl) * 0.778);
+        --text-2xl: calc(var(--text-2xl) * 0.8);
+        --text-xl: calc(var(--text-xl) * 0.833);
+        --text-lg: var(--text-lg);
+        --text-md: var(--text-base);
     }
 }
