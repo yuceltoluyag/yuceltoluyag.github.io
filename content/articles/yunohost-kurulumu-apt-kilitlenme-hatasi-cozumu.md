@@ -9,7 +9,7 @@ Summary: Debian sunucusunda YunoHost kurulumu sırasında karşılaşılan "APT 
 Translation: false
 Status: published
 Template: article
-Image: images/yunohost-hata-cozumu.webp
+Image: images/yunohost-hata-cozumu-lg.webp
 ---
 
 ## 🚀 Giriş
@@ -18,7 +18,8 @@ Debian tabanlı bir sunucuya [YunoHost](https://yunohost.org){: target="_blank" 
 
 Bu makalede, bu hatanın neden oluştuğunu, nasıl tespit edileceğini ve güvenli bir şekilde nasıl çözülebileceğini adım adım anlatacağız. ✅
 
-![yunohost-hata-cozumu](/images/yunohost-hata-cozumu.webp)
+
+
 ---
 
 ## 🧠 Hatanın Anlamı
@@ -105,3 +106,4 @@ Bu rehberde, YunoHost kurulum sürecinde sıkça karşılaşılan `dpkg lock` ha
 
 Yorumlarınızı aşağıya bırakın 💬, başka bir rehberde görüşmek üzere! 👋
 
+[responsive_img src="/images/yunohost-hata-cozumu-lg.webp" alt="yunohost-hata-cozumu" /]

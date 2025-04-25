@@ -1,16 +1,65 @@
-{% extends "base.html" %} {% block title %}Etiketler{% endblock %} {% block content %}
-<div class="bg-site-card rounded-lg p-8">
-    <h1 class="text-3xl font-bold mb-8 text-text-primary">Etiketler</h1>
+{% extends "base.html" %} {% block title %}Etiketler - {{ SITENAME }}{% endblock title %} {% block seo %}
+<meta
+    name="description"
+    content="{{ SITENAME }} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz." />
+<link rel="canonical" href="{{ SITEURL }}/etiketler.html" />
+<meta property="og:title" content="Etiketler - {{ SITENAME }}" />
+<meta
+    property="og:description"
+    content="{{ SITENAME }} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/etiketler.html" />
+{% endblock seo %} {% block content %}
+<div class="container">
+    <div class="tags-header">
+        <h1 class="tags-title">Etiketler</h1>
+        <p class="tags-description">
+            Site içerisindeki tüm konulara ait etiketler. Büyüklük, içerik sayısını gösterir.
+        </p>
+    </div>
 
-    <div class="flex flex-wrap gap-4">
-        {% for tag, articles in tags|sort %}
+    {% set max_count = 1 %} {% for tag, articles in tags %} {% if articles|length > max_count %} {% set max_count =
+    articles|length %} {% endif %} {% endfor %} {% set sorted_tags = [] %} {% for tag, articles in tags %} {% set _ =
+    sorted_tags.append((tag, articles, articles|length)) %} {% endfor %} {% set sorted_tags =
+    sorted_tags|sort(attribute=2, reverse=true) %}
+
+    <div class="tags-cloud">
+        {% for tag, articles, count in sorted_tags %} {% set tag_size = 1 %} {% if max_count > 1 %} {% set size_ratio =
+        count / max_count %} {% if size_ratio < 0.2 %} {% set tag_size = 1 %} {% elif size_ratio < 0.4 %} {% set
+        tag_size = 2 %} {% elif size_ratio < 0.6 %} {% set tag_size = 3 %} {% elif size_ratio < 0.8 %} {% set tag_size =
+        4 %} {% else %} {% set tag_size = 5 %} {% endif %} {% endif %}
+
         <a
             href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-            class="px-4 py-2 bg-site-card-alt rounded-full hover:text-primary transition-colors">
+            class="tag-cloud-item tag-size-{{ tag_size }}"
+            aria-label="{{ tag }} etiketli {{ count }} yazıya git">
             #{{ tag }}
-            <span class="text-text-secondary">({{ articles|length }})</span>
+            <span class="tag-count">{{ count }}</span>
         </a>
         {% endfor %}
     </div>
+
+    <div class="tags-info">
+        <h2 class="tags-info-title">En Çok Kullanılan Etiketler</h2>
+        <div class="popular-tags">
+            {% for tag, articles, count in sorted_tags[:5] %}
+            <div class="popular-tag-item">
+                <div class="popular-tag-header">
+                    <h3 class="popular-tag-title">
+                        <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/">#{{ tag }}</a>
+                    </h3>
+                    <span class="popular-tag-count">{{ count }} yazı</span>
+                </div>
+                <ul class="popular-tag-articles">
+                    {% for article in articles[:3] %}
+                    <li class="popular-tag-article">
+                        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
-{% endblock %}
+{% endblock content %}

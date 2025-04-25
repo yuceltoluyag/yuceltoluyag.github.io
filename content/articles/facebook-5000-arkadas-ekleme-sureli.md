@@ -11,9 +11,8 @@ Summary: Facebook'ta 5000 arkadaş ekleme işlemi için güncellenmiş versiyon.
 Translation: false
 Status: published
 Template: article
-Image: images/facebook-5000-arkadas-ekleme-kodu-v2.webp
+Image: images/facebook-5000-arkadas-ekleme-kodu-v2-lg.webp
 
-![Facebook 5000 Arkadaş Ekleme](/images/facebook-5000-arkadas-ekleme-kodu-v2.webp)
 
 
 ## Facebook 5000 Arkadaş Ekleme (Süreli)
@@ -27,7 +26,7 @@ Bu kod, yaklaşık **3 yıl** boyunca ücretsiz olarak kullanıldı ve birçok o
 
 İlk paylaştığım konuda belirttiğim noktaları kesinlikle unutmayın! Facebook'un son güncellemeleriyle birlikte sistem, üçüncü taraf uygulamalara karşı daha hassas hale geldi. Bunun sebebi ise **Cambridge Analytica skandalı** .
 
-<div class="info-box error">
+<div class="info-box warning">
 Facebook'un son güncellemesiyle birlikte, bu tür uygulamaları kullanırken dikkatli olun. Eğer hesabınız kapanır, kitlenir ya da IP adresiniz kara listeye alınırsa, yeni açtığınız hesaplarınız da <b>anında kapatılabilir</b>. 
 </div>
 
@@ -42,4 +41,11 @@ Facebook'un son güncellemesiyle birlikte, bu tür uygulamaları kullanırken di
 
 [Kodu satın almak için tıklayın](https://instagram.com/yuceltoluyag){: target="_blank" rel="noopener noreferrer"}.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/poi-oUJbTrc?si=8oAPSsULEvMv4yEs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="poi-oUJbTrc"></lite-youtube>
+
+[responsive_img src="/images/facebook-5000-arkadas-ekleme-kodu-v2-lg.webp" alt="Facebook 5000 Arkadaş Ekleme" /]

@@ -9,7 +9,7 @@ Summary: Sweet Alert sınıfının kullanımını, tüm argümanlarıyla birlikt
 Translation: false
 Status: published
 Template: article
-Image: images/sweetalert.webp
+Image: images/sweetalert-lg.webp
 
 # Sweet Alert Nedir?
 
@@ -91,7 +91,8 @@ Bir butona tıklandığında uyarı penceresinin açılmasını sağlayalım:
 
 ## Örnek Görsel
 
-![SweetAlert Örneği](/images/sweetalert.webp)
+
+[responsive_img src="/images/sweetalert-lg.webp" alt="SweetAlert Örneği" /]
 
 ## İndirme Bağlantısı
 

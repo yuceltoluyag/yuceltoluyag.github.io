@@ -9,7 +9,7 @@ Summary: Earn.com, anket doldurarak ve gruplara katılarak kazanç elde edebilec
 Translation: false
 Status: published
 Template: article
-Image: images/earncom.webp
+Image: images/earncom-lg.webp
 
 <div class="info-box warning">
 <b>Not:</b> 
@@ -18,29 +18,33 @@ Image: images/earncom.webp
 
 
 Merhaba, internet üzerinden **para kazanmak** isteyenler için benim de kullandığım bir sistemden bahsedeceğim. Earn.com, yatırım yapmadan kazanç sağlayabileceğiniz bir platformdur. Kullanıcılara, anket doldurarak veya gruplara katılarak para kazanma fırsatı sunar.
-![earncom](/images/earncom.webp)
-### Earn.com Nasıl Çalışır?
+
+## Earn.com Nasıl Çalışır?
 Earn.com, anketör şirketlerle anlaşarak size anketler gönderir. Bu anketleri tamamladıktan sonra en az 1 dolar kazanç sağlarsınız. Peki, bu süreç nasıl işliyor?
 
-### Cüzdan Oluşturma
+## Cüzdan Oluşturma
 Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kripto cüzdanına ihtiyacınız olabilir. Cüzdanınızı şu adresten oluşturabilirsiniz: [MyEtherWallet](https://www.myetherwallet.com/){: target="_blank" rel="noopener noreferrer"}. Cüzdan kodunuzu kimseyle paylaşmayın ve güvenli bir yerde saklayın.
 
-![cüzdan-oluşturma](/images/cuzdan-olusturma.gif)
+<div class="video-container">
+  <video autoplay loop muted playsinline>
+    <source src="/images/cuzdan-olusturma.webm" type="video/webm" />
+  </video>
+</div>
 
-### Asıl Kazanç Nerede?
+## Asıl Kazanç Nerede?
 
 - Yetkinliklerinize göre gruplara katılarak yüksek gelir elde edebilirsiniz. Örneğin, PHP grubu gibi teknik gruplarda soru başına 100 $ kazanmak mümkündür.
 - Katılmak istediğiniz gruplarda doğrulama sürecinden geçmeniz gerekir. Örneğin, [Earn.com Grupları](https://earn.com/lists/){: target="_blank" rel="noopener noreferrer"} sayfasında başvururken yeteneklerinizi kanıtlamanız istenir.
 - Kullanıcılar soru sormak için ödeme yapar, siz de bu soruları yanıtlayarak para kazanırsınız.
 
-### Neden Earn.com?
+## Neden Earn.com?
 - Yatırım yapmanızı gerektirmez.
 - Kazançlarınızı zamanında öder.
-- Türkiye’de uygulanabilecek bir fikir ancak yerel benzeri pek yoktur.
+- Türkiye'de uygulanabilecek bir fikir ancak yerel benzeri pek yoktur.
 - Haftalık ortalama kazanç: **150-350 TL**
 
-### Gerekli Olan Hesaplar
-Earn.com’dan verimli şekilde yararlanabilmek için aşağıdaki hesaplara sahip olmanız önerilir:
+## Gerekli Olan Hesaplar
+Earn.com'dan verimli şekilde yararlanabilmek için aşağıdaki hesaplara sahip olmanız önerilir:
 
 - [LinkedIn](https://www.linkedin.com/in/yuceltoluyag/){: target="_blank" rel="noopener noreferrer"} → Profilinizin eksiksiz ve doğru bilgilerle doldurulmuş olması gereklidir.
 - [GitHub](https://github.com/yuceltoluyag){: target="_blank" rel="noopener noreferrer"} → Teknik gruplara katılım için önemlidir.
@@ -49,4 +53,11 @@ Earn.com’dan verimli şekilde yararlanabilmek için aşağıdaki hesaplara sah
 Sisteme kaydolmak için referans bağlantısı kullanırsanız onay süreciniz hızlanır. Eğer referansınız yoksa aşağıdaki bağlantıyı kullanabilirsiniz:
 
 [Earn.com Referans Bağlantısı](http://earn.com/friday13/referral/?a=b6bpe21djavw2sar){: target="_blank" rel="noopener noreferrer"}
-![örnek cevaplama](/images/ornek-cevaplama.gif)
+
+<div class="video-container">
+  <video autoplay loop muted playsinline>
+    <source src="/images/ornek-cevaplama.webm" type="video/webm" />
+  </video>
+</div>
+
+[responsive_img src="/images/earncom-lg.webp" alt="earncom" /]

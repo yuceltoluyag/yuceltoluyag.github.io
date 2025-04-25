@@ -1,51 +1,59 @@
-{% extends "base.html" %} {% block title %}#{{ tag }} Etiketli Yazılar {% endblock %} {% block content %}
-<div class="bg-site-card rounded-lg p-8">
-    <div class="mb-8">
-        <h1 class="text-3xl font-bold text-text-primary mb-2">#{{ tag }} Etiketli Yazılar</h1>
-        <p class="text-text-secondary">Bu etikete sahip {{ articles|length }} yazı bulundu</p>
+{% extends "base.html" %} {% block title %}#{{ tag }} Etiketli Yazılar - {{ SITENAME }}{% endblock title %} {% block seo
+%}
+<meta
+    name="description"
+    content="#{{ tag }} etiketi ile ilgili tüm yazılar. Bu etikette toplam {{ articles|length }} yazı bulunuyor." />
+<link rel="canonical" href="{{ SITEURL }}/etiket/{{ tag.slug }}/" />
+<meta property="og:title" content="#{{ tag }} Etiketli Yazılar - {{ SITENAME }}" />
+<meta
+    property="og:description"
+    content="#{{ tag }} etiketi ile ilgili tüm yazılar. Bu etikette toplam {{ articles|length }} yazı bulunuyor." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/etiket/{{ tag.slug }}/" />
+{% endblock seo %} {% block content %}
+<div class="container">
+    <div class="tag-header">
+        <h1 class="tag-title">#{{ tag }} Etiketli Yazılar</h1>
+        <p class="tag-description">Bu etikete sahip {{ articles|length }} yazı bulundu</p>
     </div>
 
-    <div class="grid gap-6">
+    <div class="tag-article-list">
         {% for article in articles_page.object_list %}
-        <article class="card hover:scale-[1.01] transition-transform">
-            <h2 class="text-xl font-bold text-text-primary mb-2">
-                <a href="{{ SITEURL }}/{{ article.url }}" class="hover:text-primary transition-colors">
-                    {{ article.title }}
-                </a>
+        <article class="tag-article-item">
+            <h2 class="tag-article-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
             </h2>
 
-            <div class="flex items-center gap-4 text-sm text-text-secondary mb-4">
-                <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+            <div class="tag-article-meta">
+                <time datetime="{{ article.date.isoformat() }}" class="tag-article-date">
+                    {{ article.locale_date }}
+                </time>
                 {% if article.category %}
-                <a
-                    href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
-                    class="hover:text-primary transition-colors">
+                <a href="{{ SITEURL }}/kategori/{{ article.category.slug }}/" class="tag-article-category">
                     {{ article.category }}
                 </a>
                 {% endif %}
             </div>
 
-            <p class="text-text-secondary">{{ article.summary }}</p>
+            <p class="tag-article-summary">{{ article.summary }}</p>
         </article>
         {% endfor %}
     </div>
 
     {% if articles_page.has_other_pages() %}
-    <div class="flex justify-center gap-2 mt-8">
+    <div class="tag-pagination">
         {% if articles_page.has_previous() %}
-        <a
-            href="{{ SITEURL }}/{{ articles_previous_page.url }}"
-            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-primary transition-colors">
+        <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="pagination-previous" aria-label="Önceki sayfa">
+            <span aria-hidden="true">&larr;</span>
             Önceki
         </a>
         {% endif %} {% if articles_page.has_next() %}
-        <a
-            href="{{ SITEURL }}/{{ articles_next_page.url }}"
-            class="px-4 py-2 bg-site-card-alt rounded-lg hover:text-primary transition-colors">
+        <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="pagination-next" aria-label="Sonraki sayfa">
             Sonraki
+            <span aria-hidden="true">&rarr;</span>
         </a>
         {% endif %}
     </div>
     {% endif %}
 </div>
-{% endblock %}
+{% endblock content %}

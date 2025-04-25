@@ -1,43 +1,45 @@
 {
-    "name": "minel-theme",
-    "version": "1.0.0",
-    "description": "Minimal Pelican theme with Tailwind CSS",
-    "type": "commonjs",
-    "engines": {
-        "node": ">=16.0.0"
+    "name": "baba-front",
+    "version": "2.2.2",
+    "private": true,
+    "devDependencies": {
+        "@eslint/eslintrc": "^3.3.1",
+        "@eslint/js": "^9.25.1",
+        "autoprefixer": "^10.4.21",
+        "cross-env": "^7.0.3",
+        "cssnano": "^7.0.6",
+        "eslint": "^9.25.1",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-import-resolver-alias": "^1.1.2",
+        "eslint-plugin-import": "^2.31.0",
+        "gulp": "^5.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-if": "^3.0.0",
+        "gulp-postcss": "^10.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-terser": "^2.1.0",
+        "gulp-uglify": "^3.0.2",
+        "sass": "^1.87.0",
+        "stylelint": "^16.19.0",
+        "stylelint-config-clean-order": "^7.0.0",
+        "stylelint-config-standard-scss": "^14.0.0",
+        "stylelint-scss": "^6.11.1"
+    },
+    "dependencies": {
+        "@tabler/icons": "^3.31.0",
+        "reseter.css": "^2.0.0"
+    },
+    "overrides": {
+        "eslint": "^9.25.1"
     },
     "scripts": {
-        "css": "gulp styles",
-        "js": "gulp scripts",
-        "images": "gulp images",
-        "build": "gulp",
-        "watch": "gulp watch",
-        "dev": "gulp watch",
-        "prod": "cross-env NODE_ENV=production gulp"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.24.0",
-        "@babel/preset-env": "^7.24.0",
-        "@tailwindcss/typography": "^0.5.16",
-        "autoprefixer": "^10.4.20",
-        "cross-env": "^7.0.3",
-        "cssnano": "^6.0.5",
-        "gulp": "^4.0.2",
-        "gulp-babel": "^8.0.0",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-imagemin": "^7.1.0",
-        "gulp-postcss": "^9.1.0",
-        "gulp-rename": "^2.0.0",
-        "gulp-sourcemaps": "^3.0.0",
-        "gulp-terser": "^2.1.0",
-        "gulp-webp": "^4.0.1",
-        "imagemin-mozjpeg": "^9.0.0",
-        "imagemin-pngquant": "^9.0.2",
-        "postcss": "^8.4.35",
-        "postcss-cli": "^11.0.0",
-        "postcss-import": "^16.1.0",
-        "postcss-nesting": "^12.0.2",
-        "postcss-preset-env": "^9.3.0",
-        "tailwindcss": "^3.4.17"
+        "dev": "gulp dev",
+        "build": "cross-env NODE_ENV=production gulp build",
+        "styles": "gulp styles",
+        "scripts": "gulp scripts",
+        "clean": "gulp clean",
+        "start": "npm run build"
     }
 }

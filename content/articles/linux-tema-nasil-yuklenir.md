@@ -9,13 +9,14 @@ Summary: Linux'ta tema yükleme işlemi oldukça basittir. Gnome Shell ve eklent
 Translation: false
 Status: published
 Template: article
-Image: images/linux-tema-nasil-yuklenir-gnome-shell-ve.webp
+Image: images/linux-tema-nasil-yuklenir-gnome-shell-ve-lg.webp
 
 Merhaba, uzun süredir bloga bir şeyler yazmıyordum. Daha önce Unity kullanırken video çekmiştim, ancak sabit diskimin bozulması ve sıcak hava derken günler hızla geçti. 😃 Linux'ta tema yükleme işlemi oldukça kolaydır. Hangi dağıtımı veya masaüstü ortamını kullanıyor olursanız olun, süreç genellikle benzerdir. Örneğin, Unity için `unity-tweak-tool` kullanılırken, Gnome için `gnome-tweak-tool` tercih edilmektedir. XFCE kullandığım dönemde, özelleştirmeleri doğrudan yapabiliyorduk (yanılıyor olabilirim 🤔).
 
-![linux-tema-nasil-yuklenir-gnome-shell-ve](/images/linux-tema-nasil-yuklenir-gnome-shell-ve.webp)
 
-### 🌄 Arka Plan (Wallpaper) için Kullandığım Siteler
+[responsive_img src="/images/linux-tema-nasil-yuklenir-gnome-shell-ve-lg.webp" alt="linux-tema-nasil-yuklenir-gnome-shell-ve" /]
+
+## 🌄 Arka Plan (Wallpaper) için Kullandığım Siteler
 
 1. [Alpha](https://alpha.wallhaven.cc/latest){: target="_blank" rel="noopener noreferrer"}
 2. [InterfaceLIFT](https://interfacelift.com/wallpaper/downloads/date/any/){: target="_blank" rel="noopener noreferrer"}
@@ -23,7 +24,7 @@ Merhaba, uzun süredir bloga bir şeyler yazmıyordum. Daha önce Unity kullanı
 
 ---
 
-### 🎨 Tema, İkon, İmleç ve Shell İçin Kaynaklar
+## 🎨 Tema, İkon, İmleç ve Shell İçin Kaynaklar
 
 1. [DeviantArt](https://www.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/newest/?offset=0){: target="_blank" rel="noopener noreferrer"}
 2. [Gnome-Look](https://www.gnome-look.org/){: target="_blank" rel="noopener noreferrer"}
@@ -35,11 +36,11 @@ Ubuntu 17.10 beta sürümünden itibaren Gnome 3.x kullanmaya başladım. Bu ned
 
 ---
 
-### 🔌 Gnome Eklentileri
+## 🔌 Gnome Eklentileri
 
 Gnome'un bir eklenti sistemi bulunmaktadır. [Gnome Eklentileri](https://extensions.gnome.org/){: target="_blank" rel="noopener noreferrer"} sitesinden nasıl eklenti ekleyebileceğinizi ve yönetebileceğinizi öğrenebilirsiniz.
 
-#### 📌 Kurulumla İlgili Notlar
+### 📌 Kurulumla İlgili Notlar
 
 - `Dash to Dock` yerine `Plank` kullanabilirsiniz, ancak tavsiye etmiyorum.
 - Her tema `install.sh` komut dosyasıyla yüklenmez. Tema geliştiricisi yükleme yöntemini açıklama satırlarında belirtir.

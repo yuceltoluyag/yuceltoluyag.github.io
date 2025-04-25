@@ -11,13 +11,12 @@ Summary: Git ile GPG imzalı etiket oluşturmayı ve karşılaşılabilecek soru
 Translation: false  
 Status: published  
 Template: article  
-Image: images/git-gpg-imzali-etiket.webp
+Image: images/git-gpg-imzali-etiket-lg.webp
 
 
 # Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme 🔐
 
 Geliştirme sürecinde **Git etiketleri**, belirli versiyonları işaretlemek için kullanılan önemli bir özelliktir. Ancak, bu etiketleri **GPG ile imzalamak**, sürümünüzün güvenilirliğini artırır ve yetkisiz değişikliklerin önüne geçer. Bu makalede, **Git ile GPG imzalı etiket oluşturma** sürecini ve karşılaşılabilecek olası hataları nasıl giderebileceğinizi anlatacağız. 🚀
-![git-gpg-imzali-etiket](/images/git-gpg-imzali-etiket.webp)
 
 ## 1️⃣ GPG Anahtarınızı Oluşturun
 
@@ -144,4 +143,7 @@ GPG imzaları, **açık kaynak projelerinde, güvenlik gerektiren kurumsal proje
 ---
 
 📌 **Ekstra Bilgi**: Eğer GPG anahtarınızı kaybederseniz, yeni bir anahtar oluşturmanız ve projelerde bu yeni anahtarı kullanmaya başlamanız gerekir. **Eski anahtarınızı iptal etmeyi unutmayın!** 🚨
+
+
+[responsive_img src="/images/git-gpg-imzali-etiket-lg.webp" alt="git-gpg-imzali-etiket" /]
 

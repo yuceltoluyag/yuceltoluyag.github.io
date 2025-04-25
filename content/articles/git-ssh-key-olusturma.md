@@ -11,7 +11,7 @@ Summary: Git üzerinde çalışırken SSH anahtarı oluşturma konusunda yaşana
 Translation: false
 Status: published
 Template: article
-Image: images/git_bash.webp
+Image: images/git_bash-lg.webp
 
 Git üzerinde çalışırken SSH anahtarı oluşturma konusunda sorun yaşayanlar için bu rehberde, Windows ve Linux kullanıcıları için adım adım SSH anahtarı oluşturma sürecini ele alacağız. 🛠️
 
@@ -21,7 +21,7 @@ Git üzerinde çalışırken SSH anahtarı oluşturma konusunda sorun yaşayanla
 1. Git Bash uygulamasını [https://git-scm.com/downloads](https://git-scm.com/downloads){: target="_blank" rel="noopener noreferrer"} adresinden indirip yükleyin.
 2. Terminali açarak aşağıdaki komutları sırasıyla çalıştırın:
 
-```shell
+```bash 
 git config --global user.name "Kullanıcı Adınız"
 git config --global user.email "email@adresiniz.com"
 ssh-keygen
@@ -32,14 +32,12 @@ ssh-keygen
 5. Dosya içindeki anahtar kodlarını kopyalayın.
 6. [GitHub SSH Keys Ayarları](https://github.com/settings/keys){: target="_blank" rel="noopener noreferrer"} sayfasına giderek **New SSH Key** butonuna tıklayın ve kopyaladığınız kodları yapıştırıp kaydedin.
 
-
-![gitbash](/images/git_bash.webp)
-
+[responsive_img src="/images/git_bash-lg.webp" alt="gitbash" /]
 ### Linux İçin SSH-Key Oluşturma
 
 1. Git Bash veya terminali açın ve aşağıdaki komutları çalıştırın:
 
-```shell
+```bash 
 git config --global user.name "Kullanıcı Adınız"
 git config --global user.email "email@adresiniz.com"
 ssh-keygen -t rsa -b 4096 -C "email@adresiniz.com"

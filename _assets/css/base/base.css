@@ -1,0 +1,228 @@
+/**
+ * Base CSS
+ * 
+ * Temel HTML elemanları için stil tanımlamaları ve reset işlemleri
+ */
+
+html {
+    box-sizing: border-box;
+    font-size: var(--font-size-root);
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Ana içerik bölgesi */
+main {
+    flex: 1;
+}
+
+/* Görüntüler */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    vertical-align: middle;
+}
+
+figure {
+    margin: var(--spacing-lg) 0;
+}
+
+figcaption {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    text-align: center;
+    margin-top: var(--spacing-xs);
+    font-style: italic;
+}
+
+/* Tablolar */
+table {
+    width: auto;
+    max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: var(--spacing-md) 0;
+}
+
+/* Mobil için tablo görünümü */
+@media (max-width: 768px) {
+    table {
+        display: block; /* Sadece mobilde block olsun */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+th,
+td {
+    padding: var(--spacing-sm);
+    border: var(--border-width-thin) solid var(--color-border);
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-background-alt);
+    font-weight: 600;
+}
+
+/* Form Elemanları */
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Diğer Elementler */
+address {
+    font-style: normal;
+    margin-bottom: var(--spacing-md);
+}
+
+abbr[title] {
+    text-decoration: none;
+    border-bottom: var(--border-width-thin) dotted;
+    cursor: help;
+}
+
+/* Erişilebilirlik için focus stilleri */
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Yardımcı sınıflar */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
+.container-narrow {
+    max-width: var(--container-narrow-max-width);
+}
+
+/* Erişilebilirlik yardımcı sınıfı */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Karanlık mod ayarlamaları */
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--color-text);
+        background-color: var(--color-background);
+    }
+
+    th {
+        background-color: var(--color-background-alt);
+    }
+
+    th,
+    td {
+        border-color: var(--color-border);
+    }
+}
+
+/* Yardımcı padding sınıfları */
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.pt-24 {
+    padding-top: 6rem;
+}
+
+.pb-8 {
+    padding-bottom: 2rem;
+}
+
+/* Linkler */
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+/* Özel link stilleri */
+.link {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.link:hover,
+.link:focus {
+    color: var(--color-primary-hover);
+}

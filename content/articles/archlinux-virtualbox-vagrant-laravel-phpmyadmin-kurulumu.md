@@ -11,9 +11,10 @@ Summary: Arch Linux üzerinde VirtualBox, Vagrant, Laravel ve PhpMyAdmin kurulum
 Translation: false
 Status: published
 Template: article
-Image: images/pic-selected-190916-0747-49.webp
+Image: images/pic-selected-190916-0747-49-lg.webp
 
-![Kurulum Görseli](/images/pic-selected-190916-0747-49.webp)
+
+
 
 ## VirtualBox Kurulumu 🚀
 
@@ -110,7 +111,41 @@ bash init.sh
 sudo nano ~/www/Homestead/Homestead.yaml
 ```
 
-<script src="https://gist.github.com/yuceltoluyag/5e0dac9ef4c2da7c27cd278cac7140e4.js"></script>
+```yaml
+
+ip: "192.168.10.10"
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/www
+      to: /home/vagrant/www
+
+sites:
+    - map: laravel6.test
+      to: /home/vagrant/www/laravel6/public
+
+databases:
+    - homestead
+
+features:
+    - mariadb: false
+    - ohmyzsh: false
+    - webdriver: false
+
+# ports:
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
+```
 
 Dosyanın başında **ip: \"192.168.10.10\"** adresini göreceksiniz. Laravel projemizi bu IP üzerinden çalıştırmak için **hosts** dosyamıza ekleme yapalım:
 
@@ -141,7 +176,9 @@ Bağlanmak için:
 vagrant ssh
 ```
 
-![SSH Bağlantısı](/images/pic-selected-190916-0818-54.webp)
+
+[responsive_img src="/images/pic-selected-190916-0818-54-lg.webp" alt="SSH Bağlantısı" /]
+
 
 ## Laravel Kurulumu 🌐
 
@@ -154,7 +191,8 @@ composer create-project --prefer-dist laravel/laravel
 
 Bu işlem tamamlandığında **www** klasörünüzün içinde **laravel** adında bir klasör oluşacaktır.
 
-![Laravel Kurulumu](/images/pic-full-190916-0808-36.webp)
+
+[responsive_img src="/images/pic-full-190916-0808-36-lg.webp" alt="Laravel Kurulumu" /]
 
 ## PhpMyAdmin Kurulumu 🛠️
 
@@ -195,5 +233,7 @@ Tüm ayarlamalar tamamlandı! 🚀 **PhpMyAdmin'e erişmek için:**
 Kullanıcı adı: **homestead**
 Şifre: **secret**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/d9ITbD5Mn3w?si=P-Yu-QzqK_856zC5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
+<lite-youtube videoid="d9ITbD5Mn3w"></lite-youtube>
+[responsive_img src="/images/pic-selected-190916-0747-49-lg.webp" alt="Kurulum Görseli" /]

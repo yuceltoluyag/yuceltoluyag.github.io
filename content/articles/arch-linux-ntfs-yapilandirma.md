@@ -9,13 +9,14 @@ Summary: Arch Linux'ta NTFS dosya sistemine sahip disklerin nasıl bağlanacağ�
 Translation: false
 Status: published
 Template: article
-Image: images/ntfs_yetki_hatasi.webp
+Image: images/ntfs_yetki_hatasi-lg.webp
 
-![NTFS Yetki Hatası](/images/ntfs_yetki_hatasi.webp)
+
 
 ## Sorun Nedir? ⚠️
 
 Linux'un varsayılan dosya sistemi **ext** (ext1, ext2, ext3, ext4) olduğundan, yeni bir sistem kurulduğunda NTFS formatındaki diskleri bağlamaya çalışırken **"failed to mount diskadı -> not authorized to perform operation"** hatasıyla karşılaşabilirsiniz. Daha modern bir dosya yöneticisi kullanıyorsanız, bağlanmak istediğinizde **parola** istemesi de olasıdır. Linux, diğer dosya sistemlerini tanır ancak işlem yapabilmek için yetkilendirme gerektirir.
+[responsive_img src="/images/ntfs_yetki_hatasi-lg.webp" alt="NTFS Yetki Hatası" /]
 
 ---
 
@@ -23,13 +24,13 @@ Linux'un varsayılan dosya sistemi **ext** (ext1, ext2, ext3, ext4) olduğundan,
 
 Terminali açarak aşağıdaki paketleri yükleyin:
 
-```shell
+```bash
 sudo pacman -S gvfs ntfs-3g dosfstools
 ```
 
 Ardından, aşağıdaki adımları uygulayın:
 
-```shell
+```bash
 su
 cd /usr/share/polkit-1/rules.d
 touch 10-drives.rules
@@ -48,13 +49,13 @@ polkit.addRule(function(action, subject) {
 
 Eğer sisteminizde bu ayarlar etkinleşmezse, tekrar aşağıdaki komutu çalıştırarak güncellemeyi deneyebilirsiniz:
 
-```shell
+```bash
 sudo pacman -S gvfs ntfs-3g dosfstools
 ```
 
 Son olarak, kullanıcıyı **disk** grubuna ekleyin:
 
-```shell
+```bash
 sudo gpasswd -a $USER disk
 ```
 
@@ -66,17 +67,17 @@ Bilgisayarınızı yeniden başlattığınızda, sorun çözülmüş olacaktır.
 
 Takılı disklerin listesini ve UUID bilgilerini görmek için şu komutu çalıştırabilirsiniz:
 
-```shell
+```bash
 sudo blkid
 ```
 
 Bir NTFS diskini belirli bir klasöre bağlamak için:
 
-```shell
+```bash
 sudo mkdir /mnt/ntfsdisk
 ```
 
-```shell
+```bash
 sudo mount -t ntfs-3g /dev/sdXX /mnt/ntfsdisk
 ```
 
@@ -86,7 +87,7 @@ sudo mount -t ntfs-3g /dev/sdXX /mnt/ntfsdisk
 
 Bağlı diskten çıkmak isterseniz:
 
-```shell
+```bash
 sudo umount /mnt/ntfsdisk
 ```
 
@@ -96,13 +97,13 @@ sudo umount /mnt/ntfsdisk
 
 Başlangıçta otomatik bağlanmasını istiyorsanız **fstab** dosyanızı düzenlemelisiniz:
 
-```shell
+```bash
 sudo vim /etc/fstab  # Nano veya başka bir editör de kullanabilirsiniz.
 ```
 
 Dosyanın en altına şu satırı ekleyin:
 
-```shell
+```bash
 /dev/sdXX /mnt/ntfsdisk ntfs-3g uid=kullaniciadiniz,gid=users,umask=0022 0 0
 ```
 

@@ -9,8 +9,6 @@ _site/
 output/
 node_modules/
 .DS_Store
-content/images/
-content/images_temp/
 themes/Minel/static/css/
 themes/Minel/static/js/
 # C extensions

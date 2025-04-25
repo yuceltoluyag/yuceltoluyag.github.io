@@ -1,0 +1,177 @@
+/**
+ * TOC Markers - İçindekiler Tablosu İşaretleyicileri
+ * Kullanım: İçindekiler tablosundaki ikonlar ve okuma takibi için stiller
+ */
+
+/* TOC İşaretleyici (Marker) */
+.toc-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 24px;
+    background-color: var(--color-primary);
+    border-radius: 0 2px 2px 0;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+/* TOC İkon Konteyneri */
+.toc-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+/* SVG İkon Elemanları */
+.toc-dot {
+    fill: var(--color-light);
+    stroke: var(--color-gray-400);
+    stroke-width: 1;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.toc-line {
+    stroke: var(--color-gray-300);
+    stroke-width: 1;
+    transition: stroke 0.3s ease;
+}
+
+/* Aktif Durumlar */
+.toc-href.toc-reading .toc-dot {
+    fill: var(--color-primary);
+    stroke: var(--color-primary);
+}
+
+.toc-href.toc-reading .toc-line {
+    stroke: var(--color-primary-light);
+}
+
+.toc-href.toc-reading .toc-icon {
+    transform: scale(1.1);
+}
+
+/* Okunmuş Durumlar */
+.toc-href.toc-already-read .toc-dot {
+    fill: var(--color-primary-lighter);
+    stroke: var(--color-primary-lighter);
+}
+
+.toc-href.toc-already-read .toc-line {
+    stroke: var(--color-primary-lighter);
+}
+
+/* Hover Efektleri */
+.toc-href:hover .toc-dot {
+    fill: var(--color-primary-light);
+    stroke: var(--color-primary);
+}
+
+.toc-href:hover .toc-line {
+    stroke: var(--color-primary-light);
+}
+
+/* Eski TOC Stilleri - Minel Tema ile Uyumlaştırılmış */
+.toc a:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+.toc a:hover:before,
+.toc a.active:before,
+.toc-href:hover:before,
+.toc-href.toc-reading:before {
+    transform: scaleY(1);
+}
+
+/* Kaydırma çubuğu stilleri */
+.toc-content::-webkit-scrollbar,
+.toc::-webkit-scrollbar {
+    width: 4px;
+}
+
+.toc-content::-webkit-scrollbar-track,
+.toc::-webkit-scrollbar-track {
+    background: var(--color-background-alt);
+    border-radius: 10px;
+}
+
+.toc-content::-webkit-scrollbar-thumb,
+.toc::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 10px;
+}
+
+.toc-content::-webkit-scrollbar-thumb:hover,
+.toc::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Koyu Tema Uyarlamaları */
+@media (prefers-color-scheme: dark) {
+    .toc-dot {
+        fill: var(--color-gray-700);
+        stroke: var(--color-gray-500);
+    }
+
+    .toc-line {
+        stroke: var(--color-gray-600);
+    }
+
+    .toc-href.toc-already-read .toc-dot {
+        fill: var(--color-primary-dark);
+        stroke: var(--color-primary-dark);
+    }
+
+    .toc-href.toc-already-read .toc-line {
+        stroke: var(--color-primary-dark);
+    }
+
+    .toc a:before,
+    .toc-href:before {
+        background-color: var(--color-primary-light);
+    }
+
+    .toc-content::-webkit-scrollbar-track,
+    .toc::-webkit-scrollbar-track {
+        background: var(--color-bg-card);
+    }
+
+    .toc-content::-webkit-scrollbar-thumb,
+    .toc::-webkit-scrollbar-thumb {
+        background: var(--color-border-dark);
+    }
+}
+
+/* Mobil Cihazlar İçin Uyarlamalar */
+@media (max-width: 992px) {
+    .toc-marker {
+        display: none;
+    }
+
+    .toc-icon {
+        margin-right: 0.35rem;
+        width: 16px;
+        height: 16px;
+    }
+
+    .toc-container {
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+}

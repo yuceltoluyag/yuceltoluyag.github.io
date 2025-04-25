@@ -9,7 +9,7 @@ Summary: Pelican tabanlı statik blogunuza yorum sistemi entegre etmek istiyorsa
 Translation: false
 Status: published
 Template: article
-Image: images/comment-worker-kurulumu.webp
+Image: images/comment-worker-kurulumu-lg.webp
 
 # Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu ✨
 
@@ -19,7 +19,8 @@ Statik blog altyapısı kullanan geliştiriciler için dinamik yorum sistemleri 
 
 `comment-worker`, Cloudflare Workers üzerinde çalışan, kullanıcı yorumlarını GitHub ya da GitLab gibi platformlara JSON dosyası olarak pushlayan modern bir yorum altyapısı çözümüdür. Statik sitelere dinamik içerik eklemenin güvenli ve sürdürülebilir bir yoludur.
 
-![comment-worker-cloudflare-settings](/images/comment-worker-kurulumu.webp)
+
+[responsive_img src="/images/comment-worker-kurulumu-lg.webp" alt="comment-worker-cloudflare-settings" /]
 
 ### Öne Çıkan Özellikleri
 
@@ -46,7 +47,9 @@ Statik blog altyapısı kullanan geliştiriciler için dinamik yorum sistemleri 
 - Kimlikler artık `cuid2` ile oluşturuluyor.
 - Giriş doğrulama ve veri dönüşümleri için Zod kullanılıyor.
 
-> ⚠️ Henüz mevcut olmayan özellikler: dokümantasyon, testler, JSON/frontmatter desteği, GitHub token auth, bildirim, anti-spam, auth, generatedFields ve OneDev/GitLab desteği. Yorumlara artık `date` alanı otomatik olarak ekleniyor.
+<div class="info-box info">
+    ⚠️ Henüz mevcut olmayan özellikler: dokümantasyon, testler, JSON/frontmatter desteği, GitHub token auth, bildirim, anti-spam, auth, generatedFields ve OneDev/GitLab desteği. Yorumlara artık `date` alanı otomatik olarak ekleniyor.
+</div>
 
 ## Kurulum Aşamaları 📆
 
@@ -56,7 +59,11 @@ Cloudflare hesabınıza giriş yaparak yeni bir Worker oluşturun ve `comment-wo
 
 👉 [Cloudflare'a Hemen Deploy Et](https://deploy.workers.cloudflare.com/?url=https://github.com/smooshy/comment-worker){: target="_blank" rel="noopener noreferrer"}
 
-> Eğer hata alırsanız, oluşturulan reponuzdan src, package.json ve wrangler.toml dosyalarını ana projeden kopyalayarak tekrar deploy edebilirsiniz. 
+<div class="info-box info">
+    ⚠️ Eğer hata alırsanız, oluşturulan reponuzdan src, package.json ve wrangler.toml dosyalarını ana projeden kopyalayarak tekrar deploy edebilirsiniz.
+</div>
+
+
 
 Lokalde test etmek için:
 ```bash
@@ -72,7 +79,8 @@ Ayrıca kendi örnek projemi de inceleyebilirsiniz: [comment-worker örneği](ht
   - **Contents**: read & write
   - **Pull requests**: read & write
 
-![GHA Permissions](/images/comment-worker-staticman-app.webp)
+
+[responsive_img src="/images/comment-worker-staticman-app-lg.webp" alt="GHA Permissions" /]
 
 ### 3. Ortam Değişkenlerini Ayarlama
 
@@ -89,13 +97,18 @@ Cloudflare Workers Settings kısmından aşağıdaki bilgileri ekleyin:
 | CW_DEBUG                 | true / false                                | Hata ayıklama modu                                      |
 | TURNSTILE_SECRET_KEY                 |           https://developers.cloudflare.com/turnstile/get-started/                      | Im Not Human : )                                      |
 
-> CW_DEBUG başlangıçta true olarak ayarlanmalıdır. Böylece sorunları kolayca görebilirsiniz.
 
-![comment-worker-cloudflare-settings](/images/comment-worker-staticman.webp)
+<div class="info-box important">
+   CW_DEBUG başlangıçta true olarak ayarlanmalıdır. Böylece sorunları kolayca görebilirsiniz.
+</div>
+
+
+[responsive_img src="/images/comment-worker-staticman-lg.webp" alt="comment-worker-cloudflare-settings" /]
 
 Build ayarlarında da aynı env değişkenlerini tanımlamayı unutmayın:
 
-![comment-worker-cloudflare-settings](/images/comment-worker-staticman-pelican.webp)
+
+[responsive_img src="/images/comment-worker-staticman-pelican-lg.webp" alt="comment-worker-cloudflare-settings" /]
 
 #### Özel Anahtarı PKCS8 Formatına Çevirme 🔐
 

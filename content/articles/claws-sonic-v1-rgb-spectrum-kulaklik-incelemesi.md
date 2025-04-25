@@ -9,7 +9,7 @@ Summary: Claw's Sonic V1 RGB Spectrum 7.1 oyuncu kulaklığına dair detaylı ku
 Translation: false
 Status: published
 Template: article
-Image: images/claws-sonic-v1-rgb.webp
+Image: images/claws-sonic-v1-rgb-lg.webp
 
 <div class="info-box warning">
 <b>Not:</b>
@@ -23,7 +23,7 @@ Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi p
 Günümüzde uygun fiyatlı ve performanslı oyuncu kulaklığı bulmak, teknolojik ürünlerde yaşanan fiyat artışları nedeniyle giderek zorlaşıyor. Bu yazıda, **Claw's Sonic V1 RGB Spectrum 7.1** modelini detaylı bir şekilde inceleyecek, deneyimlerimizi aktaracak ve bu kulaklığın gerçekten vaat ettiklerini sunup sunmadığını değerlendireceğiz.
 
 
-![claws-sonic-v1-rgb](/images/claws-sonic-v1-rgb.webp)
+
 
 
 ---
@@ -44,14 +44,6 @@ Aşağıda kulaklığın mikrofon performansını daha iyi anlayabilmeniz için 
   </div>
   <p class="audio-caption">Claw's Sonic V1 RGB Spectrum 7.1 kulaklık mikrofon testi</p>
 </div>
-
-<style>
-.audio-tip {
-  margin-top: 5px;
-  font-style: italic;
-  color: #666;
-}
-</style>
 
 <div class="info-box tip">
 <b>Not:</b>
@@ -74,7 +66,11 @@ Yaptığımız mikrofon testinde hafif bir **dip ses** fark ettik. Ancak bu ses,
 - Örneğin; evde çocuk ağlamasını neredeyse hiç duymadım. 🎧
 - Müzik dinlenmediği durumlarda bile dış ses izolasyonu tatmin edici seviyede.
 
-> Not: Kafa yapınız büyükse bile kulaklığı rahatlıkla kullanabilirsiniz. Deneyen biri olarak söylüyorum, Türkiye'de benden büyük kafa bulmak zor! 😄
+> 
+
+<div class="info-box tip">
+    Not: Kafa yapınız büyükse bile kulaklığı rahatlıkla kullanabilirsiniz. Deneyen biri olarak söylüyorum, Türkiye'de benden büyük kafa bulmak zor! 😄
+</div>
 
 ---
 
@@ -142,3 +138,4 @@ Eğer bütçenizi zorlamadan kaliteli bir kulaklık arıyorsanız ve RGB ışık
 
 ---
 
+[responsive_img src="/images/claws-sonic-v1-rgb-lg.webp" alt="claws-sonic-v1-rgb" /]

@@ -9,9 +9,8 @@ Summary: Windows işletim sisteminde Redshift programını nasıl kullanacağın
 Translation: false
 Status: published
 Template: article
-Image: images/redshift_windows.webp
+Image: images/redshift_windows-lg.webp
 
-![Redshift Windows](/images/redshift_windows.webp)
 
 ## 🌙 Redshift Nedir?
 
@@ -83,3 +82,4 @@ Redshift, ekranınızı göz dostu hale getirerek gece çalışmalarınızı dah
 
 Sorularınızı veya deneyimlerinizi yorumlarda paylaşabilirsiniz! 🎤
 
+[responsive_img src="/images/redshift_windows-lg.webp" alt="Redshift Windows" /]

@@ -11,7 +11,7 @@ Summary: Bu yazıda, Arch Linux üzerinde Apache (LAMPP) sanal sunucu kurulumu a
 Translation: false
 Status: published
 Template: article
-Image: images/babatest.webp
+Image: images/babatest-lg.webp
 
 
 Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sıkça kullandığım bir yöntemin **Türkçe Dökümantasyonu**nu yazmak istedim. Bu yöntemin adı **Virtual Host** olarak bilinir. Her projeye bir domain atayarak, kodlama ve proje isimlerinin akılda kalmasını sağlar. Bu yöntem, CSS, JS gibi dosyaların entegrasyonu sırasında rahatlık da sağlar.
@@ -31,7 +31,7 @@ Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sık�
 
 Domaini oluşturmak için aşağıdaki komutu kullanabilirsiniz:
 
-```shell
+```bash
 sudo mkdir /srv/http/baba.test
 ```
 
@@ -39,7 +39,7 @@ Bu domainin içerisine bir test dosyası atın. Örneğin:
 
 ## Dosya Oluşturma
 
-```shell
+```bash
 sudo nano /srv/http/baba.test/index.html
 ```
 
@@ -68,7 +68,7 @@ F3 ardından F2'ye basarak kaydedip çıkıyoruz.
 
 HTTPD yapılandırmasını düzenlemek için şu komutu kullanın:
 
-```shell
+```bash
 sudo nano /etc/httpd/conf/httpd.conf
 ```
 
@@ -76,7 +76,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 Dosyanın en altına şu satırı ekliyoruz:
 
-```shell
+```bash
 # Virtual hosts
 Include conf/extra/httpd-vhosts.conf
 ```
@@ -85,7 +85,7 @@ Include conf/extra/httpd-vhosts.conf
 
 F3 ve ardından F2 tuşlarına basarak dosyayı kaydediyoruz. Sonrasında şu komutu kullanarak yeni bir dosya oluşturuyoruz:
 
-```shell
+```bash
 sudo nano /etc/httpd/conf/extra/httpd-vhosts.conf
 ```
 
@@ -93,7 +93,7 @@ sudo nano /etc/httpd/conf/extra/httpd-vhosts.conf
 
 Bu dosyanın en altına şu satırları ekliyoruz:
 
-```shell
+```bash
 ServerAdmin webmaster@baba.test
 DocumentRoot "/srv/http/baba.test"
 ServerName baba.test
@@ -108,7 +108,7 @@ Bu, standart kullanım şeklidir. Ancak yalnızca `DocumentRoot` ve `ServerName`
 
 Yapılandırmanızı test etmek için şu komutu kullanabilirsiniz:
 
-```shell
+```bash
 apachectl configtest
 ```
 
@@ -116,7 +116,7 @@ Ancak son bir işlem kaldı. Şimdi, **hosts** dosyasını düzenleyip, bu URL'y
 
 ## Hosts Dosyasını Düzenleme
 
-```shell
+```bash
 sudo nano /etc/hosts
 ```
 
@@ -124,18 +124,19 @@ Dosyanın en altına şu satırı ekliyoruz:
 
 ## Domain Tanıtımı
 
-```shell
+```bash
 127.0.0.1 baba.test
 ```
 
 Son olarak kaydedip çıkıyoruz ve Apache sunucusunu yeniden başlatıyoruz:
 
-```shell
+```bash
 sudo systemctl restart httpd
 ```
 
 ## Sonuç ;)
 
-![its work](/images/babatest.webp)
+
+[responsive_img src="/images/babatest-lg.webp" alt="arch-linux-apache-lampp-sanal-sunucu-kurulumu" /]
 
 

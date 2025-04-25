@@ -9,16 +9,16 @@ Summary: Composer kullanırken yavaş indirme sorunu mu yaşıyorsunuz? Bu rehbe
 Translation: false
 Status: published
 Template: article
-Image: images/composer.webp
+Image: images/composer-lg.webp
 
 
-![Composer Hızlandırma](/images/composer.webp)
+
 
 ## Composer Yavaş İndirme Sorunu ve Çözümleri ⚡
 
 Composer kullanırken paketlerin yavaş indirildiğini mi fark ettiniz? Endişelenmeyin! Aşağıdaki yöntemleri kullanarak hızınızı artırabilirsiniz. 💨
 
-```shell
+```bash
 composer diagnose
 Checking platform settings: OK
 Checking git settings: OK
@@ -37,13 +37,13 @@ Composer version: 1.9.1 PHP version: 7.4.0 PHP binary path: /usr/bin/php
 
 İlk olarak, mevcut sorunları tespit etmek için aşağıdaki komutu çalıştırın:
 
-```shell
+```bash
 composer diagnose
 ```
 
 Eğer aşağıdaki gibi bir hata mesajı alıyorsanız, Composer'ın güncel `public key`'lere ihtiyacı olabilir:
 
-```shell
+```bash
 Checking pubkeys: FAIL Missing pubkey for tags verification
 Missing pubkey for dev verification
 Run composer self-update --update-keys to set them up
@@ -51,7 +51,7 @@ Run composer self-update --update-keys to set them up
 
 Bu sorunu çözmek için:
 
-```shell
+```bash
 composer self-update --update-keys
 ```
 
@@ -68,7 +68,7 @@ Ardından terminalinizi kapatıp tekrar açın ve `composer diagnose` komutunu y
 
 Bazı ağlarda IPv6 bağlantısı zaman aşımına neden olabilir. Eğer Composer işlemleriniz beklenenden uzun sürüyorsa, IPv6'yı devre dışı bırakmayı deneyin:
 
-```shell
+```bash
 sudo sh -c "echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf"
 ```
 
@@ -80,7 +80,7 @@ Bu işlemi yaptıktan sonra Composer'ı tekrar test edin. 🚀
 
 Varsayılan olarak Composer, `packagist.org` üzerinden çalışır. Eğer bağlantınız yavaşsa, aşağıdaki komut ile `packagist` adresini güncelleyebilirsiniz:
 
-```shell
+```bash
 composer config --global repo.packagist composer https://packagist.org
 ```
 
@@ -92,7 +92,7 @@ Bu işlem, paketlerin daha hızlı yüklenmesini sağlayabilir. 🔥
 
 Composer işlemlerini hızlandırmak için `prestissimo` eklentisini yükleyebilirsiniz. Bu eklenti, paketlerin eşzamanlı indirilmesini sağlar:
 
-```shell
+```bash
 composer global require hirak/prestissimo
 ```
 
@@ -104,7 +104,7 @@ Ancak unutmayın, `prestissimo` Composer 2.0 ve üzeri sürümlerde gereksiz hal
 
 Composer'ın ne yaptığını ayrıntılı görmek için aşağıdaki komutları kullanabilirsiniz:
 
-```shell
+```bash
 composer -vvv require phpunit/phpunit
 ```
 
@@ -124,3 +124,4 @@ Composer ile yavaş indirme sorunları can sıkıcı olabilir, ancak yukarıdaki
 
 Umarım bu rehber Composer kullanımınızı daha keyifli hale getirir! 🎉
 Herhangi bir hata alırsanız yorum bırakmayı unutmayın! 👇
+[responsive_img src="/images/composer-lg.webp" alt="Composer Hızlandırma" /]

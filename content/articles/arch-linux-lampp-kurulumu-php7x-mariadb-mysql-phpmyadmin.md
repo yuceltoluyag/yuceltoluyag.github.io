@@ -11,13 +11,14 @@ Summary: Bu rehberde, Arch Linux üzerinde Apache, PHP, MariaDB, MySQL ve PhpMyA
 Translation: false
 Status: published
 Template: article
-Image: images/archlinuxlampp.webp
+Image: images/archlinuxlampp-lg.webp
 
 
 
 
 Merhaba! Çok uzun bir süre önce  Arch Linux'a geçiş yaptım. Ancak notlarımı bir türlü bloguma aktarma fırsatım olmadı. Bundan sonraki yazılarım, Arch Linux üzerine olacaktır. Sorular gelirse Ubuntu, Linux Mint gibi dağıtımlar için de ara ara yazılar paylaşacağım.
-![archlinuxlampp](/images/archlinuxlampp.webp)
+
+
 # Apache Kurulumu
 
 Apache kurulumu için aşağıdaki komutları kullanabilirsiniz:
@@ -46,7 +47,7 @@ mysql_secure_installation
 
 - `mysql_secure_installation` komutunu çalıştırdıktan sonra, "change the root password" seçeneğine `y` tuşuna basarak şifrenizi belirleyin. Şifreyi unutmayacağınız bir şekilde girmeniz önemlidir. Diğer tüm seçeneklere `Y` diyebilirsiniz. Sistem diliniz Türkçe ise `E` tuşuna basarak devam edebilirsiniz. Eğer "Thanks for using MariaDB" yazısını görürseniz, kurulum tamamlanmıştır.
 
-## PHP Kurulumu
+# PHP Kurulumu
 
 PHP kurulumu için şu komutları kullanabilirsiniz:
 
@@ -58,7 +59,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 - Burada, `LoadModule mpm_event_module modules/mod_mpm_event.so` satırının başına `#` işareti koyuyoruz.
 - Sayfanın en altına aşağıdaki kodları ekliyoruz.
 
-### Apache Konfigurasyonu
+## Apache Konfigurasyonu
 
 ```bash
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
@@ -81,7 +82,7 @@ sudo pacman -S phpmyadmin
 sudo nano /etc/php/php.ini
 ```
 
-### PHP.ini Konfigurasyonu
+## PHP.ini Konfigurasyonu
 
 - `php.ini` dosyasının içerisinde şu satırları aktif hale getirin:
 
@@ -99,7 +100,7 @@ extension=zip
 
 Başındaki `;` işaretlerini kaldırıyoruz. Ekstra olarak aktif etmek istediğiniz başka bir eklenti varsa aynı işlemi yapabilirsiniz. Ayrıca, PHP hata mesajlarını görmek için şu ayarı yapmamız gerekiyor:
 
-### Hataları Gösterme
+## Hataları Gösterme
 
 ```bash
 display_errors = On
@@ -107,7 +108,7 @@ display_errors = On
 
 Bu ayar normalde `Off` durumundadır. `On` yaparak, yerel geliştirme sırasında hata mesajlarını görebilirsiniz.
 
-#### PHPMyAdmin Konfigurasyonu
+## PHPMyAdmin Konfigurasyonu
 
 ```bash
 sudo nano /etc/httpd/conf/extra/phpmyadmin.conf
@@ -153,7 +154,7 @@ Eğer `error` ifadesini görmüyorsanız, kurulumunuz başarıyla tamamlanmışt
 PHP 7.2.2 (cli) (built: Jan 30 2018 19:18:38) ( NTS )
 ```
 
-## Ekstra Bilgiler
+# Ekstra Bilgiler
 
 Projelerinizi kaydedeceğiniz dizin: **/srv/http/**
 
@@ -166,4 +167,10 @@ sudo chown -R friday13:friday13 /srv/http/
 
 Bu iki yöntemle genelde dosya erişim sorunları çözülür. Ancak bazen, yüklenen dosyanın gideceği klasörle ilgili bir sorun yaşanabilir. Bu durumda ilk yöntemi uygulayarak klasöre yazma izni verebilirsiniz.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SElIrg0owl8?si=8WwEPayhcUK7RFWZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+## Video Anlatımı
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="SElIrg0owl8"></lite-youtube>
+
+[responsive_img src="/images/archlinuxlampp.webp" alt="arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin" /]

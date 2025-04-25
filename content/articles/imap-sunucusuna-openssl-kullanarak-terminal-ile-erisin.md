@@ -11,7 +11,7 @@ Summary: IMAP sunucusuna OpenSSL kullanarak terminal ile nasıl bağlanabileceğ
 Translation: false
 Status: published
 Template: article
-Image: images/imap_openssl_terminal.webp
+Image: images/imap_openssl_terminal-lg.webp
 
 
 
@@ -241,7 +241,7 @@ Bu komut ile remote isimlerini ve klasör yapısını görebilirsiniz. Türkçe 
 
 ### Posta Kutusunu Seçme
 
-Örneğin muttrc içerisinde gönderilmiş postalara erişmek istersem remote kısmına **[Gmail]/G&APY-nderilmi&AV8- Postalar** yazmalıyım. Eksik,hatalı bir remote tagı yazarsam neomutt başlattığımda **slave sent cannot be opened.** tarzında bir hata verir. Bu hatayı es geçip arayüze bağlanabilirsiniz ancak gönderilen postalar kısmına ulaşamazsınız. <font color="red">Tekrar belirtiyorum REMOTE tag çok önemlidir.</font>
+Örneğin muttrc içerisinde gönderilmiş postalara erişmek istersem remote kısmına **[Gmail]/G&APY-nderilmi&AV8- Postalar** yazmalıyım. Eksik,hatalı bir remote tagı yazarsam neomutt başlattığımda **slave sent cannot be opened.** tarzında bir hata verir. Bu hatayı es geçip arayüze bağlanabilirsiniz ancak gönderilen postalar kısmına ulaşamazsınız. <span class="text-highlight">Tekrar belirtiyorum REMOTE tag çok önemlidir.</span>
 
 ### Hotmail/Outlook Erişimi
 
@@ -314,4 +314,5 @@ tag FETCH 6388 (BODY[n])
 
 ```
 
-![imap_openssl_terminal](/images/imap_openssl_terminal.webp)
+
+[responsive_img src="/images/imap_openssl_terminal-lg.webp" alt="imap_openssl_terminal" /]

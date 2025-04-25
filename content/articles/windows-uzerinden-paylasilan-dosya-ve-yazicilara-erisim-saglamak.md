@@ -9,7 +9,7 @@ Summary: Bu rehberde, Windows üzerinden paylaşılan dosya ve yazıcılara Linu
 Translation: false
 Status: published
 Template: article
-Image: images/linux_samba.webp
+Image: images/linux_samba-lg.webp
 
 
 Merhaba! Windows üzerinden paylaşılan dosya, yazıcı gibi kaynaklara Linux üzerinden nasıl erişebileceğinizi anlatan bir rehber hazırladım. Bu konu bana yaklaşık 2-3 ay önce sorulmuştu, ancak yoğunluk nedeniyle henüz yanıtlayamamıştım. Şimdi, konuyu baştan sona ele alacağım ve tüm ayarları tek bir yazıda toplayacağım. Korkmanıza gerek yok, her şey adım adım açıklanacak!
@@ -102,8 +102,8 @@ Aşağıdaki komutla paylaşımı bağlayabilirsiniz:
 sudo mount -t cifs //ipadresi/paylasilanklasor /mnt/virtual -o username=olusturulankullaniciadi,password=olusturulansifre,workgroup=workgroup,iocharset=utf8,uid=olusturulankullaniciadi,gid=root
 ```
 
-![linux_samba_worked](/images/linux_samba.webp)
 
+[responsive_img src="/images/linux_samba-lg.webp" alt="linux_samba_worked" /]
 ## İsteğe Bağlı Özellikler
 
 "**Usershares**" özelliği, root olmayan kullanıcılara kendi paylaşım ayarlarını ekleme, değiştirme ve silme yeteneği tanır. Eğer Thunar dosya yöneticisini kullanıyorsanız (XFCE masaüstü ortamında), aşağıdaki komutla gerekli paketi yükleyebilirsiniz:

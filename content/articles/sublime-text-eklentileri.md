@@ -9,7 +9,7 @@ Summary: Kullandığım en faydalı Sublime Text eklentilerini ve temalarını t
 Translation: false
 Status: published
 Template: article
-Image: images/AFileIcon.webp
+Image: images/AFileIcon-lg.webp
 
 Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika eklenti ve temaları sizlerle paylaşacağım. 🥳
 
@@ -25,7 +25,51 @@ Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika ek
 
 
 Ayarlarımı GitHub'dan alabilirsiniz: [Sublime Repom](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"} ve **Alternatif Ayarlarım**
-<script src="https://gist.github.com/yuceltoluyag/51b4391d44cfc353aad0d1731b56c39f.js"></script>
+```json
+{
+"auto_complete_triggers": [
+{
+"characters": "<",
+"selector": "text.html"
+},
+{
+"characters": ".",
+"selector": "source.js"
+}
+],
+"theme": "Agila Neon.sublime-theme",
+"color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
+"bold_folder_labels": true,
+"caret_extra_width": 2,
+"caret_style": "smooth",
+"fade_fold_buttons": false,
+"font_face": "Inconsolata",
+"font_size": 16,
+"highlight_line": true,
+"highlight_modified_tabs": true,
+"ignored_packages": [
+"JavaScript",
+"Vintage"
+],
+"indent_guide_options": [
+"draw_normal",
+"draw_active"
+],
+"line_padding_bottom": 1,
+"line_padding_top": 1,
+"show_line_endings": true,
+"tab_size": 4,
+"theme": "Agila.sublime-theme",
+"theme_agila_sidebar_light_icons": true,
+"theme_agila_sidebar_selected_entry_yellow": true,
+"theme_agila_auto_complete_yellow": true,
+"theme_agila_active_tab_entry_yellow": true,
+"translate_tabs_to_spaces": true,
+"trim_trailing_white_space_on_save": true,
+"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+"word_wrap": false
+}
+```
 ## EMMET
 
 Emmet, kod yazma hızınızı önemli ölçüde artırabilecek harika bir eklentidir. Ancak, kod yazmaya yeni başlayanlara önerilmez.
@@ -59,26 +103,27 @@ Sublime Text için Git entegrasyonu sağlayan harika bir eklentidir. Dökümanta
 
 GitGutter, projenizde yaptığınız değişiklikleri gösteren bir eklentidir. `git status` komutunun Sublime'deki halini düşünebilirsiniz.
 
-![GitGutter](/images/GitGutter.gif)
+
 
 ## GitHubinator
 
 Bu eklenti, seçtiğiniz alanı doğrudan GitHub reposunda aramanıza yardımcı olur. Artık "Acaba bunu nerede yazmışım?" sorusu ortadan kalkıyor.
 
-![GitHubinator](/images/GitHubinator.webp)
+
+[responsive_img src="/images/GitHubinator-lg.webp" alt="GitHubinator" /]
 
 ## GitOpenChangedFiles
 
 GitGutter'dan farkı, yalnızca değişiklik yapılan satırları gösterip, repo içinde arama yapabilmesidir. `Ctrl + Shift + O` tuşlarına basarak hızlıca kullanabilirsiniz.
 
-![GitOpenChangedFiles](/images/GitOpenChangedFiles.gif)
+
 
 ## SublimeLinter
 
 SublimeLinter, kod hatalarını ve uyarılarını göstermek için harika bir araçtır. [SublimeLinter Dökümantasyonu](http://www.sublimelinter.com){: target="_blank" rel="noopener noreferrer"} adresini mutlaka inceleyin.
 
-![SublimeLinter](/images/SublimeLinter.webp)
 
+[responsive_img src="/images/SublimeLinter-lg.webp" alt="SublimeLinter" /]
 ## ChangeQuotes
 
 Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok kolaylaştırıyor. Hızlı bir işlem için mükemmel bir yardımcıdır.
@@ -87,26 +132,28 @@ Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok
 
 Bu eklentiyle birlikte, sol taraftaki sidebarda sağ tıkladığınızda pek çok ek özellik eklenir.
 
-![SidebarEnhancements](/images/Side​Bar​Enhancements.webp)
 
+[responsive_img src="/images/Side​Bar​Enhancements-lg.webp" alt="SidebarEnhancements" /]
 ## BracketHighlighter
 
 Bu eklenti, seçtiğiniz etiketi veya parantezi nerede açıp nerede kapandığını görmenizi sağlar.
 
-![BracketHighlighter](/images/BracketHighlighter.webp)
+
+[responsive_img src="/images/BracketHighlighter-lg.webp" alt="BracketHighlighter" /]
 
 ## Gutter Color
 
 Renk seçimlerinizi ekstra bir program kullanmadan rahatça yapabilirsiniz. Ayrıca **Color Highlighter** kullanarak renklerinizi doğrudan görmek mümkündür.
 
-![GutterColor](/images/GutterColor.webp)
+
+[responsive_img src="/images/GutterColor-lg.webp" alt="GutterColor" /]
 
 ## AlignTab
 
 Vim editöründeki tabuler hizalamayı taklit eden bu eklenti, çok sayıda özellik sunuyor.
 
-![AlignTab](/images/AlignTab.webp)
 
+[responsive_img src="/images/AlignTab-lg.webp" alt="AlignTab" /]
 ## AutoFileName
 
 Dosya yollarınızı otomatik olarak tamamlar. Eksik dosya yolları yazıldığında öneri gelmez, böylece hataları azaltabilirsiniz.
@@ -119,19 +166,19 @@ HTML, CSS, JavaScript ve JSON kodlarını formatlamak için kullanılan bir ekle
 
 Bu eklenti, kod bloklarınızın üzerine açıklamalar eklemenizi sağlar.
 
-![DocBlockr](/images/DocBlockr.gif)
+
 
 ## A File Icon
 
 Dosya uzantılarına göre simgeler ekler, böylece dosyalarınız daha düzenli görünür.
 
-![AFileIcon](/images/AFileIcon.webp)
 
+[responsive_img src="/images/AFileIcon-lg.webp" alt="AFileIcon" /]
 ## Tema
 
 Material Tema kullanıyorum: [Material Theme GitHub Sayfası](https://github.com/equinusocio/material-theme){: target="_blank" rel="noopener noreferrer"}.
 
-![Material-Theme](/images/material-theme.gif)
+
 
 Yeni kullandığım temalar ve pluginler hakkında bilgi almak için [GitHub Repo](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"}
 

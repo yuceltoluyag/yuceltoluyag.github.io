@@ -1,0 +1,66 @@
+name: Run CI
+run-name: ${{ github.actor }}
+on: [push]
+
+jobs:
+    ci:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install uv
+              uses: astral-sh/setup-uv@v5
+              with:
+                  version: "0.6.8"
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.11"
+            - name: Create and activate virtual environment
+              run: |
+                  uv venv
+                  source .venv/bin/activate
+            - name: Install dependencies
+              run: |
+                  uv pip install -r requirements.txt
+
+    deploy:
+        needs: ci
+        runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/main'
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v4
+            - name: Install uv and dependencies
+              uses: astral-sh/setup-uv@v5
+              with:
+                  version: "0.6.8"
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                  python-version: "3.11"
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+                  cache: "npm"
+            - name: Install npm dependencies
+              run: npm ci
+            - name: Create and activate virtual environment
+              run: |
+                  uv venv
+                  source .venv/bin/activate
+            - name: Install dependencies
+              run: |
+                  uv pip install -r requirements.txt
+            - name: Build site assets with Gulp
+              run: npm run build
+            - name: Build site
+              run: uv run pelican content -s publishconf.py
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./output
+                  publish_branch: gh-pages
+                  force_orphan: true

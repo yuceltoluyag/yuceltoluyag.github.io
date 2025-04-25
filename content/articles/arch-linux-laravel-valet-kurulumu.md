@@ -11,9 +11,9 @@ Summary: Valet Linux, minimalist geliştirme ortamını sevenler için ideal bir
 Translation: false
 Status: published
 Template: article
-Image: images/laravel-valet-kurulumu-linux.webp
+Image: images/laravel-valet-kurulumu-linux-lg.webp
 
-![Laravel Valet Kurulumu](/images/laravel-valet-kurulumu-linux.webp)
+
 
 # Merhaba 👋
 
@@ -21,7 +21,7 @@ Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel 
 
 Valet, sisteminizi makine açıldığında **Nginx'i arka planda çalıştıracak şekilde yapılandırır**. Ardından, **DnsMasq** kullanarak `*.test` uzantılı domainlerinizi ilgili dizinlere yönlendirir. **Sadece 7MB RAM kullanarak çalışan, hızlı ve hafif bir Laravel geliştirme ortamı sunar.** 🎯
 
-<div class="info-box error">
+<div class="info-box warning">
 <b>Not:</b> Daha önce 
 <a href="https://yuceltoluyag.dev/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" target="_blank" rel="noopener noreferrer"> Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin) </a>veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.
 </div>
@@ -29,43 +29,43 @@ Valet, sisteminizi makine açıldığında **Nginx'i arka planda çalıştıraca
 
 Terminali açın ve aşağıdaki komutları sırasıyla çalıştırın:
 
-```shell
+```bash
 pacman -S nss jq xsel networkmanager
 ```
 
 PHP'nin kurulu ve 5.6'dan yüksek bir sürüm olduğundan emin olun:
 
-```shell
+```bash
 pacman -S php # Kurulum sonrası kontrol için: php -v
 ```
 
 Gerekli ek PHP paketlerini yükleyin:
 
-```shell
+```bash
 yay -S php71-mcrypt
 ```
 
 İsteğe bağlı paketler:
 
-```shell
+```bash
 yay -S php php-dblib php-fpm php-gd php-odbc php-pgsql php-sqlite
 ```
 
 Composer kurun:
 
-```shell
+```bash
 yay -S composer
 ```
 
 Daha sonra `.bashrc` içerisine şu satırı ekleyin:
 
-```shell
+```bash
 PATH="$HOME/.config/composer/vendor/bin:$PATH"
 ```
 
 Composer'ı hazır hale getirin ve Valet Linux'u yükleyin:
 
-```shell
+```bash
 composer global require cpriego/valet-linux
 ```
 
@@ -73,13 +73,13 @@ composer global require cpriego/valet-linux
 
 Ana dizine gidip `Sites` adında bir klasör oluşturun:
 
-```shell
+```bash
 mkdir ~/Sites
 ```
 
 Bu klasör içinde her alt klasör bir domain adı gibi çalışacaktır. Örneğin, `blog` isimli bir Laravel projesi oluşturup park edelim:
 
-```shell
+```bash
 cd ~/Sites
 php valet park
 laravel new blog
@@ -91,35 +91,36 @@ Tarayıcıdan **http://blog.test** adresine girerek projenizi görüntüleyebili
 
 Belirli bir proje için özel link oluşturabilirsiniz:
 
-```shell
+```bash
 valet link projeadi
 ```
 
 Bağlantıları listelemek için:
 
-```shell
+```bash
 valet links
 ```
 
-![Laravel Valet Link Arch Linux](/images/laravel-valet-link-archlinux.webp)
+
+[responsive_img src="/images/laravel-valet-link-archlinux-lg.webp" alt="Laravel Valet Link Arch Linux" /]
 
 ## 🔧 Domain Uzantısını Değiştirme
 
 Varsayılan `.test` uzantısını değiştirmek isterseniz:
 
-```shell
+```bash
 valet domain .app
 ```
 
 Mevcut domain uzantısını öğrenmek için:
 
-```shell
+```bash
 valet domain
 ```
 
 Valet'in kullandığı portu değiştirmek için:
 
-```shell
+```bash
 valet port xxxx # xxxx yerine yeni port numarasını yazın
 ```
 
@@ -127,19 +128,21 @@ valet port xxxx # xxxx yerine yeni port numarasını yazın
 
 Özellikle `.app` veya `.dev` gibi uzantılar kullanıldığında SSL hatası alabilirsiniz. Bunu önlemek için:
 
-```shell
+```bash
 valet secure projeadi
 ```
 
 SSL'yi devre dışı bırakmak için:
 
-```shell
+```bash
 valet unsecure projeadi
 ```
 
 ## 📺 Video Anlatım
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-Qdxa0XjkgQ?si=VA6YUYm0A3q2lciz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="-Qdxa0XjkgQ"></lite-youtube>
 
 ## 📚 Kaynaklar
 
@@ -148,3 +151,4 @@ valet unsecure projeadi
 
 🎯 Artık Valet ile Laravel projelerinizi hızla geliştirebilir ve yerel ortamınızı optimize edebilirsiniz! 🚀
 
+[responsive_img src="/images/laravel-valet-kurulumu-linux-lg.webp" alt="Laravel Valet Kurulumu" /]

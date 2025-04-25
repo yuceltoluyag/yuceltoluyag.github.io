@@ -11,10 +11,10 @@ Summary: Facebook gruplarında arkadaş ekleme sürecini hızlandırmak ve belir
 Translation: false
 Status: published
 Template: article
-Image: images/facebook-5000.webp
+Image: images/facebook-5000-lg.webp
 
 Merhaba, Facebook **grup kasma yöntemi** olarak bilinen bazı **JavaScript** kodları paylaşılırdı. Bu kodları tarayıcı konsoluna yapıştırarak arkadaşlarınızı gruba davet edebilirdiniz. Ancak, Facebook ekibi bu durumu engellemek için günlük arkadaş ekleme sınırını **1000**, toplu mesaj gönderme sınırını ise **50** olarak belirlemiştir.
-![facebook-5000](/images/facebook-5000.webp)
+
 ### 📌 Önemli Noktalar
 Facebook, ekleme işlemini manuel olarak yapsanız bile hızınızı analiz ederek **bot kullanımını tespit edebilir**. Bu nedenle, arkadaş ekleme işlemlerini belirli aralıklarla yapmak önemlidir.
 
@@ -29,5 +29,10 @@ Test aşamasında **1K, 2K ve 5K** hesaplar kullanarak en uygun süreleri belirl
 [Group Invite All](#facebook) eklentisini tarayıcınıza ekleyin ve yukarıdaki süreler arasında seçim yaparak arkadaş ekleme işlemini gerçekleştirin. Arka planda bu işlemi sürdürürken diğer sekmelerde farklı işlemler yapabilirsiniz.
 
 🎥 Video anlatımı için aşağıdaki bağlantıyı izleyebilirsiniz:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G_oDPhADUso?si=XunOZkay9KLCBe9S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="G_oDPhADUso"></lite-youtube>
+
+[responsive_img src="/images/facebook-5000-lg.webp" alt="facebook-5000" /]

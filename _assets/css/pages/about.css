@@ -1,0 +1,252 @@
+/**
+ * Hakkımda Sayfası
+ *
+ * Hakkımda sayfası için özel stiller
+ */
+
+.hakkimda-page {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Hero Bölümü */
+.hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--color-background-alt);
+    border-radius: var(--radius-lg);
+}
+
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    margin-bottom: 1.5rem;
+}
+
+.hero-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-white);
+}
+
+.page-title {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+}
+
+.title-underline {
+    width: 80px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+}
+
+/* İçerik Bölümü */
+.about-content {
+    display: grid;
+    gap: var(--spacing-lg);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        grid-template-columns: 300px 1fr;
+    }
+}
+
+/* İletişim Bölümü */
+.contact-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-card {
+    background: var(--color-background);
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+}
+
+.section-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--spacing-xs);
+    color: var(--color-primary);
+}
+
+.social-accounts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.social-account-link {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    background: var(--color-background-alt);
+    border: var(--border-width-thin) solid var(--color-border);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+}
+
+.social-account-link:hover {
+    background: var(--color-background-hover);
+    transform: translateY(-2px);
+}
+
+.social-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-right: var(--spacing-sm);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+}
+
+.social-info {
+    flex: 1;
+}
+
+.platform-name {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+}
+
+.username {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+}
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-text-lighter);
+}
+
+/* Ana İçerik */
+.main-content {
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-me-card {
+    background: var(--color-background);
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.page-content {
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.page-content h2 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    color: var(--color-text);
+    margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.page-content h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-text);
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+}
+
+.page-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.page-content ul,
+.page-content ol {
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.page-content li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.page-content a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.page-content a:hover {
+    text-decoration: none;
+}
+
+.page-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .hakkimda-page {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+
+    .hero-section {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .about-me-card {
+        padding: var(--spacing-xl);
+    }
+}
+
+/* Karanlık Tema Uyumluluğu */
+@media (prefers-color-scheme: dark) {
+    .contact-card,
+    .about-me-card {
+        background: var(--color-background);
+        border-color: var(--color-border);
+    }
+
+    .social-account-link {
+        background: var(--color-background-alt);
+        border-color: var(--color-border);
+    }
+
+    .social-account-link:hover {
+        background: var(--color-background-hover);
+    }
+}

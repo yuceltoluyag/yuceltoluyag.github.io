@@ -1,78 +1,25 @@
-{% extends "base.html" %} {% block title %} Arama {% endblock %} {% block content %}
-<div class="search-container">
-    <h1>Site İçi Arama</h1>
-    <div class="search-box">
-        <input type="text" id="search-input" placeholder="Aramak istediğiniz kelimeyi yazın..." autofocus />
-        <button id="search-button">Ara</button>
+{% extends "base.html" %} {% block title %}Arama - {{ SITENAME }}{% endblock %} {% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="bg-site-card rounded-lg p-6 md:p-8">
+        <h1 class="text-3xl font-bold mb-6 text-text-primary">Site İçi Arama</h1>
+
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Aramak istediğiniz kelimeyi yazın..."
+                class="flex-1 px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:bg-site-bg dark:text-text-primary"
+                autofocus />
+            <button
+                id="search-button"
+                class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium">
+                Ara
+            </button>
+        </div>
+
+        <div id="search-results" class="mt-8"></div>
     </div>
-    <div id="search-results"></div>
 </div>
-
-<style>
-    .search-container {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 1rem;
-    }
-
-    .search-box {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 2rem;
-    }
-
-    #search-input {
-        flex: 1;
-        padding: 0.5rem 1rem;
-        border: 2px solid #ddd;
-        border-radius: 4px;
-        font-size: 1rem;
-    }
-
-    #search-button {
-        padding: 0.5rem 2rem;
-        background: #007bff;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-
-    #search-button:hover {
-        background: #0056b3;
-    }
-
-    #search-results {
-        margin-top: 2rem;
-    }
-
-    .search-result {
-        margin-bottom: 2rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #eee;
-    }
-
-    .search-result h2 {
-        margin: 0 0 0.5rem 0;
-    }
-
-    .search-result p {
-        margin: 0;
-        color: #666;
-    }
-
-    .search-result .date {
-        font-size: 0.9rem;
-        color: #999;
-    }
-
-    .no-results {
-        text-align: center;
-        color: #666;
-        margin-top: 2rem;
-    }
-</style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -83,11 +30,12 @@
         function performSearch() {
             const query = searchInput.value.trim();
             if (!query) {
-                resultsContainer.innerHTML = '<div class="no-results">Lütfen arama yapmak için bir kelime girin.</div>';
+                resultsContainer.innerHTML =
+                    '<div class="text-center text-text-secondary py-8">Lütfen arama yapmak için bir kelime girin.</div>';
                 return;
             }
 
-            resultsContainer.innerHTML = '<div class="loading">Aranıyor...</div>';
+            resultsContainer.innerHTML = '<div class="text-center text-text-secondary py-8">Aranıyor...</div>';
             // Burada arama işlemi yapılacak
             // Pelican search plugin'i ile entegre edilecek
         }

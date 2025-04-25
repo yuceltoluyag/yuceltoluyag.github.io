@@ -1,0 +1,305 @@
+/**
+ * Site Altbilgisi Layout
+ * 
+ * Site footer bölümü için stiller
+ */
+
+.site-footer {
+    background-color: var(--color-background-alt) !important;
+    color: var(--color-text);
+    padding: var(--spacing-md) 0;
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+}
+
+/* Footer Ana İçerik */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.footer-links,
+.footer-social,
+.footer-subscribe {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Footer başlıkları */
+.footer-links h3,
+.footer-social h3,
+.footer-subscribe h3 {
+    font-size: var(--text-md);
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.footer-description {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+/* Bağlantılar Listesi */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-links a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color var(--transition-fast);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+/* Basit Abonelik Formu */
+.simple-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.simple-input {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+}
+
+.simple-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.simple-button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: none;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    transition: background-color var(--transition-fast);
+    font-weight: 600;
+}
+
+.simple-button:hover {
+    background-color: #00497c; /* Daha koyu bir mavi tonu */
+    text-decoration: none;
+}
+
+/* Sosyal Medya Linkleri */
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+}
+
+.social-link iconify-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    color: white;
+    border-color: transparent;
+}
+
+/* Sosyal medya platformlarına özel renkler */
+.social-link:has(iconify-icon[icon="mdi:github"]):hover {
+    background-color: #171515;
+}
+
+.social-link:has(iconify-icon[icon="simple-icons:mastodon"]):hover {
+    background-color: #6364ff;
+}
+
+.social-link:has(iconify-icon[icon="simple-icons:matrix"]):hover {
+    background-color: #000000;
+}
+
+.social-link:has(iconify-icon[icon="mdi:discord"]):hover {
+    background-color: #5865f2;
+}
+
+.social-link:has(iconify-icon[icon="mdi:instagram"]):hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-link:has(iconify-icon[icon="mdi:youtube"]):hover {
+    background-color: #ff0000;
+}
+
+.social-link:has(iconify-icon[icon="mdi:twitch"]):hover {
+    background-color: #9146ff;
+}
+
+.social-link:has(iconify-icon[icon="ri:kick-line"]):hover {
+    background-color: #53fc18;
+}
+
+.social-link:has(iconify-icon[icon="arcticons:papara"]):hover {
+    background-color: #00c2d8;
+}
+
+.social-link:has(iconify-icon[icon="octicon:heart-fill-24"]):hover {
+    background-color: #ea4aaa;
+}
+
+/* Footer Alt Kısmı */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-border);
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
+}
+
+.copyright,
+.powered-by {
+    margin: 0;
+}
+
+.powered-by a {
+    color: #005fa3; /* Daha koyu bir mavi tonu - AA uyumluluğu için */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.powered-by a:hover {
+    text-decoration: none;
+    color: #003e6b; /* Hover durumunda daha koyu renk */
+}
+
+/* Karanlık Tema */
+@media (prefers-color-scheme: dark) {
+    .site-footer {
+        background-color: var(--color-background-alt) !important;
+        border-top-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-links h3,
+    .footer-social h3,
+    .footer-subscribe h3 {
+        color: var(--color-white, #ffffff);
+    }
+
+    .footer-description {
+        color: var(--color-text-light, #e0e0e0);
+    }
+
+    .footer-links a {
+        color: var(--color-text-light, #e0e0e0);
+    }
+
+    .footer-links a:hover {
+        color: var(--color-primary-light, #80b4ff);
+    }
+
+    .simple-input {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-light, #e0e0e0);
+    }
+
+    .social-link {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: var(--color-text-light, #e0e0e0);
+    }
+
+    .social-link:hover {
+        color: var(--color-white);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-bottom {
+        border-top-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .simple-button {
+        background-color: #0077cc; /* Koyu temada daha açık mavi */
+        color: var(--color-white);
+    }
+
+    .simple-button:hover {
+        background-color: #4da8ff;
+    }
+
+    .powered-by a {
+        color: #4da8ff; /* Karanlık temada daha açık mavi */
+        text-decoration: none;
+    }
+
+    .powered-by a:hover {
+        color: #80b4ff;
+    }
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+    .footer-info {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links {
+        justify-content: center;
+        gap: var(--spacing-xs);
+    }
+
+    .social-link {
+        width: 28px;
+        height: 28px;
+    }
+}

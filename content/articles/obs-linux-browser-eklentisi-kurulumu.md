@@ -9,7 +9,7 @@ Summary: Linux ortamında OBS için browser eklentisinin nasıl kurulacağını 
 Translation: false
 Status: published
 Template: article
-Image: images/linux_browser_kaynaklar.webp
+Image: images/linux_browser_kaynaklar-lg.webp
 
 
 Merhaba! 🎥 Open Broadcaster Software (OBS), video kaydetme ve canlı yayın yapma konusunda en iyi uygulamalardan biridir. Ancak Linux ortamında eklenti ekleme süreci hakkında yeterince Türkçe kaynak bulunmadığı için bu rehberi hazırladım. OBS'nin nasıl kullanılacağını anlatmayacağım, çünkü bu konuda yeterince içerik mevcut. Bu yazıda, **OBS'e Linux Browser eklentisinin nasıl ekleneceğini ve Discord StreamKit entegrasyonunun nasıl yapılacağını** öğreneceğiz.
@@ -35,7 +35,7 @@ Bu işlemleri elle de yapabilirsiniz, ancak ben terminal üzerinden yapmayı ter
 
 Eğer eklenti varsayılan olarak gelmiyorsa, manuel olarak şu komutları kullanabilirsiniz:
 
-```shell
+```bash
 wget https://github.com/bazukas/obs-linuxbrowser/releases/download/0.6.1/linuxbrowser0.6.1-obs23.0.2-64bit.tgz
 mkdir -p $HOME/.config/obs-studio/plugins
 tar xfvz linuxbrowser0.6.1-obs23.0.2-64bit.tgz -C $HOME/.config/obs-studio/plugins/
@@ -51,36 +51,38 @@ Bu adımları tamamladıktan sonra eklenti, **OBS'in eklenti klasörüne** başa
 
 OBS'i açın ve **Kaynaklar (+) butonuna** basarak **Linux Browser** seçeneğini belirleyin.
 
-![Linux Browser Kaynak Seçimi](/images/linux_browser_kaynaklar.webp)
 
+[responsive_img src="/images/linux_browser_kaynaklar-lg.webp" alt="Linux Browser Kaynak Seçimi" /]
 ### 2. Discord StreamKit Entegrasyonu
 
 **Discord StreamKit** sayfasına gidin ve en altta bulunan **OBS -> Connect to Discord** butonuna tıklayın.
 
-![Discord Bağlantısı](/images/linux_browser_discord.webp)
+
+[responsive_img src="/images/linux_browser_discord-lg.webp" alt="Discord Bağlantısı" /]
 
 **Install For OBS** butonuna basın.
 
-![OBS için Kurulum](/images/linux_browser_obs.webp)
 
+[responsive_img src="/images/linux_browser_obs-lg.webp" alt="OBS için Kurulum" /]
 ### 3. Sunucu Seçimi ve Ayarlar
 
 Açılan ekranda **sunucunuzu seçin** ve **ses veya metin sohbeti** entegrasyonu için gerekli ayarları yapın.
 
-![Discord OBS Özelleştirme](/images/linux_browser_obs_custom.webp)
 
+[responsive_img src="/images/linux_browser_obs_custom-lg.webp" alt="Discord OBS Özelleştirme" /]
 ### 4. OBS İçerisinde URL Ekleme
 
 OBS'te **Linux Browser** kaynağını açın ve **URL alanına Discord StreamKit tarafından sağlanan bağlantıyı yapıştırın**.
 
 💡 **İpucu:** CSS bilginiz varsa, ekranda özelleştirmeler yaparak daha şık bir görünüm elde edebilirsiniz! 🎨
 
-![OBS Ayarları](/images/linux_browser_settings.webp)
+
+[responsive_img src="/images/linux_browser_settings.webp" alt="OBS Ayarları" /]
 
 🎉 İşte sonuç!
 
-![Sonuç Görüntüsü](/images/linux_browser_final.webp)
 
+[responsive_img src="/images/linux_browser_final.webp" alt="Sonuç Görüntüsü" /]
 ---
 
 ## Linux Discord Sunucumuz 🚀

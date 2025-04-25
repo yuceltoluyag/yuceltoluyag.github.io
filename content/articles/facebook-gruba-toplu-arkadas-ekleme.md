@@ -11,7 +11,7 @@ Summary: Facebook grubunuza veya katıldığınız bir gruba topluca arkadaş ek
 Translation: false
 Status: published
 Template: article
-Image: images/facebookgrupkodu.webp
+Image: images/facebookgrupkodu-lg.webp
 
 
 # Merhaba 👋
@@ -23,7 +23,8 @@ Yaklaşık iki yıl önce yayınladığım videolardan sonra bu konuda bana sık
 
 ## Güncellenmiş Facebook Grup Arkadaş Ekleme Yöntemi 🚀
 
-![Facebook Yeni Grup Eklentisi](/images/facebookgrupkodu.webp)
+
+
 
 Yukarıdaki resimde gösterildiği gibi:
 
@@ -41,6 +42,12 @@ Yukarıdaki resimde gösterildiği gibi:
 
 ### Video Rehber 🎥
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pggW_tyFG7k?si=DR9mpIX09MzMhEyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="pggW_tyFG7k"></lite-youtube>
+
+
+
 Bu yöntemleri uygulayarak Facebook gruplarınızı daha etkili şekilde yönetebilirsiniz. **Ancak unutmayın, spam yapmadan, doğal bir şekilde hareket edin!** 🚀 Eğer sorularınız varsa, yorum bırakabilirsiniz. 😊
 
+[responsive_img src="/images/facebookgrupkodu.webp" alt="Facebook Yeni Grup Eklentisi" /]

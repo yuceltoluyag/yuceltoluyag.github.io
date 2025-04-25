@@ -11,7 +11,7 @@ Summary: PhpStorm içerisinde CS Fixer kullanımını adım adım anlatan rehber
 Translation: false
 Status: published
 Template: article
-Image: images/php_phpstorm_csfixer.webp
+Image: images/php_phpstorm_csfixer-lg.webp
 
 # PSR Standartı Nedir?
 
@@ -41,9 +41,10 @@ C:\Users\kullaniciadiniz\AppData\Roaming\Composer\vendor\bin\php-cs-fixer.bat # 
 
 Bu yolları yazdıktan sonra, `Validate` (Doğrulama) butonuna basarak CS Fixer'ın sürüm bilgisini kontrol edebilirsiniz.
 
-![phpstorm_inside_phpcsfixer](/images/php_phpstorm_csfixer.webp)
-![phpstorm_inside_phpcsfixer](/images/php_phpstorm_csfixer2.webp)
-![phpstorm_inside_phpcsfixer](/images/php_phpstorm_csfixer3.webp)
+
+[responsive_img src="/images/php_phpstorm_csfixer-lg.webp" alt="phpstorm_inside_phpcsfixer" /]
+[responsive_img src="/images/php_phpstorm_csfixer2-lg.webp" alt="phpstorm_inside_phpcsfixer" /]
+[responsive_img src="/images/php_phpstorm_csfixer3-lg.webp" alt="phpstorm_inside_phpcsfixer" /]
 
 - `Settings -> Tools -> +` butonuna basarak yeni bir araç ekleyin.
 - `Name`: Bu kısma istediğiniz ismi yazabilirsiniz.
@@ -63,10 +64,10 @@ $ProjectFileDir$
 
 Seçeneğini kullanabilirsiniz. Bu sayede, diğer projelerde de CS Fixer işlemini kolayca kullanabilirsiniz.
 
-![phpstorm_inside_phpcsfixer](/images/php_phpstorm_csfixer4.webp)
+[responsive_img src="/images/php_phpstorm_csfixer4-lg.webp" alt="phpstorm_inside_phpcsfixer" /]
 
 Örnek `.php_cs` dosyasını [buradan](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/.php_cs.dist){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz. Daha fazla bilgi için [Cs Fixer Kullanımı](https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage){: target="_blank" rel="noopener noreferrer"} kısmına göz atabilirsiniz. Ayrıca başka bir örnek için [Doctrine coding style](https://gist.github.com/azdanov/8f637142115feebf4b44e11a0971e5cb){: target="_blank" rel="noopener noreferrer"}'ı kontrol edebilirsiniz.
 
 PhpStorm'u yeniden başlatın. `Tools -> External Tools` menüsünde, eklediğiniz araç ismini göreceksiniz. Kısayol eklemek isterseniz, `Settings -> Keymap -> External Tools` menüsünden istediğiniz kısayolu ekleyebilirsiniz. Ben `Alt + F` kısayolunu ekledim, siz dilediğinizi ekleyebilirsiniz.
 
-![phpstorm_inside_phpcsfixer](/images/php_phpstorm_csfixer5.webp)
+[responsive_img src="/images/php_phpstorm_csfixer5-lg.webp" alt="phpstorm_inside_phpcsfixer" /]

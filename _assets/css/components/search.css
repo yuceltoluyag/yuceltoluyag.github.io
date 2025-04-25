@@ -1,0 +1,323 @@
+/**
+ * Arama Bileşeni
+ * 
+ * Arama modalı, arama kutusu ve sonuçları için stil tanımlamaları
+ */
+
+/* Modal yapısı */
+.search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 5vh;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.search-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-modal-content {
+    background-color: var(--color-bg-card);
+    width: 90%;
+    max-width: 800px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+}
+
+/* Kapat butonu */
+.search-modal-close {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.search-modal-close:hover {
+    opacity: 1;
+}
+
+/* Arama başlığı */
+.search-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.search-header h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+/* Arama formu */
+.search-form {
+    margin-bottom: var(--spacing-md);
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.search-input-container:focus-within {
+    border-color: var(--color-primary);
+}
+
+.search-input {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-sm);
+    font-size: var(--text-base);
+    border: none;
+    background-color: var(--color-bg-card);
+    color: var(--color-text);
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0 var(--spacing-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Arama sonuçları */
+.search-results {
+    min-height: 50px;
+}
+
+.search-results-container {
+    display: grid;
+    gap: var(--spacing-xs);
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: var(--spacing-xs);
+}
+
+.search-no-results {
+    padding: var(--spacing-sm);
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+/* Sonuç öğeleri */
+.search-result-item {
+    padding: var(--spacing-sm) var(--spacing-sm);
+    border: var(--border-width-thin) solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg-card);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: var(--spacing-xs);
+}
+
+.search-result-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.search-result-title {
+    font-size: var(--text-md);
+    margin-bottom: var(--spacing-xs2);
+    line-height: 1.3;
+}
+
+.search-result-link {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.search-result-link:hover {
+    color: var(--color-primary);
+}
+
+.search-result-meta {
+    display: flex;
+    gap: var(--spacing-sm);
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs2);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-result-tags {
+    display: flex;
+    gap: var(--spacing-xs2);
+    flex-wrap: wrap;
+}
+
+.search-result-tag {
+    font-size: var(--text-xs2);
+    padding: var(--spacing-xs2) var(--spacing-xs);
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-light);
+    border-radius: var(--radius-sm);
+}
+
+/* Vurgulanan metin */
+mark {
+    background-color: rgba(var(--color-primary-rgb), 0.25);
+    color: var(--color-text);
+    padding: 0 var(--spacing-xs2);
+    border-radius: var(--radius-xs);
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .search-modal-content {
+        width: 95%;
+        padding: var(--spacing-md);
+    }
+
+    .search-header h2 {
+        font-size: var(--text-lg);
+    }
+
+    .search-input {
+        font-size: var(--text-sm);
+        padding: var(--spacing-sm);
+    }
+
+    .search-result-item {
+        padding: var(--spacing-sm);
+    }
+
+    .search-result-title {
+        font-size: var(--text-md);
+    }
+}
+
+/* Karanlık Tema Uyumluluğu */
+@media (prefers-color-scheme: dark) {
+    .search-modal {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .search-result-item {
+        background-color: var(--color-bg-card);
+        border-color: var(--color-border);
+    }
+
+    .search-input-container {
+        border-color: var(--color-border);
+    }
+
+    .search-input {
+        background-color: var(--color-bg-card);
+        color: var(--color-text);
+    }
+
+    .search-result-category {
+        background-color: var(--color-primary-dark);
+        color: #fff;
+    }
+
+    .search-result-tag {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ddd;
+    }
+
+    .search-highlight {
+        background-color: rgba(var(--color-primary-rgb), 0.3);
+        color: var(--color-primary-light);
+    }
+}
+
+/* Animasyon */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Arama modalı açıkken body stili */
+body.search-modal-open {
+    overflow: hidden;
+}
+
+/* Sonuç kategorileri */
+.search-result-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.search-result-category {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.search-result-date {
+    margin-right: 15px;
+}
+
+.search-result-excerpt {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: var(--color-text);
+}
+
+.no-results {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--color-text-light);
+    font-size: 18px;
+}
+
+/* Arama vurgulayıcı */
+.search-highlight {
+    background-color: rgba(var(--color-primary-rgb), 0.15);
+    color: var(--color-primary);
+    padding: 0 2px;
+    border-radius: 2px;
+}
