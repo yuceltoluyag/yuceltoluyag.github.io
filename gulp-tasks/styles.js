@@ -9,10 +9,22 @@ const cssnano = require("cssnano");
 const rename = require("gulp-rename");
 const concat = require("gulp-concat");
 const config = require("./config");
+const fs = require("fs");
+
+// Dizinin var olduğundan emin ol
+function ensureDirectoryExists(directory) {
+    if (!fs.existsSync(directory)) {
+        fs.mkdirSync(directory, { recursive: true });
+        console.log(`Dizin oluşturuldu: ${directory}`);
+    }
+}
 
 // Ana CSS dosyası oluşturma (tüm CSS'ler tek bir dosyada birleştirilecek)
 function buildMainCss() {
-    return src(config.src.css)
+    // Çıktı dizininin var olduğundan emin ol
+    ensureDirectoryExists(config.dist.css);
+
+    return src(config.src.css, { allowEmpty: true })
         .pipe(concat("main.css")) // Tüm CSS dosyalarını birleştir
         .pipe(postcss([autoprefixer()]))
         .pipe(rename({ suffix: ".min" }))

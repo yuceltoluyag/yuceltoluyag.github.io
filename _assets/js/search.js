@@ -22,10 +22,22 @@ async function loadSearchData() {
             throw new Error("Arama verileri yüklenemedi");
         }
         searchData = await response.json();
-        console.log("Arama verileri yüklendi:", searchData.length + " öğe");
+        // Arama verileri önbelleğe alınabilir
+        initSearchIndex();
     } catch (error) {
-        console.error("Arama verilerini yükleme hatası:", error);
+        // Hata durumunda sessizce devam et
     }
+}
+
+// Arama indeksini başlat
+function initSearchIndex() {
+    // Sonraki aramaları hızlandırmak için veri önişleme
+    searchData.forEach((item) => {
+        // Arama için gereken alanları küçük harfe çevir
+        item._searchTitle = item.title?.toLowerCase() || "";
+        item._searchCategory = item.category?.toLowerCase() || "";
+        item._searchTags = item.tags?.join(" ").toLowerCase() || "";
+    });
 }
 
 // Arama modalını aç
@@ -52,6 +64,9 @@ function handleOutsideClick(event) {
     }
 }
 
+// Arama gecikmesi için değişken
+let searchTimeout = null;
+
 // Arama işlemi
 function performSearch(query) {
     // Boş sorgu kontrolü
@@ -60,19 +75,15 @@ function performSearch(query) {
         return;
     }
 
-    // Arama algoritması
+    // Optimize edilmiş arama
+    const queryLower = query.toLowerCase();
+
+    // Arama algoritması - önişlenmiş verileri kullan
     const results = searchData.filter((item) => {
-        // Başlıklarda, kategorilerde ve etiketlerde ara
-        const searchableTitle = item.title.toLowerCase();
-        const searchableCategory = (item.category || "").toLowerCase();
-        const searchableTags = (item.tags || []).join(" ").toLowerCase();
-
-        const queryLower = query.toLowerCase();
-
         return (
-            searchableTitle.includes(queryLower) ||
-            searchableCategory.includes(queryLower) ||
-            searchableTags.includes(queryLower)
+            item._searchTitle.includes(queryLower) ||
+            item._searchCategory.includes(queryLower) ||
+            item._searchTags.includes(queryLower)
         );
     });
 
@@ -89,6 +100,7 @@ function displayResults(results, query) {
         return;
     }
 
+    const resultsFragment = document.createDocumentFragment();
     const resultsContainer = document.createElement("div");
     resultsContainer.className = "search-results-container";
 
@@ -137,7 +149,8 @@ function displayResults(results, query) {
         resultsContainer.appendChild(resultItem);
     });
 
-    searchResults.appendChild(resultsContainer);
+    resultsFragment.appendChild(resultsContainer);
+    searchResults.appendChild(resultsFragment);
 }
 
 // Metinde sorgu terimini vurgula
@@ -180,9 +193,12 @@ document.addEventListener("DOMContentLoaded", () => {
         performSearch(searchInput.value);
     });
 
-    // Anlık arama
+    // Debounce ile anlık arama
     searchInput.addEventListener("input", (e) => {
-        performSearch(e.target.value);
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            performSearch(e.target.value);
+        }, 200); // 200ms gecikme ekle
     });
 
     // ESC tuşu ile kapatma

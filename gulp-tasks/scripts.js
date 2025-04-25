@@ -9,10 +9,22 @@ const rename = require("gulp-rename");
 const concat = require("gulp-concat");
 const config = require("./config");
 const terser = require("gulp-terser");
+const fs = require("fs");
+
+// Dizinin var olduğundan emin ol
+function ensureDirectoryExists(directory) {
+    if (!fs.existsSync(directory)) {
+        fs.mkdirSync(directory, { recursive: true });
+        console.log(`Dizin oluşturuldu: ${directory}`);
+    }
+}
 
 // Bireysel JS dosyalarını işleme
 function processJs() {
-    return src(config.src.js)
+    // Çıktı dizininin var olduğundan emin ol
+    ensureDirectoryExists(config.dist.js);
+
+    return src(config.src.js, { allowEmpty: true })
         .pipe(
             gulpIf(
                 config.isProd,
@@ -43,7 +55,10 @@ function processJs() {
 
 // Ana JS dosyası oluşturma
 function buildMainJs() {
-    return src(config.src.js)
+    // Çıktı dizininin var olduğundan emin ol
+    ensureDirectoryExists(config.dist.js);
+
+    return src(config.src.js, { allowEmpty: true })
         .pipe(concat("main.js"))
         .pipe(
             gulpIf(
