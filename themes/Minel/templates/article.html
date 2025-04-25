@@ -1,5 +1,29 @@
 {% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %} {% block head %}
 <!-- Sadece makale sayfalarında kod vurgulama CSS'ini ekle -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style>
+    mastodon-comments {
+        --font-color: #5d686f;
+        --font-size: 1rem;
+        --block-border-width: 1px;
+        --block-border-radius: 3px;
+        --block-border-color: #ededf0;
+        --block-background-color: #f7f8f8;
+        --comment-indent: 40px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        mastodon-comments {
+            --comment-indent: 20px;
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+        mastodon-comments {
+            --comment-indent: 0px;
+        }
+    }
+</style>
 {% endblock %} {% block content %}
 <div class="container article-container">
     <div class="article-grid">
@@ -21,15 +45,13 @@
                     <iconify-icon icon="tabler:article"></iconify-icon>
                     Son Yazılar
                 </h3>
-                <div class="sidebar-posts">
+                <div class="recent-posts-list">
                     {% for article in articles[:5] %}
-                    <a href="{{ SITEURL }}/{{ article.url }}" class="sidebar-post">
-                        <div class="sidebar-post-title">{{ article.title }}</div>
-                        <div class="sidebar-post-meta">
-                            <iconify-icon icon="tabler:calendar" width="14" height="14"></iconify-icon>
-                            {{ article.date|strftime('%d %B %Y') }}
-                        </div>
-                    </a>
+                    <div class="recent-post-item">
+                        <a href="{{ SITEURL }}/{{ article.url }}" class="recent-post-link">
+                            <h4 class="post-title">{{ article.title }}</h4>
+                        </a>
+                    </div>
                     {% endfor %}
                 </div>
             </div>
@@ -40,16 +62,14 @@
                     <iconify-icon icon="tabler:copy"></iconify-icon>
                     Benzer Yazılar
                 </h3>
-                <div class="sidebar-posts">
+                <div class="related-posts-list">
                     {% for related in articles if related.category == article.category and related != article %} {% if
                     loop.index <= 4 %}
-                    <a href="{{ SITEURL }}/{{ related.url }}" class="sidebar-post">
-                        <div class="sidebar-post-title">{{ related.title }}</div>
-                        <div class="sidebar-post-meta">
-                            <iconify-icon icon="tabler:calendar" width="14" height="14"></iconify-icon>
-                            {{ related.date|strftime('%d %B %Y') }}
-                        </div>
-                    </a>
+                    <div class="related-post-item">
+                        <a href="{{ SITEURL }}/{{ related.url }}" class="related-post-link">
+                            <h4 class="post-title">{{ related.title }}</h4>
+                        </a>
+                    </div>
                     {% endif %} {% endfor %}
                 </div>
             </div>
@@ -135,235 +155,19 @@
 
                 <div class="article-content">{{ article.content }}</div>
 
-                <!-- Webmention Bölümü -->
+                <!-- Webmentions -->
                 <div class="webmentions-container">
-                    <h3 class="webmentions-title">
-                        <iconify-icon icon="tabler:messages"></iconify-icon>
-                        Webmentionlar
-                    </h3>
-
-                    <div class="webmentions-content">
-                        {% if article.webmentions %}
-                        <div class="webmentions-list">
-                            {% for webmention in article.webmentions %}
-                            <div class="webmention-item">
-                                <div class="webmention-author">
-                                    {% if webmention.author.photo %}
-                                    <img
-                                        src="{{ webmention.author.photo }}"
-                                        alt="{{ webmention.author.name }}"
-                                        class="webmention-avatar" />
-                                    {% else %}
-                                    <div class="webmention-avatar-placeholder">
-                                        <iconify-icon icon="tabler:user"></iconify-icon>
-                                    </div>
-                                    {% endif %}
-                                    <div class="webmention-author-info">
-                                        <a
-                                            href="{{ webmention.author.url }}"
-                                            class="webmention-author-name"
-                                            target="_blank"
-                                            rel="noopener">
-                                            {{ webmention.author.name }}
-                                        </a>
-                                        <div class="webmention-date">
-                                            <time datetime="{{ webmention.published }}">
-                                                {{ webmention.published|strftime('%d %B %Y') }}
-                                            </time>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="webmention-content">{{ webmention.content|safe }}</div>
-                                <div class="webmention-source">
-                                    <a href="{{ webmention.source }}" target="_blank" rel="noopener">
-                                        <iconify-icon icon="tabler:external-link"></iconify-icon>
-                                        Kaynağa git
-                                    </a>
-                                </div>
-                            </div>
-                            {% endfor %}
-                        </div>
-                        {% else %}
-                        <div class="webmentions-empty">
-                            <p>
-                                Henüz webmention yok. Bu makaleye yanıt vermek için kendi web sitenizden bir bağlantı
-                                oluşturun.
-                            </p>
-                        </div>
-                        {% endif %}
-                    </div>
-
-                    <div class="webmentions-info">
-                        <p>
-                            Bu sitede
-                            <a href="https://indieweb.org/Webmention" target="_blank" rel="noopener">Webmention</a>
-                            desteklenmektedir. Kendi sitenizden bu sayfaya bağlantı vererek yanıt yazabilirsiniz.
-                        </p>
-                    </div>
+                    <div class="webmentions-content"></div>
                 </div>
             </article>
         </div>
     </div>
 </div>
-
-<style>
-    /* Minimal yan panel yazı stilleri */
-    .sidebar-posts {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .sidebar-post {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        border-bottom: 1px solid var(--color-border, #eee);
-        padding-bottom: 0.75rem;
-        transition: transform 0.15s ease;
-    }
-
-    .sidebar-post:hover {
-        transform: translateX(2px);
-    }
-
-    .sidebar-post:last-child {
-        border-bottom: none;
-    }
-
-    .sidebar-post-title {
-        font-weight: 500;
-        margin-bottom: 0.3rem;
-        line-height: 1.4;
-    }
-
-    .sidebar-post-meta {
-        font-size: 0.8rem;
-        color: var(--color-text-light, #718096);
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-
-    /* Webmention Stilleri */
-    .webmentions-container {
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 1px solid var(--color-border, #eee);
-    }
-
-    .webmentions-title {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .webmentions-content {
-        margin-bottom: 1.5rem;
-    }
-
-    .webmentions-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .webmention-item {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        background-color: var(--color-bg-alt, #f9fafb);
-    }
-
-    .webmention-author {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .webmention-avatar {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-    .webmention-avatar-placeholder {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: var(--color-bg-muted, #e2e8f0);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--color-text-muted, #64748b);
-    }
-
-    .webmention-author-info {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .webmention-author-name {
-        font-weight: 500;
-        text-decoration: none;
-        color: var(--color-primary, #3182ce);
-    }
-
-    .webmention-date {
-        font-size: 0.8rem;
-        color: var(--color-text-light, #718096);
-    }
-
-    .webmention-content {
-        margin-bottom: 0.75rem;
-        line-height: 1.5;
-    }
-
-    .webmention-source {
-        font-size: 0.85rem;
-    }
-
-    .webmention-source a {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.3rem;
-        color: var(--color-text-light, #718096);
-        text-decoration: none;
-    }
-
-    .webmention-source a:hover {
-        color: var(--color-primary, #3182ce);
-    }
-
-    .webmentions-empty {
-        padding: 1.5rem;
-        background-color: var(--color-bg-alt, #f9fafb);
-        border-radius: 0.5rem;
-        text-align: center;
-        color: var(--color-text-light, #718096);
-    }
-
-    .webmentions-info {
-        font-size: 0.85rem;
-        color: var(--color-text-light, #718096);
-        padding: 1rem;
-        background-color: var(--color-bg-alt, #f9fafb);
-        border-radius: 0.5rem;
-    }
-
-    .webmentions-info a {
-        color: var(--color-primary, #3182ce);
-        text-decoration: none;
-    }
-</style>
 {% endblock %} {% block scripts %}
 <!-- Webmention JS -->
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention.min.js" defer></script>
 
-<!-- Webmention Test Aracı (Geliştirme sırasında) -->
 {% if DEVELOPMENT_MODE %}
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention-test.min.js" defer></script>
+
 {% endif %} {% endblock %}

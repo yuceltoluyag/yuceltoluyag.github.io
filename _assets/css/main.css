@@ -52,6 +52,7 @@
 @import "./components/search.css";
 @import "./components/article.css";
 @import "./components/sidebar-widget.css";
+@import "./components/webmentions.css";
 
 /* Layout Dosyaları */
 @import "./layouts/header.css";

@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-lg.webp
+mastodon_url: https://mastodon.social/@yuceltoluyag/114259692781210332
 
 
 <div class="info-box warning">

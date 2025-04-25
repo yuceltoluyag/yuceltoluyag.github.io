@@ -49,12 +49,12 @@
     font-size: var(--text-lg);
     font-weight: 600;
     margin-bottom: var(--spacing-md);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: var(--border-width-thin) solid var(--color-border);
     color: var(--color-text-primary);
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-border);
 }
 
 .widget-title iconify-icon {
@@ -68,47 +68,59 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
 }
 
 .recent-post-item,
 .related-post-item {
-    transition: transform var(--transition-fast);
+    position: relative;
+    border-bottom: 1px solid var(--color-border);
 }
 
-.recent-post-item:hover,
-.related-post-item:hover {
-    transform: translateX(var(--spacing-xs));
+.recent-post-item:last-child,
+.related-post-item:last-child {
+    border-bottom: none;
 }
 
 .recent-post-link,
 .related-post-link {
     display: block;
-    color: var(--sidebar-link-color);
     text-decoration: none;
-    font-size: var(--text-sm);
-    line-height: 1.5;
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-md);
-    background: var(--sidebar-link-bg);
+    padding: var(--spacing-sm) 0;
+    position: relative;
+    padding-left: var(--spacing-lg);
     transition: all var(--transition-fast);
-    font-weight: 500;
 }
 
-.recent-post-link:hover,
-.related-post-link:hover {
-    color: var(--sidebar-link-hover-color);
-    background: var(--sidebar-link-hover-bg);
+.recent-post-link::before,
+.related-post-link::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all var(--transition-fast);
 }
 
-.post-date {
-    display: block;
-    font-size: var(--text-xs);
-    color: var(--sidebar-date-color);
-    margin-top: var(--spacing-xs);
+.recent-post-link:hover::before,
+.related-post-link:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.post-title {
+    font-size: var(--text-sm);
     font-weight: 500;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+    margin: 0;
+    transition: color var(--transition-fast);
+}
+
+.recent-post-link:hover .post-title,
+.related-post-link:hover .post-title {
+    color: var(--color-primary);
+    transform: translateX(var(--spacing-xs));
 }
 
 /* Her bir widget'ı kendi içinde tamamla */
@@ -287,16 +299,23 @@
         border-color: var(--color-border);
     }
 
+    .recent-post-item,
+    .related-post-item {
+        border-color: var(--color-border);
+    }
+
     .recent-post-link,
     .related-post-link {
         color: var(--sidebar-link-color);
-        background: var(--sidebar-link-bg);
+        background: var(--color-bg-card);
+        border-color: var(--color-border);
     }
 
     .recent-post-link:hover,
     .related-post-link:hover {
         color: var(--sidebar-link-hover-color);
-        background: var(--sidebar-link-hover-bg);
+        background: var(--color-bg-card);
+        border-color: var(--color-primary);
     }
 
     .post-date {
@@ -319,11 +338,11 @@
 
     .toc-content a:hover {
         color: var(--sidebar-link-hover-color);
-        background-color: var(--sidebar-link-hover-bg);
+        background-color: var(--color-bg-card);
     }
 
     .toc-content a.active {
-        color: var(--color-primary-light);
+        color: var(--color-primary);
     }
 
     .toc-content::-webkit-scrollbar-track {
@@ -337,6 +356,18 @@
     .recent-posts.sidebar-widget::before {
         background: linear-gradient(to right, transparent, var(--color-primary-light), transparent);
     }
+
+    .widget-title::before {
+        background: var(--color-primary);
+    }
+
+    .post-category {
+        background: rgba(var(--color-primary-rgb), 0.1);
+    }
+
+    .post-meta-bottom {
+        border-color: var(--color-border);
+    }
 }
 
 /* Mobil Uyarlamalar */
@@ -347,6 +378,28 @@
 
     .article-sidebar {
         display: none !important; /* Sidebar'ı mobil görünümde tamamen gizle */
+    }
+
+    .recent-post-link,
+    .related-post-link {
+        padding: var(--spacing-sm);
+    }
+
+    .post-meta-top {
+        flex-wrap: wrap;
+    }
+
+    .widget-title {
+        font-size: var(--text-md);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .post-excerpt {
+        display: none;
+    }
+
+    .post-title {
+        font-size: var(--text-sm);
     }
 }
 

@@ -1,0 +1,164 @@
+/* Webmentions Container */
+.webmentions-container {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.webmentions-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.webmentions-content {
+    margin-bottom: 1.5rem;
+}
+
+/* Webmentions List */
+.webmentions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Webmention Sections */
+.webmention-section {
+    margin-bottom: 2rem;
+}
+
+.webmention-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+/* Likes Grid */
+.webmention-likes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.webmention-like-item {
+    text-align: center;
+}
+
+.webmention-like-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+/* Webmention Item */
+.webmention-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.webmention-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.webmention-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.webmention-avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-bg-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+}
+
+.webmention-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.webmention-author-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.webmention-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.webmention-date {
+    margin-left: auto;
+}
+
+.emoji {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 0 2px;
+}
+
+.webmention-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.webmention-source {
+    font-size: 0.85rem;
+}
+
+.webmention-source a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.webmention-source a:hover {
+    color: var(--color-primary);
+}
+
+/* Empty State */
+.webmentions-empty {
+    padding: 1.5rem;
+    background-color: var(--color-bg-alt);
+    border-radius: 0.5rem;
+    text-align: center;
+    color: var(--color-text-light);
+}
+
+/* Info Box */
+.webmentions-info {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    padding: 1rem;
+    background-color: var(--color-bg-alt);
+    border-radius: 0.5rem;
+}
+
+.webmentions-info a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
