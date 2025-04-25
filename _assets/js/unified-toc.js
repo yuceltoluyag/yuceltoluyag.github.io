@@ -8,22 +8,54 @@ document.addEventListener("DOMContentLoaded", function () {
     const tocContainer = document.querySelector(".toc-container");
     if (!tocContainer) return;
 
+    const tocContent = document.querySelector(".toc-content");
+    if (!tocContent) return;
+
     // Başlama işlevleri
     setupHeadings();
     setupTocMarker();
     setupTocLinks();
 
-    // Scroll olayını dinle (performans için requestAnimationFrame kullanarak)
+    // Scroll değişkenlerini tanımla
+    let lastScrollTop = 0;
+    let scrollDirection = "down";
+    let isManualScroll = false;
     let scrollTimeout;
+
+    // Scroll olayını dinle (performans için requestAnimationFrame kullanarak)
     window.addEventListener(
         "scroll",
         () => {
-            if (scrollTimeout) {
-                window.cancelAnimationFrame(scrollTimeout);
+            // Yalnızca manuel scroll değilse işlem yap
+            if (!isManualScroll) {
+                // Scroll yönünü belirle
+                const st = window.scrollY;
+                scrollDirection = st > lastScrollTop ? "down" : "up";
+                lastScrollTop = st;
+
+                if (scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                scrollTimeout = requestAnimationFrame(() => {
+                    updateToc();
+                });
             }
-            scrollTimeout = requestAnimationFrame(() => {
-                updateToc();
-            });
+        },
+        { passive: true }
+    );
+
+    // TOC içindeki scroll olayını dinle
+    tocContent.addEventListener(
+        "scroll",
+        function () {
+            // TOC içinde scroll yapıldığında manuel scroll olarak işaretle
+            isManualScroll = true;
+
+            // Belirli bir süre sonra manuel scroll'u sıfırla
+            clearTimeout(tocContent.scrollTimeout);
+            tocContent.scrollTimeout = setTimeout(() => {
+                isManualScroll = false;
+            }, 1000); // 1 saniye sonra normal duruma dön
         },
         { passive: true }
     );
@@ -50,16 +82,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Görünür hale gelmesi için başlıklara sınıf ekle
             heading.classList.add("scroll-target");
+
+            // Başlıklara IntersectionObserver ekle
+            observeHeading(heading);
         });
+    }
+
+    // IntersectionObserver ile başlıkları izle
+    let headingObserver;
+    function observeHeading(heading) {
+        if (!("IntersectionObserver" in window)) return; // Tarayıcı desteği kontrolü
+
+        if (!headingObserver) {
+            headingObserver = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // Başlık görünür olduğunda TOC'u güncelle
+                            const id = entry.target.id;
+                            const link = document.querySelector(`.toc-href[href="#${id}"]`);
+                            if (link && !isManualScroll) {
+                                updateTocItems(entry.target, null, window.scrollY);
+                            }
+                        }
+                    });
+                },
+                {
+                    rootMargin: "-100px 0px -80% 0px", // Üstten 100px, alttan %80 görünürlük
+                    threshold: 0,
+                }
+            );
+        }
+
+        headingObserver.observe(heading);
     }
 
     /**
      * TOC marker'ı oluştur (aktif başlığın yanındaki çizgi)
      */
     function setupTocMarker() {
-        const tocContent = document.querySelector(".toc-content");
-        if (!tocContent) return;
-
         const marker = document.createElement("div");
         marker.className = "toc-marker";
         tocContent.appendChild(marker);
@@ -129,6 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Sayfa geçiş animasyonunu engelle
             e.stopPropagation();
 
+            // Manuel scroll bayrağını etkinleştir
+            isManualScroll = true;
+
             // Smooth scroll
             window.scrollTo({
                 top: targetHeader.offsetTop - 100, // Üstten ofset
@@ -141,6 +205,16 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 location.hash = `#${targetId}`;
             }
+
+            // Aktif link sınıfını güncelle
+            const allTocLinks = document.querySelectorAll(".toc-href");
+            allTocLinks.forEach((link) => link.classList.remove("toc-reading"));
+            this.classList.add("toc-reading");
+
+            // 1 saniye sonra manuel scroll bayrağını kaldır
+            setTimeout(() => {
+                isManualScroll = false;
+            }, 1000);
         }
     }
 
@@ -148,6 +222,9 @@ document.addEventListener("DOMContentLoaded", function () {
      * TOC'u güncelle - hem toc.js hem de toc-enhancements.js'den en iyi özellikleri kullanır
      */
     function updateToc() {
+        // Manuel scroll yapılıyorsa güncelleme yapma
+        if (isManualScroll) return;
+
         const scrollPosition = window.scrollY + 150;
         const headings = Array.from(
             document.querySelectorAll(".article-content h2, .article-content h3, .article-content h4")
@@ -221,8 +298,10 @@ document.addEventListener("DOMContentLoaded", function () {
             marker.style.transform = `translateY(${linkTop}px)`;
         }
 
-        // TOC'u aktif öğeye scroll et
-        scrollTocToActiveLink(activeLink, previousHeader);
+        // TOC'u aktif öğeye scroll et (manuel scroll değilse)
+        if (!isManualScroll) {
+            scrollTocToActiveLink(activeLink, previousHeader);
+        }
     }
 
     /**
@@ -278,21 +357,39 @@ document.addEventListener("DOMContentLoaded", function () {
      * TOC'u aktif öğeye scroll et
      */
     function scrollTocToActiveLink(activeLink, previousHeader) {
-        const liElement = activeLink.parentElement;
-        const tocRect = tocContainer.getBoundingClientRect();
+        // Manuel scroll durumunda bu işlevi çalıştırma
+        if (isManualScroll) return;
+
+        const liElement = activeLink.closest("li"); // Daha güvenli seçici
+        if (!liElement) return;
+
+        const tocContentRect = tocContent.getBoundingClientRect();
         const liRect = liElement.getBoundingClientRect();
 
-        // Scroll yönünü belirle
-        const scrollingUp = previousHeader && previousHeader.offsetTop > liElement.offsetTop;
+        // Görüntülenmesi gereken pozisyonu hesapla
+        const targetPosition = liElement.offsetTop - tocContent.offsetTop;
+        const visibleStart = tocContent.scrollTop;
+        const visibleEnd = visibleStart + tocContent.clientHeight;
 
         // Link görünür değilse scroll
-        if (liRect.top < tocRect.top || liRect.bottom > tocRect.bottom) {
-            const offset = scrollingUp
-                ? tocContainer.clientHeight * 0.7 // Yukarı scroll için offset
-                : tocContainer.clientHeight * 0.3; // Aşağı scroll için offset
+        if (targetPosition < visibleStart || targetPosition > visibleEnd - liElement.clientHeight) {
+            // Scroll yönüne göre pozisyonu ayarla
+            let scrollOffset;
 
-            tocContainer.scrollTo({
-                top: liElement.offsetTop - offset,
+            if (scrollDirection === "down") {
+                // Aşağı doğru scroll için pozisyon (TOC'un üst kısmına daha yakın)
+                scrollOffset = targetPosition - tocContent.clientHeight * 0.3;
+            } else {
+                // Yukarı doğru scroll için pozisyon (TOC'un alt kısmına daha yakın)
+                scrollOffset = targetPosition - tocContent.clientHeight * 0.7;
+            }
+
+            // Scroll pozisyonunun sınırları aşmamasını sağla
+            scrollOffset = Math.max(0, Math.min(scrollOffset, tocContent.scrollHeight - tocContent.clientHeight));
+
+            // Yumuşak scroll yap
+            tocContent.scrollTo({
+                top: scrollOffset,
                 behavior: "smooth",
             });
         }

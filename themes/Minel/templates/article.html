@@ -21,16 +21,17 @@
                     <iconify-icon icon="tabler:article"></iconify-icon>
                     Son Yazılar
                 </h3>
-                <ul class="recent-posts-list">
+                <div class="sidebar-posts">
                     {% for article in articles[:5] %}
-                    <li class="recent-post-item">
-                        <a href="{{ SITEURL }}/{{ article.url }}" class="recent-post-link">
-                            {{ article.title }}
-                            <span class="post-date">{{ article.date|strftime('%d %B %Y') }}</span>
-                        </a>
-                    </li>
+                    <a href="{{ SITEURL }}/{{ article.url }}" class="sidebar-post">
+                        <div class="sidebar-post-title">{{ article.title }}</div>
+                        <div class="sidebar-post-meta">
+                            <iconify-icon icon="tabler:calendar" width="14" height="14"></iconify-icon>
+                            {{ article.date|strftime('%d %B %Y') }}
+                        </div>
+                    </a>
                     {% endfor %}
-                </ul>
+                </div>
             </div>
 
             {% if article.category %}
@@ -39,17 +40,18 @@
                     <iconify-icon icon="tabler:copy"></iconify-icon>
                     Benzer Yazılar
                 </h3>
-                <ul class="related-posts-list">
+                <div class="sidebar-posts">
                     {% for related in articles if related.category == article.category and related != article %} {% if
-                    loop.index <= 5 %}
-                    <li class="related-post-item">
-                        <a href="{{ SITEURL }}/{{ related.url }}" class="related-post-link">
-                            {{ related.title }}
-                            <span class="post-date">{{ related.date|strftime('%d %B %Y') }}</span>
-                        </a>
-                    </li>
+                    loop.index <= 4 %}
+                    <a href="{{ SITEURL }}/{{ related.url }}" class="sidebar-post">
+                        <div class="sidebar-post-title">{{ related.title }}</div>
+                        <div class="sidebar-post-meta">
+                            <iconify-icon icon="tabler:calendar" width="14" height="14"></iconify-icon>
+                            {{ related.date|strftime('%d %B %Y') }}
+                        </div>
+                    </a>
                     {% endif %} {% endfor %}
-                </ul>
+                </div>
             </div>
             {% endif %}
         </aside>
@@ -136,4 +138,44 @@
         </div>
     </div>
 </div>
+
+<style>
+    /* Minimal yan panel yazı stilleri */
+    .sidebar-posts {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .sidebar-post {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-bottom: 1px solid var(--color-border, #eee);
+        padding-bottom: 0.75rem;
+        transition: transform 0.15s ease;
+    }
+
+    .sidebar-post:hover {
+        transform: translateX(2px);
+    }
+
+    .sidebar-post:last-child {
+        border-bottom: none;
+    }
+
+    .sidebar-post-title {
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+        line-height: 1.4;
+    }
+
+    .sidebar-post-meta {
+        font-size: 0.8rem;
+        color: var(--color-text-light, #718096);
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+</style>
 {% endblock %}

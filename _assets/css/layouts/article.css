@@ -587,3 +587,22 @@
         max-width: 100%; /* Mobil görünümde tam genişlik */
     }
 }
+
+/* Mobil cihazlar için düzenleme */
+@media (max-width: 768px) {
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-main {
+        width: 100%;
+    }
+
+    .article-container {
+        padding: var(--spacing-sm);
+    }
+
+    .article {
+        padding: var(--spacing-md);
+    }
+}
