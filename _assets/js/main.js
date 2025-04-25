@@ -71,15 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Otomatik karanlık mod
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-    // Medya sorgusu değiştiğinde
-    prefersDarkScheme.addEventListener("change", function (e) {
-        if (e.matches) {
-            console.log("Karanlık mod tercihi algılandı.");
-        } else {
-            console.log("Açık mod tercihi algılandı.");
-        }
-    });
-
     // Scroll olduğunda header'ı değiştir
     const header = document.querySelector(".site-header");
 
@@ -197,15 +188,35 @@ document.addEventListener("DOMContentLoaded", function () {
                         copyButton.setAttribute("aria-label", "Kodu kopyala");
                     }, 2000);
                 })
-                .catch((err) => {
-                    copyButton.classList.add("error");
-                    copyButton.setAttribute("aria-label", "Kopyalama başarısız oldu");
+                .catch(() => {
+                    // Fallback if clipboard fails
+                    const textArea = document.createElement("textarea");
+                    textArea.value = code;
+                    textArea.style.position = "fixed";
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
 
-                    setTimeout(() => {
-                        copyButton.classList.remove("error");
-                        copyButton.setAttribute("aria-label", "Kodu kopyala");
-                    }, 2000);
-                    console.error("Kopyalama başarısız:", err);
+                    try {
+                        document.execCommand("copy");
+                        copyButton.classList.add("copied");
+                        copyButton.setAttribute("aria-label", "Kod kopyalandı");
+
+                        setTimeout(() => {
+                            copyButton.classList.remove("copied");
+                            copyButton.setAttribute("aria-label", "Kodu kopyala");
+                        }, 2000);
+                    } catch (err) {
+                        copyButton.classList.add("error");
+                        copyButton.setAttribute("aria-label", "Kopyalanamadı");
+
+                        setTimeout(() => {
+                            copyButton.classList.remove("error");
+                            copyButton.setAttribute("aria-label", "Kodu kopyala");
+                        }, 2000);
+                    }
+
+                    document.body.removeChild(textArea);
                 });
         });
 

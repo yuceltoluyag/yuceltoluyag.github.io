@@ -9,8 +9,7 @@ _site/
 output/
 node_modules/
 .DS_Store
-themes/Minel/static/css/
-themes/Minel/static/js/
+
 # C extensions
 *.so
 .cursorignore

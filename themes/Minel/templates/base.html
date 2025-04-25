@@ -46,7 +46,8 @@
 
         <!-- İçindekiler Tablosu JS -->
         {% if article and article.toc %}
-        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/toc-enhancements.min.js" defer></script>
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-toc.min.js"></script>
         {% endif %} {% include 'includes/tagmanager.html' %} {% block scripts %}{% endblock %}
     </body>
 </html>
