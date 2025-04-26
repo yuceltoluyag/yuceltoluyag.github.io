@@ -116,11 +116,18 @@
                     <form
                         action="https://listmonk.minel.yuceltoluyag.dev/subscription/form"
                         method="post"
-                        class="simple-form">
-                        <input type="hidden" name="nonce" />
-                        <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" />
-                        <input type="email" name="email" placeholder="E-posta adresin" required class="simple-input" />
-                        <button type="submit" class="simple-button">Abone Ol</button>
+                        class="simple-form"
+                        disabled>
+                        <input type="hidden" name="nonce" disabled />
+                        <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="E-posta adresin"
+                            required
+                            class="simple-input"
+                            disabled />
+                        <button type="submit" class="simple-button" disabled>Abone Ol</button>
                     </form>
                 </div>
             </div>
