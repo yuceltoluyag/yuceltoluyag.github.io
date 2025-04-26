@@ -1,30 +1,5 @@
-{% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %} {% block head %}
-<!-- Sadece makale sayfalarında kod vurgulama CSS'ini ekle -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<style>
-    mastodon-comments {
-        --font-color: #5d686f;
-        --font-size: 1rem;
-        --block-border-width: 1px;
-        --block-border-radius: 3px;
-        --block-border-color: #ededf0;
-        --block-background-color: #f7f8f8;
-        --comment-indent: 40px;
-    }
-
-    @media only screen and (max-width: 1024px) {
-        mastodon-comments {
-            --comment-indent: 20px;
-        }
-    }
-
-    @media only screen and (max-width: 640px) {
-        mastodon-comments {
-            --comment-indent: 0px;
-        }
-    }
-</style>
-{% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %} {% block head %} {%
+endblock %} {% block content %}
 <div class="container article-container">
     <div class="article-grid">
         <aside class="article-sidebar">

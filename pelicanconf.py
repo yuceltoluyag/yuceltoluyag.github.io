@@ -20,8 +20,8 @@ OUTPUT_PATH = "output"
 TIMEZONE = "Europe/Istanbul"
 
 # Webmention Testi için
-DEVELOPMENT_MODE = True
-WEBMENTION_TEST_MODE = True  # Webmention test modu
+DEVELOPMENT_MODE = False
+WEBMENTION_TEST_MODE = False  # Webmention test modu
 
 DEFAULT_LANG = "tr"
 
