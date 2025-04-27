@@ -1,6 +1,10 @@
 [build-system]
-requires = ["uv>=0.6.16"]
+requires = ["uv>=0.6.16", "setuptools>=68.0.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+py-modules = []
 
 [project]
     dependencies = [
