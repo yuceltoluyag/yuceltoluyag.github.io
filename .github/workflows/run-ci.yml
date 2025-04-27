@@ -21,6 +21,7 @@ jobs:
                   source .venv/bin/activate
             - name: Install dependencies
               run: |
+                  uv pip install setuptools
                   uv pip install -r requirements.txt
 
     deploy:
@@ -52,6 +53,7 @@ jobs:
                   source .venv/bin/activate
             - name: Install dependencies
               run: |
+                  uv pip install setuptools
                   uv pip install -r requirements.txt
             - name: Build site assets with Gulp
               run: npm run build
