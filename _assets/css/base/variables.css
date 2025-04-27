@@ -217,8 +217,8 @@
 
         --color-background: #1a1a1a;
         --color-background-alt: #252525;
-        --color-background-dark: #ffffff;
-        --color-background-dark-alt: #f8f8f8;
+        --color-background-dark: #121212; /* Düzeltildi: karanlık arka plan rengi */
+        --color-background-dark-alt: #1e1e1e; /* Düzeltildi: karanlık arka plan alternatif rengi */
         --color-background-hover: #333333;
         --color-bg: #1a1a1a; /* Ana arka plan - dark mode */
         --color-bg-alt: #252525; /* İkincil arka plan - dark mode */
