@@ -88,6 +88,8 @@ pelican-tag-cloud==1.0.1
     # via yuceltoluyag-dev (pyproject.toml)
 pelican-yaml-metadata==2.1.2
     # via yuceltoluyag-dev (pyproject.toml)
+ptyprocess==0.7.0
+    # via failprint
 pygments==2.18.0
     # via
     #   pelican
@@ -126,8 +128,6 @@ typing-extensions==4.13.2
     #   beautifulsoup4
 typogrify==2.1.0
     # via yuceltoluyag-dev (pyproject.toml)
-tzdata==2025.2
-    # via pelican
 unidecode==1.4.0
     # via pelican
 uv==0.6.16

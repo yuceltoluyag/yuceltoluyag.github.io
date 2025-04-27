@@ -6,17 +6,35 @@
 </div>
 
 <ul class="menu">
-    {% for link in NAVBAR_LINKS %}
+    <!-- Ana Sayfa -->
     <li class="menu-item">
-        <a href="{{ link.url }}" class="menu-link" target="{{ link.target }}">{{ link.name }}</a>
+        <a href="{{ SITEURL }}/" class="menu-link">
+            <iconify-icon icon="tabler:home" class="menu-icon" width="20" height="20"></iconify-icon>
+            <span class="menu-text">Ana Sayfa</span>
+        </a>
     </li>
-    {% endfor %}
+
+    <!-- Hakkımda -->
+    <li class="menu-item">
+        <a href="{{ SITEURL }}/hakkimda" class="menu-link">
+            <iconify-icon icon="tabler:user" class="menu-icon" width="20" height="20"></iconify-icon>
+            <span class="menu-text">Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li class="menu-item">
+        <a href="{{ SITEURL }}/bagis" class="menu-link">
+            <iconify-icon icon="tabler:heart" class="menu-icon" width="20" height="20"></iconify-icon>
+            <span class="menu-text">Bağış</span>
+        </a>
+    </li>
 
     <!-- Arama butonu -->
     <li class="menu-item search-item">
         <a href="#" class="menu-link search-link search-trigger" aria-label="Ara">
-            <iconify-icon icon="tabler:search" width="18" height="18"></iconify-icon>
-            <span class="search-text">Ara</span>
+            <iconify-icon icon="tabler:search" class="menu-icon" width="20" height="20"></iconify-icon>
+            <span class="menu-text">Ara</span>
         </a>
     </li>
 </ul>
