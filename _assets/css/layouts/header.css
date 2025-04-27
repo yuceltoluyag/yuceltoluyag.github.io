@@ -274,8 +274,9 @@
 /* Karanlık tema için kaydırılmış header */
 @media (prefers-color-scheme: dark) {
     .site-header.scrolled {
-        background-color: var(--color-background-dark);
+        background-color: var(--color-background-dark) !important;
         border-bottom-color: rgba(var(--color-border-dark-rgb), 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
 }
 
@@ -327,9 +328,17 @@
         border-bottom: none;
     }
 
-    /* Mobil görünümde menü metinlerini gizle, sadece ikonları göster */
+    /* Mobil görünümde menü metinlerini görünmez yap, ama ekran okuyucular için erişilebilir bırak */
     .menu-text {
-        display: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
     }
 
     /* Mobilde menü ikonlarını biraz büyüt */

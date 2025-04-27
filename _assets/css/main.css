@@ -3,45 +3,20 @@
  * 
  * CSS dosyaları şu sırada yüklenir:
  * 
- * 1. /base
- *    - reset.css      (Önce)
- *    - variables.css  (Değişkenler)
- *    - base.css      (Temel stiller)
- *    - typography.css (Tipografi)
- * 
- * 2. /components
- *    - buttons.css
- *    - forms.css
- *    - cards.css
- *    - tables.css
- *    - code.css
- *    - icons.css
- *    - pagination.css
- *    - search.css
- * 
- * 3. /layouts
- *    - header.css
- *    - footer.css
- *    - sidebar.css
- *    - article.css
- * 
- * 4. /pages
- *    - home.css
- *    - post.css
- *    - archive.css
- * 
- * 5. /utils
- *    - helpers.css
- *    - animations.css
+ * 1. /base         - Temel stiller ve sıfırlamalar
+ * 2. /components   - Bileşen stilleri 
+ * 3. /layouts      - Sayfa düzen stilleri
+ * 4. /pages        - Sayfa özel stilleri
+ * 5. /utils        - Yardımcı sınıflar ve animasyonlar
  */
 
-/* Base Dosyaları */
+/* Base Dosyaları - Öncelikle yüklenir */
 @import "./base/reset.css";
 @import "./base/variables.css";
 @import "./base/base.css";
 @import "./base/typography.css";
 
-/* Component Dosyaları */
+/* Component Dosyaları - Tekrar kullanılabilir UI öğeleri */
 @import "./components/buttons.css";
 @import "./components/forms.css";
 @import "./components/cards.css";
@@ -50,19 +25,19 @@
 @import "./components/icons.css";
 @import "./components/pagination.css";
 @import "./components/search.css";
-@import "./components/article.css";
 @import "./components/sidebar-widget.css";
 @import "./components/webmentions.css";
+@import "./components/article.css"; /* Sadece makale içi UI bileşenleri */
 
-/* Layout Dosyaları */
+/* Layout Dosyaları - Sayfa düzenleri ve grid/flex yapıları */
 @import "./layouts/header.css";
 @import "./layouts/footer.css";
 @import "./layouts/layout.css";
-@import "./layouts/article.css";
 @import "./layouts/grid.css";
 @import "./layouts/flex.css";
+@import "./layouts/article.css"; /* Makale sayfası düzeni */
 
-/* Pages Dosyaları */
+/* Pages Dosyaları - Sayfa özel stilleri */
 @import "./pages/index.css";
 @import "./pages/post.css";
 @import "./pages/archive.css";
@@ -74,10 +49,11 @@
 @import "./pages/search.css";
 @import "./pages/legal.css";
 
-/* Diğer CSS Dosyaları */
-@import "./footer.css";
+/* Yardımcı Sınıflar ve Animasyonlar */
+@import "./utils/helpers.css";
+@import "./utils/animations.css";
 
-/* Yardımcı Sınıflar */
+/* Container Stilleri */
 .container {
     width: 100%;
     max-width: var(--container-max-width);
@@ -99,6 +75,7 @@
     padding: 0 var(--spacing-md);
 }
 
+/* Flex Yardımcı Sınıfları */
 .flex {
     display: flex;
 }
@@ -119,6 +96,7 @@
     justify-content: center;
 }
 
+/* Metin Hizalama */
 .text-center {
     text-align: center;
 }
@@ -131,6 +109,7 @@
     text-align: right;
 }
 
+/* Görünürlük */
 .hidden {
     display: none !important;
 }
@@ -177,26 +156,12 @@
 }
 
 /* Responsive Ayarlamalar */
-@media (max-width: 1200px) {
-    /* :root değişkenleri variables.css'e taşındı */
-}
-
-@media (max-width: 992px) {
-    /* :root değişkenleri variables.css'e taşındı */
-}
-
 @media (max-width: 768px) {
-    /* :root değişkenleri variables.css'e taşındı */
-
     .container,
     .container-narrow,
     .container-wide {
         padding: 0 var(--spacing-sm);
     }
-}
-
-@media (max-width: 576px) {
-    /* :root değişkenleri variables.css'e taşındı */
 }
 
 /* Daha büyük telefon ekranları için */
@@ -217,4 +182,14 @@
     .footer-info {
         gap: var(--spacing-xs);
     }
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    /* Mobil cihazlar için özel düzenlemeler */
+}
+
+/* Erişilebilirlik */
+@media (prefers-reduced-motion: reduce) {
+    /* Azaltılmış hareket tercihi olan kullanıcılar için */
 }

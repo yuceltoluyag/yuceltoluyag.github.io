@@ -1,10 +1,13 @@
-/* Makale Ana Stili */
-.article {
-    color: var(--color-text-primary);
-    background-color: var(--color-bg);
-    line-height: 1.6;
-    font-size: 1.125rem;
-}
+/**
+ * Makale Bileşenleri
+ * 
+ * Bu dosya sadece makale içerisinde kullanılan özel bileşenler içindir:
+ * - Audio ve video oynatıcılar
+ * - Özel metin stilleri
+ * - Makale içi diğer bileşenler
+ * 
+ * NOT: Makale düzeni ile ilgili stiller layouts/article.css'te bulunmaktadır.
+ */
 
 /* Audio Player Stilleri */
 .audio-player {
@@ -30,8 +33,8 @@
     font-size: 0.875rem;
 }
 
-/* Önemli Metin Stileri */
-.article .text-highlight {
+/* Önemli Metin Stilleri */
+.text-highlight {
     font-weight: 700;
     background-color: var(--article-blockquote-bg);
     color: var(--color-text-primary);
@@ -72,13 +75,14 @@
     border-radius: 0.5rem;
 }
 
+/* Metin Seçimi */
+.article ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
 /* Karanlık Tema */
 @media (prefers-color-scheme: dark) {
-    .article {
-        color: var(--color-text);
-        background-color: var(--color-bg);
-    }
-
     .audio-player {
         background: var(--color-bg-alt);
     }
@@ -102,43 +106,12 @@
         border-color: var(--color-border);
     }
 
-    .article .text-highlight {
+    .text-highlight {
         background-color: var(--color-bg-primary);
         color: var(--color-text);
         border-left-color: var(--color-primary);
     }
-}
 
-/* Erişilebilirlik İyileştirmeleri */
-.article a {
-    color: var(--color-primary);
-    text-decoration: underline;
-}
-
-.article a:hover,
-.article a:focus {
-    color: var(--color-primary-hover);
-    text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    .article a {
-        color: var(--color-primary-light);
-    }
-
-    .article a:hover,
-    .article a:focus {
-        color: var(--color-primary-lighter);
-    }
-}
-
-/* Metin Seçimi */
-.article ::selection {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-}
-
-@media (prefers-color-scheme: dark) {
     .article ::selection {
         background-color: var(--color-primary-light);
         color: var(--color-bg);
