@@ -571,24 +571,27 @@
 @media (max-width: 992px) {
     .article-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 
     .article-sidebar {
-        order: -1; /* TOC'yi içerik üzerine taşı */
-        position: relative;
-        top: 0;
-        margin-bottom: var(--spacing-md);
-        width: 100%; /* Mobil görünümde tam genişlik */
+        position: static;
+        width: 100%;
+        order: 2;
+    }
+
+    /* Mobil ekranlarda yan panel bileşenlerini gizle */
+    .article-sidebar .toc-container,
+    .article-sidebar .recent-posts,
+    .article-sidebar .related-posts {
+        display: none;
     }
 
     .toc-container {
-        position: relative;
-        top: 0;
-        max-width: 100%; /* Mobil görünümde tam genişlik */
+        display: none;
     }
 }
 
-/* Mobil cihazlar için düzenleme */
 @media (max-width: 768px) {
     .article-grid {
         grid-template-columns: 1fr;
@@ -603,6 +606,6 @@
     }
 
     .article {
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm);
     }
 }

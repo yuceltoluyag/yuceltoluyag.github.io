@@ -2,72 +2,6 @@
  * Main JavaScript file for the Minel theme
  */
 document.addEventListener("DOMContentLoaded", function () {
-    // Responsive menu
-    const menuToggle = document.querySelector(".menu-toggle");
-    const siteNavigation = document.querySelector(".site-navigation");
-    const body = document.body;
-
-    // Mobil menü için overlay oluştur
-    const menuOverlay = document.createElement("div");
-    menuOverlay.className = "menu-overlay";
-    document.body.appendChild(menuOverlay);
-
-    if (menuToggle) {
-        menuToggle.addEventListener("click", function () {
-            const isExpanded = this.getAttribute("aria-expanded") === "true";
-            this.setAttribute("aria-expanded", !isExpanded);
-            siteNavigation.classList.toggle("toggled");
-            body.classList.toggle("menu-open");
-        });
-
-        // Overlay'e tıklama ile menüyü kapat
-        menuOverlay.addEventListener("click", function () {
-            if (siteNavigation.classList.contains("toggled")) {
-                menuToggle.setAttribute("aria-expanded", "false");
-                siteNavigation.classList.remove("toggled");
-                body.classList.remove("menu-open");
-            }
-        });
-
-        // Alt menüler için işlemler
-        const subMenuParents = document.querySelectorAll(".menu-item-has-children");
-
-        subMenuParents.forEach((item) => {
-            // Mobil görünümde alt menüleri açıp kapamak için tıklama işlevi
-            const link = item.querySelector(".menu-link");
-
-            if (link && window.innerWidth <= 768) {
-                link.addEventListener("click", function (e) {
-                    if (window.innerWidth <= 768) {
-                        // Sadece mobilde çalışsın
-                        e.preventDefault();
-                        item.classList.toggle("submenu-open");
-                    }
-                });
-            }
-        });
-
-        // Pencere boyutu değiştiğinde menü durumunu sıfırla
-        window.addEventListener("resize", function () {
-            if (window.innerWidth > 768) {
-                body.classList.remove("menu-open");
-                if (siteNavigation.classList.contains("toggled")) {
-                    siteNavigation.classList.remove("toggled");
-                    menuToggle.setAttribute("aria-expanded", "false");
-                }
-            }
-        });
-
-        // ESC tuşu ile mobil menüyü kapat
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && siteNavigation.classList.contains("toggled")) {
-                menuToggle.setAttribute("aria-expanded", "false");
-                siteNavigation.classList.remove("toggled");
-                body.classList.remove("menu-open");
-            }
-        });
-    }
-
     // Otomatik karanlık mod
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -207,241 +141,80 @@ document.addEventListener("DOMContentLoaded", function () {
                             copyButton.setAttribute("aria-label", "Kodu kopyala");
                         }, 2000);
                     } catch (err) {
-                        copyButton.classList.add("error");
-                        copyButton.setAttribute("aria-label", "Kopyalanamadı");
-
-                        setTimeout(() => {
-                            copyButton.classList.remove("error");
-                            copyButton.setAttribute("aria-label", "Kodu kopyala");
-                        }, 2000);
+                        console.error("Kopyalama işlemi başarısız oldu: ", err);
                     }
 
                     document.body.removeChild(textArea);
                 });
         });
+    });
 
-        // Butonun görünürlüğünü kontrol et
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    copyButton.style.opacity = "1";
-                }
-            });
-        });
+    // Kodu kopyalama butonlarına dil bilgisi ekleme
+    document.querySelectorAll("pre").forEach((pre) => {
+        const code = pre.querySelector("code");
+        if (!code) return;
 
-        observer.observe(pre);
-
-        // Kod dilini tespit et
+        // class'lardan dil bilgisini çıkar (örn. language-python)
+        const classes = code.className.split(" ");
         let language = "";
-        if (codeElement.className) {
-            const classMatch = codeElement.className.match(/language-(\w+)/);
-            if (classMatch && classMatch[1]) {
-                language = classMatch[1];
 
-                // Dil etiketi ekle (eğer zaten yoksa)
-                if (!pre.querySelector(".filename")) {
-                    const langLabel = document.createElement("span");
-                    langLabel.className = "filename";
-                    langLabel.textContent = language.toUpperCase();
-
-                    // Dil etiketini pre'nin en başına ekle (ilk çocuk olarak)
-                    pre.insertBefore(langLabel, pre.firstChild);
-                }
+        for (const cls of classes) {
+            if (cls.startsWith("language-")) {
+                language = cls.replace("language-", "");
+                break;
             }
         }
 
-        // Karakter sayısını hesapla
-        const charCount = codeElement.textContent.length;
-        const lineHeight = parseInt(window.getComputedStyle(codeElement).lineHeight) || 20;
-
-        // 500 karakterden fazla olan kod blokları için daha fazla göster/daha az göster butonu ekle
-        if (charCount > 500) {
-            // Başlangıçta max-height ayarla ve taşan içeriği gizle
-            pre.style.maxHeight = lineHeight * 10 + "px";
-            pre.style.overflow = "hidden";
-
-            // Buton container oluştur (daha iyi konumlandırma için)
-            const buttonContainer = document.createElement("div");
-            buttonContainer.className = "show-more-button-container";
-
-            const showMoreButton = document.createElement("button");
-            showMoreButton.className = "show-more-button";
-            showMoreButton.textContent = "Daha Fazla Göster";
-            showMoreButton.setAttribute("aria-expanded", "false");
-
-            // Buton container'a ekle ve sonra pre'nin yanına yerleştir
-            buttonContainer.appendChild(showMoreButton);
-            pre.parentNode.insertBefore(buttonContainer, pre.nextSibling);
-
-            showMoreButton.addEventListener("click", function () {
-                const isExpanded = this.getAttribute("aria-expanded") === "true";
-
-                if (isExpanded) {
-                    pre.style.maxHeight = lineHeight * 10 + "px";
-                    pre.classList.remove("expanded");
-                    this.textContent = "Daha Fazla Göster";
-                    this.setAttribute("aria-expanded", "false");
-                } else {
-                    pre.style.maxHeight = pre.scrollHeight + "px";
-                    pre.classList.add("expanded");
-                    this.textContent = "Daha Az Göster";
-                    this.setAttribute("aria-expanded", "true");
-                }
-            });
+        if (language) {
+            // Etiket oluştur
+            const languageLabel = document.createElement("div");
+            languageLabel.className = "code-language";
+            languageLabel.textContent = language;
+            pre.appendChild(languageLabel);
         }
     });
 
-    // TOC ve Arama özelliklerini global scope'a fonksiyon olarak tanımlayalım
-    window.initializeTOC = function () {
-        const toc = document.querySelector(".toc");
-        if (!toc) return;
+    // Karanlık / Aydınlık mod geçişi
+    let darkMode = localStorage.getItem("dark-mode") === "true" || false;
 
-        // Başlık bağlantılarını seç
-        const tocLinks = toc.querySelectorAll("a");
+    if (prefersDarkScheme.matches) {
+        darkMode = true;
+    }
 
-        // Görünür başlıkları takip et
-        const headers = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6")).filter((header) => header.id);
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        // Aktif olmayan tüm linkleri temizle
-                        tocLinks.forEach((link) => link.classList.remove("active"));
-
-                        // Görünür başlığa karşılık gelen linki bul ve aktif et
-                        const activeLink = Array.from(tocLinks).find(
-                            (link) => link.getAttribute("href") === `#${entry.target.id}`
-                        );
-
-                        if (activeLink) {
-                            activeLink.classList.add("active");
-                        }
+    // Resimleri lazyload etme
+    const lazyImages = document.querySelectorAll("img[data-src]");
+    if ("IntersectionObserver" in window) {
+        const imageObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    const image = entry.target;
+                    image.src = image.dataset.src;
+                    if (image.dataset.srcset) {
+                        image.srcset = image.dataset.srcset;
                     }
-                });
-            },
-            {
-                rootMargin: "-100px 0px -66%",
-                threshold: 0,
-            }
-        );
-
-        headers.forEach((header) => observer.observe(header));
-
-        // Düzgün kaydırma
-        tocLinks.forEach((link) => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute("href").substring(1);
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: "smooth",
-                    });
-
-                    history.pushState(null, null, `#${targetId}`);
+                    image.classList.add("loaded");
+                    imageObserver.unobserve(image);
                 }
             });
         });
-    };
 
-    window.initializeSearch = function () {
-        const searchForm = document.querySelector(".search-form");
-        const searchInputField = document.querySelector(".search-input");
-        const searchResults = document.querySelector(".search-results");
-        const searchResultsList = document.querySelector(".search-results-list");
-
-        if (!searchForm || !searchInputField) return;
-
-        // URL'den arama parametresini al
-        const urlParams = new URLSearchParams(window.location.search);
-        const initialQuery = urlParams.get("q");
-
-        // Arama işlemi fonksiyonu
-        const performSearch = (query) => {
-            if (!query || query.trim() === "") return;
-
-            fetch("/search-data.json")
-                .then((response) => response.json())
-                .then((data) => {
-                    const results = data.filter(
-                        (item) =>
-                            item.title.toLowerCase().includes(query.toLowerCase()) ||
-                            (item.content && item.content.toLowerCase().includes(query.toLowerCase()))
-                    );
-
-                    if (searchResultsList) {
-                        searchResultsList.innerHTML = "";
-
-                        if (results.length === 0) {
-                            const noResults = document.createElement("li");
-                            noResults.className = "search-no-results";
-                            noResults.textContent = "Sonuç bulunamadı";
-                            searchResultsList.appendChild(noResults);
-                        } else {
-                            results.forEach((result) => {
-                                const item = document.createElement("li");
-                                item.className = "search-result-item";
-
-                                const link = document.createElement("a");
-                                link.href = result.url;
-                                link.className = "search-result-link";
-
-                                const title = document.createElement("h3");
-                                title.className = "search-result-title";
-                                title.textContent = result.title;
-
-                                const snippet = document.createElement("p");
-                                snippet.className = "search-result-snippet";
-                                snippet.textContent = result.snippet || "İçerik önizlemesi mevcut değil";
-
-                                link.appendChild(title);
-                                link.appendChild(snippet);
-                                item.appendChild(link);
-                                searchResultsList.appendChild(item);
-                            });
-                        }
-
-                        if (searchResults) {
-                            searchResults.classList.add("active");
-                        }
-                    }
-                })
-                .catch((error) => {
-                    console.error("Arama sırasında hata oluştu:", error);
-                });
-        };
-
-        // URL'deki aramayı yap
-        if (initialQuery) {
-            searchInputField.value = initialQuery;
-            performSearch(initialQuery);
-        }
-
-        // Arama formu gönderildiğinde
-        searchForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const query = searchInputField.value.trim();
-
-            if (query) {
-                // URL'i güncelle
-                const newUrl = new URL(window.location.href);
-                newUrl.searchParams.set("q", query);
-                window.history.pushState({}, "", newUrl);
-
-                performSearch(query);
-            }
+        lazyImages.forEach(function (image) {
+            imageObserver.observe(image);
         });
-    };
-
-    // İçindekiler tablosu kontrolü
-    if (document.querySelector(".toc")) {
-        // İçindekiler tablosu fonksiyonlarını çalıştır
-        window.initializeTOC();
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        lazyImages.forEach(function (image) {
+            image.src = image.dataset.src;
+            if (image.dataset.srcset) {
+                image.srcset = image.dataset.srcset;
+            }
+            image.classList.add("loaded");
+        });
     }
 
-    // Arama fonksiyonunu çalıştır
-    window.initializeSearch();
+    // Arama fonksiyonları
+    const performSearch = (query) => {
+        // Bu fonksiyon search.js dosyasında tanımlanmıştır
+        // Buraya sadece bağlantı amacıyla bırakıldı
+    };
 });
