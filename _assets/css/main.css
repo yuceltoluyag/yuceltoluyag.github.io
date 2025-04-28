@@ -28,6 +28,7 @@
 @import "./components/sidebar-widget.css";
 @import "./components/webmentions.css";
 @import "./components/article.css"; /* Sadece makale içi UI bileşenleri */
+@import "./components/translations.css"; /* Çeviri bileşenleri */
 
 /* Layout Dosyaları - Sayfa düzenleri ve grid/flex yapıları */
 @import "./layouts/header.css";
