@@ -1,3 +1,5 @@
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=1e6a19574e1e&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+
 # Minel - Minimal Pelican Theme
 
 Minel, Pelican blog motoru için Tailwind CSS ile geliştirilmiş minimal bir temadır.

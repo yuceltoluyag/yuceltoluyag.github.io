@@ -4,27 +4,35 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Hata ayıklama - Sadece localhost'ta çalışacak
+    const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+    const debugLog = (message, ...args) => {
+        if (isLocalhost) {
+            console.log(message, ...args);
+        }
+    };
+
     // TOC container'ı bul
     const tocContainer = document.querySelector(".toc-container");
     if (!tocContainer) {
-        console.log("TOC container bulunamadı");
+        debugLog("TOC container bulunamadı");
         return;
     }
 
     const tocContent = document.querySelector(".toc-content");
     if (!tocContent) {
-        console.log("TOC content bulunamadı");
+        debugLog("TOC content bulunamadı");
         return;
     }
 
     // TOC içeriğini bul
     const tocDiv = document.getElementById("toc");
     if (!tocDiv) {
-        console.log("TOC div bulunamadı");
+        debugLog("TOC div bulunamadı");
         return;
     }
 
-    console.log("TOC başlatılıyor...");
+    debugLog("TOC başlatılıyor...");
 
     // Scroll değişkenlerini tanımla
     let lastScrollTop = 0;
@@ -93,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function setupHeadings() {
         const headings = document.querySelectorAll(".prose h2, .prose h3, .prose h4");
-        console.log("Bulunan başlık sayısı:", headings.length);
+        debugLog("Bulunan başlık sayısı:", headings.length);
 
         headings.forEach((heading, index) => {
             if (!heading.id) {
@@ -158,11 +166,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Tüm TOC linklerini bul
         const tocLinks = tocDiv.querySelectorAll("a");
         if (tocLinks.length === 0) {
-            console.log("TOC linkleri bulunamadı");
+            debugLog("TOC linkleri bulunamadı");
             return;
         }
 
-        console.log("TOC linkleri bulundu:", tocLinks.length);
+        debugLog("TOC linkleri bulundu:", tocLinks.length);
 
         tocLinks.forEach((link) => {
             // Link sınıflarını düzenle

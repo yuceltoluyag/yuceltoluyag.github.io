@@ -1,6 +1,6 @@
 { "version": "https://jsonfeed.org/version/1", "title": "{{ SITENAME }}", "home_page_url": "{{ SITEURL }}/", "feed_url":
-"{{ SITEURL }}/feed.json", "description": "{{ DESCRIPTION }}", "favicon": "{{ SITEURL }}/favicon.ico", "icon": "{{
-SITEURL }}/images/logo.svg", "author": { "name": "{{ AUTHOR }}", "url": "{{ SITEURL }}/", "avatar": "{{ SITEURL
+"{{ SITEURL }}/feed.json", "description": "{{ DESCRIPTION }}", "favicon": "{{ SITEURL }}/images/favicon.ico", "icon":
+"{{ SITEURL }}/images/logo.svg", "author": { "name": "{{ AUTHOR }}", "url": "{{ SITEURL }}/", "avatar": "{{ SITEURL
 }}/images/logo.svg" }, "expired": false, "items": [ {% for article in articles %} { "id": "{{ article.slug | striptags |
 escape }}", "url": "{{ SITEURL }}/{{ article.url }}", "title": "{{ article.title | striptags | escape }}", "summary": {{
 article.summary | striptags | tojson }}, "content_html": {{ article.content | striptags | tojson }}, "category": "{{

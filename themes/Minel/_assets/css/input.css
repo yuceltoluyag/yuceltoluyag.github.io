@@ -1004,12 +1004,13 @@
     }
 
     :root {
-        --rounded-xs: 0.125rem; /* eski rounded-sm */
-        --rounded-sm: 0.25rem; /* eski rounded-default */
-        --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* eski shadow-sm */
-        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); /* eski shadow-default */
-        --blur-xs: 4px; /* eski blur-sm */
-        --blur-sm: 8px; /* eski blur-default */
+        /* Tailwind CSS v4 sınıf yenilemelerine göre güncellenmiş değişkenler */
+        --rounded-xs: 0.125rem; /* v4'te rounded-xs olarak adlandırıldı (eski rounded-sm) */
+        --rounded-sm: 0.25rem; /* v4'te rounded-sm olarak adlandırıldı (eski rounded-default) */
+        --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* v4'te shadow-xs olarak adlandırıldı (eski shadow-sm) */
+        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); /* v4'te shadow-sm olarak adlandırıldı (eski shadow-default) */
+        --blur-xs: 4px; /* v4'te blur-xs olarak adlandırıldı (eski blur-sm) */
+        --blur-sm: 8px; /* v4'te blur-sm olarak adlandırıldı (eski blur-default) */
     }
 }
 

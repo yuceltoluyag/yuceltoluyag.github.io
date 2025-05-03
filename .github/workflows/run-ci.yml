@@ -30,6 +30,10 @@ jobs:
         if: github.ref == 'refs/heads/main'
         permissions:
             contents: write
+        environment:
+            name: production
+        env:
+            PUBLISH: "true"
         steps:
             - uses: actions/checkout@v4
             - name: Install uv and dependencies
