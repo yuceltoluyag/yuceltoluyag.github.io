@@ -1,118 +1,80 @@
-# Proje Değişiklikleri Özeti
+# 📜 Minel Tema Değişiklik Geçmişi
 
-Bu doküman, projede yapılan önemli değişiklikleri maddeler halinde özetlemektedir.
+Bu belge, Minel temasına yapılan tüm önemli değişiklikleri içerir.
 
-## 1. Mastodon Yorumları Entegrasyonu
+## [Unreleased]
 
-### Yeni Eklenen Özellikler
+### ✨ Yeni Özellikler
+- Iconify kütüphanesi entegrasyonu ile modern ikon desteği eklendi
 
-- Makalelere Mastodon toot bağlantıları ekleme desteği
-- Makale meta verilerinden Mastodon toot ID'lerini veya bağlantılarını otomatik çıkarma
-- Sadece Mastodon bağlantısı olan makalelerde yorum bölümü gösterme
-- Gelişmiş hata işleme ve kullanıcı deneyimi iyileştirmeleri
-- Yönetim araçları eklentisi
+### 🐛 Hata Düzeltmeleri 
+- Arama sonuçlarında link tıklandıktan sonra modal kapanmama sorunu giderildi
+- Console log mesajları sadece geliştirme ortamında görünecek şekilde düzenlendi
 
-### Değiştirilen Dosyalar
+## [2.0.0] - 2024-06-15
 
-- `themes/Minel/templates/article.html`: Mastodon yorumları gösterim kontrolü eklendi
-- `themes/Minel/templates/base.html`: Gerekli JavaScript dosyaları dahil edildi
-- `pelicanconf.py`: Mastodon yapılandırması ve admin araçları ayarları eklendi
-- `duties.py`: Mastodon toot ID yönetimi için yeni görev eklendi
+### ⚠️ Önemli Değişiklikler
+- Tailwind CSS v4 ve DaisyUI v5 uyumluluğu sağlandı
+- Kaldırılan yardımcı sınıflar güncellendi
 
-### Yeni Eklenen Dosyalar
+### ✨ Yeni Özellikler
 
-- `content/mastodon_comments.json`: Mastodon ID'lerini makale slug'larıyla eşleştirme dosyası
-- `themes/Minel/static/js/mastodon-comments.js`: Mastodon yorumlarını görüntüleyen Web bileşeni
-- `themes/Minel/static/js/mastodon-id-finder.js`: Mastodon URL'lerinden ID çıkarma aracı
-- `themes/Minel/templates/includes/admin-panel.html`: Makale yönetim araçları paneli
+#### Tema ve Görünüm
+- Animasyonlu tema değişimi
+- Özelleştirilmiş tema geçiş butonu
+- Kullanıcı tema tercihi otomatik hatırlama
 
-## 2. CSS Yapısı Yenileme
+#### Tipografi ve Görsel İyileştirmeler
+- Özel başlık fontları ve stilleri
+- Vurgu efektleri
+- Blockquote, liste ve içerik öğeleri için geliştirilmiş stiller
 
-### Önemli Değişiklikler
+#### İçindekiler Tablosu İyileştirmeleri
+- Otomatik aktif bölüm vurgulama
+- Animasyonlu kaydırma efekti
+- Görsel olarak geliştirilmiş içindekiler tablosu
+- Mobil cihazlar için optimize edilmiş görünüm
 
-- Eski CSS dosya yapısı kaldırıldı, daha modüler ve bakımı kolay bir yapıya geçildi
-- TailwindCSS v4 uyumluluğu için güncelleme yapıldı
-- CSS derleme ve optimizasyon araçları güncellendi
+#### İçerik İyileştirmeleri
+- Zenginleştirilmiş iç bağlantı görünümü
+- Geçiş animasyonları
+- Ziyaret edilmiş bağlantı izleme
+- Bağlantı başlık öznitelikleri otomatik oluşturma
 
-### Kaldırılan Dosyalar
+### 🔍 SEO Optimizasyonu
+- Otomatik meta açıklamaları ve anahtar kelimeler
+- Türkçe içerik analizi ve anahtar kelime çıkarma
+- Stop-word filtreleme
 
-- `_assets/css/` altındaki tüm dosyalar (base, components, layouts, pages, utils vb.)
-- `themes/Minel/static/css/main.min.css`
-- `gulpfile.js`, `package.json` ve `package-lock.json`
+### 🚀 Performans İyileştirmeleri
+- Lazy loading
+- Kritik olmayan JS erteleme
+- Core Web Vitals izleme ve raporlama
+- Önbelleğe alma stratejileri
 
-### Yeni Eklenen Dosyalar
+### 🔌 Entegrasyonlar
+- Webmention.io entegrasyonu
+- Makale sayfalarında webmention gösterimi
+- Webmention test aracı (geliştirme modunda)
+- E-posta aboneliği için Buttondown entegrasyonu
 
-- `themes/Minel/_assets/`: Yeni CSS/JS kaynak dosyaları 
-- `themes/Minel/static/css/style.css`: Yeni birleştirilmiş CSS
-- `themes/Minel/.babelrc`, `themes/Minel/postcss.config.mjs`: Derleme yapılandırmaları
-- `themes/Minel/package.json`: Tema seviyesinde bağımlılıklar
+## [1.0.0] - 2023-10-15
 
-## 3. JavaScript Geliştirmeleri
-
-### Yeni Eklenen Dosyalar
-
-- `themes/Minel/static/js/code-copy.js`: Kod bloklarını kopyalama işlevselliği
-- `themes/Minel/static/js/main.js`: Ana JavaScript işlevleri
-- `themes/Minel/static/js/toc.js` ve `themes/Minel/static/js/toc-enhancements.js`: İçindekiler tablosu iyileştirmeleri
-- `themes/Minel/static/js/unified-toc.js`: Birleştirilmiş içindekiler tablosu özellikleri
-- `themes/Minel/static/js/webmention.js` ve `themes/Minel/static/js/webmention-test.js`: Webmention entegrasyonu
-
-### Değiştirilen JavaScript Dosyaları
-
-- JavaScript dosyaları artık minify edilmemiş halde bulunuyor (daha kolay geliştirme için)
-- Eski `.min.js` dosyaları kaldırıldı
-
-## 4. Şablon Güncellemeleri
-
-- `themes/Minel/templates/about.html`, `donate.html`, `legal.html` ve diğer şablonlar yeni yapıya uygun güncellendi
-- `themes/Minel/templates/includes/head.html` kaldırıldı, içeriği `base.html` içine taşındı
-- `themes/Minel/templates/includes/header.html` ve `footer.html` güncel tasarıma uyarlandı
-- Arama modalı, navigasyon ve diğer bileşenler güncel tasarım dilini yansıtacak şekilde güncellendi
-
-## 5. Proje Yapılandırma Değişiklikleri
-
-- `.gitignore`: Yeni dosya yapısına uygun güncellendi
-- `.pre-commit-config.yaml`: Güncel kontroller eklendi
-- `pyproject.toml` ve `requirements.txt`: Bağımlılıklar güncellendi
-- `uv.lock`: Güncel paket kilitleme dosyası eklendi
-- `poetry.lock`: Poetry ile bağımlılık yönetimi için eklendi
-
-## 6. İçerik Güncellemeleri
-
-- `content/articles/onemli-degisiklikler.md`: Önemli değişiklikler belgesi güncellendi
-- `content/articles/dreame-d10-plus-gen-2-inceleme.md` ve `raspberry-pi-nasil-kurulur.md`: İçerik güncellemeleri
-
-## Kullanım Bilgileri
-
-### Mastodon Yorumları Kullanımı
-
-Makalenizin başlangıcına aşağıdaki formatlardan birini ekleyin:
-
-1. **Tam Mastodon bağlantısı ile:**
-   - `Mastodon_Link: https://mastodon.social/@yuceltoluyag/123456789`
-
-2. **Sadece ID kullanarak:**
-   - `Mastodon_ID: 123456789`
-
-### Admin Araçları Kullanımı
-
-1. `pelicanconf.py` dosyasında `ADMIN_TOOLS = True` yapın
-2. Makale sayfasına gidin ve sayfanın altında admin panelini göreceksiniz
-3. "Mastodon ID Bulucu" aracını kullanarak Mastodon URL'sini girin
-4. "ID Çıkar" butonuna tıklayın
-5. "Kopyala" butonuyla meta veriyi kopyalayıp makalenize ekleyin
-
-## Önbellek Temizleme
-
-Eğer değişiklikler sitenizde görünmüyorsa:
-
-1. Tarayıcı önbelleğini temizleyin
-2. Pelican'ı `--delete-output-directory` parametresiyle çalıştırın
-
-## Ek Notlar
-
-- Bu yorumlar sistemi, Fediverse ağındaki tüm yorumları gösterir (sadece Mastodon ile sınırlı değil)
-- Mastodon API hız sınırlamalarına dikkat edin
-- Yorum gösterilmeyen makalelerde "Yorumlar yüklenirken hata oluştu" mesajı artık gösterilmeyecek
-- Responsive tasarım ile mobil ve masaüstü cihazlarda sorunsuz çalışır
-- Sadece gerekli olduğunda JavaScript kodları yüklenir (performans optimizasyonu)
+### ✨ İlk Sürüm
+- Tailwind CSS ile modern tasarım
+- Karanlık/Aydınlık mod desteği
+- Mobil uyumlu (responsive) tasarım
+- İçindekiler tablosu
+- Kod vurgulama (syntax highlighting)
+- SEO optimizasyonu
+- Yapısal veri (Schema.org) desteği
+- VideoObject şeması (YouTube videoları için)
+- Arama özelliği
+- İstatistik özellikleri
+- Resim optimizasyonu
+- Minify desteği
+- PWA desteği
+- Çoklu dil desteği
+- Öne çıkan makale özelliği
+- RSS ve Atom feed desteği
+- WCAG erişilebilirlik uyumu 
