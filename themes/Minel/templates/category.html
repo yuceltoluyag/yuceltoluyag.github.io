@@ -10,37 +10,31 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/kategori/{{ category.slug }}/" />
 {% endblock seo %} {% block content %}
-<div class="container">
+<div class="container mx-auto px-4">
     <!-- Kategori Başlığı -->
-    <div class="category-header">
-        <div class="category-icon">
-            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-            </svg>
+    <div class="flex items-center gap-4 mb-12 bg-base-100 p-6 rounded-xl shadow-xs">
+        <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <span class="iconify" data-icon="tabler:tag" width="28" height="28"></span>
         </div>
-        <div class="category-info">
-            <h1 class="category-title">{{ category }}</h1>
-            <p class="category-count">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
+        <div class="flex-1">
+            <h1 class="text-3xl md:text-4xl font-bold text-base-content">{{ category }}</h1>
+            <p class="text-base-content/70 mt-1">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
         </div>
     </div>
 
     <!-- Yazı Listesi -->
-    <div class="articles-container">
+    <div class="space-y-6">
         {% for article in articles %}
-        <article class="article-card">
-            <a href="{{ SITEURL }}/{{ article.url }}" class="article-link">
-                <div class="article-metadata">
-                    <h2 class="article-title">{{ article.title }}</h2>
-                    <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" class="article-date">
+        <article class="card bg-base-100 shadow-xs hover:shadow-lg transition-all duration-200">
+            <a href="{{ SITEURL }}/{{ article.url }}" class="card-body p-6">
+                <div class="mb-3">
+                    <h2 class="text-xl font-bold hover:text-primary transition-colors">{{ article.title }}</h2>
+                    <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" class="text-sm text-base-content/60">
                         {{ article.date.strftime('%d %b %Y') }}
                     </time>
                 </div>
                 {% if article.summary %}
-                <div class="article-summary">{{ article.summary|striptags|truncate(150) }}</div>
+                <div class="text-base-content/70">{{ article.summary|striptags|truncate(150) }}</div>
                 {% endif %}
             </a>
         </article>

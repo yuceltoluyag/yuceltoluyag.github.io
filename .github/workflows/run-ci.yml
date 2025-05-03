@@ -45,7 +45,9 @@ jobs:
               with:
                   node-version: "20"
                   cache: "npm"
+                  cache-dependency-path: "themes/Minel/package-lock.json"
             - name: Install npm dependencies
+              working-directory: ./themes/Minel
               run: npm ci
             - name: Create and activate virtual environment
               run: |
@@ -55,8 +57,11 @@ jobs:
               run: |
                   uv pip install setuptools
                   uv pip install -r requirements.txt
-            - name: Build site assets with Gulp
-              run: npm run build
+            - name: Build site assets with npm
+              run: |
+                  cd ./themes/Minel
+                  npm run build:all:prod
+                  cd ../..
             - name: Build site
               run: uv run pelican content -s publishconf.py
             - name: Deploy to GitHub Pages

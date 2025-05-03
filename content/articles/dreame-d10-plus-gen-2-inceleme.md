@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-lg.webp
-
+DEFAULT_TOOT_ID: 114259692781210332
 
 <div class="info-box warning">
 <b>Not:</b>

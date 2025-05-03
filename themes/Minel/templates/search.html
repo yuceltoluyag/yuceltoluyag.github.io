@@ -1,20 +1,16 @@
 {% extends "base.html" %} {% block title %}Arama - {{ SITENAME }}{% endblock %} {% block content %}
 <div class="container mx-auto px-4 py-8">
-    <div class="bg-site-card rounded-lg p-6 md:p-8">
-        <h1 class="text-3xl font-bold mb-6 text-text-primary">Site İçi Arama</h1>
+    <div class="card bg-base-100 shadow-xs rounded-xl p-6 md:p-8">
+        <h1 class="text-3xl font-bold mb-6 text-base-content">Site İçi Arama</h1>
 
         <div class="flex flex-col md:flex-row gap-4 mb-8">
             <input
                 type="text"
                 id="search-input"
                 placeholder="Aramak istediğiniz kelimeyi yazın..."
-                class="flex-1 px-4 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-700 focus:outline-none focus:border-primary dark:bg-site-bg dark:text-text-primary"
+                class="input input-bordered flex-1 focus:outline-hidden focus:border-primary bg-base-200 text-base-content"
                 autofocus />
-            <button
-                id="search-button"
-                class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors font-medium">
-                Ara
-            </button>
+            <button id="search-button" class="btn btn-primary">Ara</button>
         </div>
 
         <div id="search-results" class="mt-8"></div>
@@ -31,11 +27,11 @@
             const query = searchInput.value.trim();
             if (!query) {
                 resultsContainer.innerHTML =
-                    '<div class="text-center text-text-secondary py-8">Lütfen arama yapmak için bir kelime girin.</div>';
+                    '<div class="text-center text-base-content/60 py-8">Lütfen arama yapmak için bir kelime girin.</div>';
                 return;
             }
 
-            resultsContainer.innerHTML = '<div class="text-center text-text-secondary py-8">Aranıyor...</div>';
+            resultsContainer.innerHTML = '<div class="text-center text-base-content/60 py-8">Aranıyor...</div>';
             // Burada arama işlemi yapılacak
             // Pelican search plugin'i ile entegre edilecek
         }

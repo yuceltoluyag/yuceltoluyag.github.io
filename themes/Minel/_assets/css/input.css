@@ -1,0 +1,1678 @@
+@import "tailwindcss";
+
+@plugin 'daisyui' {
+    themes: light --default, dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+    name: "autumn";
+    color-scheme: "light";
+    --color-base-100: oklch(95.814% 0 0);
+    --color-base-200: oklch(89.107% 0 0);
+    --color-base-300: oklch(82.4% 0 0);
+    --color-base-content: oklch(19.162% 0 0);
+    --color-primary: oklch(40.723% 0.161 17.53);
+    --color-primary-content: oklch(88.144% 0.032 17.53);
+    --color-secondary: oklch(61.676% 0.169 23.865);
+    --color-secondary-content: oklch(12.335% 0.033 23.865);
+    --color-accent: oklch(73.425% 0.094 60.729);
+    --color-accent-content: oklch(14.685% 0.018 60.729);
+    --color-neutral: oklch(54.367% 0.037 51.902);
+    --color-neutral-content: oklch(90.873% 0.007 51.902);
+    --color-info: oklch(69.224% 0.097 207.284);
+    --color-info-content: oklch(13.844% 0.019 207.284);
+    --color-success: oklch(60.995% 0.08 174.616);
+    --color-success-content: oklch(12.199% 0.016 174.616);
+    --color-warning: oklch(70.081% 0.164 56.844);
+    --color-warning-content: oklch(14.016% 0.032 56.844);
+    --color-error: oklch(53.07% 0.241 24.16);
+    --color-error-content: oklch(90.614% 0.048 24.16);
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+    name: "dracula";
+    color-scheme: "dark";
+    --color-base-100: oklch(28.822% 0.022 277.508);
+    --color-base-200: oklch(26.805% 0.02 277.508);
+    --color-base-300: oklch(24.787% 0.019 277.508);
+    --color-base-content: oklch(97.747% 0.007 106.545);
+    --color-primary: oklch(75.461% 0.183 346.812);
+    --color-primary-content: oklch(15.092% 0.036 346.812);
+    --color-secondary: oklch(74.202% 0.148 301.883);
+    --color-secondary-content: oklch(14.84% 0.029 301.883);
+    --color-accent: oklch(83.392% 0.124 66.558);
+    --color-accent-content: oklch(16.678% 0.024 66.558);
+    --color-neutral: oklch(39.445% 0.032 275.524);
+    --color-neutral-content: oklch(87.889% 0.006 275.524);
+    --color-info: oklch(88.263% 0.093 212.846);
+    --color-info-content: oklch(17.652% 0.018 212.846);
+    --color-success: oklch(87.099% 0.219 148.024);
+    --color-success-content: oklch(17.419% 0.043 148.024);
+    --color-warning: oklch(95.533% 0.134 112.757);
+    --color-warning-content: oklch(19.106% 0.026 112.757);
+    --color-error: oklch(68.22% 0.206 24.43);
+    --color-error-content: oklch(13.644% 0.041 24.43);
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+}
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] * ));
+
+@theme {
+    --breakpoint-xs: 30rem;
+    --tracking-extra-wide: 0.25em;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    /* Geçiş efektleri */
+    body {
+        @apply transition-colors duration-200;
+
+        &::-webkit-scrollbar {
+            @apply w-1.5 h-1.5;
+        }
+
+        &::-webkit-scrollbar-track {
+            @apply bg-base-100;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            @apply bg-base-300 rounded-xs;
+
+            &:hover {
+                @apply bg-primary/50;
+            }
+        }
+    }
+
+    /* Post kartı stilleri */
+    .post-card {
+        @apply card bg-base-100 shadow-xs transition-all duration-300;
+
+        &:hover {
+            @apply shadow-sm;
+
+            .post-image {
+                @apply scale-105;
+            }
+
+            .post-title {
+                @apply text-primary;
+            }
+
+            .post-excerpt {
+                @apply text-base-content;
+            }
+        }
+    }
+
+    /* Navbar stilleri */
+    .navbar {
+        &-transparent {
+            @apply bg-transparent;
+        }
+
+        &-solid {
+            @apply bg-base-100/80 backdrop-blur-xs;
+        }
+    }
+
+    /* Kod renklendirme stilleri */
+    .token {
+        &.comment,
+        &.prolog,
+        &.doctype,
+        &.cdata {
+            @apply text-base-content/50;
+        }
+
+        &.punctuation {
+            @apply text-base-content/70;
+        }
+
+        &.property,
+        &.tag,
+        &.boolean,
+        &.number,
+        &.constant,
+        &.symbol {
+            @apply text-primary;
+        }
+
+        &.selector,
+        &.attr-name,
+        &.string,
+        &.char,
+        &.builtin {
+            @apply text-secondary;
+        }
+
+        &.operator,
+        &.entity,
+        &.url,
+        &.variable {
+            @apply text-accent;
+        }
+
+        &.atrule,
+        &.attr-value,
+        &.function {
+            @apply text-success;
+        }
+
+        &.regex,
+        &.important {
+            @apply text-warning;
+        }
+
+        &.keyword {
+            @apply text-info;
+        }
+    }
+
+    /* Kart stilleri */
+    .card {
+        @apply card bg-base-100 shadow-xs hover:shadow-sm transition-all duration-300;
+    }
+
+    /* Container stil */
+    .container {
+        @apply max-w-7xl mx-auto px-4;
+    }
+
+    /* Puzzle arka planı için */
+    .puzzle-bg {
+        background-color: var(--main-site-background);
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zm20.97 0l9.315 9.314-1.414 1.414L34.828 0h2.83zM22.344 0L13.03 9.314l1.414 1.414L25.172 0h-2.83zm32 0l12.142 12.142-1.414 1.414L30 .828 17.272 13.556l-1.414-1.414L28 0h4zM.284 0l28 28-1.414 1.414L0 2.544V0h.284zM0 5.373l25.456 25.455-1.414 1.415L0 8.2V5.374zm0 5.656l22.627 22.627-1.414 1.414L0 13.86v-2.83zm0 5.656l19.8 19.8-1.415 1.413L0 19.514v-2.83zm0 5.657l16.97 16.97-1.414 1.415L0 25.172v-2.83zM0 28l14.142 14.142-1.414 1.414L0 30.828V28zm0 5.657L11.314 44.97 9.9 46.386l-9.9-9.9v-2.828zm0 5.657L8.485 47.8 7.07 49.212 0 42.143v-2.83zm0 5.657l5.657 5.657-1.414 1.415L0 47.8v-2.83zm0 5.657l2.828 2.83-1.414 1.413L0 53.456v-2.83zM54.627 60L30 35.373 5.373 60H8.2L30 38.2 51.8 60h2.827zm-5.656 0L30 41.03 11.03 60h2.828L30 43.858 46.142 60h2.83zm-5.656 0L30 46.686 16.686 60h2.83L30 49.515 40.485 60h2.83zm-5.657 0L30 52.343 22.344 60h2.83L30 55.172 34.828 60h2.83zM32 60l-2-2-2 2h4zM59.716 0l-28 28 1.414 1.414L60 2.544V0h-.284zM60 5.373L34.544 30.828l1.414 1.415L60 8.2V5.374zm0 5.656L37.373 33.656l1.414 1.414L60 13.86v-2.83zm0 5.656l-19.8 19.8 1.415 1.413L60 19.514v-2.83zm0 5.657l-16.97 16.97 1.414 1.415L60 25.172v-2.83zM60 28L45.858 42.142l1.414 1.414L60 30.828V28zm0 5.657L48.686 44.97l1.415 1.415 9.9-9.9v-2.828zm0 5.657L51.515 47.8l1.414 1.413 7.07-7.07v-2.83zm0 5.657l-5.657 5.657 1.414 1.415L60 47.8v-2.83zm0 5.657l-2.828 2.83 1.414 1.413L60 53.456v-2.83zM39.9 16.385l1.414-1.414L30 3.658 18.686 14.97l1.415 1.415 9.9-9.9 9.9 9.9zm-2.83 2.828l1.415-1.414L30 9.313 21.515 17.8l1.414 1.413L30 11.8l7.07 7.414z' fill='%23333' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+
+    /* Paralax ve header stilleri */
+    .parallax-bg {
+        @apply bg-fixed bg-center bg-cover;
+    }
+
+    /* Header animasyonları */
+    .header-content h1 {
+        @apply text-4xl md:text-5xl font-bold mb-4;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-content p {
+        @apply text-lg md:text-xl max-w-2xl mx-auto mb-8;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    /* TOC stilleri */
+    #toc {
+        @apply sticky top-24 pt-4;
+    }
+
+    #toc ul {
+        @apply space-y-1 pl-2;
+    }
+
+    #toc li {
+        @apply relative;
+    }
+
+    #toc a.toc-href {
+        @apply block py-1 pl-4 text-base-content/70 hover:text-primary transition-colors text-sm border-l border-base-300;
+    }
+
+    #toc a.toc-href.active,
+    #toc a.toc-href:hover {
+        @apply text-primary border-primary;
+    }
+
+    /* TOC marker - aktif başlığın yanındaki çizgi için stil */
+    .toc-marker {
+        @apply absolute left-0 w-0.5 bg-primary rounded-full transition-all duration-300 ease-in-out;
+    }
+
+    #toc svg.text-primary {
+        @apply animate-pulse;
+    }
+
+    #toc .toc-line {
+        @apply absolute left-0 w-px h-full bg-base-300;
+    }
+
+    #toc .toc-dot {
+        @apply absolute -left-1 top-2 w-2 h-2 rounded-full bg-base-300;
+    }
+
+    /* TOC container için stil */
+    .toc-container {
+        @apply sticky top-24 card bg-base-100 shadow-xs overflow-hidden;
+    }
+
+    /* TOC content için stil */
+    .toc-content {
+        @apply max-h-[calc(100vh-10rem)] overflow-y-auto py-4;
+        mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 95%, transparent 100%);
+
+        &::-webkit-scrollbar {
+            @apply w-1.5;
+        }
+
+        &::-webkit-scrollbar-track {
+            @apply bg-transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            @apply bg-base-300 rounded-full;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            @apply bg-primary/20;
+        }
+    }
+
+    /* TOC mobil görünüm */
+    @media (max-width: 1024px) {
+        .toc-container {
+            @apply static card mt-6 mb-8;
+        }
+    }
+
+    /* Sidebar wrapper stilleri */
+    .sidebar-wrapper {
+        @apply space-y-6 pb-20;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Animasyonlar */
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes pageExit {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes pageEnter {
+        0% {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Override Tailwind Typography default styles */
+    .dark .prose {
+        @apply text-base-content;
+    }
+
+    /* Override Tailwind Typography list styles */
+    .prose ul,
+    ol {
+        margin-top: 0.5rem;
+    }
+
+    .prose ol {
+        @apply list-decimal pl-5 my-4 space-y-2;
+    }
+
+    .prose ol li {
+        @apply relative pl-1;
+    }
+
+    /* Liste önünde sayı yerleşimi */
+    .prose ol li::before {
+        @apply pr-2 absolute left-0 font-bold text-base-content;
+    }
+
+    /* Liste iç içe boşluklar */
+    .prose li > * {
+        @apply mt-1 mb-1;
+    }
+
+    /* Liste içi bağlantılar */
+    .prose li a {
+        @apply text-primary hover:text-primary/80 transition-colors;
+    }
+
+    /* Dark mode text styles */
+    .dark .prose strong {
+        @apply text-base-content font-bold;
+    }
+
+    /* Light mode text styles */
+    :root:not(.dark) .prose strong {
+        @apply text-base-content font-bold;
+    }
+
+    /* Tablo stilleri */
+    .prose table {
+        @apply table-auto w-full my-8;
+    }
+
+    .prose thead {
+        @apply bg-base-200;
+    }
+
+    .prose th {
+        @apply font-bold text-base-content p-3 text-left;
+    }
+
+    .prose td {
+        @apply p-3 border-t border-base-300;
+    }
+
+    .prose tr {
+        @apply border-b border-base-300;
+    }
+
+    .prose tbody tr:hover {
+        @apply bg-base-200/50;
+    }
+
+    .prose tbody tr:hover td {
+        @apply bg-transparent;
+    }
+
+    /* Dark mode table styles */
+    .dark .prose table {
+        @apply bg-base-100;
+    }
+
+    .dark .prose thead {
+        @apply bg-base-300/30;
+    }
+
+    .dark .prose tbody tr:hover {
+        @apply bg-base-300/20;
+    }
+
+    /* Light mode table styles */
+    :root:not(.dark) .prose table {
+        @apply bg-base-100;
+    }
+
+    :root:not(.dark) .prose thead {
+        @apply bg-base-200;
+    }
+
+    :root:not(.dark) .prose tbody tr:hover {
+        @apply bg-base-200/70;
+    }
+
+    /* Responsive table */
+    @media (max-width: 640px) {
+        .prose table {
+            @apply block overflow-x-auto;
+        }
+    }
+
+    /* Bilgi kutuları */
+    .info-box {
+        @apply alert my-6;
+    }
+
+    /* Not kutusu */
+    .note {
+        @apply alert alert-info;
+    }
+
+    /* Uyarı kutusu */
+    .warning {
+        @apply alert alert-warning;
+    }
+
+    /* Hata kutusu */
+    .error {
+        @apply alert alert-error;
+    }
+
+    /* İpucu kutusu */
+    .tip {
+        @apply alert alert-success;
+    }
+
+    /* Önemli kutusu */
+    .important {
+        @apply alert bg-primary text-primary-content;
+    }
+
+    /* Öne çıkarılan makale stilleri */
+    .featured-article {
+        @apply relative rounded-box overflow-hidden transition-all duration-300;
+
+        &:hover {
+            @apply transform scale-105;
+        }
+    }
+
+    /* Alıntı stilleri */
+    .prose blockquote {
+        @apply p-4 my-4 border-l-4 border-primary/50 bg-base-200/50 italic;
+    }
+
+    .prose blockquote p {
+        @apply mb-0;
+    }
+
+    /* Yukarı git butonu ve TOC butonu için iyileştirilmiş stiller */
+    .fixed-buttons-container {
+        @apply fixed right-6 bottom-6 flex flex-col gap-2 z-40;
+    }
+
+    /* Yukarı git butonu için iconify ile iyileştirilmiş stiller */
+    #back-to-top {
+        @apply btn btn-circle btn-primary opacity-0 invisible transition-all duration-300 shadow-md;
+
+        &:hover .iconify {
+            @apply animate-bounce;
+        }
+
+        &.visible {
+            @apply opacity-100 visible scale-100;
+        }
+
+        &.hidden {
+            @apply opacity-0 invisible scale-90;
+        }
+    }
+
+    /* Mobil TOC butonu stilleri */
+    #toggle-mobile-toc {
+        @apply btn btn-circle btn-secondary shadow-md transition-transform duration-300;
+
+        &:hover .iconify {
+            @apply scale-110 transition-transform duration-200;
+        }
+
+        &.active {
+            @apply rotate-45;
+        }
+    }
+
+    /* Mobil TOC menüsü içindeki içerik stilleri */
+    #mobile-toc-drawer {
+        @apply shadow-lg border border-base-300;
+
+        /* TOC linkleri için özel stiller */
+        a {
+            @apply block py-1.5 px-2 text-sm text-base-content/80 hover:bg-base-200 hover:text-primary transition-colors rounded-xs;
+        }
+
+        /* Başlık hiyerarşisi için girinti */
+        .toc-h2 {
+            @apply pl-2;
+        }
+        .toc-h3 {
+            @apply pl-4;
+        }
+        .toc-h4 {
+            @apply pl-6;
+        }
+        .toc-h5 {
+            @apply pl-8;
+        }
+        .toc-h6 {
+            @apply pl-10;
+        }
+    }
+
+    /* Modern scrollbar stilleri */
+    ::-webkit-scrollbar {
+        @apply w-2 h-2;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-base-200 rounded-box;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-base-300 rounded-box hover:bg-primary/20;
+    }
+
+    /* Aside elementi için özel scrollbar stilleri */
+    aside::-webkit-scrollbar {
+        @apply w-1.5 h-1.5;
+    }
+
+    aside::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    aside::-webkit-scrollbar-thumb {
+        @apply bg-base-300 rounded-full;
+    }
+
+    aside::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary/20;
+    }
+
+    /* Sidebar düzeni için stil */
+    .article-sidebar {
+        @apply space-y-6;
+    }
+
+    /* Sidebar için stiller */
+    aside .card {
+        @apply relative;
+
+        &.fixed {
+            @apply shadow-none;
+        }
+    }
+
+    /* Ekstra Tailwind CSS v4 güncellemeleri */
+    .outline-none {
+        @apply outline-hidden;
+    }
+
+    .shadow-sm {
+        @apply shadow-xs;
+    }
+
+    .shadow {
+        @apply shadow-sm;
+    }
+
+    .drop-shadow-sm {
+        @apply drop-shadow-xs;
+    }
+
+    .drop-shadow {
+        @apply drop-shadow-sm;
+    }
+
+    .blur-sm {
+        @apply blur-xs;
+    }
+
+    .blur {
+        @apply blur-sm;
+    }
+
+    .backdrop-blur-sm {
+        @apply backdrop-blur-xs;
+    }
+
+    .backdrop-blur {
+        @apply backdrop-blur-sm;
+    }
+
+    .rounded-sm {
+        @apply rounded-xs;
+    }
+
+    .rounded {
+        @apply rounded-sm;
+    }
+
+    .ring {
+        @apply ring-3;
+    }
+
+    .bg-site-card {
+        @apply bg-base-100;
+    }
+
+    .bg-site-card-alt {
+        @apply bg-base-200;
+    }
+
+    .bg-site-card-95 {
+        @apply bg-base-100/95;
+    }
+
+    .bg-site-card-alt\/50 {
+        @apply bg-base-200/50;
+    }
+
+    /* Seçili metin stilleri */
+    ::selection {
+        @apply bg-primary/30 text-base-content;
+    }
+
+    ::-moz-selection {
+        @apply bg-primary/30 text-base-content;
+    }
+
+    /* Light tema için seçili metin stilleri */
+    :root:not(.dark) ::selection {
+        @apply bg-primary/20 text-gray-900;
+    }
+
+    :root:not(.dark) ::-moz-selection {
+        @apply bg-primary/20 text-gray-900;
+    }
+
+    /* Dark tema için seçili metin stilleri */
+    .dark ::selection {
+        @apply bg-primary/30 text-gray-100;
+    }
+
+    .dark ::-moz-selection {
+        @apply bg-primary/30 text-gray-100;
+    }
+
+    /* Kod blokları için mockup-code stilleri */
+    .highlight {
+        @apply my-6 relative;
+
+        /* Dosya adı etiketi sol üst köşede */
+        .filename {
+            @apply absolute top-2 left-4 text-sm font-medium text-base-content/60 z-10;
+        }
+
+        pre {
+            @apply mockup-code bg-base-200 rounded-box w-full text-base-content text-sm my-2 relative;
+
+            /* Pre elementlerinden inline border stilini kaldıralım, bu işi CSS yapsın */
+            border: none !important;
+
+            /* Dil etiketi için stil - content:none ile iptal etmek yerine konumu ayarlayalım */
+            &[data-lang]::before {
+                @apply absolute top-2 right-12 text-xs font-mono opacity-50;
+            }
+
+            code {
+                @apply block px-4 py-4 mt-6 overflow-x-auto text-left text-base-content font-mono leading-relaxed; /* mt-6 ile dosya adı için üstten boşluk */
+
+                /* İç içe span etiketleri için tutarlı görünüm */
+                span {
+                    font-family: inherit;
+                    font-size: inherit;
+
+                    /* İç içe spanların doğru yerleşmesi için */
+                    &.o,
+                    &.p {
+                        @apply text-base-content/70;
+                    }
+                }
+            }
+
+            /* Satır numarası veya başlangıç karakteri için stil - Bunları kaldırmayalım */
+            &[data-prefix]::before {
+                @apply content-[attr(data-prefix)] inline-block mr-2 text-base-content/70;
+            }
+
+            /* Satır başı simgeleri için yeterli boşluk */
+            .line-numbers {
+                @apply pl-8;
+            }
+
+            /* Kopyalama butonu stillerini güncelle - sağ üst köşeye */
+            .btn-copy {
+                @apply opacity-0 transition-opacity duration-200 absolute top-2 right-2 z-20 bg-base-300/80 backdrop-blur-xs hover:bg-base-300 p-1.5 rounded-md border border-base-200;
+
+                &:hover {
+                    @apply bg-base-300 scale-105 shadow-xs;
+                }
+
+                &.copied {
+                    @apply bg-success/20 text-success border-success/20;
+                }
+
+                /* Iconify içerisindeki ikonun boyutu */
+                iconify-icon {
+                    @apply text-lg block;
+                }
+            }
+
+            &:hover .btn-copy {
+                @apply opacity-100;
+            }
+        }
+    }
+
+    /* Kod dilleri için özel renkler */
+    .bash-code,
+    .BASH-code {
+        .ch {
+            @apply text-info;
+        } /* Shebang */
+        .nb {
+            @apply text-primary;
+        } /* Yerleşik komutlar */
+        .s2 {
+            @apply text-secondary;
+        } /* Çift tırnaklı stringler */
+        .w {
+            @apply text-base-content/80;
+        } /* Boşluklar */
+    }
+
+    .js-code,
+    .javascript-code,
+    .JS-code {
+        .kd {
+            @apply text-info;
+        } /* Anahtar kelimeler */
+        .nx {
+            @apply text-primary;
+        } /* Nesneler */
+        .s1,
+        .s2 {
+            @apply text-secondary;
+        } /* Stringler */
+        .mi {
+            @apply text-accent;
+        } /* Sayılar */
+        .o {
+            @apply text-base-content/70;
+        } /* Operatörler */
+        .c1 {
+            @apply text-base-content/50 italic;
+        } /* Yorumlar */
+    }
+
+    .py-code,
+    .python-code,
+    .PY-code {
+        .k {
+            @apply text-info;
+        } /* Anahtar kelimeler */
+        .n {
+            @apply text-primary;
+        } /* İsimler */
+        .s,
+        .s1,
+        .s2 {
+            @apply text-secondary;
+        } /* Stringler */
+        .mi {
+            @apply text-accent;
+        } /* Sayılar */
+        .o {
+            @apply text-base-content/70;
+        } /* Operatörler */
+        .c,
+        .c1 {
+            @apply text-base-content/50 italic;
+        } /* Yorumlar */
+    }
+
+    /* Kod bloğu renk şeması DaisyUI renklerine uyarlanmış */
+    code {
+        @apply text-base-content;
+
+        /* Anahtar kelimeler - k sınıfı */
+        .k,
+        .kd,
+        .kn,
+        .kp,
+        .kr,
+        .kt,
+        .key,
+        .keyword {
+            @apply text-info font-semibold;
+        }
+
+        /* Fonksiyon isimleri - nf, fm sınıfları */
+        .nf,
+        .fm,
+        .function,
+        .nx,
+        .n {
+            @apply text-success font-medium;
+        }
+
+        /* Stringler - s, s1, s2, str, string sınıfları */
+        .s,
+        .s1,
+        .s2,
+        .sa,
+        .sb,
+        .sc,
+        .dl,
+        .sd,
+        .s2,
+        .se,
+        .sh,
+        .si,
+        .sx,
+        .sr,
+        .s1,
+        .ss,
+        .string {
+            @apply text-secondary;
+        }
+
+        /* Sayılar - m, mi, mf sınıfları */
+        .m,
+        .mf,
+        .mh,
+        .mi,
+        .il,
+        .mo,
+        .mb,
+        .mx,
+        .number {
+            @apply text-accent;
+        }
+
+        /* Değişkenler ve parametreler */
+        .na,
+        .nb,
+        .bp,
+        .no,
+        .nd,
+        .ni,
+        .ne,
+        .py,
+        .nl,
+        .nn,
+        .nt,
+        .nv,
+        .vc,
+        .vg,
+        .vi,
+        .vm,
+        .variable {
+            @apply text-primary;
+        }
+
+        /* Sınıf isimleri - nc sınıfı */
+        .nc,
+        .class {
+            @apply text-warning font-medium;
+        }
+
+        /* Parantezler, operatörler - p, o, ow sınıfları */
+        .p,
+        .o,
+        .ow,
+        .operator,
+        .punctuation {
+            @apply text-base-content/70;
+        }
+
+        /* Yorumlar - c, c1, cm, cs, cd, ch, cpf, sınıfları */
+        .c,
+        .c1,
+        .cm,
+        .cs,
+        .cd,
+        .ch,
+        .cpf,
+        .comment {
+            @apply text-base-content/50 italic;
+        }
+
+        /* Dekoratörler ve özel semboller */
+        .gd,
+        .gi,
+        .gu,
+        .gt,
+        .gh,
+        .gp,
+        .gs,
+        .decorator {
+            @apply text-warning font-semibold;
+        }
+
+        /* Built-in fonksiyonlar ve metotlar */
+        .nb,
+        .bp,
+        .builtin {
+            @apply text-primary font-medium;
+        }
+
+        /* Dosya yolları ve URL'ler */
+        .nl,
+        .nn,
+        .path,
+        .url {
+            @apply text-primary/80 underline;
+        }
+
+        /* HTML/XML etiketleri */
+        .nt,
+        .tag {
+            @apply text-info;
+        }
+
+        /* HTML/XML öznitelikleri */
+        .na,
+        .attr {
+            @apply text-warning;
+        }
+
+        /* Vurgulamalar ve önemli bölümler */
+        .hll,
+        .highlight,
+        .important {
+            @apply bg-base-300/30;
+        }
+
+        /* Hata ve uyarılar */
+        .err,
+        .error {
+            @apply text-error;
+        }
+
+        /* Sabitler ve enumlar */
+        .no,
+        .constant,
+        .enum {
+            @apply text-accent font-semibold;
+        }
+
+        /* Özel sembolleştirmeler */
+        span[class^="syntax--"] {
+            @apply text-inherit;
+        }
+    }
+
+    :root {
+        --rounded-xs: 0.125rem; /* eski rounded-sm */
+        --rounded-sm: 0.25rem; /* eski rounded-default */
+        --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* eski shadow-sm */
+        --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); /* eski shadow-default */
+        --blur-xs: 4px; /* eski blur-sm */
+        --blur-sm: 8px; /* eski blur-default */
+    }
+}
+
+@layer components {
+    /* Prose özelleştirmeleri */
+    .prose {
+        @apply text-base-content;
+
+        /* 标题通用样式 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            display: inline-block;
+            width: 100%;
+            margin: 1rem 0 0.5rem;
+            font-weight: bold;
+            position: relative;
+
+            a {
+                padding: 0 0.5rem;
+                opacity: 0;
+                text-decoration: none;
+                color: var(--color-primary);
+                transition: opacity 0.2s ease-in-out;
+            }
+
+            &:hover {
+                a {
+                    opacity: 1;
+                }
+            }
+        }
+        /* 各级标题特殊样式 */
+        h1 {
+            @apply text-3xl;
+        }
+
+        h2 {
+            @apply text-2xl;
+        }
+
+        h3 {
+            @apply text-xl;
+        }
+
+        h4 {
+            @apply text-lg;
+        }
+
+        h5,
+        h6 {
+            @apply text-base;
+        }
+
+        /* 基础文本元素 */
+        @apply wrap-break-word;
+
+        p {
+            @apply mb-4 leading-relaxed text-base-content/80;
+        }
+        p:not(:first-child, :last-child) {
+            margin: 0.75rem 0;
+        }
+
+        a {
+            @apply text-primary hover:text-primary/80 transition-colors font-medium no-underline;
+        }
+
+        a:not(.card) {
+            @apply text-primary underline decoration-dashed;
+        }
+        del {
+            @apply line-through opacity-70;
+        }
+
+        strong {
+            @apply font-bold text-base-content;
+        }
+
+        em {
+            @apply italic text-base-content/90;
+        }
+
+        blockquote {
+            @apply relative pl-6 border-l-4 border-primary/30 italic text-base-content/80 my-8 py-2 bg-base-200 rounded-r-xl pr-4;
+        }
+
+        hr {
+            margin: 1.5rem 0.25rem;
+            border: 1px dashed;
+        }
+
+        img {
+            &:where(:not(inline img)) {
+                max-width: 75%;
+                max-height: 40rem;
+
+                @apply relative mx-auto mt-4 mb-6 rounded-md;
+            }
+
+            &:where(inline img) {
+                display: inline;
+                max-height: 2em;
+                vertical-align: middle;
+                margin: 0 0.25em;
+                object-fit: contain;
+                width: auto;
+                border-radius: 0.25rem;
+            }
+        }
+
+        figure {
+            @apply my-6;
+
+            figcaption {
+                @apply text-center text-sm text-base-content/60 mt-2;
+            }
+        }
+
+        /* List styles with DaisyUI compatibility */
+        ul:not(.menu) {
+            @apply list-disc pl-6 my-4 space-y-2;
+
+            li {
+                @apply text-base-content/80 relative;
+            }
+        }
+
+        ol {
+            @apply list-decimal pl-6 my-4 space-y-2;
+
+            li {
+                @apply text-base-content/80 relative;
+            }
+        }
+
+        /* Table styles */
+        table {
+            @apply table table-zebra my-6 w-full;
+
+            thead {
+                @apply bg-base-200;
+
+                th {
+                    @apply text-base-content font-bold p-3;
+                }
+            }
+
+            tbody {
+                tr {
+                    @apply hover:bg-base-200/50;
+
+                    td {
+                        @apply p-3 border-b border-base-300 text-base-content/80;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Prose h1,h2,h3,h4 stilleri */
+    .prose h1,
+    .prose h2,
+    .prose h3,
+    .prose h4 {
+        @apply text-base-content font-bold mb-4;
+    }
+
+    .prose h1 {
+        @apply text-3xl;
+    }
+
+    .prose h2 {
+        @apply text-2xl;
+    }
+
+    .prose h3 {
+        @apply text-xl;
+    }
+
+    .prose p {
+        @apply mb-4 leading-relaxed;
+    }
+
+    .prose ul {
+        @apply list-disc list-inside mb-4 space-y-2;
+    }
+
+    .prose a {
+        @apply text-primary hover:opacity-80 transition-colors;
+    }
+
+    /* List styles with DaisyUI compatibility */
+    .prose ul:not(.menu) {
+        @apply list-disc pl-6 my-4 space-y-2;
+
+        li {
+            @apply text-base-content/80;
+        }
+    }
+
+    .prose ol {
+        @apply list-decimal pl-6 my-4 space-y-2;
+
+        li {
+            @apply text-base-content/80;
+        }
+    }
+
+    /* Table styles */
+    .prose table {
+        @apply table table-zebra my-6 w-full;
+
+        thead {
+            @apply bg-base-200;
+
+            th {
+                @apply text-base-content font-bold p-3;
+            }
+        }
+
+        tbody {
+            tr {
+                @apply hover:bg-base-200/50;
+
+                td {
+                    @apply p-3 border-b border-base-300 text-base-content/80;
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+    .scrollbar-none {
+        @apply overflow-hidden;
+    }
+
+    /* Kök seviyedeki diğer seçiciler */
+    .page-card {
+        @apply transition-all duration-300;
+    }
+
+    .page-card:hover {
+        @apply transform scale-105;
+    }
+
+    #navbar {
+        @apply transition-all duration-200;
+
+        .flex-1 {
+            @apply -mx-2;
+
+            a {
+                @apply px-2 py-1 rounded-xs;
+
+                &:hover {
+                    @apply bg-base-100;
+                }
+            }
+        }
+    }
+
+    /* Responsive yazı gizleme sınıfları */
+    .responsive-sidebar {
+        @apply hidden lg:block;
+    }
+
+    /* Kod blokları için özel yardımcılar */
+    .no-border {
+        border: none !important;
+    }
+
+    .no-border * {
+        border: none !important;
+    }
+
+    /* Mobil TOC drawer stilleri */
+    .mobile-toc-drawer {
+        @apply fixed right-6 bottom-20 z-50 transition-all duration-300 transform;
+
+        &.closed {
+            @apply translate-y-full opacity-0 invisible;
+        }
+
+        &.open {
+            @apply translate-y-0 opacity-100 visible;
+        }
+    }
+
+    /* Iconify optimizasyonları */
+    .iconify {
+        @apply inline-block align-middle;
+        width: 1.25em;
+        height: 1.25em;
+        vertical-align: -0.125em;
+    }
+
+    /* Menü ikonları için iconify stilleri */
+    .menu .iconify {
+        @apply mr-2;
+        width: 1.2em;
+        height: 1.2em;
+    }
+
+    /* Büyük ikonlar */
+    .iconify-lg {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    /* DaisyUI dropdown için ek stiller */
+    .dropdown .dropdown-content {
+        @apply shadow-lg;
+    }
+
+    /* Mobil için dropdown menü animasyonu */
+    @keyframes dropdownFade {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .dropdown .dropdown-content {
+        animation: dropdownFade 0.2s ease-out;
+    }
+
+    /* Hamburger menü hover efekti */
+    .dropdown > button:hover .iconify {
+        @apply text-primary transition-colors;
+    }
+
+    /* Mobil menü öğeleri için ek stiller */
+    .dropdown .menu li > a {
+        @apply py-3;
+    }
+
+    .dropdown .menu li > a:hover {
+        @apply bg-base-200;
+    }
+}
+
+@layer animations {
+    /* Sayfa geçiş animasyonları */
+    html.is-changing .swup-transition-fade {
+        @apply transition-all duration-200;
+    }
+    html.is-animating .swup-transition-fade {
+        @apply translate-y-4 opacity-0;
+    }
+
+    html.is-changing .swup-transition-slide {
+        @apply transition-all duration-300;
+    }
+    html.is-animating .swup-transition-slide {
+        @apply -translate-x-20 opacity-0;
+    }
+
+    html.is-changing .swup-transition-parallel-slide {
+        @apply transition-all duration-500 ease-linear;
+    }
+    html.is-changing .swup-transition-parallel-slide.is-previous-container {
+        @apply -translate-x-full;
+    }
+    html.is-changing .swup-transition-parallel-slide.is-next-container {
+        @apply translate-x-full;
+    }
+
+    /* Sayfa yükleme animasyonları */
+    .onload-animation {
+        @apply opacity-0;
+        animation: fade-in-up 300ms forwards;
+    }
+
+    #header-content {
+        animation-delay: 400ms;
+    }
+
+    #main-content {
+        animation-delay: 300ms;
+    }
+
+    /* Fade-in-up animasyonu */
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(1rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Slide-in-right animasyonu */
+    @keyframes slide-in-right {
+        0% {
+            opacity: 0;
+            transform: translateX(-1rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Slide-in-left animasyonu */
+    @keyframes slide-in-left {
+        0% {
+            opacity: 0;
+            transform: translateX(1rem);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Fade-in animasyonu */
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Sayfa yükleme göstergesi */
+    body.is-loading::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0.25rem;
+        background-color: rgb(var(--color-primary) / 0.8);
+        z-index: 50;
+        animation: loading-bar 1.5s infinite ease-in-out;
+    }
+
+    @keyframes loading-bar {
+        0% {
+            width: 0;
+            opacity: 1;
+        }
+        50% {
+            width: 75%;
+            opacity: 0.8;
+        }
+        100% {
+            width: 100%;
+            opacity: 0;
+        }
+    }
+
+    /* Sayfanın tamamen yüklenmesine kadar bir blur/geçiş efekti */
+    .is-animating .blur-load {
+        @apply blur-xs transition-all duration-300;
+    }
+
+    .is-rendering .blur-load {
+        @apply blur-none;
+    }
+}
+
+/* Mastodon Yorumları - DaisyUI uyumlu stiller */
+.mastodon-comment {
+    @apply bg-base-100 rounded-box border border-base-300 p-4 mb-6 flex flex-col text-base-content w-full;
+}
+
+.mastodon-comment p {
+    @apply mb-0;
+}
+
+.mastodon-comment .author {
+    @apply p-0 flex flex-wrap items-start gap-2;
+}
+
+.mastodon-comment .author a {
+    @apply no-underline;
+}
+
+.mastodon-comment .author .avatar img {
+    @apply mr-4 min-w-[60px] w-[60px] h-[60px] rounded-lg;
+}
+
+.mastodon-comment .author .details {
+    @apply flex flex-col flex-1 min-w-[200px];
+}
+
+.mastodon-comment .author .details .name {
+    @apply font-bold;
+}
+
+.mastodon-comment .author .details .user {
+    @apply text-base-content/70 text-sm break-all;
+}
+
+.mastodon-comment .author .date {
+    @apply text-xs text-base-content/60 mt-1;
+}
+
+.mastodon-comment .content {
+    @apply my-4 mx-0 md:mx-5 break-words;
+}
+
+.mastodon-comment .attachments {
+    @apply mx-0 md:mx-3 max-w-full overflow-hidden;
+}
+
+.mastodon-comment .attachments > * {
+    @apply mx-0 md:mx-3;
+}
+
+.mastodon-comment .attachments img {
+    @apply max-w-full h-auto rounded-md;
+}
+
+.mastodon-comment .content p:first-child {
+    @apply mt-0 mb-0;
+}
+
+#mastodon-stats {
+    @apply text-center flex justify-center gap-4 mb-6;
+}
+
+.mastodon-comment .status,
+#mastodon-stats {
+    @apply flex flex-row items-center justify-start gap-2 mt-4;
+}
+
+.mastodon-comment .status > div,
+#mastodon-stats > div {
+    @apply inline-block mr-3;
+}
+
+.mastodon-comment .status a,
+#mastodon-stats a {
+    @apply flex items-center gap-1 py-1 px-3 rounded-md text-sm no-underline transition-colors;
+}
+
+.mastodon-comment .status .replies a:empty::before,
+#mastodon-stats .replies a:empty::before {
+    content: "";
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.mastodon-comment .status .reblogs a:empty::before,
+#mastodon-stats .reblogs a:empty::before {
+    content: "";
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.mastodon-comment .status .favourites a:empty::before,
+#mastodon-stats .favourites a:empty::before {
+    content: "";
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.mastodon-comment .status .replies.active a::before,
+#mastodon-stats .replies.active a::before {
+    @apply text-primary;
+}
+
+.mastodon-comment .status .reblogs.active a::before,
+#mastodon-stats .reblogs.active a::before {
+    @apply text-secondary;
+}
+
+.mastodon-comment .status .favourites.active a::before,
+#mastodon-stats .favourites.active a::before {
+    @apply text-warning;
+}
+
+.mastodon-comment .status .replies.active a,
+#mastodon-stats .replies.active a {
+    @apply bg-primary/10 text-primary;
+}
+
+.mastodon-comment .status .reblogs.active a,
+#mastodon-stats .reblogs.active a {
+    @apply bg-secondary/10 text-secondary;
+}
+
+.mastodon-comment .status .favourites.active a,
+#mastodon-stats .favourites.active a {
+    @apply bg-warning/10 text-warning;
+}
+
+/* Pasif istatistikler için */
+.mastodon-comment .status div:not(.active) a,
+#mastodon-stats div:not(.active) a {
+    @apply bg-base-200 text-base-content/70 hover:bg-base-300;
+}
+
+#mastodon-comments-list {
+    @apply mx-auto w-full max-w-full;
+}
+
+mastodon-comments {
+    @apply block w-full max-w-full;
+}
+
+/* İç içe yorumlar için girintileme - depth ile kontrol edilecek */
+.mastodon-comment[data-depth="1"] {
+    @apply ml-0 md:ml-6;
+}
+
+.mastodon-comment[data-depth="2"] {
+    @apply ml-0 md:ml-12;
+}
+
+.mastodon-comment[data-depth="3"] {
+    @apply ml-0 md:ml-18;
+}
+
+.mastodon-comment[data-depth="4"] {
+    @apply ml-0 md:ml-24;
+}
+
+.mastodon-comment[data-depth="5"] {
+    @apply ml-0 md:ml-28;
+}
+
+/* Swup İlerleme Çubuğu (Progress Bar) */
+.swup-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: rgb(var(--color-primary) / 1);
+    z-index: 9999;
+    transition: width 0.2s, opacity 0.4s;
+    opacity: 0;
+}
+.swup-progress-bar.active {
+    opacity: 1;
+}

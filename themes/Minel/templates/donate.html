@@ -5,171 +5,116 @@
     content="Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz." />
 <link rel="canonical" href="{{ SITEURL }}/bagis/" />
 {% endblock %} {% block content %}
-<div class="container">
-    <article class="article donate-page">
+<div class="container mx-auto px-4">
+    <article class="card bg-base-100 rounded-xl shadow-xs">
         <!-- Hero Bölümü -->
-        <div class="hero-section">
-            <div class="donate-icon-container">
-                <div class="donate-icon-pulse"></div>
-                <div class="donate-icon-wrapper">
-                    <svg class="donate-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
+        <div class="p-8 text-center">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+                <div class="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
+                <div
+                    class="relative w-full h-full flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <span class="iconify" data-icon="tabler:heart" width="32" height="32"></span>
                 </div>
             </div>
-            <h1 class="page-title">Bağış Yap</h1>
-            <div class="donate-intro">
-                <p class="intro-text">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Bağış Yap</h1>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-xl text-base-content/70 mb-4">
                     Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki
                     yöntemlerle bağış yapabilirsiniz.
                 </p>
-                <div class="feature-tags">
+                <div class="flex flex-wrap justify-center gap-2 mt-4">
                     {% for feature in ["✍️ İçerik", "🎥 Eğitim", "💻 Açık Kaynak", "🚀 Topluluk"] %}
-                    <div class="feature-tag">{{ feature }}</div>
+                    <span class="badge badge-primary">{{ feature }}</span>
                     {% endfor %}
                 </div>
             </div>
         </div>
 
         <!-- İçerik Bölümü -->
-        <div class="article-content donate-content">
-            <div class="donate-card">
-                <div class="donate-layout">
+        <div class="p-6">
+            <div class="card bg-base-200 rounded-xl">
+                <div class="grid md:grid-cols-2 gap-8 p-6">
                     <!-- Neden Bağış? -->
-                    <div class="why-donate-section">
-                        <div class="section-header">
-                            <div class="section-icon-container">
-                                <svg
-                                    class="section-icon"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                                </svg>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                <span class="iconify" data-icon="tabler:bulb" width="24" height="24"></span>
                             </div>
-                            <h2 class="section-title">Neden Bağış?</h2>
+                            <h2 class="text-2xl font-bold text-base-content">Neden Bağış?</h2>
                         </div>
-                        <div class="benefits-list">
-                            <div class="benefit-item">
-                                <svg
-                                    class="benefit-icon"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p>Daha fazla içerik üretebiliyorum</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="iconify text-success"
+                                    data-icon="tabler:check"
+                                    width="20"
+                                    height="20"></span>
+                                <p class="text-base-content/80">Daha fazla içerik üretebiliyorum</p>
                             </div>
-                            <div class="benefit-item">
-                                <svg
-                                    class="benefit-icon"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p>Daha kaliteli eğitim videoları hazırlayabiliyorum</p>
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="iconify text-success"
+                                    data-icon="tabler:check"
+                                    width="20"
+                                    height="20"></span>
+                                <p class="text-base-content/80">Daha kaliteli eğitim videoları hazırlayabiliyorum</p>
                             </div>
-                            <div class="benefit-item">
-                                <svg
-                                    class="benefit-icon"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                <p>Açık kaynak projelere daha fazla zaman ayırabiliyorum</p>
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="iconify text-success"
+                                    data-icon="tabler:check"
+                                    width="20"
+                                    height="20"></span>
+                                <p class="text-base-content/80">
+                                    Açık kaynak projelere daha fazla zaman ayırabiliyorum
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Bağış Seçenekleri -->
-                    <div class="donation-options-section">
-                        <div class="section-header">
-                            <div class="section-icon-container">
-                                <svg
-                                    class="section-icon"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                    aria-hidden="true">
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                <span class="iconify" data-icon="tabler:wallet" width="24" height="24"></span>
                             </div>
-                            <h2 class="section-title">Bağış Seçenekleri</h2>
+                            <h2 class="text-2xl font-bold text-base-content">Bağış Seçenekleri</h2>
                         </div>
 
                         <!-- Papara ve GitHub Sponsors -->
-                        <div class="payment-options">
+                        <div class="space-y-4">
                             <!-- Papara -->
                             {% if SOCIAL.papara %}
                             <a
                                 href="https://www.papara.com/donate/{{ SOCIAL.papara }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="payment-option papara">
-                                <div class="option-header">
-                                    <div class="option-icon papara-icon">
-                                        <svg
-                                            class="option-svg"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                                        </svg>
+                                class="card bg-base-100 hover:shadow-md transition-all duration-200 overflow-hidden">
+                                <div class="card-body p-4 flex flex-row items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 flex items-center justify-center rounded-lg bg-purple-100 text-purple-600">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:credit-card"
+                                                width="20"
+                                                height="20"></span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-base-content">Papara</h3>
+                                            <p class="text-sm text-base-content/70">Hızlı ve Güvenli Bağış</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 class="option-title">Papara</h3>
-                                        <p class="option-subtitle">Hızlı ve Güvenli Bağış</p>
+                                    <div class="flex items-center text-primary font-medium">
+                                        <span>Bağış Yap</span>
+                                        <span
+                                            class="iconify ml-2"
+                                            data-icon="tabler:chevron-right"
+                                            width="20"
+                                            height="20"></span>
                                     </div>
-                                </div>
-                                <div class="option-action papara-action">
-                                    <span>Bağış Yap</span>
-                                    <svg
-                                        class="action-arrow"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true">
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M9 5l7 7-7 7" />
-                                    </svg>
                                 </div>
                             </a>
                             {% endif %}
@@ -180,38 +125,30 @@
                                 href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="payment-option github">
-                                <div class="option-header">
-                                    <div class="option-icon github-icon">
-                                        <svg
-                                            class="option-svg"
-                                            fill="currentColor"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true">
-                                            <path
-                                                fill-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                                        </svg>
+                                class="card bg-base-100 hover:shadow-md transition-all duration-200 overflow-hidden">
+                                <div class="card-body p-4 flex flex-row items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100 text-gray-800">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:brand-github"
+                                                width="20"
+                                                height="20"></span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-base-content">GitHub Sponsors</h3>
+                                            <p class="text-sm text-base-content/70">Aylık Destek</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 class="option-title">GitHub Sponsors</h3>
-                                        <p class="option-subtitle">Aylık Destek</p>
+                                    <div class="flex items-center text-primary font-medium">
+                                        <span>Sponsor Ol</span>
+                                        <span
+                                            class="iconify ml-2"
+                                            data-icon="tabler:chevron-right"
+                                            width="20"
+                                            height="20"></span>
                                     </div>
-                                </div>
-                                <div class="option-action github-action">
-                                    <span>Sponsor Ol</span>
-                                    <svg
-                                        class="action-arrow"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true">
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M9 5l7 7-7 7" />
-                                    </svg>
                                 </div>
                             </a>
                             {% endif %}
@@ -219,91 +156,61 @@
 
                         <!-- Kripto Adresler -->
                         {% if DONATE_CRYPTO %}
-                        <div class="crypto-options">
+                        <div class="space-y-4 mt-6">
                             {% for coin in DONATE_CRYPTO %}
-                            <div class="crypto-option">
-                                <div class="crypto-header">
-                                    <div class="crypto-icon-container">
-                                        <svg
-                                            class="crypto-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
+                            <div class="card bg-base-100 overflow-hidden">
+                                <div class="card-body p-4 space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg bg-accent/10 text-accent">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:currency-bitcoin"
+                                                width="18"
+                                                height="18"></span>
+                                        </div>
+                                        <div class="font-medium text-base-content">{{ coin.name }}</div>
                                     </div>
-                                    <div class="crypto-name">{{ coin.name }}</div>
-                                </div>
-                                <div class="crypto-address-container">
-                                    <div class="crypto-address">{{ coin.address }}</div>
-                                    <button
-                                        onclick="navigator.clipboard.writeText('{{ coin.address }}')"
-                                        class="crypto-copy-button"
-                                        aria-label="{{ coin.name }} adresini kopyala">
-                                        <svg
-                                            class="copy-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                                        </svg>
-                                    </button>
+                                    <div class="flex items-center justify-between bg-base-200 rounded-lg p-2">
+                                        <div class="text-sm text-base-content/70 truncate pr-2">{{ coin.address }}</div>
+                                        <button
+                                            onclick="navigator.clipboard.writeText('{{ coin.address }}')"
+                                            class="btn btn-sm btn-ghost"
+                                            aria-label="{{ coin.name }} adresini kopyala">
+                                            <span class="iconify" data-icon="tabler:copy" width="18" height="18"></span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             {% endfor %}
                         </div>
                         {% else %}
-                        <div class="crypto-options">
+                        <div class="space-y-4 mt-6">
                             {% for coin in [{'name': 'Bitcoin (BTC)', 'address':
                             'bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}, {'name': 'Ethereum (ETH)', 'address':
                             '0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}] %}
-                            <div class="crypto-option">
-                                <div class="crypto-header">
-                                    <div class="crypto-icon-container">
-                                        <svg
-                                            class="crypto-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
+                            <div class="card bg-base-100 overflow-hidden">
+                                <div class="card-body p-4 space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-lg bg-accent/10 text-accent">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:currency-bitcoin"
+                                                width="18"
+                                                height="18"></span>
+                                        </div>
+                                        <div class="font-medium text-base-content">{{ coin.name }}</div>
                                     </div>
-                                    <div class="crypto-name">{{ coin.name }}</div>
-                                </div>
-                                <div class="crypto-address-container">
-                                    <div class="crypto-address">{{ coin.address }}</div>
-                                    <button
-                                        onclick="navigator.clipboard.writeText('{{ coin.address }}')"
-                                        class="crypto-copy-button"
-                                        aria-label="{{ coin.name }} adresini kopyala">
-                                        <svg
-                                            class="copy-icon"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                            aria-hidden="true">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                                        </svg>
-                                    </button>
+                                    <div class="flex items-center justify-between bg-base-200 rounded-lg p-2">
+                                        <div class="text-sm text-base-content/70 truncate pr-2">{{ coin.address }}</div>
+                                        <button
+                                            onclick="navigator.clipboard.writeText('{{ coin.address }}')"
+                                            class="btn btn-sm btn-ghost"
+                                            aria-label="{{ coin.name }} adresini kopyala">
+                                            <span class="iconify" data-icon="tabler:copy" width="18" height="18"></span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             {% endfor %}
@@ -318,14 +225,14 @@
 
 <script>
     // Kopyalama butonlarının işlevselliği
-    document.querySelectorAll(".crypto-copy-button").forEach((button) => {
+    document.querySelectorAll(".btn-ghost").forEach((button) => {
         button.addEventListener("click", function () {
             // Kopyalandı sınıfını ekle
-            this.classList.add("copied");
+            this.classList.add("btn-success");
 
             // 2 saniye sonra kopyalandı sınıfını kaldır
             setTimeout(() => {
-                this.classList.remove("copied");
+                this.classList.remove("btn-success");
             }, 2000);
         });
     });

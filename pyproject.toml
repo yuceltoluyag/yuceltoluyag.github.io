@@ -1,3 +1,15 @@
+[tool.poetry]
+name = "yuceltoluyag-dev"
+version = "0.0.1"
+description = "Yücel Toluyağ'ın kişisel blog sitesi"
+authors = ["Your Name <youremail@example.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/yourname/yuceltoluyag.github.io"
+repository = "https://github.com/yourname/yuceltoluyag.github.io"
+documentation = "https://github.com/yourname/yuceltoluyag.github.io"
+package-mode = false
+
 [build-system]
 requires = ["uv>=0.6.16", "setuptools>=68.0.0"]
 build-backend = "setuptools.build_meta"
@@ -31,9 +43,9 @@ py-modules = []
         "uv>=0.6.16",
     ]
     description = "Yücel Toluyağ'ın kişisel blog sitesi - Yazılım, teknoloji ve kişisel deneyimler üzerine içerikler"
-    name = "yuceltoluyag.dev"
+    name = "yuceltoluyag.github.io"
     readme = "README.md"
-    requires-python = ">=3.11"
+    requires-python = ">=3.9,<4.0"
     version = "0.0.1"
 
 [project.optional-dependencies]

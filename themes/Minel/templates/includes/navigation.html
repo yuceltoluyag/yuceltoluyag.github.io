@@ -1,40 +1,117 @@
 <!-- Site logosu -->
-<div class="site-logo">
-    <a href="{{ SITEURL }}/" class="logo-link">
-        <img src="{{ SITEURL }}/images/logo-lg.webp" alt="{{ SITENAME }}" class="logo-image" />
+<div class="flex-shrink-0 mr-4">
+    <a href="{{ SITEURL }}/" class="flex items-center">
+        <img src="{{ SITEURL }}/images/logo-lg.webp" alt="{{ SITENAME }}" class="h-10" />
     </a>
 </div>
 
-<ul class="menu">
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
     <!-- Ana Sayfa -->
-    <li class="menu-item">
-        <a href="{{ SITEURL }}/" class="menu-link" aria-label="Ana Sayfa">
-            <iconify-icon icon="tabler:home" class="menu-icon" width="20" height="20"></iconify-icon>
-            <span class="menu-text">Ana Sayfa</span>
+    <li>
+        <a
+            href="{{ SITEURL }}/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
         </a>
     </li>
 
     <!-- Hakkımda -->
-    <li class="menu-item">
-        <a href="{{ SITEURL }}/hakkimda" class="menu-link" aria-label="Hakkımda">
-            <iconify-icon icon="tabler:user" class="menu-icon" width="20" height="20"></iconify-icon>
-            <span class="menu-text">Hakkımda</span>
+    <li>
+        <a
+            href="{{ SITEURL }}/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
         </a>
     </li>
 
     <!-- Bağış -->
-    <li class="menu-item">
-        <a href="{{ SITEURL }}/bagis" class="menu-link" aria-label="Bağış">
-            <iconify-icon icon="tabler:heart" class="menu-icon" width="20" height="20"></iconify-icon>
-            <span class="menu-text">Bağış</span>
+    <li>
+        <a
+            href="{{ SITEURL }}/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
         </a>
     </li>
 
     <!-- Arama butonu -->
-    <li class="menu-item search-item">
-        <a href="#" class="menu-link search-link search-trigger" aria-label="Ara">
-            <iconify-icon icon="tabler:search" class="menu-icon" width="20" height="20"></iconify-icon>
-            <span class="menu-text">Ara</span>
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
         </a>
     </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input type="checkbox" class="theme-controller" value="autumn" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
 </ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label class="swap swap-rotate">
+        <input type="checkbox" class="theme-controller" value="autumn" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="{{ SITEURL }}/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITEURL }}/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="{{ SITEURL }}/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

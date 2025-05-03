@@ -1,54 +1,39 @@
-<div id="search-modal" class="search-modal">
-    <div class="search-modal-content">
-        <button class="search-modal-close" aria-label="Aramayı kapat">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
 
-        <div class="search-header">
-            <h2>Site Araması</h2>
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
 
-            <form id="search-form" class="search-form">
-                <div class="search-input-container">
+            <form id="search-form" class="w-full">
+                <div class="relative">
                     <input
                         type="text"
                         id="search-input"
-                        class="search-input"
+                        class="input input-bordered w-full pr-12"
                         placeholder="Makale, etiket veya kategori ara..."
                         autocomplete="off"
                         aria-label="Arama" />
-                    <button id="search-button" class="search-button" type="submit" aria-label="Ara">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
                     </button>
                 </div>
             </form>
         </div>
 
-        <div id="search-results" class="search-results">
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
             <!-- Arama sonuçları burada gösterilecek -->
         </div>
     </div>
-</div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>

@@ -91,6 +91,12 @@ DELETE_OUTPUT_DIRECTORY = True
 DISABLE_URL_HASH = True
 BROWSER_COLOR = "#333333"
 PYGMENTS_STYLE = "dracula"
+PYGMENTS_RST_OPTIONS = {
+    "linenos": "table",  # Satır numaralarını tablo olarak göster
+    "anchorlinenos": True,  # Satır numaralarına bağlantı ekle
+    "cssclass": "highlight",  # Kullanılacak CSS sınıfı
+    "wrapcode": True,  # Kod uzunsa wrap yap
+}
 ROBOTS = "index, follow"
 # Extra Settings for the theme
 DISPLAY_PAGES_ON_MENU = True
@@ -246,7 +252,18 @@ SOCIAL = {
     "kick": "babapy",
     "papara": "yuceltoluyag",
     "github_sponsor": "yuceltoluyag",
+    "bluesky": "yuceltoluyag.bsky.social",
 }
+
+# Mastodon yorumları için yapılandırma
+MASTODON_CONFIG = {
+    "host": "mastodon.social",
+    "user": "yuceltoluyag",
+    "default_enabled": True,  # Varsayılan olarak yorumları etkinleştir
+}
+
+# Admin araçları ayarları
+ADMIN_TOOLS = False  # Sadece geliştirme sırasında True yapılmalı
 
 NAVBAR_LINKS = [
     {"name": "Ana Sayfa", "url": "/", "target": "_self"},
