@@ -1,149 +1,299 @@
 {% extends "base.html" %} {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %} {% block head %} {%
 endblock %} {% block content %}
-<div class="container article-container">
-    <div class="article-grid">
-        <!-- Sidebar bileşenleri - mobil ve tablet ekranlarda gizlenecek -->
-        <aside class="article-sidebar">
-            {% if article.toc %}
-            <div class="toc-container sidebar-widget">
-                <div class="toc-header">
-                    <h3 class="toc-title">
-                        <iconify-icon icon="tabler:list" class="toc-title-icon"></iconify-icon>
-                        İçindekiler
-                    </h3>
-                </div>
-                <div class="toc-content">{{ article.toc }}</div>
-            </div>
-            {% endif %}
-
-            <div class="sidebar-widget recent-posts">
-                <h3 class="widget-title">
-                    <iconify-icon icon="tabler:article"></iconify-icon>
-                    Son Yazılar
-                </h3>
-                <div class="recent-posts-list">
-                    {% for article in articles[:5] %}
-                    <div class="recent-post-item">
-                        <a href="{{ SITEURL }}/{{ article.url }}" class="recent-post-link">
-                            <h4 class="post-title">{{ article.title }}</h4>
-                        </a>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/mastodon-comments.js" defer></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    {% if article.toc %}
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-lg font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto">{{ article.toc }}</div>
+                            </div>
+                        </div>
                     </div>
-                    {% endfor %}
-                </div>
-            </div>
+                    {% endif %}
 
-            {% if article.category %}
-            <div class="sidebar-widget related-posts">
-                <h3 class="widget-title">
-                    <iconify-icon icon="tabler:copy"></iconify-icon>
-                    Benzer Yazılar
-                </h3>
-                <div class="related-posts-list">
-                    {% for related in articles if related.category == article.category and related != article %} {% if
-                    loop.index <= 4 %}
-                    <div class="related-post-item">
-                        <a href="{{ SITEURL }}/{{ related.url }}" class="related-post-link">
-                            <h4 class="post-title">{{ related.title }}</h4>
-                        </a>
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-lg font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                {% for article in articles[:5] %}
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a href="{{ SITEURL }}/{{ article.url }}" class="link link-hover text-primary">
+                                        <h4 class="text-md">{{ article.title }}</h4>
+                                    </a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
-                    {% endif %} {% endfor %}
+
+                    {% if article.category %}
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-lg font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                {% for related in articles if related.category == article.category and related !=
+                                article %} {% if loop.index <= 4 %}
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a href="{{ SITEURL }}/{{ related.url }}" class="link link-hover text-primary">
+                                        <h4 class="text-md">{{ related.title }}</h4>
+                                    </a>
+                                </div>
+                                {% endif %} {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
-            {% endif %}
         </aside>
 
-        <div class="article-main">
-            <article class="article">
-                <header class="article-header">
-                    <h1 class="article-title">{{ article.title }}</h1>
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">{{ article.title }}</h1>
 
-                    <div class="article-meta">
-                        <div class="meta-item meta-date">
-                            <iconify-icon icon="tabler:calendar"></iconify-icon>
-                            <time datetime="{{ article.date.isoformat() }}">
-                                {{ article.date|strftime('%d %B %Y') }}
-                            </time>
-                        </div>
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="{{ article.date.isoformat() }}" class="ml-1">
+                                    {{ article.date|strftime('%d %B %Y') }}
+                                </time>
+                            </div>
 
-                        {% if article.modified %}
-                        <div class="meta-item meta-modified">
-                            <iconify-icon icon="tabler:history"></iconify-icon>
-                            <time datetime="{{ article.modified.isoformat() }}">
-                                {{ article.modified|strftime('%d %B %Y') }}
-                            </time>
-                        </div>
-                        {% endif %} {% if article.category %}
-                        <div class="meta-item meta-category">
-                            <iconify-icon icon="tabler:folder"></iconify-icon>
-                            <a href="{{ SITEURL }}/kategori/{{ article.category.slug }}/">{{ article.category }}</a>
-                        </div>
-                        {% endif %} {% if article.series %}
-                        <div class="meta-item meta-series">
-                            <iconify-icon icon="tabler:list-numbers"></iconify-icon>
-                            <span>
-                                {{ article.series.name }} ({{ article.series.index }}/{{ article.series.all|length }})
-                            </span>
-                        </div>
-                        {% endif %} {% if article.statistics is defined %}
-                        <div class="meta-item meta-wordcount">
-                            <iconify-icon icon="tabler:text-recognition"></iconify-icon>
-                            <span>{{ article.statistics.wc }} kelime</span>
-                        </div>
+                            {% if article.modified %}
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:history"></span>
+                                <time datetime="{{ article.modified.isoformat() }}" class="ml-1">
+                                    {{ article.modified|strftime('%d %B %Y') }}
+                                </time>
+                            </div>
+                            {% endif %} {% if article.category %}
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
+                                    class="link link-hover ml-1">
+                                    {{ article.category }}
+                                </a>
+                            </div>
+                            {% endif %} {% if article.series %}
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:list-numbers"></span>
+                                <span class="ml-1">
+                                    {{ article.series.name }} ({{ article.series.index }}/{{ article.series.all|length
+                                    }})
+                                </span>
+                            </div>
+                            {% endif %} {% if article.statistics is defined %}
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">{{ article.statistics.wc }} kelime</span>
+                            </div>
 
-                        <div class="meta-item meta-readtime">
-                            <iconify-icon icon="tabler:clock"></iconify-icon>
-                            <span>{{ article.statistics.read_mins }} dakika</span>
-                        </div>
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">{{ article.statistics.read_mins }} dakika</span>
+                            </div>
 
-                        <div class="meta-item meta-difficulty">
-                            <iconify-icon icon="tabler:chart-bar"></iconify-icon>
-                            <span>Seviye {{ article.statistics.fk }}</span>
-                        </div>
-                        {% endif %} {% if ARTICLE_EDIT_LINK %}
-                        <div class="meta-item meta-edit">
-                            <iconify-icon icon="tabler:edit"></iconify-icon>
-                            <a href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}" target="_blank" rel="noopener">
-                                Düzenle
-                            </a>
-                        </div>
-                        {% endif %}
-                    </div>
-                </header>
-
-                {% if article.series %}
-                <div class="article-series">
-                    <h2 class="series-title">{{ article.series.name }} Serisi</h2>
-                    <ol class="series-list">
-                        {% for article_in_series in article.series.all %}
-                        <li class="series-item {% if article_in_series == article %}series-item-current{% endif %}">
-                            {% if article_in_series == article %}
-                            <span class="series-current-title">{{ article_in_series.title }}</span>
-                            {% else %}
-                            <a href="{{ SITEURL }}/{{ article_in_series.url }}" class="series-link">
-                                {{ article_in_series.title }}
-                            </a>
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye {{ article.statistics.fk }}</span>
+                            </div>
+                            {% endif %} {% if ARTICLE_EDIT_LINK %}
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
                             {% endif %}
-                        </li>
-                        {% endfor %}
-                    </ol>
-                </div>
-                {% endif %}
+                        </div>
+                    </header>
 
-                <div class="article-content">{{ article.content }}</div>
+                    {% if article.series %}
+                    <div class="bg-base-200 p-4 rounded-xs mb-6">
+                        <h2 class="text-xl font-bold mb-2 text-base-content">{{ article.series.name }} Serisi</h2>
+                        <ol class="space-y-2 pl-5 list-decimal">
+                            {% for article_in_series in article.series.all %}
+                            <li class="{% if article_in_series == article %}font-bold text-primary{% endif %}">
+                                {% if article_in_series == article %}
+                                <span>{{ article_in_series.title }}</span>
+                                {% else %}
+                                <a
+                                    href="{{ SITEURL }}/{{ article_in_series.url }}"
+                                    class="link link-hover text-primary">
+                                    {{ article_in_series.title }}
+                                </a>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                    {% endif %}
 
-                <!-- Webmentions -->
-                <div class="webmentions-container">
-                    <div class="webmentions-content"></div>
+                    <div class="prose prose-lg dark:prose-invert max-w-none article-content">{{ article.content }}</div>
+
+                    <!-- Webmentions -->
+                    <div class="webmentions-container">
+                        <div class="webmentions-content"></div>
+                    </div>
+
+                    {% if article.mastodon_link or article.mastodon_id %} {% if article.mastodon_link %} {% set
+                    mastodon_parts = article.mastodon_link.split('/') %} {% set toot_id = mastodon_parts[-1] %} {% set
+                    user = mastodon_parts[-2]|replace('@', '') %} {% set host = mastodon_parts[-3]|replace('https://',
+                    '')|replace('http://', '') %} {% elif article.mastodon_id %} {% set toot_id = article.mastodon_id %}
+                    {% set host = MASTODON_CONFIG.host|default('mastodon.social') %} {% set user =
+                    MASTODON_CONFIG.user|default('yuceltoluyag') %} {% endif %}
+
+                    <div class="mastodon-comments-section mt-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-2xl font-bold flex items-center">
+                                <span class="iconify mr-2" data-icon="tabler:message-circle"></span>
+                                Fediverse Yorumları
+                            </h2>
+                            <a
+                                href="https://{{ host }}/@{{ user }}/{{ toot_id }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-sm btn-outline btn-primary">
+                                <span class="iconify mr-1" data-icon="tabler:external-link"></span>
+                                Mastodon'da Görüntüle
+                            </a>
+                        </div>
+                        <mastodon-comments
+                            host="{{ host }}"
+                            user="{{ user }}"
+                            tootId="{{ toot_id }}"></mastodon-comments>
+                    </div>
+                    {% endif %}
                 </div>
             </article>
         </div>
     </div>
 </div>
+
+<!-- Mobil için TOC açılır menüsü -->
+{% if article.toc %}
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]">{{ article.toc }}</div>
+</div>
+{% endif %}
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    {% if article.toc %}
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+    {% endif %}
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
 {% endblock %} {% block scripts %}
+<!-- TOC JS -->
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-toc.js" defer></script>
+
 <!-- Webmention JS -->
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention.min.js" defer></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention.js" defer></script>
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+    });
+</script>
 
 {% if DEVELOPMENT_MODE %}
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention-test.min.js" defer></script>
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention-test.js" defer></script>
+{% endif %}
 
-{% endif %} {% endblock %}
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+{% if DEVELOPMENT_MODE or ADMIN_TOOLS %} {% include "includes/admin-panel.html" %} {% endif %} {% endblock %}

@@ -4,33 +4,28 @@
     content="Bu sayfada {{ SITENAME }} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz." />
 <link rel="canonical" href="{{ SITEURL }}/kategoriler.html" />
 {% endblock seo %} {% block content %}
-<div class="container">
-    <div class="categories-header">
-        <h1 class="categories-title">Kategoriler</h1>
-        <p class="categories-description">
+<div class="container mx-auto px-4">
+    <div class="text-center mb-12 py-8">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Kategoriler</h1>
+        <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
             Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara
             ulaşabilirsiniz.
         </p>
     </div>
 
-    <div class="categories-grid">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {% for category, articles in categories|sort %}
         <a
             href="{{ SITEURL }}/kategori/{{ category.slug }}/"
-            class="category-card"
+            class="card bg-base-100 hover:shadow-lg transition-shadow p-5 flex items-center gap-4 border border-base-200 group"
             aria-label="{{ category }} kategorisine git">
-            <div class="category-icon">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-                </svg>
+            <div
+                class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                <span class="iconify" data-icon="tabler:tag" width="24" height="24"></span>
             </div>
-            <div class="category-details">
-                <h2 class="category-name">{{ category }}</h2>
-                <span class="category-count">{{ articles|length }} yazı</span>
+            <div class="flex-1">
+                <h2 class="text-lg font-semibold group-hover:text-primary transition-colors">{{ category }}</h2>
+                <span class="text-sm text-base-content/70">{{ articles|length }} yazı</span>
             </div>
         </a>
         {% endfor %}

@@ -11,46 +11,65 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/etiket/{{ tag.slug }}/" />
 {% endblock seo %} {% block content %}
-<div class="container">
-    <div class="tag-header">
-        <h1 class="tag-title">#{{ tag }} Etiketli Yazılar</h1>
-        <p class="tag-description">Bu etikete sahip {{ articles|length }} yazı bulundu</p>
+<div class="container mx-auto px-4">
+    <div class="flex items-center gap-4 mb-12 bg-base-100 p-6 rounded-xl shadow-xs">
+        <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <span class="iconify" data-icon="tabler:hash" width="28" height="28"></span>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2 text-base-content">#{{ tag }} Etiketli Yazılar</h1>
+            <p class="text-base-content/70">Bu etikete sahip {{ articles|length }} yazı bulundu</p>
+        </div>
     </div>
 
-    <div class="tag-article-list">
+    <div class="space-y-6">
         {% for article in articles_page.object_list %}
-        <article class="tag-article-item">
-            <h2 class="tag-article-title">
-                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-            </h2>
+        <article class="card bg-base-100 shadow-xs hover:shadow-lg transition-all duration-200">
+            <div class="card-body p-6">
+                <h2 class="text-xl font-bold mb-2">
+                    <a href="{{ SITEURL }}/{{ article.url }}" class="hover:text-primary transition-colors">
+                        {{ article.title }}
+                    </a>
+                </h2>
 
-            <div class="tag-article-meta">
-                <time datetime="{{ article.date.isoformat() }}" class="tag-article-date">
-                    {{ article.locale_date }}
-                </time>
-                {% if article.category %}
-                <a href="{{ SITEURL }}/kategori/{{ article.category.slug }}/" class="tag-article-category">
-                    {{ article.category }}
-                </a>
-                {% endif %}
+                <div class="flex flex-wrap gap-3 mb-3 text-sm text-base-content/60">
+                    <time datetime="{{ article.date.isoformat() }}" class="flex items-center gap-1">
+                        <span class="iconify" data-icon="tabler:calendar" width="16" height="16"></span>
+                        {{ article.locale_date }}
+                    </time>
+                    {% if article.category %}
+                    <a
+                        href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
+                        class="flex items-center gap-1 hover:text-primary">
+                        <span class="iconify" data-icon="tabler:folder" width="16" height="16"></span>
+                        {{ article.category }}
+                    </a>
+                    {% endif %}
+                </div>
+
+                <p class="text-base-content/80">{{ article.summary }}</p>
             </div>
-
-            <p class="tag-article-summary">{{ article.summary }}</p>
         </article>
         {% endfor %}
     </div>
 
     {% if articles_page.has_other_pages() %}
-    <div class="tag-pagination">
+    <div class="join flex justify-center my-8">
         {% if articles_page.has_previous() %}
-        <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="pagination-previous" aria-label="Önceki sayfa">
-            <span aria-hidden="true">&larr;</span>
+        <a
+            href="{{ SITEURL }}/{{ articles_previous_page.url }}"
+            class="btn btn-outline join-item"
+            aria-label="Önceki sayfa">
+            <span class="iconify" data-icon="tabler:chevron-left" width="20" height="20"></span>
             Önceki
         </a>
         {% endif %} {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="pagination-next" aria-label="Sonraki sayfa">
+        <a
+            href="{{ SITEURL }}/{{ articles_next_page.url }}"
+            class="btn btn-outline join-item"
+            aria-label="Sonraki sayfa">
             Sonraki
-            <span aria-hidden="true">&rarr;</span>
+            <span class="iconify" data-icon="tabler:chevron-right" width="20" height="20"></span>
         </a>
         {% endif %}
     </div>

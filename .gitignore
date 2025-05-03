@@ -8,11 +8,14 @@ seo_report.html
 _site/
 output/
 node_modules/
+themes/Minel/node_modules/
 .DS_Store
-
 # C extensions
 *.so
 .cursorignore
+.cursorrules
+.cursorrules2
+.cursor/
 
 # Distribution / packaging
 .Python
