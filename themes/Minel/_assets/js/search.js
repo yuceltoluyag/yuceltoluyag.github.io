@@ -14,11 +14,18 @@ const searchResults = document.getElementById("search-results");
 const searchTriggers = document.querySelectorAll(".search-trigger");
 const searchModalClose = document.querySelector(".btn-circle[aria-label='Aramayı kapat']");
 
-// Hata ayıklama
-console.log("Search.js yükleniyor");
-console.log("Search modal element:", searchModal);
-console.log("Search triggers:", searchTriggers.length);
-console.log("Search modal close button:", searchModalClose);
+// Hata ayıklama - Sadece localhost'ta çalışacak
+const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+const debugLog = (message, ...args) => {
+    if (isLocalhost) {
+        console.log(message, ...args);
+    }
+};
+
+debugLog("Search.js yükleniyor");
+debugLog("Search modal element:", searchModal);
+debugLog("Search triggers:", searchTriggers.length);
+debugLog("Search modal close button:", searchModalClose);
 
 // Arama verilerini yükle
 async function loadSearchData() {
@@ -32,7 +39,9 @@ async function loadSearchData() {
         initSearchIndex();
     } catch (error) {
         // Hata durumunda sessizce devam et
-        console.error("Arama verileri yükleme hatası:", error);
+        if (isLocalhost) {
+            console.error("Arama verileri yükleme hatası:", error);
+        }
     }
 }
 
@@ -49,13 +58,15 @@ function initSearchIndex() {
 
 // Arama modalını aç
 function openSearchModal() {
-    console.log("Modalı açma girişimi");
+    debugLog("Modalı açma girişimi");
     if (!searchModal) {
-        console.error("Search modal bulunamadı!");
+        if (isLocalhost) {
+            console.error("Search modal bulunamadı!");
+        }
         return;
     }
 
-    console.log("Modal açılıyor:", searchModal);
+    debugLog("Modal açılıyor:", searchModal);
     // DaisyUI v4 dialog elementini kullan
     searchModal.showModal();
 
@@ -68,13 +79,15 @@ function openSearchModal() {
 
 // Arama modalını kapat
 function closeSearchModal() {
-    console.log("Modalı kapatma girişimi");
+    debugLog("Modalı kapatma girişimi");
     if (!searchModal) {
-        console.error("Search modal bulunamadı!");
+        if (isLocalhost) {
+            console.error("Search modal bulunamadı!");
+        }
         return;
     }
 
-    console.log("Modal kapatılıyor");
+    debugLog("Modal kapatılıyor");
     // DaisyUI v4 dialog elementini kapat
     searchModal.close();
 
@@ -155,7 +168,7 @@ function displayResults(results, query) {
         resultItem.innerHTML = `
             <div class="card-body p-4">
                 <h3 class="font-bold text-lg mb-1">
-                    <a href="${fullUrl}" class="hover:text-primary transition-colors">${highlightText(
+                    <a href="${fullUrl}" class="hover:text-primary transition-colors result-link">${highlightText(
             result.title,
             query
         )}</a>
@@ -189,6 +202,23 @@ function displayResults(results, query) {
 
     resultsFragment.appendChild(resultsContainer);
     searchResults.appendChild(resultsFragment);
+
+    // Arama sonuç linkleri için olay dinleyicileri ekle
+    addResultLinksEventListeners();
+}
+
+// Sonuç linklerine tıklayınca modalı kapat
+function addResultLinksEventListeners() {
+    const resultLinks = document.querySelectorAll(".result-link");
+    resultLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            // Modalı kapat
+            closeSearchModal();
+
+            // Normal link davranışı devam etsin, sayfaya gitsin
+            // e.preventDefault(); yapmıyoruz, doğal link davranışı korunsun
+        });
+    });
 }
 
 // Metinde sorgu terimini vurgula
@@ -206,11 +236,11 @@ function escapeRegExp(string) {
 
 // Olay dinleyicileri
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Search DOM yüklendi");
+    debugLog("Search DOM yüklendi");
 
     // DOM elementlerini tekrar kontrol et
-    console.log("Search modal (DOMContentLoaded içinde):", document.getElementById("search-modal"));
-    console.log("Search triggers (DOMContentLoaded içinde):", document.querySelectorAll(".search-trigger").length);
+    debugLog("Search modal (DOMContentLoaded içinde):", document.getElementById("search-modal"));
+    debugLog("Search triggers (DOMContentLoaded içinde):", document.querySelectorAll(".search-trigger").length);
 
     // Arama verilerini yükle
     loadSearchData();
@@ -218,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Arama butonları
     searchTriggers.forEach((trigger) => {
         trigger.addEventListener("click", (e) => {
-            console.log("Arama tetiği tıklandı");
+            debugLog("Arama tetiği tıklandı");
             e.preventDefault();
             openSearchModal();
         });
@@ -230,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Form gönderimi
     if (searchForm) {
         searchForm.addEventListener("submit", (e) => {
-            console.log("Form gönderildi");
+            debugLog("Form gönderildi");
             e.preventDefault();
             performSearch(searchInput.value);
         });

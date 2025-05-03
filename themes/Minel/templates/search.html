@@ -34,6 +34,20 @@
             resultsContainer.innerHTML = '<div class="text-center text-base-content/60 py-8">Aranıyor...</div>';
             // Burada arama işlemi yapılacak
             // Pelican search plugin'i ile entegre edilecek
+
+            // Arama sonuç linklerine tıklama olayını izle ve gerekli işlemi yap
+            setTimeout(() => {
+                const resultLinks = document.querySelectorAll("#search-results a");
+                resultLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        // Dialog/modal kapanmasını ele al
+                        const searchModal = document.getElementById("search-modal");
+                        if (searchModal && typeof searchModal.close === "function") {
+                            searchModal.close();
+                        }
+                    });
+                });
+            }, 500); // Sonuçların oluşturulması için kısa bir bekleme süresi
         }
 
         searchButton.addEventListener("click", performSearch);

@@ -10,6 +10,9 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+# Publish modunu aktif et
+PUBLISH = True
+
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = "https://yuceltoluyag.dev"
 RELATIVE_URLS = False
