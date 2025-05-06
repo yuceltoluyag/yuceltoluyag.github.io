@@ -1,0 +1,12 @@
+{
+    "github.copilot.chat.codeGeneration.instructions": [
+        {
+            "file": "docs/code-style.md"
+        }
+    ],
+    "github.copilot.chat.commitMessageGeneration.instructions": [
+        {
+            "file": "docs/commit-message.md"
+        }
+    ]
+}
