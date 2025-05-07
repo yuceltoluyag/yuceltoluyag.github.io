@@ -38,6 +38,73 @@ c/o
 =/=	
 1/4, etc.
 1st 2nd etc.
+++ctrl+alt+delete++
+
+# Klavye Tuşları Örnekleri
+
+PyMdown Extensions'da bulunan Keys uzantısı ile klavye tuşlarını kolayca gösterebilirsiniz. Tuş kombinasyonları `++` sembolleri arasına, tuşlar ise `+` ile ayrılarak yazılır.
+
+## Temel Tuşlar
+
+++a++ ++b++ ++c++
+
+++1++ ++2++ ++3++
+
+++space++
+
+## Özel Karakterler
+
+++colon++ ++comma++ ++dot++
+
+++equal++ ++plus++ ++minus++
+
+## Fonksiyon Tuşları
+
+++f1++ ++f2++ ++f3++ ++f4++ ++f5++
+
+## Yön Tuşları
+
+++up++ ++down++ ++left++ ++right++
+
+++page-up++ ++page-down++ ++home++ ++end++
+
+## Düzenleme Tuşları
+
+++insert++ ++delete++ ++backspace++ ++tab++
+
+## Aksiyon Tuşları
+
+++enter++ ++escape++ ++space++
+
+## Değiştirici Tuşlar
+
+++ctrl++ ++alt++ ++shift++ ++super++
+
+++windows++ ++command++ ++option++
+
+## Klavye Kısayolları Örnekleri
+
+++ctrl+c++ (Kopyala)
+
+++ctrl+v++ (Yapıştır)
+
+++ctrl+alt+delete++ (Windows'ta Görev Yöneticisi)
+
+++ctrl+shift+esc++ (Windows'ta doğrudan Görev Yöneticisi)
+
+++alt+tab++ (Pencereler arası geçiş)
+
+++windows+e++ (Dosya Gezgini açma)
+
+++ctrl+alt+"Özel Tuş"++ (Özel tuş örneği)
+
+++cmd+space++ (macOS Spotlight)
+
+## Multimedya Tuşları
+
+++volume-up++ ++volume-down++ ++volume-mute++
+
+++media-play++ ++media-stop++ ++media-next-track++
 
 <div class="info-box info">
     Bu bir bilgi kutusudur.
