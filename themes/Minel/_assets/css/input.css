@@ -1245,6 +1245,79 @@
             }
         }
     }
+
+    /* PyMdown Keys için DaisyUI uyumlu stiller */
+    .keys {
+        @apply inline-flex items-center space-x-1;
+    }
+
+    .keys kbd {
+        @apply kbd kbd-sm bg-base-300 shadow-sm text-base-content px-2 py-1 text-xs font-mono rounded min-w-5 text-center;
+    }
+
+    /* Değiştirici tuşlar için özel stiller */
+    .key-ctrl,
+    .key-control,
+    .key-cmd,
+    .key-command,
+    .key-alt,
+    .key-shift,
+    .key-super,
+    .key-windows,
+    .key-option {
+        @apply kbd kbd-sm bg-neutral text-neutral-content font-semibold;
+    }
+
+    /* Fonksiyon tuşları için özel stiller */
+    [class*="key-f"] {
+        @apply kbd kbd-sm bg-secondary text-secondary-content;
+    }
+
+    /* Yön tuşları için özel stiller */
+    .key-up,
+    .key-down,
+    .key-left,
+    .key-right,
+    .key-home,
+    .key-end,
+    .key-page-up,
+    .key-page-down {
+        @apply kbd kbd-sm bg-accent text-accent-content;
+    }
+
+    /* Aksiyon tuşları için özel stiller */
+    .key-enter,
+    .key-return,
+    .key-tab,
+    .key-escape,
+    .key-esc {
+        @apply kbd kbd-sm bg-primary text-primary-content;
+    }
+
+    /* Özel karakterler için stiller */
+    .key-colon,
+    .key-comma,
+    .key-dot,
+    .key-equal,
+    .key-plus,
+    .key-minus {
+        @apply kbd kbd-sm bg-base-200;
+    }
+
+    /* Multimedya tuşları için stiller */
+    .key-volume-up,
+    .key-volume-down,
+    .key-volume-mute,
+    .key-media-play,
+    .key-media-stop,
+    .key-media-next-track {
+        @apply kbd kbd-sm bg-info text-info-content;
+    }
+
+    /* Hover efekti */
+    .keys kbd:hover {
+        @apply shadow-md transform scale-105 transition-all duration-200;
+    }
 }
 
 @layer utilities {

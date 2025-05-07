@@ -53,9 +53,14 @@
 
     <!-- Tema Değiştirici -->
     <li>
-        <label class="swap swap-rotate ml-2">
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
             <!-- Bu gizli checkbox tema durumunu kontrol eder -->
-            <input type="checkbox" class="theme-controller" value="autumn" />
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
 
             <!-- Güneş ikonu - açık tema -->
             <span class="swap-on flex items-center">
@@ -73,8 +78,13 @@
 <!-- Mobil Menü Butonu ve Tema Değiştirici -->
 <div class="md:hidden flex items-center gap-3">
     <!-- Mobil Tema Değiştirici -->
-    <label class="swap swap-rotate">
-        <input type="checkbox" class="theme-controller" value="autumn" />
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
         <span class="swap-on flex items-center">
             <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
         </span>
