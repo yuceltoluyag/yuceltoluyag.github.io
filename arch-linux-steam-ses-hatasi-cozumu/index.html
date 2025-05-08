@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.dev" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Arch Linux Üzerinde Steam Ses Hatalarını Çözme",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.dev/images/Tannenberg-lg.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Arch Linux Üzerinde Steam Ses Hatalarını Çözme" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.dev/arch-linux-steam-ses-hatasi-cozumu/" />
+<meta property="og:title" content="Arch Linux Üzerinde Steam Ses Hatalarını Çözme" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-05-06T10:00:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.dev/yazar/yuceltoluyag/" />
+<meta property="article:section" content="oyun" />
+  <meta property="article:tag" content="arch linux" />
+<meta property="article:tag" content="steam" />
+<meta property="article:tag" content="ses hatası" />
+<meta property="article:tag" content="pipewire" />
+<meta property="article:tag" content="wayland" />
+<meta property="article:tag" content="glibc" />
+<meta property="article:tag" content="linux oyunları" />
+<meta property="article:tag" content="pulse audio" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan ses hatalarını çözmek için adım adım bir rehber." />
+<meta property="og:description" content="Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan ses hatalarını çözmek için adım adım bir rehber." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.dev"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.dev",
+        "logo": "https://yuceltoluyag.dev/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://mastodon.social/@yuceltoluyag","https://matrix.to/#/@fatpip:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux Üzerinde Steam Ses Hatalarını Çözme",
+        "description": "Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan ses hatalarını çözmek için adım adım bir rehber.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.dev/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-05-06T10:00:00+03:00",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.dev/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.dev/arch-linux-steam-ses-hatasi-cozumu/"
+        },
+"articleSection": "oyun","keywords": "arch linux, steam, ses hatası, pipewire, wayland, glibc, linux oyunları, pulse audio",        "url": "https://yuceltoluyag.dev/arch-linux-steam-ses-hatasi-cozumu/",
+"image": "https://yuceltoluyag.dev/images/Tannenberg-lg.webp",        "homepage": "https://yuceltoluyag.dev/"
+    }
+</script>
+
+        <title>Arch Linux Üzerinde Steam Ses Hatalarını Çözme - Ortaya Karışık</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.dev/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.dev/images/favicon-96x96.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.dev/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.dev/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.dev/images/apple-touch-icon-lg.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.dev/site.webmanifest" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.dev/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+        <!-- Webmention -->
+        <link rel="webmention" href="https://webmention.io/yuceltoluyag.dev/webmention" />
+        <link rel="pingback" href="https://webmention.io/yuceltoluyag.dev/xmlrpc" />
+        <link rel="webmention" href="https://brid.gy/webmention/tumblr" />
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.dev/" class="flex items-center">
+        <img src="https://yuceltoluyag.dev/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.dev/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.dev/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.dev/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.dev/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.dev/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.dev/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<script src="https://yuceltoluyag.dev/assets/js/mastodon-comments.js" defer></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-lg font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#arch-linux-uzerinde-steam-ses-hatalarini-cozme" title="Arch Linux &Uuml;zerinde Steam Ses Hatalar&inodot;n&inodot; &Ccedil;&ouml;zme">Arch Linux &Uuml;zerinde Steam Ses Hatalar&inodot;n&inodot; &Ccedil;&ouml;zme</a><ul><li><a class="toc-href" href="#1-pipewire-yapilandirmasini-kontrol-etme" title="1. PipeWire Yap&inodot;land&inodot;rmas&inodot;n&inodot; Kontrol Etme">1. PipeWire Yap&inodot;land&inodot;rmas&inodot;n&inodot; Kontrol Etme</a><ul><li><a class="toc-href" href="#11-pipewire-servislerinin-durumunu-kontrol-etme" title="1.1 PipeWire Servislerinin Durumunu Kontrol Etme">1.1 PipeWire Servislerinin Durumunu Kontrol Etme</a></li><li><a class="toc-href" href="#12-pipewire-pulse-servisini-etkinlestirme" title="1.2 PipeWire-Pulse Servisini Etkinle&scedil;tirme">1.2 PipeWire-Pulse Servisini Etkinle&scedil;tirme</a></li></ul></li><li><a class="toc-href" href="#2-steam-baslatma-seceneklerini-guncelleme_1" title="2. Steam Ba&scedil;latma Se&ccedil;eneklerini G&uuml;ncelleme">2. Steam Ba&scedil;latma Se&ccedil;eneklerini G&uuml;ncelleme</a></li><li><a class="toc-href" href="#sistem-bilgileri-ve-gpu-suruculeri" title="Sistem Bilgileri ve GPU S&uuml;r&uuml;c&uuml;leri">Sistem Bilgileri ve GPU S&uuml;r&uuml;c&uuml;leri</a></li><li><a class="toc-href" href="#steam-ciktilari-ve-hatalar" title="Steam &Ccedil;&inodot;kt&inodot;lar&inodot; ve Hatalar">Steam &Ccedil;&inodot;kt&inodot;lar&inodot; ve Hatalar</a></li><li><a class="toc-href" href="#cozum-1-oyun-baslatma-secenekleri" title="&Ccedil;&ouml;z&uuml;m 1: Oyun Ba&scedil;latma Se&ccedil;enekleri">&Ccedil;&ouml;z&uuml;m 1: Oyun Ba&scedil;latma Se&ccedil;enekleri</a></li><li><a class="toc-href" href="#cozum-2-overlay-ve-xdg-portal-kaldirma" title="&Ccedil;&ouml;z&uuml;m 2: Overlay ve XDG Portal Kald&inodot;rma">&Ccedil;&ouml;z&uuml;m 2: Overlay ve XDG Portal Kald&inodot;rma</a></li><li><a class="toc-href" href="#cozum-3-pipewire-servis-durumunu-kontrol-et" title="&Ccedil;&ouml;z&uuml;m 3: PipeWire Servis Durumunu Kontrol Et">&Ccedil;&ouml;z&uuml;m 3: PipeWire Servis Durumunu Kontrol Et</a><ul><li><a class="toc-href" href="#21-steamde-baslatma-seceneklerini-duzenleme" title="2.1 Steam&rsquo;de Ba&scedil;latma Se&ccedil;eneklerini D&uuml;zenleme">2.1 Steam&rsquo;de Ba&scedil;latma Se&ccedil;eneklerini D&uuml;zenleme</a></li></ul></li><li><a class="toc-href" href="#3-ld_preload-ile-fmodstudio-kutuphanelerini-yuklemek_1" title="3. LD_PRELOAD ile Fmodstudio K&uuml;t&uuml;phanelerini Y&uuml;klemek">3. LD_PRELOAD ile Fmodstudio K&uuml;t&uuml;phanelerini Y&uuml;klemek</a><ul><li><a class="toc-href" href="#31-oyun-klasorunu-bulma" title="3.1 Oyun Klas&ouml;r&uuml;n&uuml; Bulma">3.1 Oyun Klas&ouml;r&uuml;n&uuml; Bulma</a></li><li><a class="toc-href" href="#32-baslatma-seceneklerine-ld_preload-eklemek" title="3.2 Ba&scedil;latma Se&ccedil;eneklerine LD_PRELOAD Eklemek">3.2 Ba&scedil;latma Se&ccedil;eneklerine LD_PRELOAD Eklemek</a></li></ul></li><li><a class="toc-href" href="#4-glibc-tuning-ile-gelismis-cozum_1" title="4. GLIBC Tuning ile Geli&scedil;mi&scedil; &Ccedil;&ouml;z&uuml;m">4. GLIBC Tuning ile Geli&scedil;mi&scedil; &Ccedil;&ouml;z&uuml;m</a></li><li><a class="toc-href" href="#5-ekstra-yardim-ve-topluluk-destegi" title="5. Ekstra Yard&inodot;m ve Topluluk Deste&gbreve;i">5. Ekstra Yard&inodot;m ve Topluluk Deste&gbreve;i</a></li><li><a class="toc-href" href="#sonuc-steam-ses-sorunlari-tarih-oluyor" title="Sonu&ccedil;: Steam Ses Sorunlar&inodot; Tarih Oluyor! ✅">Sonu&ccedil;: Steam Ses Sorunlar&inodot; Tarih Oluyor! ✅</a></li></ul></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-lg font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/arch-linux-rise-of-kingdoms-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde Rise of Kingdoms Kurulumu (Lutris ile)</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/lightdm-xprofile-xinitrc-farki/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Oturum Ayarları: .xinitrc mi .xprofile mı?</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/arch-linux-transmission-kurulum/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/mangohud-ile-oyun-performansi-izleme/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-lg font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/arch-linux-rise-of-kingdoms-kurulumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde Rise of Kingdoms Kurulumu (Lutris ile)</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/mangohud-ile-oyun-performansi-izleme/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.dev/guncel-ucretsiz-oyunlar/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Güncel Ücretsiz Oyunlar (Steam & GOG & Epic)</h4>
+                                    </a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Arch Linux Üzerinde Steam Ses Hatalarını Çözme</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-05-06T10:00:00+03:00" class="ml-1">
+                                    06 May 2025
+                                </time>
+                            </div>
+
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.dev/kategori/oyun/"
+                                    class="link link-hover ml-1">
+                                    oyun
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">812 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">4 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 12.70</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/arch-linux-steam-ses-hatasi-cozumu.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-lg dark:prose-invert max-w-none article-content"><h1 id="arch-linux-uzerinde-steam-ses-hatalarini-cozme">Arch Linux &Uuml;zerinde Steam Ses Hatalar&inodot;n&inodot; &Ccedil;&ouml;zme</h1>
+<p>🎮 Wayland alt&inodot;nda <strong>Arch Linux</strong> kullan&inodot;rken Steam oyunlar&inodot;nda &ldquo;Ses motoru ba&scedil;lat&inodot;lamad&inodot;&rdquo; hatas&inodot; m&inodot; al&inodot;yorsunuz? Endi&scedil;elenmeyin &mdash; bu rehber, ses sorunlar&inodot;n&inodot; &ccedil;&ouml;zmek i&ccedil;in t&uuml;m gereken ad&inodot;mlar&inodot; size ad&inodot;m ad&inodot;m anlatacak!</p>
+<p>Bu t&uuml;r hatalar genellikle <strong>PipeWire</strong>, <strong>PulseAudio</strong> ya da oyunlar&inodot;n kendi ses motorlar&inodot;yla ilgili yap&inodot;land&inodot;rma sorunlar&inodot;ndan kaynaklan&inodot;r. &Scedil;imdi gelin, bu problemleri nas&inodot;l &ccedil;&ouml;zece&gbreve;inizi birlikte inceleyelim. 👇</p>
+<p>Ingilizce hatalar:
+- Could not initialize the sound engine. Please make sure you have the latest audio drivers installed.</p>
+<blockquote>
+<p>"Ocam Steam'da farkl&inodot; oyunlarda sorun yok. Tannenberg oyna diyorum veya Verdun, ekran a&ccedil;&inodot;l&inodot;yor ama 'ses motoru ba&scedil;lat&inodot;lamad&inodot;'. Onun d&inodot;&scedil;&inodot;nda sistemde sesim var, sadece bu iki oyunda ses hi&ccedil; yok :D"
+&mdash; Galip Dede</p>
+</blockquote>
+<p><img alt="Tannenberg Ses Motoru Hatas&inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/Tannenberg-lg.webp" srcset="/images/Tannenberg-sm.webp 300w, /images/Tannenberg-md.webp 500w, /images/Tannenberg-lg.webp 800w"/>
+<img alt="Verdun audio engine error" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/verdun-lg.webp" srcset="/images/verdun-sm.webp 300w, /images/verdun-md.webp 500w, /images/verdun-lg.webp 800w"/></p>
+<div class="info-box warning">
+    Bu rehberde sorunu, eklentileri tan&inodot;tarak yani 3. numaral&inodot; ad&inodot;mlar&inodot; uygulayarak &ccedil;&ouml;zd&uuml;k. Bu nedenle di&gbreve;er ba&scedil;latma se&ccedil;eneklerini kald&inodot;rd&inodot;k. Ancak, sorunu bu y&ouml;ntemle &ccedil;&ouml;zemeyen kullan&inodot;c&inodot;lar i&ccedil;in ek bilgileri b&inodot;rakmaya devam ettim. Kafa kar&inodot;&scedil;&inodot;kl&inodot;&gbreve;&inodot; ya&scedil;arsan&inodot;z, &ouml;nce rehberdeki 3. ad&inodot;mlar&inodot;n&inodot; uygulay&inodot;n. E&gbreve;er i&scedil;e yaramazsa di&gbreve;er alternatif ad&inodot;mlar&inodot; deneyebilirsiniz.
+</div>
+<hr/>
+<h2 id="1-pipewire-yapilandirmasini-kontrol-etme">1. PipeWire Yap&inodot;land&inodot;rmas&inodot;n&inodot; Kontrol Etme</h2>
+<h3 id="11-pipewire-servislerinin-durumunu-kontrol-etme">1.1 PipeWire Servislerinin Durumunu Kontrol Etme</h3>
+<p>Bu paketlerin y&uuml;kl&uuml; olup olmad&inodot;&gbreve;&inodot;n&inodot; kontrol edin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>alsa-card-profiles<span class="w"> </span>alsa-plugins<span class="w"> </span>alsa-ucm-conf<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>alsa-lib<span class="w"> </span>alsa-topology-conf<span class="w"> </span>alsa-utils<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>pipewire<span class="w"> </span>pipewire-audio<span class="w"> </span>pipewire-alsa<span class="w"> </span>pipewire-jack<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>pipewire-pulse<span class="w"> </span>pipewire-libcamera<span class="w"> </span>pwvucontrol<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>wireplumber<span class="w"> </span>lib32-pipewire<span class="w"> </span>lib32-libpulse
+</code></pre></div>
+<p>&Idot;lk olarak sisteminizde PipeWire servislerinin aktif ve d&uuml;zg&uuml;n &ccedil;al&inodot;&scedil;t&inodot;&gbreve;&inodot;ndan emin olun:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>pipewire
+systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>pipewire-pulse
+</code></pre></div>
+<p>E&gbreve;er servisler &ccedil;al&inodot;&scedil;m&inodot;yorsa, &scedil;u komutlar&inodot; kullanarak etkinle&scedil;tirin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>pipewire<span class="w"> </span>pipewire-pulse<span class="w"> </span>wireplumber
+systemctl<span class="w"> </span>--user<span class="w"> </span>restart<span class="w"> </span>pipewire<span class="w"> </span>pipewire-pulse<span class="w"> </span>wireplumber
+</code></pre></div>
+<h3 id="12-pipewire-pulse-servisini-etkinlestirme">1.2 PipeWire-Pulse Servisini Etkinle&scedil;tirme</h3>
+<p>Steam'in ses sistemleriyle uyumlu &ccedil;al&inodot;&scedil;abilmesi i&ccedil;in <code>pipewire-pulse</code> servisi gereklidir. A&scedil;a&gbreve;&inodot;daki komutla kontrol edin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>pipewire-pulse
+</code></pre></div>
+<p>Servis &ccedil;al&inodot;&scedil;m&inodot;yorsa, a&scedil;a&gbreve;&inodot;daki komutu uygulay&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>pipewire-pulse
+</code></pre></div>
+<p>Ayr&inodot;ca &scedil;u paketi y&uuml;klemek de kritik olabilir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>lib32-libpulse
+</code></pre></div>
+<hr/>
+<h2 id="2-steam-baslatma-seceneklerini-guncelleme_1">2. Steam Ba&scedil;latma Se&ccedil;eneklerini G&uuml;ncelleme</h2>
+<p>Wayland ortam&inodot;nda ses sorunlar&inodot;n&inodot;n bir di&gbreve;er kayna&gbreve;&inodot;, SDL ve grafik backend yap&inodot;land&inodot;rmalar&inodot; olabilir.</p>
+<h2 id="sistem-bilgileri-ve-gpu-suruculeri">Sistem Bilgileri ve GPU S&uuml;r&uuml;c&uuml;leri</h2>
+<p>Galip arkada&scedil;&inodot;m&inodot;z&inodot;n sistemi:</p>
+<ul>
+<li><strong>Masa&uuml;st&uuml; ortam&inodot;:</strong> KDE Wayland</li>
+<li><strong>Ekran kart&inodot;:</strong> AMD Radeon RX 550</li>
+</ul>
+<p>AMD sistemlerde a&scedil;a&gbreve;&inodot;daki paketler kurulu olmal&inodot;:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>mesa<span class="w"> </span>lib32-mesa<span class="w"> </span>vulkan-radeon<span class="w"> </span>lib32-vulkan-radeon<span class="w"> </span>vulkan-tools
+</code></pre></div>
+<p><code>vulkaninfo</code> &ccedil;&inodot;kt&inodot;s&inodot; da &scedil;u &scedil;ekildeydi:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>GPU<span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span>AMD<span class="w"> </span>Radeon<span class="w"> </span>RX<span class="w"> </span><span class="m">550</span><span class="w"> </span>/<span class="w"> </span><span class="m">550</span><span class="w"> </span>Series<span class="w"> </span><span class="o">(</span>RADV<span class="w"> </span>POLARIS12<span class="o">))</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Not:</strong> Bu kodlar wayland i&ccedil;in ba&scedil;latma se&ccedil;enekleridir. X11 i&ccedil;in yapman&inodot;za gerek yok. Bu komutlardan sonrada sorunumuz &ccedil;&ouml;z&uuml;lmedi ancak bilgi olarak kals&inodot;n diye b&inodot;rak&inodot;yorum. &Idot;&scedil;e yaramad&inodot;&gbreve;&inodot; i&ccedil;in ba&scedil;latma se&ccedil;eneklerini silip devam ediyoruz.</p>
+</blockquote>
+<h2 id="steam-ciktilari-ve-hatalar">Steam &Ccedil;&inodot;kt&inodot;lar&inodot; ve Hatalar</h2>
+<p>Steam terminal &ccedil;&inodot;kt&inodot;lar&inodot;nda g&ouml;ze &ccedil;arpan baz&inodot; sat&inodot;rlar &scedil;unlard&inodot;:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>ERROR:<span class="w"> </span>ld.so:<span class="w"> </span>object<span class="w"> </span><span class="s1">'.../gameoverlayrenderer.so'</span><span class="w"> </span>from<span class="w"> </span>LD_PRELOAD<span class="w"> </span>cannot<span class="w"> </span>be<span class="w"> </span>preloaded<span class="w"> </span><span class="o">(</span>wrong<span class="w"> </span>ELF<span class="w"> </span>class<span class="o">)</span>:<span class="w"> </span>ignored.
+<span class="o">(</span>process:4678<span class="o">)</span>:<span class="w"> </span>GLib-GObject-CRITICAL<span class="w"> </span>**:<span class="w"> </span>g_object_unref:<span class="w"> </span>assertion<span class="w"> </span><span class="s1">'G_IS_OBJECT (object)'</span><span class="w"> </span>failed
+</code></pre></div>
+<p>Bu hatalar genellikle ses de&gbreve;il grafik/sistem uyumsuzluklar&inodot;na i&scedil;aret etse de, <code>LD_PRELOAD</code> &uuml;zerinden bir bypass denenebilir.</p>
+<h2 id="cozum-1-oyun-baslatma-secenekleri">&Ccedil;&ouml;z&uuml;m 1: Oyun Ba&scedil;latma Se&ccedil;enekleri</h2>
+<p>&Idot;lk olarak Steam'deki ba&scedil;latma se&ccedil;eneklerine &scedil;u komutu girin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>env<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">""</span><span class="w"> </span>%command%
+</code></pre></div>
+<p>Olmazsa &scedil;u varyantlar&inodot; da deneyin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>env<span class="w"> </span><span class="nv">GDK_BACKEND</span><span class="o">=</span>x11<span class="w"> </span><span class="nv">SDL_VIDEODRIVER</span><span class="o">=</span>x11<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">""</span><span class="w"> </span>%command%
+</code></pre></div>
+<p>veya</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>env<span class="w"> </span><span class="nv">PULSE_LATENCY_MSEC</span><span class="o">=</span><span class="m">60</span><span class="w"> </span><span class="nv">SDL_AUDIODRIVER</span><span class="o">=</span>pulse<span class="w"> </span><span class="nv">GDK_BACKEND</span><span class="o">=</span>x11<span class="w"> </span><span class="nv">SDL_VIDEODRIVER</span><span class="o">=</span>x11<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">""</span><span class="w"> </span>%command%
+</code></pre></div>
+<h2 id="cozum-2-overlay-ve-xdg-portal-kaldirma">&Ccedil;&ouml;z&uuml;m 2: Overlay ve XDG Portal Kald&inodot;rma</h2>
+<p>Steam Overlay baz&inodot; sistemlerde sorun yaratabiliyor. Ayarlardan kapat&inodot;n.</p>
+<p><img alt="Steam Aray&uuml;z&uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/steam_arayuz-lg.webp" srcset="/images/steam_arayuz-sm.webp 300w, /images/steam_arayuz-md.webp 500w, /images/steam_arayuz-lg.webp 800w"/></p>
+<p>Ek olarak &scedil;u komutla <code>xdg-desktop-portals</code> paketini kald&inodot;rmak &ccedil;&ouml;z&uuml;m olabilir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-R<span class="w"> </span>xdg-desktop-portals
+</code></pre></div>
+<h2 id="cozum-3-pipewire-servis-durumunu-kontrol-et">&Ccedil;&ouml;z&uuml;m 3: PipeWire Servis Durumunu Kontrol Et</h2>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>pipewire
+systemctl<span class="w"> </span>--user<span class="w"> </span>status<span class="w"> </span>pipewire-pulse
+</code></pre></div>
+<p>Her ikisi de <strong>active (running)</strong> durumunda olmal&inodot;.</p>
+<p>Galip'in &ccedil;&inodot;kt&inodot;s&inodot; &ouml;rnek olarak:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>●<span class="w"> </span>pipewire.service<span class="w"> </span>-<span class="w"> </span>PipeWire<span class="w"> </span>Multimedia<span class="w"> </span>Service
+<span class="w">     </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>...
+
+●<span class="w"> </span>pipewire-pulse.service<span class="w"> </span>-<span class="w"> </span>PipeWire<span class="w"> </span>PulseAudio
+<span class="w">     </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>...
+</code></pre></div>
+<h3 id="21-steamde-baslatma-seceneklerini-duzenleme">2.1 Steam&rsquo;de Ba&scedil;latma Se&ccedil;eneklerini D&uuml;zenleme</h3>
+<ol>
+<li>Steam&rsquo;de oyuna sa&gbreve; t&inodot;klay&inodot;n &rarr; <strong>&Ouml;zellikler</strong></li>
+<li><strong>Ba&scedil;latma Se&ccedil;enekleri</strong> alan&inodot;na &scedil;unu yaz&inodot;n:</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>env<span class="w"> </span><span class="nv">SDL_AUDIODRIVER</span><span class="o">=</span>pulse<span class="w"> </span><span class="nv">GDK_BACKEND</span><span class="o">=</span>x11<span class="w"> </span><span class="nv">SDL_VIDEODRIVER</span><span class="o">=</span>x11<span class="w"> </span><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">""</span><span class="w"> </span>%command%
+</code></pre></div>
+<p>Bu ayar, SDL&rsquo;nin PulseAudio kullanmas&inodot;n&inodot; ve X11 &uuml;zerinden daha kararl&inodot; &ccedil;al&inodot;&scedil;mas&inodot;n&inodot; sa&gbreve;lar.</p>
+<blockquote>
+<p><strong>Not:</strong> Bu komutlarlada sorunu &ccedil;&ouml;zemedik, ba&scedil;latma se&ccedil;eneklerini silip devam ediyoruz.</p>
+</blockquote>
+<hr/>
+<h2 id="3-ld_preload-ile-fmodstudio-kutuphanelerini-yuklemek_1">3. LD_PRELOAD ile Fmodstudio K&uuml;t&uuml;phanelerini Y&uuml;klemek</h2>
+<p>Baz&inodot; oyunlarda (&ouml;rne&gbreve;in <strong>Isonzo</strong>, <strong>Verdun</strong>, <strong>Tannenberg</strong>) &ouml;zel ses motorlar&inodot; nedeniyle hata al&inodot;nabilir.</p>
+<h3 id="31-oyun-klasorunu-bulma">3.1 Oyun Klas&ouml;r&uuml;n&uuml; Bulma</h3>
+<p>Steam oyun k&uuml;t&uuml;phane'inden oyununuza sa&gbreve; t&inodot;klay&inodot;n Y&ouml;net men&uuml;s&uuml;nden Yerel Dosyalara G&ouml;z At se&ccedil;ene&gbreve;ini se&ccedil;in.
+Benim i&ccedil;in bu &scedil;ekilde g&ouml;r&uuml;n&uuml;yor:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>~/.local/share/Steam/steamapps/common/Isonzo/Isonzo/Isonzo_Data/Plugins
+</code></pre></div>
+<h3 id="32-baslatma-seceneklerine-ld_preload-eklemek">3.2 Ba&scedil;latma Se&ccedil;eneklerine LD_PRELOAD Eklemek</h3>
+<p>Her oyun i&ccedil;in a&scedil;a&gbreve;&inodot;daki &ouml;rneklere g&ouml;re ba&scedil;latma se&ccedil;enekleri ayarlanmal&inodot;d&inodot;r:</p>
+<p>Dosya i&ccedil;eri&gbreve;i &scedil;&ouml;yle g&ouml;r&uuml;nmektedir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>Permissions<span class="w">  </span>Size<span class="w"> </span>User<span class="w">     </span>Date<span class="w"> </span>Modified<span class="w"> </span>Name
+.rwxr-xr-x<span class="w">   </span>13Mi<span class="w"> </span>friday13<span class="w">  </span><span class="m">5</span><span class="w"> </span>May<span class="w"> </span><span class="m">04</span>:50<span class="w">  </span><span class="w"> </span>libEOSSDK-Linux-Shipping.so
+.rwxr-xr-x<span class="w">  </span><span class="m">2</span>,9Mi<span class="w"> </span>friday13<span class="w">  </span><span class="m">5</span><span class="w"> </span>May<span class="w"> </span><span class="m">04</span>:50<span class="w">  </span><span class="w"> </span>libfmodstudio.so
+.rwxr-xr-x<span class="w">  </span><span class="m">3</span>,9Mi<span class="w"> </span>friday13<span class="w">  </span><span class="m">5</span><span class="w"> </span>May<span class="w"> </span><span class="m">04</span>:50<span class="w">  </span><span class="w"> </span>libfmodstudioL.so
+.rwxr-xr-x<span class="w">  </span>917Ki<span class="w"> </span>friday13<span class="w">  </span><span class="m">5</span><span class="w"> </span>May<span class="w"> </span><span class="m">04</span>:50<span class="w">  </span><span class="w"> </span>libresonanceaudio.so
+.rwxr-xr-x<span class="w">  </span>389Ki<span class="w"> </span>friday13<span class="w">  </span><span class="m">5</span><span class="w"> </span>May<span class="w"> </span><span class="m">04</span>:50<span class="w">  </span><span class="w"> </span>libsteam_api.so
+</code></pre></div>
+<h4>Isonzo</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/Isonzo/Isonzo_Data/Plugins/libfmodstudio.so </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/Isonzo/Isonzo_Data/Plugins/libfmodstudioL.so"</span><span class="w"> </span>%command%
+</code></pre></div>
+<h4>Verdun</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/Verdun/Verdun_Data/Plugins/libfmodstudio.so </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/Verdun/Verdun_Data/Plugins/libfmodstudioL.so"</span><span class="w"> </span>%command%
+</code></pre></div>
+<h4>Tannenberg</h4>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">LD_PRELOAD</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/Tannenberg/Tannenberg_Data/Plugins/libfmodstudio.so </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">/Tannenberg/Tannenberg_Data/Plugins/libfmodstudioL.so"</span><span class="w"> </span>%command%
+</code></pre></div>
+<hr/>
+<h2 id="4-glibc-tuning-ile-gelismis-cozum_1">4. GLIBC Tuning ile Geli&scedil;mi&scedil; &Ccedil;&ouml;z&uuml;m</h2>
+<p>Sisteminizde glibc s&uuml;r&uuml;m&uuml; 2.41 veya &uuml;st&uuml; de&gbreve;ilse, baz&inodot; oyunlarda ses hatalar&inodot; olu&scedil;abilir. Bu durumda glibc tunables ayar&inodot; yard&inodot;mc&inodot; olabilir.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">GLIBC_TUNABLES</span><span class="o">=</span>glibc.rtld.execstack<span class="o">=</span><span class="m">2</span><span class="w"> </span>%command%
+</code></pre></div>
+<p>Bu ayar, oyunlar&inodot;n sisteminizdeki d&uuml;&scedil;&uuml;k seviyeli ses y&ouml;neticileriyle daha uyumlu &ccedil;al&inodot;&scedil;mas&inodot;n&inodot; sa&gbreve;layabilir.</p>
+<hr/>
+<h2 id="5-ekstra-yardim-ve-topluluk-destegi">5. Ekstra Yard&inodot;m ve Topluluk Deste&gbreve;i</h2>
+<p>🧠 E&gbreve;er yukar&inodot;daki t&uuml;m ad&inodot;mlara ra&gbreve;men sorun ya&scedil;amaya devam ediyorsan&inodot;z:</p>
+<ul>
+<li><a href="https://bbs.archlinux.org/">Arch Linux forumlar&inodot;n&inodot;</a></li>
+<li><a href="https://steamcommunity.com/app">Steam Toplulu&gbreve;u Tart&inodot;&scedil;malar&inodot;n&inodot;</a> ziyaret edebilirsiniz.</li>
+<li><a href="https://github.com/ValveSoftware/steam">Steam'in resmi GitHub deposunu</a> inceleyebilirsiniz.</li>
+</ul>
+<p>Benzer sorunlar&inodot; ya&scedil;am&inodot;&scedil; kullan&inodot;c&inodot;lar, sizinle &ccedil;&ouml;z&uuml;m yollar&inodot;n&inodot; payla&scedil;abilir.</p>
+<hr/>
+<h2 id="sonuc-steam-ses-sorunlari-tarih-oluyor">Sonu&ccedil;: Steam Ses Sorunlar&inodot; Tarih Oluyor! ✅</h2>
+<p>Bu rehberde, Arch Linux &uuml;zerinde Steam oyunlar&inodot;nda kar&scedil;&inodot;la&scedil;&inodot;lan ses problemlerini nas&inodot;l &ccedil;&ouml;zece&gbreve;inizi ad&inodot;m ad&inodot;m anlatt&inodot;k. PipeWire servislerinden ba&scedil;latma se&ccedil;eneklerine, <code>LD_PRELOAD</code> k&uuml;t&uuml;phane y&uuml;klemelerinden glibc ayarlar&inodot;na kadar bir&ccedil;ok y&ouml;ntemi kapsad&inodot;k.</p>
+<blockquote>
+<p>E&gbreve;er bu rehber i&scedil;inize yarad&inodot;ysa, l&uuml;tfen yorum b&inodot;rakmay&inodot; veya payla&scedil;may&inodot; unutmay&inodot;n. 🎉
+Daha fazla Linux rehberi i&ccedil;in takipte kal&inodot;n!</p>
+</blockquote>
+<p><img alt="Tannenberg Sonu&ccedil; Mutlu Sonu&ccedil;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/Tannenberg-sonuc-lg.webp" srcset="/images/Tannenberg-sonuc-sm.webp 300w, /images/Tannenberg-sonuc-md.webp 500w, /images/Tannenberg-sonuc-lg.webp 800w"/></p></div>
+
+                    <!-- Webmentions -->
+                    <div class="webmentions-container">
+                        <div class="webmentions-content"></div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#arch-linux-uzerinde-steam-ses-hatalarini-cozme" title="Arch Linux &Uuml;zerinde Steam Ses Hatalar&inodot;n&inodot; &Ccedil;&ouml;zme">Arch Linux &Uuml;zerinde Steam Ses Hatalar&inodot;n&inodot; &Ccedil;&ouml;zme</a><ul><li><a class="toc-href" href="#1-pipewire-yapilandirmasini-kontrol-etme" title="1. PipeWire Yap&inodot;land&inodot;rmas&inodot;n&inodot; Kontrol Etme">1. PipeWire Yap&inodot;land&inodot;rmas&inodot;n&inodot; Kontrol Etme</a><ul><li><a class="toc-href" href="#11-pipewire-servislerinin-durumunu-kontrol-etme" title="1.1 PipeWire Servislerinin Durumunu Kontrol Etme">1.1 PipeWire Servislerinin Durumunu Kontrol Etme</a></li><li><a class="toc-href" href="#12-pipewire-pulse-servisini-etkinlestirme" title="1.2 PipeWire-Pulse Servisini Etkinle&scedil;tirme">1.2 PipeWire-Pulse Servisini Etkinle&scedil;tirme</a></li></ul></li><li><a class="toc-href" href="#2-steam-baslatma-seceneklerini-guncelleme_1" title="2. Steam Ba&scedil;latma Se&ccedil;eneklerini G&uuml;ncelleme">2. Steam Ba&scedil;latma Se&ccedil;eneklerini G&uuml;ncelleme</a></li><li><a class="toc-href" href="#sistem-bilgileri-ve-gpu-suruculeri" title="Sistem Bilgileri ve GPU S&uuml;r&uuml;c&uuml;leri">Sistem Bilgileri ve GPU S&uuml;r&uuml;c&uuml;leri</a></li><li><a class="toc-href" href="#steam-ciktilari-ve-hatalar" title="Steam &Ccedil;&inodot;kt&inodot;lar&inodot; ve Hatalar">Steam &Ccedil;&inodot;kt&inodot;lar&inodot; ve Hatalar</a></li><li><a class="toc-href" href="#cozum-1-oyun-baslatma-secenekleri" title="&Ccedil;&ouml;z&uuml;m 1: Oyun Ba&scedil;latma Se&ccedil;enekleri">&Ccedil;&ouml;z&uuml;m 1: Oyun Ba&scedil;latma Se&ccedil;enekleri</a></li><li><a class="toc-href" href="#cozum-2-overlay-ve-xdg-portal-kaldirma" title="&Ccedil;&ouml;z&uuml;m 2: Overlay ve XDG Portal Kald&inodot;rma">&Ccedil;&ouml;z&uuml;m 2: Overlay ve XDG Portal Kald&inodot;rma</a></li><li><a class="toc-href" href="#cozum-3-pipewire-servis-durumunu-kontrol-et" title="&Ccedil;&ouml;z&uuml;m 3: PipeWire Servis Durumunu Kontrol Et">&Ccedil;&ouml;z&uuml;m 3: PipeWire Servis Durumunu Kontrol Et</a><ul><li><a class="toc-href" href="#21-steamde-baslatma-seceneklerini-duzenleme" title="2.1 Steam&rsquo;de Ba&scedil;latma Se&ccedil;eneklerini D&uuml;zenleme">2.1 Steam&rsquo;de Ba&scedil;latma Se&ccedil;eneklerini D&uuml;zenleme</a></li></ul></li><li><a class="toc-href" href="#3-ld_preload-ile-fmodstudio-kutuphanelerini-yuklemek_1" title="3. LD_PRELOAD ile Fmodstudio K&uuml;t&uuml;phanelerini Y&uuml;klemek">3. LD_PRELOAD ile Fmodstudio K&uuml;t&uuml;phanelerini Y&uuml;klemek</a><ul><li><a class="toc-href" href="#31-oyun-klasorunu-bulma" title="3.1 Oyun Klas&ouml;r&uuml;n&uuml; Bulma">3.1 Oyun Klas&ouml;r&uuml;n&uuml; Bulma</a></li><li><a class="toc-href" href="#32-baslatma-seceneklerine-ld_preload-eklemek" title="3.2 Ba&scedil;latma Se&ccedil;eneklerine LD_PRELOAD Eklemek">3.2 Ba&scedil;latma Se&ccedil;eneklerine LD_PRELOAD Eklemek</a></li></ul></li><li><a class="toc-href" href="#4-glibc-tuning-ile-gelismis-cozum_1" title="4. GLIBC Tuning ile Geli&scedil;mi&scedil; &Ccedil;&ouml;z&uuml;m">4. GLIBC Tuning ile Geli&scedil;mi&scedil; &Ccedil;&ouml;z&uuml;m</a></li><li><a class="toc-href" href="#5-ekstra-yardim-ve-topluluk-destegi" title="5. Ekstra Yard&inodot;m ve Topluluk Deste&gbreve;i">5. Ekstra Yard&inodot;m ve Topluluk Deste&gbreve;i</a></li><li><a class="toc-href" href="#sonuc-steam-ses-sorunlari-tarih-oluyor" title="Sonu&ccedil;: Steam Ses Sorunlar&inodot; Tarih Oluyor! ✅">Sonu&ccedil;: Steam Ses Sorunlar&inodot; Tarih Oluyor! ✅</a></li></ul></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.dev/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.dev/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.dev/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.dev/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.dev/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://mastodon.social/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Mastodon">
+                        <span class="iconify text-xl" data-icon="tabler:brand-mastodon"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.dev/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.dev/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.dev/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.dev/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.dev/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.dev/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.dev/assets/js/unified-toc.js" defer></script>
+
+<!-- Webmention JS -->
+<script src="https://yuceltoluyag.dev/assets/js/webmention.js" defer></script>
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+     </body>
+</html>
