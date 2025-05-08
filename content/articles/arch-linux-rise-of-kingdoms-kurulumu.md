@@ -62,16 +62,15 @@ yay -S wine-ge lutris winetricks
 winetricks corefonts vcrun2019 d3dcompiler_47
 ```
 
-<div class="alert alert-info">
-<h4>Not:</h4>
+<div role="alert" class="alert alert-warning alert-soft">
+<iconify-icon icon="line-md:account-alert-loop" width="24" height="24"></iconify-icon>
+  <h4>Not:</h4>
 <p>
     <strong>Bu ayarları Lutris sizin için yapıyor. Olurda başka oyunlarda bir hatayla karşılaşırsanız, bu ayarları kendiniz yapabilirsiniz.</strong>
 </p>
 </div>
 
 ## 🗅️ 4. Grafik Glitch ve Titreme Sorunlarının Giderilmesi
-
-**Görsel Açıklaması:** Oyundaki görsel bozulmaların ve düzeldiği halin karşılaştırması.
 
 ### Sorun:
 
