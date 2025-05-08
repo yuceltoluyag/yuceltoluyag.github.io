@@ -257,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
         themeControllers.forEach((controller) => {
             controller.checked = false;
         });
-        document.documentElement.setAttribute("data-theme", "dracula");
+        document.documentElement.setAttribute("data-theme", "dim");
     }
 
     // Tema değişikliği için event listener ekle
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             } else {
                 // Koyu tema
-                document.documentElement.setAttribute("data-theme", "dracula");
+                document.documentElement.setAttribute("data-theme", "dim");
                 localStorage.setItem("theme", "dark");
                 // Diğer kontrolleri de senkronize et
                 themeControllers.forEach((c) => {

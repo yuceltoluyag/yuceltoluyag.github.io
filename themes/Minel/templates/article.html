@@ -33,7 +33,9 @@ endblock %} {% block content %}
                             <div class="space-y-3">
                                 {% for article in articles[:5] %}
                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
-                                    <a href="{{ SITEURL }}/{{ article.url }}" class="link link-hover text-primary">
+                                    <a
+                                        href="{{ SITEURL }}/{{ article.url }}"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
                                         <h4 class="text-md">{{ article.title }}</h4>
                                     </a>
                                 </div>
@@ -54,7 +56,9 @@ endblock %} {% block content %}
                                 {% for related in articles if related.category == article.category and related !=
                                 article %} {% if loop.index <= 4 %}
                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
-                                    <a href="{{ SITEURL }}/{{ related.url }}" class="link link-hover text-primary">
+                                    <a
+                                        href="{{ SITEURL }}/{{ related.url }}"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
                                         <h4 class="text-md">{{ related.title }}</h4>
                                     </a>
                                 </div>
