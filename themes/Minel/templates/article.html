@@ -162,6 +162,127 @@ endblock %} {% block content %}
 
                     <div class="prose prose-lg dark:prose-invert max-w-none article-content">{{ article.content }}</div>
 
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text={{ article.title }} {{ SITEURL }}/{{ article.url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+                        <!-- Mastodon Paylaşım -->
+                        <button
+                            class="social-share-btn mastodon-share"
+                            id="mastodon-share-btn"
+                            aria-label="Mastodon'da Paylaş">
+                            <iconify-icon icon="tabler:brand-mastodon"></iconify-icon>
+                        </button>
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject={{ article.title }}&body={{ SITEURL }}/{{ article.url }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url={{ SITEURL }}/{{ article.url }}&description={{ article.title }}{% if article.image %}&media={{ SITEURL }}/{{ article.image }}{% endif %}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Pocket Paylaşım -->
+                        <a
+                            href="https://getpocket.com/save?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pocket-share"
+                            aria-label="Pocket'a Kaydet">
+                            <iconify-icon icon="tabler:brand-pocket"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
                     <!-- Webmentions -->
                     <div class="webmentions-container">
                         <div class="webmentions-content"></div>
@@ -290,6 +411,55 @@ endblock %} {% block content %}
                 link.addEventListener("click", function () {
                     mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
                 });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+        // Mastodon Paylaşım İşlevi
+        const mastodonShareButton = document.getElementById("mastodon-share-btn");
+        if (mastodonShareButton) {
+            mastodonShareButton.addEventListener("click", function () {
+                // Paylaşılacak bilgileri al
+                const url = window.location.href;
+                const title = document.querySelector("h1").textContent.trim();
+
+                // Varsayılan mastodon örneği
+                const defaultInstance = "mastodon.social";
+
+                // Kullanıcıdan mastodon örneğini al
+                const instance = prompt("Mastodon örneğinizi girin (örn: mastodon.social):", defaultInstance);
+
+                if (instance) {
+                    // Mastodon paylaşım URL'sini oluştur
+                    const shareUrl = `https://${instance}/share?text=${encodeURIComponent(title + " " + url)}`;
+
+                    // Yeni pencerede paylaşım sayfasını aç
+                    window.open(shareUrl, "_blank");
+                }
             });
         }
     });

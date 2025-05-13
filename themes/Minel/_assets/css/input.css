@@ -1318,6 +1318,105 @@
     .keys kbd:hover {
         @apply shadow-md transform scale-105 transition-all duration-200;
     }
+
+    /* Sosyal Medya Paylaşım Butonları */
+    .social-share-container {
+        @apply flex flex-wrap gap-2 items-center;
+    }
+
+    .social-share-btn {
+        @apply btn btn-circle btn-sm shadow-xs border-0 transition-all duration-200 bg-base-200 hover:shadow-sm;
+
+        /* İkon boyutu ve hizalama */
+        iconify-icon {
+            @apply text-lg;
+        }
+
+        /* Hover efekti */
+        &:hover {
+            @apply transform scale-105;
+        }
+
+        /* Farklı sosyal platformlar için renkler */
+        &.twitter-share:hover {
+            @apply bg-[#1DA1F2] text-white;
+        }
+
+        &.facebook-share:hover {
+            @apply bg-[#4267B2] text-white;
+        }
+
+        &.linkedin-share:hover {
+            @apply bg-[#0077B5] text-white;
+        }
+
+        &.reddit-share:hover {
+            @apply bg-[#FF4500] text-white;
+        }
+
+        &.telegram-share:hover {
+            @apply bg-[#0088CC] text-white;
+        }
+
+        &.whatsapp-share:hover {
+            @apply bg-[#25D366] text-white;
+        }
+
+        &.mastodon-share:hover {
+            @apply bg-[#6364FF] text-white;
+        }
+
+        &.email-share:hover {
+            @apply bg-[#D44638] text-white;
+        }
+
+        &.pinterest-share:hover {
+            @apply bg-[#E60023] text-white;
+        }
+
+        &.tumblr-share:hover {
+            @apply bg-[#36465D] text-white;
+        }
+
+        &.pocket-share:hover {
+            @apply bg-[#EF3F56] text-white;
+        }
+
+        &.copy-share:hover {
+            @apply bg-primary text-primary-content;
+        }
+
+        /* Kopyalama butonu aktif durumu */
+        &.copy-share.copied {
+            @apply bg-success text-success-content;
+        }
+    }
+
+    /* Mastodon Paylaşım Modalı */
+    .mastodon-modal {
+        @apply modal;
+
+        .modal-box {
+            @apply max-w-md;
+        }
+
+        .mastodon-form {
+            @apply flex flex-col gap-4;
+
+            .form-group {
+                @apply flex flex-col gap-2;
+            }
+
+            input,
+            textarea {
+                @apply input w-full border border-base-300;
+            }
+
+            .modal-actions {
+                @apply flex justify-end gap-2 mt-4;
+            }
+        }
+    }
 }
 
 @layer utilities {
