@@ -2,6 +2,22 @@
  * Main JavaScript file for the Minel theme
  */
 document.addEventListener("DOMContentLoaded", function () {
+    // Debug modu - sadece geliştirme ortamında aktif olacak
+    const isDebugMode =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1" ||
+        window.location.hostname.includes("192.168.");
+
+    // Konsol log yardımcı fonksiyonu
+    const debugLog = function (message) {
+        if (isDebugMode) {
+            console.log(message);
+        }
+    };
+
+    // Konsola global debug fonksiyonu tanımla
+    window.debugLog = debugLog;
+
     // Otomatik karanlık mod
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -58,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchLink && searchModal && searchModal.showModal) {
         searchLink.addEventListener("click", function (e) {
             e.preventDefault();
-            console.log("Arama modalı açılıyor (main.js)");
+            debugLog("Arama modalı açılıyor (main.js)");
             searchModal.showModal();
             if (searchInput) {
                 setTimeout(() => {

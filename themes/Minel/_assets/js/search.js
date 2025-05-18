@@ -14,14 +14,22 @@ const searchResults = document.getElementById("search-results");
 const searchTriggers = document.querySelectorAll(".search-trigger");
 const searchModalClose = document.querySelector(".btn-circle[aria-label='Aramayı kapat']");
 
-// Hata ayıklama - Sadece localhost'ta çalışacak
-const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-const debugLog = (message, ...args) => {
-    if (isLocalhost) {
-        console.log(message, ...args);
-    }
-};
+// Hata ayıklama - Geliştirme ortamı kontrolü
+const isDebugMode =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname.includes("192.168.");
 
+// Global debugLog fonksiyonunu kullan veya yoksa oluştur
+const debugLog =
+    window.debugLog ||
+    function (message, ...args) {
+        if (isDebugMode) {
+            console.log(message, ...args);
+        }
+    };
+
+// Başlangıçta debug bilgilerini göster
 debugLog("Search.js yükleniyor");
 debugLog("Search modal element:", searchModal);
 debugLog("Search triggers:", searchTriggers.length);
@@ -39,9 +47,7 @@ async function loadSearchData() {
         initSearchIndex();
     } catch (error) {
         // Hata durumunda sessizce devam et
-        if (isLocalhost) {
-            console.error("Arama verileri yükleme hatası:", error);
-        }
+        debugLog("Arama verileri yükleme hatası:", error);
     }
 }
 
@@ -60,7 +66,7 @@ function initSearchIndex() {
 function openSearchModal() {
     debugLog("Modalı açma girişimi");
     if (!searchModal) {
-        if (isLocalhost) {
+        if (isDebugMode) {
             console.error("Search modal bulunamadı!");
         }
         return;
@@ -81,7 +87,7 @@ function openSearchModal() {
 function closeSearchModal() {
     debugLog("Modalı kapatma girişimi");
     if (!searchModal) {
-        if (isLocalhost) {
+        if (isDebugMode) {
             console.error("Search modal bulunamadı!");
         }
         return;
