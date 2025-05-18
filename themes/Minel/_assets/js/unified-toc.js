@@ -4,13 +4,20 @@
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Hata ayıklama - Sadece localhost'ta çalışacak
-    const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-    const debugLog = (message, ...args) => {
-        if (isLocalhost) {
-            console.log(message, ...args);
-        }
-    };
+    // Hata ayıklama - Geliştirme ortamı kontrolü
+    const isDebugMode =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1" ||
+        window.location.hostname.includes("192.168.");
+
+    // Global debugLog fonksiyonunu kullan veya yoksa oluştur
+    const debugLog =
+        window.debugLog ||
+        function (message, ...args) {
+            if (isDebugMode) {
+                console.log(message, ...args);
+            }
+        };
 
     // TOC container'ı bul
     const tocContainer = document.querySelector(".toc-container");

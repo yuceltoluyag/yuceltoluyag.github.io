@@ -13,6 +13,11 @@
         <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
         <link rel="manifest" href="{{ SITEURL }}/site.webmanifest" />
 
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="{{ SITEURL }}/{% if article %}{{ article.url }}{% elif page %}{{ page.url }}{% else %}{{ output_file|replace('index.html','') }}{% endif %}" />
+
         <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" />
 
         <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
@@ -37,6 +42,32 @@
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
             crossorigin="anonymous"></script>
         {% endif %}
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="o2cdcXAK9l11WjziGm0oDA" async></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
     </head>
 
     <body>

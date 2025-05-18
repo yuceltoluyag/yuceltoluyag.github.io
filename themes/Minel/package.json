@@ -16,8 +16,8 @@
     "dependencies": {
         "@babel/cli": "^7.27.2",
         "@babel/preset-env": "^7.27.2",
-        "@tailwindcss/cli": "^4.1.5",
-        "@tailwindcss/postcss": "^4.1.5",
+        "@tailwindcss/cli": "^4.1.7",
+        "@tailwindcss/postcss": "^4.1.7",
         "autoprefixer": "^10.4.21",
         "chokidar": "^4.0.3",
         "cross-env": "^7.0.3",
@@ -28,8 +28,8 @@
         "postcss-cli": "^11.0.1",
         "postcss-import": "^16.1.0",
         "postcss-nesting": "^13.0.1",
-        "tailwindcss": "^4.1.5",
-        "terser": "^5.39.0"
+        "tailwindcss": "^4.1.7",
+        "terser": "^5.39.2"
     },
     "browserslist": {
         "production": [
