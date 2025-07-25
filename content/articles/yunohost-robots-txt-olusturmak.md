@@ -85,7 +85,7 @@ sudo find / -type f -name 'listmonk'
 Gelen sonuçlardan ilgili Nginx config dosyasını seçin:
 
 ```bash
-sudo nano /etc/nginx/conf.d/listmonk.minel.yuceltoluyag.dev.d/listmonk.conf
+sudo nano /etc/nginx/conf.d/listmonk.minel.yuceltoluyag.github.io.d/listmonk.conf
 ```
 
 ### 2. Aşağıdaki `location` bloğunu ekleyin
@@ -109,7 +109,7 @@ sudo systemctl restart nginx
 Tarayıcınızdan şu URL'yi ziyaret edin:
 
 ```
-https://listmonk.minel.yuceltoluyag.dev/robots.txt
+https://listmonk.minel.yuceltoluyag.github.io/robots.txt
 ```
 
 Dosya düzgün görüntüleniyorsa, yapılandırmanız başarıyla tamamlanmış demektir.

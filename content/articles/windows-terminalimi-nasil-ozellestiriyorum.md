@@ -252,7 +252,7 @@ Successfully installed
 
 ```
 
-Kurulum tamamlandıktan sonra **Git** ayarlarınızı yapınız. **Bilmiyorsanız**, [Git ssh-key oluşturma (windows&linux)](https://yuceltoluyag.dev/git-ssh-key-olusturma-windows/) yazısını inceleyebilirsiniz.
+Kurulum tamamlandıktan sonra **Git** ayarlarınızı yapınız. **Bilmiyorsanız**, [Git ssh-key oluşturma (windows&linux)](https://yuceltoluyag.github.io/git-ssh-key-olusturma-windows/) yazısını inceleyebilirsiniz.
 
 ## Powershell Config
 
