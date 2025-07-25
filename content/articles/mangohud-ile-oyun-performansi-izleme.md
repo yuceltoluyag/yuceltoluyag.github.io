@@ -153,7 +153,9 @@ Bu rehber Arch Linux içindir. Debian/Ubuntu sistemlerinde `apt install mangohud
 
 🎯 MangoHud’u denediniz mi? Yapılandırma dosyanızda hangi ayarları tercih ediyorsunuz? Yorumlarda paylaşın!
 
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
+<lite-youtube videoid="foUosbS6p_A"></lite-youtube>
 
 ---
 
