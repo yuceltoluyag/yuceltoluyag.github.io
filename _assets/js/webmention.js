@@ -10,7 +10,7 @@
 
     // Eğer localhost ise, production URL'ine çevir
     if (currentPageUrl.includes("localhost:8000")) {
-        currentPageUrl = currentPageUrl.replace("http://localhost:8000", "https://yuceltoluyag.dev");
+        currentPageUrl = currentPageUrl.replace("http://localhost:8000", "https://yuceltoluyag.github.io/");
     }
 
     // Webmention API endpoint'i
