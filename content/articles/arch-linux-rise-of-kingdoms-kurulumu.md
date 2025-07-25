@@ -17,7 +17,7 @@ Rise of Kingdoms, mobil çıkışlı ama Windows üzerinden PC'de de oynanabilen
 
 ## 🔧 1. Gerekli Bağımlılıkların Kurulumu
 
-**Görsel Açıklaması:** Terminal ekranında `pacman` ile `wine`, `lutris`, `winetricks` paketlerinin kurulumunun gösterimi.
+
 
 ```bash
 sudo pacman -S lutris wine winetricks
@@ -36,7 +36,7 @@ yay -S wine-ge lutris winetricks
 
 ## 📀 2. Lutris Üzerinden Setup.exe Kurulumu
 
-**Görsel Açıklaması:** Lutris arayüzünde "Add Game" ve "Install EXE" seçeneklerinin tıklanışı.
+
 
 [responsive_img src="/images/rok-lutris-add-game-lg.webp" alt="lutris-add-game-local" /]
 
@@ -50,7 +50,7 @@ yay -S wine-ge lutris winetricks
 
 ## ⚙️ 3. Wine Ayarlarının Optimize Edilmesi
 
-**Görsel Açıklaması:** Lutris içinde Wine Configuration (winecfg) penceresi açık.
+
 
 ### Yapılacak Ayarlar:
 
@@ -118,7 +118,7 @@ Oyunu `dgvoodoo2`  **olmadan** çalıştırdığında ekranda kırılmalar,titre
 
 ## 🥺 6. Test ve Stabilite Kontrolü
 
-**Görsel Açıklaması:** Oyunun düzgün çalıştığı ekran görüntüsü ve Lutris FPS overlay.
+
 
 [responsive_img src="/images/rok-lutris-fps-test-lg.webp" alt="lutris-fps-overlay" /] Artık Oyun tıpkı Windows'ta gibi çalışıyor. Bütün herşeyi canlı yayında test ettik.
 
