@@ -18,7 +18,7 @@
         // URL düzenleme fonksiyonu
         function formatTestUrl(url) {
             if (url.includes("localhost:8000")) {
-                return url.replace("http://localhost:8000", "https://yuceltoluyag.dev");
+                return url.replace("http://localhost:8000", "https://yuceltoluyag.github.io");
             }
             return url;
         }
