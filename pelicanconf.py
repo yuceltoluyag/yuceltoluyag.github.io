@@ -5,8 +5,8 @@ from pymdownx import emoji
 
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
-SITEURL = "https://yuceltoluyag.dev" if PUBLISH else "http://localhost:8000"
-CANONICAL_URL = "https://yuceltoluyag.dev"  # Her zaman production URL'i kullan
+SITEURL = "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8000"
+CANONICAL_URL = "https://yuceltoluyag.github.io/"  # Her zaman production URL'i kullan
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
