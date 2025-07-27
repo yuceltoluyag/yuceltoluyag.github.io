@@ -3,7 +3,7 @@ import subprocess
 
 def update_requirements():
     # Paketleri güncellemek için
-    with open("requirements.txt") as f:
+with open("requirements.txt") as f:
         packages = f.read().splitlines()
 
     # Paketleri güncelleme işlemi
@@ -12,4 +12,4 @@ def update_requirements():
 
 
 if __name__ == "__main__":
-    update_requirements()
+update_requirements()
