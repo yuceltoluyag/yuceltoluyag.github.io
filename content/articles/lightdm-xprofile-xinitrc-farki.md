@@ -1,6 +1,7 @@
 Title: Linux’ta Oturum Ayarları: .xinitrc mi .xprofile mı?
 Date: 2025-05-09 16:30
-Category: linux
+Modified: 2025-05-07 06:24
+Category: Masaüstü Ortamları
 Tags: lightdm, xinitrc, xprofile, arch linux, oturum ayarları
 Slug: lightdm-xprofile-xinitrc-farki
 Authors: yuceltoluyag
@@ -32,7 +33,7 @@ Bu durumun tek bir sebebi olabilir: **LightDM veya benzeri bir Display Manager k
 #!/bin/bash
 xsetroot -cursor_name left_ptr &
 exec i3
-````
+```
 
 ### `.xprofile` Dosyası Ne İçin Kullanılır?
 

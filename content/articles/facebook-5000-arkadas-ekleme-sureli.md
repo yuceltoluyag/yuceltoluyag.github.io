@@ -1,7 +1,7 @@
 Title: Facebook 5000 Arkadaş Ekleme (Süreli)
 Date: 2021-02-09 12:00 10:00
-Modified: 2025-03-08 12:00
-Category: Facebook
+Modified: 2025-04-25 03:46
+Category: Sosyal Medya
 Tags: facebook
 Slug: facebook-5000-arkadas-ekleme-sureli
 Authors: yuceltoluyag

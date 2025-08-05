@@ -1,7 +1,7 @@
 Title: Arch Linux'ta Conda Kurulumu ve Yönetimi
 Date: 2025-02-28 10:00 10:00
-Modified: 2025-03-08 12:00
-Category: linux
+Modified: 2025-04-25 03:46
+Category: Yazılım Geliştirme
 Tags: archlinux, python, conda, miniconda, yazılım
 Slug: arch-linux-conda-kurulumu
 Authors: yuceltoluyag

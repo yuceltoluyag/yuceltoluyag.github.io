@@ -5,8 +5,12 @@ from pymdownx import emoji
 
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
-SITEURL = "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8000"
-CANONICAL_URL = "https://yuceltoluyag.github.io/"  # Her zaman production URL'i kullan
+SITEURL = (
+    "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8000"
+)
+CANONICAL_URL = (
+    "https://yuceltoluyag.github.io/"  # Her zaman production URL'i kullan
+)
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
@@ -148,6 +152,7 @@ common_plugins = [
     "plugins.video_schema",
     "plugins.comments",
     "plugins.pelican-toc",  # İçindekiler tablosu eklentisi
+    "plugins.auto_modified",
 ]
 
 dev_plugins = common_plugins.copy()
@@ -243,7 +248,7 @@ LINKS = {
 # --- Social Media ---
 SOCIAL = {
     "mastodon": "yuceltoluyag",
-    "matrix": "fatpip",
+    "matrix": "fatpip:matrix.org",
     "discord": "188034964879573003",
     "github": "yuceltoluyag",
     "instagram": "yuceltoluyag",

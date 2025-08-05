@@ -1,6 +1,7 @@
 Title: Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü
 Date: 2025-07-31 10:00
-Category: linux
+Modified: 2025-07-30 14:55
+Category: Donanım
 Tags: arch linux, linux-firmware, nvidia, pacman, sistem güncelleme, firmware hatası
 Slug: arch-linux-linux-firmware-nvidia-hatasi-cozumu
 Authors: yuceltoluyag

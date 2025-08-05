@@ -1,7 +1,7 @@
 Title: Pelican Bloguna Mastodon Yorumları Ekleme
 Date: 2025-05-01 14:00
 Modified: 2025-05-01 14:00
-Category: kutuphane
+Category: Web Geliştirme
 Tags: pelican, mastodon, yorumlar, webcomponent, blog
 Slug: pelican-bloguna-mastodon-yorumlari-ekleme
 Author: yuceltoluyag

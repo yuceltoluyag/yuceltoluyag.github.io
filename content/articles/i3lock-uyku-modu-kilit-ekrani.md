@@ -1,6 +1,7 @@
 Title: i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?
 Date: 2025-04-24 14:00
-Category: linux
+Modified: 2025-04-25 03:46
+Category: Masaüstü Ortamları
 Tags: i3lock, systemd, linux güvenlik, ekran kilidi, suspend
 Slug: i3lock-uyku-modu-kilit-ekrani
 Authors: yuceltoluyag

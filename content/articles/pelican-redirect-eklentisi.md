@@ -1,7 +1,7 @@
 Title: Pelican Redirect Eklentisi: Eski URL'leri Sorunsuz Yönlendirin 🔄
 Date: 2025-03-26 08:00 10:00
-Modified: 2025-03-26 10:00
-Category: kutuphane
+Modified: 2025-04-25 03:46
+Category: Web Geliştirme
 Tags: pelican, python, seo, redirect, yönlendirme, statik site
 Slug: pelican-redirect-eklentisi
 Authors: yuceltoluyag

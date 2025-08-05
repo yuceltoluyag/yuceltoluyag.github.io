@@ -1,7 +1,7 @@
 Title: Önemli Değişiklikler
 Date: 2025-02-27 12:00
-Modified: 2025-02-27 12:00
-Category: Duyurular
+Modified: 2025-05-07 06:24
+Category: Haberler
 Tags: site,Haberler
 Slug: onemli-degisiklikler
 Authors: yuceltoluyag

@@ -1,7 +1,7 @@
 Title: Facebook Toplu Arkadaş Ekleme (Gruba + Süreli)
 Date: 2018-10-11 12:00 10:00
-Modified: 2025-03-08 12:00
-Category: Facebook
+Modified: 2025-04-25 03:46
+Category: Sosyal Medya
 Tags: facebook
 Series: Facebook
 Series_index: 1
