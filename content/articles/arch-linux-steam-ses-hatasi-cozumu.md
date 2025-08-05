@@ -1,6 +1,7 @@
 Title: Arch Linux Üzerinde Steam Ses Hatalarını Çözme
 Date: 2025-05-06 10:00
-Category: oyun
+Modified: 2025-05-07 00:59
+Category:  Oyun
 Tags: arch linux, steam, ses hatası, pipewire, wayland, glibc, linux oyunları, pulse audio
 Slug: arch-linux-steam-ses-hatasi-cozumu
 Authors: yuceltoluyag

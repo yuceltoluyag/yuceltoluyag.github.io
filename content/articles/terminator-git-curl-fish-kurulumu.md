@@ -1,7 +1,7 @@
 Title: Terminator, Git, Curl ve Fish Kurulumu (Terminali Özelleştirme)
 Date: 2018-12-01 14:00 10:00
-Modified: 2025-03-08 12:00
-Category: linux
+Modified: 2025-04-25 03:46
+Category: Terminal
 Tags: terminal, linux, fish, git, curl
 Slug: terminator-git-curl-fish-kurulumu
 Authors: yuceltoluyag

@@ -1,7 +1,7 @@
 Title: Linux Özelleştirilebilir MP3 Oynatıcısı Audacious
 Date: 2018-12-01 12:00 10:00
-Modified: 2025-03-08 12:00
-Category: linux
+Modified: 2025-04-25 03:46
+Category: Medya
 Tags: linux, mp3, müzik oynatıcı
 Slug: linux-ozellestirilebilir-mp3-oynaticisi-audacious
 Authors: yuceltoluyag

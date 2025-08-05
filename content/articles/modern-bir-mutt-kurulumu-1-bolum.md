@@ -1,7 +1,7 @@
 Title: Modern Bir Mutt Kurulumu 1. Bölüm
 Date: 2020-02-03 12:00 10:00
-Modified: 2025-03-08 12:00
-Category: linux
+Modified: 2025-04-25 03:46
+Category:  Linux
 Tags: linux, e-mail
 Slug: modern-bir-mutt-kurulumu-1-bolum
 Authors: yuceltoluyag

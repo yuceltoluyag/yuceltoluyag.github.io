@@ -1,7 +1,7 @@
 Title: PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü
 Date: 2025-03-28 17:30
-Modified: 2025-03-28 17:30
-Category: kutuphane
+Modified: 2025-04-25 03:46
+Category: Sorun Giderme
 Tags: pyenv-win, powershell, python, hata çözümü
 Slug: powershell-pyenv-win-kurulum-hatasi-cozumu
 Authors: yuceltoluyag

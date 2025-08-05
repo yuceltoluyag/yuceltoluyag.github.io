@@ -1,7 +1,7 @@
 Title: Zsh İçerisinde Shopt Kullanmak
 Date: 2020-01-28 12:00 10:00
-Modified: 2025-03-08 12:00
-Category: linux
+Modified: 2025-04-25 03:46
+Category: Terminal
 Tags: linux, terminal, zsh
 Slug: zsh-icerisinde-shopt-kullanmak
 Authors: yuceltoluyag

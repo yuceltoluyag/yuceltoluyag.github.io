@@ -1,6 +1,7 @@
 Title: Yunohost'ta robots.txt Dosyası Oluşturmak
 Date: 2025-04-14 10:00
-Category: kutuphane
+Modified: 2025-07-25 06:43
+Category: Sunucu
 Tags: yunohost, robots.txt, nginx, seo, listeleme engelleme
 Slug: yunohost-robots-txt-olusturmak
 Authors: yuceltoluyag

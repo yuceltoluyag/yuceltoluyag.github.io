@@ -1,7 +1,7 @@
 Title: Arch Linux Laravel Valet Kurulumu
 Date: 2020-06-15 14:00 10:00
-Modified: 2025-03-08 12:00
-Category: linux
+Modified: 2025-07-25 06:43
+Category: Laravel Geliştirme
 Tags: linux, laravel
 Slug: arch-linux-laravel-valet-kurulumu
 Authors: yuceltoluyag

@@ -1,6 +1,7 @@
 Title: Node.js'de Sharp Modülünü Kurarken Karşılaşılan C++17 Derleme Hatası ve Çözümü  
 Date: 2025-05-06 10:15  
-Category: kutuphane  
+Modified: 2025-05-07 00:59
+Category: Sorun Giderme  
 Tags: node.js, sharp, derleme hatası, c++17, arch linux, node-gyp  
 Slug: nodejs-sharp-cpp17-derleme-hatasi-cozumu  
 Authors: yuceltoluyag  

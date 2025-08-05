@@ -1,7 +1,7 @@
 Title: Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu
 Date: 2025-04-12 15:30
-Modified: 2025-04-13 16:00
-Category: kutuphane
+Modified: 2025-04-25 03:46
+Category: Web Geliştirme
 Tags: pelican, staticman, comment-worker, cloudflare, github
 Slug: pelican-ile-staticman-alternatifi-comment-worker-kurulumu
 Authors: yuceltoluyag

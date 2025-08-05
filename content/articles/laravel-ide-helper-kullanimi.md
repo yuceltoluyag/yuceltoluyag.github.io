@@ -1,7 +1,7 @@
 Title: Laravel IDE Helper Kullanımı
 Date: 2020-07-03 14:00 10:00
-Modified: 2025-03-08 12:00
-Category: kutuphane
+Modified: 2025-04-25 03:46
+Category: Laravel Geliştirme
 Tags: phpstorm, cmder
 Slug: laravel-ide-helper-kullanimi
 Authors: yuceltoluyag

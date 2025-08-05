@@ -1,6 +1,7 @@
 Title: Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
 Date: 2025-05-08 12:00
-Category: linux
+Modified: 2025-05-07 06:24
+Category: Ağ ve İnternet
 Tags: Arch Linux, Transmission, BitTorrent, İndirme, Yükleme, Komut Satırı, Web Arayüzü
 Slug: arch-linux-transmission-kurulum
 Authors: yuceltoluyag

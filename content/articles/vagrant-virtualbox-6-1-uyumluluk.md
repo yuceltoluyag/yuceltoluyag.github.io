@@ -1,7 +1,7 @@
 Title: Vagrant'ı VirtualBox 6.1 ile Uyumlu Hale Getirmek
 Date: 2020-01-04 12:00 10:00
-Modified: 2025-03-08 12:00
-Category: program
+Modified: 2025-04-25 03:46
+Category: Sorun Giderme
 Tags: linux, vagrant, windows10
 Slug: vagrant-virtualbox-6-1-uyumluluk
 Authors: yuceltoluyag

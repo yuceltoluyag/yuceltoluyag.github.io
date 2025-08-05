@@ -1,5 +1,6 @@
 Title: MCP ile Tarayıcı Otomasyonunu Kolayca Başlatın: Puppeteer Sunucusu Kurulumu
 Date: 2025-04-17 14:00
+Modified: 2025-04-25 03:46
 Category: Geliştirme Araçları
 Tags: mcp, puppeteer, npx, browser automation, nodejs, tarayıcı sunucusu
 Slug: mcp-puppeteer-sunucusu-kurulumu

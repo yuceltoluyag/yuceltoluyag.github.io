@@ -1,7 +1,7 @@
 Title: Newsboat RSS Feeds Kullanımı
 Date: 2020-07-17 12:00 10:00
-Modified: 2025-03-08 12:00
-Category: linux
+Modified: 2025-04-25 03:46
+Category: Terminal
 Tags: linux, newsboat
 Slug: newsboat-rss-feeds-kullanimi
 Authors: yuceltoluyag
