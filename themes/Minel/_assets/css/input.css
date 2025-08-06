@@ -1381,6 +1381,9 @@
         &.pocket-share:hover {
             @apply bg-[#EF3F56] text-white;
         }
+        &.bluesky-share:hover {
+            @apply bg-[#1185FE] text-white;
+        }
 
         &.copy-share:hover {
             @apply bg-primary text-primary-content;

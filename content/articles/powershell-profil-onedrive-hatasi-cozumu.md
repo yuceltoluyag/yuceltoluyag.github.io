@@ -1,6 +1,6 @@
 Title: PowerShell Profil Sorunları ve OneDrive Kaldırma Sonrası Dizin Hatası Çözümü
 Date: 2025-03-02 10:00
-Modified: 2025-03-29 09:16
+Modified: 2025-08-05 22:38
 Category: Sorun Giderme
 Tags: PowerShell, OneDrive, Execution Policy, Modül Kurulumu
 Slug: powershell-profil-onedrive-hatasi-cozumu

@@ -1,6 +1,6 @@
 Title: Raspberry Pi Nasıl Kurulur
 Date: 2025-04-24 12:00
-Modified: 2025-05-03 07:04
+Modified: 2025-08-05 22:38
 Category: Donanım
 Tags: raspberry pi, raspberry pi kurulumu, microSD kart, ssh ayarları, statik ip
 Slug: raspberry-pi-nasil-kurulur

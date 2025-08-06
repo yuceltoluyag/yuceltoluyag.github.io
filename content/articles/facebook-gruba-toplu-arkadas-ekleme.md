@@ -1,6 +1,6 @@
 Title: Facebook Gruba Toplu Arkadaş Ekleme Yeni Versiyon
 Date: 2020-11-06 12:00 10:00
-Modified: 2025-04-25 03:46
+Modified: 2025-08-05 22:38
 Category: Sosyal Medya
 Tags: facebook, grup yönetimi, arkadaş ekleme
 Slug: facebook-gruba-toplu-arkadas-ekleme

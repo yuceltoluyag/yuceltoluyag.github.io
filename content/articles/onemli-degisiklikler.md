@@ -1,6 +1,6 @@
 Title: Önemli Değişiklikler
 Date: 2025-02-27 12:00
-Modified: 2025-05-07 06:24
+Modified: 2025-08-05 22:38
 Category: Haberler
 Tags: site,Haberler
 Slug: onemli-degisiklikler
@@ -11,10 +11,6 @@ Status: published
 Template: article
 Image: images/duyuru-lg.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114438941336923082
-
-
-
-
 ---
 # Akıllı Semboller
 * ==Word==
