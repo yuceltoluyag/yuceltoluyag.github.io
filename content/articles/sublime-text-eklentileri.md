@@ -1,6 +1,6 @@
 Title: Kullandığım Enfes Sublime Text Eklentileri
 Date: 2018-09-10 10:00 10:00
-Modified: 2025-04-25 03:46
+Modified: 2025-08-05 22:38
 Category: Geliştirme Araçları
 Tags: ipucu, sublime
 Slug: sublime-text-eklentileri
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/AFileIcon-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114978632312203694
 
 Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika eklenti ve temaları sizlerle paylaşacağım. 🥳
 

@@ -1,6 +1,6 @@
 Title: Arch Linux'ta Docker Kurulumu – Adım Adım Rehber
 Date: 2025-08-06 04:30
-Modified: 2025-08-05 21:09
+Modified: 2025-08-05 22:38
 Category: Sunucu
 Tags: arch linux, docker, container, kurulum, linux
 Slug: arch-linux-docker-kurulumu

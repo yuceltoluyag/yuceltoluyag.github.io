@@ -1,6 +1,6 @@
 Title: Spotify’dan Müzik Nasıl İndirilir? (Resimli Anlatım - Güncel)
 Date: 2018-09-10 13:45 10:00
-Modified: 2025-04-25 03:46
+Modified: 2025-08-05 22:38
 Category: Medya
 Tags: ipucu, spotify
 Slug: spotify-muzik-indirme
@@ -9,6 +9,7 @@ Summary: Spotify’dan müzik indirme yöntemlerini resimli ve güncel anlatıml
 Status: published
 Template: article
 Image: images/spotify-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114978651581920868
 
 
 # Neden?

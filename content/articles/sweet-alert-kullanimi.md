@@ -1,6 +1,6 @@
 Title: Sweet Alert Sınıfı Kullanımı: Detaylı Anlatım ve Tüm Argümanları
 Date: 2018-09-10 12:00 10:00
-Modified: 2025-04-25 03:46
+Modified: 2025-08-05 22:38
 Category: Web Geliştirme
 Tags: yazılım, sweetalert
 Slug: sweet-alert-kullanimi
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/sweetalert-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114978582840667535
 
 # Sweet Alert Nedir?
 

@@ -1,6 +1,6 @@
 Title: Git SSH-Key Oluşturma (Windows & Linux)
 Date: 2018-09-21 12:00 10:00
-Modified: 2025-04-25 03:46
+Modified: 2025-08-05 22:38
 Category: Git
 Tags: git,github, ssh
 Slug: git-ssh-key-olusturma

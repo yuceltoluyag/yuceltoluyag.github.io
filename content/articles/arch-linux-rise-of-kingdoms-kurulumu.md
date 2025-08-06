@@ -1,6 +1,6 @@
 Title: Arch Linux Üzerinde Rise of Kingdoms Kurulumu (Lutris ile)
 Date: 2025-05-10 21:00
-Modified: 2025-07-25 06:31
+Modified: 2025-08-05 22:38
 Category:  Oyun
 Tags: arch linux, rise of kingdoms, lutris, linux oyun, wine, çözümler, grafik hatası, çözünürlük
 Slug: arch-linux-rise-of-kingdoms-kurulumu
