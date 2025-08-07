@@ -1,6 +1,6 @@
 Title: Windows Üzerinden Paylaşılan Dosya ve Yazıcılara Erişim Sağlamak (Samba Kullanımı)
 Date: 2018-11-17 10:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Ağ ve İnternet
 Tags: linux, windows10
 Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/linux_samba-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982722753677108
 
 
 Merhaba! Windows üzerinden paylaşılan dosya, yazıcı gibi kaynaklara Linux üzerinden nasıl erişebileceğinizi anlatan bir rehber hazırladım. Bu konu bana yaklaşık 2-3 ay önce sorulmuştu, ancak yoğunluk nedeniyle henüz yanıtlayamamıştım. Şimdi, konuyu baştan sona ele alacağım ve tüm ayarları tek bir yazıda toplayacağım. Korkmanıza gerek yok, her şey adım adım açıklanacak!

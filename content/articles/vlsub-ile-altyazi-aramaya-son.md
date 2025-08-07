@@ -1,6 +1,6 @@
 Title: VLSub ile Altyazı Aramaya Son (Resimli Anlatım)
 Date: 2019-03-30 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Medya
 Tags: vlc, film
 Slug: vlsub-ile-altyazi-aramaya-son
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/vlsub0-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984286254678578
 
 # VLSub ile Altyazı Aramaya Son (Resimli Anlatım) 🎬
 

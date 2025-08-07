@@ -1,6 +1,6 @@
 Title: Her Türk Gencinin İzlemesi Gereken Belgeseller Serisi 1
 Date: 2020-01-04 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Medya
 Tags: film, belgesel
 Slug: her-turk-gencinin-izlemesi-gereken-belgeseller-1
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/her-turk-gencinin-izlemesi-gereken-belgeseller-1-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984443173742176
 
 
 📽️ **Her Türk Gencinin İzlemesi Gereken Belgeseller Serisi 1**

@@ -1,6 +1,6 @@
 Title: WSL Üzerinde Arch Linux Kurulumu
 Date: 2022-06-26 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Windows
 Tags: windows10, linux
 Slug: wsl-uzerinde-arch-linux-kurulumu
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/wls-archlinux-kurulumu-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985269244740877
 
 **Merhaba**
 

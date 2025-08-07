@@ -1,6 +1,6 @@
 Title: Linux'ta HTTrack Kullanımı
 Date: 2018-12-01 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Ağ ve İnternet
 Tags: httrack, linux
 Slug: linux-ta-httrack-kullanimi
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/httrack-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982912012327637
 
 Merhaba! HTTrack, internet bağlantınız olmadığında bile web sitelerini kullanabilmenizi sağlayan bir yazılımdır. Windows tarafında sıkça kullandığım bu yazılımı, Linux terminali üzerinden nasıl kullanabileceğinizi anlatan bir döküman hazırlamak istedim.
 

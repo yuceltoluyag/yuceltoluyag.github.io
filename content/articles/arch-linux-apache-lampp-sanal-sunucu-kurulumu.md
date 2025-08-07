@@ -1,6 +1,6 @@
 Title: Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu
 Date: 2018-11-18 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Sunucu
 Tags: linux, apache
 Series: ArchLampp
@@ -12,7 +12,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/babatest-lg.webp
-
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982815369929909
 
 Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sıkça kullandığım bir yöntemin **Türkçe Dökümantasyonu**nu yazmak istedim. Bu yöntemin adı **Virtual Host** olarak bilinir. Her projeye bir domain atayarak, kodlama ve proje isimlerinin akılda kalmasını sağlar. Bu yöntem, CSS, JS gibi dosyaların entegrasyonu sırasında rahatlık da sağlar.
 

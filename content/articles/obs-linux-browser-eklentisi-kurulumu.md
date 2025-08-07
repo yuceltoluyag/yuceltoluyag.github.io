@@ -1,6 +1,6 @@
 Title: OBS Linux Browser Eklentisi Kurulumu ve Discord Chat Entegrasyonu
 Date: 2018-11-17 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: linux
 Tags: linux, obs, discord
 Slug: obs-linux-browser-eklentisi-kurulumu
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/linux_browser_kaynaklar-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982751660270155
 
 
 Merhaba! 🎥 Open Broadcaster Software (OBS), video kaydetme ve canlı yayın yapma konusunda en iyi uygulamalardan biridir. Ancak Linux ortamında eklenti ekleme süreci hakkında yeterince Türkçe kaynak bulunmadığı için bu rehberi hazırladım. OBS'nin nasıl kullanılacağını anlatmayacağım, çünkü bu konuda yeterince içerik mevcut. Bu yazıda, **OBS'e Linux Browser eklentisinin nasıl ekleneceğini ve Discord StreamKit entegrasyonunun nasıl yapılacağını** öğreneceğiz.

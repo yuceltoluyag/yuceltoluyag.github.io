@@ -1,6 +1,6 @@
 Title: Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli
 Date: 2019-05-10 00:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Sosyal Medya
 Tags: facebook
 Series: Facebook
@@ -12,7 +12,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/facebook-5000-lg.webp
-
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984312882757495
 
 
 Facebook Toplu Arkadaş Ekleme (Gruba + Süreli) videosundan sonra **"Arkadaş ekleme kodu var mı?"** şeklinde çok sayıda soru aldım. Bu yazıyı ve taslağı daha önce hazırlamıştım, ancak dalgınlığıma ve iş yoğunluğuna bağlı olarak unuttum. 😅

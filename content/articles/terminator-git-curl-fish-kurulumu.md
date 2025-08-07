@@ -1,6 +1,6 @@
 Title: Terminator, Git, Curl ve Fish Kurulumu (Terminali Özelleştirme)
 Date: 2018-12-01 14:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Terminal
 Tags: terminal, linux, fish, git, curl
 Slug: terminator-git-curl-fish-kurulumu
@@ -10,11 +10,11 @@ Translation: false
 Status: published
 Template: article
 Image: images/terminator-git-curl-fish-kurulumu-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982841774461789
+
+
 
 Merhaba! Linux’ta en çok vakit geçirdiğimiz alanlardan biri terminaldir. Peki terminalimizi nasıl daha işlevsel ve estetik hale getirebiliriz? İşte bu rehber tam size göre! 💪🚀
-
-
-
 
 Terminali daha verimli ve keyifli hale getirmek için **Terminator** ve **Fish Shell** kombinasyonunu kullanacağız. Bu sayede:
 

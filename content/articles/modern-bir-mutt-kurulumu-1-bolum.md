@@ -1,6 +1,6 @@
 Title: Modern Bir Mutt Kurulumu 1. Bölüm
 Date: 2020-02-03 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category:  Linux
 Tags: linux, e-mail
 Slug: modern-bir-mutt-kurulumu-1-bolum
@@ -12,11 +12,10 @@ Translation: false
 Status: published
 Template: article
 Image: images/neomutt_senkron-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984516082310221
+
 
 Merhaba! Bu yazımızın ilk bölümünde, harika bir e-posta istemcisi olan Mutt ayarlarımızı yapılandıracağız. 😊
-
-
-
 
 ## Gerekli Yazılımlar
 

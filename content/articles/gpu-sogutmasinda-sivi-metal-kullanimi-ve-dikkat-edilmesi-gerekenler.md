@@ -1,6 +1,6 @@
 Title: GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler
 Date: 2025-05-07 12:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Donanım
 Tags: sıvı metal, gpu soğutma, alüminyum reaksiyonu, thermal macun, gpu modifikasyonu
 Slug: gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler

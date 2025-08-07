@@ -1,6 +1,6 @@
 Title: Jekyll ile Google Analytics Sayfa Görüntüleme Sayısı Takibi
 Date: 2022-01-30 09:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Web Geliştirme
 Tags: superproxy, jekyll, google analytics
 Slug: jekyll-google-analytics-sayfa-goruntuleme
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/superproxy-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985257871113523
 
 **Merhaba!** 🌟
 

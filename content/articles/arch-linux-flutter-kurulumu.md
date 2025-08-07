@@ -1,6 +1,6 @@
 Title: Rehber: Arch Linux'ta Flutter Kurulumu
 Date: 2025-08-03 16:45  
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Yazılım Geliştirme  
 Tags: flutter, arch-linux, android-development, dart, mobile-development, aur, android-sdk  
 Slug: arch-linux-flutter-kurulumu
