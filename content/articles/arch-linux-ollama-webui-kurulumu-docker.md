@@ -1,6 +1,6 @@
 Title: Arch Linux'ta Ollama ve WebUI Kurulumu
 Date: 2025-08-07 05:10
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Sunucu
 Tags: arch linux, docker, ollama, webui, yapay zeka, gpu, rocm, cuda, websocket, watchtower
 Slug: arch-linux-ollama-webui-kurulumu-docker
@@ -9,7 +9,7 @@ Status: published
 Summary: Arch Linux üzerinde Docker kullanarak Ollama ve WebUI kurulumunu, GPU hızlandırma, tek container bundle seçenekleri ve otomatik güncellemeler dahil adım adım anlatan kapsamlı rehber.
 Template: article
 Image: images/arch-linux-ollama-webui-kurulumu-docker-lg.webp
-
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989785173302285
 
 # Arch Linux'ta Ollama ve WebUI Kurulumu (Docker ile) 🤖
 

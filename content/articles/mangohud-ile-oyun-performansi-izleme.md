@@ -1,6 +1,6 @@
 Title: Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin
 Date: 2025-05-06 15:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Oyun
 Tags: mangohud, linux oyunları, arch linux, fps göstergesi, oyun performansı
 Slug: mangohud-ile-oyun-performansi-izleme
@@ -9,6 +9,7 @@ Status: published
 Summary: MangoHud ile oyunlarınızda FPS, sıcaklık, kullanım gibi sistem performansı bilgilerini anlık olarak izleyin. Arch Linux üzerinde kurulum ve yapılandırma rehberi.
 Template: article
 Image: images/mangohud_linux-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988969674382671
 
 # Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin 🎮
 

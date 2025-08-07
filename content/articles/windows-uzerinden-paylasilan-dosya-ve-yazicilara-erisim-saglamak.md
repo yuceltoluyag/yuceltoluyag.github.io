@@ -1,6 +1,6 @@
 Title: Windows Üzerinden Paylaşılan Dosya ve Yazıcılara Erişim Sağlamak (Samba Kullanımı)
 Date: 2018-11-17 10:00 10:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Ağ ve İnternet
 Tags: linux, windows10
 Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak

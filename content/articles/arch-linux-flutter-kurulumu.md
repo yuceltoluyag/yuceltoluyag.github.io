@@ -1,6 +1,6 @@
 Title: Rehber: Arch Linux'ta Flutter Kurulumu
 Date: 2025-08-03 16:45  
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Yazılım Geliştirme  
 Tags: flutter, arch-linux, android-development, dart, mobile-development, aur, android-sdk  
 Slug: arch-linux-flutter-kurulumu
@@ -9,6 +9,7 @@ Status: published
 Summary: Arch Linux'ta Android Studio kurmadan Flutter geliştirme ortamı kurulumu. 2025 güncel paketleri ve Java 24 desteği ile hafif ve etkili kurulum.  
 Template: article
 Image: images/arch-linux-flutter-kurulumu-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989730580607107
 
 
 # Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi 

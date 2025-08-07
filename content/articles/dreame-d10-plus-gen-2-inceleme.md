@@ -1,6 +1,6 @@
 Title: Dreame D10 Plus Gen 2 İnceleme
 Date: 2025-03-31 12:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Ürün İnceleme
 Tags: robot süpürge, akıllı temizlik, Dreame D10 Plus
 Slug: dreame-d10-plus-gen-2-inceleme
@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-lg.webp
-DEFAULT_TOOT_ID: 114259692781210332
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987742998718327
 
 <div class="info-box warning">
 <b>Not:</b>

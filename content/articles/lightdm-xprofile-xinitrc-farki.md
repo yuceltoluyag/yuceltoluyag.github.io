@@ -1,6 +1,6 @@
 Title: Linux’ta Oturum Ayarları: .xinitrc mi .xprofile mı?
 Date: 2025-05-09 16:30
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Masaüstü Ortamları
 Tags: lightdm, xinitrc, xprofile, arch linux, oturum ayarları
 Slug: lightdm-xprofile-xinitrc-farki
@@ -9,6 +9,8 @@ Status: published
 Summary: LightDM gibi bir display manager kullanıyorsanız `.xinitrc` dosyanız neden çalışmaz? Doğru başlangıç dosyasının `.xprofile` olduğunu anlatan bu rehber, kafa karışıklığını ortadan kaldırıyor.
 Template: article
 Image: images/xinitvsxprofile-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989004771704509
+
 
 # LightDM Kullanıyorsan Neden `.xprofile` Kullanmalısın?
 

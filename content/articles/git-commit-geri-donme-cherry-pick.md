@@ -1,6 +1,6 @@
 Title: Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı
 Date: 2025-03-28 18:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Git
 Tags: git, version-control, commit, rollback, cherry-pick
 Slug: git-commit-geri-donme-cherry-pick
@@ -12,6 +12,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/git-chery-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987704187596338
 
 
 

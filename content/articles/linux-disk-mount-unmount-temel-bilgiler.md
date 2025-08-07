@@ -1,6 +1,6 @@
 Title: Linux’ta Disklerin Mount ve Unmount İşlemleri: Temel Bilgiler ve Uygulamalar  
 Date: 2025-08-05 12:30  
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Disk Yönetimi  
 Tags: linux, mount, unmount, disk, dosya-sistemi, sistem-yonetimi  
 Slug: linux-disk-mount-unmount-temel-bilgiler  
@@ -10,6 +10,7 @@ Summary: Linux’ta disklerin mount edilmesi ve unmount edilmesi işlemlerini te
 Series: Linux-disk
 Series_index: 2 
 Template: article  
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989756718275526
 
 # 💽 Linux’ta Disklerin Mount Edilmesi ve Unmount Edilmesi: Temel Bilgiler
 

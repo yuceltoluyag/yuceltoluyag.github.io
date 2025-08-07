@@ -1,6 +1,6 @@
 Title: Raspberry Pi Nasıl Kurulur
 Date: 2025-04-24 12:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Donanım
 Tags: raspberry pi, raspberry pi kurulumu, microSD kart, ssh ayarları, statik ip
 Slug: raspberry-pi-nasil-kurulur
@@ -9,6 +9,7 @@ Status: published
 Summary: Raspberry Pi kurulumu adım adım nasıl yapılır? microSD kartı hazırlamaktan SSH ile uzaktan bağlantıya kadar tüm detayları bu rehberde bulabilirsiniz.
 Template: article
 Image: images/raspberry-pi-nasil-kurulur-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987887086983086
 
 # Raspberry Pi Nasıl Kurulur? 🛠️
 

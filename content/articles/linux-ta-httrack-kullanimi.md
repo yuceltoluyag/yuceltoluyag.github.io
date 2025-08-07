@@ -1,6 +1,6 @@
 Title: Linux'ta HTTrack Kullanımı
 Date: 2018-12-01 12:00 10:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Ağ ve İnternet
 Tags: httrack, linux
 Slug: linux-ta-httrack-kullanimi

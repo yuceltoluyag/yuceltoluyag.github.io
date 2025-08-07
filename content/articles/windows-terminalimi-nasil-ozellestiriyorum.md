@@ -1,6 +1,6 @@
 Title: Windows Terminalimi Nasıl Özelleştiriyorum
 Date: 2022-06-26 10:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Windows
 Tags: windows10, linux
 Slug: windows-terminalimi-nasil-ozellestiriyorum
