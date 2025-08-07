@@ -1,6 +1,6 @@
 Title: PowerShell Profil Sorunları ve OneDrive Kaldırma Sonrası Dizin Hatası Çözümü
 Date: 2025-03-02 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Sorun Giderme
 Tags: PowerShell, OneDrive, Execution Policy, Modül Kurulumu
 Slug: powershell-profil-onedrive-hatasi-cozumu
@@ -9,6 +9,7 @@ Summary: PowerShell profil dosyası ile ilgili yaşanan hata mesajları, OneDriv
 Status: published
 Template: article
 Image: images/windows11-onedrive-sorunu.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985346729844921
 
 ![Hosts Dosyası Düzenleme](/images/windows11-onedrive-sorunu.webp)
 

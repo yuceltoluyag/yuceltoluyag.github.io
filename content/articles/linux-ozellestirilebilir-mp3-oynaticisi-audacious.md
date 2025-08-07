@@ -1,6 +1,6 @@
 Title: Linux Özelleştirilebilir MP3 Oynatıcısı Audacious
 Date: 2018-12-01 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Medya
 Tags: linux, mp3, müzik oynatıcı
 Slug: linux-ozellestirilebilir-mp3-oynaticisi-audacious
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/audacious-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114983963606574479
 
 
 Yılların efsane müzik  🎵 oynatıcıları **Winamp**  ve **AIMP**, Windows kullanıcıları için vazgeçilmezdi. Ancak Linux ortamında benzer bir deneyim sunan en iyi alternatiflerden biri **Audacious** oldu. Piyasadaki birçok MP3 oynatıcıyı denedikten sonra, en fazla özelleştirme sunanı Audacious olduğu için tercih ettim.

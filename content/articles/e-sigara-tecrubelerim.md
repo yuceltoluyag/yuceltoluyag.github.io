@@ -1,6 +1,6 @@
 Title: E-Sigara Tecrübelerim
 Date: 2020-10-24 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Ürün İnceleme
 Tags: tanitim
 Slug: e-sigara-tecrubelerim
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/esigara-yararlimi-zararlimi-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984893645827636
 
 # Merhaba
 

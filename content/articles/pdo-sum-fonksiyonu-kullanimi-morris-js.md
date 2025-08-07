@@ -1,6 +1,6 @@
 Title: PDO Sum Fonksiyonu Kullanımı (morris.js İçerir)
 Date: 2018-12-07 14:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: PHP Geliştirme
 Tags: php, pdo
 Slug: pdo-sum-fonksiyonu-kullanimi-morris-js
@@ -10,7 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/php_morris-lg.webp
-
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114983987991038402
 
 Merhaba! MySQL (phpMyAdmin) üzerinde bir tablodaki belirli sütunların toplamını almak için keşfettiğim basit ve etkili bir fonksiyonun kullanımını ele alacağız. Ayrıca, en sevdiğim grafik kütüphanelerinden biri olan [morris.js](http://morrisjs.github.io/morris.js/){: target="_blank" rel="noopener noreferrer"} ile bu verileri görselleştireceğiz. 🎨📊
 

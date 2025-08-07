@@ -1,6 +1,6 @@
 Title: Git SSH-Key Oluşturma (Windows & Linux)
 Date: 2018-09-21 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Git
 Tags: git,github, ssh
 Slug: git-ssh-key-olusturma
@@ -12,6 +12,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/git_bash-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982170415333865
+
 
 Git üzerinde çalışırken SSH anahtarı oluşturma konusunda sorun yaşayanlar için bu rehberde, Windows ve Linux kullanıcıları için adım adım SSH anahtarı oluşturma sürecini ele alacağız. 🛠️
 

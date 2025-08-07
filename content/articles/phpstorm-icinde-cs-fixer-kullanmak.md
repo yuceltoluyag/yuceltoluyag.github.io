@@ -1,6 +1,6 @@
 Title: Phpstorm içerisinde CS Fixer Kullanmak
 Date: 2020-02-06 14:30 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Geliştirme Araçları
 Tags: phpstorm, cmder
 Slug: phpstorm-icinde-cs-fixer-kullanmak
@@ -12,6 +12,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/php_phpstorm_csfixer-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984674025445306
 
 # PSR Standartı Nedir?
 

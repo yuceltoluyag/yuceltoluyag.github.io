@@ -1,6 +1,6 @@
 Title: Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)
 Date: 2018-11-18 12:00 10:00
-Modified: 2025-08-05 22:38
+Modified: 2025-08-06 16:05
 Category: Sunucu
 Tags: linux, apache
 Series: ArchLampp
@@ -12,6 +12,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/archlinuxlampp-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982780512488089
 
 
 
