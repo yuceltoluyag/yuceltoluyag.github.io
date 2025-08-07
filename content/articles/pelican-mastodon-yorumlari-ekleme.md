@@ -1,6 +1,6 @@
 Title: Pelican Bloguna Mastodon Yorumları Ekleme
 Date: 2025-05-01 14:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Web Geliştirme
 Tags: pelican, mastodon, yorumlar, webcomponent, blog
 Slug: pelican-bloguna-mastodon-yorumlari-ekleme
@@ -10,6 +10,7 @@ Status: published
 Summary: Pelican statik blog sistemine Mastodon yorumlarını nasıl ekleyeceğinizi adım adım öğrenin.
 Image: images/pelican-bloguna-mastodon-yorumlari-ekleme-lg.webp
 Template: article
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987917469252302
 
 Statik bloglar için yorum sistemi bulmak her zaman zor olmuştur. Disqus gibi üçüncü taraf hizmetler gizlilik endişeleri oluşturabilir, kendi kendine barındırılan çözümler ise bakımı zor olabilir. Neyse ki Fediverse ve özellikle Mastodon, bloglarımıza entegre edebileceğimiz harika bir yorum sistemi sunuyor.
 

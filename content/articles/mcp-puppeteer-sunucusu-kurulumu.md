@@ -1,6 +1,6 @@
 Title: MCP ile Tarayıcı Otomasyonunu Kolayca Başlatın: Puppeteer Sunucusu Kurulumu
 Date: 2025-04-17 14:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Geliştirme Araçları
 Tags: mcp, puppeteer, npx, browser automation, nodejs, tarayıcı sunucusu
 Slug: mcp-puppeteer-sunucusu-kurulumu
@@ -9,6 +9,7 @@ Status: published
 Summary: Bu yazıda,  Continue Eklentisinde mcp kurulumu
 Template: article
 Image: images/mcp-puppeteer-sunucusu-kurulumu-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987857795740048
 
 
 **MCP (Model Context Protocol)** kullanarak *tarayıcı otomasyonuna* başlamak mı istiyorsun? Kafa karıştırıcı kurulum adımlarını unut! Bu rehberde, sadece tek bir `npx` komutuyla **Puppeteer destekli bir MCP sunucusunun nasıl çalıştırılacağını** adım adım göstereceğim. Üstelik tüm işlemler Windows ortamında! 💻

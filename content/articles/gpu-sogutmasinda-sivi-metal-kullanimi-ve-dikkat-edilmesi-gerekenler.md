@@ -1,6 +1,6 @@
 Title: GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler
 Date: 2025-05-07 12:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Donanım
 Tags: sıvı metal, gpu soğutma, alüminyum reaksiyonu, thermal macun, gpu modifikasyonu
 Slug: gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler
@@ -9,7 +9,7 @@ Status: published
 Summary: GPU soğutmasında sıvı metal kullanımı hakkında bilmeniz gereken her şey. Alüminyum reaksiyonları, doğru yüzey seçimi, malzeme önerileri ve detaylı uygulama rehberi.
 Template: article
 Image: /images/rtx-4060-sıvı-metal-lg.webp
-
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988983481909917
 
 <div class="alert alert-warning">
   <strong>Dikkat:</strong>Sıvı metal kullanımı doğru yapılırsa GPU'nuzda %10-20'ye kadar sıcaklık iyileştirmesi sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı geri dönüşümsüz şekilde bozabilir. Riski yüksek bir işlem,buna göre düşünün.Sorumluluk size aittir.

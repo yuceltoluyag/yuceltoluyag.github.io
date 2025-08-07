@@ -1,6 +1,6 @@
 Title: Arch Linux Üzerinde Rise of Kingdoms Kurulumu (Lutris ile)
 Date: 2025-05-10 21:00
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category:  Oyun
 Tags: arch linux, rise of kingdoms, lutris, linux oyun, wine, çözümler, grafik hatası, çözünürlük
 Slug: arch-linux-rise-of-kingdoms-kurulumu
@@ -9,6 +9,8 @@ Status: published
 Summary: Arch Linux'ta Rise of Kingdoms oynamak mümkün! Bu rehberde Lutris ile nasıl kurulum yapacağınızı ve yaşanan grafik sorunlarını nasıl çözeceğinizi adım adım anlatıyoruz.
 Template: article
 Image: images/rok-lutris-fps-test-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989018351105207
+
 
 ## 🧐 Giriş: Neden Rise of Kingdoms'u Linux'ta Oynamalısınız?
 
@@ -162,6 +164,8 @@ Eğer sorun çözülmediyse, aşağıdaki adımları izleyin.
 -- 1080p çözünürlükte çalışıyor.
 
 -- 60 FPS veya daha üzerinde sorunsuz şekilde çalışıyor.
+
+-- [/rise-of-kingdom-bot ](/veda-rise-of-kingdom-bot )
 
 Canlı Yayın Tekrarı : [Canlı Yayın tekrarını izlemek için dıkla](https://kick.com/babapy/videos/2063d6f8-eba5-44af-8877-2ba34dd2d9c9)
 

@@ -1,6 +1,6 @@
 Title: Claw's Sonic V1 RGB Spectrum 7.1 Kulaklık İncelemesi 🎧
 Date: 2025-04-10 12:30
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Ürün İnceleme
 Tags: kulaklık, claw's sonic, oyuncu kulaklığı, rgb kulaklık, fiyat performans
 Slug: claws-sonic-v1-rgb-spectrum-kulaklik-incelemesi
@@ -10,6 +10,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/claws-sonic-v1-rgb-lg.webp
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987790374839792
 
 <div class="info-box warning">
 <b>Not:</b>

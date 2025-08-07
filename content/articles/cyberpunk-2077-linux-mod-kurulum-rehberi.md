@@ -1,6 +1,6 @@
 Title: 🎮 Cyberpunk 2077 Linux'ta Mod Kurulum Rehberi: Cyber Engine Tweaks ve Daha Fazlası
 Date: 2025-08-01 10:30  
-Modified: 2025-08-06 16:05
+Modified: 2025-08-07 06:45
 Category: Oyun
 Tags: cyberpunk-2077, linux, mod, cyber-engine-tweaks, wine, proton, gaming  
 Slug: cyberpunk-2077-linux-mod-kurulum-rehberi  
@@ -8,8 +8,9 @@ Authors: yuceltoluyag
 Status: published  
 Summary: Cyberpunk 2077'yi Linux'ta modlayın! Paketlenmiş ve paketlenmemiş sürümler için detaylı Cyber Engine Tweaks kurulum rehberi.  
 Template: article
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989718619228793
 
----
+
 
 ## 🚀 Giriş
 
