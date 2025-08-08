@@ -130,7 +130,7 @@ typogrify==2.1.0
     # via yuceltoluyag-github-io (pyproject.toml)
 unidecode==1.4.0
     # via pelican
-uv==0.6.16
+uv==0.8.6
     # via yuceltoluyag-github-io (pyproject.toml)
 watchfiles==1.0.5
     # via pelican
