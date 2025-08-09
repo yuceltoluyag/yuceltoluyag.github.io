@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Git</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/git.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-07T06:45:00+03:00</updated><entry><title>GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber</title><link href="https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/" rel="alternate"/><published>2025-05-03T14:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-03:/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/</id><summary type="html">&lt;p&gt;Bu yazıda, GitHub Copilot'ı kullanarak commit mesajlarınızı otomatik olarak nasıl tamamlayabileceğinizi ve yazılım geliştirme sürecini nasıl daha verimli hale getirebileceğinizi adım adım öğreneceksiniz.&lt;/p&gt;</summary><content type="html">&lt;hr/&gt;
+&lt;p&gt;Yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirmede s&amp;uuml;rekli kar&amp;scedil;&amp;inodot;la&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;m&amp;inodot;z bir zorluk var: &lt;strong&gt;anlaml&amp;inodot; commit mesajlar&amp;inodot; yazmak&lt;/strong&gt;. Hi&amp;ccedil; d&amp;uuml;&amp;scedil;&amp;uuml;nd&amp;uuml;n&amp;uuml;z m&amp;uuml;, bu rutini otomatikle&amp;scedil;tirebilir misiniz? &amp;Idot;yi haber: &lt;strong&gt;GitHub Copilot&lt;/strong&gt; art&amp;inodot;k yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z de&amp;gbreve;i&amp;scedil;iklikleri analiz edip anlaml&amp;inodot; commit mesajlar&amp;inodot; &amp;ouml;nerebiliyor! 🚀&lt;/p&gt;
+&lt;p&gt;Bu rehberde, &lt;strong&gt;GitHub Copilot'&amp;inodot;n commit mesajlar&amp;inodot;n&amp;inodot;z&amp;inodot; otomatik tamamlama&lt;/strong&gt; &amp;ouml;zelli&amp;gbreve;ini nas&amp;inodot;l en verimli &amp;scedil;ekilde kullanaca&amp;gbreve;&amp;inodot;n&amp;inodot;z&amp;inodot; ad&amp;inodot;m ad&amp;inodot;m g&amp;ouml;sterece&amp;gbreve;iz. Ekip arkada&amp;scedil;lar&amp;inodot;n&amp;inodot;z&amp;inodot;n g&amp;ouml;z&amp;uuml;nde kahraman olacak ve git tarih&amp;ccedil;eniz hi&amp;ccedil; olmad&amp;inodot;&amp;gbreve;&amp;inodot; kadar d&amp;uuml;zenli olacak!&lt;/p&gt;
+&lt;h2 id="neden-github-copilot-ile-commit-mesajlari-yazmaliyim"&gt;Neden GitHub Copilot ile Commit Mesajlar&amp;inodot; Yazmal&amp;inodot;y&amp;inodot;m?&lt;/h2&gt;
+&lt;p&gt;Hi&amp;ccedil; bir projede dola&amp;scedil;&amp;inodot;rken "Bu de&amp;gbreve;i&amp;scedil;iklik neden yap&amp;inodot;lm&amp;inodot;&amp;scedil;?" diye d&amp;uuml;&amp;scedil;&amp;uuml;nd&amp;uuml;n&amp;uuml;z m&amp;uuml;? Ya da kendi yazd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z commit mesajlar&amp;inodot;na bak&amp;inodot;p "Bu ne anlama geliyor?" diye kafa yordunuz mu? &amp;Idot;&amp;scedil;te tam burada &lt;strong&gt;GitHub Copilot&lt;/strong&gt; devreye giriyor.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GitHub Copilot ile commit mesajlar&amp;inodot; yazman&amp;inodot;n avantajlar&amp;inodot;:&lt;/strong&gt;
+- ⏱️ &lt;strong&gt;Zaman Tasarrufu&lt;/strong&gt;: De&amp;gbreve;i&amp;scedil;iklikleri manuel olarak a&amp;ccedil;&amp;inodot;klamak yerine yapay zeka bunu sizin i&amp;ccedil;in yap&amp;inodot;yor
+- 🔄 &lt;strong&gt;Tutarl&amp;inodot;l&amp;inodot;k&lt;/strong&gt;: T&amp;uuml;m ekip &amp;uuml;yeleri benzer formatta mesajlar olu&amp;scedil;turuyor
+- 📝 &lt;strong&gt;Detay&lt;/strong&gt;: Yap&amp;inodot;lan de&amp;gbreve;i&amp;scedil;ikliklerin kapsaml&amp;inodot; ve anla&amp;scedil;&amp;inodot;l&amp;inodot;r a&amp;ccedil;&amp;inodot;klamalar&amp;inodot;
+- 🧠 &lt;strong&gt;Daha Az Zihinsel Y&amp;uuml;k&lt;/strong&gt;: "Ne yazd&amp;inodot;&amp;gbreve;&amp;inodot;m&amp;inodot; nas&amp;inodot;l a&amp;ccedil;&amp;inodot;klasam?" stresinden kurtulun&lt;/p&gt;
+&lt;p&gt;Ayr&amp;inodot;ca, yapay zeka destekli bu &amp;ouml;zellik sayesinde, commit mesajlar&amp;inodot;n&amp;inodot;z sadece "de&amp;gbreve;i&amp;scedil;iklikler yap&amp;inodot;ld&amp;inodot;" gibi anlams&amp;inodot;z ifadelerden &amp;ccedil;ok daha profesyonel hale gelecek.&lt;/p&gt;
+&lt;h2 id="kurulum-github-copiloti-vs-codea-entegre-etme"&gt;Kurulum: GitHub Copilot'&amp;inodot; VS Code'a Entegre Etme&lt;/h2&gt;
+&lt;p&gt;GitHub Copilot'&amp;inodot;n commit mesajlar&amp;inodot;n&amp;inodot;z&amp;inodot; tamamlamas&amp;inodot;n&amp;inodot; istiyorsan&amp;inodot;z, &amp;ouml;nce sisteminize d&amp;uuml;zg&amp;uuml;n &amp;scedil;ekilde kurulmas&amp;inodot; gerekir. &amp;Idot;&amp;scedil;te VS Code'a GitHub Copilot kurman&amp;inodot;n ad&amp;inodot;mlar&amp;inodot;:&lt;/p&gt;
+&lt;h3 id="1-github-copilot-eklentisini-yukleme"&gt;1. GitHub Copilot Eklentisini Y&amp;uuml;kleme&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;VS Code'u a&amp;ccedil;&amp;inodot;n&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Klavyenizden &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;X&lt;/kbd&gt; tu&amp;scedil;lar&amp;inodot;na basarak &lt;strong&gt;Extensions&lt;/strong&gt; b&amp;ouml;l&amp;uuml;m&amp;uuml;n&amp;uuml; a&amp;ccedil;&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;Arama kutusuna "&lt;strong&gt;GitHub Copilot&lt;/strong&gt;" yaz&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&amp;Ccedil;&amp;inodot;kan sonu&amp;ccedil;lardan "GitHub Copilot" eklentisini bulun ve "&lt;strong&gt;Install&lt;/strong&gt;" butonuna t&amp;inodot;klay&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&amp;Idot;ndirme tamamland&amp;inodot;ktan sonra yeniden ba&amp;scedil;latma gerekebilir&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="2-github-hesabinizla-baglanti-kurun"&gt;2. GitHub Hesab&amp;inodot;n&amp;inodot;zla Ba&amp;gbreve;lant&amp;inodot; Kurun&lt;/h3&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;ktan sonra:
+1. VS Code size bir bildirim g&amp;ouml;sterecek - "&lt;strong&gt;Sign in to GitHub&lt;/strong&gt;" se&amp;ccedil;ene&amp;gbreve;ine t&amp;inodot;klay&amp;inodot;n
+2. Taray&amp;inodot;c&amp;inodot;n&amp;inodot;zda GitHub hesab&amp;inodot;n&amp;inodot;za giri&amp;scedil; yap&amp;inodot;n
+3. Gerekli izinleri onaylay&amp;inodot;n
+4. VS Code'a geri d&amp;ouml;nd&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml;zde, Copilot'&amp;inodot;n aktif oldu&amp;gbreve;unu bildiren bir mesaj g&amp;ouml;receksiniz&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not&lt;/strong&gt;: GitHub Copilot'un &amp;uuml;cretsiz s&amp;uuml;r&amp;uuml;m&amp;uuml; de bulunmaktad&amp;inodot;r! &amp;Uuml;cretsiz s&amp;uuml;r&amp;uuml;mde ayda 2,000 tamamlama ve 50 sohbet iste&amp;gbreve;i hakk&amp;inodot;n&amp;inodot;z var. Daha fazla kullan&amp;inodot;m i&amp;ccedil;in &amp;uuml;cretli plana ge&amp;ccedil;ebilirsiniz. &amp;Ouml;&amp;gbreve;renciyseniz &amp;uuml;cretsiz eri&amp;scedil;im i&amp;ccedil;in &lt;a href="https://education.github.com/pack"&gt;GitHub Student Developer Pack&lt;/a&gt; ba&amp;scedil;vurusu yapabilirsiniz.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="ozel-kodlama-ve-commit-talimatlari-olusturma-guncel-yontem_1"&gt;&amp;Ouml;zel Kodlama ve Commit Talimatlar&amp;inodot; Olu&amp;scedil;turma (G&amp;uuml;ncel Y&amp;ouml;ntem)&lt;/h2&gt;
+&lt;p&gt;GitHub Copilot'&amp;inodot;n &lt;strong&gt;sizin stilinize uygun&lt;/strong&gt; commit mesajlar&amp;inodot; olu&amp;scedil;turmas&amp;inodot; i&amp;ccedil;in &amp;ouml;zel talimatlar tan&amp;inodot;mlayabilirsiniz. Bu ad&amp;inodot;m iste&amp;gbreve;e ba&amp;gbreve;l&amp;inodot;d&amp;inodot;r ancak &lt;strong&gt;Copilot'&amp;inodot;n verimlili&amp;gbreve;ini &amp;ouml;nemli &amp;ouml;l&amp;ccedil;&amp;uuml;de art&amp;inodot;r&amp;inodot;r&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ouml;NEML&amp;Idot; G&amp;Uuml;NCELLEME&lt;/strong&gt;: GitHub Copilot, &amp;ouml;zel talimatlar&amp;inodot; y&amp;ouml;netmek i&amp;ccedil;in yeni bir sistem kullan&amp;inodot;yor. Art&amp;inodot;k talimatlar&amp;inodot;n&amp;inodot;z&amp;inodot; tek bir &lt;code&gt;.github/copilot-instructions.md&lt;/code&gt; dosyas&amp;inodot;nda toplaman&amp;inodot;z gerekiyor.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="1-proje-yapilandirma-dosyalarini-olusturma"&gt;1. Proje Yap&amp;inodot;land&amp;inodot;rma Dosyalar&amp;inodot;n&amp;inodot; Olu&amp;scedil;turma&lt;/h3&gt;
+&lt;p&gt;&amp;Idot;lk olarak, proje klas&amp;ouml;r&amp;uuml;n&amp;uuml;zde gerekli dizin ve dosyalar&amp;inodot; olu&amp;scedil;turun:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;.github
+touch&lt;span class="w"&gt; &lt;/span&gt;.github/copilot-instructions.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="2-kod-uslubunuzu-ve-commit-mesaji-formatinizi-tanimlayin"&gt;2. Kod &amp;Uuml;slubunuzu ve Commit Mesaj&amp;inodot; Format&amp;inodot;n&amp;inodot;z&amp;inodot; Tan&amp;inodot;mlay&amp;inodot;n&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.github/copilot-instructions.md&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; a&amp;ccedil;&amp;inodot;n ve kodlama tercihlerinizi ile commit mesaj&amp;inodot; format&amp;inodot;n&amp;inodot;z&amp;inodot; belirtin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Markdown&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;# Project Instructions&lt;/span&gt;
+
+&lt;span class="gu"&gt;## Code Style Guide&lt;/span&gt;
+
+&lt;span class="gu"&gt;### General Guidelines&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Keep the code simple and readable.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use Prettier for code formatting.
+
+&lt;span class="gu"&gt;### CSS&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use class names that are descriptive and follow a consistent naming convention.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Avoid using IDs for styling.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Organize CSS properties in a logical order.
+
+&lt;span class="gu"&gt;### Tailwind CSS V4&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use utility-first classes to build components.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Avoid using custom CSS when possible.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Group related classes together for better readability.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use DaisyUI classes for components.
+
+&lt;span class="gu"&gt;### JavaScript&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use &lt;span class="sb"&gt;`const`&lt;/span&gt; and &lt;span class="sb"&gt;`let`&lt;/span&gt; instead of &lt;span class="sb"&gt;`var`&lt;/span&gt;.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Prefer arrow functions for anonymous functions.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use template literals for string concatenation.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Always use semicolons.
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Follow the Prettier configuration for formatting.
+
+---
+
+&lt;span class="gu"&gt;## Commit Style Guide&lt;/span&gt;
+
+We follow the [&lt;span class="nt"&gt;Conventional Commits&lt;/span&gt;](&lt;span class="na"&gt;https://www.conventionalcommits.org/en/v1.0.0/&lt;/span&gt;) style for our commit messages. Here are some examples:
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`feat: add new user authentication module`&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`fix: resolve issue with data fetching.`&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`docs: update README with installation instructions`&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`style: format code with Prettier`&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`refactor: improve performance of data processing`&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`test: add unit tests for user service`&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`chore: update dependencies`&lt;/span&gt;
+
+&lt;span class="gu"&gt;### Commit Message Rules&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use imperative mood (e.g., "add feature" not "added feature")
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Keep the subject line under 50 characters
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Capitalize the subject line
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Do not end the subject line with a period
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Separate subject from body with a blank line
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Use the body to explain what and why vs. how
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="3-vs-code-ayarlarini-guncelleyin"&gt;3. VS Code Ayarlar&amp;inodot;n&amp;inodot; G&amp;uuml;ncelleyin&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.vscode/settings.json&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; a&amp;ccedil;&amp;inodot;n ve a&amp;scedil;a&amp;gbreve;&amp;inodot;daki kod blo&amp;gbreve;unu ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"github.copilot.chat.codeGeneration.useInstructionFiles"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;NOT&lt;/strong&gt;: Eski y&amp;ouml;ntemde kullan&amp;inodot;lan &lt;code&gt;github.copilot.chat.codeGeneration.instructions&lt;/code&gt; ve &lt;code&gt;github.copilot.chat.commitMessageGeneration.instructions&lt;/code&gt; ayarlar&amp;inodot; art&amp;inodot;k kullan&amp;inodot;lm&amp;inodot;yor. Bu ayarlar&amp;inodot; kald&amp;inodot;rman&amp;inodot;z gerekiyor.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Bu yap&amp;inodot;land&amp;inodot;rma, GitHub Copilot'a kodlama stilinizi ve commit mesaj&amp;inodot; format&amp;inodot;n&amp;inodot;z&amp;inodot; &amp;ouml;&amp;gbreve;retecektir. 🎯 Detayl&amp;inodot; incelemek i&amp;ccedil;in &lt;a href="https://aka.ms/vscode-ghcp-custom-instructions"&gt;GitHub Copilot'&amp;inodot;n resmi belgelerine&lt;/a&gt; bak&amp;inodot;n.&lt;/p&gt;
+&lt;h2 id="verbose-modu-etkinlestirme_1"&gt;Verbose Modu Etkinle&amp;scedil;tirme&lt;/h2&gt;
+&lt;p&gt;GitHub Copilot'&amp;inodot;n &lt;strong&gt;commit mesajlar&amp;inodot;n&amp;inodot;z&amp;inodot; daha iyi analiz etmesi&lt;/strong&gt; i&amp;ccedil;in, Git'in verbose modunu etkinle&amp;scedil;tirmeniz gerekiyor. Bu mod, Copilot'a yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z de&amp;gbreve;i&amp;scedil;iklikleri daha detayl&amp;inodot; g&amp;ouml;stererek daha do&amp;gbreve;ru &amp;ouml;neriler yapmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;p&gt;Terminali a&amp;ccedil;&amp;inodot;n ve &amp;scedil;u komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;commit.verbose&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Bu ayar sayesinde, commit yaparken t&amp;uuml;m de&amp;gbreve;i&amp;scedil;iklikler commit edit&amp;ouml;r&amp;uuml;n&amp;uuml;zde g&amp;ouml;r&amp;uuml;necek ve GitHub Copilot bu bilgileri kullanarak daha do&amp;gbreve;ru commit mesajlar&amp;inodot; &amp;ouml;nerecektir.&lt;/p&gt;
+&lt;h2 id="commit-mesajlari-icin-copiloti-kullanma"&gt;Commit Mesajlar&amp;inodot; &amp;Idot;&amp;ccedil;in Copilot'&amp;inodot; Kullanma&lt;/h2&gt;
+&lt;p&gt;Art&amp;inodot;k her &amp;scedil;ey haz&amp;inodot;r! GitHub Copilot'&amp;inodot; commit mesajlar&amp;inodot;n&amp;inodot;z&amp;inodot; olu&amp;scedil;turmak i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; izleyin:&lt;/p&gt;
+&lt;h3 id="1-degisikliklerinizi-stageleyin"&gt;1. De&amp;gbreve;i&amp;scedil;ikliklerinizi Stage'leyin&lt;/h3&gt;
+&lt;p&gt;&amp;Ouml;ncelikle, commit etmek istedi&amp;gbreve;iniz t&amp;uuml;m de&amp;gbreve;i&amp;scedil;iklikleri stage'leyin:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;.&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# T&amp;uuml;m de&amp;gbreve;i&amp;scedil;iklikleri ekler&lt;/span&gt;
+&lt;span class="c1"&gt;# VEYA&lt;/span&gt;
+git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;dosya_ad&amp;inodot;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Belirli bir dosyay&amp;inodot; ekler&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="2-commit-editorunu-acin"&gt;2. Commit Edit&amp;ouml;r&amp;uuml;n&amp;uuml; A&amp;ccedil;&amp;inodot;n&lt;/h3&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak commit edit&amp;ouml;r&amp;uuml;n&amp;uuml; a&amp;ccedil;&amp;inodot;n:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="3-copilotin-onerilerini-kullanin"&gt;3. Copilot'&amp;inodot;n &amp;Ouml;nerilerini Kullan&amp;inodot;n&lt;/h3&gt;
+&lt;p&gt;VS Code'da commit edit&amp;ouml;r&amp;uuml; a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda:
+1. Edit&amp;ouml;r&amp;uuml;n &amp;uuml;st k&amp;inodot;sm&amp;inodot;nda bir &lt;strong&gt;"Generate Commit Message"&lt;/strong&gt; (Commit Mesaj&amp;inodot; Olu&amp;scedil;tur) butonu g&amp;ouml;receksiniz
+2. Bu butona t&amp;inodot;klay&amp;inodot;n
+3. GitHub Copilot, yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z de&amp;gbreve;i&amp;scedil;iklikleri analiz edecek ve uygun bir commit mesaj&amp;inodot; &amp;ouml;nerecektir
+4. &amp;Ouml;nerilen mesaj&amp;inodot; g&amp;ouml;zden ge&amp;ccedil;irin ve gerekirse d&amp;uuml;zenleyin
+5. &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt; tu&amp;scedil;lar&amp;inodot;na basarak kaydedin ve edit&amp;ouml;r&amp;uuml; kapat&amp;inodot;n&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GitHub Copilot Commit Mesaj&amp;inodot; &amp;Ouml;nerisi" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/copilot-commit-lg.webp" srcset="/images/copilot-commit-sm.webp 300w, /images/copilot-commit-md.webp 500w, /images/copilot-commit-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Idot;pucu&lt;/strong&gt;: Copilot'&amp;inodot;n &amp;ouml;nerisi istedi&amp;gbreve;iniz gibi de&amp;gbreve;ilse, d&amp;uuml;zenlemekten &amp;ccedil;ekinmeyin. Copilot size sadece bir ba&amp;scedil;lang&amp;inodot;&amp;ccedil; noktas&amp;inodot; sunar.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="ileri-duzey-ipuclari-ve-en-iyi-uygulamalar_1"&gt;&amp;Idot;leri D&amp;uuml;zey &amp;Idot;pu&amp;ccedil;lar&amp;inodot; ve En &amp;Idot;yi Uygulamalar&lt;/h2&gt;
+&lt;p&gt;GitHub Copilot ile commit mesajlar&amp;inodot;n&amp;inodot;z&amp;inodot; daha da etkili hale getirmek i&amp;ccedil;in baz&amp;inodot; ileri d&amp;uuml;zey ipu&amp;ccedil;lar&amp;inodot;:&lt;/p&gt;
+&lt;h3 id="1-mantikli-commit-gruplari-olusturun"&gt;1. Mant&amp;inodot;kl&amp;inodot; Commit Gruplar&amp;inodot; Olu&amp;scedil;turun&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Tek bir commit'te &amp;ccedil;ok fazla de&amp;gbreve;i&amp;scedil;iklik yapmay&amp;inodot;n&lt;/strong&gt;. Her commit, mant&amp;inodot;ksal olarak birbiriyle ili&amp;scedil;kili de&amp;gbreve;i&amp;scedil;iklikleri i&amp;ccedil;ermelidir. Bu, Copilot'&amp;inodot;n de&amp;gbreve;i&amp;scedil;iklikleri daha iyi analiz etmesini sa&amp;gbreve;lar.
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# &amp;Idot;yi bir yakla&amp;scedil;&amp;inodot;m&lt;/span&gt;
+git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;src/authentication/
+git&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# "feat: kullan&amp;inodot;c&amp;inodot; kimlik do&amp;gbreve;rulama sistemi eklendi"&lt;/span&gt;
+git&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;src/ui/components/
+git&lt;span class="w"&gt; &lt;/span&gt;commit&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# "style: giri&amp;scedil; formu g&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml; iyile&amp;scedil;tirildi"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="2-copilotin-yanilgilarini-duzeltin"&gt;2. Copilot'&amp;inodot;n Yan&amp;inodot;lg&amp;inodot;lar&amp;inodot;n&amp;inodot; D&amp;uuml;zeltin&lt;/h3&gt;
+&lt;p&gt;Copilot her zaman m&amp;uuml;kemmel de&amp;gbreve;ildir. &amp;Ouml;nerdi&amp;gbreve;i commit mesajlar&amp;inodot;n&amp;inodot; her zaman &lt;strong&gt;g&amp;ouml;zden ge&amp;ccedil;irin ve gerekirse d&amp;uuml;zeltin&lt;/strong&gt;. &amp;Ouml;zellikle:
+- &lt;strong&gt;Yaz&amp;inodot;m hatalar&amp;inodot;&lt;/strong&gt; olabilir
+- &lt;strong&gt;De&amp;gbreve;i&amp;scedil;ikliklerin kapsam&amp;inodot;n&amp;inodot;&lt;/strong&gt; yanl&amp;inodot;&amp;scedil; anlayabilir
+- Nadiren tamamen &lt;strong&gt;alakas&amp;inodot;z mesajlar&lt;/strong&gt; &amp;ouml;nerebilir&lt;/p&gt;
+&lt;h3 id="3-ozel-prompt-ipuclari-kullanin"&gt;3. &amp;Ouml;zel Prompt &amp;Idot;pu&amp;ccedil;lar&amp;inodot; Kullan&amp;inodot;n&lt;/h3&gt;
+&lt;p&gt;Commit edit&amp;ouml;r&amp;uuml;ne &amp;ouml;zel notlar ekleyerek Copilot'a rehberlik edebilirsiniz:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# Copilot: Bu de&amp;gbreve;i&amp;scedil;iklik performans iyile&amp;scedil;tirmesi i&amp;ccedil;in yap&amp;inodot;ld&amp;inodot;
+# Copilot: issue #123 ile ilgili
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu notlar commit'e dahil edilmez, sadece Copilot'a yard&amp;inodot;mc&amp;inodot; olur.&lt;/p&gt;
+&lt;h2 id="sik-karsilasilan-sorunlar-ve-cozumleri_1"&gt;S&amp;inodot;k Kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan Sorunlar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri&lt;/h2&gt;
+&lt;h3 id="copilot-commit-mesaji-onermiyorsa"&gt;❓ Copilot Commit Mesaj&amp;inodot; &amp;Ouml;nermiyorsa&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Copilot eklentisinin g&amp;uuml;ncel oldu&amp;gbreve;unu&lt;/strong&gt; kontrol edin&lt;/li&gt;
+&lt;li&gt;VS Code'u yeniden ba&amp;scedil;lat&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;GitHub hesab&amp;inodot;n&amp;inodot;z&amp;inodot;n aktif ve ba&amp;gbreve;l&amp;inodot; oldu&amp;gbreve;undan emin olun&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--verbose&lt;/code&gt; modunun etkin oldu&amp;gbreve;unu do&amp;gbreve;rulay&amp;inodot;n&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="use-instructions-files-instead-hatasi-aliyorum"&gt;❓ "Use instructions files instead" Hatas&amp;inodot; Al&amp;inodot;yorum&lt;/h3&gt;
+&lt;p&gt;Bu hata, eski talimat y&amp;ouml;ntemini kulland&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda ortaya &amp;ccedil;&amp;inodot;kar. &amp;Ccedil;&amp;ouml;z&amp;uuml;m i&amp;ccedil;in:
+1. &lt;code&gt;.vscode/settings.json&lt;/code&gt; dosyan&amp;inodot;z&amp;inodot; a&amp;ccedil;&amp;inodot;n
+2. Eski talimat ayarlar&amp;inodot;n&amp;inodot; kald&amp;inodot;r&amp;inodot;n:
+   &lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;// Bu sat&amp;inodot;rlar&amp;inodot; silin&lt;/span&gt;
+&lt;span class="nt"&gt;"github.copilot.chat.codeGeneration.instructions"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;"file"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"docs/code-style.md"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="nt"&gt;"github.copilot.chat.commitMessageGeneration.instructions"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;"file"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"docs/commit-style.md"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+3. Yeni ayar&amp;inodot; ekleyin:
+   &lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"github.copilot.chat.codeGeneration.useInstructionFiles"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+4. &lt;code&gt;.github/copilot-instructions.md&lt;/code&gt; dosyas&amp;inodot; olu&amp;scedil;turun ve talimatlar&amp;inodot;n&amp;inodot;z&amp;inodot; buraya ta&amp;scedil;&amp;inodot;y&amp;inodot;n&lt;/p&gt;
+&lt;h3 id="oneriler-cok-genel-veya-alakasizsa"&gt;❓ &amp;Ouml;neriler &amp;Ccedil;ok Genel veya Alakas&amp;inodot;zsa&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Daha k&amp;uuml;&amp;ccedil;&amp;uuml;k ve odaklanm&amp;inodot;&amp;scedil; commit'ler yap&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.github/copilot-instructions.md&lt;/code&gt; dosyan&amp;inodot;z&amp;inodot; d&amp;uuml;zenleyin ve daha spesifik hale getirin&lt;/li&gt;
+&lt;li&gt;Commit edit&amp;ouml;r&amp;uuml;nde manuel ipu&amp;ccedil;lar&amp;inodot; ekleyin&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="vs-codeda-generate-commit-message-butonu-gozukmuyor"&gt;❓ VS Code'da "Generate Commit Message" Butonu G&amp;ouml;z&amp;uuml;km&amp;uuml;yor&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GitHub Copilot Chat eklentisini de y&amp;uuml;kledi&amp;gbreve;inizden emin olun&lt;/li&gt;
+&lt;li&gt;VS Code'u g&amp;uuml;ncelleyin&lt;/li&gt;
+&lt;li&gt;Eklentiyi devre d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rak&amp;inodot;p yeniden etkinle&amp;scedil;tirin&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="sonuc-ve-ileriye-bakis_1"&gt;Sonu&amp;ccedil; ve &amp;Idot;leriye Bak&amp;inodot;&amp;scedil;&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;GitHub Copilot ile commit mesajlar&amp;inodot; olu&amp;scedil;turmak&lt;/strong&gt;, yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirme s&amp;uuml;recinizi &amp;ouml;nemli &amp;ouml;l&amp;ccedil;&amp;uuml;de h&amp;inodot;zland&amp;inodot;r&amp;inodot;r ve projenizin git tarih&amp;ccedil;esini daha anla&amp;scedil;&amp;inodot;l&amp;inodot;r hale getirir. Bu rehberde &amp;ouml;&amp;gbreve;rendi&amp;gbreve;iniz teknikler sayesinde:
+- ⏱️ Her g&amp;uuml;n &amp;ouml;nemli miktarda zaman kazanacaks&amp;inodot;n&amp;inodot;z
+- 📈 Projenizin bak&amp;inodot;m&amp;inodot; ve takibi kolayla&amp;scedil;acak
+- 🤝 Ekip &amp;uuml;yeleri aras&amp;inodot;nda tutarl&amp;inodot; commit mesajlar&amp;inodot; sa&amp;gbreve;layacaks&amp;inodot;n&amp;inodot;z&lt;/p&gt;
+&lt;p&gt;GitHub Copilot, yapay zeka teknolojisinin yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirme s&amp;uuml;re&amp;ccedil;lerini nas&amp;inodot;l iyile&amp;scedil;tirebilece&amp;gbreve;inin m&amp;uuml;kemmel bir &amp;ouml;rne&amp;gbreve;idir. Bu teknolojiyi benimseyip kendi i&amp;scedil; ak&amp;inodot;&amp;scedil;&amp;inodot;n&amp;inodot;za entegre etti&amp;gbreve;inizde, verimlili&amp;gbreve;inizin nas&amp;inodot;l artt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;receksiniz!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Deneyimlerinizi Payla&amp;scedil;&amp;inodot;n!&lt;/strong&gt; 💬&lt;/p&gt;
+&lt;p&gt;GitHub Copilot ile commit mesajlar&amp;inodot; olu&amp;scedil;turma konusunda deneyimleriniz neler? Hangi &amp;ouml;zel talimatlar&amp;inodot; kullan&amp;inodot;yorsunuz? Yorumlarda payla&amp;scedil;&amp;inodot;n ve di&amp;gbreve;er geli&amp;scedil;tiricilere yard&amp;inodot;mc&amp;inodot; olun!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bir sonraki yaz&amp;inodot;m&amp;inodot;zda GitHub Copilot'&amp;inodot;n kod incelemelerinde nas&amp;inodot;l kullan&amp;inodot;labilece&amp;gbreve;ini ke&amp;scedil;fedece&amp;gbreve;iz. Takipte kal&amp;inodot;n!&lt;/strong&gt; 🚀&lt;/p&gt;</content><category term="Git"/><category term="GitHub Copilot"/><category term="Commit Mesajları"/><category term="Git"/><category term="Yazılım Geliştirme"/><category term="Otomasyon"/><category term="VS Code"/><category term="GitHub"/></entry><entry><title>Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı</title><link href="https://yuceltoluyag.github.io/git-commit-geri-donme-cherry-pick/" rel="alternate"/><published>2025-03-28T18:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-03-28:/git-commit-geri-donme-cherry-pick/</id><summary type="html">&lt;p&gt;Git'te belirli bir commit'e geri dönmek ve git cherry-pick komutuyla seçili değişiklikleri farklı bir branch'e taşımak için kullanabileceğiniz yöntemleri anlatıyoruz. 🚀&lt;/p&gt;</summary><content type="html">&lt;h2 id="gitte-belirli-bir-commite-geri-donme-ve-cherry-pick-kullanimi"&gt;Git'te Belirli Bir Commit'e Geri D&amp;ouml;nme ve Cherry-Pick Kullan&amp;inodot;m&amp;inodot; 🎯&lt;/h2&gt;
+&lt;p&gt;Version kontrol sistemleri, &amp;ouml;zellikle Git, projelerinizdeki de&amp;gbreve;i&amp;scedil;iklikleri y&amp;ouml;netmek i&amp;ccedil;in olduk&amp;ccedil;a g&amp;uuml;&amp;ccedil;l&amp;uuml; ara&amp;ccedil;lar sunar. &lt;strong&gt;Bazen bir commit'e geri d&amp;ouml;nmek veya belirli bir commit'in i&amp;ccedil;eri&amp;gbreve;ini farkl&amp;inodot; bir branch'e ta&amp;scedil;&amp;inodot;mak isteyebilirsiniz.&lt;/strong&gt; Bu makalede, &lt;code&gt;git reset&lt;/code&gt;, &lt;code&gt;git checkout&lt;/code&gt; ve &lt;code&gt;git cherry-pick&lt;/code&gt; komutlar&amp;inodot;n&amp;inodot;n nas&amp;inodot;l kullan&amp;inodot;laca&amp;gbreve;&amp;inodot;n&amp;inodot; anlataca&amp;gbreve;&amp;inodot;z. 🛠️  &lt;/p&gt;
+&lt;h2 id="commite-geri-donme-yontemleri"&gt;Commit'e Geri D&amp;ouml;nme Y&amp;ouml;ntemleri 🔄&lt;/h2&gt;
+&lt;h3 id="1-gecici-olarak-geri-donmek-detached-head-modu"&gt;&lt;strong&gt;1. Ge&amp;ccedil;ici Olarak Geri D&amp;ouml;nmek (Detached HEAD Modu)&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er sadece belirli bir commit'in i&amp;ccedil;eri&amp;gbreve;ini incelemek istiyorsan&amp;inodot;z, &amp;scedil;u komutu kullanabilirsiniz:  &lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;checkout&lt;span class="w"&gt; &lt;/span&gt;86d538b&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu komut &lt;strong&gt;projenizi o commit'in oldu&amp;gbreve;u duruma getirir&lt;/strong&gt; ancak &lt;strong&gt;detached HEAD&lt;/strong&gt; modunda &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;rs&amp;inodot;n&amp;inodot;z. E&amp;gbreve;er bu commit &amp;uuml;zerinde &amp;ccedil;al&amp;inodot;&amp;scedil;mak istiyorsan&amp;inodot;z yeni bir branch olu&amp;scedil;turabilirsiniz:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;checkout&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;eski-versiyon&lt;span class="w"&gt; &lt;/span&gt;86d538b&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="2-kalici-olarak-geri-donmek-git-reset"&gt;&lt;strong&gt;2. Kal&amp;inodot;c&amp;inodot; Olarak Geri D&amp;ouml;nmek (&lt;code&gt;git reset&lt;/code&gt;)&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er &lt;strong&gt;ge&amp;ccedil;mi&amp;scedil;i de&amp;gbreve;i&amp;scedil;tirerek&lt;/strong&gt; tamamen eski bir commit'e geri d&amp;ouml;nmek istiyorsan&amp;inodot;z &amp;scedil;u komutu kullanabilirsiniz:  &lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;reset&lt;span class="w"&gt; &lt;/span&gt;--hard&lt;span class="w"&gt; &lt;/span&gt;86d538b&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu komut t&amp;uuml;m de&amp;gbreve;i&amp;scedil;iklikleri &lt;strong&gt;kal&amp;inodot;c&amp;inodot; olarak&lt;/strong&gt; siler ve projeyi o commit'e d&amp;ouml;nd&amp;uuml;r&amp;uuml;r. &lt;strong&gt;Dikkat:&lt;/strong&gt; E&amp;gbreve;er de&amp;gbreve;i&amp;scedil;iklikleri uzak depoya (&lt;code&gt;git push&lt;/code&gt;) g&amp;ouml;nderdiyseniz, bunu zorla g&amp;uuml;ncellemeniz gerekir:  &lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;push&lt;span class="w"&gt; &lt;/span&gt;--force&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+⚠️ &lt;strong&gt;Uyar&amp;inodot;:&lt;/strong&gt; &lt;code&gt;--force&lt;/code&gt; parametresi, ekibinizle &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yorsan&amp;inodot;z dikkatli kullan&amp;inodot;lmal&amp;inodot;d&amp;inodot;r.  &lt;/p&gt;
+&lt;h3 id="3-belirli-bir-commiti-geri-alma-git-revert"&gt;&lt;strong&gt;3. Belirli Bir Commit'i Geri Alma (&lt;code&gt;git revert&lt;/code&gt;)&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er sadece bir commit'in yapt&amp;inodot;&amp;gbreve;&amp;inodot; de&amp;gbreve;i&amp;scedil;iklikleri geri almak istiyorsan&amp;inodot;z:  &lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;revert&lt;span class="w"&gt; &lt;/span&gt;86d538b&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu komut, belirtilen commit'in yapt&amp;inodot;&amp;gbreve;&amp;inodot; de&amp;gbreve;i&amp;scedil;iklikleri &lt;strong&gt;tersine &amp;ccedil;eviren yeni bir commit&lt;/strong&gt; olu&amp;scedil;turur. &lt;strong&gt;Mevcut ge&amp;ccedil;mi&amp;scedil; korunur&lt;/strong&gt;, b&amp;ouml;ylece ekip &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;nda daha g&amp;uuml;venlidir. 🤝  &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="git-cherry-pick-kullanimi_1"&gt;&lt;code&gt;git cherry-pick&lt;/code&gt; Kullan&amp;inodot;m&amp;inodot; 🍒&lt;/h2&gt;
+&lt;p&gt;Bazen, bir branch'teki belirli bir commit'i ba&amp;scedil;ka bir branch'e ta&amp;scedil;&amp;inodot;mak isteyebilirsiniz. Bunun i&amp;ccedil;in &lt;code&gt;git cherry-pick&lt;/code&gt; komutu kullan&amp;inodot;l&amp;inodot;r.  &lt;/p&gt;
+&lt;h3 id="1-tek-bir-commiti-baska-bir-branche-tasimak"&gt;&lt;strong&gt;1. Tek Bir Commit'i Ba&amp;scedil;ka Bir Branch'e Ta&amp;scedil;&amp;inodot;mak&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Diyelim ki &lt;code&gt;feature&lt;/code&gt; branch'indesiniz ve &lt;code&gt;main&lt;/code&gt; branch'inde bulunan &lt;code&gt;86d538b&lt;/code&gt; commit'ini almak istiyorsunuz:  &lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;cherry-pick&lt;span class="w"&gt; &lt;/span&gt;86d538b&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu i&amp;scedil;lem, belirtilen commit'i &lt;strong&gt;&amp;scedil;u an bulundu&amp;gbreve;unuz branch'e ekler&lt;/strong&gt;.  &lt;/p&gt;
+&lt;h3 id="2-birden-fazla-commiti-secerek-tasimak"&gt;&lt;strong&gt;2. Birden Fazla Commit'i Se&amp;ccedil;erek Ta&amp;scedil;&amp;inodot;mak&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er birden fazla commit'i almak istiyorsan&amp;inodot;z, aralar&amp;inodot;na bo&amp;scedil;luk koyarak &amp;scedil;u komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;cherry-pick&lt;span class="w"&gt; &lt;/span&gt;86d538b&lt;span class="w"&gt; &lt;/span&gt;12a4ef9&lt;span class="w"&gt; &lt;/span&gt;f45c8d7&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="3-belirli-bir-commit-araligini-secmek"&gt;&lt;strong&gt;3. Belirli Bir Commit Aral&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; Se&amp;ccedil;mek&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er bir commit aral&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; almak istiyorsan&amp;inodot;z:  &lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;cherry-pick&lt;span class="w"&gt; &lt;/span&gt;86d538b..f45c8d7&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu komut, &lt;code&gt;86d538b&lt;/code&gt; ile &lt;code&gt;f45c8d7&lt;/code&gt; aras&amp;inodot;ndaki t&amp;uuml;m commit'leri al&amp;inodot;p mevcut branch'e uygular. 🚀  &lt;/p&gt;
+&lt;h3 id="4-catisma-conflict-durumunda-ne-yapmaliyim"&gt;&lt;strong&gt;4. &amp;Ccedil;at&amp;inodot;&amp;scedil;ma (Conflict) Durumunda Ne Yapmal&amp;inodot;y&amp;inodot;m?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er &lt;code&gt;git cherry-pick&lt;/code&gt; s&amp;inodot;ras&amp;inodot;nda bir &lt;strong&gt;&amp;ccedil;ak&amp;inodot;&amp;scedil;ma (merge conflict)&lt;/strong&gt; olu&amp;scedil;ursa:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git status&lt;/code&gt; komutuyla hangi dosyalarda &amp;ccedil;ak&amp;inodot;&amp;scedil;ma oldu&amp;gbreve;unu kontrol edin.&lt;/li&gt;
+&lt;li&gt;&amp;Ccedil;ak&amp;inodot;&amp;scedil;malar&amp;inodot; manuel olarak &amp;ccedil;&amp;ouml;z&amp;uuml;n.&lt;/li&gt;
+&lt;li&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m bittikten sonra commit'i tamamlamak i&amp;ccedil;in &amp;scedil;u komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;cherry-pick&lt;span class="w"&gt; &lt;/span&gt;--continue&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er i&amp;scedil;lemi iptal etmek isterseniz:  &lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;cherry-pick&lt;span class="w"&gt; &lt;/span&gt;--abort&lt;span class="w"&gt;  &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu komut, cherry-pick i&amp;scedil;lemini geri alarak eski haline d&amp;ouml;nd&amp;uuml;r&amp;uuml;r.  &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc_1"&gt;&lt;strong&gt;Sonu&amp;ccedil; ✅&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Git'te belirli bir commit'e geri d&amp;ouml;nmek veya belirli commit'leri farkl&amp;inodot; branch'lere ta&amp;scedil;&amp;inodot;mak i&amp;ccedil;in kullanabilece&amp;gbreve;iniz bir&amp;ccedil;ok y&amp;ouml;ntem vard&amp;inodot;r. Hangi y&amp;ouml;ntemin sizin i&amp;ccedil;in en uygun oldu&amp;gbreve;unu belirleyerek i&amp;scedil;lem yapabilirsiniz.  &lt;/p&gt;
+&lt;p&gt;🚀 &lt;strong&gt;&amp;Ouml;zetle:&lt;/strong&gt;&lt;br/&gt;
+- &lt;code&gt;git checkout&lt;/code&gt; ile ge&amp;ccedil;ici olarak ge&amp;ccedil;mi&amp;scedil; commit'e d&amp;ouml;nebilirsiniz.&lt;br/&gt;
+- &lt;code&gt;git reset --hard&lt;/code&gt; ile tamamen geri d&amp;ouml;nebilirsiniz.&lt;br/&gt;
+- &lt;code&gt;git revert&lt;/code&gt; ile sadece belirli bir commit'i geri alabilirsiniz.&lt;br/&gt;
+- &lt;code&gt;git cherry-pick&lt;/code&gt; ile belirli commit'leri se&amp;ccedil;erek farkl&amp;inodot; bir branch'e ta&amp;scedil;&amp;inodot;yabilirsiniz.  &lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er Git ile ilgili ba&amp;scedil;ka sorular&amp;inodot;n&amp;inodot;z varsa yorum b&amp;inodot;rakabilirsiniz! Happy coding! 🎉&lt;/p&gt;
+&lt;p&gt;&lt;img alt="git-commit-geri-donme-cherry-pick" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/git-chery-lg.webp" srcset="/images/git-chery-sm.webp 300w, /images/git-chery-md.webp 500w, /images/git-chery-lg.webp 800w"/&gt;&lt;/p&gt;</content><category term="Git"/><category term="git"/><category term="version-control"/><category term="commit"/><category term="rollback"/><category term="cherry-pick"/></entry><entry><title>SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme</title><link href="https://yuceltoluyag.github.io/ssh-gpg-yedekleme-geri-yukleme/" rel="alternate"/><published>2025-03-04T10:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-03-04:/ssh-gpg-yedekleme-geri-yukleme/</id><summary type="html">&lt;p&gt;SSH ve GPG anahtarlarını güvenli bir şekilde yedekleme ve geri yükleme adımlarını öğrenin.&lt;/p&gt;</summary><content type="html">&lt;h1 id="ssh-ve-gpg-anahtarlarini-yedekleme-ve-geri-yukleme"&gt;SSH ve GPG Anahtarlar&amp;inodot;n&amp;inodot; Yedekleme ve Geri Y&amp;uuml;kleme 🔑&lt;/h1&gt;
+&lt;p&gt;SSH ve GPG anahtarlar&amp;inodot;, kimlik do&amp;gbreve;rulama ve veri g&amp;uuml;venli&amp;gbreve;i a&amp;ccedil;&amp;inodot;s&amp;inodot;ndan kritik &amp;ouml;neme sahiptir. &lt;strong&gt;Bu makalede, SSH ve GPG anahtarlar&amp;inodot;n&amp;inodot; nas&amp;inodot;l yedekleyip geri y&amp;uuml;kleyebilece&amp;gbreve;inizi &amp;ouml;&amp;gbreve;reneceksiniz.&lt;/strong&gt; 💾&lt;/p&gt;
+&lt;h2 id="1-yedekleme"&gt;1️⃣ Yedekleme&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;ncelikle, &lt;strong&gt;SSH &amp;ouml;zel ve genel anahtarlar&amp;inodot;n&amp;inodot;z&amp;inodot;&lt;/strong&gt; g&amp;uuml;venli bir yere yedekleyin.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;id_rsa ve id_rsa.pub dosyalar&amp;inodot;n&amp;inodot; USB belle&amp;gbreve;e kopyalay&amp;inodot;n:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cp&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/id_rsa&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/id_rsa.pub&lt;span class="w"&gt; &lt;/span&gt;/mnt/usb/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;GPG anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; tan&amp;inodot;mlamak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--list-secret-keys&lt;span class="w"&gt; &lt;/span&gt;--keyid-format&lt;span class="w"&gt; &lt;/span&gt;LONG
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ccedil;&amp;inodot;kt&amp;inodot; &amp;scedil;u &amp;scedil;ekilde g&amp;ouml;r&amp;uuml;necektir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sec   4096R/3AA5C34371567BD2 2016-03-10 [expires: 2017-03-10]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Slash (/) i&amp;scedil;aretinden sonraki karakterler, &amp;ouml;zel anahtar&amp;inodot;n&amp;inodot;z&amp;inodot;n kimli&amp;gbreve;idir.&lt;/strong&gt; Bu ID'yi kullanarak &amp;ouml;zel anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; d&amp;inodot;&amp;scedil;a aktar&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--export-secret-keys&lt;span class="w"&gt; &lt;/span&gt;3AA5C34371567BD2&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;my-private-key.asc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Scedil;imdi &lt;strong&gt;my-private-key.asc&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; USB belle&amp;gbreve;e kopyalay&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cp&lt;span class="w"&gt; &lt;/span&gt;my-private-key.asc&lt;span class="w"&gt; &lt;/span&gt;/mnt/usb/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="2-geri-yukleme"&gt;2️⃣ Geri Y&amp;uuml;kleme 🛠️&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er SSH ve GPG anahtarlar&amp;inodot;n&amp;inodot;z&amp;inodot; yeni bir sisteme ta&amp;scedil;&amp;inodot;man&amp;inodot;z gerekiyorsa, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; takip edin.&lt;/p&gt;
+&lt;h3 id="ssh-anahtarlarini-geri-yukleme"&gt;🔹 SSH Anahtarlar&amp;inodot;n&amp;inodot; Geri Y&amp;uuml;kleme&lt;/h3&gt;
+&lt;p&gt;USB bellekte bulunan &lt;strong&gt;id_rsa&lt;/strong&gt; ve &lt;strong&gt;id_rsa.pub&lt;/strong&gt; dosyalar&amp;inodot;n&amp;inodot; &lt;strong&gt;~/.ssh/&lt;/strong&gt; dizinine geri kopyalay&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cp&lt;span class="w"&gt; &lt;/span&gt;/mnt/usb/id_rsa&lt;span class="w"&gt; &lt;/span&gt;/mnt/usb/id_rsa.pub&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Dosya izinlerini ve sahipli&amp;gbreve;ini ayarlay&amp;inodot;n:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chown&lt;span class="w"&gt; &lt;/span&gt;user:user&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/id_rsa*
+chmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;600&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/id_rsa
+chmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;644&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;SSH Agent'&amp;inodot; ba&amp;scedil;lat&amp;inodot;n:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ssh-agent&lt;span class="w"&gt; &lt;/span&gt;bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;SSH &amp;ouml;zel anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; SSH Agent&amp;rsquo;a ekleyin:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ssh-add&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/id_rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="gpg-anahtarlarini-geri-yukleme"&gt;🔹 GPG Anahtarlar&amp;inodot;n&amp;inodot; Geri Y&amp;uuml;kleme&lt;/h3&gt;
+&lt;p&gt;GPG &amp;ouml;zel anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; i&amp;ccedil;e aktar&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--import&lt;span class="w"&gt; &lt;/span&gt;my-private-key.asc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="sonuc_1"&gt;🎯 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Bu ad&amp;inodot;mlar&amp;inodot; takip ederek &lt;strong&gt;SSH ve GPG anahtarlar&amp;inodot;n&amp;inodot;z&amp;inodot; g&amp;uuml;venli bir &amp;scedil;ekilde yedekleyebilir ve gerekti&amp;gbreve;inde geri y&amp;uuml;kleyebilirsiniz&lt;/strong&gt;. 🔒 Yedeklerinizi &lt;strong&gt;g&amp;uuml;venli bir ortamda&lt;/strong&gt; saklad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zdan emin olun ve yetkisiz ki&amp;scedil;ilerin eri&amp;scedil;imini engelleyin! 🚀
+&lt;img alt="ssh-gpg-yedekleme-geri-yukleme" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/ssh-gpg-yedekleme-geri-yukleme-lg.webp" srcset="/images/ssh-gpg-yedekleme-geri-yukleme-sm.webp 300w, /images/ssh-gpg-yedekleme-geri-yukleme-md.webp 500w, /images/ssh-gpg-yedekleme-geri-yukleme-lg.webp 800w"/&gt;&lt;/p&gt;</content><category term="Git"/><category term="ssh"/><category term="gpg"/><category term="anahtar yönetimi"/><category term="yedekleme"/><category term="güvenlik"/></entry><entry><title>Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme</title><link href="https://yuceltoluyag.github.io/git-gpg-imzali-etiket/" rel="alternate"/><published>2025-03-03T10:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-03-03:/git-gpg-imzali-etiket/</id><summary type="html">&lt;p&gt;Git ile GPG imzalı etiket oluşturmayı ve karşılaşılabilecek sorunları nasıl çözeceğinizi öğrenin.&lt;/p&gt;</summary><content type="html">&lt;h1 id="git-ile-gpg-imzali-etiket-olusturma-ve-sorun-giderme"&gt;Git ile GPG &amp;Idot;mzal&amp;inodot; Etiket Olu&amp;scedil;turma ve Sorun Giderme 🔐&lt;/h1&gt;
+&lt;p&gt;Geli&amp;scedil;tirme s&amp;uuml;recinde &lt;strong&gt;Git etiketleri&lt;/strong&gt;, belirli versiyonlar&amp;inodot; i&amp;scedil;aretlemek i&amp;ccedil;in kullan&amp;inodot;lan &amp;ouml;nemli bir &amp;ouml;zelliktir. Ancak, bu etiketleri &lt;strong&gt;GPG ile imzalamak&lt;/strong&gt;, s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;z&amp;uuml;n g&amp;uuml;venilirli&amp;gbreve;ini art&amp;inodot;r&amp;inodot;r ve yetkisiz de&amp;gbreve;i&amp;scedil;ikliklerin &amp;ouml;n&amp;uuml;ne ge&amp;ccedil;er. Bu makalede, &lt;strong&gt;Git ile GPG imzal&amp;inodot; etiket olu&amp;scedil;turma&lt;/strong&gt; s&amp;uuml;recini ve kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;labilecek olas&amp;inodot; hatalar&amp;inodot; nas&amp;inodot;l giderebilece&amp;gbreve;inizi anlataca&amp;gbreve;&amp;inodot;z. 🚀&lt;/p&gt;
+&lt;h2 id="1-gpg-anahtarinizi-olusturun"&gt;1️⃣ GPG Anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; Olu&amp;scedil;turun&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er daha &amp;ouml;nce bir GPG anahtar&amp;inodot;n&amp;inodot;z yoksa, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komut ile yeni bir anahtar olu&amp;scedil;turabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--full-generate-key
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Anahtar olu&amp;scedil;turulduktan sonra, ID&amp;rsquo;nizi &amp;ouml;&amp;gbreve;renmek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--list-secret-keys&lt;span class="w"&gt; &lt;/span&gt;--keyid-format&lt;span class="w"&gt; &lt;/span&gt;LONG
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, anahtar&amp;inodot;n&amp;inodot;z&amp;inodot;n detaylar&amp;inodot;n&amp;inodot; g&amp;ouml;sterecektir. &amp;Ccedil;&amp;inodot;kt&amp;inodot;da &lt;strong&gt;sec&lt;/strong&gt; etiketi alt&amp;inodot;nda bulunan uzun anahtar ID'sini not edin. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sec   rsa4096/8416A43957C19627 2022-04-25 [SC] [expires: 2025-08-23]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Burada &lt;strong&gt;8416A43957C19627&lt;/strong&gt; k&amp;inodot;sm&amp;inodot; sizin &lt;strong&gt;anahtar ID'nizdir&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="2-giti-gpg-ile-yapilandirin"&gt;2️⃣ Git&amp;rsquo;i GPG ile Yap&amp;inodot;land&amp;inodot;r&amp;inodot;n&lt;/h2&gt;
+&lt;p&gt;Git&amp;rsquo;in &lt;strong&gt;GPG anahtar&amp;inodot;n&amp;inodot;z&amp;inodot;&lt;/strong&gt; kullanmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lamak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.signingkey&lt;span class="w"&gt; &lt;/span&gt;8416A43957C19627
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ayr&amp;inodot;ca, Git commit'lerinizi varsay&amp;inodot;lan olarak imzalamak isterseniz &amp;scedil;u komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;commit.gpgsign&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="3-imzali-git-etiketi-olusturun"&gt;3️⃣ &amp;Idot;mzal&amp;inodot; Git Etiketi Olu&amp;scedil;turun ✍️&lt;/h2&gt;
+&lt;p&gt;GPG anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; Git'e tan&amp;inodot;tt&amp;inodot;ktan sonra, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komut ile imzal&amp;inodot; bir etiket olu&amp;scedil;turabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;tag&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.3&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Versiyon 0.0.3' by Jekyll"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Mevcut etiketleri g&amp;ouml;rmek i&amp;ccedil;in:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;tag
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Bir etiketi do&amp;gbreve;rulamak i&amp;ccedil;in:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;tag&lt;span class="w"&gt; &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="4-etiketi-uzak-depoya-gonderin"&gt;4️⃣ Etiketi Uzak Depoya G&amp;ouml;nderin ☁️&lt;/h2&gt;
+&lt;p&gt;&amp;Idot;mzal&amp;inodot; etiketinizi GitHub veya ba&amp;scedil;ka bir uzak depoya g&amp;ouml;ndermek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;push&lt;span class="w"&gt; &lt;/span&gt;origin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;T&amp;uuml;m etiketleri birden g&amp;ouml;ndermek isterseniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;push&lt;span class="w"&gt; &lt;/span&gt;--tags
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="5-windows-terminal-ve-git-bash-gpg-sorunlari"&gt;5️⃣ Windows Terminal ve Git Bash GPG Sorunlar&amp;inodot; 🔍&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er &lt;strong&gt;Windows Terminal&lt;/strong&gt; veya &lt;strong&gt;Git Bash&lt;/strong&gt; kullan&amp;inodot;yorsan&amp;inodot;z ve GPG anahtar&amp;inodot;n&amp;inodot;z birinde &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;rken di&amp;gbreve;erinde g&amp;ouml;r&amp;uuml;nm&amp;uuml;yorsa, bu ortam de&amp;gbreve;i&amp;scedil;kenleri ile ilgili olabilir.&lt;/p&gt;
+&lt;h3 id="cozum"&gt;🔧 &amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Git Bash'de &lt;strong&gt;ev dizininizi&lt;/strong&gt; kontrol edin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Windows Terminal'de kullan&amp;inodot;c&amp;inodot; profilinizi kontrol edin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%USERPROFILE%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Idot;ki dizinin ayn&amp;inodot; oldu&amp;gbreve;undan emin olun!&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Windows Terminal&amp;rsquo;de &amp;scedil;u ortam de&amp;gbreve;i&amp;scedil;kenini ayarlay&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;GNUPGHOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\y&lt;/span&gt;ucel&lt;span class="se"&gt;\.&lt;/span&gt;gnupg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;GPG anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; i&amp;ccedil;e aktar&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--import&lt;span class="w"&gt; &lt;/span&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\y&lt;/span&gt;ucel&lt;span class="se"&gt;\.&lt;/span&gt;gnupg&lt;span class="se"&gt;\m&lt;/span&gt;y-private-key.asc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; Git&amp;rsquo;e tekrar tan&amp;inodot;t&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.signingkey&lt;span class="w"&gt; &lt;/span&gt;8416A43957C19627
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;Scedil;imdi tekrar kontrol edin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gpg&lt;span class="w"&gt; &lt;/span&gt;--list-secret-keys&lt;span class="w"&gt; &lt;/span&gt;--keyid-format&lt;span class="w"&gt; &lt;/span&gt;LONG
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er &amp;ccedil;&amp;inodot;kt&amp;inodot; bo&amp;scedil; geliyorsa, &lt;strong&gt;GPG'nin sistem genelinde kurulu olup olmad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;&lt;/strong&gt; kontrol edin.&lt;/p&gt;
+&lt;h2 id="sonuc_1"&gt;🎯 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Bu ad&amp;inodot;mlar&amp;inodot; takip ederek &lt;strong&gt;GPG ile imzal&amp;inodot; Git etiketleri olu&amp;scedil;turabilir&lt;/strong&gt;, etiketlerinizi g&amp;uuml;venle payla&amp;scedil;abilir ve &lt;strong&gt;Windows Terminal &amp;amp; Git Bash aras&amp;inodot;ndaki GPG sorunlar&amp;inodot;n&amp;inodot; &amp;ccedil;&amp;ouml;zebilirsiniz&lt;/strong&gt;. 🔥&lt;/p&gt;
+&lt;p&gt;GPG imzalar&amp;inodot;, &lt;strong&gt;a&amp;ccedil;&amp;inodot;k kaynak projelerinde, g&amp;uuml;venlik gerektiren kurumsal projelerde ve hassas geli&amp;scedil;tirme s&amp;uuml;re&amp;ccedil;lerinde&lt;/strong&gt; b&amp;uuml;y&amp;uuml;k &amp;ouml;nem ta&amp;scedil;&amp;inodot;r. Kullanmay&amp;inodot; al&amp;inodot;&amp;scedil;kanl&amp;inodot;k haline getirin! ✅&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;📌 &lt;strong&gt;Ekstra Bilgi&lt;/strong&gt;: E&amp;gbreve;er GPG anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; kaybederseniz, yeni bir anahtar olu&amp;scedil;turman&amp;inodot;z ve projelerde bu yeni anahtar&amp;inodot; kullanmaya ba&amp;scedil;laman&amp;inodot;z gerekir. &lt;strong&gt;Eski anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; iptal etmeyi unutmay&amp;inodot;n!&lt;/strong&gt; 🚨&lt;/p&gt;
+&lt;p&gt;&lt;img alt="git-gpg-imzali-etiket" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/git-gpg-imzali-etiket-lg.webp" srcset="/images/git-gpg-imzali-etiket-sm.webp 300w, /images/git-gpg-imzali-etiket-md.webp 500w, /images/git-gpg-imzali-etiket-lg.webp 800w"/&gt;&lt;/p&gt;</content><category term="Git"/><category term="git"/><category term="gpg"/><category term="imzalama"/><category term="etiketleme"/><category term="güvenlik"/></entry><entry><title>Git SSH-Key Oluşturma (Windows &amp; Linux)</title><link href="https://yuceltoluyag.github.io/git-ssh-key-olusturma/" rel="alternate"/><published>2018-09-21T10:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-09-21:/git-ssh-key-olusturma/</id><summary type="html">&lt;p&gt;Git üzerinde çalışırken SSH anahtarı oluşturma konusunda yaşanan sorunları gidermek için adım adım Windows ve Linux platformlarında nasıl SSH anahtarı oluşturulacağını anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Git &amp;uuml;zerinde &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;rken SSH anahtar&amp;inodot; olu&amp;scedil;turma konusunda sorun ya&amp;scedil;ayanlar i&amp;ccedil;in bu rehberde, Windows ve Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in ad&amp;inodot;m ad&amp;inodot;m SSH anahtar&amp;inodot; olu&amp;scedil;turma s&amp;uuml;recini ele alaca&amp;gbreve;&amp;inodot;z. 🛠️&lt;/p&gt;
+&lt;h3 id="windows-icin-ssh-key-olusturma"&gt;Windows &amp;Idot;&amp;ccedil;in SSH-Key Olu&amp;scedil;turma&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Git Bash uygulamas&amp;inodot;n&amp;inodot; &lt;a href="https://git-scm.com/downloads" rel="noopener noreferrer" target="_blank"&gt;https://git-scm.com/downloads&lt;/a&gt; adresinden indirip y&amp;uuml;kleyin.&lt;/li&gt;
+&lt;li&gt;Terminali a&amp;ccedil;arak a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; s&amp;inodot;ras&amp;inodot;yla &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Kullan&amp;inodot;c&amp;inodot; Ad&amp;inodot;n&amp;inodot;z"&lt;/span&gt;
+git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.email&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"email@adresiniz.com"&lt;/span&gt;
+ssh-keygen
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Komutlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rd&amp;inodot;ktan sonra kar&amp;scedil;&amp;inodot;n&amp;inodot;za &amp;ccedil;&amp;inodot;kan t&amp;uuml;m se&amp;ccedil;eneklerde &lt;code&gt;Enter&lt;/code&gt; tu&amp;scedil;una basarak devam edin.&lt;/li&gt;
+&lt;li&gt;Anahtar olu&amp;scedil;turulduktan sonra &lt;code&gt;C:\Users\kullan&amp;inodot;c&amp;inodot;adiniz\.ssh&lt;/code&gt; dizinine giderek &lt;code&gt;id_rsa.pub&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; Not Defteri ile a&amp;ccedil;&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Dosya i&amp;ccedil;indeki anahtar kodlar&amp;inodot;n&amp;inodot; kopyalay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/settings/keys" rel="noopener noreferrer" target="_blank"&gt;GitHub SSH Keys Ayarlar&amp;inodot;&lt;/a&gt; sayfas&amp;inodot;na giderek &lt;strong&gt;New SSH Key&lt;/strong&gt; butonuna t&amp;inodot;klay&amp;inodot;n ve kopyalad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z kodlar&amp;inodot; yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;p kaydedin.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="gitbash" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/git_bash-lg.webp" srcset="/images/git_bash-sm.webp 300w, /images/git_bash-md.webp 500w, /images/git_bash-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;h3 id="linux-icin-ssh-key-olusturma"&gt;Linux &amp;Idot;&amp;ccedil;in SSH-Key Olu&amp;scedil;turma&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Git Bash veya terminali a&amp;ccedil;&amp;inodot;n ve a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Kullan&amp;inodot;c&amp;inodot; Ad&amp;inodot;n&amp;inodot;z"&lt;/span&gt;
+git&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--global&lt;span class="w"&gt; &lt;/span&gt;user.email&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"email@adresiniz.com"&lt;/span&gt;
+ssh-keygen&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;rsa&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-C&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"email@adresiniz.com"&lt;/span&gt;
+ssh-add&lt;span class="w"&gt; &lt;/span&gt;~/.ssh/id_rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Komutlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rd&amp;inodot;ktan sonra, gelen t&amp;uuml;m se&amp;ccedil;eneklerde &lt;code&gt;Enter&lt;/code&gt; tu&amp;scedil;una basarak devam edin.&lt;/li&gt;
+&lt;li&gt;Anahtar olu&amp;scedil;turulduktan sonra &lt;code&gt;~/.ssh/id_rsa.pub&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot;n i&amp;ccedil;eri&amp;gbreve;ini kopyalay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/settings/keys" rel="noopener noreferrer" target="_blank"&gt;GitHub SSH Keys Ayarlar&amp;inodot;&lt;/a&gt; sayfas&amp;inodot;na giderek &lt;strong&gt;New SSH Key&lt;/strong&gt; butonuna t&amp;inodot;klay&amp;inodot;n ve kopyalad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z kodlar&amp;inodot; yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;p kaydedin.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;✅ Art&amp;inodot;k GitHub &amp;uuml;zerinde SSH anahtar&amp;inodot;n&amp;inodot;z&amp;inodot; kullanarak g&amp;uuml;venli bir &amp;scedil;ekilde i&amp;scedil;lem yapabilirsiniz!&lt;/p&gt;
+&lt;p&gt;Bu rehber sayesinde Windows ve Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in SSH anahtar&amp;inodot; olu&amp;scedil;turma s&amp;uuml;recini kolayca tamamlayabilirsiniz. 🚀&lt;/p&gt;</content><category term="Git"/><category term="git"/><category term="github"/><category term="ssh"/></entry></feed>

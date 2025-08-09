@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Linux</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/linux.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-07T06:45:00+03:00</updated><entry><title>Arch Linux Eski Depoların Temizlenmesi: Ne Yapmanız Gerekiyor?</title><link href="https://yuceltoluyag.github.io/arch-linux-eski-depolar-temizlenmesi/" rel="alternate"/><published>2025-04-15T12:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-04-15:/arch-linux-eski-depolar-temizlenmesi/</id><summary type="html">&lt;h2 id="arch-linux-kullanicilari-icin-eski-depolarin-temizlenmesi-hakkinda-bilmeniz-gereken-her-sey"&gt;Arch Linux Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; &amp;Idot;&amp;ccedil;in Eski Depolar&amp;inodot;n Temizlenmesi Hakk&amp;inodot;nda Bilmeniz Gereken Her &amp;Scedil;ey&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt; kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in yeni bir duyuru geldi: Eskimi&amp;scedil; ve art&amp;inodot;k kullan&amp;inodot;lmayan depolar&amp;inodot;n temizlenmesi i&amp;scedil;lemi ba&amp;scedil;l&amp;inodot;yor! Bu yaz&amp;inodot;da, eski depolar&amp;inodot;n sisteminizden nas&amp;inodot;l kald …&lt;/p&gt;</summary><content type="html">&lt;h2 id="arch-linux-kullanicilari-icin-eski-depolarin-temizlenmesi-hakkinda-bilmeniz-gereken-her-sey"&gt;Arch Linux Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; &amp;Idot;&amp;ccedil;in Eski Depolar&amp;inodot;n Temizlenmesi Hakk&amp;inodot;nda Bilmeniz Gereken Her &amp;Scedil;ey&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt; kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in yeni bir duyuru geldi: Eskimi&amp;scedil; ve art&amp;inodot;k kullan&amp;inodot;lmayan depolar&amp;inodot;n temizlenmesi i&amp;scedil;lemi ba&amp;scedil;l&amp;inodot;yor! Bu yaz&amp;inodot;da, eski depolar&amp;inodot;n sisteminizden nas&amp;inodot;l kald&amp;inodot;r&amp;inodot;laca&amp;gbreve;&amp;inodot;n&amp;inodot; ve bu de&amp;gbreve;i&amp;scedil;ikli&amp;gbreve;in ne anlama geldi&amp;gbreve;ini inceleyece&amp;gbreve;iz. E&amp;gbreve;er Arch Linux kullan&amp;inodot;yorsan&amp;inodot;z ve sisteminizde hala eski depo referanslar&amp;inodot; varsa, bu yaz&amp;inodot;y&amp;inodot; dikkatle okuman&amp;inodot;zda fayda var.&lt;/p&gt;
+&lt;h3 id="eski-depolarin-temizlenmesi-neden-simdi"&gt;Eski Depolar&amp;inodot;n Temizlenmesi: Neden &amp;Scedil;imdi?&lt;/h3&gt;
+&lt;p&gt;Arch Linux, s&amp;uuml;rekli g&amp;uuml;ncel ve stabil bir sistem sa&amp;gbreve;lamaya y&amp;ouml;nelik yapt&amp;inodot;&amp;gbreve;&amp;inodot; yeniliklerle tan&amp;inodot;n&amp;inodot;r. Ancak, baz&amp;inodot; depo de&amp;gbreve;i&amp;scedil;iklikleri zamanla gereksiz hale gelir. &amp;Ouml;rne&amp;gbreve;in, iki y&amp;inodot;l &amp;ouml;nce &lt;strong&gt;[community]&lt;/strong&gt; deposu, &lt;strong&gt;[extra]&lt;/strong&gt; deposuyla birle&amp;scedil;tirildi ve bununla birlikte baz&amp;inodot; eski depolar kullan&amp;inodot;lmaz hale geldi. Bu depolar sistem &amp;uuml;zerinde hala mevcut olabilir, fakat art&amp;inodot;k i&amp;scedil;levselli&amp;gbreve;i yoktur.&lt;/p&gt;
+&lt;p&gt;2025-03-01 tarihinden itibaren Arch Linux, eski &lt;strong&gt;[community]&lt;/strong&gt;, &lt;strong&gt;[community-testing]&lt;/strong&gt;, &lt;strong&gt;[testing]&lt;/strong&gt;, &lt;strong&gt;[testing-debug]&lt;/strong&gt;, &lt;strong&gt;[staging]&lt;/strong&gt; ve &lt;strong&gt;[staging-debug]&lt;/strong&gt; depolar&amp;inodot;n&amp;inodot; tamamen kald&amp;inodot;racak. Bu de&amp;gbreve;i&amp;scedil;iklik, sisteminizi g&amp;uuml;ncel tutman&amp;inodot;za yard&amp;inodot;mc&amp;inodot; olurken, gereksiz dosya ve ayarlar&amp;inodot; da ortadan kald&amp;inodot;racak.&lt;/p&gt;
+&lt;h3 id="depo-temizligi-ne-gibi-sorunlara-yol-acabilir"&gt;Depo Temizli&amp;gbreve;i Ne Gibi Sorunlara Yol A&amp;ccedil;abilir?&lt;/h3&gt;
+&lt;p&gt;Eski depolar&amp;inodot;n sisteminizde kalmas&amp;inodot;, baz&amp;inodot; sorunlara yol a&amp;ccedil;abilir. &amp;Ouml;zellikle, &lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyan&amp;inodot;zda hala eski depolar varsa, &lt;strong&gt;pacman -Sy&lt;/strong&gt; komutuyla depo verilerini senkronize etmeye &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda hata alabilirsiniz.&lt;/p&gt;
+&lt;h4&gt;Temizlik &amp;Idot;&amp;scedil;leminden Etkilenen Depolar:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[community]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[community-testing]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[testing]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[testing-debug]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[staging]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[staging-debug]&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;E&amp;gbreve;er bu depolar&amp;inodot;n sisteminizde hala yer ald&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; fark ediyorsan&amp;inodot;z, bir an &amp;ouml;nce g&amp;uuml;ncelleme yapmal&amp;inodot;s&amp;inodot;n&amp;inodot;z.&lt;/p&gt;
+&lt;h3 id="eski-depolari-sisteminizden-kaldirma-adimlari"&gt;Eski Depolar&amp;inodot; Sisteminizden Kald&amp;inodot;rma Ad&amp;inodot;mlar&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Eski depolar&amp;inodot; kald&amp;inodot;rmak i&amp;ccedil;in, &lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyan&amp;inodot;zda gerekli de&amp;gbreve;i&amp;scedil;iklikleri yapman&amp;inodot;z gerekiyor. &amp;Idot;&amp;scedil;te ad&amp;inodot;m ad&amp;inodot;m nas&amp;inodot;l yapaca&amp;gbreve;&amp;inodot;n&amp;inodot;z:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; a&amp;ccedil;&amp;inodot;n:
+   &lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/pacman.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Eski depolar&amp;inodot;n (&amp;ouml;rne&amp;gbreve;in, &lt;strong&gt;[community]&lt;/strong&gt;, &lt;strong&gt;[testing]&lt;/strong&gt;) bulundu&amp;gbreve;u sat&amp;inodot;rlar&amp;inodot; bulun.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bu sat&amp;inodot;rlar&amp;inodot; silin veya yorum sat&amp;inodot;r&amp;inodot; haline getirin (ba&amp;scedil;lar&amp;inodot;na # ekleyerek).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dosyay&amp;inodot; kaydedin ve &amp;ccedil;&amp;inodot;k&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;pacman -Sy&lt;/strong&gt; komutunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak depo verilerini g&amp;uuml;ncelleyin:
+   &lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-Sy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Bu i&amp;scedil;lemi yapt&amp;inodot;ktan sonra, sisteminizde eski depo referanslar&amp;inodot; kalmayacak ve hata almayacaks&amp;inodot;n&amp;inodot;z.&lt;/p&gt;
+&lt;h3 id="guncel-pacman-ve-depo-yapilandirmasi"&gt;G&amp;uuml;ncel Pacman ve Depo Yap&amp;inodot;land&amp;inodot;rmas&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Arch Linux, &lt;strong&gt;pacman&lt;/strong&gt; 6.0.2-7 ve sonras&amp;inodot;yla birlikte, eski depo yap&amp;inodot;land&amp;inodot;rmalar&amp;inodot;n&amp;inodot; temizlemek i&amp;ccedil;in bir &lt;strong&gt;.pacnew&lt;/strong&gt; dosyas&amp;inodot; g&amp;ouml;ndermi&amp;scedil;tir. E&amp;gbreve;er bu dosya sisteminizde varsa, gerekli yap&amp;inodot;land&amp;inodot;rma de&amp;gbreve;i&amp;scedil;ikliklerini yaparak sisteminizi g&amp;uuml;ncel tutabilirsiniz.&lt;/p&gt;
+&lt;h3 id="depo-temizliginin-faydalari"&gt;Depo Temizli&amp;gbreve;inin Faydalar&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Eski depolar&amp;inodot;n kald&amp;inodot;r&amp;inodot;lmas&amp;inodot;, sisteminizdeki gereksiz verilerin temizlenmesini sa&amp;gbreve;lar ve disk alan&amp;inodot;ndan tasarruf etmenize yard&amp;inodot;mc&amp;inodot; olur. Ayr&amp;inodot;ca, sistem g&amp;uuml;ncellemelerini yaparken kar&amp;scedil;&amp;inodot;la&amp;scedil;abilece&amp;gbreve;iniz hatalar&amp;inodot;n &amp;ouml;n&amp;uuml;ne ge&amp;ccedil;er ve Arch Linux'un en g&amp;uuml;ncel s&amp;uuml;r&amp;uuml;mlerine sorunsuz eri&amp;scedil;im sa&amp;gbreve;laman&amp;inodot;z&amp;inodot; garanti eder.&lt;/p&gt;
+&lt;h3 id="sonuc-eski-depolari-kaldirin-sisteminizi-temizleyin"&gt;Sonu&amp;ccedil;: Eski Depolar&amp;inodot; Kald&amp;inodot;r&amp;inodot;n, Sisteminizi Temizleyin!&lt;/h3&gt;
+&lt;p&gt;Arch Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in, eski depolar&amp;inodot;n kald&amp;inodot;r&amp;inodot;lmas&amp;inodot; &amp;ouml;nemli bir ad&amp;inodot;md&amp;inodot;r. &lt;strong&gt;/etc/pacman.conf&lt;/strong&gt; dosyan&amp;inodot;zdaki eski depo sat&amp;inodot;rlar&amp;inodot;n&amp;inodot; kald&amp;inodot;rarak, sisteminizin stabilitesini ve h&amp;inodot;z&amp;inodot;n&amp;inodot; art&amp;inodot;rabilirsiniz. Unutmay&amp;inodot;n, bu ad&amp;inodot;mlar&amp;inodot; att&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda herhangi bir hata ile kar&amp;scedil;&amp;inodot;la&amp;scedil;mazs&amp;inodot;n&amp;inodot;z ve sisteminiz her zaman en g&amp;uuml;ncel haliyle &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hemen &amp;scedil;imdi eski depolar&amp;inodot; kald&amp;inodot;r&amp;inodot;n ve sisteminizi temizleyin!&lt;/strong&gt; Daha fazla bilgi ve Arch Linux'un en son g&amp;uuml;ncellemeleri i&amp;ccedil;in bizi takip etmeye devam edin.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="Eski depolar&amp;inodot; kald&amp;inodot;rarak sisteminizi h&amp;inodot;zland&amp;inodot;r&amp;inodot;n." class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/arch-linux-yeni-pacman-ayarlari-lg.webp" srcset="/images/arch-linux-yeni-pacman-ayarlari-sm.webp 300w, /images/arch-linux-yeni-pacman-ayarlari-md.webp 500w, /images/arch-linux-yeni-pacman-ayarlari-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Bu yaz&amp;inodot;y&amp;inodot; be&amp;gbreve;endiniz mi? &lt;strong&gt;Yorumlar&amp;inodot;n&amp;inodot;z&amp;inodot;&lt;/strong&gt; a&amp;scedil;a&amp;gbreve;&amp;inodot;da bizimle payla&amp;scedil;abilirsiniz! Ayr&amp;inodot;ca, Arch Linux ile ilgili daha fazla ipucu ve rehber i&amp;ccedil;in &lt;strong&gt;sosyal medya hesaplar&amp;inodot;m&amp;inodot;z&amp;inodot;&lt;/strong&gt; takip edebilirsiniz. E&amp;gbreve;er bu yaz&amp;inodot;y&amp;inodot; faydal&amp;inodot; bulduysan&amp;inodot;z, arkada&amp;scedil;lar&amp;inodot;n&amp;inodot;zla payla&amp;scedil;may&amp;inodot; unutmay&amp;inodot;n!&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er bu t&amp;uuml;r i&amp;ccedil;erikler ilginizi &amp;ccedil;ekiyorsa, &lt;strong&gt;e-posta b&amp;uuml;ltenimize abone olmay&amp;inodot;&lt;/strong&gt; unutmay&amp;inodot;n!&lt;/p&gt;</content><category term="Linux"/><category term="Arch Linux"/><category term="Depo Temizliği"/><category term="Pacman"/><category term="Sistem Yönetimi"/><category term="Linux"/><category term="Yazılım Güncellemeleri"/></entry><entry><title>Modern Bir Mutt Kurulumu 1. Bölüm</title><link href="https://yuceltoluyag.github.io/modern-bir-mutt-kurulumu-1-bolum/" rel="alternate"/><published>2020-02-03T10:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-02-03:/modern-bir-mutt-kurulumu-1-bolum/</id><summary type="html">&lt;p&gt;Neomutt, mbsync, msmtp ve mu ile modern bir mutt kurulumu yapmayı adım adım anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! Bu yaz&amp;inodot;m&amp;inodot;z&amp;inodot;n ilk b&amp;ouml;l&amp;uuml;m&amp;uuml;nde, harika bir e-posta istemcisi olan Mutt ayarlar&amp;inodot;m&amp;inodot;z&amp;inodot; yap&amp;inodot;land&amp;inodot;raca&amp;gbreve;&amp;inodot;z. 😊&lt;/p&gt;
+&lt;h2 id="gerekli-yazilimlar"&gt;Gerekli Yaz&amp;inodot;l&amp;inodot;mlar&lt;/h2&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki yaz&amp;inodot;l&amp;inodot;mlar, mutt'&amp;inodot; kullanabilmek i&amp;ccedil;in gereklidir:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/index.php/Isync#Installing" rel="noopener noreferrer" target="_blank"&gt;Mbsync/isync&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.archlinux.org/index.php/Msmtp" rel="noopener noreferrer" target="_blank"&gt;Msmtp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aur.archlinux.org/packages/mu/" rel="noopener noreferrer" target="_blank"&gt;Mu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Vim ya da t&amp;uuml;revleri&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.archlinux.org/packages/community/x86_64/neomutt/" rel="noopener noreferrer" target="_blank"&gt;NeoMutt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aur.archlinux.org/packages/vdirsyncer-git/" rel="noopener noreferrer" target="_blank"&gt;Vdirsyncer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.archlinux.org/packages/community/any/khard/" rel="noopener noreferrer" target="_blank"&gt;Khard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://aur.archlinux.org/packages/ripmime/" rel="noopener noreferrer" target="_blank"&gt;Ripmime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.archlinux.org/packages/community/any/urlscan/" rel="noopener noreferrer" target="_blank"&gt;UrlScan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.archlinux.org/packages/extra/x86_64/w3m/" rel="noopener noreferrer" target="_blank"&gt;W3m&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.archlinux.org/packages/core/x86_64/gpgme/" rel="noopener noreferrer" target="_blank"&gt;Gpgme&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="yukaridaki-programlar-ne-ise-yarar"&gt;Yukar&amp;inodot;daki Programlar Ne &amp;Idot;&amp;scedil;e Yarar?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;mbsync&lt;/strong&gt;: Birden fazla IMAP hesab&amp;inodot;n&amp;inodot; yerel makinenizde senkronize eder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;msmtp&lt;/strong&gt;: E-posta g&amp;ouml;ndermenizi sa&amp;gbreve;lar. 😁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;mu&lt;/strong&gt;: E-postalar&amp;inodot;n&amp;inodot;z&amp;inodot; indexler ve t&amp;uuml;m e-postalar&amp;inodot;n&amp;inodot;z i&amp;ccedil;in bir arama aray&amp;uuml;z&amp;uuml; sa&amp;gbreve;lar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;vim&lt;/strong&gt;: E-posta yazmak i&amp;ccedil;in kullan&amp;inodot;lan edit&amp;ouml;r. Ben Neovim kullan&amp;inodot;yorum.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;neomutt&lt;/strong&gt;: E-posta istemcimiz. 😇&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yukar&amp;inodot;daki yaz&amp;inodot;l&amp;inodot;mlar, mail al&amp;inodot;p g&amp;ouml;nderebilmemiz i&amp;ccedil;in gerekli ara&amp;ccedil;lard&amp;inodot;r. E-postalar i&amp;ccedil;indeki ekleri g&amp;ouml;rmek, ki&amp;scedil;ileri incelemek gibi i&amp;scedil;lemleri ise a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ara&amp;ccedil;larla yap&amp;inodot;yoruz:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;vdirsyncer&lt;/strong&gt;: Ki&amp;scedil;ilerinizi senkronize eder.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;khard&lt;/strong&gt;: Vdirsyncer ile senkronize edilen ki&amp;scedil;ileri neomutt'ta kullan&amp;inodot;labilir hale getirir.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ripmime&lt;/strong&gt;: E-posta eklerini kaydetmeye yarar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;urlscan&lt;/strong&gt;: Tercih etti&amp;gbreve;iniz taray&amp;inodot;c&amp;inodot;da URL'leri a&amp;ccedil;ar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;w3m&lt;/strong&gt;: HTML e-postalar&amp;inodot;n&amp;inodot; mutt i&amp;ccedil;inde okunabilir hale getirir.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gpgme&lt;/strong&gt;: E-postalar&amp;inodot; &amp;scedil;ifrelemek i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="kurulum"&gt;Kurulum&lt;/h2&gt;
+&lt;p&gt;Yukar&amp;inodot;daki paketleri kendi da&amp;gbreve;&amp;inodot;t&amp;inodot;m&amp;inodot;n&amp;inodot;za g&amp;ouml;re kurabilirsiniz. Arch Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in kolayl&amp;inodot;k olmas&amp;inodot; ad&amp;inodot;na, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla t&amp;uuml;m paketleri kurabilirsiniz. 🤣&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;msmtp&lt;span class="w"&gt; &lt;/span&gt;msmtp-mta&lt;span class="w"&gt; &lt;/span&gt;isync&lt;span class="w"&gt; &lt;/span&gt;mu-git&lt;span class="w"&gt; &lt;/span&gt;neovim&lt;span class="w"&gt; &lt;/span&gt;neomutt-git&lt;span class="w"&gt; &lt;/span&gt;vdirsyncer-git&lt;span class="w"&gt; &lt;/span&gt;khard&lt;span class="w"&gt; &lt;/span&gt;ripmime&lt;span class="w"&gt; &lt;/span&gt;urlscan&lt;span class="w"&gt; &lt;/span&gt;w3m&lt;span class="w"&gt; &lt;/span&gt;gpgme
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Klas&amp;ouml;r yap&amp;inodot;m&amp;inodot;z&amp;inodot; olu&amp;scedil;tural&amp;inodot;m. Ben, ana dizinde klas&amp;ouml;r yap&amp;inodot;s&amp;inodot;n&amp;inodot; sevmedi&amp;gbreve;im i&amp;ccedil;in gizli dosyalar olarak olu&amp;scedil;turuyorum. Buras&amp;inodot; tamamen sizin tercihinize ba&amp;gbreve;l&amp;inodot;. 😀 Dikkat etmeniz gereken bir nokta: &lt;strong&gt;T&amp;uuml;rk&amp;ccedil;e karakter kullanmamaya &amp;ouml;zen g&amp;ouml;sterin&lt;/strong&gt; (&amp;ccedil;, &amp;inodot;, &amp;uuml;, &amp;gbreve;, &amp;ouml;, &amp;scedil;, &amp;Idot;, &amp;Gbreve;, &amp;Uuml;, &amp;Ouml;, &amp;Scedil;, &amp;Ccedil;).&lt;/p&gt;
+&lt;p&gt;Ayr&amp;inodot;ca, Gmail ile ya&amp;scedil;anabilecek sorunlara da dikkat etmeliyiz. Gmail'in ald&amp;inodot;&amp;gbreve;&amp;inodot; g&amp;uuml;venlik &amp;ouml;nlemleri nedeniyle baz&amp;inodot; ayarlar yapmam&amp;inodot;z gerekebilir. E&amp;gbreve;er Gmail ile ilgili bir sorun ya&amp;scedil;arsan&amp;inodot;z, yorumda belirterek &amp;ccedil;&amp;ouml;z&amp;uuml;m bulmaya &amp;ccedil;al&amp;inodot;&amp;scedil;al&amp;inodot;m.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;.Contacts
+mkdir&lt;span class="w"&gt; &lt;/span&gt;.Mail
+mkdir&lt;span class="w"&gt; &lt;/span&gt;.Mail/ytoluyagmail
+mkdir&lt;span class="w"&gt; &lt;/span&gt;.Mail/ytoluyagyandex
+mkdir&lt;span class="w"&gt; &lt;/span&gt;.Mail/yuceltoluyaghotmail
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ana dizine bir dosya daha olu&amp;scedil;tural&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;touch&lt;span class="w"&gt; &lt;/span&gt;~/.mbsyncrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu dosyada, e-posta hesaplar&amp;inodot;m&amp;inodot;z&amp;inodot; IMAP &amp;uuml;zerinden senkronize edilecek &amp;scedil;ekilde yap&amp;inodot;land&amp;inodot;raca&amp;gbreve;&amp;inodot;z. &amp;Ouml;rnek olarak Gmail hesab&amp;inodot;m&amp;inodot;z i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;#################################&lt;/span&gt;
+&lt;span class="c1"&gt;######## Gmail Hesab&amp;inodot;m ########&lt;/span&gt;
+&lt;span class="c1"&gt;#################################&lt;/span&gt;
+
+IMAPAccount&lt;span class="w"&gt; &lt;/span&gt;gmail
+Host&lt;span class="w"&gt; &lt;/span&gt;imap.gmail.com
+User&lt;span class="w"&gt; &lt;/span&gt;ytoluyag@gmail.com
+PassCmd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/bin/gpg2 -q --for-your-eyes-only --no-tty -d ~/.password-store/ytoluyag.gpg"&lt;/span&gt;
+SSLType&lt;span class="w"&gt; &lt;/span&gt;IMAPS
+CertificateFile&lt;span class="w"&gt; &lt;/span&gt;/etc/ssl/certs/ca-certificates.crt
+SSLVersions&lt;span class="w"&gt; &lt;/span&gt;SSLv3
+AuthMechs&lt;span class="w"&gt; &lt;/span&gt;LOGIN
+
+&lt;span class="c1"&gt;# Remote storage&lt;/span&gt;
+
+IMAPStore&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-remote
+Account&lt;span class="w"&gt; &lt;/span&gt;gmail
+
+&lt;span class="c1"&gt;# Local storage&lt;/span&gt;
+
+MaildirStore&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-local
+Path&lt;span class="w"&gt; &lt;/span&gt;~/.Mail/ytoluyagmail/
+Inbox&lt;span class="w"&gt; &lt;/span&gt;~/.Mail/ytoluyagmail/INBOX
+
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-inbox
+Master&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-remote:&lt;span class="s2"&gt;"[Gmail]/All Mail"&lt;/span&gt;
+Slave&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-local:INBOX
+Create&lt;span class="w"&gt; &lt;/span&gt;Both
+Expunge&lt;span class="w"&gt; &lt;/span&gt;Both
+
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-archive
+Master&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-remote:&lt;span class="s2"&gt;"[Gmail]/Starred"&lt;/span&gt;
+Slave&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-local:archive
+Create&lt;span class="w"&gt; &lt;/span&gt;Both
+Expunge&lt;span class="w"&gt; &lt;/span&gt;Both
+
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-drafts
+Master&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-remote:&lt;span class="s2"&gt;"[Gmail]/Drafts"&lt;/span&gt;
+Slave&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-local:drafts
+Create&lt;span class="w"&gt; &lt;/span&gt;Both
+Expunge&lt;span class="w"&gt; &lt;/span&gt;Both
+
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-sent
+Master&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-remote:&lt;span class="s2"&gt;"[Gmail]/Sent Mail"&lt;/span&gt;
+Slave&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-local:sent
+Create&lt;span class="w"&gt; &lt;/span&gt;Both
+Expunge&lt;span class="w"&gt; &lt;/span&gt;Both
+
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-trash
+Master&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-remote:&lt;span class="s2"&gt;"[Gmail]/Trash"&lt;/span&gt;
+Slave&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-local:trash
+Create&lt;span class="w"&gt; &lt;/span&gt;Both
+Expunge&lt;span class="w"&gt; &lt;/span&gt;Both
+
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-junk
+Master&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-remote:&lt;span class="s2"&gt;"[Gmail]/Spam"&lt;/span&gt;
+Slave&lt;span class="w"&gt; &lt;/span&gt;:ytoluyag-local:junk
+Create&lt;span class="w"&gt; &lt;/span&gt;Both
+Expunge&lt;span class="w"&gt; &lt;/span&gt;Both
+
+Group&lt;span class="w"&gt; &lt;/span&gt;ytoluyag
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-inbox
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-archive
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-drafts
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-sent
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-trash
+Channel&lt;span class="w"&gt; &lt;/span&gt;ytoluyag-junk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Burada, ilgili e-postalar&amp;inodot; olu&amp;scedil;turdu&amp;gbreve;unuz klas&amp;ouml;rlere y&amp;ouml;nlendirdik. &lt;strong&gt;Remote&lt;/strong&gt; ve &lt;strong&gt;local&lt;/strong&gt; kavramlar&amp;inodot;: E-postalar&amp;inodot;n&amp;inodot;z&amp;inodot;n uzant&amp;inodot;lar&amp;inodot;d&amp;inodot;r. &amp;Ouml;rne&amp;gbreve;in, Gmail&amp;rsquo;de Spam klas&amp;ouml;r&amp;uuml;ne t&amp;inodot;klad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda &lt;strong&gt;trash&lt;/strong&gt; linkine y&amp;ouml;nlendirir. Remote k&amp;inodot;sm&amp;inodot; &amp;ccedil;ok &amp;ouml;nemlidir. &lt;/p&gt;
+&lt;p&gt;&amp;Scedil;ifre k&amp;inodot;sm&amp;inodot;n&amp;inodot; ise &amp;scedil;u &amp;scedil;ekilde yap&amp;inodot;land&amp;inodot;rabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;#PassCmd "security find-internet-password -s 'imap.gmail.com' -a 'ytoluyag@gmail.com' -w"&lt;/span&gt;
+PassCmd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/bin/gpg2 -q --for-your-eyes-only --no-tty -d ~/.password-store/ytoluyag.gpg"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Scedil;imdi, bir dosya daha olu&amp;scedil;tural&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;touch&lt;span class="w"&gt; &lt;/span&gt;~/.msmtprc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu dosyada ise mail ba&amp;gbreve;lant&amp;inodot; ayarlar&amp;inodot;n&amp;inodot; yap&amp;inodot;yoruz. E&amp;gbreve;er mail ba&amp;gbreve;lant&amp;inodot;n&amp;inodot;z&amp;inodot;n imap, port, ssl gibi bilgilerini bilmiyorsan&amp;inodot;z, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki kaynaklara g&amp;ouml;z atabilirsiniz:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://support.google.com/mail/answer/7126229?hl=tr" rel="noopener noreferrer" target="_blank"&gt;Gmail &amp;Idot;MAP Ayarlar&amp;inodot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://yandex.com.tr/support/mail/mail-clients.html" rel="noopener noreferrer" target="_blank"&gt;Yandex &amp;Idot;MAP Ayarlar&amp;inodot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://support.office.com/tr-tr/article/outlook-com-i%C3%A7in-pop-imap-ve-smtp-ayarlar%C4%B1-d088b986-291d-42b8-9564-9c414e2aa040" rel="noopener noreferrer" target="_blank"&gt;Hotmail &amp;Idot;MAP Ayarlar&amp;inodot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;account&lt;span class="w"&gt; &lt;/span&gt;ytoluyagmail
+host&lt;span class="w"&gt; &lt;/span&gt;smtp.gmail.com
+port&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;465&lt;/span&gt;
+protocol&lt;span class="w"&gt; &lt;/span&gt;smtp
+auth&lt;span class="w"&gt; &lt;/span&gt;on
+user&lt;span class="w"&gt; &lt;/span&gt;ytoluyag@gmail.com
+from&lt;span class="w"&gt; &lt;/span&gt;ytoluyag@gmail.com
+tls&lt;span class="w"&gt; &lt;/span&gt;on
+tls_starttls&lt;span class="w"&gt; &lt;/span&gt;off
+tls_trust_file&lt;span class="w"&gt; &lt;/span&gt;/etc/ssl/certs/ca-certificates.crt
+
+account&lt;span class="w"&gt; &lt;/span&gt;yuceltoluyaghotmail
+host&lt;span class="w"&gt; &lt;/span&gt;smtp.office365.com
+port&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;587&lt;/span&gt;
+protocol&lt;span class="w"&gt; &lt;/span&gt;smtp
+auth&lt;span class="w"&gt; &lt;/span&gt;on
+user&lt;span class="w"&gt; &lt;/span&gt;yuceltoluyag@hotmail.com.tr
+from&lt;span class="w"&gt; &lt;/span&gt;yuceltoluyag@hotmail.com.tr
+tls&lt;span class="w"&gt; &lt;/span&gt;on
+tls_starttls&lt;span class="w"&gt; &lt;/span&gt;on
+tls_trust_file&lt;span class="w"&gt; &lt;/span&gt;/etc/ssl/certs/ca-certificates.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu ayarlar&amp;inodot; test edelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Mail Test Ediyoruz"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;msmtp&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;ytoluyagmail&lt;span class="w"&gt; &lt;/span&gt;ytoluyag@gmail.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Test Sonucu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/uygulama_sifresi_gmail-lg.webp" srcset="/images/uygulama_sifresi_gmail-sm.webp 300w, /images/uygulama_sifresi_gmail-md.webp 500w, /images/uygulama_sifresi_gmail-lg.webp 800w"/&gt;
+E&amp;gbreve;er hata al&amp;inodot;rsan&amp;inodot;z, &amp;ccedil;&amp;ouml;z&amp;uuml;m i&amp;ccedil;in tekrar g&amp;ouml;zden ge&amp;ccedil;irebilirsiniz. &amp;Ouml;zellikle Gmail'in iki&lt;/p&gt;
+&lt;p&gt;fakt&amp;ouml;rl&amp;uuml; do&amp;gbreve;rulama gereksinimlerini g&amp;ouml;z &amp;ouml;n&amp;uuml;nde bulundurmal&amp;inodot;s&amp;inodot;n&amp;inodot;z.&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er ba&amp;gbreve;lant&amp;inodot;n&amp;inodot;z ba&amp;scedil;ar&amp;inodot;l&amp;inodot; olduysa, Muttr'&amp;inodot; ba&amp;scedil;latal&amp;inodot;m.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;neomutt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Burada g&amp;ouml;rece&amp;gbreve;iniz hata loglar&amp;inodot;n&amp;inodot; da d&amp;uuml;zeltmek gerekebilir. E&amp;gbreve;er hata al&amp;inodot;yorsan&amp;inodot;z, dosyan&amp;inodot;z&amp;inodot; tekrar g&amp;ouml;zden ge&amp;ccedil;irebilirsiniz. 
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mbsync&lt;span class="w"&gt; &lt;/span&gt;-a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="neomutt_senkron" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/neomutt_senkron-lg.webp" srcset="/images/neomutt_senkron-sm.webp 300w, /images/neomutt_senkron-md.webp 500w, /images/neomutt_senkron-lg.webp 800w"/&gt;
+Bu yaz&amp;inodot; dizisinin &lt;a href="/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin" rel="noopener noreferrer" target="_blank"&gt;2.B&amp;ouml;l&amp;uuml;m&lt;/a&gt;'&amp;uuml;nde, e-posta istemcinizi daha ayr&amp;inodot;nt&amp;inodot;l&amp;inodot; olarak yap&amp;inodot;land&amp;inodot;rmaya devam edece&amp;gbreve;iz. 🙂&lt;/p&gt;</content><category term="Linux"/><category term="linux"/><category term="e-mail"/></entry><entry><title>OBS Linux Browser Eklentisi Kurulumu ve Discord Chat Entegrasyonu</title><link href="https://yuceltoluyag.github.io/obs-linux-browser-eklentisi-kurulumu/" rel="alternate"/><published>2018-11-17T10:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-11-17:/obs-linux-browser-eklentisi-kurulumu/</id><summary type="html">&lt;p&gt;Linux ortamında OBS için browser eklentisinin nasıl kurulacağını ve Discord chat entegrasyonunun nasıl yapılacağını adım adım anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! 🎥 Open Broadcaster Software (OBS), video kaydetme ve canl&amp;inodot; yay&amp;inodot;n yapma konusunda en iyi uygulamalardan biridir. Ancak Linux ortam&amp;inodot;nda eklenti ekleme s&amp;uuml;reci hakk&amp;inodot;nda yeterince T&amp;uuml;rk&amp;ccedil;e kaynak bulunmad&amp;inodot;&amp;gbreve;&amp;inodot; i&amp;ccedil;in bu rehberi haz&amp;inodot;rlad&amp;inodot;m. OBS'nin nas&amp;inodot;l kullan&amp;inodot;laca&amp;gbreve;&amp;inodot;n&amp;inodot; anlatmayaca&amp;gbreve;&amp;inodot;m, &amp;ccedil;&amp;uuml;nk&amp;uuml; bu konuda yeterince i&amp;ccedil;erik mevcut. Bu yaz&amp;inodot;da, &lt;strong&gt;OBS'e Linux Browser eklentisinin nas&amp;inodot;l eklenece&amp;gbreve;ini ve Discord StreamKit entegrasyonunun nas&amp;inodot;l yap&amp;inodot;laca&amp;gbreve;&amp;inodot;n&amp;inodot;&lt;/strong&gt; &amp;ouml;&amp;gbreve;renece&amp;gbreve;iz.&lt;/p&gt;
+&lt;h2 id="kurulum"&gt;Kurulum&lt;/h2&gt;
+&lt;p&gt;OBS'e eklenti ekleyip test olarak &lt;strong&gt;Discord StreamKit&lt;/strong&gt; entegrasyonu ger&amp;ccedil;ekle&amp;scedil;tirece&amp;gbreve;iz. 🎤💬&lt;/p&gt;
+&lt;div class="info-box warning"&gt;
+&lt;b&gt;G&amp;uuml;ncelleme: Art&amp;inodot;k Linux Browser Eklentisi varsay&amp;inodot;lan olarak gelmektedir. Ekstra y&amp;uuml;kleme yapman&amp;inodot;za gerek yoktur!&lt;/b&gt; 🚀
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href="https://github.com/bazukas/obs-linuxbrowser/releases" rel="noopener noreferrer" target="_blank"&gt;obs-linuxbrowser&lt;/a&gt;&lt;/del&gt; (Eski y&amp;ouml;ntem, art&amp;inodot;k gerekli de&amp;gbreve;il. Y&amp;uuml;klemeyin!)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://discordapp.com/streamkit" rel="noopener noreferrer" target="_blank"&gt;Discord StreamKit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu i&amp;scedil;lemleri elle de yapabilirsiniz, ancak ben terminal &amp;uuml;zerinden yapmay&amp;inodot; tercih ediyorum.&lt;/p&gt;
+&lt;h3 id="terminal-uzerinden-kurulum-eski-yontem"&gt;Terminal &amp;Uuml;zerinden Kurulum (Eski Y&amp;ouml;ntem)&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er eklenti varsay&amp;inodot;lan olarak gelmiyorsa, manuel olarak &amp;scedil;u komutlar&amp;inodot; kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wget&lt;span class="w"&gt; &lt;/span&gt;https://github.com/bazukas/obs-linuxbrowser/releases/download/0.6.1/linuxbrowser0.6.1-obs23.0.2-64bit.tgz
+mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.config/obs-studio/plugins
+tar&lt;span class="w"&gt; &lt;/span&gt;xfvz&lt;span class="w"&gt; &lt;/span&gt;linuxbrowser0.6.1-obs23.0.2-64bit.tgz&lt;span class="w"&gt; &lt;/span&gt;-C&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/.config/obs-studio/plugins/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="kurulum-sonrasi_1"&gt;Kurulum Sonras&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Bu ad&amp;inodot;mlar&amp;inodot; tamamlad&amp;inodot;ktan sonra eklenti, &lt;strong&gt;OBS'in eklenti klas&amp;ouml;r&amp;uuml;ne&lt;/strong&gt; ba&amp;scedil;ar&amp;inodot;yla eklenmi&amp;scedil; olacakt&amp;inodot;r. &lt;strong&gt;Ba&amp;scedil;ka bir eklenti y&amp;uuml;klemek istedi&amp;gbreve;inizde, ayn&amp;inodot; dizini kullanabilirsiniz.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="kullanim"&gt;Kullan&amp;inodot;m&lt;/h2&gt;
+&lt;h3 id="1-obs-uzerinde-linux-browser-eklentisini-acma"&gt;1. OBS &amp;Uuml;zerinde Linux Browser Eklentisini A&amp;ccedil;ma&lt;/h3&gt;
+&lt;p&gt;OBS'i a&amp;ccedil;&amp;inodot;n ve &lt;strong&gt;Kaynaklar (+) butonuna&lt;/strong&gt; basarak &lt;strong&gt;Linux Browser&lt;/strong&gt; se&amp;ccedil;ene&amp;gbreve;ini belirleyin.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Linux Browser Kaynak Se&amp;ccedil;imi" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_browser_kaynaklar-lg.webp" srcset="/images/linux_browser_kaynaklar-sm.webp 300w, /images/linux_browser_kaynaklar-md.webp 500w, /images/linux_browser_kaynaklar-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;h3 id="2-discord-streamkit-entegrasyonu"&gt;2. Discord StreamKit Entegrasyonu&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Discord StreamKit&lt;/strong&gt; sayfas&amp;inodot;na gidin ve en altta bulunan &lt;strong&gt;OBS -&amp;gt; Connect to Discord&lt;/strong&gt; butonuna t&amp;inodot;klay&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Discord Ba&amp;gbreve;lant&amp;inodot;s&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_browser_discord-lg.webp" srcset="/images/linux_browser_discord-sm.webp 300w, /images/linux_browser_discord-md.webp 500w, /images/linux_browser_discord-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Install For OBS&lt;/strong&gt; butonuna bas&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="OBS i&amp;ccedil;in Kurulum" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_browser_obs-lg.webp" srcset="/images/linux_browser_obs-sm.webp 300w, /images/linux_browser_obs-md.webp 500w, /images/linux_browser_obs-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;h3 id="3-sunucu-secimi-ve-ayarlar"&gt;3. Sunucu Se&amp;ccedil;imi ve Ayarlar&lt;/h3&gt;
+&lt;p&gt;A&amp;ccedil;&amp;inodot;lan ekranda &lt;strong&gt;sunucunuzu se&amp;ccedil;in&lt;/strong&gt; ve &lt;strong&gt;ses veya metin sohbeti&lt;/strong&gt; entegrasyonu i&amp;ccedil;in gerekli ayarlar&amp;inodot; yap&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Discord OBS &amp;Ouml;zelle&amp;scedil;tirme" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_browser_obs_custom-lg.webp" srcset="/images/linux_browser_obs_custom-sm.webp 300w, /images/linux_browser_obs_custom-md.webp 500w, /images/linux_browser_obs_custom-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;h3 id="4-obs-icerisinde-url-ekleme"&gt;4. OBS &amp;Idot;&amp;ccedil;erisinde URL Ekleme&lt;/h3&gt;
+&lt;p&gt;OBS'te &lt;strong&gt;Linux Browser&lt;/strong&gt; kayna&amp;gbreve;&amp;inodot;n&amp;inodot; a&amp;ccedil;&amp;inodot;n ve &lt;strong&gt;URL alan&amp;inodot;na Discord StreamKit taraf&amp;inodot;ndan sa&amp;gbreve;lanan ba&amp;gbreve;lant&amp;inodot;y&amp;inodot; yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;💡 &lt;strong&gt;&amp;Idot;pucu:&lt;/strong&gt; CSS bilginiz varsa, ekranda &amp;ouml;zelle&amp;scedil;tirmeler yaparak daha &amp;scedil;&amp;inodot;k bir g&amp;ouml;r&amp;uuml;n&amp;uuml;m elde edebilirsiniz! 🎨&lt;/p&gt;
+&lt;p&gt;&lt;img alt="OBS Ayarlar&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_browser_settings-lg.webp" srcset="/images/linux_browser_settings-sm.webp 300w, /images/linux_browser_settings-md.webp 500w, /images/linux_browser_settings-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;p&gt;🎉 &amp;Idot;&amp;scedil;te sonu&amp;ccedil;!&lt;/p&gt;
+&lt;h2 id="_2"&gt;&lt;img alt="Sonu&amp;ccedil; G&amp;ouml;r&amp;uuml;nt&amp;uuml;s&amp;uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_browser_final-lg.webp" srcset="/images/linux_browser_final-sm.webp 300w, /images/linux_browser_final-md.webp 500w, /images/linux_browser_final-lg.webp 800w"/&gt;&lt;/h2&gt;
+&lt;h2 id="linux-discord-sunucumuz"&gt;Linux Discord Sunucumuz 🚀&lt;/h2&gt;
+&lt;p&gt;Linux ile ilgili sohbet etmek ve destek almak i&amp;ccedil;in &lt;strong&gt;Discord sunucumuza kat&amp;inodot;labilirsiniz!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;👉 &lt;a href="https://discordapp.com/invite/da3Su8s" rel="noopener noreferrer" target="_blank"&gt;Discord Sunucumuza Kat&amp;inodot;l&amp;inodot;n&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Bu rehberin Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in faydal&amp;inodot; olaca&amp;gbreve;&amp;inodot;n&amp;inodot; umuyorum. Herhangi bir sorunuz varsa yorumlarda belirtebilirsiniz! 📢&lt;/p&gt;</content><category term="linux"/><category term="linux"/><category term="obs"/><category term="discord"/></entry><entry><title>Linux'ta UEFI Windows 10 Format USB Oluşturma - Resimli Anlatım</title><link href="https://yuceltoluyag.github.io/linux-uefi-windows10-usb/" rel="alternate"/><published>2018-09-14T10:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-09-14:/linux-uefi-windows10-usb/</id><summary type="html">&lt;p&gt;Linux kullanarak UEFI destekli Windows 10 format USB'si nasıl oluşturulur? WoeUSB aracıyla adım adım resimli anlatımı bu makalede bulabilirsiniz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="linuxta-uefi-windows-10-format-usb-olusturma"&gt;Linux'ta UEFI Windows 10 Format USB Olu&amp;scedil;turma&lt;/h1&gt;
+&lt;p&gt;Windows'tan Linux'a ge&amp;ccedil;i&amp;scedil; yaparken, Rufus gibi programlar ile USB'den format olu&amp;scedil;turmak olduk&amp;ccedil;a kolayd&amp;inodot;r. Ancak, Linux &amp;uuml;zerinde Wine kullan&amp;inodot;lsa bile Rufus'un d&amp;uuml;zg&amp;uuml;n &amp;ccedil;al&amp;inodot;&amp;scedil;mad&amp;inodot;&amp;gbreve;&amp;inodot; s&amp;inodot;k&amp;ccedil;a g&amp;ouml;r&amp;uuml;lmektedir. Neyse ki, Linux taraf&amp;inodot;nda kullan&amp;inodot;labilecek &amp;ccedil;e&amp;scedil;itli uygulamalar mevcuttur. Bunlardan biri de &lt;strong&gt;WoeUSB&lt;/strong&gt;'dir. Bu rehberde, WoeUSB ile nas&amp;inodot;l UEFI destekli bir Windows 10 format USB'si olu&amp;scedil;turabilece&amp;gbreve;inizi anlataca&amp;gbreve;&amp;inodot;z.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-hazirlik"&gt;1. Haz&amp;inodot;rl&amp;inodot;k&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;ncelikle, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gereksinimlere sahip olmal&amp;inodot;s&amp;inodot;n&amp;inodot;z:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows 10 ISO dosyas&amp;inodot;:&lt;/strong&gt; E&amp;gbreve;er elinizde yoksa, &lt;a href="https://www.microsoft.com/tr-tr/software-download/windows10" rel="noopener noreferrer" target="_blank"&gt;resmi Microsoft sitesinden&lt;/a&gt; indirebilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WoeUSB program&amp;inodot;:&lt;/strong&gt; A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlarla WoeUSB'yi kurabilirsiniz:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;add-apt-repository&lt;span class="w"&gt; &lt;/span&gt;ppa:nilarimogard/webupd8
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;woeusb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="2-usb-diskini-formatlama"&gt;2. USB Diskini Formatlama&lt;/h2&gt;
+&lt;p&gt;USB diskimizi haz&amp;inodot;rlamak i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; takip edelim:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;USB diskinizi bi&amp;ccedil;imlendirin.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Format olarak NTFS se&amp;ccedil;in.&lt;/strong&gt; (FAT32 kullan&amp;inodot;rsan&amp;inodot;z b&amp;uuml;y&amp;uuml;k dosyalarda hata alabilirsiniz.)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="USB Formatlama" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_windows10_uefi_format-lg.webp" srcset="/images/linux_windows10_uefi_format-sm.webp 300w, /images/linux_windows10_uefi_format-md.webp 500w, /images/linux_windows10_uefi_format-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er USB'yi yanl&amp;inodot;&amp;scedil; formatta bi&amp;ccedil;imlendirirseniz a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi bir hata ile kar&amp;scedil;&amp;inodot;la&amp;scedil;abilirsiniz:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Format Hatas&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_windows10_uefi_format_error-lg.webp" srcset="/images/linux_windows10_uefi_format_error-sm.webp 300w, /images/linux_windows10_uefi_format_error-md.webp 500w, /images/linux_windows10_uefi_format_error-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;h2 id="3-woeusb-kullanimi"&gt;3. WoeUSB Kullan&amp;inodot;m&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;WoeUSB'yi a&amp;ccedil;&amp;inodot;n ve &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; takip edin:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ISO dosyan&amp;inodot;z&amp;inodot; se&amp;ccedil;in.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;USB diskinizi se&amp;ccedil;in.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ba&amp;scedil;lat d&amp;uuml;&amp;gbreve;mesine basarak i&amp;scedil;lemi ba&amp;scedil;lat&amp;inodot;n.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="WoeUSB Aray&amp;uuml;z&amp;uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_windows10_uefi_disk-lg.webp" srcset="/images/linux_windows10_uefi_disk-sm.webp 300w, /images/linux_windows10_uefi_disk-md.webp 500w, /images/linux_windows10_uefi_disk-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;h2 id="4-usbden-boot-etme"&gt;4. USB'den Boot Etme&lt;/h2&gt;
+&lt;p&gt;&amp;Idot;&amp;scedil;lem tamamland&amp;inodot;ktan sonra bilgisayar&amp;inodot;n&amp;inodot;z&amp;inodot; yeniden ba&amp;scedil;lat&amp;inodot;n ve &lt;strong&gt;BIOS/UEFI ayarlar&amp;inodot;ndan USB disk ile boot edin.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Boot Ekran&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, 60vw" src="/images/linux_windows10_uefi_boot-lg.webp" srcset="/images/linux_windows10_uefi_boot-sm.webp 300w, /images/linux_windows10_uefi_boot-md.webp 500w, /images/linux_windows10_uefi_boot-lg.webp 800w"/&gt;&lt;/p&gt;
+&lt;h2 id="5-sonuc"&gt;5. Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;G&amp;ouml;rd&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml;z gibi, Linux &amp;uuml;zerinden UEFI destekli Windows 10 format USB'si olu&amp;scedil;turduk. E&amp;gbreve;er Linux'a yeni ba&amp;scedil;lad&amp;inodot;ysan&amp;inodot;z, aniden tam ge&amp;ccedil;i&amp;scedil; yapmak yerine &amp;ccedil;ift i&amp;scedil;letim sistemi kullanarak a&amp;scedil;amal&amp;inodot; bir ge&amp;ccedil;i&amp;scedil; yapman&amp;inodot;z daha iyi olabilir. &lt;strong&gt;Daha fazla bilgi i&amp;ccedil;in &amp;scedil;u makaleyi okuyabilirsiniz:&lt;/strong&gt; &lt;a href="/yeni-baslayanlar-linux-surumu/" rel="noopener noreferrer" target="_blank"&gt;Yeni Ba&amp;scedil;layanlar &amp;Idot;&amp;ccedil;in Linux&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er sorular&amp;inodot;n&amp;inodot;z veya kurulum s&amp;inodot;ras&amp;inodot;nda ald&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z hatalar varsa yorum b&amp;inodot;rakabilirsiniz. &amp;Idot;yi &amp;ccedil;al&amp;inodot;&amp;scedil;malar!&lt;/p&gt;</content><category term="Linux"/><category term="linux"/><category term="windows10"/><category term="usb"/><category term="format"/><category term="uefi"/></entry><entry><title>Yeni Başlayanlar Hangi Linux Sürümünü Kurmalı?</title><link href="https://yuceltoluyag.github.io/yeni-baslayanlar-linux-surumu/" rel="alternate"/><published>2018-09-13T10:00:00+03:00</published><updated>2025-08-07T06:45:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-09-13:/yeni-baslayanlar-linux-surumu/</id><summary type="html">&lt;p&gt;Linux'a yeni başlayanlar için en uygun dağıtımları ve seçim kriterlerini anlatıyoruz. Kullanım kolaylığı, destek topluluğu ve sistem gereksinimleri gibi faktörleri göz önünde bulundurarak doğru seçimi yapmanıza yardımcı oluyoruz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="yeni-baslayanlar-icin-en-iyi-linux-dagitimlari"&gt;Yeni Ba&amp;scedil;layanlar &amp;Idot;&amp;ccedil;in En &amp;Idot;yi Linux Da&amp;gbreve;&amp;inodot;t&amp;inodot;mlar&amp;inodot;&lt;/h1&gt;
+&lt;p&gt;Linux d&amp;uuml;nyas&amp;inodot;na yeni ad&amp;inodot;m atan kullan&amp;inodot;c&amp;inodot;lar i&amp;ccedil;in do&amp;gbreve;ru da&amp;gbreve;&amp;inodot;t&amp;inodot;m&amp;inodot; se&amp;ccedil;mek, &amp;ouml;&amp;gbreve;renme s&amp;uuml;recini kolayla&amp;scedil;t&amp;inodot;ran &amp;ouml;nemli bir ad&amp;inodot;md&amp;inodot;r. Kullan&amp;inodot;c&amp;inodot; dostu aray&amp;uuml;ze sahip, geni&amp;scedil; topluluk deste&amp;gbreve;i olan ve stabil &amp;ccedil;al&amp;inodot;&amp;scedil;an bir s&amp;uuml;r&amp;uuml;m tercih edilmelidir. &amp;Idot;&amp;scedil;te yeni ba&amp;scedil;layanlar i&amp;ccedil;in en iyi Linux da&amp;gbreve;&amp;inodot;t&amp;inodot;mlar&amp;inodot;:&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-linux-mint"&gt;1. Linux Mint&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ouml;zellikler:&lt;/strong&gt;
+- Windows'a benzer aray&amp;uuml;z (Cinnamon masa&amp;uuml;st&amp;uuml; ortam&amp;inodot;)
+- Hafif ve h&amp;inodot;zl&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;
+- Yeni ba&amp;scedil;layanlar i&amp;ccedil;in daha az terminal komutu gerektirmesi
+- Geni&amp;scedil; topluluk deste&amp;gbreve;i
+- G&amp;uuml;nl&amp;uuml;k kullan&amp;inodot;ma ve yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirmeye uygun&lt;/p&gt;
+&lt;p&gt;Linux Mint, &amp;ouml;zellikle Windows'tan ge&amp;ccedil;en kullan&amp;inodot;c&amp;inodot;lar i&amp;ccedil;in son derece rahat bir ge&amp;ccedil;i&amp;scedil; sa&amp;gbreve;lar. Kullan&amp;inodot;m kolayl&amp;inodot;&amp;gbreve;&amp;inodot;, kararl&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot; ve topluluk deste&amp;gbreve;i ile yeni ba&amp;scedil;layanlara &amp;ouml;nerdi&amp;gbreve;im &lt;strong&gt;ilk tercih&lt;/strong&gt; Linux Mint'tir. Hem g&amp;uuml;nl&amp;uuml;k i&amp;scedil;lerde hem de yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirme ortam&amp;inodot; olarak rahatl&amp;inodot;kla kullan&amp;inodot;labilir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-fedora-php-gelistiricileri-icin-oneri"&gt;2. Fedora (PHP geli&amp;scedil;tiricileri i&amp;ccedil;in &amp;ouml;neri)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ouml;zellikler:&lt;/strong&gt;
+- G&amp;uuml;ncellemeleri h&amp;inodot;zl&amp;inodot; alan, modern bir sistem
+- Geli&amp;scedil;tiriciler i&amp;ccedil;in g&amp;uuml;&amp;ccedil;l&amp;uuml; ara&amp;ccedil;lar
+- GNOME masa&amp;uuml;st&amp;uuml; ortam&amp;inodot;yla modern tasar&amp;inodot;m&lt;/p&gt;
+&lt;p&gt;Fedora, &amp;ouml;zellikle &lt;strong&gt;PHP geli&amp;scedil;tiricileri&lt;/strong&gt; i&amp;ccedil;in g&amp;uuml;ncel paketler ve g&amp;uuml;&amp;ccedil;l&amp;uuml; geli&amp;scedil;tirme ara&amp;ccedil;lar&amp;inodot; sunar.&lt;br/&gt;
+Neden Fedora&amp;rsquo;y&amp;inodot; &amp;ouml;nerdi&amp;gbreve;imi bu yaz&amp;inodot;ya ekli &lt;strong&gt;videoda&lt;/strong&gt; detayl&amp;inodot;ca anlatt&amp;inodot;m.&lt;br/&gt;
+K&amp;inodot;saca: &lt;em&gt;g&amp;uuml;ncel PHP s&amp;uuml;r&amp;uuml;mleri, sa&amp;gbreve;lam paket y&amp;ouml;netimi, g&amp;uuml;venli yap&amp;inodot; ve geli&amp;scedil;tirme odakl&amp;inodot; kararl&amp;inodot;l&amp;inodot;k&lt;/em&gt;.&lt;br/&gt;
+Yani Fedora, modern teknolojileri h&amp;inodot;zl&amp;inodot;ca deneyimlemek ve yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirme s&amp;uuml;re&amp;ccedil;lerinde g&amp;uuml;ncel kalmak isteyenler i&amp;ccedil;in idealdir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="bu-iki-dagitimdan-sonra-ne-yapmali"&gt;Bu &amp;Idot;ki Da&amp;gbreve;&amp;inodot;t&amp;inodot;mdan Sonra Ne Yapmal&amp;inodot;?&lt;/h2&gt;
+&lt;p&gt;Linux Mint veya Fedora&amp;rsquo;da tecr&amp;uuml;be kazand&amp;inodot;ktan sonra kullan&amp;inodot;c&amp;inodot;lar daha esnek, ileri seviye da&amp;gbreve;&amp;inodot;t&amp;inodot;mlara ge&amp;ccedil;ebilir.&lt;br/&gt;
+Yazar olarak &amp;ouml;nerilerim:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt; &amp;ndash; Tam kontrol ve g&amp;uuml;ncel yaz&amp;inodot;l&amp;inodot;mlar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Void Linux&lt;/strong&gt; &amp;ndash; Hafiflik, h&amp;inodot;z ve farkl&amp;inodot; bir paket y&amp;ouml;netim deneyimi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;Not:&lt;/strong&gt; &amp;Idot;sterseniz bu iki da&amp;gbreve;&amp;inodot;t&amp;inodot;mla ya&amp;scedil;am d&amp;ouml;ng&amp;uuml;n&amp;uuml;z sona erene kadar devam edebilirsiniz.&lt;br/&gt;
+E&amp;gbreve;er olur da &lt;em&gt;distrohop&lt;/em&gt; hastal&amp;inodot;&amp;gbreve;&amp;inodot;na yakalan&amp;inodot;rsan&amp;inodot;z, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki iki da&amp;gbreve;&amp;inodot;t&amp;inodot;m sizi yeterince me&amp;scedil;gul edecektir.&lt;br/&gt;
+Videoda da s&amp;ouml;yledi&amp;gbreve;im gibi, sizin i&amp;ccedil;in en iyisi ve en rahat ortam&amp;inodot;n&amp;inodot;z hangisiyse orada kal&amp;inodot;n.&lt;br/&gt;
+&amp;Ouml;nemli olan ikon de&amp;gbreve;i&amp;scedil;tirmekle veya pencere y&amp;ouml;neticileriyle saatler harcamak de&amp;gbreve;il; &lt;strong&gt;kodunuzu yaz&amp;inodot;n, oyununuzu oynay&amp;inodot;n, i&amp;scedil;inize odaklan&amp;inodot;n&lt;/strong&gt;.&lt;br/&gt;
+Unutmay&amp;inodot;n, hedef &lt;em&gt;unixporn&lt;/em&gt;&amp;rsquo;daki configler de&amp;gbreve;il, kendi verimli &amp;ccedil;al&amp;inodot;&amp;scedil;ma ortam&amp;inodot;n&amp;inodot;z.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="topluluk-ve-destek"&gt;Topluluk ve Destek&lt;/h2&gt;
+&lt;p&gt;Linux Mint ve Fedora, geni&amp;scedil; ve yard&amp;inodot;msever bir destek toplulu&amp;gbreve;una sahiptir. Forumlar, sosyal medya gruplar&amp;inodot; ve belgeler &amp;uuml;zerinden kolayca yard&amp;inodot;m bulabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;div class="info-box warning"&gt;
+Akl&amp;inodot;n&amp;inodot;za tak&amp;inodot;lan bir soru veya kurulumlarda hata al&amp;inodot;rsan&amp;inodot;z yorum b&amp;inodot;rak&amp;inodot;n, yard&amp;inodot;mc&amp;inodot; olurum. &amp;Idot;yi &amp;ccedil;al&amp;inodot;&amp;scedil;malar!
+&lt;/div&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="IDjtbPEDk3w"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;</content><category term="Linux"/><category term="linux"/><category term="başlangıç"/><category term="dağıtım"/><category term="rehber"/></entry></feed>
