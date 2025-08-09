@@ -10,8 +10,9 @@ Translation: false
 Status: published
 Template: article
 Image: images/duyuru-lg.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114438941336923082
----
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/115001034011754786
+
+
 # Akıllı Semboller
 * ==Word==
 * ++"Word"++
