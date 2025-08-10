@@ -1,6 +1,6 @@
 Title: Arch Linux'ta NTFS Nasıl Yapılandırılır
 Date: 2020-07-05 12:00
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Disk Yönetimi
 Tags: linux, ntfs
 Slug: arch-linux-ntfs-yapilandirma

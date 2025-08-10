@@ -1,6 +1,6 @@
 Title: Jekyll Staticman Eklentisi Kurulumu
 Date: 2022-01-29 00:00 10:00
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Web Geliştirme
 Tags: staticman, jekyll
 Slug: jekyll-staticman-eklentisi-kurulumu

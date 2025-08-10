@@ -1,6 +1,6 @@
 Title: Linux Üzerinde Apache2, MySQL ve PhpMyAdmin Kurulumu (Debian ve Türevleri)
 Date: 2018-09-14 12:00 10:00
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Sunucu
 Tags: linux, apache, mysql, phpmyadmin
 Slug: linux-apache2-mysql-phpmyadmin-kurulumu

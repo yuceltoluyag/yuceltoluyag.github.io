@@ -1,6 +1,6 @@
 Title: Arch Linux'ta Ollama ve WebUI Kurulumu
 Date: 2025-08-07 05:10
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Sunucu
 Tags: arch linux, docker, ollama, webui, yapay zeka, gpu, rocm, cuda, websocket, watchtower
 Slug: arch-linux-ollama-webui-kurulumu-docker

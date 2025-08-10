@@ -1,6 +1,6 @@
 Title: Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları
 Date: 2025-07-28 09:30
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Donanım
 Tags: arch linux, cpupower, intel_pstate, cpu frekansı, güç yönetimi, i3wm, performans ayarı
 Slug: arch-linux-cpu-performans-ayarlari

@@ -1,6 +1,6 @@
 Title: Nesine.com: Veraset ve İntikal Vergisi ne anlama geliyor?
 Date: 2025-05-17 10:30
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Haberler
 Tags: veraset ve intikal vergisi, 2025 vergi istisnası, ikramiye vergisi, vergi kesintisi
 Slug: 2025-veraset-intikal-vergisi-bilgilendirme

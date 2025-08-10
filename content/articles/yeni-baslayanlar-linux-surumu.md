@@ -1,6 +1,6 @@
 Title: Yeni Başlayanlar Hangi Linux Sürümünü Kurmalı?
 Date: 2018-09-13 12:30 10:00
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Linux
 Tags: linux, başlangıç, dağıtım, rehber
 Slug: yeni-baslayanlar-linux-surumu
