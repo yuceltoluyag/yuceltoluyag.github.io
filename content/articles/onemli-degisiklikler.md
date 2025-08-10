@@ -1,6 +1,6 @@
 Title: Önemli Değişiklikler
 Date: 2025-02-27 12:00
-Modified: 2025-08-07 06:45
+Modified: 2025-08-10 02:41
 Category: Haberler
 Tags: site,Haberler
 Slug: onemli-degisiklikler

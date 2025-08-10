@@ -1,6 +1,6 @@
 Title: Jekyll ile Google Analytics Sayfa Görüntüleme Sayısı Takibi
 Date: 2022-01-30 09:00 10:00
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Web Geliştirme
 Tags: superproxy, jekyll, google analytics
 Slug: jekyll-google-analytics-sayfa-goruntuleme

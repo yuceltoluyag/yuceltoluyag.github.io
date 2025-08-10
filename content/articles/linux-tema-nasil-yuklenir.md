@@ -1,6 +1,6 @@
 Title: Linux Tema Nasıl Yüklenir (Gnome Shell ve Eklentileri)
 Date: 2018-09-21 12:30 10:00
-Modified: 2025-08-07 06:45
+Modified: 2025-08-08 01:17
 Category: Masaüstü Ortamları
 Tags: linux, unixporn
 Slug: linux-tema-nasil-yuklenir
