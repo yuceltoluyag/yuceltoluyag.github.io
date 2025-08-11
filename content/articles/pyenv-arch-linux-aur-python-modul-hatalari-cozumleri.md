@@ -1,6 +1,6 @@
 Title: Pyenv ile Arch Linux AUR Paketlerinde Python Modül Hataları ve Çözümleri  
 Date: 2025-08-04 12:00  
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Sorun Giderme  
 Tags: pyenv, arch-linux, aur, python, python-modülleri, hata-çözümü  
 Slug: pyenv-arch-linux-aur-python-modul-hatalari-cozumleri  

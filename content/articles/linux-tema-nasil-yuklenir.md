@@ -1,6 +1,6 @@
 Title: Linux Tema Nasıl Yüklenir (Gnome Shell ve Eklentileri)
 Date: 2018-09-21 12:30 10:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Masaüstü Ortamları
 Tags: linux, unixporn
 Slug: linux-tema-nasil-yuklenir
@@ -65,7 +65,13 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 😞 Eski Unity temamı özlüyorum...
 <div class="info-box important">
-Konu geçerli olup,konuya ait görseller önceki blogumdan silindiği için, özelleştirme yaptığım dağıtım resimleride silindi
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">Eksik Görseller</div>
+        <p>Konu geçerli olup, konuya ait görseller önceki blogumdan silindiği için, özelleştirme yaptığım dağıtım resimleri de silindi.</p>
+    </div>
 </div>
 
 🚀 Bu rehber ile Linux'ta tema yükleme sürecini rahatça tamamlayabilirsiniz!

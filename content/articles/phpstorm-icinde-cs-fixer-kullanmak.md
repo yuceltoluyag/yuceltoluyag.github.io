@@ -1,6 +1,6 @@
 Title: Phpstorm içerisinde CS Fixer Kullanmak
 Date: 2020-02-06 14:30 10:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Geliştirme Araçları
 Tags: phpstorm, cmder
 Slug: phpstorm-icinde-cs-fixer-kullanmak
@@ -19,7 +19,14 @@ Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984674025445306
 PSR, "PHP Standards Recommendations" anlamına gelir ve PHP ile yazılan kodların belirli bir formatta yazılmasını sağlayan standartlardır. Günümüz IDE'leri **code refactor** adı altında bu işlemi **otomatik** hale getirdiği için çoğu yazılımcı bu standartlardan habersiz olabilir (bu durum genelde freelance çalışanlar için geçerlidir). Başlangıçta, IDE'ler standartlar değiştikçe otomatik işlemi kullanıcıya bırakabiliyor.
 
 <div class="info-box note">
-<b>Deprecated</b> - 2019-08-10 tarihi itibariyle PSR-2 standartları kullanım dışı bırakılmıştır. <a href="https://www.php-fig.org/psr/psr-12/" target="_blank" rel="noopener noreferrer">PSR-12 </a> şu anda alternatif olarak tavsiye edilmektedir.</div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">Kullanımdan Kaldırıldı</div>
+        <p><b>Deprecated</b> - 2019-08-10 tarihi itibariyle PSR-2 standartları kullanım dışı bırakılmıştır. <a href="https://www.php-fig.org/psr/psr-12/" target="_blank" rel="noopener noreferrer">PSR-12 </a> şu anda alternatif olarak tavsiye edilmektedir.</p>
+    </div>
+</div>
 
 [PSR-2](https://www.php-fig.org/psr/psr-2/){: target="_blank" rel="noopener noreferrer"} kod standartlarının kullanımı artık tavsiye edilmemektedir. Ancak bu işlemi IDE ile yapıyorsanız, doğrudan [PSR-12](https://www.php-fig.org/psr/psr-12/){: target="_blank" rel="noopener noreferrer"} standartlarına geçmenizi tavsiye etmiyorum, çünkü hala bazı problemleri mevcut gibi görünüyor. PSR-12 hakkında daha fazla bilgiye [buradan](https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4502){: target="_blank" rel="noopener noreferrer"} ulaşabilirsiniz.
 

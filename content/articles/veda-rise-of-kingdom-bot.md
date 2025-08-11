@@ -1,6 +1,6 @@
 Title: Veda Zamanı: Rise of Kingdom Bot'un Sonu
 Date: 2025-03-28 12:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Haberler
 Tags: oyun, bot, geliştirme, veda
 Slug: veda-rise-of-kingdom-bot
@@ -30,7 +30,15 @@ Bu kararı almamın iki büyük sebebi var:
 
 Aslında yeni bir **GUI tasarlamak ve yeni özellikler eklemek** için oldukça hevesliydim. Fakat test süreci bu kadar zorlaşınca, kullanıcılara yeterince stabil ve güvenilir bir şey sunamamak beni rahatsız etti. **Eksik ya da hatalı bir iş paylaşmak istemediğim için, projeyi bırakmaya karar verdim.**
 [responsive_img src="/images/rokbot-gui-lg.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
-<div class="info-box important">Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad'imle vedalaştık. 😄</div>
+<div class="info-box important">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">Hoşçakal ThinkPad</div>
+        <p>Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad'imle vedalaştık. 😄</p>
+    </div>
+</div>
 # Nasıl Başladım?  
 
 Bu oyunu oynamıyorum çünkü **pay-to-win (P2W)** sistemine sahip. Oyunlarda para harcamaya karşı değilim; sonuçta bu bir eğlence sektörü ve eğleniyorsan harcama yapmak tamamen senin tercihin. Ancak, bir arkadaşım benden bir bot geliştirip geliştiremeyeceğimi sorduğunda, internette küçük bir araştırma yapmaya karar verdim. Karşıma birçok hileli içerik çıktı. Daha sonra açık kaynaklı bir bot buldum ve onun üzerinde çalışmaya başladım. Ancak bir süre sonra projenin gelişimi yavaşladı. Ortaya çıkan bazı hataları düzelttim, fakat sonrasında projeye ara verdim.  

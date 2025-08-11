@@ -1,6 +1,6 @@
 Title: Jekyll Staticman Eklentisi Kurulumu
 Date: 2022-01-29 00:00 10:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Web Geliştirme
 Tags: staticman, jekyll
 Slug: jekyll-staticman-eklentisi-kurulumu
@@ -130,7 +130,13 @@ openssl genrsa -out key.pem
 Eğer terminal kullanamıyorsanız, çevrimiçi RSA anahtar üreticilerini kullanabilirsiniz. [Online RSA Key Generator](https://travistidwell.com/jsencrypt/demo/){: target="_blank" rel="noopener noreferrer"} sitesini ziyaret ederek anahtarınızı oluşturabilirsiniz.
 
 <div class="info-box important">
-    <strong>Bilgi:</strong> Github'dan aldığımız <code>GITHUB_PRIVATE_KEY</code> ile <code>RSA Key</code>'imiz aynı olabilir. Bu yüzden RSA Key oluşturma adımını atlayabilirsiniz.
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">RSA Key Hakkında</div>
+        <p>Github'dan aldığımız <code>GITHUB_PRIVATE_KEY</code> ile <code>RSA Key</code>'imiz aynı olabilir. Bu yüzden RSA Key oluşturma adımını atlayabilirsiniz.</p>
+    </div>
 </div>
 
 

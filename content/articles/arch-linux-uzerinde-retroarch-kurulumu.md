@@ -1,6 +1,6 @@
 Title: Arch Linux Üzerinde RetroArch Kurulumu ve Yapılandırılması
 Date: 2025-03-01 10:00 10:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category:Oyun
 Tags: archlinux, retroarch, emulator, oyun, yazılım
 Slug: arch-linux-uzerinde-retroarch-kurulumu

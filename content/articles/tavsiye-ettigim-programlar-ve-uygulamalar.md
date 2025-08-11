@@ -1,6 +1,6 @@
 Title: Tavsiye Ettiğim Programlar ve Uygulamalar Serisi
 Date: 2020-06-01 10:00 10:00
-Modified: 2025-08-09 04:25
+Modified: 2025-08-10 04:07
 Category: Ürün İnceleme
 Tags: program, güvenlik, internet
 Slug: tavsiye-ettigim-programlar-ve-uygulamalar
@@ -18,7 +18,14 @@ Uzun zamandır bu tür bir yazı yazmayı planlıyordum ama bir türlü fırsat 
 
 
 <div class="info-box important">
-Bu yazıyı bir seri haline getirmek istiyorum. Bakalım başarabilecek miyim? 🤞</div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">Yazı Serisi</div>
+        <p>Bu yazıyı bir seri haline getirmek istiyorum. Bakalım başarabilecek miyim? 🤞</p>
+    </div>
+</div>
 ## **Comodo Firewall (Güvenlik Duvarı) 🔥**
 
 

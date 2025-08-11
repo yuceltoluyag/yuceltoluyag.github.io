@@ -1,6 +1,6 @@
 Title: Composer Yavaş İndirme Sorunu Çözümü
 Date: 2019-12-04 12:00 10:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Sorun Giderme
 Tags: composer, hızlandırma, çözüm
 Slug: composer-yavas-indirme-sorunu-cozumu

@@ -1,6 +1,6 @@
 Title: Linux'ta Disk Nasıl Sıfırlanır? Herhangi Bir Diski Güvenli Şekilde Silme Rehberi
 Date: 2025-04-18 12:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Disk Yönetimi
 Tags: linux, disk silme, dd komutu, shred komutu, wipefs, veri temizleme, disk sıfırlama
 Slug: linux-disk-sifirlama-rehberi
