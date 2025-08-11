@@ -1,6 +1,6 @@
 Title: WinePrefix Nedir ve Nasıl Kullanılır?
 Date: 2025-07-29
-Modified: 2025-08-10 04:07
+Modified: 2025-08-11 22:48
 Category: Oyun
 Tags: wine, wineprefix, linux, oyun, uyumluluk, rehber
 Slug: wineprefix-nedir-nasil-kullanilir

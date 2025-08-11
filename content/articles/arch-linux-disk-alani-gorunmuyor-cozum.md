@@ -1,6 +1,6 @@
 Title: Arch Linux’ta Disk Alanı Eksik Görünüyor mu? İşte Adım Adım Çözüm Rehberi 🧹💾
 Date: 2025-07-26 09:00
-Modified: 2025-08-10 04:07
+Modified: 2025-08-11 22:48
 Category: Disk Yönetimi
 Tags: arch-linux, disk, boş-alan, ext4, linux-disk-sorunları, df, lsblk, disk-temizliği
 Slug: arch-linux-disk-alani-gorunmuyor-cozum

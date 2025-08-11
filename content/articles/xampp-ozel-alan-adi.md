@@ -1,6 +1,6 @@
 Title: XAMPP Kullanarak Localhost'a Özel Alan Adı Oluşturma
 Date: 2019-03-06 12:00 10:00
-Modified: 2025-08-10 04:07
+Modified: 2025-08-11 22:48
 Category: Geliştirme Araçları
 Tags: windows10, apache
 Slug: xampp-ozel-alan-adi

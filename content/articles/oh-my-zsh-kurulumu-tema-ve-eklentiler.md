@@ -1,6 +1,6 @@
 Title: Oh My ZSH Kurulumu (Tema ve Eklentiler Dahil)
 Date: 2018-12-07 12:00 10:00
-Modified: 2025-08-10 04:07
+Modified: 2025-08-11 22:48
 Category: Terminal
 Tags: linux, terminal, zsh
 Slug: oh-my-zsh-kurulumu-tema-ve-eklentiler

@@ -1,6 +1,6 @@
 Title: MediaTek IMEI Onarma Rehberi  
 Date: 2025-08-11 10:30  
-Modified: 2025-08-11 22:46
+Modified: 2025-08-11 22:48
 Category: Sorun Giderme  
 Tags: MediaTek IMEI onarma, MTK IMEI fix, TWRP IMEI repair, MediaTek imei patch, Arch Linux  
 Slug: mediatek-imei-onarma-rehberi  
@@ -11,7 +11,9 @@ Template: article
 Series: Android Rehberleri
 Series_index: 1
 Image: images/crDroid-95-lg.webp
----
+Mastodon_Link: https://mastodon.social/@yuceltoluyag/115011891140145918
+
+
 
 # MediaTek IMEI Yedek Alma - Onarma Rehberi 📱
 
