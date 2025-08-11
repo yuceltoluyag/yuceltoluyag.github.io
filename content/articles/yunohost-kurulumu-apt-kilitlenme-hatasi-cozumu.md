@@ -1,6 +1,6 @@
 Title: YunoHost Kurulumu Sırasında Karşılaşılan APT Kilitlenme Hatası ve Çözümü
 Date: 2025-04-11 15:45
-Modified: 2025-08-10 04:07
+Modified: 2025-08-11 22:48
 Category: Sunucu
 Tags: yunohost, ssh, debian, apt, linux
 Slug: yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu

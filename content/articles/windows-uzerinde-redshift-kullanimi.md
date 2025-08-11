@@ -1,6 +1,6 @@
 Title: Windows Üzerinde Redshift Kullanımı
 Date: 2019-12-04 12:00 10:00
-Modified: 2025-08-10 04:07
+Modified: 2025-08-11 22:48
 Category: Windows
 Tags: windows10, redshift, gece_modu
 Slug: windows-uzerinde-redshift-kullanimi

@@ -1,6 +1,6 @@
 title: X11’de Proton Authenticator Butonlarının Görünmemesi Sorunu ve Kesin Çözümü
 date: 2025-08-10 15:00
-Modified: 2025-08-10 04:07
+Modified: 2025-08-11 22:48
 category: Sorun Giderme
 tags: [linux, x11, proton-authenticator, webkit, dmabuf, hata-cozumu]
 slug: x11-proton-authenticator-buton-gorunmeme-cozumu
