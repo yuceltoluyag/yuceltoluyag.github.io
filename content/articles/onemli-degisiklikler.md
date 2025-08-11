@@ -1,6 +1,6 @@
 Title: Önemli Değişiklikler
 Date: 2025-02-27 12:00
-Modified: 2025-08-10 02:41
+Modified: 2025-08-10 04:07
 Category: Haberler
 Tags: site,Haberler
 Slug: onemli-degisiklikler
@@ -103,20 +103,44 @@ PyMdown Extensions'da bulunan Keys uzantısı ile klavye tuşlarını kolayca g�
 
 ++media-play++ ++media-stop++ ++media-next-track++
 
-<div class="info-box info">
-    Bu bir bilgi kutusudur.
+<div class="info-box note">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">Bilgi</div>
+        <p>Tema içinde bulunan alert kutularını görmektesiniz. Bu bir bilgi kutusudur ve önemli bilgileri vurgulamak için kullanılır.</p>
+    </div>
 </div>
 
 <div class="info-box warning">
-    Bu bir uyarı kutusudur.
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+    </svg>
+    <div>
+        <div class="alert-title">Uyarı</div>
+        <p>Dikkat edilmesi gereken durumlarda bu uyarı kutusu kullanılır. Kullanıcıları potansiyel sorunlar hakkında bilgilendirmek için idealdir.</p>
+    </div>
 </div>
 
 <div class="info-box important">
-    Bu önemli bir bilgidir!
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">Önemli</div>
+        <p>Kritik bilgiler ve önemli duyurular için bu kutu kullanılır. Gözden kaçırılmaması gereken bilgileri vurgular.</p>
+    </div>
 </div>
 
 <div class="info-box tip">
-    Faydalı bir ipucu.
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    </svg>
+    <div>
+        <div class="alert-title">İpucu</div>
+        <p>Yararlı ipuçları ve öneriler için bu kutu kullanılır. Kullanıcılara ek bilgi ve kolaylaştırıcı öneriler sunar.</p>
+    </div>
 </div>
 
 # Kod Bloğu Dil Testi

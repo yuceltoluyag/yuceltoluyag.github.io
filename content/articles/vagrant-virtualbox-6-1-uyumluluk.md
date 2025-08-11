@@ -1,6 +1,6 @@
 Title: Vagrant'ı VirtualBox 6.1 ile Uyumlu Hale Getirmek
 Date: 2020-01-04 12:00 10:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Sorun Giderme
 Tags: linux, vagrant, windows10
 Slug: vagrant-virtualbox-6-1-uyumluluk
@@ -51,7 +51,13 @@ driver_map = {
 ```
 
 <div class="info-box important">
-<b>Not:</b> Windows kullanıcıları dosyayı düzenlerken <b>Notepad++</b> veya <b>Visual Studio Code</b> gibi bir metin editörünü <b>yönetici </b>olarak çalıştırmalıdır.
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <div>
+        <div class="alert-title">Windows Kullanıcıları İçin</div>
+        <p><b>Not:</b> Windows kullanıcıları dosyayı düzenlerken <b>Notepad++</b> veya <b>Visual Studio Code</b> gibi bir metin editörünü <b>yönetici </b>olarak çalıştırmalıdır.</p>
+    </div>
 </div>
 
 ## Adım 2: version_6_1.rb Dosyasını Oluşturun

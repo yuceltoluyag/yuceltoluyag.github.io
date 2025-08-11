@@ -1,6 +1,6 @@
 Title: Linux'ta UEFI Windows 10 Format USB Oluşturma - Resimli Anlatım
 Date: 2018-09-14 12:45 10:00
-Modified: 2025-08-09 04:25
+Modified: 2025-08-10 04:07
 Category: Linux
 Tags: linux, windows10, usb, format, uefi
 Slug: linux-uefi-windows10-usb

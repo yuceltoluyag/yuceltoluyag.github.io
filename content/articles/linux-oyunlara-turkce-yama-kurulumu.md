@@ -1,6 +1,6 @@
 Title: Linux’ta Oyunlara Türkçe Yama Nasıl Kurulur? (Detaylı Rehber)
 Date: 2025-05-13 14:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Oyun
 Tags: linux, archlinux, türkçe yama, oyunlar, dil paketi, lutris, wine, yerelleştirme, proton, native oyun
 Slug: linux-oyunlara-turkce-yama-kurulumu

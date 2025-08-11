@@ -1,6 +1,6 @@
 Title: VLSub ile Altyazı Aramaya Son (Resimli Anlatım)
 Date: 2019-03-30 12:00 10:00
-Modified: 2025-08-08 01:17
+Modified: 2025-08-10 04:07
 Category: Medya
 Tags: vlc, film
 Slug: vlsub-ile-altyazi-aramaya-son
@@ -21,7 +21,13 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 
 
 <div class="info-box tip">
-<b>Bilgi:</b> Yeni VLC sürümlerinde bu özellik <b>yerleşik olarak</b> gelebilir. Eğer <b>Görünüm</b> sekmesinde <b>VLSub</b> menüsünü görüyorsanız, ayrıca bir eklenti kurmanıza gerek yoktur. ✅
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+    </svg>
+    <div>
+        <div class="alert-title">Yeni VLC Sürümleri</div>
+        <p>Yeni VLC sürümlerinde bu özellik <b>yerleşik olarak</b> gelebilir. Eğer <b>Görünüm</b> sekmesinde <b>VLSub</b> menüsünü görüyorsanız, ayrıca bir eklenti kurmanıza gerek yoktur. ✅</p>
+    </div>
 </div>
 
 ---
