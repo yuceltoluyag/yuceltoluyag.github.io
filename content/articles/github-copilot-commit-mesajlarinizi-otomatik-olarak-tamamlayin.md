@@ -1,6 +1,6 @@
 Title: GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber
 Date: 2025-05-03 14:00
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Git
 Tags: GitHub Copilot, Commit Mesajları, Git, Yazılım Geliştirme, Otomasyon, VS Code, GitHub
 Slug: github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin

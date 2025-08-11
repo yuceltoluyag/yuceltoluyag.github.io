@@ -1,6 +1,6 @@
 Title: Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi
 Date: 2025-07-30 21:15
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Donanım
 Tags: usb, güç yönetimi, kernel modülleri, linux, arch linux, aygıt analizi, bash
 Slug: arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi

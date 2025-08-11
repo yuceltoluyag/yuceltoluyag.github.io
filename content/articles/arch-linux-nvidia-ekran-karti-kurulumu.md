@@ -1,6 +1,6 @@
 Title: Arch Linux Nvidia Ekran Kartı Kurulumu
 Date: 2020-04-18 10:00
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Donanım
 Tags: linux, nvidia, laptop
 Slug: arch-linux-nvidia-ekran-karti-kurulumu

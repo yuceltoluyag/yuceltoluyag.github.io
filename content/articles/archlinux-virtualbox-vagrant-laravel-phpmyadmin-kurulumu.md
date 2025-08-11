@@ -1,6 +1,6 @@
 Title: Arch Linux Üzerinde VirtualBox + Vagrant + Laravel + PhpMyAdmin Kurulumu (Homestead)
 Date: 2019-09-16 00:00 10:00
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Laravel Geliştirme
 Tags: linux, laravel
 Slug: archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu
