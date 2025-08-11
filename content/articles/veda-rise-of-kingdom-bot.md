@@ -1,6 +1,6 @@
 Title: Veda Zamanı: Rise of Kingdom Bot'un Sonu
 Date: 2025-03-28 12:00
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Haberler
 Tags: oyun, bot, geliştirme, veda
 Slug: veda-rise-of-kingdom-bot

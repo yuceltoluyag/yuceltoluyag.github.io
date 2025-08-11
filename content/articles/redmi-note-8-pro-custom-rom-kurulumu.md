@@ -1,6 +1,6 @@
 Title: Redmi Note 8 Pro Custom ROM Yükleme Rehberi
 Date: 2025-08-12 14:30
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Sorun Giderme
 Tags: Android, custom ROM, TWRP, IMEI onarma, Redmi Note 8 Pro, Arch Linux
 Slug: redmi-note-8-pro-custom-rom-kurulumu

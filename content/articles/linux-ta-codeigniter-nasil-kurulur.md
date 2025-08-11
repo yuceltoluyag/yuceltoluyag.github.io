@@ -1,6 +1,6 @@
 Title: Linux'ta CodeIgniter Nasıl Kurulur?
 Date: 2018-12-01 12:00 10:00
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Web Geliştirme
 Tags: codeigniter, linux
 Slug: linux-ta-codeigniter-nasil-kurulur

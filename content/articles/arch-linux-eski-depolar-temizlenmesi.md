@@ -1,6 +1,6 @@
 Title: Arch Linux Eski Depoların Temizlenmesi: Ne Yapmanız Gerekiyor?
 Date: 2025-04-15 12:00  
-Modified: 2025-08-11 22:48
+Modified: 2025-08-11 22:59
 Category: Linux
 Tags: Arch Linux, Depo Temizliği, Pacman, Sistem Yönetimi, Linux, Yazılım Güncellemeleri  
 Slug: arch-linux-eski-depolar-temizlenmesi  
