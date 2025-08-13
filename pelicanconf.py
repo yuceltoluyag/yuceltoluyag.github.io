@@ -152,7 +152,6 @@ common_plugins = [
     "plugins.video_schema",
     "plugins.comments",
     "plugins.pelican-toc",  # İçindekiler tablosu eklentisi
-    "plugins.auto_modified",
 ]
 
 dev_plugins = common_plugins.copy()
