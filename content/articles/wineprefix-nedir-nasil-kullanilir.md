@@ -4,7 +4,7 @@ Modified: 2025-08-11 22:59
 Category: Oyun
 Tags: wine, wineprefix, linux, oyun, uyumluluk, rehber
 Slug: wineprefix-nedir-nasil-kullanilir
-Authors: yucel
+Authors: yuceltoluyag
 Status: published
 Images: images/wineprefix-nedir-nasil-kullanilir-lg.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989615830305083

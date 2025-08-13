@@ -1,18 +1,14 @@
-Title: Stremio Nedir, Nasıl Kurulur ve Kullanılır? 2025 Detaylı Rehber
-Date: 2025-08-13 02:47
+Title: Rehber : Stremio Nedir, Nasıl Kurulur ve Kullanılır ?
+Date: 2025-08-14 02:47
 Category: Medya
 Tags: stremio, eklenti, film izleme, dizi izleme, torrentio, linux, windows, macos, streaming, medya merkezi, real-debrid
 Slug: stremio-nedir-nasil-kullanilir-eklenti-kurulumu-rehberi
-Authors: yuceltoluyag
-Status: draft
+Authors: galipdede
+Status: published
 Summary: Stremio ile tüm film, dizi ve video içeriklerinizi tek bir yerden yönetin. Kurulumdan eklenti kullanımına 2025 güncel rehber.
 Template: article
 
-Tamam! İşte profesyonel blog yazısı kurallarına tam uygun, bilgi kutuları ve iç link önerileri eklenmiş, küçük düzenlemelerle akıcı hale getirilmiş tam makale:
-
----
-
-# Stremio Nedir, Nasıl Kurulur ve Kullanılır? 2025 Detaylı Rehber 🚀
+# Stremio  Detaylı Rehber 🚀
 
 Günümüz dijital çağında içerik tüketimi tam bir karmaşaya dönüştü. Netflix, Disney+, Amazon Prime gibi birçok platform arasında hangi dizinin nerede olduğunu takip etmek ve hepsine ayrı ayrı abone olmak hem yorucu hem de maliyetli. 😩 Cüzdanınızın ve sabrınızın çığlıklarını duyar gibiyim!
 
@@ -48,22 +44,6 @@ Stremio, kendi sunucularında içerik barındırmayan, farklı platformlardan (N
 
 ---
 
-## Stremio vs. Kodi: Hangisi Size Göre?
-
-| Özellik            | Stremio                      | Kodi                            |
-| ------------------ | ---------------------------- | ------------------------------- |
-| Kullanım Kolaylığı | ✅ Çok kolay, tak ve çalıştır | ⚠️ Öğrenme eğrisi yüksek        |
-| Kurulum            | Basit ve hızlı               | Daha karmaşık                   |
-| Eklenti Yönetimi   | Çevrimiçi, tek tıkla         | Manuel, ZIP dosyası gerekebilir |
-| Özelleştirme       | Sınırlı                      | Çok geniş                       |
-| Odak Noktası       | Streaming (online içerik)    | Yerel medya ve streaming        |
-| Veri Yönetimi      | Bulut tabanlı                | Yerel cihazda                   |
-
-**Özet:**
-Stremio, hızlı ve kolay medya akışı isteyenler için idealdir. (İlgili yazı: \[Medya Merkezi Seçimi - Kodi mi Stremio mu?]) Kodi ise detaylı özelleştirme seven teknoloji tutkunlarına hitap eder.
-
----
-
 ## Stremio Yasal mı? ⚖️
 
 Stremio uygulaması kendisi %100 yasaldır ve resmi mağazalarda bulunur. Ancak kullandığınız **eklenti türüne** göre yasal durum değişir.
@@ -93,14 +73,10 @@ Stremio uygulaması kendisi %100 yasaldır ve resmi mağazalarda bulunur. Ancak 
 ## Adım Adım Stremio Kurulumu 🚀
 
 ### 1. Windows ve macOS
-
 * Resmi web sitesine gidin: [https://www.stremio.com](https://www.stremio.com)
 * İndirip basit talimatlarla kurulumu tamamlayın.
 
 ### 2. Linux (Arch/EndeavourOS)
-
-Terminalde şu komutu kullanabilirsiniz:
-
 ```bash
 yay -S stremio
 ```
@@ -114,29 +90,52 @@ flatpak install flathub com.stremio.Stremio
 ### 4. Android ve Android TV
 
 * Google Play Store’dan “Stremio” aratın ve resmi uygulamayı yükleyin.
-
-(Daha detaylı Linux kurulumu için: \[Linux’ta Stremio Kurulumu])
-
+* Alternatif olarak, APK dosyasını [resmi sitesinden](https://www.stremio.com/downloads) indirebilirsiniz.
 ---
 
 ## Stremio Nasıl Kullanılır? İlk Adımlar 🎬
 
 1. **Hesap oluşturun:** E-posta veya Facebook ile hızlıca kayıt olun.
+
 2. **Arayüzü keşfedin:**
 
-   * **Pano (Board):** İzlemeye devam edebileceğiniz içerikler.
+   * **Ana ekran (Home):** İzlemeye devam edebileceğiniz içerikler.
+     \[responsive\_img src="/images/gelen-icerik-lg.webp" alt="Stremio ana ekran görüntüsü" /]
+
    * **Keşfet (Discover):** Yeni filmler ve diziler.
+     \[responsive\_img src="/images/kesfet-lg.webp" alt="Stremio keşfet sekmesi" /]
+
    * **Kütüphane (Library):** Kaydettiğiniz içerikler.
-3. **Eklenti yükleyin:** Sağ üstteki yapboz parçasına tıklayın, resmi ve topluluk eklentilerini seçin ve yükleyin.
+     \[responsive\_img src="/images/kıtaplık-ekleme-lg.webp" alt="Stremio kütüphaneye içerik ekleme ekranı" /]
+
+   * **Dublaj ve Altyazı Ayarları:** İçeriğe dublaj ve altyazı ekleme.
+     \[responsive\_img src="/images/dublaj-2-lg.webp" alt="Stremio dublaj ve altyazı ayarları ekranı" /]
+
+   * **Takvim (Calendar):** Kitaplığa kaydettiğiniz dizilerin bölüm yayın tarihlerini gösterir.
+     \[responsive\_img src="/images/takvim-lg.webp" alt="Stremio takvim özelliği ekranı" /]
+
+   * **Ayarlar (Settings):** Uygulama deneyiminizi kişiselleştireceğiniz alan. Temel bazı ayarlar.
+     \[responsive\_img src="/images/ayarlar-1-lg.webp" alt="Stremio ayarlar menüsü 1" /]
+     \[responsive\_img src="/images/ayarlar-2-lg.webp" alt="Stremio ayarlar menüsü 2" /]
+
+3. **Eklenti yükleyin:** Sol menüdeki yapboz parçasına tıklayın.
+   \[responsive\_img src="/images/eklentiler-lg.webp" alt="Stremio eklenti menüsü" /]
 
 ---
 
 ## Stremio Eklentileri: Gücünüzü Katlayın ✨
 
-* **Torrentio:** Çok sayıda torrent kaynağına erişim sağlar.
-* **OpenSubtitles v3:** Hızlı ve çok dilli altyazı desteği.
-* **ThePirateBay+, RARBG:** Alternatif torrent kaynakları.
-* **YouTube:** Takip ettiğiniz kanalların videoları.
+* **Resmi Eklentiler:** Stremio’nun kendi ekosisteminde güvenle kullanabileceğiniz eklentiler.
+  \[responsive\_img src="/images/resmi-eklentiler-lg.webp" alt="Stremio resmi eklentiler listesi" /]
+
+* **Topluluk Eklentileri:** Kullanıcılar tarafından geliştirilen eklentiler.
+  \[responsive\_img src="/images/topluluk-eklenti1-lg.webp" alt="Stremio topluluk eklentileri listesi" /]
+
+* **Yüklü Eklentileriniz:** Şu anda aktif olan eklentileri görüntüleme ekranı.
+  \[responsive\_img src="/images/eklentilerim3-lg.webp" alt="Stremio yüklü eklentiler listesi" /]
+
+* **Eklenti Yapılandırma:** Torrentio gibi eklentilerin ayarlarını düzenleme ekranı.
+  \[responsive\_img src="/images/eklenti-yapılandır-lg.webp" alt="Stremio eklenti yapılandırma ekranı" /]
 
 <div class="info-box tip">
   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -144,27 +143,39 @@ flatpak install flathub com.stremio.Stremio
   </svg>
   <div>
     <div class="alert-title">İpucu</div>
-    <p>Real-Debrid gibi Debrid servisleri ile bağlantılarınız daha hızlı ve kesintisiz olur. Detaylar için: [Real-Debrid Nedir?]</p>
+    <p>Real-Debrid gibi Debrid servisleri ile bağlantılarınız daha hızlı ve kesintisiz olur. </p>
+  </div>
+</div>
+
+<div class="info-box tip">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+  </svg>
+  <div>
+    <div class="alert-title">İpucu</div>
+    <p><strong>Real-Debrid Nedir?</strong> Kısaca <strong>RD</strong>, ücretli bir dosya indirme hizmetidir. Temel amacı, torrent ve premium dosya barındıran sitelerden gelen bağlantıların hızını ve kararlılığını artırmaktır.</p>
+    <p><strong>Neden kullanılır?</strong></p>
+    <ul>
+      <li>Torrent tabanlı eklentilerle (Torrentio gibi) çalışırken, düşük kaliteli veya yavaş bağlantıları otomatik olarak yüksek kaliteli ve hızlı linklere çevirir.</li>
+      <li>Premium platformlardan (Rapidgator, Nitroflare vs.) indirmelerde sınırsız hız ve reklamsız erişim sağlar.</li>
+      <li>Stremio'da kullanıldığında, içerik akışlarında kesinti riskini azaltır ve HD/4K kalitesini garanti eder.</li>
+    </ul>
+    <p><strong>Alternatifleri:</strong> AllDebrid, Premiumize gibi hizmetler de benzer işlevi görür. Real-Debrid'in farkı geniş uyumluluğu ve API desteğidir.</p>
   </div>
 </div>
 
 ---
 
-## Stremio Deneyimini Zirveye Taşıyacak İpuçları 🏆
-
-* **Trakt.tv Entegrasyonu:** İzleme geçmişinizi otomatik senkronize edin ve kişisel öneriler alın.
-* **VPN Kullanımı:** İnternet trafiğinizi şifreleyin, gizliliğinizi koruyun. VPN neden önemli? \[VPN Rehberi]
-* **Debrid Servisleri:** Daha hızlı ve güvenilir kaynaklar için Real-Debrid veya AllDebrid kullanın.
-
----
-
 ## Sonuç
 
-Stremio, dağınık dijital içerik dünyasında kolaylık ve hız sunar. Basit kurulumu, kullanıcı dostu arayüzü ve güçlü eklenti sistemiyle tüm medya içeriklerinizi tek bir yerden yönetmek için harika bir araçtır. Ancak yasal sorumluluklarınızı unutmadan, VPN ve güvenilir eklentilerle güvenli bir deneyim yaşamanız çok önemlidir.
+Stremio, dağınık dijital içerik dünyasında kolaylık ve hız sunar. Basit kurulumu, kullanıcı dostu arayüzü ve güçlü eklenti sistemiyle tüm medya içeriklerinizi tek bir yerden yönetmek için harika bir araçtır. Ancak yasal sorumluluklarınızı unutmadan, güvenilir eklentilerle güzel bir deneyim yaşamanız çok önemlidir.
 
 Şimdi Stremio’yu kurun, favori eklentilerinizi keşfedin ve dijital eğlence dünyanızı kolayca yönetin!
 
 💬 Favori Stremio eklentiniz hangisi? Ya da bu rehberde yer almayan bir ipucunuz var mı? Yorumlarda bizimle paylaşın!
 
+
+
 ---
+
 
