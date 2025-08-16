@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Bu yazıda,  Linux üzerinde disk sıfırlamayı öğreneceksiniz..
 Template: article
-Image: images/Linux-üzerinde-disk-sifirlama-lg.webp
+Image: images/Linux-üzerinde-disk-sifirlama-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987873115464671
 
 
@@ -151,5 +151,5 @@ Eğer bu rehber işine yaradıysa paylaşabilir, aşağıya yorum bırakabilir v
 
 Senin de kullandığın başka yöntemler varsa yorumlarda paylaş, birlikte büyüyelim! 🙌
 
-[responsive_img src="/images/Linux-üzerinde-disk-sifirlama-lg.webp" alt="Linux üzerinde disk sıfırlama" /]
+[responsive_img src="/images/Linux-üzerinde-disk-sifirlama-xl.webp" alt="Linux üzerinde disk sıfırlama" /]
 

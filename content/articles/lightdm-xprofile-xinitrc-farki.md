@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: LightDM gibi bir display manager kullanıyorsanız `.xinitrc` dosyanız neden çalışmaz? Doğru başlangıç dosyasının `.xprofile` olduğunu anlatan bu rehber, kafa karışıklığını ortadan kaldırıyor.
 Template: article
-Image: images/xinitvsxprofile-lg.webp
+Image: images/xinitvsxprofile-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989004771704509
 
 
@@ -18,7 +18,7 @@ Arch Linux ya da diğer Linux dağıtımlarında masaüstü ortamını başlatma
 Bu durumun tek bir sebebi olabilir: **LightDM veya benzeri bir Display Manager kullanıyorsun ve `.xinitrc` dosyan hiçbir işe yaramıyor!** Bu yazıda, `.xinitrc` ile `.xprofile` farkını detaylıca inceleyecek ve neden `.xprofile` kullanman gerektiğini adım adım göstereceğiz.
 
 ---
-[responsive_img src="/images/xinitvsxprofile-lg.webp" alt="xinitrc ve xprofile farkı" /]
+[responsive_img src="/images/xinitvsxprofile-xl.webp" alt="xinitrc ve xprofile farkı" /]
 ## `.xinitrc` ve `.xprofile` Nedir?
 
 ### `.xinitrc` Dosyası Ne Yapar?

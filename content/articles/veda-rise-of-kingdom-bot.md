@@ -9,7 +9,7 @@ Summary: Rise of Kingdom Bot'un geliştirilmesine artık devam edemeyeceğimi ü
 Translation: false
 Status: published
 Template: article
-Image: images/rokbot-gui-lg.webp
+Image: images/rokbot-gui-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985410694158553
 
 
@@ -24,12 +24,12 @@ Bu kararı almamın iki büyük sebebi var:
 👶 **Hayatımdaki Yeni Dönem:** Kısa süre önce bir ebeveyn oldum ve zamanımın büyük bir kısmını artık minik yavruma ayırıyorum. Şimdi ise diş çıkarma sürecinde ve ebeveynler bilir, bu dönemde oldukça huysuz ve gürültülü olabiliyor. 😅 
 
 💻 **Teknik Engeller:** Mevcut bilgisayarım artık modern oyunları ve emülatörleri kaldırmıyor. FPS düşüşleri o kadar büyük ki, oyunu test etmek neredeyse imkânsız hale geldi. YouTube için video kaydederken bile 25-30 FPS almak için saatlerce uğraşmak zorunda kalıyordum. Ancak son oyun ve emülatör güncellemeleriyle birlikte durum daha da kötüleşti. Grafikler işlenirken FPS neredeyse sıfıra düşüyor ve hiçbir optimizasyon bunu düzeltemiyor. 🥶
-[responsive_img src="/images/rok0fps-lg.webp" alt="FPS düşüşü gösteren ekran görüntüsü" /]
+[responsive_img src="/images/rok0fps-xl.webp" alt="FPS düşüşü gösteren ekran görüntüsü" /]
 
 
 
 Aslında yeni bir **GUI tasarlamak ve yeni özellikler eklemek** için oldukça hevesliydim. Fakat test süreci bu kadar zorlaşınca, kullanıcılara yeterince stabil ve güvenilir bir şey sunamamak beni rahatsız etti. **Eksik ya da hatalı bir iş paylaşmak istemediğim için, projeyi bırakmaya karar verdim.**
-[responsive_img src="/images/rokbot-gui-lg.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
+[responsive_img src="/images/rokbot-gui-xl.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
 <div class="info-box important">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -50,7 +50,7 @@ Zamanla oyunu daha iyi anlamak için oynamaya başladım ve başlangıçtan feti
 Ölü krallıklar olarak bilinen **C-D tohumlarına** bile gitseniz, orada mutlaka çok para harcamış ama oyunu öğrenememiş oyuncular bulunur ve yine size fırsat tanımazlar. **Hiçbir zaman kendi gücünüzle denk biriyle savaşamazsınız.** En güçlü Vali'den altın kafa alamaz, hatta krallığınız garipse etkinliklere bile alınmazsınız. Ben tüm bunları yaşamadım ama aktiflik sürem yüksekti.1 ana karakter 6 adet farm hesabıyla oynamaya başladım. Günümün büyük bir kısmını bu oyuna ayırıyor ve **ciddi anlamda bir hayatsıza dönüşüyordum.**  
 
 Dikkat ederseniz, büyük krallıklarda **sadece 50 ila 150 arasında ciddi para harcayan aktif oyuncu bulunuyor.** Yani **Free-to-Play (F2P)** oyuncular, savaşlarda sadece ekstra güç sağlamak için kullanılıyor. Bu konu hakkında sayfalarca yazı yazabilirim ama muhtemelen sıkılacaksınız. **Kısacası, bu oyun sadece pay-to-win değil; onun tanrısı!**  
-[responsive_img src="/images/rokbot-gui-lg.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
+[responsive_img src="/images/rokbot-gui-xl.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
 # Bu oyunu anlamak için zaten 1 yıl harcadım.  
 
 Sizlere çok sevdiğim, F2P oyuncuların "tanrısı" olarak bilinen **Logic Bank**'ın bir sözünü paylaşmak istiyorum:  
@@ -87,7 +87,7 @@ Bu projede bazı özellikleri benden talep edip, daha sonra kendi **ücretli** s
 Bu projeyi geliştirirken ve diğer botları incelerken, insanların aslında sadece "ücretsiz" bir alternatif istediklerini fark ettim. Çünkü piyasadaki diğer botlar gerçekten pahalı ve haftalık abonelik gerektiriyor. Sadece farm işlevine odaklanan botlar daha ucuz, ancak satıcının ne kadar güvenilir olduğu konusunda hiçbir fikrim yok.
 
 Bu nedenle projeyi devam ettirmek istemiyorum. Ayrıca bu oyun bana gerçekten bir oyun oynuyormuşum gibi hissettirmiyor. **Ne beni oynamaya teşvik eden var ne de insanlar şevk için destek sağlıyor.**
-[responsive_img src="/images/rok-youtube-istatistik-lg.webp" alt="Rise of Kingdom YouTube istatistikleri" /]
+[responsive_img src="/images/rok-youtube-istatistik-xl.webp" alt="Rise of Kingdom YouTube istatistikleri" /]
 YouTube'daki videolarım şu an yaklaşık **30 bin görüntülemeye sahip**, ancak abone sayım oldukça düşük. İnsanlar destek konusunda hiç yardımcı olmuyor, sadece ücretsiz bir alternatif arıyorlar. Şimdi, neden asıl geliştiricinin bu projeyi terk ettiğini çok daha iyi anlıyorum. **Rip @Dylan-Zheng**
 
 

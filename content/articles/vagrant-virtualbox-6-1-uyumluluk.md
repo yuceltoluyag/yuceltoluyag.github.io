@@ -9,7 +9,7 @@ Summary: Vagrant'ın VirtualBox 6.1 ile yaşadığı uyumsuzluk sorununu nasıl 
 Translation: false
 Status: published
 Template: article
-Image: images/ol_vbox_vagrant-min-lg.webp
+Image: images/ol_vbox_vagrant-min-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984431326966294
 
 
@@ -90,4 +90,4 @@ end
 
 Yukarıdaki işlemleri tamamladıktan sonra Vagrant'ı tekrar çalıştırın. Artık VirtualBox 6.1 ile uyumlu bir şekilde çalışması gerekiyor. Eğer hala hata alıyorsanız, yorumlarda paylaşmaktan çekinmeyin! 👍💗
 
-[responsive_img src="/images/ol_vbox_vagrant-min-lg.webp" alt="Vagrant VirtualBox Windows Linux Güncelleme" /]
+[responsive_img src="/images/ol_vbox_vagrant-min-xl.webp" alt="Vagrant VirtualBox Windows Linux Güncelleme" /]

@@ -11,7 +11,7 @@ Summary: Git'te belirli bir commit'e geri dönmek ve git cherry-pick komutuyla s
 Translation: false
 Status: published
 Template: article
-Image: images/git-chery-lg.webp
+Image: images/git-chery-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987704187596338
 
 
@@ -113,4 +113,4 @@ Git'te belirli bir commit'e geri dönmek veya belirli commit'leri farklı branch
 
 Eğer Git ile ilgili başka sorularınız varsa yorum bırakabilirsiniz! Happy coding! 🎉
 
-[responsive_img src="/images/git-chery-lg.webp" alt="git-commit-geri-donme-cherry-pick" /]
+[responsive_img src="/images/git-chery-xl.webp" alt="git-commit-geri-donme-cherry-pick" /]

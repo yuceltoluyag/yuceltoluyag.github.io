@@ -8,7 +8,7 @@ Author: yuceltoluyag
 Translation: false
 Status: published
 Summary: Pelican statik blog sistemine Mastodon yorumlarını nasıl ekleyeceğinizi adım adım öğrenin.
-Image: images/pelican-bloguna-mastodon-yorumlari-ekleme-lg.webp
+Image: images/pelican-bloguna-mastodon-yorumlari-ekleme-xl.webp
 Template: article
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987917469252302
 
@@ -260,4 +260,4 @@ Herhangi bir sorunla karşılaşırsanız, aşağıdaki kaynaklara göz atabilir
 - Javascriptin değiştirilmiş versiyonuna buradan ulaşabilirsiniz [mastodon-comments.js](/files/mastodon-comments.js) 
 
 
-[responsive_img src="/images/pelican-bloguna-mastodon-yorumlari-ekleme-lg.webp" alt="pelican-bloguna-mastodon-yorumlari-ekleme" /]
+[responsive_img src="/images/pelican-bloguna-mastodon-yorumlari-ekleme-xl.webp" alt="pelican-bloguna-mastodon-yorumlari-ekleme" /]

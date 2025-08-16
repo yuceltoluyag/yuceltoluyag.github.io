@@ -10,7 +10,7 @@ Summary: MediaTek işlemcili telefonlarda IMEI onarma adımlarını, Arch Linux 
 Template: article
 Series: Android Rehberleri
 Series_index: 1
-Image: images/crDroid-95-lg.webp
+Image: images/crDroid-95-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/115011891140145918
 
 
@@ -340,6 +340,6 @@ Bu rehber işine yaradıysa veya takıldığın noktalar olduysa, yorumlarda sor
 
 ---
 
-[responsive_img src="/images/crDroid-95-lg.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
+[responsive_img src="/images/crDroid-95-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
 
-[responsive_img src="/images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-lg.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
+[responsive_img src="/images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]

@@ -11,7 +11,7 @@ Summary: Facebook'ta 5000 arkadaş ekleme işlemi için güncellenmiş versiyon.
 Translation: false
 Status: published
 Template: article
-Image: images/facebook-5000-arkadas-ekleme-kodu-v2-lg.webp
+Image: images/facebook-5000-arkadas-ekleme-kodu-v2-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984954479518221
 
 ## Facebook 5000 Arkadaş Ekleme (Süreli)
@@ -47,4 +47,4 @@ Facebook'un son güncellemesiyle birlikte, bu tür uygulamaları kullanırken di
 
 <lite-youtube videoid="poi-oUJbTrc"></lite-youtube>
 
-[responsive_img src="/images/facebook-5000-arkadas-ekleme-kodu-v2-lg.webp" alt="Facebook 5000 Arkadaş Ekleme" /]
+[responsive_img src="/images/facebook-5000-arkadas-ekleme-kodu-v2-xl.webp" alt="Facebook 5000 Arkadaş Ekleme" /]

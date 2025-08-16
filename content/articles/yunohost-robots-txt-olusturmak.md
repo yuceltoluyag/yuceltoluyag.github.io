@@ -6,7 +6,7 @@ Tags: yunohost, robots.txt, nginx, seo, listeleme engelleme
 Slug: yunohost-robots-txt-olusturmak
 Authors: yuceltoluyag
 Status: published
-Image: images/yunohost-robotstxt-lg.webp
+Image: images/yunohost-robotstxt-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987831204439588
 
 
@@ -119,7 +119,7 @@ Dosya düzgün görüntüleniyorsa, yapılandırmanız başarıyla tamamlanmış
 ---
 
 
-[responsive_img src="/images/yunohost-robotstxt-lg.webp" alt="yunohost üzerinde oluşturulmuş örnek robots.txt dosyası" /]
+[responsive_img src="/images/yunohost-robotstxt-xl.webp" alt="yunohost üzerinde oluşturulmuş örnek robots.txt dosyası" /]
 
 ---
 

@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published  
 Summary: Arch Linux üzerinde Sharp modülünü Node.js projelerine kurarken karşılaşılan C++17 derleme hatasının ne anlama geldiğini ve nasıl çözüleceğini adım adım anlatıyoruz.  
 Template: article 
-Image: images/fckthisnodejsharp-lg.webp
+Image: images/fckthisnodejsharp-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988895289770969
 
 # Node.js'de Sharp Modülünü Kurarken Karşılaşılan C++17 Derleme Hatası ve Çözümü
@@ -136,7 +136,7 @@ Bu yazıda, **Node.js ortamında `sharp` modülünü kurarken alınan C++17 kayn
 5. Lütfen [Sharp Dökümanları](https://sharp.pixelplumbing.com/install/) adresini kontrol edin.
 
 Bu yöntemle %90 olasılıkla sorun çözülecektir. Eğer hâlâ problem yaşıyorsanız, log çıktısıyla birlikte destek forumlarına danışabilirsiniz.
-[responsive_img src="/images/fckthisnodejsharp-lg.webp" alt="Sharp Derleme Hatası Çözümü" /]
+[responsive_img src="/images/fckthisnodejsharp-xl.webp" alt="Sharp Derleme Hatası Çözümü" /]
 ---
 
 ## 💬 Söz Sende!

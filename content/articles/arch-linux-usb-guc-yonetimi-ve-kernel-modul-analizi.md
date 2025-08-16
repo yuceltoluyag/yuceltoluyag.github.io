@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Bu rehberde, bir Bash scripti yardımıyla Linux sisteminizdeki USB cihazların güç yönetimi ayarlarını ve aktif kernel modüllerinin parametrelerini nasıl analiz edebileceğinizi adım adım anlatıyoruz.
 Template: article
-Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-lg.webp
+Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989692214124173
 
 ---
@@ -16,7 +16,7 @@ Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989692214124173
 # 🖥️ Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi Rehberi
 
 Linux sistemlerde donanım kaynaklarını verimli kullanmak, güç tüketimini azaltmak ve uyumluluk sorunlarını gidermek için **USB güç yönetimi** ve **çekirdek modül ayarları** oldukça önemlidir. Bu rehberde, bir Bash scripti yardımıyla sisteminizdeki USB aygıtlarının durumunu ve modül parametrelerini nasıl inceleyebileceğinizi öğreneceksiniz. 🚀
-[responsive_img src="/images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-lg.webp" alt="arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-lg" /]
+[responsive_img src="/images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp" alt="arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl" /]
 ---
 
 ## 🧠 Bu Rehber Kimler İçin?

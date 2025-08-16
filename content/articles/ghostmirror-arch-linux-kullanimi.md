@@ -7,7 +7,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: GhostMirror, Arch Linux kullanıcıları için geliştirilmiş akıllı mirror repository yönetim aracıdır. Manuel müdahale gerektirmeden mirror'ları analiz eder, hataları tespit eder ve optimum mirror listeleri oluşturur.
 Template: article
-Image: images/ghostmirror-arch-linux-kullanimi-lg.webp
+Image: images/ghostmirror-arch-linux-kullanimi-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/115018950335960240
 
 
@@ -19,7 +19,7 @@ Arch Linux kullanıcıları olarak, sistemimizi hızlı ve güvenilir paket ayna
 
 Bu rehberde, GhostMirror’ın ne olduğunu, nasıl kurulup kullanılacağını ve sisteminizde nasıl otomatik ayna optimizasyonu sağlayacağınızı adım adım öğreneceksiniz. Böylece Arch Linux deneyiminizi çok daha sorunsuz ve hızlı hale getirebilirsiniz.
 
-[responsive_img src="/images/ghostmirror-arch-linux-kullanimi-lg.webp" alt="Linux'ta GhostMirror Kullanımı" /]
+[responsive_img src="/images/ghostmirror-arch-linux-kullanimi-xl.webp" alt="Linux'ta GhostMirror Kullanımı" /]
 
 ---
 

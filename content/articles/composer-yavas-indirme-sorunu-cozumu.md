@@ -9,7 +9,7 @@ Summary: Composer kullanırken yavaş indirme sorunu mu yaşıyorsunuz? Bu rehbe
 Translation: false
 Status: published
 Template: article
-Image: images/composer-lg.webp
+Image: images/composer-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984413472275351
 
 
@@ -123,4 +123,4 @@ Composer ile yavaş indirme sorunları can sıkıcı olabilir, ancak yukarıdaki
 
 Umarım bu rehber Composer kullanımınızı daha keyifli hale getirir! 🎉
 Herhangi bir hata alırsanız yorum bırakmayı unutmayın! 👇
-[responsive_img src="/images/composer-lg.webp" alt="Composer Hızlandırma" /]
+[responsive_img src="/images/composer-xl.webp" alt="Composer Hızlandırma" /]

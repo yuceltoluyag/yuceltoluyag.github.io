@@ -11,7 +11,7 @@ Summary: Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağ
 Translation: false
 Status: published
 Template: article
-Image: images/windows-terminal-lg.webp
+Image: images/windows-terminal-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985306515279329
 
 **Merhaba**
@@ -46,24 +46,24 @@ Eğer terminalinizde **ikon**ların doğru şekilde **görüntülenmesini** isti
 Bu iki uygulamayı **kuruyoruz**. Kurduktan sonra **Windows Terminal** uygulamamızı **açıyoruz** ve **ayarlara** giriyoruz.
 
 
-[responsive_img src="/images/windows-terminal-lg.webp" alt="windows-terminal" /]
+[responsive_img src="/images/windows-terminal-xl.webp" alt="windows-terminal" /]
 
 Ayarlara girdikten sonra **görünüm** sekmesindeki ayarlarınız şu şekilde **olmalı**.
 
 
-[responsive_img src="/images/windows-terminal2-lg.webp" alt="windows-terminal2" /]
+[responsive_img src="/images/windows-terminal2-xl.webp" alt="windows-terminal2" /]
 
 
 Ayarları **kaydettikten** sonra **Startup** kısmına tıklayın. Yüklemiş olduğumuz **Powershell**'i **varsayılan** olarak ayarlayın.
-[responsive_img src="/images/windows-terminal3-lg.webp" alt="windows-terminal3" /]
+[responsive_img src="/images/windows-terminal3-xl.webp" alt="windows-terminal3" /]
 Ayarları **kaydedin** ve **Defaults** sekmesine gelin, oradan **Appearance** kısmından **Font** ayarlarınızı yapın.
 
 
-[responsive_img src="/images/windows-terminal4-lg.webp" alt="windows-terminal4" /]
+[responsive_img src="/images/windows-terminal4-xl.webp" alt="windows-terminal4" /]
 **Font** ayarlarınızı yaptıktan sonra aynı ekranda bulunan "**Enable Acrylic**"i **aktif** hale getirin ve ayarları **kaydedin**.
 
 
-[responsive_img src="/images/windows-terminal5-lg.webp" alt="windows-terminal5" /]
+[responsive_img src="/images/windows-terminal5-xl.webp" alt="windows-terminal5" /]
 
 Tüm bunları yaptıktan sonra **Terminal**inizi **kapatıp** yeniden **açın**.
 
@@ -378,7 +378,7 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 
 # Sonuç
 
-[responsive_img src="/images/windows-terminal-son-lg.webp" alt="windows-terminal6" /]
+[responsive_img src="/images/windows-terminal-son-xl.webp" alt="windows-terminal6" /]
 ## Bana Balık Tutmasını Öğretme, Bana Balık Ver
 
 Bu yazımı okuyorsanız, muhtemelen **Git** nedir biliyorsunuzdur 👊 Linux tarafında sorunsuz çalışan araçlar **Windows**ta bazen sorunlu olabiliyor. Örneğin, **GPG** kullanırken sorun yaşamıyorsanız, kullanmaya devam edin 🧠 Ancak sorun yaşıyorsanız, "**gpg4win**" kullanmanızı tavsiye ederim.

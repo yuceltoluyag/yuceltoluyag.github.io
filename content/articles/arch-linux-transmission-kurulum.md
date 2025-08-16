@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux üzerinde Transmission'ı nasıl kurar ve kullanırsınız? Bu rehberde, Transmission'ın kurulumunu, yapılandırmasını ve en verimli şekilde nasıl kullanabileceğinizi adım adım keşfedeceksiniz.
 Template: article
-Image: images/Transmission-lg.webp
+Image: images/Transmission-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988995540919447
 
 # Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
@@ -151,7 +151,7 @@ Web arayüzü üzerinden torrent eklemek için:
 1. Tarayıcınızda `http://localhost:9091` adresine gidin.
 2. “Ekle” butonuna tıklayın ve torrent dosyasını yükleyin.
 3. İndirme işlemini başlatın.
-[responsive_img src="/images/Transmission-lg.webp" alt="Transmission Web Arayüzü" /]
+[responsive_img src="/images/Transmission-xl.webp" alt="Transmission Web Arayüzü" /]
 ### 5.2 Komut Satırı Üzerinden Torrent Ekleme
 
 Komut satırından bir torrent dosyası eklemek için:

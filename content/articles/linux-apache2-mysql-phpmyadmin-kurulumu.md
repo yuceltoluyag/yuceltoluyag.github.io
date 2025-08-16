@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Summary: Debian ve türevlerinde Apache2, MySQL ve PhpMyAdmin kurulumunu adım adım nasıl gerçekleştirebileceğinizi anlatıyoruz.
 Status: published
 Template: article
-Image: images/linux-apache2-mysql-phpmyadmin-kurulumu-lg.webp
+Image: images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982042077615978
 
 
@@ -105,4 +105,4 @@ sudo service apache2 restart
 
 Kurulum sırasında herhangi bir hata alırsanız yorum bırakabilirsiniz. İyi çalışmalar!
 
-[responsive_img src="/images/linux-apache2-mysql-phpmyadmin-kurulumu-lg.webp" alt="linux-apache2-mysql-phpmyadmin-kurulumu" /]
+[responsive_img src="/images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp" alt="linux-apache2-mysql-phpmyadmin-kurulumu" /]

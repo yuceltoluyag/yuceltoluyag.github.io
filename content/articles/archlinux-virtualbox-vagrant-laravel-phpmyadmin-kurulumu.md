@@ -11,7 +11,7 @@ Summary: Arch Linux üzerinde VirtualBox, Vagrant, Laravel ve PhpMyAdmin kurulum
 Translation: false
 Status: published
 Template: article
-Image: images/pic-selected-190916-0747-49-lg.webp
+Image: images/pic-selected-190916-0747-49-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984353173118702
 
 
@@ -177,7 +177,7 @@ vagrant ssh
 ```
 
 
-[responsive_img src="/images/pic-selected-190916-0818-54-lg.webp" alt="SSH Bağlantısı" /]
+[responsive_img src="/images/pic-selected-190916-0818-54-xl.webp" alt="SSH Bağlantısı" /]
 
 
 ## Laravel Kurulumu 🌐
@@ -192,7 +192,7 @@ composer create-project --prefer-dist laravel/laravel
 Bu işlem tamamlandığında **www** klasörünüzün içinde **laravel** adında bir klasör oluşacaktır.
 
 
-[responsive_img src="/images/pic-full-190916-0808-36-lg.webp" alt="Laravel Kurulumu" /]
+[responsive_img src="/images/pic-full-190916-0808-36-xl.webp" alt="Laravel Kurulumu" /]
 
 ## PhpMyAdmin Kurulumu 🛠️
 
@@ -236,4 +236,4 @@ Kullanıcı adı: **homestead**
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="d9ITbD5Mn3w"></lite-youtube>
-[responsive_img src="/images/pic-selected-190916-0747-49-lg.webp" alt="Kurulum Görseli" /]
+[responsive_img src="/images/pic-selected-190916-0747-49-xl.webp" alt="Kurulum Görseli" /]

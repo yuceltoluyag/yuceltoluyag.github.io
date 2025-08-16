@@ -9,7 +9,7 @@ Summary: Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken 
 Translation: false
 Status: published
 Template: article
-Image: images/conda-lg.webp
+Image: images/conda-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985320597394764
 
 # Arch Linux'ta Conda Kurulumu ve Yönetimi
@@ -429,4 +429,4 @@ conda init
 
 Thank you for installing Miniconda3!
 ```
-[responsive_img src="/images/conda-lg.webp" alt="arch-linux-conda-kurulumu" /]
+[responsive_img src="/images/conda-xl.webp" alt="arch-linux-conda-kurulumu" /]

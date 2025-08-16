@@ -9,7 +9,7 @@ Summary: Bu rehberde, Windows üzerinden paylaşılan dosya ve yazıcılara Linu
 Translation: false
 Status: published
 Template: article
-Image: images/linux_samba-lg.webp
+Image: images/linux_samba-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982722753677108
 
 
@@ -104,7 +104,7 @@ sudo mount -t cifs //ipadresi/paylasilanklasor /mnt/virtual -o username=olusturu
 ```
 
 
-[responsive_img src="/images/linux_samba-lg.webp" alt="linux_samba_worked" /]
+[responsive_img src="/images/linux_samba-xl.webp" alt="linux_samba_worked" /]
 ## İsteğe Bağlı Özellikler
 
 "**Usershares**" özelliği, root olmayan kullanıcılara kendi paylaşım ayarlarını ekleme, değiştirme ve silme yeteneği tanır. Eğer Thunar dosya yöneticisini kullanıyorsanız (XFCE masaüstü ortamında), aşağıdaki komutla gerekli paketi yükleyebilirsiniz:

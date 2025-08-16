@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux'ta Rise of Kingdoms oynamak mümkün! Bu rehberde Lutris ile nasıl kurulum yapacağınızı ve yaşanan grafik sorunlarını nasıl çözeceğinizi adım adım anlatıyoruz.
 Template: article
-Image: images/rok-lutris-fps-test-lg.webp
+Image: images/rok-lutris-fps-test-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989018351105207
 
 
@@ -41,7 +41,7 @@ yay -S wine-ge lutris winetricks
 
 
 
-[responsive_img src="/images/rok-lutris-add-game-lg.webp" alt="lutris-add-game-local" /]
+[responsive_img src="/images/rok-lutris-add-game-xl.webp" alt="lutris-add-game-local" /]
 
 
 
@@ -87,7 +87,7 @@ winetricks corefonts vcrun2019 d3dcompiler_47
 * Lutris runner seçeneklerinden dgvoodoo2’yi etkinleştirin.
 * Ayarlarınız resimdeki gibi olmalı.
 
-[responsive_img src="/images/rok-lutris-enable-dxvk-lg.webp" alt="lutris-winecfg" /]
+[responsive_img src="/images/rok-lutris-enable-dxvk-xl.webp" alt="lutris-winecfg" /]
 
  
 - Eğer yukarıdaki çözüm ile sorun devam ederse, aşağıdaki adımları izleyin.
@@ -109,7 +109,7 @@ dxgi.numBackBuffers = 2
 
 ## 🗄️ 5. Çözünürlük Problemlerine Özel Ayarlar
 
-[responsive_img src="/images/rok-lutris-glitch-problem-lg.webp" alt="lutris-enable-Glitch-problem" /]
+[responsive_img src="/images/rok-lutris-glitch-problem-xl.webp" alt="lutris-enable-Glitch-problem" /]
 
 Oyunu `dgvoodoo2`  **olmadan** çalıştırdığında ekranda kırılmalar,titreme,çözünürlük değiştirememe gibi sorunları yaşanabilir. `dgvoodoo2` etkinleştirdiğinizden emin olun. Etkinleştirdiğiniz halde sorun çözülmediyse, sorunu çözmek için aşağıdaki adımları izleyin.
 
@@ -123,7 +123,7 @@ Oyunu `dgvoodoo2`  **olmadan** çalıştırdığında ekranda kırılmalar,titre
 
 
 
-[responsive_img src="/images/rok-lutris-fps-test-lg.webp" alt="lutris-fps-overlay" /] Artık Oyun tıpkı Windows'ta gibi çalışıyor. Bütün herşeyi canlı yayında test ettik.
+[responsive_img src="/images/rok-lutris-fps-test-xl.webp" alt="lutris-fps-overlay" /] Artık Oyun tıpkı Windows'ta gibi çalışıyor. Bütün herşeyi canlı yayında test ettik.
 
 --- 
 

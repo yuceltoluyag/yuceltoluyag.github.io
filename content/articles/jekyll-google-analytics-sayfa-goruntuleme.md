@@ -9,7 +9,7 @@ Summary: Jekyll sitenizde Google Analytics ile sayfa görüntüleme sayısını 
 Translation: false
 Status: published
 Template: article
-Image: images/superproxy-lg.webp
+Image: images/superproxy-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985257871113523
 
 **Merhaba!** 🌟
@@ -38,13 +38,13 @@ Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı ya
 6. Sol menüden **API ve Hizmetler** kısmını seçin ve ardından **API'leri ve Hizmetleri Etkinleştir**i tıklayın.
 
 
-[responsive_img src="/images/superproxy2-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy2-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 - `Google Analytics API`'yi seçin ve API'yi aktif edin.
 - `APIs & Services` menüsünde, `OAuth consent Screen`e tıklayın ve gelen pencerede **Harici (External)** seçeneğini işaretleyerek devam edin.
 
 
-[responsive_img src="/images/superproxy3-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy3-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 
 <div class="info-box tip">
@@ -55,7 +55,7 @@ Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz.
 * `Credentials` kısmından `OAuth 2.0 Client IDs` kısmını aktif edin.
 
 
-[responsive_img src="/images/superproxy4-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy4-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 - `Client ID` ve `Client Secret` adında oluşan kodları not edin.
 - `Client ID` üzerine tekrar tıklayın ve şu alanları doldurun:
@@ -63,7 +63,7 @@ Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz.
   - `Authorized redirect URIs` kısmına ise sadece **`/admin/auth`** uzantısını dahil edin.
 
 
-[responsive_img src="/images/superproxy5-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy5-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 ## Cloud SDK
 
@@ -95,7 +95,7 @@ Dosyayı kaydedin.
 5. **`src/config.py`** dosyasını açın. `OAUTH_CLIENT_ID` ve `OAUTH_CLIENT_SECRET` kısımlarını yukarıda oluşturduğunuz Client ID ve Secret ile doldurun.
 
 
-[responsive_img src="/images/superproxy6-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy6-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 6. `XSRF_KEY` kısmına rastgele güçlü bir şifre yazın.
 7. **src** klasöründe terminali açın ve şu komutu çalıştırın:
@@ -119,7 +119,7 @@ gcloud app browse
 Açılan linkin sonuna `/admin` ekleyin ve bağlı olduğunuz Analytics hesabınıza giriş yapın. Her şey yolunda gitmişse, şu ekranla karşılaşmalısınız:
 
 
-[responsive_img src="/images/superproxy7-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy7-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 ## Google Analytics Sorgusu
 
@@ -132,19 +132,19 @@ Açılan linkin sonuna `/admin` ekleyin ve bağlı olduğunuz Analytics hesabın
 7. **Filters** => `ga:pagePath=~^.\*/$;ga:pagePath!@=` olarak doldurun.
 
 
-[responsive_img src="/images/superproxy8-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy8-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 8. `Run Query` butonuna tıklayın ve oluşan URL'yi not alın.
 9. `Create Query` kısmını aşağıdaki gibi doldurun.
 
 
-[responsive_img src="/images/superproxy9-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy9-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 10. Ardından proje kısmından `Manage` seçeneğine tıklayın, `Enable Endpoint` ve `Start Scheduling` butonlarına basın. İşlem tamam! 🎉
 
 11. Son olarak, tüm bu süreç bittikten sonra görünüm şu şekilde olmalıdır:
 
-[responsive_img src="/images/superproxy10-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy10-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 12. `_config.yml` dosyanızı açın ve şu kodları ekleyin:
 
@@ -170,4 +170,4 @@ google_analytics:
 
 Bu çözümü blogumda kullanıyorum. **Google Console** servisi, **Amazon** gibi ücretsiz deyip de ay sonunda kartınızdan para çekmeye **çalışmıyor**, **yedi aydır** sorunsuz kullanıyorum. Yine de, tedbir amaçlı ödeme alarmı kurabilirsiniz. Ödemeler kısmından alarmlara tıklayıp **1 TL**'yi aşınca beni uyar diye ayarlayabilirsiniz. 😉
 
-[responsive_img src="/images/superproxy11-lg.webp" alt="GA-superproxy-kurulumu" /]
+[responsive_img src="/images/superproxy11-xl.webp" alt="GA-superproxy-kurulumu" /]

@@ -9,14 +9,14 @@ Summary: Arch Linux'ta NTFS dosya sistemine sahip disklerin nasıl bağlanacağ�
 Translation: false
 Status: published
 Template: article
-Image: images/ntfs_yetki_hatasi-lg.webp
+Image: images/ntfs_yetki_hatasi-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984863338075066
 
 
 ## Sorun Nedir? ⚠️
 
 Linux'un varsayılan dosya sistemi **ext** (ext1, ext2, ext3, ext4) olduğundan, yeni bir sistem kurulduğunda NTFS formatındaki diskleri bağlamaya çalışırken **"failed to mount diskadı -> not authorized to perform operation"** hatasıyla karşılaşabilirsiniz. Daha modern bir dosya yöneticisi kullanıyorsanız, bağlanmak istediğinizde **parola** istemesi de olasıdır. Linux, diğer dosya sistemlerini tanır ancak işlem yapabilmek için yetkilendirme gerektirir.
-[responsive_img src="/images/ntfs_yetki_hatasi-lg.webp" alt="NTFS Yetki Hatası" /]
+[responsive_img src="/images/ntfs_yetki_hatasi-xl.webp" alt="NTFS Yetki Hatası" /]
 
 ---
 

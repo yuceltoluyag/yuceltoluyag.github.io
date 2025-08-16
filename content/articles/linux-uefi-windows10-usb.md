@@ -9,7 +9,7 @@ Summary: Linux kullanarak UEFI destekli Windows 10 format USB'si nasıl oluştur
 Translation: false
 Status: published
 Template: article
-Image: images/linux_windows10_uefi_format-lg.webp
+Image: images/linux_windows10_uefi_format-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114994518552013527
 
 
@@ -40,12 +40,12 @@ USB diskimizi hazırlamak için şu adımları takip edelim:
 2. **Format olarak NTFS seçin.** (FAT32 kullanırsanız büyük dosyalarda hata alabilirsiniz.)
 
 
-[responsive_img src="/images/linux_windows10_uefi_format-lg.webp" alt="USB Formatlama" /]
+[responsive_img src="/images/linux_windows10_uefi_format-xl.webp" alt="USB Formatlama" /]
 
 Eğer USB'yi yanlış formatta biçimlendirirseniz aşağıdaki gibi bir hata ile karşılaşabilirsiniz:
 
 
-[responsive_img src="/images/linux_windows10_uefi_format_error-lg.webp" alt="Format Hatası" /]
+[responsive_img src="/images/linux_windows10_uefi_format_error-xl.webp" alt="Format Hatası" /]
 
 ## 3. WoeUSB Kullanımı
 
@@ -56,14 +56,14 @@ WoeUSB'yi açın ve şu adımları takip edin:
 3. **Başlat düğmesine basarak işlemi başlatın.**
 
 
-[responsive_img src="/images/linux_windows10_uefi_disk-lg.webp" alt="WoeUSB Arayüzü" /]
+[responsive_img src="/images/linux_windows10_uefi_disk-xl.webp" alt="WoeUSB Arayüzü" /]
 
 ## 4. USB'den Boot Etme
 
 İşlem tamamlandıktan sonra bilgisayarınızı yeniden başlatın ve **BIOS/UEFI ayarlarından USB disk ile boot edin.**
 
 
-[responsive_img src="/images/linux_windows10_uefi_boot-lg.webp" alt="Boot Ekranı" /]
+[responsive_img src="/images/linux_windows10_uefi_boot-xl.webp" alt="Boot Ekranı" /]
 ## 5. Sonuç
 
 Gördüğünüz gibi, Linux üzerinden UEFI destekli Windows 10 format USB'si oluşturduk. Eğer Linux'a yeni başladıysanız, aniden tam geçiş yapmak yerine çift işletim sistemi kullanarak aşamalı bir geçiş yapmanız daha iyi olabilir. **Daha fazla bilgi için şu makaleyi okuyabilirsiniz:** [Yeni Başlayanlar İçin Linux](/yeni-baslayanlar-linux-surumu/){: target="_blank" rel="noopener noreferrer"}

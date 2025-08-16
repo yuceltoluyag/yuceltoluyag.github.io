@@ -9,7 +9,7 @@ Summary: Arch Linux üzerinde RetroArch kurulumu ve yapılandırmasını adım a
 Translation: false
 Status: published
 Template: article
-Image: images/retroarch-lg.webp
+Image: images/retroarch-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985335068268101
 
 
@@ -179,4 +179,4 @@ audio_out_rate = 48000
 Bu rehber, Arch Linux üzerinde RetroArch'ı kurup optimize etmek isteyenler için kapsamlı bir kaynak sunuyor. Daha fazla bilgi için [Arch Wiki: RetroArch](https://wiki.archlinux.org/title/RetroArch){: target="_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖
 
 Keyifli oyunlar! 🎮
-[responsive_img src="/images/retroarch-lg.webp" alt="RetroArch kullanıcı arayüzü" /]
+[responsive_img src="/images/retroarch-xl.webp" alt="RetroArch kullanıcı arayüzü" /]

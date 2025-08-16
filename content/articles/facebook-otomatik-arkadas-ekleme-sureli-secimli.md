@@ -11,7 +11,7 @@ Summary: Facebook otomatik arkadaş ekleme kodu hakkında bilgi ve kullanım ön
 Translation: false
 Status: published
 Template: article
-Image: images/facebook-5000-lg.webp
+Image: images/facebook-5000-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984312882757495
 
 
@@ -33,4 +33,4 @@ Abartıdan neyi kastettiğimi açıklayayım:
 
 <lite-youtube videoid="poi-oUJbTrc"></lite-youtube>
 
-[responsive_img src="/images/facebook-5000-lg.webp" alt="facebook-5000" /]
+[responsive_img src="/images/facebook-5000-xl.webp" alt="facebook-5000" /]

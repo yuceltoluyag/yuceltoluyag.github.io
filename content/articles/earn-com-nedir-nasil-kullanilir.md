@@ -9,7 +9,7 @@ Summary: Earn.com, anket doldurarak ve gruplara katılarak kazanç elde edebilec
 Translation: false
 Status: published
 Template: article
-Image: images/earncom-lg.webp
+Image: images/earncom-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982579879193708
 
 <div class="info-box warning">
@@ -66,4 +66,4 @@ Sisteme kaydolmak için referans bağlantısı kullanırsanız onay süreciniz h
   </video>
 </div>
 
-[responsive_img src="/images/earncom-lg.webp" alt="earncom" /]
+[responsive_img src="/images/earncom-xl.webp" alt="earncom" /]
