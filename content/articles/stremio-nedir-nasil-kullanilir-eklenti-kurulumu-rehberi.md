@@ -1,5 +1,6 @@
 Title: Rehber : Stremio Nedir, Nasıl Kurulur ve Kullanılır ?
 Date: 2025-08-14 02:47
+Modified: 2025-08-16 02:47
 Category: Medya
 Tags: stremio, eklenti, film izleme, dizi izleme, torrentio, linux, windows, macos, streaming, medya merkezi, real-debrid
 Slug: stremio-nedir-nasil-kullanilir-eklenti-kurulumu-rehberi
@@ -7,7 +8,7 @@ Authors: galipdede
 Status: published
 Summary: Stremio ile tüm film, dizi ve video içeriklerinizi tek bir yerden yönetin. Kurulumdan eklenti kullanımına 2025 güncel rehber.
 Template: article
-Image: images/eklentiler-lg.webp
+Image: images/kesfet-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/115023937993071542
 
 # Stremio  Detaylı Rehber 🚀
@@ -101,43 +102,53 @@ flatpak install flathub com.stremio.Stremio
 
 2. **Arayüzü keşfedin:**
 
-   * **Ana ekran (Home):** İzlemeye devam edebileceğiniz içerikler.
-     \[responsive\_img src="/images/gelen-icerik-lg.webp" alt="Stremio ana ekran görüntüsü" /]
+   * **Ana ekran (Home):** İzlemeye devam edebileceğiniz içerikler, yeni bölüm bildirimleri ve kategorize edilmiş içerikler.
+     
+     
+     [responsive_img src="/images/ana-xl.webp" alt="Stremio ana ekran" /]
 
-   * **Keşfet (Discover):** Yeni filmler ve diziler.
-     \[responsive\_img src="/images/kesfet-lg.webp" alt="Stremio keşfet sekmesi" /]
 
-   * **Kütüphane (Library):** Kaydettiğiniz içerikler.
-     \[responsive\_img src="/images/kıtaplık-ekleme-lg.webp" alt="Stremio kütüphaneye içerik ekleme ekranı" /]
+   * **Keşfet (Discover):** İçerikleri platformuna ve türüne göre bulabileceğiz alan.
+     [responsive_img src="/images/kesfet-xl.webp" alt="Stremio keşfet" /]
 
-   * **Dublaj ve Altyazı Ayarları:** İçeriğe dublaj ve altyazı ekleme.
-     \[responsive\_img src="/images/dublaj-2-lg.webp" alt="Stremio dublaj ve altyazı ayarları ekranı" /]
 
+     
+     [responsive_img src="/images/kitaplik-ekleme-xl.webp" alt="Stremio kitaplığa ekleme" /]
+
+     
+     
+     [responsive_img src="/images/icerik-ekrani-xl.webp" alt="Stremio içerik ekranı" /]
+
+
+   * **Kitaplık (Bookcase):** Kaydettiğiniz içerikler.
+     
+     [responsive_img src="/images/kitaplik-xl.webp" alt="Stremio kitaplık" /]
+
+      
    * **Takvim (Calendar):** Kitaplığa kaydettiğiniz dizilerin bölüm yayın tarihlerini gösterir.
-     \[responsive\_img src="/images/takvim-lg.webp" alt="Stremio takvim özelliği ekranı" /]
+     
+     [responsive_img src="/images/takvim-xl.webp" alt="Stremio takvim" /]
+
 
    * **Ayarlar (Settings):** Uygulama deneyiminizi kişiselleştireceğiniz alan. Temel bazı ayarlar.
-     \[responsive\_img src="/images/ayarlar-1-lg.webp" alt="Stremio ayarlar menüsü 1" /]
-     \[responsive\_img src="/images/ayarlar-2-lg.webp" alt="Stremio ayarlar menüsü 2" /]
+    
+     
+     [responsive_img src="/images/ayarlar-1-xl.webp" alt="Stremio ayarlar" /]
 
-3. **Eklenti yükleyin:** Sol menüdeki yapboz parçasına tıklayın.
-   \[responsive\_img src="/images/eklentiler-lg.webp" alt="Stremio eklenti menüsü" /]
+[responsive_img src="/images/ayarlar-2-xl.webp" alt="Stremio ayarlar" /]
+
+
+
 
 ---
 
 ## Stremio Eklentileri: Gücünüzü Katlayın ✨
+  * **Eklentiler (Addons):** Resmi eklentiler kurulumla beraber gelenler. Topluluk eklentileri ise kişisel tercihinize kalmış. Fakat topluluk eklentilerini araştırmadan güvenliğinden emin olmadan kurmayınız.Sorumluluk size aittir.
+  
+  [responsive_img src="/images/eklenti-xl.webp" alt="Stremio eklentiler" /]
 
-* **Resmi Eklentiler:** Stremio’nun kendi ekosisteminde güvenle kullanabileceğiniz eklentiler.
-  \[responsive\_img src="/images/resmi-eklentiler-lg.webp" alt="Stremio resmi eklentiler listesi" /]
+[responsive_img src="/images/eklenti-yapilandir-xl.webp" alt="Stremio eklenti yapılandırma" /]
 
-* **Topluluk Eklentileri:** Kullanıcılar tarafından geliştirilen eklentiler.
-  \[responsive\_img src="/images/topluluk-eklenti1-lg.webp" alt="Stremio topluluk eklentileri listesi" /]
-
-* **Yüklü Eklentileriniz:** Şu anda aktif olan eklentileri görüntüleme ekranı.
-  \[responsive\_img src="/images/eklentilerim3-lg.webp" alt="Stremio yüklü eklentiler listesi" /]
-
-* **Eklenti Yapılandırma:** Torrentio gibi eklentilerin ayarlarını düzenleme ekranı.
-  \[responsive\_img src="/images/eklenti-yapılandır-lg.webp" alt="Stremio eklenti yapılandırma ekranı" /]
 
 <div class="info-box tip">
   <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

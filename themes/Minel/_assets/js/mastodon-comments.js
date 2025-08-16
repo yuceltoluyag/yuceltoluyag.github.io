@@ -134,7 +134,7 @@ class MastodonComments extends HTMLElement {
         const mastodonComment = `<div class="mastodon-comment" data-depth="${depth}">
         <div class="author">
           <div class="avatar">
-            <div class="w-12 h-12 rounded-lg">
+            <div class="w-12 h-12 rounded-xl">
               <img src="${this.escapeHtml(
                   toot.account.avatar_static
               )}" class="w-full h-full object-cover" alt="${this.escapeHtml(toot.account.display_name)}">
@@ -159,7 +159,7 @@ class MastodonComments extends HTMLElement {
         ${
             toot.media_attachments.length > 0
                 ? `
-        <div class="attachments card bg-base-200 rounded-lg overflow-hidden">
+        <div class="attachments card bg-base-200 rounded-xl overflow-hidden">
           ${toot.media_attachments
               .map((attachment) => {
                   if (attachment.type === "image") {

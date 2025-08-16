@@ -74,7 +74,7 @@
             likesBody.className = "card-body p-4";
 
             const likesTitle = document.createElement("h3");
-            likesTitle.className = "card-title text-lg flex items-center mb-3";
+            likesTitle.className = "card-title text-xl flex items-center mb-3";
             likesTitle.innerHTML = `<iconify-icon icon="tabler:heart" class="mr-2"></iconify-icon> Beğenenler (${interactions.likes.length})`;
             likesBody.appendChild(likesTitle);
 
@@ -127,7 +127,7 @@
             repostsBody.className = "card-body p-4";
 
             const repostsTitle = document.createElement("h3");
-            repostsTitle.className = "card-title text-lg flex items-center mb-3";
+            repostsTitle.className = "card-title text-xl flex items-center mb-3";
             repostsTitle.innerHTML = `<iconify-icon icon="tabler:repeat" class="mr-2"></iconify-icon> Paylaşanlar (${interactions.reposts.length})`;
             repostsBody.appendChild(repostsTitle);
 
@@ -153,7 +153,7 @@
             repliesBody.className = "card-body p-4";
 
             const repliesTitle = document.createElement("h3");
-            repliesTitle.className = "card-title text-lg flex items-center mb-3";
+            repliesTitle.className = "card-title text-xl flex items-center mb-3";
             repliesTitle.innerHTML = `<iconify-icon icon="tabler:message-circle" class="mr-2"></iconify-icon> Yanıtlar (${interactions.replies.length})`;
             repliesBody.appendChild(repliesTitle);
 
@@ -282,7 +282,7 @@
         const textWrapper = document.createElement("div");
 
         const message = document.createElement("div");
-        message.className = "font-medium text-lg";
+        message.className = "font-medium text-xl";
         message.textContent = "Henüz webmention yok";
 
         const description = document.createElement("div");

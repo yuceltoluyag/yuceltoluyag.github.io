@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Bu yazıda,  Continue Eklentisinde mcp kurulumu
 Template: article
-Image: images/mcp-puppeteer-sunucusu-kurulumu-lg.webp
+Image: images/mcp-puppeteer-sunucusu-kurulumu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987857795740048
 
 
@@ -188,4 +188,4 @@ Keyifli kodlamalar! 🚀
 
 ---
 
-[responsive_img src="/images/mcp-puppeteer-sunucusu-kurulumu-lg.webp" alt="Puppeteer Sunucusu Kurulumu" /]
+[responsive_img src="/images/mcp-puppeteer-sunucusu-kurulumu-xl.webp" alt="Puppeteer Sunucusu Kurulumu" /]

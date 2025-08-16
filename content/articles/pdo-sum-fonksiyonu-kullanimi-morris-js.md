@@ -9,7 +9,7 @@ Summary: PDO kullanarak MySQL veritabanındaki verileri toplama işlemi ve bu ve
 Translation: false
 Status: published
 Template: article
-Image: images/php_morris-lg.webp
+Image: images/php_morris-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114983987991038402
 
 Merhaba! MySQL (phpMyAdmin) üzerinde bir tablodaki belirli sütunların toplamını almak için keşfettiğim basit ve etkili bir fonksiyonun kullanımını ele alacağız. Ayrıca, en sevdiğim grafik kütüphanelerinden biri olan [morris.js](http://morrisjs.github.io/morris.js/){: target="_blank" rel="noopener noreferrer"} ile bu verileri görselleştireceğiz. 🎨📊
@@ -21,7 +21,7 @@ Aşağıdaki kod, **hesap_toplam** ve **hesap_odenen** sütunlarının toplamın
 ### Örnek Görselleştirme
 
 
-[responsive_img src="/images/php_morris-lg.webp" alt="PDO ve Morris.js ile Grafik" /]
+[responsive_img src="/images/php_morris-xl.webp" alt="PDO ve Morris.js ile Grafik" /]
 ## Kod
 
 ```php
@@ -53,7 +53,7 @@ Morris.Donut({
 Kodun çalıştırılmasıyla birlikte aşağıdaki gibi bir grafik elde edeceksiniz:
 
 
-[responsive_img src="/images/php_morris_grafik-lg.webp" alt="Morris.js Grafik Örneği" /]
+[responsive_img src="/images/php_morris_grafik-xl.webp" alt="Morris.js Grafik Örneği" /]
 
 Eğer herhangi bir sorunuz olursa yorum bırakabilirsiniz! 💬😊
 

@@ -13,7 +13,7 @@
 <div class="container mx-auto px-4">
     <!-- Kategori Başlığı -->
     <div class="flex items-center gap-4 mb-12 bg-base-100 p-6 rounded-xl shadow-xs">
-        <div class="w-14 h-14 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
             <span class="iconify" data-icon="tabler:tag" width="28" height="28"></span>
         </div>
         <div class="flex-1">
@@ -25,7 +25,7 @@
     <!-- Yazı Listesi -->
     <div class="space-y-6">
         {% for article in articles %}
-        <article class="card bg-base-100 shadow-xs hover:shadow-lg transition-all duration-200">
+        <article class="card bg-base-100 shadow-xs hover:shadow-xl transition-all duration-200">
             <a href="{{ SITEURL }}/{{ article.url }}" class="card-body p-6">
                 <div class="mb-3">
                     <h2 class="text-xl font-bold hover:text-primary transition-colors">{{ article.title }}</h2>

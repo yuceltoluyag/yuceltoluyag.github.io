@@ -31,7 +31,7 @@
 
         <a
             href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-            class="badge badge-lg {% if tag_size == 1 %}badge-outline text-xs{% elif tag_size == 2 %}badge-outline text-sm{% elif tag_size == 3 %}badge-primary text-sm{% elif tag_size == 4 %}badge-primary text-base{% else %}badge-primary text-lg{% endif %} hover:badge-secondary transition-colors"
+            class="badge badge-xl {% if tag_size == 1 %}badge-outline text-xs{% elif tag_size == 2 %}badge-outline text-sm{% elif tag_size == 3 %}badge-primary text-sm{% elif tag_size == 4 %}badge-primary text-base{% else %}badge-primary text-xl{% endif %} hover:badge-secondary transition-colors"
             aria-label="{{ tag }} etiketli {{ count }} yazıya git">
             #{{ tag }}
             <span class="ml-1 opacity-70">{{ count }}</span>
@@ -46,7 +46,7 @@
             <div class="card bg-base-200 shadow-xs">
                 <div class="card-body p-4">
                     <div class="flex justify-between items-center mb-3">
-                        <h3 class="font-bold text-lg">
+                        <h3 class="font-bold text-xl">
                             <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/" class="hover:text-primary transition-colors">
                                 #{{ tag }}
                             </a>

@@ -8,12 +8,10 @@ Authors: yuceltoluyag
 Status: Published
 Summary: Bu yazıda, GitHub Copilot'ı kullanarak commit mesajlarınızı otomatik olarak nasıl tamamlayabileceğinizi ve yazılım geliştirme sürecini nasıl daha verimli hale getirebileceğinizi adım adım öğreneceksiniz.
 Template: article
-Image: images/copilot-commit-lg.webp
+Image: images/copilot-commit-xl.webp
 Series: Git
 Series_index: 6
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987992573967805
-
----
 
 Yazılım geliştirmede sürekli karşılaştığımız bir zorluk var: **anlamlı commit mesajları yazmak**. Hiç düşündünüz mü, bu rutini otomatikleştirebilir misiniz? İyi haber: **GitHub Copilot** artık yaptığınız değişiklikleri analiz edip anlamlı commit mesajları önerebiliyor! 🚀
 
@@ -24,6 +22,7 @@ Bu rehberde, **GitHub Copilot'ın commit mesajlarınızı otomatik tamamlama** �
 Hiç bir projede dolaşırken "Bu değişiklik neden yapılmış?" diye düşündünüz mü? Ya da kendi yazdığınız commit mesajlarına bakıp "Bu ne anlama geliyor?" diye kafa yordunuz mu? İşte tam burada **GitHub Copilot** devreye giriyor.
 
 **GitHub Copilot ile commit mesajları yazmanın avantajları:**
+
 - ⏱️ **Zaman Tasarrufu**: Değişiklikleri manuel olarak açıklamak yerine yapay zeka bunu sizin için yapıyor
 - 🔄 **Tutarlılık**: Tüm ekip üyeleri benzer formatta mesajlar oluşturuyor
 - 📝 **Detay**: Yapılan değişikliklerin kapsamlı ve anlaşılır açıklamaları
@@ -36,6 +35,7 @@ Ayrıca, yapay zeka destekli bu özellik sayesinde, commit mesajlarınız sadece
 GitHub Copilot'ın commit mesajlarınızı tamamlamasını istiyorsanız, önce sisteminize düzgün şekilde kurulması gerekir. İşte VS Code'a GitHub Copilot kurmanın adımları:
 
 ### 1. GitHub Copilot Eklentisini Yükleme
+
 1. **VS Code'u açın**
 2. Klavyenizden <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> tuşlarına basarak **Extensions** bölümünü açın
 3. Arama kutusuna "**GitHub Copilot**" yazın
@@ -43,7 +43,9 @@ GitHub Copilot'ın commit mesajlarınızı tamamlamasını istiyorsanız, önce 
 5. İndirme tamamlandıktan sonra yeniden başlatma gerekebilir
 
 ### 2. GitHub Hesabınızla Bağlantı Kurun
+
 Kurulum tamamlandıktan sonra:
+
 1. VS Code size bir bildirim gösterecek - "**Sign in to GitHub**" seçeneğine tıklayın
 2. Tarayıcınızda GitHub hesabınıza giriş yapın
 3. Gerekli izinleri onaylayın
@@ -58,6 +60,7 @@ GitHub Copilot'ın **sizin stilinize uygun** commit mesajları oluşturması iç
 > **ÖNEMLİ GÜNCELLEME**: GitHub Copilot, özel talimatları yönetmek için yeni bir sistem kullanıyor. Artık talimatlarınızı tek bir `.github/copilot-instructions.md` dosyasında toplamanız gerekiyor.
 
 ### 1. Proje Yapılandırma Dosyalarını Oluşturma
+
 İlk olarak, proje klasörünüzde gerekli dizin ve dosyaları oluşturun:
 ```bash
 mkdir -p .github
@@ -65,6 +68,7 @@ touch .github/copilot-instructions.md
 ```
 
 ### 2. Kod Üslubunuzu ve Commit Mesajı Formatınızı Tanımlayın
+
 `.github/copilot-instructions.md` dosyasını açın ve kodlama tercihlerinizi ile commit mesajı formatınızı belirtin:
 
 ```markdown
@@ -117,6 +121,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0
 ```
 
 ### 3. VS Code Ayarlarını Güncelleyin
+
 `.vscode/settings.json` dosyasını açın ve aşağıdaki kod bloğunu ekleyin:
 
 ```json
@@ -134,6 +139,7 @@ Bu yapılandırma, GitHub Copilot'a kodlama stilinizi ve commit mesajı formatı
 GitHub Copilot'ın **commit mesajlarınızı daha iyi analiz etmesi** için, Git'in verbose modunu etkinleştirmeniz gerekiyor. Bu mod, Copilot'a yaptığınız değişiklikleri daha detaylı göstererek daha doğru öneriler yapmasını sağlar.
 
 Terminali açın ve şu komutu çalıştırın:
+
 ```bash
 git config --global commit.verbose true
 ```
@@ -145,7 +151,9 @@ Bu ayar sayesinde, commit yaparken tüm değişiklikler commit editörünüzde g
 Artık her şey hazır! GitHub Copilot'ı commit mesajlarınızı oluşturmak için şu adımları izleyin:
 
 ### 1. Değişikliklerinizi Stage'leyin
+
 Öncelikle, commit etmek istediğiniz tüm değişiklikleri stage'leyin:
+
 ```bash
 git add .  # Tüm değişiklikleri ekler
 # VEYA
@@ -153,12 +161,15 @@ git add dosya_adı  # Belirli bir dosyayı ekler
 ```
 
 ### 2. Commit Editörünü Açın
+
 Aşağıdaki komutu çalıştırarak commit editörünü açın:
+
 ```bash
 git commit
 ```
 
 ### 3. Copilot'ın Önerilerini Kullanın
+
 VS Code'da commit editörü açıldığında:
 1. Editörün üst kısmında bir **"Generate Commit Message"** (Commit Mesajı Oluştur) butonu göreceksiniz
 2. Bu butona tıklayın
@@ -166,7 +177,7 @@ VS Code'da commit editörü açıldığında:
 4. Önerilen mesajı gözden geçirin ve gerekirse düzenleyin
 5. <kbd>Ctrl</kbd> + <kbd>S</kbd> tuşlarına basarak kaydedin ve editörü kapatın
 
-[responsive_img src="/images/copilot-commit-lg.webp" alt="GitHub Copilot Commit Mesajı Önerisi" /]
+[responsive_img src="/images/copilot-commit-xl.webp" alt="GitHub Copilot Commit Mesajı Önerisi" /]
 
 > **İpucu**: Copilot'ın önerisi istediğiniz gibi değilse, düzenlemekten çekinmeyin. Copilot size sadece bir başlangıç noktası sunar.
 
@@ -175,7 +186,9 @@ VS Code'da commit editörü açıldığında:
 GitHub Copilot ile commit mesajlarınızı daha da etkili hale getirmek için bazı ileri düzey ipuçları:
 
 ### 1. Mantıklı Commit Grupları Oluşturun
+
 **Tek bir commit'te çok fazla değişiklik yapmayın**. Her commit, mantıksal olarak birbiriyle ilişkili değişiklikleri içermelidir. Bu, Copilot'ın değişiklikleri daha iyi analiz etmesini sağlar.
+
 ```bash
 # İyi bir yaklaşım
 git add src/authentication/
@@ -185,7 +198,9 @@ git commit  # "style: giriş formu görünümü iyileştirildi"
 ```
 
 ### 2. Copilot'ın Yanılgılarını Düzeltin
+
 Copilot her zaman mükemmel değildir. Önerdiği commit mesajlarını her zaman **gözden geçirin ve gerekirse düzeltin**. Özellikle:
+
 - **Yazım hataları** olabilir
 - **Değişikliklerin kapsamını** yanlış anlayabilir
 - Nadiren tamamen **alakasız mesajlar** önerebilir
@@ -201,12 +216,14 @@ Bu notlar commit'e dahil edilmez, sadece Copilot'a yardımcı olur.
 ## Sık Karşılaşılan Sorunlar ve Çözümleri
 
 ### ❓ Copilot Commit Mesajı Önermiyorsa
+
 1. **Copilot eklentisinin güncel olduğunu** kontrol edin
 2. VS Code'u yeniden başlatın
 3. GitHub hesabınızın aktif ve bağlı olduğundan emin olun
 4. `--verbose` modunun etkin olduğunu doğrulayın
 
 ### ❓ "Use instructions files instead" Hatası Alıyorum
+
 Bu hata, eski talimat yöntemini kullandığınızda ortaya çıkar. Çözüm için:
 1. `.vscode/settings.json` dosyanızı açın
 2. Eski talimat ayarlarını kaldırın:
@@ -232,6 +249,7 @@ Bu hata, eski talimat yöntemini kullandığınızda ortaya çıkar. Çözüm i�
 4. `.github/copilot-instructions.md` dosyası oluşturun ve talimatlarınızı buraya taşıyın
 
 ### ❓ Öneriler Çok Genel veya Alakasızsa
+
 1. Daha küçük ve odaklanmış commit'ler yapın
 2. `.github/copilot-instructions.md` dosyanızı düzenleyin ve daha spesifik hale getirin
 3. Commit editöründe manuel ipuçları ekleyin
@@ -244,6 +262,7 @@ Bu hata, eski talimat yöntemini kullandığınızda ortaya çıkar. Çözüm i�
 ## Sonuç ve İleriye Bakış
 
 **GitHub Copilot ile commit mesajları oluşturmak**, yazılım geliştirme sürecinizi önemli ölçüde hızlandırır ve projenizin git tarihçesini daha anlaşılır hale getirir. Bu rehberde öğrendiğiniz teknikler sayesinde:
+
 - ⏱️ Her gün önemli miktarda zaman kazanacaksınız
 - 📈 Projenizin bakımı ve takibi kolaylaşacak
 - 🤝 Ekip üyeleri arasında tutarlı commit mesajları sağlayacaksınız

@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: 1 Ocak 2025 itibarıyla Veraset ve İntikal Vergisi istisna tutarı yükseltildi. Yeni sınır ne kadar? Kimleri etkiliyor? Detaylar yazımızda.
 Template: article
-Image: images/nesine-vergi-degisikligi-lg.webp
+Image: images/nesine-vergi-degisikligi-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989521159140020
 
 ## 2025 Yılı Veraset ve İntikal Vergisi Hakkında Bilgilendirme 📈
@@ -105,7 +105,7 @@ Vergi, ödeme yapılmadan önce brüt kazanç üzerinden otomatik olarak kesilir
 Evet, Veraset ve İntikal Vergisi istisna tutarı her yıl yeniden değerleme oranında artırılarak güncellenmektedir.
 
 ---
-[responsive_img src="/images/nesine-vergi-degisikligi-lg.webp" alt="2025 Veraset ve İntikal Vergisi İstisna Limiti Artışı"  /]
+[responsive_img src="/images/nesine-vergi-degisikligi-xl.webp" alt="2025 Veraset ve İntikal Vergisi İstisna Limiti Artışı"  /]
 
 
 

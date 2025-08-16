@@ -9,7 +9,7 @@ Summary: Arch Linux'ta Nvidia ekran kartı kurulumunu, sürücü uyumsuzlukları
 Translation: false
 Status: published
 Template: article
-Image: images/nvidia-linux-performans-ayari-lg.webp
+Image: images/nvidia-linux-performans-ayari-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984688481336401
 
 
@@ -49,8 +49,8 @@ GF106 olarak işaretlediğim kısım kartınıızn ailesini(kod adı) belirtiyor
 
 
 
-[responsive_img src="/images/nvidia-grafik-karti-indirme-lg.webp" alt="Nvidia_Sürücü_Seçme" /]
-[responsive_img src="/images/nvidia-grafik-karti-indirme2-lg.webp" alt="Nvidia_Sürücü_Bilgisi" /]
+[responsive_img src="/images/nvidia-grafik-karti-indirme-xl.webp" alt="Nvidia_Sürücü_Seçme" /]
+[responsive_img src="/images/nvidia-grafik-karti-indirme2-xl.webp" alt="Nvidia_Sürücü_Bilgisi" /]
 
 ## Hangisi Nouveau,Optimus,Prime,Bumblebee
 
@@ -130,16 +130,16 @@ killall picom compton xcompmgr
 daha sonra
 
 
-[responsive_img src="/images/nvidia-linux-performans-ayari-lg.webp" alt="Nvidia_Performans_Ayari" /]
+[responsive_img src="/images/nvidia-linux-performans-ayari-xl.webp" alt="Nvidia_Performans_Ayari" /]
 tiklerini kaldırın. Daha sonra powermizer altında ki auto ayarını resimde ki gibi değiştirin. "Preferer maxium performance seçili"
 
 
-[responsive_img src="/images/nvidia-grafik-ayari-maximum-performans-lg.webp" alt="Nvidia_Performans_Ayari" /]
+[responsive_img src="/images/nvidia-grafik-ayari-maximum-performans-xl.webp" alt="Nvidia_Performans_Ayari" /]
 
 buda verdiği performans bir de en altaki görselde bumblebee performansına bakın :D
 
 
-[responsive_img src="/images/primeperformansi-lg.webp" alt="Nvidia_optirun_performansı" /]
+[responsive_img src="/images/primeperformansi-xl.webp" alt="Nvidia_optirun_performansı" /]
 
 **Bumblebee** : Yerli yabancı tüm kaynaklardan [Bumblebee Kurulumu](https://wiki.archlinux.org/index.php/Bumblebee){: target="_blank" rel="noopener noreferrer"} anlatılır. 26 Nisan 2013 son commitini almış [Bumblebee Github](https://github.com/Bumblebee-Project/Bumblebee){: target="_blank" rel="noopener noreferrer"}. Yıla göre bakarsak en stabil buymuş gibi görünebilir fakat oyun oynayan,render yapan kısacası GPU'yu tam anlamıyla kullanmak isteyen arkadaşlar için verdiği performans tatmin edici gelmeyecektir.Benim ekran kartım için Bumblebee verdiği performans **Windows 'un yarısı kadardı**, bu kimileri için yeterli olabilir ancak benim için değil :)
 
@@ -176,9 +176,9 @@ shutdown -r now
 **Bumblebee** performans vermesiniz istediğimiz uygulamalarda **optirun uygulamaadi** gibi başlatıyoruz. Örneğin **optirun gputest**
 - Dahili Gpu Performansı
 
-[responsive_img src="/images/optirun-dahili-gpu-lg.webp" alt="Dahili Gpu Performansı" /]
+[responsive_img src="/images/optirun-dahili-gpu-xl.webp" alt="Dahili Gpu Performansı" /]
 - Harici Gpu Performansı
-[responsive_img src="/images/optirun-performansi-lg.webp" alt="Harici Gpu Performansı" /]
+[responsive_img src="/images/optirun-performansi-xl.webp" alt="Harici Gpu Performansı" /]
 
 # Videolu Anlatım 
 

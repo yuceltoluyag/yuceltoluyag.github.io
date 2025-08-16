@@ -20,7 +20,7 @@
         idFinder.className = "card bg-base-100 shadow-xs mt-4";
         idFinder.innerHTML = `
             <div class="card-body p-4">
-                <h3 class="text-lg font-bold mb-3 flex items-center">
+                <h3 class="text-xl font-bold mb-3 flex items-center">
                     <iconify-icon icon="tabler:puzzle" class="mr-2"></iconify-icon>
                     Mastodon ID Bulucu
                 </h3>

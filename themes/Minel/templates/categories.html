@@ -17,14 +17,14 @@
         {% for category, articles in categories|sort %}
         <a
             href="{{ SITEURL }}/kategori/{{ category.slug }}/"
-            class="card bg-base-100 hover:shadow-lg transition-shadow p-5 flex items-center gap-4 border border-base-200 group"
+            class="card bg-base-100 hover:shadow-xl transition-shadow p-5 flex items-center gap-4 border border-base-200 group"
             aria-label="{{ category }} kategorisine git">
             <div
-                class="w-12 h-12 flex items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                 <span class="iconify" data-icon="tabler:tag" width="24" height="24"></span>
             </div>
             <div class="flex-1">
-                <h2 class="text-lg font-semibold group-hover:text-primary transition-colors">{{ category }}</h2>
+                <h2 class="text-xl font-semibold group-hover:text-primary transition-colors">{{ category }}</h2>
                 <span class="text-sm text-base-content/70">{{ articles|length }} yazı</span>
             </div>
         </a>
