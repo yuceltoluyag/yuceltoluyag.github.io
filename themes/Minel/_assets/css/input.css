@@ -215,7 +215,7 @@
     }
 
     .header-content p {
-        @apply text-lg md:text-xl max-w-2xl mx-auto mb-8;
+        @apply text-xl md:text-xl max-w-2xl mx-auto mb-8;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 
@@ -712,7 +712,7 @@
 
     /* Mobil TOC menüsü içindeki içerik stilleri */
     #mobile-toc-drawer {
-        @apply shadow-lg border border-base-300;
+        @apply shadow-xl border border-base-300;
 
         /* TOC linkleri için özel stiller */
         a {
@@ -933,7 +933,7 @@
 
                 /* Iconify içerisindeki ikonun boyutu */
                 iconify-icon {
-                    @apply text-lg block;
+                    @apply text-xl block;
                 }
             }
 
@@ -1239,7 +1239,7 @@
         }
 
         h4 {
-            @apply text-lg;
+            @apply text-xl;
         }
 
         h5,
@@ -1508,7 +1508,7 @@
 
         /* İkon boyutu ve hizalama */
         iconify-icon {
-            @apply text-lg;
+            @apply text-xl;
         }
 
         /* Hover efekti */
@@ -1674,14 +1674,14 @@
     }
 
     /* Büyük ikonlar */
-    .iconify-lg {
+    .iconify-xl {
         width: 1.5em;
         height: 1.5em;
     }
 
     /* DaisyUI dropdown için ek stiller */
     .dropdown .dropdown-content {
-        @apply shadow-lg;
+        @apply shadow-xl;
     }
 
     /* Mobil için dropdown menü animasyonu */
@@ -1857,7 +1857,7 @@
 }
 
 .mastodon-comment .author .avatar img {
-    @apply mr-4 min-w-[60px] w-[60px] h-[60px] rounded-lg;
+    @apply mr-4 min-w-[60px] w-[60px] h-[60px] rounded-xl;
 }
 
 .mastodon-comment .author .details {

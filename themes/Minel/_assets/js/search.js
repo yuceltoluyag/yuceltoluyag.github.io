@@ -173,7 +173,7 @@ function displayResults(results, query) {
 
         resultItem.innerHTML = `
             <div class="card-body p-4">
-                <h3 class="font-bold text-lg mb-1">
+                <h3 class="font-bold text-xl mb-1">
                     <a href="${fullUrl}" class="hover:text-primary transition-colors result-link">${highlightText(
             result.title,
             query

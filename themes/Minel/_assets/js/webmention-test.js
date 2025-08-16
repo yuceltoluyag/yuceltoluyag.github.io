@@ -13,7 +13,7 @@
         // Test container oluştur
         const container = document.createElement("div");
         container.className =
-            "fixed bottom-5 right-5 w-11/12 max-w-md max-h-[80vh] overflow-y-auto bg-base-100 rounded-lg shadow-xl p-5 z-50";
+            "fixed bottom-5 right-5 w-11/12 max-w-md max-h-[80vh] overflow-y-auto bg-base-100 rounded-xl shadow-xl p-5 z-50";
 
         // URL düzenleme fonksiyonu
         function formatTestUrl(url) {
@@ -26,7 +26,7 @@
         // Başlık
         const title = document.createElement("h3");
         title.textContent = "Webmention Test Aracı";
-        title.className = "text-lg font-semibold mb-4 pb-2 border-b border-base-200 text-primary";
+        title.className = "text-xl font-semibold mb-4 pb-2 border-b border-base-200 text-primary";
         container.appendChild(title);
 
         // URL giriş alanı
@@ -195,7 +195,7 @@
                             <iconify-icon icon="tabler:message-circle-off" width="28" height="28"></iconify-icon>
                         </div>
                         <div>
-                            <div class="font-medium text-lg">Hiç webmention bulunamadı</div>
+                            <div class="font-medium text-xl">Hiç webmention bulunamadı</div>
                             <div class="text-xs opacity-70">
                                 Webmention göndermek için bu sayfaya bağlantı veren bir blog yazısı yayınlayın.
                             </div>

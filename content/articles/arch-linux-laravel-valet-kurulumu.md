@@ -11,7 +11,7 @@ Summary: Valet Linux, minimalist geliştirme ortamını sevenler için ideal bir
 Translation: false
 Status: published
 Template: article
-Image: images/laravel-valet-kurulumu-linux-lg.webp
+Image: images/laravel-valet-kurulumu-linux-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984831738660096
 
 
@@ -108,7 +108,7 @@ valet links
 ```
 
 
-[responsive_img src="/images/laravel-valet-link-archlinux-lg.webp" alt="Laravel Valet Link Arch Linux" /]
+[responsive_img src="/images/laravel-valet-link-archlinux-xl.webp" alt="Laravel Valet Link Arch Linux" /]
 
 ## 🔧 Domain Uzantısını Değiştirme
 
@@ -157,4 +157,4 @@ valet unsecure projeadi
 
 🎯 Artık Valet ile Laravel projelerinizi hızla geliştirebilir ve yerel ortamınızı optimize edebilirsiniz! 🚀
 
-[responsive_img src="/images/laravel-valet-kurulumu-linux-lg.webp" alt="Laravel Valet Kurulumu" /]
+[responsive_img src="/images/laravel-valet-kurulumu-linux-xl.webp" alt="Laravel Valet Kurulumu" /]

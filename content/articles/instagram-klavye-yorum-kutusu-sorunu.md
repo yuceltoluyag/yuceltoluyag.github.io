@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Android telefonlarda Instagram'da yorum yazarken klavyenin yorum kutusunun üstüne çıkması sinir bozucu olabilir. Bu rehber, problemi kalıcı olarak nasıl çözeceğinizi adım adım anlatıyor.
 Template: article
-Image: images/instagram-klavye-yorum-kutusu-sorunu-lg.webp
+Image: images/instagram-klavye-yorum-kutusu-sorunu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989547479517088
 
 ---
@@ -18,7 +18,7 @@ Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989547479517088
 Instagram kullanıcılarının sıkça yaşadığı ama çözümünü kolay kolay bulamadığı bir sorun var: Yorum kutusuna yazı yazmak isterken klavye ekranın alt kısmında kalmak yerine kutunun üzerine çıkıyor. Yani yorum alanını göremiyorsunuz. Bu da özellikle aktif kullanıcılar için büyük bir sorun haline geliyor.
 
 Peki bu sorunun sebebi ne? Çözüm basit mi? Evet. Bu yazıda sorunun neden kaynaklandığını, hangi ayarın bunu tetiklediğini ve nasıl çözüleceğini adım adım göstereceğiz. Üstelik bu çözüm sadece Instagram için değil, aynı problemi yaşadığınız diğer uygulamalar için de geçerli!
-[responsive_img src="/images/instagram-klavye-yorum-kutusu-sorunu-lg.webp" alt="İnstagram Klavye Sorunu Çözümü" /]
+[responsive_img src="/images/instagram-klavye-yorum-kutusu-sorunu-xl.webp" alt="İnstagram Klavye Sorunu Çözümü" /]
 ---
 
 ## 🧠 Neden Bu Sorun Yaşanıyor?

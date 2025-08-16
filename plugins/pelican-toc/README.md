@@ -9,7 +9,7 @@ Beautifulsoup4 - install via `pip install beautifulsoup4`
 ## theme
 ```
 {% if article.toc %}
-<div class="col-lg-3 hidden-xs hidden-sm">
+<div class="col-xl-3 hidden-xs hidden-sm">
     {{article.toc}}
 </div>
 {% endif %}
@@ -23,7 +23,7 @@ Title: Peeking at erlang/chicagoboss
 ```
 ## output
 ```
-<div class="col-lg-3 hidden-xs hidden-sm">
+<div class="col-xl-3 hidden-xs hidden-sm">
     <div id="toc">
       <ul>
         <li>

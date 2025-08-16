@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux üzerinde Docker kullanarak Ollama ve WebUI kurulumunu, GPU hızlandırma, tek container bundle seçenekleri ve otomatik güncellemeler dahil adım adım anlatan kapsamlı rehber.
 Template: article
-Image: images/arch-linux-ollama-webui-kurulumu-docker-lg.webp
+Image: images/arch-linux-ollama-webui-kurulumu-docker-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989785173302285
 
 # Arch Linux'ta Ollama ve WebUI Kurulumu (Docker ile) 🤖
@@ -210,4 +210,4 @@ Bu rehberde:
 
 ---
 
-[responsive_img src="/images/arch-linux-ollama-webui-kurulumu-docker-lg.webp" alt="rch-linux-ollama-webui-kurulumu-docker" /]
+[responsive_img src="/images/arch-linux-ollama-webui-kurulumu-docker-xl.webp" alt="rch-linux-ollama-webui-kurulumu-docker" /]

@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: GPU soğutmasında sıvı metal kullanımı hakkında bilmeniz gereken her şey. Alüminyum reaksiyonları, doğru yüzey seçimi, malzeme önerileri ve detaylı uygulama rehberi.
 Template: article
-Image: /images/rtx-4060-sıvı-metal-lg.webp
+Image: /images/rtx-4060-sıvı-metal-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988983481909917
 
 <div class="alert alert-warning">
@@ -40,11 +40,11 @@ Bu yüzden sıvı metal uygularken kesinlikle yüzeyin **alüminyum olmadığın
 ### Yüzey Malzemesini Nasıl Anlarsınız?
 
 * **Alüminyum** resmi:
-  [responsive_img src="/images/alimunyum-lg.webp" alt="Alüminyum" /]
+  [responsive_img src="/images/alimunyum-xl.webp" alt="Alüminyum" /]
 
 * **Nikel** resmi:
   
-  [responsive_img src="/images/hurda-nikel-bursada-lg.webp" alt="Nikel Resmi" /]
+  [responsive_img src="/images/hurda-nikel-bursada-xl.webp" alt="Nikel Resmi" /]
 ### Pratik Yöntem: Mıknatıs Testi
 
 * **Mıknatıs nikeli çeker**.
@@ -153,7 +153,7 @@ Bu bölümde işlemleri tek tek numaralandırıyoruz:
 * Soğutma bloğunun çekirdeğe ve VRAM'lere tam temas ettiğinden gözle kontrol edin.
 
 
-[responsive_img src="/images/rtx-4060-sıvı-metal-lg.webp" alt="4060 sıvı metal" /]
+[responsive_img src="/images/rtx-4060-sıvı-metal-xl.webp" alt="4060 sıvı metal" /]
 ---
 
 # Sonuç

@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published  
 Summary: Arch Linux'ta Android Studio kurmadan Flutter geliştirme ortamı kurulumu. 2025 güncel paketleri ve Java 24 desteği ile hafif ve etkili kurulum.  
 Template: article
-Image: images/arch-linux-flutter-kurulumu-lg.webp
+Image: images/arch-linux-flutter-kurulumu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989730580607107
 
 
@@ -788,6 +788,6 @@ Arch Linux'un bleeding-edge yapısı ile Flutter'ın sürekli gelişen ekosistem
 **Son Güncelleme**: Ağustos 2025  
 **Test Edildi**: Flutter 3.32.8, Java 24 OpenJDK, Android SDK 36, Arch Linux 2025.08
 
-[responsive_img src="/images/arch-linux-flutter-kurulumu-lg.webp" alt="arch-linux-flutter-kurulumu" /]
+[responsive_img src="/images/arch-linux-flutter-kurulumu-xl.webp" alt="arch-linux-flutter-kurulumu" /]
 
-[responsive_img src="/images/arch-linux-flutter-kurulumu-test-lg.webp" alt="arch-linux-flutter-kurulumu" /]
+[responsive_img src="/images/arch-linux-flutter-kurulumu-test-xl.webp" alt="arch-linux-flutter-kurulumu" /]
