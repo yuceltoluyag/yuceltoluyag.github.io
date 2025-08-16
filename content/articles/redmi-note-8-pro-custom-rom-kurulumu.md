@@ -10,7 +10,7 @@ Summary: Redmi Note 8 Pro'ya custom ROM yükleme süreci. ADB, TWRP kurulumu, IM
 Template: article
 Series: Android Rehberleri
 Series_index: 2
-Image: images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-lg.webp
+Image: images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/115011896140683306
 
 # 📱 Redmi Note 8 Pro'ya Custom ROM Yükleme: Arch Linux'ta Adım Adım Kılavuz
@@ -358,6 +358,6 @@ Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 Bus 001 Device 021: ID 18d1:4ee7 Google Inc. Nexus/Pixel Device (charging + debug)
 Vendor ID burada 18d1 (Google Inc.) olarak gözüküyor
 
-[responsive_img src="/images/crDroid-95-lg.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
+[responsive_img src="/images/crDroid-95-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
 
-[responsive_img src="/images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-lg.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
+[responsive_img src="/images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]

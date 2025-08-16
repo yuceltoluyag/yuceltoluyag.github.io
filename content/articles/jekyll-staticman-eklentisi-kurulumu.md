@@ -9,7 +9,7 @@ Summary: Jekyll blog sitesinde yorumlar için Staticman eklentisini kurma sürec
 Translation: false
 Status: published
 Template: article
-Image: images/staticman-lg.webp
+Image: images/staticman-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985225233044622
 
 **Merhaba** 😄
@@ -39,12 +39,12 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 2. Ardından, [Staticman Repo](https://github.com/eduardoboucas/staticman/tree/dev){: target="_blank" rel="noopener noreferrer"}'ya gidin ve burada **dev** branch'ini seçin. Çünkü ana dalda bazı güncellemeler henüz merge edilmemiş durumda. Bu kısımda alt kısımda bulunan **Deploy Heroku** butonuna tıklayın.
 
 
-[responsive_img src="/images/staticman8-lg.webp" alt="heroku-kurulumu]" /]
+[responsive_img src="/images/staticman8-xl.webp" alt="heroku-kurulumu]" /]
 
 3. İlgili ayarları yaparak uygulamanızı deploy edin.
 
 
-[responsive_img src="/images/staticman9-lg.webp" alt="heroku-kurulumu]" /]
+[responsive_img src="/images/staticman9-xl.webp" alt="heroku-kurulumu]" /]
 
 Şimdilik işlem bu kadar, ilerleyen adımlarda ayarları detaylıca düzenleyeceğiz.
 
@@ -52,30 +52,30 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 
 1. İlk önce [Github Apps](https://github.com/settings/apps){: target="_blank" rel="noopener noreferrer"}'dan bir uygulama oluşturun. Uygulama ismini, açıklamasını ve Heroku adresinizi kendinize göre düzenlemeyi unutmayın.
 
-[responsive_img src="/images/staticman-lg.webp" alt="heroku-kurulumu]" /]
-[responsive_img src="/images/staticman2-lg.webp" alt="heroku-kurulumu]" /]
+[responsive_img src="/images/staticman-xl.webp" alt="heroku-kurulumu]" /]
+[responsive_img src="/images/staticman2-xl.webp" alt="heroku-kurulumu]" /]
 
 ## Private Keys (Özel Anahtarlar)
 
 Private keys kısmından **Generate a private key** butonuna tıklayın ve oluşan dosyayı kaydedin. Bu dosyadaki bilgileri Heroku ortam değişkenlerinde kullanacağız.
 
-[responsive_img src="/images/staticman11-lg.webp" alt="heroku-kurulumu]" /]
+[responsive_img src="/images/staticman11-xl.webp" alt="heroku-kurulumu]" /]
 
 ## Github Token'ları
 
 1. [Github Tokens](https://github.com/settings/tokens/){: target="_blank" rel="noopener noreferrer"} sayfasına giderek yeni bir token oluşturun. Token'ınıza şu yetkileri verin:
 
 
-[responsive_img src="/images/staticman3-lg.webp" alt="staticman-kurulumu]" /]
-[responsive_img src="/images/staticman4-lg.webp" alt="staticman-kurulumu]" /]
+[responsive_img src="/images/staticman3-xl.webp" alt="staticman-kurulumu]" /]
+[responsive_img src="/images/staticman4-xl.webp" alt="staticman-kurulumu]" /]
 
 Oluşturduktan sonra size bir kod verilecektir. Bu kodu kaydedin çünkü ilerleyen aşamalarda kullanacağız. Daha sonra oluşturduğunuz uygulamaya tıklayın ve **Install App** kısmından **Install**'a basın.
 
-[responsive_img src="/images/staticman5-lg.webp" alt="staticman-kurulumu]" /]
+[responsive_img src="/images/staticman5-xl.webp" alt="staticman-kurulumu]" /]
 
 Bu adımda, token'ı tüm repolarınızda mı yoksa sadece belirli bir repoda mı kullanmak istediğinizi seçebilirsiniz. Ben sadece tek bir repoda kullanmayı tercih ediyorum.
 
-[responsive_img src="/images/staticman6-lg.webp" alt="staticman-kurulumu]" /]
+[responsive_img src="/images/staticman6-xl.webp" alt="staticman-kurulumu]" /]
 
 Sonrasında **Install** butonuna tıklayın.
 
@@ -83,7 +83,7 @@ Sonrasında **Install** butonuna tıklayın.
 
 Yeni oluşturduğumuz Github hesabını, repomuza davet edeceğiz. Repomuza gidin, **Settings** sekmesine tıklayın. Ardından **Collaborators** kısmından **add people** diyerek oluşturduğunuz bot hesabını ekleyin. Diğer hesabınızla giriş yaparak daveti kabul edin.
 
-[responsive_img src="/images/staticman7-lg.webp" alt="staticman-kurulumu]" /]
+[responsive_img src="/images/staticman7-xl.webp" alt="staticman-kurulumu]" /]
 
 Github ayarlarımız burada tamamlandı! 🤯
 
@@ -199,7 +199,7 @@ https://{HEROKU_ADRESİNİZ}/v3/encrypt/şifrelenecekşey
 Postman üzerinden testler yapmak için doğru ayarları yapmanız gerekecek. Form elemanları kısmındaki `field` ve `options` ayarlarını doğru şekilde yapılandırmalısınız.
 
 
-[responsive_img src="/images/staticman-postman-lg.webp" alt="staticman-kurulumu]" /]
+[responsive_img src="/images/staticman-postman-xl.webp" alt="staticman-kurulumu]" /]
 
 [Canlı Test](https://github.com/Baba-Project/jekyll-staticman/pull/1){: target="_blank" rel="noopener noreferrer"}
 

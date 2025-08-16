@@ -9,7 +9,7 @@ Summary: Smok Nord ile elektronik sigara deneyimlerim.
 Translation: false
 Status: published
 Template: article
-Image: images/esigara-yararlimi-zararlimi-lg.webp
+Image: images/esigara-yararlimi-zararlimi-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984893645827636
 
 # Merhaba
@@ -62,7 +62,7 @@ Diyelim ki **son coiliniz** ömrünü doldurmak üzere ya da yandı, sipariş ve
 # Kullandığım Tatlar
 
 
-[responsive_img src="/images/esigara-yararlimi-zararlimi-lg.webp" alt="Manhattan Likit" /]
+[responsive_img src="/images/esigara-yararlimi-zararlimi-xl.webp" alt="Manhattan Likit" /]
 
 Resimden de anlaşılacağı üzere ben Manhattan likitlerini kullanıyorum. Sık kullandıklarım:
 

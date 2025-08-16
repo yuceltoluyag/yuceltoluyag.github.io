@@ -11,7 +11,7 @@ Summary: Oh My ZSH kurulumu, tema ve eklenti ayarları hakkında detaylı rehber
 Translation: false
 Status: published
 Template: article
-Image: images/oh_my_zsh-lg.webp
+Image: images/oh_my_zsh-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984008847657548
 
 
@@ -54,7 +54,7 @@ Burada kullanıcı satırınızın sonunda `/bin/zsh` yazdığından emin olun. 
 chsh -s /bin/bash
 ```
 
-[responsive_img src="/images/oh_my_zsh-lg.webp" alt="oh-my-zsh" /]
+[responsive_img src="/images/oh_my_zsh-xl.webp" alt="oh-my-zsh" /]
 ## Oh My ZSH Tema Kurulumu 🎨
 
 ```bash

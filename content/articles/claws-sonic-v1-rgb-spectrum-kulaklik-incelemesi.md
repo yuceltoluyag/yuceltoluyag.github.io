@@ -9,7 +9,7 @@ Summary: Claw's Sonic V1 RGB Spectrum 7.1 oyuncu kulaklığına dair detaylı ku
 Translation: false
 Status: published
 Template: article
-Image: images/claws-sonic-v1-rgb-lg.webp
+Image: images/claws-sonic-v1-rgb-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987790374839792
 
 <div class="info-box warning">
@@ -154,4 +154,4 @@ Eğer bütçenizi zorlamadan kaliteli bir kulaklık arıyorsanız ve RGB ışık
 
 ---
 
-[responsive_img src="/images/claws-sonic-v1-rgb-lg.webp" alt="claws-sonic-v1-rgb" /]
+[responsive_img src="/images/claws-sonic-v1-rgb-xl.webp" alt="claws-sonic-v1-rgb" /]

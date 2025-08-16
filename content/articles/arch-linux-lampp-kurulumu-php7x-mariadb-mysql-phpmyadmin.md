@@ -11,7 +11,7 @@ Summary: Bu rehberde, Arch Linux üzerinde Apache, PHP, MariaDB, MySQL ve PhpMyA
 Translation: false
 Status: published
 Template: article
-Image: images/archlinuxlampp-lg.webp
+Image: images/archlinuxlampp-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982780512488089
 
 

@@ -11,7 +11,7 @@ Summary: SSH ve GPG anahtarlarını güvenli bir şekilde yedekleme ve geri yük
 Translation: false  
 Status: published  
 Template: article  
-Image: images/ssh-gpg-yedekleme-geri-yukleme-lg.webp
+Image: images/ssh-gpg-yedekleme-geri-yukleme-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985374923504182
 
 # SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme 🔑
@@ -96,5 +96,5 @@ gpg --import my-private-key.asc
 ## 🎯 Sonuç
 
 Bu adımları takip ederek **SSH ve GPG anahtarlarınızı güvenli bir şekilde yedekleyebilir ve gerektiğinde geri yükleyebilirsiniz**. 🔒 Yedeklerinizi **güvenli bir ortamda** sakladığınızdan emin olun ve yetkisiz kişilerin erişimini engelleyin! 🚀
-[responsive_img src="/images/ssh-gpg-yedekleme-geri-yukleme-lg.webp" alt="ssh-gpg-yedekleme-geri-yukleme" /]
+[responsive_img src="/images/ssh-gpg-yedekleme-geri-yukleme-xl.webp" alt="ssh-gpg-yedekleme-geri-yukleme" /]
 

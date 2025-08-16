@@ -11,7 +11,7 @@ Summary: Zsh içerisinde shopt komutunun nasıl kullanılacağını ve bash uyum
 Translation: false
 Status: published
 Template: article
-Image: images/shopt-lg.webp
+Image: images/shopt-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984474656779593
 
 
@@ -93,4 +93,4 @@ shopt -s cdspell 2> /dev/null
 
 [Zsh Ayarlarım!](https://github.com/yuceltoluyag/WindowsTerminal/blob/main/WSL/.zshrc){: target="_blank" rel="noopener noreferrer"} +  [Script Oluşturucu!](https://github.com/yuceltoluyag/otoscript){: target="_blank" rel="noopener noreferrer"}
 
-[responsive_img src="/images/shopt-lg.webp" alt="shopt" /]
+[responsive_img src="/images/shopt-xl.webp" alt="shopt" /]

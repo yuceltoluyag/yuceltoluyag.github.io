@@ -9,7 +9,7 @@ Summary: Yakın tarihimizle ilgili izlenmesi gereken en önemli belgeselleri der
 Translation: false
 Status: published
 Template: article
-Image: images/her-turk-gencinin-izlemesi-gereken-belgeseller-1-lg.webp
+Image: images/her-turk-gencinin-izlemesi-gereken-belgeseller-1-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984443173742176
 
 
@@ -56,4 +56,4 @@ Eğer yukarıdaki belgeselleri beğendiyseniz, bu videoları da izlemenizi öner
 
 🗂️ **Arşivleme Tavsiyesi:** Bu belgeselleri bulduğunda indirerek arşivlemen iyi olur. Kim bilir, bir gün silinebilir! 😉
 
-[responsive_img src="/images/her-turk-gencinin-izlemesi-gereken-belgeseller-1-lg.webp" alt="her-turk-gencinin-izlemesi-gereken-belgeseller-1" /]
+[responsive_img src="/images/her-turk-gencinin-izlemesi-gereken-belgeseller-1-xl.webp" alt="her-turk-gencinin-izlemesi-gereken-belgeseller-1" /]

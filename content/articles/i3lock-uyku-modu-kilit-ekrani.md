@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: i3lock kullanarak Linux sisteminiz uyku modundan uyandığında ekranın otomatik olarak kilitlenmesini sağlayın. Bu rehber, systemd servisleriyle nasıl yapılandırılacağını adım adım gösteriyor.
 Template: article
-Image: images/wake-up-lock-lg.webp
+Image: images/wake-up-lock-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987898406460144
 
 # i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?
@@ -22,7 +22,7 @@ Güvenlik önemli, özellikle bilgisayarınızı kısa süreliğine bile olsa ba
 İlk adım, sisteminizdeki mevcut ekran kilitleyicilerin otomatik devreye girmesini engellemek. Ben **KDE** masaüstü ortamı kullanıyorum (Arch Linux üzerinde), bu yüzden **KScreenLocker** ayarlarını şu şekilde düzenledim:
 
 
-[responsive_img src="/images/wake-up-lock-lg.webp" alt="RKScreenLocker ayarları" /]
+[responsive_img src="/images/wake-up-lock-xl.webp" alt="RKScreenLocker ayarları" /]
 ⚠️ *"Otomatik olarak kilitle" ve "devam ettiğinde kilitle" gibi seçeneklerin işaretli olmadığından emin olun.*
 
 Ardından `i3lock`'un sisteminizde kurulu olduğundan emin olun. Tavsiyem: [i3lock-color](https://github.com/Raymo111/i3lock-color){: target="_blank" rel="noopener noreferrer"}'u tercih etmeniz. Daha fazla özelleştirme seçeneği sunuyor.

@@ -6,7 +6,7 @@ Tags: wine, wineprefix, linux, oyun, uyumluluk, rehber
 Slug: wineprefix-nedir-nasil-kullanilir
 Authors: yuceltoluyag
 Status: published
-Images: images/wineprefix-nedir-nasil-kullanilir-lg.webp
+Images: images/wineprefix-nedir-nasil-kullanilir-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989615830305083
 
 # 🍷 WinePrefix Nedir ve Neden Önemlidir?
@@ -23,7 +23,7 @@ Bu rehberde:
 * Lutris ve Steam/Proton ile entegrasyon 🎯
 
 Hepsini adım adım gösteriyoruz. 🎯
-[responsive_img src="/images/wineprefix-nedir-nasil-kullanilir-lg.webp" alt="wineprefix-nedir-nasil-kullanilir" /]
+[responsive_img src="/images/wineprefix-nedir-nasil-kullanilir-xl.webp" alt="wineprefix-nedir-nasil-kullanilir" /]
 ---
 
 ## 🧠 1. WinePrefix Nedir?

@@ -9,7 +9,7 @@ Summary: Kullandığım en faydalı Sublime Text eklentilerini ve temalarını t
 Translation: false
 Status: published
 Template: article
-Image: images/AFileIcon-lg.webp
+Image: images/AFileIcon-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114978632312203694
 
 Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika eklenti ve temaları sizlerle paylaşacağım. 🥳
@@ -117,7 +117,7 @@ GitGutter, projenizde yaptığınız değişiklikleri gösteren bir eklentidir. 
 Bu eklenti, seçtiğiniz alanı doğrudan GitHub reposunda aramanıza yardımcı olur. Artık "Acaba bunu nerede yazmışım?" sorusu ortadan kalkıyor.
 
 
-[responsive_img src="/images/GitHubinator-lg.webp" alt="GitHubinator" /]
+[responsive_img src="/images/GitHubinator-xl.webp" alt="GitHubinator" /]
 
 ## GitOpenChangedFiles
 
@@ -130,7 +130,7 @@ GitGutter'dan farkı, yalnızca değişiklik yapılan satırları gösterip, rep
 SublimeLinter, kod hatalarını ve uyarılarını göstermek için harika bir araçtır. [SublimeLinter Dökümantasyonu](http://www.sublimelinter.com){: target="_blank" rel="noopener noreferrer"} adresini mutlaka inceleyin.
 
 
-[responsive_img src="/images/SublimeLinter-lg.webp" alt="SublimeLinter" /]
+[responsive_img src="/images/SublimeLinter-xl.webp" alt="SublimeLinter" /]
 ## ChangeQuotes
 
 Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok kolaylaştırıyor. Hızlı bir işlem için mükemmel bir yardımcıdır.
@@ -140,27 +140,27 @@ Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok
 Bu eklentiyle birlikte, sol taraftaki sidebarda sağ tıkladığınızda pek çok ek özellik eklenir.
 
 
-[responsive_img src="/images/Side​Bar​Enhancements-lg.webp" alt="SidebarEnhancements" /]
+[responsive_img src="/images/Side​Bar​Enhancements-xl.webp" alt="SidebarEnhancements" /]
 ## BracketHighlighter
 
 Bu eklenti, seçtiğiniz etiketi veya parantezi nerede açıp nerede kapandığını görmenizi sağlar.
 
 
-[responsive_img src="/images/BracketHighlighter-lg.webp" alt="BracketHighlighter" /]
+[responsive_img src="/images/BracketHighlighter-xl.webp" alt="BracketHighlighter" /]
 
 ## Gutter Color
 
 Renk seçimlerinizi ekstra bir program kullanmadan rahatça yapabilirsiniz. Ayrıca **Color Highlighter** kullanarak renklerinizi doğrudan görmek mümkündür.
 
 
-[responsive_img src="/images/GutterColor-lg.webp" alt="GutterColor" /]
+[responsive_img src="/images/GutterColor-xl.webp" alt="GutterColor" /]
 
 ## AlignTab
 
 Vim editöründeki tabuler hizalamayı taklit eden bu eklenti, çok sayıda özellik sunuyor.
 
 
-[responsive_img src="/images/AlignTab-lg.webp" alt="AlignTab" /]
+[responsive_img src="/images/AlignTab-xl.webp" alt="AlignTab" /]
 ## AutoFileName
 
 Dosya yollarınızı otomatik olarak tamamlar. Eksik dosya yolları yazıldığında öneri gelmez, böylece hataları azaltabilirsiniz.
@@ -180,7 +180,7 @@ Bu eklenti, kod bloklarınızın üzerine açıklamalar eklemenizi sağlar.
 Dosya uzantılarına göre simgeler ekler, böylece dosyalarınız daha düzenli görünür.
 
 
-[responsive_img src="/images/AFileIcon-lg.webp" alt="AFileIcon" /]
+[responsive_img src="/images/AFileIcon-xl.webp" alt="AFileIcon" /]
 ## Tema
 
 Material Tema kullanıyorum: [Material Theme GitHub Sayfası](https://github.com/equinusocio/material-theme){: target="_blank" rel="noopener noreferrer"}.

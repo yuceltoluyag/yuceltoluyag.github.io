@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan ses hatalarını çözmek için adım adım bir rehber.
 Template: article
-Image: images/Tannenberg-lg.webp
+Image: images/Tannenberg-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988449539697338
 
 
@@ -26,8 +26,8 @@ Ingilizce hatalar:
 > "Ocam Steam'da farklı oyunlarda sorun yok. Tannenberg oyna diyorum veya Verdun, ekran açılıyor ama 'ses motoru başlatılamadı'. Onun dışında sistemde sesim var, sadece bu iki oyunda ses hiç yok \:D"
 > — Galip Dede
 
-[responsive_img src="/images/Tannenberg-lg.webp" alt="Tannenberg Ses Motoru Hatası" /]
-[responsive_img src="/images/verdun-lg.webp" alt="Verdun audio engine error" /]
+[responsive_img src="/images/Tannenberg-xl.webp" alt="Tannenberg Ses Motoru Hatası" /]
+[responsive_img src="/images/verdun-xl.webp" alt="Verdun audio engine error" /]
 
 <div class="info-box warning">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -152,7 +152,7 @@ env PULSE_LATENCY_MSEC=60 SDL_AUDIODRIVER=pulse GDK_BACKEND=x11 SDL_VIDEODRIVER=
 
 Steam Overlay bazı sistemlerde sorun yaratabiliyor. Ayarlardan kapatın.
 
-[responsive_img src="/images/steam_arayuz-lg.webp" alt="Steam Arayüzü" /]
+[responsive_img src="/images/steam_arayuz-xl.webp" alt="Steam Arayüzü" /]
 
 Ek olarak şu komutla `xdg-desktop-portals` paketini kaldırmak çözüm olabilir:
 
@@ -276,4 +276,4 @@ Bu rehberde, Arch Linux üzerinde Steam oyunlarında karşılaşılan ses proble
 > Daha fazla Linux rehberi için takipte kalın!
 
 
-[responsive_img src="/images/Tannenberg-sonuc-lg.webp" alt="Tannenberg Sonuç Mutlu Sonuç" /]
+[responsive_img src="/images/Tannenberg-sonuc-xl.webp" alt="Tannenberg Sonuç Mutlu Sonuç" /]

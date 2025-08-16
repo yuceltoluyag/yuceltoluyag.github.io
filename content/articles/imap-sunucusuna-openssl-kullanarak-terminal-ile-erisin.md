@@ -11,7 +11,7 @@ Summary: IMAP sunucusuna OpenSSL kullanarak terminal ile nasıl bağlanabileceğ
 Translation: false
 Status: published
 Template: article
-Image: images/imap_openssl_terminal-lg.webp
+Image: images/imap_openssl_terminal-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984629648133106
 
 
@@ -316,4 +316,4 @@ tag FETCH 6388 (BODY[n])
 ```
 
 
-[responsive_img src="/images/imap_openssl_terminal-lg.webp" alt="imap_openssl_terminal" /]
+[responsive_img src="/images/imap_openssl_terminal-xl.webp" alt="imap_openssl_terminal" /]

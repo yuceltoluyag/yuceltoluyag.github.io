@@ -11,7 +11,7 @@ Summary: Facebook gruplarında arkadaş ekleme sürecini hızlandırmak ve belir
 Translation: false
 Status: published
 Template: article
-Image: images/facebook-5000-lg.webp
+Image: images/facebook-5000-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982701980625018
 
 Merhaba, Facebook **grup kasma yöntemi** olarak bilinen bazı **JavaScript** kodları paylaşılırdı. Bu kodları tarayıcı konsoluna yapıştırarak arkadaşlarınızı gruba davet edebilirdiniz. Ancak, Facebook ekibi bu durumu engellemek için günlük arkadaş ekleme sınırını **1000**, toplu mesaj gönderme sınırını ise **50** olarak belirlemiştir.
@@ -36,4 +36,4 @@ Test aşamasında **1K, 2K ve 5K** hesaplar kullanarak en uygun süreleri belirl
 
 <lite-youtube videoid="G_oDPhADUso"></lite-youtube>
 
-[responsive_img src="/images/facebook-5000-lg.webp" alt="facebook-5000" /]
+[responsive_img src="/images/facebook-5000-xl.webp" alt="facebook-5000" /]

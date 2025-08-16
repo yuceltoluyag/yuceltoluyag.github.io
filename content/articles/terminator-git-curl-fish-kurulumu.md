@@ -9,7 +9,7 @@ Summary: Linux terminalinizi daha işlevsel ve estetik hale getirmek için Termi
 Translation: false
 Status: published
 Template: article
-Image: images/terminator-git-curl-fish-kurulumu-lg.webp
+Image: images/terminator-git-curl-fish-kurulumu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982841774461789
 
 
@@ -104,4 +104,4 @@ omf install eklenti-adı
 
 <lite-youtube videoid="h78f3V4p09E"></lite-youtube>
 
-[responsive_img src="/images/terminator-git-curl-fish-kurulumu-lg.webp" alt="terminator-git-curl-fish-kurulumu" /]
+[responsive_img src="/images/terminator-git-curl-fish-kurulumu-xl.webp" alt="terminator-git-curl-fish-kurulumu" /]

@@ -9,7 +9,7 @@ Summary: Pelican tabanlı statik blogunuza yorum sistemi entegre etmek istiyorsa
 Translation: false
 Status: published
 Template: article
-Image: images/comment-worker-kurulumu-lg.webp
+Image: images/comment-worker-kurulumu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987818064535152
 
 # Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu ✨
@@ -21,7 +21,7 @@ Statik blog altyapısı kullanan geliştiriciler için dinamik yorum sistemleri 
 `comment-worker`, Cloudflare Workers üzerinde çalışan, kullanıcı yorumlarını GitHub ya da GitLab gibi platformlara JSON dosyası olarak pushlayan modern bir yorum altyapısı çözümüdür. Statik sitelere dinamik içerik eklemenin güvenli ve sürdürülebilir bir yoludur.
 
 
-[responsive_img src="/images/comment-worker-kurulumu-lg.webp" alt="comment-worker-cloudflare-settings" /]
+[responsive_img src="/images/comment-worker-kurulumu-xl.webp" alt="comment-worker-cloudflare-settings" /]
 
 ### Öne Çıkan Özellikleri
 
@@ -93,7 +93,7 @@ Ayrıca kendi örnek projemi de inceleyebilirsiniz: [comment-worker örneği](ht
   - **Pull requests**: read & write
 
 
-[responsive_img src="/images/comment-worker-staticman-app-lg.webp" alt="GHA Permissions" /]
+[responsive_img src="/images/comment-worker-staticman-app-xl.webp" alt="GHA Permissions" /]
 
 ### 3. Ortam Değişkenlerini Ayarlama
 
@@ -122,12 +122,12 @@ Cloudflare Workers Settings kısmından aşağıdaki bilgileri ekleyin:
 </div>
 
 
-[responsive_img src="/images/comment-worker-staticman-lg.webp" alt="comment-worker-cloudflare-settings" /]
+[responsive_img src="/images/comment-worker-staticman-xl.webp" alt="comment-worker-cloudflare-settings" /]
 
 Build ayarlarında da aynı env değişkenlerini tanımlamayı unutmayın:
 
 
-[responsive_img src="/images/comment-worker-staticman-pelican-lg.webp" alt="comment-worker-cloudflare-settings" /]
+[responsive_img src="/images/comment-worker-staticman-pelican-xl.webp" alt="comment-worker-cloudflare-settings" /]
 
 #### Özel Anahtarı PKCS8 Formatına Çevirme 🔐
 

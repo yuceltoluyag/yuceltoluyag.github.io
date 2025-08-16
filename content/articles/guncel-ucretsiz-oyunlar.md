@@ -9,7 +9,7 @@ Summary: Steam, GOG ve Epic gibi platformlardaki güncel ücretsiz oyun duyurula
 Translation: false
 Status: published
 Template: article
-Image: images/ucretsiz-oyunlar-lg.webp
+Image: images/ucretsiz-oyunlar-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984814860970146
 
 ## Güncel Ücretsiz Oyunlar 🎮🚀
@@ -29,4 +29,4 @@ Birden fazla kaynağı tarayan ve şu özelliklere sahip bir sistem geliştirdim
 
 **Steam, Epic, GOG, Keylol, Reddit** ve daha bir çok kaynağı tarayarak en yeni ücretsiz oyun duyurularından haberdar olun! 🚀
 
-[responsive_img src="/images/ucretsiz-oyunlar-lg.webp" alt="Güncel Steam, Epic, GOG Oyunları" /]
+[responsive_img src="/images/ucretsiz-oyunlar-xl.webp" alt="Güncel Steam, Epic, GOG Oyunları" /]

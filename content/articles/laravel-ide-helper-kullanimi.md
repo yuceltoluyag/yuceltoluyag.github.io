@@ -11,7 +11,7 @@ Summary: Laravel IDE Helper paketi ile PHPStorm'da otomatik tamamlama ve kod yar
 Translation: false
 Status: published
 Template: article
-Image: images/laravel_7x_ide_helper-lg.webp
+Image: images/laravel_7x_ide_helper-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984850205763176
 
 
@@ -106,4 +106,4 @@ Bu işlemin sonunda, **User.php** gibi model dosyalarının başında şu şekil
 
 PhpStorm ile ilgili daha fazla yazıya [buradan ulaşabilirsiniz](/etiket/phpstorm/). 🚀
 
-[responsive_img src="/images/laravel_7x_ide_helper-lg.webp" alt="Laravel IDE Helper" /]
+[responsive_img src="/images/laravel_7x_ide_helper-xl.webp" alt="Laravel IDE Helper" /]

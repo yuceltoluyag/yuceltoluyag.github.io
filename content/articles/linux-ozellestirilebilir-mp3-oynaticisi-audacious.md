@@ -9,7 +9,7 @@ Summary: Audacious, Linux için özelleştirilebilir ve güçlü bir MP3 oynatı
 Translation: false
 Status: published
 Template: article
-Image: images/audacious-lg.webp
+Image: images/audacious-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114983963606574479
 
 
@@ -38,4 +38,4 @@ Yılların efsane müzik  🎵 oynatıcıları **Winamp**  ve **AIMP**, Windows 
 
 Audacious, Linux ortamında müzik dinleme deneyiminizi daha keyifli ve kişiselleştirilmiş hale getirecek harika bir oynatıcıdır. 🎧 Kullanım deneyimlerinizi paylaşmayı unutmayın! 😊
 
-[responsive_img src="/images/audacious-lg.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
+[responsive_img src="/images/audacious-xl.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]

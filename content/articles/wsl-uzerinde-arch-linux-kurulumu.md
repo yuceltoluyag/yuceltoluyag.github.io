@@ -9,7 +9,7 @@ Summary: Windows Subsystem for Linux (WSL) üzerinde Arch Linux kurulumunu adım
 Translation: false
 Status: published
 Template: article
-Image: images/wls-archlinux-kurulumu-lg.webp
+Image: images/wls-archlinux-kurulumu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985269244740877
 
 **Merhaba**
@@ -36,7 +36,7 @@ Windows altında Üçüncü parti yazılım olmadan Linux çalıştırmamızı s
 - WSL 2 için Windows 10 versionunuz **2004** veya **daha üstü olmalı** (**19041**) yada **Windows 11** kullanıyor olmalısınız. Sürümünüzü şu şekilde hızlıca öğrenebilirsiniz. `Windows + R`, tuşuna basın gelen ekrana `winver` yazın size sürüm numaranızı gösterecektir.
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu-lg.webp" alt="wsl2-archlinux-kurulumu" /]
+[responsive_img src="/images/wls-archlinux-kurulumu-xl.webp" alt="wsl2-archlinux-kurulumu" /]
 - Eğerki **sürümünüz eski** ise şuradaki adımları takip edebilirsiniz. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual){: target="_blank" rel="noopener noreferrer"}
 
 - [Windows Terminal Özelleştirme](/windows-terminalimi-nasil-ozellestiriyorum){: target="_blank" rel="noopener noreferrer"}
@@ -82,7 +82,7 @@ Daha sonra **sistemi yeniden başlatın** 👀 Bilgisayarınız **yeniden başla
 Kurulum tamamlandıktan sonra sizden **kullanıcı adı** ve **şifre** oluşturmanızı isteyecek. O kısımları doldurun.
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu2-lg.webp" alt="wsl2-archlinux-kurulumu2" /]
+[responsive_img src="/images/wls-archlinux-kurulumu2-xl.webp" alt="wsl2-archlinux-kurulumu2" /]
 ```bash
 
 Enter new UNIX username: kullanıcıadıgirin
@@ -168,7 +168,7 @@ This message is shown once once a day. To disable it please create the
 WSL kurulumumuz buraya kadardı.Artık **terminal** sekmenizde **Ubuntu** dağıtımını görebilirsiniz.
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu3-lg.webp" alt="wsl2-archlinux-kurulumu3" /]
+[responsive_img src="/images/wls-archlinux-kurulumu3-xl.webp" alt="wsl2-archlinux-kurulumu3" /]
 
 Adettendir diyerek ubuntumuzu bir güncelleyelim 🤭
 
@@ -209,11 +209,11 @@ komutunu yazın hangi **distro**nun hangi sürümü kullandığını görebilirs
 - Archlinux.exe yi çalıştırın.
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu4-lg.webp" alt="wsl2-archlinux-kurulumu4" /]
+[responsive_img src="/images/wls-archlinux-kurulumu4-xl.webp" alt="wsl2-archlinux-kurulumu4" /]
 - Kurulum Bittikten sonra terminalinizden **Arch Linux**u başlatın.
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu5-lg.webp" alt="wsl2-archlinux-kurulumu5" /]
+[responsive_img src="/images/wls-archlinux-kurulumu5-xl.webp" alt="wsl2-archlinux-kurulumu5" /]
 - Hemen kullanıcı oluşturalım ve kendimize sudo yetkisi verelim 🤖 **Friday13** benim yerli ve milli nickimdir. Siz oraya **ali** yazın **mehmet** yazın ne yazarsanız yazın ☠️
 
 ```bash
@@ -251,7 +251,7 @@ dosyamızı açıyoruz resimdeki gibi oluşturduğumuz kullanıcıyıda ekliyoru
 ```
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu6-lg.webp" alt="wsl2-archlinux-kurulumu6" /]
+[responsive_img src="/images/wls-archlinux-kurulumu6-xl.webp" alt="wsl2-archlinux-kurulumu6" /]
 Bu satırların başında bulunan **diez(#)** işaretlerini **kaldırıyoruz**. **F3** ardından **enter** ve **F2** ye basarak çıkıyoruz.
 
 - Sistem açıldığında oluşturduğumuz kullanıcıyı varsayılan olarak aktif etmek için
@@ -267,12 +267,12 @@ Arch.exe config --default-user friday13
 ```
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu7-lg.webp" alt="wsl2-archlinux-kurulumu7" /]
+[responsive_img src="/images/wls-archlinux-kurulumu7-xl.webp" alt="wsl2-archlinux-kurulumu7" /]
 
 Daha sonra açık tüm terminalleri **kapatıp** yeniden **açın** ve **Arch** sekmesinden **Arch** seçin. Tada :)
 
 
-[responsive_img src="/images/wls-archlinux-kurulumu8-lg.webp" alt="wsl2-archlinux-kurulumu8" /]
+[responsive_img src="/images/wls-archlinux-kurulumu8-xl.webp" alt="wsl2-archlinux-kurulumu8" /]
 Bundan sonra içerisinde at mı koşturursunuz deveye hendek mi atlatırsınız bilmem : ) Keyfinize göre takılın.
 
 ## Yerel Dosyalarınızı Nasıl İçer aktarırsınız.

@@ -11,7 +11,7 @@ Summary: Git ile GPG imzalı etiket oluşturmayı ve karşılaşılabilecek soru
 Translation: false  
 Status: published  
 Template: article  
-Image: images/git-gpg-imzali-etiket-lg.webp
+Image: images/git-gpg-imzali-etiket-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985361471375070
 
 
@@ -146,5 +146,5 @@ GPG imzaları, **açık kaynak projelerinde, güvenlik gerektiren kurumsal proje
 📌 **Ekstra Bilgi**: Eğer GPG anahtarınızı kaybederseniz, yeni bir anahtar oluşturmanız ve projelerde bu yeni anahtarı kullanmaya başlamanız gerekir. **Eski anahtarınızı iptal etmeyi unutmayın!** 🚨
 
 
-[responsive_img src="/images/git-gpg-imzali-etiket-lg.webp" alt="git-gpg-imzali-etiket" /]
+[responsive_img src="/images/git-gpg-imzali-etiket-xl.webp" alt="git-gpg-imzali-etiket" /]
 
