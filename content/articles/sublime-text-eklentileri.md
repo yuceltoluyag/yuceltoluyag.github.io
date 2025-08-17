@@ -140,7 +140,7 @@ Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok
 Bu eklentiyle birlikte, sol taraftaki sidebarda sağ tıkladığınızda pek çok ek özellik eklenir.
 
 
-[responsive_img src="/images/Side​Bar​Enhancements-xl.webp" alt="SidebarEnhancements" /]
+[responsive_img src="/images/sidebar-enhancements-xl.webp" alt="SidebarEnhancements" /]
 ## BracketHighlighter
 
 Bu eklenti, seçtiğiniz etiketi veya parantezi nerede açıp nerede kapandığını görmenizi sağlar.
