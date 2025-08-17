@@ -352,6 +352,7 @@ REDIRECTS = {
     "/tags/film/": "/etiket/film/",
     "/tags/linux.html": "/etiket/linux/",
     "/tags/zsh.html": "/etiket/zsh/",
+    "/tags/terminal/": "/etiket/terminal/",
     "/tags/sweetalert.html": "/etiket/sweetalert/",
     "/category/tanitim.html": "/kategori/tanitim/",
     "/categories/facebook": "/kategori/facebook/",  # Sonda / olmayan versiyonu koru
@@ -364,6 +365,7 @@ REDIRECTS = {
     "/linuxta-uefi-windows-10-format-usb_14": "/linux-uefi-windows10-usb/",
     "/linuxta-uefi-windows-10-format-usb": "/linux-uefi-windows10-usb/",
     "/guncel-ucretsiz-steam-gog-epic-oyunlari-Kopya": "/guncel-ucretsiz-oyunlar/",
+    "/guncel-ucretsiz-steam-gog-epic-oyunlari": "/guncel-ucretsiz-oyunlar/",
     "/felix-coin-guvenlimidir": "/onemli-degisiklikler/",
     "/vlsub-ile-altyaz-aramaya-son-resimli": "/vlsub-ile-altyazi-aramaya-son/",
     "/terminatorgitcurlfish-yukleme": "/terminator-git-curl-fish-kurulumu",
@@ -395,6 +397,7 @@ REDIRECTS = {
     "/phpstorm-icerisinde-cmder-kullanmak": "/phpstorm-icinde-cmder-kullanmak",
     "/pdo-sum-fonksiyonu-kullanmmorrisjs": "/pdo-sum-fonksiyonu-kullanimi-morris-js",
     "/facebook-toplu-arkadas-eklemegruba": "/facebook-gruba-toplu-arkadas-ekleme",
+    "/facebook-5000-arkadas-ekleme-sureli-v2": "/facebook-5000-arkadas-ekleme-sureli",
     "/linux-uzerinde-apache2-mysql-phpmyadmin": "/linux-apache2-mysql-phpmyadmin-kurulumu",
     "/her-turk-gencinin-izlemesi-gereken": "/her-turk-gencinin-izlemesi-gereken-belgeseller-1",
     "/linux-codeigniter-son-surum-nasl": "/linux-ta-codeigniter-nasil-kurulur",
@@ -402,6 +405,7 @@ REDIRECTS = {
     "/archlinux-valet-kurulumu": "/arch-linux-laravel-valet-kurulumu",
     "/arch-linux-lampp-kurulumuphp7xmariadbmy": "/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin",
     "/jekyll-staticman-eklentisi": "/jekyll-staticman-eklentisi-kurulumu",
+    "/imap-openssl-terminalde-kullanimi": "/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin/",
 }
 
 # Cache Settings
