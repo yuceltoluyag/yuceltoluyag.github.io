@@ -11,7 +11,7 @@ Summary: Oh My ZSH kurulumu, tema ve eklenti ayarları hakkında detaylı rehber
 Translation: false
 Status: published
 Template: article
-Image: images/oh_my_zsh-xl.webp
+Image: images/oh_my_zsh-xl.webp 
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984008847657548
 
 
