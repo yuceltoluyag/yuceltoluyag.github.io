@@ -14,10 +14,10 @@
         "build:all:prod": "cross-env NODE_ENV=production npm-run-all build:prod build:js"
     },
     "dependencies": {
-        "@babel/cli": "^7.28.0",
-        "@babel/preset-env": "^7.28.0",
-        "@tailwindcss/cli": "^4.1.11",
-        "@tailwindcss/postcss": "^4.1.11",
+        "@babel/cli": "^7.28.3",
+        "@babel/preset-env": "^7.28.3",
+        "@tailwindcss/cli": "^4.1.12",
+        "@tailwindcss/postcss": "^4.1.12",
         "autoprefixer": "^10.4.21",
         "chokidar": "^4.0.3",
         "cross-env": "^10.0.0",
@@ -28,7 +28,7 @@
         "postcss-cli": "^11.0.1",
         "postcss-import": "^16.1.1",
         "postcss-nesting": "^13.0.2",
-        "tailwindcss": "^4.1.11",
+        "tailwindcss": "^4.1.12",
         "terser": "^5.43.1"
     },
     "browserslist": {
