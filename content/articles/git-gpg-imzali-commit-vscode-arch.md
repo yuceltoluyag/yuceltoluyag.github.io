@@ -9,7 +9,7 @@ Summary: VSCode terminalinde GPG anahtarıyla imzalı commit atarken yaşanan tu
 Series: Git
 Series_index: 8
 Template: article
-Images: images/git-gpg-imzali-commit-vscode-arch-xl.webp
+Image: images/git-gpg-imzali-commit-vscode-arch-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/115091931044294738
 
 # VSCode ve Arch Linux Üzerinde GPG İmzalı Commit Sorunlarını Çözme Rehberi
