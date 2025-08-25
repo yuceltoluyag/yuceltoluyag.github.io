@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Windows</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/windows.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Windows Terminalimi Nasıl Özelleştiriyorum</title><link href="https://yuceltoluyag.github.io/windows-terminalimi-nasil-ozellestiriyorum/" rel="alternate"/><published>2022-06-26T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2022-06-26:/windows-terminalimi-nasil-ozellestiriyorum/</id><summary type="html">&lt;p&gt;Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağını keşfedin.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Merhaba&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Instagram &amp;uuml;zerinden &lt;strong&gt;hikaye&lt;/strong&gt;lerimi takip edenler, &lt;strong&gt;Windows Terminal&lt;/strong&gt;imi nas&amp;inodot;l &amp;ouml;zelle&amp;scedil;tirdi&amp;gbreve;imi soruyordu. 🙄 Bu konu hakk&amp;inodot;nda blog yaz&amp;inodot;m&amp;inodot; bekleyin dedim ve o beklenen an geldi 😂🥱&lt;/p&gt;
+&lt;h1 id="malzemeler"&gt;Malzemeler 🥗&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Nerd Fonts&lt;/li&gt;
+&lt;li&gt;Windows Terminal Preview&lt;/li&gt;
+&lt;li&gt;Windows PowerShell&lt;/li&gt;
+&lt;li&gt;Scoop&lt;/li&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;li&gt;Oh My Posh&lt;/li&gt;
+&lt;li&gt;Terminal Icons&lt;/li&gt;
+&lt;li&gt;PSReadLine&lt;/li&gt;
+&lt;li&gt;Z&lt;/li&gt;
+&lt;li&gt;PSFzf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="font"&gt;Font&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er terminalinizde &lt;strong&gt;ikon&lt;/strong&gt;lar&amp;inodot;n do&amp;gbreve;ru &amp;scedil;ekilde &lt;strong&gt;g&amp;ouml;r&amp;uuml;nt&amp;uuml;lenmesini&lt;/strong&gt; istiyorsan&amp;inodot;z:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/ryanoasis/nerd-fonts"&gt;Nerd Fonts&lt;/a&gt; &lt;strong&gt;kullanmal&amp;inodot;s&amp;inodot;n&amp;inodot;z&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Nerd Fonts'un tamam&amp;inodot; 2 GB'dan daha fazlad&amp;inodot;r. Hepsini indirmenize gerek yok; be&amp;gbreve;endi&amp;gbreve;iniz fontu se&amp;ccedil;ip kurabilirsiniz. Keyfinize bak&amp;inodot;n! =)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="microsoft-magaza"&gt;Microsoft Ma&amp;gbreve;aza&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.microsoft.com/store/productId/9N0DX20HK701"&gt;Windows Terminal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.microsoft.com/store/productId/9MZ1SNWT0N5D"&gt;PowerShell&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu iki uygulamay&amp;inodot; &lt;strong&gt;kuruyoruz&lt;/strong&gt;. Kurduktan sonra &lt;strong&gt;Windows Terminal&lt;/strong&gt; uygulamam&amp;inodot;z&amp;inodot; &lt;strong&gt;a&amp;ccedil;&amp;inodot;yoruz&lt;/strong&gt; ve &lt;strong&gt;ayarlara&lt;/strong&gt; giriyoruz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="windows-terminal" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/windows-terminal-xl.webp" srcset="/images/windows-terminal-sm.webp 300w, /images/windows-terminal-md.webp 500w, /images/windows-terminal-xl.webp 800w, /images/windows-terminal-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Ayarlara girdikten sonra &lt;strong&gt;g&amp;ouml;r&amp;uuml;n&amp;uuml;m&lt;/strong&gt; sekmesindeki ayarlar&amp;inodot;n&amp;inodot;z &amp;scedil;u &amp;scedil;ekilde &lt;strong&gt;olmal&amp;inodot;&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="windows-terminal2" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/windows-terminal2-xl.webp" srcset="/images/windows-terminal2-sm.webp 300w, /images/windows-terminal2-md.webp 500w, /images/windows-terminal2-xl.webp 800w, /images/windows-terminal2-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Ayarlar&amp;inodot; &lt;strong&gt;kaydettikten&lt;/strong&gt; sonra &lt;strong&gt;Startup&lt;/strong&gt; k&amp;inodot;sm&amp;inodot;na t&amp;inodot;klay&amp;inodot;n. Y&amp;uuml;klemi&amp;scedil; oldu&amp;gbreve;umuz &lt;strong&gt;Powershell&lt;/strong&gt;'i &lt;strong&gt;varsay&amp;inodot;lan&lt;/strong&gt; olarak ayarlay&amp;inodot;n.
+&lt;img alt="windows-terminal3" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/windows-terminal3-xl.webp" srcset="/images/windows-terminal3-sm.webp 300w, /images/windows-terminal3-md.webp 500w, /images/windows-terminal3-xl.webp 800w, /images/windows-terminal3-xl.webp 1200w"/&gt;
+Ayarlar&amp;inodot; &lt;strong&gt;kaydedin&lt;/strong&gt; ve &lt;strong&gt;Defaults&lt;/strong&gt; sekmesine gelin, oradan &lt;strong&gt;Appearance&lt;/strong&gt; k&amp;inodot;sm&amp;inodot;ndan &lt;strong&gt;Font&lt;/strong&gt; ayarlar&amp;inodot;n&amp;inodot;z&amp;inodot; yap&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="windows-terminal4" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/windows-terminal4-xl.webp" srcset="/images/windows-terminal4-sm.webp 300w, /images/windows-terminal4-md.webp 500w, /images/windows-terminal4-xl.webp 800w, /images/windows-terminal4-xl.webp 1200w"/&gt;
+&lt;strong&gt;Font&lt;/strong&gt; ayarlar&amp;inodot;n&amp;inodot;z&amp;inodot; yapt&amp;inodot;ktan sonra ayn&amp;inodot; ekranda bulunan "&lt;strong&gt;Enable Acrylic&lt;/strong&gt;"i &lt;strong&gt;aktif&lt;/strong&gt; hale getirin ve ayarlar&amp;inodot; &lt;strong&gt;kaydedin&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="windows-terminal5" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/windows-terminal5-xl.webp" srcset="/images/windows-terminal5-sm.webp 300w, /images/windows-terminal5-md.webp 500w, /images/windows-terminal5-xl.webp 800w, /images/windows-terminal5-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;T&amp;uuml;m bunlar&amp;inodot; yapt&amp;inodot;ktan sonra &lt;strong&gt;Terminal&lt;/strong&gt;inizi &lt;strong&gt;kapat&amp;inodot;p&lt;/strong&gt; yeniden &lt;strong&gt;a&amp;ccedil;&amp;inodot;n&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id="scoop"&gt;Scoop&lt;/h2&gt;
+&lt;p&gt;Scoop'u kurmak i&amp;ccedil;in s&amp;inodot;ras&amp;inodot;yla a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; yaz&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Set-ExecutionPolicy&lt;span class="w"&gt; &lt;/span&gt;RemoteSigned&lt;span class="w"&gt; &lt;/span&gt;-Scope&lt;span class="w"&gt; &lt;/span&gt;CurrentUser
+irm&lt;span class="w"&gt; &lt;/span&gt;get.scoop.sh&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;iex
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Scoop'u kurduktan sonra, paket &lt;strong&gt;bulunamad&amp;inodot;&lt;/strong&gt; gibi &lt;strong&gt;hatalarla&lt;/strong&gt; kar&amp;scedil;&amp;inodot;la&amp;scedil;mamak i&amp;ccedil;in &amp;scedil;u komutlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;scoop&lt;span class="w"&gt; &lt;/span&gt;bucket&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;main
+scoop&lt;span class="w"&gt; &lt;/span&gt;bucket&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;extras
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Veritaban&amp;inodot;n&amp;inodot; &lt;strong&gt;g&amp;uuml;ncelleyecektir&lt;/strong&gt;. Bu i&amp;scedil;lem biraz &lt;strong&gt;zaman&lt;/strong&gt; alabilir.&lt;/p&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;ktan sonra:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;scoop&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;jq
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'7zip'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;.07&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;64bit&lt;span class="o"&gt;]&lt;/span&gt;
+
+7z2107-x64.msi&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,8&lt;span class="w"&gt; &lt;/span&gt;MB&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[=========================================]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;%
+
+Checking&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;7z2107-x64.msi&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;ok.
+
+Extracting&lt;span class="w"&gt; &lt;/span&gt;7z2107-x64.msi&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;done&lt;/span&gt;.
+
+Linking&lt;span class="w"&gt; &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\7&lt;/span&gt;zip&lt;span class="se"&gt;\c&lt;/span&gt;urrent&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;gt;&lt;span class="w"&gt;  &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\7&lt;/span&gt;zip&lt;span class="se"&gt;\2&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.07
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s1"&gt;'7z'&lt;/span&gt;.
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shortcut&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;7&lt;/span&gt;-Zip&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;7zFM.exe&lt;span class="o"&gt;)&lt;/span&gt;
+
+Persisting&lt;span class="w"&gt; &lt;/span&gt;Codecs
+
+Persisting&lt;span class="w"&gt; &lt;/span&gt;Formats
+
+Running&lt;span class="w"&gt; &lt;/span&gt;post-install&lt;span class="w"&gt; &lt;/span&gt;script...
+
+&lt;span class="s1"&gt;'7zip'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;.07&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;was&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;successfully!
+
+Notes
+
+-----
+
+Add&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;7&lt;/span&gt;-Zip&lt;span class="w"&gt; &lt;/span&gt;as&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;context&lt;span class="w"&gt; &lt;/span&gt;menu&lt;span class="w"&gt; &lt;/span&gt;option&lt;span class="w"&gt; &lt;/span&gt;by&lt;span class="w"&gt; &lt;/span&gt;running:
+
+&lt;span class="s2"&gt;"C:\Users\Friday13\scoop\apps\7zip\current\install-context.reg"&lt;/span&gt;
+
+Installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'curl'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;7&lt;/span&gt;.83.1_1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;64bit&lt;span class="o"&gt;]&lt;/span&gt;
+
+curl-7.83.1_1-win64-mingw.tar.xz&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;,6&lt;span class="w"&gt; &lt;/span&gt;MB&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[=======================]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;%
+
+Checking&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;curl-7.83.1_1-win64-mingw.tar.xz&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;ok.
+
+Extracting&lt;span class="w"&gt; &lt;/span&gt;curl-7.83.1_1-win64-mingw.tar.xz&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;done&lt;/span&gt;.
+
+Linking&lt;span class="w"&gt; &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\c&lt;/span&gt;url&lt;span class="se"&gt;\c&lt;/span&gt;urrent&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;gt;&lt;span class="w"&gt;  &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\c&lt;/span&gt;url&lt;span class="se"&gt;\7&lt;/span&gt;.83.1_1
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s1"&gt;'curl'&lt;/span&gt;.
+
+&lt;span class="s1"&gt;'curl'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;7&lt;/span&gt;.83.1_1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;was&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;successfully!
+
+Installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'jq'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.6&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;64bit&lt;span class="o"&gt;]&lt;/span&gt;
+
+jq-win64.exe&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;,4&lt;span class="w"&gt; &lt;/span&gt;MB&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[===========================================]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;%
+
+Checking&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;jq-win64.exe&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;ok.
+
+Linking&lt;span class="w"&gt; &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\j&lt;/span&gt;q&lt;span class="se"&gt;\c&lt;/span&gt;urrent&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;gt;&lt;span class="w"&gt;  &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\j&lt;/span&gt;q&lt;span class="se"&gt;\1&lt;/span&gt;.6
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s1"&gt;'jq'&lt;/span&gt;.
+
+&lt;span class="s1"&gt;'jq'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.6&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;was&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;successfully!
+
+Installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'sudo'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.2020.01.26&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;64bit&lt;span class="o"&gt;]&lt;/span&gt;
+
+sudo.ps1&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;,2&lt;span class="w"&gt; &lt;/span&gt;KB&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[===============================================]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;%
+
+Checking&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;sudo.ps1&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;ok.
+
+Linking&lt;span class="w"&gt; &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\s&lt;/span&gt;udo&lt;span class="se"&gt;\c&lt;/span&gt;urrent&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;gt;&lt;span class="w"&gt;  &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\s&lt;/span&gt;udo&lt;span class="se"&gt;\0&lt;/span&gt;.2020.01.26
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s1"&gt;'sudo'&lt;/span&gt;.
+
+&lt;span class="s1"&gt;'sudo'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.2020.01.26&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;was&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;successfully!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha sonra &lt;strong&gt;neovim&lt;/strong&gt; ve &lt;strong&gt;gcc&lt;/strong&gt; paketlerini kurun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;scoop&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;neovim&lt;span class="w"&gt; &lt;/span&gt;gcc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'gcc'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.2.0&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;64bit&lt;span class="o"&gt;]&lt;/span&gt;
+
+components-18.0.7z&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;96&lt;/span&gt;,4&lt;span class="w"&gt; &lt;/span&gt;MB&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[====================================]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;%
+
+Checking&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;components-18.0.7z&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;ok.
+
+Extracting&lt;span class="w"&gt; &lt;/span&gt;components-18.0.7z&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;done&lt;/span&gt;.
+
+Running&lt;span class="w"&gt; &lt;/span&gt;pre-install&lt;span class="w"&gt; &lt;/span&gt;script...
+
+Linking&lt;span class="w"&gt; &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\g&lt;/span&gt;cc&lt;span class="se"&gt;\c&lt;/span&gt;urrent&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;gt;&lt;span class="w"&gt;  &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\g&lt;/span&gt;cc&lt;span class="se"&gt;\1&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.2.0
+
+&lt;span class="s1"&gt;'gcc'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.2.0&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;was&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;successfully!
+
+Installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'neovim'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.7.0&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;64bit&lt;span class="o"&gt;]&lt;/span&gt;
+
+nvim-win64.zip&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;36&lt;/span&gt;,4&lt;span class="w"&gt; &lt;/span&gt;MB&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[========================================]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;%
+
+Checking&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;nvim-win64.zip&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;ok.
+
+Extracting&lt;span class="w"&gt; &lt;/span&gt;nvim-win64.zip&lt;span class="w"&gt; &lt;/span&gt;...&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;done&lt;/span&gt;.
+
+Linking&lt;span class="w"&gt; &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\n&lt;/span&gt;eovim&lt;span class="se"&gt;\c&lt;/span&gt;urrent&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&amp;gt;&lt;span class="w"&gt;  &lt;/span&gt;~&lt;span class="se"&gt;\s&lt;/span&gt;coop&lt;span class="se"&gt;\a&lt;/span&gt;pps&lt;span class="se"&gt;\n&lt;/span&gt;eovim&lt;span class="se"&gt;\0&lt;/span&gt;.7.0
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s1"&gt;'nvim'&lt;/span&gt;.
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="s1"&gt;'nvim-qt'&lt;/span&gt;.
+
+Creating&lt;span class="w"&gt; &lt;/span&gt;shortcut&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Neovim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;nvim-qt.exe&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="s1"&gt;'neovim'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.7.0&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;was&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;successfully!
+
+&lt;span class="s1"&gt;'neovim'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;suggests&lt;span class="w"&gt; &lt;/span&gt;installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'extras/vcredist2022'&lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="git-kurulumu"&gt;Git Kurulumu&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;winget&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;--id&lt;span class="w"&gt; &lt;/span&gt;Git.Git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;winget&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;--id&lt;span class="w"&gt; &lt;/span&gt;Git.Git
+
+The&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;msstore&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;requires&lt;span class="w"&gt; &lt;/span&gt;that&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;view&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;following&lt;span class="w"&gt; &lt;/span&gt;agreements&lt;span class="w"&gt; &lt;/span&gt;before&lt;span class="w"&gt; &lt;/span&gt;using.
+
+Terms&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;Transaction:&lt;span class="w"&gt; &lt;/span&gt;https://aka.ms/microsoft-store-terms-of-transaction
+
+The&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;requires&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;current&lt;span class="w"&gt; &lt;/span&gt;machine&lt;span class="err"&gt;'&lt;/span&gt;s&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;-letter&lt;span class="w"&gt; &lt;/span&gt;geographic&lt;span class="w"&gt; &lt;/span&gt;region&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;sent&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;backend&lt;span class="w"&gt; &lt;/span&gt;service&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;properly&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;ex.&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"US"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;.
+
+
+
+Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;agree&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;all&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;agreements&lt;span class="w"&gt; &lt;/span&gt;terms?
+
+&lt;span class="o"&gt;[&lt;/span&gt;Y&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Yes&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;N&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;No:&lt;span class="w"&gt; &lt;/span&gt;Y
+
+Found&lt;span class="w"&gt; &lt;/span&gt;Git&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;Git.Git&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.36.1
+
+This&lt;span class="w"&gt; &lt;/span&gt;application&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;licensed&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;by&lt;span class="w"&gt; &lt;/span&gt;its&lt;span class="w"&gt; &lt;/span&gt;owner.
+
+Microsoft&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;responsible&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;nor&lt;span class="w"&gt; &lt;/span&gt;does&lt;span class="w"&gt; &lt;/span&gt;it&lt;span class="w"&gt; &lt;/span&gt;grant&lt;span class="w"&gt; &lt;/span&gt;any&lt;span class="w"&gt; &lt;/span&gt;licenses&lt;span class="w"&gt; &lt;/span&gt;to,&lt;span class="w"&gt; &lt;/span&gt;third-party&lt;span class="w"&gt; &lt;/span&gt;packages.
+
+Downloading&lt;span class="w"&gt; &lt;/span&gt;https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe
+
+&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&amp;block;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;47&lt;/span&gt;.3&lt;span class="w"&gt; &lt;/span&gt;MB&lt;span class="w"&gt; &lt;/span&gt;/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;47&lt;/span&gt;.3&lt;span class="w"&gt; &lt;/span&gt;MB
+
+Successfully&lt;span class="w"&gt; &lt;/span&gt;verified&lt;span class="w"&gt; &lt;/span&gt;installer&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;hash&lt;/span&gt;
+
+Starting&lt;span class="w"&gt; &lt;/span&gt;package&lt;span class="w"&gt; &lt;/span&gt;install...
+
+Successfully&lt;span class="w"&gt; &lt;/span&gt;installed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;ktan sonra &lt;strong&gt;Git&lt;/strong&gt; ayarlar&amp;inodot;n&amp;inodot;z&amp;inodot; yap&amp;inodot;n&amp;inodot;z. &lt;strong&gt;Bilmiyorsan&amp;inodot;z&lt;/strong&gt;, &lt;a href="https://yuceltoluyag.github.io/git-ssh-key-olusturma-windows/"&gt;Git ssh-key olu&amp;scedil;turma (windows&amp;amp;linux)&lt;/a&gt; yaz&amp;inodot;s&amp;inodot;n&amp;inodot; inceleyebilirsiniz.&lt;/p&gt;
+&lt;h2 id="powershell-config"&gt;Powershell Config&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Kullan&amp;inodot;c&amp;inodot; dizininde&lt;/strong&gt; oldu&amp;gbreve;unuzdan emin olun: &lt;code&gt;C:\Users\Kullan&amp;inodot;c&amp;inodot;Ad&amp;inodot;n&amp;inodot;z&lt;/code&gt;. Bu dizindeyken i&amp;scedil;lemleri yap&amp;inodot;n. &lt;strong&gt;Terminal&lt;/strong&gt;i a&amp;ccedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda varsay&amp;inodot;lan olarak bu dizin a&amp;ccedil;&amp;inodot;l&amp;inodot;r, e&amp;gbreve;er &lt;strong&gt;de&amp;gbreve;i&amp;scedil;tirdiyseniz&lt;/strong&gt; diye s&amp;ouml;yl&amp;uuml;yorum. Sonra vay efendim bizde &lt;strong&gt;olmuyor&lt;/strong&gt; &lt;strong&gt;demeyin&lt;/strong&gt; :)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;.config/powershell
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sonra olu&amp;scedil;turdu&amp;gbreve;umuz bu dizin alt&amp;inodot;nda &lt;strong&gt;user_profile&lt;/strong&gt; ad&amp;inodot;nda dosya &lt;strong&gt;olu&amp;scedil;turuyoruz&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nvim&lt;span class="w"&gt; &lt;/span&gt;.&lt;span class="se"&gt;\.&lt;/span&gt;config&lt;span class="se"&gt;\p&lt;/span&gt;owershell&lt;span class="se"&gt;\u&lt;/span&gt;ser_profile.ps1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;&amp;ccedil;erisine &amp;scedil;u sat&amp;inodot;rlar&amp;inodot; yaz&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# set PowerShell to UTF-8&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;console&lt;span class="o"&gt;]&lt;/span&gt;::InputEncoding&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;console&lt;span class="o"&gt;]&lt;/span&gt;::OutputEncoding&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;New-Object&lt;span class="w"&gt; &lt;/span&gt;System.Text.UTF8Encoding
+
+Import-Module&lt;span class="w"&gt; &lt;/span&gt;posh-git
+&lt;span class="nv"&gt;$omp_config&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;".\material.omp.json"&lt;/span&gt;
+oh-my-posh&lt;span class="w"&gt; &lt;/span&gt;init&lt;span class="w"&gt; &lt;/span&gt;pwsh&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$env&lt;/span&gt;&lt;span class="s2"&gt;:POSH_THEMES_PATH\$omp_config"&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Invoke-Expression
+
+Import-Module&lt;span class="w"&gt; &lt;/span&gt;-Name&lt;span class="w"&gt; &lt;/span&gt;Terminal-Icons
+Set-PSReadLineOption&lt;span class="w"&gt; &lt;/span&gt;-EditMode&lt;span class="w"&gt; &lt;/span&gt;Vi
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha sonra bu ayarlar&amp;inodot; yapt&amp;inodot;ktan sonra:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nvim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$PROFILE&lt;/span&gt;.CurrentUserCurrentHost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;&amp;ccedil;erisine &amp;scedil;unu yaz&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;.&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nv"&gt;$env&lt;/span&gt;:USERPROFILE&lt;span class="se"&gt;\.&lt;/span&gt;config&lt;span class="se"&gt;\p&lt;/span&gt;owershell&lt;span class="se"&gt;\u&lt;/span&gt;ser_profile.ps1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Terminalinizi kapat&amp;inodot;p a&amp;ccedil;&amp;inodot;n. Test edelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Yaz&amp;inodot;n ve size renkli bir bi&amp;ccedil;imde dizinin &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot;n&amp;inodot; verecektir.&lt;/p&gt;
+&lt;h2 id="paketler"&gt;Paketler&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Oh My Posh&lt;/strong&gt; paketimizi kural&amp;inodot;m. S&amp;inodot;ras&amp;inodot;yla iki komutla &lt;strong&gt;terminal&lt;/strong&gt;e yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;p entere bas&amp;inodot;n 😏&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Install-Module&lt;span class="w"&gt; &lt;/span&gt;posh-git&lt;span class="w"&gt; &lt;/span&gt;-Scope&lt;span class="w"&gt; &lt;/span&gt;CurrentUser&lt;span class="w"&gt; &lt;/span&gt;-Force
+winget&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;oh-my-posh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Terminali kapat&amp;inodot;p a&amp;ccedil;&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NVM (NodeJS Version Manager)&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;scoop&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;nvm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# kurduktan sonra terminali kapat&amp;inodot;p a&amp;ccedil;&amp;inodot;n&lt;/span&gt;
+nvm&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;lts
+nvm&lt;span class="w"&gt; &lt;/span&gt;use&lt;span class="w"&gt; &lt;/span&gt;lts&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Hata verirse&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;nvm use lts&lt;/code&gt; yazd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda &amp;scedil;&amp;ouml;yle bir uyar&amp;inodot; al&amp;inodot;yorsan&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;You&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;have&lt;span class="w"&gt; &lt;/span&gt;sufficient&lt;span class="w"&gt; &lt;/span&gt;privilege&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;perform&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;operation.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Terminali kapat&amp;inodot;p y&amp;ouml;netici olarak &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n. Tekrar &lt;code&gt;nvm use lts&lt;/code&gt; yaz&amp;inodot;n ve terminali normal olarak ba&amp;scedil;lat&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Terminal Icons&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Install-Module&lt;span class="w"&gt; &lt;/span&gt;-Name&lt;span class="w"&gt; &lt;/span&gt;Terminal-Icons&lt;span class="w"&gt; &lt;/span&gt;-Repository&lt;span class="w"&gt; &lt;/span&gt;PSGallery&lt;span class="w"&gt; &lt;/span&gt;-Force
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Terminali kapat&amp;inodot;p a&amp;ccedil;&amp;inodot;n, &lt;strong&gt;test&lt;/strong&gt; etmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ll
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Komutunu yaz&amp;inodot;n ve &lt;strong&gt;dosya&lt;/strong&gt; isimlerinin yan&amp;inodot;nda &lt;strong&gt;ikonlar&lt;/strong&gt; g&amp;ouml;rmelisiniz.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Z&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Install-Module&lt;span class="w"&gt; &lt;/span&gt;-Name&lt;span class="w"&gt; &lt;/span&gt;z&lt;span class="w"&gt; &lt;/span&gt;-Force
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;PSReadLine&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Install-Module&lt;span class="w"&gt; &lt;/span&gt;-Name&lt;span class="w"&gt; &lt;/span&gt;PSReadLine&lt;span class="w"&gt; &lt;/span&gt;-AllowPrerelease&lt;span class="w"&gt; &lt;/span&gt;-Scope&lt;span class="w"&gt; &lt;/span&gt;CurrentUser&lt;span class="w"&gt; &lt;/span&gt;-Force&lt;span class="w"&gt; &lt;/span&gt;-SkipPublisherCheck
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;FZF&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;scoop&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;fzf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;output:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Installing&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'fzf'&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.30.0&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;64bit&lt;span class="o"&gt;]&lt;/span&gt;
+...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;PSFzf&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Install-Module&lt;span class="w"&gt; &lt;/span&gt;-Name&lt;span class="w"&gt; &lt;/span&gt;PSFzf&lt;span class="w"&gt; &lt;/span&gt;-Scope&lt;span class="w"&gt; &lt;/span&gt;CurrentUser&lt;span class="w"&gt; &lt;/span&gt;-Force
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="sonuc_1"&gt;Sonu&amp;ccedil;&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="windows-terminal6" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/windows-terminal-son-xl.webp" srcset="/images/windows-terminal-son-sm.webp 300w, /images/windows-terminal-son-md.webp 500w, /images/windows-terminal-son-xl.webp 800w, /images/windows-terminal-son-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="bana-balik-tutmasini-ogretme-bana-balik-ver"&gt;Bana Bal&amp;inodot;k Tutmas&amp;inodot;n&amp;inodot; &amp;Ouml;&amp;gbreve;retme, Bana Bal&amp;inodot;k Ver&lt;/h2&gt;
+&lt;p&gt;Bu yaz&amp;inodot;m&amp;inodot; okuyorsan&amp;inodot;z, muhtemelen &lt;strong&gt;Git&lt;/strong&gt; nedir biliyorsunuzdur 👊 Linux taraf&amp;inodot;nda sorunsuz &amp;ccedil;al&amp;inodot;&amp;scedil;an ara&amp;ccedil;lar &lt;strong&gt;Windows&lt;/strong&gt;ta bazen sorunlu olabiliyor. &amp;Ouml;rne&amp;gbreve;in, &lt;strong&gt;GPG&lt;/strong&gt; kullan&amp;inodot;rken sorun ya&amp;scedil;am&amp;inodot;yorsan&amp;inodot;z, kullanmaya devam edin 🧠 Ancak sorun ya&amp;scedil;&amp;inodot;yorsan&amp;inodot;z, "&lt;strong&gt;gpg4win&lt;/strong&gt;" kullanman&amp;inodot;z&amp;inodot; tavsiye ederim.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;scoop&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;gpg4win
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://github.com/yuceltoluyag/WindowsTerminal"&gt;Windows Terminal DotFiles&lt;/a&gt; ayarlar&amp;inodot;ma buradan ula&amp;scedil;abilir ve kendinize g&amp;ouml;re d&amp;uuml;zenleyebilirsiniz.&lt;/p&gt;</content><category term="Windows"/><category term="windows10"/><category term="linux"/></entry><entry><title>WSL Üzerinde Arch Linux Kurulumu</title><link href="https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/" rel="alternate"/><published>2022-06-26T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2022-06-26:/wsl-uzerinde-arch-linux-kurulumu/</id><summary type="html">&lt;p&gt;Windows Subsystem for Linux (WSL) üzerinde Arch Linux kurulumunu adım adım anlatan rehber.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Merhaba&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.instagram.com/yuceltoluyag/" rel="noopener noreferrer" target="_blank"&gt;&amp;Idot;nstagram&lt;/a&gt; &amp;uuml;zerinden &lt;strong&gt;hikaye&lt;/strong&gt;lerimi takip edenler &lt;strong&gt;WSL&lt;/strong&gt;'ye nas&amp;inodot;l &lt;strong&gt;Arch Linux&lt;/strong&gt; Kurdu&amp;gbreve;umu soruyorlard&amp;inodot;. Kurulum yapabilenler ise &lt;strong&gt;s&amp;uuml;rekli &amp;ccedil;&amp;ouml;kt&amp;uuml;&amp;gbreve;&amp;uuml;nden&lt;/strong&gt; yak&amp;inodot;nd&amp;inodot;lar. Uzun s&amp;uuml;redir kullan&amp;inodot;yorum. &amp;Ccedil;&amp;ouml;kme patlama yanma yak&amp;inodot;lma gibi &amp;scedil;eyler &lt;strong&gt;ya&amp;scedil;amad&amp;inodot;m&lt;/strong&gt;. 😎&lt;/p&gt;
+&lt;h1 id="wsl-nedir-windows-subsytem-linux"&gt;WSL Nedir (Windows Subsytem Linux) ?&lt;/h1&gt;
+&lt;p&gt;Windows alt&amp;inodot;nda &amp;Uuml;&amp;ccedil;&amp;uuml;nc&amp;uuml; parti yaz&amp;inodot;l&amp;inodot;m olmadan Linux &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmam&amp;inodot;z&amp;inodot; sa&amp;gbreve;lar. &lt;strong&gt;WSL 1&lt;/strong&gt; ve &lt;strong&gt;WSL 2&lt;/strong&gt; aras&amp;inodot;nda ne fark var ? &lt;strong&gt;WSL 2&lt;/strong&gt; de &lt;strong&gt;Hyper -V&lt;/strong&gt; teknolojisinin kullan&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot; i&amp;ccedil;in daha &lt;strong&gt;performansl&amp;inodot;&lt;/strong&gt; &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor. &amp;Scedil;u an resmi olarak grafik(&lt;strong&gt;Desktop&lt;/strong&gt;) arabirimi desteklenmesede bir &amp;ccedil;ok kullan&amp;inodot;c&amp;inodot; &lt;strong&gt;DE&lt;/strong&gt; dahil kurulum yap&amp;inodot;p kullan&amp;inodot;yor. &lt;strong&gt;&amp;Ouml;mr&amp;uuml;n&amp;uuml;&lt;/strong&gt; &lt;strong&gt;Linux&lt;/strong&gt; camias&amp;inodot;nda ge&amp;ccedil;iren arkada&amp;scedil;lara kesinlikle &lt;strong&gt;tavsiye ediyorum&lt;/strong&gt; 🤩&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&amp;Ouml;zellik&lt;/th&gt;
+&lt;th&gt;WSL 1&lt;/th&gt;
+&lt;th&gt;WSL 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows ve Linux aras&amp;inodot;nda entegrasyon&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;H&amp;inodot;zl&amp;inodot; &amp;ouml;ny&amp;uuml;kleme s&amp;uuml;releri&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Geleneksel Sanal Makinelere k&amp;inodot;yasla k&amp;uuml;&amp;ccedil;&amp;uuml;k kaynak ayak izi&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VMware ve VirtualBox'&amp;inodot;n g&amp;uuml;ncel s&amp;uuml;r&amp;uuml;mleriyle &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sanal makine Y&amp;ouml;netimi&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tam Linux &amp;Ccedil;ekirde&amp;gbreve;i&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tam sistem &amp;ccedil;a&amp;gbreve;r&amp;inodot; uyumlulu&amp;gbreve;u&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS dosya sistemlerinde performans&lt;/td&gt;
+&lt;td&gt;✅&lt;/td&gt;
+&lt;td&gt;❌&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id="malzemeler"&gt;Malzemeler 🥗&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;WSL 2 i&amp;ccedil;in Windows 10 versionunuz &lt;strong&gt;2004&lt;/strong&gt; veya &lt;strong&gt;daha &amp;uuml;st&amp;uuml; olmal&amp;inodot;&lt;/strong&gt; (&lt;strong&gt;19041&lt;/strong&gt;) yada &lt;strong&gt;Windows 11&lt;/strong&gt; kullan&amp;inodot;yor olmal&amp;inodot;s&amp;inodot;n&amp;inodot;z. S&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;z&amp;uuml; &amp;scedil;u &amp;scedil;ekilde h&amp;inodot;zl&amp;inodot;ca &amp;ouml;&amp;gbreve;renebilirsiniz. &lt;code&gt;Windows + R&lt;/code&gt;, tu&amp;scedil;una bas&amp;inodot;n gelen ekrana &lt;code&gt;winver&lt;/code&gt; yaz&amp;inodot;n size s&amp;uuml;r&amp;uuml;m numaran&amp;inodot;z&amp;inodot; g&amp;ouml;sterecektir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu-xl.webp" srcset="/images/wls-archlinux-kurulumu-sm.webp 300w, /images/wls-archlinux-kurulumu-md.webp 500w, /images/wls-archlinux-kurulumu-xl.webp 800w, /images/wls-archlinux-kurulumu-xl.webp 1200w"/&gt;
+- E&amp;gbreve;erki &lt;strong&gt;s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;z eski&lt;/strong&gt; ise &amp;scedil;uradaki ad&amp;inodot;mlar&amp;inodot; takip edebilirsiniz. &lt;a href="https://docs.microsoft.com/en-us/windows/wsl/install-manual" rel="noopener noreferrer" target="_blank"&gt;Install Linux on Windows with WSL&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="/windows-terminalimi-nasil-ozellestiriyorum" rel="noopener noreferrer" target="_blank"&gt;Windows Terminal &amp;Ouml;zelle&amp;scedil;tirme&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;WSL&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="wsl2-kurulumu"&gt;WSL2 Kurulumu&lt;/h2&gt;
+&lt;p&gt;Terminalinizi &lt;strong&gt;Y&amp;ouml;netici&lt;/strong&gt; olarak ba&amp;scedil;lat&amp;inodot;n. Ve &amp;scedil;u komutu girin.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wsl&lt;span class="w"&gt; &lt;/span&gt;--install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;output&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Installing:&lt;span class="w"&gt; &lt;/span&gt;Virtual&lt;span class="w"&gt; &lt;/span&gt;Machine&lt;span class="w"&gt; &lt;/span&gt;Platform
+
+Virtual&lt;span class="w"&gt; &lt;/span&gt;Machine&lt;span class="w"&gt; &lt;/span&gt;Platform&lt;span class="w"&gt; &lt;/span&gt;has&lt;span class="w"&gt; &lt;/span&gt;been&lt;span class="w"&gt; &lt;/span&gt;installed.
+
+Installing:&lt;span class="w"&gt; &lt;/span&gt;Windows&lt;span class="w"&gt; &lt;/span&gt;Subsystem&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Linux
+
+Windows&lt;span class="w"&gt; &lt;/span&gt;Subsystem&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Linux&lt;span class="w"&gt; &lt;/span&gt;has&lt;span class="w"&gt; &lt;/span&gt;been&lt;span class="w"&gt; &lt;/span&gt;installed.
+
+Downloading:&lt;span class="w"&gt; &lt;/span&gt;WSL&lt;span class="w"&gt; &lt;/span&gt;Kernel
+
+Installing:&lt;span class="w"&gt; &lt;/span&gt;WSL&lt;span class="w"&gt; &lt;/span&gt;Kernel
+
+WSL&lt;span class="w"&gt; &lt;/span&gt;Kernel&lt;span class="w"&gt; &lt;/span&gt;has&lt;span class="w"&gt; &lt;/span&gt;been&lt;span class="w"&gt; &lt;/span&gt;installed.
+
+Downloading:&lt;span class="w"&gt; &lt;/span&gt;Ubuntu
+
+&amp;Idot;stenen&lt;span class="w"&gt; &lt;/span&gt;i&amp;scedil;lem&lt;span class="w"&gt; &lt;/span&gt;ba&amp;scedil;ar&amp;inodot;l&amp;inodot;.&lt;span class="w"&gt; &lt;/span&gt;De&amp;gbreve;i&amp;scedil;iklikler&lt;span class="w"&gt; &lt;/span&gt;sistem&lt;span class="w"&gt; &lt;/span&gt;yeniden&lt;span class="w"&gt; &lt;/span&gt;&amp;ouml;ny&amp;uuml;kleninceye&lt;span class="w"&gt; &lt;/span&gt;kadar&lt;span class="w"&gt; &lt;/span&gt;etkili&lt;span class="w"&gt; &lt;/span&gt;olmayacak.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha sonra &lt;strong&gt;sistemi yeniden ba&amp;scedil;lat&amp;inodot;n&lt;/strong&gt; 👀 Bilgisayar&amp;inodot;n&amp;inodot;z &lt;strong&gt;yeniden ba&amp;scedil;lad&amp;inodot;ktan sonra&lt;/strong&gt; &lt;strong&gt;WSL2&lt;/strong&gt; &lt;strong&gt;kernel update&lt;/strong&gt; paketi ve &lt;strong&gt;Ubuntu Linux&lt;/strong&gt; da&amp;gbreve;&amp;inodot;t&amp;inodot;m&amp;inodot; &lt;strong&gt;otomatik&lt;/strong&gt; olarak y&amp;uuml;klenecektir. Kurulum internet h&amp;inodot;z&amp;inodot;n&amp;inodot;za g&amp;ouml;re de&amp;gbreve;i&amp;scedil;iklik g&amp;ouml;sterecektir.Dondu kald&amp;inodot;m&amp;inodot; acaba diye &amp;scedil;ey edip &lt;strong&gt;terminali kapatmay&amp;inodot;n&lt;/strong&gt; 🤡&lt;/p&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;ktan sonra sizden &lt;strong&gt;kullan&amp;inodot;c&amp;inodot; ad&amp;inodot;&lt;/strong&gt; ve &lt;strong&gt;&amp;scedil;ifre&lt;/strong&gt; olu&amp;scedil;turman&amp;inodot;z&amp;inodot; isteyecek. O k&amp;inodot;s&amp;inodot;mlar&amp;inodot; doldurun.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu2" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu2-xl.webp" srcset="/images/wls-archlinux-kurulumu2-sm.webp 300w, /images/wls-archlinux-kurulumu2-md.webp 500w, /images/wls-archlinux-kurulumu2-xl.webp 800w, /images/wls-archlinux-kurulumu2-xl.webp 1200w"/&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Enter&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;UNIX&lt;span class="w"&gt; &lt;/span&gt;username:&lt;span class="w"&gt; &lt;/span&gt;kullan&amp;inodot;c&amp;inodot;ad&amp;inodot;girin
+
+New&lt;span class="w"&gt; &lt;/span&gt;password:&amp;Scedil;ifre&lt;span class="w"&gt; &lt;/span&gt;Girin
+
+Retype&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;password:&lt;span class="w"&gt; &lt;/span&gt;&amp;Scedil;ifrenizi&lt;span class="w"&gt; &lt;/span&gt;Tekrar&lt;span class="w"&gt; &lt;/span&gt;Girin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;output&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Installing,&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;may&lt;span class="w"&gt; &lt;/span&gt;take&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;few&lt;span class="w"&gt; &lt;/span&gt;minutes...
+
+Please&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;default&lt;span class="w"&gt; &lt;/span&gt;UNIX&lt;span class="w"&gt; &lt;/span&gt;user&lt;span class="w"&gt; &lt;/span&gt;account.&lt;span class="w"&gt; &lt;/span&gt;The&lt;span class="w"&gt; &lt;/span&gt;username&lt;span class="w"&gt; &lt;/span&gt;does&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;need&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;match&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;Windows&lt;span class="w"&gt; &lt;/span&gt;username.
+
+For&lt;span class="w"&gt; &lt;/span&gt;more&lt;span class="w"&gt; &lt;/span&gt;information&lt;span class="w"&gt; &lt;/span&gt;visit:&lt;span class="w"&gt; &lt;/span&gt;https://aka.ms/wslusers
+
+Enter&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;UNIX&lt;span class="w"&gt; &lt;/span&gt;username:&lt;span class="w"&gt; &lt;/span&gt;friday13
+
+New&lt;span class="w"&gt; &lt;/span&gt;password:
+
+Retype&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;password:
+
+passwd:&lt;span class="w"&gt; &lt;/span&gt;password&lt;span class="w"&gt; &lt;/span&gt;updated&lt;span class="w"&gt; &lt;/span&gt;successfully
+
+Installation&lt;span class="w"&gt; &lt;/span&gt;successful!
+
+To&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;as&lt;span class="w"&gt; &lt;/span&gt;administrator&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;user&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"root"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;use&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"sudo &amp;lt;command&amp;gt;"&lt;/span&gt;.
+
+See&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"man sudo_root"&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;details.
+
+
+
+Welcome&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;Ubuntu&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;.04&lt;span class="w"&gt; &lt;/span&gt;LTS&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;GNU/Linux&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.10.16.3-microsoft-standard-WSL2&lt;span class="w"&gt; &lt;/span&gt;x86_64&lt;span class="o"&gt;)&lt;/span&gt;
+
+
+
+*&lt;span class="w"&gt; &lt;/span&gt;Documentation:&lt;span class="w"&gt; &lt;/span&gt;https://help.ubuntu.com
+
+*&lt;span class="w"&gt; &lt;/span&gt;Management:&lt;span class="w"&gt; &lt;/span&gt;https://landscape.canonical.com
+
+*&lt;span class="w"&gt; &lt;/span&gt;Support:&lt;span class="w"&gt; &lt;/span&gt;https://ubuntu.com/advantage
+
+
+
+System&lt;span class="w"&gt; &lt;/span&gt;information&lt;span class="w"&gt; &lt;/span&gt;as&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;Tue&lt;span class="w"&gt; &lt;/span&gt;May&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;03&lt;/span&gt;:07:17&lt;span class="w"&gt; &lt;/span&gt;+03&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2022&lt;/span&gt;
+
+
+
+System&lt;span class="w"&gt; &lt;/span&gt;load:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.18&lt;span class="w"&gt; &lt;/span&gt;Processes:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;
+
+Usage&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;/:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.4%&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;250&lt;/span&gt;.98GB&lt;span class="w"&gt; &lt;/span&gt;Users&lt;span class="w"&gt; &lt;/span&gt;logged&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+
+Memory&lt;span class="w"&gt; &lt;/span&gt;usage:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;%&lt;span class="w"&gt; &lt;/span&gt;IPv4&lt;span class="w"&gt; &lt;/span&gt;address&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;eth0:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;172&lt;/span&gt;.30.160.142
+
+Swap&lt;span class="w"&gt; &lt;/span&gt;usage:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;%
+
+
+
+&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;updates&lt;span class="w"&gt; &lt;/span&gt;can&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;immediately.
+
+&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;these&lt;span class="w"&gt; &lt;/span&gt;updates&lt;span class="w"&gt; &lt;/span&gt;are&lt;span class="w"&gt; &lt;/span&gt;security&lt;span class="w"&gt; &lt;/span&gt;updates.
+
+
+
+
+The&lt;span class="w"&gt; &lt;/span&gt;list&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;available&lt;span class="w"&gt; &lt;/span&gt;updates&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;more&lt;span class="w"&gt; &lt;/span&gt;than&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;week&lt;span class="w"&gt; &lt;/span&gt;old.
+
+To&lt;span class="w"&gt; &lt;/span&gt;check&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;updates&lt;span class="w"&gt; &lt;/span&gt;run:&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+
+
+
+
+This&lt;span class="w"&gt; &lt;/span&gt;message&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;shown&lt;span class="w"&gt; &lt;/span&gt;once&lt;span class="w"&gt; &lt;/span&gt;once&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;day.&lt;span class="w"&gt; &lt;/span&gt;To&lt;span class="w"&gt; &lt;/span&gt;disable&lt;span class="w"&gt; &lt;/span&gt;it&lt;span class="w"&gt; &lt;/span&gt;please&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;the
+
+/home/friday13/.hushlogin&lt;span class="w"&gt; &lt;/span&gt;file.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;WSL kurulumumuz buraya kadard&amp;inodot;.Art&amp;inodot;k &lt;strong&gt;terminal&lt;/strong&gt; sekmenizde &lt;strong&gt;Ubuntu&lt;/strong&gt; da&amp;gbreve;&amp;inodot;t&amp;inodot;m&amp;inodot;n&amp;inodot; g&amp;ouml;rebilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu3" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu3-xl.webp" srcset="/images/wls-archlinux-kurulumu3-sm.webp 300w, /images/wls-archlinux-kurulumu3-md.webp 500w, /images/wls-archlinux-kurulumu3-xl.webp 800w, /images/wls-archlinux-kurulumu3-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Adettendir diyerek ubuntumuzu bir g&amp;uuml;ncelleyelim 🤭&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="archlinux-kurulumu"&gt;Archlinux Kurulumu&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;wsl --set-default-version 2&lt;/code&gt; komutunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n. Baz&amp;inodot; kullan&amp;inodot;c&amp;inodot;lar yukar&amp;inodot;daki k&amp;inodot;s&amp;inodot;mlar&amp;inodot; atlayarak yapabilir 😏 Sistemde hangi &lt;strong&gt;WSL&lt;/strong&gt; s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; kulland&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z&amp;inodot; merak ediyorsan&amp;inodot;z&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wsl&lt;span class="w"&gt; &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;-v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;output&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;NAME&lt;span class="w"&gt; &lt;/span&gt;STATE&lt;span class="w"&gt; &lt;/span&gt;VERSION
+
+*&lt;span class="w"&gt; &lt;/span&gt;Ubuntu&lt;span class="w"&gt; &lt;/span&gt;Running&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;komutunu yaz&amp;inodot;n hangi &lt;strong&gt;distro&lt;/strong&gt;nun hangi s&amp;uuml;r&amp;uuml;m&amp;uuml; kulland&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;rebilirsiniz.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/yuk7/ArchWSL/releases" rel="noopener noreferrer" target="_blank"&gt;ArchWSL&lt;/a&gt; Reposuna gidip son s&amp;uuml;r&amp;uuml;m&amp;uuml; indirin. (Arch.zip)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;C&lt;/code&gt; Dizini alt&amp;inodot;nda &lt;code&gt;archlinux&lt;/code&gt; ad&amp;inodot;nda bir klas&amp;ouml;r olu&amp;scedil;turun.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;Idot;ndirdi&amp;gbreve;iniz dosyay&amp;inodot; zipten &amp;ccedil;&amp;inodot;kart&amp;inodot;n. &amp;Idot;&amp;ccedil;erisinde &lt;code&gt;Arch.exe&lt;/code&gt; ve &lt;code&gt;rootfs.tar.gz&lt;/code&gt; adl&amp;inodot; iki dosyay&amp;inodot; kopyalay&amp;inodot;n ve &lt;code&gt;C:\archlinux&lt;/code&gt; klas&amp;ouml;r&amp;uuml;ne yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Archlinux.exe yi &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu4" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu4-xl.webp" srcset="/images/wls-archlinux-kurulumu4-sm.webp 300w, /images/wls-archlinux-kurulumu4-md.webp 500w, /images/wls-archlinux-kurulumu4-xl.webp 800w, /images/wls-archlinux-kurulumu4-xl.webp 1200w"/&gt;
+- Kurulum Bittikten sonra terminalinizden &lt;strong&gt;Arch Linux&lt;/strong&gt;u ba&amp;scedil;lat&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu5" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu5-xl.webp" srcset="/images/wls-archlinux-kurulumu5-sm.webp 300w, /images/wls-archlinux-kurulumu5-md.webp 500w, /images/wls-archlinux-kurulumu5-xl.webp 800w, /images/wls-archlinux-kurulumu5-xl.webp 1200w"/&gt;
+- Hemen kullan&amp;inodot;c&amp;inodot; olu&amp;scedil;tural&amp;inodot;m ve kendimize sudo yetkisi verelim 🤖 &lt;strong&gt;Friday13&lt;/strong&gt; benim yerli ve milli nickimdir. Siz oraya &lt;strong&gt;ali&lt;/strong&gt; yaz&amp;inodot;n &lt;strong&gt;mehmet&lt;/strong&gt; yaz&amp;inodot;n ne yazarsan&amp;inodot;z yaz&amp;inodot;n ☠️&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;useradd&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;-g&lt;span class="w"&gt; &lt;/span&gt;users&lt;span class="w"&gt; &lt;/span&gt;-G&lt;span class="w"&gt; &lt;/span&gt;optical,storage,wheel,video,audio,users,power,network,log&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;/bin/bash&lt;span class="w"&gt; &lt;/span&gt;friday13&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;#OLU&amp;Scedil;TACA&amp;Gbreve;INIZKULLANICIADINIG&amp;Idot;R&amp;Idot;N#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;passwd&lt;span class="w"&gt; &lt;/span&gt;friday13&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;#olu&amp;scedil;turdu&amp;gbreve;unuz kullan&amp;inodot;c&amp;inodot;n&amp;inodot;n &amp;scedil;ifresini belirleyin.#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;groupadd&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;#sudo grubu ekleyelim#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/sudoers
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;dosyam&amp;inodot;z&amp;inodot; a&amp;ccedil;&amp;inodot;yoruz resimdeki gibi olu&amp;scedil;turdu&amp;gbreve;umuz kullan&amp;inodot;c&amp;inodot;y&amp;inodot;da ekliyoruz.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;%wheel&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ALL&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;ALL&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;NOPASSWD:
+
+%sudo&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ALL&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;ALL&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ALL
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu6" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu6-xl.webp" srcset="/images/wls-archlinux-kurulumu6-sm.webp 300w, /images/wls-archlinux-kurulumu6-md.webp 500w, /images/wls-archlinux-kurulumu6-xl.webp 800w, /images/wls-archlinux-kurulumu6-xl.webp 1200w"/&gt;
+Bu sat&amp;inodot;rlar&amp;inodot;n ba&amp;scedil;&amp;inodot;nda bulunan &lt;strong&gt;diez(#)&lt;/strong&gt; i&amp;scedil;aretlerini &lt;strong&gt;kald&amp;inodot;r&amp;inodot;yoruz&lt;/strong&gt;. &lt;strong&gt;F3&lt;/strong&gt; ard&amp;inodot;ndan &lt;strong&gt;enter&lt;/strong&gt; ve &lt;strong&gt;F2&lt;/strong&gt; ye basarak &amp;ccedil;&amp;inodot;k&amp;inodot;yoruz.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sistem a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda olu&amp;scedil;turdu&amp;gbreve;umuz kullan&amp;inodot;c&amp;inodot;y&amp;inodot; varsay&amp;inodot;lan olarak aktif etmek i&amp;ccedil;in&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(&lt;strong&gt;Uyar&amp;inodot;&lt;/strong&gt; burada ki komutlar&amp;inodot; &lt;strong&gt;Arch&lt;/strong&gt; terminaline &lt;strong&gt;de&amp;gbreve;il&lt;/strong&gt;,&lt;strong&gt;normal terminal&lt;/strong&gt;e gireceksiniz. 🎃)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C:&lt;span class="se"&gt;\a&lt;/span&gt;rchlinux&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;#dizinine gidin&lt;/span&gt;
+
+Arch.exe&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--default-user&lt;span class="w"&gt; &lt;/span&gt;friday13
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu7" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu7-xl.webp" srcset="/images/wls-archlinux-kurulumu7-sm.webp 300w, /images/wls-archlinux-kurulumu7-md.webp 500w, /images/wls-archlinux-kurulumu7-xl.webp 800w, /images/wls-archlinux-kurulumu7-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Daha sonra a&amp;ccedil;&amp;inodot;k t&amp;uuml;m terminalleri &lt;strong&gt;kapat&amp;inodot;p&lt;/strong&gt; yeniden &lt;strong&gt;a&amp;ccedil;&amp;inodot;n&lt;/strong&gt; ve &lt;strong&gt;Arch&lt;/strong&gt; sekmesinden &lt;strong&gt;Arch&lt;/strong&gt; se&amp;ccedil;in. Tada :)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="wsl2-archlinux-kurulumu8" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu8-xl.webp" srcset="/images/wls-archlinux-kurulumu8-sm.webp 300w, /images/wls-archlinux-kurulumu8-md.webp 500w, /images/wls-archlinux-kurulumu8-xl.webp 800w, /images/wls-archlinux-kurulumu8-xl.webp 1200w"/&gt;
+Bundan sonra i&amp;ccedil;erisinde at m&amp;inodot; ko&amp;scedil;turursunuz deveye hendek mi atlat&amp;inodot;rs&amp;inodot;n&amp;inodot;z bilmem : ) Keyfinize g&amp;ouml;re tak&amp;inodot;l&amp;inodot;n.&lt;/p&gt;
+&lt;h2 id="yerel-dosyalarinizi-nasil-icer-aktarirsiniz"&gt;Yerel Dosyalar&amp;inodot;n&amp;inodot;z&amp;inodot; Nas&amp;inodot;l &amp;Idot;&amp;ccedil;er aktar&amp;inodot;rs&amp;inodot;n&amp;inodot;z.&lt;/h2&gt;
+&lt;p&gt;Hali haz&amp;inodot;rda bulunan dosyalar&amp;inodot;n&amp;inodot;z&amp;inodot; &lt;strong&gt;Arch&lt;/strong&gt; i&amp;ccedil;ine aktarmak istiyorsan&amp;inodot;z. &lt;code&gt;Windows + R&lt;/code&gt;tu&amp;scedil;una bas&amp;inodot;n &lt;code&gt;\\wsl$&lt;/code&gt; yaz&amp;inodot;n art&amp;inodot;k dosya dizinindesiniz 🤙&lt;/p&gt;
+&lt;h2 id="ram-ve-cpu-yonetimi"&gt;Ram ve CPU Y&amp;ouml;netimi&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bu komutla sistemde &lt;strong&gt;aktif&lt;/strong&gt; &amp;ccedil;al&amp;inodot;&amp;scedil;an i&amp;scedil;letim sistemlerini listelersiniz. 👨&amp;zwj;💻&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wsl&lt;span class="w"&gt; &lt;/span&gt;--list&lt;span class="w"&gt; &lt;/span&gt;--verbose
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Daha sonra &lt;strong&gt;WSL&lt;/strong&gt; kapat&amp;inodot;yoruz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wsl&lt;span class="w"&gt; &lt;/span&gt;--shutdown
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Kullan&amp;inodot;c&amp;inodot; dizinize gidin &lt;code&gt;C:\Users\&amp;lt;Kullan&amp;inodot;c&amp;inodot;Ad&amp;inodot;n&amp;inodot;z&amp;gt;&lt;/code&gt; i&amp;ccedil;erisine &lt;code&gt;.wslconfig&lt;/code&gt; ad&amp;inodot;nda bir dosya &lt;strong&gt;olu&amp;scedil;turun&lt;/strong&gt;. Ve dosyan&amp;inodot;n i&amp;ccedil;erisini &amp;scedil;&amp;ouml;yle &lt;strong&gt;doldurun&lt;/strong&gt; :&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Ayarlar, WSL 2 &amp;uuml;zerinde &amp;ccedil;al&amp;inodot;&amp;scedil;an t&amp;uuml;m Linux da&amp;gbreve;&amp;inodot;t&amp;inodot;mlar&amp;inodot;nda ge&amp;ccedil;erlidir&lt;/span&gt;
+
+&lt;span class="c1"&gt;# "free -m" ile wsl2'de Ram haf&amp;inodot;zas&amp;inodot;n&amp;inodot; g&amp;ouml;rebilirsiniz.&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;wsl2&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+
+&lt;span class="c1"&gt;# VM belle&amp;gbreve;ini en fazla 12 GB kullanacak &amp;scedil;ekilde s&amp;inodot;n&amp;inodot;rlar, varsay&amp;inodot;lan olarak RAM'in %50'si&lt;/span&gt;
+
+&lt;span class="nv"&gt;memory&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;12GB
+
+
+
+&lt;span class="c1"&gt;# VM'yi 8 sanal i&amp;scedil;lemci kullanacak &amp;scedil;ekilde ayarlar(&amp;Ccedil;ekirdek say&amp;inodot;n&amp;inodot;za g&amp;ouml;re d&amp;uuml;zenleyin)&lt;/span&gt;
+
+&lt;span class="nv"&gt;processors&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;
+
+
+
+&lt;span class="c1"&gt;# Takas depolama alan&amp;inodot; miktar&amp;inodot;n&amp;inodot; 4 GB olarak ayarlar, varsay&amp;inodot;lan olarak kullan&amp;inodot;labilir RAM'in %25'i&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Kullanmak istemiyorsan&amp;inodot;z 0 yazabilirsiniz.&lt;/span&gt;
+
+&lt;span class="nv"&gt;swap&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4GB
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu ayarlar&amp;inodot; sistem &amp;ouml;zelliklerinize g&amp;ouml;re &lt;strong&gt;de&amp;gbreve;i&amp;scedil;tirmeyi unutmay&amp;inodot;n&lt;/strong&gt;..&lt;/p&gt;
+&lt;h2 id="paketler-ve-ozellestirme"&gt;Paketler ve &amp;Ouml;zelle&amp;scedil;tirme&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;/etc/pacman.conf&lt;/code&gt; dosyam&amp;inodot; d&amp;uuml;zenledim.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sudo pacman -S git openssh base base-devel wget htop neovim curl ruby nodejs python&lt;/code&gt; temel ihtiya&amp;ccedil; paketlerini kurdum.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Paket kurarken &amp;scedil;u uyar&amp;inodot;y&amp;inodot; g&amp;ouml;r&amp;uuml;rseniz&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;fakeroot&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;IgnorePkg/IgnoreGroup.&lt;span class="w"&gt; &lt;/span&gt;Install&lt;span class="w"&gt; &lt;/span&gt;anyway?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;Y/n&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;n&lt;span class="se"&gt;\*\*&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;kesinlikle kald&amp;inodot;rmay&amp;inodot;n&lt;/strong&gt; akl&amp;inodot;n&amp;inodot;zda bulunsun. Ne zaman g&amp;ouml;rseniz &lt;strong&gt;n&lt;/strong&gt; yapin 🐧&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;YAY&lt;/strong&gt; paket y&amp;ouml;neticisini kurdum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://aur.archlinux.org/yay-git.git
+
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;yay-git/
+
+makepkg&lt;span class="w"&gt; &lt;/span&gt;-sri
+
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;..
+
+rm&lt;span class="w"&gt; &lt;/span&gt;-rf&lt;span class="w"&gt; &lt;/span&gt;yay-git/
+
+yay&lt;span class="w"&gt; &lt;/span&gt;-Syyu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ayarlar&amp;inodot;ma &lt;strong&gt;&lt;a href="https://github.com/yuceltoluyag/WindowsTerminal" rel="noopener noreferrer" target="_blank"&gt;Github&lt;/a&gt;&lt;/strong&gt;  Sayfamdan ula&amp;scedil;abilirsiniz.&lt;/p&gt;</content><category term="Windows"/><category term="windows10"/><category term="linux"/></entry><entry><title>Windows Üzerinde Redshift Kullanımı</title><link href="https://yuceltoluyag.github.io/windows-uzerinde-redshift-kullanimi/" rel="alternate"/><published>2019-12-04T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2019-12-04:/windows-uzerinde-redshift-kullanimi/</id><summary type="html">&lt;p&gt;Windows işletim sisteminde Redshift programını nasıl kullanacağınızı adım adım anlatıyoruz. Göz sağlığınızı korumak için en iyi ayarları keşfedin! 👀&lt;/p&gt;</summary><content type="html">&lt;h2 id="redshift-nedir"&gt;🌙 Redshift Nedir?&lt;/h2&gt;
+&lt;p&gt;Redshift, &amp;ouml;zellikle gece saatlerinde bilgisayar kullananlar i&amp;ccedil;in harika bir ara&amp;ccedil;t&amp;inodot;r. Program, g&amp;uuml;n do&amp;gbreve;umu ve g&amp;uuml;n bat&amp;inodot;m&amp;inodot;na g&amp;ouml;re ekran&amp;inodot;n&amp;inodot;z&amp;inodot;n renk s&amp;inodot;cakl&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; ve gamma ayarlar&amp;inodot;n&amp;inodot; otomatik olarak de&amp;gbreve;i&amp;scedil;tirir. B&amp;ouml;ylece g&amp;ouml;z yorgunlu&amp;gbreve;unu azalt&amp;inodot;r ve daha konforlu bir deneyim sunar. 😌&lt;/p&gt;
+&lt;h2 id="alternatif-programlar"&gt;🚀 Alternatif Programlar&lt;/h2&gt;
+&lt;p&gt;Redshift kullanmadan &amp;ouml;nce birka&amp;ccedil; alternatif program denedim:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows Gece I&amp;scedil;&amp;inodot;&amp;gbreve;&amp;inodot; (Night Mode)&lt;/strong&gt;: Windows'un yerle&amp;scedil;ik &amp;ouml;zelli&amp;gbreve;i olsa da esneklik a&amp;ccedil;&amp;inodot;s&amp;inodot;ndan yetersiz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flux&lt;/strong&gt;: &amp;Idot;lk s&amp;uuml;r&amp;uuml;mleri ba&amp;scedil;ar&amp;inodot;l&amp;inodot;yd&amp;inodot;, ancak zamanla baz&amp;inodot; eksiklikler ortaya &amp;ccedil;&amp;inodot;kt&amp;inodot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Redshift&lt;/strong&gt;: Linux'ta uzun s&amp;uuml;redir sorunsuz kulland&amp;inodot;&amp;gbreve;&amp;inodot;m i&amp;ccedil;in Windows'ta da denemeye karar verdim. A&amp;ccedil;&amp;inodot;k kaynakl&amp;inodot; ve &amp;ccedil;apraz platform deste&amp;gbreve;i sayesinde Windows'ta da &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak m&amp;uuml;mk&amp;uuml;n. 💡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="redshift-nasil-kurulur"&gt;🔧 Redshift Nas&amp;inodot;l Kurulur?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/jonls/redshift/releases" rel="noopener noreferrer" target="_blank"&gt;Redshift'in en son s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;&lt;/a&gt; indirin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;C:\Program Files (x86)&lt;/strong&gt; i&amp;ccedil;ine &lt;strong&gt;Redshift&lt;/strong&gt; ad&amp;inodot;nda bir klas&amp;ouml;r olu&amp;scedil;turun.&lt;/li&gt;
+&lt;li&gt;&amp;Idot;ndirdi&amp;gbreve;iniz dosyalar&amp;inodot; bu klas&amp;ouml;r&amp;uuml;n i&amp;ccedil;ine &amp;ccedil;&amp;inodot;kar&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Gamma s&amp;inodot;n&amp;inodot;rlar&amp;inodot;n&amp;inodot; kald&amp;inodot;rmak i&amp;ccedil;in gerekli kay&amp;inodot;t defteri (reg) dosyalar&amp;inodot;na ihtiyac&amp;inodot;n&amp;inodot;z var. &lt;a href="http://www.mediafire.com/file/ylw89legwkyp04t/redshift.7z/file" rel="noopener noreferrer" target="_blank"&gt;Buradan&lt;/a&gt; indirebilirsiniz.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;📂 &lt;strong&gt;Klas&amp;ouml;r d&amp;uuml;zeni &amp;scedil;u &amp;scedil;ekilde olmal&amp;inodot;:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;PowerShell&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Program&lt;/span&gt; &lt;span class="n"&gt;Files&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x86&lt;/span&gt;&lt;span class="p"&gt;)\&lt;/span&gt;&lt;span class="n"&gt;Redshift&lt;/span&gt;
+ &lt;span class="err"&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;/span&gt; &lt;span class="n"&gt;redshift&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exe&lt;/span&gt;
+ &lt;span class="err"&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;/span&gt; &lt;span class="n"&gt;redshift&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+ &lt;span class="err"&gt;&amp;boxvr;&amp;boxh;&amp;boxh;&lt;/span&gt; &lt;span class="n"&gt;di&amp;gbreve;er&lt;/span&gt; &lt;span class="n"&gt;dosyalar&lt;/span&gt;&lt;span class="p"&gt;...&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="redshift-ayarlari"&gt;⚙️ Redshift Ayarlar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Redshift'i ba&amp;scedil;latmadan &amp;ouml;nce baz&amp;inodot; yap&amp;inodot;land&amp;inodot;rmalar yapman&amp;inodot;z gerekiyor:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Windows + R&lt;/strong&gt; tu&amp;scedil;lar&amp;inodot;na basarak &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r penceresini a&amp;ccedil;&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;*&lt;em&gt;%USERPROFILE%\AppData\Local*&lt;/em&gt; dizinine gidin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;redshift.conf&lt;/strong&gt; ad&amp;inodot;nda yeni bir dosya olu&amp;scedil;turun.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.latlong.net/" rel="noopener noreferrer" target="_blank"&gt;LatLong.net&lt;/a&gt; sitesine giderek bulundu&amp;gbreve;unuz konumun enlem (latitude) ve boylam (longitude) bilgilerini al&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;redshift.conf&lt;/strong&gt; dosyan&amp;inodot;z&amp;inodot; a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi d&amp;uuml;zenleyin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;[redshift]
+; G&amp;uuml;n ve gece ekran s&amp;inodot;cakl&amp;inodot;klar&amp;inodot;n&amp;inodot; belirleyin
+temp-day=6500
+temp-night=5500
+transition=1
+brightness-day=1
+brightness-night=0.7
+gamma-day=0.8:0.7:0.8
+gamma-night=0.8
+location-provider=manual
+adjustment-method=wingdi
+
+[manual]
+lat=xx
+lon=yy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;📌 &lt;strong&gt;Not:&lt;/strong&gt; &lt;code&gt;lat=xx&lt;/code&gt; ve &lt;code&gt;lon=yy&lt;/code&gt; k&amp;inodot;s&amp;inodot;mlar&amp;inodot;na kendi konum bilgilerinizi eklemeyi unutmay&amp;inodot;n!&lt;/p&gt;
+&lt;h2 id="redshifti-baslatma"&gt;▶️ Redshift'i Ba&amp;scedil;latma&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Redshift.exe&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Ekran renk s&amp;inodot;cakl&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;n yava&amp;scedil;&amp;ccedil;a de&amp;gbreve;i&amp;scedil;ti&amp;gbreve;ini g&amp;ouml;zlemleyin.&lt;/li&gt;
+&lt;li&gt;E&amp;gbreve;er herhangi bir hata al&amp;inodot;rsan&amp;inodot;z, &lt;strong&gt;redshift.conf&lt;/strong&gt; dosyan&amp;inodot;z&amp;inodot;n do&amp;gbreve;ru yap&amp;inodot;land&amp;inodot;r&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol edin.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;p&gt;Redshift, ekran&amp;inodot;n&amp;inodot;z&amp;inodot; g&amp;ouml;z dostu hale getirerek gece &amp;ccedil;al&amp;inodot;&amp;scedil;malar&amp;inodot;n&amp;inodot;z&amp;inodot; daha konforlu hale getirecektir. 🌟 &amp;Ouml;zellikle programc&amp;inodot;lar, yazarlar ve uzun s&amp;uuml;re bilgisayar ba&amp;scedil;&amp;inodot;nda vakit ge&amp;ccedil;iren herkes i&amp;ccedil;in olduk&amp;ccedil;a faydal&amp;inodot;d&amp;inodot;r. 🖥️💙&lt;/p&gt;
+&lt;p&gt;Sorular&amp;inodot;n&amp;inodot;z&amp;inodot; veya deneyimlerinizi yorumlarda payla&amp;scedil;abilirsiniz! 🎤&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Redshift Windows" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/redshift_windows-xl.webp" srcset="/images/redshift_windows-sm.webp 300w, /images/redshift_windows-md.webp 500w, /images/redshift_windows-xl.webp 800w, /images/redshift_windows-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Windows"/><category term="windows10"/><category term="redshift"/><category term="gece_modu"/></entry></feed>
