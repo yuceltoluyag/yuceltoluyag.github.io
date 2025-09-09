@@ -1,19 +1,11 @@
 version: 2
   updates:
     # Configure Dependabot for Python projects
-    - package-ecosystem: "pip" # For Python projects using pip
-      directory: "/" # Root directory of the project
+    - package-ecosystem: "pip"    # For Python projects using pip
+      directory: "/"              # Root directory of the project
       schedule:
-        interval: "daily" # How often to check for updates
-        # You can adjust the interval as needed (e.g., "weekly").
+        interval: "daily"         # How often to check for updates
       open-pull-requests-limit: 10 # Limits the number of open pull requests
-      # Prioritize security updates by setting them to open immediately
-      security-updates: "auto" 
-      # Enable version updates for all dependencies
-      versioning-strategy: "increase" # Can be "lockfile-only", "increase", or "widen"
-      # Example to ignore certain dependencies (commented out)
+      versioning-strategy: "increase"
       ignore:
-      - dependency-name: "uv"
-      #     versions: ["1.0.0"]
-      # This section is customizable and allows you to ignore specific dependencies or versions.
-      # It's commented out for now, as per the instructions.
+        - dependency-name: "uv"
