@@ -6,13 +6,12 @@
         "build": "postcss ./_assets/css/input.css -o ./static/css/style.css",
         "build:prod": "cross-env NODE_ENV=production postcss ./_assets/css/input.css -o ./static/css/style.css",
         "watch": "postcss ./_assets/css/input.css -o ./static/css/style.css --watch",
-        "build:css": "npx @tailwindcss/cli -i ./_assets/css/input.css -o ./static/css/style.css",
         "tailwind": "npx @tailwindcss/cli -i ./_assets/css/input.css -o ./static/css/style.css --watch",
         "build:js": "node baba.js",
         "watch:js": "node watcher.js",
         "watch:all": "npm-run-all --parallel tailwind build:js watch:js",
-        "build:all": "npm-run-all build:css build:js",
-        "build:all:prod": "cross-env NODE_ENV=production npm-run-all build:css build:js"
+        "build:all": "npm-run-all build:prod build:js",
+        "build:all:prod": "cross-env NODE_ENV=production npm-run-all build:prod build:js"
     },
     "dependencies": {
         "@babel/cli": "^7.28.3",
@@ -23,7 +22,7 @@
         "chokidar": "^4.0.3",
         "cross-env": "^10.0.0",
         "cssnano": "^7.1.1",
-        "daisyui": "^5.1.9",
+        "daisyui": "^5.1.8",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.5.6",
         "postcss-cli": "^11.0.1",
