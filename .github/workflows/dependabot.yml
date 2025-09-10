@@ -1,11 +1,10 @@
 version: 2
-  updates:
-    # Configure Dependabot for Python projects
-    - package-ecosystem: "pip"    # For Python projects using pip
-      directory: "/"              # Root directory of the project
+updates:
+    - package-ecosystem: "pip"
+      directory: "/"
       schedule:
-        interval: "daily"         # How often to check for updates
-      open-pull-requests-limit: 10 # Limits the number of open pull requests
+          interval: "daily"
+      open-pull-requests-limit: 10
       versioning-strategy: "increase"
       ignore:
-        - dependency-name: "uv"
+          - dependency-name: "uv"
