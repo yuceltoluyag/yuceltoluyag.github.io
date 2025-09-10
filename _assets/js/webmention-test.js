@@ -66,11 +66,17 @@
         const urlInfo = document.createElement("div");
         urlInfo.style.cssText = "margin-bottom: 15px; font-size: 13px; color: #718096;";
         if (window.location.href.includes("localhost")) {
-            urlInfo.innerHTML = `
-                <strong style="color: #4a5568;">Not:</strong> Localhost ortamında test yapıyorsunuz. 
-                URL otomatik olarak production adresine çevrildi. Production URL: 
-                <span style="color: #2b6cb0;">${formatTestUrl(window.location.href)}</span>
-            `;
+            // Güvenli XSS önleme: innerHTML yerine textContent + element construction
+            // Not label
+            const strong = document.createElement("strong");
+            strong.style.color = "#4a5568";
+            strong.textContent = "Not:";
+            urlInfo.appendChild(strong);
+            urlInfo.appendChild(document.createTextNode(" Localhost ortamında test yapıyorsunuz. URL otomatik olarak production adresine çevrildi. Production URL: "));
+            const prodUrlSpan = document.createElement("span");
+            prodUrlSpan.style.color = "#2b6cb0";
+            prodUrlSpan.textContent = formatTestUrl(window.location.href);
+            urlInfo.appendChild(prodUrlSpan);
         }
         inputWrapper.appendChild(urlInfo);
 
