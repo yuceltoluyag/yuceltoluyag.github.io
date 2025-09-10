@@ -96,7 +96,8 @@ function displayResults(results, query) {
     searchResults.innerHTML = "";
 
     if (results.length === 0) {
-        searchResults.innerHTML = `<p class="search-no-results">"${query}" için sonuç bulunamadı</p>`;
+        const safeQuery = escapeHTML(query);
+        searchResults.innerHTML = `<p class="search-no-results">"${safeQuery}" için sonuç bulunamadı</p>`;
         return;
     }
 
@@ -164,6 +165,16 @@ function highlightText(text, query) {
 // Regex için özel karakterleri escape et
 function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// HTML meta-karakterleri için escaping
+function escapeHTML(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
 }
 
 // Olay dinleyicileri
