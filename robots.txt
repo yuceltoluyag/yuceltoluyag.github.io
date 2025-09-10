@@ -1,0 +1,60 @@
+# Robots.txt for yuceltoluyag.github.io
+
+Sitemap: https://yuceltoluyag.github.io/sitemap.xml
+
+# Tüm botlar için yönergeler
+User-agent: *
+Allow: /
+
+# Google botları
+User-agent: Googlebot
+Allow: /
+
+# Google Image
+User-agent: Googlebot-Image
+Allow: /*
+
+# Google AdSense
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google Mobile
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Bing botları
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Agresif botlar için sınırlamalar
+User-agent: SemrushBot
+Disallow: /etiket/
+Disallow: /kategori/
+Allow: /
+
+User-agent: AhrefsBot
+Disallow: /etiket/
+Disallow: /kategori/
+Allow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sosyal medya önbellekleme
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Sunucu</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/sunucu.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Arch Linux'ta Ollama ve WebUI Kurulumu</title><link href="https://yuceltoluyag.github.io/arch-linux-ollama-webui-kurulumu-docker/" rel="alternate"/><published>2025-08-07T05:10:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-08-07:/arch-linux-ollama-webui-kurulumu-docker/</id><summary type="html">&lt;p&gt;Arch Linux üzerinde Docker kullanarak Ollama ve WebUI kurulumunu, GPU hızlandırma, tek container bundle seçenekleri ve otomatik güncellemeler dahil adım adım anlatan kapsamlı rehber.&lt;/p&gt;</summary><content type="html">&lt;h1 id="arch-linuxta-ollama-ve-webui-kurulumu-docker-ile"&gt;Arch Linux'ta Ollama ve WebUI Kurulumu (Docker ile) 🤖&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Ollama&lt;/strong&gt;, yerel olarak &amp;ccedil;al&amp;inodot;&amp;scedil;an b&amp;uuml;y&amp;uuml;k dil modellerini (LLM) y&amp;ouml;netmenizi sa&amp;gbreve;layan modern bir platformdur.
+&lt;strong&gt;Open WebUI&lt;/strong&gt; ise bu modelleri taray&amp;inodot;c&amp;inodot; &amp;uuml;zerinden kolayca kullanabilmeniz i&amp;ccedil;in g&amp;ouml;rsel bir aray&amp;uuml;z sunar.
+Bu yaz&amp;inodot;da, &lt;strong&gt;Arch Linux&amp;rsquo;ta Docker kullanarak Ollama ve Open WebUI kurulumunu&lt;/strong&gt;, GPU h&amp;inodot;zland&amp;inodot;rma, tek container bundle kurulum ve otomatik g&amp;uuml;ncellemeler dahil olmak &amp;uuml;zere t&amp;uuml;m y&amp;ouml;ntemleri ad&amp;inodot;m ad&amp;inodot;m &amp;ouml;&amp;gbreve;reneceksiniz.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 E&amp;gbreve;er sisteminizde Docker kurulu de&amp;gbreve;ilse &amp;ouml;nce &lt;a href="/arch-linux-docker-kurulumu"&gt;Arch Linux&amp;rsquo;ta Docker Kurulumu&lt;/a&gt; rehberimize g&amp;ouml;z at&amp;inodot;n.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="websocket-destegi"&gt;🔑 WebSocket Deste&amp;gbreve;i&lt;/h2&gt;
+&lt;p&gt;Open WebUI&amp;rsquo;nin &amp;ccedil;al&amp;inodot;&amp;scedil;abilmesi i&amp;ccedil;in &lt;strong&gt;WebSocket ba&amp;gbreve;lant&amp;inodot; deste&amp;gbreve;i gereklidir&lt;/strong&gt;.
+A&amp;gbreve; yap&amp;inodot;land&amp;inodot;rman&amp;inodot;z&amp;inodot;n WebSocket ba&amp;gbreve;lant&amp;inodot;lar&amp;inodot;n&amp;inodot; engellemedi&amp;gbreve;inden emin olun.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-kurulum-on-kosullari"&gt;1️⃣ Kurulum &amp;Ouml;n Ko&amp;scedil;ullar&amp;inodot;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Arch Linux&lt;/strong&gt; (g&amp;uuml;ncel)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt; kurulu ve &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r durumda&lt;/li&gt;
+&lt;li&gt;&amp;Idot;nternet ba&amp;gbreve;lant&amp;inodot;s&amp;inodot;&lt;/li&gt;
+&lt;li&gt;Minimum &lt;strong&gt;8 GB RAM&lt;/strong&gt; (daha b&amp;uuml;y&amp;uuml;k modeller i&amp;ccedil;in 16 GB+ &amp;ouml;nerilir)&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ollama uygulamas&amp;inodot;&lt;/strong&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;E&amp;gbreve;er Ollama &lt;strong&gt;sisteminizde y&amp;uuml;kl&amp;uuml;&lt;/strong&gt; de&amp;gbreve;ilse &amp;scedil;u komutla y&amp;uuml;kleyin:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-Syyu&lt;span class="w"&gt; &lt;/span&gt;ollama
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  * E&amp;gbreve;er Ollama&amp;rsquo;y&amp;inodot; da Docker i&amp;ccedil;inde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak istiyorsan&amp;inodot;z, &lt;strong&gt;tek container bundle kurulum&lt;/strong&gt; b&amp;ouml;l&amp;uuml;m&amp;uuml;ne bak&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-senaryo-1-bilgisayarda-ollama-yuklu-webui-docker-uzerinden"&gt;2️⃣ Senaryo 1: Bilgisayarda Ollama Y&amp;uuml;kl&amp;uuml; + WebUI Docker &amp;Uuml;zerinden&lt;/h2&gt;
+&lt;p&gt;Bu senaryoda Ollama bilgisayar&amp;inodot;n&amp;inodot;za kurulu olur, WebUI ise Docker i&amp;ccedil;inde &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="cpu-kurulumu"&gt;CPU Kurulumu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3000&lt;/span&gt;:8080&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--add-host&lt;span class="o"&gt;=&lt;/span&gt;host.docker.internal:host-gateway&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;open-webui:/app/backend/data&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--name&lt;span class="w"&gt; &lt;/span&gt;open-webui&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--restart&lt;span class="w"&gt; &lt;/span&gt;always&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;ghcr.io/open-webui/open-webui:main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="nvidia-gpu-destegi-ile-kurulum"&gt;NVIDIA GPU Deste&amp;gbreve;i ile Kurulum&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3000&lt;/span&gt;:8080&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--gpus&lt;span class="w"&gt; &lt;/span&gt;all&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--add-host&lt;span class="o"&gt;=&lt;/span&gt;host.docker.internal:host-gateway&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;open-webui:/app/backend/data&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--name&lt;span class="w"&gt; &lt;/span&gt;open-webui&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--restart&lt;span class="w"&gt; &lt;/span&gt;always&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;ghcr.io/open-webui/open-webui:cuda
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-senaryo-2-ollama-webui-tek-container-bundle-kurulum_1"&gt;3️⃣ Senaryo 2: Ollama + WebUI Tek Container (Bundle Kurulum)&lt;/h2&gt;
+&lt;p&gt;Bu y&amp;ouml;ntemle &lt;strong&gt;tek komutla&lt;/strong&gt; hem Ollama hem Open WebUI kurulmu&amp;scedil; olur.&lt;/p&gt;
+&lt;h3 id="gpu-destekli-kurulum"&gt;GPU Destekli Kurulum&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3000&lt;/span&gt;:8080&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--gpus&lt;span class="o"&gt;=&lt;/span&gt;all&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;ollama:/root/.ollama&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;open-webui:/app/backend/data&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--name&lt;span class="w"&gt; &lt;/span&gt;open-webui&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--restart&lt;span class="w"&gt; &lt;/span&gt;always&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;ghcr.io/open-webui/open-webui:ollama
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="cpu-ile-kurulum"&gt;CPU ile Kurulum&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3000&lt;/span&gt;:8080&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;ollama:/root/.ollama&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;open-webui:/app/backend/data&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--name&lt;span class="w"&gt; &lt;/span&gt;open-webui&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--restart&lt;span class="w"&gt; &lt;/span&gt;always&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;ghcr.io/open-webui/open-webui:ollama
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;✅ Bu y&amp;ouml;ntem, &lt;strong&gt;ba&amp;gbreve;&amp;inodot;ml&amp;inodot;l&amp;inodot;k ve yap&amp;inodot;land&amp;inodot;rma derdi olmadan&lt;/strong&gt; her iki uygulamay&amp;inodot; da tek seferde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;r.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-nvidia-gpu-destegi-detayli_1"&gt;4️⃣ NVIDIA GPU Deste&amp;gbreve;i (Detayl&amp;inodot;)&lt;/h2&gt;
+&lt;p&gt;NVIDIA GPU ile y&amp;uuml;ksek performans almak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;nvidia&lt;span class="w"&gt; &lt;/span&gt;nvidia-utils&lt;span class="w"&gt; &lt;/span&gt;nvidia-container-toolkit
+sudo&lt;span class="w"&gt; &lt;/span&gt;nvidia-ctk&lt;span class="w"&gt; &lt;/span&gt;runtime&lt;span class="w"&gt; &lt;/span&gt;configure&lt;span class="w"&gt; &lt;/span&gt;--runtime&lt;span class="o"&gt;=&lt;/span&gt;docker
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulumu test etmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nvidia-smi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-amd-gpu-rocm-destegi"&gt;5️⃣ AMD GPU (ROCm) Deste&amp;gbreve;i&lt;/h2&gt;
+&lt;p&gt;AMD GPU kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; ROCm ile h&amp;inodot;zland&amp;inodot;rma sa&amp;gbreve;layabilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;rocm-opencl-runtime&lt;span class="w"&gt; &lt;/span&gt;rocm-hip-runtime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Docker &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;rken:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;--device&lt;span class="o"&gt;=&lt;/span&gt;/dev/kfd&lt;span class="w"&gt; &lt;/span&gt;--device&lt;span class="o"&gt;=&lt;/span&gt;/dev/dri
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;parametrelerini ekleyin.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-webuiye-erisim"&gt;6️⃣ WebUI&amp;rsquo;ye Eri&amp;scedil;im&lt;/h2&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;&amp;gbreve;&amp;inodot;nda taray&amp;inodot;c&amp;inodot;dan:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;http://localhost:3000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;adresine giderek giri&amp;scedil; yapabilirsiniz.
+&amp;Idot;lk a&amp;ccedil;&amp;inodot;l&amp;inodot;&amp;scedil;ta kullan&amp;inodot;c&amp;inodot; hesab&amp;inodot; olu&amp;scedil;turman&amp;inodot;z istenir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="7-guncellemeler"&gt;7️⃣ G&amp;uuml;ncellemeler&lt;/h2&gt;
+&lt;h3 id="manuel-guncelleme"&gt;Manuel G&amp;uuml;ncelleme&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;--rm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;/var/run/docker.sock:/var/run/docker.sock&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;containrrr/watchtower&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--run-once&lt;span class="w"&gt; &lt;/span&gt;open-webui
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="otomatik-guncelleme-her-5-dakikada-bir"&gt;Otomatik G&amp;uuml;ncelleme (Her 5 Dakikada Bir)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--name&lt;span class="w"&gt; &lt;/span&gt;watchtower&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--restart&lt;span class="w"&gt; &lt;/span&gt;unless-stopped&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;/var/run/docker.sock:/var/run/docker.sock&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;containrrr/watchtower&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--interval&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;300&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;open-webui
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔧 Not: &lt;code&gt;open-webui&lt;/code&gt; yerine kendi container ad&amp;inodot;n&amp;inodot;z&amp;inodot; yaz&amp;inodot;n.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="8-yaygin-sorunlar_1"&gt;8️⃣ Yayg&amp;inodot;n Sorunlar&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;WebUI Ollama&amp;rsquo;ya ba&amp;gbreve;lanam&amp;inodot;yor:&lt;/strong&gt;
+  Tek container bundle kullan&amp;inodot;n veya host ba&amp;gbreve;lant&amp;inodot;s&amp;inodot;nda &lt;code&gt;--add-host&lt;/code&gt; parametresini unutmay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Model indirme yava&amp;scedil;:&lt;/strong&gt;
+  &amp;Idot;nternet h&amp;inodot;z&amp;inodot;n&amp;inodot;za ba&amp;gbreve;l&amp;inodot;. &amp;Ouml;nceden indirilmi&amp;scedil; modelleri &lt;code&gt;ollama-data&lt;/code&gt; volume i&amp;ccedil;ine kopyalayabilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port &amp;ccedil;ak&amp;inodot;&amp;scedil;mas&amp;inodot;:&lt;/strong&gt;
+&lt;code&gt;-p 3000:8080&lt;/code&gt; gibi portlar&amp;inodot; de&amp;gbreve;i&amp;scedil;tirin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;🔚 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Bu rehberde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arch Linux&amp;rsquo;ta Ollama ve Open WebUI kurulumunu&lt;/li&gt;
+&lt;li&gt;CPU, GPU ve tek container bundle senaryolar&amp;inodot;n&amp;inodot;&lt;/li&gt;
+&lt;li&gt;G&amp;uuml;ncelleme y&amp;ouml;ntemlerini&lt;/li&gt;
+&lt;li&gt;WebSocket gereksinimini&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;ouml;&amp;gbreve;rendiniz.&lt;/p&gt;
+&lt;p&gt;💬 &lt;strong&gt;Siz hangi kurulum y&amp;ouml;ntemini tercih ettiniz?&lt;/strong&gt; Deneyimlerinizi payla&amp;scedil;&amp;inodot;n!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="rch-linux-ollama-webui-kurulumu-docker" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-ollama-webui-kurulumu-docker-xl.webp" srcset="/images/arch-linux-ollama-webui-kurulumu-docker-sm.webp 300w, /images/arch-linux-ollama-webui-kurulumu-docker-md.webp 500w, /images/arch-linux-ollama-webui-kurulumu-docker-xl.webp 800w, /images/arch-linux-ollama-webui-kurulumu-docker-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Sunucu"/><category term="arch linux"/><category term="docker"/><category term="ollama"/><category term="webui"/><category term="yapay zeka"/><category term="gpu"/><category term="rocm"/><category term="cuda"/><category term="websocket"/><category term="watchtower"/></entry><entry><title>Arch Linux'ta Docker Kurulumu – Adım Adım Rehber</title><link href="https://yuceltoluyag.github.io/arch-linux-docker-kurulumu/" rel="alternate"/><published>2025-08-06T04:30:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-08-06:/arch-linux-docker-kurulumu/</id><summary type="html">&lt;p&gt;Arch Linux üzerinde Docker kurulumu, yapılandırması ve temel kullanım adımlarını adım adım anlatan kapsamlı rehber.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Docker&lt;/strong&gt;, modern yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirme ve da&amp;gbreve;&amp;inodot;t&amp;inodot;m d&amp;uuml;nyas&amp;inodot;n&amp;inodot;n vazge&amp;ccedil;ilmez ara&amp;ccedil;lar&amp;inodot;ndan biri.
+Peki, &lt;strong&gt;Arch Linux&amp;rsquo;ta Docker nas&amp;inodot;l kurulur ve yap&amp;inodot;land&amp;inodot;r&amp;inodot;l&amp;inodot;r?&lt;/strong&gt; Bu rehberde hem &lt;strong&gt;kurulum ad&amp;inodot;mlar&amp;inodot;n&amp;inodot;&lt;/strong&gt; hem de &lt;strong&gt;temel kullan&amp;inodot;m ipu&amp;ccedil;lar&amp;inodot;n&amp;inodot;&lt;/strong&gt; ad&amp;inodot;m ad&amp;inodot;m &amp;ouml;&amp;gbreve;reneceksiniz.&lt;/p&gt;
+&lt;p&gt;Docker sayesinde uygulamalar&amp;inodot;n&amp;inodot;z&amp;inodot; izole edilmi&amp;scedil; &lt;strong&gt;container&lt;/strong&gt; ortamlar&amp;inodot;nda &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilir, ba&amp;gbreve;&amp;inodot;ml&amp;inodot;l&amp;inodot;k karma&amp;scedil;as&amp;inodot;n&amp;inodot; ortadan kald&amp;inodot;rabilir ve geli&amp;scedil;tirme s&amp;uuml;re&amp;ccedil;lerinizi h&amp;inodot;zland&amp;inodot;rabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-docker-nedir-ve-neden-kullanilir"&gt;1️⃣ Docker Nedir ve Neden Kullan&amp;inodot;l&amp;inodot;r?&lt;/h2&gt;
+&lt;p&gt;Docker, yaz&amp;inodot;l&amp;inodot;mlar&amp;inodot; &lt;strong&gt;container&lt;/strong&gt; ad&amp;inodot; verilen izole ortamlar i&amp;ccedil;inde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rman&amp;inodot;za olanak tan&amp;inodot;r. Bu sayede:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Farkl&amp;inodot; sistemlerde &lt;strong&gt;ayn&amp;inodot; &amp;scedil;ekilde &amp;ccedil;al&amp;inodot;&amp;scedil;an&lt;/strong&gt; yaz&amp;inodot;l&amp;inodot;m paketleri olu&amp;scedil;turabilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ba&amp;gbreve;&amp;inodot;ml&amp;inodot;l&amp;inodot;k sorunlar&amp;inodot;n&amp;inodot;&lt;/strong&gt; ortadan kald&amp;inodot;r&amp;inodot;rs&amp;inodot;n&amp;inodot;z.&lt;/li&gt;
+&lt;li&gt;Geli&amp;scedil;tirme, test ve &amp;uuml;retim ortamlar&amp;inodot;nda &lt;strong&gt;tutarl&amp;inodot;l&amp;inodot;k&lt;/strong&gt; sa&amp;gbreve;lars&amp;inodot;n&amp;inodot;z.&lt;/li&gt;
+&lt;li&gt;H&amp;inodot;zl&amp;inodot; kurulum ve da&amp;gbreve;&amp;inodot;t&amp;inodot;m imk&amp;acirc;n&amp;inodot; elde edersiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;Ouml;rne&amp;gbreve;in, PHP ile geli&amp;scedil;tirdi&amp;gbreve;iniz bir web uygulamas&amp;inodot;n&amp;inodot;, Docker kullanarak hem kendi bilgisayar&amp;inodot;n&amp;inodot;zda hem de sunucuda &lt;strong&gt;tek komutla&lt;/strong&gt; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-arch-linuxta-docker-kurulumu"&gt;2️⃣ Arch Linux&amp;rsquo;ta Docker Kurulumu&lt;/h2&gt;
+&lt;p&gt;Arch Linux, &lt;strong&gt;rolling release&lt;/strong&gt; yap&amp;inodot;s&amp;inodot; sayesinde her zaman en g&amp;uuml;ncel Docker s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; AUR&amp;rsquo;a veya resmi depolar&amp;inodot;na ekler.
+Kurulum i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; takip edin:&lt;/p&gt;
+&lt;h3 id="21-gerekli-paketleri-guncelleyin"&gt;2.1 Gerekli Paketleri G&amp;uuml;ncelleyin&lt;/h3&gt;
+&lt;p&gt;Terminalinizi a&amp;ccedil;&amp;inodot;n ve sistem paketlerinizi g&amp;uuml;ncelleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-Syu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;em&gt;Sistemi g&amp;uuml;ncel tutmak, olas&amp;inodot; ba&amp;gbreve;&amp;inodot;ml&amp;inodot;l&amp;inodot;k sorunlar&amp;inodot;n&amp;inodot;n &amp;ouml;n&amp;uuml;ne ge&amp;ccedil;er.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="22-docker-paketini-yukleyin"&gt;2.2 Docker Paketini Y&amp;uuml;kleyin&lt;/h3&gt;
+&lt;p&gt;Arch Linux&amp;rsquo;un resmi deposunda &lt;code&gt;docker&lt;/code&gt; paketi mevcut:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;docker&lt;span class="w"&gt; &lt;/span&gt;docker-compose&lt;span class="w"&gt; &lt;/span&gt;docker-buildx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="23-docker-servisini-etkinlestirin"&gt;2.3 Docker Servisini Etkinle&amp;scedil;tirin&lt;/h3&gt;
+&lt;p&gt;Kurulumdan sonra Docker&amp;rsquo;&amp;inodot;n otomatik olarak ba&amp;scedil;lat&amp;inodot;lmas&amp;inodot; i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;docker.service
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;docker.service
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;is-active&lt;span class="w"&gt; &lt;/span&gt;docker.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🚦 &lt;em&gt;&lt;code&gt;enable&lt;/code&gt; komutu sistemi her a&amp;ccedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda Docker&amp;rsquo;&amp;inodot; otomatik ba&amp;scedil;lat&amp;inodot;r.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-kullanici-yetkilendirmesi-sudosuz-docker-kullanimi_1"&gt;3️⃣ Kullan&amp;inodot;c&amp;inodot; Yetkilendirmesi (Sudo&amp;rsquo;suz Docker Kullan&amp;inodot;m&amp;inodot;)&lt;/h2&gt;
+&lt;p&gt;Varsay&amp;inodot;lan olarak Docker komutlar&amp;inodot;n&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in &lt;code&gt;sudo&lt;/code&gt; gerekir.
+Kendi kullan&amp;inodot;c&amp;inodot; hesab&amp;inodot;n&amp;inodot;zla Docker komutlar&amp;inodot;n&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;usermod&lt;span class="w"&gt; &lt;/span&gt;-aG&lt;span class="w"&gt; &lt;/span&gt;docker&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ard&amp;inodot;ndan &amp;ccedil;&amp;inodot;k&amp;inodot;&amp;scedil; yap&amp;inodot;p tekrar giri&amp;scedil; yap&amp;inodot;n veya:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;newgrp&lt;span class="w"&gt; &lt;/span&gt;docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu sayede:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;ps
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;komutunu &lt;strong&gt;sudo&lt;/strong&gt; yazmadan kullanabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-docker-kurulumunu-dogrulama"&gt;4️⃣ Docker Kurulumunu Do&amp;gbreve;rulama&lt;/h2&gt;
+&lt;p&gt;Kurulumun ba&amp;scedil;ar&amp;inodot;l&amp;inodot; oldu&amp;gbreve;unu test etmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;hello-world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;Idot;nternetten k&amp;uuml;&amp;ccedil;&amp;uuml;k bir test imaj&amp;inodot; indirir.&lt;/li&gt;
+&lt;li&gt;Container i&amp;ccedil;inde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;Kurulumun ba&amp;scedil;ar&amp;inodot;l&amp;inodot; olup olmad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; terminal &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot;yla g&amp;ouml;sterir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ba&amp;scedil;ar&amp;inodot;l&amp;inodot; bir kurulumda &amp;scedil;u &amp;scedil;ekilde bir &amp;ccedil;&amp;inodot;kt&amp;inodot; g&amp;ouml;rmelisiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Hello from Docker!
+This message shows that your installation appears to be working correctly.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-temel-docker-komutlari"&gt;5️⃣ Temel Docker Komutlar&amp;inodot; 🛠&lt;/h2&gt;
+&lt;p&gt;Docker&amp;rsquo;&amp;inodot; kullanmaya ba&amp;scedil;lamak i&amp;ccedil;in bilmeniz gereken temel komutlar:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Komut&lt;/th&gt;
+&lt;th&gt;A&amp;ccedil;&amp;inodot;klama&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker ps&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&amp;Ccedil;al&amp;inodot;&amp;scedil;an container&amp;rsquo;lar&amp;inodot; listeler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker images&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Mevcut imajlar&amp;inodot; listeler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker pull &amp;lt;imaj&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Docker Hub&amp;rsquo;dan imaj indirir&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker run &amp;lt;imaj&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yeni bir container &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;r&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker stop &amp;lt;id&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Container&amp;rsquo;&amp;inodot; durdurur&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker rm &amp;lt;id&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Container&amp;rsquo;&amp;inodot; siler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;docker rmi &amp;lt;imaj&amp;gt;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&amp;Idot;maj&amp;inodot; siler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-arch-linuxta-docker-ile-ilgili-yaygin-sorunlar-ve-cozumleri"&gt;6️⃣ Arch Linux&amp;rsquo;ta Docker ile &amp;Idot;lgili Yayg&amp;inodot;n Sorunlar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri&lt;/h2&gt;
+&lt;h3 id="61-permission-denied-hatasi"&gt;6.1 "Permission Denied" Hatas&amp;inodot;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sebep:&lt;/strong&gt; Kullan&amp;inodot;c&amp;inodot; &lt;code&gt;docker&lt;/code&gt; grubunda de&amp;gbreve;il.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/strong&gt; &lt;code&gt;usermod -aG docker $USER&lt;/code&gt; komutunu uygulay&amp;inodot;n.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="62-servis-baslamiyor"&gt;6.2 Servis Ba&amp;scedil;lam&amp;inodot;yor&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sebep:&lt;/strong&gt; &lt;code&gt;docker&lt;/code&gt; servisi etkin de&amp;gbreve;il.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;docker
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;start&lt;span class="w"&gt; &lt;/span&gt;docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="63-ag-sorunlari"&gt;6.3 A&amp;gbreve; Sorunlar&amp;inodot;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sebep:&lt;/strong&gt; Docker&amp;rsquo;&amp;inodot;n olu&amp;scedil;turdu&amp;gbreve;u &lt;code&gt;bridge&lt;/code&gt; a&amp;gbreve;&amp;inodot; bozuk.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/strong&gt; Docker servisini yeniden ba&amp;scedil;lat&amp;inodot;n:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;docker
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="7-sonuc-ve-oneriler_1"&gt;7️⃣ Sonu&amp;ccedil; ve &amp;Ouml;neriler 🎯&lt;/h2&gt;
+&lt;p&gt;Bu rehberde &lt;strong&gt;Arch Linux&amp;rsquo;ta Docker kurulumu&lt;/strong&gt; ve temel kullan&amp;inodot;m ad&amp;inodot;mlar&amp;inodot;n&amp;inodot; &amp;ouml;&amp;gbreve;rendiniz.
+Art&amp;inodot;k uygulamalar&amp;inodot;n&amp;inodot;z&amp;inodot; izole ortamlarda g&amp;uuml;venle &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilir, geli&amp;scedil;tirme s&amp;uuml;re&amp;ccedil;lerinizi daha verimli hale getirebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Docker &amp;ouml;&amp;gbreve;renmeye devam etmek i&amp;ccedil;in &amp;scedil;u konulara g&amp;ouml;z atabilirsiniz:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker Compose ile &amp;ccedil;oklu container y&amp;ouml;netimi&lt;/li&gt;
+&lt;li&gt;&amp;Ouml;zel Docker imaj&amp;inodot; olu&amp;scedil;turma&lt;/li&gt;
+&lt;li&gt;Volume ve Network y&amp;ouml;netimi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;💬 &lt;strong&gt;Siz Docker&amp;rsquo;&amp;inodot; hangi projelerinizde kullan&amp;inodot;yorsunuz?&lt;/strong&gt; Deneyimlerinizi yorumlarda payla&amp;scedil;abilirsiniz!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;✅ &lt;strong&gt;&amp;Ouml;zet:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Arch Linux&amp;rsquo;ta Docker kurulumu kolayd&amp;inodot;r ve resmi depodan yap&amp;inodot;labilir.&lt;/li&gt;
+&lt;li&gt;Kullan&amp;inodot;c&amp;inodot; grubuna ekleme ile &lt;code&gt;sudo&lt;/code&gt; kullanmadan komut &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker run hello-world&lt;/code&gt; testiyle kurulum do&amp;gbreve;rulan&amp;inodot;r.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;</content><category term="Sunucu"/><category term="arch linux"/><category term="docker"/><category term="container"/><category term="kurulum"/><category term="linux"/></entry><entry><title>Yunohost'ta robots.txt Dosyası Oluşturmak</title><link href="https://yuceltoluyag.github.io/yunohost-robots-txt-olusturmak/" rel="alternate"/><published>2025-04-14T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-04-14:/yunohost-robots-txt-olusturmak/</id><summary type="html">&lt;p&gt;🚀 &lt;strong&gt;Web sitenizin arama motorlar&amp;inodot; taraf&amp;inodot;ndan nas&amp;inodot;l tarand&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol etmek ister misiniz?&lt;/strong&gt; Yunohost &amp;uuml;zerinde bar&amp;inodot;nd&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z uygulamalara &amp;ouml;zel &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot; olu&amp;scedil;turarak bu kontrol&amp;uuml; tamamen elinize alabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bu yaz&amp;inodot;da, &amp;ouml;zellikle &lt;strong&gt;Yunohost'ta robots.txt dosyas&amp;inodot; olu&amp;scedil;turmak&lt;/strong&gt; konusunda ad&amp;inodot;m ad&amp;inodot;m bir rehber …&lt;/p&gt;</summary><content type="html">&lt;p&gt;🚀 &lt;strong&gt;Web sitenizin arama motorlar&amp;inodot; taraf&amp;inodot;ndan nas&amp;inodot;l tarand&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol etmek ister misiniz?&lt;/strong&gt; Yunohost &amp;uuml;zerinde bar&amp;inodot;nd&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z uygulamalara &amp;ouml;zel &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot; olu&amp;scedil;turarak bu kontrol&amp;uuml; tamamen elinize alabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bu yaz&amp;inodot;da, &amp;ouml;zellikle &lt;strong&gt;Yunohost'ta robots.txt dosyas&amp;inodot; olu&amp;scedil;turmak&lt;/strong&gt; konusunda ad&amp;inodot;m ad&amp;inodot;m bir rehber sunaca&amp;gbreve;&amp;inodot;m. Ayr&amp;inodot;ca SEO uyumlu yap&amp;inodot;land&amp;inodot;rma tekniklerini de &amp;ouml;&amp;gbreve;reneceksiniz. Hedefimiz, Google gibi arama motorlar&amp;inodot;n&amp;inodot;n sitenizi &lt;strong&gt;istenmeyen &amp;scedil;ekilde dizine eklemesini engellemek&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="robotstxt-nedir-ve-neden-onemlidir"&gt;🤖 Robots.txt Nedir ve Neden &amp;Ouml;nemlidir?&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;robots.txt&lt;/code&gt;, bir sitenin k&amp;ouml;k dizininde yer alan ve arama motorlar&amp;inodot;na hangi sayfalar&amp;inodot; &lt;strong&gt;tarayabileceklerini veya tarayamayacaklar&amp;inodot;n&amp;inodot;&lt;/strong&gt; bildiren d&amp;uuml;z metin dosyas&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="ne-ise-yarar"&gt;Ne &amp;Idot;&amp;scedil;e Yarar?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Arama motorlar&amp;inodot;n&amp;inodot;n &amp;ouml;zel alanlara eri&amp;scedil;imini s&amp;inodot;n&amp;inodot;rlar.&lt;/li&gt;
+&lt;li&gt;Sunucu y&amp;uuml;k&amp;uuml;n&amp;uuml; azalt&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;Gizli i&amp;ccedil;eriklerin yanl&amp;inodot;&amp;scedil;l&amp;inodot;kla dizine al&amp;inodot;nmas&amp;inodot;n&amp;inodot; &amp;ouml;nler.&lt;/li&gt;
+&lt;li&gt;SEO stratejinizin bir par&amp;ccedil;as&amp;inodot; olarak &amp;ouml;nemli rol oynar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="yunohostta-robotstxt-dosyasi-olusturmak_1"&gt;⚙️ Yunohost&amp;rsquo;ta Robots.txt Dosyas&amp;inodot; Olu&amp;scedil;turmak&lt;/h2&gt;
+&lt;p&gt;Yunohost, yap&amp;inodot;land&amp;inodot;rmalar&amp;inodot; daha farkl&amp;inodot; bir &amp;scedil;ekilde ele al&amp;inodot;r. Robots.txt eklemek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; izleyin:&lt;/p&gt;
+&lt;h3 id="1-dosyayi-olustur"&gt;1. Dosyay&amp;inodot; Olu&amp;scedil;tur&lt;/h3&gt;
+&lt;p&gt;&amp;Ouml;ncelikle &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; uygulaman&amp;inodot;z&amp;inodot;n dizininde olu&amp;scedil;turun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/var/www/listmonk/robots.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki i&amp;ccedil;eri&amp;gbreve;i &amp;ouml;rnek olarak ekleyebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;User-agent: *
+Disallow: /private/
+Allow: /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Bu &amp;ouml;rnekte &lt;code&gt;/private/&lt;/code&gt; dizini hari&amp;ccedil; t&amp;uuml;m i&amp;ccedil;erik taramaya a&amp;ccedil;&amp;inodot;k.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="googlein-sitene-erisimini-engellemek_1"&gt;🔐 Google'&amp;inodot;n Sitene Eri&amp;scedil;imini Engellemek&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er Google botlar&amp;inodot;n&amp;inodot;n sitenizi hi&amp;ccedil; dizine almamas&amp;inodot;n&amp;inodot; istiyorsan&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;User-agent: Googlebot
+Disallow: /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, yaln&amp;inodot;zca Googlebot'u engeller. T&amp;uuml;m botlar&amp;inodot; engellemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;User-agent: *
+Disallow: /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;❗ Not: Bu sadece &lt;strong&gt;dizinlemeyi&lt;/strong&gt; engeller, sayfalar&amp;inodot;n taranmas&amp;inodot;n&amp;inodot; de&amp;gbreve;il. Tam koruma i&amp;ccedil;in HTTP authentication veya &lt;code&gt;noindex&lt;/code&gt; meta etiketleri de kullan&amp;inodot;labilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="nginx-uzerinden-robotstxt-sunmak"&gt;🔧 Nginx &amp;Uuml;zerinden robots.txt Sunmak&lt;/h2&gt;
+&lt;p&gt;Dosyay&amp;inodot; olu&amp;scedil;turduktan sonra Nginx sunucusuna bu dosyay&amp;inodot; d&amp;uuml;zg&amp;uuml;n bir &amp;scedil;ekilde tan&amp;inodot;tmak gerekiyor.&lt;/p&gt;
+&lt;h3 id="1-gerekli-nginx-konfigurasyonunu-bul"&gt;1. Gerekli Nginx Konfig&amp;uuml;rasyonunu Bul&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;find&lt;span class="w"&gt; &lt;/span&gt;/&lt;span class="w"&gt; &lt;/span&gt;-type&lt;span class="w"&gt; &lt;/span&gt;f&lt;span class="w"&gt; &lt;/span&gt;-name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'listmonk'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Gelen sonu&amp;ccedil;lardan ilgili Nginx config dosyas&amp;inodot;n&amp;inodot; se&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/nginx/conf.d/listmonk.minel.yuceltoluyag.github.io.d/listmonk.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="2-asagidaki-location-blogunu-ekleyin"&gt;2. A&amp;scedil;a&amp;gbreve;&amp;inodot;daki &lt;code&gt;location&lt;/code&gt; blo&amp;gbreve;unu ekleyin&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Nginx Configuration File&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;location&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/robots.txt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kn"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/var/www/listmonk/robots.txt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="3-nginxi-yeniden-baslat"&gt;3. Nginx&amp;rsquo;i Yeniden Ba&amp;scedil;lat&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="dogrulama-dosya-dogru-calisiyor-mu_1"&gt;✅ Do&amp;gbreve;rulama: Dosya Do&amp;gbreve;ru &amp;Ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor mu?&lt;/h2&gt;
+&lt;p&gt;Taray&amp;inodot;c&amp;inodot;n&amp;inodot;zdan &amp;scedil;u URL'yi ziyaret edin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;https://listmonk.minel.yuceltoluyag.github.io/robots.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosya d&amp;uuml;zg&amp;uuml;n g&amp;ouml;r&amp;uuml;nt&amp;uuml;leniyorsa, yap&amp;inodot;land&amp;inodot;rman&amp;inodot;z ba&amp;scedil;ar&amp;inodot;yla tamamlanm&amp;inodot;&amp;scedil; demektir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="yunohost &amp;uuml;zerinde olu&amp;scedil;turulmu&amp;scedil; &amp;ouml;rnek robots.txt dosyas&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/yunohost-robotstxt-xl.webp" srcset="/images/yunohost-robotstxt-sm.webp 300w, /images/yunohost-robotstxt-md.webp 500w, /images/yunohost-robotstxt-xl.webp 800w, /images/yunohost-robotstxt-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="ipuclari-dikkat-edilmesi-gerekenler"&gt;🎓 &amp;Idot;pu&amp;ccedil;lar&amp;inodot; &amp;amp; Dikkat Edilmesi Gerekenler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;robots.txt&lt;/code&gt; yaln&amp;inodot;zca &lt;strong&gt;kibar botlar&lt;/strong&gt; i&amp;ccedil;indir. K&amp;ouml;t&amp;uuml; niyetli botlar bu dosyay&amp;inodot; yok sayabilir.&lt;/li&gt;
+&lt;li&gt;Dosyay&amp;inodot; de&amp;gbreve;i&amp;scedil;tirdikten sonra Google Search Console &amp;uuml;zerinden test edin.&lt;/li&gt;
+&lt;li&gt;Siteye &amp;ouml;zg&amp;uuml; i&amp;ccedil;erikler i&amp;ccedil;in ayr&amp;inodot; kurallar yazabilirsiniz.&lt;/li&gt;
+&lt;li&gt;E&amp;gbreve;er uygulaman&amp;inodot;zda bir &lt;strong&gt;public&lt;/strong&gt; dizini varsa, &lt;strong&gt;robots.txt&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; direkt oraya koyun&amp;mdash;&lt;strong&gt;%90&lt;/strong&gt; ihtimalle sorunsuz &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r.Burada anlatt&amp;inodot;&amp;gbreve;&amp;inodot;m y&amp;ouml;ntem ise public dizini olmadan, do&amp;gbreve;rudan nginx &amp;uuml;zerinden robots.txt tan&amp;inodot;mlama y&amp;ouml;ntemi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;✍️ Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Yunohost'ta &lt;code&gt;robots.txt&lt;/code&gt; dosyas&amp;inodot; olu&amp;scedil;turmak olduk&amp;ccedil;a kolay bir i&amp;scedil;lemdir ama do&amp;gbreve;ru yap&amp;inodot;land&amp;inodot;r&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda sitenizin SEO stratejisini ciddi &amp;scedil;ekilde etkileyebilir. &amp;Ouml;zellikle belirli dizinleri gizlemek veya sadece belirli botlara izin vermek isteyenler i&amp;ccedil;in vazge&amp;ccedil;ilmezdir.&lt;/p&gt;</content><category term="Sunucu"/><category term="yunohost"/><category term="robots.txt"/><category term="nginx"/><category term="seo"/><category term="listeleme engelleme"/></entry><entry><title>YunoHost Kurulumu Sırasında Karşılaşılan APT Kilitlenme Hatası ve Çözümü</title><link href="https://yuceltoluyag.github.io/yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu/" rel="alternate"/><published>2025-04-11T15:45:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-04-11:/yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu/</id><summary type="html">&lt;p&gt;Debian sunucusunda YunoHost kurulumu sırasında karşılaşılan "APT kilitlenme" hatasını adım adım nasıl çözeceğinizi öğrenin.&lt;/p&gt;</summary><content type="html">&lt;h2 id="giris"&gt;🚀 Giri&amp;scedil;&lt;/h2&gt;
+&lt;p&gt;Debian tabanl&amp;inodot; bir sunucuya &lt;a href="https://yunohost.org" rel="noopener noreferrer" target="_blank"&gt;YunoHost&lt;/a&gt; kurmaya &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;rken "&lt;code&gt;Could not get lock /var/lib/dpkg/lock-frontend&lt;/code&gt;" hatas&amp;inodot;yla kar&amp;scedil;&amp;inodot;la&amp;scedil;abilirsiniz. Bu hata, genellikle sistemde &amp;ccedil;al&amp;inodot;&amp;scedil;an ba&amp;scedil;ka bir &lt;code&gt;apt&lt;/code&gt; i&amp;scedil;lemi nedeniyle olu&amp;scedil;ur ve kurulumu kesintiye u&amp;gbreve;rat&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;Bu makalede, bu hatan&amp;inodot;n neden olu&amp;scedil;tu&amp;gbreve;unu, nas&amp;inodot;l tespit edilece&amp;gbreve;ini ve g&amp;uuml;venli bir &amp;scedil;ekilde nas&amp;inodot;l &amp;ccedil;&amp;ouml;z&amp;uuml;lebilece&amp;gbreve;ini ad&amp;inodot;m ad&amp;inodot;m anlataca&amp;gbreve;&amp;inodot;z. ✅&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="hatanin-anlami"&gt;🧠 Hatan&amp;inodot;n Anlam&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Hata mesaj&amp;inodot; genellikle &amp;scedil;u &amp;scedil;ekilde g&amp;ouml;r&amp;uuml;n&amp;uuml;r:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;E:&lt;span class="w"&gt; &lt;/span&gt;Could&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;get&lt;span class="w"&gt; &lt;/span&gt;lock&lt;span class="w"&gt; &lt;/span&gt;/var/lib/dpkg/lock-frontend.&lt;span class="w"&gt; &lt;/span&gt;It&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;held&lt;span class="w"&gt; &lt;/span&gt;by&lt;span class="w"&gt; &lt;/span&gt;process&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1241&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;apt&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu, sistemde &amp;ccedil;al&amp;inodot;&amp;scedil;an ba&amp;scedil;ka bir &lt;code&gt;apt&lt;/code&gt; i&amp;scedil;leminin &lt;code&gt;dpkg&lt;/code&gt; sistemini kilitledi&amp;gbreve;i ve sizin i&amp;scedil;leminizin bu y&amp;uuml;zden engellendi&amp;gbreve;i anlam&amp;inodot;na gelir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="adim-adim-cozum"&gt;🔍 Ad&amp;inodot;m Ad&amp;inodot;m &amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/h2&gt;
+&lt;h3 id="1-aktif-apt-islemlerini-kontrol-edin"&gt;1. Aktif &lt;code&gt;apt&lt;/code&gt; i&amp;scedil;lemlerini kontrol edin:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ps&lt;span class="w"&gt; &lt;/span&gt;aux&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;apt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, &amp;ccedil;al&amp;inodot;&amp;scedil;an veya donmu&amp;scedil; &lt;code&gt;apt&lt;/code&gt; s&amp;uuml;re&amp;ccedil;lerini listeler. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;root&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;1241&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.3&lt;span class="w"&gt;  &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;upgrade&lt;span class="w"&gt; &lt;/span&gt;-y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="2-gerekiyorsa-bu-islemleri-sonlandirin"&gt;2. Gerekiyorsa bu i&amp;scedil;lemleri sonland&amp;inodot;r&amp;inodot;n ⚠️&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;kill&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1241&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1240&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1239&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="3-kilit-dosyalarini-temizleyin"&gt;3. Kilit dosyalar&amp;inodot;n&amp;inodot; temizleyin 🧹&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;/var/lib/dpkg/lock-frontend
+sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;/var/lib/apt/lists/lock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="4-dpkg-yapilandirmasini-duzeltin"&gt;4. &lt;code&gt;dpkg&lt;/code&gt; yap&amp;inodot;land&amp;inodot;rmas&amp;inodot;n&amp;inodot; d&amp;uuml;zeltin 🛠️&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;dpkg&lt;span class="w"&gt; &lt;/span&gt;--configure&lt;span class="w"&gt; &lt;/span&gt;-a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="5-paket-listelerini-guncelleyin-ve-eksikleri-tamamlayin"&gt;5. Paket listelerini g&amp;uuml;ncelleyin ve eksikleri tamamlay&amp;inodot;n 📦&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;--fix-broken&lt;span class="w"&gt; &lt;/span&gt;install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="6-gerekli-paketi-yukleyin-ornek-libtext-iconv-perl"&gt;6. Gerekli paketi y&amp;uuml;kleyin (&amp;ouml;rnek: &lt;code&gt;libtext-iconv-perl&lt;/code&gt;)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;libtext-iconv-perl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="7-yunohost-kurulumuna-tekrar-baslayin"&gt;7. YunoHost kurulumuna tekrar ba&amp;scedil;lay&amp;inodot;n 🌐&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;https://install.yunohost.org&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc_1"&gt;✅ Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Bu rehberde, YunoHost kurulum s&amp;uuml;recinde s&amp;inodot;k&amp;ccedil;a kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan &lt;code&gt;dpkg lock&lt;/code&gt; hatas&amp;inodot;n&amp;inodot; nas&amp;inodot;l &amp;ccedil;&amp;ouml;zece&amp;gbreve;inizi &amp;ouml;&amp;gbreve;rendiniz. Bu y&amp;ouml;ntem yaln&amp;inodot;zca YunoHost de&amp;gbreve;il, genel olarak t&amp;uuml;m &lt;code&gt;apt&lt;/code&gt; tabanl&amp;inodot; kurulumlarda i&amp;scedil;e yarar.&lt;/p&gt;
+&lt;p&gt;🔒 Kilitlenmi&amp;scedil; sistemler moral bozabilir ama bu ad&amp;inodot;mlarla h&amp;inodot;zl&amp;inodot;ca &amp;ccedil;&amp;ouml;zebilirsiniz!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="ekstra-ipuclari"&gt;📚 Ekstra &amp;Idot;pu&amp;ccedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;E&amp;gbreve;er &lt;code&gt;apt&lt;/code&gt; i&amp;scedil;lemleri s&amp;inodot;k s&amp;inodot;k donuyorsa, sunucunun disk alan&amp;inodot;n&amp;inodot; kontrol edin.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;htop&lt;/code&gt; komutu ile sistemde genel kaynak kullan&amp;inodot;m&amp;inodot;n&amp;inodot; takip edebilirsiniz.&lt;/li&gt;
+&lt;li&gt;Uzun kurulum i&amp;scedil;lemlerinde SSH oturumunun kopmamas&amp;inodot; i&amp;ccedil;in &lt;code&gt;tmux&lt;/code&gt; veya &lt;code&gt;screen&lt;/code&gt; kullanabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;Yorumlar&amp;inodot;n&amp;inodot;z&amp;inodot; a&amp;scedil;a&amp;gbreve;&amp;inodot;ya b&amp;inodot;rak&amp;inodot;n 💬, ba&amp;scedil;ka bir rehberde g&amp;ouml;r&amp;uuml;&amp;scedil;mek &amp;uuml;zere! 👋&lt;/p&gt;
+&lt;p&gt;&lt;img alt="yunohost-hata-cozumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/yunohost-hata-cozumu-xl.webp" srcset="/images/yunohost-hata-cozumu-sm.webp 300w, /images/yunohost-hata-cozumu-md.webp 500w, /images/yunohost-hata-cozumu-xl.webp 800w, /images/yunohost-hata-cozumu-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Sunucu"/><category term="yunohost"/><category term="ssh"/><category term="debian"/><category term="apt"/><category term="linux"/></entry><entry><title>Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu</title><link href="https://yuceltoluyag.github.io/arch-linux-apache-lampp-sanal-sunucu-kurulumu/" rel="alternate"/><published>2018-11-18T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-11-18:/arch-linux-apache-lampp-sanal-sunucu-kurulumu/</id><summary type="html">&lt;p&gt;Bu yazıda, Arch Linux üzerinde Apache (LAMPP) sanal sunucu kurulumu adımlarını öğreneceksiniz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! Bloguma uzun bir aradan sonra yaz&amp;inodot; yazarken, proje olu&amp;scedil;tururken s&amp;inodot;k&amp;ccedil;a kulland&amp;inodot;&amp;gbreve;&amp;inodot;m bir y&amp;ouml;ntemin &lt;strong&gt;T&amp;uuml;rk&amp;ccedil;e D&amp;ouml;k&amp;uuml;mantasyonu&lt;/strong&gt;nu yazmak istedim. Bu y&amp;ouml;ntemin ad&amp;inodot; &lt;strong&gt;Virtual Host&lt;/strong&gt; olarak bilinir. Her projeye bir domain atayarak, kodlama ve proje isimlerinin ak&amp;inodot;lda kalmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lar. Bu y&amp;ouml;ntem, CSS, JS gibi dosyalar&amp;inodot;n entegrasyonu s&amp;inodot;ras&amp;inodot;nda rahatl&amp;inodot;k da sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin" rel="noopener noreferrer" target="_blank"&gt;Arch Linux XAMPP/LAMPP Kurulumu&lt;/a&gt; yap&amp;inodot;lmal&amp;inodot;d&amp;inodot;r.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;baba.test&lt;/strong&gt; ad&amp;inodot;nda bir domain olu&amp;scedil;turaca&amp;gbreve;&amp;inodot;z.&lt;/p&gt;
+&lt;h1 id="domain-olusturma"&gt;Domain Olu&amp;scedil;turma&lt;/h1&gt;
+&lt;p&gt;Domaini olu&amp;scedil;turmak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;/srv/http/baba.test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu domainin i&amp;ccedil;erisine bir test dosyas&amp;inodot; at&amp;inodot;n. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;h2 id="dosya-olusturma"&gt;Dosya Olu&amp;scedil;turma&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/srv/http/baba.test/index.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;&amp;ccedil;erisine &amp;scedil;u kodlar&amp;inodot; yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;h2 id="dosya-duzenleme"&gt;Dosya D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;HTML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;baba.test&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+      Youtube Kanal&amp;inodot;ma Abone Olmay&amp;inodot; Unutmay&amp;inodot;n: Virtual Host &amp;Idot;&amp;scedil;lemi Ba&amp;scedil;ar&amp;inodot;l&amp;inodot;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="dosya-kaydetme"&gt;Dosya Kaydetme&lt;/h2&gt;
+&lt;p&gt;F3 ard&amp;inodot;ndan F2'ye basarak kaydedip &amp;ccedil;&amp;inodot;k&amp;inodot;yoruz.&lt;/p&gt;
+&lt;h1 id="httpd-konfigurasyonu_1"&gt;HTTPD Konfigurasyonu&lt;/h1&gt;
+&lt;p&gt;HTTPD yap&amp;inodot;land&amp;inodot;rmas&amp;inodot;n&amp;inodot; d&amp;uuml;zenlemek i&amp;ccedil;in &amp;scedil;u komutu kullan&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/httpd/conf/httpd.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="httpd-duzenleme"&gt;HTTPD D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;p&gt;Dosyan&amp;inodot;n en alt&amp;inodot;na &amp;scedil;u sat&amp;inodot;r&amp;inodot; ekliyoruz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Virtual hosts&lt;/span&gt;
+Include&lt;span class="w"&gt; &lt;/span&gt;conf/extra/httpd-vhosts.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="yeni-vhost-dosyasi"&gt;Yeni Vhost Dosyas&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;F3 ve ard&amp;inodot;ndan F2 tu&amp;scedil;lar&amp;inodot;na basarak dosyay&amp;inodot; kaydediyoruz. Sonras&amp;inodot;nda &amp;scedil;u komutu kullanarak yeni bir dosya olu&amp;scedil;turuyoruz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/httpd/conf/extra/httpd-vhosts.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="vhost-duzenleme"&gt;VHOST D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;p&gt;Bu dosyan&amp;inodot;n en alt&amp;inodot;na &amp;scedil;u sat&amp;inodot;rlar&amp;inodot; ekliyoruz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ServerAdmin&lt;span class="w"&gt; &lt;/span&gt;webmaster@baba.test
+DocumentRoot&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/srv/http/baba.test"&lt;/span&gt;
+ServerName&lt;span class="w"&gt; &lt;/span&gt;baba.test
+ServerAlias&lt;span class="w"&gt; &lt;/span&gt;www.baba.test
+ErrorLog&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/var/log/httpd/baba.test-error_log"&lt;/span&gt;
+CustomLog&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/var/log/httpd/baba.test-access_log"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;common
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu, standart kullan&amp;inodot;m &amp;scedil;eklidir. Ancak yaln&amp;inodot;zca &lt;code&gt;DocumentRoot&lt;/code&gt; ve &lt;code&gt;ServerName&lt;/code&gt; k&amp;inodot;s&amp;inodot;mlar&amp;inodot;n&amp;inodot; kullanabilirsiniz. Di&amp;gbreve;erlerini kullanmak istemiyorsan&amp;inodot;z, ba&amp;scedil;lar&amp;inodot;na &lt;code&gt;#&lt;/code&gt; i&amp;scedil;areti koyarak pasif hale getirebilirsiniz.&lt;/p&gt;
+&lt;h1 id="apache-konfigurasyon-testi_1"&gt;Apache Konfig&amp;uuml;rasyon Testi&lt;/h1&gt;
+&lt;p&gt;Yap&amp;inodot;land&amp;inodot;rman&amp;inodot;z&amp;inodot; test etmek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apachectl&lt;span class="w"&gt; &lt;/span&gt;configtest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ancak son bir i&amp;scedil;lem kald&amp;inodot;. &amp;Scedil;imdi, &lt;strong&gt;hosts&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenleyip, bu URL'yi tan&amp;inodot;mlayaca&amp;gbreve;&amp;inodot;z.&lt;/p&gt;
+&lt;h2 id="hosts-dosyasini-duzenleme"&gt;Hosts Dosyas&amp;inodot;n&amp;inodot; D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyan&amp;inodot;n en alt&amp;inodot;na &amp;scedil;u sat&amp;inodot;r&amp;inodot; ekliyoruz:&lt;/p&gt;
+&lt;h2 id="domain-tanitimi"&gt;Domain Tan&amp;inodot;t&amp;inodot;m&amp;inodot;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;127&lt;/span&gt;.0.0.1&lt;span class="w"&gt; &lt;/span&gt;baba.test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Son olarak kaydedip &amp;ccedil;&amp;inodot;k&amp;inodot;yoruz ve Apache sunucusunu yeniden ba&amp;scedil;lat&amp;inodot;yoruz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;httpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="sonuc"&gt;Sonu&amp;ccedil; ;)&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="arch-linux-apache-lampp-sanal-sunucu-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/babatest-xl.webp" srcset="/images/babatest-sm.webp 300w, /images/babatest-md.webp 500w, /images/babatest-xl.webp 800w, /images/babatest-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Sunucu"/><category term="linux"/><category term="apache"/></entry><entry><title>Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</title><link href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" rel="alternate"/><published>2018-11-18T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-11-18:/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/</id><summary type="html">&lt;p&gt;Bu rehberde, Arch Linux üzerinde Apache, PHP, MariaDB, MySQL ve PhpMyAdmin kurulumlarını adım adım öğreneceksiniz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! &amp;Ccedil;ok uzun bir s&amp;uuml;re &amp;ouml;nce  Arch Linux'a ge&amp;ccedil;i&amp;scedil; yapt&amp;inodot;m. Ancak notlar&amp;inodot;m&amp;inodot; bir t&amp;uuml;rl&amp;uuml; bloguma aktarma f&amp;inodot;rsat&amp;inodot;m olmad&amp;inodot;. Bundan sonraki yaz&amp;inodot;lar&amp;inodot;m, Arch Linux &amp;uuml;zerine olacakt&amp;inodot;r. Sorular gelirse Ubuntu, Linux Mint gibi da&amp;gbreve;&amp;inodot;t&amp;inodot;mlar i&amp;ccedil;in de ara ara yaz&amp;inodot;lar payla&amp;scedil;aca&amp;gbreve;&amp;inodot;m.&lt;/p&gt;
+&lt;h1 id="apache-kurulumu"&gt;Apache Kurulumu&lt;/h1&gt;
+&lt;p&gt;Apache kurulumu i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;apache
+sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/httpd/conf/httpd.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Burada, &lt;code&gt;LoadModule unique_id_module modules/mod_unique_id.so&lt;/code&gt; sat&amp;inodot;r&amp;inodot;n&amp;inodot;n ba&amp;scedil;&amp;inodot;na &lt;code&gt;#&lt;/code&gt; i&amp;scedil;areti koyuyoruz. Ard&amp;inodot;ndan kaydedip &amp;ccedil;&amp;inodot;k&amp;inodot;yoruz.&lt;/li&gt;
+&lt;li&gt;Nano kullan&amp;inodot;yorsan&amp;inodot;z, F3 ile kaydedip, F2 ile &amp;ccedil;&amp;inodot;kabilirsiniz. Nano yerine gedit, Sublime veya mousepad gibi di&amp;gbreve;er metin edit&amp;ouml;rlerini de kullanabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="mysql-mariadb-kurulumu"&gt;MySQL &amp;amp; MariaDB Kurulumu&lt;/h1&gt;
+&lt;p&gt;MySQL ve MariaDB kurulumu i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; takip edin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;httpd
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;httpd
+sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;mysql
+sudo&lt;span class="w"&gt; &lt;/span&gt;mysql_install_db&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="o"&gt;=&lt;/span&gt;mysql&lt;span class="w"&gt; &lt;/span&gt;--basedir&lt;span class="o"&gt;=&lt;/span&gt;/usr&lt;span class="w"&gt; &lt;/span&gt;--datadir&lt;span class="o"&gt;=&lt;/span&gt;/var/lib/mysql
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;mysqld
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;start&lt;span class="w"&gt; &lt;/span&gt;mysqld
+mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mysql_secure_installation&lt;/code&gt; komutunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rd&amp;inodot;ktan sonra, "change the root password" se&amp;ccedil;ene&amp;gbreve;ine &lt;code&gt;y&lt;/code&gt; tu&amp;scedil;una basarak &amp;scedil;ifrenizi belirleyin. &amp;Scedil;ifreyi unutmayaca&amp;gbreve;&amp;inodot;n&amp;inodot;z bir &amp;scedil;ekilde girmeniz &amp;ouml;nemlidir. Di&amp;gbreve;er t&amp;uuml;m se&amp;ccedil;eneklere &lt;code&gt;Y&lt;/code&gt; diyebilirsiniz. Sistem diliniz T&amp;uuml;rk&amp;ccedil;e ise &lt;code&gt;E&lt;/code&gt; tu&amp;scedil;una basarak devam edebilirsiniz. E&amp;gbreve;er "Thanks for using MariaDB" yaz&amp;inodot;s&amp;inodot;n&amp;inodot; g&amp;ouml;r&amp;uuml;rseniz, kurulum tamamlanm&amp;inodot;&amp;scedil;t&amp;inodot;r.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="php-kurulumu"&gt;PHP Kurulumu&lt;/h1&gt;
+&lt;p&gt;PHP kurulumu i&amp;ccedil;in &amp;scedil;u komutlar&amp;inodot; kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;php&lt;span class="w"&gt; &lt;/span&gt;php-apache
+sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/httpd/conf/httpd.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Burada, &lt;code&gt;LoadModule mpm_event_module modules/mod_mpm_event.so&lt;/code&gt; sat&amp;inodot;r&amp;inodot;n&amp;inodot;n ba&amp;scedil;&amp;inodot;na &lt;code&gt;#&lt;/code&gt; i&amp;scedil;areti koyuyoruz.&lt;/li&gt;
+&lt;li&gt;Sayfan&amp;inodot;n en alt&amp;inodot;na a&amp;scedil;a&amp;gbreve;&amp;inodot;daki kodlar&amp;inodot; ekliyoruz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="apache-konfigurasyonu"&gt;Apache Konfigurasyonu&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;LoadModule&lt;span class="w"&gt; &lt;/span&gt;mpm_prefork_module&lt;span class="w"&gt; &lt;/span&gt;modules/mod_mpm_prefork.so
+LoadModule&lt;span class="w"&gt; &lt;/span&gt;php7_module&lt;span class="w"&gt; &lt;/span&gt;modules/libphp7.so
+AddHandler&lt;span class="w"&gt; &lt;/span&gt;php7-script&lt;span class="w"&gt; &lt;/span&gt;php
+Include&lt;span class="w"&gt; &lt;/span&gt;conf/extra/php7_module.conf
+
+&lt;span class="c1"&gt;# phpMyAdmin configuration&lt;/span&gt;
+Include&lt;span class="w"&gt; &lt;/span&gt;conf/extra/phpmyadmin.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="phpmyadmin-kurulumu_1"&gt;PHPMyAdmin Kurulumu&lt;/h1&gt;
+&lt;p&gt;PHPMyAdmin kurulumu i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; takip edin:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;F3 ard&amp;inodot;ndan F2'ye basarak kaydediyoruz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;phpmyadmin
+sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/php/php.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="phpini-konfigurasyonu"&gt;PHP.ini Konfigurasyonu&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;php.ini&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot;n i&amp;ccedil;erisinde &amp;scedil;u sat&amp;inodot;rlar&amp;inodot; aktif hale getirin:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;mysqli.so
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;curl
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;mysqli
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pdo_dblib
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pdo_mysql
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pdo_odbc
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pdo_pgsql
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pdo_sqlite
+&lt;span class="nv"&gt;extension&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ba&amp;scedil;&amp;inodot;ndaki &lt;code&gt;;&lt;/code&gt; i&amp;scedil;aretlerini kald&amp;inodot;r&amp;inodot;yoruz. Ekstra olarak aktif etmek istedi&amp;gbreve;iniz ba&amp;scedil;ka bir eklenti varsa ayn&amp;inodot; i&amp;scedil;lemi yapabilirsiniz. Ayr&amp;inodot;ca, PHP hata mesajlar&amp;inodot;n&amp;inodot; g&amp;ouml;rmek i&amp;ccedil;in &amp;scedil;u ayar&amp;inodot; yapmam&amp;inodot;z gerekiyor:&lt;/p&gt;
+&lt;h2 id="hatalari-gosterme"&gt;Hatalar&amp;inodot; G&amp;ouml;sterme&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;display_errors&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;On
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu ayar normalde &lt;code&gt;Off&lt;/code&gt; durumundad&amp;inodot;r. &lt;code&gt;On&lt;/code&gt; yaparak, yerel geli&amp;scedil;tirme s&amp;inodot;ras&amp;inodot;nda hata mesajlar&amp;inodot;n&amp;inodot; g&amp;ouml;rebilirsiniz.&lt;/p&gt;
+&lt;h2 id="phpmyadmin-konfigurasyonu"&gt;PHPMyAdmin Konfigurasyonu&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/httpd/conf/extra/phpmyadmin.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Bu dosyaya &amp;scedil;u sat&amp;inodot;rlar&amp;inodot; ekleyin:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Alias&lt;span class="w"&gt; &lt;/span&gt;/phpmyadmin&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/share/webapps/phpMyAdmin"&lt;/span&gt;
+&amp;lt;Directory&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/share/webapps/phpMyAdmin"&lt;/span&gt;&amp;gt;
+DirectoryIndex&lt;span class="w"&gt; &lt;/span&gt;index.php
+AllowOverride&lt;span class="w"&gt; &lt;/span&gt;All
+Options&lt;span class="w"&gt; &lt;/span&gt;FollowSymlinks
+Require&lt;span class="w"&gt; &lt;/span&gt;all&lt;span class="w"&gt; &lt;/span&gt;granted
+&amp;lt;/Directory&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ard&amp;inodot;ndan Apache'yi yeniden ba&amp;scedil;lat&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;httpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="ekstra-eklentiler_1"&gt;Ekstra Eklentiler&lt;/h1&gt;
+&lt;p&gt;PHP ile d&amp;uuml;zg&amp;uuml;n &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot; i&amp;ccedil;in baz&amp;inodot; ek eklentileri y&amp;uuml;klememiz gerekecek:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;php-dblib
+sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;php-pgsql&lt;span class="w"&gt; &lt;/span&gt;php-sqlite&lt;span class="w"&gt; &lt;/span&gt;php-gd&lt;span class="w"&gt; &lt;/span&gt;php-odbc
+sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-Syu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;PHP s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; kontrol etmek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php&lt;span class="w"&gt; &lt;/span&gt;-v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er &lt;code&gt;error&lt;/code&gt; ifadesini g&amp;ouml;rm&amp;uuml;yorsan&amp;inodot;z, kurulumunuz ba&amp;scedil;ar&amp;inodot;yla tamamlanm&amp;inodot;&amp;scedil;t&amp;inodot;r.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;PHP&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;7&lt;/span&gt;.2.2&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;cli&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;built:&lt;span class="w"&gt; &lt;/span&gt;Jan&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2018&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;19&lt;/span&gt;:18:38&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;NTS&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="ekstra-bilgiler"&gt;Ekstra Bilgiler&lt;/h1&gt;
+&lt;p&gt;Projelerinizi kaydedece&amp;gbreve;iniz dizin: &lt;strong&gt;/srv/http/&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Dosya yazma izinleriyle ilgili sorun ya&amp;scedil;amamak i&amp;ccedil;in &amp;scedil;u komutlar&amp;inodot; kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;o+w&lt;span class="w"&gt; &lt;/span&gt;/srv/http/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# veya&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;friday13:friday13&lt;span class="w"&gt; &lt;/span&gt;/srv/http/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu iki y&amp;ouml;ntemle genelde dosya eri&amp;scedil;im sorunlar&amp;inodot; &amp;ccedil;&amp;ouml;z&amp;uuml;l&amp;uuml;r. Ancak bazen, y&amp;uuml;klenen dosyan&amp;inodot;n gidece&amp;gbreve;i klas&amp;ouml;rle ilgili bir sorun ya&amp;scedil;anabilir. Bu durumda ilk y&amp;ouml;ntemi uygulayarak klas&amp;ouml;re yazma izni verebilirsiniz.&lt;/p&gt;
+&lt;h2 id="video-anlatimi"&gt;Video Anlat&amp;inodot;m&amp;inodot;&lt;/h2&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="SElIrg0owl8"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/archlinuxlampp-xl.webp" srcset="/images/archlinuxlampp-sm.webp 300w, /images/archlinuxlampp-md.webp 500w, /images/archlinuxlampp-xl.webp 800w, /images/archlinuxlampp-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Sunucu"/><category term="linux"/><category term="apache"/></entry><entry><title>Linux Üzerinde Apache2, MySQL ve PhpMyAdmin Kurulumu (Debian ve Türevleri)</title><link href="https://yuceltoluyag.github.io/linux-apache2-mysql-phpmyadmin-kurulumu/" rel="alternate"/><published>2018-09-14T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-09-14:/linux-apache2-mysql-phpmyadmin-kurulumu/</id><summary type="html">&lt;p&gt;Debian ve türevlerinde Apache2, MySQL ve PhpMyAdmin kurulumunu adım adım nasıl gerçekleştirebileceğinizi anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Debian ve t&amp;uuml;revlerinde Apache2, MySQL ve PhpMyAdmin kurulumunu ad&amp;inodot;m ad&amp;inodot;m nas&amp;inodot;l ger&amp;ccedil;ekle&amp;scedil;tirebilece&amp;gbreve;inizi anlat&amp;inodot;yoruz. XAMPP kullanmak yerine do&amp;gbreve;rudan Apache kurmak isteyenler i&amp;ccedil;in rehber niteli&amp;gbreve;indedir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="apache-kurulumu"&gt;Apache Kurulumu&lt;/h2&gt;
+&lt;p&gt;Her komuttan sonra &lt;code&gt;Enter&lt;/code&gt; tu&amp;scedil;una basmay&amp;inodot; unutmay&amp;inodot;n.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;update
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;apache2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komutlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rd&amp;inodot;ktan sonra taray&amp;inodot;c&amp;inodot;n&amp;inodot;z&amp;inodot;n adres &amp;ccedil;ubu&amp;gbreve;una &lt;code&gt;localhost&lt;/code&gt; veya IP adresinizi yaz&amp;inodot;n. E&amp;gbreve;er Apache d&amp;uuml;zg&amp;uuml;n &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yorsa varsay&amp;inodot;lan Apache sayfas&amp;inodot;n&amp;inodot; g&amp;ouml;rebilirsiniz.&lt;/p&gt;
+&lt;h2 id="mysql-kurulumu"&gt;MySQL Kurulumu&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;mysql-server&lt;span class="w"&gt; &lt;/span&gt;mysql-client
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulum s&amp;inodot;ras&amp;inodot;nda sizden bir parola girmeniz istenecektir. Parolan&amp;inodot;z&amp;inodot; belirleyip onaylay&amp;inodot;n.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;mysql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda MySQL'in &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; belirten bir &amp;ccedil;&amp;inodot;kt&amp;inodot; alman&amp;inodot;z gerekir.&lt;/p&gt;
+&lt;h2 id="mariadb-kurulumu-istege-bagli"&gt;MariaDB Kurulumu (&amp;Idot;ste&amp;gbreve;e Ba&amp;gbreve;l&amp;inodot;)&lt;/h2&gt;
+&lt;p&gt;MariaDB y&amp;uuml;klemek isteyenler a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu kullanabilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;mariadb-server&lt;span class="w"&gt; &lt;/span&gt;mariadb-client
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;G&amp;uuml;venlik ayarlar&amp;inodot;n&amp;inodot; yapmak i&amp;ccedil;in &amp;scedil;u komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Gelen ekranda root parolan&amp;inodot;z&amp;inodot; girin ve g&amp;uuml;venlik yap&amp;inodot;land&amp;inodot;rmalar&amp;inodot;n&amp;inodot; tamamlay&amp;inodot;n.&lt;/p&gt;
+&lt;h2 id="php-kurulumu"&gt;PHP Kurulumu&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;add-apt-repository&lt;span class="w"&gt; &lt;/span&gt;ppa:ondrej/php
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;update
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;php7.0-mysql&lt;span class="w"&gt; &lt;/span&gt;php7.0-curl&lt;span class="w"&gt; &lt;/span&gt;php7.0-json&lt;span class="w"&gt; &lt;/span&gt;php7.0-cgi&lt;span class="w"&gt; &lt;/span&gt;php7.0&lt;span class="w"&gt; &lt;/span&gt;libapache2-mod-php7.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulumu do&amp;gbreve;rulamak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php&lt;span class="w"&gt; &lt;/span&gt;-v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Komutunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak PHP s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;z&amp;uuml; kontrol edebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Apache'yi yeniden ba&amp;scedil;lat&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;apache2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="phpmyadmin-kurulumu"&gt;PhpMyAdmin Kurulumu&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;phpmyadmin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulum s&amp;inodot;ras&amp;inodot;nda Apache2'yi se&amp;ccedil;in ve veritaban&amp;inodot; y&amp;ouml;netimi i&amp;ccedil;in root parolan&amp;inodot;z&amp;inodot; girin.&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er phpMyAdmin'e eri&amp;scedil;irken &lt;code&gt;404 Not Found&lt;/code&gt; hatas&amp;inodot; al&amp;inodot;rsan&amp;inodot;z a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;ln&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;/etc/phpmyadmin/apache.conf&lt;span class="w"&gt; &lt;/span&gt;/etc/apache2/conf-available/phpmyadmin.conf
+sudo&lt;span class="w"&gt; &lt;/span&gt;a2enconf&lt;span class="w"&gt; &lt;/span&gt;phpmyadmin.conf
+sudo&lt;span class="w"&gt; &lt;/span&gt;service&lt;span class="w"&gt; &lt;/span&gt;apache2&lt;span class="w"&gt; &lt;/span&gt;reload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Taray&amp;inodot;c&amp;inodot;n&amp;inodot;za &lt;code&gt;localhost/phpmyadmin&lt;/code&gt; yazarak phpMyAdmin'e eri&amp;scedil;ebilirsiniz. E&amp;gbreve;er "The mbstring extension is missing" hatas&amp;inodot; al&amp;inodot;rsan&amp;inodot;z &amp;scedil;u komutlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;libapache2-mod-php7.0
+sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;php7.0-mbstring
+sudo&lt;span class="w"&gt; &lt;/span&gt;service&lt;span class="w"&gt; &lt;/span&gt;apache2&lt;span class="w"&gt; &lt;/span&gt;restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulum s&amp;inodot;ras&amp;inodot;nda herhangi bir hata al&amp;inodot;rsan&amp;inodot;z yorum b&amp;inodot;rakabilirsiniz. &amp;Idot;yi &amp;ccedil;al&amp;inodot;&amp;scedil;malar!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="linux-apache2-mysql-phpmyadmin-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp" srcset="/images/linux-apache2-mysql-phpmyadmin-kurulumu-sm.webp 300w, /images/linux-apache2-mysql-phpmyadmin-kurulumu-md.webp 500w, /images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp 800w, /images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Sunucu"/><category term="linux"/><category term="apache"/><category term="mysql"/><category term="phpmyadmin"/></entry></feed>

@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü" />
+<meta name="fediverse:creator" content="@yuceltoluyag@mastodon.social" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/" />
+<meta property="og:title" content="Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-07-31T10:00:00+03:00" />
+<meta property="article:modified_time" content="2025-08-11T22:59:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Donanım" />
+  <meta property="article:tag" content="arch linux" />
+<meta property="article:tag" content="linux-firmware" />
+<meta property="article:tag" content="nvidia" />
+<meta property="article:tag" content="pacman" />
+<meta property="article:tag" content="sistem güncelleme" />
+<meta property="article:tag" content="firmware hatası" />
+  
+<!-- Meta Description -->
+<meta name="description" content="linux-firmware paketinin 20250613.12fe085f-5 sürümüne yapılan güncelleme sonrası yaşanan NVIDIA firmware çakışma hatası ve adım adım çözüm rehberi." />
+<meta property="og:description" content="linux-firmware paketinin 20250613.12fe085f-5 sürümüne yapılan güncelleme sonrası yaşanan NVIDIA firmware çakışma hatası ve adım adım çözüm rehberi." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://mastodon.social/@yuceltoluyag","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü",
+        "description": "linux-firmware paketinin 20250613.12fe085f-5 sürümüne yapılan güncelleme sonrası yaşanan NVIDIA firmware çakışma hatası ve adım adım çözüm rehberi.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-07-31T10:00:00+03:00",
+"dateModified": "2025-08-11T22:59:00+03:00",        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+        },
+"articleSection": "Donanım","keywords": "arch linux, linux-firmware, nvidia, pacman, sistem güncelleme, firmware hatası",        "url": "https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/",
+"image": "https://yuceltoluyag.github.io/images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+        <!-- Webmention -->
+        <link rel="webmention" href="https://webmention.io/yuceltoluyag.github.io/webmention" />
+        <link rel="pingback" href="https://webmention.io/yuceltoluyag.github.io/xmlrpc" />
+        <link rel="webmention" href="https://brid.gy/webmention/tumblr" />
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<script src="https://yuceltoluyag.github.io/assets/js/mastodon-comments.js" defer></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#linux-firmware-paketindeki-degisiklik-ne" title="linux-firmware Paketindeki De&gbreve;i&scedil;iklik Ne?">linux-firmware Paketindeki De&gbreve;i&scedil;iklik Ne?</a></li><li><a class="toc-href" href="#karsilasilan-hata-mesaji" title="Kar&scedil;&inodot;la&scedil;&inodot;lan Hata Mesaj&inodot;">Kar&scedil;&inodot;la&scedil;&inodot;lan Hata Mesaj&inodot;</a></li><li><a class="toc-href" href="#sorunun-nedeni-nedir" title="Sorunun Nedeni Nedir?">Sorunun Nedeni Nedir?</a></li><li><a class="toc-href" href="#bu-sorun-kimleri-etkiler" title="Bu Sorun Kimleri Etkiler?">Bu Sorun Kimleri Etkiler?</a></li><li><a class="toc-href" href="#cozum-linux-firmware-paketini-manuel-olarak-kaldirip-yeniden-yukleyin" title="&Ccedil;&ouml;z&uuml;m: linux-firmware Paketini Manuel Olarak Kald&inodot;r&inodot;p Yeniden Y&uuml;kleyin">&Ccedil;&ouml;z&uuml;m: linux-firmware Paketini Manuel Olarak Kald&inodot;r&inodot;p Yeniden Y&uuml;kleyin</a><ul><li><a class="toc-href" href="#1-linux-firmware-paketini-zorla-kaldirin" title="1. linux-firmware Paketini Zorla Kald&inodot;r&inodot;n">1. linux-firmware Paketini Zorla Kald&inodot;r&inodot;n</a></li><li><a class="toc-href" href="#2-sistem-guncellemesini-tamamlayin" title="2. Sistem G&uuml;ncellemesini Tamamlay&inodot;n">2. Sistem G&uuml;ncellemesini Tamamlay&inodot;n</a></li></ul></li><li><a class="toc-href" href="#alternatif-yontem-belirli-nvidia-firmware-dosyalarini-manuel-silmek_1" title="Alternatif Y&ouml;ntem: Belirli NVIDIA Firmware Dosyalar&inodot;n&inodot; Manuel Silmek">Alternatif Y&ouml;ntem: Belirli NVIDIA Firmware Dosyalar&inodot;n&inodot; Manuel Silmek</a></li><li><a class="toc-href" href="#ozet-sorun-neden-oldu-nasil-cozulur" title="&Ouml;zet: Sorun Neden Oldu, Nas&inodot;l &Ccedil;&ouml;z&uuml;l&uuml;r?">&Ouml;zet: Sorun Neden Oldu, Nas&inodot;l &Ccedil;&ouml;z&uuml;l&uuml;r?</a></li><li><a class="toc-href" href="#sikca-sorulan-sorular-sss" title="S&inodot;k&ccedil;a Sorulan Sorular (SSS)">S&inodot;k&ccedil;a Sorulan Sorular (SSS)</a><ul><li><a class="toc-href" href="#bu-islem-guvenli-mi" title="Bu i&scedil;lem g&uuml;venli mi?">Bu i&scedil;lem g&uuml;venli mi?</a></li><li><a class="toc-href" href="#hangi-surumde-bu-sorun-ortadan-kalkti" title="Hangi s&uuml;r&uuml;mde bu sorun ortadan kalkt&inodot;?">Hangi s&uuml;r&uuml;mde bu sorun ortadan kalkt&inodot;?</a></li><li><a class="toc-href" href="#otomatik-bir-cozum-gelir-mi" title="Otomatik bir &ccedil;&ouml;z&uuml;m gelir mi?">Otomatik bir &ccedil;&ouml;z&uuml;m gelir mi?</a></li></ul></li><li><a class="toc-href" href="#sen-de-bu-sorunu-yasadin-mi_1" title="Sen de Bu Sorunu Ya&scedil;ad&inodot;n m&inodot;?">Sen de Bu Sorunu Ya&scedil;ad&inodot;n m&inodot;?</a></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/davinci-resolve-20-1-linux-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta DaVinci Resolve 20.1 Açılmıyor Hatası ve Çözümü</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-ddos-hizmet-kesintisi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta Süren DDoS Saldırısı ve Hızlı Çözüm Yolları</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/git-gpg-imzali-commit-vscode-arch/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Raspberry Pi Nasıl Kurulur</h4>
+                                    </a>
+                                </div>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-07-31T10:00:00+03:00" class="ml-1">
+                                    31 July 2025
+                                </time>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:history"></span>
+                                <time datetime="2025-08-11T22:59:00+03:00" class="ml-1">
+                                    11 August 2025
+                                </time>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/donanim/"
+                                    class="link link-hover ml-1">
+                                    Donanım
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">594 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">3 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 15.85</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/arch-linux-linux-firmware-nvidia-hatasi-cozumu.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><p>Arch Linux kullan&inodot;yorsan&inodot;z ve son g&uuml;ncellemeleri yaparken <code>linux-firmware</code> paketine dair can s&inodot;k&inodot;c&inodot; bir hata mesaj&inodot;yla kar&scedil;&inodot;la&scedil;t&inodot;ysan&inodot;z, yaln&inodot;z de&gbreve;ilsiniz. &Ouml;zellikle NVIDIA donan&inodot;m&inodot;na sahip sistemlerde, <code>linux-firmware-nvidia</code> ile ilgili dosya &ccedil;ak&inodot;&scedil;malar&inodot; (<code>exists in filesystem</code>) bir&ccedil;ok kullan&inodot;c&inodot;n&inodot;n sistemini y&uuml;kseltmesini engelliyor. Bu makalede, bu sorunun nedenini ve kal&inodot;c&inodot; &ccedil;&ouml;z&uuml;m&uuml;n&uuml; ad&inodot;m ad&inodot;m a&ccedil;&inodot;kl&inodot;yoruz. ✅</p>
+<p><img alt="arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp" srcset="/images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-sm.webp 300w, /images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-md.webp 500w, /images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp 800w, /images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp 1200w"/></p>
+<h2 id="linux-firmware-paketindeki-degisiklik-ne">linux-firmware Paketindeki De&gbreve;i&scedil;iklik Ne?</h2>
+<p>2025-06-13 tarihinde yay&inodot;mlanan <code>linux-firmware</code> paketi, 20250613.12fe085f-5 s&uuml;r&uuml;m&uuml;yle &ouml;nemli bir yap&inodot;sal de&gbreve;i&scedil;ikli&gbreve;e gitti. Art&inodot;k t&uuml;m firmware bile&scedil;enleri, donan&inodot;m &uuml;reticisine &ouml;zel paketlere b&ouml;l&uuml;nm&uuml;&scedil; durumda.</p>
+<p>&Ouml;rne&gbreve;in:</p>
+<ul>
+<li><code>linux-firmware-nvidia</code></li>
+<li><code>linux-firmware-intel</code></li>
+<li><code>linux-firmware-amd</code></li>
+</ul>
+<p>Bu ayr&inodot;&scedil;t&inodot;rma sayesinde sistemde yaln&inodot;zca ihtiya&ccedil; duyulan firmware'ler kurulabiliyor. Ana paket olan <code>linux-firmware</code> art&inodot;k sadece bu alt paketlere ba&gbreve;&inodot;ml&inodot; olan bo&scedil; (metapackage) bir yap&inodot;ya sahip.</p>
+<blockquote>
+<p>Ancak bu yeniden yap&inodot;lanma, NVIDIA s&uuml;r&uuml;c&uuml;lerine ait sembolik ba&gbreve;lant&inodot;lar&inodot;n (symlink) upstream taraf&inodot;ndan yeniden d&uuml;zenlenmesiyle ayn&inodot; zamana denk geldi ve beklenmedik bir dosya &ccedil;ak&inodot;&scedil;mas&inodot;na neden oldu.</p>
+</blockquote>
+<h2 id="karsilasilan-hata-mesaji">Kar&scedil;&inodot;la&scedil;&inodot;lan Hata Mesaj&inodot;</h2>
+<p>G&uuml;ncelleme s&inodot;ras&inodot;nda Pacman &scedil;u hatalar&inodot; verebilir:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad103 exists in filesystem
+linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad104 exists in filesystem
+linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad106 exists in filesystem
+linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad107 exists in filesystem
+</code></pre></div>
+<p>Bu hata mesajlar&inodot;, <code>linux-firmware</code> paketinin &ouml;nceki s&uuml;r&uuml;mlerinde NVIDIA firmware dosyalar&inodot;n&inodot;n do&gbreve;rudan sistemde yer ald&inodot;&gbreve;&inodot;n&inodot;, yeni sistemde ise bunlar&inodot;n art&inodot;k <code>linux-firmware-nvidia</code> paketi taraf&inodot;ndan y&ouml;netilmeye &ccedil;al&inodot;&scedil;&inodot;ld&inodot;&gbreve;&inodot;n&inodot; g&ouml;steriyor.</p>
+<h2 id="sorunun-nedeni-nedir">Sorunun Nedeni Nedir?</h2>
+<p>Pacman, varsay&inodot;lan olarak dosya &ccedil;ak&inodot;&scedil;malar&inodot;n&inodot; tolere etmez. Ayn&inodot; dosyan&inodot;n iki farkl&inodot; paket taraf&inodot;ndan sahiplenilmesi durumunda i&scedil;lemi durdurur. Bu &ouml;zel durumda, sistemde zaten var olan NVIDIA firmware dosyalar&inodot;, yeni <code>linux-firmware-nvidia</code> paketinin kurulmas&inodot;n&inodot; engelliyor.</p>
+<p>Bu durumun ortaya &ccedil;&inodot;kmas&inodot;n&inodot;n iki ana nedeni var:</p>
+<ol>
+<li><strong>Yukar&inodot; ak&inodot;&scedil; (upstream) taraf&inodot;ndan yap&inodot;lan sembolik ba&gbreve;lant&inodot; d&uuml;zenlemeleri</strong></li>
+<li><strong><code>linux-firmware</code> paketinin mimarisindeki radikal de&gbreve;i&scedil;iklik</strong></li>
+</ol>
+<h2 id="bu-sorun-kimleri-etkiler">Bu Sorun Kimleri Etkiler?</h2>
+<p>Bu problem, a&scedil;a&gbreve;&inodot;daki ko&scedil;ullar&inodot; sa&gbreve;layan kullan&inodot;c&inodot;lar&inodot; etkiler:</p>
+<ul>
+<li><code>linux-firmware</code> s&uuml;r&uuml;m&uuml; 20250508.788aadc8-2 veya daha eski bir s&uuml;r&uuml;m kullan&inodot;l&inodot;yor</li>
+<li>Sistem g&uuml;ncellenmek isteniyor (<code>pacman -Syu</code>)</li>
+<li>Sistemde NVIDIA donan&inodot;m&inodot; mevcut (ya da <code>linux-firmware-nvidia</code> otomatik olarak y&uuml;kleniyor)</li>
+</ul>
+<h2 id="cozum-linux-firmware-paketini-manuel-olarak-kaldirip-yeniden-yukleyin">&Ccedil;&ouml;z&uuml;m: linux-firmware Paketini Manuel Olarak Kald&inodot;r&inodot;p Yeniden Y&uuml;kleyin</h2>
+<p>Sistemi ba&scedil;ar&inodot;yla g&uuml;ncellemek i&ccedil;in a&scedil;a&gbreve;&inodot;daki ad&inodot;mlar&inodot; s&inodot;ras&inodot;yla uygulay&inodot;n:</p>
+<h3 id="1-linux-firmware-paketini-zorla-kaldirin">1. linux-firmware Paketini Zorla Kald&inodot;r&inodot;n</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Rdd<span class="w"> </span>linux-firmware
+</code></pre></div>
+<p>Bu komut, ba&gbreve;&inodot;ml&inodot;l&inodot;k kontrol&uuml; yapmadan <code>linux-firmware</code> paketini kald&inodot;r&inodot;r. Normalde tavsiye edilmez, ancak bu &ouml;zel durumda g&uuml;venlidir &ccedil;&uuml;nk&uuml; hemen ard&inodot;ndan yeniden kurulacakt&inodot;r.</p>
+<h3 id="2-sistem-guncellemesini-tamamlayin">2. Sistem G&uuml;ncellemesini Tamamlay&inodot;n</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu
+</code></pre></div>
+<p>Bu i&scedil;lem s&inodot;ras&inodot;nda yeni <code>linux-firmware</code> ve onun ba&gbreve;&inodot;ml&inodot; oldu&gbreve;u <code>linux-firmware-nvidia</code> gibi alt paketler kurulacakt&inodot;r. Dosya &ccedil;ak&inodot;&scedil;mas&inodot; art&inodot;k ya&scedil;anmaz.</p>
+<blockquote>
+<p><strong>Not:</strong> E&gbreve;er <code>-Syu</code> s&inodot;ras&inodot;nda ba&scedil;ka hatalarla kar&scedil;&inodot;la&scedil;&inodot;rsan&inodot;z, Pacman&rsquo;&inodot;n &ccedil;&inodot;kt&inodot;s&inodot;n&inodot; dikkatle kontrol edin. Spesifik bir paketin sorun &ccedil;&inodot;kard&inodot;&gbreve;&inodot;n&inodot; g&ouml;r&uuml;rseniz ona &ouml;zel m&uuml;dahale gerekebilir.</p>
+</blockquote>
+<h2 id="alternatif-yontem-belirli-nvidia-firmware-dosyalarini-manuel-silmek_1">Alternatif Y&ouml;ntem: Belirli NVIDIA Firmware Dosyalar&inodot;n&inodot; Manuel Silmek</h2>
+<p>E&gbreve;er <code>linux-firmware</code> paketini kald&inodot;rmak istemiyorsan&inodot;z, ilgili dosyalar&inodot; tek tek silebilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/usr/lib/firmware/nvidia/ad103
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/usr/lib/firmware/nvidia/ad104
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/usr/lib/firmware/nvidia/ad106
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/usr/lib/firmware/nvidia/ad107
+</code></pre></div>
+<p>Sonras&inodot;nda tekrar <code>sudo pacman -Syu</code> komutunu &ccedil;al&inodot;&scedil;t&inodot;rarak sisteminizi g&uuml;ncelleyebilirsiniz. Ancak bu y&ouml;ntem daha fazla risk i&ccedil;erir ve dikkatli kullan&inodot;lmal&inodot;d&inodot;r.</p>
+<h2 id="ozet-sorun-neden-oldu-nasil-cozulur">&Ouml;zet: Sorun Neden Oldu, Nas&inodot;l &Ccedil;&ouml;z&uuml;l&uuml;r?</h2>
+<ul>
+<li><code>linux-firmware</code> art&inodot;k bo&scedil; bir paket ve firmware'ler ayr&inodot; ayr&inodot; paketlendi.</li>
+<li>NVIDIA firmware dosyalar&inodot;n&inodot;n upstream&rsquo;de yeniden d&uuml;zenlenmesi, Pacman&rsquo;&inodot;n dosya &ccedil;ak&inodot;&scedil;mas&inodot; uyar&inodot;s&inodot; vermesine yol a&ccedil;t&inodot;.</li>
+<li>
+<p>Sorunu &ccedil;&ouml;zmek i&ccedil;in:</p>
+</li>
+<li>
+<p><code>linux-firmware</code> paketini kald&inodot;r&inodot;n (<code>pacman -Rdd</code>)</p>
+</li>
+<li>Sistem g&uuml;ncellemesini &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n (<code>pacman -Syu</code>)</li>
+</ul>
+<p>Bu ad&inodot;mlarla sisteminizi sorunsuz &scedil;ekilde en g&uuml;ncel hale getirebilirsiniz. 🎉</p>
+<hr/>
+<h2 id="sikca-sorulan-sorular-sss">S&inodot;k&ccedil;a Sorulan Sorular (SSS)</h2>
+<h3 id="bu-islem-guvenli-mi">Bu i&scedil;lem g&uuml;venli mi?</h3>
+<p>Evet, bu belirli durumda <code>-Rdd</code> kullanmak g&uuml;venlidir &ccedil;&uuml;nk&uuml; <code>linux-firmware</code> hemen ard&inodot;ndan yeniden kurulacakt&inodot;r.</p>
+<h3 id="hangi-surumde-bu-sorun-ortadan-kalkti">Hangi s&uuml;r&uuml;mde bu sorun ortadan kalkt&inodot;?</h3>
+<p>Sorun, <code>linux-firmware</code> 20250613.12fe085f-5 s&uuml;r&uuml;m&uuml;ne ge&ccedil;i&scedil;le birlikte ba&scedil;lad&inodot;. Bu s&uuml;r&uuml;mden sonrakilerde yeniden yap&inodot;lanma tamamland&inodot;&gbreve;&inodot; i&ccedil;in benzer sorunlar beklenmiyor.</p>
+<h3 id="otomatik-bir-cozum-gelir-mi">Otomatik bir &ccedil;&ouml;z&uuml;m gelir mi?</h3>
+<p>Gelecekte <code>pacman</code> veya <code>linux-firmware</code> paketleri taraf&inodot;ndan otomatik dosya ta&scedil;&inodot;ma/silme deste&gbreve;i eklenebilir. Ancak &scedil;u an i&ccedil;in manuel m&uuml;dahale &scedil;art.</p>
+<hr/>
+<h2 id="sen-de-bu-sorunu-yasadin-mi_1">Sen de Bu Sorunu Ya&scedil;ad&inodot;n m&inodot;?</h2>
+<p>E&gbreve;er bu rehber i&scedil;ine yarad&inodot;ysa yorumlarda belirtmeyi unutma 💬
+Ayr&inodot;ca arkada&scedil;lar&inodot;n da benzer bir sorun ya&scedil;&inodot;yorsa payla&scedil;arak onlara da yard&inodot;mc&inodot; olabilirsin!</p>
+<hr/>
+<blockquote>
+<p>📌 <strong>&Idot;pucu:</strong> Sistem g&uuml;ncellemelerinden &ouml;nce mutlaka <code>pacman.log</code> dosyas&inodot;n&inodot; yedeklemeyi unutma. B&ouml;ylece neler de&gbreve;i&scedil;ti&gbreve;ini kolayca takip edebilirsin.</p>
+</blockquote>
+<hr/>
+<p><strong>Kaynak:</strong></p>
+<ul>
+<li><a href="https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/">Arch Linux News &ndash; linux-firmware &gt;= 20250613.12fe085f-5 upgrade requires manual intervention</a></li>
+</ul>
+<hr/></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/&text=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/&title=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/&text=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+                        <!-- Mastodon Paylaşım -->
+                        <button
+                            class="social-share-btn mastodon-share"
+                            id="mastodon-share-btn"
+                            aria-label="Mastodon'da Paylaş">
+                            <iconify-icon icon="tabler:brand-mastodon"></iconify-icon>
+                        </button>
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü&body=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/&description=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü&media=https://yuceltoluyag.github.io/images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/&title=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü%20-%20https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    <!-- Webmentions -->
+                    <div class="webmentions-container">
+                        <div class="webmentions-content"></div>
+                    </div>
+
+      
+                    <div class="mastodon-comments-section mt-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-2xl font-bold flex items-center">
+                                <span class="iconify mr-2" data-icon="tabler:message-circle"></span>
+                                Fediverse Yorumları
+                            </h2>
+                            <a
+                                href="https://mastodon.social/@yuceltoluyag/114989705482412461"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-sm btn-outline btn-primary">
+                                <span class="iconify mr-1" data-icon="tabler:external-link"></span>
+                                Mastodon'da Görüntüle
+                            </a>
+                        </div>
+                        <mastodon-comments
+                            host="mastodon.social"
+                            user="yuceltoluyag"
+                            tootId="114989705482412461"></mastodon-comments>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#linux-firmware-paketindeki-degisiklik-ne" title="linux-firmware Paketindeki De&gbreve;i&scedil;iklik Ne?">linux-firmware Paketindeki De&gbreve;i&scedil;iklik Ne?</a></li><li><a class="toc-href" href="#karsilasilan-hata-mesaji" title="Kar&scedil;&inodot;la&scedil;&inodot;lan Hata Mesaj&inodot;">Kar&scedil;&inodot;la&scedil;&inodot;lan Hata Mesaj&inodot;</a></li><li><a class="toc-href" href="#sorunun-nedeni-nedir" title="Sorunun Nedeni Nedir?">Sorunun Nedeni Nedir?</a></li><li><a class="toc-href" href="#bu-sorun-kimleri-etkiler" title="Bu Sorun Kimleri Etkiler?">Bu Sorun Kimleri Etkiler?</a></li><li><a class="toc-href" href="#cozum-linux-firmware-paketini-manuel-olarak-kaldirip-yeniden-yukleyin" title="&Ccedil;&ouml;z&uuml;m: linux-firmware Paketini Manuel Olarak Kald&inodot;r&inodot;p Yeniden Y&uuml;kleyin">&Ccedil;&ouml;z&uuml;m: linux-firmware Paketini Manuel Olarak Kald&inodot;r&inodot;p Yeniden Y&uuml;kleyin</a><ul><li><a class="toc-href" href="#1-linux-firmware-paketini-zorla-kaldirin" title="1. linux-firmware Paketini Zorla Kald&inodot;r&inodot;n">1. linux-firmware Paketini Zorla Kald&inodot;r&inodot;n</a></li><li><a class="toc-href" href="#2-sistem-guncellemesini-tamamlayin" title="2. Sistem G&uuml;ncellemesini Tamamlay&inodot;n">2. Sistem G&uuml;ncellemesini Tamamlay&inodot;n</a></li></ul></li><li><a class="toc-href" href="#alternatif-yontem-belirli-nvidia-firmware-dosyalarini-manuel-silmek_1" title="Alternatif Y&ouml;ntem: Belirli NVIDIA Firmware Dosyalar&inodot;n&inodot; Manuel Silmek">Alternatif Y&ouml;ntem: Belirli NVIDIA Firmware Dosyalar&inodot;n&inodot; Manuel Silmek</a></li><li><a class="toc-href" href="#ozet-sorun-neden-oldu-nasil-cozulur" title="&Ouml;zet: Sorun Neden Oldu, Nas&inodot;l &Ccedil;&ouml;z&uuml;l&uuml;r?">&Ouml;zet: Sorun Neden Oldu, Nas&inodot;l &Ccedil;&ouml;z&uuml;l&uuml;r?</a></li><li><a class="toc-href" href="#sikca-sorulan-sorular-sss" title="S&inodot;k&ccedil;a Sorulan Sorular (SSS)">S&inodot;k&ccedil;a Sorulan Sorular (SSS)</a><ul><li><a class="toc-href" href="#bu-islem-guvenli-mi" title="Bu i&scedil;lem g&uuml;venli mi?">Bu i&scedil;lem g&uuml;venli mi?</a></li><li><a class="toc-href" href="#hangi-surumde-bu-sorun-ortadan-kalkti" title="Hangi s&uuml;r&uuml;mde bu sorun ortadan kalkt&inodot;?">Hangi s&uuml;r&uuml;mde bu sorun ortadan kalkt&inodot;?</a></li><li><a class="toc-href" href="#otomatik-bir-cozum-gelir-mi" title="Otomatik bir &ccedil;&ouml;z&uuml;m gelir mi?">Otomatik bir &ccedil;&ouml;z&uuml;m gelir mi?</a></li></ul></li><li><a class="toc-href" href="#sen-de-bu-sorunu-yasadin-mi_1" title="Sen de Bu Sorunu Ya&scedil;ad&inodot;n m&inodot;?">Sen de Bu Sorunu Ya&scedil;ad&inodot;n m&inodot;?</a></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://mastodon.social/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Mastodon">
+                        <span class="iconify text-xl" data-icon="tabler:brand-mastodon"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+<!-- Webmention JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/webmention.js" defer></script>
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+        // Mastodon Paylaşım İşlevi
+        const mastodonShareButton = document.getElementById("mastodon-share-btn");
+        if (mastodonShareButton) {
+            mastodonShareButton.addEventListener("click", function () {
+                // Paylaşılacak bilgileri al
+                const url = window.location.href;
+                const title = document.querySelector("h1").textContent.trim();
+
+                // Varsayılan mastodon örneği
+                const defaultInstance = "mastodon.social";
+
+                // Kullanıcıdan mastodon örneğini al
+                const instance = prompt("Mastodon örneğinizi girin (örn: mastodon.social):", defaultInstance);
+
+                if (instance) {
+                    // Mastodon paylaşım URL'sini oluştur
+                    const shareUrl = `https://${instance}/share?text=${encodeURIComponent(title + " " + url)}`;
+
+                    // Yeni pencerede paylaşım sayfasını aç
+                    window.open(shareUrl, "_blank");
+                }
+            });
+        }
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+     </body>
+</html>

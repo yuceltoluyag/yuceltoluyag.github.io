@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - PHP Geliştirme</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/php-gelistirme.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>PDO Sum Fonksiyonu Kullanımı (morris.js İçerir)</title><link href="https://yuceltoluyag.github.io/pdo-sum-fonksiyonu-kullanimi-morris-js/" rel="alternate"/><published>2018-12-07T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-12-07:/pdo-sum-fonksiyonu-kullanimi-morris-js/</id><summary type="html">&lt;p&gt;PDO kullanarak MySQL veritabanındaki verileri toplama işlemi ve bu verileri morris.js ile grafik halinde görselleştirme.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! MySQL (phpMyAdmin) &amp;uuml;zerinde bir tablodaki belirli s&amp;uuml;tunlar&amp;inodot;n toplam&amp;inodot;n&amp;inodot; almak i&amp;ccedil;in ke&amp;scedil;fetti&amp;gbreve;im basit ve etkili bir fonksiyonun kullan&amp;inodot;m&amp;inodot;n&amp;inodot; ele alaca&amp;gbreve;&amp;inodot;z. Ayr&amp;inodot;ca, en sevdi&amp;gbreve;im grafik k&amp;uuml;t&amp;uuml;phanelerinden biri olan &lt;a href="http://morrisjs.github.io/morris.js/" rel="noopener noreferrer" target="_blank"&gt;morris.js&lt;/a&gt; ile bu verileri g&amp;ouml;rselle&amp;scedil;tirece&amp;gbreve;iz. 🎨📊&lt;/p&gt;
+&lt;h2 id="veri-toplama"&gt;Veri Toplama&lt;/h2&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki kod, &lt;strong&gt;hesap_toplam&lt;/strong&gt; ve &lt;strong&gt;hesap_odenen&lt;/strong&gt; s&amp;uuml;tunlar&amp;inodot;n&amp;inodot;n toplam&amp;inodot;n&amp;inodot; alarak bir grafik olu&amp;scedil;turacakt&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="ornek-gorsellestirme"&gt;&amp;Ouml;rnek G&amp;ouml;rselle&amp;scedil;tirme&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="PDO ve Morris.js ile Grafik" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/php_morris-xl.webp" srcset="/images/php_morris-sm.webp 300w, /images/php_morris-md.webp 500w, /images/php_morris-xl.webp 800w, /images/php_morris-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="kod_1"&gt;Kod&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;PHP&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;Morris.Donut({&lt;/span&gt;
+&lt;span class="x"&gt;    element: 'morris-donut-chart',&lt;/span&gt;
+&lt;span class="x"&gt;    data: [&lt;/span&gt;
+&lt;span class="x"&gt;        &lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+        &lt;span class="nv"&gt;$kac_tane&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$db&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"SELECT SUM(hesap_toplam) AS toplagel FROM hesaplar"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;  
+        &lt;span class="nv"&gt;$kac_bane&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$db&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;query&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"SELECT SUM(hesap_odenen) AS bulgel FROM hesaplar"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;  
+
+        &lt;span class="nv"&gt;$toplam&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$kac_tane&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'toplagel'&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;  
+        &lt;span class="nv"&gt;$cik&lt;/span&gt;    &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$kac_bane&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'bulgel'&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;  
+
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'{label: "Toplam Bor&amp;ccedil;lar", value: '&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$toplam&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;'},'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;'{label: "Toplam &amp;Ouml;demeler", value: '&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="nv"&gt;$cik&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="s1"&gt;'}'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;    ]&lt;/span&gt;
+&lt;span class="x"&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="aciklamalar"&gt;A&amp;ccedil;&amp;inodot;klamalar&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SUM()&lt;/strong&gt; fonksiyonu, belirli bir s&amp;uuml;tundaki t&amp;uuml;m de&amp;gbreve;erleri toplar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;fetch()&lt;/strong&gt; metodu, sorgunun sonucunu al&amp;inodot;r ve de&amp;gbreve;i&amp;scedil;kenlere atar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Morris.js Donut&lt;/strong&gt; grafi&amp;gbreve;i, al&amp;inodot;nan verileri grafik olarak g&amp;ouml;rselle&amp;scedil;tirmek i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="sonuc"&gt;Sonu&amp;ccedil;&lt;/h3&gt;
+&lt;p&gt;Kodun &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;lmas&amp;inodot;yla birlikte a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi bir grafik elde edeceksiniz:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Morris.js Grafik &amp;Ouml;rne&amp;gbreve;i" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/php_morris_grafik-xl.webp" srcset="/images/php_morris_grafik-sm.webp 300w, /images/php_morris_grafik-md.webp 500w, /images/php_morris_grafik-xl.webp 800w, /images/php_morris_grafik-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er herhangi bir sorunuz olursa yorum b&amp;inodot;rakabilirsiniz! 💬😊&lt;/p&gt;</content><category term="PHP Geliştirme"/><category term="php"/><category term="pdo"/></entry></feed>
