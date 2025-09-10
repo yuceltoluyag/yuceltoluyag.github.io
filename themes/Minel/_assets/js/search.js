@@ -2,6 +2,18 @@
  * Arama fonksiyonalitesi
  */
 
+
+// HTML escaping utility to prevent XSS
+function escapeHTML(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/\//g, '&#x2F;');
+}
+
 // Arama verileri ve index için global değişkenler
 let searchData = [];
 let searchIndex = null;
@@ -138,7 +150,7 @@ function displayResults(results, query) {
     searchResults.innerHTML = "";
 
     if (results.length === 0) {
-        searchResults.innerHTML = `<p class="text-center text-base-content/60 py-8">"${query}" için sonuç bulunamadı</p>`;
+        searchResults.innerHTML = `<p class="text-center text-base-content/60 py-8">"${escapeHTML(query)}" için sonuç bulunamadı</p>`;
         return;
     }
 
