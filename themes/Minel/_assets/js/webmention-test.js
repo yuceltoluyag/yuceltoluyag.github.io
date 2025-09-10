@@ -23,6 +23,16 @@
             return url;
         }
 
+        // HTML escaping utility
+        function escapeHTML(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
         // Başlık
         const title = document.createElement("h3");
         title.textContent = "Webmention Test Aracı";
@@ -55,9 +65,9 @@
                         <span>Localhost ortamında test yapıyorsunuz. URL otomatik olarak production adresine çevrildi.</span>
                     </div>
                 </div>
-                <div class="mt-1 text-xs">Production URL: <span class="text-primary">${formatTestUrl(
+                <div class="mt-1 text-xs">Production URL: <span class="text-primary">${escapeHTML(formatTestUrl(
                     window.location.href
-                )}</span></div>
+                ))}</span></div>
             `;
         }
         inputWrapper.appendChild(urlInfo);
