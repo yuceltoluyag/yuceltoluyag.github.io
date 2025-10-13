@@ -115,13 +115,13 @@ Bazı durumlarda, orijinal mastodon-comments.js dosyasında sorunlar yaşayabili
 ```javascript
 render_toots(toots, in_reply_to, depth) {
     console.log(`MastodonComments: render_toots başladı - in_reply_to: ${in_reply_to}, depth: ${depth}`);
-    
+
     // Derinlik kontrolü ekleyelim, çok derin recursion'ları önleyelim
     if (depth > 10) {
         console.log(`MastodonComments: Maksimum derinliğe ulaşıldı (${depth}), render işlemi durduruldu`);
         return;
     }
-    
+
     // Sadece kök yorumları göster, diğerlerini rekürsif olarak işle
     if (depth === 0) {
         // İlk seviye - filtreleme olmadan tüm yorumları göster
@@ -132,10 +132,10 @@ render_toots(toots, in_reply_to, depth) {
         var tootsToRender = toots.filter((toot) => toot.in_reply_to_id === in_reply_to);
         console.log(`MastodonComments: Alt seviye yorumlar - in_reply_to: ${in_reply_to}, bulunan: ${tootsToRender.length}`);
     }
-    
+
     // Yorumları sırala (tarih sıralaması)
     tootsToRender = tootsToRender.sort((a, b) => a.created_at.localeCompare(b.created_at));
-    
+
     // Her bir yorum için render işlemi yap
     tootsToRender.forEach((toot) => {
         // Bu yorum daha önce render edilmiş mi?
@@ -143,10 +143,10 @@ render_toots(toots, in_reply_to, depth) {
             console.log(`MastodonComments: Toot zaten render edilmiş, atlanıyor - id: ${toot.id}`);
             return;
         }
-        
+
         // Bu yorumu render edildi olarak işaretle
         toot._rendered = true;
-        
+
         this.render_toot(toots, toot, depth);
     });
 }
@@ -168,7 +168,7 @@ render_toot(toots, toot, depth) {
             }" height="20" width="20" />`
         );
     });
-    
+
     // İçerik içindeki emojileri işle
     let processedContent = toot.content;
     if (toot.emojis && toot.emojis.length > 0) {
@@ -177,7 +177,7 @@ render_toot(toots, toot, depth) {
             const emojiImg = `<img src="${this.escapeHtml(emoji.static_url)}" alt="Emoji ${
                 emoji.shortcode
             }" height="20" width="20" />`;
-            
+
             // Emoji kodunu, emoji resmiyle değiştir (tüm eşleşmeleri bul)
             processedContent = processedContent.split(emojiCode).join(emojiImg);
         });
@@ -192,7 +192,7 @@ render_toot(toots, toot, depth) {
         <div class="content">${processedContent}</div>
         <!-- Diğer içerikler -->
     </div>`;
-    
+
     // ...devamı...
 }
 ```
@@ -237,7 +237,7 @@ Yorumların görünmemesinin birkaç nedeni olabilir:
 
 1. **DOMPurify Sorunu**: DOMPurify kütüphanesinin doğru yüklendiğinden emin olun. Tarayıcı konsolunda hata mesajlarını kontrol edin.
 
-2. **Mastodon API Kısıtlamaları**: Bazı durumlarda, Mastodon API'si "private" veya "unlisted" görünürlüğüne sahip yanıtları göstermeyebilir. 
+2. **Mastodon API Kısıtlamaları**: Bazı durumlarda, Mastodon API'si "private" veya "unlisted" görünürlüğüne sahip yanıtları göstermeyebilir.
 
 3. **CORS Sorunları**: Tarayıcınızın geliştirici araçlarında CORS hatası olup olmadığını kontrol edin.
 
@@ -257,7 +257,7 @@ Herhangi bir sorunla karşılaşırsanız, aşağıdaki kaynaklara göz atabilir
 
 - [GitHub - dpecos/mastodon-comments](https://github.com/dpecos/mastodon-comments){: target="_blank" rel="noopener noreferrer"}
 - [Daniel Pecos Martinez'in blog yazısı](https://danielpecos.com/2022/12/25/mastodon-as-comment-system-for-your-static-blog/){: target="_blank" rel="noopener noreferrer"}
-- Javascriptin değiştirilmiş versiyonuna buradan ulaşabilirsiniz [mastodon-comments.js](/files/mastodon-comments.js) 
+- Javascriptin değiştirilmiş versiyonuna buradan ulaşabilirsiniz [mastodon-comments.js](/files/mastodon-comments.js)
 
 
 [responsive_img src="/images/pelican-bloguna-mastodon-yorumlari-ekleme-xl.webp" alt="pelican-bloguna-mastodon-yorumlari-ekleme" /]

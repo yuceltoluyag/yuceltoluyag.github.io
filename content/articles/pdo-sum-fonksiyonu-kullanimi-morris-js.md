@@ -31,10 +31,10 @@ Morris.Donut({
         <?php
         $kac_tane = $db->query("SELECT SUM(hesap_toplam) AS toplagel FROM hesaplar")->fetch();  
         $kac_bane = $db->query("SELECT SUM(hesap_odenen) AS bulgel FROM hesaplar")->fetch();  
-        
+
         $toplam = $kac_tane['toplagel'];  
         $cik    = $kac_bane['bulgel'];  
-        
+
         echo '{label: "Toplam Borçlar", value: '.$toplam.'},';
         echo '{label: "Toplam Ödemeler", value: '.$cik.'}';
         ?>

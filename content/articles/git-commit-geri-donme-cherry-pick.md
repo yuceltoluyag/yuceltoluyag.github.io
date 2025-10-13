@@ -88,7 +88,7 @@ Eğer `git cherry-pick` sırasında bir **çakışma (merge conflict)** oluşurs
 1. `git status` komutuyla hangi dosyalarda çakışma olduğunu kontrol edin.
 2. Çakışmaları manuel olarak çözün.
 3. Çözüm bittikten sonra commit'i tamamlamak için şu komutu çalıştırın:
-   
+
    ```bash  
    git cherry-pick --continue  
    ```  

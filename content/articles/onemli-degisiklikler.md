@@ -28,11 +28,11 @@ Mastodon_Link: https://mastodon.social/@yuceltoluyag/115001034011754786
 (c)
 (r)
 c/o
-+/-	
--->	
-<--	
++/-
+-->
+<--
 <-->
-=/=	
+=/=
 1/4, etc.
 1st 2nd etc.
 ++ctrl+alt+delete++
@@ -162,16 +162,16 @@ sudo systemctl restart nginx
 ```python
 def merhaba_dunya():
     print("Merhaba Dünya!")
-    
+
 if __name__ == "__main__":
     merhaba_dunya()
-    
+
 # Sınıf örneği
 class Kisi:
     def __init__(self, ad, yas):
         self.ad = ad
         self.yas = yas
-        
+
     def selamla(self):
         return f"Merhaba, ben {self.ad}. {self.yas} yaşındayım."
 ```
@@ -247,7 +247,7 @@ CREATE TABLE kullanicilar (
 );
 
 -- Veri ekleme
-INSERT INTO kullanicilar (ad, soyad, email) 
+INSERT INTO kullanicilar (ad, soyad, email)
 VALUES ('Ali', 'Yılmaz', 'ali@ornek.com');
 
 -- Veri sorgulama
@@ -260,7 +260,7 @@ SELECT * FROM kullanicilar WHERE ad = 'Ali';
 public class MerhabaDunya {
     public static void main(String[] args) {
         System.out.println("Merhaba Dünya!");
-        
+
         // Nesne oluşturma
         Kisi kisi = new Kisi("Ahmet", 30);
         System.out.println(kisi.selamla());
@@ -270,12 +270,12 @@ public class MerhabaDunya {
 class Kisi {
     private String ad;
     private int yas;
-    
+
     public Kisi(String ad, int yas) {
         this.ad = ad;
         this.yas = yas;
     }
-    
+
     public String selamla() {
         return "Merhaba, ben " + ad + ". " + yas + " yaşındayım.";
     }
@@ -292,10 +292,10 @@ class Kisi {
 private:
     std::string ad;
     int yas;
-    
+
 public:
     Kisi(std::string ad, int yas) : ad(ad), yas(yas) {}
-    
+
     std::string selamla() {
         return "Merhaba, ben " + ad + ". " + std::to_string(yas) + " yaşındayım.";
     }
@@ -303,10 +303,10 @@ public:
 
 int main() {
     std::cout << "Merhaba Dünya!" << std::endl;
-    
+
     Kisi kisi("Mehmet", 25);
     std::cout << kisi.selamla() << std::endl;
-    
+
     return 0;
 }
 ```
@@ -329,7 +329,7 @@ func (k Kisi) Selamla() string {
 
 func main() {
     fmt.Println("Merhaba Dünya!")
-    
+
     kisi := Kisi{Ad: "Ayşe", Yas: 28}
     fmt.Println(kisi.Selamla())
 }
@@ -348,12 +348,12 @@ merhaba_dunya
 # Sınıf örneği
 class Kisi
   attr_reader :ad, :yas
-  
+
   def initialize(ad, yas)
     @ad = ad
     @yas = yas
   end
-  
+
   def selamla
     "Merhaba, ben #{@ad}. #{@yas} yaşındayım."
   end
@@ -378,12 +378,12 @@ merhabaDunya();
 class Kisi {
     private $ad;
     private $yas;
-    
+
     public function __construct($ad, $yas) {
         $this->ad = $ad;
         $this->yas = $yas;
     }
-    
+
     public function selamla() {
         return "Merhaba, ben " . $this->ad . ". " . $this->yas . " yaşındayım.";
     }
@@ -409,7 +409,7 @@ impl Kisi {
             yas,
         }
     }
-    
+
     fn selamla(&self) -> String {
         format!("Merhaba, ben {}. {} yaşındayım.", self.ad, self.yas)
     }
@@ -417,7 +417,7 @@ impl Kisi {
 
 fn main() {
     println!("Merhaba Dünya!");
-    
+
     let kisi = Kisi::new("Fatma", 29);
     println!("{}", kisi.selamla());
 }
@@ -437,12 +437,12 @@ merhabaDunya()
 class Kisi {
     let ad: String
     let yas: Int
-    
+
     init(ad: String, yas: Int) {
         self.ad = ad
         self.yas = yas
     }
-    
+
     func selamla() -> String {
         return "Merhaba, ben \(ad). \(yas) yaşındayım."
     }
@@ -457,7 +457,7 @@ print(kisi.selamla())
 ```kotlin
 fun main() {
     println("Merhaba Dünya!")
-    
+
     val kisi = Kisi("Selin", 27)
     println(kisi.selamla())
 }
@@ -481,7 +481,7 @@ interface Kisi {
 
 class KisiImpl implements Kisi {
     constructor(public ad: string, public yas: number) {}
-    
+
     selamla(): string {
         return `Merhaba, ben ${this.ad}. ${this.yas} yaşındayım.`;
     }
@@ -505,7 +505,7 @@ site:
   baslik: "Test Sitesi"
   aciklama: "Bu bir test sitesidir"
   versiyon: 1.0
-  
+
 kullanicilar:
   - ad: Ali
     soyad: Yılmaz
@@ -513,7 +513,7 @@ kullanicilar:
     roller:
       - admin
       - editor
-  
+
   - ad: Ayşe
     soyad: Kaya
     email: ayse@ornek.com

@@ -76,4 +76,4 @@ Gizlilik politikamızla ilgili sorularınız için iletişime geçebilirsiniz.
 
 Bu politika periyodik olarak güncellenebilir. Önemli değişiklikler olduğunda kullanıcılarımız bilgilendirilecektir.
 
-**Son güncelleme: 2025-03-08 12:00** 
+**Son güncelleme: 2025-03-08 12:00**

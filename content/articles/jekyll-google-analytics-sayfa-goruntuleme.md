@@ -1,6 +1,6 @@
 Title: Jekyll ile Google Analytics Sayfa Görüntüleme Sayısı Takibi
 Date: 2022-01-30 09:00 10:00
-Modified: 2025-08-11 22:59
+Modified: 2025-10-12 18:28
 Category: Web Geliştirme
 Tags: superproxy, jekyll, google analytics
 Slug: jekyll-google-analytics-sayfa-goruntuleme
@@ -162,9 +162,10 @@ google_analytics:
 
 ## Örnek Dosyalar
 
-- [\_Config.yml Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_config.yml#L37){: target="_blank" rel="noopener noreferrer"}
-- [Script.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_includes/script.html#L35){: target="_blank" rel="noopener noreferrer"}
-- [Post.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/_layouts/post.html#L46){: target="_blank" rel="noopener noreferrer"}
+- [_Config.yml Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_config.yml#L39){: target="_blank" rel="noopener noreferrer}
+- [Script.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_includes/script.html#L35){: target="_blank" rel="noopener noreferrer}
+- [Post.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_layouts/post.html#L46){: target="_blank" rel="noopener noreferrer}
+
 
 # Sonuç
 

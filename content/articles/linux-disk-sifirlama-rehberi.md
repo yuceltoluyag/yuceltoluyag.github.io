@@ -12,7 +12,7 @@ Image: images/Linux-uzerinde-disk-sifirlama-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987873115464671
 
 
-💣 **Linux'ta disk sıfırlama** işlemi, sistem yöneticileri ve teknik kullanıcılar için zaman zaman kaçınılmazdır. Yeni bir kurulum öncesi, eski verileri silerken veya diskleri geri dönüşü olmayacak şekilde temizlerken, doğru yöntemlerle ilerlemek çok önemlidir. 
+💣 **Linux'ta disk sıfırlama** işlemi, sistem yöneticileri ve teknik kullanıcılar için zaman zaman kaçınılmazdır. Yeni bir kurulum öncesi, eski verileri silerken veya diskleri geri dönüşü olmayacak şekilde temizlerken, doğru yöntemlerle ilerlemek çok önemlidir.
 
 Bu rehberde, `/dev/sdX` formatındaki **herhangi bir diski güvenli ve etkili şekilde nasıl sıfırlayabileceğinizi** detaylıca anlatacağım. Ayrıca hangi yöntemin ne zaman uygun olduğunu örneklerle açıklayacağım.  
 
@@ -147,7 +147,7 @@ Linux'ta diskleri sıfırlamak, hem sistem güvenliği hem de stabilitesi açıs
 
 Eğer bu rehber işine yaradıysa paylaşabilir, aşağıya yorum bırakabilir veya blogumu takip edebilirsin. Daha fazla Linux ipucu ve sistem yönetimi rehberi için buradayım! 🐧
 
---- 
+---
 
 Senin de kullandığın başka yöntemler varsa yorumlarda paylaş, birlikte büyüyelim! 🙌
 

@@ -148,7 +148,7 @@ Channel ytoluyag-trash
 Channel ytoluyag-junk
 ```
 
-Burada, ilgili e-postaları oluşturduğunuz klasörlere yönlendirdik. **Remote** ve **local** kavramları: E-postalarınızın uzantılarıdır. Örneğin, Gmail’de Spam klasörüne tıkladığınızda **trash** linkine yönlendirir. Remote kısmı çok önemlidir. 
+Burada, ilgili e-postaları oluşturduğunuz klasörlere yönlendirdik. **Remote** ve **local** kavramları: E-postalarınızın uzantılarıdır. Örneğin, Gmail’de Spam klasörüne tıkladığınızda **trash** linkine yönlendirir. Remote kısmı çok önemlidir.
 
 Şifre kısmını ise şu şekilde yapılandırabilirsiniz:
 
@@ -210,7 +210,7 @@ Eğer bağlantınız başarılı olduysa, Muttr'ı başlatalım.
 neomutt
 ```
 
-Burada göreceğiniz hata loglarını da düzeltmek gerekebilir. Eğer hata alıyorsanız, dosyanızı tekrar gözden geçirebilirsiniz. 
+Burada göreceğiniz hata loglarını da düzeltmek gerekebilir. Eğer hata alıyorsanız, dosyanızı tekrar gözden geçirebilirsiniz.
 ```bash
 mbsync -a
 ```

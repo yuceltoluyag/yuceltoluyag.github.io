@@ -6,9 +6,9 @@ Tags: linux, mount, unmount, disk, dosya-sistemi, sistem-yonetimi
 Slug: linux-disk-mount-unmount-temel-bilgiler  
 Authors: yuceltoluyag  
 Status: published  
-Summary: Linux’ta disklerin mount edilmesi ve unmount edilmesi işlemlerini temel kavramlar, komutlar ve örneklerle anlatıyoruz. 
+Summary: Linux’ta disklerin mount edilmesi ve unmount edilmesi işlemlerini temel kavramlar, komutlar ve örneklerle anlatıyoruz.
 Series: Linux-disk
-Series_index: 2 
+Series_index: 2
 Template: article  
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989756718275526
 

@@ -49,7 +49,7 @@ def main():
     os.chdir("output")
 
     # Sunucu ayarları
-    PORT = 8000
+    PORT = 8080
     Handler = CustomHandler
 
     # Sunucuyu başlat

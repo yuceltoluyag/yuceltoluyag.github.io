@@ -180,7 +180,7 @@ shutdown -r now
 - Harici Gpu Performansı
 [responsive_img src="/images/optirun-performansi-xl.webp" alt="Harici Gpu Performansı" /]
 
-# Videolu Anlatım 
+# Videolu Anlatım
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 

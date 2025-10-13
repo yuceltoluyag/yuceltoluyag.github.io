@@ -33,7 +33,7 @@ Hazırsanız adım adım çözümlere geçelim. 🚀
 * Terminal çıktısında şu hatalar görülür:
 
   ```bash
-  ERROR: ld.so: object '/home/user/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so' 
+  ERROR: ld.so: object '/home/user/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so'
   from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
 
   ERROR: ld.so: object 'libgamemodeauto.so.0' from LD_PRELOAD cannot be preloaded: ignored.
@@ -332,13 +332,13 @@ Game Recording - would start recording game 633460, but recording for this game 
 
 Adding process 3913 for gameID 633460
 
-gamemodeauto: 
+gamemodeauto:
 
 ERROR: ld.so: object '/home/galip/.local/share/Steam/steamapps/common/WW1GameSeries/Tannenberg/Tannenberg_Data/Plugins/libfmodstudio.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS64): ignored.
 
 ERROR: ld.so: object '/home/galip/.local/share/Steam/steamapps/common/WW1GameSeries/Tannenberg/Tannenberg_Data/Plugins/libfmodstudioL.so' from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS64): ignored.
 
-gamemodeauto: 
+gamemodeauto:
 
 ERROR: ld.so: object 'libgamemodeauto.so.0' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
 

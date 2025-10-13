@@ -43,7 +43,7 @@ Bu yüzden sıvı metal uygularken kesinlikle yüzeyin **alüminyum olmadığın
   [responsive_img src="/images/alimunyum-xl.webp" alt="Alüminyum" /]
 
 * **Nikel** resmi:
-  
+
   [responsive_img src="/images/hurda-nikel-bursada-xl.webp" alt="Nikel Resmi" /]
 ### Pratik Yöntem: Mıknatıs Testi
 

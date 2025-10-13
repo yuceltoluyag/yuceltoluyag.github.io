@@ -41,7 +41,8 @@ py-modules = []
         "pymdown-extensions>=10.14.3",
         "rcssmin>=1.2.1",
         "uv>=0.6.16",
-    ]
+        "pytz>=2025.2",
+]
     description = "Yücel Toluyağ'ın kişisel blog sitesi - Yazılım, teknoloji ve kişisel deneyimler üzerine içerikler"
     name = "yuceltoluyag.github.io"
     readme = "README.md"

@@ -134,4 +134,4 @@ Pelican Redirect eklentisi, statik sitenizde URL yapısını değiştirmeniz ger
 
 Eklentiyi kendi projenizde kullanarak geri bildirimde bulunmaktan çekinmeyin. Açık kaynak topluluğuna katkıda bulunmak ve projelerinizi geliştirmek için her zaman yeni özellikler ve iyileştirmeler üzerinde çalışıyoruz. 💪
 
-**Not**: Bu eklenti, Pelican 4.x ve üzeri sürümlerle test edilmiştir. Daha eski sürümlerde bazı uyumluluk sorunları yaşanabilir. 
+**Not**: Bu eklenti, Pelican 4.x ve üzeri sürümlerle test edilmiştir. Daha eski sürümlerde bazı uyumluluk sorunları yaşanabilir.
