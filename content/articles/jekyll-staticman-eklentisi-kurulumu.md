@@ -1,6 +1,6 @@
 Title: Jekyll Staticman Eklentisi Kurulumu
 Date: 2022-01-29 00:00 10:00
-Modified: 2025-08-11 22:59
+Modified: 2025-10-12 18:28
 Category: Web Geliştirme
 Tags: staticman, jekyll
 Slug: jekyll-staticman-eklentisi-kurulumu
@@ -212,7 +212,8 @@ Bu dosyaları inceleyin arkadaşlar, kafanızda ışıkların patlayacağından 
 - [comment.html](https://github.com/Baba-Project/jekyll-staticman/blob/main/_includes/comment.html){: target="_blank" rel="noopener noreferrer"}
 - [comment_form.html](https://github.com/Baba-Project/jekyll-staticman/blob/main/_includes/comment_form.html){: target="_blank" rel="noopener noreferrer"}
 - [main.js](https://github.com/Baba-Project/jekyll-staticman/blob/main/assets/js/main.js){: target="_blank" rel="noopener noreferrer"}
-- [\_comment.scss](https://github.com/Baba-Project/jekyll-staticman/blob/main/css/main.scss#L305){: target="_blank" rel="noopener noreferrer"}
+
+- [_comment.scss](https://github.com/Baba-Project/jekyll-staticman/blob/558016f1c2b3aaf9c69d8b8483e63f0933c6d9ab/css/main.scss#L305){: target="_blank" rel="noopener noreferrer}
 
 * Canlı Test => [Yorum Yap](https://baba-project.github.io/jekyll-staticman/){: target="_blank" rel="noopener noreferrer"}
 * Kaynak Dosyaları => [Beleş İndir](https://github.com/Baba-Project/jekyll-staticman){: target="_blank" rel="noopener noreferrer"}

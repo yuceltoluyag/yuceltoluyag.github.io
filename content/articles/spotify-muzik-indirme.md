@@ -38,14 +38,14 @@ Merhaba! **Spotify**, çevrimdışı müzik dinleme özelliğini yalnızca **pre
 5. Açılan sayfada **“Login with YouTube”** butonuna basarak Google hesabınızla giriş yapın ve çalma listesini aktaracağınız YouTube hesabınızı seçin.
 6. Aktarım tamamlandıktan sonra aşağıdaki gibi bir ekran göreceksiniz.
 
-  
+
 
  [responsive_img src="/images/spotify-3-xl.webp" alt="spotify-3" /]
 7. **YouTube'da oluşturulan çalma listesinin bağlantısını kopyalayın.**
 
-   
+
    [responsive_img src="/images/spotify-4-xl.webp" alt="spotify-4" /]
-   
+
 
 8. [4K Video Downloader](https://www.4kdownload.com/){: target="_blank" rel="noopener noreferrer"} programını bilgisayarınıza indirip tam sürümünü kullanmalısınız. Programı açtıktan sonra **“Bağlantıyı Yapıştır”** butonuna tıklayın ve **videoyu indirin**.
 9. Video ayrıştırma işlemi tamamlandıktan sonra, **MP3 veya video olarak indirme seçeneği sunulacaktır**. **MP3 olarak indirme seçeneğini seçin**.

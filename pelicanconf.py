@@ -70,6 +70,9 @@ AUTHORS_URL = "yazarlar/"
 AUTHORS_SAVE_AS = "yazarlar/index.html"
 CATEGORIES_URL = "kategoriler/"
 CATEGORIES_SAVE_AS = "kategoriler/index.html"
+# Redirect URL pattern (for pelican_redirect plugin)
+REDIRECT_URL = "{slug}/"
+REDIRECT_SAVE_AS = "{slug}/index.html"
 # URL sonlarındaki .html'i kaldır
 ARTICLE_LANG_URL = "{slug}-{lang}/"
 ARTICLE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
@@ -226,6 +229,7 @@ SITEMAP = {
         # "^category/",  # eski kategori URL'leri
         # "^author/",  # kullanılmıyorsa dışlanabilir
     ],
+    # Note: Redirect sayfaları otomatik olarak hariç tutulur (status='draft')
 }
 
 # --- Menu Items ---
@@ -354,10 +358,10 @@ REDIRECTS = {
     "/tags/zsh.html": "/etiket/zsh/",
     "/tags/terminal/": "/etiket/terminal/",
     "/tags/sweetalert.html": "/etiket/sweetalert/",
-    "/category/tanitim.html": "/kategori/tanitim/",
-    "/categories/facebook": "/kategori/facebook/",  # Sonda / olmayan versiyonu koru
-    "/category/tan%C4%B1t%C4%B1m.html": "/kategori/tanitim/",
-    "/category/tan%C4%B1t%C4%B1m": "/kategori/tanitim/",  # Sonda / olmayan versiyonu koru
+    "/category/tanitim.html": "/kategori/haberler/",  # Eski tanıtım kategorisi artık haberler
+    "/categories/facebook": "/kategori/sosyal-medya/",  # Facebook kategorisi sosyal medya'ya yönlendirildi
+    "/category/tan%C4%B1t%C4%B1m.html": "/kategori/haberler/",
+    "/category/tan%C4%B1t%C4%B1m": "/kategori/haberler/",  # Sonda / olmayan versiyonu koru
     "/series/phpstorm.html": "/etiket/phpstorm/",
     # Yazarlar yönlendirmesi
     "/yazar/": "/yazarlar/",  # yazar/ dizinini yazarlar/ dizinine yönlendir

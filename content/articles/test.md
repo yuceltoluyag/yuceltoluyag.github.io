@@ -603,7 +603,7 @@ Aşağıdaki betik, belirli bir ağa bağlandığımızı kontrol eder ve buna g
 # Tüm NetworkManager bağlantı türleri desteklenir: kablosuz, VPN, kablolu...
 if [ "$2" = "up" ]; then
   if [ "$CONNECTION_UUID" = "uuid" ]; then
-    mount /your/mount/point & 
+    mount /your/mount/point &
     # ihtiyaç duyduğunuz kadar fazla paylaşım ekleyin
   fi
 fi

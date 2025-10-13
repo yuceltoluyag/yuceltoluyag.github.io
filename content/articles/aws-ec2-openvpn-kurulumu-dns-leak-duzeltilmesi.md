@@ -34,7 +34,7 @@ Paranız çok, zamanınız azsa, kullan tabii ki sevgili okurum 🐸 Bazı VPN'l
 
 3.  Lisans Sözleşmesini kabul edin
 
- 
+
      [responsive_img src="/images/amazon-openvpn-kurulumu-2-xl.webp" alt="amazon-openvpn-kurulumu-2" /]
 
 4.  Lisans bilgisi resimdeki gibi görünecektir. **Continue to Configuration** tıklayıp devam edin
@@ -48,7 +48,7 @@ Paranız çok, zamanınız azsa, kullan tabii ki sevgili okurum 🐸 Bazı VPN'l
 
 6.  Yeni formdaki seçimlerimiz şöyle olmalı:
 
-    
+
       [responsive_img src="/images/amazon-openvpn-kurulumu-5-xl.webp" alt="amazon-openvpn-kurulumu-5" /]
 
 7.  Security Group Settings ve Key Pair Settings ayarlarını oluşturmanız gerekiyor. Ben kızımın adını verdim 🏌️‍♂️
@@ -142,5 +142,5 @@ Arkadaşım hep ücretli VPN'ler kullanırdı.😍 Bir gün kendisinden denemek 
 [Kernel][Alert] firewall security alert! [Fragment Flooding] attack, possible.
 ```
 
-Hemen Türk Telekom'daki arkadaşlara ulaştım, ancak derdimi bir türlü anlatamadım. Neyse ki saldırı başladığında modemi kapatarak sorunu çözdüm. Bu olaydan sonra şunu öğrendim: Ücretli veya ücretsiz VPN kullanın, DNS Leak'e yakalanmayın. Bol VPN'siz günler! 
+Hemen Türk Telekom'daki arkadaşlara ulaştım, ancak derdimi bir türlü anlatamadım. Neyse ki saldırı başladığında modemi kapatarak sorunu çözdüm. Bu olaydan sonra şunu öğrendim: Ücretli veya ücretsiz VPN kullanın, DNS Leak'e yakalanmayın. Bol VPN'siz günler!
 

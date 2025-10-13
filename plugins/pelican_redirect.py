@@ -133,11 +133,12 @@ class RedirectGenerator(Generator):
                 )
 
                 # Create a Redirect object
+                # Set status to 'draft' so sitemap excludes it (status != 'published')
                 metadata = {
                     "title": "Redirecting...",
                     "location": target_url,
                     "delay": 0,
-                    "status": "hidden",
+                    "status": "draft",  # This makes sitemap exclude the redirect
                     "slug": slug,
                     "save_as": slug,
                 }

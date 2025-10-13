@@ -89,7 +89,7 @@ winetricks corefonts vcrun2019 d3dcompiler_47
 
 [responsive_img src="/images/rok-lutris-enable-dxvk-xl.webp" alt="lutris-winecfg" /]
 
- 
+
 - Eğer yukarıdaki çözüm ile sorun devam ederse, aşağıdaki adımları izleyin.
 
 * `DXVK_HUD=0` yaparak overlay’i kapatın.
@@ -125,7 +125,7 @@ Oyunu `dgvoodoo2`  **olmadan** çalıştırdığında ekranda kırılmalar,titre
 
 [responsive_img src="/images/rok-lutris-fps-test-xl.webp" alt="lutris-fps-overlay" /] Artık Oyun tıpkı Windows'ta gibi çalışıyor. Bütün herşeyi canlı yayında test ettik.
 
---- 
+---
 
 Eğer sorun çözülmediyse, aşağıdaki adımları izleyin.
 

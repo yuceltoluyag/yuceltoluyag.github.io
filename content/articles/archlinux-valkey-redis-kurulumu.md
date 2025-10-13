@@ -52,7 +52,7 @@ systemctl status valkey.service
 Yeşil bir `active (running)` görüyorsanız, Valkey başarıyla çalışıyor demektir. 🎉
 
 ```bash
-[friday13@baba ~]$ systemctl status valkey.service                                                                                                                                                                                          
+[friday13@baba ~]$ systemctl status valkey.service  
 ● valkey.service - Advanced key-value store
      Loaded: loaded (/usr/lib/systemd/system/valkey.service; enabled; preset: disabled)
      Active: active (running) since Fri 2025-08-15 15:49:17 +03; 1 day 15h ago

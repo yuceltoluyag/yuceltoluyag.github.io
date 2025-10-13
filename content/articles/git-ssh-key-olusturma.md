@@ -23,7 +23,7 @@ Git üzerinde çalışırken SSH anahtarı oluşturma konusunda sorun yaşayanla
 1. Git Bash uygulamasını [https://git-scm.com/downloads](https://git-scm.com/downloads){: target="_blank" rel="noopener noreferrer"} adresinden indirip yükleyin.
 2. Terminali açarak aşağıdaki komutları sırasıyla çalıştırın:
 
-```bash 
+```bash
 git config --global user.name "Kullanıcı Adınız"
 git config --global user.email "email@adresiniz.com"
 ssh-keygen
@@ -39,7 +39,7 @@ ssh-keygen
 
 1. Git Bash veya terminali açın ve aşağıdaki komutları çalıştırın:
 
-```bash 
+```bash
 git config --global user.name "Kullanıcı Adınız"
 git config --global user.email "email@adresiniz.com"
 ssh-keygen -t rsa -b 4096 -C "email@adresiniz.com"

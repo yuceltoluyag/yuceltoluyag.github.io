@@ -31,7 +31,7 @@ Merhaba, uzun süredir bloga bir şeyler yazmıyordum. Daha önce Unity kullanı
 2. [Gnome-Look](https://www.gnome-look.org/){: target="_blank" rel="noopener noreferrer"}
 3. [XFCE Masaüstü İçin](https://www.xfce-look.org/){: target="_blank" rel="noopener noreferrer"}
 
-Özellikle DeviantArt'ta doğru aramalar yaparak veya menüleri kullanarak istediğiniz içeriğe kolayca ulaşabilirsiniz. Yukarıda belirttiğim siteler genellikle güncel ve organize edilmiş kaynaklardır. 
+Özellikle DeviantArt'ta doğru aramalar yaparak veya menüleri kullanarak istediğiniz içeriğe kolayca ulaşabilirsiniz. Yukarıda belirttiğim siteler genellikle güncel ve organize edilmiş kaynaklardır.
 
 Ubuntu 17.10 beta sürümünden itibaren Gnome 3.x kullanmaya başladım. Bu nedenle anlatımım Gnome 3.x için olacak, ancak aynı mantıkla diğer masaüstü ortamlarında da uygulayabilirsiniz. 💡
 

@@ -77,7 +77,7 @@ Include conf/extra/phpmyadmin.conf
 PHPMyAdmin kurulumu için şu adımları takip edin:
 
 - F3 ardından F2'ye basarak kaydediyoruz.
-  
+
 ```bash
 sudo pacman -S phpmyadmin
 sudo nano /etc/php/php.ini

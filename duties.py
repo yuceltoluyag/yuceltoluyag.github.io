@@ -31,7 +31,7 @@ PY_SRC_PATHS = (
 )
 PY_SRC_LIST = tuple(str(_) for _ in PY_SRC_PATHS)
 HOST = "localhost"
-PORT = 8000
+PORT = 8080
 run_pelican = tools.lazy(pelican_main, name="pelican.main")
 POST_PATH = Path(f"{SETTINGS['PATH']}/{SETTINGS['ARTICLE_PATHS'][0]}").resolve()
 POST_TEMPLATE = """\

@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.13 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -228,19 +228,19 @@
     background-color: transparent;
     padding: calc(0.25rem * 0);
     color: inherit;
-    overflow-x: hidden;
-    transition: translate 0.3s ease-out, visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
-    overflow-y: hidden;
+    transition: visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
+    overflow: clip;
     overscroll-behavior: contain;
     z-index: 999;
     scrollbar-gutter: auto;
     &::backdrop {
       display: none;
     }
-    &.modal-open, &[open], &:target {
+    &.modal-open, &[open], &:target, .modal-toggle:checked + & {
       pointer-events: auto;
       visibility: visible;
       opacity: 100%;
+      transition: visibility 0s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
       background-color: oklch(0% 0 0/ 0.4);
       .modal-box {
         translate: 0 0;
@@ -249,8 +249,7 @@
       }
     }
     @starting-style {
-      &.modal-open, &[open], &:target {
-        visibility: hidden;
+      &.modal-open, &[open], &:target, .modal-toggle:checked + & {
         opacity: 0%;
       }
     }
@@ -291,7 +290,6 @@
       }
     }
     &:after {
-      position: absolute;
       opacity: 0%;
       background-color: var(--tt-bg);
       content: "";
@@ -299,6 +297,7 @@
       width: 0.625rem;
       height: 0.25rem;
       display: block;
+      position: absolute;
       mask-repeat: no-repeat;
       mask-position: -1px 0;
       --mask-tooltip: url("data:image/svg+xml,%3Csvg width='10' height='4' viewBox='0 0 8 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.500009 1C3.5 1 3.00001 4 5.00001 4C7 4 6.5 1 9.5 1C10 1 10 0.499897 10 0H0C-1.99338e-08 0.5 0 1 0.500009 1Z' fill='black'/%3E%3C/svg%3E%0A");
@@ -498,13 +497,11 @@
     .dropdown-content {
       position: absolute;
     }
-    &:not(details, .dropdown-open, .dropdown-hover:hover, :focus-within) {
-      .dropdown-content {
-        display: none;
-        transform-origin: top;
-        opacity: 0%;
-        scale: 95%;
-      }
+    &:not(details, .dropdown-open, .dropdown-hover:hover, :focus-within) .dropdown-content, &.dropdown-hover:not(:hover) [tabindex]:first-child:focus:not(:focus-visible) ~ .dropdown-content {
+      display: none;
+      transform-origin: top;
+      opacity: 0%;
+      scale: 95%;
     }
     &[popover], .dropdown-content {
       z-index: 999;
@@ -702,7 +699,7 @@
     pointer-events: none;
     display: inline-block;
     aspect-ratio: 1 / 1;
-    background-color: currentColor;
+    background-color: currentcolor;
     vertical-align: middle;
     width: calc(var(--size-selector, 0.25rem) * 6);
     mask-size: 100%;
@@ -731,7 +728,7 @@
     white-space: nowrap;
     width: clamp(3rem, 20rem, 100%);
     height: var(--size);
-    font-size: 0.875rem;
+    font-size: max(var(--font-size, 0.875rem), 0.875rem);
     touch-action: manipulation;
     border-start-start-radius: var(--join-ss, var(--radius-field));
     border-start-end-radius: var(--join-se, var(--radius-field));
@@ -782,6 +779,13 @@
       outline-offset: 2px;
       isolation: isolate;
       z-index: 1;
+    }
+    @media (pointer: coarse) {
+      @supports (-webkit-touch-callout: none) {
+        &:focus, &:focus-within {
+          --font-size: 1rem;
+        }
+      }
     }
     &:has(> input[disabled]), &:is(:disabled, [disabled]), fieldset:disabled & {
       cursor: not-allowed;
@@ -853,7 +857,7 @@
       mask-repeat: no-repeat;
       mask-image: var(--mask-chat);
       mask-position: 0px -1px;
-      mask-size: 13px;
+      mask-size: 0.8125rem;
     }
   }
   .card {
@@ -1054,7 +1058,7 @@
       width: 100%;
       height: 100%;
       rotate: 45deg;
-      background-color: currentColor;
+      background-color: currentcolor;
       opacity: 0%;
       transition: clip-path 0.3s, opacity 0.1s, rotate 0.3s, translate 0.3s;
       transition-delay: 0.1s;
@@ -1115,9 +1119,9 @@
     appearance: none;
     overflow: hidden;
     border-radius: var(--radius-box);
-    background-color: currentColor;
+    background-color: currentcolor;
     @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, currentColor 20%, transparent);
+      background-color: color-mix(in oklab, currentcolor 20%, transparent);
     }
     color: var(--color-base-content);
     &:indeterminate {
@@ -1142,7 +1146,7 @@
     @supports (-moz-appearance: none) {
       &::-moz-progress-bar {
         border-radius: var(--radius-box);
-        background-color: currentColor;
+        background-color: currentcolor;
       }
     }
     @supports (-webkit-appearance: none) {
@@ -1287,7 +1291,7 @@
     width: clamp(3rem, 20rem, 100%);
     padding-inline-start: 0.75rem;
     padding-inline-end: 0.75rem;
-    font-size: 0.875rem;
+    font-size: max(var(--font-size, 0.875rem), 0.875rem);
     touch-action: manipulation;
     border-color: var(--input-color);
     box-shadow: 0 1px var(--input-color) inset, 0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
@@ -1320,6 +1324,13 @@
       outline: 2px solid var(--input-color);
       outline-offset: 2px;
       isolation: isolate;
+    }
+    @media (pointer: coarse) {
+      @supports (-webkit-touch-callout: none) {
+        &:focus, &:focus-within {
+          --font-size: 1rem;
+        }
+      }
     }
     &:has(> textarea[disabled]), &:is(:disabled, [disabled]) {
       cursor: not-allowed;
@@ -1454,9 +1465,9 @@
     align-items: center;
     gap: calc(0.25rem * 1.5);
     white-space: nowrap;
-    color: currentColor;
+    color: currentcolor;
     @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, currentColor 60%, transparent);
+      color: color-mix(in oklab, currentcolor 60%, transparent);
     }
     &:has(input) {
       cursor: pointer;
@@ -1639,10 +1650,7 @@
     vertical-align: middle;
     color: color-mix(in srgb, #000 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in srgb, #000 30%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        color: color-mix(in oklab, var(--color-black) 30%, transparent);
-      }
+      color: color-mix(in oklab, var(--color-black) 30%, transparent);
     }
     background-image: radial-gradient( circle at 35% 30%, oklch(1 0 0 / calc(var(--depth) * 0.5)), #0000 );
     box-shadow: 0 2px 3px -1px currentColor;
@@ -2688,7 +2696,7 @@
       --btn-border: #0000;
       --btn-noise: none;
       &:not(:disabled, [disabled], .btn-disabled) {
-        outline-color: currentColor;
+        outline-color: currentcolor;
         --btn-fg: currentColor;
       }
     }
@@ -4405,7 +4413,7 @@
       --btn-border: #0000;
       --btn-noise: none;
       &:not(:disabled, [disabled], .btn-disabled) {
-        outline-color: currentColor;
+        outline-color: currentcolor;
         --btn-fg: currentColor;
       }
     }
@@ -4441,7 +4449,7 @@
       --btn-border: #0000;
       --btn-noise: none;
       &:not(:disabled, [disabled], .btn-disabled) {
-        outline-color: currentColor;
+        outline-color: currentcolor;
         --btn-fg: currentColor;
       }
     }
@@ -5852,6 +5860,7 @@
     font-size: 0.875rem;
     height: var(--size);
     min-width: var(--size);
+    box-shadow: none;
     min-width: calc(var(--spacing) * 5);
     border-radius: 0.25rem;
     background-color: var(--color-base-300);
@@ -5888,6 +5897,7 @@
     font-size: 0.875rem;
     height: var(--size);
     min-width: var(--size);
+    box-shadow: none;
     background-color: var(--color-neutral);
     --size: calc(var(--size-selector, 0.25rem) * 5);
     font-size: 0.75rem;
@@ -5916,6 +5926,7 @@
     font-size: 0.875rem;
     height: var(--size);
     min-width: var(--size);
+    box-shadow: none;
     background-color: var(--color-secondary);
     --size: calc(var(--size-selector, 0.25rem) * 5);
     font-size: 0.75rem;
@@ -5942,6 +5953,7 @@
     font-size: 0.875rem;
     height: var(--size);
     min-width: var(--size);
+    box-shadow: none;
     background-color: var(--color-accent);
     --size: calc(var(--size-selector, 0.25rem) * 5);
     font-size: 0.75rem;
@@ -5968,6 +5980,7 @@
     font-size: 0.875rem;
     height: var(--size);
     min-width: var(--size);
+    box-shadow: none;
     background-color: var(--color-primary);
     --size: calc(var(--size-selector, 0.25rem) * 5);
     font-size: 0.75rem;
@@ -5987,6 +6000,7 @@
     font-size: 0.875rem;
     height: var(--size);
     min-width: var(--size);
+    box-shadow: none;
     background-color: var(--color-base-200);
     --size: calc(var(--size-selector, 0.25rem) * 5);
     font-size: 0.75rem;
@@ -6012,6 +6026,7 @@
     font-size: 0.875rem;
     height: var(--size);
     min-width: var(--size);
+    box-shadow: none;
     background-color: var(--color-info);
     --size: calc(var(--size-selector, 0.25rem) * 5);
     font-size: 0.75rem;
@@ -6259,19 +6274,19 @@
     background-color: transparent;
     padding: calc(0.25rem * 0);
     color: inherit;
-    overflow-x: hidden;
-    transition: translate 0.3s ease-out, visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
-    overflow-y: hidden;
+    transition: visibility 0.3s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
+    overflow: clip;
     overscroll-behavior: contain;
     z-index: 999;
     scrollbar-gutter: auto;
     &::backdrop {
       display: none;
     }
-    &.modal-open, &[open], &:target {
+    &.modal-open, &[open], &:target, .modal-toggle:checked + & {
       pointer-events: auto;
       visibility: visible;
       opacity: 100%;
+      transition: visibility 0s allow-discrete, background-color 0.3s ease-out, opacity 0.1s ease-out;
       background-color: oklch(0% 0 0/ 0.4);
       .modal-box {
         translate: 0 0;
@@ -6280,8 +6295,7 @@
       }
     }
     @starting-style {
-      &.modal-open, &[open], &:target {
-        visibility: hidden;
+      &.modal-open, &[open], &:target, .modal-toggle:checked + & {
         opacity: 0%;
       }
     }
@@ -6312,7 +6326,7 @@
         white-space: nowrap;
         width: clamp(3rem, 20rem, 100%);
         height: var(--size);
-        font-size: 0.875rem;
+        font-size: max(var(--font-size, 0.875rem), 0.875rem);
         touch-action: manipulation;
         border-start-start-radius: var(--join-ss, var(--radius-field));
         border-start-end-radius: var(--join-se, var(--radius-field));
@@ -6363,6 +6377,13 @@
           outline-offset: 2px;
           isolation: isolate;
           z-index: 1;
+        }
+        @media (pointer: coarse) {
+          @supports (-webkit-touch-callout: none) {
+            &:focus, &:focus-within {
+              --font-size: 1rem;
+            }
+          }
         }
         &:has(> input[disabled]), &:is(:disabled, [disabled]), fieldset:disabled & {
           cursor: not-allowed;
@@ -7057,34 +7078,8 @@ mastodon-comments {
   }
 }
 @layer base {
-  :where( :root:has( .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not(.drawer-open) > .drawer-toggle:checked ) ) {
-    scrollbar-gutter: stable;
-    background-image: linear-gradient(var(--color-base-100), var(--color-base-100));
-    --root-bg: var(--color-base-100);
-    @supports (color: color-mix(in lab, red, red)) {
-      --root-bg: color-mix(in srgb, var(--color-base-100), oklch(0% 0 0) 40%);
-    }
-  }
-  :where(.modal[open], .modal-open, .modal-toggle:checked + .modal):not(.modal-start, .modal-end) {
-    scrollbar-gutter: stable;
-  }
-}
-@layer base {
-  @property --radialprogress {
-    syntax: "<percentage>";
-    inherits: true;
-    initial-value: 0%;
-  }
-}
-@layer base {
   :root {
-    --fx-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.34' numOctaves='4' stitchTiles='stitch'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.2'%3E%3C/rect%3E%3C/svg%3E");
-  }
-}
-@layer base {
-  :root, [data-theme] {
-    background-color: var(--root-bg, var(--color-base-100));
-    color: var(--color-base-content);
+    --fx-noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.34' numOctaves='4' stitchTiles='stitch'%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23a)' opacity='0.2'%3E%3C/rect%3E%3C/svg%3E");
   }
 }
 @layer base {
@@ -7096,8 +7091,54 @@ mastodon-comments {
   }
 }
 @layer base {
+  @property --radialprogress {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+  }
+}
+@layer base {
   :root:has( .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not([class*="drawer-open"]) > .drawer-toggle:checked ) {
     overflow: hidden;
+  }
+}
+@layer base {
+  :where( :root:has( .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not(.drawer-open) > .drawer-toggle:checked ) ) {
+    scrollbar-gutter: stable;
+    background-image: linear-gradient(var(--color-base-100), var(--color-base-100));
+    --root-bg: var(--color-base-100);
+    @supports (color: color-mix(in lab, red, red)) {
+      --root-bg: color-mix(in srgb, var(--color-base-100), oklch(0% 0 0) 40%);
+    }
+  }
+  :where(.modal[open], .modal-open, .modal-toggle:checked + .modal):not(.modal-start, .modal-end) {
+    scrollbar-gutter: stable;
+  }
+  @supports (width: if(else: 1px)) and (animation-timeline: scroll()) {
+    :root {
+      animation: set-page-has-scroll forwards;
+      animation-timeline: scroll();
+    }
+    @keyframes set-page-has-scroll {
+      0%, to {
+        --page-has-scroll: 1;
+      }
+    }
+    :where( :root:has( .modal-open, .modal[open], .modal:target, .modal-toggle:checked, .drawer:not(.drawer-open) > .drawer-toggle:checked ) ) {
+      scrollbar-gutter: if(style(--page-has-scroll: 1): stable; else: unset);
+    }
+  }
+}
+@layer base {
+  :root, [data-theme] {
+    background-color: var(--root-bg, var(--color-base-100));
+    color: var(--color-base-content);
+  }
+}
+@keyframes rating {
+  0%, 40% {
+    scale: 1.1;
+    filter: brightness(1.05) contrast(1.05);
   }
 }
 @keyframes dropdown {
@@ -7121,12 +7162,6 @@ mastodon-comments {
   100% {
     scale: 1;
     opacity: 1;
-  }
-}
-@keyframes rating {
-  0%, 40% {
-    scale: 1.1;
-    filter: brightness(1.05) contrast(1.05);
   }
 }
 @keyframes skeleton {

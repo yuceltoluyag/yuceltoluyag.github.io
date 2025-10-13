@@ -17,9 +17,9 @@ Mastodon_Link: https://mastodon.social/@yuceltoluyag/114983947794837501
 
 [responsive_img src="/images/codeigniter-xl.webp" alt="codeigniter" /]
 
- 1. Adım 1: [Apache Kurulumu](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="_blank" rel="noopener noreferrer"} (Arch Linux için [tıklayın](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/){: target="_blank" rel="noopener noreferrer"}))   
+ 1. Adım 1: [Apache Kurulumu](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="_blank" rel="noopener noreferrer"} (Arch Linux için [tıklayın](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/){: target="_blank" rel="noopener noreferrer"}))  
  2. Adım 2: [CodeIgniter İndirme Bağlantısı](https://codeigniter.com/download){: target="_blank" rel="noopener noreferrer"
- 3. 
+ 3.
 Mevcut versiyon: 3.1.9
 
 Aşağıdaki komutları kullanarak CodeIgniter’ı kurabilirsiniz:

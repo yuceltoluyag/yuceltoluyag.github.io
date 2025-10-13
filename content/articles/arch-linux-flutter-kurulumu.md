@@ -12,7 +12,7 @@ Image: images/arch-linux-flutter-kurulumu-xl.webp
 Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989730580607107
 
 
-# Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi 
+# Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi
 
 ## 🎯 Giriş
 
@@ -103,14 +103,14 @@ mkdir -p ~/.pub-cache
 chmod 755 ~/.pub-cache
 ```
 
-## 📱 Adım 3: Android SDK ve Araçları Kurulumu 
+## 📱 Adım 3: Android SDK ve Araçları Kurulumu
 
 ### AUR ile Kolay Kurulum 📦
 
 Arch Linux'un gücünü kullanarak tüm Android SDK bileşenlerini AUR'dan kuralım:
 
 ```bash
-# Android SDK Command Line Tools 
+# Android SDK Command Line Tools
 yay -S android-sdk-cmdline-tools-latest
 
 # Platform tools ve build tools
@@ -141,7 +141,7 @@ export ANDROID_SDK_ROOT="/opt/android-sdk"
 export ANDROID_AVD_HOME="$HOME/.android/avd"
 ```
 
-## 🌍 Adım 5: Environment Variables Kurulumu 
+## 🌍 Adım 5: Environment Variables Kurulumu
 
 ### Modern Shell Konfigürasyonu ⚙️
 
@@ -181,7 +181,7 @@ echo $ANDROID_HOME
 echo $JAVA_HOME
 ```
 
-## 📲 Adım 6: Android Emülatör Kurulumu 
+## 📲 Adım 6: Android Emülatör Kurulumu
 
 ### Modern Sistem Image'i Kurulumu 💿
 
@@ -191,7 +191,7 @@ Android SDK 36 ile güncel sistem image'leri:
 # Mevcut sistem image'lerini listele
 sdkmanager --list | grep system-images
 
-# Android 36 Google Play image 
+# Android 36 Google Play image
 sdkmanager --install "system-images;android-36;google_apis_playstore;x86_64"
 
 # Android 35 backup olarak
@@ -239,7 +239,7 @@ emulator @Flutter_Pixel_8_Pro \
   -no-snapshot &
 ```
 
-## 🩺 Adım 7: Flutter Doctor ile Doğrulama 
+## 🩺 Adım 7: Flutter Doctor ile Doğrulama
 
 ### Android Lisanslarını Kabul Etme ✅
 
@@ -347,7 +347,7 @@ flutter doctor -v
 • No issues found!
 ```
 
-## 🔧 Adım 8: İleri Seviye Konfigürasyon 
+## 🔧 Adım 8: İleri Seviye Konfigürasyon
 
 ### Modern KVM Kurulumu ⚡
 
@@ -381,7 +381,7 @@ org.gradle.configureondemand=true
 org.gradle.caching=true
 org.gradle.jvmargs=-Xmx8g -XX:MaxMetaspaceSize=2g -XX:+HeapDumpOnOutOfMemoryError
 
-# Android build optimizasyonu 
+# Android build optimizasyonu
 android.useAndroidX=true
 android.enableJetifier=true
 android.enableR8.fullMode=true
@@ -438,23 +438,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
+
   # UI ve Material 3
   material_color_utilities: ^0.8.0
   dynamic_color: ^1.7.0
-  
+
   # State management
   provider: ^6.1.2
   riverpod: ^2.5.1
-  
+
   # Networking
   http: ^1.2.1
   dio: ^5.4.3
-  
+
   # Storage
   shared_preferences: ^2.2.3
   sqflite: ^2.3.3
-  
+
   # Utils
   intl: ^0.19.0
   path: ^1.9.0
@@ -486,7 +486,7 @@ flutter run -d linux
 flutter run --hot
 ```
 
-## ⚠️ Yaygın Sorunlar ve Çözümleri 
+## ⚠️ Yaygın Sorunlar ve Çözümleri
 
 ### Sorun 1: Java 24 Uyumluluk Sorunları ☕
 
@@ -552,7 +552,7 @@ flutter pub get
 flutter build web --release
 ```
 
-## 🎨 Adım 10: Modern IDE Kurulumu 
+## 🎨 Adım 10: Modern IDE Kurulumu
 
 ### Visual Studio Code + Extensions 💻
 
@@ -630,7 +630,7 @@ return {
 }
 ```
 
-## 📊 Performance ve Build Optimizasyonu 
+## 📊 Performance ve Build Optimizasyonu
 
 ### Modern Build Configurations 🏗️
 
@@ -639,18 +639,18 @@ return {
 ```gradle
 android {
     compileSdk 36
-    
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
-    
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            
+
             // 2025: Modern signing config
             signingConfig signingConfigs.release
         }
@@ -658,7 +658,7 @@ android {
             matchingFallbacks = ['debug', 'release']
         }
     }
-    
+
     // 2025: Build optimization
     packagingOptions {
         pickFirst '**/libc++_shared.so'
@@ -700,7 +700,7 @@ flutter build linux --release
 echo "✅ All builds completed!"
 ```
 
-## 🔗 Modern Development Workflow 
+## 🔗 Modern Development Workflow
 
 ### Git Hooks Setup 🎯
 
@@ -749,7 +749,7 @@ WORKDIR /workspace
 
 ## 🎯 Sonuç ve İleri Adımlar
 
-Tebrikler! 🎉 2025'in en güncel teknolojileri ile Arch Linux'ta tam fonksiyonel bir Flutter geliştirme ortamı kurdunuz. 
+Tebrikler! 🎉 2025'in en güncel teknolojileri ile Arch Linux'ta tam fonksiyonel bir Flutter geliştirme ortamı kurdunuz.
 
 ### 2025'te Yeni Özellikler 🆕
 

@@ -103,8 +103,8 @@ flatpak install flathub com.stremio.Stremio
 2. **Arayüzü keşfedin:**
 
    * **Ana ekran (Home):** İzlemeye devam edebileceğiniz içerikler, yeni bölüm bildirimleri ve kategorize edilmiş içerikler.
-     
-     
+
+
      [responsive_img src="/images/ana-xl.webp" alt="Stremio ana ekran" /]
 
 
@@ -112,27 +112,27 @@ flatpak install flathub com.stremio.Stremio
      [responsive_img src="/images/kesfet-xl.webp" alt="Stremio keşfet" /]
 
 
-     
+
      [responsive_img src="/images/kitaplik-ekleme-xl.webp" alt="Stremio kitaplığa ekleme" /]
 
-     
-     
+
+
      [responsive_img src="/images/icerik-ekrani-xl.webp" alt="Stremio içerik ekranı" /]
 
 
    * **Kitaplık (Bookcase):** Kaydettiğiniz içerikler.
-     
+
      [responsive_img src="/images/kitaplik-xl.webp" alt="Stremio kitaplık" /]
 
-      
+
    * **Takvim (Calendar):** Kitaplığa kaydettiğiniz dizilerin bölüm yayın tarihlerini gösterir.
-     
+
      [responsive_img src="/images/takvim-xl.webp" alt="Stremio takvim" /]
 
 
    * **Ayarlar (Settings):** Uygulama deneyiminizi kişiselleştireceğiniz alan. Temel bazı ayarlar.
-    
-     
+
+
      [responsive_img src="/images/ayarlar-1-xl.webp" alt="Stremio ayarlar" /]
 
 [responsive_img src="/images/ayarlar-2-xl.webp" alt="Stremio ayarlar" /]
@@ -144,7 +144,7 @@ flatpak install flathub com.stremio.Stremio
 
 ## Stremio Eklentileri: Gücünüzü Katlayın ✨
   * **Eklentiler (Addons):** Resmi eklentiler kurulumla beraber gelenler. Topluluk eklentileri ise kişisel tercihinize kalmış. Fakat topluluk eklentilerini araştırmadan güvenliğinden emin olmadan kurmayınız.Sorumluluk size aittir.
-  
+
   [responsive_img src="/images/eklenti-xl.webp" alt="Stremio eklentiler" /]
 
 [responsive_img src="/images/eklenti-yapilandir-xl.webp" alt="Stremio eklenti yapılandırma" /]

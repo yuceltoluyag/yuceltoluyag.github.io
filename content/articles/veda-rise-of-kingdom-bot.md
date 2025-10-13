@@ -17,11 +17,11 @@ Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985410694158553
 
 Merhaba herkes,
 
-Bu yazıyı yazmak benim için hiç kolay değil. Ancak artık kaçınılmaz bir gerçeği paylaşmanın vakti geldi: **Rise of Kingdom Bot'un geliştirilmesine devam edemeyeceğim.** 
+Bu yazıyı yazmak benim için hiç kolay değil. Ancak artık kaçınılmaz bir gerçeği paylaşmanın vakti geldi: **Rise of Kingdom Bot'un geliştirilmesine devam edemeyeceğim.**
 
 Bu kararı almamın iki büyük sebebi var:
 
-👶 **Hayatımdaki Yeni Dönem:** Kısa süre önce bir ebeveyn oldum ve zamanımın büyük bir kısmını artık minik yavruma ayırıyorum. Şimdi ise diş çıkarma sürecinde ve ebeveynler bilir, bu dönemde oldukça huysuz ve gürültülü olabiliyor. 😅 
+👶 **Hayatımdaki Yeni Dönem:** Kısa süre önce bir ebeveyn oldum ve zamanımın büyük bir kısmını artık minik yavruma ayırıyorum. Şimdi ise diş çıkarma sürecinde ve ebeveynler bilir, bu dönemde oldukça huysuz ve gürültülü olabiliyor. 😅
 
 💻 **Teknik Engeller:** Mevcut bilgisayarım artık modern oyunları ve emülatörleri kaldırmıyor. FPS düşüşleri o kadar büyük ki, oyunu test etmek neredeyse imkânsız hale geldi. YouTube için video kaydederken bile 25-30 FPS almak için saatlerce uğraşmak zorunda kalıyordum. Ancak son oyun ve emülatör güncellemeleriyle birlikte durum daha da kötüleşti. Grafikler işlenirken FPS neredeyse sıfıra düşüyor ve hiçbir optimizasyon bunu düzeltemiyor. 🥶
 [responsive_img src="/images/rok0fps-xl.webp" alt="FPS düşüşü gösteren ekran görüntüsü" /]
@@ -102,9 +102,9 @@ Bu oyunu anlamak için zaten 1 yıl harcadım.
 
 ### Yasal Uyarı ve Son Düşünceler
 
-Yakın zamanda **Rise of Kingdoms ekibinden yasal bir uyarı aldım** (botun geliştirilmemesi yönünde). Ben sadece eğitim amaçlı olarak geliştirmeye devam ettim, ancak sanırım son iki commit'ten sonra hala aktif olduğumu düşündüler. 🙂 
+Yakın zamanda **Rise of Kingdoms ekibinden yasal bir uyarı aldım** (botun geliştirilmemesi yönünde). Ben sadece eğitim amaçlı olarak geliştirmeye devam ettim, ancak sanırım son iki commit'ten sonra hala aktif olduğumu düşündüler. 🙂
 
-Bu yüzden üzgünüm, sadece verdiğim sözü tutmak için güncelleme yapıyordum, ama sanırım duvara tosladık. 😅 **Projeyi fork eden ve geliştirmeye devam eden arkadaşların dikkatli olmasını öneririm:** 
+Bu yüzden üzgünüm, sadece verdiğim sözü tutmak için güncelleme yapıyordum, ama sanırım duvara tosladık. 😅 **Projeyi fork eden ve geliştirmeye devam eden arkadaşların dikkatli olmasını öneririm:**
 
 Her şey için teşekkürler. 🙏
 

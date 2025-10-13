@@ -101,7 +101,7 @@ mcpServers:
       - -y
       - "@modelcontextprotocol/server-puppeteer"
 ```
-Continue eklentisinde şu şekilde kullanıyorum,ollama ile birlikte 
+Continue eklentisinde şu şekilde kullanıyorum,ollama ile birlikte
 ```yaml
 name: Local Assistant
 version: 1.0.0
