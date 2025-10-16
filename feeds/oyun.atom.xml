@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Oyun</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/oyun.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-10-16T22:00:00+03:00</updated><entry><title>Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</title><link href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/" rel="alternate"/><published>2025-10-16T22:00:00+03:00</published><updated>2025-10-16T22:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-10-16:/ninja-kamil-ghost-of-tsushima-linux-macerasi/</id><summary type="html">&lt;p&gt;Linux'ta Ghost of Tsushima oynayan Ninja Kamil’in kaotik, eğlenceli ve teknik sorunlarla dolu macerasına mizahi bir bakış.&lt;/p&gt;</summary><content type="html">&lt;hr/&gt;
+&lt;h1 id="ninja-kamilin-kaotik-macerasi"&gt;🎮 Ninja Kamil'in Kaotik Maceras&amp;inodot;&lt;/h1&gt;
+&lt;p&gt;Linux &amp;uuml;zerinde &lt;em&gt;Ghost of Tsushima&lt;/em&gt; oynarken hem g&amp;uuml;lmek hem de stres atmak ister misiniz?
+O zaman &lt;strong&gt;Ninja Kamil&lt;/strong&gt;&amp;rsquo;in bu kaotik maceras&amp;inodot;na haz&amp;inodot;r olun! 🎭
+Kimi zaman donan, kimi zaman kahkaha att&amp;inodot;ran bu yay&amp;inodot;n; teknik sorunlar&amp;inodot;n, oyun i&amp;ccedil;i sa&amp;ccedil;mal&amp;inodot;klar&amp;inodot;n ve yarat&amp;inodot;c&amp;inodot; yorumlar&amp;inodot;n birle&amp;scedil;iminden do&amp;gbreve;mu&amp;scedil; tam bir kaos &amp;scedil;&amp;ouml;leni.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="video-zaman-damgalari"&gt;🕓 Video Zaman Damgalar&amp;inodot;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;00:00:42&lt;/strong&gt; &amp;ndash; Ninja Kamil ve unutulmu&amp;scedil; i&amp;ccedil;erik payla&amp;scedil;&amp;inodot;m&amp;inodot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;00:04:39&lt;/strong&gt; &amp;ndash; Fast food, AMD FSR, kenar yumu&amp;scedil;atma sohbeti&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;00:12:35&lt;/strong&gt; &amp;ndash; Oyun ayarlar&amp;inodot; ve altyaz&amp;inodot;larla u&amp;gbreve;ra&amp;scedil;ma&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;00:23:32&lt;/strong&gt; &amp;ndash; FPS limitleri ve sohbet kar&amp;inodot;&amp;scedil;&amp;inodot;kl&amp;inodot;&amp;gbreve;&amp;inodot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;00:28:54&lt;/strong&gt; &amp;ndash; Performans iyile&amp;scedil;tirme denemeleri&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;00:34:18&lt;/strong&gt; &amp;ndash; Karakter g&amp;ouml;r&amp;uuml;n&amp;uuml;rl&amp;uuml;&amp;gbreve;&amp;uuml; ve d&amp;ouml;v&amp;uuml;&amp;scedil; zorluklar&amp;inodot;
+&lt;img alt="Ninja Qamil Ghost Of Tsushima" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/ninja_qamil-xl.webp" srcset="/images/ninja_qamil-sm.webp 300w, /images/ninja_qamil-md.webp 500w, /images/ninja_qamil-xl.webp 800w, /images/ninja_qamil-xl.webp 1200w"/&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="teknik-sorunlar-ve-ilk-izlenimler-000000"&gt;⚙️ Teknik Sorunlar ve &amp;Idot;lk &amp;Idot;zlenimler (00:00:00)&lt;/h2&gt;
+&lt;p&gt;Yay&amp;inodot;n &lt;strong&gt;kelimenin tam anlam&amp;inodot;yla bir patlama&lt;/strong&gt; ile ba&amp;scedil;l&amp;inodot;yor: Elektrik kesintisi!
+Ninja Kamil telefonun otomatik d&amp;ouml;nd&amp;uuml;rme ayarlar&amp;inodot;yla sava&amp;scedil;&amp;inodot;yor, arada &amp;ouml;z&amp;uuml;r dileyip ses ayarlar&amp;inodot;n&amp;inodot; dengeliyor. 🎧
+Linux &amp;uuml;zerinde &lt;em&gt;Ghost of Tsushima&lt;/em&gt; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak kolay de&amp;gbreve;il: &amp;ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;k, FPS limiti, FSR ve kenar yumu&amp;scedil;atma derken tam bir optimizasyon m&amp;uuml;cadelesi ya&amp;scedil;an&amp;inodot;yor.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Yeni nesil oyunlar art&amp;inodot;k donmadan oynanam&amp;inodot;yor,&amp;rdquo; diyor Kamil, Nvidia s&amp;uuml;r&amp;uuml;c&amp;uuml;lerini sorgularken.
+Ama o pes etmiyor &amp;mdash; &amp;ccedil;&amp;uuml;nk&amp;uuml; bir Linux kullan&amp;inodot;c&amp;inodot;s&amp;inodot; m&amp;uuml;cadele eder. 💪🐧&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="oynanisa-dalis-000500"&gt;🗡️ Oynan&amp;inodot;&amp;scedil;a Dal&amp;inodot;&amp;scedil; (00:05:00)&lt;/h2&gt;
+&lt;p&gt;Nihayet oyun ba&amp;scedil;l&amp;inodot;yor&amp;hellip; ama ayar men&amp;uuml;s&amp;uuml; hemen a&amp;ccedil;&amp;inodot;l&amp;inodot;yor. 😅
+FPS s&amp;inodot;n&amp;inodot;rlamas&amp;inodot;, g&amp;ouml;lge kalitesi, ekran parlakl&amp;inodot;&amp;gbreve;&amp;inodot; &amp;mdash; hepsi tek tek test ediliyor.
+Kamil, karakter kontrol&amp;uuml;n&amp;uuml; &amp;ldquo;sarho&amp;scedil; bir at s&amp;uuml;rmek&amp;rdquo; olarak tan&amp;inodot;ml&amp;inodot;yor. 🐎
+Di&amp;gbreve;er oyuncularla kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;yor, g&amp;uuml;l&amp;uuml;n&amp;ccedil; diyaloglar ve karma&amp;scedil;&amp;inodot;k d&amp;ouml;v&amp;uuml;&amp;scedil; sahneleri ya&amp;scedil;an&amp;inodot;yor.
+Oyundaki karakterin s&amp;uuml;rekli yorgun g&amp;ouml;r&amp;uuml;nmesine anlam veremiyor:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Abi adam daha y&amp;uuml;r&amp;uuml;rken terliyor ya!&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="performans-savaslari-001000"&gt;🧩 Performans Sava&amp;scedil;lar&amp;inodot; (00:10:00)&lt;/h2&gt;
+&lt;p&gt;OBS, CPU kullan&amp;inodot;m&amp;inodot;n&amp;inodot; tavan yapt&amp;inodot;r&amp;inodot;yor.
+Kamil&amp;rsquo;in Linux yay&amp;inodot;n&amp;inodot; bir yandan &lt;em&gt;Ghost of Tsushima&lt;/em&gt;, di&amp;gbreve;er yandan &amp;ldquo;FPS ka&amp;ccedil; oldu acaba&amp;rdquo; tak&amp;inodot;nt&amp;inodot;s&amp;inodot;yla ilerliyor.
+Stuttering ba&amp;scedil;lad&amp;inodot;&amp;gbreve;&amp;inodot;nda &amp;ccedil;&amp;ouml;z&amp;uuml;m &amp;ouml;nerisi haz&amp;inodot;r:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Shadowplay&amp;rsquo;e mi ge&amp;ccedil;sem acaba? Ama o da Windows&amp;rsquo;ta var...&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Yine de denemekten vazge&amp;ccedil;miyor. Yay&amp;inodot;n performans&amp;inodot;n&amp;inodot; art&amp;inodot;rmak i&amp;ccedil;in grafik ayarlar&amp;inodot;n&amp;inodot; minimize ediyor, ama oyunun sanatsal g&amp;uuml;zelli&amp;gbreve;i h&amp;acirc;l&amp;acirc; etkileyici. 🌸&lt;/p&gt;
+&lt;div class="info-box tip"&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Idot;pucu&lt;/div&gt;
+&lt;p&gt;Linux'ta OBS kullan&amp;inodot;rken kare d&amp;uuml;&amp;scedil;&amp;uuml;&amp;scedil;lerini azaltmak i&amp;ccedil;in &lt;code&gt;ffmpeg_vaapi&lt;/code&gt; veya &lt;code&gt;nvenc&lt;/code&gt; donan&amp;inodot;m h&amp;inodot;zland&amp;inodot;rmas&amp;inodot;n&amp;inodot; etkinle&amp;scedil;tirmeyi deneyin.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="asya-sinemasi-uzerine-felsefi-dalgalar-001500"&gt;🎬 Asya Sinemas&amp;inodot; &amp;Uuml;zerine Felsefi Dalgalar (00:15:00)&lt;/h2&gt;
+&lt;p&gt;Bir anda oyun duruyor, sohbet ba&amp;scedil;l&amp;inodot;yor:
+Kamil, Asya sinemas&amp;inodot;n&amp;inodot;n klasik d&amp;ouml;ng&amp;uuml;s&amp;uuml;n&amp;uuml; anlat&amp;inodot;yor:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Adam d&amp;ouml;v&amp;uuml;l&amp;uuml;r, uyan&amp;inodot;r, yan&amp;inodot;nda kad&amp;inodot;n vard&amp;inodot;r, sonra ya&amp;scedil;l&amp;inodot; bir usta gelir...&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;1985&amp;rsquo;ten beri hi&amp;ccedil; de&amp;gbreve;i&amp;scedil;medi&amp;gbreve;ini iddia ediyor.
+Bu anda oyun yay&amp;inodot;n&amp;inodot; adeta &lt;em&gt;Ghost of Tsushima&lt;/em&gt;&amp;rsquo;dan &amp;ccedil;&amp;inodot;k&amp;inodot;p &lt;em&gt;Cine5 nostaljisine&lt;/em&gt; d&amp;ouml;n&amp;uuml;&amp;scedil;&amp;uuml;yor. 🎞️&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sessizlik-ve-samuraylik-denemeleri-002000"&gt;🥷 Sessizlik ve Samurayl&amp;inodot;k Denemeleri (00:20:00)&lt;/h2&gt;
+&lt;p&gt;Kamil sonunda gizlilik moduna ge&amp;ccedil;iyor.
+Ancak d&amp;uuml;&amp;scedil;man yapay zekas&amp;inodot; tutars&amp;inodot;z:
+Bir d&amp;uuml;&amp;scedil;man burnunun dibine kadar geliyor ama duymuyor; di&amp;gbreve;eri duvardan f&amp;inodot;s&amp;inodot;lt&amp;inodot;y&amp;inodot; i&amp;scedil;itiyor.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Karde&amp;scedil;im biriniz sa&amp;gbreve;&amp;inodot;r, biriniz Batman misiniz?&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Karanl&amp;inodot;kta y&amp;ouml;n bulmakta zorlan&amp;inodot;yor, &amp;inodot;&amp;scedil;&amp;inodot;k ar&amp;inodot;yor, k&amp;inodot;l&amp;inodot;&amp;ccedil; istiyor&amp;hellip;
+Derken: &amp;ldquo;Biri bana me&amp;scedil;ale verin, hi&amp;ccedil;bir &amp;scedil;ey g&amp;ouml;remiyorum!&amp;rdquo;&lt;/p&gt;
+&lt;div class="info-box warning"&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Uyar&amp;inodot;&lt;/div&gt;
+&lt;p&gt;Linux'ta baz&amp;inodot; grafik motorlar&amp;inodot; d&amp;uuml;&amp;scedil;&amp;uuml;k gamma de&amp;gbreve;erleriyle &amp;ccedil;al&amp;inodot;&amp;scedil;abilir. Oyun i&amp;ccedil;i &amp;ldquo;Brightness&amp;rdquo; ayar&amp;inodot;n&amp;inodot; %60 &amp;uuml;zerine &amp;ccedil;&amp;inodot;kar&amp;inodot;n.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="son-bolum-sabir-testi-002500"&gt;😤 Son B&amp;ouml;l&amp;uuml;m: Sab&amp;inodot;r Testi (00:25:00)&lt;/h2&gt;
+&lt;p&gt;Telefon &amp;ccedil;alar, FPS d&amp;uuml;&amp;scedil;er, OBS hata verir &amp;mdash; tam bir kaos!
+Ama Ninja Kamil&amp;rsquo;in pes etmeye niyeti yok.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Kapan&amp;inodot;rsa kapans&amp;inodot;n, ben bu oyunu bitirece&amp;gbreve;im!&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Her zorlukta mizah buluyor, her bug&amp;rsquo;dan bir f&amp;inodot;kra &amp;ccedil;&amp;inodot;kar&amp;inodot;yor.
+Yay&amp;inodot;n sonuna do&amp;gbreve;ru yorgun ama kararl&amp;inodot;:
+Linux&amp;rsquo;ta bile olsa, Tsushima fethedilecek. 🇯🇵🐧&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-kaosun-icinde-eglence"&gt;🎯 Sonu&amp;ccedil;: Kaosun &amp;Idot;&amp;ccedil;inde E&amp;gbreve;lence&lt;/h2&gt;
+&lt;p&gt;Ninja Kamil&amp;rsquo;in &lt;em&gt;Ghost of Tsushima&lt;/em&gt; maceras&amp;inodot;, hem oyun severler hem de Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in harika bir &amp;ldquo;ger&amp;ccedil;ek d&amp;uuml;nya&amp;rdquo; yay&amp;inodot;n&amp;inodot;yd&amp;inodot;.
+Teknik hatalar, donmalar, beklenmedik telefon aramalar&amp;inodot;&amp;hellip;
+Ama sonunda geriye kalan &amp;scedil;ey saf e&amp;gbreve;lenceydi.&lt;/p&gt;
+&lt;div class="info-box important"&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Ouml;nemli&lt;/div&gt;
+&lt;p&gt;Yay&amp;inodot;nlarda kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan teknik hatalar sinir bozucu olsa da, izleyici i&amp;ccedil;in mizah&amp;inodot;n en saf haline d&amp;ouml;n&amp;uuml;&amp;scedil;ebilir. &amp;Ouml;zellikle Linux &amp;uuml;zerinde yay&amp;inodot;n yapmak cesaret ister!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="ozetle"&gt;🧠 &amp;Ouml;zetle&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ninja Kamil, Linux &amp;uuml;zerinde Ghost of Tsushima oynarken say&amp;inodot;s&amp;inodot;z teknik sorunla sava&amp;scedil;&amp;inodot;yor.&lt;/li&gt;
+&lt;li&gt;OBS performans sorunlar&amp;inodot;, FPS d&amp;uuml;&amp;scedil;&amp;uuml;&amp;scedil;leri ve FSR testleriyle dolu bir macera.&lt;/li&gt;
+&lt;li&gt;Arada sinema muhabbeti, mizah ve bolca &amp;ldquo;neden bu kadar karanl&amp;inodot;k&amp;rdquo; serzeni&amp;scedil;i.&lt;/li&gt;
+&lt;li&gt;Sonu&amp;ccedil;: Stres giderici, kahkaha att&amp;inodot;ran bir yay&amp;inodot;n deneyimi! 😂&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="onerilen-icerikler"&gt;🔗 &amp;Ouml;nerilen &amp;Idot;&amp;ccedil;erikler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/linux-oyunlara-turkce-yama-kurulumu/"&gt;Linux&amp;rsquo;ta Oyunlara T&amp;uuml;rk&amp;ccedil;e Yama Nas&amp;inodot;l Kurulur?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cyberpunk-2077-linux-mod-kurulum-rehberi"&gt;Cyberpunk 2077 Linux'ta Mod Kurulum Rehberi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/wineprefix-nedir-nasil-kullanilir"&gt;WinePrefix Nedir ve Nas&amp;inodot;l Kullan&amp;inodot;l&amp;inodot;r?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="igYBOo35Q-k"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="bu-videoda-performansla-ilgili-tum-sorunlari-tek-tek-ele-aliyor-ve-detaylica-acikliyorum"&gt;🧩 Bu videoda, performansla ilgili t&amp;uuml;m sorunlar&amp;inodot; tek tek ele al&amp;inodot;yor ve detayl&amp;inodot;ca a&amp;ccedil;&amp;inodot;kl&amp;inodot;yorum!&lt;/h2&gt;
+&lt;p&gt;Yani akl&amp;inodot;n&amp;inodot;zdaki "Neden kas&amp;inodot;yor?", "Nas&amp;inodot;l daha ak&amp;inodot;c&amp;inodot; oynar&amp;inodot;m?" gibi sorular&amp;inodot;n hepsine &amp;ccedil;&amp;ouml;z&amp;uuml;m burada! 🚀🎮&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="R4zbnIoE5hk"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;</content><category term="Oyun"/><category term="ghost-of-tsushima"/><category term="linux"/><category term="ninja-kamil"/><category term="oyun-izlenimleri"/><category term="oyun-performans"/><category term="mizah"/><category term="oyun-inceleme"/></entry><entry><title>Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</title><link href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/" rel="alternate"/><published>2025-10-14T19:00:00+03:00</published><updated>2025-10-14T19:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-10-14:/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/</id><summary type="html">&lt;p&gt;Linux’ta Vortex ve Proton kullanarak Clair Obscur: Expedition 33 modlarını güvenli şekilde kurmanın adım adım rehberi.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Linux oyuncular&amp;inodot; i&amp;ccedil;in modlama &amp;ccedil;o&amp;gbreve;u zaman Windows kullan&amp;inodot;c&amp;inodot;lar&amp;inodot;na g&amp;ouml;re daha zorlu bir s&amp;uuml;re&amp;ccedil;tir. &amp;Ouml;zellikle Proton veya Wine &amp;uuml;zerinden &amp;ccedil;al&amp;inodot;&amp;scedil;an oyunlarda dosya yollar&amp;inodot;n&amp;inodot;n farkl&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot;, Vortex gibi mod y&amp;ouml;neticilerinin &lt;strong&gt;ENOTDIR&lt;/strong&gt; gibi hatalar vermesine yol a&amp;ccedil;abilir.
+Bu rehberde, &lt;strong&gt;Clair Obscur: Expedition 33&lt;/strong&gt; oyunu i&amp;ccedil;in Vortex ve Nexus Mods kullanarak mod kurulumunu &lt;strong&gt;Linux ortam&amp;inodot;nda sorunsuz&lt;/strong&gt; &amp;scedil;ekilde nas&amp;inodot;l yapabilece&amp;gbreve;inizi ad&amp;inodot;m ad&amp;inodot;m g&amp;ouml;sterece&amp;gbreve;iz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-sorunun-kaynagi-enotdir-ve-dosya-yolu-uyusmazliklari"&gt;1️⃣ Sorunun Kayna&amp;gbreve;&amp;inodot;: ENOTDIR ve Dosya Yolu Uyu&amp;scedil;mazl&amp;inodot;klar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Vortex, Windows dosya sistemi mant&amp;inodot;&amp;gbreve;&amp;inodot;na g&amp;ouml;re tasarlanm&amp;inodot;&amp;scedil;t&amp;inodot;r. Normalde &amp;scedil;u yolu kullan&amp;inodot;r:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\u&lt;/span&gt;sers&lt;span class="se"&gt;\s&lt;/span&gt;teamuser&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\L&lt;/span&gt;ocal&lt;span class="se"&gt;\S&lt;/span&gt;andfall
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ancak Linux&amp;rsquo;ta Proton veya Wine ortam&amp;inodot;nda bu yolun kar&amp;scedil;&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot; &amp;scedil;&amp;ouml;yledir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/home/kullanici/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/users/steamuser/AppData/Local/Sandfall
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;💥 E&amp;gbreve;er bu klas&amp;ouml;r yerine yanl&amp;inodot;&amp;scedil;l&amp;inodot;kla bir &lt;strong&gt;dosya&lt;/strong&gt; varsa, &amp;scedil;u hatay&amp;inodot; al&amp;inodot;rs&amp;inodot;n&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ENOTDIR:&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;directory
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="info-box note"&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Bilgi&lt;/div&gt;
+&lt;p&gt;Bu hata, Vortex&amp;rsquo;in bekledi&amp;gbreve;i klas&amp;ouml;r yap&amp;inodot;s&amp;inodot;n&amp;inodot;n bir dosya ile &amp;ccedil;ak&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;sterir. Genellikle yanl&amp;inodot;&amp;scedil; ba&amp;gbreve;lama (symlink) veya eksik dizin yap&amp;inodot;s&amp;inodot;ndan kaynaklan&amp;inodot;r.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Bu durumda &lt;strong&gt;symlink (sembolik ba&amp;gbreve;lant&amp;inodot;)&lt;/strong&gt; veya &lt;strong&gt;bind mount&lt;/strong&gt; kullanabilirsiniz. Ancak baz&amp;inodot; modlar IO-Store &amp;uuml;zerinden fiziksel dosya kontrol&amp;uuml; yapt&amp;inodot;&amp;gbreve;&amp;inodot; i&amp;ccedil;in &lt;strong&gt;dosyalar&amp;inodot; ger&amp;ccedil;ekten ta&amp;scedil;&amp;inodot;mak&lt;/strong&gt; daha g&amp;uuml;venli bir &amp;ccedil;&amp;ouml;z&amp;uuml;md&amp;uuml;r.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-guvenli-adim-oyunun-yedegini-almak"&gt;2️⃣ G&amp;uuml;venli Ad&amp;inodot;m: Oyunun Yede&amp;gbreve;ini Almak&lt;/h2&gt;
+&lt;p&gt;Modlama i&amp;scedil;lemi &amp;ouml;ncesi mutlaka oyun dosyalar&amp;inodot;n&amp;inodot;z&amp;inodot; ve kay&amp;inodot;tlar&amp;inodot;n&amp;inodot;z&amp;inodot; yedekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cp&lt;span class="w"&gt; &lt;/span&gt;-r&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/mnt/steam_depo/BaBaGames/Clair Obscur Expedition 33"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/home/friday13/backup/Clair Obscur Expedition 33"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="info-box important"&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Ouml;nemli&lt;/div&gt;
+&lt;p&gt;Yedek almadan yap&amp;inodot;lan de&amp;gbreve;i&amp;scedil;iklikler geri al&amp;inodot;namaz hale gelebilir. &amp;Ouml;zellikle `.sav` uzant&amp;inodot;l&amp;inodot; kay&amp;inodot;t dosyalar&amp;inodot; kritik &amp;ouml;neme sahiptir.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-oyunu-vortexin-pfx-c-drive-klasorune-tasimak"&gt;3️⃣ Oyunu Vortex&amp;rsquo;in PFX &amp;ldquo;C Drive&amp;rdquo; Klas&amp;ouml;r&amp;uuml;ne Ta&amp;scedil;&amp;inodot;mak&lt;/h2&gt;
+&lt;p&gt;Linux&amp;rsquo;ta Vortex, oyunlar&amp;inodot; kendi Proton/Wine pfx ortam&amp;inodot;nda y&amp;ouml;netir. Bu klas&amp;ouml;r genellikle &amp;scedil;u yerdedir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/Games/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Oyunu buraya ta&amp;scedil;&amp;inodot;yarak Vortex&amp;rsquo;in do&amp;gbreve;ru &amp;scedil;ekilde alg&amp;inodot;lamas&amp;inodot;n&amp;inodot; sa&amp;gbreve;layabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mv&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/mnt/steam_depo/BaBaGames/Clair Obscur Expedition 33"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="s2"&gt;"/home/friday13/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/Games/"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="info-box tip"&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Idot;pucu&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er dosya izinleriyle ilgili hata al&amp;inodot;rsan&amp;inodot;z, komutun ba&amp;scedil;&amp;inodot;na &lt;code&gt;sudo&lt;/code&gt; ekleyebilirsiniz. Ancak m&amp;uuml;mk&amp;uuml;nse kullan&amp;inodot;c&amp;inodot; izinlerini de&amp;gbreve;i&amp;scedil;tirmek yerine kendi hesab&amp;inodot;n&amp;inodot;zla i&amp;scedil;lem yap&amp;inodot;n.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-vortexe-oyunun-yolunu-elle-tanitmak"&gt;4️⃣ Vortex&amp;rsquo;e Oyunun Yolunu Elle Tan&amp;inodot;tmak&lt;/h2&gt;
+&lt;p&gt;Oyunu ta&amp;scedil;&amp;inodot;d&amp;inodot;ktan sonra Vortex&amp;rsquo;te oyun yolunu g&amp;uuml;ncelleyin:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Windows g&amp;ouml;r&amp;uuml;n&amp;uuml;m&amp;uuml;:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\G&lt;/span&gt;ames&lt;span class="se"&gt;\C&lt;/span&gt;lair&lt;span class="w"&gt; &lt;/span&gt;Obscur&lt;span class="w"&gt; &lt;/span&gt;Expedition&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;33&lt;/span&gt;&lt;span class="se"&gt;\g&lt;/span&gt;ame&lt;span class="se"&gt;\g&lt;/span&gt;ame.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Linux kar&amp;scedil;&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot;:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/home/friday13/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/Games/Clair&lt;span class="w"&gt; &lt;/span&gt;Obscur&lt;span class="w"&gt; &lt;/span&gt;Expedition&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;33&lt;/span&gt;/game/game.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-modlari-dogru-konuma-yerlestirmek"&gt;5️⃣ Modlar&amp;inodot; Do&amp;gbreve;ru Konuma Yerle&amp;scedil;tirmek&lt;/h2&gt;
+&lt;p&gt;Vortex, modlar&amp;inodot; &amp;ldquo;staging folder&amp;rdquo; denilen ge&amp;ccedil;ici bir klas&amp;ouml;rde depolar. Do&amp;gbreve;ru dizin yap&amp;inodot;s&amp;inodot; &amp;scedil;u &amp;scedil;ekilde olmal&amp;inodot;d&amp;inodot;r:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Windows&amp;rsquo;ta:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\G&lt;/span&gt;ames&lt;span class="se"&gt;\V&lt;/span&gt;ortex&lt;span class="w"&gt; &lt;/span&gt;Mods&lt;span class="se"&gt;\c&lt;/span&gt;lairobscurexpedition33
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Linux&amp;rsquo;ta:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/home/friday13/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/Games/Vortex&lt;span class="w"&gt; &lt;/span&gt;Mods/clairobscurexpedition33
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Symlink kullanarak bu klas&amp;ouml;r&amp;uuml; Vortex&amp;rsquo;in bekledi&amp;gbreve;i yere ba&amp;gbreve;layabilirsiniz. Ancak g&amp;uuml;venli bir kurulum istiyorsan&amp;inodot;z modlar&amp;inodot; do&amp;gbreve;rudan bu dizine kopyalaman&amp;inodot;z &amp;ouml;nerilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-son-kontroller-ve-test"&gt;6️⃣ Son Kontroller ve Test&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Vortex&amp;rsquo;i yeniden ba&amp;scedil;lat&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Oyunu &amp;ldquo;Modlu&amp;rdquo; olarak ba&amp;scedil;lat&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;ENOTDIR&amp;rdquo; hatas&amp;inodot; g&amp;ouml;r&amp;uuml;nm&amp;uuml;yorsa kurulum ba&amp;scedil;ar&amp;inodot;l&amp;inodot; demektir.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="info-box note"&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Bilgi&lt;/div&gt;
+&lt;p&gt;Modlar y&amp;uuml;klenmiyorsa staging folder ve oyun dizinlerini kontrol edin. Yanl&amp;inodot;&amp;scedil; dosya izinleri veya eksik dizinler sorun &amp;ccedil;&amp;inodot;karabilir.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="sandfall-dosyasi-bulunamadi-hatasi"&gt;🧩 Sandfall Dosyas&amp;inodot; Bulunamad&amp;inodot; Hatas&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Baz&amp;inodot; durumlarda Vortex &amp;ldquo;Sandfall&amp;rdquo; klas&amp;ouml;r&amp;uuml;n&amp;uuml; bulamayabilir. Bunu d&amp;uuml;zeltmek i&amp;ccedil;in sembolik ba&amp;gbreve;lant&amp;inodot; olu&amp;scedil;turun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ln&lt;span class="w"&gt; &lt;/span&gt;-sf&lt;span class="w"&gt; &lt;/span&gt;/home/friday13/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/Games/Clair&lt;span class="se"&gt;\ &lt;/span&gt;Obscur&lt;span class="se"&gt;\ &lt;/span&gt;Expedition&lt;span class="se"&gt;\ &lt;/span&gt;&lt;span class="m"&gt;33&lt;/span&gt;/game/prefix/drive_c/users/steamuser/Local&lt;span class="se"&gt;\ &lt;/span&gt;Settings/Application&lt;span class="se"&gt;\ &lt;/span&gt;Data/Sandfall/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+/home/friday13/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/users/steamuser/AppData/Local
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="konsol-dev-console-acilmiyor-sorunu"&gt;🧰 Konsol (Dev Console) A&amp;ccedil;&amp;inodot;lm&amp;inodot;yor Sorunu&lt;/h2&gt;
+&lt;p&gt;Baz&amp;inodot; modlar veya Unreal Engine oyunlar&amp;inodot; konsolu &lt;code&gt;~&lt;/code&gt; (tilde) tu&amp;scedil;una atar.
+Linux&amp;rsquo;ta bu tu&amp;scedil;un keycode kar&amp;scedil;&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot; genellikle &lt;strong&gt;35&lt;/strong&gt;&amp;rsquo;tir.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;setxkbmap&lt;span class="w"&gt; &lt;/span&gt;-query
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ccedil;&amp;inodot;kt&amp;inodot;da &lt;code&gt;layout: tr&lt;/code&gt; g&amp;ouml;r&amp;uuml;yorsan&amp;inodot;z, &lt;code&gt;keycode 35&lt;/code&gt; muhtemelen &lt;code&gt;asciitilde&lt;/code&gt; tu&amp;scedil;udur.
+Bunu tan&amp;inodot;tmak i&amp;ccedil;in &amp;scedil;u komutu girin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;xmodmap&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"keycode 35 = grave asciitilde"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu de&amp;gbreve;i&amp;scedil;iklik kal&amp;inodot;c&amp;inodot; olsun istiyorsan&amp;inodot;z &lt;code&gt;~/.profile&lt;/code&gt; dosyan&amp;inodot;za ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Kal&amp;inodot;c&amp;inodot; Tilde Fix&lt;/span&gt;
+xmodmap&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"keycode 35 = grave asciitilde"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Art&amp;inodot;k oyun konsolunu &lt;code&gt;AltGr + &amp;ouml;&lt;/code&gt; veya do&amp;gbreve;rudan &lt;code&gt;~&lt;/code&gt; ile a&amp;ccedil;abilirsiniz. ✅&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;🔚 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ENOTDIR&lt;/strong&gt; hatas&amp;inodot; genellikle dosya yolu kar&amp;inodot;&amp;scedil;&amp;inodot;kl&amp;inodot;&amp;gbreve;&amp;inodot;ndan kaynaklan&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;Oyun dosyalar&amp;inodot;n&amp;inodot; Vortex&amp;rsquo;in &lt;strong&gt;pfx ortam&amp;inodot;na ta&amp;scedil;&amp;inodot;y&amp;inodot;n.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Mod klas&amp;ouml;rlerini do&amp;gbreve;ru staging dizinine yerle&amp;scedil;tirin.&lt;/li&gt;
+&lt;li&gt;Gerekirse &lt;code&gt;xmodmap&lt;/code&gt; ile konsol tu&amp;scedil;unu tan&amp;inodot;mlay&amp;inodot;n.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu ad&amp;inodot;mlar&amp;inodot; uygulad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda &lt;strong&gt;Clair Obscur: Expedition 33&lt;/strong&gt; oyununda Linux &amp;uuml;zerinde sorunsuz bir mod deneyimi ya&amp;scedil;ayabilirsiniz. 🧠🎮&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="faydali-makaleler"&gt;📎 Faydal&amp;inodot; Makaleler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="/linux-oyunlara-turkce-yama-kurulumu/"&gt;Linux&amp;rsquo;ta Oyunlara T&amp;uuml;rk&amp;ccedil;e Yama Nas&amp;inodot;l Kurulur?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/cyberpunk-2077-linux-mod-kurulum-rehberi"&gt;Cyberpunk 2077 Linux'ta Mod Kurulum Rehberi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="/wineprefix-nedir-nasil-kullanilir"&gt;WinePrefix Nedir ve Nas&amp;inodot;l Kullan&amp;inodot;l&amp;inodot;r?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="23E4RxRsG_o"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;</content><category term="Oyun"/><category term="linux"/><category term="vortex"/><category term="nexusmods"/><category term="clairobscur"/><category term="proton"/><category term="wine"/><category term="modlama"/></entry><entry><title>🎮 Cyberpunk 2077 Linux'ta Mod Kurulum Rehberi: Cyber Engine Tweaks ve Daha Fazlası</title><link href="https://yuceltoluyag.github.io/cyberpunk-2077-linux-mod-kurulum-rehberi/" rel="alternate"/><published>2025-08-01T10:30:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-08-01:/cyberpunk-2077-linux-mod-kurulum-rehberi/</id><summary type="html">&lt;p&gt;Cyberpunk 2077'yi Linux'ta modlayın! Paketlenmiş ve paketlenmemiş sürümler için detaylı Cyber Engine Tweaks kurulum rehberi.&lt;/p&gt;</summary><content type="html">&lt;h2 id="giris"&gt;🚀 Giri&amp;scedil;&lt;/h2&gt;
+&lt;p&gt;Cyberpunk 2077, Linux platformunda da harika bir deneyim sunuyor, ancak modlarla bu deneyimi bir &amp;uuml;st seviyeye ta&amp;scedil;&amp;inodot;yabilirsiniz! Bu rehberde, hem paketlenmi&amp;scedil; hem de paketlenmemi&amp;scedil; s&amp;uuml;r&amp;uuml;mler i&amp;ccedil;in mod kurulumunu detayl&amp;inodot;ca anlataca&amp;gbreve;&amp;inodot;m. &amp;Ouml;zellikle Cyber Engine Tweaks modunu kurarak oyununuzu nas&amp;inodot;l geli&amp;scedil;tirece&amp;gbreve;inizi &amp;ouml;&amp;gbreve;reneceksiniz. 🎯&lt;/p&gt;
+&lt;h2 id="gereksinimler"&gt;📋 Gereksinimler&lt;/h2&gt;
+&lt;p&gt;Mod kurulumuna ba&amp;scedil;lamadan &amp;ouml;nce sisteminizde bulunmas&amp;inodot; gerekenler:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ Cyberpunk 2077 (Steam, GOG veya Epic Games versiyonu)&lt;/li&gt;
+&lt;li&gt;✅ Wine 7.0+ veya Proton 7.0+&lt;/li&gt;
+&lt;li&gt;✅ Winetricks&lt;/li&gt;
+&lt;li&gt;✅ &amp;Idot;nternet ba&amp;gbreve;lant&amp;inodot;s&amp;inodot;&lt;/li&gt;
+&lt;li&gt;✅ Temel terminal bilgisi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="paketlenmis-surumler-icin-kurulum-kron4ek-yontemi"&gt;🎯 Paketlenmi&amp;scedil; S&amp;uuml;r&amp;uuml;mler &amp;Idot;&amp;ccedil;in Kurulum (Kron4ek Y&amp;ouml;ntemi)&lt;/h2&gt;
+&lt;h3 id="adim-1-cyber-engine-tweaks-indirme"&gt;Ad&amp;inodot;m 1: Cyber Engine Tweaks &amp;Idot;ndirme 📥&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://github.com/yamashi/CyberEngineTweaks"&gt;Cyber Engine Tweaks GitHub sayfas&amp;inodot;na&lt;/a&gt; gidin&lt;/li&gt;
+&lt;li&gt;En son s&amp;uuml;r&amp;uuml;m&amp;uuml; indirin&lt;/li&gt;
+&lt;li&gt;ZIP dosyas&amp;inodot;n&amp;inodot; oyun dizininize &amp;ccedil;&amp;inodot;kar&amp;inodot;n&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="adim-2-wine-konfigurasyonu"&gt;Ad&amp;inodot;m 2: Wine Konfig&amp;uuml;rasyonu ⚙️&lt;/h3&gt;
+&lt;p&gt;Paketlenmi&amp;scedil; s&amp;uuml;r&amp;uuml;m i&amp;ccedil;in winecfg'yi &amp;scedil;u komutla a&amp;ccedil;&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./start.sh&lt;span class="w"&gt; &lt;/span&gt;--cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Wine Configuration penceresinde:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Libraries&lt;/strong&gt; sekmesine ge&amp;ccedil;in&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;New override for library&lt;/strong&gt; alan&amp;inodot;na &lt;code&gt;version&lt;/code&gt; yaz&amp;inodot;n (t&amp;inodot;rnak i&amp;scedil;areti olmadan)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add&lt;/strong&gt; butonuna t&amp;inodot;klay&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;Listeden &lt;code&gt;version&lt;/code&gt; se&amp;ccedil;in ve &lt;strong&gt;Edit&lt;/strong&gt; t&amp;inodot;klay&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Native then Builtin&lt;/strong&gt; se&amp;ccedil;ene&amp;gbreve;ini se&amp;ccedil;in (varsay&amp;inodot;lan olarak zaten se&amp;ccedil;ili olmal&amp;inodot;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; ile kaydedin&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="adim-3-directx-bilesenleri-kurulumu"&gt;Ad&amp;inodot;m 3: DirectX Bile&amp;scedil;enleri Kurulumu 🔧&lt;/h3&gt;
+&lt;p&gt;Gerekli DirectX bile&amp;scedil;enlerini kurmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;./start.sh&lt;span class="w"&gt; &lt;/span&gt;--tricks&lt;span class="w"&gt; &lt;/span&gt;d3dcompiler_43&lt;span class="w"&gt; &lt;/span&gt;d3dcompiler_47
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="adim-4-oyunu-baslatma-ve-test"&gt;Ad&amp;inodot;m 4: Oyunu Ba&amp;scedil;latma ve Test 🎮&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Oyunu normal &amp;scedil;ekilde ba&amp;scedil;lat&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;Cyber Engine Tweaks overlay'i i&amp;ccedil;in klavye k&amp;inodot;sayolu belirleme penceresi g&amp;ouml;r&amp;uuml;nmeli&lt;/li&gt;
+&lt;li&gt;&amp;Idot;stedi&amp;gbreve;iniz tu&amp;scedil; kombinasyonunu ayarlay&amp;inodot;n (&amp;ouml;rne&amp;gbreve;in: &lt;code&gt;F4&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="paketlenmemis-surumler-icin-kurulum_1"&gt;🛠️ Paketlenmemi&amp;scedil; S&amp;uuml;r&amp;uuml;mler &amp;Idot;&amp;ccedil;in Kurulum&lt;/h2&gt;
+&lt;h3 id="adim-1-steamproton-kurulumu"&gt;Ad&amp;inodot;m 1: Steam/Proton Kurulumu 🎲&lt;/h3&gt;
+&lt;p&gt;Steam'de Cyberpunk 2077 i&amp;ccedil;in Proton ayarlar&amp;inodot;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Steam Library'de Cyberpunk 2077'ye sa&amp;gbreve; t&amp;inodot;klay&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Properties&lt;/strong&gt; &amp;gt; &lt;strong&gt;Compatibility&lt;/strong&gt; sekmesi&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Force the use of a specific Steam Play compatibility tool&lt;/strong&gt; i&amp;scedil;aretleyin&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Proton 7.0+&lt;/strong&gt; se&amp;ccedil;in&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="adim-2-prefix-konumunu-bulma"&gt;Ad&amp;inodot;m 2: Prefix Konumunu Bulma 📍&lt;/h3&gt;
+&lt;p&gt;Steam Proton prefix'inizi bulun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.steam/steam/steamapps/compatdata/1091500
+ls&lt;span class="w"&gt; &lt;/span&gt;-la
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="adim-3-cyber-engine-tweaks-kurulumu"&gt;Ad&amp;inodot;m 3: Cyber Engine Tweaks Kurulumu 📦&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Cyber Engine Tweaks'i indirin&lt;/li&gt;
+&lt;li&gt;Oyun dizinine &amp;ccedil;&amp;inodot;kar&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Oyun dizini genellikle &amp;scedil;urada:&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.steam/steam/steamapps/common/Cyberpunk&lt;span class="se"&gt;\ &lt;/span&gt;&lt;span class="m"&gt;2077&lt;/span&gt;/
+&lt;span class="c1"&gt;# CET dosyalar&amp;inodot;n&amp;inodot; buraya &amp;ccedil;&amp;inodot;kar&amp;inodot;n&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="adim-4-winecfg-ayarlari-manuel"&gt;Ad&amp;inodot;m 4: Winecfg Ayarlar&amp;inodot; (Manuel) ⚡&lt;/h3&gt;
+&lt;p&gt;Prefix'e &amp;ouml;zel winecfg a&amp;ccedil;mak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.steam/steam/steamapps/compatdata/1091500/pfx&lt;span class="w"&gt; &lt;/span&gt;winecfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha sonra Ad&amp;inodot;m 2'deki ayn&amp;inodot; &lt;code&gt;version&lt;/code&gt; library ayarlar&amp;inodot;n&amp;inodot; yap&amp;inodot;n.&lt;/p&gt;
+&lt;h3 id="adim-5-winetricks-ile-directx-kurulumu"&gt;Ad&amp;inodot;m 5: Winetricks ile DirectX Kurulumu 🎯&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.steam/steam/steamapps/compatdata/1091500/pfx&lt;span class="w"&gt; &lt;/span&gt;winetricks&lt;span class="w"&gt; &lt;/span&gt;d3dcompiler_43&lt;span class="w"&gt; &lt;/span&gt;d3dcompiler_47
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="alternatif-kurulum-yontemleri_1"&gt;🔍 Alternatif Kurulum Y&amp;ouml;ntemleri&lt;/h2&gt;
+&lt;h3 id="lutris-kullanicilari-icin"&gt;Lutris Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; &amp;Idot;&amp;ccedil;in 🎮&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Lutris'te oyunu se&amp;ccedil;in&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Configure&lt;/strong&gt; &amp;gt; &lt;strong&gt;Runner options&lt;/strong&gt;'a gidin&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wine version&lt;/strong&gt;: Wine-GE veya Lutris-Wine se&amp;ccedil;in&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;System options&lt;/strong&gt; &amp;gt; &lt;strong&gt;Prefix architecture&lt;/strong&gt;: &lt;code&gt;win64&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Terminal'de prefix yolunu bulun ve yukar&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; uygulay&amp;inodot;n&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="bottles-kullanicilari-icin"&gt;Bottles Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; &amp;Idot;&amp;ccedil;in 🍷&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Bottles'da yeni bir &amp;scedil;i&amp;scedil;e olu&amp;scedil;turun&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gaming&lt;/strong&gt; template'ini se&amp;ccedil;in&lt;/li&gt;
+&lt;li&gt;Dependencies'e &lt;code&gt;d3dcompiler_43&lt;/code&gt; ve &lt;code&gt;d3dcompiler_47&lt;/code&gt; ekleyin&lt;/li&gt;
+&lt;li&gt;Cyber Engine Tweaks'i &amp;scedil;i&amp;scedil;enin program dizinine kurun&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="yaygin-sorunlar-ve-cozumleri_1"&gt;⚠️ Yayg&amp;inodot;n Sorunlar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri&lt;/h2&gt;
+&lt;h3 id="sorun-1-overlay-acilmiyor"&gt;Sorun 1: Overlay A&amp;ccedil;&amp;inodot;lm&amp;inodot;yor 🚫&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Oyun dizininde CET loglar&amp;inodot;n&amp;inodot; kontrol edin&lt;/span&gt;
+cat&lt;span class="w"&gt; &lt;/span&gt;cyber_engine_tweaks.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="sorun-2-crash-on-startup"&gt;Sorun 2: Crash on Startup 💥&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/strong&gt;
+- Proton versiyonunu de&amp;gbreve;i&amp;scedil;tirin (GE-Proton &amp;ouml;nerilir)
+- Steam launch options: &lt;code&gt;PROTON_LOG=1 %command%&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id="sorun-3-mods-yuklenmiyor"&gt;Sorun 3: Mods Y&amp;uuml;klenmiyor 📁&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/strong&gt;
+1. Mod dosyalar&amp;inodot;n&amp;inodot;n do&amp;gbreve;ru dizinde oldu&amp;gbreve;unu kontrol edin
+2. &lt;code&gt;bin/x64/plugins/cyber_engine_tweaks/mods/&lt;/code&gt; dizini yap&amp;inodot;s&amp;inodot;n&amp;inodot; do&amp;gbreve;rulay&amp;inodot;n&lt;/p&gt;
+&lt;h2 id="populer-modlar-ve-kurulumlari_1"&gt;🎨 Pop&amp;uuml;ler Modlar ve Kurulumlar&amp;inodot;&lt;/h2&gt;
+&lt;h3 id="1-better-vehicle-handling"&gt;1. Better Vehicle Handling 🚗&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Mods dizinine &amp;ccedil;&amp;inodot;kar&amp;inodot;n&lt;/span&gt;
+~/.steam/steam/steamapps/common/Cyberpunk&lt;span class="se"&gt;\ &lt;/span&gt;&lt;span class="m"&gt;2077&lt;/span&gt;/bin/x64/plugins/cyber_engine_tweaks/mods/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="2-enhanced-police-system"&gt;2. Enhanced Police System 👮&amp;zwj;&amp;male;️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;NexusMods'dan indirin&lt;/li&gt;
+&lt;li&gt;Mod manager kullan&amp;inodot;n veya manuel olarak kurun&lt;/li&gt;
+&lt;li&gt;Game directory/archive/pc/mod/ dizinine yerle&amp;scedil;tirin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-visual-improvements"&gt;3. Visual Improvements 🎨&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ReShade for Linux kurulumu&lt;/li&gt;
+&lt;li&gt;DXVK ile uyumluluk ayarlar&amp;inodot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="ileri-seviye-ayarlar_1"&gt;🔧 &amp;Idot;leri Seviye Ayarlar&lt;/h2&gt;
+&lt;h3 id="performance-optimizasyonu"&gt;Performance Optimizasyonu ⚡&lt;/h3&gt;
+&lt;p&gt;Launch parametreleri:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;DXVK_LOG_LEVEL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;none&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;DXVK_HUD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fps&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="memory-management"&gt;Memory Management 💾&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;user.ini&lt;/code&gt; dosyas&amp;inodot;nda:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;INI&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Engine]&lt;/span&gt;
+&lt;span class="na"&gt;MemoryPoolBudgets.PoolCPU&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;3GB&lt;/span&gt;
+&lt;span class="na"&gt;MemoryPoolBudgets.PoolGPU&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;6GB&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id="benchmark-ve-test_1"&gt;📊 Benchmark ve Test&lt;/h2&gt;
+&lt;p&gt;Mod kurulumu sonras&amp;inodot; performans testi:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Vanilla oyun&lt;/strong&gt;: FPS ortalamas&amp;inodot; kaydedin&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modlu oyun&lt;/strong&gt;: Kar&amp;scedil;&amp;inodot;la&amp;scedil;t&amp;inodot;rmal&amp;inodot; test yap&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stability test&lt;/strong&gt;: 30 dakika oynay&amp;inodot;n&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="sonuc-ve-oneriler"&gt;🎯 Sonu&amp;ccedil; ve &amp;Ouml;neriler&lt;/h2&gt;
+&lt;p&gt;Cyberpunk 2077'yi Linux'ta modlamak ba&amp;scedil;lang&amp;inodot;&amp;ccedil;ta karma&amp;scedil;&amp;inodot;k g&amp;ouml;r&amp;uuml;nse de, do&amp;gbreve;ru ad&amp;inodot;mlar&amp;inodot; takip ederek harika sonu&amp;ccedil;lar elde edebilirsiniz! 🚀&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;En &amp;Idot;yi Uygulamalar:&lt;/strong&gt;
+- 💾 Oyun dosyalar&amp;inodot;n&amp;inodot;z&amp;inodot; yedekleyin
+- 🔄 Modlar&amp;inodot; tek tek test edin
+- 📋 Kurulum notlar&amp;inodot;n&amp;inodot;z&amp;inodot; tutun
+- 🎮 Community forumlar&amp;inodot;n&amp;inodot; takip edin&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;G&amp;uuml;venlik &amp;Idot;pu&amp;ccedil;lar&amp;inodot;:&lt;/strong&gt;
+- ✅ Sadece g&amp;uuml;venilir kaynaklardan mod indirin
+- 🛡️ Antivirus taramas&amp;inodot; yap&amp;inodot;n
+- 📝 Mod listesini g&amp;uuml;ncel tutun&lt;/p&gt;
+&lt;p&gt;Linux gaming toplulu&amp;gbreve;u s&amp;uuml;rekli b&amp;uuml;y&amp;uuml;yor ve Cyberpunk 2077 gibi AAA oyunlar art&amp;inodot;k Linux'ta da m&amp;uuml;kemmel &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor. Bu rehberle Night City'de daha iyi bir deneyim ya&amp;scedil;ayaca&amp;gbreve;&amp;inodot;n&amp;inodot;zdan eminim! 🌃&lt;/p&gt;
+&lt;h2 id="faydali-kaynaklar"&gt;🔗 Faydal&amp;inodot; Kaynaklar&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.protondb.com/app/1091500"&gt;ProtonDB Cyberpunk Reports&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://reddit.com/r/linux_gaming"&gt;r/linux_gaming Community&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.nexusmods.com/cyberpunk2077"&gt;NexusMods Cyberpunk Section&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Bu rehber s&amp;uuml;rekli g&amp;uuml;ncellenmektedir. Yeni mod versiyonlar&amp;inodot; ve Linux uyumlulu&amp;gbreve;u de&amp;gbreve;i&amp;scedil;iklikleri i&amp;ccedil;in takipte kal&amp;inodot;n! 🎮✨&lt;/p&gt;</content><category term="Oyun"/><category term="cyberpunk-2077"/><category term="linux"/><category term="mod"/><category term="cyber-engine-tweaks"/><category term="wine"/><category term="proton"/><category term="gaming"/></entry><entry><title>WinePrefix Nedir ve Nasıl Kullanılır?</title><link href="https://yuceltoluyag.github.io/wineprefix-nedir-nasil-kullanilir/" rel="alternate"/><published>2025-07-29T00:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-07-29:/wineprefix-nedir-nasil-kullanilir/</id><summary type="html">&lt;h1 id="wineprefix-nedir-ve-neden-onemlidir"&gt;🍷 WinePrefix Nedir ve Neden &amp;Ouml;nemlidir?&lt;/h1&gt;
+&lt;p&gt;Linux &amp;uuml;zerinde Windows oyunlar&amp;inodot; ve uygulamalar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in Wine kullan&amp;inodot;yorsan&amp;inodot;z, kar&amp;scedil;&amp;inodot;n&amp;inodot;za mutlaka &lt;code&gt;WINEPREFIX&lt;/code&gt; kavram&amp;inodot; &amp;ccedil;&amp;inodot;km&amp;inodot;&amp;scedil;t&amp;inodot;r. Bu ortam de&amp;gbreve;i&amp;scedil;keni sayesinde farkl&amp;inodot; programlar i&amp;ccedil;in izole sanal Windows ortamlar&amp;inodot; olu&amp;scedil;turabilir, sorun ya&amp;scedil;amadan &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz …&lt;/p&gt;</summary><content type="html">&lt;h1 id="wineprefix-nedir-ve-neden-onemlidir"&gt;🍷 WinePrefix Nedir ve Neden &amp;Ouml;nemlidir?&lt;/h1&gt;
+&lt;p&gt;Linux &amp;uuml;zerinde Windows oyunlar&amp;inodot; ve uygulamalar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in Wine kullan&amp;inodot;yorsan&amp;inodot;z, kar&amp;scedil;&amp;inodot;n&amp;inodot;za mutlaka &lt;code&gt;WINEPREFIX&lt;/code&gt; kavram&amp;inodot; &amp;ccedil;&amp;inodot;km&amp;inodot;&amp;scedil;t&amp;inodot;r. Bu ortam de&amp;gbreve;i&amp;scedil;keni sayesinde farkl&amp;inodot; programlar i&amp;ccedil;in izole sanal Windows ortamlar&amp;inodot; olu&amp;scedil;turabilir, sorun ya&amp;scedil;amadan &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Bu rehberde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;WINEPREFIX&lt;/code&gt; nedir?&lt;/li&gt;
+&lt;li&gt;Nas&amp;inodot;l olu&amp;scedil;turulur?&lt;/li&gt;
+&lt;li&gt;Farkl&amp;inodot; prefix'lerle oyun kurulumlar&amp;inodot; nas&amp;inodot;l yap&amp;inodot;l&amp;inodot;r?&lt;/li&gt;
+&lt;li&gt;Pratik &amp;ouml;rneklerle nas&amp;inodot;l kullan&amp;inodot;l&amp;inodot;r?&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;winecfg&lt;/code&gt;, &lt;code&gt;winetricks&lt;/code&gt;, &lt;code&gt;regedit&lt;/code&gt; ve hata ay&amp;inodot;klama ipu&amp;ccedil;lar&amp;inodot;&lt;/li&gt;
+&lt;li&gt;Lutris ve Steam/Proton ile entegrasyon 🎯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Hepsini ad&amp;inodot;m ad&amp;inodot;m g&amp;ouml;steriyoruz. 🎯
+&lt;img alt="wineprefix-nedir-nasil-kullanilir" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wineprefix-nedir-nasil-kullanilir-xl.webp" srcset="/images/wineprefix-nedir-nasil-kullanilir-sm.webp 300w, /images/wineprefix-nedir-nasil-kullanilir-md.webp 500w, /images/wineprefix-nedir-nasil-kullanilir-xl.webp 800w, /images/wineprefix-nedir-nasil-kullanilir-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-wineprefix-nedir"&gt;🧠 1. WinePrefix Nedir?&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;WINEPREFIX&lt;/code&gt;, Wine&amp;rsquo;&amp;inodot;n Windows benzeri dosya sistemini &lt;strong&gt;hangi klas&amp;ouml;rde olu&amp;scedil;turaca&amp;gbreve;&amp;inodot;n&amp;inodot; ve &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;raca&amp;gbreve;&amp;inodot;n&amp;inodot;&lt;/strong&gt; belirten bir ortam de&amp;gbreve;i&amp;scedil;kenidir.&lt;/p&gt;
+&lt;p&gt;Her prefix asl&amp;inodot;nda ba&amp;gbreve;&amp;inodot;ms&amp;inodot;z bir &amp;ldquo;sanal Windows&amp;rdquo; klas&amp;ouml;r&amp;uuml;d&amp;uuml;r.
+Bu sayede bir oyun i&amp;ccedil;in 32 bit, bir ba&amp;scedil;kas&amp;inodot; i&amp;ccedil;in 64 bit uyumlu, biri i&amp;ccedil;in DirectX9, biri i&amp;ccedil;in DirectX11 i&amp;ccedil;eren farkl&amp;inodot; ortamlar olu&amp;scedil;turabilirsiniz.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🎮 &lt;strong&gt;Oyunlarda neden &amp;ouml;nemli?&lt;/strong&gt;
+&amp;Ccedil;&amp;uuml;nk&amp;uuml; bir oyunun ihtiya&amp;ccedil; duydu&amp;gbreve;u DLL dosyalar&amp;inodot;, sistem ayarlar&amp;inodot;, kay&amp;inodot;t defteri girdileri di&amp;gbreve;er oyunlarla &amp;ccedil;ak&amp;inodot;&amp;scedil;abilir. &lt;code&gt;WINEPREFIX&lt;/code&gt; bu sorunlar&amp;inodot; tamamen izole eder.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-wineprefix-dizini-nasil-gorunur"&gt;🧱 2. WinePrefix Dizini Nas&amp;inodot;l G&amp;ouml;r&amp;uuml;n&amp;uuml;r?&lt;/h2&gt;
+&lt;p&gt;Bir &lt;code&gt;WINEPREFIX&lt;/code&gt; dizini genellikle &amp;scedil;u yap&amp;inodot;ya sahiptir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.wine/ (veya &amp;ouml;zel belirlenen klas&amp;ouml;r)
+&amp;boxvr;&amp;boxh;&amp;boxh; drive_c/         &amp;rarr; Sanal C:\ s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;
+&amp;boxvr;&amp;boxh;&amp;boxh; system.reg       &amp;rarr; Sistem kay&amp;inodot;t defteri
+&amp;boxvr;&amp;boxh;&amp;boxh; user.reg         &amp;rarr; Kullan&amp;inodot;c&amp;inodot; kay&amp;inodot;t defteri
+&amp;boxvr;&amp;boxh;&amp;boxh; userdef.reg      &amp;rarr; Varsay&amp;inodot;lan kullan&amp;inodot;c&amp;inodot; kay&amp;inodot;tlar&amp;inodot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu yap&amp;inodot;da &lt;code&gt;drive_c&lt;/code&gt; i&amp;ccedil;ine kurdu&amp;gbreve;unuz her program, Windows sisteminde oldu&amp;gbreve;u gibi &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 Varsay&amp;inodot;lan Wine dizini: &lt;code&gt;~/.wine&lt;/code&gt;
+Ama biz her oyun i&amp;ccedil;in farkl&amp;inodot; klas&amp;ouml;r kullanman&amp;inodot;z&amp;inodot; &amp;ouml;neriyoruz: &lt;code&gt;~/wineprefixes/oyunadi&lt;/code&gt; gibi.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-wineprefix-nasil-olusturulur"&gt;🛠️ 3. WinePrefix Nas&amp;inodot;l Olu&amp;scedil;turulur?&lt;/h2&gt;
+&lt;h3 id="ornek-pes-2017-icin-yeni-bir-wineprefix-olusturmak"&gt;🎯 &amp;Ouml;rnek: PES 2017 i&amp;ccedil;in yeni bir &lt;code&gt;WINEPREFIX&lt;/code&gt; olu&amp;scedil;turmak&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/wineprefixes/pes2017
+wineboot&lt;span class="w"&gt; &lt;/span&gt;-u
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu iki komut:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Yeni bir klas&amp;ouml;r tan&amp;inodot;mlar (&lt;code&gt;~/wineprefixes/pes2017&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wineboot -u&lt;/code&gt; ile prefix i&amp;ccedil;inde sanal Windows ortam&amp;inodot; kurar.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🛡️ Bu i&amp;scedil;lem, ger&amp;ccedil;ek bir Windows kurulumu gibi temel dosyalar&amp;inodot; olu&amp;scedil;turur: &lt;code&gt;C:\&lt;/code&gt;, kay&amp;inodot;t defteri, config dosyalar&amp;inodot; vb.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-prefix-uzerinden-uygulama-calistirmak_1"&gt;▶️ 4. Prefix &amp;Uuml;zerinden Uygulama &amp;Ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak&lt;/h2&gt;
+&lt;h3 id="ornek-exe-dosyasini-ozel-bir-prefix-icinde-baslatmak"&gt;&amp;Ouml;rnek: &lt;code&gt;.exe&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; &amp;ouml;zel bir prefix i&amp;ccedil;inde ba&amp;scedil;latmak&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/wineprefixes/pes2017
+wine&lt;span class="w"&gt; &lt;/span&gt;~/Downloads/Settings.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komutla:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Settings.exe&lt;/code&gt; uygulamas&amp;inodot; sadece &lt;code&gt;~/wineprefixes/pes2017&lt;/code&gt; i&amp;ccedil;indeki Windows ortam&amp;inodot;nda &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;Kay&amp;inodot;t defteri ve y&amp;uuml;kl&amp;uuml; DLL&amp;rsquo;ler bu prefix&amp;rsquo;e &amp;ouml;zeldir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔄 Bu &amp;scedil;ekilde her oyunu farkl&amp;inodot; sistemlerde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak m&amp;uuml;mk&amp;uuml;n olur.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-uygulamali-senaryo-pes-2017-kurulumu_1"&gt;🎮 5. Uygulamal&amp;inodot; Senaryo: PES 2017 Kurulumu&lt;/h2&gt;
+&lt;h3 id="adim-1-prefix-olustur"&gt;Ad&amp;inodot;m 1: Prefix olu&amp;scedil;tur&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/peswine
+wineboot&lt;span class="w"&gt; &lt;/span&gt;-u
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="adim-2-yapilandirmalari-istege-gore-duzenle"&gt;Ad&amp;inodot;m 2: Yap&amp;inodot;land&amp;inodot;rmalar&amp;inodot; iste&amp;gbreve;e g&amp;ouml;re d&amp;uuml;zenle&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;winecfg&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;# Wine ayarlar&amp;inodot;n&amp;inodot; yap&amp;inodot;land&amp;inodot;r&lt;/span&gt;
+winetricks&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="c1"&gt;# DLL y&amp;uuml;kleme arac&amp;inodot; (&amp;ouml;rn. d3dx9)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="adim-3-oyunu-kur"&gt;Ad&amp;inodot;m 3: Oyunu kur&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wine&lt;span class="w"&gt; &lt;/span&gt;setup.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;E&amp;gbreve;er kurulum dosyas&amp;inodot; Windows&amp;rsquo;ta &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yorsa, burada da aynen &amp;ccedil;al&amp;inodot;&amp;scedil;mal&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="oyunu-baslatmak_1"&gt;▶️ Oyunu Ba&amp;scedil;latmak&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/peswine
+wine&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"C:\Program Files\PES2017\pes2017.exe"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🗂️ Wine bu dizini otomatik olarak &amp;scedil;una e&amp;scedil;ler:
+&lt;code&gt;"C:\Program Files"&lt;/code&gt; &amp;rarr; &lt;code&gt;~/peswine/drive_c/Program Files&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-regedit-ve-kayit-defteri-duzenleme"&gt;🧩 6. Regedit ve Kay&amp;inodot;t Defteri D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;p&gt;Wine i&amp;ccedil;indeki kay&amp;inodot;t defteri ayarlar&amp;inodot;n&amp;inodot; &amp;scedil;u komutla d&amp;uuml;zenleyebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/peswine&lt;span class="w"&gt; &lt;/span&gt;wine&lt;span class="w"&gt; &lt;/span&gt;regedit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Burada bir&amp;ccedil;ok Windows program&amp;inodot;nda oldu&amp;gbreve;u gibi HKEY_LOCAL_MACHINE ve HKEY_CURRENT_USER yap&amp;inodot;lar&amp;inodot;n&amp;inodot; g&amp;ouml;rebilir, elle anahtar ekleyip silebilirsiniz.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Dikkat: Yanl&amp;inodot;&amp;scedil; kay&amp;inodot;t defteri d&amp;uuml;zenlemeleri program&amp;inodot;n &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;n&amp;inodot; bozabilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="7-faydali-ipuclari"&gt;💡 7. Faydal&amp;inodot; &amp;Idot;pu&amp;ccedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&amp;Idot;pucu&lt;/th&gt;
+&lt;th&gt;A&amp;ccedil;&amp;inodot;klama&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Her oyun i&amp;ccedil;in ayr&amp;inodot; &lt;code&gt;WINEPREFIX&lt;/code&gt; kullan&lt;/td&gt;
+&lt;td&gt;&amp;Ccedil;ak&amp;inodot;&amp;scedil;malar&amp;inodot; ve kar&amp;inodot;&amp;scedil;&amp;inodot;kl&amp;inodot;&amp;gbreve;&amp;inodot; &amp;ouml;nler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Varsay&amp;inodot;lan prefix &lt;code&gt;~/.wine&lt;/code&gt;'d&amp;inodot;r&lt;/td&gt;
+&lt;td&gt;Hi&amp;ccedil; tan&amp;inodot;mlamazsan&amp;inodot;z buray&amp;inodot; kullan&amp;inodot;r&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;winetricks&lt;/code&gt; ile DLL kurulumu yaparken de prefix&amp;rsquo;i belirt&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;WINEPREFIX=... winetricks ...&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id="dll-yukleme-ornegi"&gt;🎯 DLL Y&amp;uuml;kleme &amp;Ouml;rne&amp;gbreve;i:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/peswine&lt;span class="w"&gt; &lt;/span&gt;winetricks&lt;span class="w"&gt; &lt;/span&gt;d3dx9
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="8-hata-ayiklama-ve-log-takibi_1"&gt;🧪 8. Hata Ay&amp;inodot;klama ve Log Takibi&lt;/h2&gt;
+&lt;p&gt;Wine uygulamalar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;rken olu&amp;scedil;abilecek hatalar&amp;inodot; g&amp;ouml;rmek i&amp;ccedil;in &lt;code&gt;WINEDEBUG&lt;/code&gt; kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/peswine&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;WINEDEBUG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;+seh&lt;span class="w"&gt; &lt;/span&gt;wine&lt;span class="w"&gt; &lt;/span&gt;pes2017.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ayr&amp;inodot;ca &lt;code&gt;winecfg&lt;/code&gt; arac&amp;inodot; ile:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DirectX s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;&lt;/li&gt;
+&lt;li&gt;Windows s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;&lt;/li&gt;
+&lt;li&gt;Ses s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;n&amp;uuml;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;gibi ayarlar&amp;inodot; de&amp;gbreve;i&amp;scedil;tirebilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="9-prefix-yedekleme-ve-kopyalama"&gt;💾 9. Prefix Yedekleme ve Kopyalama&lt;/h2&gt;
+&lt;p&gt;Her &lt;code&gt;WINEPREFIX&lt;/code&gt; bir klas&amp;ouml;r oldu&amp;gbreve;undan kolayca yedeklenebilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;tar&lt;span class="w"&gt; &lt;/span&gt;czvf&lt;span class="w"&gt; &lt;/span&gt;peswine-backup.tar.gz&lt;span class="w"&gt; &lt;/span&gt;~/peswine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ba&amp;scedil;ka bir sistemde bu yede&amp;gbreve;i a&amp;ccedil;arak oyunu direkt kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;tar&lt;span class="w"&gt; &lt;/span&gt;xzvf&lt;span class="w"&gt; &lt;/span&gt;peswine-backup.tar.gz&lt;span class="w"&gt; &lt;/span&gt;-C&lt;span class="w"&gt; &lt;/span&gt;~/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="10-lutris-ile-prefix-yonetimi"&gt;🔄 10. Lutris ile Prefix Y&amp;ouml;netimi&lt;/h2&gt;
+&lt;p&gt;Oyunlar&amp;inodot; Lutris &amp;uuml;zerinden kurarken de &lt;code&gt;WINEPREFIX&lt;/code&gt; her oyun i&amp;ccedil;in otomatik olu&amp;scedil;turulur.
+&amp;Idot;lgili prefix genellikle &amp;scedil;urada bulunur:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.local/share/lutris/runners/wine/prefix/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ama &amp;ouml;zelle&amp;scedil;tirilebilir. Lutris bu i&amp;scedil;lemleri arka planda otomatik y&amp;ouml;netir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="11-steamproton-ile-prefix-kullanimi"&gt;🛠️ 11. Steam/Proton ile Prefix Kullan&amp;inodot;m&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Steam'de Proton ile &amp;ccedil;al&amp;inodot;&amp;scedil;an oyunlar da benzer &amp;scedil;ekilde prefix kullan&amp;inodot;r. Bu prefix&amp;rsquo;ler genellikle &amp;scedil;urada yer al&amp;inodot;r:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.steam/steam/steamapps/compatdata/APPID/pfx/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Buradaki &lt;code&gt;APPID&lt;/code&gt;, oyunun Steam App ID&amp;rsquo;sidir. &lt;code&gt;regedit&lt;/code&gt;, &lt;code&gt;winetricks&lt;/code&gt;, &lt;code&gt;winecfg&lt;/code&gt; gibi ara&amp;ccedil;larla bu prefix&amp;rsquo;e m&amp;uuml;dahale edebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;WINEPREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/.steam/steam/steamapps/compatdata/APPID/pfx&lt;span class="w"&gt; &lt;/span&gt;winetricks&lt;span class="w"&gt; &lt;/span&gt;corefonts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="12-kisaca-komut-tablosu"&gt;✅ 12. K&amp;inodot;saca Komut Tablosu&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Komut&lt;/th&gt;
+&lt;th&gt;G&amp;ouml;revi&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;export WINEPREFIX=...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Prefix belirler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;wineboot -u&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yeni prefix olu&amp;scedil;turur&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;wine dosya.exe&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Uygulamay&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;r&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;winetricks dll&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;DLL y&amp;uuml;kler (&amp;ouml;rn: d3dx9)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;winecfg&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Ayarlar&amp;inodot; yap&amp;inodot;land&amp;inodot;r&amp;inodot;r&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;wine regedit&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Kay&amp;inodot;t defteri d&amp;uuml;zenler&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;WINEDEBUG=...&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Hata loglar&amp;inodot;n&amp;inodot; g&amp;ouml;sterir&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h2 id="13-neden-prefix-kullanmalisin"&gt;📌 13. Neden Prefix Kullanmal&amp;inodot;s&amp;inodot;n?&lt;/h2&gt;
+&lt;p&gt;✅ Avantajlar&amp;inodot;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🧩 Uyumsuz oyunlar&amp;inodot; izole etmek&lt;/li&gt;
+&lt;li&gt;🔧 &amp;Ouml;zel yap&amp;inodot;land&amp;inodot;rmalar yapabilmek&lt;/li&gt;
+&lt;li&gt;💣 Sorunlu oyunlar&amp;inodot;n sistem genelini etkilemesini &amp;ouml;nlemek&lt;/li&gt;
+&lt;li&gt;🗂️ Her prefix'i ayr&amp;inodot; klas&amp;ouml;rde yedeklemek&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;🔚 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;WINEPREFIX&lt;/code&gt;, Linux &amp;uuml;zerinde oyun ve uygulama &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;ran herkesin &amp;ouml;&amp;gbreve;renmesi gereken temel bir kavramd&amp;inodot;r.
+Bu rehberle art&amp;inodot;k:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kendi prefix&amp;rsquo;lerinizi olu&amp;scedil;turabilir,&lt;/li&gt;
+&lt;li&gt;DLL kurabilir,&lt;/li&gt;
+&lt;li&gt;Kay&amp;inodot;t defteri d&amp;uuml;zenleyebilir,&lt;/li&gt;
+&lt;li&gt;Lutris ve Steam ile entegre kullanabilir,&lt;/li&gt;
+&lt;li&gt;Farkl&amp;inodot; oyunlar&amp;inodot; sorunsuz &amp;scedil;ekilde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz. ✅&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Oyun"/><category term="wine"/><category term="wineprefix"/><category term="linux"/><category term="oyun"/><category term="uyumluluk"/><category term="rehber"/></entry><entry><title>Linux’ta Oyunlara Türkçe Yama Nasıl Kurulur? (Detaylı Rehber)</title><link href="https://yuceltoluyag.github.io/linux-oyunlara-turkce-yama-kurulumu/" rel="alternate"/><published>2025-05-13T14:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-13:/linux-oyunlara-turkce-yama-kurulumu/</id><summary type="html">&lt;p&gt;Linux kullanıcıları için hazırladığımız bu kapsamlı rehberde, oyunlara nasıl Türkçe yama kurulacağını adım adım anlatıyoruz. Wine, Lutris ve yerelleştirme araçlarının nasıl kullanılacağını öğrenin.&lt;/p&gt;</summary><content type="html">&lt;h3 id="giris"&gt;Giri&amp;scedil;&lt;/h3&gt;
+&lt;p&gt;Linux&amp;rsquo;ta oyun oynamak son y&amp;inodot;llarda &amp;ccedil;ok daha eri&amp;scedil;ilebilir hale geldi. Ancak &lt;strong&gt;oyun yerelle&amp;scedil;tirme&lt;/strong&gt; ve &lt;strong&gt;T&amp;uuml;rk&amp;ccedil;e dil deste&amp;gbreve;i&lt;/strong&gt; h&amp;acirc;l&amp;acirc; her oyun i&amp;ccedil;in varsay&amp;inodot;lan olarak sunulmuyor. Bu rehberde, &amp;ouml;zellikle Arch Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; ba&amp;scedil;ta olmak &amp;uuml;zere, Linux sistemlerde oyunlara T&amp;uuml;rk&amp;ccedil;e yama nas&amp;inodot;l kurulur sorusunu ad&amp;inodot;m ad&amp;inodot;m a&amp;ccedil;&amp;inodot;kl&amp;inodot;yoruz.&lt;/p&gt;
+&lt;p&gt;Art&amp;inodot;k &lt;code&gt;.exe&lt;/code&gt; uzant&amp;inodot;l&amp;inodot; yama dosyalar&amp;inodot; sadece Proton veya Wine ile kurulan oyunlarla s&amp;inodot;n&amp;inodot;rl&amp;inodot; de&amp;gbreve;il; do&amp;gbreve;ru dizin yap&amp;inodot;s&amp;inodot;n&amp;inodot; sa&amp;gbreve;lad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z s&amp;uuml;rece &lt;strong&gt;native (yerel) Linux oyunlar&amp;inodot;na&lt;/strong&gt; da T&amp;uuml;rk&amp;ccedil;e yama uygulamak m&amp;uuml;mk&amp;uuml;n!&lt;/p&gt;
+&lt;p&gt;Haz&amp;inodot;rsan&amp;inodot;z ba&amp;scedil;layal&amp;inodot;m 🎮🇹🇷&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-gereksinimler_1"&gt;1. Gereksinimler&lt;/h2&gt;
+&lt;p&gt;Kuruluma ge&amp;ccedil;meden &amp;ouml;nce sisteminizde a&amp;scedil;a&amp;gbreve;&amp;inodot;daki bile&amp;scedil;enlerin haz&amp;inodot;r olmas&amp;inodot; gerekiyor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Wine&lt;/strong&gt; &amp;ndash; Windows uygulamalar&amp;inodot;n&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lutris&lt;/strong&gt; &amp;ndash; (&amp;Idot;ste&amp;gbreve;e ba&amp;gbreve;l&amp;inodot;, ancak bir&amp;ccedil;ok oyun i&amp;ccedil;in kurulum kolayl&amp;inodot;&amp;gbreve;&amp;inodot; sa&amp;gbreve;lar)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kurulu oyun dosyalar&amp;inodot;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T&amp;uuml;rk&amp;ccedil;e yama dosyalar&amp;inodot;&lt;/strong&gt; &amp;ndash; Genellikle &lt;code&gt;.zip&lt;/code&gt;, &lt;code&gt;.rar&lt;/code&gt; veya &lt;code&gt;.exe&lt;/code&gt; format&amp;inodot;nda olur&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-turkce-yama-dosyasini-edinme"&gt;2. T&amp;uuml;rk&amp;ccedil;e Yama Dosyas&amp;inodot;n&amp;inodot; Edinme&lt;/h2&gt;
+&lt;p&gt;T&amp;uuml;rk&amp;ccedil;e yamalar, g&amp;ouml;n&amp;uuml;ll&amp;uuml; &amp;ccedil;eviri ekipleri ve topluluklar taraf&amp;inodot;ndan haz&amp;inodot;rlan&amp;inodot;r. G&amp;uuml;venilir kaynaklardan yama dosyalar&amp;inodot;n&amp;inodot; indirmeniz &amp;ouml;nerilir.&lt;/p&gt;
+&lt;p&gt;🔗 &lt;strong&gt;&amp;Ouml;nerilen Yama Siteleri:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.oyunceviri.net/"&gt;oyunceviri.net&lt;/a&gt; &amp;ndash; En b&amp;uuml;y&amp;uuml;k ve aktif T&amp;uuml;rk&amp;ccedil;e yama platformu&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://sinnerclownceviri.net/"&gt;sinnerclownceviri.net&lt;/a&gt; &amp;ndash; &amp;Ouml;zellikle korku/macera oyunlar&amp;inodot; i&amp;ccedil;in &amp;ccedil;eviriler&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://forum.donanimhaber.com/yayinlanmis-yamalar--f2632"&gt;Donan&amp;inodot;m Haber Forum &amp;ndash; Yay&amp;inodot;nlanm&amp;inodot;&amp;scedil; Yamalar&lt;/a&gt; &amp;ndash; Topluluk bazl&amp;inodot; ar&amp;scedil;iv&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;📌 &lt;strong&gt;&amp;Idot;ndirirken dikkat edilmesi gerekenler:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yorumlar&amp;inodot; ve s&amp;uuml;r&amp;uuml;m bilgilerini okuyun&lt;/li&gt;
+&lt;li&gt;Oyun s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;zle uyumlu oldu&amp;gbreve;undan emin olun&lt;/li&gt;
+&lt;li&gt;Gerekirse oyun klas&amp;ouml;r&amp;uuml;n&amp;uuml;z&amp;uuml;n yede&amp;gbreve;ini al&amp;inodot;n&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-exe-formatindaki-kurulum-dosyalarini-acmak"&gt;3. &lt;code&gt;.exe&lt;/code&gt; Format&amp;inodot;ndaki Kurulum Dosyalar&amp;inodot;n&amp;inodot; A&amp;ccedil;mak&lt;/h2&gt;
+&lt;p&gt;Yama bir kurulum sihirbaz&amp;inodot; olarak sunulmu&amp;scedil;sa, Wine &amp;uuml;zerinden kolayca &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;wine&lt;span class="w"&gt; &lt;/span&gt;setup.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulum ekran&amp;inodot; a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda, &lt;strong&gt;oyunun kurulu oldu&amp;gbreve;u dizini manuel olarak belirtmeniz&lt;/strong&gt; &amp;ouml;nemlidir. Aksi halde yama yanl&amp;inodot;&amp;scedil; klas&amp;ouml;re y&amp;uuml;klenebilir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-yerel-native-linux-oyunlarina-exe-yama-kurulumu"&gt;4. Yerel (Native) Linux Oyunlar&amp;inodot;na &lt;code&gt;.exe&lt;/code&gt; Yama Kurulumu&lt;/h2&gt;
+&lt;p&gt;Genellikle &lt;code&gt;.exe&lt;/code&gt; uzant&amp;inodot;l&amp;inodot; dosyalar yaln&amp;inodot;zca Windows ortamlar&amp;inodot;nda &amp;ccedil;al&amp;inodot;&amp;scedil;abilir gibi g&amp;ouml;r&amp;uuml;nse de, bu dosyalar&amp;inodot;n yapt&amp;inodot;&amp;gbreve;&amp;inodot; i&amp;scedil;lem &amp;ccedil;o&amp;gbreve;unlukla belirli klas&amp;ouml;rlere dosya kopyalamaktan ibarettir.&lt;/p&gt;
+&lt;p&gt;Bu nedenle, Proton ya da Wine kullanmayan &lt;strong&gt;native Linux oyunlar&amp;inodot;nda da&lt;/strong&gt; bu t&amp;uuml;r yamalar&amp;inodot; kurabilirsiniz.&lt;/p&gt;
+&lt;h3 id="nasil-calisir"&gt;💡 Nas&amp;inodot;l &amp;Ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r?&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.exe&lt;/code&gt; uzant&amp;inodot;l&amp;inodot; yamalar, genellikle a&amp;scedil;a&amp;gbreve;&amp;inodot;daki i&amp;scedil;lemleri yapar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Oyunun baz&amp;inodot; klas&amp;ouml;rlerine (&lt;code&gt;data&lt;/code&gt;, &lt;code&gt;lang&lt;/code&gt;, &lt;code&gt;resource&lt;/code&gt;, &lt;code&gt;localization&lt;/code&gt;) dosyalar ekler&lt;/li&gt;
+&lt;li&gt;Mevcut dosyalar&amp;inodot;n &amp;uuml;zerine yazar veya yeni klas&amp;ouml;r olu&amp;scedil;turur&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Linux'ta bu i&amp;scedil;lemi manuel olarak yapman&amp;inodot;z m&amp;uuml;mk&amp;uuml;nd&amp;uuml;r:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# &amp;Ouml;rnek bir dizin yap&amp;inodot;s&amp;inodot;&lt;/span&gt;
+~/.steam/steam/steamapps/common/OyunAdi/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Yamay&amp;inodot; Wine ya da bir dosya y&amp;ouml;neticisiyle a&amp;ccedil;arak i&amp;ccedil;erikleri ge&amp;ccedil;ici bir klas&amp;ouml;re &amp;ccedil;&amp;inodot;kar&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Linux'ta T&amp;uuml;rk&amp;ccedil;e yama kurulumu" src="/images/linux-oyunlara-turkce-yama-kurulumu-xl.webp"/&gt;&lt;/p&gt;
+&lt;h3 id="kurulum-adimlari"&gt;🔧 Kurulum Ad&amp;inodot;mlar&amp;inodot;:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;.exe&lt;/code&gt; yama dosyas&amp;inodot;n&amp;inodot; Wine veya Bottles ile &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n, ya da &lt;code&gt;Ark&lt;/code&gt;, &lt;code&gt;file-roller&lt;/code&gt;, &lt;code&gt;7z&lt;/code&gt; gibi ara&amp;ccedil;larla a&amp;ccedil;&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&amp;Ccedil;&amp;inodot;kan dosyalar&amp;inodot; &lt;code&gt;~/Temp/yama/&lt;/code&gt; gibi ge&amp;ccedil;ici bir klas&amp;ouml;re ay&amp;inodot;klay&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;data&lt;/code&gt;, &lt;code&gt;lang&lt;/code&gt;, &lt;code&gt;resource&lt;/code&gt;, &lt;code&gt;localization&lt;/code&gt; gibi klas&amp;ouml;rleri tespit edin (b&amp;uuml;y&amp;uuml;k/k&amp;uuml;&amp;ccedil;&amp;uuml;k harf duyarl&amp;inodot;d&amp;inodot;r)&lt;/li&gt;
+&lt;li&gt;Oyunun Linux dizinindeki kar&amp;scedil;&amp;inodot;l&amp;inodot;k gelen yerlere dosyalar&amp;inodot; kopyalay&amp;inodot;n&lt;/li&gt;
+&lt;li&gt;Oyunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n ve T&amp;uuml;rk&amp;ccedil;ele&amp;scedil;tirmenin ba&amp;scedil;ar&amp;inodot;yla uyguland&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol edin&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-lutris-uzerinden-kurulum-ve-test_1"&gt;5. Lutris &amp;Uuml;zerinden Kurulum ve Test&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er oyunu &lt;strong&gt;Lutris&lt;/strong&gt; &amp;uuml;zerinden &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;yorsan&amp;inodot;z:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lutris &amp;rarr; Oyunu sa&amp;gbreve; t&amp;inodot;klay&amp;inodot;n &amp;rarr; &lt;strong&gt;Configure&lt;/strong&gt; &amp;rarr; &lt;strong&gt;Game Options&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Dosya yollar&amp;inodot;n&amp;inodot; ve environment variable&amp;rsquo;lar&amp;inodot; kontrol edin&lt;/li&gt;
+&lt;li&gt;Gerekirse &lt;code&gt;run directory&lt;/code&gt; alan&amp;inodot;n&amp;inodot; elle yama yap&amp;inodot;lan klas&amp;ouml;re y&amp;ouml;nlendirin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu ayarlar sayesinde yama dosyalar&amp;inodot;n&amp;inodot;n oyun s&amp;inodot;ras&amp;inodot;nda do&amp;gbreve;ru &amp;scedil;ekilde okunmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;layabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-karsilasilan-yaygin-sorunlar-ve-cozumleri"&gt;6. Kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan Yayg&amp;inodot;n Sorunlar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Sorun&lt;/th&gt;
+&lt;th&gt;Olas&amp;inodot; &amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Yama sonras&amp;inodot; oyun a&amp;ccedil;&amp;inodot;lm&amp;inodot;yor&lt;/td&gt;
+&lt;td&gt;Wine s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; de&amp;gbreve;i&amp;scedil;tirin, yedek dosyadan geri d&amp;ouml;n&amp;uuml;n&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Men&amp;uuml;de T&amp;uuml;rk&amp;ccedil;e karakterler bozuk&lt;/td&gt;
+&lt;td&gt;Eksik font dosyalar&amp;inodot; olabilir, yamay&amp;inodot; yeniden kurmay&amp;inodot; deneyin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;.exe&lt;/code&gt; dosyas&amp;inodot; a&amp;ccedil;&amp;inodot;lm&amp;inodot;yor&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;winetricks&lt;/code&gt; ile gerekli DLL dosyalar&amp;inodot;n&amp;inodot; y&amp;uuml;kleyin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Yama klas&amp;ouml;rleri yanl&amp;inodot;&amp;scedil; kopyalanm&amp;inodot;&amp;scedil;&lt;/td&gt;
+&lt;td&gt;Dizin yap&amp;inodot;s&amp;inodot;n&amp;inodot; ve harf duyarl&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol edin&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h2 id="7-bonus-otomatiklestirme-scripti-ileri-seviye"&gt;7. Bonus: Otomatikle&amp;scedil;tirme Scripti (&amp;Idot;leri Seviye)&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er s&amp;uuml;rekli olarak yama kuruyorsan&amp;inodot;z, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi basit bir bash scripti ile i&amp;scedil;lemi otomatikle&amp;scedil;tirebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+unzip&lt;span class="w"&gt; &lt;/span&gt;TurkceYama.zip&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.steam/steam/steamapps/common/OyunAdi/"&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Yama ba&amp;scedil;ar&amp;inodot;yla kuruldu!"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🔐 Not: Script i&amp;ccedil;indeki yollar&amp;inodot; kendi sisteminize g&amp;ouml;re g&amp;uuml;ncelleyin.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Linux &amp;uuml;zerinde oyunlara T&amp;uuml;rk&amp;ccedil;e yama kurmak ilk bak&amp;inodot;&amp;scedil;ta karma&amp;scedil;&amp;inodot;k g&amp;ouml;r&amp;uuml;nse de, temel prensipler anla&amp;scedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda olduk&amp;ccedil;a basittir. Bu rehber sayesinde ister Wine ile kurulu ister native Linux oyunu olsun, art&amp;inodot;k oyunlar&amp;inodot;n&amp;inodot;z&amp;inodot; T&amp;uuml;rk&amp;ccedil;e oynaman&amp;inodot;n keyfini &amp;ccedil;&amp;inodot;karabilirsiniz.&lt;/p&gt;
+&lt;p&gt;💬 &lt;em&gt;Sen de hangi oyunlara T&amp;uuml;rk&amp;ccedil;e yama kurdun? Yorumlarda payla&amp;scedil;, birlikte deneyim kazanal&amp;inodot;m!&lt;/em&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sikca-sorulan-sorular-sss"&gt;S&amp;inodot;k&amp;ccedil;a Sorulan Sorular (SSS)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;1. Linux&amp;rsquo;ta oyunlara neden T&amp;uuml;rk&amp;ccedil;e yama kurmak zor?&lt;/strong&gt;
+&amp;Ccedil;o&amp;gbreve;u yama Windows sistemlere y&amp;ouml;nelik olarak geli&amp;scedil;tirildi&amp;gbreve;i i&amp;ccedil;in, Linux&amp;rsquo;ta kurulum genellikle manuel yap&amp;inodot;l&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. &lt;code&gt;.exe&lt;/code&gt; dosyalar&amp;inodot; sadece Proton oyunlar&amp;inodot;nda m&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r?&lt;/strong&gt;
+Hay&amp;inodot;r. Wine veya benzeri ara&amp;ccedil;larla &lt;code&gt;.exe&lt;/code&gt; dosyalar&amp;inodot;n&amp;inodot;n i&amp;ccedil;eri&amp;gbreve;i a&amp;ccedil;&amp;inodot;labilir ve native oyunlara da uygulanabilir.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. Oyunum yama sonras&amp;inodot; a&amp;ccedil;&amp;inodot;lm&amp;inodot;yor, ne yapmal&amp;inodot;y&amp;inodot;m?&lt;/strong&gt;
+Yedek dosyadan geri d&amp;ouml;n&amp;uuml;n veya Wine/Proton s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;z&amp;uuml; de&amp;gbreve;i&amp;scedil;tirerek yeniden deneyin.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="video-rehber"&gt;Video Rehber&lt;/h2&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="mdyl6kkFTGQ"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;</content><category term="Oyun"/><category term="linux"/><category term="archlinux"/><category term="türkçe yama"/><category term="oyunlar"/><category term="dil paketi"/><category term="lutris"/><category term="wine"/><category term="yerelleştirme"/><category term="proton"/><category term="native oyun"/></entry><entry><title>Arch Linux Üzerinde Rise of Kingdoms Kurulumu (Lutris ile)</title><link href="https://yuceltoluyag.github.io/arch-linux-rise-of-kingdoms-kurulumu/" rel="alternate"/><published>2025-05-10T21:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-10:/arch-linux-rise-of-kingdoms-kurulumu/</id><summary type="html">&lt;p&gt;Arch Linux'ta Rise of Kingdoms oynamak mümkün! Bu rehberde Lutris ile nasıl kurulum yapacağınızı ve yaşanan grafik sorunlarını nasıl çözeceğinizi adım adım anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;h2 id="giris-neden-rise-of-kingdomsu-linuxta-oynamalisiniz"&gt;🧐 Giri&amp;scedil;: Neden Rise of Kingdoms'u Linux'ta Oynamal&amp;inodot;s&amp;inodot;n&amp;inodot;z?&lt;/h2&gt;
+&lt;p&gt;Rise of Kingdoms, mobil &amp;ccedil;&amp;inodot;k&amp;inodot;&amp;scedil;l&amp;inodot; ama Windows &amp;uuml;zerinden PC'de de oynanabilen pop&amp;uuml;ler bir strateji oyunu. Ancak Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in native bir destek sunulmuyor. Bu rehberde Arch Linux &amp;uuml;zerinde &lt;strong&gt;Lutris&lt;/strong&gt; kullanarak Rise of Kingdoms'u nas&amp;inodot;l kuraca&amp;gbreve;&amp;inodot;n&amp;inodot;z&amp;inodot;, grafik sorunlar&amp;inodot;n&amp;inodot; nas&amp;inodot;l &amp;ccedil;&amp;ouml;zece&amp;gbreve;inizi ve sorunsuz bir deneyim i&amp;ccedil;in hangi ayarlar&amp;inodot; yapman&amp;inodot;z gerekti&amp;gbreve;ini g&amp;ouml;sterece&amp;gbreve;iz.&lt;/p&gt;
+&lt;h2 id="1-gerekli-bagimliliklarin-kurulumu"&gt;🔧 1. Gerekli Ba&amp;gbreve;&amp;inodot;ml&amp;inodot;l&amp;inodot;klar&amp;inodot;n Kurulumu&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;lutris&lt;span class="w"&gt; &lt;/span&gt;wine&lt;span class="w"&gt; &lt;/span&gt;winetricks
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Tavsiye edilen:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;wine-ge&lt;span class="w"&gt; &lt;/span&gt;lutris&lt;span class="w"&gt; &lt;/span&gt;winetricks
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Notlar:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;wine-ge&lt;/code&gt; s&amp;uuml;r&amp;uuml;m&amp;uuml;, oyunlarda daha stabil olabilir.&lt;/li&gt;
+&lt;li&gt;Lutris sisteminizde yoksa AUR &amp;uuml;zerinden kurabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-lutris-uzerinden-setupexe-kurulumu"&gt;📀 2. Lutris &amp;Uuml;zerinden Setup.exe Kurulumu&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="lutris-add-game-local" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rok-lutris-add-game-xl.webp" srcset="/images/rok-lutris-add-game-sm.webp 300w, /images/rok-lutris-add-game-md.webp 500w, /images/rok-lutris-add-game-xl.webp 800w, /images/rok-lutris-add-game-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Lutris&amp;rsquo;i a&amp;ccedil;&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Sol alt k&amp;ouml;&amp;scedil;eden &amp;ldquo;+&amp;rdquo; tu&amp;scedil;una t&amp;inodot;klay&amp;inodot;n, ard&amp;inodot;ndan "Add a new game".&lt;/li&gt;
+&lt;li&gt;Wine runner se&amp;ccedil;in.&lt;/li&gt;
+&lt;li&gt;"Executable" k&amp;inodot;sm&amp;inodot;na &lt;code&gt;setup.exe&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; g&amp;ouml;sterin.&lt;/li&gt;
+&lt;li&gt;Kurulum sihirbaz&amp;inodot;n&amp;inodot; takip edin.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="3-wine-ayarlarinin-optimize-edilmesi"&gt;⚙️ 3. Wine Ayarlar&amp;inodot;n&amp;inodot;n Optimize Edilmesi&lt;/h2&gt;
+&lt;h3 id="yapilacak-ayarlar"&gt;Yap&amp;inodot;lacak Ayarlar:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows versiyonunu &amp;ldquo;Windows 10&amp;rdquo; yap&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;DLL overrides k&amp;inodot;sm&amp;inodot;na &lt;code&gt;d3dcompiler_47&lt;/code&gt; ve &lt;code&gt;vcrun2019&lt;/code&gt; ekleyin.&lt;/li&gt;
+&lt;li&gt;Gerekirse &lt;code&gt;winetricks&lt;/code&gt; &amp;uuml;zerinden:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;winetricks&lt;span class="w"&gt; &lt;/span&gt;corefonts&lt;span class="w"&gt; &lt;/span&gt;vcrun2019&lt;span class="w"&gt; &lt;/span&gt;d3dcompiler_47
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="alert alert-warning alert-soft" role="alert"&gt;
+&lt;iconify-icon height="24" icon="line-md:account-alert-loop" width="24"&gt;&lt;/iconify-icon&gt;
+&lt;h4&gt;Not:&lt;/h4&gt;
+&lt;p&gt;
+&lt;strong&gt;Bu ayarlar&amp;inodot; Lutris sizin i&amp;ccedil;in yap&amp;inodot;yor. Olurda ba&amp;scedil;ka oyunlarda bir hatayla kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;rsan&amp;inodot;z, bu ayarlar&amp;inodot; kendiniz yapabilirsiniz.&lt;/strong&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id="4-grafik-glitch-ve-titreme-sorunlarinin-giderilmesi_1"&gt;🗅️ 4. Grafik Glitch ve Titreme Sorunlar&amp;inodot;n&amp;inodot;n Giderilmesi&lt;/h2&gt;
+&lt;h3 id="sorun"&gt;Sorun:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Siyah ekranlar&lt;/li&gt;
+&lt;li&gt;Mouse ghosting&lt;/li&gt;
+&lt;li&gt;Ekran titremesi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="cozum"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Lutris runner se&amp;ccedil;eneklerinden DXVK&amp;rsquo;yi etkinle&amp;scedil;tirin.&lt;/li&gt;
+&lt;li&gt;Lutris runner se&amp;ccedil;eneklerinden dgvoodoo2&amp;rsquo;yi etkinle&amp;scedil;tirin.&lt;/li&gt;
+&lt;li&gt;Ayarlar&amp;inodot;n&amp;inodot;z resimdeki gibi olmal&amp;inodot;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="lutris-winecfg" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rok-lutris-enable-dxvk-xl.webp" srcset="/images/rok-lutris-enable-dxvk-sm.webp 300w, /images/rok-lutris-enable-dxvk-md.webp 500w, /images/rok-lutris-enable-dxvk-xl.webp 800w, /images/rok-lutris-enable-dxvk-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;E&amp;gbreve;er yukar&amp;inodot;daki &amp;ccedil;&amp;ouml;z&amp;uuml;m ile sorun devam ederse, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; izleyin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;DXVK_HUD=0&lt;/code&gt; yaparak overlay&amp;rsquo;i kapat&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Oyunun &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot; Wine prefix i&amp;ccedil;inde &amp;scedil;u dosyay&amp;inodot; olu&amp;scedil;turun veya d&amp;uuml;zenleyin:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nano&lt;span class="w"&gt; &lt;/span&gt;~/.config/lutris/runners/wine/default/user_settings.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ve i&amp;ccedil;ine &amp;scedil;unu ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;INI&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[DXVK]&lt;/span&gt;
+&lt;span class="na"&gt;dxgi.customDeviceDesc&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;NVIDIA GeForce GTX 1050&lt;/span&gt;
+&lt;span class="na"&gt;dxgi.numBackBuffers&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="5-cozunurluk-problemlerine-ozel-ayarlar_1"&gt;🗄️ 5. &amp;Ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;k Problemlerine &amp;Ouml;zel Ayarlar&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="lutris-enable-Glitch-problem" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rok-lutris-glitch-problem-xl.webp" srcset="/images/rok-lutris-glitch-problem-sm.webp 300w, /images/rok-lutris-glitch-problem-md.webp 500w, /images/rok-lutris-glitch-problem-xl.webp 800w, /images/rok-lutris-glitch-problem-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Oyunu &lt;code&gt;dgvoodoo2&lt;/code&gt; &lt;strong&gt;olmadan&lt;/strong&gt; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;nda ekranda k&amp;inodot;r&amp;inodot;lmalar,titreme,&amp;ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;k de&amp;gbreve;i&amp;scedil;tirememe gibi sorunlar&amp;inodot; ya&amp;scedil;anabilir. &lt;code&gt;dgvoodoo2&lt;/code&gt; etkinle&amp;scedil;tirdi&amp;gbreve;inizden emin olun. Etkinle&amp;scedil;tirdi&amp;gbreve;iniz halde sorun &amp;ccedil;&amp;ouml;z&amp;uuml;lmediyse, sorunu &amp;ccedil;&amp;ouml;zmek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; izleyin.&lt;/p&gt;
+&lt;h3 id="adimlar"&gt;Ad&amp;inodot;mlar:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Lutris oyun ayarlar&amp;inodot;nda "Run in a virtual desktop" kutusunu i&amp;scedil;aretleyin.&lt;/li&gt;
+&lt;li&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;&amp;gbreve;&amp;uuml; masa&amp;uuml;st&amp;uuml; &amp;ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml;zle e&amp;scedil;le&amp;scedil;tirin.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;winecfg &amp;gt; Graphics&lt;/code&gt; k&amp;inodot;sm&amp;inodot;ndan DPI de&amp;gbreve;erini 100 olarak ayarlay&amp;inodot;n.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="6-test-ve-stabilite-kontrolu_1"&gt;🥺 6. Test ve Stabilite Kontrol&amp;uuml;&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="lutris-fps-overlay" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rok-lutris-fps-test-xl.webp" srcset="/images/rok-lutris-fps-test-sm.webp 300w, /images/rok-lutris-fps-test-md.webp 500w, /images/rok-lutris-fps-test-xl.webp 800w, /images/rok-lutris-fps-test-xl.webp 1200w"/&gt; Art&amp;inodot;k Oyun t&amp;inodot;pk&amp;inodot; Windows'ta gibi &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor. B&amp;uuml;t&amp;uuml;n her&amp;scedil;eyi canl&amp;inodot; yay&amp;inodot;nda test ettik.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;E&amp;gbreve;er sorun &amp;ccedil;&amp;ouml;z&amp;uuml;lmediyse, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; izleyin.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Oyun ba&amp;scedil;lad&amp;inodot;ktan sonra birka&amp;ccedil; dakika oynay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Ses, g&amp;ouml;r&amp;uuml;nt&amp;uuml; ve kontrolleri test edin.&lt;/li&gt;
+&lt;li&gt;Lutris loglar&amp;inodot;n&amp;inodot; kontrol edin (&lt;code&gt;Right Click &amp;gt; Show Logs&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="ekstra-ipuclari-ve-oneriler"&gt;💡 Ekstra &amp;Idot;pu&amp;ccedil;lar&amp;inodot; ve &amp;Ouml;neriler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MangoHud ile FPS ve s&amp;inodot;cakl&amp;inodot;k takibi yapabilirsiniz.&lt;/li&gt;
+&lt;li&gt;Proton GE s&amp;uuml;r&amp;uuml;mlerini test etmek isterseniz Lutris i&amp;ccedil;inde runner&amp;rsquo;&amp;inodot; de&amp;gbreve;i&amp;scedil;tirin.&lt;/li&gt;
+&lt;li&gt;Oyunu harici bir klas&amp;ouml;re kurarak yedekleme kolayl&amp;inodot;&amp;gbreve;&amp;inodot; sa&amp;gbreve;layabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="sonuc"&gt;📌 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in Lutris b&amp;uuml;y&amp;uuml;k bir nimet. Rise of Kingdoms gibi native olmayan bir oyunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak ilk ba&amp;scedil;ta karma&amp;scedil;&amp;inodot;k gibi g&amp;ouml;r&amp;uuml;nse de, bu ad&amp;inodot;mlar&amp;inodot; izledi&amp;gbreve;inizde k&amp;inodot;sa s&amp;uuml;rede sorunsuz bir oyun deneyimine ula&amp;scedil;abilirsiniz. Her &amp;scedil;eyden &amp;ouml;nemlisi, bu s&amp;uuml;re&amp;ccedil; Linux'un g&amp;uuml;c&amp;uuml;n&amp;uuml; ve esnekli&amp;gbreve;ini tekrar tekrar g&amp;ouml;steriyor.&lt;/p&gt;
+&lt;h2 id="sik-sorulan-sorular"&gt;📣 S&amp;inodot;k Sorulan Sorular&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Oyun a&amp;ccedil;&amp;inodot;lm&amp;inodot;yor, ne yapmal&amp;inodot;y&amp;inodot;m?&lt;/strong&gt;
+  Lutris loglar&amp;inodot;n&amp;inodot; kontrol edin, eksik DLL ya da DXVK sorunu olabilir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ses gelmiyor?&lt;/strong&gt;
+  PulseAudio ya da PipeWire kurulumunu kontrol edin. &lt;code&gt;winecfg&lt;/code&gt; &amp;uuml;zerinden test edin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;FPS d&amp;uuml;&amp;scedil;&amp;uuml;k?&lt;/strong&gt;
+  DXVK, Vulkan driverlar&amp;inodot;n&amp;inodot;z&amp;inodot;n g&amp;uuml;ncelli&amp;gbreve;ini kontrol edin. NVIDIA kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; &lt;code&gt;nvidia-dkms&lt;/code&gt; kullanmal&amp;inodot;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="videolu-rehber-icin"&gt;Videolu rehber i&amp;ccedil;in:&lt;/h2&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="u-_21BAuPlc"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;p&gt;-- Canl&amp;inodot; yay&amp;inodot;nda test ettik.&lt;/p&gt;
+&lt;p&gt;-- 1080p &amp;ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;kte &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor.&lt;/p&gt;
+&lt;p&gt;-- 60 FPS veya daha &amp;uuml;zerinde sorunsuz &amp;scedil;ekilde &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor.&lt;/p&gt;
+&lt;p&gt;-- &lt;a href="/veda-rise-of-kingdom-bot"&gt;/rise-of-kingdom-bot &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Canl&amp;inodot; Yay&amp;inodot;n Tekrar&amp;inodot; : &lt;a href="https://kick.com/babapy/videos/2063d6f8-eba5-44af-8877-2ba34dd2d9c9"&gt;Canl&amp;inodot; Yay&amp;inodot;n tekrar&amp;inodot;n&amp;inodot; izlemek i&amp;ccedil;in d&amp;inodot;kla&lt;/a&gt;&lt;/p&gt;</content><category term="Oyun"/><category term="arch linux"/><category term="rise of kingdoms"/><category term="lutris"/><category term="linux oyun"/><category term="wine"/><category term="çözümler"/><category term="grafik hatası"/><category term="çözünürlük"/></entry><entry><title>Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin</title><link href="https://yuceltoluyag.github.io/mangohud-ile-oyun-performansi-izleme/" rel="alternate"/><published>2025-05-06T15:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-06:/mangohud-ile-oyun-performansi-izleme/</id><summary type="html">&lt;p&gt;MangoHud ile oyunlarınızda FPS, sıcaklık, kullanım gibi sistem performansı bilgilerini anlık olarak izleyin. Arch Linux üzerinde kurulum ve yapılandırma rehberi.&lt;/p&gt;</summary><content type="html">&lt;h1 id="rehber-mangohud-kullanimi-ile-oyun-performansinizi-izleyin"&gt;Rehber: MangoHud Kullan&amp;inodot;m&amp;inodot; ile Oyun Performans&amp;inodot;n&amp;inodot;z&amp;inodot; &amp;Idot;zleyin 🎮&lt;/h1&gt;
+&lt;p&gt;Linux'ta oyun oynarken &lt;em&gt;oyun performans&amp;inodot;n&amp;inodot; ger&amp;ccedil;ek zamanl&amp;inodot;&lt;/em&gt; izlemek ister misiniz? Peki ya ekran&amp;inodot;n bir k&amp;ouml;&amp;scedil;esinde FPS, CPU s&amp;inodot;cakl&amp;inodot;&amp;gbreve;&amp;inodot;, GPU kullan&amp;inodot;m&amp;inodot; gibi bilgileri g&amp;ouml;rmek? &amp;Idot;&amp;scedil;te tam da bu noktada &lt;strong&gt;MangoHud&lt;/strong&gt; devreye giriyor. Bu rehberde, MangoHud'un Arch Linux &amp;uuml;zerinde nas&amp;inodot;l kurulaca&amp;gbreve;&amp;inodot;, yap&amp;inodot;land&amp;inodot;r&amp;inodot;laca&amp;gbreve;&amp;inodot; ve oyunlarla nas&amp;inodot;l kullan&amp;inodot;laca&amp;gbreve;&amp;inodot; hakk&amp;inodot;nda ad&amp;inodot;m ad&amp;inodot;m bilgi verece&amp;gbreve;im.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="mangohud-nedir"&gt;MangoHud Nedir?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;MangoHud&lt;/strong&gt;, Vulkan ve OpenGL tabanl&amp;inodot; oyunlarda sistem performans&amp;inodot;n&amp;inodot; ekran &amp;uuml;st&amp;uuml; katman (overlay) olarak g&amp;ouml;steren a&amp;ccedil;&amp;inodot;k kaynakl&amp;inodot; bir ara&amp;ccedil;t&amp;inodot;r. FPS, GPU/CPU s&amp;inodot;cakl&amp;inodot;&amp;gbreve;&amp;inodot;, bellek kullan&amp;inodot;m&amp;inodot; gibi bir&amp;ccedil;ok metrikle birlikte gelir. Ayr&amp;inodot;ca, oyun benchmark'lar&amp;inodot; yaparken performans verilerini kaydetmek i&amp;ccedil;in de kullan&amp;inodot;labilir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="mangohud-kurulumu-arch-linux"&gt;MangoHud Kurulumu (Arch Linux)&lt;/h2&gt;
+&lt;p&gt;Arch Linux kullan&amp;inodot;yorsan&amp;inodot;z MangoHud kurulumu olduk&amp;ccedil;a kolayd&amp;inodot;r. A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla MangoHud'u kurabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;mangohud
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er 32-bit oyunlar oynuyorsan&amp;inodot;z, &amp;scedil;u paketi de y&amp;uuml;klemeniz gerekebilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;lib32-mangohud
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="mangohud-yapilandirmasi"&gt;MangoHud Yap&amp;inodot;land&amp;inodot;rmas&amp;inodot; 📁&lt;/h2&gt;
+&lt;p&gt;MangoHud yap&amp;inodot;land&amp;inodot;rmas&amp;inodot; i&amp;ccedil;in birka&amp;ccedil; dosya yolu kullan&amp;inodot;labilir. MangoHud bu dosyalar&amp;inodot; s&amp;inodot;ras&amp;inodot;yla tarar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$XDG_CONFIG_HOME/MangoHud/MangoHud.conf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$XDG_CONFIG_HOME/MangoHud/APPLICATION-NAME.conf&lt;/code&gt; (b&amp;uuml;y&amp;uuml;k/k&amp;uuml;&amp;ccedil;&amp;uuml;k harf duyarl&amp;inodot;d&amp;inodot;r)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$XDG_CONFIG_HOME/MangoHud/wine-APPLICATION-NAME.conf&lt;/code&gt; (Wine uygulamalar&amp;inodot; i&amp;ccedil;in, &lt;code&gt;.exe&lt;/code&gt; uzant&amp;inodot;s&amp;inodot; olmadan)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./MangoHud.conf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$MANGOHUD_CONFIGFILE&lt;/code&gt; (ortam de&amp;gbreve;i&amp;scedil;keni ile belirtilirse)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;📝 &lt;em&gt;&amp;Idot;pucu:&lt;/em&gt; &amp;Ouml;rnek bir yap&amp;inodot;land&amp;inodot;rma dosyas&amp;inodot; MangoHud'un GitHub sayfas&amp;inodot;nda bulunabilir.&lt;/p&gt;
+&lt;h3 id="mangohudconf-icin-ornek-icerik"&gt;MangoHud.conf &amp;Idot;&amp;ccedil;in &amp;Ouml;rnek &amp;Idot;&amp;ccedil;erik&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;INI&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;fps_limit&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;144&lt;/span&gt;
+&lt;span class="na"&gt;cpu_temp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;1&lt;/span&gt;
+&lt;span class="na"&gt;gpu_temp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;1&lt;/span&gt;
+&lt;span class="na"&gt;ram&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;1&lt;/span&gt;
+&lt;span class="na"&gt;frame_timing&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="_2"&gt;&lt;img alt="MangoHud" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/mangohud_linux-xl.webp" srcset="/images/mangohud_linux-sm.webp 300w, /images/mangohud_linux-md.webp 500w, /images/mangohud_linux-xl.webp 800w, /images/mangohud_linux-xl.webp 1200w"/&gt;&lt;/h2&gt;
+&lt;h2 id="mangohud-gui-araci-goverlay"&gt;MangoHud GUI Arac&amp;inodot;: GOverlay 🖥️&lt;/h2&gt;
+&lt;p&gt;Terminal ile u&amp;gbreve;ra&amp;scedil;mak istemeyen kullan&amp;inodot;c&amp;inodot;lar i&amp;ccedil;in &lt;strong&gt;GOverlay&lt;/strong&gt; ad&amp;inodot;nda grafik aray&amp;uuml;ze sahip bir konfig&amp;uuml;rasyon arac&amp;inodot; da mevcut. AUR &amp;uuml;zerinden kolayca kurulabilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;goverlay
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;GOverlay ile t&amp;uuml;m MangoHud ayarlar&amp;inodot;n&amp;inodot; GUI &amp;uuml;zerinden d&amp;uuml;zenleyebilir, &amp;ouml;nizleme alabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="mangohud-kullanimi"&gt;MangoHud Kullan&amp;inodot;m&amp;inodot; 🚀&lt;/h2&gt;
+&lt;h3 id="genel-kullanim"&gt;Genel Kullan&amp;inodot;m&lt;/h3&gt;
+&lt;p&gt;Bir uygulamay&amp;inodot; MangoHud ile ba&amp;scedil;latmak i&amp;ccedil;in terminalde a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mangohud&lt;span class="w"&gt; &lt;/span&gt;uygulama_ad&amp;inodot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ouml;rnek:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mangohud&lt;span class="w"&gt; &lt;/span&gt;glxgears
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="klavye-kisayollari"&gt;Klavye K&amp;inodot;sayollar&amp;inodot;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Sa&amp;gbreve; Shift + F12&lt;/code&gt; &amp;ndash; Overlay'i a&amp;ccedil;/kapat&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sa&amp;gbreve; Shift + F11&lt;/code&gt; &amp;ndash; Overlay konumunu de&amp;gbreve;i&amp;scedil;tir&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sa&amp;gbreve; Shift + F10&lt;/code&gt; &amp;ndash; Overlay profilini de&amp;gbreve;i&amp;scedil;tir&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sol Shift + F2&lt;/code&gt; &amp;ndash; Loglama a&amp;ccedil;/kapat&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Sol Shift + F4&lt;/code&gt; &amp;ndash; Yap&amp;inodot;land&amp;inodot;rmay&amp;inodot; yeniden y&amp;uuml;kle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="steam-oyunlariyla-mangohud-kullanimi"&gt;Steam Oyunlar&amp;inodot;yla MangoHud Kullan&amp;inodot;m&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Steam'deki oyunlara MangoHud'u dahil etmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Steam k&amp;uuml;t&amp;uuml;phanenizde oyuna sa&amp;gbreve; t&amp;inodot;klay&amp;inodot;n &amp;rarr; &amp;Ouml;zellikler&amp;hellip;&lt;/li&gt;
+&lt;li&gt;A&amp;ccedil;&amp;inodot;lan pencerede &lt;em&gt;Ba&amp;scedil;latma Se&amp;ccedil;enekleri&lt;/em&gt; k&amp;inodot;sm&amp;inodot;na &amp;scedil;unu girin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mangohud&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alternatif olarak, t&amp;uuml;m oyunlar i&amp;ccedil;in Steam&amp;rsquo;i MangoHud ile ba&amp;scedil;latabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mangohud&lt;span class="w"&gt; &lt;/span&gt;steam-runtime
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="gamemode-ile-birlikte-kullanim"&gt;GameMode ile Birlikte Kullan&amp;inodot;m&lt;/h3&gt;
+&lt;p&gt;Performans&amp;inodot; art&amp;inodot;rmak i&amp;ccedil;in MangoHud&amp;rsquo;u &lt;strong&gt;GameMode&lt;/strong&gt; ile birlikte &amp;scedil;u &amp;scedil;ekilde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mangohud&lt;span class="w"&gt; &lt;/span&gt;gamemoderun&lt;span class="w"&gt; &lt;/span&gt;oyun_ad&amp;inodot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="ekstra-ipuclari_1"&gt;Ekstra &amp;Idot;pu&amp;ccedil;lar&amp;inodot; 🧠&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;MangoHud sadece Vulkan/OpenGL oyunlarda &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r. DXVK veya VKD3D gibi &amp;ccedil;eviri katmanlar&amp;inodot;yla DirectX oyunlar&amp;inodot; da desteklenir.&lt;/li&gt;
+&lt;li&gt;MangoHud&amp;rsquo;un otomatik &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot; i&amp;ccedil;in &amp;scedil;u ortam de&amp;gbreve;i&amp;scedil;kenini kullanabilirsiniz:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;MANGOHUD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--dlsym&lt;/code&gt; parametresi baz&amp;inodot; oyunlarda gerekli olabilir:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mangohud&lt;span class="w"&gt; &lt;/span&gt;--dlsym&lt;span class="w"&gt; &lt;/span&gt;oyun_ad&amp;inodot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="debianubuntu-icin-kurulum-notu"&gt;Debian/Ubuntu i&amp;ccedil;in Kurulum Notu&lt;/h3&gt;
+&lt;p&gt;Bu rehber Arch Linux i&amp;ccedil;indir. Debian/Ubuntu sistemlerinde &lt;code&gt;apt install mangohud&lt;/code&gt; komutu kullan&amp;inodot;labilir. Ancak yap&amp;inodot;land&amp;inodot;rma ve kullan&amp;inodot;m ad&amp;inodot;mlar&amp;inodot; b&amp;uuml;y&amp;uuml;k oranda ayn&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-oyunlarda-performansi-takip-etmenin-en-iyi-yolu_1"&gt;Sonu&amp;ccedil;: Oyunlarda Performans&amp;inodot; Takip Etmenin En &amp;Idot;yi Yolu&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;MangoHud&lt;/strong&gt;, Linux'ta oyun oynayanlar i&amp;ccedil;in vazge&amp;ccedil;ilmez bir performans izleme arac&amp;inodot;d&amp;inodot;r. Gerek kolay kurulumu, gerekse esnek yap&amp;inodot;land&amp;inodot;rmas&amp;inodot; ile hem oyuncular hem de geli&amp;scedil;tiriciler i&amp;ccedil;in b&amp;uuml;y&amp;uuml;k kolayl&amp;inodot;k sa&amp;gbreve;lar. Bu rehberde, MangoHud&amp;rsquo;un Arch Linux &amp;uuml;zerinde nas&amp;inodot;l kurulup kullan&amp;inodot;laca&amp;gbreve;&amp;inodot;n&amp;inodot; detayl&amp;inodot;ca ele ald&amp;inodot;k.&lt;/p&gt;
+&lt;p&gt;🎯 MangoHud&amp;rsquo;u denediniz mi? Yap&amp;inodot;land&amp;inodot;rma dosyan&amp;inodot;zda hangi ayarlar&amp;inodot; tercih ediyorsunuz? Yorumlarda payla&amp;scedil;&amp;inodot;n!&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="foUosbS6p_A"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;hr/&gt;</content><category term="Oyun"/><category term="mangohud"/><category term="linux oyunları"/><category term="arch linux"/><category term="fps göstergesi"/><category term="oyun performansı"/></entry><entry><title>Arch Linux Üzerinde Steam Ses Hatalarını Çözme</title><link href="https://yuceltoluyag.github.io/arch-linux-steam-ses-hatasi-cozumu/" rel="alternate"/><published>2025-05-06T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-06:/arch-linux-steam-ses-hatasi-cozumu/</id><summary type="html">&lt;p&gt;Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan ses hatalarını çözmek için adım adım bir rehber.&lt;/p&gt;</summary><content type="html">&lt;h1 id="arch-linux-uzerinde-steam-ses-hatalarini-cozme"&gt;Arch Linux &amp;Uuml;zerinde Steam Ses Hatalar&amp;inodot;n&amp;inodot; &amp;Ccedil;&amp;ouml;zme&lt;/h1&gt;
+&lt;p&gt;🎮 Wayland alt&amp;inodot;nda &lt;strong&gt;Arch Linux&lt;/strong&gt; kullan&amp;inodot;rken Steam oyunlar&amp;inodot;nda &amp;ldquo;Ses motoru ba&amp;scedil;lat&amp;inodot;lamad&amp;inodot;&amp;rdquo; hatas&amp;inodot; m&amp;inodot; al&amp;inodot;yorsunuz? Endi&amp;scedil;elenmeyin &amp;mdash; bu rehber, ses sorunlar&amp;inodot;n&amp;inodot; &amp;ccedil;&amp;ouml;zmek i&amp;ccedil;in t&amp;uuml;m gereken ad&amp;inodot;mlar&amp;inodot; size ad&amp;inodot;m ad&amp;inodot;m anlatacak!&lt;/p&gt;
+&lt;p&gt;Bu t&amp;uuml;r hatalar genellikle &lt;strong&gt;PipeWire&lt;/strong&gt;, &lt;strong&gt;PulseAudio&lt;/strong&gt; ya da oyunlar&amp;inodot;n kendi ses motorlar&amp;inodot;yla ilgili yap&amp;inodot;land&amp;inodot;rma sorunlar&amp;inodot;ndan kaynaklan&amp;inodot;r. &amp;Scedil;imdi gelin, bu problemleri nas&amp;inodot;l &amp;ccedil;&amp;ouml;zece&amp;gbreve;inizi birlikte inceleyelim. 👇&lt;/p&gt;
+&lt;p&gt;Ingilizce hatalar:
+- Could not initialize the sound engine. Please make sure you have the latest audio drivers installed.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;"Ocam Steam'da farkl&amp;inodot; oyunlarda sorun yok. Tannenberg oyna diyorum veya Verdun, ekran a&amp;ccedil;&amp;inodot;l&amp;inodot;yor ama 'ses motoru ba&amp;scedil;lat&amp;inodot;lamad&amp;inodot;'. Onun d&amp;inodot;&amp;scedil;&amp;inodot;nda sistemde sesim var, sadece bu iki oyunda ses hi&amp;ccedil; yok :D"
+&amp;mdash; Galip Dede&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="Tannenberg Ses Motoru Hatas&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/Tannenberg-xl.webp" srcset="/images/Tannenberg-sm.webp 300w, /images/Tannenberg-md.webp 500w, /images/Tannenberg-xl.webp 800w, /images/Tannenberg-xl.webp 1200w"/&gt;
+&lt;img alt="Verdun audio engine error" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/verdun-xl.webp" srcset="/images/verdun-sm.webp 300w, /images/verdun-md.webp 500w, /images/verdun-xl.webp 800w, /images/verdun-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;div class="info-box warning"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Ouml;nemli Not&lt;/div&gt;
+&lt;p&gt;Bu rehberde sorunu, eklentileri tan&amp;inodot;tarak yani 3. numaral&amp;inodot; ad&amp;inodot;mlar&amp;inodot; uygulayarak &amp;ccedil;&amp;ouml;zd&amp;uuml;k. Bu nedenle di&amp;gbreve;er ba&amp;scedil;latma se&amp;ccedil;eneklerini kald&amp;inodot;rd&amp;inodot;k. Ancak, sorunu bu y&amp;ouml;ntemle &amp;ccedil;&amp;ouml;zemeyen kullan&amp;inodot;c&amp;inodot;lar i&amp;ccedil;in ek bilgileri b&amp;inodot;rakmaya devam ettim. Kafa kar&amp;inodot;&amp;scedil;&amp;inodot;kl&amp;inodot;&amp;gbreve;&amp;inodot; ya&amp;scedil;arsan&amp;inodot;z, &amp;ouml;nce rehberdeki 3. ad&amp;inodot;mlar&amp;inodot;n&amp;inodot; uygulay&amp;inodot;n. E&amp;gbreve;er i&amp;scedil;e yaramazsa di&amp;gbreve;er alternatif ad&amp;inodot;mlar&amp;inodot; deneyebilirsiniz.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-pipewire-yapilandirmasini-kontrol-etme"&gt;1. PipeWire Yap&amp;inodot;land&amp;inodot;rmas&amp;inodot;n&amp;inodot; Kontrol Etme&lt;/h2&gt;
+&lt;h3 id="11-pipewire-servislerinin-durumunu-kontrol-etme"&gt;1.1 PipeWire Servislerinin Durumunu Kontrol Etme&lt;/h3&gt;
+&lt;p&gt;Bu paketlerin y&amp;uuml;kl&amp;uuml; olup olmad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol edin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;alsa-card-profiles&lt;span class="w"&gt; &lt;/span&gt;alsa-plugins&lt;span class="w"&gt; &lt;/span&gt;alsa-ucm-conf&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;alsa-lib&lt;span class="w"&gt; &lt;/span&gt;alsa-topology-conf&lt;span class="w"&gt; &lt;/span&gt;alsa-utils&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;pipewire&lt;span class="w"&gt; &lt;/span&gt;pipewire-audio&lt;span class="w"&gt; &lt;/span&gt;pipewire-alsa&lt;span class="w"&gt; &lt;/span&gt;pipewire-jack&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;pipewire-pulse&lt;span class="w"&gt; &lt;/span&gt;pipewire-libcamera&lt;span class="w"&gt; &lt;/span&gt;pwvucontrol&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;wireplumber&lt;span class="w"&gt; &lt;/span&gt;lib32-pipewire&lt;span class="w"&gt; &lt;/span&gt;lib32-libpulse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;lk olarak sisteminizde PipeWire servislerinin aktif ve d&amp;uuml;zg&amp;uuml;n &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;ndan emin olun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;pipewire
+systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;pipewire-pulse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er servisler &amp;ccedil;al&amp;inodot;&amp;scedil;m&amp;inodot;yorsa, &amp;scedil;u komutlar&amp;inodot; kullanarak etkinle&amp;scedil;tirin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pipewire&lt;span class="w"&gt; &lt;/span&gt;pipewire-pulse&lt;span class="w"&gt; &lt;/span&gt;wireplumber
+systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;pipewire&lt;span class="w"&gt; &lt;/span&gt;pipewire-pulse&lt;span class="w"&gt; &lt;/span&gt;wireplumber
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="12-pipewire-pulse-servisini-etkinlestirme"&gt;1.2 PipeWire-Pulse Servisini Etkinle&amp;scedil;tirme&lt;/h3&gt;
+&lt;p&gt;Steam'in ses sistemleriyle uyumlu &amp;ccedil;al&amp;inodot;&amp;scedil;abilmesi i&amp;ccedil;in &lt;code&gt;pipewire-pulse&lt;/code&gt; servisi gereklidir. A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla kontrol edin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;pipewire-pulse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Servis &amp;ccedil;al&amp;inodot;&amp;scedil;m&amp;inodot;yorsa, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu uygulay&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;pipewire-pulse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ayr&amp;inodot;ca &amp;scedil;u paketi y&amp;uuml;klemek de kritik olabilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;lib32-libpulse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-steam-baslatma-seceneklerini-guncelleme_1"&gt;2. Steam Ba&amp;scedil;latma Se&amp;ccedil;eneklerini G&amp;uuml;ncelleme&lt;/h2&gt;
+&lt;p&gt;Wayland ortam&amp;inodot;nda ses sorunlar&amp;inodot;n&amp;inodot;n bir di&amp;gbreve;er kayna&amp;gbreve;&amp;inodot;, SDL ve grafik backend yap&amp;inodot;land&amp;inodot;rmalar&amp;inodot; olabilir.&lt;/p&gt;
+&lt;h2 id="sistem-bilgileri-ve-gpu-suruculeri"&gt;Sistem Bilgileri ve GPU S&amp;uuml;r&amp;uuml;c&amp;uuml;leri&lt;/h2&gt;
+&lt;p&gt;Galip arkada&amp;scedil;&amp;inodot;m&amp;inodot;z&amp;inodot;n sistemi:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Masa&amp;uuml;st&amp;uuml; ortam&amp;inodot;:&lt;/strong&gt; KDE Wayland&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ekran kart&amp;inodot;:&lt;/strong&gt; AMD Radeon RX 550&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;AMD sistemlerde a&amp;scedil;a&amp;gbreve;&amp;inodot;daki paketler kurulu olmal&amp;inodot;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;mesa&lt;span class="w"&gt; &lt;/span&gt;lib32-mesa&lt;span class="w"&gt; &lt;/span&gt;vulkan-radeon&lt;span class="w"&gt; &lt;/span&gt;lib32-vulkan-radeon&lt;span class="w"&gt; &lt;/span&gt;vulkan-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;vulkaninfo&lt;/code&gt; &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot; da &amp;scedil;u &amp;scedil;ekildeydi:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;GPU&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;AMD&lt;span class="w"&gt; &lt;/span&gt;Radeon&lt;span class="w"&gt; &lt;/span&gt;RX&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;550&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;550&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Series&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;RADV&lt;span class="w"&gt; &lt;/span&gt;POLARIS12&lt;span class="o"&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Bu kodlar wayland i&amp;ccedil;in ba&amp;scedil;latma se&amp;ccedil;enekleridir. X11 i&amp;ccedil;in yapman&amp;inodot;za gerek yok. Bu komutlardan sonrada sorunumuz &amp;ccedil;&amp;ouml;z&amp;uuml;lmedi ancak bilgi olarak kals&amp;inodot;n diye b&amp;inodot;rak&amp;inodot;yorum. &amp;Idot;&amp;scedil;e yaramad&amp;inodot;&amp;gbreve;&amp;inodot; i&amp;ccedil;in ba&amp;scedil;latma se&amp;ccedil;eneklerini silip devam ediyoruz.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="steam-ciktilari-ve-hatalar"&gt;Steam &amp;Ccedil;&amp;inodot;kt&amp;inodot;lar&amp;inodot; ve Hatalar&lt;/h2&gt;
+&lt;p&gt;Steam terminal &amp;ccedil;&amp;inodot;kt&amp;inodot;lar&amp;inodot;nda g&amp;ouml;ze &amp;ccedil;arpan baz&amp;inodot; sat&amp;inodot;rlar &amp;scedil;unlard&amp;inodot;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ERROR:&lt;span class="w"&gt; &lt;/span&gt;ld.so:&lt;span class="w"&gt; &lt;/span&gt;object&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'.../gameoverlayrenderer.so'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;from&lt;span class="w"&gt; &lt;/span&gt;LD_PRELOAD&lt;span class="w"&gt; &lt;/span&gt;cannot&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;preloaded&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;wrong&lt;span class="w"&gt; &lt;/span&gt;ELF&lt;span class="w"&gt; &lt;/span&gt;class&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;ignored.
+&lt;span class="o"&gt;(&lt;/span&gt;process:4678&lt;span class="o"&gt;)&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;GLib-GObject-CRITICAL&lt;span class="w"&gt; &lt;/span&gt;**:&lt;span class="w"&gt; &lt;/span&gt;g_object_unref:&lt;span class="w"&gt; &lt;/span&gt;assertion&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'G_IS_OBJECT (object)'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;failed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu hatalar genellikle ses de&amp;gbreve;il grafik/sistem uyumsuzluklar&amp;inodot;na i&amp;scedil;aret etse de, &lt;code&gt;LD_PRELOAD&lt;/code&gt; &amp;uuml;zerinden bir bypass denenebilir.&lt;/p&gt;
+&lt;h2 id="cozum-1-oyun-baslatma-secenekleri"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m 1: Oyun Ba&amp;scedil;latma Se&amp;ccedil;enekleri&lt;/h2&gt;
+&lt;p&gt;&amp;Idot;lk olarak Steam'deki ba&amp;scedil;latma se&amp;ccedil;eneklerine &amp;scedil;u komutu girin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;env&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;LD_PRELOAD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Olmazsa &amp;scedil;u varyantlar&amp;inodot; da deneyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;env&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;x11&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SDL_VIDEODRIVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;x11&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;LD_PRELOAD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;veya&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;env&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PULSE_LATENCY_MSEC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;60&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SDL_AUDIODRIVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pulse&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;x11&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SDL_VIDEODRIVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;x11&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;LD_PRELOAD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="cozum-2-overlay-ve-xdg-portal-kaldirma"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m 2: Overlay ve XDG Portal Kald&amp;inodot;rma&lt;/h2&gt;
+&lt;p&gt;Steam Overlay baz&amp;inodot; sistemlerde sorun yaratabiliyor. Ayarlardan kapat&amp;inodot;n.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Steam Aray&amp;uuml;z&amp;uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/steam_arayuz-xl.webp" srcset="/images/steam_arayuz-sm.webp 300w, /images/steam_arayuz-md.webp 500w, /images/steam_arayuz-xl.webp 800w, /images/steam_arayuz-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Ek olarak &amp;scedil;u komutla &lt;code&gt;xdg-desktop-portals&lt;/code&gt; paketini kald&amp;inodot;rmak &amp;ccedil;&amp;ouml;z&amp;uuml;m olabilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;xdg-desktop-portals
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="cozum-3-pipewire-servis-durumunu-kontrol-et"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m 3: PipeWire Servis Durumunu Kontrol Et&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;pipewire
+systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;pipewire-pulse
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Her ikisi de &lt;strong&gt;active (running)&lt;/strong&gt; durumunda olmal&amp;inodot;.&lt;/p&gt;
+&lt;p&gt;Galip'in &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot; &amp;ouml;rnek olarak:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;●&lt;span class="w"&gt; &lt;/span&gt;pipewire.service&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;PipeWire&lt;span class="w"&gt; &lt;/span&gt;Multimedia&lt;span class="w"&gt; &lt;/span&gt;Service
+&lt;span class="w"&gt;     &lt;/span&gt;Active:&lt;span class="w"&gt; &lt;/span&gt;active&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;running&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;since&lt;span class="w"&gt; &lt;/span&gt;...
+
+●&lt;span class="w"&gt; &lt;/span&gt;pipewire-pulse.service&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;PipeWire&lt;span class="w"&gt; &lt;/span&gt;PulseAudio
+&lt;span class="w"&gt;     &lt;/span&gt;Active:&lt;span class="w"&gt; &lt;/span&gt;active&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;running&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;since&lt;span class="w"&gt; &lt;/span&gt;...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="21-steamde-baslatma-seceneklerini-duzenleme"&gt;2.1 Steam&amp;rsquo;de Ba&amp;scedil;latma Se&amp;ccedil;eneklerini D&amp;uuml;zenleme&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Steam&amp;rsquo;de oyuna sa&amp;gbreve; t&amp;inodot;klay&amp;inodot;n &amp;rarr; &lt;strong&gt;&amp;Ouml;zellikler&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ba&amp;scedil;latma Se&amp;ccedil;enekleri&lt;/strong&gt; alan&amp;inodot;na &amp;scedil;unu yaz&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;env&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SDL_AUDIODRIVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;pulse&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;GDK_BACKEND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;x11&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SDL_VIDEODRIVER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;x11&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;LD_PRELOAD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu ayar, SDL&amp;rsquo;nin PulseAudio kullanmas&amp;inodot;n&amp;inodot; ve X11 &amp;uuml;zerinden daha kararl&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Bu komutlarlada sorunu &amp;ccedil;&amp;ouml;zemedik, ba&amp;scedil;latma se&amp;ccedil;eneklerini silip devam ediyoruz.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-ld_preload-ile-fmodstudio-kutuphanelerini-yuklemek_1"&gt;3. LD_PRELOAD ile Fmodstudio K&amp;uuml;t&amp;uuml;phanelerini Y&amp;uuml;klemek&lt;/h2&gt;
+&lt;p&gt;Baz&amp;inodot; oyunlarda (&amp;ouml;rne&amp;gbreve;in &lt;strong&gt;Isonzo&lt;/strong&gt;, &lt;strong&gt;Verdun&lt;/strong&gt;, &lt;strong&gt;Tannenberg&lt;/strong&gt;) &amp;ouml;zel ses motorlar&amp;inodot; nedeniyle hata al&amp;inodot;nabilir.&lt;/p&gt;
+&lt;h3 id="31-oyun-klasorunu-bulma"&gt;3.1 Oyun Klas&amp;ouml;r&amp;uuml;n&amp;uuml; Bulma&lt;/h3&gt;
+&lt;p&gt;Steam oyun k&amp;uuml;t&amp;uuml;phane'inden oyununuza sa&amp;gbreve; t&amp;inodot;klay&amp;inodot;n Y&amp;ouml;net men&amp;uuml;s&amp;uuml;nden Yerel Dosyalara G&amp;ouml;z At se&amp;ccedil;ene&amp;gbreve;ini se&amp;ccedil;in.
+Benim i&amp;ccedil;in bu &amp;scedil;ekilde g&amp;ouml;r&amp;uuml;n&amp;uuml;yor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.local/share/Steam/steamapps/common/Isonzo/Isonzo/Isonzo_Data/Plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="32-baslatma-seceneklerine-ld_preload-eklemek"&gt;3.2 Ba&amp;scedil;latma Se&amp;ccedil;eneklerine LD_PRELOAD Eklemek&lt;/h3&gt;
+&lt;p&gt;Her oyun i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki &amp;ouml;rneklere g&amp;ouml;re ba&amp;scedil;latma se&amp;ccedil;enekleri ayarlanmal&amp;inodot;d&amp;inodot;r:&lt;/p&gt;
+&lt;p&gt;Dosya i&amp;ccedil;eri&amp;gbreve;i &amp;scedil;&amp;ouml;yle g&amp;ouml;r&amp;uuml;nmektedir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Permissions&lt;span class="w"&gt;  &lt;/span&gt;Size&lt;span class="w"&gt; &lt;/span&gt;User&lt;span class="w"&gt;     &lt;/span&gt;Date&lt;span class="w"&gt; &lt;/span&gt;Modified&lt;span class="w"&gt; &lt;/span&gt;Name
+.rwxr-xr-x&lt;span class="w"&gt;   &lt;/span&gt;13Mi&lt;span class="w"&gt; &lt;/span&gt;friday13&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;May&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;04&lt;/span&gt;:50&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;libEOSSDK-Linux-Shipping.so
+.rwxr-xr-x&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;,9Mi&lt;span class="w"&gt; &lt;/span&gt;friday13&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;May&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;04&lt;/span&gt;:50&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;libfmodstudio.so
+.rwxr-xr-x&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;,9Mi&lt;span class="w"&gt; &lt;/span&gt;friday13&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;May&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;04&lt;/span&gt;:50&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;libfmodstudioL.so
+.rwxr-xr-x&lt;span class="w"&gt;  &lt;/span&gt;917Ki&lt;span class="w"&gt; &lt;/span&gt;friday13&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;May&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;04&lt;/span&gt;:50&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;libresonanceaudio.so
+.rwxr-xr-x&lt;span class="w"&gt;  &lt;/span&gt;389Ki&lt;span class="w"&gt; &lt;/span&gt;friday13&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;May&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;04&lt;/span&gt;:50&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;libsteam_api.so
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Isonzo&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;LD_PRELOAD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/Isonzo/Isonzo_Data/Plugins/libfmodstudio.so &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/Isonzo/Isonzo_Data/Plugins/libfmodstudioL.so"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Verdun&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;LD_PRELOAD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/Verdun/Verdun_Data/Plugins/libfmodstudio.so &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/Verdun/Verdun_Data/Plugins/libfmodstudioL.so"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h4&gt;Tannenberg&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;LD_PRELOAD&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/Tannenberg/Tannenberg_Data/Plugins/libfmodstudio.so &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/Tannenberg/Tannenberg_Data/Plugins/libfmodstudioL.so"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-glibc-tuning-ile-gelismis-cozum_1"&gt;4. GLIBC Tuning ile Geli&amp;scedil;mi&amp;scedil; &amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/h2&gt;
+&lt;p&gt;Sisteminizde glibc s&amp;uuml;r&amp;uuml;m&amp;uuml; 2.41 veya &amp;uuml;st&amp;uuml; de&amp;gbreve;ilse, baz&amp;inodot; oyunlarda ses hatalar&amp;inodot; olu&amp;scedil;abilir. Bu durumda glibc tunables ayar&amp;inodot; yard&amp;inodot;mc&amp;inodot; olabilir.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;GLIBC_TUNABLES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;glibc.rtld.execstack&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;%command%
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu ayar, oyunlar&amp;inodot;n sisteminizdeki d&amp;uuml;&amp;scedil;&amp;uuml;k seviyeli ses y&amp;ouml;neticileriyle daha uyumlu &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;n&amp;inodot; sa&amp;gbreve;layabilir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-ekstra-yardim-ve-topluluk-destegi"&gt;5. Ekstra Yard&amp;inodot;m ve Topluluk Deste&amp;gbreve;i&lt;/h2&gt;
+&lt;p&gt;🧠 E&amp;gbreve;er yukar&amp;inodot;daki t&amp;uuml;m ad&amp;inodot;mlara ra&amp;gbreve;men sorun ya&amp;scedil;amaya devam ediyorsan&amp;inodot;z:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://bbs.archlinux.org/"&gt;Arch Linux forumlar&amp;inodot;n&amp;inodot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://steamcommunity.com/app"&gt;Steam Toplulu&amp;gbreve;u Tart&amp;inodot;&amp;scedil;malar&amp;inodot;n&amp;inodot;&lt;/a&gt; ziyaret edebilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/ValveSoftware/steam"&gt;Steam'in resmi GitHub deposunu&lt;/a&gt; inceleyebilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Benzer sorunlar&amp;inodot; ya&amp;scedil;am&amp;inodot;&amp;scedil; kullan&amp;inodot;c&amp;inodot;lar, sizinle &amp;ccedil;&amp;ouml;z&amp;uuml;m yollar&amp;inodot;n&amp;inodot; payla&amp;scedil;abilir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-steam-ses-sorunlari-tarih-oluyor"&gt;Sonu&amp;ccedil;: Steam Ses Sorunlar&amp;inodot; Tarih Oluyor! ✅&lt;/h2&gt;
+&lt;p&gt;Bu rehberde, Arch Linux &amp;uuml;zerinde Steam oyunlar&amp;inodot;nda kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan ses problemlerini nas&amp;inodot;l &amp;ccedil;&amp;ouml;zece&amp;gbreve;inizi ad&amp;inodot;m ad&amp;inodot;m anlatt&amp;inodot;k. PipeWire servislerinden ba&amp;scedil;latma se&amp;ccedil;eneklerine, &lt;code&gt;LD_PRELOAD&lt;/code&gt; k&amp;uuml;t&amp;uuml;phane y&amp;uuml;klemelerinden glibc ayarlar&amp;inodot;na kadar bir&amp;ccedil;ok y&amp;ouml;ntemi kapsad&amp;inodot;k.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;E&amp;gbreve;er bu rehber i&amp;scedil;inize yarad&amp;inodot;ysa, l&amp;uuml;tfen yorum b&amp;inodot;rakmay&amp;inodot; veya payla&amp;scedil;may&amp;inodot; unutmay&amp;inodot;n. 🎉
+Daha fazla Linux rehberi i&amp;ccedil;in takipte kal&amp;inodot;n!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img alt="Tannenberg Sonu&amp;ccedil; Mutlu Sonu&amp;ccedil;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/Tannenberg-sonuc-xl.webp" srcset="/images/Tannenberg-sonuc-sm.webp 300w, /images/Tannenberg-sonuc-md.webp 500w, /images/Tannenberg-sonuc-xl.webp 800w, /images/Tannenberg-sonuc-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Oyun"/><category term="arch linux"/><category term="steam"/><category term="ses hatası"/><category term="pipewire"/><category term="wayland"/><category term="glibc"/><category term="linux oyunları"/><category term="pulse audio"/></entry><entry><title>Arch Linux Üzerinde RetroArch Kurulumu ve Yapılandırılması</title><link href="https://yuceltoluyag.github.io/arch-linux-uzerinde-retroarch-kurulumu/" rel="alternate"/><published>2025-03-01T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-03-01:/arch-linux-uzerinde-retroarch-kurulumu/</id><summary type="html">&lt;p&gt;Arch Linux üzerinde RetroArch kurulumu ve yapılandırmasını adım adım anlatan rehber.&lt;/p&gt;</summary><content type="html">&lt;h2 id="retroarch-kurulumu-ve-yapilandirilmasi"&gt;RetroArch Kurulumu ve Yap&amp;inodot;land&amp;inodot;r&amp;inodot;lmas&amp;inodot; 🎮&lt;/h2&gt;
+&lt;p&gt;Arch Linux &amp;uuml;zerinde RetroArch'&amp;inodot; kurmak ve yap&amp;inodot;land&amp;inodot;rmak isteyenler i&amp;ccedil;in kapsaml&amp;inodot; bir rehber haz&amp;inodot;rlad&amp;inodot;k. RetroArch, geni&amp;scedil; platform deste&amp;gbreve;i ve esnek yap&amp;inodot;s&amp;inodot;yla oyun severlere benzersiz bir deneyim sunuyor. &amp;Idot;&amp;scedil;te &amp;ouml;ne &amp;ccedil;&amp;inodot;kan &amp;ouml;zellikleri:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;Ccedil;oklu ge&amp;ccedil;i&amp;scedil;li shader deste&amp;gbreve;i 🎨&lt;/li&gt;
+&lt;li&gt;Ger&amp;ccedil;ek zamanl&amp;inodot; geri sarma ⏪&lt;/li&gt;
+&lt;li&gt;FFmpeg ile video kayd&amp;inodot; 🎥&lt;/li&gt;
+&lt;li&gt;Oyun kumandas&amp;inodot;yla kontrol edilebilen kullan&amp;inodot;c&amp;inodot; dostu aray&amp;uuml;z 🎮&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-retroarch-kurulumu"&gt;1️⃣ RetroArch Kurulumu&lt;/h2&gt;
+&lt;p&gt;RetroArch'&amp;inodot; Arch Linux &amp;uuml;zerinde kurmak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;retroarch&lt;span class="w"&gt; &lt;/span&gt;retroarch-assets-xmb&lt;span class="w"&gt; &lt;/span&gt;libretro-core-info&lt;span class="w"&gt; &lt;/span&gt;libretro-overlays&lt;span class="w"&gt; &lt;/span&gt;libretro-shaders
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="paket-aciklamalari"&gt;Paket A&amp;ccedil;&amp;inodot;klamalar&amp;inodot;:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;retroarch-assets-xmb&lt;/strong&gt;: RetroArch i&amp;ccedil;in grafik ve aray&amp;uuml;z dosyalar&amp;inodot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;retroarch-assets-ozone&lt;/strong&gt;: Masa&amp;uuml;st&amp;uuml; dostu bir RetroArch aray&amp;uuml;z&amp;uuml;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;libretro-core-info&lt;/strong&gt;: Em&amp;uuml;lat&amp;ouml;r &amp;ccedil;ekirdekleri hakk&amp;inodot;nda bilgi dosyalar&amp;inodot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;libretro-overlays&lt;/strong&gt;: Retro oyunlar i&amp;ccedil;in kaplamalar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;libretro-shaders&lt;/strong&gt;: Grafik efektleri (g&amp;ouml;lgelendiriciler).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-retroarchi-ilk-kez-calistirma_1"&gt;2️⃣ RetroArch'&amp;inodot; &amp;Idot;lk Kez &amp;Ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rma&lt;/h2&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;ktan sonra RetroArch'&amp;inodot; ba&amp;scedil;latmak i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;retroarch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ba&amp;scedil;latma ekran&amp;inodot;nda temel ayarlar&amp;inodot; yap&amp;inodot;land&amp;inodot;rarak ihtiyac&amp;inodot;n&amp;inodot;za g&amp;ouml;re &amp;ouml;zelle&amp;scedil;tirebilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-temel-yapilandirma"&gt;3️⃣ Temel Yap&amp;inodot;land&amp;inodot;rma ⚙️&lt;/h2&gt;
+&lt;h3 id="konfigurasyon-dosyasi"&gt;Konfig&amp;uuml;rasyon Dosyas&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;RetroArch&amp;rsquo;&amp;inodot;n t&amp;uuml;m ayarlar&amp;inodot; &amp;scedil;u dosyada bulunur:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.config/retroarch/retroarch.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu dosyada yapabilece&amp;gbreve;iniz baz&amp;inodot; temel ayarlar:
+- &lt;strong&gt;Video Ayarlar&amp;inodot;&lt;/strong&gt;: Oyun i&amp;ccedil;indeki &amp;ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;k ve ekran modu.
+- &lt;strong&gt;Ses Ayarlar&amp;inodot;&lt;/strong&gt;: ALSA veya PulseAudio gibi ses s&amp;uuml;r&amp;uuml;c&amp;uuml;lerini se&amp;ccedil;me.
+- &lt;strong&gt;Girdi (Input) Ayarlar&amp;inodot;&lt;/strong&gt;: Klavye ve joystick kontrollerini yap&amp;inodot;land&amp;inodot;rma.&lt;/p&gt;
+&lt;h4&gt;&amp;Ouml;rnek Yap&amp;inodot;land&amp;inodot;rmalar&lt;/h4&gt;
+&lt;p&gt;E&amp;gbreve;er RetroArch bile&amp;scedil;enlerini kullan&amp;inodot;c&amp;inodot; dizininde kullan&amp;inodot;yorsan&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;libretro_directory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"~/.config/retroarch/cores"&lt;/span&gt;
+&lt;span class="nv"&gt;libretro_info_path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"~/.config/retroarch/cores/info"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sistem genelinde kullan&amp;inodot;yorsan&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;assets_directory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/share/retroarch/assets"&lt;/span&gt;
+&lt;span class="nv"&gt;libretro_info_path&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/share/libretro/info"&lt;/span&gt;
+&lt;span class="nv"&gt;libretro_directory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/lib/libretro"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-cekirdek-core-yukleme_1"&gt;4️⃣ &amp;Ccedil;ekirdek (Core) Y&amp;uuml;kleme 🛠️&lt;/h2&gt;
+&lt;p&gt;RetroArch, oyunlar&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in em&amp;uuml;lat&amp;ouml;r &amp;ccedil;ekirdekleri kullan&amp;inodot;r. &amp;Ccedil;ekirdek y&amp;uuml;klemek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki y&amp;ouml;ntemleri kullanabilirsiniz:&lt;/p&gt;
+&lt;h3 id="online-updater-ile-cekirdek-yukleme"&gt;Online Updater ile &amp;Ccedil;ekirdek Y&amp;uuml;kleme&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;RetroArch'&amp;inodot; a&amp;ccedil;&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Main Menu &amp;gt; Online Updater &amp;gt; Core Updater&lt;/strong&gt; ad&amp;inodot;mlar&amp;inodot;n&amp;inodot; takip edin.&lt;/li&gt;
+&lt;li&gt;&amp;Idot;stedi&amp;gbreve;iniz &amp;ccedil;ekirde&amp;gbreve;i se&amp;ccedil;ip indirin.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="manuel-cekirdek-yukleme"&gt;Manuel &amp;Ccedil;ekirdek Y&amp;uuml;kleme&lt;/h3&gt;
+&lt;p&gt;&amp;Ccedil;ekirdekleri AUR &amp;uuml;zerinden y&amp;uuml;klemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;libretro-core-info
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Belli bir &amp;ccedil;ekirdek ve oyunla &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;retroarch&lt;span class="w"&gt; &lt;/span&gt;--libretro&lt;span class="w"&gt; &lt;/span&gt;/path/to/some_core_libretro.so&lt;span class="w"&gt; &lt;/span&gt;/path/to/rom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-grafik-golgelendiriciler-ve-kaplamalar_1"&gt;5️⃣ Grafik G&amp;ouml;lgelendiriciler ve Kaplamalar 🎨&lt;/h2&gt;
+&lt;p&gt;Oyun deneyiminizi geli&amp;scedil;tirmek i&amp;ccedil;in shader ve overlay kullanabilirsiniz:
+- &lt;strong&gt;Shaders&lt;/strong&gt;: CRT ve scanline gibi efektler ekler.
+- &lt;strong&gt;Overlays&lt;/strong&gt;: Retro konsollar&amp;inodot;n &amp;ccedil;er&amp;ccedil;eve tasar&amp;inodot;mlar&amp;inodot;n&amp;inodot; taklit eder.&lt;/p&gt;
+&lt;p&gt;Bu ayarlar&amp;inodot; &lt;strong&gt;Settings &amp;gt; Video &amp;gt; Output&lt;/strong&gt; men&amp;uuml;s&amp;uuml;nden yap&amp;inodot;land&amp;inodot;rabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-girdi-ve-kontrol-ayarlari"&gt;6️⃣ Girdi ve Kontrol Ayarlar&amp;inodot; 🎮&lt;/h2&gt;
+&lt;p&gt;Klavye ve joystick kontrolleri &lt;strong&gt;Settings &amp;gt; Input&lt;/strong&gt; men&amp;uuml;s&amp;uuml;nden ayarlanabilir. &amp;Ccedil;o&amp;gbreve;u joystick cihaz&amp;inodot; otomatik olarak alg&amp;inodot;lan&amp;inodot;r, ancak manuel yap&amp;inodot;land&amp;inodot;rma da m&amp;uuml;mk&amp;uuml;nd&amp;uuml;r:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.config/retroarch/autoconfig/&amp;lt;joystick_ad&amp;inodot;&amp;gt;.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="7-sistem-performansini-artirma"&gt;7️⃣ Sistem Performans&amp;inodot;n&amp;inodot; Art&amp;inodot;rma 🚀&lt;/h2&gt;
+&lt;p&gt;RetroArch performans&amp;inodot;n&amp;inodot; optimize etmek i&amp;ccedil;in &amp;scedil;u ayarlar&amp;inodot; deneyebilirsiniz:
+- Shader kullan&amp;inodot;m&amp;inodot;n&amp;inodot; azalt&amp;inodot;n.
+- OpenGL gibi hafif bir video s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml; kullan&amp;inodot;n.
+- &lt;strong&gt;Audio Latency&lt;/strong&gt; ayarlar&amp;inodot;n&amp;inodot; optimize edin (&lt;strong&gt;Settings &amp;gt; Audio &amp;gt; Latency&lt;/strong&gt;).
+- &lt;strong&gt;Video Threading&lt;/strong&gt; &amp;ouml;zelli&amp;gbreve;ini a&amp;ccedil;&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;video_threaded&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="8-sik-karsilasilan-sorunlar-ve-cozumleri"&gt;8️⃣ S&amp;inodot;k Kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan Sorunlar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri 🛠️&lt;/h2&gt;
+&lt;h3 id="cekirdek-bulunamiyor"&gt;&amp;Ccedil;ekirdek Bulunam&amp;inodot;yor&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er RetroArch &amp;ccedil;ekirdeklerini bulam&amp;inodot;yorsa &amp;scedil;u ayar&amp;inodot; yap&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;libretro_directory&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/lib/libretro"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="girdi-cihazlari-calismiyor"&gt;Girdi Cihazlar&amp;inodot; &amp;Ccedil;al&amp;inodot;&amp;scedil;m&amp;inodot;yor&lt;/h3&gt;
+&lt;p&gt;Girdi cihazlar&amp;inodot; alg&amp;inodot;lanm&amp;inodot;yorsa, kullan&amp;inodot;c&amp;inodot;n&amp;inodot;z&amp;inodot; &lt;strong&gt;input&lt;/strong&gt; grubuna ekleyin veya &amp;scedil;u udev kural&amp;inodot;n&amp;inodot; ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/etc/udev/rules.d/99-evdev.rules
+&lt;span class="nv"&gt;KERNEL&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="s2"&gt;"event*"&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;NAME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"input/%k"&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;MODE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"666"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="video-performansi-kotu"&gt;Video Performans&amp;inodot; K&amp;ouml;t&amp;uuml;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Settings &amp;gt; Video &amp;gt; Threaded Video&lt;/strong&gt; se&amp;ccedil;ene&amp;gbreve;ini etkinle&amp;scedil;tirin veya &amp;ccedil;&amp;ouml;z&amp;uuml;n&amp;uuml;rl&amp;uuml;&amp;gbreve;&amp;uuml; d&amp;uuml;&amp;scedil;&amp;uuml;r&amp;uuml;n.&lt;/p&gt;
+&lt;h3 id="alsa-ile-ses-sorunlari"&gt;ALSA ile Ses Sorunlar&amp;inodot;&lt;/h3&gt;
+&lt;p&gt;Ses &amp;ccedil;&amp;inodot;k&amp;inodot;&amp;scedil; oran&amp;inodot;n&amp;inodot; &amp;scedil;u &amp;scedil;ekilde ayarlay&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;audio_out_rate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;48000&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;p&gt;Bu rehber, Arch Linux &amp;uuml;zerinde RetroArch'&amp;inodot; kurup optimize etmek isteyenler i&amp;ccedil;in kapsaml&amp;inodot; bir kaynak sunuyor. Daha fazla bilgi i&amp;ccedil;in &lt;a href="https://wiki.archlinux.org/title/RetroArch" rel="noopener noreferrer" target="_blank"&gt;Arch Wiki: RetroArch&lt;/a&gt; sayfas&amp;inodot;na g&amp;ouml;z atabilirsiniz. 📖&lt;/p&gt;
+&lt;p&gt;Keyifli oyunlar! 🎮
+&lt;img alt="RetroArch kullan&amp;inodot;c&amp;inodot; aray&amp;uuml;z&amp;uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/retroarch-xl.webp" srcset="/images/retroarch-sm.webp 300w, /images/retroarch-md.webp 500w, /images/retroarch-xl.webp 800w, /images/retroarch-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Oyun"/><category term="archlinux"/><category term="retroarch"/><category term="emulator"/><category term="oyun"/><category term="yazılım"/></entry><entry><title>Güncel Ücretsiz Oyunlar (Steam &amp; GOG &amp; Epic)</title><link href="https://yuceltoluyag.github.io/guncel-ucretsiz-oyunlar/" rel="alternate"/><published>2020-06-06T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-06-06:/guncel-ucretsiz-oyunlar/</id><summary type="html">&lt;p&gt;Steam, GOG ve Epic gibi platformlardaki güncel ücretsiz oyun duyurularını kaçırmamak için takip edebileceğiniz bir rehber.&lt;/p&gt;</summary><content type="html">&lt;h2 id="guncel-ucretsiz-oyunlar"&gt;G&amp;uuml;ncel &amp;Uuml;cretsiz Oyunlar 🎮🚀&lt;/h2&gt;
+&lt;p&gt;Selamlar! 🎉 &lt;strong&gt;Discord&lt;/strong&gt; &amp;uuml;zerinde &lt;strong&gt;g&amp;uuml;ncel &amp;uuml;cretsiz oyun&lt;/strong&gt; duyurular&amp;inodot;n&amp;inodot; payla&amp;scedil;&amp;inodot;yordum. Ancak ya&amp;scedil;ad&amp;inodot;&amp;gbreve;&amp;inodot;m rahats&amp;inodot;zl&amp;inodot;k ve &lt;strong&gt;Discord&lt;/strong&gt;'a yeterince vakit ay&amp;inodot;ramamam nedeniyle bu payla&amp;scedil;&amp;inodot;mlara ara vermek zorunda kald&amp;inodot;m. Neyse, s&amp;ouml;z&amp;uuml; fazla uzatmayal&amp;inodot;m. 😃&lt;/p&gt;
+&lt;p&gt;Birden fazla kayna&amp;gbreve;&amp;inodot; tarayan ve &amp;scedil;u &amp;ouml;zelliklere sahip bir sistem geli&amp;scedil;tirdim:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hafta boyunca oynamas&amp;inodot; &amp;uuml;cretsiz oyunlar&amp;inodot; tarar&lt;/strong&gt; 🎮&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;S&amp;uuml;reli Eri&amp;scedil;im&lt;/strong&gt;: Belirtilen s&amp;uuml;re i&amp;ccedil;inde al&amp;inodot;rsan&amp;inodot;z k&amp;uuml;t&amp;uuml;phanenizde &lt;strong&gt;kalabilir&lt;/strong&gt; veya &lt;strong&gt;kaybolabilir&lt;/strong&gt;. ⏳&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;S&amp;uuml;resiz Eri&amp;scedil;im&lt;/strong&gt;: Bir kez ald&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda &amp;ouml;m&amp;uuml;r boyu sizin olur! 🏆&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Oyun&lt;/strong&gt; ve &lt;strong&gt;DLC&lt;/strong&gt; kampanyalar&amp;inodot;n&amp;inodot; tarayarak anl&amp;inodot;k olarak &lt;strong&gt;Telegram grubuna&lt;/strong&gt; g&amp;ouml;ndermektedir.&lt;/p&gt;
+&lt;h3 id="katilmak-ister-misiniz"&gt;Kat&amp;inodot;lmak ister misiniz? 🤩&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://discord.gg/da3Su8s" rel="noopener noreferrer" target="_blank" title="https://discord.gg/da3Su8s"&gt;G&amp;uuml;ncel &amp;Uuml;cretsiz Oyunlar Telegram Kanal&amp;inodot;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steam, Epic, GOG, Keylol, Reddit&lt;/strong&gt; ve daha bir &amp;ccedil;ok kayna&amp;gbreve;&amp;inodot; tarayarak en yeni &amp;uuml;cretsiz oyun duyurular&amp;inodot;ndan haberdar olun! 🚀&lt;/p&gt;
+&lt;p&gt;&lt;img alt="G&amp;uuml;ncel Steam, Epic, GOG Oyunlar&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/ucretsiz-oyunlar-xl.webp" srcset="/images/ucretsiz-oyunlar-sm.webp 300w, /images/ucretsiz-oyunlar-md.webp 500w, /images/ucretsiz-oyunlar-xl.webp 800w, /images/ucretsiz-oyunlar-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Oyun"/><category term="steam"/><category term="discord"/><category term="oyunlar"/><category term="gog"/><category term="epic"/></entry></feed>
