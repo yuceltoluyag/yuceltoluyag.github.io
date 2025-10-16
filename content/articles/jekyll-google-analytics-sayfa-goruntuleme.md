@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/superproxy-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985257871113523
 
 **Merhaba!** 🌟
 

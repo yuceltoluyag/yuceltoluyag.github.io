@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/ol_vbox_vagrant-min-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984431326966294
 
 
 

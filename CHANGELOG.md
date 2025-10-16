@@ -53,9 +53,6 @@ Bu belge, Minel temasına yapılan tüm önemli değişiklikleri içerir.
 - Önbelleğe alma stratejileri
 
 ### 🔌 Entegrasyonlar
-- Webmention.io entegrasyonu
-- Makale sayfalarında webmention gösterimi
-- Webmention test aracı (geliştirme modunda)
 - E-posta aboneliği için Buttondown entegrasyonu
 
 ## [1.0.0] - 2023-10-15

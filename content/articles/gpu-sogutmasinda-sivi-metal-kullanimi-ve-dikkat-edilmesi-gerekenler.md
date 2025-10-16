@@ -9,7 +9,6 @@ Status: published
 Summary: GPU soğutmasında sıvı metal kullanımı hakkında bilmeniz gereken her şey. Alüminyum reaksiyonları, doğru yüzey seçimi, malzeme önerileri ve detaylı uygulama rehberi.
 Template: article
 Image: /images/rtx-4060-sıvı-metal-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988983481909917
 
 <div class="alert alert-warning">
   <strong>Dikkat:</strong>Sıvı metal kullanımı doğru yapılırsa GPU'nuzda %10-20'ye kadar sıcaklık iyileştirmesi sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı geri dönüşümsüz şekilde bozabilir. Riski yüksek bir işlem,buna göre düşünün.Sorumluluk size aittir.

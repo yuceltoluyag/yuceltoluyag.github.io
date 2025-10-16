@@ -11,7 +11,6 @@ Template: article
 Series: Android Rehberleri
 Series_index: 1
 Image: images/crDroid-95-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115011891140145918
 
 
 

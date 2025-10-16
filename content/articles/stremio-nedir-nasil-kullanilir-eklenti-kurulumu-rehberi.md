@@ -9,7 +9,6 @@ Status: published
 Summary: Stremio ile tüm film, dizi ve video içeriklerinizi tek bir yerden yönetin. Kurulumdan eklenti kullanımına 2025 güncel rehber.
 Template: article
 Image: images/kesfet-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115023937993071542
 
 # Stremio  Detaylı Rehber 🚀
 

@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/her-turk-gencinin-izlemesi-gereken-belgeseller-1-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984443173742176
 
 
 📽️ **Her Türk Gencinin İzlemesi Gereken Belgeseller Serisi 1**

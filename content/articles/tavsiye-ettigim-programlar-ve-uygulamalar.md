@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: /images/comodo_firewall-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114994909881292851
 
 # Merhaba! 👋
 

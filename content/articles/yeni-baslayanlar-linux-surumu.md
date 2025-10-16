@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/ubuntu-logo-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114979001407047632
 
 # Yeni Başlayanlar İçin En İyi Linux Dağıtımları
 

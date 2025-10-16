@@ -9,7 +9,6 @@ Status: published
 Summary: Bu yazıda,  Continue Eklentisinde mcp kurulumu
 Template: article
 Image: images/mcp-puppeteer-sunucusu-kurulumu-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987857795740048
 
 
 **MCP (Model Context Protocol)** kullanarak *tarayıcı otomasyonuna* başlamak mı istiyorsun? Kafa karıştırıcı kurulum adımlarını unut! Bu rehberde, sadece tek bir `npx` komutuyla **Puppeteer destekli bir MCP sunucusunun nasıl çalıştırılacağını** adım adım göstereceğim. Üstelik tüm işlemler Windows ortamında! 💻

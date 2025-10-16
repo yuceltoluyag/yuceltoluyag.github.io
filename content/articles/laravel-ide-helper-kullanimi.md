@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/laravel_7x_ide_helper-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984850205763176
 
 
 ## Laravel IDE Helper Nedir? 🚀

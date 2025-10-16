@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/git-chery-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987704187596338
 
 
 

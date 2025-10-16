@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/windows-terminal-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985306515279329
 
 **Merhaba**
 

@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux üzerinde Docker kurulumu, yapılandırması ve temel kullanım adımlarını adım adım anlatan kapsamlı rehber.
 Template: article
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989772931815244
 
 
 

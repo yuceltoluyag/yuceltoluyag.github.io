@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/archlinuxlampp-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982780512488089
 
 
 

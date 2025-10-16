@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/rokbot-gui-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985410694158553
 
 
 🚨 **Bir Yolun Sonu: Rise of Kingdom Bot'a Veda** 🚨

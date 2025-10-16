@@ -7,7 +7,6 @@ Slug: yunohost-robots-txt-olusturmak
 Authors: yuceltoluyag
 Status: published
 Image: images/yunohost-robotstxt-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987831204439588
 
 
 

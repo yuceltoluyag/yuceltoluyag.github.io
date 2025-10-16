@@ -8,7 +8,6 @@ Status: published
 Summary: Debian'da Steam oyunları açılmıyor mu? Wrong ELF Class, libgamemodeauto preload ve FMOD hatalarını çözmek için iki farklı yöntemi öğrenin.
 Template: article
 Image: images/linux-girl-steam-debian-elf-class-gamemode-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115141057835929402
 
 
 Linux kullanıcıları için Steam, oyun dünyasının vazgeçilmez kapısıdır. Ancak Debian üzerinde oyun açmaya çalışırken **“wrong ELF class: ELFCLASS32/64”**, **“libgamemodeauto.so preload cannot be preloaded”** veya **FMOD preload hataları** ile karşılaşabilirsiniz.

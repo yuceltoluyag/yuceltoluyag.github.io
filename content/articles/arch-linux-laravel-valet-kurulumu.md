@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/laravel-valet-kurulumu-linux-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984831738660096
 
 
 

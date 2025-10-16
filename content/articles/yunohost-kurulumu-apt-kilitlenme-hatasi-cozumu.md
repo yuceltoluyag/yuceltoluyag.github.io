@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/yunohost-hata-cozumu-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987804407152808
 
 
 ## 🚀 Giriş

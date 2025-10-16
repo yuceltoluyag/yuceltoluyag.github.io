@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/oh_my_zsh-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984008847657548
 
 
 Merhaba! Uzun süredir **fish shell** kullanıyordum ancak **Oh My ZSH**'yi denemek istedim. Kurulum ve kullanım sırasında bazı hatalarla karşılaştım ve maalesef yeterince açıklayıcı Türkçe kaynak bulamadım. Resmi kaynaklardan edindiğim bilgilerle temiz bir kurulum gerçekleştirdim ve bu rehberi hazırladım. 🚀

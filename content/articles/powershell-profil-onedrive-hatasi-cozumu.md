@@ -9,7 +9,6 @@ Summary: PowerShell profil dosyası ile ilgili yaşanan hata mesajları, OneDriv
 Status: published
 Template: article
 Image: images/windows11-onedrive-sorunu.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985346729844921
 
 ![Hosts Dosyası Düzenleme](/images/windows11-onedrive-sorunu.webp)
 

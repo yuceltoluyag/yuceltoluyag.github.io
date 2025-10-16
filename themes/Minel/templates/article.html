@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {% block head %} {% endblock %} {% block
 content %}
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/mastodon-comments.js" defer></script>
 <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <!-- Sidebar bileşenleri -->
@@ -229,13 +228,6 @@ content %}
                             <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
                         </a>
 
-                        <!-- Mastodon Paylaşım -->
-                        <button
-                            class="social-share-btn mastodon-share"
-                            id="mastodon-share-btn"
-                            aria-label="Mastodon'da Paylaş">
-                            <iconify-icon icon="tabler:brand-mastodon"></iconify-icon>
-                        </button>
 
                         <!-- Email Paylaşım -->
                         <a
@@ -283,39 +275,15 @@ content %}
                         </button>
                     </div>
 
-                    <!-- Webmentions -->
-                    <div class="webmentions-container">
-                        <div class="webmentions-content"></div>
+                    <!-- Disqus Yorum Sistemi -->
+                    <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                            <iconify-icon icon="tabler:message-circle" class="inline mr-2"></iconify-icon>
+                            Yorumlar
+                        </h3>
+                        <div id="disqus_thread"></div>
                     </div>
 
-                    {% if article.mastodon_link or article.mastodon_id %} {% if article.mastodon_link %} {% set
-                    mastodon_parts = article.mastodon_link.split('/') %} {% set toot_id = mastodon_parts[-1] %} {% set
-                    user = mastodon_parts[-2]|replace('@', '') %} {% set host = mastodon_parts[-3]|replace('https://',
-                    '')|replace('http://', '') %} {% elif article.mastodon_id %} {% set toot_id = article.mastodon_id %}
-                    {% set host = MASTODON_CONFIG.host|default('mastodon.social') %} {% set user =
-                    MASTODON_CONFIG.user|default('yuceltoluyag') %} {% endif %}
-
-                    <div class="mastodon-comments-section mt-8">
-                        <div class="flex items-center justify-between mb-4">
-                            <h2 class="text-2xl font-bold flex items-center">
-                                <span class="iconify mr-2" data-icon="tabler:message-circle"></span>
-                                Fediverse Yorumları
-                            </h2>
-                            <a
-                                href="https://{{ host }}/@{{ user }}/{{ toot_id }}"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="btn btn-sm btn-outline btn-primary">
-                                <span class="iconify mr-1" data-icon="tabler:external-link"></span>
-                                Mastodon'da Görüntüle
-                            </a>
-                        </div>
-                        <mastodon-comments
-                            host="{{ host }}"
-                            user="{{ user }}"
-                            tootId="{{ toot_id }}"></mastodon-comments>
-                    </div>
-                    {% endif %}
                 </div>
             </article>
         </div>
@@ -361,8 +329,26 @@ content %}
 <!-- TOC JS -->
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-toc.js" defer></script>
 
-<!-- Webmention JS -->
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention.js" defer></script>
+<!-- Disqus Yorum Sistemi -->
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+        this.page.url = "{{ SITEURL }}/{{ article.url }}";  // Makale URL'si
+        this.page.identifier = "{{ article.url }}"; // Makale benzersiz tanımlayıcısı
+        this.page.title = "{{ article.title|e }}"; // Makale başlığı
+    };
+    
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yuceltoluyag.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 
 <!-- Mobil TOC ve Yukarı Git Butonları JS -->
 <script>
@@ -439,35 +425,9 @@ content %}
             });
         }
 
-        // Mastodon Paylaşım İşlevi
-        const mastodonShareButton = document.getElementById("mastodon-share-btn");
-        if (mastodonShareButton) {
-            mastodonShareButton.addEventListener("click", function () {
-                // Paylaşılacak bilgileri al
-                const url = window.location.href;
-                const title = document.querySelector("h1").textContent.trim();
-
-                // Varsayılan mastodon örneği
-                const defaultInstance = "mastodon.social";
-
-                // Kullanıcıdan mastodon örneğini al
-                const instance = prompt("Mastodon örneğinizi girin (örn: mastodon.social):", defaultInstance);
-
-                if (instance) {
-                    // Mastodon paylaşım URL'sini oluştur
-                    const shareUrl = `https://${instance}/share?text=${encodeURIComponent(title + " " + url)}`;
-
-                    // Yeni pencerede paylaşım sayfasını aç
-                    window.open(shareUrl, "_blank");
-                }
-            });
-        }
     });
 </script>
 
-{% if DEVELOPMENT_MODE %}
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmention-test.js" defer></script>
-{% endif %}
 
 <!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
 {% if DEVELOPMENT_MODE or ADMIN_TOOLS %} {% include "includes/admin-panel.html" %} {% endif %} {% endblock %}

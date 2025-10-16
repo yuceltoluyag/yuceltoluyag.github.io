@@ -10,7 +10,6 @@ Template: article
 Series: Git
 Series_index: 7
 Image: images/github-commit-atma-rehberi-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115036480228308801
 
 
 > “Git commit atmak” yazılımcı dünyasının ekmek-su ikilisi gibi bir şeydir. Eğer kod yazıyorsan, değişikliklerini versiyon kontrol sistemine kaydetmeyi bilmek zorundasın. Bu rehberde sana, **GitHub** üzerinde bir projeye **commit atma** sürecini sıfırdan, adım adım ve bol örnekle anlatacağım.

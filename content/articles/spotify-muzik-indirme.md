@@ -9,7 +9,6 @@ Summary: Spotify’dan müzik indirme yöntemlerini resimli ve güncel anlatıml
 Status: published
 Template: article
 Image: images/spotify-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114978651581920868
 
 
 # Neden?

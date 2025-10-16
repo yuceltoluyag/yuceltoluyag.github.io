@@ -23,9 +23,10 @@ CONTENT_BASE_URL = os.path.abspath(os.path.dirname(__file__))
 OUTPUT_PATH = "output"
 TIMEZONE = "Europe/Istanbul"
 
-# Webmention Testi için
 DEVELOPMENT_MODE = False
-WEBMENTION_TEST_MODE = False  # Webmention test modu
+
+# Disqus Yorum Sistemi
+DISQUS_SITENAME = "yuceltoluyag"
 
 DEFAULT_LANG = "tr"
 
@@ -250,7 +251,6 @@ LINKS = {
 
 # --- Social Media ---
 SOCIAL = {
-    "mastodon": "yuceltoluyag",
     "matrix": "fatpip:matrix.org",
     "discord": "188034964879573003",
     "github": "yuceltoluyag",
@@ -263,12 +263,6 @@ SOCIAL = {
     "bluesky": "yuceltoluyag.bsky.social",
 }
 
-# Mastodon yorumları için yapılandırma
-MASTODON_CONFIG = {
-    "host": "mastodon.social",
-    "user": "yuceltoluyag",
-    "default_enabled": True,  # Varsayılan olarak yorumları etkinleştir
-}
 
 # Admin araçları ayarları
 ADMIN_TOOLS = False  # Sadece geliştirme sırasında True yapılmalı

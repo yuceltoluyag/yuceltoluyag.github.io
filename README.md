@@ -26,7 +26,6 @@ Minel, [Pelican](https://getpelican.com) blog motoru için [Tailwind CSS](https:
   - Site içi arama
   - PWA desteği
 - **Entegrasyonlar**:
-  - Webmention.io desteği
   - RSS ve Atom feed desteği
   - E-posta aboneliği (Buttondown)
   - Çoklu dil desteği
@@ -116,17 +115,6 @@ YouTube videolarınız için otomatik VideoObject şeması ekler:
 - Makalelerinizde YouTube iframe'leri otomatik tespit edilir
 - Google arama sonuçlarında video içeriğiniz daha iyi görüntülenir
 
-### Webmention Entegrasyonu
-
-1. [Webmention.io](https://webmention.io/)'da hesap oluşturun
-2. API token'ını `_assets/js/webmention.js` dosyasındaki `apiToken` değişkenine atayın
-3. Geliştirme modunda test etmek için:
-
-```python
-# pelicanconf.py
-DEVELOPMENT_MODE = True  # Geliştirme için
-# DEVELOPMENT_MODE = False  # Üretim için
-```
 
 ## 📜 Değişiklik Geçmişi
 

@@ -8,7 +8,6 @@ Status: published
 Summary: DaVinci Resolve 20.1 Linux’ta açılmıyor mu? Arch tabanlı sistemlerde yaşanan libglib hatasının kolay çözümünü adım adım öğrenin.
 Template: article
 Image: images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115132940215693139
 Bluesky_Link: https://bsky.app/profile/yuceltoluyag.bsky.social/post/3lxtdptsnrk2a
 
 

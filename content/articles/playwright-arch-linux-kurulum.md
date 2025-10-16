@@ -8,7 +8,6 @@ Status: published
 Summary: Arch Linux üzerinde Playwright kurulumu için gerekli adımlar, bağımlılıklar ve olası sorunların çözümlerini adım adım anlatıyoruz. Bu rehber ile E2E test ortamınızı kolayca hazırlayabilirsiniz.
 Template: article
 Image: images/playwright-report-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115039808506283062
 
 Web uygulamalarını uçtan uca (E2E) test etmek için **Playwright** son yıllarda oldukça popüler hale geldi. Chromium, Firefox ve WebKit gibi farklı tarayıcıları tek bir API ile test edebilmek büyük kolaylık sağlıyor. Ancak iş **Arch Linux** üzerinde Playwright kurmaya gelince işler her zaman pürüzsüz ilerlemeyebiliyor. Çeşitli bağımlılıklar, eksik kütüphaneler ve AUR üzerinde sık sık yaşanan paket değişiklikleri kurulum sürecini uzatabiliyor.
 

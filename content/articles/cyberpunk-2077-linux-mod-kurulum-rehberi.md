@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Status: published  
 Summary: Cyberpunk 2077'yi Linux'ta modlayın! Paketlenmiş ve paketlenmemiş sürümler için detaylı Cyber Engine Tweaks kurulum rehberi.  
 Template: article
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989718619228793
 
 
 

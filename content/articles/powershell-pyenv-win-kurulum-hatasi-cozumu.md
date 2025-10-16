@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/Microsoft-PowerShell-Archive-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987643401547407
 
 
 
