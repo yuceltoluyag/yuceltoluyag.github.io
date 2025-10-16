@@ -11,7 +11,6 @@ Template: article
 Series: Android Rehberleri
 Series_index: 2
 Image: images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115011896140683306
 
 # 📱 Redmi Note 8 Pro'ya Custom ROM Yükleme: Arch Linux'ta Adım Adım Kılavuz
 

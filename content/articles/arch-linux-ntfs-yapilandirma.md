@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/ntfs_yetki_hatasi-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984863338075066
 
 
 ## Sorun Nedir? ⚠️

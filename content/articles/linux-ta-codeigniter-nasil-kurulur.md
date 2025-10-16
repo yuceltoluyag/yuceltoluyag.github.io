@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/codeigniter-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114983947794837501
 
 
 **Gökhan Kandemir**’in **CodeIgniter Kitabı** ’nı aldıktan sonra, çalışma yapabilmek için CodeIgniter’ı kurmam gerekti. Kurulum işlemi oldukça basit ve lokal geliştirme ortamında çalışmak için ekstra bir ayar gerekmiyor. Ancak, sunucu tarafında bazı ek yapılandırmalar yapmanız gerekebilir. Bu yazıda, temel kurulum işlemi ile ilgili detayları paylaşıyorum. Sunucu ayarları ile ilgili isteyenlere ayrıca yardımcı olabilirim.

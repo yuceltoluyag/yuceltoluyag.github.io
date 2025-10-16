@@ -8,7 +8,6 @@ Status: published
 Summary: Arch Linux, 12 Ağustos’tan bu yana devam eden bir DDoS saldırısıyla boğuşuyor. Ana site, AUR ve forumlara erişimde sorunlar yaşanıyor. Kullanıcılar için alternatif erişim yolları ve yansılar bu yazıda.  
 Template: article  
 Image: images/arch-linux-ddos-hizmet-kesintisi-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/115091936430498581
 
 ---
 

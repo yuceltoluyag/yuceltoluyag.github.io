@@ -7,7 +7,6 @@ Slug: wineprefix-nedir-nasil-kullanilir
 Authors: yuceltoluyag
 Status: published
 Images: images/wineprefix-nedir-nasil-kullanilir-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989615830305083
 
 # 🍷 WinePrefix Nedir ve Neden Önemlidir?
 

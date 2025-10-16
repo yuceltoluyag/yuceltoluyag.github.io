@@ -1,6 +1,6 @@
 Title: Linux Özelleştirilebilir MP3 Oynatıcısı Audacious
 Date: 2018-12-01 12:00 10:00
-Modified: 2025-08-11 22:59
+Modified: 2025-10-16 22:59
 Category: Medya
 Tags: linux, mp3, müzik oynatıcı
 Slug: linux-ozellestirilebilir-mp3-oynaticisi-audacious
@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/audacious-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114983963606574479
 
 
 Yılların efsane müzik  🎵 oynatıcıları **Winamp**  ve **AIMP**, Windows kullanıcıları için vazgeçilmezdi. Ancak Linux ortamında benzer bir deneyim sunan en iyi alternatiflerden biri **Audacious** oldu. Piyasadaki birçok MP3 oynatıcıyı denedikten sonra, en fazla özelleştirme sunanı Audacious olduğu için tercih ettim.
@@ -27,7 +26,7 @@ Yılların efsane müzik  🎵 oynatıcıları **Winamp**  ve **AIMP**, Windows 
 ## Audacious Kurulumu ve Tema Kullanımı 🎨
 
 1. **Audacious Temaları**
-   - Winamp uyumlu temalara [buradan](https://www.deviantart.com/customization/skins/media/winamp/classic/whats-hot/){: target="_blank" rel="noopener noreferrer"} ulaşabilirsiniz.
+   - Winamp uyumlu temalara [buradan](https://www.deviantart.com/customization/skins/media/winamp/classic/whats-hot/){: target="_blank" rel="noopener noreferrer"} ulaşabilirsiniz. Yada Buraya tıklayıp efsane temaları indirebilirsiniz.[https://skins.webamp.org/]{: target="_blank" rel="noopener noreferrer"}
 2. **Tema Yükleme**
    - İndirdiğiniz temayı `~/.local/share/audacious/Skins` dizinine taşıyın.
    - Eğer bu dizin mevcut değilse, kendiniz oluşturabilirsiniz:

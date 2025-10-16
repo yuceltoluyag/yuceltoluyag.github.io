@@ -9,7 +9,6 @@ Status: published
 Summary: Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan ses hatalarını çözmek için adım adım bir rehber.
 Template: article
 Image: images/Tannenberg-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114988449539697338
 
 
 # Arch Linux Üzerinde Steam Ses Hatalarını Çözme

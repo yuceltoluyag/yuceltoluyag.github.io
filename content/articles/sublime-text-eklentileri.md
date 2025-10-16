@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/AFileIcon-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114978632312203694
 
 Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika eklenti ve temaları sizlerle paylaşacağım. 🥳
 

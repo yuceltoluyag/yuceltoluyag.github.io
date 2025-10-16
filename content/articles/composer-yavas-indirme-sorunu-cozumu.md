@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/composer-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984413472275351
 
 
 ## Composer Yavaş İndirme Sorunu ve Çözümleri ⚡

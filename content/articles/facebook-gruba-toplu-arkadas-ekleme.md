@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/facebookgrupkodu-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984933871702666
 
 
 # Merhaba 👋

@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/linux_windows10_uefi_format-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114994518552013527
 
 
 # Linux'ta UEFI Windows 10 Format USB Oluşturma

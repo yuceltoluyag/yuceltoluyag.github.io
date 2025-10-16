@@ -12,7 +12,6 @@ Translation: false
 Status: published  
 Template: article  
 Image: images/git-gpg-imzali-etiket-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985361471375070
 
 
 # Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme 🔐

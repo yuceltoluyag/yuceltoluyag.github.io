@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/wls-archlinux-kurulumu-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985269244740877
 
 **Merhaba**
 

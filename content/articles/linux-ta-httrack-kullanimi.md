@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/httrack-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114982912012327637
 
 Merhaba! HTTrack, internet bağlantınız olmadığında bile web sitelerini kullanabilmenizi sağlayan bir yazılımdır. Windows tarafında sıkça kullandığım bu yazılımı, Linux terminali üzerinden nasıl kullanabileceğinizi anlatan bir döküman hazırlamak istedim.
 

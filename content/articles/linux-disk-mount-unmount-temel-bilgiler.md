@@ -10,7 +10,6 @@ Summary: Linux’ta disklerin mount edilmesi ve unmount edilmesi işlemlerini te
 Series: Linux-disk
 Series_index: 2
 Template: article  
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989756718275526
 
 # 💽 Linux’ta Disklerin Mount Edilmesi ve Unmount Edilmesi: Temel Bilgiler
 

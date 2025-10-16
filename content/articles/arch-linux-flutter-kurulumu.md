@@ -9,7 +9,6 @@ Status: published
 Summary: Arch Linux'ta Android Studio kurmadan Flutter geliştirme ortamı kurulumu. 2025 güncel paketleri ve Java 24 desteği ile hafif ve etkili kurulum.  
 Template: article
 Image: images/arch-linux-flutter-kurulumu-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989730580607107
 
 
 # Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi

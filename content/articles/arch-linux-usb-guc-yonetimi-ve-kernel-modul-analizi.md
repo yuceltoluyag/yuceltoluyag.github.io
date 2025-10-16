@@ -9,7 +9,6 @@ Status: published
 Summary: Bu rehberde, bir Bash scripti yardımıyla Linux sisteminizdeki USB cihazların güç yönetimi ayarlarını ve aktif kernel modüllerinin parametrelerini nasıl analiz edebileceğinizi adım adım anlatıyoruz.
 Template: article
 Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989692214124173
 
 ---
 

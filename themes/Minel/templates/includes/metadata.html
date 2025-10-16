@@ -33,7 +33,6 @@
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="{{ SITENAME }}" />
 {% endif %}
-<meta name="fediverse:creator" content="@yuceltoluyag@mastodon.social" />
 
 <!-- Open Graph Tip ve URL Etiketleri -->
 {% if article %}
@@ -110,7 +109,6 @@
             {% if SOCIAL.youtube %}"https://youtube.com/@{{ SOCIAL.youtube }}",{% endif %}
             {% if SOCIAL.twitch %}"https://twitch.tv/{{ SOCIAL.twitch }}",{% endif %}
             {% if SOCIAL.discord %}"https://discord.com/users/{{ SOCIAL.discord }}",{% endif %}
-            {% if SOCIAL.mastodon %}"https://mastodon.social/@{{ SOCIAL.mastodon }}",{% endif %}
             {% if SOCIAL.matrix %}"https://matrix.to/#/@{{ SOCIAL.matrix }}:matrix.org",{% endif %}
             {% if SOCIAL.kick %}"https://kick.com/{{ SOCIAL.kick }}"{% endif %}
         ]

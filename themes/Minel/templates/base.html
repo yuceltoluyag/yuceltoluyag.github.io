@@ -30,10 +30,6 @@
         <script src="https://unpkg.com/@swup/js-plugin@3"></script>
         <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
 
-        <!-- Webmention -->
-        <link rel="webmention" href="https://webmention.io/yuceltoluyag.github.io/webmention" />
-        <link rel="pingback" href="https://webmention.io/yuceltoluyag.github.io/xmlrpc" />
-        <link rel="webmention" href="https://brid.gy/webmention/tumblr" />
 
         {% if GOOGLE_ADSENSE and PUBLISH %}
         <!-- Google AdSense -->
@@ -98,5 +94,8 @@
         <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
         <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-toc.js"></script>
         {% endif %} {% include 'includes/tagmanager.html' %} {% block scripts %}{% endblock %}
+        
+        <!-- Disqus Count Script -->
+        <script id="dsq-count-scr" src="//yuceltoluyag.disqus.com/count.js" async></script>
     </body>
 </html>

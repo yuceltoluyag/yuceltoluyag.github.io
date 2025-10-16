@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/vlsub0-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984286254678578
 
 # VLSub ile Altyazı Aramaya Son (Resimli Anlatım) 🎬
 

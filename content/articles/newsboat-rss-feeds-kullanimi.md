@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/newsboat-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984877153539510
 
 [responsive_img src="/images/newsboat-xl.webp" alt="Newsboat" /]
 

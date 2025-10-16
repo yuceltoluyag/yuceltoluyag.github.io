@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/php_phpstorm_csfixer-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984674025445306
 
 # PSR Standartı Nedir?
 

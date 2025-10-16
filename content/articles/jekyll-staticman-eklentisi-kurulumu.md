@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/staticman-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985225233044622
 
 **Merhaba** 😄
 

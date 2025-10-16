@@ -9,7 +9,6 @@ Status: published
 Summary: Arch Linux üzerinde modern Intel işlemcilerle nasıl CPU frekansı kontrol edilir ve güç yönetimi optimize edilir? cpupower ve intel_pstate ile adım adım yapılandırma rehberi.
 Template: article
 Image: images/arch-linux-cpu-performans-ayarlari-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114989591406409896
 
 
 

@@ -7,7 +7,6 @@ Slug: arch-linux-eski-depolar-temizlenmesi
 Authors: yuceltoluyag  
 Status: published
 Image: images/arch-linux-yeni-pacman-ayarlari-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114987844204512704
 
 ## Arch Linux Kullanıcıları İçin Eski Depoların Temizlenmesi Hakkında Bilmeniz Gereken Her Şey
 

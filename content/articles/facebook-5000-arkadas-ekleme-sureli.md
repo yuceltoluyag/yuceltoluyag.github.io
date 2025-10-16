@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/facebook-5000-arkadas-ekleme-kodu-v2-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984954479518221
 
 ## Facebook 5000 Arkadaş Ekleme (Süreli)
 

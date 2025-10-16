@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/pelican-redirect-eklentisi-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985388328975051
 
 Statik site oluşturucuları kullanırken karşılaşılan en büyük sorunlardan biri, site yapısı veya URL'lerde yapılan değişikliklerden sonra eski bağlantıların çalışmaması problemidir. 🤔 Bu durum SEO açısından oldukça zararlı olabilir ve ziyaretçilerinizi kaybetmenize neden olabilir. Özellikle Google gibi arama motorlarında üst sıralarda yer alan içeriklerinize yapılan dış bağlantılar, URL değişiklikleri sonrasında "404 Sayfa Bulunamadı" hatasına düşecektir.
 

@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/ucretsiz-oyunlar-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984814860970146
 
 ## Güncel Ücretsiz Oyunlar 🎮🚀
 

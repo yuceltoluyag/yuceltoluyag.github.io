@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/phpstorm_terminal-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984367613976899
 
 ## PHPStorm İçerisinde Cmder Kullanmak 🚀
 

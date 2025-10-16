@@ -12,7 +12,6 @@ Translation: false
 Status: published  
 Template: article  
 Image: images/ssh-gpg-yedekleme-geri-yukleme-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985374923504182
 
 # SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme 🔑
 

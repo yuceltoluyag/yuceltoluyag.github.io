@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/conda-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114985320597394764
 
 # Arch Linux'ta Conda Kurulumu ve Yönetimi
 

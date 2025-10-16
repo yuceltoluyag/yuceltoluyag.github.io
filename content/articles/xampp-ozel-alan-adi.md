@@ -10,7 +10,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/hosts-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984196579615973
 
 
 

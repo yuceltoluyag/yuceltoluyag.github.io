@@ -12,7 +12,6 @@ Translation: false
 Status: published
 Template: article
 Image: images/pic-selected-190916-0747-49-xl.webp
-Mastodon_Link: https://mastodon.social/@yuceltoluyag/114984353173118702
 
 
 
