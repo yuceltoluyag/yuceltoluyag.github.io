@@ -25,8 +25,8 @@ TIMEZONE = "Europe/Istanbul"
 
 DEVELOPMENT_MODE = False
 
-# Disqus Yorum Sistemi
-DISQUS_SITENAME = "yuceltoluyag"
+# Disqus Yorum Sistemi (devre dışı)
+# DISQUS_SITENAME = ""
 
 DEFAULT_LANG = "tr"
 
