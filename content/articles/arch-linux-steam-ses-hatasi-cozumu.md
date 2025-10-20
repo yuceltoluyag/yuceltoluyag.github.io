@@ -1,7 +1,7 @@
 Title: Arch Linux Üzerinde Steam Ses Hatalarını Çözme
 Date: 2025-05-06 10:00
 Modified: 2025-08-11 22:59
-Category:  Oyun
+Category: Oyun
 Tags: arch linux, steam, ses hatası, pipewire, wayland, glibc, linux oyunları, pulse audio
 Slug: arch-linux-steam-ses-hatasi-cozumu
 Authors: yuceltoluyag
@@ -10,16 +10,14 @@ Summary: Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan se
 Template: article
 Image: images/Tannenberg-xl.webp
 
-
 # Arch Linux Üzerinde Steam Ses Hatalarını Çözme
 
-
-
-🎮 Wayland altında **Arch Linux** kullanırken Steam oyunlarında “Ses motoru başlatılamadı” hatası mı alıyorsunuz? Endişelenmeyin — bu rehber, ses sorunlarını çözmek için tüm gereken adımları size adım adım anlatacak!
+🎮 Wayland altında **Arch Linux** kullanırken Steam oyunlarında “Ses motoru başlatılamadı" hatası mı alıyorsunuz? Endişelenmeyin — bu rehber, ses sorunlarını çözmek için tüm gereken adımları size adım adım anlatacak!
 
 Bu tür hatalar genellikle **PipeWire**, **PulseAudio** ya da oyunların kendi ses motorlarıyla ilgili yapılandırma sorunlarından kaynaklanır. Şimdi gelin, bu problemleri nasıl çözeceğinizi birlikte inceleyelim. 👇
 
 Ingilizce hatalar:
+
 - Could not initialize the sound engine. Please make sure you have the latest audio drivers installed.
 
 > "Ocam Steam'da farklı oyunlarda sorun yok. Tannenberg oyna diyorum veya Verdun, ekran açılıyor ama 'ses motoru başlatılamadı'. Onun dışında sistemde sesim var, sadece bu iki oyunda ses hiç yok \:D"
@@ -28,14 +26,9 @@ Ingilizce hatalar:
 [responsive_img src="/images/Tannenberg-xl.webp" alt="Tannenberg Ses Motoru Hatası" /]
 [responsive_img src="/images/verdun-xl.webp" alt="Verdun audio engine error" /]
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli Not</div>
-        <p>Bu rehberde sorunu, eklentileri tanıtarak yani 3. numaralı adımları uygulayarak çözdük. Bu nedenle diğer başlatma seçeneklerini kaldırdık. Ancak, sorunu bu yöntemle çözemeyen kullanıcılar için ek bilgileri bırakmaya devam ettim. Kafa karışıklığı yaşarsanız, önce rehberdeki 3. adımlarını uygulayın. Eğer işe yaramazsa diğer alternatif adımları deneyebilirsiniz.</p>
-    </div>
+!!! warning "Önemli Not"
+Bu rehberde sorunu, eklentileri tanıtarak yani 3. numaralı adımları uygulayarak çözdük. Bu nedenle diğer başlatma seçeneklerini kaldırdık. Ancak, sorunu bu yöntemle çözemeyen kullanıcılar için ek bilgileri bırakmaya devam ettim. Kafa karışıklığı yaşarsanız, önce rehberdeki 3. adımlarını uygulayın. Eğer işe yaramazsa diğer alternatif adımları deneyebilirsiniz.
+
 </div>
 
 ---
@@ -99,8 +92,8 @@ Wayland ortamında ses sorunlarının bir diğer kaynağı, SDL ve grafik backen
 
 Galip arkadaşımızın sistemi:
 
-* **Masaüstü ortamı:** KDE Wayland
-* **Ekran kartı:** AMD Radeon RX 550
+- **Masaüstü ortamı:** KDE Wayland
+- **Ekran kartı:** AMD Radeon RX 550
 
 AMD sistemlerde aşağıdaki paketler kurulu olmalı:
 
@@ -113,8 +106,8 @@ sudo pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-tools
 ```bash
 GPU id = 0 (AMD Radeon RX 550 / 550 Series (RADV POLARIS12))
 ```
-> **Not:** Bu kodlar wayland için başlatma seçenekleridir. X11 için yapmanıza gerek yok. Bu komutlardan sonrada sorunumuz çözülmedi ancak bilgi olarak kalsın diye bırakıyorum. İşe yaramadığı için başlatma seçeneklerini silip devam ediyoruz.
 
+> **Not:** Bu kodlar wayland için başlatma seçenekleridir. X11 için yapmanıza gerek yok. Bu komutlardan sonrada sorunumuz çözülmedi ancak bilgi olarak kalsın diye bırakıyorum. İşe yaramadığı için başlatma seçeneklerini silip devam ediyoruz.
 
 ## Steam Çıktıları ve Hatalar
 
@@ -189,12 +182,11 @@ env SDL_AUDIODRIVER=pulse GDK_BACKEND=x11 SDL_VIDEODRIVER=x11 LD_PRELOAD="" %com
 
 Bu ayar, SDL’nin PulseAudio kullanmasını ve X11 üzerinden daha kararlı çalışmasını sağlar.
 
-
 > **Not:** Bu komutlarlada sorunu çözemedik, başlatma seçeneklerini silip devam ediyoruz.
 
 ---
 
-## 3. LD\_PRELOAD ile Fmodstudio Kütüphanelerini Yüklemek
+## 3. LD_PRELOAD ile Fmodstudio Kütüphanelerini Yüklemek
 
 Bazı oyunlarda (örneğin **Isonzo**, **Verdun**, **Tannenberg**) özel ses motorları nedeniyle hata alınabilir.
 
@@ -207,7 +199,7 @@ Benim için bu şekilde görünüyor:
 ~/.local/share/Steam/steamapps/common/Isonzo/Isonzo/Isonzo_Data/Plugins
 ```
 
-### 3.2 Başlatma Seçeneklerine LD\_PRELOAD Eklemek
+### 3.2 Başlatma Seçeneklerine LD_PRELOAD Eklemek
 
 Her oyun için aşağıdaki örneklere göre başlatma seçenekleri ayarlanmalıdır:
 
@@ -254,14 +246,13 @@ Bu ayar, oyunların sisteminizdeki düşük seviyeli ses yöneticileriyle daha u
 
 ---
 
-
 ## 5. Ekstra Yardım ve Topluluk Desteği
 
 🧠 Eğer yukarıdaki tüm adımlara rağmen sorun yaşamaya devam ediyorsanız:
 
-* [Arch Linux forumlarını](https://bbs.archlinux.org/)
-* [Steam Topluluğu Tartışmalarını](https://steamcommunity.com/app) ziyaret edebilirsiniz.
-* [Steam'in resmi GitHub deposunu](https://github.com/ValveSoftware/steam) inceleyebilirsiniz.
+- [Arch Linux forumlarını](https://bbs.archlinux.org/)
+- [Steam Topluluğu Tartışmalarını](https://steamcommunity.com/app) ziyaret edebilirsiniz.
+- [Steam'in resmi GitHub deposunu](https://github.com/ValveSoftware/steam) inceleyebilirsiniz.
 
 Benzer sorunları yaşamış kullanıcılar, sizinle çözüm yollarını paylaşabilir.
 
@@ -273,6 +264,5 @@ Bu rehberde, Arch Linux üzerinde Steam oyunlarında karşılaşılan ses proble
 
 > Eğer bu rehber işinize yaradıysa, lütfen yorum bırakmayı veya paylaşmayı unutmayın. 🎉
 > Daha fazla Linux rehberi için takipte kalın!
-
 
 [responsive_img src="/images/Tannenberg-sonuc-xl.webp" alt="Tannenberg Sonuç Mutlu Sonuç" /]

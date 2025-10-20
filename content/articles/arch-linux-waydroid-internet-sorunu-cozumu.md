@@ -4,7 +4,7 @@ Category: Sorun Giderme
 Tags: waydroid, arch linux, android, linux, iptables, konteyner, ağ yapılandırması
 Slug: arch-linux-waydroid-internet-sorunu-cozumu
 Authors: yuceltoluyag
-Status: draft
+Status: published
 Summary: Waydroid Android logosunda takılıyor mu? İnternet yok mu? Iptables-nft uyumsuzluğunu çöz ve Arch Linux'ta Waydroid'i çalıştır. Adım adım rehber başlayan içeriyle.
 Template: article
 
@@ -55,14 +55,8 @@ Bu sorunun temelinde iki ana faktör yatıyor. İlki, Arch Linux'un varsayılan 
 
 Kısaca ne oluyor? Waydroid, ağ kurulum betiğini çalıştırırken Linux firewall kurallarını düzenlemeye çalışıyor. Ancak nft backend ile legacy kuralları eşleştirmiyor ve bu nedenle gerekli NAT (Network Address Translation) kuralları oluşturamıyor. NAT kurulmazsa, konteyner içindeki Android sistem internete erişemiyor. Bu yüzden açılırken çalışmaya devam ediyor ancak ağ başlatılamadığından boot aşamasında takılıyor.
 
-<div class="info-box note">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Not</div>
-        <p><strong>NAT Nedir?</strong> Network Address Translation (NAT), bir özel ağdaki cihazları (bu durumda Waydroid konteyneri) ana sisteme bağlayan ve onları internete çıkmasını sağlayan bir ağ tekniğidir. Konteyner içindeki Android'in kendi IP adresi vardır ama bu IP'yi internet'e doğrudan gösteremez. NAT kuralları sayesinde konteyner dışarıya çıkabiliyor.</p>
-    </div>
+!!! note "Not"
+    <strong>NAT Nedir?</strong> Network Address Translation (NAT), bir özel ağdaki cihazları (bu durumda Waydroid konteyneri) ana sisteme bağlayan ve onları internete çıkmasını sağlayan bir ağ tekniğidir. Konteyner içindeki Android'in kendi IP adresi vardır ama bu IP'yi internet'e doğrudan gösteremez. NAT kuralları sayesinde konteyner dışarıya çıkabiliyor.
 </div>
 
 ## Çözüm Adımları: Waydroid'i Çalıştırmak
@@ -99,14 +93,8 @@ sudo ln -sf /usr/bin/ip6tables-nft /usr/bin/ip6tables
 
 Bu komutlar iptables-nft paketini kurar ve sistem komutlarını legacy yerine nft versiyonlarıyla bağlantılandırır.
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Dikkat</div>
-        <p>Eğer sistemde başka containerlar çalışıyorsa (Docker, Podman vb.), bu adımı yapmadan önce onları da kontrol etmeniz önerilir çünkü iptables değişiklikleri onları etkileyebilir.</p>
-    </div>
+!!! warning "Dikkat"
+    Eğer sistemde başka containerlar çalışıyorsa (Docker, Podman vb.), bu adımı yapmadan önce onları da kontrol etmeniz önerilir çünkü iptables değişiklikleri onları etkileyebilir.
 </div>
 
 ### Adım 3: Eski ve Bozuk Kuralları Temizle
@@ -154,14 +142,8 @@ ip a
 
 Çıktıda internet bağlantınız olan arayüzü bulun. Genellikle `eth0`, `en0`, `wlan0` veya `wlp` ile başlayan isimler olabilir. Bu adımı doğru yapmazsanız Waydroid yine internete çıkamayacaktır.
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p><strong>Ağ arayüzünü bulma:</strong> Eğer WiFi kullanıyorsanız genellikle "wlan" ile başlayan isim vardır. Kablolu ağ kullanıyorsanız "eth" veya "enp" ile başlayan isim ararsınız. Her durumda `ip a` komutu size tüm arayüzleri gösterecektir.</p>
-    </div>
+!!! tip "İpucu"
+    <strong>Ağ arayüzünü bulma:</strong> Eğer WiFi kullanıyorsanız genellikle "wlan" ile başlayan isim vardır. Kablolu ağ kullanıyorsanız "eth" veya "enp" ile başlayan isim ararsınız. Her durumda `ip a` komutu size tüm arayüzleri gösterecektir.
 </div>
 
 ### Adım 6: IP Yönlendirmesini Etkinleştir

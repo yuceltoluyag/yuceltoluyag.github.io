@@ -29,18 +29,19 @@ Ağ yapılandırmanızın WebSocket bağlantılarını engellemediğinden emin o
 
 ## 1️⃣ Kurulum Ön Koşulları
 
-* **Arch Linux** (güncel)
-* **Docker** kurulu ve çalışır durumda
-* İnternet bağlantısı
-* Minimum **8 GB RAM** (daha büyük modeller için 16 GB+ önerilir)
-* **Ollama uygulaması**:
+- **Arch Linux** (güncel)
+- **Docker** kurulu ve çalışır durumda
+- İnternet bağlantısı
+- Minimum **8 GB RAM** (daha büyük modeller için 16 GB+ önerilir)
+- **Ollama uygulaması**:
 
-  * Eğer Ollama **sisteminizde yüklü** değilse şu komutla yükleyin:
+  - Eğer Ollama **sisteminizde yüklü** değilse şu komutla yükleyin:
 
-    ```bash
+  ```bash
     yay -Syyu ollama
-    ```
-  * Eğer Ollama’yı da Docker içinde çalıştırmak istiyorsanız, **tek container bundle kurulum** bölümüne bakın.
+  ```
+
+  - Eğer Ollama’yı da Docker içinde çalıştırmak istiyorsanız, **tek container bundle kurulum** bölümüne bakın.
 
 ---
 
@@ -185,11 +186,11 @@ docker run -d \
 
 ## 8️⃣ Yaygın Sorunlar
 
-* **WebUI Ollama’ya bağlanamıyor:**
+- **WebUI Ollama’ya bağlanamıyor:**
   Tek container bundle kullanın veya host bağlantısında `--add-host` parametresini unutmayın.
-* **Model indirme yavaş:**
+- **Model indirme yavaş:**
   İnternet hızınıza bağlı. Önceden indirilmiş modelleri `ollama-data` volume içine kopyalayabilirsiniz.
-* **Port çakışması:**
+- **Port çakışması:**
   `-p 3000:8080` gibi portları değiştirin.
 
 ---
@@ -198,10 +199,10 @@ docker run -d \
 
 Bu rehberde:
 
-* Arch Linux’ta Ollama ve Open WebUI kurulumunu
-* CPU, GPU ve tek container bundle senaryolarını
-* Güncelleme yöntemlerini
-* WebSocket gereksinimini
+- Arch Linux’ta Ollama ve Open WebUI kurulumunu
+- CPU, GPU ve tek container bundle senaryolarını
+- Güncelleme yöntemlerini
+- WebSocket gereksinimini
 
 öğrendiniz.
 

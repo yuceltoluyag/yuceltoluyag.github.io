@@ -17,14 +17,8 @@ Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika ek
 
 Öncelikle Sublime Text 3 sürümünü kullandığımı belirtmek isterim. Editöre paket yüklemek için şu adımları izleyebilirsiniz: **view -> show console** menüsünü açın ve sürümünüze uygun gerekli kodları yapıştırarak Enter tuşuna basın. Paket yüklendikten sonra `Ctrl + Shift + P` kombinasyonu ile paket yöneticisini açabilir ve `Install` yazıp Enter’a basarak kurmak istediğiniz paketi seçebilirsiniz.  
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Kolay Kurulum Yöntemi</div>
-        <p><strong>Güncelleme:</strong> <code>Ctrl + Shift + P</code> tuşlarına basarak 'Install Package Manager' seçeneğiyle paket yöneticisini kolayca yükleyebilirsiniz.</p>
-    </div>
+!!! important "Kolay Kurulum Yöntemi"
+    <strong>Güncelleme:</strong> <code>Ctrl + Shift + P</code> tuşlarına basarak 'Install Package Manager' seçeneğiyle paket yöneticisini kolayca yükleyebilirsiniz.
 </div>
 
 

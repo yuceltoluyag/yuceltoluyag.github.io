@@ -13,7 +13,6 @@ Status: published
 Template: article  
 Image: images/git-gpg-imzali-etiket-xl.webp
 
-
 # Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme 🔐
 
 Geliştirme sürecinde **Git etiketleri**, belirli versiyonları işaretlemek için kullanılan önemli bir özelliktir. Ancak, bu etiketleri **GPG ile imzalamak**, sürümünüzün güvenilirliğini artırır ve yetkisiz değişikliklerin önüne geçer. Bu makalede, **Git ile GPG imzalı etiket oluşturma** sürecini ve karşılaşılabilecek olası hataları nasıl giderebileceğinizi anlatacağız. 🚀
@@ -96,43 +95,43 @@ Eğer **Windows Terminal** veya **Git Bash** kullanıyorsanız ve GPG anahtarın
 
 1. Git Bash'de **ev dizininizi** kontrol edin:
 
-   ```bash
-   echo $HOME
-   ```
+```bash
+  echo $HOME
+```
 
 2. Windows Terminal'de kullanıcı profilinizi kontrol edin:
 
-   ```bash
-   echo %USERPROFILE%
-   ```
+```bash
+  echo %USERPROFILE%
+```
 
-   **İki dizinin aynı olduğundan emin olun!**
+**İki dizinin aynı olduğundan emin olun!**
 
 3. Windows Terminal’de şu ortam değişkenini ayarlayın:
 
-   ```bash
-   set GNUPGHOME=C:\Users\yucel\.gnupg
-   ```
+```bash
+  set GNUPGHOME=C:\Users\yucel\.gnupg
+```
 
 4. GPG anahtarınızı içe aktarın:
 
-   ```bash
-   gpg --import C:\Users\yucel\.gnupg\my-private-key.asc
-   ```
+```bash
+  gpg --import C:\Users\yucel\.gnupg\my-private-key.asc
+```
 
 5. Anahtarınızı Git’e tekrar tanıtın:
 
-   ```bash
-   git config --global user.signingkey 8416A43957C19627
-   ```
+```bash
+  git config --global user.signingkey 8416A43957C19627
+```
 
 6. Şimdi tekrar kontrol edin:
 
-   ```bash
-   gpg --list-secret-keys --keyid-format LONG
-   ```
+```bash
+  gpg --list-secret-keys --keyid-format LONG
+```
 
-   Eğer çıktı boş geliyorsa, **GPG'nin sistem genelinde kurulu olup olmadığını** kontrol edin.
+Eğer çıktı boş geliyorsa, **GPG'nin sistem genelinde kurulu olup olmadığını** kontrol edin.
 
 ## 🎯 Sonuç
 
@@ -144,6 +143,4 @@ GPG imzaları, **açık kaynak projelerinde, güvenlik gerektiren kurumsal proje
 
 📌 **Ekstra Bilgi**: Eğer GPG anahtarınızı kaybederseniz, yeni bir anahtar oluşturmanız ve projelerde bu yeni anahtarı kullanmaya başlamanız gerekir. **Eski anahtarınızı iptal etmeyi unutmayın!** 🚨
 
-
 [responsive_img src="/images/git-gpg-imzali-etiket-xl.webp" alt="git-gpg-imzali-etiket" /]
-

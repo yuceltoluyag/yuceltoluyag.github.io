@@ -5,75 +5,61 @@ PELICANOPTS=
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
+PUBLISHDIR=$(BASEDIR)/docs
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-GITHUB_PAGES_BRANCH=main
-
+CNAME=yuceltoluyag.dev
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
 endif
 
-RELATIVE ?= 0
-ifeq ($(RELATIVE), 1)
-	PELICANOPTS += --relative-urls
-endif
-
-SERVER ?= "0.0.0.0"
-
-PORT ?= 0
-ifneq ($(PORT), 0)
-	PELICANOPTS += -p $(PORT)
-endif
-
-
 help:
-	@echo 'Makefile for a pelican Web site                                           '
+	@echo 'Makefile for a pelican Web site and podman commands                       '
 	@echo '                                                                          '
-	@echo 'Usage:                                                                    '
-	@echo '   make html                           (re)generate the web site          '
+	@echo 'Usage (Outside the Container):                                            '
+	@echo '   make build                          builds a dev container             '
 	@echo '   make clean                          remove the generated files         '
-	@echo '   make regenerate                     regenerate files upon modification '
-	@echo '   make publish                        generate using production settings '
-	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
+	@echo '   make post                           create post using container        '
+	@echo '   make run                            runs a dev container               '
+	@echo '                                                                          '
+	@echo 'Usage (Inside the Container):                                             '
+	@echo '   make create-post                    creates a new post using template  '
 	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
-	@echo '   make devserver-global               regenerate and serve on 0.0.0.0    '
-	@echo '   make github                         upload the web site via gh-pages   '
+	@echo '   make publish-docs                   generate using production settings '
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 
-html:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+build:
+	podman build -t yuceltoluyag.dev:latest .
+
+build-docker:
+	docker build -f Containerfile -t yuceltoluyag.dev:latest .
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
 
-regenerate:
-	"$(PELICAN)" -r "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+post:
+	podman run --rm -it --volume .:/app:Z -p 8000:8000 yuceltoluyag.dev:latest create-post
 
-serve:
-	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+post-docker:
+	docker run --rm -it --volume .:/app -p 8000:8000 yuceltoluyag.dev:latest create-post
 
-serve-global:
-	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -b $(SERVER)
+run:
+	podman run --rm -it --volume .:/app:Z -p 8000:8000 yuceltoluyag.dev:latest devserver
+
+run-docker:
+	docker run --rm -it --volume .:/app -p 8000:8000 yuceltoluyag.dev:latest devserver
+
+create-post:
+	python create_post.py
 
 devserver:
-	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" -b 0.0.0.0 $(PELICANOPTS)
+	echo $(CNAME) > "$(OUTPUTDIR)/CNAME"
 
-devserver-global:
-	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -b 0.0.0.0
-
-publish:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
-
-github: publish
-	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
-	git push origin $(GITHUB_PAGES_BRANCH)
-
-
-.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish github
+.PHONY: build clean post publish run create-post devserver publish-docs

@@ -9,8 +9,6 @@ Status: published
 Summary: Arch Linux üzerinde Docker kurulumu, yapılandırması ve temel kullanım adımlarını adım adım anlatan kapsamlı rehber.
 Template: article
 
-
-
 **Docker**, modern yazılım geliştirme ve dağıtım dünyasının vazgeçilmez araçlarından biri.
 Peki, **Arch Linux’ta Docker nasıl kurulur ve yapılandırılır?** Bu rehberde hem **kurulum adımlarını** hem de **temel kullanım ipuçlarını** adım adım öğreneceksiniz.
 
@@ -22,10 +20,10 @@ Docker sayesinde uygulamalarınızı izole edilmiş **container** ortamlarında 
 
 Docker, yazılımları **container** adı verilen izole ortamlar içinde çalıştırmanıza olanak tanır. Bu sayede:
 
-* Farklı sistemlerde **aynı şekilde çalışan** yazılım paketleri oluşturabilirsiniz.
-* **Bağımlılık sorunlarını** ortadan kaldırırsınız.
-* Geliştirme, test ve üretim ortamlarında **tutarlılık** sağlarsınız.
-* Hızlı kurulum ve dağıtım imkânı elde edersiniz.
+- Farklı sistemlerde **aynı şekilde çalışan** yazılım paketleri oluşturabilirsiniz.
+- **Bağımlılık sorunlarını** ortadan kaldırırsınız.
+- Geliştirme, test ve üretim ortamlarında **tutarlılık** sağlarsınız.
+- Hızlı kurulum ve dağıtım imkânı elde edersiniz.
 
 Örneğin, PHP ile geliştirdiğiniz bir web uygulamasını, Docker kullanarak hem kendi bilgisayarınızda hem de sunucuda **tek komutla** çalıştırabilirsiniz.
 
@@ -44,7 +42,7 @@ Terminalinizi açın ve sistem paketlerinizi güncelleyin:
 sudo pacman -Syu
 ```
 
-> 💡 *Sistemi güncel tutmak, olası bağımlılık sorunlarının önüne geçer.*
+> 💡 _Sistemi güncel tutmak, olası bağımlılık sorunlarının önüne geçer._
 
 ### 2.2 Docker Paketini Yükleyin
 
@@ -65,7 +63,7 @@ sudo systemctl is-active docker.service
 
 ```
 
-> 🚦 *`enable` komutu sistemi her açtığınızda Docker’ı otomatik başlatır.*
+> 🚦 _`enable` komutu sistemi her açtığınızda Docker’ı otomatik başlatır._
 
 ---
 
@@ -104,9 +102,9 @@ docker run hello-world
 
 Bu komut:
 
-* İnternetten küçük bir test imajı indirir.
-* Container içinde çalıştırır.
-* Kurulumun başarılı olup olmadığını terminal çıktısıyla gösterir.
+- İnternetten küçük bir test imajı indirir.
+- Container içinde çalıştırır.
+- Kurulumun başarılı olup olmadığını terminal çıktısıyla gösterir.
 
 Başarılı bir kurulumda şu şekilde bir çıktı görmelisiniz:
 
@@ -137,27 +135,27 @@ Docker’ı kullanmaya başlamak için bilmeniz gereken temel komutlar:
 
 ### 6.1 "Permission Denied" Hatası
 
-* **Sebep:** Kullanıcı `docker` grubunda değil.
-* **Çözüm:** `usermod -aG docker $USER` komutunu uygulayın.
+- **Sebep:** Kullanıcı `docker` grubunda değil.
+- **Çözüm:** `usermod -aG docker $USER` komutunu uygulayın.
 
 ### 6.2 Servis Başlamıyor
 
-* **Sebep:** `docker` servisi etkin değil.
-* **Çözüm:**
+- **Sebep:** `docker` servisi etkin değil.
+- **Çözüm:**
 
-  ```bash
+```bash
   sudo systemctl enable docker
   sudo systemctl start docker
-  ```
+```
 
 ### 6.3 Ağ Sorunları
 
-* **Sebep:** Docker’ın oluşturduğu `bridge` ağı bozuk.
-* **Çözüm:** Docker servisini yeniden başlatın:
+- **Sebep:** Docker’ın oluşturduğu `bridge` ağı bozuk.
+- **Çözüm:** Docker servisini yeniden başlatın:
 
-  ```bash
+```bash
   sudo systemctl restart docker
-  ```
+```
 
 ---
 
@@ -168,9 +166,9 @@ Artık uygulamalarınızı izole ortamlarda güvenle çalıştırabilir, gelişt
 
 Docker öğrenmeye devam etmek için şu konulara göz atabilirsiniz:
 
-* Docker Compose ile çoklu container yönetimi
-* Özel Docker imajı oluşturma
-* Volume ve Network yönetimi
+- Docker Compose ile çoklu container yönetimi
+- Özel Docker imajı oluşturma
+- Volume ve Network yönetimi
 
 💬 **Siz Docker’ı hangi projelerinizde kullanıyorsunuz?** Deneyimlerinizi yorumlarda paylaşabilirsiniz!
 
@@ -178,8 +176,8 @@ Docker öğrenmeye devam etmek için şu konulara göz atabilirsiniz:
 
 ✅ **Özet:**
 
-* Arch Linux’ta Docker kurulumu kolaydır ve resmi depodan yapılabilir.
-* Kullanıcı grubuna ekleme ile `sudo` kullanmadan komut çalıştırabilirsiniz.
-* `docker run hello-world` testiyle kurulum doğrulanır.
+- Arch Linux’ta Docker kurulumu kolaydır ve resmi depodan yapılabilir.
+- Kullanıcı grubuna ekleme ile `sudo` kullanmadan komut çalıştırabilirsiniz.
+- `docker run hello-world` testiyle kurulum doğrulanır.
 
 ---

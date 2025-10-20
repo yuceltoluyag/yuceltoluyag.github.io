@@ -1,0 +1,25 @@
+{% macro translations_for(article) %} {% if article.translations %}
+<div id="list-of-translations" class="card bg-base-200 p-4 rounded-xl my-6">
+    <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+        <span class="font-medium text-base-content">Bu yazı aşağıdaki dillerde de mevcuttur:</span>
+        <div class="flex flex-wrap gap-2">
+            {% for translation in article.translations|sort(attribute='lang') %}
+            <a
+                href="{{ SITEURL }}/{{ translation.url }}"
+                class="badge badge-primary hover:badge-secondary transition-colors"
+                hreflang="{{ translation.lang }}">
+                <span class="mr-1">🌐</span>
+                {{ translation.lang }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endif %} {% endmacro %}
+
+{% macro entry_hreflang(entry) %}
+  {% for translation in entry.translations %}
+    <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ SITEURL }}/{{ translation.url }}">
+  {% endfor %}
+{% endmacro %}

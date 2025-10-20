@@ -1,18 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 import os
-from pymdownx import emoji
+from datetime import date
 
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
 SITEURL = (
-    "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8000"
+    "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8080"
 )
 CANONICAL_URL = (
     "https://yuceltoluyag.github.io/"  # Her zaman production URL'i kullan
 )
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
+SITETAGLINE = ">| Linux gamer, Python lover, and technology enthusiast |<"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
 DESCRIPTION = "Linux, Python ve Web Geliştirme Rehberleri"
 ARTICLE_PATHS = ["articles"]
@@ -25,8 +26,8 @@ TIMEZONE = "Europe/Istanbul"
 
 DEVELOPMENT_MODE = False
 
-# Disqus Yorum Sistemi (devre dışı)
-# DISQUS_SITENAME = ""
+# Disqus Yorum Sistemi
+DISQUS_SITENAME = "yuceltoluyag"
 
 DEFAULT_LANG = "tr"
 
@@ -80,11 +81,12 @@ ARTICLE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
 PAGE_LANG_URL = "{slug}-{lang}/"
 PAGE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
 # Uncomment following line if you want document-relative URLs when developing
-RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 # Theme ayarları
-THEME = "themes/Minel"
-THEME_STATIC_DIR = "assets"
+THEME = "themes/baba"
+
+THEME_STATIC_PATHS = ["static"]
 WITH_FUTURE_DATES = True
 USE_FOLDER_AS_CATEGORY = True
 WEBASSETS_DEBUG = False
@@ -147,10 +149,10 @@ common_plugins = [
     "pelican.plugins.related_posts",
     "pelican.plugins.neighbors",
     "pelican.plugins.statistics",
-    "pelican.plugins.series",
+ 
     "plugins.fix_sitemap",
     "plugins.json_feed",
-    "responsive_image_shortcode",  # Responsive Image Shortcode
+    "plugins.responsive_image_shortcode",  # Responsive Image Shortcode
     "plugins.search",
     "plugins.pelican_redirect",
     "plugins.video_schema",
@@ -268,9 +270,24 @@ SOCIAL = {
 ADMIN_TOOLS = False  # Sadece geliştirme sırasında True yapılmalı
 
 NAVBAR_LINKS = [
-    {"name": "Ana Sayfa", "url": "/", "target": "_self"},
-    {"name": "Hakkımda", "url": "/hakkimda", "target": "_self"},
-    {"name": "Bağış", "url": "/bagis", "target": "_self"},
+    {
+        "name": "Ana Sayfa",
+        "url": "/",
+        "target": "_self",
+        "icon": "fa-solid fa-house",
+    },
+    {
+        "name": "Hakkımda",
+        "url": "/hakkimda",
+        "target": "_self",
+        "icon": "fa-solid fa-user",
+    },
+    {
+        "name": "Bağış",
+        "url": "/bagis",
+        "target": "_self",
+        "icon": "fa-solid fa-hand-holding-heart",
+    },
 ]
 
 # --- License ---
@@ -295,28 +312,18 @@ IGNORE_FILES = ["404.html"]
 
 # --- Markdown Extensions ---
 MARKDOWN = {
-    "extensions": [
-        "pymdownx.mark",
-        "pymdownx.smartsymbols",
-        "pymdownx.tilde",
-        "pymdownx.saneheaders",
-        "pymdownx.keys",
-        "pymdownx.inlinehilite",
-        "pymdownx.emoji",
-        "pymdownx.extra",
-        "markdown.extensions.attr_list",
-        "pymdownx.highlight",
-        "pymdownx.superfences",
-    ],
     "extension_configs": {
-        "pymdownx.emoji": {"emoji_generator": emoji.to_png_sprite},
-        "pymdownx.highlight": {
-            "use_pygments": True,
-            "auto_title": True,
-            "linenums_style": "pymdownx-inline",
+        "markdown.extensions.codehilite": {"css_class": "highlight"},
+        "markdown.extensions.fenced_code": {},
+        "markdown.extensions.tables": {},
+        "markdown.extensions.toc": {
+            "permalink": "#",
         },
-        "pymdownx.superfences": {"custom_fences": []},
+        "markdown.extensions.admonition": {},
+        "markdown.extensions.attr_list": {},
+        "markdown.extensions.footnotes": {},
     },
+    "output_format": "html5",
 }
 
 # Özel sayfa şablonları

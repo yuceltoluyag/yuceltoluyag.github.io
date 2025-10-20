@@ -11,14 +11,8 @@ Status: published
 Template: article
 Image: images/earncom-xl.webp
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli Güncelleme</div>
-        <p><a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" target="_blank" rel="noopener noreferrer">Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı</a> bu sebeple bu makalenin artık geçerli olmadığını unutmayın. Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil. Yeni sistemde yatırım yap kazan-kaybet mantığı ile çalışıyor.</p>
-    </div>
+!!! warning "Önemli Güncelleme"
+    <a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" rel="noopener noreferrer" target="_blank">Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı</a> bu sebeple bu makalenin artık geçerli olmadığını unutmayın. Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil. Yeni sistemde yatırım yap kazan-kaybet mantığı ile çalışıyor.
 </div>
 
 

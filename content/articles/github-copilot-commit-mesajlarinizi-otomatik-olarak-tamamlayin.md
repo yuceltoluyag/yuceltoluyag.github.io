@@ -61,6 +61,7 @@ GitHub Copilot'ın **sizin stilinize uygun** commit mesajları oluşturması iç
 ### 1. Proje Yapılandırma Dosyalarını Oluşturma
 
 İlk olarak, proje klasörünüzde gerekli dizin ve dosyaları oluşturun:
+
 ```bash
 mkdir -p .github
 touch .github/copilot-instructions.md
@@ -76,21 +77,25 @@ touch .github/copilot-instructions.md
 ## Code Style Guide
 
 ### General Guidelines
+
 - Keep the code simple and readable.
 - Use Prettier for code formatting.
 
 ### CSS
+
 - Use class names that are descriptive and follow a consistent naming convention.
 - Avoid using IDs for styling.
 - Organize CSS properties in a logical order.
 
 ### Tailwind CSS V4
+
 - Use utility-first classes to build components.
 - Avoid using custom CSS when possible.
 - Group related classes together for better readability.
 - Use DaisyUI classes for components.
 
 ### JavaScript
+
 - Use `const` and `let` instead of `var`.
 - Prefer arrow functions for anonymous functions.
 - Use template literals for string concatenation.
@@ -102,6 +107,7 @@ touch .github/copilot-instructions.md
 ## Commit Style Guide
 
 We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) style for our commit messages. Here are some examples:
+
 - `feat: add new user authentication module`
 - `fix: resolve issue with data fetching.`
 - `docs: update README with installation instructions`
@@ -111,6 +117,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0
 - `chore: update dependencies`
 
 ### Commit Message Rules
+
 - Use imperative mood (e.g., "add feature" not "added feature")
 - Keep the subject line under 50 characters
 - Capitalize the subject line
@@ -125,7 +132,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0
 
 ```json
 {
-    "github.copilot.chat.codeGeneration.useInstructionFiles": true
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true
 }
 ```
 
@@ -170,6 +177,7 @@ git commit
 ### 3. Copilot'ın Önerilerini Kullanın
 
 VS Code'da commit editörü açıldığında:
+
 1. Editörün üst kısmında bir **"Generate Commit Message"** (Commit Mesajı Oluştur) butonu göreceksiniz
 2. Bu butona tıklayın
 3. GitHub Copilot, yaptığınız değişiklikleri analiz edecek ve uygun bir commit mesajı önerecektir
@@ -205,11 +213,14 @@ Copilot her zaman mükemmel değildir. Önerdiği commit mesajlarını her zaman
 - Nadiren tamamen **alakasız mesajlar** önerebilir
 
 ### 3. Özel Prompt İpuçları Kullanın
+
 Commit editörüne özel notlar ekleyerek Copilot'a rehberlik edebilirsiniz:
+
 ```
 # Copilot: Bu değişiklik performans iyileştirmesi için yapıldı
 # Copilot: issue #123 ile ilgili
 ```
+
 Bu notlar commit'e dahil edilmez, sadece Copilot'a yardımcı olur.
 
 ## Sık Karşılaşılan Sorunlar ve Çözümleri
@@ -224,27 +235,32 @@ Bu notlar commit'e dahil edilmez, sadece Copilot'a yardımcı olur.
 ### ❓ "Use instructions files instead" Hatası Alıyorum
 
 Bu hata, eski talimat yöntemini kullandığınızda ortaya çıkar. Çözüm için:
+
 1. `.vscode/settings.json` dosyanızı açın
 2. Eski talimat ayarlarını kaldırın:
-   ```json
-   // Bu satırları silin
-   "github.copilot.chat.codeGeneration.instructions": [
-       {
-           "file": "docs/code-style.md"
-       }
-   ],
-   "github.copilot.chat.commitMessageGeneration.instructions": [
-       {
-           "file": "docs/commit-style.md"
-       }
-   ]
-   ```
+
+```json
+  // Bu satırları silin
+  "github.copilot.chat.codeGeneration.instructions": [
+      {
+          "file": "docs/code-style.md"
+      }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+      {
+          "file": "docs/commit-style.md"
+      }
+  ]
+```
+
 3. Yeni ayarı ekleyin:
-   ```json
-   {
-       "github.copilot.chat.codeGeneration.useInstructionFiles": true
-   }
-   ```
+
+```json
+{
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true
+}
+```
+
 4. `.github/copilot-instructions.md` dosyası oluşturun ve talimatlarınızı buraya taşıyın
 
 ### ❓ Öneriler Çok Genel veya Alakasızsa
@@ -254,6 +270,7 @@ Bu hata, eski talimat yöntemini kullandığınızda ortaya çıkar. Çözüm i�
 3. Commit editöründe manuel ipuçları ekleyin
 
 ### ❓ VS Code'da "Generate Commit Message" Butonu Gözükmüyor
+
 1. GitHub Copilot Chat eklentisini de yüklediğinizden emin olun
 2. VS Code'u güncelleyin
 3. Eklentiyi devre dışı bırakıp yeniden etkinleştirin

@@ -9,10 +9,9 @@ Summary: GhostMirror, Arch Linux kullanıcıları için geliştirilmiş akıllı
 Template: article
 Image: images/ghostmirror-arch-linux-kullanimi-xl.webp
 
-
-
 ## 1. Giriş 📌
-Arch Linux kullanıcıları olarak, sistemimizi hızlı ve güvenilir paket aynaları (mirror) ile güncel tutmak çok önemlidir. Ancak, bazen paket güncellemeleri görünmez ve güncelleme sırasında “paket bulunamadı” gibi hatalarla karşılaşabiliriz. Bu durumun en yaygın sebeplerinden biri, yerel `mirrorlist` dosyamızın güncel olmayan veya senkronize olmayan aynaları içermesidir.
+
+Arch Linux kullanıcıları olarak, sistemimizi hızlı ve güvenilir paket aynaları (mirror) ile güncel tutmak çok önemlidir. Ancak, bazen paket güncellemeleri görünmez ve güncelleme sırasında “paket bulunamadı" gibi hatalarla karşılaşabiliriz. Bu durumun en yaygın sebeplerinden biri, yerel `mirrorlist` dosyamızın güncel olmayan veya senkronize olmayan aynaları içermesidir.
 
 İşte bu noktada **GhostMirror** devreye giriyor. GhostMirror, Arch Linux kullanıcılarının ayna listelerini otomatik olarak yönetmelerini, güncel ve hızlı aynaları kolayca bulmalarını sağlayan güçlü bir araçtır. Aynı zamanda hatalı veya güncel olmayan aynaları tespit edip detaylı analiz sunar.
 
@@ -28,11 +27,11 @@ GhostMirror, Arch Linux kullanıcıları için geliştirilmiş bir ayna kontrol 
 
 Başlıca özellikleri:
 
-* Aynaların paket veritabanlarını yerel veritabanı ile karşılaştırarak güncel olup olmadığını gösterir.
-* Hangi aynaların senkronize olmadığını, hangi paketlerin eksik veya eski olduğunu detaylıca listeler.
-* Aynaları hız, ping ve güncellik gibi kriterlere göre sıralayabilir.
-* Otomatik olarak systemd servisi ile ayna listesini güncelleyebilir, sizin manuel müdahalenize gerek kalmaz.
-* Hatalı aynalarla ilgili nedenleri araştırıp raporlayabilir (investigation modu).
+- Aynaların paket veritabanlarını yerel veritabanı ile karşılaştırarak güncel olup olmadığını gösterir.
+- Hangi aynaların senkronize olmadığını, hangi paketlerin eksik veya eski olduğunu detaylıca listeler.
+- Aynaları hız, ping ve güncellik gibi kriterlere göre sıralayabilir.
+- Otomatik olarak systemd servisi ile ayna listesini güncelleyebilir, sizin manuel müdahalenize gerek kalmaz.
+- Hatalı aynalarla ilgili nedenleri araştırıp raporlayabilir (investigation modu).
 
 💡 **İpucu:** GhostMirror, özellikle Arch Linux gibi hızlı değişen dağıtımlarda ayna sorunlarını önlemek için mükemmel bir yardımcıdır.
 
@@ -82,12 +81,12 @@ ghostmirror -PoclLS Italy,Germany,France ./mirrorlist.new 30 state,outofdate,mor
 
 Burada:
 
-* `-P` ilerleme ve renkli çıktı sağlar,
-* `-o` tablo formatında çıktı verir,
-* `-c` ülkeleri seçer,
-* `-l` çıktı dosyasını belirtir,
-* `-L` maksimum ayna sayısını sınırlar,
-* `-S` sıralama modunu belirtir (hata verenler çıkarılır, güncel olmayanlar öncelikli gösterilir, ping bazlı önceliklendirme yapılır).
+- `-P` ilerleme ve renkli çıktı sağlar,
+- `-o` tablo formatında çıktı verir,
+- `-c` ülkeleri seçer,
+- `-l` çıktı dosyasını belirtir,
+- `-L` maksimum ayna sayısını sınırlar,
+- `-S` sıralama modunu belirtir (hata verenler çıkarılır, güncel olmayanlar öncelikli gösterilir, ping bazlı önceliklendirme yapılır).
 
 **2. Adım:** Oluşturduğunuz listeyi daha detaylı test edin ve optimize edin:
 
@@ -97,10 +96,10 @@ ghostmirror -PmuolsS ./mirrorlist.new ./mirrorlist.new light state,outofdate,mor
 
 Burada:
 
-* `-m` yerel listeyi kullanır,
-* `-u` sadece aktif (yorum satırı olmayan) aynaları kullanır,
-* `-s` hız testi yapar,
-* `-S` sıralamayı değiştirir.
+- `-m` yerel listeyi kullanır,
+- `-u` sadece aktif (yorum satırı olmayan) aynaları kullanır,
+- `-s` hız testi yapar,
+- `-S` sıralamayı değiştirir.
 
 **3. Adım:** Eski mirrorlist dosyanızı yedekleyin ve yenisiyle değiştirin:
 
@@ -119,9 +118,7 @@ GhostMirror’u otomatik modda kullanarak systemd timer ile ayna listenizin sür
 
 **Hazırlık:**
 
-
 Öncelikle konfigürasyon dizini oluşturun:
-
 
 ```bash
 mkdir -p ~/.config/ghostmirror
@@ -180,13 +177,13 @@ Bu mod, hatalı aynaları listeler ve sorunun olası nedenlerini açıklar.
 
 ## 5. Önemli Parametreler ve Seçenekler
 
-* `-c --country`: Ülke bazlı ayna seçimi yapar.
-* `-m --mirrorfile`: Yerel mirrorlist dosyasını kullanır.
-* `-u --uncommented`: Sadece aktif (yorum satırı olmayan) aynaları kullanır.
-* `-S --sort`: Aynaları sıralama modlarını belirler. Örnek: `state,outofdate,ping`
-* `-s --speed`: Hız testi türünü seçer. `light` (küçük paket), `normal`, `heavy` (büyük paket).
-* `-l --list`: Yeni mirrorlist dosyasının kaydedileceği konumu belirtir.
-* `-D --systemd`: Otomatik systemd timer modunu aktif eder.
+- `-c --country`: Ülke bazlı ayna seçimi yapar.
+- `-m --mirrorfile`: Yerel mirrorlist dosyasını kullanır.
+- `-u --uncommented`: Sadece aktif (yorum satırı olmayan) aynaları kullanır.
+- `-S --sort`: Aynaları sıralama modlarını belirler. Örnek: `state,outofdate,ping`
+- `-s --speed`: Hız testi türünü seçer. `light` (küçük paket), `normal`, `heavy` (büyük paket).
+- `-l --list`: Yeni mirrorlist dosyasının kaydedileceği konumu belirtir.
+- `-D --systemd`: Otomatik systemd timer modunu aktif eder.
 
 💡 **İpucu:** Hız testi ve ping sonuçlarını birleştirerek en uygun aynaları kolayca seçebilirsiniz.
 
@@ -194,10 +191,10 @@ Bu mod, hatalı aynaları listeler ve sorunun olası nedenlerini açıklar.
 
 ## 6. İpuçları ve En İyi Uygulamalar
 
-* Düzenli olarak GhostMirror ile aynalarınızı kontrol edin, özellikle büyük güncellemelerden önce.
-* Otomatik mod ile mirrorlist güncellemelerini arka planda çalıştırarak işinizi kolaylaştırın.
-* Birden fazla ülke seçerek daha geniş ve hızlı ayna havuzu oluşturabilirsiniz.
-* Systemd timer sayesinde her gün belli saatlerde otomatik kontrol yapabilirsiniz.
+- Düzenli olarak GhostMirror ile aynalarınızı kontrol edin, özellikle büyük güncellemelerden önce.
+- Otomatik mod ile mirrorlist güncellemelerini arka planda çalıştırarak işinizi kolaylaştırın.
+- Birden fazla ülke seçerek daha geniş ve hızlı ayna havuzu oluşturabilirsiniz.
+- Systemd timer sayesinde her gün belli saatlerde otomatik kontrol yapabilirsiniz.
 
 ---
 
@@ -205,11 +202,11 @@ Bu mod, hatalı aynaları listeler ve sorunun olası nedenlerini açıklar.
 
 GhostMirror, düzenli olarak güncellenerek performans ve kararlılık açısından geliştirilmiştir. Önemli sürüm notlarından bazıları:
 
-* v0.13.1: Versiyon hatası düzeltildi.
-* v0.12.1: Otomatik sürüm güncelleme iyileştirmeleri.
-* v0.10.0: İlk ayna zorunluluğu kaldırıldı, alternatif ayna araması eklendi.
-* v0.9.21: PKGBUILD ve dokümantasyon güncellendi.
-* v0.8.0: Stabilite ve hız iyileştirmeleri.
+- v0.13.1: Versiyon hatası düzeltildi.
+- v0.12.1: Otomatik sürüm güncelleme iyileştirmeleri.
+- v0.10.0: İlk ayna zorunluluğu kaldırıldı, alternatif ayna araması eklendi.
+- v0.9.21: PKGBUILD ve dokümantasyon güncellendi.
+- v0.8.0: Stabilite ve hız iyileştirmeleri.
 
 Daha ayrıntılı sürüm notları ve değişiklikler paket içinde mevcuttur.
 
@@ -227,14 +224,9 @@ Deneyimlerinizi paylaşmayı ve topluluğa katkıda bulunmayı unutmayın.
 
 ---
 
-<div class="info-box tip">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-  </svg>
-  <div>
-    <div class="alert-title">İpucu</div>
-    <p>GhostMirror ile otomatik ayna güncelleme işlemlerini systemd timer ile kolayca halledebilirsiniz. Bu sayede manuel işlemlerden kurtulursunuz.</p>
-  </div>
+!!! tip "İpucu"
+GhostMirror ile otomatik ayna güncelleme işlemlerini systemd timer ile kolayca halledebilirsiniz. Bu sayede manuel işlemlerden kurtulursunuz.
+
 </div>
 
 ## Örnek Çıktılar

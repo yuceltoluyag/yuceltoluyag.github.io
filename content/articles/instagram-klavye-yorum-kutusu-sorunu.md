@@ -18,6 +18,7 @@ Instagram kullanıcılarının sıkça yaşadığı ama çözümünü kolay kola
 
 Peki bu sorunun sebebi ne? Çözüm basit mi? Evet. Bu yazıda sorunun neden kaynaklandığını, hangi ayarın bunu tetiklediğini ve nasıl çözüleceğini adım adım göstereceğiz. Üstelik bu çözüm sadece Instagram için değil, aynı problemi yaşadığınız diğer uygulamalar için de geçerli!
 [responsive_img src="/images/instagram-klavye-yorum-kutusu-sorunu-xl.webp" alt="İnstagram Klavye Sorunu Çözümü" /]
+
 ---
 
 ## 🧠 Neden Bu Sorun Yaşanıyor?
@@ -36,31 +37,24 @@ Aşağıdaki adımları takip ederek bu sorunu tamamen çözebilirsiniz:
 
 Instagram uygulaması açıkken ayar değişiklikleri geçerli olmayabilir.
 
-
-
 ---
 
 ### 2. Telefon Ayarlarına Girin
 
-Ana ekrandan “Ayarlar” uygulamasına dokunun.
-
+Ana ekrandan “Ayarlar" uygulamasına dokunun.
 
 ---
 
 ### 3. Ekran Ayarları > Ana Ekran Tuşları Bölümüne Girin
 
-* Ayarlar > **Ekran** > **Ana Ekran Tuşları** yolunu izleyin.
-* Bu menü bazı markalarda “Navigasyon Çubuğu” olarak da geçebilir.
-
-
+- Ayarlar > **Ekran** > **Ana Ekran Tuşları** yolunu izleyin.
+- Bu menü bazı markalarda “Navigasyon Çubuğu" olarak da geçebilir.
 
 ---
 
-### 4. “Menü Tuşunu Gizle” veya “Dokunmatik Tuşları Gizle” Seçeneğini Kapatın
+### 4. “Menü Tuşunu Gizle" veya “Dokunmatik Tuşları Gizle" Seçeneğini Kapatın
 
 Bu ayar aktifse, klavyenin ekran boyutunu yanlış yorumlamasına neden olabilir. Bu ayarı **kapalı konuma** getirin.
-
-
 
 ---
 
@@ -68,15 +62,11 @@ Bu ayar aktifse, klavyenin ekran boyutunu yanlış yorumlamasına neden olabilir
 
 Ayarlarda değişiklik yaptıktan sonra Instagram uygulamasını tekrar açın.
 
-
-
 ---
 
 ### 6. Yorum Yazma Alanını Test Edin
 
 Herhangi bir gönderinin altına yorum yazmayı deneyin. Klavye artık yorum kutusunu kapatmamalı.
-
-
 
 ---
 
@@ -84,11 +74,11 @@ Herhangi bir gönderinin altına yorum yazmayı deneyin. Klavye artık yorum kut
 
 Bu çözüm yöntemi sadece Instagram için değil, aşağıdaki uygulamalarda da işe yarayabilir:
 
-* WhatsApp
-* Facebook
-* Twitter (X)
-* Bankacılık uygulamaları
-* Not uygulamaları
+- WhatsApp
+- Facebook
+- Twitter (X)
+- Bankacılık uygulamaları
+- Not uygulamaları
 
 Aynı şekilde klavyenin ekranın yanlış bölümüne denk geldiği durumlarda bu ayarı kontrol etmek çözüm sağlayacaktır.
 
@@ -96,9 +86,9 @@ Aynı şekilde klavyenin ekranın yanlış bölümüne denk geldiği durumlarda 
 
 ## 🚨 Dikkat Edilmesi Gerekenler
 
-* Ayarlar menüsü cihaz markasına göre farklılık gösterebilir. Samsung, Xiaomi, Oppo gibi üreticilerde menü isimleri değişebilir.
-* “Tam ekran jestleri” aktifse, bu da benzer sorunlara neden olabilir. Gerekirse onu da devre dışı bırakıp deneyin.
-* Instagram Lite sürümünde aynı hata olmayabilir, ancak çözüm mantığı aynıdır.
+- Ayarlar menüsü cihaz markasına göre farklılık gösterebilir. Samsung, Xiaomi, Oppo gibi üreticilerde menü isimleri değişebilir.
+- “Tam ekran jestleri" aktifse, bu da benzer sorunlara neden olabilir. Gerekirse onu da devre dışı bırakıp deneyin.
+- Instagram Lite sürümünde aynı hata olmayabilir, ancak çözüm mantığı aynıdır.
 
 ---
 
@@ -106,9 +96,9 @@ Aynı şekilde klavyenin ekranın yanlış bölümüne denk geldiği durumlarda 
 
 Eğer ayarlara erişiminiz yoksa ya da geçici bir çözüm arıyorsanız:
 
-* Klavye açıldığında ekranı iki parmağınızla küçültüp yorum kutusunu görmeye çalışın.
-* Uygulamayı yatay moda alıp yazı yazmayı deneyin.
-* Farklı bir klavye uygulaması (örneğin Gboard) yüklemeyi deneyin.
+- Klavye açıldığında ekranı iki parmağınızla küçültüp yorum kutusunu görmeye çalışın.
+- Uygulamayı yatay moda alıp yazı yazmayı deneyin.
+- Farklı bir klavye uygulaması (örneğin Gboard) yüklemeyi deneyin.
 
 ---
 
@@ -116,10 +106,10 @@ Eğer ayarlara erişiminiz yoksa ya da geçici bir çözüm arıyorsanız:
 
 Bu sorun özellikle şu cihazlarda kullanıcılar tarafından raporlanmıştır:
 
-* Xiaomi Redmi serisi
-* Huawei eski modeller
-* Samsung Galaxy J serisi
-* Oppo A serisi
+- Xiaomi Redmi serisi
+- Huawei eski modeller
+- Samsung Galaxy J serisi
+- Oppo A serisi
 
 ---
 
@@ -127,7 +117,7 @@ Bu sorun özellikle şu cihazlarda kullanıcılar tarafından raporlanmıştır:
 
 | Sorun                          | Klavye yorum kutusunun üstünü kapatması         |
 | ------------------------------ | ----------------------------------------------- |
-| Sebep                          | “Menü tuşunu gizle” gibi ekran ayarları         |
+| Sebep                          | “Menü tuşunu gizle" gibi ekran ayarları         |
 | Kalıcı çözüm                   | Ayarı kapatmak ve Instagram’ı yeniden başlatmak |
 | Diğer uygulamalarda da geçerli | Evet                                            |
 | Alternatif çözümler            | Ekranı küçültmek, farklı klavye kullanmak       |
@@ -143,4 +133,3 @@ Sorununuz çözüldüyse yorumlarda belirtmeyi unutmayın! 👇
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="2RPZZpfZmRA"></lite-youtube>
-

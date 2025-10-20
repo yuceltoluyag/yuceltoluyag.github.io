@@ -11,12 +11,11 @@ Status: published
 Template: article
 Image: images/Microsoft-PowerShell-Archive-xl.webp
 
+## PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü 🎯
 
+Python sürümlerini yönetmek için kullanılan **Pyenv-Win**, PowerShell 7.5.0 sürümünde bazı kullanıcılar için kurulum hatası verebilir. Özellikle `Microsoft.PowerShell.Archive` modülü eksik olduğunda aşağıdaki hata ile karşılaşabilirsiniz:
 
-## PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü 🎯  
-Python sürümlerini yönetmek için kullanılan **Pyenv-Win**, PowerShell 7.5.0 sürümünde bazı kullanıcılar için kurulum hatası verebilir. Özellikle `Microsoft.PowerShell.Archive` modülü eksik olduğunda aşağıdaki hata ile karşılaşabilirsiniz:  
-
-```powershell  
+```powershell
 Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
 
         Directory: C:\Users\yucel
@@ -44,53 +43,60 @@ Line |
      |      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      | Cannot find path 'C:\Users\yucel\.pyenv\pyenv-win-master' because it does not exist.
 pyenv-win is successfully installed. You may need to close and reopen your terminal before using it.
-```  
+```
 
-Bu hata nedeniyle **Expand-Archive çalışmıyor**, dolayısıyla Pyenv-Win düzgün kurulmamış oluyor. Neyse ki, bu sorunun basit bir çözümü var! 🚀  
+Bu hata nedeniyle **Expand-Archive çalışmıyor**, dolayısıyla Pyenv-Win düzgün kurulmamış oluyor. Neyse ki, bu sorunun basit bir çözümü var! 🚀
 
-## Hata Sebebi 🤔  
-PowerShell 7.5.0, bazı sistemlerde **Microsoft.PowerShell.Archive modülünü otomatik olarak yükleyemiyor**. Pyenv-Win kurulum betiği (`install-pyenv-win.ps1`), `Expand-Archive` komutunu çağırdığı için hata alıyorsunuz.  
+## Hata Sebebi 🤔
 
-## Çözüm: Kurulum Betiğini Düzenleyin 🛠️  
-Bu hatayı gidermek için `install-pyenv-win.ps1` dosyanızı açın ve aşağıdaki satırı bulun:  
+PowerShell 7.5.0, bazı sistemlerde **Microsoft.PowerShell.Archive modülünü otomatik olarak yükleyemiyor**. Pyenv-Win kurulum betiği (`install-pyenv-win.ps1`), `Expand-Archive` komutunu çağırdığı için hata alıyorsunuz.
 
-```powershell  
+## Çözüm: Kurulum Betiğini Düzenleyin 🛠️
+
+Bu hatayı gidermek için `install-pyenv-win.ps1` dosyanızı açın ve aşağıdaki satırı bulun:
+
+```powershell
 Start-Process -FilePath "powershell.exe" -ArgumentList @(
         "-NoProfile",
         "-Command `"Microsoft.PowerShell.Archive\Expand-Archive -Path \`"$DownloadPath\`" -DestinationPath \`"$PyEnvDir\`"`""
-    ) -NoNewWindow -Wait  
-```  
+    ) -NoNewWindow -Wait
+```
 
-Bunu şu şekilde değiştirin:  
+Bunu şu şekilde değiştirin:
 
-```powershell  
-Start-Process -FilePath "pwsh.exe" -ArgumentList @(  
-    "-NoProfile",  
-    "-Command \"Expand-Archive -Path \`"$DownloadPath\`" -DestinationPath \`"$PyEnvDir\`"\""  
-) -NoNewWindow -Wait  
-```  
+```powershell
+Start-Process -FilePath "pwsh.exe" -ArgumentList @(
+    "-NoProfile",
+    "-Command \"Expand-Archive -Path \`"$DownloadPath\`" -DestinationPath \`"$PyEnvDir\`"\""
+) -NoNewWindow -Wait
+```
 
-### **Bu Değişiklik Ne Yapıyor?**  
-- `Expand-Archive` komutunu **yeni bir PowerShell sürecinde (`pwsh.exe`) çalıştırarak** modül eksikliğini bypass ediyor.  
-- Böylece **arşiv açma işlemi** sorunsuz tamamlanıyor ve Pyenv-Win kurulabiliyor. 🎉  
+### **Bu Değişiklik Ne Yapıyor?**
 
-## Alternatif Çözüm 🏗️  
-Eğer yukarıdaki yöntem size karmaşık geldiyse, **PowerShell modülünü manuel yükleyerek** de sorunu çözebilirsiniz:  
+- `Expand-Archive` komutunu **yeni bir PowerShell sürecinde (`pwsh.exe`) çalıştırarak** modül eksikliğini bypass ediyor.
+- Böylece **arşiv açma işlemi** sorunsuz tamamlanıyor ve Pyenv-Win kurulabiliyor. 🎉
 
-1. **PowerShell'i yönetici olarak açın** ve şu komutu çalıştırın:  
-   ```powershell  
-   Install-Module -Name Microsoft.PowerShell.Archive -Force -Scope CurrentUser  
-   ```  
+## Alternatif Çözüm 🏗️
 
-2. **Modülü içe aktarın:**  
-   ```powershell  
-   Import-Module Microsoft.PowerShell.Archive  
-   ```  
+Eğer yukarıdaki yöntem size karmaşık geldiyse, **PowerShell modülünü manuel yükleyerek** de sorunu çözebilirsiniz:
 
-3. **Pyenv-Win kurulumunu tekrar deneyin.**  
+1. **PowerShell'i yönetici olarak açın** ve şu komutu çalıştırın:
 
-## Sonuç ✅  
-PowerShell 7.5.0'da Pyenv-Win kurulumu sırasında `Expand-Archive` hatası alıyorsanız, yukarıdaki çözüm yöntemlerinden birini kullanarak sorunu giderebilirsiniz. Kurulum sonrasında terminalinizi yeniden başlatmayı unutmayın! 🔄  
+```powershell
+  Install-Module -Name Microsoft.PowerShell.Archive -Force -Scope CurrentUser
+```
+
+2. **Modülü içe aktarın:**
+
+```powershell
+  Import-Module Microsoft.PowerShell.Archive
+```
+
+3. **Pyenv-Win kurulumunu tekrar deneyin.**
+
+## Sonuç ✅
+
+PowerShell 7.5.0'da Pyenv-Win kurulumu sırasında `Expand-Archive` hatası alıyorsanız, yukarıdaki çözüm yöntemlerinden birini kullanarak sorunu giderebilirsiniz. Kurulum sonrasında terminalinizi yeniden başlatmayı unutmayın! 🔄
 
 Başka hata veya sorularınız olursa yorum bırakabilirsiniz. Happy coding! 🚀
 

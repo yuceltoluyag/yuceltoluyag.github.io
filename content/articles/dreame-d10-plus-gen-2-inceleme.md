@@ -11,14 +11,8 @@ Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-xl.webp
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Reklam Değildir</div>
-        <p>Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Dreame ve Roborge markalarıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir.</p>
-    </div>
+!!! warning "Reklam Değildir"
+    Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Dreame ve Roborge markalarıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir.
 </div>
 
 # Dreame D10 Plus Gen 2 İnceleme

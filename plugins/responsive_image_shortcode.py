@@ -46,7 +46,7 @@ def responsive_image_shortcode(content):
         # Boyut varyantlarını oluştur
         sm_src = f"{base_path}-sm.{ext}"
         md_src = f"{base_path}-md.{ext}"
-        lg_src = f"{base_path}-xl.{ext}"
+        lg_src = f"{base_path}-lg.{ext}"
         xl_src = f"{base_path}-xl.{ext}"
 
         return f"""<img class="responsive-img" 

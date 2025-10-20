@@ -10,16 +10,13 @@ Summary: Arch Linux’ta disk alanınız az mı görünüyor? Gerçekte boş yer
 Template: article
 Image: images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp
 
-
-
-
-
 ## 🎯 Giriş
 
 Arch Linux kullanıcısıysanız, sisteminizde yüzlerce gigabayt boş alan olmasına rağmen neden yalnızca belirli bir miktar görünür olduğunu merak etmişsinizdir. Örneğin: Diskinizde 300 GB boş yer olduğunu biliyorsunuz, ama `df -h` size yalnızca 173 GB gösteriyor. Peki neden?
 
-Bu rehberde, bu kafa karıştırıcı problemi adım adım analiz edecek ve çözeceğiz. Hedefimiz, **Arch Linux sisteminde eksik görünen disk alanının nerelere “kaybolduğunu”** anlamak ve etkili şekilde geri kazanmaktır. 🤓
+Bu rehberde, bu kafa karıştırıcı problemi adım adım analiz edecek ve çözeceğiz. Hedefimiz, **Arch Linux sisteminde eksik görünen disk alanının nerelere “kaybolduğunu"** anlamak ve etkili şekilde geri kazanmaktır. 🤓
 [responsive_img src="/images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp" alt="Linux’ta Disk Alanı Eksik Görünüyor mu" /]
+
 ---
 
 ## 👤 Hedef Kitle
@@ -32,12 +29,12 @@ Bu yazı, **orta ve ileri seviye Linux kullanıcıları** için yazılmıştır.
 
 En yaygın sebepler:
 
-* `ext4` dosya sisteminin root için rezerve ettiği bloklar
-* Silinmiş ama hâlâ çalışan işlemlerce tutulan dosyalar
-* Steam gibi uygulamaların devasa önbellekleri
-* Hatalı veya eksik bölümleme
-* Kullanıcının yanlış yorumladığı boş alan hesapları
-* Sistemin yeniden başlatılmaması nedeniyle kalıcı olmayan dosya kullanımı
+- `ext4` dosya sisteminin root için rezerve ettiği bloklar
+- Silinmiş ama hâlâ çalışan işlemlerce tutulan dosyalar
+- Steam gibi uygulamaların devasa önbellekleri
+- Hatalı veya eksik bölümleme
+- Kullanıcının yanlış yorumladığı boş alan hesapları
+- Sistemin yeniden başlatılmaması nedeniyle kalıcı olmayan dosya kullanımı
 
 Bu yazı, tüm bu senaryoları kapsayan bir çözüm haritası sunar.
 
@@ -54,8 +51,6 @@ lsblk -f
 ```
 
 🔎 Açıklama: Bu komut, disk bölümlerinin hangi dosya sistemlerini kullandığını ve nereye bağlandığını gösterir.
-
-
 
 ---
 
@@ -75,8 +70,6 @@ df -h
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/sda1       916G  697G  173G  81% /mnt/steam_depo
 ```
-
-
 
 ---
 
@@ -103,8 +96,6 @@ Rezerve alan miktarını sıfırlamak (isteğe bağlı):
 sudo tune2fs -m 0 /dev/sda1
 ```
 
-
-
 ⚠️ Uyarı: Sunucu sistemlerde %0 yapmak önerilmez; sadece masaüstü kullanıcıları için.
 
 ---
@@ -121,8 +112,6 @@ sudo lsof | grep deleted
 
 🔧 Çözüm:
 Bu dosyaları tutan işlemi sonlandırın veya `kill` komutuyla durdurun.
-
-
 
 ---
 
@@ -144,24 +133,20 @@ sudo du -h --max-depth=1 /mnt/steam_depo | sort -hr | head -n 20
 20G     /mnt/steam_depo/Age of Empires II Definitive Edition
 ```
 
-
-
 ---
 
 ### ✅ Adım 6: Gereksiz Dosyaları Temizleyin 🧹
 
 **Silinebilir yer kaplayıcılar:**
 
-* 🎮 Eski oyun dosyaları
-* 🧱 Steam indirme önbelleği
-* 🗑️ `.Trash-*` klasörleri
-* 🐳 Docker kullanılmayan imajlar:
+- 🎮 Eski oyun dosyaları
+- 🧱 Steam indirme önbelleği
+- 🗑️ `.Trash-*` klasörleri
+- 🐳 Docker kullanılmayan imajlar:
 
-  ```bash
+```bash
   docker system prune -a
-  ```
-
-
+```
 
 ---
 
@@ -171,9 +156,9 @@ Bazı durumlarda, her şeyi doğru yapsanız bile boş alan olması gerektiği h
 
 🔎 Neden işe yarar?
 
-* Bellekte kalan silinmiş dosyalar temizlenir
-* Disk önbelleği diske yazılır
-* Steam gibi kapatılmamış uygulamalar bırakılan alanı serbest bırakır
+- Bellekte kalan silinmiş dosyalar temizlenir
+- Disk önbelleği diske yazılır
+- Steam gibi kapatılmamış uygulamalar bırakılan alanı serbest bırakır
 
 🔧 Çözüm:
 
@@ -181,19 +166,15 @@ Bazı durumlarda, her şeyi doğru yapsanız bile boş alan olması gerektiği h
 sudo reboot
 ```
 
-
-
 ---
 
 ### ✅ Adım 8: Dış Ortamlara Yedekleme Yapın ☁️
 
 Boş alan yaratmak için büyük dosyaları taşıyabileceğiniz yerler:
 
-* Harici HDD/SSD
-* Google Drive, Dropbox, Mega gibi bulut çözümleri
-* NAS sunucular
-
-
+- Harici HDD/SSD
+- Google Drive, Dropbox, Mega gibi bulut çözümleri
+- NAS sunucular
 
 ---
 
@@ -211,5 +192,3 @@ Diskinizde neden az boş alan göründüğünü anlamak için aşağıdaki nokta
 Bu adımlar sayesinde, Arch Linux sisteminizde disk alanı yönetimini ustalıkla yapabilirsiniz. 🧠
 
 ---
-
-
