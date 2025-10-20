@@ -46,8 +46,8 @@ Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı ya
 [responsive_img src="/images/superproxy3-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 
-<div class="info-box tip">
-Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz. Zaten logoluk bir durum yok :)</div>
+!!! tip""
+    Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz. Zaten logoluk bir durum yok :)
 
 - Projeyi **yayınlayın**.
 

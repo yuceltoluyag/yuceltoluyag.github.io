@@ -14,22 +14,23 @@ Linux üzerinde Windows oyunları ve uygulamaları çalıştırmak için Wine ku
 
 Bu rehberde:
 
-* `WINEPREFIX` nedir?
-* Nasıl oluşturulur?
-* Farklı prefix'lerle oyun kurulumları nasıl yapılır?
-* Pratik örneklerle nasıl kullanılır?
-* `winecfg`, `winetricks`, `regedit` ve hata ayıklama ipuçları
-* Lutris ve Steam/Proton ile entegrasyon 🎯
+- `WINEPREFIX` nedir?
+- Nasıl oluşturulur?
+- Farklı prefix'lerle oyun kurulumları nasıl yapılır?
+- Pratik örneklerle nasıl kullanılır?
+- `winecfg`, `winetricks`, `regedit` ve hata ayıklama ipuçları
+- Lutris ve Steam/Proton ile entegrasyon 🎯
 
 Hepsini adım adım gösteriyoruz. 🎯
 [responsive_img src="/images/wineprefix-nedir-nasil-kullanilir-xl.webp" alt="wineprefix-nedir-nasil-kullanilir" /]
+
 ---
 
 ## 🧠 1. WinePrefix Nedir?
 
 `WINEPREFIX`, Wine’ın Windows benzeri dosya sistemini **hangi klasörde oluşturacağını ve çalıştıracağını** belirten bir ortam değişkenidir.
 
-Her prefix aslında bağımsız bir “sanal Windows” klasörüdür.
+Her prefix aslında bağımsız bir “sanal Windows" klasörüdür.
 Bu sayede bir oyun için 32 bit, bir başkası için 64 bit uyumlu, biri için DirectX9, biri için DirectX11 içeren farklı ortamlar oluşturabilirsiniz.
 
 > 🎮 **Oyunlarda neden önemli?**
@@ -85,8 +86,8 @@ wine ~/Downloads/Settings.exe
 
 Bu komutla:
 
-* `Settings.exe` uygulaması sadece `~/wineprefixes/pes2017` içindeki Windows ortamında çalışır.
-* Kayıt defteri ve yüklü DLL’ler bu prefix’e özeldir.
+- `Settings.exe` uygulaması sadece `~/wineprefixes/pes2017` içindeki Windows ortamında çalışır.
+- Kayıt defteri ve yüklü DLL’ler bu prefix’e özeldir.
 
 > 🔄 Bu şekilde her oyunu farklı sistemlerde çalıştırmak mümkün olur.
 
@@ -138,7 +139,7 @@ Wine içindeki kayıt defteri ayarlarını şu komutla düzenleyebilirsiniz:
 WINEPREFIX=~/peswine wine regedit
 ```
 
-Burada birçok Windows programında olduğu gibi HKEY\_LOCAL\_MACHINE ve HKEY\_CURRENT\_USER yapılarını görebilir, elle anahtar ekleyip silebilirsiniz.
+Burada birçok Windows programında olduğu gibi HKEY_LOCAL_MACHINE ve HKEY_CURRENT_USER yapılarını görebilir, elle anahtar ekleyip silebilirsiniz.
 
 > ⚠️ Dikkat: Yanlış kayıt defteri düzenlemeleri programın çalışmasını bozabilir.
 
@@ -170,9 +171,9 @@ WINEPREFIX=~/peswine WINEDEBUG=+seh wine pes2017.exe
 
 Ayrıca `winecfg` aracı ile:
 
-* DirectX sürümünü
-* Windows sürümünü
-* Ses sürücüsünü
+- DirectX sürümünü
+- Windows sürümünü
+- Ses sürücüsünü
 
 gibi ayarları değiştirebilirsiniz.
 
@@ -241,10 +242,10 @@ WINEPREFIX=~/.steam/steam/steamapps/compatdata/APPID/pfx winetricks corefonts
 
 ✅ Avantajları:
 
-* 🧩 Uyumsuz oyunları izole etmek
-* 🔧 Özel yapılandırmalar yapabilmek
-* 💣 Sorunlu oyunların sistem genelini etkilemesini önlemek
-* 🗂️ Her prefix'i ayrı klasörde yedeklemek
+- 🧩 Uyumsuz oyunları izole etmek
+- 🔧 Özel yapılandırmalar yapabilmek
+- 💣 Sorunlu oyunların sistem genelini etkilemesini önlemek
+- 🗂️ Her prefix'i ayrı klasörde yedeklemek
 
 ---
 
@@ -253,8 +254,8 @@ WINEPREFIX=~/.steam/steam/steamapps/compatdata/APPID/pfx winetricks corefonts
 `WINEPREFIX`, Linux üzerinde oyun ve uygulama çalıştıran herkesin öğrenmesi gereken temel bir kavramdır.
 Bu rehberle artık:
 
-* Kendi prefix’lerinizi oluşturabilir,
-* DLL kurabilir,
-* Kayıt defteri düzenleyebilir,
-* Lutris ve Steam ile entegre kullanabilir,
-* Farklı oyunları sorunsuz şekilde çalıştırabilirsiniz. ✅
+- Kendi prefix’lerinizi oluşturabilir,
+- DLL kurabilir,
+- Kayıt defteri düzenleyebilir,
+- Lutris ve Steam ile entegre kullanabilir,
+- Farklı oyunları sorunsuz şekilde çalıştırabilirsiniz. ✅

@@ -16,6 +16,7 @@ from pelican.server import ComplexHTTPRequestHandler, RootedHTTPServer
 from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 
 CI = os.environ.get("CI", "0") in {"1", "true", "yes", ""}
+DEBUG_MODE = os.environ.get("DEBUG_MODE", "0") in {"1", "true", "yes", ""}
 
 OPEN_BROWSER_ON_SERVE = True
 SETTINGS = {}
@@ -134,19 +135,28 @@ def clean(ctx: Context) -> None:
 @duty(post=[cache_bust])
 def build(ctx: Context) -> None:
     """Build the project."""
-    ctx.run(run_pelican(["-s", SETTINGS_FILE_BASE]))
+    pelican_args = ["-s", SETTINGS_FILE_BASE]
+    if DEBUG_MODE:
+        pelican_args.append("--debug")
+    ctx.run(run_pelican(pelican_args))
 
 
 @duty(post=[cache_bust])
 def rebuild(ctx: Context) -> None:
     """Rebuild the project."""
-    ctx.run(run_pelican(["-d", "-s", SETTINGS_FILE_BASE]))
+    pelican_args = ["-d", "-s", SETTINGS_FILE_BASE]
+    if DEBUG_MODE:
+        pelican_args.append("--debug")
+    ctx.run(run_pelican(pelican_args))
 
 
 @duty
 def regenerate(ctx: Context) -> None:
     """Regenerate the project."""
-    ctx.run(run_pelican(["-r", "-s", SETTINGS_FILE_BASE]))
+    pelican_args = ["-r", "-s", SETTINGS_FILE_BASE]
+    if DEBUG_MODE:
+        pelican_args.append("--debug")
+    ctx.run(run_pelican(pelican_args))
 
 
 @duty
@@ -191,16 +201,17 @@ def livereload(ctx: Context):
     from livereload import Server
 
     def cached_build():
+        pelican_args = [
+            "-s",
+            SETTINGS_FILE_BASE,
+            "-e",
+            "CACHE_CONTENT=true",
+            "LOAD_CONTENT_CACHE=true",
+        ]
+        if DEBUG_MODE:
+            pelican_args.append("--debug")
         ctx.run(
-            run_pelican(
-                [
-                    "-s",
-                    SETTINGS_FILE_BASE,
-                    "-e",
-                    "CACHE_CONTENT=true",
-                    "LOAD_CONTENT_CACHE=true",
-                ]
-            )
+            run_pelican(pelican_args)
         )
 
     theme_path = SETTINGS["THEME"]

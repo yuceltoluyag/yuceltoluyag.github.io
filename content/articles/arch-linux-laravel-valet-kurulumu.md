@@ -21,14 +21,8 @@ Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel 
 
 Valet, sisteminizi makine açıldığında **Nginx'i arka planda çalıştıracak şekilde yapılandırır**. Ardından, **DnsMasq** kullanarak `*.test` uzantılı domainlerinizi ilgili dizinlere yönlendirir. **Sadece 7MB RAM kullanarak çalışan, hızlı ve hafif bir Laravel geliştirme ortamı sunar.** 🎯
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önceki Kurulumlar</div>
-        <p>Daha önce <a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" target="_blank" rel="noopener noreferrer">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.</p>
-    </div>
+!!! warning "Önceki Kurulumlar"
+    Daha önce <a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" rel="noopener noreferrer" target="_blank">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.
 </div>
 ## 🛠 Kurulum
 

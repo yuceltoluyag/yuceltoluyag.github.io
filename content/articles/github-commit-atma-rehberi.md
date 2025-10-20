@@ -11,25 +11,19 @@ Series: Git
 Series_index: 7
 Image: images/github-commit-atma-rehberi-xl.webp
 
-
-> “Git commit atmak” yazılımcı dünyasının ekmek-su ikilisi gibi bir şeydir. Eğer kod yazıyorsan, değişikliklerini versiyon kontrol sistemine kaydetmeyi bilmek zorundasın. Bu rehberde sana, **GitHub** üzerinde bir projeye **commit atma** sürecini sıfırdan, adım adım ve bol örnekle anlatacağım.
+> “Git commit atmak" yazılımcı dünyasının ekmek-su ikilisi gibi bir şeydir. Eğer kod yazıyorsan, değişikliklerini versiyon kontrol sistemine kaydetmeyi bilmek zorundasın. Bu rehberde sana, **GitHub** üzerinde bir projeye **commit atma** sürecini sıfırdan, adım adım ve bol örnekle anlatacağım.
 > **Önemli güncelleme:** Ana repoya doğrudan değil, **kendi branch’inde** çalışıp her zaman **Pull Request (PR)** ile gönderiyoruz. Ayrıca projeyi lokalde görüp test etmek için **virtualenv + duty** ile nasıl ayağa kaldıracağını da anlatıyorum.
 
 ## 1️⃣ Bu Yazıya Başlamadan Önce Okuman Gerekenler
 
 Eğer daha önce Git ile SSH anahtarı eklemediysen veya GPG imzalı commit/etiket konusuna göz atmadıysan, önce şu iki makaleyi mutlaka oku:
 
-* [Git SSH-Key Oluşturma (Windows & Linux)](/git-ssh-key-olusturma/) 🔑
-* [Git ile GPG İmzalı Etiket Oluşturma](/git-gpg-imzali-etiket/) ✍️
+- [Git SSH-Key Oluşturma (Windows & Linux)](/git-ssh-key-olusturma/) 🔑
+- [Git ile GPG İmzalı Etiket Oluşturma](/git-gpg-imzali-etiket/) ✍️
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli</div>
-        <p>Bu rehberin sorunsuz ilerlemesi için Git kurulu olmalı, GitHub hesabına SSH anahtarın ekli olmalı, commit imzası için GPG anahtarın tanımlı olmalı ve Python kurulu olmalıdır (virtualenv ve <code>duty</code> kullanacağız).</p>
-    </div>
+!!! important "Önemli"
+Bu rehberin sorunsuz ilerlemesi için Git kurulu olmalı, GitHub hesabına SSH anahtarın ekli olmalı, commit imzası için GPG anahtarın tanımlı olmalı ve Python kurulu olmalıdır (virtualenv ve <code>duty</code> kullanacağız).
+
 </div>
 
 ---
@@ -88,14 +82,9 @@ git clone git@github.com:yuceltoluyag/yuceltoluyag.github.io.git
 cd yuceltoluyag.github.io
 ```
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>HTTPS ile klonlamak istersen: <code>git clone https://github.com/yuceltoluyag/yuceltoluyag.github.io.git</code>. Ancak HTTPS push sırasında kullanıcı adı/parola ister; SSH genellikle daha rahattır.</p>
-    </div>
+!!! tip "İpucu"
+HTTPS ile klonlamak istersen: <code>git clone https://github.com/yuceltoluyag/yuceltoluyag.github.io.git</code>. Ancak HTTPS push sırasında kullanıcı adı/parola ister; SSH genellikle daha rahattır.
+
 </div>
 
 ---
@@ -116,14 +105,9 @@ git checkout -b benim-branchim
 git checkout -b arkadas-landing-duzenleme
 ```
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>Branch isimlerini kısa, açıklayıcı ve tireli seç: <code>bugfix-typo-footer</code>, <code>feature-yeni-makale-sablonu</code> gibi.</p>
-    </div>
+!!! tip "İpucu"
+Branch isimlerini kısa, açıklayıcı ve tireli seç: <code>bugfix-typo-footer</code>, <code>feature-yeni-makale-sablonu</code> gibi.
+
 </div>
 
 ---
@@ -155,14 +139,9 @@ duty livereload
 
 Terminal çıktısında <b>lokal URL</b> görürsün (çoğunlukla <code>[http://127.0.0.1:8000](http://127.0.0.1:8000)</code> veya <code>[http://localhost:8000](http://localhost:8000)</code>). Tarayıcıda bu adrese giderek yaptığın değişiklikleri anlık görebilirsin. Sunucuyu durdurmak için terminalde <code>ctrl c</code> tuşlarına bas.
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Uyarı</div>
-        <p>Sanal ortam (<code>venv</code>) <b>aktif edilmeden</b> <code>duty</code> komutlarını çalıştırırsan uygulama açılmayacaktır. Doğru komut: <code>source venv/bin/activate</code> (Linux/Mac). Yanlış: <code>source venv/bin/active</code> (sonu “activate” olmalı).</p>
-    </div>
+!!! warning "Uyarı"
+Sanal ortam (<code>venv</code>) <b>aktif edilmeden</b> <code>duty</code> komutlarını çalıştırırsan uygulama açılmayacaktır. Doğru komut: <code>source venv/bin/activate</code> (Linux/Mac). Yanlış: <code>source venv/bin/active</code> (sonu “activate" olmalı).
+
 </div>
 
 ---
@@ -218,14 +197,9 @@ git add .
 git commit -S -m "README.md: örnek satır eklendi"
 ```
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>İyi commit mesajı kısa ve nettir. Kötü: <code>update</code>. İyi: <code>docs: README.md'ye katkı akışı eklendi</code>.</p>
-    </div>
+!!! tip "İpucu"
+İyi commit mesajı kısa ve nettir. Kötü: <code>update</code>. İyi: <code>docs: README.md'ye katkı akışı eklendi</code>.
+
 </div>
 
 ---
@@ -252,22 +226,17 @@ git push -u origin arkadas-landing-duzenleme
 
 Tarayıcıdan repo sayfasına git: <code>[https://github.com/yuceltoluyag/yuceltoluyag.github.io](https://github.com/yuceltoluyag/yuceltoluyag.github.io)</code>
 
-GitHub genelde “Compare & pull request” butonunu gösterir. Tıkla ve PR’ını oluştur. Açıklama alanında:
+GitHub genelde “Compare & pull request" butonunu gösterir. Tıkla ve PR’ını oluştur. Açıklama alanında:
 
-* <b>Ne</b> yaptığını
-* <b>Neden</b> yaptığını
-* Nasıl <b>test</b> ettiğini
+- <b>Ne</b> yaptığını
+- <b>Neden</b> yaptığını
+- Nasıl <b>test</b> ettiğini
 
 kısaca anlat. Bu repo için <b>2. ve sonraki çalışmalarda her zaman PR</b> açıyoruz; böylece repo sahibiyle karışıklık olmaz, kod inceleme akışı korunur.
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli</div>
-        <p>Bu projede ana branch’e doğrudan push yapma. Tüm katkılar <b>branch → PR</b> akışıyla gelmelidir.</p>
-    </div>
+!!! important "Önemli"
+Bu projede ana branch’e doğrudan push yapma. Tüm katkılar <b>branch → PR</b> akışıyla gelmelidir.
+
 </div>
 
 ---
@@ -277,14 +246,9 @@ kısaca anlat. Bu repo için <b>2. ve sonraki çalışmalarda her zaman PR</b> a
 PR açıldıktan sonra commit’lerini ve değişikliklerini GitHub arayüzünde görebilirsin.
 GPG imzası doğruysa commit yanında <b>Verified</b> etiketi görünür.
 
-<div class="info-box note">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Bilgi</div>
-        <p>GPG imzası, commit’in gerçekten sana ait olduğunu doğrular ve takım çalışmasında güven sağlar.</p>
-    </div>
+!!! note "Bilgi"
+GPG imzası, commit’in gerçekten sana ait olduğunu doğrular ve takım çalışmasında güven sağlar.
+
 </div>
 
 ---
@@ -341,17 +305,12 @@ git push -u origin task-kisa-adi
 | Yanlış komut: `source venv/bin/active` | Dosya adı hatalı (`activate` olmalı)                  | Doğru komut: `source venv/bin/activate`                                         |
 | `Permission denied (publickey)`        | SSH anahtarı yok/agent’e ekli değil                   | SSH anahtarını GitHub’a ekle, ardından `ssh-add` ile agent’a ekle               |
 | `gpg: signing failed`                  | GPG anahtarı tanımsız/parola girilmedi                | `git config --global user.signingkey` ile ayarla; pinentry kurulu mu kontrol et |
-| PR’da “conflict” uyarısı               | Ana branch’te yeni commit’ler var                     | PR açmadan önce `git checkout main && git pull origin main` ile güncelle        |
+| PR’da “conflict" uyarısı               | Ana branch’te yeni commit’ler var                     | PR açmadan önce `git checkout main && git pull origin main` ile güncelle        |
 | PR açılmadı, doğrudan main’e pushlandı | Süreç ihlali                                          | Değişiklikleri geri al, akışı takip et: branch → push → PR                      |
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>Lokal sunucuyu durdurmak için terminalde <code>ctrl c</code> tuşlarına bas. Yeniden başlatmak için yine <code>duty livereload</code> kullan.</p>
-    </div>
+!!! tip "İpucu"
+Lokal sunucuyu durdurmak için terminalde <code>ctrl c</code> tuşlarına bas. Yeniden başlatmak için yine <code>duty livereload</code> kullan.
+
 </div>
 
 ---
@@ -395,11 +354,11 @@ git checkout -b yeni-gorev
 
 ## 🎯 Sonuç
 
-Artık “GitHub’ta bir projeye nasıl commit atılır?” sorusunun cevabını sadece öğrenmekle kalmadın; <b>doğru akış</b> olan <b>branch üzerinde çalış + PR ile gönder</b> sürecini, ayrıca projeyi <b>lokalde ayağa kaldırma</b> adımlarını da biliyorsun. Bu yaklaşım:
+Artık “GitHub’ta bir projeye nasıl commit atılır?" sorusunun cevabını sadece öğrenmekle kalmadın; <b>doğru akış</b> olan <b>branch üzerinde çalış + PR ile gönder</b> sürecini, ayrıca projeyi <b>lokalde ayağa kaldırma</b> adımlarını da biliyorsun. Bu yaklaşım:
 
-* Ana branch’i temiz ve stabil tutar,
-* İnceleme (code review) sürecini mümkün kılar,
-* Ekip içi karışıklıkları engeller,
-* Değişikliklerini güvenle test edip doğrulamanı sağlar.
+- Ana branch’i temiz ve stabil tutar,
+- İnceleme (code review) sürecini mümkün kılar,
+- Ekip içi karışıklıkları engeller,
+- Değişikliklerini güvenle test edip doğrulamanı sağlar.
 
 Kısacası, profesyonel bir katılım için ihtiyaç duyduğun tüm yapı taşları bu rehberde. Şimdi sıra sende: Kendi branch’ini aç, lokalde çalıştır, açıklayıcı commit mesajları yaz ve <b>her zaman PR</b> ile gönder. 🚀

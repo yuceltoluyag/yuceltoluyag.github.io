@@ -1,125 +1,33 @@
-# Minel - Minimal Pelican Teması
+# Introduction
 
-Minel, [Pelican](https://getpelican.com) blog motoru için [Tailwind CSS](https://tailwindcss.com) ve [DaisyUI](https://daisyui.com) ile geliştirilmiş minimal bir temadır.
+This is my personal blog using the [pelican project](https://docs.getpelican.com/en/latest/).
 
-[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=1e6a19574e1e&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+I designed the theme using [pico.css](https://picocss.com/), [font-awesome](https://fontawesome.com/), and the [simple template](https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates) from [pelican](https://docs.getpelican.com/en/latest/).
 
-## 🚀 Özellikler
+I host the site right [here](https://yuceltoluyag.github.io) on GitHub pages.
 
-- **Modern Tasarım**: Tailwind CSS v4 ve DaisyUI ile geliştirilmiş modern arayüz
-- **Karanlık/Aydınlık Mod**: Otomatik ve manuel tema değiştirme desteği
-- **Mobil Uyumlu**: Tüm cihazlarda kusursuz deneyim
-- **Gelişmiş İçerik Özellikleri**:
-  - Otomatik içindekiler tablosu (TOC)
-  - Kod vurgulama (syntax highlighting)
-  - Öne çıkan makale desteği
-- **SEO Optimizasyonu**:
-  - Yapısal veri (Schema.org) desteği
-  - VideoObject şeması (YouTube videoları için otomatik)
-  - Meta açıklamaları ve anahtar kelimeler
-- **Performans**:
-  - Resim optimizasyonu ve WebP dönüşümü
-  - CSS/JS minify desteği
-  - Lazy loading ve kaynak önceliklendirme
-- **Erişilebilirlik**: WCAG erişilebilirlik standartlarına uygunluk
-- **İnteraktif Özellikler**:
-  - Site içi arama
-  - PWA desteği
-- **Entegrasyonlar**:
-  - RSS ve Atom feed desteği
-  - E-posta aboneliği (Buttondown)
-  - Çoklu dil desteği
+# Run Locally
 
-## 📥 Kurulum
+To run the site locally, you will want to have podman installed.
 
-1. Tema dosyalarını Pelican projenizin `themes/Minel` dizinine kopyalayın:
+Build the container to run the site:
 
 ```bash
-git clone https://github.com/yuceltoluyag/Minel themes/Minel
+make build
 ```
 
-2. Gerekli bağımlılıkları yükleyin:
+And run the container:
 
 ```bash
-# NPM paketleri
-cd themes/Minel
-npm install
-
-# Python paketleri
-pip install -r requirements.txt
+make run
 ```
 
-3. `pelicanconf.py` dosyanızda temayı etkinleştirin:
+You can now view the site at [http://localhost:8000](http://localhost:8000).
 
-```python
-THEME = 'themes/Minel'
-```
+You can use `make clean` to remove the output directory and `make run` to start it up again.
 
-## 🛠️ Geliştirme
-
-### Geliştirme Modu
-
-Dosyaları izlemek ve değişiklikleri otomatik derlemek için:
+To make a post using the template, run:
 
 ```bash
-npm run dev
-# veya
-duty watch
+make post
 ```
-
-### CSS/JS Geliştirme
-
-Kaynak dosyalarınızı **_assets** klasörüne yerleştirin:
-- CSS: `themes/Minel/_assets/css/`
-- JS: `themes/Minel/_assets/js/`
-- Görseller: `themes/Minel/_assets/images/`
-
-Node.js betiği, bu dosyaları işleyerek gerekli dizinlere otomatik olarak çıkartır.
-
-### Üretim için Derleme
-
-Optimize edilmiş üretim derlemesi için:
-
-```bash
-npm run build      # Geliştirme modunda derleme
-npm run publish    # Üretim için optimize edilmiş derleme
-
-# Üretimden sonra canlı yenileme
-duty livereload
-```
-
-### Temizleme
-
-Derlenen dosyaları temizlemek için:
-
-```bash
-npm run clean
-# veya
-duty clean
-```
-
-## 📝 İçerik Oluşturma
-
-Yeni bir makale oluşturmak için:
-
-```bash
-duty new "Makale Başlığı"
-```
-
-## 🧩 Eklenti Entegrasyonları
-
-### Video Şema Eklentisi
-
-YouTube videolarınız için otomatik VideoObject şeması ekler:
-
-- Makalelerinizde YouTube iframe'leri otomatik tespit edilir
-- Google arama sonuçlarında video içeriğiniz daha iyi görüntülenir
-
-
-## 📜 Değişiklik Geçmişi
-
-Detaylı değişiklik geçmişi için [CHANGELOG.md](CHANGELOG.md) dosyasına bakınız.
-
-## 📄 Lisans
-
-MIT Lisansı altında dağıtılmaktadır. Detaylar için [LICENSE](LICENSE) dosyasına bakınız.

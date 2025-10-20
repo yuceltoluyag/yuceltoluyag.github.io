@@ -13,8 +13,6 @@ Image: images/conda-xl.webp
 
 # Arch Linux'ta Conda Kurulumu ve Yönetimi
 
-
-
 Conda, yazılım paketlerini ve ortamlarını yönetmek için kullanılan popüler bir açık kaynaklı araçtır. Python geliştirme ortamlarında özellikle kullanılır, ancak başka diller için de destek sunar. Bu makalede, Conda'nın kurulumu ve temel kullanımı adım adım açıklanacak, ayrıca Arch Linux üzerinde en verimli şekilde Conda nasıl kurulmalı ve yönetilmeli, en iyi uygulamalarla birlikte ele alınacaktır.
 
 ## 1. Conda Kurulumu
@@ -25,25 +23,27 @@ Conda, Anaconda veya Miniconda dağıtımlarını kullanarak kurulabilir. Minico
 
 Miniconda, Conda'nın temel kurulumunu sağlar ve başlangıçta gereksiz paketlerden kaçınmak için tercih edilebilir. Miniconda'yı kurmak için şu adımları izleyebilirsiniz:
 
-1. Miniconda'yı [resmi web sitesinden](https://docs.conda.io/en/latest/miniconda.html){: target="_blank" rel="noopener noreferrer"} indirin.
+1. Miniconda'yı [resmi web sitesinden](https://docs.conda.io/en/latest/miniconda.html){: target="\_blank" rel="noopener noreferrer"} indirin.
 2. Terminali açın ve Miniconda kurulum dosyasını çalıştırın:
-   ```bash
-   bash Miniconda3-latest-Linux-x86_64.sh
-   ```
+
+```bash
+  bash Miniconda3-latest-Linux-x86_64.sh
+```
+
 3. Kurulum sırasında size bir lisans sözleşmesi sunulacaktır. Kabul etmek için `yes` yazın.
 4. Kurulum klasörünü seçin. Varsayılan olarak, Miniconda `~/miniconda3` dizinine kurulacaktır. Eğer bu dizini değiştirmek isterseniz, kurulum sırasında farklı bir dizin belirtmeniz yeterlidir.
 
    **Öneri**: Miniconda'yı varsayılan dizinden farklı bir dizine kurmak istiyorsanız, kurulum sırasında şu komutu kullanabilirsiniz:
 
-   ```bash
-   bash Miniconda3-latest-Linux-x86_64.sh -p /yeni/dizin/miniconda3
-   ```
+```bash
+  bash Miniconda3-latest-Linux-x86_64.sh -p /yeni/dizin/miniconda3
+```
 
 5. Kurulum tamamlandığında, Conda'yı etkinleştirmek için terminali yeniden başlatın veya aşağıdaki komutu çalıştırın:
 
-   ```bash
-   source ~/.bashrc
-   ```
+```bash
+  source ~/.bashrc
+```
 
 ### 1.2 Conda'nın Versiyonunu Kontrol Etme
 
@@ -428,4 +428,5 @@ conda init
 
 Thank you for installing Miniconda3!
 ```
+
 [responsive_img src="/images/conda-xl.webp" alt="arch-linux-conda-kurulumu" /]

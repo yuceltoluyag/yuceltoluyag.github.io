@@ -14,47 +14,23 @@ Image: images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp
 
 # 📱 Redmi Note 8 Pro'ya Custom ROM Yükleme: Arch Linux'ta Adım Adım Kılavuz
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli</div>
-        <p>⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.  
-        Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.  
-        Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz.</p>
-    </div>
+!!! important "Önemli"
+    ⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.  
+            Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.  
+            Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz.
 </div>
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Uyarı</div>
-        <p>📱 İşlem sırasında telefonunuzdaki önemli veriler (uygulamalar, ayarlar, dosyalar vb.) kaybolabilir.  
-        Mutlaka işlem öncesi yedeklerinizi alın ve önemli dosyalarınızı yedekleyin.</p>
-    </div>
+!!! warning "Uyarı"
+    📱 İşlem sırasında telefonunuzdaki önemli veriler (uygulamalar, ayarlar, dosyalar vb.) kaybolabilir.  
+            Mutlaka işlem öncesi yedeklerinizi alın ve önemli dosyalarınızı yedekleyin.
 </div>
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>🔧 Ben <strong>Redmi Note 8 Pro</strong> kullanıcısıyım ve bu rehberi kendi cihazımda uyguladım.</p>
-    </div>
+!!! tip "İpucu"
+    🔧 Ben <strong>Redmi Note 8 Pro</strong> kullanıcısıyım ve bu rehberi kendi cihazımda uyguladım.
 </div>
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Kritik Uyarı</div>
-        <p><a href="/mediatek-imei-onarma-rehberi/" style="color: #dc2626; font-weight: bold;">/mediatek-imei-onarma-rehberi/</a> adresindeki adımları eksiksiz tamamlamadan bu işleme geçmeyin! IMEI yedekleme/onarma işlemleri ROM kurulumundan önce mutlaka yapılmalıdır.</p>
-    </div>
+!!! warning "Kritik Uyarı"
+    <a href="/mediatek-imei-onarma-rehberi/" style="color: #dc2626; font-weight: bold;">/mediatek-imei-onarma-rehberi/</a> adresindeki adımları eksiksiz tamamlamadan bu işleme geçmeyin! IMEI yedekleme/onarma işlemleri ROM kurulumundan önce mutlaka yapılmalıdır.
 </div>
 
 ## 🔍 Giriş
@@ -84,14 +60,8 @@ Eğer cihazınız listede görünüyorsa, bağlantı başarılı demektir. 🟢
 
 ## 💾 IMEI Yedeği Alma
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli</div>
-        <p>IMEI yedeği almak kritik öneme sahiptir! ROM yüklerken IMEI kaybolursa, cihazınız şebeke bulamaz.</p>
-    </div>
+!!! important "Önemli"
+    IMEI yedeği almak kritik öneme sahiptir! ROM yüklerken IMEI kaybolursa, cihazınız şebeke bulamaz.
 </div>
 
 ### IMEI Bilgilerini Öğrenme
@@ -128,14 +98,8 @@ NVRAM yedeği almak genellikle root erişimi gerektirir. Root erişiminiz yoksa,
 
 ## 🔓 Bootloader Kilidini Açma
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Uyarı</div>
-        <p>Bu işlem cihazınızdaki tüm verileri silecektir! Önemli verilerinizi yedeklediğinizden emin olun.</p>
-    </div>
+!!! warning "Uyarı"
+    Bu işlem cihazınızdaki tüm verileri silecektir! Önemli verilerinizi yedeklediğinizden emin olun.
 </div>
 
 ### Bootloader Moduna Geçme
@@ -235,14 +199,8 @@ TWRP menüsünden:
 ### ROM Yükleme Yöntemleri
 
 #### Yöntem 1: ADB Sideload Kullanımı
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>Sideload, dosya transferi sorunları yaşadığınızda en güvenilir yöntemdir.</p>
-    </div>
+!!! tip "İpucu"
+    Sideload, dosya transferi sorunları yaşadığınızda en güvenilir yöntemdir.
 </div>
 
 TWRP'de:
@@ -308,14 +266,8 @@ adb push "/path/to/rom.zip" /data/media/0/
 2. Veya sideload yöntemini kullanın (önerilir)
 
 ### "Corrupted NVRAM" Hatası
-<div class="info-box note">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Bilgi</div>
-        <p>Bu hata özellikle MediaTek cihazlarda NVRAM bölümünün bozulmasından kaynaklanır.</p>
-    </div>
+!!! note "Bilgi"
+    Bu hata özellikle MediaTek cihazlarda NVRAM bölümünün bozulmasından kaynaklanır.
 </div>
 
 **Çözüm:**

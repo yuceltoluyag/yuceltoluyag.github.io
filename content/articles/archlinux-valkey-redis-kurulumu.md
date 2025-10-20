@@ -152,11 +152,8 @@ sudo systemctl restart valkey.service
 
 ### Transparent Huge Pages (THP) Uyarısı
 
-<div class="info-box warning">
-    <div>
-        <div class="alert-title">Uyarı</div>
-        <p>THP açık kalırsa Valkey performans sorunlarına yol açabilir.</p>
-    </div>
+!!! warning "Uyarı"
+    THP açık kalırsa Valkey performans sorunlarına yol açabilir.
 </div>
 
 ```bash

@@ -23,6 +23,7 @@ Arch Linux, sürekli güncel ve stabil bir sistem sağlamaya yönelik yaptığı
 Eski depoların sisteminizde kalması, bazı sorunlara yol açabilir. Özellikle, **/etc/pacman.conf** dosyanızda hala eski depolar varsa, **pacman -Sy** komutuyla depo verilerini senkronize etmeye çalıştığınızda hata alabilirsiniz.
 
 #### Temizlik İşleminden Etkilenen Depolar:
+
 - **[community]**
 - **[community-testing]**
 - **[testing]**
@@ -37,9 +38,10 @@ Eğer bu depoların sisteminizde hala yer aldığını fark ediyorsanız, bir an
 Eski depoları kaldırmak için, **/etc/pacman.conf** dosyanızda gerekli değişiklikleri yapmanız gerekiyor. İşte adım adım nasıl yapacağınız:
 
 1. **/etc/pacman.conf** dosyasını açın:
-   ```bash
-   sudo nano /etc/pacman.conf
-   ```
+
+```bash
+  sudo nano /etc/pacman.conf
+```
 
 2. Eski depoların (örneğin, **[community]**, **[testing]**) bulunduğu satırları bulun.
 
@@ -48,9 +50,10 @@ Eski depoları kaldırmak için, **/etc/pacman.conf** dosyanızda gerekli deği�
 4. Dosyayı kaydedin ve çıkın.
 
 5. **pacman -Sy** komutunu çalıştırarak depo verilerini güncelleyin:
-   ```bash
-   sudo pacman -Sy
-   ```
+
+```bash
+  sudo pacman -Sy
+```
 
 Bu işlemi yaptıktan sonra, sisteminizde eski depo referansları kalmayacak ve hata almayacaksınız.
 
@@ -74,8 +77,6 @@ Arch Linux kullanıcıları için, eski depoların kaldırılması önemli bir a
 
 ---
 
-
 Bu yazıyı beğendiniz mi? **Yorumlarınızı** aşağıda bizimle paylaşabilirsiniz! Ayrıca, Arch Linux ile ilgili daha fazla ipucu ve rehber için **sosyal medya hesaplarımızı** takip edebilirsiniz. Eğer bu yazıyı faydalı bulduysanız, arkadaşlarınızla paylaşmayı unutmayın!
 
 Eğer bu tür içerikler ilginizi çekiyorsa, **e-posta bültenimize abone olmayı** unutmayın!
-

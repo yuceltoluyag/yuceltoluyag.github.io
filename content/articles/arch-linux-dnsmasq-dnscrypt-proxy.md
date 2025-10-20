@@ -47,8 +47,8 @@ sudo systemctl start dnsmasq
 sudo systemctl enable dnsmasq
 ```
 
-<div class="info-box tip">
-  <div class="alert-title">İpucu</div>
+!!! tip""
+    <div class="alert-title">İpucu</div>
   Yerel ağınızda hız kazanmak için dnsmasq'ın DNS önbelleklemesini etkin kullanabilirsiniz.
 </div>
 
@@ -84,8 +84,8 @@ sudo systemctl start dnscrypt-proxy
 sudo systemctl enable dnscrypt-proxy
 ```
 
-<div class="info-box important">
-  <div class="alert-title">Önemli</div>
+!!! important""
+    <div class="alert-title">Önemli</div>
   listen_addresses farklı portta olmalı (ör. 5300), böylece dnsmasq ile çakışma olmaz.
 </div>
 
@@ -99,8 +99,8 @@ dnsmasq → dnscrypt-proxy zinciri ile hem hız hem güvenlik sağlar.
 2. dnscrypt-proxy’yi dnsmasq’a gelen sorguları şifreleyecek şekilde ayarlayın.
 3. Her iki servisi başlatın ve otomatik açılmalarını sağlayın.
 
-<div class="info-box warning">
-  <div class="alert-title">Uyarı</div>
+!!! warning""
+    <div class="alert-title">Uyarı</div>
   Port çakışmalarını önlemek için dnscrypt-proxy farklı bir portta dinlemeli (ör. 5300).
 </div>
 
@@ -141,8 +141,8 @@ Beklenen çıktıda:
 * IP adresi dönmeli (ör. 95.217.163.246)
 * Query time makul olmalı
 
-<div class="info-box note">
-  <div class="alert-title">Bilgi</div>
+!!! note""
+    <div class="alert-title">Bilgi</div>
   Bu adım DNS zincirinin doğru çalışıp çalışmadığını hızlıca doğrular.
 </div>
 
@@ -158,8 +158,8 @@ journalctl -u dnsmasq -u dnscrypt-proxy --since "10 minutes ago"
 
 * Eğer **No entries** görünüyorsa her şey sorunsuz çalışıyor demektir.
 
-<div class="info-box tip">
-  <div class="alert-title">İpucu</div>
+!!! tip""
+    <div class="alert-title">İpucu</div>
   Logları düzenli kontrol etmek, özellikle ağ değişikliklerinden sonra olası problemleri yakalamanıza yardımcı olur.
 </div>
 

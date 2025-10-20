@@ -29,14 +29,8 @@ Bu kararı almamın iki büyük sebebi var:
 
 Aslında yeni bir **GUI tasarlamak ve yeni özellikler eklemek** için oldukça hevesliydim. Fakat test süreci bu kadar zorlaşınca, kullanıcılara yeterince stabil ve güvenilir bir şey sunamamak beni rahatsız etti. **Eksik ya da hatalı bir iş paylaşmak istemediğim için, projeyi bırakmaya karar verdim.**
 [responsive_img src="/images/rokbot-gui-xl.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Hoşçakal ThinkPad</div>
-        <p>Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad'imle vedalaştık. 😄</p>
-    </div>
+!!! important "Hoşçakal ThinkPad"
+    Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad'imle vedalaştık. 😄
 </div>
 # Nasıl Başladım?  
 

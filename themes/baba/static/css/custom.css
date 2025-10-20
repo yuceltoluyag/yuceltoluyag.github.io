@@ -1,0 +1,517 @@
+a {
+    text-decoration: none;
+}
+
+h2.entry-title a {
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+a.url {
+    text-decoration: none;
+}
+
+/* Default (light) text colors */
+nav.navbar ul li,
+a.outline,
+a.social {
+    color: var(--pico-color);
+}
+
+/* Dark mode text color overrides */
+[data-theme="dark"] nav.navbar ul li,
+[data-theme="dark"] a.outline,
+[data-theme="dark"] a.social {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .sidebar a.contrast {
+  background-color: transparent;
+}
+
+article.hentry {
+    margin-bottom: 1.5em;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+article.page {
+    margin-top: 5em;
+    border-radius: 20px;
+    padding: 2em;
+}
+
+article.article {
+    margin-top: 5em;
+    border-radius: 20px;
+    padding: 2em;
+}
+
+article.article footer div#post-info {
+    text-align: left;
+    margin: auto;
+}
+
+main.container {
+    padding-top: 0.75em;
+}
+
+div.grid {
+    position: static;
+    background-color: transparent;
+}
+
+section#nav {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+}
+
+h1.page-title {
+    margin-bottom: 0.75em;
+}
+h1.author-category-tags-title {
+    margin-bottom: 0.75em;
+    padding-top: 2.5em;
+    padding-left: 0.6em;
+}
+
+@media only screen and (max-width: 1107px) {
+    #fadeshow1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 884px) {
+    #fadeshow2 {
+        display: none;
+    }
+    h1.page-title {
+        margin-bottom: 0.75em;
+        padding-top: 4.8em;
+    }
+    div.grid {
+        padding-bottom: 0.75em;
+    }
+    div#main-page ol#post-list {
+        padding-top: 9em;
+    }
+
+    header h2.entry-title {
+        padding-top: 5.2em;
+    }
+
+    article.page {
+        margin-top: 9em;
+        padding-top: 1em;
+        border-radius: 20px;
+    }
+
+    h1.page-title {
+        padding: 0;
+        margin-bottom: 0.75em;
+    }
+
+    article.article {
+        margin-top: 9em;
+        padding-top: 1em;
+        border-radius: 20px;
+    }
+
+    h1.author-category-tags-title {
+        margin-bottom: 0.75em;
+        padding-top: 4.8em;
+        padding-left: 0.75em;
+    }
+}
+
+@media only screen and (min-width: 884px) {
+    #fadeshow3 {
+        display: none;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.toc {
+    display: table;
+    width: auto;
+}
+
+/* TOC heading in bold */
+.toc .toctitle {
+    font-weight: bold;
+}
+
+/* No bullets for toc list, indentation of nested lists 1em */
+.toc ul {
+    padding-left: 1rem;
+    margin-bottom: 0.75em;
+}
+
+.toc ul li {
+    list-style-type: disclosure-closed;
+}
+
+article.article h3 {
+    margin-top: 0.75em;
+}
+
+article.article a {
+    text-decoration: none;
+}
+
+article.page a {
+    text-decoration: none;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+    border-radius: 5px;
+}
+
+img {
+    border-style: none;
+    border-radius: 5px;
+}
+
+/* Style for inline code */
+code {
+  color: var(--pico-code-color);
+  background-color: var(--pico-code-background-color);
+  padding: 0.125em 0.25em;
+  border-radius: 0.25em;
+}
+
+/* Override for highlighted code blocks */
+.highlight code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Modern permalink style */
+.headerlink {
+  visibility: hidden;
+  text-decoration: none;
+  font-size: 0.8em;
+  margin-left: 0.5em;
+  color: var(--pico-primary-focus);
+}
+
+h1:hover .headerlink,
+h2:hover .headerlink,
+h3:hover .headerlink,
+h4:hover .headerlink,
+h5:hover .headerlink,
+h6:hover .headerlink {
+  visibility: visible;
+}
+
+.headerlink:hover {
+  color: var(--pico-primary-hover);
+}
+
+/* Sidebar layout */
+.wrapper {
+  display: flex;
+}
+
+/* Default (light) sidebar style */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px; /* Sidebar width */
+  height: 100vh;
+  background-color: var(--pico-card-background-color);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Dark mode sidebar override */
+[data-theme="dark"] .sidebar {
+  background-color: #0b1014;
+}
+
+.content-wrapper {
+  margin-left: 100px; /* Sidebar width */
+  width: calc(100% - 100px);
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* Vertical navbar styles */
+.navbar {
+  height: auto;
+  display: block;
+}
+
+/* --- Sidebar Fixes ---
+
+/* Remove background and border from sidebar icon links */
+.sidebar a.contrast {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+/* Ensure the navbar list doesn't cause overflow */
+.navbar ul {
+  flex-direction: column;
+  align-items: center; /* Center the items horizontally */
+  width: 100%;
+  padding: 0; /* Remove all padding */
+  margin: 0; /* Remove all margin */
+  box-sizing: border-box;
+  list-style: none; /* Remove bullets */
+}
+
+.navbar ul li {
+  margin: 15px 0;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* --- Article Hero Section --- */
+.article-hero {
+  position: relative;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-image: var(--hero-background-image); /* Use CSS variable for background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white; /* Default text color for contrast */
+  overflow: hidden;
+  border-radius: 10px; /* Softer corners */
+  width: 100%; /* Ensure it takes full width */
+}
+
+.article-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--hero-background-image); /* Use CSS variable for background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(10px); /* Apply blur effect */
+  transform: scale(1.05); /* Counteract blur edge effect */
+  z-index: -1; /* Place behind content */
+}
+
+.hero-meta {
+  font-size: 1.1em; /* Slightly larger */
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Increased spacing between meta items */
+  margin-top: 1em;
+}
+
+.hero-meta time, .hero-meta address {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.hero-meta .category {
+    font-style: italic;
+}
+
+.hero-summary {
+  margin-top: 1.8em; /* More space */
+  max-width: 700px; /* Slightly narrower for better readability */
+  font-size: 1.3em; /* Larger */
+  line-height: 1.7; /* More readable line height */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Adjust article content to start below the hero */
+article.article {
+  margin-top: 0; /* Remove previous margin-top */
+  padding-top: 2em; /* Add some padding at the top */
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+  .article-hero {
+    height: 40vh;
+    background-attachment: scroll; /* Disable parallax on mobile */
+  }
+
+  .hero-title {
+    font-size: 2em;
+  }
+
+  .hero-summary {
+    font-size: 1em;
+  }
+}
+
+/* Adjust link styles for vertical layout */
+.navbar a {
+  display: block;
+  width: 100%;
+}
+
+.navbar a:hover {
+  transform: translateX(5px); /* Move right on hover */
+}
+
+.navbar a::after {
+  /* Reposition underline for vertical layout */
+  bottom: 0;
+  left: -5px;
+  height: 100%;
+  width: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+}
+
+/* Search Modal */
+.search-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.search-modal.show {
+  display: block;
+}
+
+.search-modal-content {
+  background-color: var(--pico-background-color);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--pico-card-border-color);
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+}
+
+.search-modal-close {
+  color: var(--pico-muted-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.search-modal-close:hover,
+.search-modal-close:focus {
+  color: var(--pico-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#search-input {
+  width: 100%;
+}
+
+.search-result-item {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--pico-card-border-color);
+}
+
+.search-result-item:last-child {
+}
+
+/* Terminal-like code blocks */
+[data-theme="dark"] .highlight {
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-top: 45px; /* Space for the title bar */
+  overflow: hidden;
+  /* Override from pygments.css */
+  background: #232323;
+}
+
+/* Title bar */
+[data-theme="dark"] .highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background-color: #191919; /* Title bar background */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  z-index: 1;
+}
+
+/* Traffic light buttons */
+[data-theme="dark"] .highlight::after {
+  content: ' ';
+  position: absolute;
+  top: 16px; /* Vertically center in the 45px bar */
+  left: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #f55551; /* Close button */
+  box-shadow: 20px 0 0 #f6b73e, 40px 0 0 #32c146; /* Minimize, Maximize */
+  z-index: 2;
+}
+
+/* Adjust pre element inside */
+[data-theme="dark"] .highlight pre {
+  position: relative;
+  z-index: 0;
+  margin: 0;
+  /* top, right, bottom, left */
+  padding: 1.5em 1.5em 1.5em 2.5em;
+  background-color: transparent !important; /* Override pygments background */
+  color: #f8f8f2;
+}
+
+/* The prompt is in pygments.css, let's adjust its position a bit */
+[data-theme="dark"] .highlight pre::before {
+    left: 1em;
+}

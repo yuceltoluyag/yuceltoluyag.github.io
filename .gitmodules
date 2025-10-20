@@ -1,7 +1,0 @@
-[submodule "pelican-plugins"]
-	path = pelican-plugins
-	url = https://github.com/getpelican/pelican-plugins.git
-
-[submodule "pelican-webmention"]
-	path = pelican-webmention
-	url = git@github.com:drivet/pelican-webmention.git

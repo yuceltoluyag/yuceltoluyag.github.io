@@ -11,14 +11,8 @@ Status: published
 Template: article
 Image: images/claws-sonic-v1-rgb-xl.webp
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Reklam Değildir</div>
-        <p>Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Claw's markasıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir.</p>
-    </div>
+!!! warning "Reklam Değildir"
+    Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Claw's markasıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir.
 </div>
 
 ---
@@ -50,24 +44,12 @@ Aşağıda kulaklığın mikrofon performansını daha iyi anlayabilmeniz için 
   <p class="audio-caption">Claw's Sonic V1 RGB Spectrum 7.1 kulaklık mikrofon testi</p>
 </div>
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">Ses Kaydı Hakkında</div>
-        <p>Bu ses kaydını Discord kanalında paylaştığım dönemde laptop kullanıyordum. O zamanki ses normalden biraz daha yüksekti ama buna rağmen mikrofon gayet iyi iş çıkarmıştı, bence fazlasıyla başarılıydı.</p>
-    </div>
+!!! tip "Ses Kaydı Hakkında"
+    Bu ses kaydını Discord kanalında paylaştığım dönemde laptop kullanıyordum. O zamanki ses normalden biraz daha yüksekti ama buna rağmen mikrofon gayet iyi iş çıkarmıştı, bence fazlasıyla başarılıydı.
 </div>
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Cızırtı Sorunu</div>
-        <p>Hem yazıda hem de ses kaydında belirttiğim gibi, o cızırtı laptop kaynaklıydı. Şu anda masaüstü bilgisayar kullanıyorum ve mikrofon kalitesi tam da beklediğim gibi. Eğer sizde de eski bir laptop varsa, yukarıdaki sesleri duyabilirsiniz—ama bilin ki o duyduklarınızdan fazlası var. :D</p>
-    </div>
+!!! important "Cızırtı Sorunu"
+    Hem yazıda hem de ses kaydında belirttiğim gibi, o cızırtı laptop kaynaklıydı. Şu anda masaüstü bilgisayar kullanıyorum ve mikrofon kalitesi tam da beklediğim gibi. Eğer sizde de eski bir laptop varsa, yukarıdaki sesleri duyabilirsiniz—ama bilin ki o duyduklarınızdan fazlası var. :D
 </div>
 
 
@@ -83,9 +65,8 @@ Yaptığımız mikrofon testinde hafif bir **dip ses** fark ettik. Ancak bu ses,
 
 
 
-<div class="info-box tip">
+!!! tip""
     Not: Kafa yapınız büyükse bile kulaklığı rahatlıkla kullanabilirsiniz. Deneyen biri olarak söylüyorum, Türkiye'de benden büyük kafa bulmak zor! 😄
-</div>
 
 ---
 

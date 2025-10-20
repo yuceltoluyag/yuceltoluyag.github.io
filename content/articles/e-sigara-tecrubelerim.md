@@ -75,28 +75,16 @@ Site ilgili, yazılımı otomatiğe bağlamış. Siparişinizi verin, arkanıza 
 
 Sigara bırakmaya yardımcı olduğunu düşünüyorum. Eğer çok ağır bir içiciyseniz, 9 mg nikotinli seviyeden başlayıp, yavaşça nikotinsizliğe geçebilirsiniz. Sigara gibi yorgunluk veya tembellik hissiyatı vermez. En önemlisi de kullandığınız likitler çok güzel kokar; sigaranın o kötü kokusu yoktur artık. Sabahları uyandığınızda boğazınızdaki yanma ve ağzınızın içinin kötü kokması gibi durumlar yoktur. Bunun neden yasak olduğuna gelince, bilemiyorum, altan bilemiyorum... 😄
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli Dozaj Bilgisi</div>
-        <p>6 mg, 9 mg nikotinlerde nikotin oranı arttığı için yukarıdaki paket hesabının geçersiz olduğunu unutmayın. Ben, lark ve kırmızı Winston içen birisiyim. Bana 3 mg nikotinli likitler yeterli oluyordu. Siz kömür içiyorsanız, salt likitten aşağısı sizi kurtarmaz. 😊 Yani abartmanın anlamı yok, salt likitlere yaklaşmanızı tavsiye etmem. Kendiniz deneyimleyip görün. 3 mg'le başlayın, yavaş yavaş azaltın... İnsan olun azıcık! 😄</p>
-    </div>
+!!! important "Önemli Dozaj Bilgisi"
+    6 mg, 9 mg nikotinlerde nikotin oranı arttığı için yukarıdaki paket hesabının geçersiz olduğunu unutmayın. Ben, lark ve kırmızı Winston içen birisiyim. Bana 3 mg nikotinli likitler yeterli oluyordu. Siz kömür içiyorsanız, salt likitten aşağısı sizi kurtarmaz. 😊 Yani abartmanın anlamı yok, salt likitlere yaklaşmanızı tavsiye etmem. Kendiniz deneyimleyip görün. 3 mg'le başlayın, yavaş yavaş azaltın... İnsan olun azıcık! 😄
 </div>
 
 # Zararları
 
 Ağız kuruluğu yapar, bol bol su içersiniz. Olur olmadık yerde gaz çıkartabilirsiniz 😊 Başka bir şeyini görmedim. Dediğim gibi, bu alet gerçekten sigarayı bırakmaya yardımcı olabilir. Kullanalı iki ay oldu, sigarayı hiç aramadım. Bir keresinde yakayım dedim, leş gibi koktu ve çok ekşi bir tat geldiği için direkt söndürdüm.
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Sağlık Uyarısı</div>
-        <p>Arkadaşlar, kullanmadan önce mutlaka doktorunuza danışın. Dişleriniz hassastır ya da damak rahatsızlığınız vardır, yazımla gaza gelip kullanmaya kalkmayın. Sonuçta ağzınıza ısı veriyorsunuz. Kullanırken de mutlaka kaliteli likitler kullanın; piyasada o kadar kalitesiz likit var ki, sigarayı bırakacağım derken başka yerinizden olmayın...</p>
-    </div>
+!!! important "Sağlık Uyarısı"
+    Arkadaşlar, kullanmadan önce mutlaka doktorunuza danışın. Dişleriniz hassastır ya da damak rahatsızlığınız vardır, yazımla gaza gelip kullanmaya kalkmayın. Sonuçta ağzınıza ısı veriyorsunuz. Kullanırken de mutlaka kaliteli likitler kullanın; piyasada o kadar kalitesiz likit var ki, sigarayı bırakacağım derken başka yerinizden olmayın...
 </div>
 
 # Sezon Finali

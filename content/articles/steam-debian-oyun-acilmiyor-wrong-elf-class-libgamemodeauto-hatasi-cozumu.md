@@ -9,8 +9,7 @@ Summary: Debian'da Steam oyunları açılmıyor mu? Wrong ELF Class, libgamemode
 Template: article
 Image: images/linux-girl-steam-debian-elf-class-gamemode-xl.webp
 
-
-Linux kullanıcıları için Steam, oyun dünyasının vazgeçilmez kapısıdır. Ancak Debian üzerinde oyun açmaya çalışırken **“wrong ELF class: ELFCLASS32/64”**, **“libgamemodeauto.so preload cannot be preloaded”** veya **FMOD preload hataları** ile karşılaşabilirsiniz.
+Linux kullanıcıları için Steam, oyun dünyasının vazgeçilmez kapısıdır. Ancak Debian üzerinde oyun açmaya çalışırken **“wrong ELF class: ELFCLASS32/64"**, **“libgamemodeauto.so preload cannot be preloaded"** veya **FMOD preload hataları** ile karşılaşabilirsiniz.
 
 [responsive_img src="/images/steam-debian-wrong-elf-class-gamemode-hatasi-xl.webp" alt="Steam Debian Wrong ELF Class ve Gamemode Hatası Çözümü" /]
 
@@ -20,7 +19,7 @@ Bu yazıda Debian’da Steam oyunlarının açılmama sorununu çözmek için **
 
 1. Depo üzerinden eksik paketlerin kurulması
 2. Manuel `.deb` paket indirerek GameMode kurulumu
-3. Ek olarak FMOD ve LD\_PRELOAD hataları için alternatif çözümler
+3. Ek olarak FMOD ve LD_PRELOAD hataları için alternatif çözümler
 
 Hazırsanız adım adım çözümlere geçelim. 🚀
 
@@ -28,29 +27,27 @@ Hazırsanız adım adım çözümlere geçelim. 🚀
 
 ## 🔍 Sorunun Belirtileri
 
-* Steam normal açılır, oyun başlatılır ancak **anında kapanır**.
-* Terminal çıktısında şu hatalar görülür:
+- Steam normal açılır, oyun başlatılır ancak **anında kapanır**.
+- Terminal çıktısında şu hatalar görülür:
 
-  ```bash
+```bash
+
   ERROR: ld.so: object '/home/user/.local/share/Steam/ubuntu12_32/gameoverlayrenderer.so'
   from LD_PRELOAD cannot be preloaded (wrong ELF class: ELFCLASS32): ignored.
 
   ERROR: ld.so: object 'libgamemodeauto.so.0' from LD_PRELOAD cannot be preloaded: ignored.
-  ```
-* Bazı oyunlarda FMOD hataları:
 
-  ```bash
+```
+
+- Bazı oyunlarda FMOD hataları:
+
+```bash
   ERROR: ld.so: object '.../libfmodstudio.so' from LD_PRELOAD cannot be preloaded: ignored.
-  ```
+```
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli</div>
-        <p>Bu hatalar genellikle oyun çalıştırmayı engeller. Ancak çözüm basit: eksik kütüphaneleri ve doğru GameMode paketlerini kurmak.</p>
-    </div>
+!!! important "Önemli"
+Bu hatalar genellikle oyun çalıştırmayı engeller. Ancak çözüm basit: eksik kütüphaneleri ve doğru GameMode paketlerini kurmak.
+
 </div>
 
 ---
@@ -82,7 +79,7 @@ sudo apt install gamemode libgamemode0:i386
 
 ---
 
-### 🔧 Sorun Devam Ederse: LD\_PRELOAD Test Yöntemi
+### 🔧 Sorun Devam Ederse: LD_PRELOAD Test Yöntemi
 
 Eğer yukarıdaki adımlardan sonra hâlâ oyun açılmıyorsa terminalde şu komutla test edin:
 
@@ -93,14 +90,9 @@ steam
 
 Bu şekilde Steam’i terminalden başlatın ve oyunu deneyin. Çalışırsa bu satırı **Steam başlatıcı ayarlarına** veya `~/.bashrc` dosyasına ekleyebilirsiniz.
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>Bu yöntem yalnızca test amaçlıdır. Kalıcı çözüm için manuel GameMode kurulumu (Yöntem 2) daha sağlıklıdır.</p>
-    </div>
+!!! tip "İpucu"
+Bu yöntem yalnızca test amaçlıdır. Kalıcı çözüm için manuel GameMode kurulumu (Yöntem 2) daha sağlıklıdır.
+
 </div>
 
 ---
@@ -117,12 +109,12 @@ sudo apt remove gamemode --autoremove
 
 ### 2. Gerekli `.deb` dosyalarını indirin
 
-* [gamemode (amd64)](https://packages.debian.org/sid/amd64/gamemode/download)
-* [gamemode-daemon (amd64)](https://packages.debian.org/sid/amd64/gamemode-daemon/download)
-* [libgamemode0 (amd64)](https://packages.debian.org/sid/amd64/libgamemode0/download)
-* [libgamemodeauto0 (amd64)](https://packages.debian.org/sid/amd64/libgamemodeauto0/download)
-* [libgamemode0 (i386)](https://packages.debian.org/sid/i386/libgamemode0/download)
-* [libgamemodeauto0 (i386)](https://packages.debian.org/sid/i386/libgamemodeauto0/download)
+- [gamemode (amd64)](https://packages.debian.org/sid/amd64/gamemode/download)
+- [gamemode-daemon (amd64)](https://packages.debian.org/sid/amd64/gamemode-daemon/download)
+- [libgamemode0 (amd64)](https://packages.debian.org/sid/amd64/libgamemode0/download)
+- [libgamemodeauto0 (amd64)](https://packages.debian.org/sid/amd64/libgamemodeauto0/download)
+- [libgamemode0 (i386)](https://packages.debian.org/sid/i386/libgamemode0/download)
+- [libgamemodeauto0 (i386)](https://packages.debian.org/sid/i386/libgamemodeauto0/download)
 
 ### 3. İndirilen paketleri kurun
 
@@ -174,7 +166,7 @@ Debian’da Steam oyunlarının açılmamasına sebep olan **wrong ELF class**, 
 Bu rehberde üç aşamalı çözüm öğrendik:
 
 1. Depodan eksik 32-bit paketleri ve GameMode’u kurmak
-2. LD\_PRELOAD yöntemiyle test yapmak
+2. LD_PRELOAD yöntemiyle test yapmak
 3. Manuel `.deb` paketleri indirip GameMode’u güncel sürümle yeniden kurmak
 
 Her iki yöntem de problemi çözer, ancak **birincisi daha pratik**, ikincisi ise **daha güncel** bir alternatif sunar.
@@ -182,7 +174,7 @@ Her iki yöntem de problemi çözer, ancak **birincisi daha pratik**, ikincisi i
 Artık Debian üzerinde Steam oyunlarını sorunsuzca çalıştırabilirsiniz. 🎮🐧
 
 👉 Oyun çalışıyor fakat ses gelmiyorsa, Linux için hazırladığımız Steam ses hatası çözüm rehberine
- bakabilirsiniz.: [Steam Linux Ses Hatası Çözümü](/arch-linux-steam-ses-hatasi-cozumu)
+bakabilirsiniz.: [Steam Linux Ses Hatası Çözümü](/arch-linux-steam-ses-hatasi-cozumu)
 
 ---
 

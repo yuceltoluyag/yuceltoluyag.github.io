@@ -1,8 +1,0 @@
----
-DirectoryPath: "output"
-CheckFavicon: true
-EnforceHTML5: true
-CheckExternal: false
-IgnoreSSLVerify: true
-IgnoreURLs:
-    - "http://localhost:8000"

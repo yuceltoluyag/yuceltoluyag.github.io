@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+  <head>
+    {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Pelican" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ DESCRIPTION }}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pico.indigo.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/44040beaf0.js"
+      crossorigin="anonymous"
+    ></script>
+
+
+    {% if FEED_ALL_ATOM %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Full Atom Feed"
+    />
+    {% endif %} {% if FEED_ALL_RSS %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Full RSS Feed"
+    />
+    {% endif %} {% if FEED_ATOM %}
+    <link
+      href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Atom Feed"
+    />
+    {% endif %} {% if FEED_RSS %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} RSS Feed"
+    />
+    {% endif %} {% if CATEGORY_FEED_ATOM and category %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Kategoriler Atom Beslemesi"
+    />
+    {% endif %} {% if CATEGORY_FEED_RSS and category %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Kategoriler RSS Beslemesi"
+    />
+    {% endif %} {% if TAG_FEED_ATOM and tag %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}"
+      type="application/atom+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Etiketler Atom Beslemesi"
+    />
+    {% endif %} {% if TAG_FEED_RSS and tag %}
+    <link
+      href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}"
+      type="application/rss+xml"
+      rel="alternate"
+      title="{{ SITENAME }} Etiketler RSS Beslemesi"
+    />
+    {% endif %}
+
+    <!-- IndieWeb -->
+    <link
+      rel="webmention"
+      href="https://webmention.io/yuceltoluyag.github.io/webmention"
+    />
+    <link
+      rel="pingback"
+      href="https://webmention.io/yuceltoluyag.github.io/xmlrpc"
+    />
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+    <!-- Bridgy -->
+    <link rel="me" href="https://github.com/{{ SOCIAL.github }}" />
+    {% if SOCIAL.mastodon %}
+    <link rel="me" href="{{ SOCIAL.mastodon }}" />
+    {% endif %}
+
+    <!-- Webmention.io Feeds -->
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      href="https://webmention.io/api/mentions.atom?token=Ap4Pb-YQo7Ne68a7rpJ0qA"
+      title="Webmentions Atom Feed"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="https://webmention.io/api/mentions.rss?token=Ap4Pb-YQo7Ne68a7rpJ0qA"
+      title="Webmentions RSS Feed"
+    />
+    {% endblock head %}
+  </head>
+
+  <body>
+
+    <div class="wrapper">
+      <aside class="sidebar">
+        <section id="nav">
+          <nav class="navbar">
+            <ul>
+              {% for item in NAVBAR_LINKS %}
+              <li id="fadeshow2">
+                <a
+                  href="{{ SITEURL }}{{ item.url }}"
+                  target="{{ item.target }}"
+                  class="contrast"
+                  aria-label="{{ item.name }}"
+                  ><i class="{{ item.icon }} fa-2x"></i
+                ></a>
+              </li>
+              {% endfor %} {% if SOCIAL %} {% for name, value in SOCIAL.items()
+              %} {% if name in ['github', 'youtube', 'bluesky', 'kick'] %} {%
+              set icon_class = '' %} {% set url = '' %} {% if name == 'github'
+              %} {% set icon_class = 'fa-brands fa-github-alt' %} {% set url =
+              'https://github.com/' + value %} {% elif name == 'youtube' %} {%
+              set icon_class = 'fa-brands fa-youtube' %} {% set url =
+              'https://www.youtube.com/@' + value %} {% elif name == 'bluesky'
+              %} {% set icon_class = 'fa-brands fa-bluesky' %} {% set url =
+              'https://bsky.app/profile/' + value %} {% elif name == 'instagram'
+              %} {% set icon_class = 'fa-brands fa-instagram' %} {% set url =
+              'https://instagram.com/' + value %} {% elif name == 'twitch' %} {%
+              set icon_class = 'fa-brands fa-twitch' %} {% set url =
+              'https://twitch.tv/' + value %} {% elif name == 'matrix' %} {% set
+              icon_class = 'fa-brands fa-matrix-org' %} {% set url =
+              'https://matrix.to/#/' + value %} {% elif name == 'discord' %} {%
+              set icon_class = 'fa-brands fa-discord' %} {% set url =
+              'https://discord.com/users/' + value %} {% elif name == 'kick' %}
+              {% set icon_class = 'fa-brands fa-kickstarter' %} {% set url =
+              'https://kick.com/' + value %} {% elif name == 'bynogame' %} {%
+              set icon_class = 'fa-solid fa-wallet' %} {% set url = '#' %} {%
+              elif name == 'github_sponsor' %} {% set icon_class = 'fa-solid
+              fa-heart' %} {% set url = 'https://github.com/sponsors/' + value
+              %} {% endif %} {% if url %}
+              <li>
+                <a
+                  href="{{ url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="contrast"
+                  aria-label="Social media link"
+                  ><i class="{{ icon_class }} fa-2x"></i
+                ></a>
+              </li>
+              {% endif %} {% endif %} {% endfor %} {% endif %}
+              <li>
+                <a href="#" class="search-trigger" aria-label="Search"
+                  ><i class="fa-solid fa-search fa-2x"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" id="theme-switcher" aria-label="Toggle theme">
+                  <i id="theme-icon" class="fa-solid fa-sun fa-lg"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+      </aside>
+      <div class="content-wrapper">
+        <main id="main-content" class="content container">
+          {% block content %} {% endblock %}
+        </main>
+      </div>
+    </div>
+
+    <div id="search-modal" class="search-modal">
+      <div class="search-modal-content">
+        <span class="search-modal-close">&times;</span>
+        <form id="search-form">
+          <input type="search" id="search-input" placeholder="Arama..." />
+        </form>
+        <div id="search-results"></div>
+      </div>
+    </div>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
+
+    <script>
+      const themeSwitcher = document.getElementById("theme-switcher");
+      const themeIcon = document.getElementById("theme-icon");
+      const html = document.documentElement;
+
+      // Set initial theme from localStorage or default to dark
+      const currentTheme = localStorage.getItem("theme") || "dark";
+      html.setAttribute("data-theme", currentTheme);
+      themeIcon.className =
+        currentTheme === "dark"
+          ? "fa-solid fa-moon fa-2x"
+          : "fa-solid fa-sun fa-2x";
+
+      themeSwitcher.addEventListener("click", function (e) {
+        e.preventDefault();
+        const newTheme =
+          html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        themeIcon.className =
+          newTheme === "dark"
+            ? "fa-solid fa-moon fa-2x"
+            : "fa-solid fa-sun fa-2x";
+      });
+    </script>
+  </body>
+</html>

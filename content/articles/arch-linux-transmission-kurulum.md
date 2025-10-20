@@ -107,35 +107,35 @@ Aşağıdaki adımları izleyerek Transmission'ı systemd servisi olarak başlat
 
 1. **Servis Dosyası Oluşturun:**
 
-   ```bash
-   sudo nano /etc/systemd/system/transmission-daemon.service
-   ```
+```bash
+  sudo nano /etc/systemd/system/transmission-daemon.service
+```
 
 2. **Servis Dosyasını Düzenleyin:**
    Servis dosyasının içeriği şu şekilde olmalıdır:
 
-   ```ini
-   [Unit]
-   Description=Transmission Daemon
-   After=network.target
+```ini
+  [Unit]
+  Description=Transmission Daemon
+  After=network.target
 
-   [Service]
-   User=yourusername
-   ExecStart=/usr/bin/transmission-daemon --foreground --no-daemon
-   ExecStop=/usr/bin/transmission-daemon --stop
-   Restart=always
+  [Service]
+  User=yourusername
+  ExecStart=/usr/bin/transmission-daemon --foreground --no-daemon
+  ExecStop=/usr/bin/transmission-daemon --stop
+  Restart=always
 
-   [Install]
-   WantedBy=multi-user.target
-   ```
+  [Install]
+  WantedBy=multi-user.target
+```
 
 3. **Servisi Başlatmak ve Etkinleştirmek:**
    Bu servis dosyasını kaydettikten sonra, aşağıdaki komutlarla servisi başlatabilir ve etkinleştirebilirsiniz:
 
-   ```bash
-   sudo systemctl enable transmission-daemon
-   sudo systemctl start transmission-daemon
-   ```
+```bash
+  sudo systemctl enable transmission-daemon
+  sudo systemctl start transmission-daemon
+```
 
 ---
 
@@ -148,9 +148,10 @@ Transmission üzerinde torrent dosyalarınızı yönetmek oldukça basittir. İs
 Web arayüzü üzerinden torrent eklemek için:
 
 1. Tarayıcınızda `http://localhost:9091` adresine gidin.
-2. “Ekle” butonuna tıklayın ve torrent dosyasını yükleyin.
+2. “Ekle" butonuna tıklayın ve torrent dosyasını yükleyin.
 3. İndirme işlemini başlatın.
-[responsive_img src="/images/Transmission-xl.webp" alt="Transmission Web Arayüzü" /]
+   [responsive_img src="/images/Transmission-xl.webp" alt="Transmission Web Arayüzü" /]
+
 ### 5.2 Komut Satırı Üzerinden Torrent Ekleme
 
 Komut satırından bir torrent dosyası eklemek için:
@@ -164,8 +165,6 @@ transmission-remote -a /path/to/your/torrent/file
 ## Sonuç
 
 Arch Linux üzerinde Transmission'ı kurmak ve yapılandırmak oldukça basit bir işlemdir. Bu rehberde, Transmission'ın hem komut satırı (CLI) hem de grafiksel kullanıcı arayüzü (GUI) ile nasıl çalıştırılacağını ve yapılandırılacağını detaylı bir şekilde öğrendiniz. Artık Transmission ile torrent dosyalarınızı kolayca indirebilir ve paylaşabilirsiniz.
-
-
 
 Eğer başka bir sorunuz varsa veya adımlarda takıldığınız bir nokta olduysa, yorum kısmında sorularınızı sorabilirsiniz!
 

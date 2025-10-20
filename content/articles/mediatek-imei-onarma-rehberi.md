@@ -16,56 +16,19 @@ Image: images/crDroid-95-xl.webp
 
 # MediaTek IMEI Yedek Alma - Onarma Rehberi 📱
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli</div>
-        <p>⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.  
-        Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.  
-        Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz.</p>
-    </div>
+!!! important "Önemli"
+    ⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.  
+            Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.  
+            Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz.
 </div>
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Uyarı</div>
-        <p>📱 İşlem sırasında telefonunuzdaki önemli veriler (uygulamalar, ayarlar, dosyalar vb.) kaybolabilir.  
-        Mutlaka işlem öncesi yedeklerinizi alın ve önemli dosyalarınızı yedekleyin.</p>
-    </div>
+!!! warning "Uyarı"
+    📱 İşlem sırasında telefonunuzdaki önemli veriler (uygulamalar, ayarlar, dosyalar vb.) kaybolabilir.  
+            Mutlaka işlem öncesi yedeklerinizi alın ve önemli dosyalarınızı yedekleyin.
 </div>
 
-<div class="info-box note">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Bilgi</div>
-        <p>💡 Bu yazılım ve yöntem sadece aşağıdaki MediaTek cihazlarda test edilmiştir ve desteklenmektedir:</p>
-        <ul>
-          <li>Redmi Note 8 Pro</li>
-          <li>Redmi Note 10S / Redmi Note 11 SE / POCO M5s</li>
-          <li>Redmi Note 12S</li>
-          <li>Redmi 10 / Redmi 10 2022 / Redmi 10 Prime / Redmi 10 Prime 2022 / Redmi Note 11 4G</li>
-          <li>Redmi 12C / POCO C55</li>
-          <li>Redmi 12</li>
-          <li>Redmi 9</li>
-        </ul>
-    </div>
-</div>
-
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>🔧 Ben <strong>Redmi Note 8 Pro</strong> kullanıcısıyım ve bu rehberi kendi cihazımda uyguladım.</p>
-    </div>
+!!! note "Bilgi"
+    💡 Bu yazılım ve yöntem sadece aşağıdaki MediaTek cihazlarda test edilmiştir ve desteklenmektedir:
 </div>
 
 ## 🎯 Giriş Bölümü
@@ -99,26 +62,8 @@ Bu rehberle bu sorunu teknik olarak nasıl çözeceğinizi öğreneceksiniz.
 5. TWRP Recovery yüklü MediaTek cihaz
 6. USB kablo
 
-<div class="info-box note">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Bilgi</div>
-        <p>Arch Linux kullanıyorsan, terminalde aşağıdaki komutlarla gerekli paketleri yükleyebilirsin:</p>
-        <pre><code>sudo pacman -Syu android-tools php git</code></pre>
-    </div>
-</div>
-
-- android-udev Paketi Kurulumu (Kritik Adım)
-<div class="info-box important">
-<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-<div>
-<div class="alert-title">Önemli</div>
-<p>android-udev paketi olmadan ADB/Fastboot ile cihaz tanıma sorunları yaşanır. Bu paket Android cihazların Linux'ta düzgün tanınmasını sağlar.</p>
-</div>
+!!! note "Bilgi"
+    Arch Linux kullanıyorsan, terminalde aşağıdaki komutlarla gerekli paketleri yükleyebilirsin:
 </div>
 
 Kurulum ve kontrol için:
@@ -151,14 +96,8 @@ git clone https://github.com/timjosten/mtk_imei.git
 cd mtk_imei
 ```
 
-<div class="info-box tip">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>Henüz scripti çalıştırmayın, önce config dosyasını hazırlamamız gerekiyor.</p>
-    </div>
+!!! tip "İpucu"
+    Henüz scripti çalıştırmayın, önce config dosyasını hazırlamamız gerekiyor.
 </div>
 
 ### 2️⃣ Adım: Chip ID ve Config Dosyasını Hazırlama
@@ -169,14 +108,8 @@ Cihazınızın chip ID'sini alın:
 adb shell getprop ro.boot.chipid
 ```
 
-<div class="info-box note">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">İpucu</div>
-        <p>💡 chip_id değeri 0x + 32 hexadecimal karakterden oluşmalıdır (toplam 34 karakter).</p>
-    </div>
+!!! note "İpucu"
+    💡 chip_id değeri 0x + 32 hexadecimal karakterden oluşmalıdır (toplam 34 karakter).
 </div>
 
 Örnek çıktı:
@@ -199,14 +132,8 @@ adb shell getprop ro.boot.chipid
 }
 ```
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Önemli</div>
-        <p>config.txt dosyası JSON formatında olmalıdır. wifi_mac ve bt_mac alanları boş bırakılamaz; 12 haneli hexadecimal değer olmalıdır.</p>
-    </div>
+!!! important "Önemli"
+    config.txt dosyası JSON formatında olmalıdır. wifi_mac ve bt_mac alanları boş bırakılamaz; 12 haneli hexadecimal değer olmalıdır.
 </div>
 
 Wi-Fi ve Bluetooth MAC adreslerini almak için:
@@ -243,14 +170,8 @@ Success!
 
 ### 4️⃣ Adım: NVRAM ve NVDATA Yedeği Alma
 
-<div class="info-box important">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Yedek Alma</div>
-        <p>Yanlış işlem sonrası geri dönüş için mutlaka yedek alın.</p>
-    </div>
+!!! important "Yedek Alma"
+    Yanlış işlem sonrası geri dönüş için mutlaka yedek alın.
 </div>
 
 Telefonu **TWRP Recovery** modunda açın:
@@ -283,34 +204,16 @@ IMEI numaralarının doğru göründüğünden emin olun.
 
 ## ⚠️ Sorun Giderme İpuçları
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">IMEI Görünmüyor mu?</div>
-        <p>Eğer IMEI görünmüyorsa, <code>config.txt</code> içindeki <code>"imei_1"</code> değerini <code>"000000000000000"</code> yapıp sadece gerçek IMEI'yi <code>"imei_2"</code> alanına yazmayı deneyin.</p>
-    </div>
+!!! warning "IMEI Görünmüyor mu?"
+    Eğer IMEI görünmüyorsa, <code>config.txt</code> içindeki <code>"imei_1"</code> değerini <code>"000000000000000"</code> yapıp sadece gerçek IMEI'yi <code>"imei_2"</code> alanına yazmayı deneyin.
 </div>
 
-<div class="info-box warning">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-    </svg>
-    <div>
-        <div class="alert-title">Bootloader Uyarısı</div>
-        <p>Bu işlemden sonra <strong>bootloader kilidini tekrar kapatmak mümkün olmayabilir.</strong></p>
-    </div>
+!!! warning "Bootloader Uyarısı"
+    Bu işlemden sonra <strong>bootloader kilidini tekrar kapatmak mümkün olmayabilir.</strong>
 </div>
 
-<div class="info-box note">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-    <div>
-        <div class="alert-title">Geri Yükleme</div>
-        <p>Sorun yaşarsanız, yedeklediğiniz NVRAM ve NVDATA'yı TWRP üzerinden geri yükleyebilirsiniz.</p>
-    </div>
+!!! note "Geri Yükleme"
+    Sorun yaşarsanız, yedeklediğiniz NVRAM ve NVDATA'yı TWRP üzerinden geri yükleyebilirsiniz.
 </div>
 
 ---
