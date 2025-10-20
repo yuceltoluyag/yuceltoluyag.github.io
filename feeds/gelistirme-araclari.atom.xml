@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Geliştirme Araçları</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/gelistirme-araclari.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-16T17:30:00+03:00</updated><entry><title>Qwen 3 ve Qwen3-Coder-Plus Üzerinde MCP Server’ları Aktif Etme 🚀</title><link href="https://yuceltoluyag.github.io/qwen3-mcp-server-aktif-etme/" rel="alternate"/><published>2025-08-16T17:30:00+03:00</published><updated>2025-08-16T17:30:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-08-16:/qwen3-mcp-server-aktif-etme/</id><summary type="html">&lt;p&gt;Qwen 3 ve Qwen3-Coder-Plus üzerinde MCP server’ları nasıl aktif edeceğinizi adım adım anlatıyoruz. Ayar dosyası düzenleme, CLI kullanımı ve test etme sürecini bu rehberde bulabilirsiniz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Yapay zek&amp;acirc; destekli geli&amp;scedil;tirme ara&amp;ccedil;lar&amp;inodot;n&amp;inodot;n y&amp;uuml;kseli&amp;scedil;iyle birlikte &lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt; server&amp;rsquo;lar&amp;inodot; da hayat&amp;inodot;m&amp;inodot;za girdi. Bu protokol sayesinde farkl&amp;inodot; servisleri Qwen gibi b&amp;uuml;y&amp;uuml;k dil modellerine kolayca entegre edebiliyor, taray&amp;inodot;c&amp;inodot; otomasyonu, ba&amp;gbreve;lamsal analizler ve hatta sihirli API ba&amp;gbreve;lant&amp;inodot;lar&amp;inodot; kurabiliyoruz.&lt;/p&gt;
+&lt;p&gt;Bu rehberde, &lt;strong&gt;Qwen 3, Qwen 3++ ve Qwen3-Coder-Plus&lt;/strong&gt; kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in MCP server&amp;rsquo;lar&amp;inodot;n nas&amp;inodot;l aktif edilece&amp;gbreve;ini ad&amp;inodot;m ad&amp;inodot;m g&amp;ouml;sterece&amp;gbreve;im. 🙂&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-mcp-nedir-ve-neden-onemlidir"&gt;1. MCP Nedir ve Neden &amp;Ouml;nemlidir?&lt;/h2&gt;
+&lt;p&gt;MCP (Model Context Protocol), dil modellerinin harici servislerle g&amp;uuml;venli ve standart bir y&amp;ouml;ntemle ileti&amp;scedil;im kurmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lar. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🌐 &lt;strong&gt;Puppeteer&lt;/strong&gt; ile taray&amp;inodot;c&amp;inodot; otomasyonu yapabilirsiniz.&lt;/li&gt;
+&lt;li&gt;🧠 &lt;strong&gt;Sequential Thinking&lt;/strong&gt; ile daha planl&amp;inodot; ak&amp;inodot;l y&amp;uuml;r&amp;uuml;tme sa&amp;gbreve;layabilirsiniz.&lt;/li&gt;
+&lt;li&gt;📊 &lt;strong&gt;Context7&lt;/strong&gt; gibi servislerle ek ba&amp;gbreve;lam ve haf&amp;inodot;za katabilirsiniz.&lt;/li&gt;
+&lt;li&gt;✨ &lt;strong&gt;Magic&lt;/strong&gt; gibi &amp;ouml;zel eklentilerle API tabanl&amp;inodot; &amp;ccedil;&amp;ouml;z&amp;uuml;mler &amp;uuml;retebilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;E&amp;gbreve;er daha &amp;ouml;nce okumad&amp;inodot;ysan&amp;inodot;z, ilgili yaz&amp;inodot;m&amp;inodot;za da g&amp;ouml;z at&amp;inodot;n: &lt;a href="/mcp-puppeteer-sunucusu-kurulumu/"&gt;MCP ile Taray&amp;inodot;c&amp;inodot; Otomasyonunu Kolayca Ba&amp;scedil;lat&amp;inodot;n: Puppeteer Sunucusu Kurulumu&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-qwensettingsjson-dosyasini-duzenleme"&gt;2. &lt;code&gt;.qwen/settings.json&lt;/code&gt; Dosyas&amp;inodot;n&amp;inodot; D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;p&gt;MCP server&amp;rsquo;lar&amp;inodot;n&amp;inodot; aktif etmenin ilk ad&amp;inodot;m&amp;inodot;, Qwen&amp;rsquo;in ayar dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenlemektir. Terminal &amp;uuml;zerinden:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vim&lt;span class="w"&gt; &lt;/span&gt;.qwen/settings.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A&amp;ccedil;&amp;inodot;lan dosyaya a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ayarlar&amp;inodot; ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"selectedAuthType"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"qwen-oauth"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"mcpServers"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"puppeteer"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"command"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"npx"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"args"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"-y"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"@modelcontextprotocol/server-puppeteer"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"sequential-thinking"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"command"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"npx"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"args"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"-y"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"@modelcontextprotocol/server-sequential-thinking"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"context7"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"command"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"npx"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"args"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"-y"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"@upstash/context7-mcp"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"@21st-dev/magic"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"command"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"npx"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"args"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"-y"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"@21st-dev/magic@latest"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"API_KEY=\"your-api-key\""&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="info-box warning"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Uyar&amp;inodot;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;selectedAuthType&lt;/code&gt; alan&amp;inodot; sizde farkl&amp;inodot; olabilir. &amp;Ouml;rne&amp;gbreve;in GitHub veya ba&amp;scedil;ka bir OAuth y&amp;ouml;ntemi se&amp;ccedil;mi&amp;scedil; olabilirsiniz. Buradaki &amp;ouml;rnek yaln&amp;inodot;zca referans i&amp;ccedil;indir.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-qwen-cli-baslatma-ve-mcp-serverlari-test-etme"&gt;3. Qwen CLI Ba&amp;scedil;latma ve MCP Server&amp;rsquo;lar&amp;inodot; Test Etme&lt;/h2&gt;
+&lt;p&gt;Ayarlar&amp;inodot; yapt&amp;inodot;ktan sonra CLI&amp;rsquo;yi ba&amp;scedil;latabilirsiniz. Terminale &amp;scedil;unu yaz&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;qwen
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;CLI a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda, aktif MCP server&amp;rsquo;lar&amp;inodot;n&amp;inodot;z&amp;inodot; g&amp;ouml;rmek i&amp;ccedil;in &lt;code&gt;/mcp&lt;/code&gt; komutunu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/mcp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er her &amp;scedil;ey do&amp;gbreve;ru yap&amp;inodot;land&amp;inodot;r&amp;inodot;ld&amp;inodot;ysa, biraz &amp;ouml;nce ekledi&amp;gbreve;iniz server&amp;rsquo;lar (&amp;ouml;rne&amp;gbreve;in &lt;strong&gt;puppeteer&lt;/strong&gt;, &lt;strong&gt;sequential-thinking&lt;/strong&gt;, &lt;strong&gt;context7&lt;/strong&gt;, &lt;strong&gt;magic&lt;/strong&gt;) listelenecektir. 🎉&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Qwen MCP Server Aktif" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/qwen-active-mcp-xl.webp" srcset="/images/qwen-active-mcp-sm.webp 300w, /images/qwen-active-mcp-md.webp 500w, /images/qwen-active-mcp-xl.webp 800w, /images/qwen-active-mcp-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;div class="info-box tip"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Idot;pucu&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er CLI&amp;rsquo;de MCP server g&amp;ouml;r&amp;uuml;nm&amp;uuml;yorsa, &amp;ouml;nce &lt;code&gt;npx&lt;/code&gt; ve ilgili paketlerin kurulu oldu&amp;gbreve;undan emin olun. Ard&amp;inodot;ndan ayarlar dosyas&amp;inodot;ndaki JSON format&amp;inodot;n&amp;inodot; kontrol edin.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-sonuc"&gt;4. Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Art&amp;inodot;k &lt;strong&gt;Qwen 3, Qwen 3++ ve Qwen3-Coder-Plus&lt;/strong&gt; &amp;uuml;zerinde MCP server&amp;rsquo;lar&amp;inodot; nas&amp;inodot;l aktif edece&amp;gbreve;inizi biliyorsunuz. 🎯&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.qwen/settings.json&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenlediniz ✅&lt;/li&gt;
+&lt;li&gt;Qwen CLI&amp;rsquo;yi ba&amp;scedil;latt&amp;inodot;n&amp;inodot;z ✅&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/mcp&lt;/code&gt; ile server&amp;rsquo;lar&amp;inodot;n &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; test ettiniz ✅&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bundan sonras&amp;inodot; sizin hayal g&amp;uuml;c&amp;uuml;n&amp;uuml;ze kalm&amp;inodot;&amp;scedil;. MCP sayesinde Qwen&amp;rsquo;i yaln&amp;inodot;zca bir dil modeli olmaktan &amp;ccedil;&amp;inodot;kar&amp;inodot;p, g&amp;uuml;&amp;ccedil;l&amp;uuml; bir geli&amp;scedil;tirme yard&amp;inodot;mc&amp;inodot;s&amp;inodot;na d&amp;ouml;n&amp;uuml;&amp;scedil;t&amp;uuml;rebilirsiniz. 🚀&lt;/p&gt;</content><category term="Geliştirme Araçları"/><category term="qwen3"/><category term="qwen3-coder-plus"/><category term="qwen3++"/><category term="mcp server"/><category term="model context protocol"/><category term="qwen ayarları"/><category term="yapay-zeka"/></entry><entry><title>MCP ile Tarayıcı Otomasyonunu Kolayca Başlatın: Puppeteer Sunucusu Kurulumu</title><link href="https://yuceltoluyag.github.io/mcp-puppeteer-sunucusu-kurulumu/" rel="alternate"/><published>2025-04-17T14:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-04-17:/mcp-puppeteer-sunucusu-kurulumu/</id><summary type="html">&lt;p&gt;Bu yazıda,  Continue Eklentisinde mcp kurulumu&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;MCP (Model Context Protocol)&lt;/strong&gt; kullanarak &lt;em&gt;taray&amp;inodot;c&amp;inodot; otomasyonuna&lt;/em&gt; ba&amp;scedil;lamak m&amp;inodot; istiyorsun? Kafa kar&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;c&amp;inodot; kurulum ad&amp;inodot;mlar&amp;inodot;n&amp;inodot; unut! Bu rehberde, sadece tek bir &lt;code&gt;npx&lt;/code&gt; komutuyla &lt;strong&gt;Puppeteer destekli bir MCP sunucusunun nas&amp;inodot;l &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;laca&amp;gbreve;&amp;inodot;n&amp;inodot;&lt;/strong&gt; ad&amp;inodot;m ad&amp;inodot;m g&amp;ouml;sterece&amp;gbreve;im. &amp;Uuml;stelik t&amp;uuml;m i&amp;scedil;lemler Windows ortam&amp;inodot;nda! 💻&lt;/p&gt;
+&lt;p&gt;Makaleyi sonuna kadar okudu&amp;gbreve;unda, sen de LLM&amp;rsquo;lerin (Large Language Models) ger&amp;ccedil;ek bir taray&amp;inodot;c&amp;inodot; &amp;uuml;zerinden nas&amp;inodot;l i&amp;scedil;lem yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; anlayacak, kendi geli&amp;scedil;tirme ortam&amp;inodot;na kolayca entegre edebileceksin.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="mcp-nedir-ve-neden-onemlidir"&gt;MCP Nedir ve Neden &amp;Ouml;nemlidir?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Model Context Protocol (MCP)&lt;/strong&gt;, yapay zeka modellerinin &amp;ccedil;e&amp;scedil;itli ba&amp;gbreve;lam sa&amp;gbreve;lay&amp;inodot;c&amp;inodot;larla (kod edit&amp;ouml;r&amp;uuml;, terminal, taray&amp;inodot;c&amp;inodot; vb.) ileti&amp;scedil;im kurmas&amp;inodot;n&amp;inodot; kolayla&amp;scedil;t&amp;inodot;ran bir protokold&amp;uuml;r.&lt;/p&gt;
+&lt;p&gt;Peki neden bu kadar &amp;ouml;nemli?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🤖 LLM'lerin taray&amp;inodot;c&amp;inodot;da gezinmesini sa&amp;gbreve;lar.&lt;/li&gt;
+&lt;li&gt;🧠 Geli&amp;scedil;mi&amp;scedil; kod tamamlama ve dok&amp;uuml;mantasyon yetenekleri sunar.&lt;/li&gt;
+&lt;li&gt;🔧 U&amp;ccedil;tan uca entegrasyonla &amp;uuml;retkenli&amp;gbreve;i art&amp;inodot;r&amp;inodot;r.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="puppeteer-nedir"&gt;Puppeteer Nedir?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://pptr.dev/" rel="noopener noreferrer" target="_blank"&gt;Puppeteer&lt;/a&gt; bir Node.js k&amp;uuml;t&amp;uuml;phanesidir ve Chrome/Chromium taray&amp;inodot;c&amp;inodot;s&amp;inodot;n&amp;inodot; programatik olarak kontrol etmene olanak tan&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;Puppeteer ile:
+- Web sayfalar&amp;inodot;nda gezinebilir,
+- Ekran g&amp;ouml;r&amp;uuml;nt&amp;uuml;leri alabilir,
+- Formlar doldurabilir,
+- Sayfa i&amp;ccedil;eri&amp;gbreve;ini tarayabilirsin.&lt;/p&gt;
+&lt;p&gt;Ve MCP sayesinde, bunu LLM'lere devretmek m&amp;uuml;mk&amp;uuml;n!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="problem-hizli-kurulumun-eksikligi"&gt;Problem: H&amp;inodot;zl&amp;inodot; Kurulumun Eksikli&amp;gbreve;i&lt;/h2&gt;
+&lt;p&gt;Taray&amp;inodot;c&amp;inodot; otomasyonunu ba&amp;scedil;latmak i&amp;ccedil;in genellikle karma&amp;scedil;&amp;inodot;k yap&amp;inodot;land&amp;inodot;rmalar gerekir. Yeni ba&amp;scedil;layanlar i&amp;ccedil;in bu, cayd&amp;inodot;r&amp;inodot;c&amp;inodot; olabilir.&lt;/p&gt;
+&lt;p&gt;Ayr&amp;inodot;ca yanl&amp;inodot;&amp;scedil; &lt;code&gt;npx&lt;/code&gt; komutu, &lt;code&gt;entrypoint not found&lt;/code&gt; gibi hatalarla seni u&amp;gbreve;ra&amp;scedil;t&amp;inodot;rabilir. Bu rehberin amac&amp;inodot;, bu sorunu &lt;strong&gt;basit ve &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r bir &amp;ccedil;&amp;ouml;z&amp;uuml;mle&lt;/strong&gt; ortadan kald&amp;inodot;rmak.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="cozum-tek-komutla-puppeteer-sunucusunu-baslatmak"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m: Tek Komutla Puppeteer Sunucusunu Ba&amp;scedil;latmak ✅&lt;/h2&gt;
+&lt;h3 id="1-on-kosullar"&gt;1. &amp;Ouml;n Ko&amp;scedil;ullar&lt;/h3&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki yaz&amp;inodot;l&amp;inodot;mlar&amp;inodot;n sistemine kurulu oldu&amp;gbreve;undan emin ol:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Node.js&lt;/strong&gt; (en az v18+)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npx&lt;/code&gt; komutu (Node ile birlikte gelir)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kontrol etmek i&amp;ccedil;in terminale &amp;scedil;unu yaz:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;node&lt;span class="w"&gt; &lt;/span&gt;-v
+npx&lt;span class="w"&gt; &lt;/span&gt;-v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="2-npx-ile-sunucuyu-baslatmak"&gt;2. &lt;code&gt;npx&lt;/code&gt; ile Sunucuyu Ba&amp;scedil;latmak&lt;/h3&gt;
+&lt;p&gt;Komut &amp;ccedil;ok basit. Windows ortam&amp;inodot;nda terminali a&amp;ccedil; ve a&amp;scedil;a&amp;gbreve;&amp;inodot;dakini yaz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npx&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;@modelcontextprotocol/server-puppeteer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🚀 Bu komut, gerekli paketi indirir ve taray&amp;inodot;c&amp;inodot; destekli MCP sunucusunu ba&amp;scedil;lat&amp;inodot;r. Do&amp;gbreve;ru &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;nda terminalde &amp;scedil;una benzer bir &amp;ccedil;&amp;inodot;kt&amp;inodot; g&amp;ouml;r&amp;uuml;rs&amp;uuml;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;[MCP] Puppeteer server listening on port 4455...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Taray&amp;inodot;c&amp;inodot; da otomatik olarak a&amp;ccedil;&amp;inodot;l&amp;inodot;r (headless de&amp;gbreve;il).&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="3-yaml-ile-konfigurasyon-istege-bagli"&gt;3. YAML ile Konfig&amp;uuml;rasyon (&amp;Idot;ste&amp;gbreve;e Ba&amp;gbreve;l&amp;inodot;)&lt;/h3&gt;
+&lt;p&gt;Geli&amp;scedil;mi&amp;scedil; kullan&amp;inodot;m i&amp;ccedil;in &lt;code&gt;mcpServers&lt;/code&gt; bloklar&amp;inodot;na bu sunucuyu ekleyebilirsin:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;YAML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;mcpServers&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;puppeteer&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;command&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;cmd&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/c&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;npx&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;-y&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"@modelcontextprotocol/server-puppeteer"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Continue eklentisinde &amp;scedil;u &amp;scedil;ekilde kullan&amp;inodot;yorum,ollama ile birlikte
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;YAML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Local Assistant&lt;/span&gt;
+&lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1.0.0&lt;/span&gt;
+&lt;span class="nt"&gt;schema&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;v1&lt;/span&gt;
+&lt;span class="nt"&gt;models&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;deekseek-r1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ollama&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;model&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;deepseek-r1&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Qwen 2.5 Coder 7b&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ollama&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;model&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;qwen2.5-coder:7b&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;roles&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;autocomplete&lt;/span&gt;
+&lt;span class="nt"&gt;context&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;code&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;docs&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;diff&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;terminal&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;problems&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;folder&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;codebase&lt;/span&gt;
+&lt;span class="nt"&gt;docs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Pelican&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;faviconUrl&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;startUrl&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;https://docs.getpelican.com/en/latest/quickstart.html&lt;/span&gt;
+
+&lt;span class="nt"&gt;mcpServers&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;browser-tools&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;command&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;cmd&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/c&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;npx&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;-y&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"@agentdeskai/browser-tools-mcp@1.2.0"&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;puppeteer&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;command&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;cmd&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/c&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;npx&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;-y&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"@modelcontextprotocol/server-puppeteer"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu sayede config tabanl&amp;inodot; ba&amp;scedil;latmalar m&amp;uuml;mk&amp;uuml;n olur. 🔧&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sik-karsilasilan-hatalar-ve-cozumleri_1"&gt;S&amp;inodot;k Kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan Hatalar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri 🧯&lt;/h2&gt;
+&lt;h3 id="mcp-server-puppeteer-is-not-recognized"&gt;&lt;code&gt;mcp-server-puppeteer is not recognized...&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Bu hata genellikle &lt;code&gt;npx&lt;/code&gt; paketinin yanl&amp;inodot;&amp;scedil; &amp;ccedil;a&amp;gbreve;r&amp;inodot;lmas&amp;inodot;yla olu&amp;scedil;ur. Tek &amp;ccedil;&amp;ouml;z&amp;uuml;m:&lt;/p&gt;
+&lt;p&gt;✅ &lt;code&gt;@modelcontextprotocol/server-puppeteer&lt;/code&gt; paketini &lt;code&gt;npx&lt;/code&gt; ile do&amp;gbreve;rudan &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="gercek-hayatta-kullanim-senaryolari_1"&gt;Ger&amp;ccedil;ek Hayatta Kullan&amp;inodot;m Senaryolar&amp;inodot;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;📄 Belge taray&amp;inodot;c&amp;inodot; ile dinamik i&amp;ccedil;erik &amp;ccedil;ekmek&lt;/li&gt;
+&lt;li&gt;🛠️ Web uygulama testlerini LLM tabanl&amp;inodot; hale getirmek&lt;/li&gt;
+&lt;li&gt;💬 Chatbot'lar&amp;inodot;n canl&amp;inodot; sayfalardan bilgi &amp;ccedil;ekmesi&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;MCP sayesinde t&amp;uuml;m bu i&amp;scedil;lemler &lt;strong&gt;s&amp;inodot;f&amp;inodot;r ek kod yazmadan&lt;/strong&gt; yap&amp;inodot;labilir!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-ve-cagri"&gt;Sonu&amp;ccedil; ve &amp;Ccedil;a&amp;gbreve;r&amp;inodot; 🎯&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;MCP ile Puppeteer sunucusunu ba&amp;scedil;latmak hi&amp;ccedil; bu kadar kolay olmam&amp;inodot;&amp;scedil;t&amp;inodot;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Tek bir komutla g&amp;uuml;&amp;ccedil;l&amp;uuml; bir taray&amp;inodot;c&amp;inodot; destekli LLM ortam&amp;inodot; kurabilirsin. Bu yaz&amp;inodot;y&amp;inodot; uygulayarak sen de kod tabanl&amp;inodot; projelerinde bir ad&amp;inodot;m &amp;ouml;ne ge&amp;ccedil;ebilirsin.&lt;/p&gt;
+&lt;p&gt;📣 E&amp;gbreve;er bu rehber i&amp;scedil;ine yarad&amp;inodot;ysa, yorum b&amp;inodot;rakmay&amp;inodot; ve blogu takip etmeyi unutma! Yeni makalelerde daha fazla LLM entegrasyonu anlataca&amp;gbreve;&amp;inodot;m.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Haz&amp;inodot;rsan, &amp;scedil;imdi terminalini a&amp;ccedil; ve komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r:&lt;br/&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;npx&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;@modelcontextprotocol/server-puppeteer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Keyifli kodlamalar! 🚀&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="Puppeteer Sunucusu Kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/mcp-puppeteer-sunucusu-kurulumu-xl.webp" srcset="/images/mcp-puppeteer-sunucusu-kurulumu-sm.webp 300w, /images/mcp-puppeteer-sunucusu-kurulumu-md.webp 500w, /images/mcp-puppeteer-sunucusu-kurulumu-xl.webp 800w, /images/mcp-puppeteer-sunucusu-kurulumu-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Geliştirme Araçları"/><category term="mcp"/><category term="puppeteer"/><category term="npx"/><category term="browser automation"/><category term="nodejs"/><category term="tarayıcı otomasyonu"/><category term="yapay zeka"/><category term="mcp kurulumu"/></entry><entry><title>Phpstorm içerisinde CS Fixer Kullanmak</title><link href="https://yuceltoluyag.github.io/phpstorm-icinde-cs-fixer-kullanmak/" rel="alternate"/><published>2020-02-06T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-02-06:/phpstorm-icinde-cs-fixer-kullanmak/</id><summary type="html">&lt;p&gt;PhpStorm içerisinde CS Fixer kullanımını adım adım anlatan rehber.&lt;/p&gt;</summary><content type="html">&lt;h1 id="psr-standarti-nedir"&gt;PSR Standart&amp;inodot; Nedir?&lt;/h1&gt;
+&lt;p&gt;PSR, "PHP Standards Recommendations" anlam&amp;inodot;na gelir ve PHP ile yaz&amp;inodot;lan kodlar&amp;inodot;n belirli bir formatta yaz&amp;inodot;lmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;layan standartlard&amp;inodot;r. G&amp;uuml;n&amp;uuml;m&amp;uuml;z IDE'leri &lt;strong&gt;code refactor&lt;/strong&gt; ad&amp;inodot; alt&amp;inodot;nda bu i&amp;scedil;lemi &lt;strong&gt;otomatik&lt;/strong&gt; hale getirdi&amp;gbreve;i i&amp;ccedil;in &amp;ccedil;o&amp;gbreve;u yaz&amp;inodot;l&amp;inodot;mc&amp;inodot; bu standartlardan habersiz olabilir (bu durum genelde freelance &amp;ccedil;al&amp;inodot;&amp;scedil;anlar i&amp;ccedil;in ge&amp;ccedil;erlidir). Ba&amp;scedil;lang&amp;inodot;&amp;ccedil;ta, IDE'ler standartlar de&amp;gbreve;i&amp;scedil;tik&amp;ccedil;e otomatik i&amp;scedil;lemi kullan&amp;inodot;c&amp;inodot;ya b&amp;inodot;rakabiliyor.&lt;/p&gt;
+&lt;div class="info-box note"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Kullan&amp;inodot;mdan Kald&amp;inodot;r&amp;inodot;ld&amp;inodot;&lt;/div&gt;
+&lt;p&gt;&lt;b&gt;Deprecated&lt;/b&gt; - 2019-08-10 tarihi itibariyle PSR-2 standartlar&amp;inodot; kullan&amp;inodot;m d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rak&amp;inodot;lm&amp;inodot;&amp;scedil;t&amp;inodot;r. &lt;a href="https://www.php-fig.org/psr/psr-12/" rel="noopener noreferrer" target="_blank"&gt;PSR-12 &lt;/a&gt; &amp;scedil;u anda alternatif olarak tavsiye edilmektedir.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://www.php-fig.org/psr/psr-2/" rel="noopener noreferrer" target="_blank"&gt;PSR-2&lt;/a&gt; kod standartlar&amp;inodot;n&amp;inodot;n kullan&amp;inodot;m&amp;inodot; art&amp;inodot;k tavsiye edilmemektedir. Ancak bu i&amp;scedil;lemi IDE ile yap&amp;inodot;yorsan&amp;inodot;z, do&amp;gbreve;rudan &lt;a href="https://www.php-fig.org/psr/psr-12/" rel="noopener noreferrer" target="_blank"&gt;PSR-12&lt;/a&gt; standartlar&amp;inodot;na ge&amp;ccedil;menizi tavsiye etmiyorum, &amp;ccedil;&amp;uuml;nk&amp;uuml; hala baz&amp;inodot; problemleri mevcut gibi g&amp;ouml;r&amp;uuml;n&amp;uuml;yor. PSR-12 hakk&amp;inodot;nda daha fazla bilgiye &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4502" rel="noopener noreferrer" target="_blank"&gt;buradan&lt;/a&gt; ula&amp;scedil;abilirsiniz.&lt;/p&gt;
+&lt;h1 id="phpstorm-icerisinde-cs-fixer-kullanmak"&gt;PhpStorm &amp;Idot;&amp;ccedil;erisinde CS Fixer Kullanmak&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Daha &amp;ouml;nce ekstra ayarlar yapman&amp;inodot;z gerekse de, PhpStorm 2018.3 versiyonundan itibaren bu &amp;ouml;zellik varsay&amp;inodot;lan olarak eklenmi&amp;scedil;tir. &lt;a href="https://blog.jetbrains.com/phpstorm/2018/09/phpstorm-2018-3-early-access-program-is-open/" rel="noopener noreferrer" target="_blank"&gt;PHP CS Fixer Deste&amp;gbreve;i&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://getcomposer.org/download/" rel="noopener noreferrer" target="_blank"&gt;Composer&lt;/a&gt;'&amp;inodot; kurunuz.&lt;/li&gt;
+&lt;li&gt;Php CS Fixer'&amp;inodot; Composer yard&amp;inodot;m&amp;inodot;yla kurun:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;global&lt;span class="w"&gt; &lt;/span&gt;require&lt;span class="w"&gt; &lt;/span&gt;friendsofphp/php-cs-fixer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;PhpStorm ayarlar&amp;inodot;nda, &lt;code&gt;Settings -&amp;gt; Languages &amp;amp; Frameworks -&amp;gt; PHP -&amp;gt; Quality Tools -&amp;gt; PHP CS Fixer&lt;/code&gt; men&amp;uuml;s&amp;uuml;ne gidin ve CS Fixer'&amp;inodot;n kurulu oldu&amp;gbreve;u yeri belirtin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\k&lt;/span&gt;ullaniciadiniz&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\R&lt;/span&gt;oaming&lt;span class="se"&gt;\C&lt;/span&gt;omposer&lt;span class="se"&gt;\v&lt;/span&gt;endor&lt;span class="se"&gt;\b&lt;/span&gt;in&lt;span class="se"&gt;\p&lt;/span&gt;hp-cs-fixer.bat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Windows i&amp;ccedil;in&lt;/span&gt;
+/home/kullaniciadiniz/.composer/vendor/bin/php-cs-fixer&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Linux i&amp;ccedil;in&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu yollar&amp;inodot; yazd&amp;inodot;ktan sonra, &lt;code&gt;Validate&lt;/code&gt; (Do&amp;gbreve;rulama) butonuna basarak CS Fixer'&amp;inodot;n s&amp;uuml;r&amp;uuml;m bilgisini kontrol edebilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="phpstorm_inside_phpcsfixer" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/php_phpstorm_csfixer-xl.webp" srcset="/images/php_phpstorm_csfixer-sm.webp 300w, /images/php_phpstorm_csfixer-md.webp 500w, /images/php_phpstorm_csfixer-xl.webp 800w, /images/php_phpstorm_csfixer-xl.webp 1200w"/&gt;
+&lt;img alt="phpstorm_inside_phpcsfixer" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/php_phpstorm_csfixer2-xl.webp" srcset="/images/php_phpstorm_csfixer2-sm.webp 300w, /images/php_phpstorm_csfixer2-md.webp 500w, /images/php_phpstorm_csfixer2-xl.webp 800w, /images/php_phpstorm_csfixer2-xl.webp 1200w"/&gt;
+&lt;img alt="phpstorm_inside_phpcsfixer" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/php_phpstorm_csfixer3-xl.webp" srcset="/images/php_phpstorm_csfixer3-sm.webp 300w, /images/php_phpstorm_csfixer3-md.webp 500w, /images/php_phpstorm_csfixer3-xl.webp 800w, /images/php_phpstorm_csfixer3-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Settings -&amp;gt; Tools -&amp;gt; +&lt;/code&gt; butonuna basarak yeni bir ara&amp;ccedil; ekleyin.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Name&lt;/code&gt;: Bu k&amp;inodot;sma istedi&amp;gbreve;iniz ismi yazabilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Description&lt;/code&gt;: Bu k&amp;inodot;sma a&amp;ccedil;&amp;inodot;klama ekleyebilirsiniz.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Program&lt;/code&gt;: CS Fixer'&amp;inodot;n kurulu oldu&amp;gbreve;u yolu buraya yaz&amp;inodot;n. Yolu &amp;uuml;stte vermi&amp;scedil;tim.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Arguments&lt;/code&gt;: Kulland&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z arg&amp;uuml;manlar&amp;inodot; buraya yaz&amp;inodot;n. Arg&amp;uuml;manlar&amp;inodot;n ne i&amp;scedil;e yarad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; &amp;ouml;&amp;gbreve;renmek i&amp;ccedil;in &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage" rel="noopener noreferrer" target="_blank"&gt;Cs Fixer Kullan&amp;inodot;m&amp;inodot;&lt;/a&gt; k&amp;inodot;sm&amp;inodot;ndan bilgi edinebilirsiniz. Burada t&amp;uuml;m arg&amp;uuml;manlar&amp;inodot; yazmak yerine, config dosyas&amp;inodot;n&amp;inodot;n yolunu g&amp;ouml;stererek t&amp;uuml;m ayarlar&amp;inodot;n&amp;inodot;z&amp;inodot; bu dosya i&amp;ccedil;inde yapabilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;fix&lt;span class="w"&gt; &lt;/span&gt;--verbose&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="o"&gt;=&lt;/span&gt;C:&lt;span class="se"&gt;\x&lt;/span&gt;ampp&lt;span class="se"&gt;\h&lt;/span&gt;tdocs&lt;span class="se"&gt;\u&lt;/span&gt;runsat&lt;span class="se"&gt;\.&lt;/span&gt;php_cs.dist&lt;span class="w"&gt; &lt;/span&gt;--path-mode&lt;span class="o"&gt;=&lt;/span&gt;intersection&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$FileDir&lt;/span&gt;$&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;$FileName&lt;/span&gt;$&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Working Directory&lt;/code&gt;: Bu i&amp;scedil;lemi sadece bu dosyada &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak yerine, di&amp;gbreve;er projelerde de kullanabilmek i&amp;ccedil;in &lt;strong&gt;insert macro&lt;/strong&gt; k&amp;inodot;sm&amp;inodot;ndan&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;$ProjectFileDir&lt;/span&gt;$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Se&amp;ccedil;ene&amp;gbreve;ini kullanabilirsiniz. Bu sayede, di&amp;gbreve;er projelerde de CS Fixer i&amp;scedil;lemini kolayca kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="phpstorm_inside_phpcsfixer" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/php_phpstorm_csfixer4-xl.webp" srcset="/images/php_phpstorm_csfixer4-sm.webp 300w, /images/php_phpstorm_csfixer4-md.webp 500w, /images/php_phpstorm_csfixer4-xl.webp 800w, /images/php_phpstorm_csfixer4-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;&amp;Ouml;rnek &lt;code&gt;.php_cs&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/.php_cs.dist" rel="noopener noreferrer" target="_blank"&gt;buradan&lt;/a&gt; inceleyebilirsiniz. Daha fazla bilgi i&amp;ccedil;in &lt;a href="https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage" rel="noopener noreferrer" target="_blank"&gt;Cs Fixer Kullan&amp;inodot;m&amp;inodot;&lt;/a&gt; k&amp;inodot;sm&amp;inodot;na g&amp;ouml;z atabilirsiniz. Ayr&amp;inodot;ca ba&amp;scedil;ka bir &amp;ouml;rnek i&amp;ccedil;in &lt;a href="https://gist.github.com/azdanov/8f637142115feebf4b44e11a0971e5cb" rel="noopener noreferrer" target="_blank"&gt;Doctrine coding style&lt;/a&gt;'&amp;inodot; kontrol edebilirsiniz.&lt;/p&gt;
+&lt;p&gt;PhpStorm'u yeniden ba&amp;scedil;lat&amp;inodot;n. &lt;code&gt;Tools -&amp;gt; External Tools&lt;/code&gt; men&amp;uuml;s&amp;uuml;nde, ekledi&amp;gbreve;iniz ara&amp;ccedil; ismini g&amp;ouml;receksiniz. K&amp;inodot;sayol eklemek isterseniz, &lt;code&gt;Settings -&amp;gt; Keymap -&amp;gt; External Tools&lt;/code&gt; men&amp;uuml;s&amp;uuml;nden istedi&amp;gbreve;iniz k&amp;inodot;sayolu ekleyebilirsiniz. Ben &lt;code&gt;Alt + F&lt;/code&gt; k&amp;inodot;sayolunu ekledim, siz diledi&amp;gbreve;inizi ekleyebilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="phpstorm_inside_phpcsfixer" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/php_phpstorm_csfixer5-xl.webp" srcset="/images/php_phpstorm_csfixer5-sm.webp 300w, /images/php_phpstorm_csfixer5-md.webp 500w, /images/php_phpstorm_csfixer5-xl.webp 800w, /images/php_phpstorm_csfixer5-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Geliştirme Araçları"/><category term="phpstorm"/><category term="cmder"/></entry><entry><title>PHPStorm içerisinde Cmder Kullanmak</title><link href="https://yuceltoluyag.github.io/phpstorm-icinde-cmder-kullanmak/" rel="alternate"/><published>2019-11-06T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2019-11-06:/phpstorm-icinde-cmder-kullanmak/</id><summary type="html">&lt;p&gt;PHPStorm içerisinde terminal olarak Cmder kullanmak için ortam değişkenlerini ayarlama ve gerekli konfigürasyonları yapma adımları.&lt;/p&gt;</summary><content type="html">&lt;h2 id="phpstorm-icerisinde-cmder-kullanmak"&gt;PHPStorm &amp;Idot;&amp;ccedil;erisinde Cmder Kullanmak 🚀&lt;/h2&gt;
+&lt;p&gt;PHPStorm i&amp;ccedil;erisinde terminali kullanabilmek i&amp;ccedil;in &lt;strong&gt;ortam de&amp;gbreve;i&amp;scedil;kenleri&lt;/strong&gt;ne yolu belirtmemiz gereklidir. Windows ortam&amp;inodot;nda ortam de&amp;gbreve;i&amp;scedil;keni eklemek i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; izleyebilirsiniz:&lt;/p&gt;
+&lt;h3 id="ortam-degiskenlerini-ayarlama"&gt;Ortam De&amp;gbreve;i&amp;scedil;kenlerini Ayarlama ⚙️&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Bilgisayar&amp;inodot;ma sa&amp;gbreve; t&amp;inodot;klay&amp;inodot;n ve &lt;strong&gt;&amp;Ouml;zellikler&lt;/strong&gt; se&amp;ccedil;ene&amp;gbreve;ine gidin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Geli&amp;scedil;mi&amp;scedil; Sistem Ayarlar&amp;inodot;&lt;/strong&gt;na t&amp;inodot;klay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ba&amp;scedil;lang&amp;inodot;&amp;ccedil; ve Kurtarma&lt;/strong&gt; b&amp;ouml;l&amp;uuml;m&amp;uuml;n&amp;uuml;n hemen alt&amp;inodot;nda &lt;strong&gt;Ortam De&amp;gbreve;i&amp;scedil;kenleri&lt;/strong&gt;ni g&amp;ouml;receksiniz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ortam De&amp;gbreve;i&amp;scedil;kenleri&lt;/strong&gt;ne t&amp;inodot;klay&amp;inodot;n ve &lt;strong&gt;Yeni&lt;/strong&gt; butonuna bas&amp;inodot;n.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;📌 &lt;strong&gt;De&amp;gbreve;i&amp;scedil;ken Ad&amp;inodot;:&lt;/strong&gt; &lt;code&gt;CMDER_ROOT&lt;/code&gt;&lt;br/&gt;
+📌 &lt;strong&gt;Yol:&lt;/strong&gt; &lt;code&gt;C:\cmder&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Ortam De&amp;gbreve;i&amp;scedil;kenleri" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/ortam_degiskenleri1-xl.webp" srcset="/images/ortam_degiskenleri1-sm.webp 300w, /images/ortam_degiskenleri1-md.webp 500w, /images/ortam_degiskenleri1-xl.webp 800w, /images/ortam_degiskenleri1-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Ben Cmder'in full s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; indirip &lt;code&gt;C:&lt;/code&gt; dizinine &amp;ccedil;&amp;inodot;karm&amp;inodot;&amp;scedil;t&amp;inodot;m. Siz nereye kurduysan&amp;inodot;z, o dizini g&amp;ouml;sterin.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Ortam De&amp;gbreve;i&amp;scedil;kenleri Ayar&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/ortam_degiskenleri3-xl.webp" srcset="/images/ortam_degiskenleri3-sm.webp 300w, /images/ortam_degiskenleri3-md.webp 500w, /images/ortam_degiskenleri3-xl.webp 800w, /images/ortam_degiskenleri3-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h3 id="phpstorm-icin-terminal-ayari"&gt;PHPStorm &amp;Idot;&amp;ccedil;in Terminal Ayar&amp;inodot; 🛠️&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;PHPStorm i&amp;ccedil;erisinden &lt;strong&gt;Ayarlar (Settings)&lt;/strong&gt; sekmesine girin.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tools&lt;/strong&gt; men&amp;uuml;s&amp;uuml; alt&amp;inodot;nda &lt;strong&gt;Terminal&lt;/strong&gt; sekmesine t&amp;inodot;klay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Shell Path&lt;/strong&gt; k&amp;inodot;sm&amp;inodot;na a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu yaz&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="s2"&gt;"cmd"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/k&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;%CMDER_ROOT%&lt;span class="se"&gt;\v&lt;/span&gt;endor&lt;span class="se"&gt;\i&lt;/span&gt;nit.bat&lt;span class="s2"&gt;""&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="PHPStorm Cmder Ayar&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/phpstorm_terminal-xl.webp" srcset="/images/phpstorm_terminal-sm.webp 300w, /images/phpstorm_terminal-md.webp 500w, /images/phpstorm_terminal-xl.webp 800w, /images/phpstorm_terminal-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h3 id="phpstormu-yeniden-baslatma"&gt;PHPStorm'u Yeniden Ba&amp;scedil;latma 🔄&lt;/h3&gt;
+&lt;p&gt;Ayarlar&amp;inodot; uygulad&amp;inodot;ktan sonra PHPStorm'u yeniden ba&amp;scedil;lat&amp;inodot;n. Yeniden a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda &lt;strong&gt;Terminal&lt;/strong&gt; sekmesine t&amp;inodot;klayarak Cmder&amp;rsquo;in &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;rebilirsiniz. 🎉&lt;/p&gt;
+&lt;p&gt;&lt;img alt="PHPStorm Cmder Terminal" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/phpstorm_terminal2-xl.webp" srcset="/images/phpstorm_terminal2-sm.webp 300w, /images/phpstorm_terminal2-md.webp 500w, /images/phpstorm_terminal2-xl.webp 800w, /images/phpstorm_terminal2-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Cmder terminali, Windows kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in olduk&amp;ccedil;a pratik bir ara&amp;ccedil;t&amp;inodot;r. Full s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; &lt;a href="https://cmder.app/" rel="noopener noreferrer" target="_blank"&gt;buradan&lt;/a&gt; indirerek istedi&amp;gbreve;iniz dizine &amp;ccedil;&amp;inodot;karabilirsiniz. 😊&lt;/p&gt;
+&lt;p&gt;Bir sonraki rehberde g&amp;ouml;r&amp;uuml;&amp;scedil;mek &amp;uuml;zere! 🚀&lt;/p&gt;</content><category term="Geliştirme Araçları"/><category term="phpstorm"/></entry><entry><title>XAMPP Kullanarak Localhost'a Özel Alan Adı Oluşturma</title><link href="https://yuceltoluyag.github.io/xampp-ozel-alan-adi/" rel="alternate"/><published>2019-03-06T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2019-03-06:/xampp-ozel-alan-adi/</id><summary type="html">&lt;p&gt;XAMPP kullanarak localhost ortamında özel bir alan adı nasıl oluşturulur? Adım adım rehber.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Linux taraf&amp;inodot;nda kullanmak isteyenleri b&amp;ouml;yle alal&amp;inodot;m: &lt;a href="/arch-linux-apache-lampp-sanal-sunucu-kurulumu/" rel="noopener noreferrer" target="_blank"&gt;Arch Linux&lt;/a&gt; + &lt;a href="/linux-apache2-mysql-phpmyadmin-kurulumu/" rel="noopener noreferrer" target="_blank"&gt;Debian&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="adim-1-hosts-dosyasini-duzenleme"&gt;Ad&amp;inodot;m 1: Hosts Dosyas&amp;inodot;n&amp;inodot; D&amp;uuml;zenleme&lt;/h2&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki dizine gidin ve &lt;code&gt;hosts&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; Not Defteri veya herhangi bir metin edit&amp;ouml;r&amp;uuml; ile a&amp;ccedil;&amp;inodot;n:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dosya Konumu:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;PowerShell&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;Windows&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;System32&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;Drivers&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;etc&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;hosts&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;A&amp;ccedil;&amp;inodot;lan dosyan&amp;inodot;n en alt sat&amp;inodot;r&amp;inodot;na &amp;scedil;u formatta ekleme yap&amp;inodot;n:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;127.0.0.1 eticaret.test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Hosts Dosyas&amp;inodot; D&amp;uuml;zenleme" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/hosts-xl.webp" srcset="/images/hosts-sm.webp 300w, /images/hosts-md.webp 500w, /images/hosts-xl.webp 800w, /images/hosts-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="adim-2-apache-virtual-hosts-yapilandirmasi"&gt;Ad&amp;inodot;m 2: Apache Virtual Hosts Yap&amp;inodot;land&amp;inodot;rmas&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;XAMPP dizinine gidin ve &lt;code&gt;httpd-vhosts.conf&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; bir edit&amp;ouml;rle a&amp;ccedil;&amp;inodot;n:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dosya Konumu:&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;PowerShell&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;:\&lt;/span&gt;&lt;span class="n"&gt;xampp&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;extra&lt;/span&gt;&lt;span class="p"&gt;\&lt;/span&gt;&lt;span class="n"&gt;httpd-vhosts&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki ayarlar&amp;inodot; kendinize g&amp;ouml;re d&amp;uuml;zenleyerek dosyan&amp;inodot;n en alt&amp;inodot;na ekleyin:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;ApacheConf&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;&amp;lt;VirtualHost&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;*:80&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ServerAdmin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;webmaster@eticaret.test
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;DocumentRoot&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"C:/xampp/htdocs/eticaret/"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ServerName&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;eticaret.test
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ServerAlias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;www.eticaret.test
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ErrorLog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"logs/eticaret.test-error.log"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;CustomLog&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"logs/eticaret.test-access.log"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;common
+&lt;span class="nt"&gt;&amp;lt;/VirtualHost&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id="adim-3-xamppyi-yeniden-baslatma"&gt;Ad&amp;inodot;m 3: XAMPP'yi Yeniden Ba&amp;scedil;latma&lt;/h2&gt;
+&lt;p&gt;Yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z de&amp;gbreve;i&amp;scedil;ikliklerin aktif olmas&amp;inodot; i&amp;ccedil;in XAMPP'yi yeniden ba&amp;scedil;lat&amp;inodot;n:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;XAMPP Kontrol Panelini a&amp;ccedil;&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Apache servisini durdurup tekrar ba&amp;scedil;lat&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Taray&amp;inodot;c&amp;inodot;n&amp;inodot;zda &lt;code&gt;http://eticaret.test&lt;/code&gt; adresine giderek ayarlar&amp;inodot;n&amp;inodot;z&amp;inodot; test edin.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Art&amp;inodot;k kendi lokal alan ad&amp;inodot;n&amp;inodot;z ile projelerinizi &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz! 🚀&lt;/p&gt;</content><category term="Geliştirme Araçları"/><category term="windows10"/><category term="apache"/></entry><entry><title>Kullandığım Enfes Sublime Text Eklentileri</title><link href="https://yuceltoluyag.github.io/sublime-text-eklentileri/" rel="alternate"/><published>2018-09-10T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-09-10:/sublime-text-eklentileri/</id><summary type="html">&lt;p&gt;Kullandığım en faydalı Sublime Text eklentilerini ve temalarını tanıtıyorum.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! Bug&amp;uuml;n, Sublime Text edit&amp;ouml;r&amp;uuml; &amp;uuml;zerinde kulland&amp;inodot;&amp;gbreve;&amp;inodot;m baz&amp;inodot; harika eklenti ve temalar&amp;inodot; sizlerle payla&amp;scedil;aca&amp;gbreve;&amp;inodot;m. 🥳&lt;/p&gt;
+&lt;h2 id="sublime-text-eklenti-kurulumu"&gt;Sublime Text Eklenti Kurulumu&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;ncelikle Sublime Text 3 s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; kulland&amp;inodot;&amp;gbreve;&amp;inodot;m&amp;inodot; belirtmek isterim. Edit&amp;ouml;re paket y&amp;uuml;klemek i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; izleyebilirsiniz: &lt;strong&gt;view -&amp;gt; show console&lt;/strong&gt; men&amp;uuml;s&amp;uuml;n&amp;uuml; a&amp;ccedil;&amp;inodot;n ve s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml;ze uygun gerekli kodlar&amp;inodot; yap&amp;inodot;&amp;scedil;t&amp;inodot;rarak Enter tu&amp;scedil;una bas&amp;inodot;n. Paket y&amp;uuml;klendikten sonra &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; kombinasyonu ile paket y&amp;ouml;neticisini a&amp;ccedil;abilir ve &lt;code&gt;Install&lt;/code&gt; yaz&amp;inodot;p Enter&amp;rsquo;a basarak kurmak istedi&amp;gbreve;iniz paketi se&amp;ccedil;ebilirsiniz.  &lt;/p&gt;
+&lt;div class="info-box important"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Kolay Kurulum Y&amp;ouml;ntemi&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;G&amp;uuml;ncelleme:&lt;/strong&gt; &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na basarak 'Install Package Manager' se&amp;ccedil;ene&amp;gbreve;iyle paket y&amp;ouml;neticisini kolayca y&amp;uuml;kleyebilirsiniz.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Ayarlar&amp;inodot;m&amp;inodot; GitHub'dan alabilirsiniz: &lt;a href="https://github.com/yuceltoluyag/sublime-text-3" rel="noopener noreferrer" target="_blank"&gt;Sublime Repom&lt;/a&gt; ve &lt;strong&gt;Alternatif Ayarlar&amp;inodot;m&lt;/strong&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="nt"&gt;"auto_complete_triggers"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="nt"&gt;"characters"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&amp;lt;"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"selector"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"text.html"&lt;/span&gt;
+&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="nt"&gt;"characters"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"."&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"selector"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"source.js"&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="nt"&gt;"theme"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Agila Neon.sublime-theme"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"color_scheme"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Packages/Agila Theme/Agila Neon Monocyanide.tmTheme"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"bold_folder_labels"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"caret_extra_width"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"caret_style"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"smooth"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"fade_fold_buttons"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"font_face"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Inconsolata"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"font_size"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"highlight_line"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"highlight_modified_tabs"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"ignored_packages"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="s2"&gt;"JavaScript"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="s2"&gt;"Vintage"&lt;/span&gt;
+&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="nt"&gt;"indent_guide_options"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="s2"&gt;"draw_normal"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="s2"&gt;"draw_active"&lt;/span&gt;
+&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;span class="nt"&gt;"line_padding_bottom"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"line_padding_top"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"show_line_endings"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"tab_size"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"theme"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Agila.sublime-theme"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"theme_agila_sidebar_light_icons"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"theme_agila_sidebar_selected_entry_yellow"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"theme_agila_auto_complete_yellow"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"theme_agila_active_tab_entry_yellow"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"translate_tabs_to_spaces"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"trim_trailing_white_space_on_save"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"word_separators"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"./\\()\"':,.;&amp;lt;&amp;gt;~!@#$%^&amp;amp;*|+=[]{}`~?"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="nt"&gt;"word_wrap"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id="emmet"&gt;EMMET&lt;/h2&gt;
+&lt;p&gt;Emmet, kod yazma h&amp;inodot;z&amp;inodot;n&amp;inodot;z&amp;inodot; &amp;ouml;nemli &amp;ouml;l&amp;ccedil;&amp;uuml;de art&amp;inodot;rabilecek harika bir eklentidir. Ancak, kod yazmaya yeni ba&amp;scedil;layanlara &amp;ouml;nerilmez.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;HTML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;#page&amp;gt;div.logo+ul#navigation&amp;gt;li*5&amp;gt;a{Item $} #&amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot; &amp;scedil;u &amp;scedil;ekilde olacakt&amp;inodot;r.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;HTML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"page"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"logo"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"navigation"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 1&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 2&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 3&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 4&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Item 5&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;li&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="alignment"&gt;Alignment&lt;/h2&gt;
+&lt;p&gt;D&amp;uuml;zen tak&amp;inodot;nt&amp;inodot;n&amp;inodot;z varsa, bu eklenti tam size g&amp;ouml;re! Kodlar&amp;inodot;n&amp;inodot;z&amp;inodot; hizalamak ve d&amp;uuml;zenlemek i&amp;ccedil;in kullanabilirsiniz. &lt;code&gt;Ctrl + Alt + A&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na basarak d&amp;uuml;zenlemeleri kolayca yapabilirsiniz.&lt;/p&gt;
+&lt;h2 id="sublimegit"&gt;SublimeGit&lt;/h2&gt;
+&lt;p&gt;Sublime Text i&amp;ccedil;in Git entegrasyonu sa&amp;gbreve;layan harika bir eklentidir. D&amp;ouml;k&amp;uuml;mantasyon i&amp;ccedil;in &lt;a href="https://sublimegit.readthedocs.io/en/latest/" rel="noopener noreferrer" target="_blank"&gt;SublimeGit D&amp;ouml;k&amp;uuml;mantasyon&lt;/a&gt; sayfas&amp;inodot;n&amp;inodot; ziyaret edebilirsiniz.&lt;/p&gt;
+&lt;h2 id="gitgutter"&gt;GitGutter&lt;/h2&gt;
+&lt;p&gt;GitGutter, projenizde yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z de&amp;gbreve;i&amp;scedil;iklikleri g&amp;ouml;steren bir eklentidir. &lt;code&gt;git status&lt;/code&gt; komutunun Sublime'deki halini d&amp;uuml;&amp;scedil;&amp;uuml;nebilirsiniz.&lt;/p&gt;
+&lt;h2 id="githubinator"&gt;GitHubinator&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, se&amp;ccedil;ti&amp;gbreve;iniz alan&amp;inodot; do&amp;gbreve;rudan GitHub reposunda araman&amp;inodot;za yard&amp;inodot;mc&amp;inodot; olur. Art&amp;inodot;k "Acaba bunu nerede yazm&amp;inodot;&amp;scedil;&amp;inodot;m?" sorusu ortadan kalk&amp;inodot;yor.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GitHubinator" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/GitHubinator-xl.webp" srcset="/images/GitHubinator-sm.webp 300w, /images/GitHubinator-md.webp 500w, /images/GitHubinator-xl.webp 800w, /images/GitHubinator-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="gitopenchangedfiles"&gt;GitOpenChangedFiles&lt;/h2&gt;
+&lt;p&gt;GitGutter'dan fark&amp;inodot;, yaln&amp;inodot;zca de&amp;gbreve;i&amp;scedil;iklik yap&amp;inodot;lan sat&amp;inodot;rlar&amp;inodot; g&amp;ouml;sterip, repo i&amp;ccedil;inde arama yapabilmesidir. &lt;code&gt;Ctrl + Shift + O&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na basarak h&amp;inodot;zl&amp;inodot;ca kullanabilirsiniz.&lt;/p&gt;
+&lt;h2 id="sublimelinter"&gt;SublimeLinter&lt;/h2&gt;
+&lt;p&gt;SublimeLinter, kod hatalar&amp;inodot;n&amp;inodot; ve uyar&amp;inodot;lar&amp;inodot;n&amp;inodot; g&amp;ouml;stermek i&amp;ccedil;in harika bir ara&amp;ccedil;t&amp;inodot;r. &lt;a href="http://www.sublimelinter.com" rel="noopener noreferrer" target="_blank"&gt;SublimeLinter D&amp;ouml;k&amp;uuml;mantasyonu&lt;/a&gt; adresini mutlaka inceleyin.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SublimeLinter" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/SublimeLinter-xl.webp" srcset="/images/SublimeLinter-sm.webp 300w, /images/SublimeLinter-md.webp 500w, /images/SublimeLinter-xl.webp 800w, /images/SublimeLinter-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="changequotes"&gt;ChangeQuotes&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, &amp;ouml;zellikle &amp;ccedil;ift t&amp;inodot;rnaklar&amp;inodot; tek t&amp;inodot;rnakla de&amp;gbreve;i&amp;scedil;tirme i&amp;scedil;ini &amp;ccedil;ok kolayla&amp;scedil;t&amp;inodot;r&amp;inodot;yor. H&amp;inodot;zl&amp;inodot; bir i&amp;scedil;lem i&amp;ccedil;in m&amp;uuml;kemmel bir yard&amp;inodot;mc&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;h2 id="sidebarenhancements"&gt;SidebarEnhancements&lt;/h2&gt;
+&lt;p&gt;Bu eklentiyle birlikte, sol taraftaki sidebarda sa&amp;gbreve; t&amp;inodot;klad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda pek &amp;ccedil;ok ek &amp;ouml;zellik eklenir.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SidebarEnhancements" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/sidebar-enhancements-xl.webp" srcset="/images/sidebar-enhancements-sm.webp 300w, /images/sidebar-enhancements-md.webp 500w, /images/sidebar-enhancements-xl.webp 800w, /images/sidebar-enhancements-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="brackethighlighter"&gt;BracketHighlighter&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, se&amp;ccedil;ti&amp;gbreve;iniz etiketi veya parantezi nerede a&amp;ccedil;&amp;inodot;p nerede kapand&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;rmenizi sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="BracketHighlighter" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/BracketHighlighter-xl.webp" srcset="/images/BracketHighlighter-sm.webp 300w, /images/BracketHighlighter-md.webp 500w, /images/BracketHighlighter-xl.webp 800w, /images/BracketHighlighter-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="gutter-color"&gt;Gutter Color&lt;/h2&gt;
+&lt;p&gt;Renk se&amp;ccedil;imlerinizi ekstra bir program kullanmadan rahat&amp;ccedil;a yapabilirsiniz. Ayr&amp;inodot;ca &lt;strong&gt;Color Highlighter&lt;/strong&gt; kullanarak renklerinizi do&amp;gbreve;rudan g&amp;ouml;rmek m&amp;uuml;mk&amp;uuml;nd&amp;uuml;r.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GutterColor" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/GutterColor-xl.webp" srcset="/images/GutterColor-sm.webp 300w, /images/GutterColor-md.webp 500w, /images/GutterColor-xl.webp 800w, /images/GutterColor-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="aligntab"&gt;AlignTab&lt;/h2&gt;
+&lt;p&gt;Vim edit&amp;ouml;r&amp;uuml;ndeki tabuler hizalamay&amp;inodot; taklit eden bu eklenti, &amp;ccedil;ok say&amp;inodot;da &amp;ouml;zellik sunuyor.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AlignTab" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/AlignTab-xl.webp" srcset="/images/AlignTab-sm.webp 300w, /images/AlignTab-md.webp 500w, /images/AlignTab-xl.webp 800w, /images/AlignTab-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="autofilename"&gt;AutoFileName&lt;/h2&gt;
+&lt;p&gt;Dosya yollar&amp;inodot;n&amp;inodot;z&amp;inodot; otomatik olarak tamamlar. Eksik dosya yollar&amp;inodot; yaz&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda &amp;ouml;neri gelmez, b&amp;ouml;ylece hatalar&amp;inodot; azaltabilirsiniz.&lt;/p&gt;
+&lt;h2 id="html-css-js-prettify"&gt;HTML-CSS-JS Prettify&lt;/h2&gt;
+&lt;p&gt;HTML, CSS, JavaScript ve JSON kodlar&amp;inodot;n&amp;inodot; formatlamak i&amp;ccedil;in kullan&amp;inodot;lan bir eklentidir.&lt;/p&gt;
+&lt;h2 id="docblockr"&gt;DocBlockr&lt;/h2&gt;
+&lt;p&gt;Bu eklenti, kod bloklar&amp;inodot;n&amp;inodot;z&amp;inodot;n &amp;uuml;zerine a&amp;ccedil;&amp;inodot;klamalar eklemenizi sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;h2 id="a-file-icon"&gt;A File Icon&lt;/h2&gt;
+&lt;p&gt;Dosya uzant&amp;inodot;lar&amp;inodot;na g&amp;ouml;re simgeler ekler, b&amp;ouml;ylece dosyalar&amp;inodot;n&amp;inodot;z daha d&amp;uuml;zenli g&amp;ouml;r&amp;uuml;n&amp;uuml;r.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="AFileIcon" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/AFileIcon-xl.webp" srcset="/images/AFileIcon-sm.webp 300w, /images/AFileIcon-md.webp 500w, /images/AFileIcon-xl.webp 800w, /images/AFileIcon-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="tema"&gt;Tema&lt;/h2&gt;
+&lt;p&gt;Material Tema kullan&amp;inodot;yorum: &lt;a href="https://github.com/equinusocio/material-theme" rel="noopener noreferrer" target="_blank"&gt;Material Theme GitHub Sayfas&amp;inodot;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Yeni kulland&amp;inodot;&amp;gbreve;&amp;inodot;m temalar ve pluginler hakk&amp;inodot;nda bilgi almak i&amp;ccedil;in &lt;a href="https://github.com/yuceltoluyag/sublime-text-3" rel="noopener noreferrer" target="_blank"&gt;GitHub Repo&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="ayarlarim"&gt;Ayarlar&amp;inodot;m&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;{
+"always_show_minimap_viewport": true,
+"bold_folder_labels": true,
+"color_scheme": "Packages/MaterialTheme/schemes/Material-Theme.tmTheme",
+"font_face":"Hack",
+"font_options": ["gray_antialias",
+"subpixel_antialias"],
+"font_size": 18,
+"ignored_packages": ["Vintage"],
+"indent_guide_options": ["draw_normal",
+"draw_active"],
+"line_padding_bottom": 3,
+"line_padding_top": 3,
+"material_theme_accent_acid-lime": true,
+"material_theme_accent_blue": true,
+"material_theme_accent_brba": true,
+"material_theme_accent_bright-teal": true,
+"material_theme_accent_cyan": true,
+"material_theme_accent_graphite": true,
+"material_theme_accent_indigo": true,
+"material_theme_accent_lime": true,
+"material_theme_accent_orange": true,
+"material_theme_accent_pink": true,
+"material_theme_accent_purple": true,
+"material_theme_accent_red": true,
+"material_theme_accent_scrollbars": true,
+"material_theme_accent_sky": true,
+"material_theme_accent_titlebar": true,
+"material_theme_accent_tomato": true,
+"material_theme_accent_yellow": true,
+"material_theme_arrow_folders": true,
+"material_theme_big_fileicons": true,
+"material_theme_bold_tab": true,
+"material_theme_bright_scrollbars": true,
+"material_theme_bullet_tree_indicator": true,
+"material_theme_compact_panel": true,
+"material_theme_compact_sidebar": true,
+"material_theme_contrast_mode": true,
+"material_theme_disable_fileicons": true,
+"material_theme_disable_folder_animation": true,
+"material_theme_disable_tree_indicator": true,
+"material_theme_panel_separator": true,
+"material_theme_small_statusbar": true,
+"material_theme_small_tab": true,
+"material_theme_tabs_autowidth": true,
+"material_theme_tabs_separator": true,
+"material_theme_titlebar": true,
+"material_theme_tree_headings": true,
+"overlay_scroll_bars": "enabled",
+"theme": "Material-Theme.sublime-theme"
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Geliştirme Araçları"/><category term="ipucu"/><category term="sublime"/></entry></feed>

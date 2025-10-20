@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Donanım</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/donanim.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü</title><link href="https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/" rel="alternate"/><published>2025-07-31T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-07-31:/arch-linux-linux-firmware-nvidia-hatasi-cozumu/</id><summary type="html">&lt;p&gt;linux-firmware paketinin 20250613.12fe085f-5 sürümüne yapılan güncelleme sonrası yaşanan NVIDIA firmware çakışma hatası ve adım adım çözüm rehberi.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Arch Linux kullan&amp;inodot;yorsan&amp;inodot;z ve son g&amp;uuml;ncellemeleri yaparken &lt;code&gt;linux-firmware&lt;/code&gt; paketine dair can s&amp;inodot;k&amp;inodot;c&amp;inodot; bir hata mesaj&amp;inodot;yla kar&amp;scedil;&amp;inodot;la&amp;scedil;t&amp;inodot;ysan&amp;inodot;z, yaln&amp;inodot;z de&amp;gbreve;ilsiniz. &amp;Ouml;zellikle NVIDIA donan&amp;inodot;m&amp;inodot;na sahip sistemlerde, &lt;code&gt;linux-firmware-nvidia&lt;/code&gt; ile ilgili dosya &amp;ccedil;ak&amp;inodot;&amp;scedil;malar&amp;inodot; (&lt;code&gt;exists in filesystem&lt;/code&gt;) bir&amp;ccedil;ok kullan&amp;inodot;c&amp;inodot;n&amp;inodot;n sistemini y&amp;uuml;kseltmesini engelliyor. Bu makalede, bu sorunun nedenini ve kal&amp;inodot;c&amp;inodot; &amp;ccedil;&amp;ouml;z&amp;uuml;m&amp;uuml;n&amp;uuml; ad&amp;inodot;m ad&amp;inodot;m a&amp;ccedil;&amp;inodot;kl&amp;inodot;yoruz. ✅&lt;/p&gt;
+&lt;p&gt;&lt;img alt="arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp" srcset="/images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-sm.webp 300w, /images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-md.webp 500w, /images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp 800w, /images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="linux-firmware-paketindeki-degisiklik-ne"&gt;linux-firmware Paketindeki De&amp;gbreve;i&amp;scedil;iklik Ne?&lt;/h2&gt;
+&lt;p&gt;2025-06-13 tarihinde yay&amp;inodot;mlanan &lt;code&gt;linux-firmware&lt;/code&gt; paketi, 20250613.12fe085f-5 s&amp;uuml;r&amp;uuml;m&amp;uuml;yle &amp;ouml;nemli bir yap&amp;inodot;sal de&amp;gbreve;i&amp;scedil;ikli&amp;gbreve;e gitti. Art&amp;inodot;k t&amp;uuml;m firmware bile&amp;scedil;enleri, donan&amp;inodot;m &amp;uuml;reticisine &amp;ouml;zel paketlere b&amp;ouml;l&amp;uuml;nm&amp;uuml;&amp;scedil; durumda.&lt;/p&gt;
+&lt;p&gt;&amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;linux-firmware-nvidia&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;linux-firmware-intel&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;linux-firmware-amd&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu ayr&amp;inodot;&amp;scedil;t&amp;inodot;rma sayesinde sistemde yaln&amp;inodot;zca ihtiya&amp;ccedil; duyulan firmware'ler kurulabiliyor. Ana paket olan &lt;code&gt;linux-firmware&lt;/code&gt; art&amp;inodot;k sadece bu alt paketlere ba&amp;gbreve;&amp;inodot;ml&amp;inodot; olan bo&amp;scedil; (metapackage) bir yap&amp;inodot;ya sahip.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ancak bu yeniden yap&amp;inodot;lanma, NVIDIA s&amp;uuml;r&amp;uuml;c&amp;uuml;lerine ait sembolik ba&amp;gbreve;lant&amp;inodot;lar&amp;inodot;n (symlink) upstream taraf&amp;inodot;ndan yeniden d&amp;uuml;zenlenmesiyle ayn&amp;inodot; zamana denk geldi ve beklenmedik bir dosya &amp;ccedil;ak&amp;inodot;&amp;scedil;mas&amp;inodot;na neden oldu.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="karsilasilan-hata-mesaji"&gt;Kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan Hata Mesaj&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;G&amp;uuml;ncelleme s&amp;inodot;ras&amp;inodot;nda Pacman &amp;scedil;u hatalar&amp;inodot; verebilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad103 exists in filesystem
+linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad104 exists in filesystem
+linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad106 exists in filesystem
+linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad107 exists in filesystem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu hata mesajlar&amp;inodot;, &lt;code&gt;linux-firmware&lt;/code&gt; paketinin &amp;ouml;nceki s&amp;uuml;r&amp;uuml;mlerinde NVIDIA firmware dosyalar&amp;inodot;n&amp;inodot;n do&amp;gbreve;rudan sistemde yer ald&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;, yeni sistemde ise bunlar&amp;inodot;n art&amp;inodot;k &lt;code&gt;linux-firmware-nvidia&lt;/code&gt; paketi taraf&amp;inodot;ndan y&amp;ouml;netilmeye &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;steriyor.&lt;/p&gt;
+&lt;h2 id="sorunun-nedeni-nedir"&gt;Sorunun Nedeni Nedir?&lt;/h2&gt;
+&lt;p&gt;Pacman, varsay&amp;inodot;lan olarak dosya &amp;ccedil;ak&amp;inodot;&amp;scedil;malar&amp;inodot;n&amp;inodot; tolere etmez. Ayn&amp;inodot; dosyan&amp;inodot;n iki farkl&amp;inodot; paket taraf&amp;inodot;ndan sahiplenilmesi durumunda i&amp;scedil;lemi durdurur. Bu &amp;ouml;zel durumda, sistemde zaten var olan NVIDIA firmware dosyalar&amp;inodot;, yeni &lt;code&gt;linux-firmware-nvidia&lt;/code&gt; paketinin kurulmas&amp;inodot;n&amp;inodot; engelliyor.&lt;/p&gt;
+&lt;p&gt;Bu durumun ortaya &amp;ccedil;&amp;inodot;kmas&amp;inodot;n&amp;inodot;n iki ana nedeni var:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Yukar&amp;inodot; ak&amp;inodot;&amp;scedil; (upstream) taraf&amp;inodot;ndan yap&amp;inodot;lan sembolik ba&amp;gbreve;lant&amp;inodot; d&amp;uuml;zenlemeleri&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;linux-firmware&lt;/code&gt; paketinin mimarisindeki radikal de&amp;gbreve;i&amp;scedil;iklik&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="bu-sorun-kimleri-etkiler"&gt;Bu Sorun Kimleri Etkiler?&lt;/h2&gt;
+&lt;p&gt;Bu problem, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ko&amp;scedil;ullar&amp;inodot; sa&amp;gbreve;layan kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; etkiler:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;linux-firmware&lt;/code&gt; s&amp;uuml;r&amp;uuml;m&amp;uuml; 20250508.788aadc8-2 veya daha eski bir s&amp;uuml;r&amp;uuml;m kullan&amp;inodot;l&amp;inodot;yor&lt;/li&gt;
+&lt;li&gt;Sistem g&amp;uuml;ncellenmek isteniyor (&lt;code&gt;pacman -Syu&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Sistemde NVIDIA donan&amp;inodot;m&amp;inodot; mevcut (ya da &lt;code&gt;linux-firmware-nvidia&lt;/code&gt; otomatik olarak y&amp;uuml;kleniyor)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="cozum-linux-firmware-paketini-manuel-olarak-kaldirip-yeniden-yukleyin"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m: linux-firmware Paketini Manuel Olarak Kald&amp;inodot;r&amp;inodot;p Yeniden Y&amp;uuml;kleyin&lt;/h2&gt;
+&lt;p&gt;Sistemi ba&amp;scedil;ar&amp;inodot;yla g&amp;uuml;ncellemek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; s&amp;inodot;ras&amp;inodot;yla uygulay&amp;inodot;n:&lt;/p&gt;
+&lt;h3 id="1-linux-firmware-paketini-zorla-kaldirin"&gt;1. linux-firmware Paketini Zorla Kald&amp;inodot;r&amp;inodot;n&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-Rdd&lt;span class="w"&gt; &lt;/span&gt;linux-firmware
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, ba&amp;gbreve;&amp;inodot;ml&amp;inodot;l&amp;inodot;k kontrol&amp;uuml; yapmadan &lt;code&gt;linux-firmware&lt;/code&gt; paketini kald&amp;inodot;r&amp;inodot;r. Normalde tavsiye edilmez, ancak bu &amp;ouml;zel durumda g&amp;uuml;venlidir &amp;ccedil;&amp;uuml;nk&amp;uuml; hemen ard&amp;inodot;ndan yeniden kurulacakt&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="2-sistem-guncellemesini-tamamlayin"&gt;2. Sistem G&amp;uuml;ncellemesini Tamamlay&amp;inodot;n&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-Syu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu i&amp;scedil;lem s&amp;inodot;ras&amp;inodot;nda yeni &lt;code&gt;linux-firmware&lt;/code&gt; ve onun ba&amp;gbreve;&amp;inodot;ml&amp;inodot; oldu&amp;gbreve;u &lt;code&gt;linux-firmware-nvidia&lt;/code&gt; gibi alt paketler kurulacakt&amp;inodot;r. Dosya &amp;ccedil;ak&amp;inodot;&amp;scedil;mas&amp;inodot; art&amp;inodot;k ya&amp;scedil;anmaz.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; E&amp;gbreve;er &lt;code&gt;-Syu&lt;/code&gt; s&amp;inodot;ras&amp;inodot;nda ba&amp;scedil;ka hatalarla kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;rsan&amp;inodot;z, Pacman&amp;rsquo;&amp;inodot;n &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot;n&amp;inodot; dikkatle kontrol edin. Spesifik bir paketin sorun &amp;ccedil;&amp;inodot;kard&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;r&amp;uuml;rseniz ona &amp;ouml;zel m&amp;uuml;dahale gerekebilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="alternatif-yontem-belirli-nvidia-firmware-dosyalarini-manuel-silmek_1"&gt;Alternatif Y&amp;ouml;ntem: Belirli NVIDIA Firmware Dosyalar&amp;inodot;n&amp;inodot; Manuel Silmek&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er &lt;code&gt;linux-firmware&lt;/code&gt; paketini kald&amp;inodot;rmak istemiyorsan&amp;inodot;z, ilgili dosyalar&amp;inodot; tek tek silebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;-rf&lt;span class="w"&gt; &lt;/span&gt;/usr/lib/firmware/nvidia/ad103
+sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;-rf&lt;span class="w"&gt; &lt;/span&gt;/usr/lib/firmware/nvidia/ad104
+sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;-rf&lt;span class="w"&gt; &lt;/span&gt;/usr/lib/firmware/nvidia/ad106
+sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;-rf&lt;span class="w"&gt; &lt;/span&gt;/usr/lib/firmware/nvidia/ad107
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sonras&amp;inodot;nda tekrar &lt;code&gt;sudo pacman -Syu&lt;/code&gt; komutunu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak sisteminizi g&amp;uuml;ncelleyebilirsiniz. Ancak bu y&amp;ouml;ntem daha fazla risk i&amp;ccedil;erir ve dikkatli kullan&amp;inodot;lmal&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;h2 id="ozet-sorun-neden-oldu-nasil-cozulur"&gt;&amp;Ouml;zet: Sorun Neden Oldu, Nas&amp;inodot;l &amp;Ccedil;&amp;ouml;z&amp;uuml;l&amp;uuml;r?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;linux-firmware&lt;/code&gt; art&amp;inodot;k bo&amp;scedil; bir paket ve firmware'ler ayr&amp;inodot; ayr&amp;inodot; paketlendi.&lt;/li&gt;
+&lt;li&gt;NVIDIA firmware dosyalar&amp;inodot;n&amp;inodot;n upstream&amp;rsquo;de yeniden d&amp;uuml;zenlenmesi, Pacman&amp;rsquo;&amp;inodot;n dosya &amp;ccedil;ak&amp;inodot;&amp;scedil;mas&amp;inodot; uyar&amp;inodot;s&amp;inodot; vermesine yol a&amp;ccedil;t&amp;inodot;.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sorunu &amp;ccedil;&amp;ouml;zmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;linux-firmware&lt;/code&gt; paketini kald&amp;inodot;r&amp;inodot;n (&lt;code&gt;pacman -Rdd&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Sistem g&amp;uuml;ncellemesini &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n (&lt;code&gt;pacman -Syu&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu ad&amp;inodot;mlarla sisteminizi sorunsuz &amp;scedil;ekilde en g&amp;uuml;ncel hale getirebilirsiniz. 🎉&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sikca-sorulan-sorular-sss"&gt;S&amp;inodot;k&amp;ccedil;a Sorulan Sorular (SSS)&lt;/h2&gt;
+&lt;h3 id="bu-islem-guvenli-mi"&gt;Bu i&amp;scedil;lem g&amp;uuml;venli mi?&lt;/h3&gt;
+&lt;p&gt;Evet, bu belirli durumda &lt;code&gt;-Rdd&lt;/code&gt; kullanmak g&amp;uuml;venlidir &amp;ccedil;&amp;uuml;nk&amp;uuml; &lt;code&gt;linux-firmware&lt;/code&gt; hemen ard&amp;inodot;ndan yeniden kurulacakt&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="hangi-surumde-bu-sorun-ortadan-kalkti"&gt;Hangi s&amp;uuml;r&amp;uuml;mde bu sorun ortadan kalkt&amp;inodot;?&lt;/h3&gt;
+&lt;p&gt;Sorun, &lt;code&gt;linux-firmware&lt;/code&gt; 20250613.12fe085f-5 s&amp;uuml;r&amp;uuml;m&amp;uuml;ne ge&amp;ccedil;i&amp;scedil;le birlikte ba&amp;scedil;lad&amp;inodot;. Bu s&amp;uuml;r&amp;uuml;mden sonrakilerde yeniden yap&amp;inodot;lanma tamamland&amp;inodot;&amp;gbreve;&amp;inodot; i&amp;ccedil;in benzer sorunlar beklenmiyor.&lt;/p&gt;
+&lt;h3 id="otomatik-bir-cozum-gelir-mi"&gt;Otomatik bir &amp;ccedil;&amp;ouml;z&amp;uuml;m gelir mi?&lt;/h3&gt;
+&lt;p&gt;Gelecekte &lt;code&gt;pacman&lt;/code&gt; veya &lt;code&gt;linux-firmware&lt;/code&gt; paketleri taraf&amp;inodot;ndan otomatik dosya ta&amp;scedil;&amp;inodot;ma/silme deste&amp;gbreve;i eklenebilir. Ancak &amp;scedil;u an i&amp;ccedil;in manuel m&amp;uuml;dahale &amp;scedil;art.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sen-de-bu-sorunu-yasadin-mi_1"&gt;Sen de Bu Sorunu Ya&amp;scedil;ad&amp;inodot;n m&amp;inodot;?&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er bu rehber i&amp;scedil;ine yarad&amp;inodot;ysa yorumlarda belirtmeyi unutma 💬
+Ayr&amp;inodot;ca arkada&amp;scedil;lar&amp;inodot;n da benzer bir sorun ya&amp;scedil;&amp;inodot;yorsa payla&amp;scedil;arak onlara da yard&amp;inodot;mc&amp;inodot; olabilirsin!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📌 &lt;strong&gt;&amp;Idot;pucu:&lt;/strong&gt; Sistem g&amp;uuml;ncellemelerinden &amp;ouml;nce mutlaka &lt;code&gt;pacman.log&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; yedeklemeyi unutma. B&amp;ouml;ylece neler de&amp;gbreve;i&amp;scedil;ti&amp;gbreve;ini kolayca takip edebilirsin.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Kaynak:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/"&gt;Arch Linux News &amp;ndash; linux-firmware &amp;gt;= 20250613.12fe085f-5 upgrade requires manual intervention&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;</content><category term="Donanım"/><category term="arch linux"/><category term="linux-firmware"/><category term="nvidia"/><category term="pacman"/><category term="sistem güncelleme"/><category term="firmware hatası"/></entry><entry><title>Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi</title><link href="https://yuceltoluyag.github.io/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi/" rel="alternate"/><published>2025-07-30T21:15:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-07-30:/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi/</id><summary type="html">&lt;p&gt;Bu rehberde, bir Bash scripti yardımıyla Linux sisteminizdeki USB cihazların güç yönetimi ayarlarını ve aktif kernel modüllerinin parametrelerini nasıl analiz edebileceğinizi adım adım anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;hr/&gt;
+&lt;h1 id="arch-linux-uzerinde-usb-guc-yonetimi-ve-kernel-modul-analizi-rehberi"&gt;🖥️ Arch Linux &amp;Uuml;zerinde USB G&amp;uuml;&amp;ccedil; Y&amp;ouml;netimi ve Kernel Mod&amp;uuml;l Analizi Rehberi&lt;/h1&gt;
+&lt;p&gt;Linux sistemlerde donan&amp;inodot;m kaynaklar&amp;inodot;n&amp;inodot; verimli kullanmak, g&amp;uuml;&amp;ccedil; t&amp;uuml;ketimini azaltmak ve uyumluluk sorunlar&amp;inodot;n&amp;inodot; gidermek i&amp;ccedil;in &lt;strong&gt;USB g&amp;uuml;&amp;ccedil; y&amp;ouml;netimi&lt;/strong&gt; ve &lt;strong&gt;&amp;ccedil;ekirdek mod&amp;uuml;l ayarlar&amp;inodot;&lt;/strong&gt; olduk&amp;ccedil;a &amp;ouml;nemlidir. Bu rehberde, bir Bash scripti yard&amp;inodot;m&amp;inodot;yla sisteminizdeki USB ayg&amp;inodot;tlar&amp;inodot;n&amp;inodot;n durumunu ve mod&amp;uuml;l parametrelerini nas&amp;inodot;l inceleyebilece&amp;gbreve;inizi &amp;ouml;&amp;gbreve;reneceksiniz. 🚀
+&lt;img alt="arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp" srcset="/images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-sm.webp 300w, /images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-md.webp 500w, /images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp 800w, /images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="bu-rehber-kimler-icin"&gt;🧠 Bu Rehber Kimler &amp;Idot;&amp;ccedil;in?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⚙️ Teknik bilgiye sahip Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot;&lt;/li&gt;
+&lt;li&gt;🐧 Arch Linux veya benzeri minimalist da&amp;gbreve;&amp;inodot;t&amp;inodot;mlar&amp;inodot; kullananlar&lt;/li&gt;
+&lt;li&gt;🧪 USB cihazlarla ilgili uyku/uyanma sorunlar&amp;inodot; ya&amp;scedil;ayanlar&lt;/li&gt;
+&lt;li&gt;🔋 Diz&amp;uuml;st&amp;uuml; bilgisayarlar&amp;inodot;nda g&amp;uuml;&amp;ccedil; tasarrufu sa&amp;gbreve;lamak isteyenler&lt;/li&gt;
+&lt;li&gt;🎧 Ses ayg&amp;inodot;tlar&amp;inodot;, kablosuz adapt&amp;ouml;rler, klavye/fare gibi donan&amp;inodot;mlar&amp;inodot;n y&amp;ouml;netimini incelemek isteyenler&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="bu-script-ne-yapar"&gt;🔍 Bu Script Ne Yapar?&lt;/h2&gt;
+&lt;p&gt;Script iki temel i&amp;scedil;lemi ger&amp;ccedil;ekle&amp;scedil;tirir:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;T&amp;uuml;m USB ayg&amp;inodot;tlar&amp;inodot;n&amp;inodot;n g&amp;uuml;&amp;ccedil; y&amp;ouml;netimi ayarlar&amp;inodot;n&amp;inodot; okur ve listeler.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sistemde aktif olarak kullan&amp;inodot;lan kernel mod&amp;uuml;llerini ve parametrelerini g&amp;ouml;sterir.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="scriptin-adim-adim-incelemesi"&gt;🛠️ Script&amp;rsquo;in Ad&amp;inodot;m Ad&amp;inodot;m &amp;Idot;ncelemesi&lt;/h2&gt;
+&lt;h3 id="1-script-icerigi"&gt;1. Script &amp;Idot;&amp;ccedil;eri&amp;gbreve;i&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;i&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;find&lt;span class="w"&gt; &lt;/span&gt;/sys/devices&lt;span class="w"&gt; &lt;/span&gt;-name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"bMaxPower"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;busdir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="p"&gt;%/*&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;busnum&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&amp;lt;&lt;span class="nv"&gt;$busdir&lt;/span&gt;/busnum&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;devnum&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&amp;lt;&lt;span class="nv"&gt;$busdir&lt;/span&gt;/devnum&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;lsusb&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$busnum&lt;/span&gt;:&lt;span class="nv"&gt;$devnum&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\n\n+++ %s\n  -%s\n"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$title&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$busdir&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ff&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;find&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$busdir&lt;/span&gt;/power&lt;span class="w"&gt; &lt;/span&gt;-type&lt;span class="w"&gt; &lt;/span&gt;f&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;-empty&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$ff&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="p"&gt;|&lt;/span&gt;tr&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\n"&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="o"&gt;[[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="si"&gt;${#&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-gt&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;" &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ff&lt;/span&gt;&lt;span class="p"&gt;##*/&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$v&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sort&lt;span class="w"&gt; &lt;/span&gt;-g&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="nb"&gt;printf&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\n\n\n+++ %s\n"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Kernel Modules"&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;mod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;lspci&lt;span class="w"&gt; &lt;/span&gt;-k&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sed&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'/in use:/s,^.*: ,,p'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sort&lt;span class="w"&gt; &lt;/span&gt;-u&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"+ &lt;/span&gt;&lt;span class="nv"&gt;$mod&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;systool&lt;span class="w"&gt; &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$mod&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sed&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/Parameters:/,/^&lt;/span&gt;$&lt;span class="s2"&gt;/p"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="uygulamali-kullanim-ve-ornek-cikti_1"&gt;🧪 Uygulamal&amp;inodot; Kullan&amp;inodot;m ve &amp;Ouml;rnek &amp;Ccedil;&amp;inodot;kt&amp;inodot;&lt;/h2&gt;
+&lt;h3 id="2-komutu-calistir"&gt;2. Komutu &amp;Ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;usb-kernel-analyzer.sh
+./usb-kernel-analyzer.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi bir &amp;ccedil;&amp;inodot;kt&amp;inodot; al&amp;inodot;rs&amp;inodot;n&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;+++ Bus 001 Device 005: ID 10c4:8108 Silicon Labs USB OPTICAL MOUSE
+ -/sys/devices/.../usb1/1-9
+ autosuspend=2
+ autosuspend_delay_ms=2000
+ control=on
+ runtime_status=active
+ wakeup=disabled
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="ciktidaki-anahtar-alanlar_1"&gt;📊 &amp;Ccedil;&amp;inodot;kt&amp;inodot;daki Anahtar Alanlar&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Alan&lt;/th&gt;
+&lt;th&gt;Anlam&amp;inodot;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;autosuspend&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2 ise cihaz uykuya ge&amp;ccedil;ebilir.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;autosuspend_delay_ms&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Uykuya ge&amp;ccedil;meden &amp;ouml;nceki bekleme s&amp;uuml;resi.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;control&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;auto&lt;/code&gt;: sistem y&amp;ouml;netir, &lt;code&gt;on&lt;/code&gt;: kullan&amp;inodot;c&amp;inodot; belirler.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;runtime_status&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;active&lt;/code&gt;: &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor, &lt;code&gt;suspended&lt;/code&gt;: uyku modunda.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;wakeup&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Cihaz sistem uykudayken uyand&amp;inodot;rabilir mi.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-one-cikan-cihaz-analizleri"&gt;🔎 3. &amp;Ouml;ne &amp;Ccedil;&amp;inodot;kan Cihaz Analizleri&lt;/h2&gt;
+&lt;h3 id="usb-mouse-silicon-labs"&gt;🖱️ USB Mouse (Silicon Labs)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Durum:&lt;/strong&gt; Aktif, &lt;code&gt;autosuspend=2&lt;/code&gt; olmas&amp;inodot;na ra&amp;gbreve;men uyumam&amp;inodot;&amp;scedil;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;G&amp;uuml;&amp;ccedil; T&amp;uuml;ketimi:&lt;/strong&gt; Devam ediyor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Wakeup:&lt;/strong&gt; Kapal&amp;inodot;, bu y&amp;uuml;zden sistem uykudan mouse ile uyanmayabilir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="usb-klavye-casue"&gt;⌨️ USB Klavye (CASUE)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Wakeup:&lt;/strong&gt; A&amp;ccedil;&amp;inodot;k. Bu cihaz sistem uykudayken uyanma tetikleyebilir.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;runtime_status=active&lt;/strong&gt; oldu&amp;gbreve;undan uyumam&amp;inodot;&amp;scedil;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="kablosuz-ag-adaptoru-realtek-rtl8188ru"&gt;📶 Kablosuz A&amp;gbreve; Adapt&amp;ouml;r&amp;uuml; (Realtek RTL8188RU)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Uyku destekleniyor&lt;/strong&gt; ama &lt;strong&gt;runtime_status=active&lt;/strong&gt; &amp;rarr; uyumuyor.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wakeup=disabled&lt;/strong&gt; &amp;rarr; A&amp;gbreve;dan uyanma tetikleyemez.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-kernel-modul-parametreleri_1"&gt;🧩 4. Kernel Mod&amp;uuml;l Parametreleri&lt;/h2&gt;
+&lt;p&gt;&amp;Ccedil;&amp;inodot;kt&amp;inodot;daki mod&amp;uuml;l &amp;ouml;rne&amp;gbreve;i:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;+++ Kernel Modules
++ nvme
+  Parameters:
+    io_queue_depth = 1024
+    use_threaded_interrupts = 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="neden-onemli"&gt;🎯 Neden &amp;Ouml;nemli?&lt;/h3&gt;
+&lt;p&gt;Bu parametreler sistemin performans&amp;inodot;, g&amp;uuml;&amp;ccedil; y&amp;ouml;netimi ve donan&amp;inodot;m uyumlulu&amp;gbreve;u &amp;uuml;zerinde do&amp;gbreve;rudan etkilidir.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Mod&amp;uuml;l&lt;/th&gt;
+&lt;th&gt;Kritik Parametreler&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;snd_hda_intel&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;power_save, enable_msi, jackpoll_ms&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;nvme&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;io_queue_depth, use_cmb_sqes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;xhci_hcd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;quirks, link_quirk&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-uykuya-gecmeyen-cihazlari-bulmak_1"&gt;🧰 5. Uykuya Ge&amp;ccedil;meyen Cihazlar&amp;inodot; Bulmak&lt;/h2&gt;
+&lt;p&gt;Script d&amp;inodot;&amp;scedil;&amp;inodot;nda &amp;scedil;u komutlar&amp;inodot; da kullanabilirsiniz:&lt;/p&gt;
+&lt;h3 id="uykuya-gecmeyen-cihazlari-listele"&gt;🔍 Uykuya ge&amp;ccedil;meyen cihazlar&amp;inodot; listele&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;grep&lt;span class="w"&gt; &lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;/sys/bus/usb/devices/*/power/runtime_status&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;suspended
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="uyuyabilir-ama-aktif-olan-cihazlari-bul"&gt;🔋 Uyuyabilir ama aktif olan cihazlar&amp;inodot; bul&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;find&lt;span class="w"&gt; &lt;/span&gt;/sys/bus/usb/devices/*/power&lt;span class="w"&gt; &lt;/span&gt;-name&lt;span class="w"&gt; &lt;/span&gt;runtime_status&lt;span class="w"&gt; &lt;/span&gt;-exec&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;-H&lt;span class="w"&gt; &lt;/span&gt;active&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-iyilestirme-onerileri_1"&gt;✅ 6. &amp;Idot;yile&amp;scedil;tirme &amp;Ouml;nerileri&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;autosuspend=2&lt;/code&gt; olan ama s&amp;uuml;rekli &lt;strong&gt;&lt;code&gt;active&lt;/code&gt;&lt;/strong&gt; durumda kalan cihazlar i&amp;ccedil;in &lt;code&gt;control=auto&lt;/code&gt; yap&amp;inodot;labilir.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;wakeup=disabled&lt;/code&gt; olan klavye gibi ayg&amp;inodot;tlar i&amp;ccedil;in:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;enabled&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;/sys/bus/usb/devices/1-3/power/wakeup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;S&amp;uuml;r&amp;uuml;c&amp;uuml; parametrelerini kal&amp;inodot;c&amp;inodot; yapmak i&amp;ccedil;in &lt;code&gt;/etc/modprobe.d&lt;/code&gt; alt&amp;inodot;na &lt;code&gt;.conf&lt;/code&gt; dosyas&amp;inodot; ekleyebilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-bu-script-neden-faydali"&gt;📌 Sonu&amp;ccedil;: Bu Script Neden Faydal&amp;inodot;?&lt;/h2&gt;
+&lt;p&gt;✅ USB g&amp;uuml;&amp;ccedil; y&amp;ouml;netimini sistemsel d&amp;uuml;zeyde g&amp;ouml;rebilirsiniz.
+✅ Uyku/uyanma sorunlar&amp;inodot;n&amp;inodot; tespit edebilirsiniz.
+✅ Kernel mod&amp;uuml;l parametrelerini analiz ederek performans veya uyumluluk art&amp;inodot;rabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;</content><category term="Donanım"/><category term="usb"/><category term="güç yönetimi"/><category term="kernel modülleri"/><category term="linux"/><category term="arch linux"/><category term="aygıt analizi"/><category term="bash"/></entry><entry><title>Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları</title><link href="https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/" rel="alternate"/><published>2025-07-28T09:30:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-07-28:/arch-linux-cpu-performans-ayarlari/</id><summary type="html">&lt;p&gt;Arch Linux üzerinde modern Intel işlemcilerle nasıl CPU frekansı kontrol edilir ve güç yönetimi optimize edilir? cpupower ve intel_pstate ile adım adım yapılandırma rehberi.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Arch Linux kullan&amp;inodot;yorsan ve &amp;ouml;zellikle GNOME ya da KDE gibi masa&amp;uuml;st&amp;uuml; ortamlar&amp;inodot;ndan uzak durup i3wm gibi hafif &amp;ccedil;&amp;ouml;z&amp;uuml;mler tercih ediyorsan, sistem performans&amp;inodot;n&amp;inodot; kontrol etmek tamamen senin elinde! 💪&lt;/p&gt;
+&lt;p&gt;Bu yaz&amp;inodot;da, &lt;strong&gt;Intel i5-13400F i&amp;scedil;lemcili, RTX 4060 Ti ekran kartl&amp;inodot; ve i3wm kullanan&lt;/strong&gt; bir sistemde CPU g&amp;uuml;&amp;ccedil; y&amp;ouml;netimini nas&amp;inodot;l yap&amp;inodot;land&amp;inodot;rd&amp;inodot;&amp;gbreve;&amp;inodot;m&amp;inodot; detayl&amp;inodot;ca payla&amp;scedil;&amp;inodot;yorum. Hedefimiz:
+👉 Maksimum performans
+👉 D&amp;uuml;&amp;scedil;&amp;uuml;k g&amp;uuml;&amp;ccedil; t&amp;uuml;ketimi
+👉 Anl&amp;inodot;k frekans takibi
+👉 Masa&amp;uuml;st&amp;uuml; ortam&amp;inodot; ba&amp;gbreve;&amp;inodot;ms&amp;inodot;z tam kontrol&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="neden-cpu-guc-yonetimi-onemlidir"&gt;🔍 Neden CPU G&amp;uuml;&amp;ccedil; Y&amp;ouml;netimi &amp;Ouml;nemlidir?&lt;/h2&gt;
+&lt;p&gt;Modern CPU'lar ola&amp;gbreve;an&amp;uuml;st&amp;uuml; g&amp;uuml;&amp;ccedil;lere sahiptir, ancak bu g&amp;uuml;c&amp;uuml; kontrols&amp;uuml;z kullanmak hem &amp;inodot;s&amp;inodot; art&amp;inodot;&amp;scedil;&amp;inodot;na hem de gereksiz enerji t&amp;uuml;ketimine yol a&amp;ccedil;ar. &amp;Idot;&amp;scedil;te bu y&amp;uuml;zden;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sistem fanlar&amp;inodot;n&amp;inodot;n sesi artar 😤&lt;/li&gt;
+&lt;li&gt;Batarya s&amp;uuml;resi d&amp;uuml;&amp;scedil;er (laptop&amp;rsquo;ta) 🔋&lt;/li&gt;
+&lt;li&gt;Gereksiz &amp;inodot;s&amp;inodot;nmalar ya&amp;scedil;an&amp;inodot;r 🔥&lt;/li&gt;
+&lt;li&gt;Throttling nedeniyle performans d&amp;uuml;&amp;scedil;er 🐌&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;Ouml;zellikle Intel i&amp;scedil;lemcili sistemlerde &lt;code&gt;intel_pstate&lt;/code&gt; s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;n&amp;uuml;n davran&amp;inodot;&amp;scedil;&amp;inodot;, do&amp;gbreve;ru yap&amp;inodot;land&amp;inodot;r&amp;inodot;lmazsa ya i&amp;scedil;lemciyi s&amp;uuml;rekli en y&amp;uuml;ksek h&amp;inodot;zda tutar ya da &amp;ccedil;ok yava&amp;scedil; davran&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="linux-cpu-performans-ayarlari" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-cpu-performans-ayarlari-xl.webp" srcset="/images/arch-linux-cpu-performans-ayarlari-sm.webp 300w, /images/arch-linux-cpu-performans-ayarlari-md.webp 500w, /images/arch-linux-cpu-performans-ayarlari-xl.webp 800w, /images/arch-linux-cpu-performans-ayarlari-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="1-sistem-donanimim"&gt;🧰 1. Sistem Donan&amp;inodot;m&amp;inodot;m&lt;/h2&gt;
+&lt;p&gt;Yap&amp;inodot;land&amp;inodot;rmay&amp;inodot; ger&amp;ccedil;ekle&amp;scedil;tirdi&amp;gbreve;im sistemin bile&amp;scedil;enleri &amp;scedil;unlar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;💻 &lt;strong&gt;Intel i5-13400F&lt;/strong&gt; (10 &amp;ccedil;ekirdek: 6P+4E)&lt;/li&gt;
+&lt;li&gt;🎮 &lt;strong&gt;Palit GeForce RTX 4060 Ti JetStream 16GB&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;🧠 &lt;strong&gt;16GB DDR5 6000MHz Team T-Force Vulcan RAM&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;🔌 &lt;strong&gt;Asus PRIME H610M-K DDR5 Anakart&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;❄️ &lt;strong&gt;Thermalright Peerless Assassin 120 SE&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;🖥️ &lt;strong&gt;MSI G244PF E2 165Hz Monit&amp;ouml;r&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu donan&amp;inodot;mla y&amp;uuml;ksek performans al&amp;inodot;rken ayn&amp;inodot; zamanda gereksiz g&amp;uuml;&amp;ccedil; t&amp;uuml;ketimini &amp;ouml;nlemek istedim.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="2-power-profiles-daemon-servisinin-durumu"&gt;🛑 2. &lt;code&gt;power-profiles-daemon&lt;/code&gt; Servisinin Durumu&lt;/h2&gt;
+&lt;p&gt;Arch Linux&amp;rsquo;un baz&amp;inodot; kurulumlar&amp;inodot;nda (&amp;ouml;zellikle GNOME veya KDE ile) &lt;code&gt;power-profiles-daemon&lt;/code&gt; varsay&amp;inodot;lan olarak etkindir. Bu servis, sistemin enerji profillerini otomatik y&amp;ouml;netir.&lt;/p&gt;
+&lt;p&gt;Durumunu kontrol etmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;status&lt;span class="w"&gt; &lt;/span&gt;power-profiles-daemon.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er bu servis &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yorsa ve hafif bir pencere y&amp;ouml;neticisi (&amp;ouml;rne&amp;gbreve;in i3wm) kullan&amp;inodot;yorsan, gereksiz olabilir. Devre d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rakmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;disable&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;power-profiles-daemon.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="3-cpupower-kurulumu-ve-yapilandirilmasi"&gt;⚙️ 3. &lt;code&gt;cpupower&lt;/code&gt; Kurulumu ve Yap&amp;inodot;land&amp;inodot;r&amp;inodot;lmas&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Art&amp;inodot;k CPU frekanslar&amp;inodot;n&amp;inodot; elle y&amp;ouml;netebilece&amp;gbreve;imiz &lt;code&gt;cpupower&lt;/code&gt; arac&amp;inodot;n&amp;inodot; kurmam&amp;inodot;z gerekiyor.&lt;/p&gt;
+&lt;h3 id="kurulum"&gt;Kurulum:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;cpupower
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="yapilandirma"&gt;Yap&amp;inodot;land&amp;inodot;rma:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/default/cpupower
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyadaki &amp;scedil;u sat&amp;inodot;rlar&amp;inodot;n ba&amp;scedil;&amp;inodot;ndaki &lt;code&gt;#&lt;/code&gt; i&amp;scedil;aretini kald&amp;inodot;r&amp;inodot;n ve de&amp;gbreve;erleri a&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi d&amp;uuml;zenleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;governor&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'performance'&lt;/span&gt;
+&lt;span class="nv"&gt;min_freq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"800MHz"&lt;/span&gt;
+&lt;span class="nv"&gt;max_freq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"3.3GHz"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;Not:&lt;/strong&gt; Frekans s&amp;inodot;n&amp;inodot;rlar&amp;inodot; sistemine g&amp;ouml;re de&amp;gbreve;i&amp;scedil;ebilir. &lt;code&gt;cpupower frequency-info&lt;/code&gt; komutu ile kontrol edebilirsin.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="servisi-etkinlestir"&gt;Servisi etkinle&amp;scedil;tir:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;cpupower
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;cpupower
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="4-frekans-bilgisi-ve-anlik-izleme_1"&gt;📊 4. Frekans Bilgisi ve Anl&amp;inodot;k &amp;Idot;zleme&lt;/h2&gt;
+&lt;p&gt;Yap&amp;inodot;land&amp;inodot;rman&amp;inodot;n &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; teyit etmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cpupower&lt;span class="w"&gt; &lt;/span&gt;frequency-info
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ouml;rnek &amp;ccedil;&amp;inodot;kt&amp;inodot;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;driver: intel_pstate
+available cpufreq governors: performance powersave
+current policy: frequency should be within 800 MHz and 3.30 GHz.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Her 10 saniyede bir &amp;ccedil;ekirdek h&amp;inodot;zlar&amp;inodot;n&amp;inodot; g&amp;ouml;rmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;watch&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"grep 'cpu MHz' /proc/cpuinfo"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🧠 &lt;strong&gt;Bu ne i&amp;scedil;e yarar?&lt;/strong&gt;
+Baz&amp;inodot; &amp;ccedil;ekirdeklerin d&amp;uuml;&amp;scedil;&amp;uuml;k, baz&amp;inodot;lar&amp;inodot;n&amp;inodot;n y&amp;uuml;ksek frekansta &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;r&amp;uuml;rs&amp;uuml;n. Bu, &lt;code&gt;intel_pstate&lt;/code&gt; s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;n&amp;uuml;n dinamik g&amp;uuml;&amp;ccedil; y&amp;ouml;netiminden kaynaklan&amp;inodot;r.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="5-intel_pstate-surucusunu-anlamak"&gt;🔍 5. &lt;code&gt;intel_pstate&lt;/code&gt; S&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;n&amp;uuml; Anlamak&lt;/h2&gt;
+&lt;p&gt;Modern Intel i&amp;scedil;lemcilerde varsay&amp;inodot;lan s&amp;uuml;r&amp;uuml;c&amp;uuml; genellikle &lt;code&gt;intel_pstate&lt;/code&gt;'tir. Bu s&amp;uuml;r&amp;uuml;c&amp;uuml; sayesinde;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;Idot;&amp;scedil;lemci kendi frekans&amp;inodot;n&amp;inodot; anl&amp;inodot;k ayarlayabilir 🔄&lt;/li&gt;
+&lt;li&gt;"performance" modunda bile &amp;ccedil;ekirdekler gerekti&amp;gbreve;inde d&amp;uuml;&amp;scedil;ebilir&lt;/li&gt;
+&lt;li&gt;Boost frekanslar&amp;inodot; desteklenir ⚡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="alternatif-suruculer"&gt;Alternatif S&amp;uuml;r&amp;uuml;c&amp;uuml;ler?&lt;/h3&gt;
+&lt;p&gt;Baz&amp;inodot; kullan&amp;inodot;c&amp;inodot;lar &lt;code&gt;acpi-cpufreq&lt;/code&gt; s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;ne ge&amp;ccedil;erek &lt;code&gt;schedutil&lt;/code&gt;, &lt;code&gt;ondemand&lt;/code&gt;, &lt;code&gt;conservative&lt;/code&gt; gibi y&amp;ouml;neticileri kullanmak isteyebilir. Fakat 12. nesil ve &amp;uuml;zeri i&amp;scedil;lemciler i&amp;ccedil;in &lt;strong&gt;&lt;code&gt;intel_pstate&lt;/code&gt; en iyi se&amp;ccedil;imdir.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="6-i3wm-kullanicilari-icin-ekstra-tavsiyeler_1"&gt;🧱 6. i3wm Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in Ekstra Tavsiyeler&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er masa&amp;uuml;st&amp;uuml; ortam&amp;inodot; yerine i3wm kullan&amp;inodot;yorsan, startup i&amp;scedil;lemlerini elle yap&amp;inodot;land&amp;inodot;rmal&amp;inodot;s&amp;inodot;n. &lt;code&gt;cpupower&lt;/code&gt; komutunu her a&amp;ccedil;&amp;inodot;l&amp;inodot;&amp;scedil;ta otomatik &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;h3 id="xprofile-dosyasina-ekle"&gt;&lt;code&gt;.xprofile&lt;/code&gt; Dosyas&amp;inodot;na Ekle:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'cpupower frequency-set -g performance'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.xprofile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;veya&lt;/p&gt;
+&lt;h3 id="systemd-user-servisi-olustur"&gt;Systemd user servisi olu&amp;scedil;tur:&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;INI&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="na"&gt;~/.config/systemd/user/cpupower.service&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;INI&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
+&lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Set cpupower governor&lt;/span&gt;
+&lt;span class="na"&gt;After&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;graphical.target&lt;/span&gt;
+
+&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;oneshot&lt;/span&gt;
+&lt;span class="na"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/usr/bin/cpupower frequency-set -g performance&lt;/span&gt;
+
+&lt;span class="k"&gt;[Install]&lt;/span&gt;
+&lt;span class="na"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;default.target&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Aktifle&amp;scedil;tir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;cpupower.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="7-ileri-duzey-ince-ayar-ve-analiz-araclari_1"&gt;🚀 7. &amp;Idot;leri D&amp;uuml;zey &amp;Idot;nce Ayar ve Analiz Ara&amp;ccedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;h3 id="71-boost-frekansinin-durumu-ve-kontrolu"&gt;7.1 Boost Frekans&amp;inodot;n&amp;inodot;n Durumu ve Kontrol&amp;uuml;&lt;/h3&gt;
+&lt;p&gt;Boost &amp;ouml;zelli&amp;gbreve;inin a&amp;ccedil;&amp;inodot;k m&amp;inodot; kapal&amp;inodot; m&amp;inodot; oldu&amp;gbreve;unu kontrol etmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cat&lt;span class="w"&gt; &lt;/span&gt;/sys/devices/system/cpu/cpufreq/boost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1&lt;/code&gt; ise boost a&amp;ccedil;&amp;inodot;k&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;/code&gt; ise boost kapal&amp;inodot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Gerekirse kapatmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;/sys/devices/system/cpu/cpufreq/boost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ Oyun veya a&amp;gbreve;&amp;inodot;r i&amp;scedil; y&amp;uuml;klerinde boost a&amp;ccedil;&amp;inodot;k kalmal&amp;inodot;, aksi takdirde performans d&amp;uuml;&amp;scedil;ebilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h3 id="72-turbostat-ile-detayli-izleme"&gt;7.2 &lt;code&gt;turbostat&lt;/code&gt; ile Detayl&amp;inodot; &amp;Idot;zleme&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Turbostat&lt;/code&gt;, CPU &amp;ccedil;ekirdeklerinin frekans&amp;inodot;, s&amp;inodot;cakl&amp;inodot;&amp;gbreve;&amp;inodot; ve g&amp;uuml;&amp;ccedil; durumlar&amp;inodot;n&amp;inodot; ger&amp;ccedil;ek zamanl&amp;inodot; g&amp;ouml;sterir.&lt;/p&gt;
+&lt;p&gt;Kurulum:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;linux-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rma:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;turbostat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h3 id="73-guc-tuketim-analizi-powertop-ve-powerstat"&gt;7.3 G&amp;uuml;&amp;ccedil; T&amp;uuml;ketim Analizi: &lt;code&gt;powertop&lt;/code&gt; ve &lt;code&gt;powerstat&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;powertop&lt;/code&gt; sistemde en &amp;ccedil;ok enerji t&amp;uuml;keten bile&amp;scedil;enleri tespit eder ve optimizasyon &amp;ouml;nerileri sunar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;powertop
+sudo&lt;span class="w"&gt; &lt;/span&gt;powertop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;powerstat&lt;/code&gt; ise anl&amp;inodot;k watt t&amp;uuml;ketimini &amp;ouml;l&amp;ccedil;mek i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r, &amp;ouml;zellikle diz&amp;uuml;st&amp;uuml; kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in faydal&amp;inodot;d&amp;inodot;r.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h3 id="74-dinamik-guc-yonetimi-auto-cpufreq"&gt;7.4 Dinamik G&amp;uuml;&amp;ccedil; Y&amp;ouml;netimi: &lt;code&gt;auto-cpufreq&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Y&amp;uuml;k ve pil durumuna g&amp;ouml;re otomatik olarak CPU governor&amp;rsquo;&amp;inodot;n&amp;inodot; ayarlar.&lt;/p&gt;
+&lt;p&gt;Kurulum (AUR veya yay kullanarak):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;auto-cpufreq
+sudo&lt;span class="w"&gt; &lt;/span&gt;auto-cpufreq&lt;span class="w"&gt; &lt;/span&gt;--install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h3 id="75-grub-ayarlariyla-intel_pstate-surucusunu-zorlamak"&gt;7.5 Grub Ayarlar&amp;inodot;yla &lt;code&gt;intel_pstate&lt;/code&gt; S&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;n&amp;uuml; Zorlamak&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er &lt;code&gt;intel_pstate&lt;/code&gt; s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml; sistemde aktif de&amp;gbreve;ilse, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; uygulayarak etkinle&amp;scedil;tirebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/default/grub
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;GRUB_CMDLINE_LINUX_DEFAULT&lt;/code&gt; sat&amp;inodot;r&amp;inodot;na a&amp;scedil;a&amp;gbreve;&amp;inodot;daki parametreyi ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;intel_pstate=active
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;De&amp;gbreve;i&amp;scedil;iklikleri kaydettikten sonra:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;grub-mkconfig&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;/boot/grub/grub.cfg
+sudo&lt;span class="w"&gt; &lt;/span&gt;reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h3 id="76-governor-modlari-karsilastirmasi"&gt;7.6 Governor Modlar&amp;inodot; Kar&amp;scedil;&amp;inodot;la&amp;scedil;t&amp;inodot;rmas&amp;inodot;&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Governor&lt;/th&gt;
+&lt;th&gt;A&amp;ccedil;&amp;inodot;klama&lt;/th&gt;
+&lt;th&gt;Kullan&amp;inodot;m Senaryosu&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;performance&lt;/td&gt;
+&lt;td&gt;Sabit y&amp;uuml;ksek frekans&lt;/td&gt;
+&lt;td&gt;Oyun, render, y&amp;uuml;ksek performans&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;powersave&lt;/td&gt;
+&lt;td&gt;Sabit d&amp;uuml;&amp;scedil;&amp;uuml;k frekans&lt;/td&gt;
+&lt;td&gt;Batarya tasarrufu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;schedutil&lt;/td&gt;
+&lt;td&gt;Kernel zamanlay&amp;inodot;c&amp;inodot;s&amp;inodot;na ba&amp;gbreve;l&amp;inodot;&lt;/td&gt;
+&lt;td&gt;Dengeli, modern&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ondemand&lt;/td&gt;
+&lt;td&gt;Y&amp;uuml;ke g&amp;ouml;re frekans art&amp;inodot;&amp;scedil;&amp;inodot;&lt;/td&gt;
+&lt;td&gt;Eski sistemlerde&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;intel_pstate&lt;/code&gt; s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;nde genellikle sadece &lt;code&gt;performance&lt;/code&gt; ve &lt;code&gt;powersave&lt;/code&gt; modlar&amp;inodot; aktiftir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h3 id="77-laptoplar-icin-tlp-ile-guc-tasarrufu"&gt;7.7 Laptoplar &amp;Idot;&amp;ccedil;in TLP ile G&amp;uuml;&amp;ccedil; Tasarrufu&lt;/h3&gt;
+&lt;p&gt;Laptop kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in &lt;code&gt;tlp&lt;/code&gt;, Wi-Fi, USB, disk gibi bile&amp;scedil;enlerin g&amp;uuml;&amp;ccedil; t&amp;uuml;ketimini optimize eder.&lt;/p&gt;
+&lt;p&gt;Kurulum ve ba&amp;scedil;latma:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;tlp
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;tlp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="8-devam-etmek-isteyenler-icin_1"&gt;🔗 8. Devam Etmek &amp;Idot;steyenler &amp;Idot;&amp;ccedil;in&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;turbostat&lt;/code&gt;&lt;/strong&gt;: CPU &amp;ccedil;ekirdeklerinin frekans&amp;inodot;, s&amp;inodot;cakl&amp;inodot;&amp;gbreve;&amp;inodot;, g&amp;uuml;&amp;ccedil; durumu gibi verileri ger&amp;ccedil;ek zamanl&amp;inodot; izler. Performans sorunlar&amp;inodot; veya &amp;inodot;s&amp;inodot;nma problemlerini tespit etmek i&amp;ccedil;in faydal&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;powertop&lt;/code&gt;&lt;/strong&gt;: Sistem genelinde hangi bile&amp;scedil;enlerin ne kadar enerji t&amp;uuml;ketti&amp;gbreve;ini g&amp;ouml;sterir ve g&amp;uuml;&amp;ccedil; tasarrufu i&amp;ccedil;in &amp;ouml;neriler sunar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;auto-cpufreq&lt;/code&gt;&lt;/strong&gt;: Y&amp;uuml;k ve pil durumuna g&amp;ouml;re CPU frekans y&amp;ouml;neticisini otomatik olarak ayarlayarak enerji verimlili&amp;gbreve;i sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;p&gt;&amp;Idot;stersen, turbostat &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot;ndan k&amp;uuml;&amp;ccedil;&amp;uuml;k bir ekran g&amp;ouml;r&amp;uuml;nt&amp;uuml;s&amp;uuml; veya &amp;ouml;rnek komut &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot; da ekleyebiliriz. Yaz&amp;inodot;n&amp;inodot;n g&amp;ouml;rsel olarak da desteklenmesi kullan&amp;inodot;c&amp;inodot; deneyimini art&amp;inodot;r&amp;inodot;r.
+Ba&amp;scedil;ka d&amp;uuml;zenleme veya ekleme talebin varsa memnuniyetle yard&amp;inodot;mc&amp;inodot; olurum!&lt;/p&gt;
+&lt;h2 id="9-yaygin-sorunlar-ve-cozumler"&gt;📌 9. Yayg&amp;inodot;n Sorunlar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mler&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Sorun&lt;/th&gt;
+&lt;th&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cpupower: command not found&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;sudo pacman -S cpupower&lt;/code&gt; ile kur&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;intel_pstate&lt;/code&gt; yerine ba&amp;scedil;ka s&amp;uuml;r&amp;uuml;c&amp;uuml; kullan&amp;inodot;l&amp;inodot;yor&lt;/td&gt;
+&lt;td&gt;`dmesg&lt;/td&gt;
+&lt;td&gt;grep pstate` ile s&amp;uuml;r&amp;uuml;c&amp;uuml; kontrol&amp;uuml;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Frekanslar de&amp;gbreve;i&amp;scedil;miyor gibi g&amp;ouml;r&amp;uuml;n&amp;uuml;yor&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;watch -n 1 "grep MHz /proc/cpuinfo"&lt;/code&gt; ile anl&amp;inodot;k izle&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Laptop kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in batarya h&amp;inodot;zla t&amp;uuml;keniyor&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;governor='powersave'&lt;/code&gt; olarak de&amp;gbreve;i&amp;scedil;tir&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;✅ Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Bu rehberde, masa&amp;uuml;st&amp;uuml; ortam&amp;inodot; kullanmadan, sadece terminal ve &lt;code&gt;cpupower&lt;/code&gt; arac&amp;inodot;yla nas&amp;inodot;l etkili bir CPU g&amp;uuml;&amp;ccedil; y&amp;ouml;netimi yap&amp;inodot;land&amp;inodot;r&amp;inodot;labilece&amp;gbreve;ini ad&amp;inodot;m ad&amp;inodot;m g&amp;ouml;sterdim. Modern bir sistemde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Performans&amp;inodot; elle y&amp;ouml;netmek 🎯&lt;/li&gt;
+&lt;li&gt;Frekanslar&amp;inodot; anl&amp;inodot;k izlemek 🔬&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;intel_pstate&lt;/code&gt; s&amp;uuml;r&amp;uuml;c&amp;uuml;s&amp;uuml;n&amp;uuml; do&amp;gbreve;ru kullanmak 🛠️
+  gibi ad&amp;inodot;mlarla sisteminiz daha verimli &amp;ccedil;al&amp;inodot;&amp;scedil;acakt&amp;inodot;r.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;</content><category term="Donanım"/><category term="arch linux"/><category term="cpupower"/><category term="intel_pstate"/><category term="cpu frekansı"/><category term="güç yönetimi"/><category term="i3wm"/><category term="performans ayarı"/></entry><entry><title>GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler</title><link href="https://yuceltoluyag.github.io/gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler/" rel="alternate"/><published>2025-05-07T12:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-07:/gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler/</id><summary type="html">&lt;p&gt;GPU soğutmasında sıvı metal kullanımı hakkında bilmeniz gereken her şey. Alüminyum reaksiyonları, doğru yüzey seçimi, malzeme önerileri ve detaylı uygulama rehberi.&lt;/p&gt;</summary><content type="html">&lt;div class="alert alert-warning"&gt;
+&lt;strong&gt;Dikkat:&lt;/strong&gt;S&amp;inodot;v&amp;inodot; metal kullan&amp;inodot;m&amp;inodot; do&amp;gbreve;ru yap&amp;inodot;l&amp;inodot;rsa GPU'nuzda %10-20'ye kadar s&amp;inodot;cakl&amp;inodot;k iyile&amp;scedil;tirmesi sa&amp;gbreve;layabilirsiniz. Ancak yanl&amp;inodot;&amp;scedil; bir ad&amp;inodot;m t&amp;uuml;m kart&amp;inodot;n&amp;inodot;z&amp;inodot; geri d&amp;ouml;n&amp;uuml;&amp;scedil;&amp;uuml;ms&amp;uuml;z &amp;scedil;ekilde bozabilir. Riski y&amp;uuml;ksek bir i&amp;scedil;lem,buna g&amp;ouml;re d&amp;uuml;&amp;scedil;&amp;uuml;n&amp;uuml;n.Sorumluluk size aittir.
+&lt;/div&gt;
+&lt;h1 id="gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler"&gt;GPU So&amp;gbreve;utmas&amp;inodot;nda S&amp;inodot;v&amp;inodot; Metal Kullan&amp;inodot;m&amp;inodot; ve Dikkat Edilmesi Gerekenler&lt;/h1&gt;
+&lt;p&gt;GPU'lar&amp;inodot;n daha serin ve verimli &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot; i&amp;ccedil;in s&amp;inodot;v&amp;inodot; metal kullan&amp;inodot;m&amp;inodot; olduk&amp;ccedil;a pop&amp;uuml;ler hale geldi. Ancak yanl&amp;inodot;&amp;scedil; uygulama, &amp;ouml;zellikle al&amp;uuml;minyum y&amp;uuml;zeylerde ciddi sorunlara yol a&amp;ccedil;abiliyor. Bu rehberde, &lt;strong&gt;s&amp;inodot;v&amp;inodot; metal ile GPU so&amp;gbreve;utma bloklar&amp;inodot; &amp;uuml;zerinde nas&amp;inodot;l g&amp;uuml;venli ve etkili &amp;ccedil;al&amp;inodot;&amp;scedil;abilece&amp;gbreve;inizi&lt;/strong&gt; ad&amp;inodot;m ad&amp;inodot;m anlataca&amp;gbreve;&amp;inodot;m.&lt;/p&gt;
+&lt;h2 id="aluminyum-ile-sivi-metalin-tehlikeli-etkilesimi"&gt;Al&amp;uuml;minyum ile S&amp;inodot;v&amp;inodot; Metalin Tehlikeli Etkile&amp;scedil;imi&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er s&amp;inodot;v&amp;inodot; metal al&amp;uuml;minyum ile temas ederse (&amp;ouml;rne&amp;gbreve;in bir GPU so&amp;gbreve;utma blo&amp;gbreve;unda), i&amp;ccedil;erisindeki &lt;strong&gt;galyum&lt;/strong&gt; elementi nedeniyle al&amp;uuml;minyum y&amp;uuml;zey h&amp;inodot;zl&amp;inodot;ca &lt;strong&gt;tortu haline gelir, par&amp;ccedil;alan&amp;inodot;r ve toz olur&lt;/strong&gt;.
+Bu &lt;strong&gt;galyum-al&amp;uuml;minyum reaksiyonu&lt;/strong&gt; ciddi hasara neden olabilir!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🔗 Reaksiyon Par&amp;ccedil;alanma Videosu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="z3Fm30T9kJ8"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;p&gt;Bu y&amp;uuml;zden s&amp;inodot;v&amp;inodot; metal uygularken kesinlikle y&amp;uuml;zeyin &lt;strong&gt;al&amp;uuml;minyum olmad&amp;inodot;&amp;gbreve;&amp;inodot;ndan&lt;/strong&gt; emin olun.&lt;/p&gt;
+&lt;h2 id="dogru-yuzey-secimi-nikel-ve-bakir"&gt;Do&amp;gbreve;ru Y&amp;uuml;zey Se&amp;ccedil;imi: Nikel ve Bak&amp;inodot;r&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nikel&lt;/strong&gt; ve &lt;strong&gt;Bak&amp;inodot;r&lt;/strong&gt; y&amp;uuml;zeylerde s&amp;inodot;v&amp;inodot; metal sorunsuz kullan&amp;inodot;labilir.&lt;/li&gt;
+&lt;li&gt;Bir&amp;ccedil;ok GPU'da &amp;ccedil;ekirdek blo&amp;gbreve;u bak&amp;inodot;r veya nikel kaplamal&amp;inodot; olur.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="yuzey-malzemesini-nasil-anlarsiniz"&gt;Y&amp;uuml;zey Malzemesini Nas&amp;inodot;l Anlars&amp;inodot;n&amp;inodot;z?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Al&amp;uuml;minyum&lt;/strong&gt; resmi:
+  &lt;img alt="Al&amp;uuml;minyum" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/alimunyum-xl.webp" srcset="/images/alimunyum-sm.webp 300w, /images/alimunyum-md.webp 500w, /images/alimunyum-xl.webp 800w, /images/alimunyum-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Nikel&lt;/strong&gt; resmi:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Nikel Resmi" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/hurda-nikel-bursada-xl.webp" srcset="/images/hurda-nikel-bursada-sm.webp 300w, /images/hurda-nikel-bursada-md.webp 500w, /images/hurda-nikel-bursada-xl.webp 800w, /images/hurda-nikel-bursada-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h3 id="pratik-yontem-miknatis-testi"&gt;Pratik Y&amp;ouml;ntem: M&amp;inodot;knat&amp;inodot;s Testi&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;M&amp;inodot;knat&amp;inodot;s nikeli &amp;ccedil;eker&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Al&amp;uuml;minyum ve bak&amp;inodot;r&lt;/strong&gt; m&amp;inodot;knat&amp;inodot;sla &amp;ccedil;ekilmez.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu basit testle hangi malzeme &amp;uuml;zerinde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z&amp;inodot; anlayabilirsiniz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="kullanilacak-malzemeler-ve-ozellikleri_1"&gt;Kullan&amp;inodot;lacak Malzemeler ve &amp;Ouml;zellikleri&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left;"&gt;&amp;Uuml;r&amp;uuml;n&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;Is&amp;inodot; &amp;Idot;letkenli&amp;gbreve;i (W/m-K)&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;Yo&amp;gbreve;unluk (g/cm&amp;sup3;)&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;Maks. Is&amp;inodot; Direnci (&amp;deg;C)&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;Viskozite&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;Thermal Grizzly Hydronaut&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;11.8&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;2.6&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;350&amp;deg;C&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;1900 puaz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;&lt;strong&gt;Thermal Grizzly Conductonaut&lt;/strong&gt;&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;73&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;6.24&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;140&amp;deg;C&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;0.021 puaz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;🔗 Hydronaut (26gr - xxx TL): &lt;a href="https://www.pazarama.com/thermal-grizzly-hydronaut-26gr-yuksek-performansli-termal-macun-p-4260711990328?magaza=think24&amp;amp;utm_source"&gt;&amp;Uuml;r&amp;uuml;n Linki&lt;/a&gt;
+🔗 Conductonaut (1gr - xxx TL): &lt;a href="https://www.teknobiyotik.com/thermal-grizzly-1gr-conductonaut-liquid-metal-termal-macun-tg-c-001-r.html?ref"&gt;&amp;Uuml;r&amp;uuml;n Linki&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="isi-iletkenlik-degerleri"&gt;Is&amp;inodot; &amp;Idot;letkenlik De&amp;gbreve;erleri&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bak&amp;inodot;r&lt;/strong&gt;: 413 W/m-K&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Ccedil;inko&lt;/strong&gt;: 116 W/m-K&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pirin&amp;ccedil;&lt;/strong&gt; (Bak&amp;inodot;r + &amp;Ccedil;inko kar&amp;inodot;&amp;scedil;&amp;inodot;m&amp;inodot;): Aras&amp;inodot;nda bir de&amp;gbreve;er.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ℹ️ &lt;strong&gt;Is&amp;inodot; iletim&lt;/strong&gt; W/m-K birimiyle ifade edilir. &lt;strong&gt;Viskozite&lt;/strong&gt; ise ak&amp;inodot;&amp;scedil;kanl&amp;inodot;&amp;gbreve;a kar&amp;scedil;&amp;inodot; diren&amp;ccedil;tir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="gerekli-ekstra-malzemeler_1"&gt;Gerekli Ekstra Malzemeler&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;1.5 MM Kal&amp;inodot;n Pul&lt;/strong&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Materyal: Bak&amp;inodot;r ala&amp;scedil;&amp;inodot;ml&amp;inodot; sar&amp;inodot; (pirin&amp;ccedil;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;100 gramda yakla&amp;scedil;&amp;inodot;k 51 adet &amp;rarr; 180 TL&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://www.erturkmetalaksesuar.com/15x12-mm-yuvarlak-tek-delik-duz-kalin-pul-ham-pirinc"&gt;&amp;Uuml;r&amp;uuml;n Linki&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;0.5 MM Kaplamas&amp;inodot;z Bak&amp;inodot;r Tel (20 Metre)&lt;/strong&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="malzeme-toplam-maliyetifiyatlar-ve-stok-tarihe-gore-degisebilir"&gt;Malzeme Toplam Maliyeti(Fiyatlar ve Stok Tarihe G&amp;ouml;re De&amp;gbreve;i&amp;scedil;ebilir)&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left;"&gt;&amp;Uuml;r&amp;uuml;n&lt;/th&gt;
+&lt;th style="text-align: left;"&gt;Fiyat&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;26gr Hydronaut Macun&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;1200 TL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;1gr Conductonaut S&amp;inodot;v&amp;inodot; Metal&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;439 TL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;51 Adet Pul&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;180 TL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left;"&gt;20 Metre Bak&amp;inodot;r Tel&lt;/td&gt;
+&lt;td style="text-align: left;"&gt;125 TL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Toplam:&lt;/strong&gt; 1.944 TL&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h1 id="adim-adim-gpuya-sivi-metal-uygulama-rehberi_1"&gt;Ad&amp;inodot;m Ad&amp;inodot;m GPU'ya S&amp;inodot;v&amp;inodot; Metal Uygulama Rehberi&lt;/h1&gt;
+&lt;p&gt;Bu b&amp;ouml;l&amp;uuml;mde i&amp;scedil;lemleri tek tek numaraland&amp;inodot;r&amp;inodot;yoruz:&lt;/p&gt;
+&lt;h2 id="1-gpu-blok-demontaji"&gt;1. GPU Blok Demontaj&amp;inodot;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PC &amp;uuml;zerinde GPU blo&amp;gbreve;unu kald&amp;inodot;r&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Fan pinlerini, varsa ARGB pinlerini &amp;ccedil;&amp;inodot;kar&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;PCB'yi, VRAM padlerini ve &amp;ccedil;ip &amp;uuml;zerindeki eski termal macunu dikkatlice temizleyin.&lt;/li&gt;
+&lt;li&gt;So&amp;gbreve;utma blo&amp;gbreve;unu s&amp;ouml;k&amp;uuml;n ve di&amp;scedil; f&amp;inodot;r&amp;ccedil;as&amp;inodot;yla temizleyin.&lt;/li&gt;
+&lt;li&gt;Fanlar&amp;inodot;n plastik cover'&amp;inodot;n&amp;inodot; hava ile temizleyin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-kenar-bantlama"&gt;2. Kenar Bantlama&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GPU &amp;ccedil;ip kenar&amp;inodot;na ve t&amp;uuml;m VRAM &amp;ccedil;iplerinin d&amp;inodot;&amp;scedil;&amp;inodot;na &amp;scedil;effaf sar&amp;inodot; bant &amp;ccedil;ekin.&lt;/li&gt;
+&lt;li&gt;Ama&amp;ccedil;: S&amp;inodot;v&amp;inodot; metal ta&amp;scedil;mas&amp;inodot; veya d&amp;ouml;k&amp;uuml;lmesi olursa k&amp;inodot;sa devreyi &amp;ouml;nlemek.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-sivi-metal-ve-termal-macun-uygulamasi"&gt;3. S&amp;inodot;v&amp;inodot; Metal ve Termal Macun Uygulamas&amp;inodot;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;Ccedil;ipe az miktarda s&amp;inodot;v&amp;inodot; metal damlat&amp;inodot;n ve &amp;uuml;zerine Hydronaut macun s&amp;inodot;k&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Bir spatula ile &amp;ccedil;ip &amp;uuml;zerinde kar&amp;inodot;&amp;scedil;t&amp;inodot;rarak ince bir katman olu&amp;scedil;turun.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-vram-uzerine-pul-montaji"&gt;4. VRAM &amp;Uuml;zerine Pul Montaj&amp;inodot;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;VRAM'lere az s&amp;inodot;v&amp;inodot; metal + Hydronaut kar&amp;inodot;&amp;scedil;&amp;inodot;m&amp;inodot; s&amp;uuml;r&amp;uuml;n.&lt;/li&gt;
+&lt;li&gt;Her VRAM'in &amp;uuml;zerine 1.5 MM kal&amp;inodot;nl&amp;inodot;kta pul yerle&amp;scedil;tirin.&lt;/li&gt;
+&lt;li&gt;Pullar&amp;inodot;n &amp;uuml;zerine yine az s&amp;inodot;v&amp;inodot; metal ve Hydronaut kar&amp;inodot;&amp;scedil;&amp;inodot;m&amp;inodot; uygulay&amp;inodot;n.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="5-vrm-ve-diger-alanlar-icin-ekstra-destek"&gt;5. VRM ve Di&amp;gbreve;er Alanlar &amp;Idot;&amp;ccedil;in Ekstra Destek&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fabrika &amp;ccedil;&amp;inodot;k&amp;inodot;&amp;scedil;&amp;inodot;ndaki VRM, mosfet, kapasit&amp;ouml;r gibi b&amp;ouml;lgelere Hydronaut s&amp;uuml;r&amp;uuml;n.&lt;/li&gt;
+&lt;li&gt;&amp;Uuml;zerine uygun boyutta pad yerle&amp;scedil;tirin.
+  &lt;strong&gt;Sak&amp;inodot;n s&amp;inodot;v&amp;inodot; metal kullanmay&amp;inodot;n!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="6-yeniden-montaj"&gt;6. Yeniden Montaj&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Fanlar&amp;inodot; plastik kal&amp;inodot;ba tak&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;So&amp;gbreve;utma blo&amp;gbreve;unu plastik cover'a vidalay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;GPU blo&amp;gbreve;unu PCB'ye dikkatlice yerle&amp;scedil;tirip fan ve ARGB pinlerini tak&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&amp;Ccedil;arpraz &amp;scedil;ekilde blo&amp;gbreve;u s&amp;inodot;k&amp;inodot;ca vidalay&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;So&amp;gbreve;utma blo&amp;gbreve;unun &amp;ccedil;ekirde&amp;gbreve;e ve VRAM'lere tam temas etti&amp;gbreve;inden g&amp;ouml;zle kontrol edin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="_1"&gt;&lt;img alt="4060 s&amp;inodot;v&amp;inodot; metal" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rtx-4060-s&amp;inodot;v&amp;inodot;-metal-xl.webp" srcset="/images/rtx-4060-s&amp;inodot;v&amp;inodot;-metal-sm.webp 300w, /images/rtx-4060-s&amp;inodot;v&amp;inodot;-metal-md.webp 500w, /images/rtx-4060-s&amp;inodot;v&amp;inodot;-metal-xl.webp 800w, /images/rtx-4060-s&amp;inodot;v&amp;inodot;-metal-xl.webp 1200w"/&gt;&lt;/h2&gt;
+&lt;h1 id="sonuc_1"&gt;Sonu&amp;ccedil;&lt;/h1&gt;
+&lt;p&gt;S&amp;inodot;v&amp;inodot; metal kullan&amp;inodot;m&amp;inodot; do&amp;gbreve;ru yap&amp;inodot;l&amp;inodot;rsa GPU'nuzda &lt;strong&gt;%10-20'ye kadar s&amp;inodot;cakl&amp;inodot;k iyile&amp;scedil;tirmesi&lt;/strong&gt; sa&amp;gbreve;layabilirsiniz. Ancak yanl&amp;inodot;&amp;scedil; bir ad&amp;inodot;m t&amp;uuml;m kart&amp;inodot;n&amp;inodot;z&amp;inodot; geri d&amp;ouml;n&amp;uuml;&amp;scedil;&amp;uuml;ms&amp;uuml;z &amp;scedil;ekilde bozabilir.&lt;/p&gt;
+&lt;p&gt;Bu rehberi ad&amp;inodot;m ad&amp;inodot;m uygularsan&amp;inodot;z, en y&amp;uuml;ksek performans&amp;inodot; g&amp;uuml;venli bir &amp;scedil;ekilde elde edebilirsiniz.
+Unutmay&amp;inodot;n: &lt;strong&gt;Al&amp;uuml;minyum y&amp;uuml;zeylerde s&amp;inodot;v&amp;inodot; metal kullanmay&amp;inodot;n!&lt;/strong&gt;&lt;/p&gt;
+&lt;hr/&gt;</content><category term="Donanım"/><category term="sıvı metal"/><category term="gpu soğutma"/><category term="alüminyum reaksiyonu"/><category term="thermal macun"/><category term="gpu modifikasyonu"/></entry><entry><title>Raspberry Pi Nasıl Kurulur</title><link href="https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/" rel="alternate"/><published>2025-04-24T12:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-04-24:/raspberry-pi-nasil-kurulur/</id><summary type="html">&lt;p&gt;Raspberry Pi kurulumu adım adım nasıl yapılır? microSD kartı hazırlamaktan SSH ile uzaktan bağlantıya kadar tüm detayları bu rehberde bulabilirsiniz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="raspberry-pi-nasil-kurulur"&gt;Raspberry Pi Nas&amp;inodot;l Kurulur? 🛠️&lt;/h1&gt;
+&lt;p&gt;G&amp;uuml;&amp;ccedil;l&amp;uuml;, ucuz ve esnek bir mini bilgisayar olan &lt;strong&gt;Raspberry Pi&lt;/strong&gt;, hobi projelerinden profesyonel uygulamalara kadar bir&amp;ccedil;ok alanda kullan&amp;inodot;labiliyor. Peki, bu cihaz&amp;inodot; ilk kez elinize ald&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda nas&amp;inodot;l kurulum yapars&amp;inodot;n&amp;inodot;z? 🤔&lt;/p&gt;
+&lt;p&gt;Bu rehberde, &lt;strong&gt;Raspberry Pi kurulumu&lt;/strong&gt; ad&amp;inodot;m ad&amp;inodot;m anlat&amp;inodot;l&amp;inodot;yor. microSD kart haz&amp;inodot;rlamadan SSH &amp;uuml;zerinden uzaktan ba&amp;gbreve;lant&amp;inodot;ya kadar ihtiyac&amp;inodot;n&amp;inodot;z olan her &amp;scedil;eyi bulacaks&amp;inodot;n&amp;inodot;z.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="gerekli-donanimlar"&gt;📦 Gerekli Donan&amp;inodot;mlar&lt;/h2&gt;
+&lt;p&gt;Raspberry Pi kurulumu i&amp;ccedil;in &amp;scedil;u donan&amp;inodot;mlara ihtiyac&amp;inodot;n&amp;inodot;z olacak:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi (Bu rehberde Pi 3 Model B kullan&amp;inodot;ld&amp;inodot;)&lt;/li&gt;
+&lt;li&gt;microSD kart (en az 8GB, tercihen Class 10)&lt;/li&gt;
+&lt;li&gt;microSD kart okuyucu (bilgisayar&amp;inodot;n&amp;inodot;zda yoksa adapt&amp;ouml;r gerekebilir)&lt;/li&gt;
+&lt;li&gt;Bilgisayar (microSD kart&amp;inodot; haz&amp;inodot;rlamak i&amp;ccedil;in)&lt;/li&gt;
+&lt;li&gt;HDMI kablosu, ekran, klavye&lt;/li&gt;
+&lt;li&gt;Ethernet kablosu (ya da Wi-Fi)&lt;/li&gt;
+&lt;li&gt;microUSB g&amp;uuml;&amp;ccedil; kablosu (standart Android &amp;scedil;arj cihaz&amp;inodot;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;T&amp;uuml;m bu donan&amp;inodot;mlar haz&amp;inodot;rsa ba&amp;scedil;layal&amp;inodot;m. 👇&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="microsd-kartin-hazirlanmasi"&gt;💾 microSD Kart&amp;inodot;n Haz&amp;inodot;rlanmas&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Harika, &amp;scedil;imdi &lt;strong&gt;Ad&amp;inodot;m 1: MicroSD Kart&amp;inodot;n&amp;inodot;z&amp;inodot; Flash&amp;rsquo;lay&amp;inodot;n&lt;/strong&gt; b&amp;ouml;l&amp;uuml;m&amp;uuml;yle devam ediyorum:&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="adim-1-microsd-kartinizi-flashlayin"&gt;Ad&amp;inodot;m 1: MicroSD Kart&amp;inodot;n&amp;inodot;z&amp;inodot; Flash&amp;rsquo;lay&amp;inodot;n&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;MicroSD kart&amp;inodot;n&amp;inodot;z&amp;inodot; bilgisayar&amp;inodot;n&amp;inodot;za tak&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.balena.io/etcher/" rel="noopener noreferrer" target="_blank"&gt;Etcher&lt;/a&gt; uygulamas&amp;inodot;n&amp;inodot; indirin ve kurun.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://downloads.raspberrypi.org/raspbian_lite_latest" rel="noopener noreferrer" target="_blank"&gt;Raspbian Stretch Lite&lt;/a&gt; s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; indirip zip dosyas&amp;inodot;n&amp;inodot; &amp;ccedil;&amp;inodot;kar&amp;inodot;n. Bu s&amp;uuml;r&amp;uuml;m, sadece komut sat&amp;inodot;r&amp;inodot; ile &amp;ccedil;al&amp;inodot;&amp;scedil;an, masa&amp;uuml;st&amp;uuml; aray&amp;uuml;z&amp;uuml; bulunmayan olduk&amp;ccedil;a hafif bir Raspbian versiyonudur. Dosya boyutu yakla&amp;scedil;&amp;inodot;k 351MB (Kas&amp;inodot;m 2018 s&amp;uuml;r&amp;uuml;m&amp;uuml;), bu y&amp;uuml;zden h&amp;inodot;zl&amp;inodot;ca indirilecektir.&lt;/li&gt;
+&lt;li&gt;Etcher&amp;rsquo;&amp;inodot; a&amp;ccedil;&amp;inodot;n, &amp;ccedil;&amp;inodot;kard&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z &lt;code&gt;.img&lt;/code&gt; uzant&amp;inodot;l&amp;inodot; Raspbian i&amp;scedil;letim sistemi dosyas&amp;inodot;n&amp;inodot; se&amp;ccedil;in ve hedef olarak MicroSD kart&amp;inodot;n&amp;inodot;z&amp;inodot; g&amp;ouml;sterin. Ard&amp;inodot;ndan &lt;strong&gt;Flash&lt;/strong&gt; butonuna t&amp;inodot;klay&amp;inodot;n ve i&amp;scedil;lemin tamamlanmas&amp;inodot;n&amp;inodot; bekleyin. Windows kullan&amp;inodot;yorsan&amp;inodot;z, i&amp;scedil;lem s&amp;inodot;ras&amp;inodot;nda baz&amp;inodot; Explorer pencereleri a&amp;ccedil;&amp;inodot;labilir, bunlar&amp;inodot; g&amp;ouml;rmezden gelebilirsiniz.&lt;/li&gt;
+&lt;li&gt;&amp;Idot;&amp;scedil;lem bittikten sonra MicroSD kart&amp;inodot;n&amp;inodot;z&amp;inodot; &lt;strong&gt;&amp;ccedil;&amp;inodot;kar&amp;inodot;n&lt;/strong&gt; ve bilgisayar&amp;inodot;n&amp;inodot;zdan ay&amp;inodot;r&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Raspberry Pi&amp;rsquo;nizin kapal&amp;inodot; oldu&amp;gbreve;undan emin olun.&lt;/strong&gt; Flashlad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z MicroSD kart&amp;inodot; Pi&amp;rsquo;nize tak&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Klavyenizi, ekran&amp;inodot;n&amp;inodot;z&amp;inodot; (HDMI portu &amp;uuml;zerinden) ve Ethernet kablosunu Raspberry Pi&amp;rsquo;ye ba&amp;gbreve;lay&amp;inodot;n. Son olarak g&amp;uuml;&amp;ccedil; kablosunu tak&amp;inodot;n. Raspberry Pi otomatik olarak a&amp;ccedil;&amp;inodot;lacakt&amp;inodot;r.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="adim-2-raspberry-piyi-yapilandirma"&gt;Ad&amp;inodot;m 2: Raspberry Pi&amp;rsquo;yi Yap&amp;inodot;land&amp;inodot;rma&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Ekran&amp;inodot;n alt&amp;inodot;nda &lt;code&gt;raspberrypi login:&lt;/code&gt; yaz&amp;inodot;s&amp;inodot; ve yan&amp;inodot;p s&amp;ouml;nen bir imle&amp;ccedil; g&amp;ouml;rd&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml;zde, kullan&amp;inodot;c&amp;inodot; ad&amp;inodot; olarak &amp;scedil;unu yaz&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Enter'a bas&amp;inodot;n. Ard&amp;inodot;ndan varsay&amp;inodot;lan &amp;scedil;ifreyi girin:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;raspberry
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu &amp;scedil;ifreyi birazdan de&amp;gbreve;i&amp;scedil;tirece&amp;gbreve;iz.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;Scedil;imdi sistem g&amp;uuml;ncellemeleri i&amp;ccedil;in &amp;scedil;u komutu yaz&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu komut, Raspbian&amp;rsquo;&amp;inodot;n g&amp;uuml;ncellemeleri hangi kaynaklardan alaca&amp;gbreve;&amp;inodot;n&amp;inodot; yeniler. &lt;code&gt;apt&lt;/code&gt; bir paket y&amp;ouml;neticisidir. &lt;code&gt;sudo&lt;/code&gt; ise &amp;ldquo;super-user do&amp;rdquo; anlam&amp;inodot;na gelir; yani bu komutu y&amp;ouml;netici yetkileriyle &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;yorsunuz.&lt;br/&gt;
+Daha &amp;ouml;nce &lt;code&gt;apt-get&lt;/code&gt; g&amp;ouml;rm&amp;uuml;&amp;scedil; olabilirsiniz, ama &lt;code&gt;apt&lt;/code&gt; daha yeni ve kullan&amp;inodot;c&amp;inodot; dostu bir s&amp;uuml;r&amp;uuml;md&amp;uuml;r. Komutun tamamlanmas&amp;inodot;n&amp;inodot; bekleyin.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ekranda tekrar &lt;code&gt;pi@raspberrypi:~ $&lt;/code&gt; &amp;ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot;n&amp;inodot; g&amp;ouml;rd&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml;zde, g&amp;uuml;ncelleme i&amp;scedil;lemi tamamlanm&amp;inodot;&amp;scedil;t&amp;inodot;r. &amp;Scedil;imdi &amp;scedil;u komutu girin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;full-upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Size soruldu&amp;gbreve;unda
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+yaz&amp;inodot;p Enter&amp;rsquo;a bas&amp;inodot;n. Bu i&amp;scedil;lem biraz s&amp;uuml;rebilir ama ekran&amp;inodot;n alt&amp;inodot;ndaki ilerleme &amp;ccedil;ubu&amp;gbreve;unu izleyebilirsiniz.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;G&amp;uuml;ncellemeler tamamland&amp;inodot;&amp;gbreve;&amp;inodot;nda, &amp;scedil;u temizlik komutlar&amp;inodot;n&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;autoremove&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;clean
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Bu komutlar gereksiz paketleri kald&amp;inodot;r&amp;inodot;r ve bellekte yer a&amp;ccedil;ar. &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; i&amp;scedil;areti, birden fazla komutu tek sat&amp;inodot;rda birle&amp;scedil;tirmenizi sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;Scedil;imdi yap&amp;inodot;land&amp;inodot;rma ekran&amp;inodot;n&amp;inodot; a&amp;ccedil;mak i&amp;ccedil;in &amp;scedil;u komutu yaz&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;raspi-config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Mavi bir grafik ekran a&amp;ccedil;&amp;inodot;lacak. Ok tu&amp;scedil;lar&amp;inodot;yla men&amp;uuml;de gezinebilir, Enter tu&amp;scedil;uyla se&amp;ccedil;im yapabilirsiniz. &lt;code&gt;8 Update&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini se&amp;ccedil;in ve Enter&amp;rsquo;a basarak yap&amp;inodot;land&amp;inodot;rma arac&amp;inodot;n&amp;inodot; g&amp;uuml;ncelleyin.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Birka&amp;ccedil; saniye bekledikten sonra a&amp;scedil;a&amp;gbreve;&amp;inodot; inerek &lt;code&gt;4. Localisation Options&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ine gelin ve Enter&amp;rsquo;a bas&amp;inodot;n. Ard&amp;inodot;ndan yerel ayarlar&amp;inodot; de&amp;gbreve;i&amp;scedil;tirmek i&amp;ccedil;in tekrar Enter&amp;rsquo;a bas&amp;inodot;n.&lt;br/&gt;
+A&amp;scedil;a&amp;gbreve;&amp;inodot; inerek &lt;code&gt;en_GB.UTF-8 UTF-8&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini bulun, se&amp;ccedil;iliyse bo&amp;scedil;luk tu&amp;scedil;uyla i&amp;scedil;areti kald&amp;inodot;r&amp;inodot;n.&lt;br/&gt;
+Devam edip &lt;code&gt;en_US.UTF-8 UTF-8&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini bulun ve bo&amp;scedil;luk tu&amp;scedil;uyla i&amp;scedil;aretleyin. Sonra Enter&amp;rsquo;a basarak i&amp;scedil;lemi tamamlay&amp;inodot;n. &lt;code&gt;en_US.UTF-8&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini varsay&amp;inodot;lan yapmak i&amp;ccedil;in tekrar Enter&amp;rsquo;a bas&amp;inodot;n. Ard&amp;inodot;ndan sizi tekrar &lt;code&gt;raspi-config&lt;/code&gt; ekran&amp;inodot;na d&amp;ouml;nd&amp;uuml;recektir.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Yeniden &lt;code&gt;4. Localisation Options&lt;/code&gt; men&amp;uuml;s&amp;uuml;ne girin. Bu kez &lt;code&gt;I2 Change Timezone&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ine gelin.&lt;br/&gt;
+&amp;Ouml;nce k&amp;inodot;tan&amp;inodot;z&amp;inodot;, sonra &amp;scedil;ehrinizi se&amp;ccedil;in. &amp;Ouml;rne&amp;gbreve;in ben &lt;code&gt;America/Toronto&lt;/code&gt; se&amp;ccedil;iyorum. ABD'deyseniz &lt;code&gt;US&lt;/code&gt; alt&amp;inodot;ndan bulundu&amp;gbreve;unuz b&amp;ouml;lgeyi se&amp;ccedil;ebilirsiniz.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Yine &lt;code&gt;Localisation Options&lt;/code&gt; men&amp;uuml;s&amp;uuml;ne girin ve bu kez klavye d&amp;uuml;zenini ayarlamak i&amp;ccedil;in &lt;code&gt;I3 Change Keyboard Layout&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini se&amp;ccedil;in.&lt;br/&gt;
+Ben &lt;code&gt;Dell USB Multimedia Keyboard&lt;/code&gt; kullan&amp;inodot;yorum. Siz de kendi klavyenizi se&amp;ccedil;in. &amp;Idot;ngiltere&amp;rsquo;deyseniz varsay&amp;inodot;lan d&amp;uuml;zeni se&amp;ccedil;ebilirsiniz. De&amp;gbreve;ilseniz &lt;code&gt;Other&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ine inip kendi klavye dilinizi se&amp;ccedil;in.&lt;br/&gt;
+Ard&amp;inodot;ndan klavye d&amp;uuml;zeninin versiyonunu se&amp;ccedil;in. Emin de&amp;gbreve;ilseniz ilk se&amp;ccedil;ene&amp;gbreve;i tercih edin. Alt-Gr tu&amp;scedil;u ve Compose Key se&amp;ccedil;eneklerini de Enter ile ge&amp;ccedil;in &amp;mdash; &amp;scedil;u anda ihtiyac&amp;inodot;n&amp;inodot;z olmayacak.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Son olarak &lt;code&gt;Localisation Options&lt;/code&gt; men&amp;uuml;s&amp;uuml;ne tekrar girip &lt;code&gt;I4 Change Wi-fi Country&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini se&amp;ccedil;in.&lt;br/&gt;
+Bu &lt;strong&gt;&amp;ccedil;ok &amp;ouml;nemli&lt;/strong&gt;, &amp;ccedil;&amp;uuml;nk&amp;uuml; bulundu&amp;gbreve;unuz &amp;uuml;lkeye uygun olmayan kablosuz ayarlar&amp;inodot; kullanmak yasal sorunlara yol a&amp;ccedil;abilir. &amp;Uuml;lkenizi se&amp;ccedil;in ve Enter&amp;rsquo;a bas&amp;inodot;n. &lt;code&gt;&amp;lt;Ok&amp;gt;&lt;/code&gt; mesaj&amp;inodot; geldi&amp;gbreve;inde tekrar Enter&amp;rsquo;a bas&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;Scedil;imdi a&amp;scedil;a&amp;gbreve;&amp;inodot; inerek &lt;code&gt;7. Advanced Options&lt;/code&gt; men&amp;uuml;s&amp;uuml;ne girin ve &lt;code&gt;A1 Expand Filesystem&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini se&amp;ccedil;in.&lt;br/&gt;
+Bu i&amp;scedil;lem, SD kart&amp;inodot;n&amp;inodot;z&amp;inodot;n tamam&amp;inodot;n&amp;inodot;n Raspberry Pi taraf&amp;inodot;ndan kullan&amp;inodot;lmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kullan&amp;inodot;c&amp;inodot; &amp;scedil;ifresini de&amp;gbreve;i&amp;scedil;tirmek i&amp;ccedil;in &lt;code&gt;1 Change User Password&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ine girin. Ekrandaki y&amp;ouml;nergeleri izleyerek yeni &amp;scedil;ifrenizi belirleyin.&lt;br/&gt;
+Son olarak sa&amp;gbreve; ok tu&amp;scedil;una iki kez basarak &lt;code&gt;&amp;lt;Finish&amp;gt;&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ine gelin ve Enter&amp;rsquo;a bas&amp;inodot;n.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&amp;Scedil;imdi &lt;code&gt;2 Network Options&lt;/code&gt; men&amp;uuml;s&amp;uuml;ne gidin ve &lt;code&gt;N1 Hostname&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;ini se&amp;ccedil;in. Raspberry Pi&amp;rsquo;nize bir ad verin. Ayarlar&amp;inodot; yapt&amp;inodot;ktan sonra sistem yeniden ba&amp;scedil;lat&amp;inodot;lacak. Yeniden ba&amp;scedil;latma i&amp;scedil;leminin tamamlanmas&amp;inodot;n&amp;inodot; bekleyin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="adim-3-raspberry-piyi-ozellestirme"&gt;Ad&amp;inodot;m 3: Raspberry Pi&amp;rsquo;yi &amp;Ouml;zelle&amp;scedil;tirme&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry Pi&amp;rsquo;niz yeniden ba&amp;scedil;lat&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda, tekrar giri&amp;scedil; yap&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Ard&amp;inodot;ndan az &amp;ouml;nce belirledi&amp;gbreve;iniz &amp;scedil;ifreyi yaz&amp;inodot;n ve Enter&amp;rsquo;a bas&amp;inodot;n.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ba&amp;scedil;lang&amp;inodot;&amp;ccedil;ta &amp;ccedil;&amp;inodot;kan g&amp;ouml;kku&amp;scedil;a&amp;gbreve;&amp;inodot; ekran&amp;inodot;n&amp;inodot; kald&amp;inodot;rmak i&amp;ccedil;in &amp;scedil;u komutu girin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/boot/config.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Nano, Linux&amp;rsquo;ta kullan&amp;inodot;m&amp;inodot; kolay bir metin d&amp;uuml;zenleyicisidir. Ok tu&amp;scedil;lar&amp;inodot;yla en alta inin ve &amp;scedil;u sat&amp;inodot;r&amp;inodot; ekleyin:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;disable_splash&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Ctrl+X tu&amp;scedil;lar&amp;inodot;na basarak &amp;ccedil;&amp;inodot;k&amp;inodot;n, ard&amp;inodot;ndan &lt;code&gt;y&lt;/code&gt; tu&amp;scedil;una basarak de&amp;gbreve;i&amp;scedil;iklikleri kaydedin.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Raspberry Pi&amp;rsquo;nizi yeniden ba&amp;scedil;lat&amp;inodot;n. Art&amp;inodot;k ba&amp;scedil;lang&amp;inodot;&amp;ccedil; ekran&amp;inodot;nda g&amp;ouml;kku&amp;scedil;a&amp;gbreve;&amp;inodot; efekti g&amp;ouml;r&amp;uuml;nmeyecek.&lt;br/&gt;
+E&amp;gbreve;er ileride tekrar g&amp;ouml;rmek isterseniz, &lt;code&gt;/boot/config.txt&lt;/code&gt; dosyas&amp;inodot;na geri d&amp;ouml;n&amp;uuml;p bu sat&amp;inodot;r&amp;inodot; silebilirsiniz.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Az &amp;ouml;nce &lt;code&gt;nano&lt;/code&gt; ile bir dosyay&amp;inodot; d&amp;uuml;zenlediniz. &amp;Scedil;imdi de &lt;code&gt;/etc/motd&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenleyece&amp;gbreve;iz. Bu dosya, her giri&amp;scedil; yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda ekranda g&amp;ouml;z&amp;uuml;ken &amp;ldquo;g&amp;uuml;n&amp;uuml;n mesaj&amp;inodot;n&amp;inodot;&amp;rdquo; belirler:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/motd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Sadece &lt;code&gt;nano&lt;/code&gt; yazarsan&amp;inodot;z dosyay&amp;inodot; d&amp;uuml;zenleyemezsiniz, &lt;code&gt;sudo&lt;/code&gt; &amp;scedil;art.&lt;br/&gt;
+&amp;Idot;mle&amp;ccedil; dosyan&amp;inodot;n ba&amp;scedil;&amp;inodot;ndayken &lt;code&gt;Ctrl+^&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na bas&amp;inodot;n, ok tu&amp;scedil;lar&amp;inodot;yla en alta kadar inin. Bu t&amp;uuml;m metni se&amp;ccedil;er. Ard&amp;inodot;ndan &lt;code&gt;Ctrl+K&lt;/code&gt; ile se&amp;ccedil;imi silin.&lt;br/&gt;
+Dosya bo&amp;scedil; kald&amp;inodot;&amp;gbreve;&amp;inodot;nda, giri&amp;scedil;te g&amp;ouml;rmek istedi&amp;gbreve;iniz mesaj&amp;inodot; yaz&amp;inodot;n. Kaydedip &amp;ccedil;&amp;inodot;kmak i&amp;ccedil;in &lt;code&gt;Ctrl+X&lt;/code&gt; ard&amp;inodot;ndan &lt;code&gt;y&lt;/code&gt; tu&amp;scedil;una bas&amp;inodot;n.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Art&amp;inodot;k oturumdan &amp;ccedil;&amp;inodot;kmak i&amp;ccedil;in &lt;code&gt;Ctrl+D&lt;/code&gt; tu&amp;scedil;lar&amp;inodot;na bas&amp;inodot;n.&lt;br/&gt;
+Tekrar giri&amp;scedil; yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda, az &amp;ouml;nce yazd&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z mesaj&amp;inodot; g&amp;ouml;receksiniz.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Son olarak, root kullan&amp;inodot;c&amp;inodot;s&amp;inodot; i&amp;ccedil;in de bir &amp;scedil;ifre belirleyin:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="adim-4-ssh-kurulumu"&gt;Ad&amp;inodot;m 4: SSH Kurulumu&lt;/h2&gt;
+&lt;p&gt;SSH, Raspberry Pi&amp;rsquo;ye ba&amp;scedil;ka bir cihazdan uzaktan terminal (komut sat&amp;inodot;r&amp;inodot;) &amp;uuml;zerinden ba&amp;gbreve;lanman&amp;inodot; sa&amp;gbreve;lar. &amp;Ouml;ncelikle Pi&amp;rsquo;ye statik bir IP adresi ataman gerekiyor.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry Pi&amp;rsquo;nin yerel IP adresini &amp;ouml;&amp;gbreve;ren:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip&lt;span class="w"&gt; &lt;/span&gt;-4&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;global
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+A&amp;scedil;a&amp;gbreve;&amp;inodot;daki gibi bir &amp;ccedil;&amp;inodot;kt&amp;inodot; alabilirsin:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;inet&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.2.10/24&lt;span class="w"&gt; &lt;/span&gt;brd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.1.1.255&lt;span class="w"&gt; &lt;/span&gt;scope&lt;span class="w"&gt; &lt;/span&gt;global&lt;span class="w"&gt; &lt;/span&gt;eth0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Buradaki &lt;code&gt;192.168.2.10&lt;/code&gt; Pi&amp;rsquo;nin yerel IP adresi. &lt;code&gt;/24&lt;/code&gt; a&amp;gbreve;&amp;inodot;n b&amp;uuml;y&amp;uuml;kl&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml; g&amp;ouml;steriyor, &amp;ccedil;o&amp;gbreve;u ev a&amp;gbreve;&amp;inodot; i&amp;ccedil;in bu 24&amp;rsquo;t&amp;uuml;r. IP adresini bir yere not al.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Modeminin (router) yerel IP adresini &amp;ouml;&amp;gbreve;ren:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ip&lt;span class="w"&gt; &lt;/span&gt;route&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;default
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&amp;Scedil;&amp;ouml;yle bir &amp;scedil;ey g&amp;ouml;receksin:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;default&lt;span class="w"&gt; &lt;/span&gt;via&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.2.1&lt;span class="w"&gt; &lt;/span&gt;dev&lt;span class="w"&gt; &lt;/span&gt;eth0&lt;span class="w"&gt; &lt;/span&gt;src&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.2.10&lt;span class="w"&gt; &lt;/span&gt;metric&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;202&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Benim &amp;ouml;rne&amp;gbreve;imde &lt;code&gt;192.168.2.1&lt;/code&gt; modem IP&amp;rsquo;si. Seninki farkl&amp;inodot; olabilir, bunu da not et.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;DNS sunucu adresini bul:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cat&lt;span class="w"&gt; &lt;/span&gt;/etc/resolv.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&amp;Ouml;rnek &amp;ccedil;&amp;inodot;kt&amp;inodot;:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Generated by resolvconf&lt;/span&gt;
+domain&lt;span class="w"&gt; &lt;/span&gt;home
+nameserver&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.2.1
+nameserver&lt;span class="w"&gt; &lt;/span&gt;XXX.XXX.XXX.XXX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&amp;Idot;lk &lt;code&gt;nameserver&lt;/code&gt; sat&amp;inodot;r&amp;inodot;ndaki adres genellikle router IP&amp;rsquo;siyle ayn&amp;inodot;d&amp;inodot;r. E&amp;gbreve;er farkl&amp;inodot;ysa, onu da not et.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IP adresini sabitlemek i&amp;ccedil;in &lt;code&gt;dhcpcd.conf&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenle:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/dhcpcd.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+A&amp;ccedil;&amp;inodot;lan dosyada &lt;code&gt;# Example static IP configuration&lt;/code&gt; sat&amp;inodot;r&amp;inodot;na gel ve &amp;scedil;u &amp;scedil;ekilde d&amp;uuml;zenle:&lt;/p&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;interface&lt;span class="w"&gt; &lt;/span&gt;eth0
+static&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ip_address&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.2.10/24
+static&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;routers&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.2.1
+static&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;domain_name_servers&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.2.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Buradaki adresleri kendi a&amp;gbreve; bilgilerine g&amp;ouml;re g&amp;uuml;ncelle.&lt;br/&gt;
+Ctrl+X &amp;rarr; &lt;code&gt;y&lt;/code&gt; &amp;rarr; Enter ile kaydedip &amp;ccedil;&amp;inodot;k, ard&amp;inodot;ndan Raspberry Pi&amp;rsquo;ni yeniden ba&amp;scedil;lat.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;SSH servisini etkinle&amp;scedil;tir:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ssh
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;start&lt;span class="w"&gt; &lt;/span&gt;ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&amp;Scedil;imdi tekrar yeniden ba&amp;scedil;lat:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Raspberry Pi'ne ba&amp;scedil;ka bir bilgisayardan ba&amp;gbreve;lanmak i&amp;ccedil;in, o bilgisayarda terminal a&amp;ccedil;:&lt;br/&gt;
+(Linux/Mac&amp;rsquo;te terminal, Windows'ta &lt;code&gt;cmd&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla SSH ba&amp;gbreve;lant&amp;inodot;s&amp;inodot; kur:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ssh&lt;span class="w"&gt; &lt;/span&gt;pi@192.168.2.10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+Burada &lt;code&gt;192.168.2.10&lt;/code&gt; senin Pi&amp;rsquo;nin IP adresi. &amp;Idot;lk ba&amp;gbreve;lant&amp;inodot;da &lt;code&gt;yes&lt;/code&gt; yazarak devam et.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Pi&amp;rsquo;nin &amp;scedil;ifresini yaz ve Enter&amp;rsquo;a bas.&lt;br/&gt;
+Ba&amp;scedil;ar&amp;inodot;l&amp;inodot; olursa, giri&amp;scedil; mesaj&amp;inodot; (MOTD) kar&amp;scedil;&amp;inodot;na &amp;ccedil;&amp;inodot;kacak ve art&amp;inodot;k kendi bilgisayar&amp;inodot;ndan Raspberry Pi&amp;rsquo;yi komut sat&amp;inodot;r&amp;inodot; &amp;uuml;zerinden kontrol edebileceksin.&lt;br/&gt;
+Bundan sonra ekran ve klavyeyi Raspberry Pi&amp;rsquo;den &amp;ccedil;&amp;inodot;karabilirsin, uzaktan y&amp;ouml;netebilirsin!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-ve-ozet"&gt;📌 Sonu&amp;ccedil; ve &amp;Ouml;zet&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;microSD kart haz&amp;inodot;rl&amp;inodot;&amp;gbreve;&amp;inodot;&lt;/li&gt;
+&lt;li&gt;Raspberry Pi ilk yap&amp;inodot;land&amp;inodot;rma&lt;/li&gt;
+&lt;li&gt;Yerelle&amp;scedil;tirme ve kullan&amp;inodot;c&amp;inodot; ayarlar&amp;inodot;&lt;/li&gt;
+&lt;li&gt;SSH ile uzaktan ba&amp;gbreve;lant&amp;inodot; kurma&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu yaz&amp;inodot;da, &lt;strong&gt;Raspberry Pi kurulumu&lt;/strong&gt; i&amp;ccedil;in ihtiyac&amp;inodot;n&amp;inodot;z olan t&amp;uuml;m ad&amp;inodot;mlar&amp;inodot; detayl&amp;inodot;ca ele ald&amp;inodot;k:
+ 💡&lt;/p&gt;
+&lt;p&gt;&lt;img alt="raspberry-pi-nasil-kurulur" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/raspberry-pi-nasil-kurulur-xl.webp" srcset="/images/raspberry-pi-nasil-kurulur-sm.webp 300w, /images/raspberry-pi-nasil-kurulur-md.webp 500w, /images/raspberry-pi-nasil-kurulur-xl.webp 800w, /images/raspberry-pi-nasil-kurulur-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Donanım"/><category term="raspberry pi"/><category term="raspberry pi kurulumu"/><category term="microSD kart"/><category term="ssh ayarları"/><category term="statik ip"/></entry><entry><title>Arch Linux Nvidia Ekran Kartı Kurulumu</title><link href="https://yuceltoluyag.github.io/arch-linux-nvidia-ekran-karti-kurulumu/" rel="alternate"/><published>2020-04-18T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-04-18:/arch-linux-nvidia-ekran-karti-kurulumu/</id><summary type="html">&lt;p&gt;Arch Linux'ta Nvidia ekran kartı kurulumunu, sürücü uyumsuzluklarını, performans ayarlarını ve optimizasyonları adım adım açıklıyorum.&lt;/p&gt;</summary><content type="html">&lt;h1 id="merhaba"&gt;Merhaba&lt;/h1&gt;
+&lt;p&gt;Merhaba! Uzun zamand&amp;inodot;r yazmak istedi&amp;gbreve;im konulardan biri de &lt;strong&gt;Nvidia&lt;/strong&gt; ekran kartlar&amp;inodot;n&amp;inodot;n kurulumu. 😊 Linux'ta &lt;strong&gt;Nvidia&lt;/strong&gt; kartlar&amp;inodot;n&amp;inodot;n kurulumu ile ilgili T&amp;uuml;rk&amp;ccedil;e kaynaklar mevcut ancak &amp;ccedil;o&amp;gbreve;u zaman kurdu&amp;gbreve;unuz s&amp;uuml;r&amp;uuml;c&amp;uuml;n&amp;uuml;n performans&amp;inodot;ndan memnun kalmayabilirsiniz. Bu durumda, " &lt;strong&gt;Linux'ta Nvidia tam verimli &amp;ccedil;al&amp;inodot;&amp;scedil;m&amp;inodot;yor galiba&lt;/strong&gt;" gibi yorumlarla kar&amp;scedil;&amp;inodot;la&amp;scedil;mak olduk&amp;ccedil;a yayg&amp;inodot;n. Asl&amp;inodot;nda burada sorun, &amp;ccedil;o&amp;gbreve;u kayna&amp;gbreve;&amp;inodot;n &lt;strong&gt;3D render, oyun&lt;/strong&gt; gibi uygulamalarla ilgilenmemesi olabilir. Benim amac&amp;inodot;m, burada size performans s&amp;inodot;ralamas&amp;inodot; yaparak &lt;strong&gt;Nvidia&lt;/strong&gt; kart&amp;inodot;n&amp;inodot;z&amp;inodot;n nas&amp;inodot;l en verimli &amp;scedil;ekilde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;stermek olacak. 😁 Hadi, fazla vakit kaybetmeden kurulumlara ge&amp;ccedil;elim!&lt;/p&gt;
+&lt;h2 id="kartinizin-durumunu-ogrenme"&gt;Kart&amp;inodot;n&amp;inodot;z&amp;inodot;n Durumunu &amp;ouml;&amp;gbreve;renme ?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Terminalinizi a&amp;ccedil;&amp;inodot;p &amp;scedil;u komutu yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lspci&lt;span class="w"&gt; &lt;/span&gt;-k&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;-A&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-E&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"(VGA|3D)"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bende ki sonu&amp;ccedil;lar ise &amp;scedil;&amp;ouml;yle : Nvidia Quadro 2000M kullan&amp;inodot;yorum.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;00&lt;/span&gt;:02.0&lt;span class="w"&gt; &lt;/span&gt;VGA&lt;span class="w"&gt; &lt;/span&gt;compatible&lt;span class="w"&gt; &lt;/span&gt;controller:&lt;span class="w"&gt; &lt;/span&gt;Intel&lt;span class="w"&gt; &lt;/span&gt;Corporation&lt;span class="w"&gt; &lt;/span&gt;2nd&lt;span class="w"&gt; &lt;/span&gt;Generation&lt;span class="w"&gt; &lt;/span&gt;Core&lt;span class="w"&gt; &lt;/span&gt;Processor&lt;span class="w"&gt; &lt;/span&gt;Family&lt;span class="w"&gt; &lt;/span&gt;Integrated&lt;span class="w"&gt; &lt;/span&gt;Graphics&lt;span class="w"&gt; &lt;/span&gt;Controller&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;rev&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;09&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+Subsystem:&lt;span class="w"&gt; &lt;/span&gt;Lenovo&lt;span class="w"&gt; &lt;/span&gt;2nd&lt;span class="w"&gt; &lt;/span&gt;Generation&lt;span class="w"&gt; &lt;/span&gt;Core&lt;span class="w"&gt; &lt;/span&gt;Processor&lt;span class="w"&gt; &lt;/span&gt;Family&lt;span class="w"&gt; &lt;/span&gt;Integrated&lt;span class="w"&gt; &lt;/span&gt;Graphics&lt;span class="w"&gt; &lt;/span&gt;Controller
+Kernel&lt;span class="w"&gt; &lt;/span&gt;driver&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;use:&lt;span class="w"&gt; &lt;/span&gt;i915
+--
+&lt;span class="m"&gt;01&lt;/span&gt;:00.0&lt;span class="w"&gt; &lt;/span&gt;VGA&lt;span class="w"&gt; &lt;/span&gt;compatible&lt;span class="w"&gt; &lt;/span&gt;controller:&lt;span class="w"&gt; &lt;/span&gt;NVIDIA&lt;span class="w"&gt; &lt;/span&gt;Corporation&lt;span class="w"&gt; &lt;/span&gt;**GF106GLM**&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;Quadro&lt;span class="w"&gt; &lt;/span&gt;2000M&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;rev&lt;span class="w"&gt; &lt;/span&gt;a1&lt;span class="o"&gt;)&lt;/span&gt;
+Subsystem:&lt;span class="w"&gt; &lt;/span&gt;Lenovo&lt;span class="w"&gt; &lt;/span&gt;**GF106GLM**&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;Quadro&lt;span class="w"&gt; &lt;/span&gt;2000M&lt;span class="o"&gt;]&lt;/span&gt;
+Kernel&lt;span class="w"&gt; &lt;/span&gt;driver&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;use:&lt;span class="w"&gt; &lt;/span&gt;nvidia
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;GF106 olarak i&amp;scedil;aretledi&amp;gbreve;im k&amp;inodot;s&amp;inodot;m kart&amp;inodot;n&amp;inodot;&amp;inodot;zn ailesini(kod ad&amp;inodot;) belirtiyor. &lt;a href="https://nouveau.freedesktop.org/wiki/CodeNames/" rel="noopener noreferrer" target="_blank"&gt;Nvidia Grafik Kart&amp;inodot; Kod Ad&amp;inodot; &amp;Ouml;&amp;gbreve;renme&lt;/a&gt; Siteye g&amp;ouml;re benim kart&amp;inodot;m Fermi ailesindenmi&amp;scedil;.&lt;/p&gt;
+&lt;h2 id="kartin-desteklendigini-surumu-ogrenmek"&gt;Kart&amp;inodot;n Desteklendi&amp;gbreve;ini s&amp;uuml;r&amp;uuml;m&amp;uuml; &amp;ouml;&amp;gbreve;renmek&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.nvidia.com/en-us/drivers/unix/legacy-gpu/" rel="noopener noreferrer" target="_blank"&gt;Nvdia Eski Kartlar&lt;/a&gt; Bu listede kart&amp;inodot;n&amp;inodot;z varsa muhtemelen art&amp;inodot;k yeni nesil s&amp;uuml;r&amp;uuml;c&amp;uuml;leri kuramayacaks&amp;inodot;n&amp;inodot;z. Kursan&amp;inodot;z dahi kullan&amp;inodot;m a&amp;scedil;amas&amp;inodot;nda hatalarla bo&amp;gbreve;u&amp;scedil;maya haz&amp;inodot;r olun. Belki de kullan&amp;inodot;c&amp;inodot;lar&amp;inodot;n en &amp;ccedil;ok yanl&amp;inodot;&amp;scedil; yapt&amp;inodot;&amp;gbreve;&amp;inodot; yer buras&amp;inodot;d&amp;inodot;r. Sizin grafik s&amp;uuml;r&amp;uuml;c&amp;uuml;n&amp;uuml;z 340xx s&amp;uuml;r&amp;uuml;m&amp;uuml;nde deste&amp;gbreve;ini kesmi&amp;scedil;tir ama siz gidip en son grafik s&amp;uuml;r&amp;uuml;c&amp;uuml;n&amp;uuml; kurmaya &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yorsunuz. &amp;Ouml;rne&amp;gbreve;in archlinux ta &lt;strong&gt;nvidia&lt;/strong&gt; paketiyle &lt;strong&gt;nvidia-xxx&lt;/strong&gt; paketi aras&amp;inodot;nda da&amp;gbreve;lar kadar fark vard&amp;inodot;r. Site &amp;uuml;zerinde benim kart&amp;inodot;m&amp;inodot;n &lt;strong&gt;Quadro 2000M 0DDA&lt;/strong&gt; bilgileri verilmi&amp;scedil;. &amp;Scedil;imdi s&amp;inodot;rada en son hangi driveri yay&amp;inodot;mlanm&amp;inodot;&amp;scedil;&amp;scedil;a o paketi bulmakta, bunun i&amp;ccedil;in nvdia s&amp;uuml;r&amp;uuml;c&amp;uuml; indirme k&amp;inodot;sm&amp;inodot;ndan yararlabiliriz.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.nvidia.com/Download/index.aspx" rel="noopener noreferrer" target="_blank"&gt;Nvidia S&amp;uuml;r&amp;uuml;c&amp;uuml; &amp;Idot;ndirme&lt;/a&gt; Adresine gidip,do&amp;gbreve;ru &amp;scedil;ekilde se&amp;ccedil;imlerinizi yapt&amp;inodot;ktan sonra arama k&amp;inodot;sm&amp;inodot;na bas&amp;inodot;n size en son yay&amp;inodot;mlanan s&amp;uuml;r&amp;uuml;c&amp;uuml;y&amp;uuml; getirecektir. &amp;Ccedil;&amp;inodot;kan sonuca g&amp;ouml;re benim s&amp;uuml;r&amp;uuml;c&amp;uuml;m 390.1320 d&amp;inodot;r. Benim aurda nvidia-390xx paketlerine bakmam gerekti&amp;gbreve;ini g&amp;ouml;steriyor. &lt;a href="https://wiki.archlinux.org/index.php/NVIDIA#Installation" rel="noopener noreferrer" target="_blank"&gt;Archlinux Nvidia Belge&lt;/a&gt; sine bakt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda 390xx ve 340xx i&amp;ccedil;in s&amp;uuml;r&amp;uuml;c&amp;uuml;leri i&amp;ccedil;in ayr&amp;inodot; paketler var.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="Nvidia_S&amp;uuml;r&amp;uuml;c&amp;uuml;_Se&amp;ccedil;me" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/nvidia-grafik-karti-indirme-xl.webp" srcset="/images/nvidia-grafik-karti-indirme-sm.webp 300w, /images/nvidia-grafik-karti-indirme-md.webp 500w, /images/nvidia-grafik-karti-indirme-xl.webp 800w, /images/nvidia-grafik-karti-indirme-xl.webp 1200w"/&gt;
+&lt;img alt="Nvidia_S&amp;uuml;r&amp;uuml;c&amp;uuml;_Bilgisi" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/nvidia-grafik-karti-indirme2-xl.webp" srcset="/images/nvidia-grafik-karti-indirme2-sm.webp 300w, /images/nvidia-grafik-karti-indirme2-md.webp 500w, /images/nvidia-grafik-karti-indirme2-xl.webp 800w, /images/nvidia-grafik-karti-indirme2-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="hangisi-nouveauoptimusprimebumblebee"&gt;Hangisi Nouveau,Optimus,Prime,Bumblebee&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Dipnot&lt;/strong&gt; : Ge&amp;ccedil;i&amp;scedil; durumlar&amp;inodot;nda kullanmasan&amp;inodot;z dahi bbswitch,nouveau kullan&amp;inodot;lmas&amp;inodot; gerekebiliyor.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nouveau&lt;/strong&gt; : A&amp;ccedil;&amp;inodot;k kaynak s&amp;uuml;r&amp;uuml;c&amp;uuml;lerdir. E&amp;gbreve;er ki grafik taraf&amp;inodot;nda &amp;ccedil;ok fazla i&amp;scedil;lemleriniz yoksa kullanabilirsiniz. (Prime veya optimus kullan&amp;inodot;rken gerekti&amp;gbreve;i durumlar olabiliyor)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-Syyu&lt;span class="w"&gt; &lt;/span&gt;xf86-video-intel&lt;span class="w"&gt; &lt;/span&gt;mesa&lt;span class="w"&gt; &lt;/span&gt;xf86-video-nouveau&lt;span class="w"&gt; &lt;/span&gt;opengl-man-pages&lt;span class="w"&gt; &lt;/span&gt;lib32-mesa-vdpau&lt;span class="w"&gt; &lt;/span&gt;lib32-libva-mesa-driver&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# paketlerini kurabilirsiniz&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Optimus&lt;/strong&gt; : Bilgisayar&amp;inodot;n&amp;inodot;zda hem intel hemde harici bir ekran kart&amp;inodot; varsa optimus teknolojisi var demektir. Bu tekonolojinin amac&amp;inodot; pil &amp;ouml;mr&amp;uuml;,performans gerektiren uygulamalarda harici karta ge&amp;ccedil;i&amp;scedil; yapmak i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r. Nouveau g&amp;ouml;re daha performansl&amp;inodot;d&amp;inodot;r(2D-3D) uygulamalar a&amp;ccedil;abilirsiniz. Ge&amp;ccedil;i&amp;scedil; i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;da ki methodlar kullan&amp;inodot;lmaktad&amp;inodot;r.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PRIME (Tavsiyem)&lt;/li&gt;
+&lt;li&gt;nouveau&lt;/li&gt;
+&lt;li&gt;Bumblebee]&lt;/li&gt;
+&lt;li&gt;nvidia-xrun&lt;/li&gt;
+&lt;li&gt;optimus-manager (tavsiyem yard&amp;inodot;mc&amp;inodot; program)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Prime&lt;/strong&gt; : Oyun,render,gpu gerektiren i&amp;scedil;lemlerde tam performans &amp;ccedil;al&amp;inodot;&amp;scedil;abilece&amp;gbreve;iniz s&amp;uuml;r&amp;uuml;c&amp;uuml;d&amp;uuml;r.&lt;/p&gt;
+&lt;p&gt;Benim kart&amp;inodot;m gibi 390 s&amp;uuml;r&amp;uuml;m&amp;uuml;ne sahip olanlar var ise &amp;scedil;u paketleri kurmal&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-Syyu&lt;span class="w"&gt; &lt;/span&gt;nvidia-390xx-dkms&lt;span class="w"&gt; &lt;/span&gt;nvidia-390xx-utils&lt;span class="w"&gt; &lt;/span&gt;opencl-nvidia-390xx&lt;span class="w"&gt; &lt;/span&gt;nvidia-390xx-settings&lt;span class="w"&gt; &lt;/span&gt;lib32-opencl-nvidia-390xx&lt;span class="w"&gt; &lt;/span&gt;lib32-nvidia-390xx-utils
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;daha sonra&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;optimus-manager-qt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;ktan sonra&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;optimus-manager.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sistemi yeniden ba&amp;scedil;lat&amp;inodot;yorsunuz. Sistem yeniden ba&amp;scedil;lad&amp;inodot;ktan sonra ister optimus-manager-qt program&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;p elle ge&amp;ccedil;i&amp;scedil; yap&amp;inodot;n,isterseniz terminal arac&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot;yla ge&amp;ccedil;i&amp;scedil; yap&amp;inodot;n.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;--switch&lt;span class="w"&gt; &lt;/span&gt;intel&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Intel Grafik Kart&amp;inodot;&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;--switch&lt;span class="w"&gt; &lt;/span&gt;nvidia&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# NVIDIA Grafik kart&amp;inodot;&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;--switch&lt;span class="w"&gt; &lt;/span&gt;hybrid&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Hibrit Grafik (xorg-server paketi gereklidir)&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;--switch&lt;span class="w"&gt; &lt;/span&gt;auto&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Otomatik Ge&amp;ccedil;i&amp;scedil;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dilerseniz sistem ba&amp;scedil;lang&amp;inodot;c&amp;inodot;nda hangi kart&amp;inodot;n se&amp;ccedil;ilece&amp;gbreve;ini belirtebilirsiniz.Se&amp;ccedil;ti&amp;gbreve;iniz kart otomatik olarak aktif edilebilir.Bu ayar&amp;inodot; yine optimus-manager-qt i&amp;ccedil;erisindende yapabilirsiniz. Terminal den yapmak i&amp;ccedil;inse&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;--set-startup&lt;span class="w"&gt; &lt;/span&gt;intel&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Intel Grafik Kart&amp;inodot;yla a&amp;ccedil;&amp;inodot;l&amp;inodot;r&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;--set-startup&lt;span class="w"&gt; &lt;/span&gt;nvidia&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# NVIDIA Grafik kart&amp;inodot;yla a&amp;ccedil;&amp;inodot;l&amp;inodot;r&lt;/span&gt;
+$&lt;span class="w"&gt; &lt;/span&gt;optimus-manager&lt;span class="w"&gt; &lt;/span&gt;--set-startup&lt;span class="w"&gt; &lt;/span&gt;hybrid&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Hibrit Grafik se&amp;ccedil;ene&amp;gbreve;i ile ba&amp;scedil;lar (xorg-server paketi gereklidir)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Opsiyonel olarak&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;nvdock
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;paketini kuralabilirsiniz. Tavsiyede ederim. Kart&amp;inodot;n &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;p &amp;ccedil;al&amp;inodot;&amp;scedil;mad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;,gerekli ayarlar&amp;inodot; alternatif olarak buradanda g&amp;ouml;rebilirsiniz.&lt;/p&gt;
+&lt;h2 id="unutmadan"&gt;Unutmadan&lt;/h2&gt;
+&lt;p&gt;Ge&amp;ccedil;i&amp;scedil;ler esnas&amp;inodot;nda oturup kapat&amp;inodot;l&amp;inodot;r ve yeniden giri&amp;scedil; yapars&amp;inodot;n&amp;inodot;z. E&amp;gbreve;er Prime kullanmak istiyorsan&amp;inodot;z &amp;ouml;ncedende farkl&amp;inodot; kurulumlar yapt&amp;inodot;ysan&amp;inodot;z(bumble) gibi prime ile &amp;ccedil;ak&amp;inodot;&amp;scedil;abilir. Bu y&amp;uuml;zden &amp;ouml;nce ki ayarlar&amp;inodot; ve programlar&amp;inodot; silmeniz gerekmektedir. Her hangi birisinin konfigurasyon dosyas&amp;inodot; kalsa dahi sorunlara yol a&amp;ccedil;abiliyor. &amp;Uuml;&amp;ccedil;&amp;uuml;nc&amp;uuml; parti uygulamlarda bu sorunlara yol a&amp;ccedil;abiliyor, nvdock tarz&amp;inodot; bir uygulama sistem ba&amp;scedil;lang&amp;inodot;c&amp;inodot;nda aktif olarak ba&amp;scedil;l&amp;inodot;yorsa buda ge&amp;ccedil;i&amp;scedil;ler esnas&amp;inodot;nda sorunlar yaratabiliyor. Bize yukarda &amp;ouml;nerdin ama hata veriyor diyorsun ?! Evet kuracaks&amp;inodot;n ancak sistem ba&amp;scedil;lang&amp;inodot;c&amp;inodot;nda otomatik olarak a&amp;ccedil;&amp;inodot;lmayacak ,ge&amp;ccedil;i&amp;scedil;lerini yapt&amp;inodot;ktan sonra elle a&amp;ccedil;&amp;inodot;caks&amp;inodot;n. Bu sebeble temiz bir kurulum &amp;ccedil;ok &amp;ouml;nemlidir. Sistemi kurduktan sonra ilk i&amp;scedil;iniz sisteminize uygun nvidia s&amp;uuml;r&amp;uuml;c&amp;uuml;lerinizi kurun, daha sonra yukar&amp;inodot;da anlatt&amp;inodot;&amp;gbreve;&amp;inodot;m gibi optimus-manageri kurun,keyfinize bak&amp;inodot;n :)&lt;/p&gt;
+&lt;h2 id="performans-ayarlarim"&gt;Performans Ayarlar&amp;inodot;m&lt;/h2&gt;
+&lt;p&gt;E&amp;gbreve;er nvidia ekran kart&amp;inodot;na ge&amp;ccedil;ti&amp;gbreve;inizde ekran y&amp;inodot;rt&amp;inodot;lmas&amp;inodot;,obs ile ilgili sorunlar,ta&amp;scedil;&amp;inodot;ma problemleri ya&amp;scedil;&amp;inodot;yorsan&amp;inodot;z. Compton,picom,xcompgr gibi paketleri kapat&amp;inodot;n.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;killall&lt;span class="w"&gt; &lt;/span&gt;picom&lt;span class="w"&gt; &lt;/span&gt;compton&lt;span class="w"&gt; &lt;/span&gt;xcompmgr
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;daha sonra&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Nvidia_Performans_Ayari" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/nvidia-linux-performans-ayari-xl.webp" srcset="/images/nvidia-linux-performans-ayari-sm.webp 300w, /images/nvidia-linux-performans-ayari-md.webp 500w, /images/nvidia-linux-performans-ayari-xl.webp 800w, /images/nvidia-linux-performans-ayari-xl.webp 1200w"/&gt;
+tiklerini kald&amp;inodot;r&amp;inodot;n. Daha sonra powermizer alt&amp;inodot;nda ki auto ayar&amp;inodot;n&amp;inodot; resimde ki gibi de&amp;gbreve;i&amp;scedil;tirin. "Preferer maxium performance se&amp;ccedil;ili"&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Nvidia_Performans_Ayari" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/nvidia-grafik-ayari-maximum-performans-xl.webp" srcset="/images/nvidia-grafik-ayari-maximum-performans-sm.webp 300w, /images/nvidia-grafik-ayari-maximum-performans-md.webp 500w, /images/nvidia-grafik-ayari-maximum-performans-xl.webp 800w, /images/nvidia-grafik-ayari-maximum-performans-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;buda verdi&amp;gbreve;i performans bir de en altaki g&amp;ouml;rselde bumblebee performans&amp;inodot;na bak&amp;inodot;n :D&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Nvidia_optirun_performans&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/primeperformansi-xl.webp" srcset="/images/primeperformansi-sm.webp 300w, /images/primeperformansi-md.webp 500w, /images/primeperformansi-xl.webp 800w, /images/primeperformansi-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bumblebee&lt;/strong&gt; : Yerli yabanc&amp;inodot; t&amp;uuml;m kaynaklardan &lt;a href="https://wiki.archlinux.org/index.php/Bumblebee" rel="noopener noreferrer" target="_blank"&gt;Bumblebee Kurulumu&lt;/a&gt; anlat&amp;inodot;l&amp;inodot;r. 26 Nisan 2013 son commitini alm&amp;inodot;&amp;scedil; &lt;a href="https://github.com/Bumblebee-Project/Bumblebee" rel="noopener noreferrer" target="_blank"&gt;Bumblebee Github&lt;/a&gt;. Y&amp;inodot;la g&amp;ouml;re bakarsak en stabil buymu&amp;scedil; gibi g&amp;ouml;r&amp;uuml;nebilir fakat oyun oynayan,render yapan k&amp;inodot;sacas&amp;inodot; GPU'yu tam anlam&amp;inodot;yla kullanmak isteyen arkada&amp;scedil;lar i&amp;ccedil;in verdi&amp;gbreve;i performans tatmin edici gelmeyecektir.Benim ekran kart&amp;inodot;m i&amp;ccedil;in Bumblebee verdi&amp;gbreve;i performans &lt;strong&gt;Windows 'un yar&amp;inodot;s&amp;inodot; kadard&amp;inodot;&lt;/strong&gt;, bu kimileri i&amp;ccedil;in yeterli olabilir ancak benim i&amp;ccedil;in de&amp;gbreve;il :)&lt;/p&gt;
+&lt;p&gt;390xx s&amp;uuml;r&amp;uuml;m&amp;uuml;ne sahip olanlar i&amp;ccedil;in&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;bumblebee&lt;span class="w"&gt; &lt;/span&gt;mesa&lt;span class="w"&gt; &lt;/span&gt;xf86-video-intel&lt;span class="w"&gt; &lt;/span&gt;nvidia-390xx&lt;span class="w"&gt; &lt;/span&gt;lib32-nvidia-390xx-utils&lt;span class="w"&gt; &lt;/span&gt;bbswitch&lt;span class="w"&gt; &lt;/span&gt;nvidia-390xx-utils
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;daha yeni bir s&amp;uuml;r&amp;uuml;c&amp;uuml;n&amp;uuml;z var ise&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;bumblebee&lt;span class="w"&gt; &lt;/span&gt;mesa&lt;span class="w"&gt; &lt;/span&gt;xf86-video-intel&lt;span class="w"&gt; &lt;/span&gt;nvidia&lt;span class="w"&gt; &lt;/span&gt;lib32-nvidia-utils&lt;span class="w"&gt; &lt;/span&gt;bbswitch&lt;span class="w"&gt; &lt;/span&gt;nvidia-utils
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;paketleri kurduktan sonra kendimizi bumblebee grubuna dahil ediyoruz&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;gpasswd&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;bumblebee
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha osnra bumblebee servisini aktif ediyoruz.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;bumblebeed.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;daha sonra sistemi yeniden ba&amp;scedil;lat&amp;inodot;yoruz.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;shutdown&lt;span class="w"&gt; &lt;/span&gt;-r&lt;span class="w"&gt; &lt;/span&gt;now
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Bumblebee&lt;/strong&gt; performans vermesiniz istedi&amp;gbreve;imiz uygulamalarda &lt;strong&gt;optirun uygulamaadi&lt;/strong&gt; gibi ba&amp;scedil;lat&amp;inodot;yoruz. &amp;Ouml;rne&amp;gbreve;in &lt;strong&gt;optirun gputest&lt;/strong&gt;
+- Dahili Gpu Performans&amp;inodot;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Dahili Gpu Performans&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/optirun-dahili-gpu-xl.webp" srcset="/images/optirun-dahili-gpu-sm.webp 300w, /images/optirun-dahili-gpu-md.webp 500w, /images/optirun-dahili-gpu-xl.webp 800w, /images/optirun-dahili-gpu-xl.webp 1200w"/&gt;
+- Harici Gpu Performans&amp;inodot;
+&lt;img alt="Harici Gpu Performans&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/optirun-performansi-xl.webp" srcset="/images/optirun-performansi-sm.webp 300w, /images/optirun-performansi-md.webp 500w, /images/optirun-performansi-xl.webp 800w, /images/optirun-performansi-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h1 id="videolu-anlatim_1"&gt;Videolu Anlat&amp;inodot;m&lt;/h1&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="DhCUPntoKSg"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;</content><category term="Donanım"/><category term="linux"/><category term="nvidia"/><category term="laptop"/></entry></feed>

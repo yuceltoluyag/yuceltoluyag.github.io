@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/copilot-commit-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/" />
+<meta property="og:title" content="GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-05-03T14:00:00+03:00" />
+<meta property="article:modified_time" content="2025-08-11T22:59:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Git" />
+  <meta property="article:tag" content="GitHub Copilot" />
+<meta property="article:tag" content="Commit Mesajları" />
+<meta property="article:tag" content="Git" />
+<meta property="article:tag" content="Yazılım Geliştirme" />
+<meta property="article:tag" content="Otomasyon" />
+<meta property="article:tag" content="VS Code" />
+<meta property="article:tag" content="GitHub" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Bu yazıda, GitHub Copilot'ı kullanarak commit mesajlarınızı otomatik olarak nasıl tamamlayabileceğinizi ve yazılım geliştirme sürecini nasıl daha verimli..." />
+<meta property="og:description" content="Bu yazıda, GitHub Copilot'ı kullanarak commit mesajlarınızı otomatik olarak nasıl tamamlayabileceğinizi ve yazılım geliştirme sürecini nasıl daha verimli..." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber",
+        "description": "Bu yazıda, GitHub Copilot'ı kullanarak commit mesajlarınızı otomatik olarak nasıl tamamlayabileceğinizi ve yazılım geliştirme sürecini nasıl daha verimli...",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-05-03T14:00:00+03:00",
+"dateModified": "2025-08-11T22:59:00+03:00",        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+        },
+"articleSection": "Git","keywords": "GitHub Copilot, Commit Mesajları, Git, Yazılım Geliştirme, Otomasyon, VS Code, GitHub",        "url": "https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/",
+"image": "https://yuceltoluyag.github.io/images/copilot-commit-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#neden-github-copilot-ile-commit-mesajlari-yazmaliyim" title="Neden GitHub Copilot ile Commit Mesajlar&inodot; Yazmal&inodot;y&inodot;m?">Neden GitHub Copilot ile Commit Mesajlar&inodot; Yazmal&inodot;y&inodot;m?</a></li><li><a class="toc-href" code'a="" entegre="" etme'="" href="#kurulum-github-copiloti-vs-codea-entegre-etme" title="Kurulum: GitHub Copilot" vs="" ı="">Kurulum: GitHub Copilot'&inodot; VS Code'a Entegre Etme</a><ul><li><a class="toc-href" href="#1-github-copilot-eklentisini-yukleme" title="1. GitHub Copilot Eklentisini Y&uuml;kleme">1. GitHub Copilot Eklentisini Y&uuml;kleme</a></li><li><a class="toc-href" href="#2-github-hesabinizla-baglanti-kurun" title="2. GitHub Hesab&inodot;n&inodot;zla Ba&gbreve;lant&inodot; Kurun">2. GitHub Hesab&inodot;n&inodot;zla Ba&gbreve;lant&inodot; Kurun</a></li></ul></li><li><a class="toc-href" href="#ozel-kodlama-ve-commit-talimatlari-olusturma-guncel-yontem_1" title="&Ouml;zel Kodlama ve Commit Talimatlar&inodot; Olu&scedil;turma (G&uuml;ncel Y&ouml;ntem)">&Ouml;zel Kodlama ve Commit Talimatlar&inodot; Olu&scedil;turma (G&uuml;ncel Y&ouml;ntem)</a><ul><li><a class="toc-href" href="#1-proje-yapilandirma-dosyalarini-olusturma" title="1. Proje Yap&inodot;land&inodot;rma Dosyalar&inodot;n&inodot; Olu&scedil;turma">1. Proje Yap&inodot;land&inodot;rma Dosyalar&inodot;n&inodot; Olu&scedil;turma</a></li><li><a class="toc-href" href="#2-kod-uslubunuzu-ve-commit-mesaji-formatinizi-tanimlayin" title="2. Kod &Uuml;slubunuzu ve Commit Mesaj&inodot; Format&inodot;n&inodot;z&inodot; Tan&inodot;mlay&inodot;n">2. Kod &Uuml;slubunuzu ve Commit Mesaj&inodot; Format&inodot;n&inodot;z&inodot; Tan&inodot;mlay&inodot;n</a></li><li><a class="toc-href" href="#3-vs-code-ayarlarini-guncelleyin" title="3. VS Code Ayarlar&inodot;n&inodot; G&uuml;ncelleyin">3. VS Code Ayarlar&inodot;n&inodot; G&uuml;ncelleyin</a></li></ul></li><li><a class="toc-href" href="#verbose-modu-etkinlestirme_1" title="Verbose Modu Etkinle&scedil;tirme">Verbose Modu Etkinle&scedil;tirme</a></li><li><a class="toc-href" href="#commit-mesajlari-icin-copiloti-kullanma" kullanma'="" title="Commit Mesajlar&inodot; &Idot;&ccedil;in Copilot" ı="">Commit Mesajlar&inodot; &Idot;&ccedil;in Copilot'&inodot; Kullanma</a><ul><li><a class="toc-href" href="#1-degisikliklerinizi-stageleyin" leyin'="" title="1. De&gbreve;i&scedil;ikliklerinizi Stage">1. De&gbreve;i&scedil;ikliklerinizi Stage'leyin</a></li><li><a class="toc-href" href="#2-commit-editorunu-acin" title="2. Commit Edit&ouml;r&uuml;n&uuml; A&ccedil;&inodot;n">2. Commit Edit&ouml;r&uuml;n&uuml; A&ccedil;&inodot;n</a></li><li><a class="toc-href" href="#3-copilotin-onerilerini-kullanin" kullanın'="" title="3. Copilot" önerilerini="" ın="">3. Copilot'&inodot;n &Ouml;nerilerini Kullan&inodot;n</a></li></ul></li><li><a class="toc-href" href="#ileri-duzey-ipuclari-ve-en-iyi-uygulamalar_1" title="&Idot;leri D&uuml;zey &Idot;pu&ccedil;lar&inodot; ve En &Idot;yi Uygulamalar">&Idot;leri D&uuml;zey &Idot;pu&ccedil;lar&inodot; ve En &Idot;yi Uygulamalar</a><ul><li><a class="toc-href" href="#1-mantikli-commit-gruplari-olusturun" title="1. Mant&inodot;kl&inodot; Commit Gruplar&inodot; Olu&scedil;turun">1. Mant&inodot;kl&inodot; Commit Gruplar&inodot; Olu&scedil;turun</a></li><li><a class="toc-href" düzeltin'="" href="#2-copilotin-yanilgilarini-duzeltin" title="2. Copilot" yanılgılarını="" ın="">2. Copilot'&inodot;n Yan&inodot;lg&inodot;lar&inodot;n&inodot; D&uuml;zeltin</a></li><li><a class="toc-href" href="#3-ozel-prompt-ipuclari-kullanin" title="3. &Ouml;zel Prompt &Idot;pu&ccedil;lar&inodot; Kullan&inodot;n">3. &Ouml;zel Prompt &Idot;pu&ccedil;lar&inodot; Kullan&inodot;n</a></li></ul></li><li><a class="toc-href" href="#sik-karsilasilan-sorunlar-ve-cozumleri_1" title="S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Sorunlar ve &Ccedil;&ouml;z&uuml;mleri">S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Sorunlar ve &Ccedil;&ouml;z&uuml;mleri</a><ul><li><a class="toc-href" href="#copilot-commit-mesaji-onermiyorsa" title="❓ Copilot Commit Mesaj&inodot; &Ouml;nermiyorsa">❓ Copilot Commit Mesaj&inodot; &Ouml;nermiyorsa</a></li><li><a class="toc-href" href="#use-instructions-files-instead-hatasi-aliyorum" title='❓ "Use instructions files instead" Hatas&inodot; Al&inodot;yorum'>❓ "Use instructions files instead" Hatas&inodot; Al&inodot;yorum</a></li><li><a class="toc-href" href="#oneriler-cok-genel-veya-alakasizsa" title="❓ &Ouml;neriler &Ccedil;ok Genel veya Alakas&inodot;zsa">❓ &Ouml;neriler &Ccedil;ok Genel veya Alakas&inodot;zsa</a></li><li><a "generate="" butonu="" class="toc-href" commit="" da="" gözükmüyor'="" href="#vs-codeda-generate-commit-message-butonu-gozukmuyor" message"="" title="❓ VS Code">❓ VS Code'da "Generate Commit Message" Butonu G&ouml;z&uuml;km&uuml;yor</a></li></ul></li><li><a class="toc-href" href="#sonuc-ve-ileriye-bakis_1" title="Sonu&ccedil; ve &Idot;leriye Bak&inodot;&scedil;">Sonu&ccedil; ve &Idot;leriye Bak&inodot;&scedil;</a></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/git-gpg-imzali-commit-vscode-arch/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/git-commit-geri-donme-cherry-pick/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ssh-gpg-yedekleme-geri-yukleme/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme</h4>
+                                    </a>
+                                </div>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-05-03T14:00:00+03:00" class="ml-1">
+                                    03 May 2025
+                                </time>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:history"></span>
+                                <time datetime="2025-08-11T22:59:00+03:00" class="ml-1">
+                                    11 August 2025
+                                </time>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/git/"
+                                    class="link link-hover ml-1">
+                                    Git
+                                </a>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:list-numbers"></span>
+                                <span class="ml-1">
+                                    Git (6/8)
+                                </span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">1227 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">5 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 12.07</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="bg-base-200 p-4 rounded-xs mb-6">
+                        <h2 class="text-xl font-bold mb-2 text-base-content">Git Serisi</h2>
+                        <ol class="space-y-2 pl-5 list-decimal">
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-ssh-key-olusturma/"
+                                    class="link link-hover text-primary">
+                                    Git SSH-Key Oluşturma (Windows & Linux)
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/windows-terminalimi-nasil-ozellestiriyorum/"
+                                    class="link link-hover text-primary">
+                                    Windows Terminalimi Nasıl Özelleştiriyorum
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/ssh-gpg-yedekleme-geri-yukleme/"
+                                    class="link link-hover text-primary">
+                                    SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-gpg-imzali-etiket/"
+                                    class="link link-hover text-primary">
+                                    Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-commit-geri-donme-cherry-pick/"
+                                    class="link link-hover text-primary">
+                                    Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı
+                                </a>
+                            </li>
+                            <li class="font-bold text-primary">
+                                <span>GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber</span>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+                                    class="link link-hover text-primary">
+                                    GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-gpg-imzali-commit-vscode-arch/"
+                                    class="link link-hover text-primary">
+                                    VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><p>Yaz&inodot;l&inodot;m geli&scedil;tirmede s&uuml;rekli kar&scedil;&inodot;la&scedil;t&inodot;&gbreve;&inodot;m&inodot;z bir zorluk var: <strong>anlaml&inodot; commit mesajlar&inodot; yazmak</strong>. Hi&ccedil; d&uuml;&scedil;&uuml;nd&uuml;n&uuml;z m&uuml;, bu rutini otomatikle&scedil;tirebilir misiniz? &Idot;yi haber: <strong>GitHub Copilot</strong> art&inodot;k yapt&inodot;&gbreve;&inodot;n&inodot;z de&gbreve;i&scedil;iklikleri analiz edip anlaml&inodot; commit mesajlar&inodot; &ouml;nerebiliyor! 🚀</p>
+<p>Bu rehberde, <strong>GitHub Copilot'&inodot;n commit mesajlar&inodot;n&inodot;z&inodot; otomatik tamamlama</strong> &ouml;zelli&gbreve;ini nas&inodot;l en verimli &scedil;ekilde kullanaca&gbreve;&inodot;n&inodot;z&inodot; ad&inodot;m ad&inodot;m g&ouml;sterece&gbreve;iz. Ekip arkada&scedil;lar&inodot;n&inodot;z&inodot;n g&ouml;z&uuml;nde kahraman olacak ve git tarih&ccedil;eniz hi&ccedil; olmad&inodot;&gbreve;&inodot; kadar d&uuml;zenli olacak!</p>
+<h2 id="neden-github-copilot-ile-commit-mesajlari-yazmaliyim">Neden GitHub Copilot ile Commit Mesajlar&inodot; Yazmal&inodot;y&inodot;m?</h2>
+<p>Hi&ccedil; bir projede dola&scedil;&inodot;rken "Bu de&gbreve;i&scedil;iklik neden yap&inodot;lm&inodot;&scedil;?" diye d&uuml;&scedil;&uuml;nd&uuml;n&uuml;z m&uuml;? Ya da kendi yazd&inodot;&gbreve;&inodot;n&inodot;z commit mesajlar&inodot;na bak&inodot;p "Bu ne anlama geliyor?" diye kafa yordunuz mu? &Idot;&scedil;te tam burada <strong>GitHub Copilot</strong> devreye giriyor.</p>
+<p><strong>GitHub Copilot ile commit mesajlar&inodot; yazman&inodot;n avantajlar&inodot;:</strong></p>
+<ul>
+<li>⏱️ <strong>Zaman Tasarrufu</strong>: De&gbreve;i&scedil;iklikleri manuel olarak a&ccedil;&inodot;klamak yerine yapay zeka bunu sizin i&ccedil;in yap&inodot;yor</li>
+<li>🔄 <strong>Tutarl&inodot;l&inodot;k</strong>: T&uuml;m ekip &uuml;yeleri benzer formatta mesajlar olu&scedil;turuyor</li>
+<li>📝 <strong>Detay</strong>: Yap&inodot;lan de&gbreve;i&scedil;ikliklerin kapsaml&inodot; ve anla&scedil;&inodot;l&inodot;r a&ccedil;&inodot;klamalar&inodot;</li>
+<li>🧠 <strong>Daha Az Zihinsel Y&uuml;k</strong>: "Ne yazd&inodot;&gbreve;&inodot;m&inodot; nas&inodot;l a&ccedil;&inodot;klasam?" stresinden kurtulun</li>
+</ul>
+<p>Ayr&inodot;ca, yapay zeka destekli bu &ouml;zellik sayesinde, commit mesajlar&inodot;n&inodot;z sadece "de&gbreve;i&scedil;iklikler yap&inodot;ld&inodot;" gibi anlams&inodot;z ifadelerden &ccedil;ok daha profesyonel hale gelecek.</p>
+<h2 id="kurulum-github-copiloti-vs-codea-entegre-etme">Kurulum: GitHub Copilot'&inodot; VS Code'a Entegre Etme</h2>
+<p>GitHub Copilot'&inodot;n commit mesajlar&inodot;n&inodot;z&inodot; tamamlamas&inodot;n&inodot; istiyorsan&inodot;z, &ouml;nce sisteminize d&uuml;zg&uuml;n &scedil;ekilde kurulmas&inodot; gerekir. &Idot;&scedil;te VS Code'a GitHub Copilot kurman&inodot;n ad&inodot;mlar&inodot;:</p>
+<h3 id="1-github-copilot-eklentisini-yukleme">1. GitHub Copilot Eklentisini Y&uuml;kleme</h3>
+<ol>
+<li><strong>VS Code'u a&ccedil;&inodot;n</strong></li>
+<li>Klavyenizden <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> tu&scedil;lar&inodot;na basarak <strong>Extensions</strong> b&ouml;l&uuml;m&uuml;n&uuml; a&ccedil;&inodot;n</li>
+<li>Arama kutusuna "<strong>GitHub Copilot</strong>" yaz&inodot;n</li>
+<li>&Ccedil;&inodot;kan sonu&ccedil;lardan "GitHub Copilot" eklentisini bulun ve "<strong>Install</strong>" butonuna t&inodot;klay&inodot;n</li>
+<li>&Idot;ndirme tamamland&inodot;ktan sonra yeniden ba&scedil;latma gerekebilir</li>
+</ol>
+<h3 id="2-github-hesabinizla-baglanti-kurun">2. GitHub Hesab&inodot;n&inodot;zla Ba&gbreve;lant&inodot; Kurun</h3>
+<p>Kurulum tamamland&inodot;ktan sonra:</p>
+<ol>
+<li>VS Code size bir bildirim g&ouml;sterecek - "<strong>Sign in to GitHub</strong>" se&ccedil;ene&gbreve;ine t&inodot;klay&inodot;n</li>
+<li>Taray&inodot;c&inodot;n&inodot;zda GitHub hesab&inodot;n&inodot;za giri&scedil; yap&inodot;n</li>
+<li>Gerekli izinleri onaylay&inodot;n</li>
+<li>VS Code'a geri d&ouml;nd&uuml;&gbreve;&uuml;n&uuml;zde, Copilot'&inodot;n aktif oldu&gbreve;unu bildiren bir mesaj g&ouml;receksiniz</li>
+</ol>
+<blockquote>
+<p><strong>Not</strong>: GitHub Copilot'un &uuml;cretsiz s&uuml;r&uuml;m&uuml; de bulunmaktad&inodot;r! &Uuml;cretsiz s&uuml;r&uuml;mde ayda 2,000 tamamlama ve 50 sohbet iste&gbreve;i hakk&inodot;n&inodot;z var. Daha fazla kullan&inodot;m i&ccedil;in &uuml;cretli plana ge&ccedil;ebilirsiniz. &Ouml;&gbreve;renciyseniz &uuml;cretsiz eri&scedil;im i&ccedil;in <a href="https://education.github.com/pack">GitHub Student Developer Pack</a> ba&scedil;vurusu yapabilirsiniz.</p>
+</blockquote>
+<h2 id="ozel-kodlama-ve-commit-talimatlari-olusturma-guncel-yontem_1">&Ouml;zel Kodlama ve Commit Talimatlar&inodot; Olu&scedil;turma (G&uuml;ncel Y&ouml;ntem)</h2>
+<p>GitHub Copilot'&inodot;n <strong>sizin stilinize uygun</strong> commit mesajlar&inodot; olu&scedil;turmas&inodot; i&ccedil;in &ouml;zel talimatlar tan&inodot;mlayabilirsiniz. Bu ad&inodot;m iste&gbreve;e ba&gbreve;l&inodot;d&inodot;r ancak <strong>Copilot'&inodot;n verimlili&gbreve;ini &ouml;nemli &ouml;l&ccedil;&uuml;de art&inodot;r&inodot;r</strong>.</p>
+<blockquote>
+<p><strong>&Ouml;NEML&Idot; G&Uuml;NCELLEME</strong>: GitHub Copilot, &ouml;zel talimatlar&inodot; y&ouml;netmek i&ccedil;in yeni bir sistem kullan&inodot;yor. Art&inodot;k talimatlar&inodot;n&inodot;z&inodot; tek bir <code>.github/copilot-instructions.md</code> dosyas&inodot;nda toplaman&inodot;z gerekiyor.</p>
+</blockquote>
+<h3 id="1-proje-yapilandirma-dosyalarini-olusturma">1. Proje Yap&inodot;land&inodot;rma Dosyalar&inodot;n&inodot; Olu&scedil;turma</h3>
+<p>&Idot;lk olarak, proje klas&ouml;r&uuml;n&uuml;zde gerekli dizin ve dosyalar&inodot; olu&scedil;turun:
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>.github
+touch<span class="w"> </span>.github/copilot-instructions.md
+</code></pre></div></p>
+<h3 id="2-kod-uslubunuzu-ve-commit-mesaji-formatinizi-tanimlayin">2. Kod &Uuml;slubunuzu ve Commit Mesaj&inodot; Format&inodot;n&inodot;z&inodot; Tan&inodot;mlay&inodot;n</h3>
+<p><code>.github/copilot-instructions.md</code> dosyas&inodot;n&inodot; a&ccedil;&inodot;n ve kodlama tercihlerinizi ile commit mesaj&inodot; format&inodot;n&inodot;z&inodot; belirtin:</p>
+<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><span class="gh"># Project Instructions</span>
+
+<span class="gu">## Code Style Guide</span>
+
+<span class="gu">### General Guidelines</span>
+<span class="k">-</span><span class="w"> </span>Keep the code simple and readable.
+<span class="k">-</span><span class="w"> </span>Use Prettier for code formatting.
+
+<span class="gu">### CSS</span>
+<span class="k">-</span><span class="w"> </span>Use class names that are descriptive and follow a consistent naming convention.
+<span class="k">-</span><span class="w"> </span>Avoid using IDs for styling.
+<span class="k">-</span><span class="w"> </span>Organize CSS properties in a logical order.
+
+<span class="gu">### Tailwind CSS V4</span>
+<span class="k">-</span><span class="w"> </span>Use utility-first classes to build components.
+<span class="k">-</span><span class="w"> </span>Avoid using custom CSS when possible.
+<span class="k">-</span><span class="w"> </span>Group related classes together for better readability.
+<span class="k">-</span><span class="w"> </span>Use DaisyUI classes for components.
+
+<span class="gu">### JavaScript</span>
+<span class="k">-</span><span class="w"> </span>Use <span class="sb">`const`</span> and <span class="sb">`let`</span> instead of <span class="sb">`var`</span>.
+<span class="k">-</span><span class="w"> </span>Prefer arrow functions for anonymous functions.
+<span class="k">-</span><span class="w"> </span>Use template literals for string concatenation.
+<span class="k">-</span><span class="w"> </span>Always use semicolons.
+<span class="k">-</span><span class="w"> </span>Follow the Prettier configuration for formatting.
+
+---
+
+<span class="gu">## Commit Style Guide</span>
+
+We follow the [<span class="nt">Conventional Commits</span>](<span class="na">https://www.conventionalcommits.org/en/v1.0.0/</span>) style for our commit messages. Here are some examples:
+<span class="k">-</span><span class="w"> </span><span class="sb">`feat: add new user authentication module`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`fix: resolve issue with data fetching.`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`docs: update README with installation instructions`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`style: format code with Prettier`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`refactor: improve performance of data processing`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`test: add unit tests for user service`</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`chore: update dependencies`</span>
+
+<span class="gu">### Commit Message Rules</span>
+<span class="k">-</span><span class="w"> </span>Use imperative mood (e.g., "add feature" not "added feature")
+<span class="k">-</span><span class="w"> </span>Keep the subject line under 50 characters
+<span class="k">-</span><span class="w"> </span>Capitalize the subject line
+<span class="k">-</span><span class="w"> </span>Do not end the subject line with a period
+<span class="k">-</span><span class="w"> </span>Separate subject from body with a blank line
+<span class="k">-</span><span class="w"> </span>Use the body to explain what and why vs. how
+</code></pre></div>
+<h3 id="3-vs-code-ayarlarini-guncelleyin">3. VS Code Ayarlar&inodot;n&inodot; G&uuml;ncelleyin</h3>
+<p><code>.vscode/settings.json</code> dosyas&inodot;n&inodot; a&ccedil;&inodot;n ve a&scedil;a&gbreve;&inodot;daki kod blo&gbreve;unu ekleyin:</p>
+<div class="highlight"><span class="filename">JSON</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"github.copilot.chat.codeGeneration.useInstructionFiles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+<blockquote>
+<p><strong>NOT</strong>: Eski y&ouml;ntemde kullan&inodot;lan <code>github.copilot.chat.codeGeneration.instructions</code> ve <code>github.copilot.chat.commitMessageGeneration.instructions</code> ayarlar&inodot; art&inodot;k kullan&inodot;lm&inodot;yor. Bu ayarlar&inodot; kald&inodot;rman&inodot;z gerekiyor.</p>
+</blockquote>
+<p>Bu yap&inodot;land&inodot;rma, GitHub Copilot'a kodlama stilinizi ve commit mesaj&inodot; format&inodot;n&inodot;z&inodot; &ouml;&gbreve;retecektir. 🎯 Detayl&inodot; incelemek i&ccedil;in <a href="https://aka.ms/vscode-ghcp-custom-instructions">GitHub Copilot'&inodot;n resmi belgelerine</a> bak&inodot;n.</p>
+<h2 id="verbose-modu-etkinlestirme_1">Verbose Modu Etkinle&scedil;tirme</h2>
+<p>GitHub Copilot'&inodot;n <strong>commit mesajlar&inodot;n&inodot;z&inodot; daha iyi analiz etmesi</strong> i&ccedil;in, Git'in verbose modunu etkinle&scedil;tirmeniz gerekiyor. Bu mod, Copilot'a yapt&inodot;&gbreve;&inodot;n&inodot;z de&gbreve;i&scedil;iklikleri daha detayl&inodot; g&ouml;stererek daha do&gbreve;ru &ouml;neriler yapmas&inodot;n&inodot; sa&gbreve;lar.</p>
+<p>Terminali a&ccedil;&inodot;n ve &scedil;u komutu &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>commit.verbose<span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<p>Bu ayar sayesinde, commit yaparken t&uuml;m de&gbreve;i&scedil;iklikler commit edit&ouml;r&uuml;n&uuml;zde g&ouml;r&uuml;necek ve GitHub Copilot bu bilgileri kullanarak daha do&gbreve;ru commit mesajlar&inodot; &ouml;nerecektir.</p>
+<h2 id="commit-mesajlari-icin-copiloti-kullanma">Commit Mesajlar&inodot; &Idot;&ccedil;in Copilot'&inodot; Kullanma</h2>
+<p>Art&inodot;k her &scedil;ey haz&inodot;r! GitHub Copilot'&inodot; commit mesajlar&inodot;n&inodot;z&inodot; olu&scedil;turmak i&ccedil;in &scedil;u ad&inodot;mlar&inodot; izleyin:</p>
+<h3 id="1-degisikliklerinizi-stageleyin">1. De&gbreve;i&scedil;ikliklerinizi Stage'leyin</h3>
+<p>&Ouml;ncelikle, commit etmek istedi&gbreve;iniz t&uuml;m de&gbreve;i&scedil;iklikleri stage'leyin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.<span class="w">  </span><span class="c1"># T&uuml;m de&gbreve;i&scedil;iklikleri ekler</span>
+<span class="c1"># VEYA</span>
+git<span class="w"> </span>add<span class="w"> </span>dosya_ad&inodot;<span class="w">  </span><span class="c1"># Belirli bir dosyay&inodot; ekler</span>
+</code></pre></div>
+<h3 id="2-commit-editorunu-acin">2. Commit Edit&ouml;r&uuml;n&uuml; A&ccedil;&inodot;n</h3>
+<p>A&scedil;a&gbreve;&inodot;daki komutu &ccedil;al&inodot;&scedil;t&inodot;rarak commit edit&ouml;r&uuml;n&uuml; a&ccedil;&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>commit
+</code></pre></div>
+<h3 id="3-copilotin-onerilerini-kullanin">3. Copilot'&inodot;n &Ouml;nerilerini Kullan&inodot;n</h3>
+<p>VS Code'da commit edit&ouml;r&uuml; a&ccedil;&inodot;ld&inodot;&gbreve;&inodot;nda:
+1. Edit&ouml;r&uuml;n &uuml;st k&inodot;sm&inodot;nda bir <strong>"Generate Commit Message"</strong> (Commit Mesaj&inodot; Olu&scedil;tur) butonu g&ouml;receksiniz
+2. Bu butona t&inodot;klay&inodot;n
+3. GitHub Copilot, yapt&inodot;&gbreve;&inodot;n&inodot;z de&gbreve;i&scedil;iklikleri analiz edecek ve uygun bir commit mesaj&inodot; &ouml;nerecektir
+4. &Ouml;nerilen mesaj&inodot; g&ouml;zden ge&ccedil;irin ve gerekirse d&uuml;zenleyin
+5. <kbd>Ctrl</kbd> + <kbd>S</kbd> tu&scedil;lar&inodot;na basarak kaydedin ve edit&ouml;r&uuml; kapat&inodot;n</p>
+<p><img alt="GitHub Copilot Commit Mesaj&inodot; &Ouml;nerisi" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/copilot-commit-xl.webp" srcset="/images/copilot-commit-sm.webp 300w, /images/copilot-commit-md.webp 500w, /images/copilot-commit-xl.webp 800w, /images/copilot-commit-xl.webp 1200w"/></p>
+<blockquote>
+<p><strong>&Idot;pucu</strong>: Copilot'&inodot;n &ouml;nerisi istedi&gbreve;iniz gibi de&gbreve;ilse, d&uuml;zenlemekten &ccedil;ekinmeyin. Copilot size sadece bir ba&scedil;lang&inodot;&ccedil; noktas&inodot; sunar.</p>
+</blockquote>
+<h2 id="ileri-duzey-ipuclari-ve-en-iyi-uygulamalar_1">&Idot;leri D&uuml;zey &Idot;pu&ccedil;lar&inodot; ve En &Idot;yi Uygulamalar</h2>
+<p>GitHub Copilot ile commit mesajlar&inodot;n&inodot;z&inodot; daha da etkili hale getirmek i&ccedil;in baz&inodot; ileri d&uuml;zey ipu&ccedil;lar&inodot;:</p>
+<h3 id="1-mantikli-commit-gruplari-olusturun">1. Mant&inodot;kl&inodot; Commit Gruplar&inodot; Olu&scedil;turun</h3>
+<p><strong>Tek bir commit'te &ccedil;ok fazla de&gbreve;i&scedil;iklik yapmay&inodot;n</strong>. Her commit, mant&inodot;ksal olarak birbiriyle ili&scedil;kili de&gbreve;i&scedil;iklikleri i&ccedil;ermelidir. Bu, Copilot'&inodot;n de&gbreve;i&scedil;iklikleri daha iyi analiz etmesini sa&gbreve;lar.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># &Idot;yi bir yakla&scedil;&inodot;m</span>
+git<span class="w"> </span>add<span class="w"> </span>src/authentication/
+git<span class="w"> </span>commit<span class="w">  </span><span class="c1"># "feat: kullan&inodot;c&inodot; kimlik do&gbreve;rulama sistemi eklendi"</span>
+git<span class="w"> </span>add<span class="w"> </span>src/ui/components/
+git<span class="w"> </span>commit<span class="w">  </span><span class="c1"># "style: giri&scedil; formu g&ouml;r&uuml;n&uuml;m&uuml; iyile&scedil;tirildi"</span>
+</code></pre></div>
+<h3 id="2-copilotin-yanilgilarini-duzeltin">2. Copilot'&inodot;n Yan&inodot;lg&inodot;lar&inodot;n&inodot; D&uuml;zeltin</h3>
+<p>Copilot her zaman m&uuml;kemmel de&gbreve;ildir. &Ouml;nerdi&gbreve;i commit mesajlar&inodot;n&inodot; her zaman <strong>g&ouml;zden ge&ccedil;irin ve gerekirse d&uuml;zeltin</strong>. &Ouml;zellikle:</p>
+<ul>
+<li><strong>Yaz&inodot;m hatalar&inodot;</strong> olabilir</li>
+<li><strong>De&gbreve;i&scedil;ikliklerin kapsam&inodot;n&inodot;</strong> yanl&inodot;&scedil; anlayabilir</li>
+<li>Nadiren tamamen <strong>alakas&inodot;z mesajlar</strong> &ouml;nerebilir</li>
+</ul>
+<h3 id="3-ozel-prompt-ipuclari-kullanin">3. &Ouml;zel Prompt &Idot;pu&ccedil;lar&inodot; Kullan&inodot;n</h3>
+<p>Commit edit&ouml;r&uuml;ne &ouml;zel notlar ekleyerek Copilot'a rehberlik edebilirsiniz:
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code># Copilot: Bu de&gbreve;i&scedil;iklik performans iyile&scedil;tirmesi i&ccedil;in yap&inodot;ld&inodot;
+# Copilot: issue #123 ile ilgili
+</code></pre></div>
+Bu notlar commit'e dahil edilmez, sadece Copilot'a yard&inodot;mc&inodot; olur.</p>
+<h2 id="sik-karsilasilan-sorunlar-ve-cozumleri_1">S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Sorunlar ve &Ccedil;&ouml;z&uuml;mleri</h2>
+<h3 id="copilot-commit-mesaji-onermiyorsa">❓ Copilot Commit Mesaj&inodot; &Ouml;nermiyorsa</h3>
+<ol>
+<li><strong>Copilot eklentisinin g&uuml;ncel oldu&gbreve;unu</strong> kontrol edin</li>
+<li>VS Code'u yeniden ba&scedil;lat&inodot;n</li>
+<li>GitHub hesab&inodot;n&inodot;z&inodot;n aktif ve ba&gbreve;l&inodot; oldu&gbreve;undan emin olun</li>
+<li><code>--verbose</code> modunun etkin oldu&gbreve;unu do&gbreve;rulay&inodot;n</li>
+</ol>
+<h3 id="use-instructions-files-instead-hatasi-aliyorum">❓ "Use instructions files instead" Hatas&inodot; Al&inodot;yorum</h3>
+<p>Bu hata, eski talimat y&ouml;ntemini kulland&inodot;&gbreve;&inodot;n&inodot;zda ortaya &ccedil;&inodot;kar. &Ccedil;&ouml;z&uuml;m i&ccedil;in:
+1. <code>.vscode/settings.json</code> dosyan&inodot;z&inodot; a&ccedil;&inodot;n
+2. Eski talimat ayarlar&inodot;n&inodot; kald&inodot;r&inodot;n:
+   <div class="highlight"><span class="filename">JSON</span><pre><span></span><code><span class="c1">// Bu sat&inodot;rlar&inodot; silin</span>
+<span class="nt">"github.copilot.chat.codeGeneration.instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"docs/code-style.md"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">],</span>
+<span class="nt">"github.copilot.chat.commitMessageGeneration.instructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"docs/commit-style.md"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+3. Yeni ayar&inodot; ekleyin:
+   <div class="highlight"><span class="filename">JSON</span><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"github.copilot.chat.codeGeneration.useInstructionFiles"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
+4. <code>.github/copilot-instructions.md</code> dosyas&inodot; olu&scedil;turun ve talimatlar&inodot;n&inodot;z&inodot; buraya ta&scedil;&inodot;y&inodot;n</p>
+<h3 id="oneriler-cok-genel-veya-alakasizsa">❓ &Ouml;neriler &Ccedil;ok Genel veya Alakas&inodot;zsa</h3>
+<ol>
+<li>Daha k&uuml;&ccedil;&uuml;k ve odaklanm&inodot;&scedil; commit'ler yap&inodot;n</li>
+<li><code>.github/copilot-instructions.md</code> dosyan&inodot;z&inodot; d&uuml;zenleyin ve daha spesifik hale getirin</li>
+<li>Commit edit&ouml;r&uuml;nde manuel ipu&ccedil;lar&inodot; ekleyin</li>
+</ol>
+<h3 id="vs-codeda-generate-commit-message-butonu-gozukmuyor">❓ VS Code'da "Generate Commit Message" Butonu G&ouml;z&uuml;km&uuml;yor</h3>
+<ol>
+<li>GitHub Copilot Chat eklentisini de y&uuml;kledi&gbreve;inizden emin olun</li>
+<li>VS Code'u g&uuml;ncelleyin</li>
+<li>Eklentiyi devre d&inodot;&scedil;&inodot; b&inodot;rak&inodot;p yeniden etkinle&scedil;tirin</li>
+</ol>
+<h2 id="sonuc-ve-ileriye-bakis_1">Sonu&ccedil; ve &Idot;leriye Bak&inodot;&scedil;</h2>
+<p><strong>GitHub Copilot ile commit mesajlar&inodot; olu&scedil;turmak</strong>, yaz&inodot;l&inodot;m geli&scedil;tirme s&uuml;recinizi &ouml;nemli &ouml;l&ccedil;&uuml;de h&inodot;zland&inodot;r&inodot;r ve projenizin git tarih&ccedil;esini daha anla&scedil;&inodot;l&inodot;r hale getirir. Bu rehberde &ouml;&gbreve;rendi&gbreve;iniz teknikler sayesinde:</p>
+<ul>
+<li>⏱️ Her g&uuml;n &ouml;nemli miktarda zaman kazanacaks&inodot;n&inodot;z</li>
+<li>📈 Projenizin bak&inodot;m&inodot; ve takibi kolayla&scedil;acak</li>
+<li>🤝 Ekip &uuml;yeleri aras&inodot;nda tutarl&inodot; commit mesajlar&inodot; sa&gbreve;layacaks&inodot;n&inodot;z</li>
+</ul>
+<p>GitHub Copilot, yapay zeka teknolojisinin yaz&inodot;l&inodot;m geli&scedil;tirme s&uuml;re&ccedil;lerini nas&inodot;l iyile&scedil;tirebilece&gbreve;inin m&uuml;kemmel bir &ouml;rne&gbreve;idir. Bu teknolojiyi benimseyip kendi i&scedil; ak&inodot;&scedil;&inodot;n&inodot;za entegre etti&gbreve;inizde, verimlili&gbreve;inizin nas&inodot;l artt&inodot;&gbreve;&inodot;n&inodot; g&ouml;receksiniz!</p>
+<hr/>
+<p><strong>Deneyimlerinizi Payla&scedil;&inodot;n!</strong> 💬</p>
+<p>GitHub Copilot ile commit mesajlar&inodot; olu&scedil;turma konusunda deneyimleriniz neler? Hangi &ouml;zel talimatlar&inodot; kullan&inodot;yorsunuz? Yorumlarda payla&scedil;&inodot;n ve di&gbreve;er geli&scedil;tiricilere yard&inodot;mc&inodot; olun!</p>
+<p><strong>Bir sonraki yaz&inodot;m&inodot;zda GitHub Copilot'&inodot;n kod incelemelerinde nas&inodot;l kullan&inodot;labilece&gbreve;ini ke&scedil;fedece&gbreve;iz. Takipte kal&inodot;n!</strong> 🚀</p></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/&text=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/&title=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/&text=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber&body=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/&description=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber&media=https://yuceltoluyag.github.io/images/copilot-commit-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/&title=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber%20-%20https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#neden-github-copilot-ile-commit-mesajlari-yazmaliyim" title="Neden GitHub Copilot ile Commit Mesajlar&inodot; Yazmal&inodot;y&inodot;m?">Neden GitHub Copilot ile Commit Mesajlar&inodot; Yazmal&inodot;y&inodot;m?</a></li><li><a class="toc-href" code'a="" entegre="" etme'="" href="#kurulum-github-copiloti-vs-codea-entegre-etme" title="Kurulum: GitHub Copilot" vs="" ı="">Kurulum: GitHub Copilot'&inodot; VS Code'a Entegre Etme</a><ul><li><a class="toc-href" href="#1-github-copilot-eklentisini-yukleme" title="1. GitHub Copilot Eklentisini Y&uuml;kleme">1. GitHub Copilot Eklentisini Y&uuml;kleme</a></li><li><a class="toc-href" href="#2-github-hesabinizla-baglanti-kurun" title="2. GitHub Hesab&inodot;n&inodot;zla Ba&gbreve;lant&inodot; Kurun">2. GitHub Hesab&inodot;n&inodot;zla Ba&gbreve;lant&inodot; Kurun</a></li></ul></li><li><a class="toc-href" href="#ozel-kodlama-ve-commit-talimatlari-olusturma-guncel-yontem_1" title="&Ouml;zel Kodlama ve Commit Talimatlar&inodot; Olu&scedil;turma (G&uuml;ncel Y&ouml;ntem)">&Ouml;zel Kodlama ve Commit Talimatlar&inodot; Olu&scedil;turma (G&uuml;ncel Y&ouml;ntem)</a><ul><li><a class="toc-href" href="#1-proje-yapilandirma-dosyalarini-olusturma" title="1. Proje Yap&inodot;land&inodot;rma Dosyalar&inodot;n&inodot; Olu&scedil;turma">1. Proje Yap&inodot;land&inodot;rma Dosyalar&inodot;n&inodot; Olu&scedil;turma</a></li><li><a class="toc-href" href="#2-kod-uslubunuzu-ve-commit-mesaji-formatinizi-tanimlayin" title="2. Kod &Uuml;slubunuzu ve Commit Mesaj&inodot; Format&inodot;n&inodot;z&inodot; Tan&inodot;mlay&inodot;n">2. Kod &Uuml;slubunuzu ve Commit Mesaj&inodot; Format&inodot;n&inodot;z&inodot; Tan&inodot;mlay&inodot;n</a></li><li><a class="toc-href" href="#3-vs-code-ayarlarini-guncelleyin" title="3. VS Code Ayarlar&inodot;n&inodot; G&uuml;ncelleyin">3. VS Code Ayarlar&inodot;n&inodot; G&uuml;ncelleyin</a></li></ul></li><li><a class="toc-href" href="#verbose-modu-etkinlestirme_1" title="Verbose Modu Etkinle&scedil;tirme">Verbose Modu Etkinle&scedil;tirme</a></li><li><a class="toc-href" href="#commit-mesajlari-icin-copiloti-kullanma" kullanma'="" title="Commit Mesajlar&inodot; &Idot;&ccedil;in Copilot" ı="">Commit Mesajlar&inodot; &Idot;&ccedil;in Copilot'&inodot; Kullanma</a><ul><li><a class="toc-href" href="#1-degisikliklerinizi-stageleyin" leyin'="" title="1. De&gbreve;i&scedil;ikliklerinizi Stage">1. De&gbreve;i&scedil;ikliklerinizi Stage'leyin</a></li><li><a class="toc-href" href="#2-commit-editorunu-acin" title="2. Commit Edit&ouml;r&uuml;n&uuml; A&ccedil;&inodot;n">2. Commit Edit&ouml;r&uuml;n&uuml; A&ccedil;&inodot;n</a></li><li><a class="toc-href" href="#3-copilotin-onerilerini-kullanin" kullanın'="" title="3. Copilot" önerilerini="" ın="">3. Copilot'&inodot;n &Ouml;nerilerini Kullan&inodot;n</a></li></ul></li><li><a class="toc-href" href="#ileri-duzey-ipuclari-ve-en-iyi-uygulamalar_1" title="&Idot;leri D&uuml;zey &Idot;pu&ccedil;lar&inodot; ve En &Idot;yi Uygulamalar">&Idot;leri D&uuml;zey &Idot;pu&ccedil;lar&inodot; ve En &Idot;yi Uygulamalar</a><ul><li><a class="toc-href" href="#1-mantikli-commit-gruplari-olusturun" title="1. Mant&inodot;kl&inodot; Commit Gruplar&inodot; Olu&scedil;turun">1. Mant&inodot;kl&inodot; Commit Gruplar&inodot; Olu&scedil;turun</a></li><li><a class="toc-href" düzeltin'="" href="#2-copilotin-yanilgilarini-duzeltin" title="2. Copilot" yanılgılarını="" ın="">2. Copilot'&inodot;n Yan&inodot;lg&inodot;lar&inodot;n&inodot; D&uuml;zeltin</a></li><li><a class="toc-href" href="#3-ozel-prompt-ipuclari-kullanin" title="3. &Ouml;zel Prompt &Idot;pu&ccedil;lar&inodot; Kullan&inodot;n">3. &Ouml;zel Prompt &Idot;pu&ccedil;lar&inodot; Kullan&inodot;n</a></li></ul></li><li><a class="toc-href" href="#sik-karsilasilan-sorunlar-ve-cozumleri_1" title="S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Sorunlar ve &Ccedil;&ouml;z&uuml;mleri">S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Sorunlar ve &Ccedil;&ouml;z&uuml;mleri</a><ul><li><a class="toc-href" href="#copilot-commit-mesaji-onermiyorsa" title="❓ Copilot Commit Mesaj&inodot; &Ouml;nermiyorsa">❓ Copilot Commit Mesaj&inodot; &Ouml;nermiyorsa</a></li><li><a class="toc-href" href="#use-instructions-files-instead-hatasi-aliyorum" title='❓ "Use instructions files instead" Hatas&inodot; Al&inodot;yorum'>❓ "Use instructions files instead" Hatas&inodot; Al&inodot;yorum</a></li><li><a class="toc-href" href="#oneriler-cok-genel-veya-alakasizsa" title="❓ &Ouml;neriler &Ccedil;ok Genel veya Alakas&inodot;zsa">❓ &Ouml;neriler &Ccedil;ok Genel veya Alakas&inodot;zsa</a></li><li><a "generate="" butonu="" class="toc-href" commit="" da="" gözükmüyor'="" href="#vs-codeda-generate-commit-message-butonu-gozukmuyor" message"="" title="❓ VS Code">❓ VS Code'da "Generate Commit Message" Butonu G&ouml;z&uuml;km&uuml;yor</a></li></ul></li><li><a class="toc-href" href="#sonuc-ve-ileriye-bakis_1" title="Sonu&ccedil; ve &Idot;leriye Bak&inodot;&scedil;">Sonu&ccedil; ve &Idot;leriye Bak&inodot;&scedil;</a></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

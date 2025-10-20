@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Arch Linux'ta Waydroid İnternet Sorunu Çözümü",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<!-- İçerikten resim çıkarma kontrolü yapılmıyor, varsayılan resim kullanılıyor -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/logo-lg.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Arch Linux'ta Waydroid İnternet Sorunu Çözümü" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/" />
+<meta property="og:title" content="Arch Linux'ta Waydroid İnternet Sorunu Çözümü" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-10-17T14:30:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Sorun Giderme" />
+  <meta property="article:tag" content="waydroid" />
+<meta property="article:tag" content="arch linux" />
+<meta property="article:tag" content="android" />
+<meta property="article:tag" content="linux" />
+<meta property="article:tag" content="iptables" />
+<meta property="article:tag" content="konteyner" />
+<meta property="article:tag" content="ağ yapılandırması" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Waydroid Android logosunda takılıyor mu? İnternet yok mu? Iptables-nft uyumsuzluğunu çöz ve Arch Linux'ta Waydroid'i çalıştır. Adım adım rehber başlayan içeriyle." />
+<meta property="og:description" content="Waydroid Android logosunda takılıyor mu? İnternet yok mu? Iptables-nft uyumsuzluğunu çöz ve Arch Linux'ta Waydroid'i çalıştır. Adım adım rehber başlayan içeriyle." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux'ta Waydroid İnternet Sorunu Çözümü",
+        "description": "Waydroid Android logosunda takılıyor mu? İnternet yok mu? Iptables-nft uyumsuzluğunu çöz ve Arch Linux'ta Waydroid'i çalıştır. Adım adım rehber başlayan içeriyle.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-10-17T14:30:00+03:00",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/"
+        },
+"articleSection": "Sorun Giderme","keywords": "waydroid, arch linux, android, linux, iptables, konteyner, ağ yapılandırması",        "url": "https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/",
+        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>Arch Linux'ta Waydroid İnternet Sorunu Çözümü</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a boot="" class="toc-href" href="#arch-linuxta-waydroid-internet-ve-boot-sorununun-cozumu" i̇nternet="" sorununun="" ta="" title="Arch Linux" ve="" waydroid="" çözümü'="">Arch Linux'ta Waydroid &Idot;nternet ve Boot Sorununun &Ccedil;&ouml;z&uuml;m&uuml;</a><ul><li><a class="toc-href" href="#waydroid-nedir-ve-neden-kullanmaliyiz" title="Waydroid Nedir ve Neden Kullanmal&inodot;y&inodot;z?">Waydroid Nedir ve Neden Kullanmal&inodot;y&inodot;z?</a></li><li><a class="toc-href" href="#sorunun-belirtileri-nelerdir" title="Sorunun Belirtileri Nelerdir?">Sorunun Belirtileri Nelerdir?</a></li><li><a class="toc-href" href="#isin-icinde-neler-var-teknik-aciklama" title="&Idot;&scedil;in I&ccedil;inde Neler Var? Teknik A&ccedil;&inodot;klama">&Idot;&scedil;in I&ccedil;inde Neler Var? Teknik A&ccedil;&inodot;klama</a></li><li><a class="toc-href" href="#cozum-adimlari-waydroidi-calistirmak" i="" title="&Ccedil;&ouml;z&uuml;m Ad&inodot;mlar&inodot;: Waydroid" çalıştırmak'="">&Ccedil;&ouml;z&uuml;m Ad&inodot;mlar&inodot;: Waydroid'i &Ccedil;al&inodot;&scedil;t&inodot;rmak</a><ul><li><a class="toc-href" href="#adim-1-mevcut-yapilandirmayi-temizle" title="Ad&inodot;m 1: Mevcut Yap&inodot;land&inodot;rmay&inodot; Temizle">Ad&inodot;m 1: Mevcut Yap&inodot;land&inodot;rmay&inodot; Temizle</a></li><li><a class="toc-href" durumunu="" et'="" href="#adim-2-nft-backendinin-durumunu-kontrol-et" inin="" kontrol="" title="Ad&inodot;m 2: nft Backend">Ad&inodot;m 2: nft Backend'inin Durumunu Kontrol Et</a></li><li><a class="toc-href" href="#adim-3-eski-ve-bozuk-kurallari-temizle" title="Ad&inodot;m 3: Eski ve Bozuk Kurallar&inodot; Temizle">Ad&inodot;m 3: Eski ve Bozuk Kurallar&inodot; Temizle</a></li><li><a class="toc-href" href="#adim-4-waydroid-ag-betigini-baslatmayi-dene" title="Ad&inodot;m 4: Waydroid A&gbreve; Beti&gbreve;ini Ba&scedil;latmay&inodot; Dene">Ad&inodot;m 4: Waydroid A&gbreve; Beti&gbreve;ini Ba&scedil;latmay&inodot; Dene</a></li><li><a class="toc-href" href="#adim-5-manuel-nat-kurallari-ekle-calisan-cozum" title="Ad&inodot;m 5: Manuel NAT Kurallar&inodot; Ekle (&Ccedil;al&inodot;&scedil;an &Ccedil;&ouml;z&uuml;m)">Ad&inodot;m 5: Manuel NAT Kurallar&inodot; Ekle (&Ccedil;al&inodot;&scedil;an &Ccedil;&ouml;z&uuml;m)</a></li><li><a class="toc-href" href="#adim-6-ip-yonlendirmesini-etkinlestir" title="Ad&inodot;m 6: IP Y&ouml;nlendirmesini Etkinle&scedil;tir">Ad&inodot;m 6: IP Y&ouml;nlendirmesini Etkinle&scedil;tir</a></li><li><a class="toc-href" href="#adim-7-waydroid-konteynerini-yeniden-baslat" title="Ad&inodot;m 7: Waydroid Konteynerini Yeniden Ba&scedil;lat">Ad&inodot;m 7: Waydroid Konteynerini Yeniden Ba&scedil;lat</a></li><li><a class="toc-href" href="#adim-8-internet-baglantisini-test-et" title="Ad&inodot;m 8: &Idot;nternet Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et">Ad&inodot;m 8: &Idot;nternet Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et</a></li></ul></li><li><a class="toc-href" href="#ekstra-bilgiler-ve-ipuclari_1" title="Ekstra Bilgiler ve &Idot;pu&ccedil;lar&inodot;">Ekstra Bilgiler ve &Idot;pu&ccedil;lar&inodot;</a></li><li><a class="toc-href" href="#sorunlar-ozet-tablosu" title="Sorunlar &Ouml;zet Tablosu">Sorunlar &Ouml;zet Tablosu</a></li><li><a class="toc-href" href="#sonuc-ve-sonraki-adimlar" title="Sonu&ccedil; ve Sonraki Ad&inodot;mlar">Sonu&ccedil; ve Sonraki Ad&inodot;mlar</a></li></ul></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/davinci-resolve-20-1-linux-hatasi-cozumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta DaVinci Resolve 20.1 Açılmıyor Hatası ve Çözümü</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/redmi-note-8-pro-custom-rom-kurulumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Redmi Note 8 Pro Custom ROM Yükleme Rehberi</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/mediatek-imei-onarma-rehberi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">MediaTek IMEI Onarma Rehberi</h4>
+                                    </a>
+                                </div>
+                                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Arch Linux'ta Waydroid İnternet Sorunu Çözümü</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-10-17T14:30:00+03:00" class="ml-1">
+                                    17 October 2025
+                                </time>
+                            </div>
+
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/sorun-giderme/"
+                                    class="link link-hover ml-1">
+                                    Sorun Giderme
+                                </a>
+                            </div>
+                               <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/arch-linux-waydroid-internet-sorunu-cozumu.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><h1 id="arch-linuxta-waydroid-internet-ve-boot-sorununun-cozumu">Arch Linux'ta Waydroid &Idot;nternet ve Boot Sorununun &Ccedil;&ouml;z&uuml;m&uuml;</h1>
+<p>Waydroid'i Arch Linux'a kurmaya &ccedil;al&inodot;&scedil;t&inodot;&gbreve;&inodot;nda Android logosunda tak&inodot;l&inodot;p kal&inodot;yor mu? Veya i&ccedil;inde internet ba&gbreve;lant&inodot;s&inodot; olmuyor mu? Bu sorunlar, Linux ve Android aras&inodot;ndaki a&gbreve; yap&inodot;land&inodot;rmas&inodot;nda ya&scedil;anan uyumsuzluklardan kaynaklan&inodot;yor. Bu makalede, Waydroid nedir, neden bu sorunlar olu&scedil;ur ve ad&inodot;m ad&inodot;m nas&inodot;l &ccedil;&ouml;zece&gbreve;iniz anlataca&gbreve;&inodot;m. Makaleyi bitirdi&gbreve;inde sisteminiz tam olarak &ccedil;al&inodot;&scedil;acak ve internet ba&gbreve;lant&inodot;s&inodot; sorunsuz olacak.</p>
+<h2 id="waydroid-nedir-ve-neden-kullanmaliyiz">Waydroid Nedir ve Neden Kullanmal&inodot;y&inodot;z?</h2>
+<p><strong>Waydroid nedir?</strong> Waydroid, Android i&scedil;letim sistemini Linux &uuml;zerinde do&gbreve;al olarak &ccedil;al&inodot;&scedil;t&inodot;ran bir platformdur. Basit&ccedil;e s&ouml;ylemek gerekirse, Linux makinenizde bir Android sistemi kurup do&gbreve;rudan Android uygulamalar&inodot;n&inodot; &ccedil;al&inodot;&scedil;t&inodot;rabiliyorsunuz. Sanal makine teknolojisinin aksine, Waydroid &ccedil;ok daha hafif ve h&inodot;zl&inodot;d&inodot;r &ccedil;&uuml;nk&uuml; LXC (Linux Container) teknolojisini kullan&inodot;r.</p>
+<p>Neden Waydroid kullanmal&inodot;y&inodot;z? E&gbreve;er Linux kullanan biri iseniz ve Android uygulamalar&inodot;na ihtiya&ccedil; duyuyorsan&inodot;z, Waydroid tam &ccedil;&ouml;z&uuml;md&uuml;r. Telefon emulat&ouml;r&uuml; gibi a&gbreve;&inodot;r de&gbreve;ildir ve do&gbreve;rudan konteyner teknolojisi sayesinde olduk&ccedil;a performansl&inodot;d&inodot;r. Arch Linux kullan&inodot;c&inodot;lar&inodot; ise &ouml;zellikle bu teknolojinin minimalist yap&inodot;s&inodot;n&inodot; sevmektedir.</p>
+<h2 id="sorunun-belirtileri-nelerdir">Sorunun Belirtileri Nelerdir?</h2>
+<p>Waydroid kurulum sonras&inodot; veya kullan&inodot;m s&inodot;ras&inodot;nda baz&inodot; g&ouml;stergeler varsa sorunla kar&scedil;&inodot; kar&scedil;&inodot;ya olabilirsiniz. A&scedil;a&gbreve;&inodot;daki komutlardan birini &ccedil;al&inodot;&scedil;t&inodot;rd&inodot;&gbreve;&inodot;n&inodot;zda problemin varl&inodot;&gbreve;&inodot;n&inodot; anlayabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>waydroid-container
+</code></pre></div>
+<p>Bu komut &scedil;u &ccedil;&inodot;kt&inodot;y&inodot; g&ouml;sterebilir:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>[Errno 2] No such file or directory: '/var/lib/waydroid/waydroid.log'
+Session: STOPPED
+Vendor type: MAINLINE
+</code></pre></div>
+<p>Di&gbreve;er durumlarda ise:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>/usr/lib/waydroid/data/scripts/waydroid-net.sh<span class="w"> </span>start
+</code></pre></div>
+<p>komutu &scedil;u hatalar&inodot; &uuml;retebilir:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>iptables: Bad rule (does a matching rule exist in that chain?).
+iptables: No chain/target/match by that name.
+</code></pre></div>
+<p>Bu hata mesajlar&inodot;n&inodot; ald&inodot;ktan sonra Waydroid a&ccedil;&inodot;l&inodot;yor ancak Android ba&scedil;lang&inodot;&ccedil; logosunda tak&inodot;l&inodot; kal&inodot;yor ve i&ccedil;inde internet ba&gbreve;lant&inodot;s&inodot; olmuyor. Ba&scedil;ka bir i&scedil;arete bakacak olursak, Waydroid shell komutlar&inodot;nda ping'in &ccedil;al&inodot;&scedil;mad&inodot;&gbreve;&inodot;n&inodot; veya WiFi ayarlar&inodot;ndan hi&ccedil;bir a&gbreve;&inodot; g&ouml;remedi&gbreve;inizi fark edebilirsiniz.</p>
+<h2 id="isin-icinde-neler-var-teknik-aciklama">&Idot;&scedil;in I&ccedil;inde Neler Var? Teknik A&ccedil;&inodot;klama</h2>
+<p>Bu sorunun temelinde iki ana fakt&ouml;r yat&inodot;yor. &Idot;lki, Arch Linux'un varsay&inodot;lan olarak <code>iptables-nft</code> arka uygulamas&inodot;n&inodot; kullanmas&inodot;d&inodot;r. &Idot;kincisi ise Waydroid'in a&gbreve; yap&inodot;land&inodot;rma beti&gbreve;inin eski <code>iptables-legacy</code> kurallar&inodot;yla yaz&inodot;lm&inodot;&scedil; olmas&inodot;d&inodot;r.</p>
+<p>K&inodot;saca ne oluyor? Waydroid, a&gbreve; kurulum beti&gbreve;ini &ccedil;al&inodot;&scedil;t&inodot;r&inodot;rken Linux firewall kurallar&inodot;n&inodot; d&uuml;zenlemeye &ccedil;al&inodot;&scedil;&inodot;yor. Ancak nft backend ile legacy kurallar&inodot; e&scedil;le&scedil;tirmiyor ve bu nedenle gerekli NAT (Network Address Translation) kurallar&inodot; olu&scedil;turam&inodot;yor. NAT kurulmazsa, konteyner i&ccedil;indeki Android sistem internete eri&scedil;emiyor. Bu y&uuml;zden a&ccedil;&inodot;l&inodot;rken &ccedil;al&inodot;&scedil;maya devam ediyor ancak a&gbreve; ba&scedil;lat&inodot;lamad&inodot;&gbreve;&inodot;ndan boot a&scedil;amas&inodot;nda tak&inodot;l&inodot;yor.</p>
+<div class="info-box note">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">Not</div>
+<p><strong>NAT Nedir?</strong> Network Address Translation (NAT), bir &ouml;zel a&gbreve;daki cihazlar&inodot; (bu durumda Waydroid konteyneri) ana sisteme ba&gbreve;layan ve onlar&inodot; internete &ccedil;&inodot;kmas&inodot;n&inodot; sa&gbreve;layan bir a&gbreve; tekni&gbreve;idir. Konteyner i&ccedil;indeki Android'in kendi IP adresi vard&inodot;r ama bu IP'yi internet'e do&gbreve;rudan g&ouml;steremez. NAT kurallar&inodot; sayesinde konteyner d&inodot;&scedil;ar&inodot;ya &ccedil;&inodot;kabiliyor.</p>
+</div>
+</div>
+<h2 id="cozum-adimlari-waydroidi-calistirmak">&Ccedil;&ouml;z&uuml;m Ad&inodot;mlar&inodot;: Waydroid'i &Ccedil;al&inodot;&scedil;t&inodot;rmak</h2>
+<p>Sorunun &ccedil;&ouml;z&uuml;m&uuml; olduk&ccedil;a sistematiktir. A&scedil;a&gbreve;&inodot;daki ad&inodot;mlar&inodot; s&inodot;ras&inodot;yla uygulayarak Waydroid'i tam &ccedil;al&inodot;&scedil;&inodot;r duruma getirebilirsiniz.</p>
+<h3 id="adim-1-mevcut-yapilandirmayi-temizle">Ad&inodot;m 1: Mevcut Yap&inodot;land&inodot;rmay&inodot; Temizle</h3>
+<p>&Idot;lk olarak aktif olan Waydroid i&scedil;lemlerini ve a&gbreve; aray&uuml;zlerini temizlemeniz gerekir. Bu ad&inodot;m &ouml;nceki ba&scedil;ar&inodot;s&inodot;z denemelerden kalan kurallar&inodot; kald&inodot;r&inodot;r:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>/usr/lib/waydroid/data/scripts/waydroid-net.sh<span class="w"> </span>stop
+sudo<span class="w"> </span>pkill<span class="w"> </span>-f<span class="w"> </span>waydroid
+sudo<span class="w"> </span>umount<span class="w"> </span>/var/lib/waydroid/rootfs<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</code></pre></div>
+<p>Bu komutlar s&inodot;ras&inodot;yla; Waydroid a&gbreve; beti&gbreve;ini durdurur, t&uuml;m Waydroid i&scedil;lemlerini kapat&inodot;r ve konteynerin montaj&inodot;n&inodot; kald&inodot;r&inodot;r. Hata al&inodot;rsan&inodot;z endi&scedil;elenmeyin, bu tamamen normaldir.</p>
+<h3 id="adim-2-nft-backendinin-durumunu-kontrol-et">Ad&inodot;m 2: nft Backend'inin Durumunu Kontrol Et</h3>
+<p>Sisteminizin hangi iptables backend'ini kulland&inodot;&gbreve;&inodot;n&inodot; kontrol etmeniz gerekir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>iptables<span class="w"> </span>-V
+</code></pre></div>
+<p>E&gbreve;er &ccedil;&inodot;kt&inodot;da <code>iptables v1.8.x (nf_tables)</code> yaz&inodot;yorsa, nft backend'i zaten aktif durumdad&inodot;r ve bu ad&inodot;m&inodot; atlayabilirsiniz. Ancak &ccedil;&inodot;kt&inodot;da "legacy" yaz&inodot;yorsa, nft'ye ge&ccedil;i&scedil; yapman&inodot;z gerekmektedir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>iptables-nft
+sudo<span class="w"> </span>ln<span class="w"> </span>-sf<span class="w"> </span>/usr/bin/iptables-nft<span class="w"> </span>/usr/bin/iptables
+sudo<span class="w"> </span>ln<span class="w"> </span>-sf<span class="w"> </span>/usr/bin/ip6tables-nft<span class="w"> </span>/usr/bin/ip6tables
+</code></pre></div>
+<p>Bu komutlar iptables-nft paketini kurar ve sistem komutlar&inodot;n&inodot; legacy yerine nft versiyonlar&inodot;yla ba&gbreve;lant&inodot;land&inodot;r&inodot;r.</p>
+<div class="info-box warning">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">Dikkat</div>
+<p>E&gbreve;er sistemde ba&scedil;ka containerlar &ccedil;al&inodot;&scedil;&inodot;yorsa (Docker, Podman vb.), bu ad&inodot;m&inodot; yapmadan &ouml;nce onlar&inodot; da kontrol etmeniz &ouml;nerilir &ccedil;&uuml;nk&uuml; iptables de&gbreve;i&scedil;iklikleri onlar&inodot; etkileyebilir.</p>
+</div>
+</div>
+<h3 id="adim-3-eski-ve-bozuk-kurallari-temizle">Ad&inodot;m 3: Eski ve Bozuk Kurallar&inodot; Temizle</h3>
+<p>&Ouml;nceki Waydroid kurulumlar&inodot;ndan veya ba&scedil;ar&inodot;s&inodot;z denemelerden kalan kurallar&inodot; temizlemelisiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>iptables<span class="w"> </span>-F
+sudo<span class="w"> </span>iptables<span class="w"> </span>-t<span class="w"> </span>nat<span class="w"> </span>-F
+sudo<span class="w"> </span>iptables<span class="w"> </span>-X
+sudo<span class="w"> </span>iptables<span class="w"> </span>-t<span class="w"> </span>nat<span class="w"> </span>-X
+</code></pre></div>
+<p>Bu komutlar firewall kurallar&inodot;n&inodot; s&inodot;f&inodot;rlarlar. <code>-F</code> se&ccedil;ene&gbreve;i kurallar&inodot; siler, <code>-X</code> se&ccedil;ene&gbreve;i ise &ouml;zel zincir kurallar&inodot;n&inodot; kald&inodot;r&inodot;r. <code>nat</code> tablosu internet y&ouml;nlendirmesiyle ilgili kurallar&inodot;d&inodot;r.</p>
+<h3 id="adim-4-waydroid-ag-betigini-baslatmayi-dene">Ad&inodot;m 4: Waydroid A&gbreve; Beti&gbreve;ini Ba&scedil;latmay&inodot; Dene</h3>
+<p>&Scedil;imdi Waydroid a&gbreve; beti&gbreve;ini &ccedil;al&inodot;&scedil;t&inodot;rabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>/usr/lib/waydroid/data/scripts/waydroid-net.sh<span class="w"> </span>start
+</code></pre></div>
+<p>E&gbreve;er bu komut hatas&inodot;z &ccedil;al&inodot;&scedil;&inodot;rsa, bir sonraki ad&inodot;ma ge&ccedil;ebilirsiniz. Ancak h&acirc;l&acirc; "Bad rule" hatas&inodot; al&inodot;yorsan&inodot;z, manuel NAT kurulumu yapman&inodot;z gerekecektir. <a href="/docker-nedir-containerlar">Docker ve konteyner teknolojisi hakk&inodot;nda daha fazla bilgi almak i&ccedil;in yaz&inodot;m&inodot;z&inodot; okuyabilirsiniz</a>.</p>
+<h3 id="adim-5-manuel-nat-kurallari-ekle-calisan-cozum">Ad&inodot;m 5: Manuel NAT Kurallar&inodot; Ekle (&Ccedil;al&inodot;&scedil;an &Ccedil;&ouml;z&uuml;m)</h3>
+<p>Bu ad&inodot;m, iptables uyumsuzlu&gbreve;unu &ccedil;&ouml;zmek i&ccedil;in en etkili ve kal&inodot;c&inodot; y&ouml;ntemdir. A&scedil;a&gbreve;&inodot;daki komutlar&inodot; s&inodot;ras&inodot;yla &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>iptables<span class="w"> </span>-t<span class="w"> </span>nat<span class="w"> </span>-A<span class="w"> </span>POSTROUTING<span class="w"> </span>-s<span class="w"> </span><span class="m">192</span>.168.240.0/24<span class="w"> </span>-o<span class="w"> </span>enp3s0<span class="w"> </span>-j<span class="w"> </span>MASQUERADE
+sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-i<span class="w"> </span>waydroid0<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+sudo<span class="w"> </span>iptables<span class="w"> </span>-A<span class="w"> </span>FORWARD<span class="w"> </span>-o<span class="w"> </span>waydroid0<span class="w"> </span>-m<span class="w"> </span>state<span class="w"> </span>--state<span class="w"> </span>RELATED,ESTABLISHED<span class="w"> </span>-j<span class="w"> </span>ACCEPT
+</code></pre></div>
+<p>Bu komutlar&inodot; a&ccedil;&inodot;klamak gerekirse:</p>
+<p>&Idot;lk komut, Waydroid konteynerinin &ouml;zel a&gbreve; aral&inodot;&gbreve;&inodot;ndan (192.168.240.0/24) gelen trafi&gbreve;i ana sistemin a&gbreve; aray&uuml;z&uuml;ne (enp3s0) y&ouml;nlendirir ve masquerading yaparak internete &ccedil;&inodot;kmas&inodot;n&inodot; sa&gbreve;lar. &Idot;kinci komut, waydroid0 aray&uuml;z&uuml;nden gelen t&uuml;m trafi&gbreve;i kabul eder. &Uuml;&ccedil;&uuml;nc&uuml; komut ise d&inodot;&scedil; a&gbreve;dan gelen cevaplar&inodot; konteyner i&ccedil;ine geri y&ouml;nlendirir.</p>
+<p><strong>&Ouml;nemli Not:</strong> <code>enp3s0</code> de&gbreve;erini kendi aktif a&gbreve; aray&uuml;z&uuml;n&uuml;zle de&gbreve;i&scedil;tirmelisiniz. Hangi aray&uuml;z&uuml; kulland&inodot;&gbreve;&inodot;n&inodot;z&inodot; &ouml;&gbreve;renmek i&ccedil;in &scedil;u komutu &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>ip<span class="w"> </span>a
+</code></pre></div>
+<p>&Ccedil;&inodot;kt&inodot;da internet ba&gbreve;lant&inodot;n&inodot;z olan aray&uuml;z&uuml; bulun. Genellikle <code>eth0</code>, <code>en0</code>, <code>wlan0</code> veya <code>wlp</code> ile ba&scedil;layan isimler olabilir. Bu ad&inodot;m&inodot; do&gbreve;ru yapmazsan&inodot;z Waydroid yine internete &ccedil;&inodot;kamayacakt&inodot;r.</p>
+<div class="info-box tip">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">&Idot;pucu</div>
+<p><strong>A&gbreve; aray&uuml;z&uuml;n&uuml; bulma:</strong> E&gbreve;er WiFi kullan&inodot;yorsan&inodot;z genellikle "wlan" ile ba&scedil;layan isim vard&inodot;r. Kablolu a&gbreve; kullan&inodot;yorsan&inodot;z "eth" veya "enp" ile ba&scedil;layan isim arars&inodot;n&inodot;z. Her durumda `ip a` komutu size t&uuml;m aray&uuml;zleri g&ouml;sterecektir.</p>
+</div>
+</div>
+<h3 id="adim-6-ip-yonlendirmesini-etkinlestir">Ad&inodot;m 6: IP Y&ouml;nlendirmesini Etkinle&scedil;tir</h3>
+<p>Linux sistemin paket y&ouml;nlendirmesini (IP forwarding) aktifle&scedil;tirmeniz gerekmektedir. Bu, bir a&gbreve;dan gelen paketleri ba&scedil;ka bir a&gbreve;a g&ouml;ndermek i&ccedil;in gereklidir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>-w<span class="w"> </span>net.ipv4.ip_forward<span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+<p>Ancak bu ayar sistem yeniden ba&scedil;lat&inodot;ld&inodot;&gbreve;&inodot;nda s&inodot;f&inodot;rlanacakt&inodot;r. Kal&inodot;c&inodot; hale getirmek i&ccedil;in &scedil;u komutu da &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo "net.ipv4.ip_forward=1" &gt; /etc/sysctl.d/99-waydroid.conf'</span>
+</code></pre></div>
+<p>Bu komut, sistemin her ba&scedil;lat&inodot;l&inodot;&scedil;&inodot;nda IP y&ouml;nlendirmesini otomatik olarak aktifle&scedil;tirecek bir yap&inodot;land&inodot;rma dosyas&inodot; olu&scedil;turur. B&ouml;ylece Waydroid sistem yeniden ba&scedil;lat&inodot;ld&inodot;ktan sonra da d&uuml;zg&uuml;n &ccedil;al&inodot;&scedil;maya devam edecektir.</p>
+<h3 id="adim-7-waydroid-konteynerini-yeniden-baslat">Ad&inodot;m 7: Waydroid Konteynerini Yeniden Ba&scedil;lat</h3>
+<p>T&uuml;m ayarlamalardan sonra Waydroid konteynerini yeniden ba&scedil;latman&inodot;z gerekir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>waydroid-container
+sudo<span class="w"> </span>waydroid<span class="w"> </span>status
+</code></pre></div>
+<p>&Idot;kinci komut konteyner durumunu g&ouml;sterecektir. E&gbreve;er ba&scedil;ar&inodot;l&inodot;ysa &scedil;u &ccedil;&inodot;kt&inodot;y&inodot; g&ouml;receksiniz:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>Session: RUNNING
+Vendor type: MAINLINE
+</code></pre></div>
+<p>E&gbreve;er Session'&inodot;n STOPPED g&ouml;r&uuml;nd&uuml;&gbreve;&uuml;n&uuml; g&ouml;r&uuml;rseniz, hatalar i&ccedil;in kontrol etmek amac&inodot;yla Ad&inodot;m 8'e ge&ccedil;meden &ouml;nce <a href="/linux-sistem-yonetimi">Linux sistem y&ouml;netimi rehberimize</a> g&ouml;z atman&inodot;z faydal&inodot; olabilir.</p>
+<h3 id="adim-8-internet-baglantisini-test-et">Ad&inodot;m 8: &Idot;nternet Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et</h3>
+<p>Art&inodot;k Waydroid i&ccedil;inde internet ba&gbreve;lant&inodot;s&inodot;n&inodot;n &ccedil;al&inodot;&scedil;&inodot;p &ccedil;al&inodot;&scedil;mad&inodot;&gbreve;&inodot;n&inodot; test edebilirsiniz. Ping komutlar&inodot;yla ba&gbreve;lant&inodot;y&inodot; kontrol edin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>waydroid<span class="w"> </span>shell<span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">8</span>.8.8.8
+</code></pre></div>
+<p>Alternatif olarak bir alan ad&inodot; ile de test edebilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>waydroid<span class="w"> </span>shell<span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span>google.com
+</code></pre></div>
+<p>E&gbreve;er ping cevap al&inodot;yorsa (3 sat&inodot;r &ccedil;&inodot;kt&inodot; g&ouml;r&uuml;yorsa), Waydroid i&ccedil;inde internet ba&gbreve;lant&inodot;s&inodot; ba&scedil;ar&inodot;l&inodot; demektir. &Scedil;imdi Android aray&uuml;z&uuml; a&ccedil;&inodot;lacak ve sistem ba&scedil;ar&inodot;yla boot olacakt&inodot;r. Logolar ge&ccedil;ecek, sistem a&ccedil;&inodot;lacak ve uygulamalar&inodot; kullanabileceksiniz. <a href="/linux-container-optimizasyonu">Waydroid kurulumundan sonra performans optimizasyonu i&ccedil;in konteyner y&ouml;netimi makalemizi</a> inceleyebilirsiniz.</p>
+<h2 id="ekstra-bilgiler-ve-ipuclari_1">Ekstra Bilgiler ve &Idot;pu&ccedil;lar&inodot;</h2>
+<p>Kurulum s&inodot;ras&inodot;nda veya sonras&inodot;nda ba&scedil;ka sorunlarla kar&scedil;&inodot;la&scedil;abilirsiniz. Bunlar&inodot;n &ccedil;&ouml;z&uuml;mlerini burada bulabilirsiniz.</p>
+<p><strong>Waydroid init hatas&inodot; al&inodot;yorsan&inodot;z:</strong></p>
+<p>E&gbreve;er <code>sudo waydroid init</code> s&inodot;ras&inodot;nda hatalarla kar&scedil;&inodot;la&scedil;&inodot;rsan&inodot;z, detayl&inodot; &ccedil;&inodot;kt&inodot; g&ouml;rmek faydal&inodot; olacakt&inodot;r:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>waydroid<span class="w"> </span>--details-to-stdout<span class="w"> </span>init
+</code></pre></div>
+<p>Bu komut, ba&scedil;latma s&inodot;ras&inodot;nda neler oldu&gbreve;unu ad&inodot;m ad&inodot;m g&ouml;sterecek ve hatan&inodot;n neresinde oldu&gbreve;unu anlayabilmenizi sa&gbreve;layacakt&inodot;r.</p>
+<p><strong>NAT kurallar&inodot; kal&inodot;c&inodot; hale getirmek:</strong></p>
+<p>Kurdu&gbreve;unuz NAT kurallar&inodot; sistem yeniden ba&scedil;lat&inodot;ld&inodot;&gbreve;&inodot;nda kaybolabilir. Kal&inodot;c&inodot; hale getirmek i&ccedil;in <code>iptables-save</code> komutunu kullanabilirsiniz. Daha detayl&inodot; bilgi i&ccedil;in <a href="/linux-firewall-ayarlar&inodot;">Linux firewall yap&inodot;land&inodot;rmas&inodot; makalemizi</a> okuman&inodot;z &ouml;nerilir.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>iptables-save<span class="w"> </span>&gt;<span class="w"> </span>/etc/iptables/iptables.rules
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>iptables
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>iptables
+</code></pre></div>
+<p>Bu komutlar firewall kurallar&inodot;n&inodot; kaydeder ve sistem ba&scedil;lang&inodot;c&inodot;nda otomatik olarak y&uuml;klemesini sa&gbreve;lar.</p>
+<h2 id="sorunlar-ozet-tablosu">Sorunlar &Ouml;zet Tablosu</h2>
+<p>Yayg&inodot;n sorunlar ve h&inodot;zl&inodot; &ccedil;&ouml;z&uuml;mleri &scedil;&ouml;yledir: Android logosunda tak&inodot;lma, genellikle NAT kurulumunun ger&ccedil;ekle&scedil;memesinden kaynaklan&inodot;r. Bu durumda d&ouml;rd&uuml;nc&uuml; ad&inodot;ma d&ouml;nerek iptables-nft NAT kurallar&inodot;n&inodot; manuel olarak eklemeyi deneyin. "Bad rule" hatas&inodot; al&inodot;yorsan&inodot;z, nft backend'inin eski scriptlerle uyumsuz oldu&gbreve;u anlam&inodot;na gelir ve elle NAT olu&scedil;turmak &ouml;nerilen &ccedil;&ouml;z&uuml;md&uuml;r. Waydroid.log dosyas&inodot; eksikse veya bulunam&inodot;yorsa, <code>sudo waydroid init</code> komutuyla dizinleri yeniden olu&scedil;turmay&inodot; deneyin. IP forwarding a&ccedil;&inodot;lmam&inodot;&scedil;sa, konteyner internete eri&scedil;emez ve alt&inodot;nc&inodot; ad&inodot;m&inodot; kontrol edin.</p>
+<h2 id="sonuc-ve-sonraki-adimlar">Sonu&ccedil; ve Sonraki Ad&inodot;mlar</h2>
+<p>Bu makalede &ouml;&gbreve;rendi&gbreve;iniz &ccedil;&ouml;z&uuml;mler sayesinde Waydroid'de internetin &ccedil;al&inodot;&scedil;mas&inodot;n&inodot; ve Android sisteminin d&uuml;zg&uuml;n a&ccedil;&inodot;lmas&inodot;n&inodot; sa&gbreve;layabileceksiniz. Arch Linux'ta Waydroid sorunlar&inodot; neredeyse her zaman bu ad&inodot;mlarla &ccedil;&ouml;z&uuml;lebilir. Sistem yeniden ba&scedil;lat&inodot;ld&inodot;&gbreve;&inodot;nda kurallar kaybolmamas&inodot; i&ccedil;in IP forwarding ayar&inodot;n&inodot; ve NAT kurallar&inodot;n&inodot; kal&inodot;c&inodot; hale getirdi&gbreve;inizden emin olun.</p>
+<p>Waydroid tam olarak &ccedil;al&inodot;&scedil;t&inodot;ktan sonra, sisteminizi optimize etmek isteyebilirsiniz. <a href="/linux-container-optimizasyonu">Linux konteyner optimizasyonu rehberimizi</a> okuyarak performans&inodot; artt&inodot;rabilirsiniz. Ayr&inodot;ca <a href="/docker-vs-waydroid-karsilastirma">Docker ve Waydroid gibi konteyner teknolojilerinin farklar&inodot; hakk&inodot;nda daha fazla bilgi edinmek i&ccedil;in yaz&inodot;m&inodot;z&inodot; ziyaret edin</a>. Herhangi bir sorunda bu makalenin ad&inodot;mlar&inodot;n&inodot; tekrar g&ouml;zden ge&ccedil;irin ve kontrol listesini kullanarak do&gbreve;ru yapt&inodot;&gbreve;&inodot;n&inodot;z&inodot; teyit edin.</p>
+<p>Ba&scedil;ar&inodot;lar dilerim! Waydroid'in tam olarak &ccedil;al&inodot;&scedil;maya ba&scedil;lam&inodot;&scedil;sa, Linux &uuml;zerinizde Android uygulamalar&inodot;n&inodot; sorunsuz &scedil;ekilde kullanabileceksiniz.</p></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/&text=Arch Linux'ta Waydroid İnternet Sorunu Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/&title=Arch Linux'ta Waydroid İnternet Sorunu Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/&text=Arch Linux'ta Waydroid İnternet Sorunu Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=Arch Linux'ta Waydroid İnternet Sorunu Çözümü https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=Arch Linux'ta Waydroid İnternet Sorunu Çözümü&body=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/&description=Arch Linux'ta Waydroid İnternet Sorunu Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/&title=Arch Linux'ta Waydroid İnternet Sorunu Çözümü"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=Arch Linux'ta Waydroid İnternet Sorunu Çözümü%20-%20https://yuceltoluyag.github.io/drafts/arch-linux-waydroid-internet-sorunu-cozumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a boot="" class="toc-href" href="#arch-linuxta-waydroid-internet-ve-boot-sorununun-cozumu" i̇nternet="" sorununun="" ta="" title="Arch Linux" ve="" waydroid="" çözümü'="">Arch Linux'ta Waydroid &Idot;nternet ve Boot Sorununun &Ccedil;&ouml;z&uuml;m&uuml;</a><ul><li><a class="toc-href" href="#waydroid-nedir-ve-neden-kullanmaliyiz" title="Waydroid Nedir ve Neden Kullanmal&inodot;y&inodot;z?">Waydroid Nedir ve Neden Kullanmal&inodot;y&inodot;z?</a></li><li><a class="toc-href" href="#sorunun-belirtileri-nelerdir" title="Sorunun Belirtileri Nelerdir?">Sorunun Belirtileri Nelerdir?</a></li><li><a class="toc-href" href="#isin-icinde-neler-var-teknik-aciklama" title="&Idot;&scedil;in I&ccedil;inde Neler Var? Teknik A&ccedil;&inodot;klama">&Idot;&scedil;in I&ccedil;inde Neler Var? Teknik A&ccedil;&inodot;klama</a></li><li><a class="toc-href" href="#cozum-adimlari-waydroidi-calistirmak" i="" title="&Ccedil;&ouml;z&uuml;m Ad&inodot;mlar&inodot;: Waydroid" çalıştırmak'="">&Ccedil;&ouml;z&uuml;m Ad&inodot;mlar&inodot;: Waydroid'i &Ccedil;al&inodot;&scedil;t&inodot;rmak</a><ul><li><a class="toc-href" href="#adim-1-mevcut-yapilandirmayi-temizle" title="Ad&inodot;m 1: Mevcut Yap&inodot;land&inodot;rmay&inodot; Temizle">Ad&inodot;m 1: Mevcut Yap&inodot;land&inodot;rmay&inodot; Temizle</a></li><li><a class="toc-href" durumunu="" et'="" href="#adim-2-nft-backendinin-durumunu-kontrol-et" inin="" kontrol="" title="Ad&inodot;m 2: nft Backend">Ad&inodot;m 2: nft Backend'inin Durumunu Kontrol Et</a></li><li><a class="toc-href" href="#adim-3-eski-ve-bozuk-kurallari-temizle" title="Ad&inodot;m 3: Eski ve Bozuk Kurallar&inodot; Temizle">Ad&inodot;m 3: Eski ve Bozuk Kurallar&inodot; Temizle</a></li><li><a class="toc-href" href="#adim-4-waydroid-ag-betigini-baslatmayi-dene" title="Ad&inodot;m 4: Waydroid A&gbreve; Beti&gbreve;ini Ba&scedil;latmay&inodot; Dene">Ad&inodot;m 4: Waydroid A&gbreve; Beti&gbreve;ini Ba&scedil;latmay&inodot; Dene</a></li><li><a class="toc-href" href="#adim-5-manuel-nat-kurallari-ekle-calisan-cozum" title="Ad&inodot;m 5: Manuel NAT Kurallar&inodot; Ekle (&Ccedil;al&inodot;&scedil;an &Ccedil;&ouml;z&uuml;m)">Ad&inodot;m 5: Manuel NAT Kurallar&inodot; Ekle (&Ccedil;al&inodot;&scedil;an &Ccedil;&ouml;z&uuml;m)</a></li><li><a class="toc-href" href="#adim-6-ip-yonlendirmesini-etkinlestir" title="Ad&inodot;m 6: IP Y&ouml;nlendirmesini Etkinle&scedil;tir">Ad&inodot;m 6: IP Y&ouml;nlendirmesini Etkinle&scedil;tir</a></li><li><a class="toc-href" href="#adim-7-waydroid-konteynerini-yeniden-baslat" title="Ad&inodot;m 7: Waydroid Konteynerini Yeniden Ba&scedil;lat">Ad&inodot;m 7: Waydroid Konteynerini Yeniden Ba&scedil;lat</a></li><li><a class="toc-href" href="#adim-8-internet-baglantisini-test-et" title="Ad&inodot;m 8: &Idot;nternet Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et">Ad&inodot;m 8: &Idot;nternet Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et</a></li></ul></li><li><a class="toc-href" href="#ekstra-bilgiler-ve-ipuclari_1" title="Ekstra Bilgiler ve &Idot;pu&ccedil;lar&inodot;">Ekstra Bilgiler ve &Idot;pu&ccedil;lar&inodot;</a></li><li><a class="toc-href" href="#sorunlar-ozet-tablosu" title="Sorunlar &Ouml;zet Tablosu">Sorunlar &Ouml;zet Tablosu</a></li><li><a class="toc-href" href="#sonuc-ve-sonraki-adimlar" title="Sonu&ccedil; ve Sonraki Ad&inodot;mlar">Sonu&ccedil; ve Sonraki Ad&inodot;mlar</a></li></ul></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/archlinux-valkey-redis-kurulumu-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/" />
+<meta property="og:title" content="Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-08-17T07:30:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Linux" />
+  <meta property="article:tag" content="redis" />
+<meta property="article:tag" content="valkey" />
+<meta property="article:tag" content="archlinux" />
+<meta property="article:tag" content="cache" />
+<meta property="article:tag" content="message broker" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Arch Linux üzerinde Redis'in özgür alternatifi Valkey’in nasıl kurulacağını, yapılandırılacağını ve yaygın hataların nasıl çözüleceğini adım adım öğrenin." />
+<meta property="og:description" content="Arch Linux üzerinde Redis'in özgür alternatifi Valkey’in nasıl kurulacağını, yapılandırılacağını ve yaygın hataların nasıl çözüleceğini adım adım öğrenin." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu",
+        "description": "Arch Linux üzerinde Redis'in özgür alternatifi Valkey’in nasıl kurulacağını, yapılandırılacağını ve yaygın hataların nasıl çözüleceğini adım adım öğrenin.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-08-17T07:30:00+03:00",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/"
+        },
+"articleSection": "Linux","keywords": "redis, valkey, archlinux, cache, message broker",        "url": "https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/",
+"image": "https://yuceltoluyag.github.io/images/archlinux-valkey-redis-kurulumu-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#giris-redis-mi-valkey-mi" title="Giri&scedil;: Redis mi, Valkey mi? 🤔">Giri&scedil;: Redis mi, Valkey mi? 🤔</a></li><li><a class="toc-href" href="#1-valkey-kurulumu" title="1. Valkey Kurulumu 🚀">1. Valkey Kurulumu 🚀</a><ul><li><a class="toc-href" href="#adim-1-paket-kurulumu" title="Ad&inodot;m 1: Paket kurulumu">Ad&inodot;m 1: Paket kurulumu</a></li><li><a class="toc-href" href="#adim-2-servisi-baslatmak-ve-aktiflestirmek" title="Ad&inodot;m 2: Servisi ba&scedil;latmak ve aktifle&scedil;tirmek">Ad&inodot;m 2: Servisi ba&scedil;latmak ve aktifle&scedil;tirmek</a></li></ul></li><li><a class="toc-href" href="#2-valkey-istemcileri_1" title="2. Valkey &Idot;stemcileri 🔌">2. Valkey &Idot;stemcileri 🔌</a></li><li><a class="toc-href" href="#3-valkey-yapilandirmasi" title="3. Valkey Yap&inodot;land&inodot;rmas&inodot; ⚙️">3. Valkey Yap&inodot;land&inodot;rmas&inodot; ⚙️</a><ul><li><a class="toc-href" href="#port-ayari" title="Port ayar&inodot;">Port ayar&inodot;</a></li><li><a class="toc-href" href="#unix-socket-ile-calistirmak" title="Unix Socket ile &Ccedil;al&inodot;&scedil;t&inodot;rmak 🔒">Unix Socket ile &Ccedil;al&inodot;&scedil;t&inodot;rmak 🔒</a></li></ul></li><li><a class="toc-href" href="#4-yaygin-sorunlar-ve-cozumleri_1" title="4. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mleri 🛠️">4. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mleri 🛠️</a><ul><li><a class="toc-href" href="#transparent-huge-pages-thp-uyarisi" title="Transparent Huge Pages (THP) Uyar&inodot;s&inodot;">Transparent Huge Pages (THP) Uyar&inodot;s&inodot;</a></li><li><a class="toc-href" href="#tcp-backlog-hatasi" title="TCP Backlog Hatas&inodot;">TCP Backlog Hatas&inodot;</a></li><li><a class="toc-href" href="#overcommit-memory-uyarisi" title="Overcommit Memory Uyar&inodot;s&inodot;">Overcommit Memory Uyar&inodot;s&inodot;</a></li></ul></li><li><a class="toc-href" href="#5-kullanisli-ipuclari_1" title="5. Kullan&inodot;&scedil;l&inodot; &Idot;pu&ccedil;lar&inodot; ✨">5. Kullan&inodot;&scedil;l&inodot; &Idot;pu&ccedil;lar&inodot; ✨</a><ul><li><a class="toc-href" href="#51-otomatik-tamamlama-zsh" title="5.1 Otomatik Tamamlama (Zsh)">5.1 Otomatik Tamamlama (Zsh)</a></li><li><a class="toc-href" href="#52-clide-temel-komutlar" title="5.2 CLI&rsquo;de Temel Komutlar">5.2 CLI&rsquo;de Temel Komutlar</a></li></ul></li><li><a class="toc-href" href="#6-gercek-hayatta-kullanim-senaryolari_1" title="6. Ger&ccedil;ek Hayatta Kullan&inodot;m Senaryolar&inodot; 💡">6. Ger&ccedil;ek Hayatta Kullan&inodot;m Senaryolar&inodot; 💡</a></li><li><a class="toc-href" href="#sonuc" title="Sonu&ccedil; 🎯">Sonu&ccedil; 🎯</a></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/playwright-arch-linux-kurulum/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde Playwright Kurulumu: Adım Adım Rehber 🐧</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ghostmirror-arch-linux-kullanimi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Rehber: Arch Linux'ta GhostMirror Kullanımı</h4>
+                                    </a>
+                                </div>
+                                       </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-08-17T07:30:00+03:00" class="ml-1">
+                                    17 August 2025
+                                </time>
+                            </div>
+
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/linux/"
+                                    class="link link-hover ml-1">
+                                    Linux
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">625 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">3 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 6.64</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/archlinux-valkey-redis-kurulumu.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><h2 id="giris-redis-mi-valkey-mi">Giri&scedil;: Redis mi, Valkey mi? 🤔</h2>
+<p>Son zamanlarda <strong>Redis Inc. lisans de&gbreve;i&scedil;ikli&gbreve;i</strong> yapt&inodot; ve bu da a&ccedil;&inodot;k kaynak d&uuml;nyas&inodot;nda tart&inodot;&scedil;malara yol a&ccedil;t&inodot;. Topluluk da bo&scedil; durmad&inodot; ve <strong>Valkey</strong> ad&inodot;nda &ouml;zg&uuml;r, topluluk odakl&inodot; bir fork olu&scedil;turdu.  </p>
+<p>Valkey asl&inodot;nda Redis&rsquo;in birebir alternatifi diyebilece&gbreve;imiz bir yaz&inodot;l&inodot;m:  </p>
+<ul>
+<li><strong>Bellek i&ccedil;i veritaban&inodot;</strong> 🧠  </li>
+<li><strong>Da&gbreve;&inodot;t&inodot;k cache sistemi</strong> ⚡  </li>
+<li><strong>Mesaj kuyru&gbreve;u &amp; broker</strong> 📬  </li>
+</ul>
+<p>E&gbreve;er daha &ouml;nce Redis kulland&inodot;ysan&inodot;z, Valkey&rsquo;i hi&ccedil; zorlanmadan kullanabilirsiniz. Bu yaz&inodot;da Arch Linux &uuml;zerinde Valkey kurulumu, yap&inodot;land&inodot;rmas&inodot; ve yayg&inodot;n sorunlar&inodot;n &ccedil;&ouml;z&uuml;m&uuml;n&uuml; ad&inodot;m ad&inodot;m anlataca&gbreve;&inodot;m.<br/>
+<img alt="Arch Linux Valkey Kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/archlinux-valkey-redis-kurulumu-xl.webp" srcset="/images/archlinux-valkey-redis-kurulumu-sm.webp 300w, /images/archlinux-valkey-redis-kurulumu-md.webp 500w, /images/archlinux-valkey-redis-kurulumu-xl.webp 800w, /images/archlinux-valkey-redis-kurulumu-xl.webp 1200w"/></p>
+<hr/>
+<h2 id="1-valkey-kurulumu">1. Valkey Kurulumu 🚀</h2>
+<p>Arch Linux kullan&inodot;yorsan&inodot;z i&scedil;iniz &ccedil;ok kolay &ccedil;&uuml;nk&uuml; Valkey resmi depolarda mevcut.  </p>
+<h3 id="adim-1-paket-kurulumu">Ad&inodot;m 1: Paket kurulumu</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>valkey
+</code></pre></div>
+<h3 id="adim-2-servisi-baslatmak-ve-aktiflestirmek">Ad&inodot;m 2: Servisi ba&scedil;latmak ve aktifle&scedil;tirmek</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>valkey.service
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>valkey.service
+</code></pre></div>
+<p>Durumu kontrol etmek i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>valkey.service
+</code></pre></div>
+<p>Ye&scedil;il bir <code>active (running)</code> g&ouml;r&uuml;yorsan&inodot;z, Valkey ba&scedil;ar&inodot;yla &ccedil;al&inodot;&scedil;&inodot;yor demektir. 🎉</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="o">[</span>friday13@baba<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>valkey.service<span class="w">  </span>
+●<span class="w"> </span>valkey.service<span class="w"> </span>-<span class="w"> </span>Advanced<span class="w"> </span>key-value<span class="w"> </span>store
+<span class="w">     </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/usr/lib/systemd/system/valkey.service<span class="p">;</span><span class="w"> </span>enabled<span class="p">;</span><span class="w"> </span>preset:<span class="w"> </span>disabled<span class="o">)</span>
+<span class="w">     </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Fri<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">15</span>:49:17<span class="w"> </span>+03<span class="p">;</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>day<span class="w"> </span>15h<span class="w"> </span>ago
+<span class="w"> </span>Invocation:<span class="w"> </span>c53b3b13df024fc8ab004eaf48d3754a
+<span class="w">   </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">220586</span><span class="w"> </span><span class="o">(</span>valkey-server<span class="o">)</span>
+<span class="w">     </span>Status:<span class="w"> </span><span class="s2">"Ready to accept connections"</span>
+<span class="w">      </span>Tasks:<span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="o">(</span>limit:<span class="w"> </span><span class="m">18627</span><span class="o">)</span>
+<span class="w">     </span>Memory:<span class="w"> </span><span class="m">4</span>.3M<span class="w"> </span><span class="o">(</span>peak:<span class="w"> </span><span class="m">7</span>.5M,<span class="w"> </span>swap:<span class="w"> </span><span class="m">1</span>.9M,<span class="w"> </span>swap<span class="w"> </span>peak:<span class="w"> </span><span class="m">2</span>.2M<span class="o">)</span>
+<span class="w">        </span>CPU:<span class="w"> </span>2min<span class="w"> </span><span class="m">52</span>.383s
+<span class="w">     </span>CGroup:<span class="w"> </span>/system.slice/valkey.service
+<span class="w">             </span>&boxur;&boxh;220586<span class="w"> </span><span class="s2">"/usr/bin/valkey-server 127.0.0.1:6379"</span>
+
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">06</span>:45:05<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">220586</span><span class="o">]</span>:<span class="w"> </span><span class="m">220586</span>:M<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">06</span>:45:05.283<span class="w"> </span>*<span class="w"> </span><span class="m">100</span><span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">300</span><span class="w"> </span>seconds.<span class="w"> </span>Saving...
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">06</span>:45:05<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">220586</span><span class="o">]</span>:<span class="w"> </span><span class="m">220586</span>:M<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">06</span>:45:05.283<span class="w"> </span>*<span class="w"> </span>Background<span class="w"> </span>saving<span class="w"> </span>started<span class="w"> </span>by<span class="w"> </span>pid<span class="w"> </span><span class="m">1097543</span>
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">06</span>:45:05<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">1097543</span><span class="o">]</span>:<span class="w"> </span><span class="m">1097543</span>:C<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">06</span>:45:05.288<span class="w"> </span>*<span class="w"> </span>DB<span class="w"> </span>saved<span class="w"> </span>on<span class="w"> </span>disk
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">06</span>:45:05<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">1097543</span><span class="o">]</span>:<span class="w"> </span><span class="m">1097543</span>:C<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">06</span>:45:05.288<span class="w"> </span>*<span class="w"> </span>Fork<span class="w"> </span>CoW<span class="w"> </span><span class="k">for</span><span class="w"> </span>RDB:<span class="w"> </span>current<span class="w"> </span><span class="m">0</span><span class="w"> </span>MB,<span class="w"> </span>peak<span class="w"> </span><span class="m">0</span><span class="w"> </span>MB,<span class="w"> </span>average<span class="w"> </span><span class="m">0</span><span class="w"> </span>MB
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">06</span>:45:05<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">220586</span><span class="o">]</span>:<span class="w"> </span><span class="m">220586</span>:M<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">06</span>:45:05.384<span class="w"> </span>*<span class="w"> </span>Background<span class="w"> </span>saving<span class="w"> </span>terminated<span class="w"> </span>with<span class="w"> </span>success
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">07</span>:20:02<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">220586</span><span class="o">]</span>:<span class="w"> </span><span class="m">220586</span>:M<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">07</span>:20:02.485<span class="w"> </span>*<span class="w"> </span><span class="m">100</span><span class="w"> </span>changes<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">300</span><span class="w"> </span>seconds.<span class="w"> </span>Saving...
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">07</span>:20:02<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">220586</span><span class="o">]</span>:<span class="w"> </span><span class="m">220586</span>:M<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">07</span>:20:02.485<span class="w"> </span>*<span class="w"> </span>Background<span class="w"> </span>saving<span class="w"> </span>started<span class="w"> </span>by<span class="w"> </span>pid<span class="w"> </span><span class="m">1107674</span>
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">07</span>:20:02<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">1107674</span><span class="o">]</span>:<span class="w"> </span><span class="m">1107674</span>:C<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">07</span>:20:02.488<span class="w"> </span>*<span class="w"> </span>DB<span class="w"> </span>saved<span class="w"> </span>on<span class="w"> </span>disk
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">07</span>:20:02<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">1107674</span><span class="o">]</span>:<span class="w"> </span><span class="m">1107674</span>:C<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">07</span>:20:02.488<span class="w"> </span>*<span class="w"> </span>Fork<span class="w"> </span>CoW<span class="w"> </span><span class="k">for</span><span class="w"> </span>RDB:<span class="w"> </span>current<span class="w"> </span><span class="m">0</span><span class="w"> </span>MB,<span class="w"> </span>peak<span class="w"> </span><span class="m">0</span><span class="w"> </span>MB,<span class="w"> </span>average<span class="w"> </span><span class="m">0</span><span class="w"> </span>MB
+A&gbreve;u<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">07</span>:20:02<span class="w"> </span>baba<span class="w"> </span>valkey-server<span class="o">[</span><span class="m">220586</span><span class="o">]</span>:<span class="w"> </span><span class="m">220586</span>:M<span class="w"> </span><span class="m">17</span><span class="w"> </span>Aug<span class="w"> </span><span class="m">2025</span><span class="w"> </span><span class="m">07</span>:20:02.585<span class="w"> </span>*<span class="w"> </span>Background<span class="w"> </span>saving<span class="w"> </span>terminated<span class="w"> </span>with<span class="w"> </span>success
+</code></pre></div>
+<hr/>
+<h2 id="2-valkey-istemcileri_1">2. Valkey &Idot;stemcileri 🔌</h2>
+<p>Valkey&rsquo;i kullanacak uygulamalar i&ccedil;in istemci k&uuml;t&uuml;phaneleri gerekir. &Ouml;ne &ccedil;&inodot;kanlar:</p>
+<ul>
+<li><strong>Python:</strong> <code>python-redis</code></li>
+<li><strong>PHP:</strong> <code>php-redis</code></li>
+<li><strong>C:</strong> <code>hiredis</code></li>
+</ul>
+<p>&Ouml;rne&gbreve;in Python i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>python-redis
+</code></pre></div>
+<p>CLI &uuml;zerinden test:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>valkey-cli
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span><span class="nb">set</span><span class="w"> </span>foo<span class="w"> </span><span class="s2">"merhaba"</span>
+OK
+<span class="m">127</span>.0.0.1:6379&gt;<span class="w"> </span>get<span class="w"> </span>foo
+<span class="s2">"merhaba"</span>
+</code></pre></div>
+<hr/>
+<h2 id="3-valkey-yapilandirmasi">3. Valkey Yap&inodot;land&inodot;rmas&inodot; ⚙️</h2>
+<p>Ayar dosyas&inodot;:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>/etc/valkey/valkey.conf
+</code></pre></div>
+<h3 id="port-ayari">Port ayar&inodot;</h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>port 6379
+</code></pre></div>
+<p>TCP ba&gbreve;lant&inodot;s&inodot;n&inodot; kapatmak i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>port 0
+</code></pre></div>
+<hr/>
+<h3 id="unix-socket-ile-calistirmak">Unix Socket ile &Ccedil;al&inodot;&scedil;t&inodot;rmak 🔒</h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>unixsocket /run/valkey/valkey.sock
+unixsocketperm 770
+</code></pre></div>
+<p>Sonras&inodot;nda kullan&inodot;c&inodot; ekleme:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>valkey<span class="w"> </span>http
+sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>valkey<span class="w"> </span>git
+</code></pre></div>
+<p>Servisi yeniden ba&scedil;lat&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>valkey.service
+</code></pre></div>
+<hr/>
+<h2 id="4-yaygin-sorunlar-ve-cozumleri_1">4. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mleri 🛠️</h2>
+<h3 id="transparent-huge-pages-thp-uyarisi">Transparent Huge Pages (THP) Uyar&inodot;s&inodot;</h3>
+<div class="info-box warning">
+<div>
+<div class="alert-title">Uyar&inodot;</div>
+<p>THP a&ccedil;&inodot;k kal&inodot;rsa Valkey performans sorunlar&inodot;na yol a&ccedil;abilir.</p>
+</div>
+</div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/tmpfiles.d/valkey.conf
+</code></pre></div>
+<p>&Idot;&ccedil;erik:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>w /sys/kernel/mm/transparent_hugepage/enabled - - - - never
+w /sys/kernel/mm/transparent_hugepage/defrag - - - - never
+</code></pre></div>
+<hr/>
+<h3 id="tcp-backlog-hatasi">TCP Backlog Hatas&inodot;</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/sysctl.d/99-sysctl.conf
+</code></pre></div>
+<p>Ekle:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>net.core.somaxconn=512
+</code></pre></div>
+<p>Uygula:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>sysctl<span class="w"> </span>--system
+</code></pre></div>
+<hr/>
+<h3 id="overcommit-memory-uyarisi">Overcommit Memory Uyar&inodot;s&inodot;</h3>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>vm.overcommit_memory=1
+</code></pre></div>
+<p>Ayn&inodot; &scedil;ekilde <code>99-sysctl.conf</code> i&ccedil;ine ekleyebilirsiniz.</p>
+<hr/>
+<h2 id="5-kullanisli-ipuclari_1">5. Kullan&inodot;&scedil;l&inodot; &Idot;pu&ccedil;lar&inodot; ✨</h2>
+<h3 id="51-otomatik-tamamlama-zsh">5.1 Otomatik Tamamlama (Zsh)</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>compdef<span class="w"> </span><span class="s1">'_dispatch redis-cli_completion redis-cli'</span><span class="w"> </span>valkey-cli
+</code></pre></div>
+<p>Bunu <code>~/.zshrc</code> dosyan&inodot;za ekleyin.</p>
+<p>E&gbreve;er zsh nedir bilmiyorsan&inodot;z &scedil;u yaz&inodot;ya g&ouml;z atabilirsiniz: <a href="/oh-my-zsh-kurulumu-tema-ve-eklentiler/">Oh My ZSH Kurulumu (Tema ve Eklentiler Dahil)</a></p>
+<hr/>
+<h3 id="52-clide-temel-komutlar">5.2 CLI&rsquo;de Temel Komutlar</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">set</span><span class="w"> </span>key<span class="w"> </span><span class="s2">"value"</span><span class="w">   </span><span class="c1"># De&gbreve;er kaydet</span>
+get<span class="w"> </span>key<span class="w">           </span><span class="c1"># De&gbreve;eri al</span>
+del<span class="w"> </span>key<span class="w">           </span><span class="c1"># Anahtar&inodot; sil</span>
+keys<span class="w"> </span>*<span class="w">            </span><span class="c1"># T&uuml;m anahtarlar&inodot; listele</span>
+flushall<span class="w">          </span><span class="c1"># T&uuml;m verileri sil</span>
+</code></pre></div>
+<hr/>
+<h2 id="6-gercek-hayatta-kullanim-senaryolari_1">6. Ger&ccedil;ek Hayatta Kullan&inodot;m Senaryolar&inodot; 💡</h2>
+<ul>
+<li><strong>Cache sistemi:</strong> Veritaban&inodot; sorgular&inodot;n&inodot; h&inodot;zland&inodot;rma.</li>
+<li><strong>Oturum y&ouml;netimi:</strong> Kullan&inodot;c&inodot; oturumlar&inodot;n&inodot; tutma.</li>
+<li><strong>Mesaj kuyru&gbreve;u:</strong> Mikro servisler aras&inodot;nda ileti&scedil;im.</li>
+<li><strong>Saya&ccedil;lar:</strong> Ziyaret&ccedil;i, be&gbreve;eni vb. ger&ccedil;ek zamanl&inodot; saya&ccedil;lar.</li>
+</ul>
+<hr/>
+<h2 id="sonuc">Sonu&ccedil; 🎯</h2>
+<p>Bu yaz&inodot;da Arch Linux &uuml;zerinde <strong>Valkey (Redis alternatifi)</strong> kurulumu, yap&inodot;land&inodot;rmas&inodot;, istemci k&uuml;t&uuml;phaneleri ve s&inodot;k kar&scedil;&inodot;la&scedil;&inodot;lan sorunlar&inodot;n &ccedil;&ouml;z&uuml;m&uuml;n&uuml; ad&inodot;m ad&inodot;m &ouml;&gbreve;rendiniz.</p>
+<p>Art&inodot;k Valkey&rsquo;i hem geli&scedil;tirme ortam&inodot;n&inodot;zda hem de &uuml;retim sunucular&inodot;n&inodot;zda g&ouml;n&uuml;l rahatl&inodot;&gbreve;&inodot;yla kullanabilirsiniz. 💚</p>
+<hr/></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/&text=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/&title=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/&text=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu&body=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/&description=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu&media=https://yuceltoluyag.github.io/images/archlinux-valkey-redis-kurulumu-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/&title=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu%20-%20https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#giris-redis-mi-valkey-mi" title="Giri&scedil;: Redis mi, Valkey mi? 🤔">Giri&scedil;: Redis mi, Valkey mi? 🤔</a></li><li><a class="toc-href" href="#1-valkey-kurulumu" title="1. Valkey Kurulumu 🚀">1. Valkey Kurulumu 🚀</a><ul><li><a class="toc-href" href="#adim-1-paket-kurulumu" title="Ad&inodot;m 1: Paket kurulumu">Ad&inodot;m 1: Paket kurulumu</a></li><li><a class="toc-href" href="#adim-2-servisi-baslatmak-ve-aktiflestirmek" title="Ad&inodot;m 2: Servisi ba&scedil;latmak ve aktifle&scedil;tirmek">Ad&inodot;m 2: Servisi ba&scedil;latmak ve aktifle&scedil;tirmek</a></li></ul></li><li><a class="toc-href" href="#2-valkey-istemcileri_1" title="2. Valkey &Idot;stemcileri 🔌">2. Valkey &Idot;stemcileri 🔌</a></li><li><a class="toc-href" href="#3-valkey-yapilandirmasi" title="3. Valkey Yap&inodot;land&inodot;rmas&inodot; ⚙️">3. Valkey Yap&inodot;land&inodot;rmas&inodot; ⚙️</a><ul><li><a class="toc-href" href="#port-ayari" title="Port ayar&inodot;">Port ayar&inodot;</a></li><li><a class="toc-href" href="#unix-socket-ile-calistirmak" title="Unix Socket ile &Ccedil;al&inodot;&scedil;t&inodot;rmak 🔒">Unix Socket ile &Ccedil;al&inodot;&scedil;t&inodot;rmak 🔒</a></li></ul></li><li><a class="toc-href" href="#4-yaygin-sorunlar-ve-cozumleri_1" title="4. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mleri 🛠️">4. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mleri 🛠️</a><ul><li><a class="toc-href" href="#transparent-huge-pages-thp-uyarisi" title="Transparent Huge Pages (THP) Uyar&inodot;s&inodot;">Transparent Huge Pages (THP) Uyar&inodot;s&inodot;</a></li><li><a class="toc-href" href="#tcp-backlog-hatasi" title="TCP Backlog Hatas&inodot;">TCP Backlog Hatas&inodot;</a></li><li><a class="toc-href" href="#overcommit-memory-uyarisi" title="Overcommit Memory Uyar&inodot;s&inodot;">Overcommit Memory Uyar&inodot;s&inodot;</a></li></ul></li><li><a class="toc-href" href="#5-kullanisli-ipuclari_1" title="5. Kullan&inodot;&scedil;l&inodot; &Idot;pu&ccedil;lar&inodot; ✨">5. Kullan&inodot;&scedil;l&inodot; &Idot;pu&ccedil;lar&inodot; ✨</a><ul><li><a class="toc-href" href="#51-otomatik-tamamlama-zsh" title="5.1 Otomatik Tamamlama (Zsh)">5.1 Otomatik Tamamlama (Zsh)</a></li><li><a class="toc-href" href="#52-clide-temel-komutlar" title="5.2 CLI&rsquo;de Temel Komutlar">5.2 CLI&rsquo;de Temel Komutlar</a></li></ul></li><li><a class="toc-href" href="#6-gercek-hayatta-kullanim-senaryolari_1" title="6. Ger&ccedil;ek Hayatta Kullan&inodot;m Senaryolar&inodot; 💡">6. Ger&ccedil;ek Hayatta Kullan&inodot;m Senaryolar&inodot; 💡</a></li><li><a class="toc-href" href="#sonuc" title="Sonu&ccedil; 🎯">Sonu&ccedil; 🎯</a></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

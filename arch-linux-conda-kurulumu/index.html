@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Arch Linux'ta Conda Kurulumu ve Yönetimi",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/conda-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Arch Linux'ta Conda Kurulumu ve Yönetimi" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/" />
+<meta property="og:title" content="Arch Linux'ta Conda Kurulumu ve Yönetimi" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-02-28T10:00:00+03:00" />
+<meta property="article:modified_time" content="2025-08-11T22:59:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Yazılım Geliştirme" />
+  <meta property="article:tag" content="archlinux" />
+<meta property="article:tag" content="python" />
+<meta property="article:tag" content="conda" />
+<meta property="article:tag" content="miniconda" />
+<meta property="article:tag" content="yazılım" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken adımlar ve en iyi uygulamalar." />
+<meta property="og:description" content="Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken adımlar ve en iyi uygulamalar." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux'ta Conda Kurulumu ve Yönetimi",
+        "description": "Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken adımlar ve en iyi uygulamalar.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-02-28T10:00:00+03:00",
+"dateModified": "2025-08-11T22:59:00+03:00",        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/"
+        },
+"articleSection": "Yazılım Geliştirme","keywords": "archlinux, python, conda, miniconda, yazılım",        "url": "https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/",
+"image": "https://yuceltoluyag.github.io/images/conda-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>Arch Linux'ta Conda Kurulumu ve Yönetimi</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" conda="" href="#arch-linuxta-conda-kurulumu-ve-yonetimi" kurulumu="" ta="" title="Arch Linux" ve="" yönetimi'="">Arch Linux'ta Conda Kurulumu ve Y&ouml;netimi</a><ul><li><a class="toc-href" href="#1-conda-kurulumu" title="1. Conda Kurulumu">1. Conda Kurulumu</a><ul><li><a class="toc-href" href="#11-miniconda-kurulumu" title="1.1 Miniconda Kurulumu">1.1 Miniconda Kurulumu</a></li><li><a class="toc-href" etme'="" href="#12-condanin-versiyonunu-kontrol-etme" kontrol="" nın="" title="1.2 Conda" versiyonunu="">1.2 Conda'n&inodot;n Versiyonunu Kontrol Etme</a></li></ul></li><li><a class="toc-href" güncelleme'="" href="#2-condayi-guncelleme_1" title="2. Conda" yı="">2. Conda'y&inodot; G&uuml;ncelleme</a></li><li><a class="toc-href" href="#3-conda-ortamlari-yonetme" title="3. Conda Ortamlar&inodot; Y&ouml;netme">3. Conda Ortamlar&inodot; Y&ouml;netme</a><ul><li><a class="toc-href" href="#31-yeni-bir-ortam-olusturma" title="3.1 Yeni Bir Ortam Olu&scedil;turma">3.1 Yeni Bir Ortam Olu&scedil;turma</a></li><li><a class="toc-href" href="#32-ortami-etkinlestirme" title="3.2 Ortam&inodot; Etkinle&scedil;tirme">3.2 Ortam&inodot; Etkinle&scedil;tirme</a></li><li><a class="toc-href" href="#33-ortami-listeleme" title="3.3 Ortam&inodot; Listeleme">3.3 Ortam&inodot; Listeleme</a></li></ul></li><li><a class="toc-href" href="#4-paket-yonetimi_1" title="4. Paket Y&ouml;netimi">4. Paket Y&ouml;netimi</a><ul><li><a class="toc-href" href="#41-paket-yukleme" title="4.1 Paket Y&uuml;kleme">4.1 Paket Y&uuml;kleme</a></li><li><a class="toc-href" href="#42-paket-guncelleme" title="4.2 Paket G&uuml;ncelleme">4.2 Paket G&uuml;ncelleme</a></li><li><a class="toc-href" href="#43-paket-kaldirma" title="4.3 Paket Kald&inodot;rma">4.3 Paket Kald&inodot;rma</a></li></ul></li><li><a class="toc-href" href="#5-en-iyi-kurulum-uygulamalari_1" title="5. En &Idot;yi Kurulum Uygulamalar&inodot;">5. En &Idot;yi Kurulum Uygulamalar&inodot;</a><ul><li><a class="toc-href" href="#51-sistem-genelinde-kurulumdan-kacinin" title="5.1 Sistem Genelinde Kurulumdan Ka&ccedil;&inodot;n&inodot;n">5.1 Sistem Genelinde Kurulumdan Ka&ccedil;&inodot;n&inodot;n</a></li><li><a class="toc-href" href="#52-aur-uzerinden-kurulum-approach-2" title="5.2 AUR &Uuml;zerinden Kurulum (Approach 2)">5.2 AUR &Uuml;zerinden Kurulum (Approach 2)</a></li><li><a class="toc-href" href="#53-conda-base-ortamini-yonetmek" title="5.3 Conda Base Ortam&inodot;n&inodot; Y&ouml;netmek">5.3 Conda Base Ortam&inodot;n&inodot; Y&ouml;netmek</a></li></ul></li><li><a class="toc-href" href="#6-sonuc_1" title="6. Sonu&ccedil;">6. Sonu&ccedil;</a></li><li><a class="toc-href" href="#output" title="Output">Output</a></li></ul></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-flutter-kurulumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Rehber: Arch Linux'ta Flutter Kurulumu</h4>
+                                    </a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Arch Linux'ta Conda Kurulumu ve Yönetimi</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-02-28T10:00:00+03:00" class="ml-1">
+                                    28 February 2025
+                                </time>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:history"></span>
+                                <time datetime="2025-08-11T22:59:00+03:00" class="ml-1">
+                                    11 August 2025
+                                </time>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/yazilim-gelistirme/"
+                                    class="link link-hover ml-1">
+                                    Yazılım Geliştirme
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">1518 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">7 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 14.53</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/arch-linux-conda-kurulumu.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><h1 id="arch-linuxta-conda-kurulumu-ve-yonetimi">Arch Linux'ta Conda Kurulumu ve Y&ouml;netimi</h1>
+<p>Conda, yaz&inodot;l&inodot;m paketlerini ve ortamlar&inodot;n&inodot; y&ouml;netmek i&ccedil;in kullan&inodot;lan pop&uuml;ler bir a&ccedil;&inodot;k kaynakl&inodot; ara&ccedil;t&inodot;r. Python geli&scedil;tirme ortamlar&inodot;nda &ouml;zellikle kullan&inodot;l&inodot;r, ancak ba&scedil;ka diller i&ccedil;in de destek sunar. Bu makalede, Conda'n&inodot;n kurulumu ve temel kullan&inodot;m&inodot; ad&inodot;m ad&inodot;m a&ccedil;&inodot;klanacak, ayr&inodot;ca Arch Linux &uuml;zerinde en verimli &scedil;ekilde Conda nas&inodot;l kurulmal&inodot; ve y&ouml;netilmeli, en iyi uygulamalarla birlikte ele al&inodot;nacakt&inodot;r.</p>
+<h2 id="1-conda-kurulumu">1. Conda Kurulumu</h2>
+<p>Conda, Anaconda veya Miniconda da&gbreve;&inodot;t&inodot;mlar&inodot;n&inodot; kullanarak kurulabilir. Miniconda, Anaconda'n&inodot;n daha hafif bir versiyonudur ve yaln&inodot;zca Conda y&ouml;netici arac&inodot;n&inodot; i&ccedil;erir. Arch Linux gibi sistemlerde Conda'y&inodot; kurarken dikkat edilmesi gereken baz&inodot; iyi uygulamalar vard&inodot;r. &Idot;&scedil;te ba&scedil;lang&inodot;&ccedil; noktas&inodot;:</p>
+<h3 id="11-miniconda-kurulumu">1.1 Miniconda Kurulumu</h3>
+<p>Miniconda, Conda'n&inodot;n temel kurulumunu sa&gbreve;lar ve ba&scedil;lang&inodot;&ccedil;ta gereksiz paketlerden ka&ccedil;&inodot;nmak i&ccedil;in tercih edilebilir. Miniconda'y&inodot; kurmak i&ccedil;in &scedil;u ad&inodot;mlar&inodot; izleyebilirsiniz:</p>
+<ol>
+<li>Miniconda'y&inodot; <a href="https://docs.conda.io/en/latest/miniconda.html" rel="noopener noreferrer" target="_blank">resmi web sitesinden</a> indirin.</li>
+<li>Terminali a&ccedil;&inodot;n ve Miniconda kurulum dosyas&inodot;n&inodot; &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:
+   <div class="highlight"><span class="filename">Bash</span><pre><span></span><code>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
+</code></pre></div></li>
+<li>Kurulum s&inodot;ras&inodot;nda size bir lisans s&ouml;zle&scedil;mesi sunulacakt&inodot;r. Kabul etmek i&ccedil;in <code>yes</code> yaz&inodot;n.</li>
+<li>Kurulum klas&ouml;r&uuml;n&uuml; se&ccedil;in. Varsay&inodot;lan olarak, Miniconda <code>~/miniconda3</code> dizinine kurulacakt&inodot;r. E&gbreve;er bu dizini de&gbreve;i&scedil;tirmek isterseniz, kurulum s&inodot;ras&inodot;nda farkl&inodot; bir dizin belirtmeniz yeterlidir.</li>
+</ol>
+<p><strong>&Ouml;neri</strong>: Miniconda'y&inodot; varsay&inodot;lan dizinden farkl&inodot; bir dizine kurmak istiyorsan&inodot;z, kurulum s&inodot;ras&inodot;nda &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh<span class="w"> </span>-p<span class="w"> </span>/yeni/dizin/miniconda3
+</code></pre></div>
+<ol>
+<li>Kurulum tamamland&inodot;&gbreve;&inodot;nda, Conda'y&inodot; etkinle&scedil;tirmek i&ccedil;in terminali yeniden ba&scedil;lat&inodot;n veya a&scedil;a&gbreve;&inodot;daki komutu &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
+<h3 id="12-condanin-versiyonunu-kontrol-etme">1.2 Conda'n&inodot;n Versiyonunu Kontrol Etme</h3>
+<p>Kurulumdan sonra Conda'n&inodot;n do&gbreve;ru &scedil;ekilde y&uuml;klendi&gbreve;inden emin olmak i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>--version
+</code></pre></div>
+<p>E&gbreve;er do&gbreve;ru &scedil;ekilde kurulduysa, Conda versiyonunu g&ouml;rebilirsiniz.</p>
+<h2 id="2-condayi-guncelleme_1">2. Conda'y&inodot; G&uuml;ncelleme</h2>
+<p>Conda'y&inodot; g&uuml;ncellemek i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>defaults<span class="w"> </span>conda
+</code></pre></div>
+<p>Bu komut, <code>base</code> ortam&inodot;nda Conda'y&inodot; g&uuml;nceller ve en son s&uuml;r&uuml;m&uuml; indirir.</p>
+<h2 id="3-conda-ortamlari-yonetme">3. Conda Ortamlar&inodot; Y&ouml;netme</h2>
+<p>Conda, farkl&inodot; projeler i&ccedil;in ba&gbreve;&inodot;ms&inodot;z ortamlar olu&scedil;turman&inodot;za olanak tan&inodot;r. Bu sayede, projelerinizde farkl&inodot; Python s&uuml;r&uuml;mleri veya paketler kullanabilirsiniz.</p>
+<h3 id="31-yeni-bir-ortam-olusturma">3.1 Yeni Bir Ortam Olu&scedil;turma</h3>
+<p>Yeni bir Conda ortam&inodot; olu&scedil;turmak i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>myenv<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+</code></pre></div>
+<p>Burada <code>myenv</code>, ortam&inodot;n ad&inodot;d&inodot;r ve <code>python=3.10</code> ifadesi Python 3.10 s&uuml;r&uuml;m&uuml;n&uuml; i&ccedil;erir.</p>
+<h3 id="32-ortami-etkinlestirme">3.2 Ortam&inodot; Etkinle&scedil;tirme</h3>
+<p>Olu&scedil;turdu&gbreve;unuz ortam&inodot; etkinle&scedil;tirmek i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>activate<span class="w"> </span>myenv
+</code></pre></div>
+<h3 id="33-ortami-listeleme">3.3 Ortam&inodot; Listeleme</h3>
+<p>T&uuml;m Conda ortamlar&inodot;n&inodot; listelemek i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>env<span class="w"> </span>list
+</code></pre></div>
+<p>Bu komut, mevcut ortamlar&inodot;n bir listesini d&ouml;nd&uuml;recektir.</p>
+<h2 id="4-paket-yonetimi_1">4. Paket Y&ouml;netimi</h2>
+<p>Conda, yaz&inodot;l&inodot;m paketlerini kolayca y&ouml;netmek i&ccedil;in kullan&inodot;l&inodot;r. Yeni paketler y&uuml;kleyebilir, g&uuml;ncelleyebilir veya silebilirsiniz.</p>
+<h3 id="41-paket-yukleme">4.1 Paket Y&uuml;kleme</h3>
+<p>Bir paketi y&uuml;klemek i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>install<span class="w"> </span>numpy
+</code></pre></div>
+<p>Bu komut, NumPy paketini y&uuml;kleyecektir.</p>
+<h3 id="42-paket-guncelleme">4.2 Paket G&uuml;ncelleme</h3>
+<p>Mevcut bir paketi g&uuml;ncellemek i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>update<span class="w"> </span>numpy
+</code></pre></div>
+<h3 id="43-paket-kaldirma">4.3 Paket Kald&inodot;rma</h3>
+<p>Bir paketi kald&inodot;rmak i&ccedil;in &scedil;u komutu kullanabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>remove<span class="w"> </span>numpy
+</code></pre></div>
+<h2 id="5-en-iyi-kurulum-uygulamalari_1">5. En &Idot;yi Kurulum Uygulamalar&inodot;</h2>
+<p>Arch Linux gibi bir sistemde Conda'n&inodot;n kurulumunu yaparken baz&inodot; iyi uygulamalara dikkat etmek gerekir. &Idot;&scedil;te bu konuda dikkat edilmesi gereken baz&inodot; &ouml;nemli noktalar:</p>
+<h3 id="51-sistem-genelinde-kurulumdan-kacinin">5.1 Sistem Genelinde Kurulumdan Ka&ccedil;&inodot;n&inodot;n</h3>
+<p><strong>Neden Sistem Genelinde Kurulumdan Ka&ccedil;&inodot;nmal&inodot;y&inodot;z?</strong></p>
+<p>Anaconda'y&inodot; sistem genelinde kurmak, sisteminizin d&uuml;zenini bozabilir. Bunun yerine, Anaconda'y&inodot; kendi <code>~/.anaconda</code> dizininize kurarak sadece gerekti&gbreve;inde etkinle&scedil;tirmeniz &ccedil;ok daha sa&gbreve;l&inodot;kl&inodot;d&inodot;r. Sistem genelinde kurulum, genellikle kar&inodot;&scedil;&inodot;kl&inodot;k yaratabilir ve farkl&inodot; Python s&uuml;r&uuml;mleri veya paketleri aras&inodot;nda uyumsuzluklara yol a&ccedil;abilir. Sistemdeki di&gbreve;er ara&ccedil;larla da &ccedil;ak&inodot;&scedil;malar ya&scedil;anabilir.</p>
+<p><strong>&Ouml;nerilen Y&ouml;ntem</strong>: Conda'y&inodot; kullan&inodot;c&inodot; dizininize kurarak, sadece gerekli oldu&gbreve;unda kullanmak en iyi yakla&scedil;&inodot;md&inodot;r. Bu y&ouml;ntem, sistemi temiz tutman&inodot;za yard&inodot;mc&inodot; olur ve paket y&ouml;netimini daha kontroll&uuml; hale getirir.</p>
+<p>Kurulum s&inodot;ras&inodot;nda "Conda'y&inodot; ba&scedil;latmak ister misiniz?" sorusuna <strong>hay&inodot;r</strong> demek &ouml;nemlidir. Bu, <code>.bashrc</code> veya <code>.zshrc</code> gibi dosyalar&inodot;n&inodot;za dokunmaz ve Conda'y&inodot; yaln&inodot;zca gerekti&gbreve;inde &scedil;u komutla etkinle&scedil;tirirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">source</span><span class="w"> </span>&lt;path_to_conda&gt;/bin/activate
+</code></pre></div>
+<p>Bu, Conda'n&inodot;n sisteminizde izole bir &scedil;ekilde &ccedil;al&inodot;&scedil;mas&inodot;n&inodot; sa&gbreve;lar, b&ouml;ylece d&uuml;zeninizi korur.</p>
+<h3 id="52-aur-uzerinden-kurulum-approach-2">5.2 AUR &Uuml;zerinden Kurulum (Approach 2)</h3>
+<p>E&gbreve;er her &scedil;eyinizi AUR (Arch User Repository) &uuml;zerinden kuruyorsan&inodot;z, pacman ile kurulum yaparak her &scedil;eyin d&uuml;zg&uuml;n bir &scedil;ekilde takip edilmesini sa&gbreve;lars&inodot;n&inodot;z. Ancak, bu y&ouml;ntemle Conda sistem genelinde kurulur ve <code>/usr/opt/bin</code> veya <code>/usr/opt/lib</code> gibi dizinlere yerle&scedil;ir. Bu, Conda'y&inodot; do&gbreve;ru &scedil;ekilde kullanmay&inodot; zorla&scedil;t&inodot;rabilir.</p>
+<p><strong>Yine de Arch Linux'ta her &scedil;eyin kolayca geri al&inodot;nabilmesi sayesinde, sisteminizde herhangi bir karma&scedil;a olu&scedil;ursa, h&inodot;zl&inodot;ca kald&inodot;r&inodot;p tekrar kurabilirsiniz. Ancak, her zaman daha kontroll&uuml; bir kurulum &ouml;nerilir.</strong></p>
+<h3 id="53-conda-base-ortamini-yonetmek">5.3 Conda Base Ortam&inodot;n&inodot; Y&ouml;netmek</h3>
+<p>Conda'y&inodot; kurduktan sonra, terminalde otomatik olarak base ortam&inodot;n&inodot;n etkinle&scedil;mesi bazen kafa kar&inodot;&scedil;t&inodot;r&inodot;c&inodot; olabilir. Bu, terminalde &ccedil;al&inodot;&scedil;t&inodot;&gbreve;&inodot;n&inodot;zda bazen beklenmeyen sonu&ccedil;lar do&gbreve;urabilir. E&gbreve;er <code>base</code> ortam&inodot;n&inodot;n otomatik olarak etkinle&scedil;mesini istemiyorsan&inodot;z, &scedil;u komutla devre d&inodot;&scedil;&inodot; b&inodot;rakabilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>conda<span class="w"> </span>deactivate
+</code></pre></div>
+<p>Ya da <code>.bashrc</code> dosyan&inodot;za <code>conda deactivate</code> ekleyerek her terminal a&ccedil;&inodot;ld&inodot;&gbreve;&inodot;nda otomatik olarak <code>base</code> ortam&inodot;n&inodot;n devre d&inodot;&scedil;&inodot; olmas&inodot;n&inodot; sa&gbreve;layabilirsiniz.</p>
+<h2 id="6-sonuc_1">6. Sonu&ccedil;</h2>
+<p>Bu makalede Conda'n&inodot;n kurulumu, g&uuml;ncellenmesi, ortam y&ouml;netimi ve paket y&ouml;netimi hakk&inodot;nda temel bilgiler payla&scedil;&inodot;ld&inodot;. Arch Linux'ta Conda kurulumunda en iyi uygulamalar&inodot; benimsemek, sisteminizin d&uuml;zenini korumaya yard&inodot;mc&inodot; olur ve yaz&inodot;l&inodot;m geli&scedil;tirme s&uuml;recinizi daha verimli hale getirir. Conda'y&inodot; etkili bir &scedil;ekilde kullanarak projelerinizde ba&gbreve;&inodot;ms&inodot;z ortamlar olu&scedil;turabilir ve Python geli&scedil;tirme deneyiminizi bir &uuml;st seviyeye ta&scedil;&inodot;yabilirsiniz.</p>
+<p>Unutmay&inodot;n, Conda'y&inodot; d&uuml;zg&uuml;n kurmak ve kullanmak, uzun vadede ba&scedil;&inodot;n&inodot;z&inodot; a&gbreve;r&inodot;tacak b&uuml;y&uuml;k sorunlardan ka&ccedil;&inodot;nman&inodot;za yard&inodot;mc&inodot; olacakt&inodot;r!</p>
+<h2 id="output">Output</h2>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="o">[</span>friday13@archlinux<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>curl<span class="w"> </span>-O<span class="w"> </span>https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash<span class="w"> </span>Miniconda3-latest-Linux-x86_64.sh
+<span class="w">  </span>%<span class="w"> </span>Total<span class="w">    </span>%<span class="w"> </span>Received<span class="w"> </span>%<span class="w"> </span>Xferd<span class="w">  </span>Average<span class="w"> </span>Speed<span class="w">   </span>Time<span class="w">    </span>Time<span class="w">     </span>Time<span class="w">  </span>Current
+<span class="w">                                 </span>Dload<span class="w">  </span>Upload<span class="w">   </span>Total<span class="w">   </span>Spent<span class="w">    </span>Left<span class="w">  </span>Speed
+<span class="w">  </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w"> </span>--:--:--<span class="w"> </span>--:<span class="w">  </span><span class="m">6</span><span class="w">  </span>140M<span class="w">    </span><span class="m">6</span><span class="w"> </span>8942k<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span>9113k<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:15<span class="w"> </span>--:<span class="w"> </span><span class="m">14</span><span class="w">  </span>140M<span class="w">   </span><span class="m">14</span><span class="w"> </span><span class="m">20</span>.6M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">10</span>.4M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:13<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">22</span><span class="w">  </span>140M<span class="w">   </span><span class="m">22</span><span class="w"> </span><span class="m">32</span>.2M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">10</span>.8M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:13<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">30</span><span class="w">  </span>140M<span class="w">   </span><span class="m">30</span><span class="w"> </span><span class="m">43</span>.6M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">10</span>.9M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">38</span><span class="w">  </span>140M<span class="w">   </span><span class="m">38</span><span class="w"> </span><span class="m">54</span>.9M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">11</span>.0M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">46</span><span class="w">  </span>140M<span class="w">   </span><span class="m">46</span><span class="w"> </span><span class="m">66</span>.2M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">11</span>.0M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">54</span><span class="w">  </span>140M<span class="w">   </span><span class="m">54</span><span class="w"> </span><span class="m">77</span>.5M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">11</span>.1M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">63</span><span class="w">  </span>140M<span class="w">   </span><span class="m">63</span><span class="w"> </span><span class="m">88</span>.7M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">11</span>.1M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">70</span><span class="w">  </span>140M<span class="w">   </span><span class="m">70</span><span class="w">  </span>100M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">11</span>.1M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">78</span><span class="w">  </span>140M<span class="w">   </span><span class="m">78</span><span class="w">  </span>111M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">11</span>.1M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">84</span><span class="w">  </span>140M<span class="w">   </span><span class="m">84</span><span class="w">  </span>119M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">10</span>.8M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:<span class="w"> </span><span class="m">92</span><span class="w">  </span>140M<span class="w">   </span><span class="m">92</span><span class="w">  </span>130M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">10</span>.9M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:100<span class="w">  </span>140M<span class="w">  </span><span class="m">100</span><span class="w">  </span>140M<span class="w">    </span><span class="m">0</span><span class="w">     </span><span class="m">0</span><span class="w">  </span><span class="m">10</span>.9M<span class="w">      </span><span class="m">0</span><span class="w">  </span><span class="m">0</span>:00:12<span class="w">  </span><span class="m">0</span>:00:12<span class="w"> </span>--:--:--<span class="w"> </span><span class="m">10</span>.6M
+
+Welcome<span class="w"> </span>to<span class="w"> </span>Miniconda3<span class="w"> </span>py312_24.11.1-0
+
+In<span class="w"> </span>order<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span><span class="w"> </span>the<span class="w"> </span>installation<span class="w"> </span>process,<span class="w"> </span>please<span class="w"> </span>review<span class="w"> </span>the<span class="w"> </span>license
+agreement.
+Please,<span class="w"> </span>press<span class="w"> </span>ENTER<span class="w"> </span>to<span class="w"> </span><span class="k">continue</span>
+&gt;&gt;&gt;
+ANACONDA<span class="w"> </span>TERMS<span class="w"> </span>OF<span class="w"> </span>SERVICE
+
+Please<span class="w"> </span><span class="nb">read</span><span class="w"> </span>these<span class="w"> </span>Terms<span class="w"> </span>of<span class="w"> </span>Service<span class="w"> </span>carefully<span class="w"> </span>before<span class="w"> </span>purcha
+sing,<span class="w"> </span>using,<span class="w"> </span>accessing,<span class="w"> </span>or<span class="w"> </span>downloading<span class="w"> </span>any<span class="w"> </span>Anaconda<span class="w"> </span>Offeri
+ngs<span class="w"> </span><span class="o">(</span>the<span class="w"> </span><span class="s2">"Offerings"</span><span class="o">)</span>.<span class="w"> </span>These<span class="w"> </span>Anaconda<span class="w"> </span>Terms<span class="w"> </span>of<span class="w"> </span>Service<span class="w"> </span><span class="o">(</span><span class="s2">"T</span>
+<span class="s2">OS"</span><span class="o">)</span><span class="w"> </span>are<span class="w"> </span>between<span class="w"> </span>Anaconda,<span class="w"> </span>Inc.<span class="w"> </span><span class="o">(</span><span class="s2">"Anaconda"</span><span class="o">)</span><span class="w"> </span>and<span class="w"> </span>you<span class="w"> </span><span class="o">(</span><span class="s2">"You</span>
+<span class="s2">"</span><span class="o">)</span>,<span class="w"> </span>the<span class="w"> </span>individual<span class="w"> </span>or<span class="w"> </span>entity<span class="w"> </span>acquiring<span class="w"> </span>and/or<span class="w"> </span>providing<span class="w"> </span>ac
+cess<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Offerings.<span class="w"> </span>These<span class="w"> </span>TOS<span class="w"> </span>govern<span class="w"> </span>Your<span class="w"> </span>access,<span class="w"> </span>downl
+oad,<span class="w"> </span>installation,<span class="w"> </span>or<span class="w"> </span>use<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>Anaconda<span class="w"> </span>Offerings,<span class="w"> </span>which
+<span class="w"> </span>are<span class="w"> </span>provided<span class="w"> </span>to<span class="w"> </span>You<span class="w"> </span><span class="k">in</span><span class="w"> </span>combination<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>terms<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="k">for</span>
+th<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>applicable<span class="w"> </span>Offering<span class="w"> </span>Description,<span class="w"> </span>and<span class="w"> </span>are<span class="w"> </span>hereby
+incorporated<span class="w"> </span>into<span class="w"> </span>these<span class="w"> </span>TOS.<span class="w"> </span>Except<span class="w"> </span>where<span class="w"> </span>indicated<span class="w"> </span>otherw
+ise,<span class="w"> </span>references<span class="w"> </span>to<span class="w"> </span><span class="s2">"You"</span><span class="w"> </span>shall<span class="w"> </span>include<span class="w"> </span>Your<span class="w"> </span>Users.<span class="w"> </span>You<span class="w"> </span>her
+eby<span class="w"> </span>acknowledge<span class="w"> </span>that<span class="w"> </span>these<span class="w"> </span>TOS<span class="w"> </span>are<span class="w"> </span>binding,<span class="w"> </span>and<span class="w"> </span>You<span class="w"> </span>affirm
+<span class="w"> </span>and<span class="w"> </span>signify<span class="w"> </span>your<span class="w"> </span>consent<span class="w"> </span>to<span class="w"> </span>these<span class="w"> </span>TOS<span class="w"> </span>by<span class="w"> </span>registering<span class="w"> </span>to,
+using,<span class="w"> </span>installing,<span class="w"> </span>downloading,<span class="w"> </span>or<span class="w"> </span>accessing<span class="w"> </span>the<span class="w"> </span>Anaconda
+Offerings<span class="w"> </span>effective<span class="w"> </span>as<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>date<span class="w"> </span>of<span class="w"> </span>first<span class="w"> </span>registration,
+use,<span class="w"> </span>install,<span class="w"> </span>download<span class="w"> </span>or<span class="w"> </span>access,<span class="w"> </span>as<span class="w"> </span>applicable<span class="w"> </span><span class="o">(</span>the<span class="w"> </span><span class="s2">"Effe</span>
+<span class="s2">ctive Date"</span><span class="o">)</span>.<span class="w"> </span>Capitalized<span class="w"> </span>definitions<span class="w"> </span>not<span class="w"> </span>otherwise<span class="w"> </span>define
+d<span class="w"> </span>herein<span class="w"> </span>are<span class="w"> </span><span class="nb">set</span><span class="w"> </span>forth<span class="w"> </span><span class="k">in</span><span class="w"> </span>Section<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="o">(</span>Definitions<span class="o">)</span>.<span class="w"> </span>If<span class="w"> </span>You
+<span class="w"> </span><span class="k">do</span><span class="w"> </span>not<span class="w"> </span>agree<span class="w"> </span>to<span class="w"> </span>these<span class="w"> </span>Terms<span class="w"> </span>of<span class="w"> </span>Service,<span class="w"> </span>You<span class="w"> </span>must<span class="w"> </span>not<span class="w"> </span>regi
+
+Do<span class="w"> </span>you<span class="w"> </span>accept<span class="w"> </span>the<span class="w"> </span>license<span class="w"> </span>terms?<span class="w"> </span><span class="o">[</span>yes<span class="p">|</span>no<span class="o">]</span>
+&gt;&gt;&gt;<span class="w"> </span>yes
+
+Miniconda3<span class="w"> </span>will<span class="w"> </span>now<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>into<span class="w"> </span>this<span class="w"> </span>location:
+/home/friday13/miniconda3
+
+<span class="w">  </span>-<span class="w"> </span>Press<span class="w"> </span>ENTER<span class="w"> </span>to<span class="w"> </span>confirm<span class="w"> </span>the<span class="w"> </span>location
+<span class="w">  </span>-<span class="w"> </span>Press<span class="w"> </span>CTRL-C<span class="w"> </span>to<span class="w"> </span>abort<span class="w"> </span>the<span class="w"> </span>installation
+<span class="w">  </span>-<span class="w"> </span>Or<span class="w"> </span>specify<span class="w"> </span>a<span class="w"> </span>different<span class="w"> </span>location<span class="w"> </span>below
+
+<span class="o">[</span>/home/friday13/miniconda3<span class="o">]</span><span class="w"> </span>&gt;&gt;&gt;<span class="w"> </span>~/.miniconda3
+<span class="nv">PREFIX</span><span class="o">=</span>/home/friday13/.miniconda3
+Unpacking<span class="w"> </span>payload<span class="w"> </span>...
+
+Installing<span class="w"> </span>base<span class="w"> </span>environment...
+
+
+Downloading<span class="w"> </span>and<span class="w"> </span>Extracting<span class="w"> </span>Packages:
+
+
+<span class="c1">## Package Plan ##</span>
+
+<span class="w">  </span>environment<span class="w"> </span>location:<span class="w"> </span>/home/friday13/.miniconda3
+
+<span class="w">  </span>added<span class="w"> </span>/<span class="w"> </span>updated<span class="w"> </span>specs:
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::_libgcc_mutex<span class="o">==</span><span class="m">0</span>.1<span class="o">=</span>main<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>c3473ff8bdb3d124ed5ff11ec380d6f9<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::_openmp_mutex<span class="o">==</span><span class="m">5</span>.1<span class="o">=</span>1_gnu<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>71d281e9c2192cb3fa425655a8defb85<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::anaconda-anon-usage<span class="o">==</span><span class="m">0</span>.5.0<span class="o">=</span>py312hfc0e8ea_100<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>d47669c8f312a5d2be0a5e095bb8e896<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::boltons<span class="o">==</span><span class="m">23</span>.0.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>36d464442713fc92897b7da029a08fb6<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::brotli-python<span class="o">==</span><span class="m">1</span>.0.9<span class="o">=</span>py312h6a678d5_8<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>e6bdf1f9e8e1ad3543aaec7e9ecea7e7<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::bzip2<span class="o">==</span><span class="m">1</span>.0.8<span class="o">=</span>h5eee18b_6<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>f21a3ff51c1b271977f53ce956a69297<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::c-ares<span class="o">==</span><span class="m">1</span>.19.1<span class="o">=</span>h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>6cfbce52273a1cb888821f18ceaa83c4<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::ca-certificates<span class="o">==</span><span class="m">2024</span>.11.26<span class="o">=</span>h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>cebd61e6520159a1315d679321620f6c<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::certifi<span class="o">==</span><span class="m">2024</span>.8.30<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>42ef53b6872f15913c0d7d702ec7475e<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::cffi<span class="o">==</span><span class="m">1</span>.17.1<span class="o">=</span>py312h1fdaa30_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>8472aea146fecf25898d67adea2ddbf8<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::conda-anaconda-telemetry<span class="o">==</span><span class="m">0</span>.1.1<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>7b3f838270a69f22b366f74dab6e6f64<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::conda-content-trust<span class="o">==</span><span class="m">0</span>.2.0<span class="o">=</span>py312h06a4308_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>fdcf7a04d9cc833ea3f397a414010206<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::conda-package-handling<span class="o">==</span><span class="m">2</span>.4.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>20af9c2597fae0494f5d5a256dae433a<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::conda-package-streaming<span class="o">==</span><span class="m">0</span>.11.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>d5ffa1f42c41b7cdad0cf9ac68f83772<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::conda<span class="o">==</span><span class="m">24</span>.11.1<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>1124d7f759c3a610b10c2e21dec55ebe<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::cryptography<span class="o">==</span><span class="m">43</span>.0.3<span class="o">=</span>py312h7825ff9_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>1c255fd1f8a79304f4a316fb5304e07b<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::distro<span class="o">==</span><span class="m">1</span>.9.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>71b90a563af005b336c976cc9466221c<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::expat<span class="o">==</span><span class="m">2</span>.6.4<span class="o">=</span>h6a678d5_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>3ec804f5b85a66e64b262cc2341dd004<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::fmt<span class="o">==</span><span class="m">9</span>.1.0<span class="o">=</span>hdb19cb5_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>4f12930203ff2d84df5d287af9b29858<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::frozendict<span class="o">==</span><span class="m">2</span>.4.2<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>76ae0259102a2156cc0e1ff9ada0f2c6<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::icu<span class="o">==</span><span class="m">73</span>.1<span class="o">=</span>h6a678d5_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>6d09df641fc23f7d277a04dc7ea32dd4<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::idna<span class="o">==</span><span class="m">3</span>.7<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>03cc59cdabff44c47be0fadffcef003c<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::jsonpatch<span class="o">==</span><span class="m">1</span>.33<span class="o">=</span>py312h06a4308_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>c3de52aaf670064f85106ddb32d720d9<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::krb5<span class="o">==</span><span class="m">1</span>.20.1<span class="o">=</span>h143b758_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>cf1accc86321fa25d6b978cc748039ae<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::ld_impl_linux-64<span class="o">==</span><span class="m">2</span>.40<span class="o">=</span>h12ee557_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>ee672b5f635340734f58d618b7bca024<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libarchive<span class="o">==</span><span class="m">3</span>.7.4<span class="o">=</span>hfab0078_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>fcc6a63f95a80a5d2ff9d3e208e9a638<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libcurl<span class="o">==</span><span class="m">8</span>.9.1<span class="o">=</span>h251f7ec_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>8133d8f19e8136a10f9f81180026c859<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libedit<span class="o">==</span><span class="m">3</span>.1.20230828<span class="o">=</span>h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>850eb5a9d2d7d3c66cce12e84406ca08<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libev<span class="o">==</span><span class="m">4</span>.33<span class="o">=</span>h7f8727e_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>5065620db4393fb549f30114a33897d1<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libffi<span class="o">==</span><span class="m">3</span>.4.4<span class="o">=</span>h6a678d5_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>70646cc713f0c43926cfdcfe9b695fe0<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libgcc-ng<span class="o">==</span><span class="m">11</span>.2.0<span class="o">=</span>h1234567_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>a87728dabf3151fb9cfa990bd2eb0464<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libgomp<span class="o">==</span><span class="m">11</span>.2.0<span class="o">=</span>h1234567_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>b372c0eea9b60732fdae4b817a63c8cd<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libmamba<span class="o">==</span><span class="m">1</span>.5.11<span class="o">=</span>hfe524e5_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>c6cd365c4e32d3fa01daca8d1beb151b<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libmambapy<span class="o">==</span><span class="m">1</span>.5.11<span class="o">=</span>py312haf1ee3a_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>256e6f590082a1cba3601be900ea2e81<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libnghttp2<span class="o">==</span><span class="m">1</span>.57.0<span class="o">=</span>h2d74bed_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>674871621300f54e7ffcf93e6e341638<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libsolv<span class="o">==</span><span class="m">0</span>.7.24<span class="o">=</span>he621ea3_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>c22067963515e7a8d27a5a222a48d870<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libssh2<span class="o">==</span><span class="m">1</span>.11.1<span class="o">=</span>h251f7ec_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>dd68c24355431c0543339dda1404129d<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libstdcxx-ng<span class="o">==</span><span class="m">11</span>.2.0<span class="o">=</span>h1234567_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>57623d10a70e09e1d048c2b2b6f4e2dd<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libuuid<span class="o">==</span><span class="m">1</span>.41.5<span class="o">=</span>h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>4a6a2354414c9080327274aa514e5299<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::libxml2<span class="o">==</span><span class="m">2</span>.13.5<span class="o">=</span>hfdd30dd_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>491a355fbc51e30d42c76e1cb6716b8a<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::lz4-c<span class="o">==</span><span class="m">1</span>.9.4<span class="o">=</span>h6a678d5_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>2ee58861f2b92b868ce761abb831819d<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::menuinst<span class="o">==</span><span class="m">2</span>.2.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>2f79985b318b96f1a79d9ca27b350bde<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::ncurses<span class="o">==</span><span class="m">6</span>.4<span class="o">=</span>h6a678d5_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>5558eec6e2191741a92f832ea826251c<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::openssl<span class="o">==</span><span class="m">3</span>.0.15<span class="o">=</span>h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>019e501b69841c6d4aeaef3b8619a678<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::packaging<span class="o">==</span><span class="m">24</span>.1<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>756ec42d4f934b642b8476689af2781f<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::pcre2<span class="o">==</span><span class="m">10</span>.42<span class="o">=</span>hebb0a14_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>727e15c3cfa02b032da4eb0c1123e977<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::pip<span class="o">==</span><span class="m">24</span>.2<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>798cbea8112672434d0cd7551f8fc4b9<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::platformdirs<span class="o">==</span><span class="m">3</span>.10.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>39dc9eb538e73250dadcdec7a8ed6595<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::pluggy<span class="o">==</span><span class="m">1</span>.5.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>1287a7b660a041fbbb8931defb9111d6<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::pycosat<span class="o">==</span><span class="m">0</span>.6.6<span class="o">=</span>py312h5eee18b_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>4ccf6371e1ccb1ccbecac26ab4fd1607<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::pysocks<span class="o">==</span><span class="m">1</span>.7.1<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>8efb8494277b7f0faedf9d437b23cbe1<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::python<span class="o">==</span><span class="m">3</span>.12.8<span class="o">=</span>h5148396_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>30e7668cd39635e3b72f86b9053540b1<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::readline<span class="o">==</span><span class="m">8</span>.2<span class="o">=</span>h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>be42180685cce6e6b0329201d9f48efb<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::reproc-cpp<span class="o">==</span><span class="m">14</span>.2.4<span class="o">=</span>h6a678d5_2<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>b03aa4903158279f003e7032ab9f5601<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::reproc<span class="o">==</span><span class="m">14</span>.2.4<span class="o">=</span>h6a678d5_2<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>3c6dbc6c60b3897222d79359343e90fa<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::requests<span class="o">==</span><span class="m">2</span>.32.3<span class="o">=</span>py312h06a4308_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>8cc2fc3e2198c2efe6cd890a7684a16a<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::ruamel.yaml.clib<span class="o">==</span><span class="m">0</span>.2.8<span class="o">=</span>py312h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>4e151915d3acb78754b5cd1be029fcd2<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::ruamel.yaml<span class="o">==</span><span class="m">0</span>.18.6<span class="o">=</span>py312h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>b4817fd05fdab4ce718bf1e7aab55f75<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::setuptools<span class="o">==</span><span class="m">75</span>.1.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>c96d08a405d335f2b0200c0f281b1fdc<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::sqlite<span class="o">==</span><span class="m">3</span>.45.3<span class="o">=</span>h5eee18b_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>acf93d6aceb74d6110e20b44cc45939e<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::tk<span class="o">==</span><span class="m">8</span>.6.14<span class="o">=</span>h39e8969_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>78dbc5e3c69143ebc037fc5d5b22e597<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::tqdm<span class="o">==</span><span class="m">4</span>.66.5<span class="o">=</span>py312he106c6f_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>099959333950bef1a3d7d12133cbfafc<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::truststore<span class="o">==</span><span class="m">0</span>.8.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>ad93bd626fc17c1606394fe258b4ed18<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::urllib3<span class="o">==</span><span class="m">2</span>.2.3<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>08b5f80f188ed801e9f463124a481289<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::wheel<span class="o">==</span><span class="m">0</span>.44.0<span class="o">=</span>py312h06a4308_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>6d495438dd44e8f16b1a05d0a8648644<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::xz<span class="o">==</span><span class="m">5</span>.4.6<span class="o">=</span>h5eee18b_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>1562802f843297ee776a50b9329597ed<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::yaml-cpp<span class="o">==</span><span class="m">0</span>.8.0<span class="o">=</span>h6a678d5_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>015d2d74ad3c8e53eec3358637433718<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::zlib<span class="o">==</span><span class="m">1</span>.2.13<span class="o">=</span>h5eee18b_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>92e42d8310108b0a440fb2e60b2b2a25<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::zstandard<span class="o">==</span><span class="m">0</span>.23.0<span class="o">=</span>py312h2c38b39_1<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>2cbafae57b8b4ec11666119d44ad4d71<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/linux-64::zstd<span class="o">==</span><span class="m">1</span>.5.6<span class="o">=</span>hc292b87_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>78ae7abd3020b41f827b35085845e1b8<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/noarch::archspec<span class="o">==</span><span class="m">0</span>.2.3<span class="o">=</span>pyhd3eb1b0_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>13d01ee2d343d8539bb47055a6c0b5b2<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/noarch::charset-normalizer<span class="o">==</span><span class="m">3</span>.3.2<span class="o">=</span>pyhd3eb1b0_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>c6fea3691e85cf7f568b0618ec29fc4f<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/noarch::conda-libmamba-solver<span class="o">==</span><span class="m">24</span>.9.0<span class="o">=</span>pyhd3eb1b0_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>251a69a5bf578ef59fdf8255c7c25c5d<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/noarch::jsonpointer<span class="o">==</span><span class="m">2</span>.1<span class="o">=</span>pyhd3eb1b0_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>298ff809e733cb04366e4e629c65aa8d<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/noarch::pybind11-abi<span class="o">==</span><span class="nv">5</span><span class="o">=</span>hd3eb1b0_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>7f0df6639fdf60ccd3045ee6faedd32f<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/noarch::pycparser<span class="o">==</span><span class="m">2</span>.21<span class="o">=</span>pyhd3eb1b0_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>135a72ff2a31150a3a3ff0b1edd41ca9<span class="o">]</span>
+<span class="w">    </span>-<span class="w"> </span>defaults/noarch::tzdata<span class="o">==</span><span class="nv">2024b</span><span class="o">=</span>h04d1e81_0<span class="o">[</span><span class="nv">md5</span><span class="o">=</span>9be694715c6a65f9631bb1b242125e9d<span class="o">]</span>
+
+
+The<span class="w"> </span>following<span class="w"> </span>NEW<span class="w"> </span>packages<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>INSTALLED:
+
+<span class="w">  </span>_libgcc_mutex<span class="w">      </span>pkgs/main/linux-64::_libgcc_mutex-0.1-main
+<span class="w">  </span>_openmp_mutex<span class="w">      </span>pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu
+<span class="w">  </span>anaconda-anon-usa~<span class="w"> </span>pkgs/main/linux-64::anaconda-anon-usage-0.5.0-py312hfc0e8ea_100
+<span class="w">  </span>archspec<span class="w">           </span>pkgs/main/noarch::archspec-0.2.3-pyhd3eb1b0_0
+<span class="w">  </span>boltons<span class="w">            </span>pkgs/main/linux-64::boltons-23.0.0-py312h06a4308_0
+<span class="w">  </span>brotli-python<span class="w">      </span>pkgs/main/linux-64::brotli-python-1.0.9-py312h6a678d5_8
+<span class="w">  </span>bzip2<span class="w">              </span>pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6
+<span class="w">  </span>c-ares<span class="w">             </span>pkgs/main/linux-64::c-ares-1.19.1-h5eee18b_0
+<span class="w">  </span>ca-certificates<span class="w">    </span>pkgs/main/linux-64::ca-certificates-2024.11.26-h06a4308_0
+<span class="w">  </span>certifi<span class="w">            </span>pkgs/main/linux-64::certifi-2024.8.30-py312h06a4308_0
+<span class="w">  </span>cffi<span class="w">               </span>pkgs/main/linux-64::cffi-1.17.1-py312h1fdaa30_0
+<span class="w">  </span>charset-normalizer<span class="w"> </span>pkgs/main/noarch::charset-normalizer-3.3.2-pyhd3eb1b0_0
+<span class="w">  </span>conda<span class="w">              </span>pkgs/main/linux-64::conda-24.11.1-py312h06a4308_0
+<span class="w">  </span>conda-anaconda-te~<span class="w"> </span>pkgs/main/linux-64::conda-anaconda-telemetry-0.1.1-py312h06a4308_0
+<span class="w">  </span>conda-content-tru~<span class="w"> </span>pkgs/main/linux-64::conda-content-trust-0.2.0-py312h06a4308_1
+<span class="w">  </span>conda-libmamba-so~<span class="w"> </span>pkgs/main/noarch::conda-libmamba-solver-24.9.0-pyhd3eb1b0_0
+<span class="w">  </span>conda-package-han~<span class="w"> </span>pkgs/main/linux-64::conda-package-handling-2.4.0-py312h06a4308_0
+<span class="w">  </span>conda-package-str~<span class="w"> </span>pkgs/main/linux-64::conda-package-streaming-0.11.0-py312h06a4308_0
+<span class="w">  </span>cryptography<span class="w">       </span>pkgs/main/linux-64::cryptography-43.0.3-py312h7825ff9_1
+<span class="w">  </span>distro<span class="w">             </span>pkgs/main/linux-64::distro-1.9.0-py312h06a4308_0
+<span class="w">  </span>expat<span class="w">              </span>pkgs/main/linux-64::expat-2.6.4-h6a678d5_0
+<span class="w">  </span>fmt<span class="w">                </span>pkgs/main/linux-64::fmt-9.1.0-hdb19cb5_1
+<span class="w">  </span>frozendict<span class="w">         </span>pkgs/main/linux-64::frozendict-2.4.2-py312h06a4308_0
+<span class="w">  </span>icu<span class="w">                </span>pkgs/main/linux-64::icu-73.1-h6a678d5_0
+<span class="w">  </span>idna<span class="w">               </span>pkgs/main/linux-64::idna-3.7-py312h06a4308_0
+<span class="w">  </span>jsonpatch<span class="w">          </span>pkgs/main/linux-64::jsonpatch-1.33-py312h06a4308_1
+<span class="w">  </span>jsonpointer<span class="w">        </span>pkgs/main/noarch::jsonpointer-2.1-pyhd3eb1b0_0
+<span class="w">  </span>krb5<span class="w">               </span>pkgs/main/linux-64::krb5-1.20.1-h143b758_1
+<span class="w">  </span>ld_impl_linux-64<span class="w">   </span>pkgs/main/linux-64::ld_impl_linux-64-2.40-h12ee557_0
+<span class="w">  </span>libarchive<span class="w">         </span>pkgs/main/linux-64::libarchive-3.7.4-hfab0078_0
+<span class="w">  </span>libcurl<span class="w">            </span>pkgs/main/linux-64::libcurl-8.9.1-h251f7ec_0
+<span class="w">  </span>libedit<span class="w">            </span>pkgs/main/linux-64::libedit-3.1.20230828-h5eee18b_0
+<span class="w">  </span>libev<span class="w">              </span>pkgs/main/linux-64::libev-4.33-h7f8727e_1
+<span class="w">  </span>libffi<span class="w">             </span>pkgs/main/linux-64::libffi-3.4.4-h6a678d5_1
+<span class="w">  </span>libgcc-ng<span class="w">          </span>pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1
+<span class="w">  </span>libgomp<span class="w">            </span>pkgs/main/linux-64::libgomp-11.2.0-h1234567_1
+<span class="w">  </span>libmamba<span class="w">           </span>pkgs/main/linux-64::libmamba-1.5.11-hfe524e5_0
+<span class="w">  </span>libmambapy<span class="w">         </span>pkgs/main/linux-64::libmambapy-1.5.11-py312haf1ee3a_0
+<span class="w">  </span>libnghttp2<span class="w">         </span>pkgs/main/linux-64::libnghttp2-1.57.0-h2d74bed_0
+<span class="w">  </span>libsolv<span class="w">            </span>pkgs/main/linux-64::libsolv-0.7.24-he621ea3_1
+<span class="w">  </span>libssh2<span class="w">            </span>pkgs/main/linux-64::libssh2-1.11.1-h251f7ec_0
+<span class="w">  </span>libstdcxx-ng<span class="w">       </span>pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1
+<span class="w">  </span>libuuid<span class="w">            </span>pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0
+<span class="w">  </span>libxml2<span class="w">            </span>pkgs/main/linux-64::libxml2-2.13.5-hfdd30dd_0
+<span class="w">  </span>lz4-c<span class="w">              </span>pkgs/main/linux-64::lz4-c-1.9.4-h6a678d5_1
+<span class="w">  </span>menuinst<span class="w">           </span>pkgs/main/linux-64::menuinst-2.2.0-py312h06a4308_0
+<span class="w">  </span>ncurses<span class="w">            </span>pkgs/main/linux-64::ncurses-6.4-h6a678d5_0
+<span class="w">  </span>openssl<span class="w">            </span>pkgs/main/linux-64::openssl-3.0.15-h5eee18b_0
+<span class="w">  </span>packaging<span class="w">          </span>pkgs/main/linux-64::packaging-24.1-py312h06a4308_0
+<span class="w">  </span>pcre2<span class="w">              </span>pkgs/main/linux-64::pcre2-10.42-hebb0a14_1
+<span class="w">  </span>pip<span class="w">                </span>pkgs/main/linux-64::pip-24.2-py312h06a4308_0
+<span class="w">  </span>platformdirs<span class="w">       </span>pkgs/main/linux-64::platformdirs-3.10.0-py312h06a4308_0
+<span class="w">  </span>pluggy<span class="w">             </span>pkgs/main/linux-64::pluggy-1.5.0-py312h06a4308_0
+<span class="w">  </span>pybind11-abi<span class="w">       </span>pkgs/main/noarch::pybind11-abi-5-hd3eb1b0_0
+<span class="w">  </span>pycosat<span class="w">            </span>pkgs/main/linux-64::pycosat-0.6.6-py312h5eee18b_1
+<span class="w">  </span>pycparser<span class="w">          </span>pkgs/main/noarch::pycparser-2.21-pyhd3eb1b0_0
+<span class="w">  </span>pysocks<span class="w">            </span>pkgs/main/linux-64::pysocks-1.7.1-py312h06a4308_0
+<span class="w">  </span>python<span class="w">             </span>pkgs/main/linux-64::python-3.12.8-h5148396_0
+<span class="w">  </span>readline<span class="w">           </span>pkgs/main/linux-64::readline-8.2-h5eee18b_0
+<span class="w">  </span>reproc<span class="w">             </span>pkgs/main/linux-64::reproc-14.2.4-h6a678d5_2
+<span class="w">  </span>reproc-cpp<span class="w">         </span>pkgs/main/linux-64::reproc-cpp-14.2.4-h6a678d5_2
+<span class="w">  </span>requests<span class="w">           </span>pkgs/main/linux-64::requests-2.32.3-py312h06a4308_1
+<span class="w">  </span>ruamel.yaml<span class="w">        </span>pkgs/main/linux-64::ruamel.yaml-0.18.6-py312h5eee18b_0
+<span class="w">  </span>ruamel.yaml.clib<span class="w">   </span>pkgs/main/linux-64::ruamel.yaml.clib-0.2.8-py312h5eee18b_0
+<span class="w">  </span>setuptools<span class="w">         </span>pkgs/main/linux-64::setuptools-75.1.0-py312h06a4308_0
+<span class="w">  </span>sqlite<span class="w">             </span>pkgs/main/linux-64::sqlite-3.45.3-h5eee18b_0
+<span class="w">  </span>tk<span class="w">                 </span>pkgs/main/linux-64::tk-8.6.14-h39e8969_0
+<span class="w">  </span>tqdm<span class="w">               </span>pkgs/main/linux-64::tqdm-4.66.5-py312he106c6f_0
+<span class="w">  </span>truststore<span class="w">         </span>pkgs/main/linux-64::truststore-0.8.0-py312h06a4308_0
+<span class="w">  </span>tzdata<span class="w">             </span>pkgs/main/noarch::tzdata-2024b-h04d1e81_0
+<span class="w">  </span>urllib3<span class="w">            </span>pkgs/main/linux-64::urllib3-2.2.3-py312h06a4308_0
+<span class="w">  </span>wheel<span class="w">              </span>pkgs/main/linux-64::wheel-0.44.0-py312h06a4308_0
+<span class="w">  </span>xz<span class="w">                 </span>pkgs/main/linux-64::xz-5.4.6-h5eee18b_1
+<span class="w">  </span>yaml-cpp<span class="w">           </span>pkgs/main/linux-64::yaml-cpp-0.8.0-h6a678d5_1
+<span class="w">  </span>zlib<span class="w">               </span>pkgs/main/linux-64::zlib-1.2.13-h5eee18b_1
+<span class="w">  </span>zstandard<span class="w">          </span>pkgs/main/linux-64::zstandard-0.23.0-py312h2c38b39_1
+<span class="w">  </span>zstd<span class="w">               </span>pkgs/main/linux-64::zstd-1.5.6-hc292b87_0
+
+
+
+Downloading<span class="w"> </span>and<span class="w"> </span>Extracting<span class="w"> </span>Packages:
+
+Preparing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+Executing<span class="w"> </span>transaction:<span class="w"> </span><span class="k">done</span>
+installation<span class="w"> </span>finished.
+Do<span class="w"> </span>you<span class="w"> </span>wish<span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>your<span class="w"> </span>shell<span class="w"> </span>profile<span class="w"> </span>to<span class="w"> </span>automatically<span class="w"> </span>initialize<span class="w"> </span>conda?
+This<span class="w"> </span>will<span class="w"> </span>activate<span class="w"> </span>conda<span class="w"> </span>on<span class="w"> </span>startup<span class="w"> </span>and<span class="w"> </span>change<span class="w"> </span>the<span class="w"> </span><span class="nb">command</span><span class="w"> </span>prompt<span class="w"> </span>when<span class="w"> </span>activated.
+If<span class="w"> </span>you<span class="s1">'d prefer that conda'</span>s<span class="w"> </span>base<span class="w"> </span>environment<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>activated<span class="w"> </span>on<span class="w"> </span>startup,
+<span class="w">   </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span><span class="nb">command</span><span class="w"> </span>when<span class="w"> </span>conda<span class="w"> </span>is<span class="w"> </span>activated:
+
+conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>auto_activate_base<span class="w"> </span><span class="nb">false</span>
+
+You<span class="w"> </span>can<span class="w"> </span>undo<span class="w"> </span>this<span class="w"> </span>by<span class="w"> </span>running<span class="w"> </span><span class="sb">`</span>conda<span class="w"> </span>init<span class="w"> </span>--reverse<span class="w"> </span><span class="nv">$SHELL</span><span class="sb">`</span>?<span class="w"> </span><span class="o">[</span>yes<span class="p">|</span>no<span class="o">]</span>
+<span class="o">[</span>no<span class="o">]</span><span class="w"> </span>&gt;&gt;&gt;<span class="w"> </span>no
+
+You<span class="w"> </span>have<span class="w"> </span>chosen<span class="w"> </span>to<span class="w"> </span>not<span class="w"> </span>have<span class="w"> </span>conda<span class="w"> </span>modify<span class="w"> </span>your<span class="w"> </span>shell<span class="w"> </span>scripts<span class="w"> </span>at<span class="w"> </span>all.
+To<span class="w"> </span>activate<span class="w"> </span>conda<span class="s1">'s base environment in your current shell session:</span>
+
+<span class="s1">eval "$(/home/friday13/.miniconda3/bin/conda shell.YOUR_SHELL_NAME hook)"</span>
+
+<span class="s1">To install conda'</span>s<span class="w"> </span>shell<span class="w"> </span>functions<span class="w"> </span><span class="k">for</span><span class="w"> </span>easier<span class="w"> </span>access,<span class="w"> </span>first<span class="w"> </span>activate,<span class="w"> </span><span class="k">then</span>:
+
+conda<span class="w"> </span>init
+
+Thank<span class="w"> </span>you<span class="w"> </span><span class="k">for</span><span class="w"> </span>installing<span class="w"> </span>Miniconda3!
+</code></pre></div>
+<img alt="arch-linux-conda-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/conda-xl.webp" srcset="/images/conda-sm.webp 300w, /images/conda-md.webp 500w, /images/conda-xl.webp 800w, /images/conda-xl.webp 1200w"/></p></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/&text=Arch Linux'ta Conda Kurulumu ve Yönetimi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/&title=Arch Linux'ta Conda Kurulumu ve Yönetimi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/&text=Arch Linux'ta Conda Kurulumu ve Yönetimi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=Arch Linux'ta Conda Kurulumu ve Yönetimi https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=Arch Linux'ta Conda Kurulumu ve Yönetimi&body=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/&description=Arch Linux'ta Conda Kurulumu ve Yönetimi&media=https://yuceltoluyag.github.io/images/conda-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/&title=Arch Linux'ta Conda Kurulumu ve Yönetimi"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=Arch Linux'ta Conda Kurulumu ve Yönetimi%20-%20https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" conda="" href="#arch-linuxta-conda-kurulumu-ve-yonetimi" kurulumu="" ta="" title="Arch Linux" ve="" yönetimi'="">Arch Linux'ta Conda Kurulumu ve Y&ouml;netimi</a><ul><li><a class="toc-href" href="#1-conda-kurulumu" title="1. Conda Kurulumu">1. Conda Kurulumu</a><ul><li><a class="toc-href" href="#11-miniconda-kurulumu" title="1.1 Miniconda Kurulumu">1.1 Miniconda Kurulumu</a></li><li><a class="toc-href" etme'="" href="#12-condanin-versiyonunu-kontrol-etme" kontrol="" nın="" title="1.2 Conda" versiyonunu="">1.2 Conda'n&inodot;n Versiyonunu Kontrol Etme</a></li></ul></li><li><a class="toc-href" güncelleme'="" href="#2-condayi-guncelleme_1" title="2. Conda" yı="">2. Conda'y&inodot; G&uuml;ncelleme</a></li><li><a class="toc-href" href="#3-conda-ortamlari-yonetme" title="3. Conda Ortamlar&inodot; Y&ouml;netme">3. Conda Ortamlar&inodot; Y&ouml;netme</a><ul><li><a class="toc-href" href="#31-yeni-bir-ortam-olusturma" title="3.1 Yeni Bir Ortam Olu&scedil;turma">3.1 Yeni Bir Ortam Olu&scedil;turma</a></li><li><a class="toc-href" href="#32-ortami-etkinlestirme" title="3.2 Ortam&inodot; Etkinle&scedil;tirme">3.2 Ortam&inodot; Etkinle&scedil;tirme</a></li><li><a class="toc-href" href="#33-ortami-listeleme" title="3.3 Ortam&inodot; Listeleme">3.3 Ortam&inodot; Listeleme</a></li></ul></li><li><a class="toc-href" href="#4-paket-yonetimi_1" title="4. Paket Y&ouml;netimi">4. Paket Y&ouml;netimi</a><ul><li><a class="toc-href" href="#41-paket-yukleme" title="4.1 Paket Y&uuml;kleme">4.1 Paket Y&uuml;kleme</a></li><li><a class="toc-href" href="#42-paket-guncelleme" title="4.2 Paket G&uuml;ncelleme">4.2 Paket G&uuml;ncelleme</a></li><li><a class="toc-href" href="#43-paket-kaldirma" title="4.3 Paket Kald&inodot;rma">4.3 Paket Kald&inodot;rma</a></li></ul></li><li><a class="toc-href" href="#5-en-iyi-kurulum-uygulamalari_1" title="5. En &Idot;yi Kurulum Uygulamalar&inodot;">5. En &Idot;yi Kurulum Uygulamalar&inodot;</a><ul><li><a class="toc-href" href="#51-sistem-genelinde-kurulumdan-kacinin" title="5.1 Sistem Genelinde Kurulumdan Ka&ccedil;&inodot;n&inodot;n">5.1 Sistem Genelinde Kurulumdan Ka&ccedil;&inodot;n&inodot;n</a></li><li><a class="toc-href" href="#52-aur-uzerinden-kurulum-approach-2" title="5.2 AUR &Uuml;zerinden Kurulum (Approach 2)">5.2 AUR &Uuml;zerinden Kurulum (Approach 2)</a></li><li><a class="toc-href" href="#53-conda-base-ortamini-yonetmek" title="5.3 Conda Base Ortam&inodot;n&inodot; Y&ouml;netmek">5.3 Conda Base Ortam&inodot;n&inodot; Y&ouml;netmek</a></li></ul></li><li><a class="toc-href" href="#6-sonuc_1" title="6. Sonu&ccedil;">6. Sonu&ccedil;</a></li><li><a class="toc-href" href="#output" title="Output">Output</a></li></ul></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

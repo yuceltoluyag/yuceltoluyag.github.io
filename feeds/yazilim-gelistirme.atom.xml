@@ -1,0 +1,962 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Yazılım Geliştirme</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/yazilim-gelistirme.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Rehber: Arch Linux'ta Flutter Kurulumu</title><link href="https://yuceltoluyag.github.io/arch-linux-flutter-kurulumu/" rel="alternate"/><published>2025-08-03T16:45:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-08-03:/arch-linux-flutter-kurulumu/</id><summary type="html">&lt;p&gt;Arch Linux'ta Android Studio kurmadan Flutter geliştirme ortamı kurulumu. 2025 güncel paketleri ve Java 24 desteği ile hafif ve etkili kurulum.&lt;/p&gt;</summary><content type="html">&lt;h1 id="arch-linuxta-flutter-kurulumu-android-studio-olmadan-tam-kurulum-rehberi"&gt;Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi&lt;/h1&gt;
+&lt;h2 id="giris"&gt;🎯 Giri&amp;scedil;&lt;/h2&gt;
+&lt;p&gt;Flutter ve Android'i birlikte &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak hi&amp;ccedil; de kolay bir i&amp;scedil; de&amp;gbreve;il! Linux, Flutter geli&amp;scedil;tirme s&amp;ouml;z konusu oldu&amp;gbreve;unda birinci s&amp;inodot;n&amp;inodot;f bir platform olsa da, Java, Android SDK ve Android ara&amp;ccedil; zincirini kurmak ger&amp;ccedil;ek bir ba&amp;scedil; belas&amp;inodot; olabilir. 😅&lt;/p&gt;
+&lt;p&gt;Bu rehber, &lt;strong&gt;Android Studio kurmadan&lt;/strong&gt; Flutter'&amp;inodot; Android SDK ile nas&amp;inodot;l &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;raca&amp;gbreve;&amp;inodot;n&amp;inodot;z&amp;inodot; g&amp;ouml;steriyor. Android Studio tam donan&amp;inodot;ml&amp;inodot; bir IDE'dir, ancak farkl&amp;inodot; bir edit&amp;ouml;r (Vim, VS Code gibi) kullanmak istiyorsan&amp;inodot;z, Android Studio sadece disk alan&amp;inodot;n&amp;inodot;z&amp;inodot; yiyor demektir! 💾&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2025 G&amp;uuml;ncellemesi&lt;/strong&gt;: Bu rehber Flutter 3.32.8, Dart 3.8.1, Java 24 OpenJDK ve Android SDK 36 ile test edilmi&amp;scedil;tir.&lt;/p&gt;
+&lt;h2 id="sistem-gereksinimleri"&gt;📋 Sistem Gereksinimleri&lt;/h2&gt;
+&lt;p&gt;Ba&amp;scedil;lamadan &amp;ouml;nce sisteminizde &amp;scedil;unlar&amp;inodot;n bulundu&amp;gbreve;undan emin olun:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ &lt;strong&gt;Disk Alan&amp;inodot;&lt;/strong&gt;: Flutter ve Android SDK i&amp;ccedil;in &lt;strong&gt;8GB&lt;/strong&gt; bo&amp;scedil; alan (2025'te biraz artt&amp;inodot;)&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;RAM&lt;/strong&gt;: Minimum 8GB (16GB &amp;ouml;nerilir - modern Android em&amp;uuml;lat&amp;ouml;rleri i&amp;ccedil;in)&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;&amp;Idot;nternet&lt;/strong&gt;: Kararl&amp;inodot; ba&amp;gbreve;lant&amp;inodot; (~2.5GB indirme)&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;AUR Helper&lt;/strong&gt;: yay veya paru&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="adim-1-flutter-kurulumu"&gt;🔧 Ad&amp;inodot;m 1: Flutter Kurulumu&lt;/h2&gt;
+&lt;h3 id="aurdan-flutter-kurulumu"&gt;AUR'dan Flutter Kurulumu 📥&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Flutter'&amp;inodot; AUR'dan kur (bin paketi g&amp;uuml;ncel)&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;flutter-bin
+
+&lt;span class="c1"&gt;# Alternatif: Flutter git versiyonu&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;flutter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="java-surumu-kontrolu-ve-ayarlama"&gt;Java S&amp;uuml;r&amp;uuml;m&amp;uuml; Kontrol&amp;uuml; ve Ayarlama ☕&lt;/h3&gt;
+&lt;p&gt;2025'te Arch Linux varsay&amp;inodot;lan olarak Java 24 ile geliyor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Mevcut Java s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; kontrol et&lt;/span&gt;
+archlinux-java&lt;span class="w"&gt; &lt;/span&gt;status
+
+&lt;span class="c1"&gt;# &amp;Ccedil;&amp;inodot;kt&amp;inodot; b&amp;ouml;yle g&amp;ouml;r&amp;uuml;necek:&lt;/span&gt;
+&lt;span class="c1"&gt;# Available Java environments:&lt;/span&gt;
+&lt;span class="c1"&gt;#   java-24-openjdk (default)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Java 24 ile uyumluluk i&amp;ccedil;in ek ayarlar&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;JAVA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'/usr/lib/jvm/java-24-openjdk'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;⚠️ 2025 G&amp;uuml;ncellemesi&lt;/strong&gt;: Java 24 ile Android ara&amp;ccedil;lar&amp;inodot; tamamen uyumlu. Eski s&amp;uuml;r&amp;uuml;mlere gerek yok!&lt;/p&gt;
+&lt;h3 id="flutter-surum-kontrolu"&gt;Flutter S&amp;uuml;r&amp;uuml;m Kontrol&amp;uuml; 🔍&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Flutter s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; kontrol et&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;--version
+
+&lt;span class="c1"&gt;# &amp;Ccedil;&amp;inodot;kt&amp;inodot; &amp;scedil;&amp;ouml;yle olmal&amp;inodot;:&lt;/span&gt;
+&lt;span class="c1"&gt;# Flutter 3.32.8 &amp;bull; channel stable &amp;bull; https://github.com/flutter/flutter.git&lt;/span&gt;
+&lt;span class="c1"&gt;# Framework &amp;bull; revision edada7c56e (8 days ago) &amp;bull; 2025-07-25 14:08:03 +0000&lt;/span&gt;
+&lt;span class="c1"&gt;# Engine &amp;bull; revision ef0cd00091 (9 days ago) &amp;bull; 2025-07-24 12:23:50 -0700&lt;/span&gt;
+&lt;span class="c1"&gt;# Tools &amp;bull; Dart 3.8.1 &amp;bull; DevTools 2.45.1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-2-flutter-izinlerini-duzeltme_1"&gt;🔐 Ad&amp;inodot;m 2: Flutter &amp;Idot;zinlerini D&amp;uuml;zeltme&lt;/h2&gt;
+&lt;h3 id="kullanici-grubu-olusturma"&gt;Kullan&amp;inodot;c&amp;inodot; Grubu Olu&amp;scedil;turma 👥&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# flutterusers grubu olu&amp;scedil;tur&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;groupadd&lt;span class="w"&gt; &lt;/span&gt;flutterusers
+
+&lt;span class="c1"&gt;# Kullan&amp;inodot;c&amp;inodot;n&amp;inodot; gruba ekle&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;gpasswd&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;flutterusers
+
+&lt;span class="c1"&gt;# /opt/flutter dizininin sahipli&amp;gbreve;ini de&amp;gbreve;i&amp;scedil;tir&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;:flutterusers&lt;span class="w"&gt; &lt;/span&gt;/opt/flutter
+
+&lt;span class="c1"&gt;# Gruba yazma izni ver&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;g+w&lt;span class="w"&gt; &lt;/span&gt;/opt/flutter/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="izin-sorunlari-devam-ederse"&gt;&amp;Idot;zin Sorunlar&amp;inodot; Devam Ederse 🚨&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Flutter dizininin sahipli&amp;gbreve;ini kullan&amp;inodot;c&amp;inodot;n&amp;inodot;za ver&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;:flutterusers&lt;span class="w"&gt; &lt;/span&gt;/opt/flutter
+
+&lt;span class="c1"&gt;# Cache dizini i&amp;ccedil;in izin&lt;/span&gt;
+mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;~/.pub-cache
+chmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;755&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.pub-cache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-3-android-sdk-ve-araclari-kurulumu_1"&gt;📱 Ad&amp;inodot;m 3: Android SDK ve Ara&amp;ccedil;lar&amp;inodot; Kurulumu&lt;/h2&gt;
+&lt;h3 id="aur-ile-kolay-kurulum"&gt;AUR ile Kolay Kurulum 📦&lt;/h3&gt;
+&lt;p&gt;Arch Linux'un g&amp;uuml;c&amp;uuml;n&amp;uuml; kullanarak t&amp;uuml;m Android SDK bile&amp;scedil;enlerini AUR'dan kural&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Android SDK Command Line Tools&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;android-sdk-cmdline-tools-latest
+
+&lt;span class="c1"&gt;# Platform tools ve build tools&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;android-sdk-platform-tools&lt;span class="w"&gt; &lt;/span&gt;android-sdk-build-tools
+
+&lt;span class="c1"&gt;# Android SDK 36 (2025'in son s&amp;uuml;r&amp;uuml;m&amp;uuml;)&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;android-platform-36
+
+&lt;span class="c1"&gt;# Em&amp;uuml;lat&amp;ouml;r deste&amp;gbreve;i&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;android-emulator
+
+&lt;span class="c1"&gt;# System images (opsiyonel - em&amp;uuml;lat&amp;ouml;r i&amp;ccedil;in)&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;android-google-apis-x86-64-system-image
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu kadar! 🎉 AUR paketleri her &amp;scedil;eyi &lt;code&gt;/opt/android-sdk/&lt;/code&gt; alt&amp;inodot;na d&amp;uuml;zg&amp;uuml;n bir &amp;scedil;ekilde kuracak.&lt;/p&gt;
+&lt;h2 id="adim-4-android-sdk-izinlerini-duzeltme_1"&gt;🔐 Ad&amp;inodot;m 4: Android SDK &amp;Idot;zinlerini D&amp;uuml;zeltme&lt;/h2&gt;
+&lt;h3 id="sdk-dizin-yapisi-aur-uyumlu"&gt;SDK Dizin Yap&amp;inodot;s&amp;inodot; (AUR Uyumlu) 📁&lt;/h3&gt;
+&lt;p&gt;AUR paketleri Android SDK'y&amp;inodot; &lt;code&gt;/opt/android-sdk/&lt;/code&gt; dizinine kuruyor. Environment variables'lar&amp;inodot; buna g&amp;ouml;re ayarlayal&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Android SDK ayarlar&amp;inodot; (AUR uyumlu)&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"/opt/android-sdk"&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_SDK_ROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"/opt/android-sdk"&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_AVD_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.android/avd"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-5-environment-variables-kurulumu_1"&gt;🌍 Ad&amp;inodot;m 5: Environment Variables Kurulumu&lt;/h2&gt;
+&lt;h3 id="modern-shell-konfigurasyonu"&gt;Modern Shell Konfig&amp;uuml;rasyonu ⚙️&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;~/.bashrc&lt;/code&gt; veya &lt;code&gt;~/.zshrc&lt;/code&gt; dosyan&amp;inodot;za &amp;scedil;u g&amp;uuml;ncel ayarlar&amp;inodot; ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Java 24 ayarlar&amp;inodot;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;JAVA_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'/usr/lib/jvm/java-24-openjdk'&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Android SDK ayarlar&amp;inodot; (AUR uyumlu)&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"/opt/android-sdk"&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_SDK_ROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"/opt/android-sdk"&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_AVD_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.android/avd"&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Path ayarlar&amp;inodot;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$ANDROID_HOME&lt;/span&gt;/platform-tools
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$ANDROID_HOME&lt;/span&gt;/cmdline-tools/latest/bin
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$ANDROID_HOME&lt;/span&gt;/emulator
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:&lt;span class="nv"&gt;$ANDROID_HOME&lt;/span&gt;/tools/bin
+
+&lt;span class="c1"&gt;# Flutter path&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;:/opt/flutter/bin
+
+&lt;span class="c1"&gt;# Pub cache&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PUB_CACHE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.pub-cache"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="degisiklikleri-uygulama"&gt;De&amp;gbreve;i&amp;scedil;iklikleri Uygulama 🔄&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Shell'i yeniden y&amp;uuml;kle&lt;/span&gt;
+&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.bashrc
+
+&lt;span class="c1"&gt;# Veya yeni terminal a&amp;ccedil;&amp;inodot;n&lt;/span&gt;
+&lt;span class="c1"&gt;# Environment'&amp;inodot;n do&amp;gbreve;ru y&amp;uuml;klendi&amp;gbreve;ini kontrol et&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$ANDROID_HOME&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$JAVA_HOME&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-6-android-emulator-kurulumu_1"&gt;📲 Ad&amp;inodot;m 6: Android Em&amp;uuml;lat&amp;ouml;r Kurulumu&lt;/h2&gt;
+&lt;h3 id="modern-sistem-imagei-kurulumu"&gt;Modern Sistem Image'i Kurulumu 💿&lt;/h3&gt;
+&lt;p&gt;Android SDK 36 ile g&amp;uuml;ncel sistem image'leri:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Mevcut sistem image'lerini listele&lt;/span&gt;
+sdkmanager&lt;span class="w"&gt; &lt;/span&gt;--list&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;system-images
+
+&lt;span class="c1"&gt;# Android 36 Google Play image&lt;/span&gt;
+sdkmanager&lt;span class="w"&gt; &lt;/span&gt;--install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"system-images;android-36;google_apis_playstore;x86_64"&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Android 35 backup olarak&lt;/span&gt;
+sdkmanager&lt;span class="w"&gt; &lt;/span&gt;--install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"system-images;android-35;google_apis_playstore;x86_64"&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Android 34 LTS deste&amp;gbreve;i&lt;/span&gt;
+sdkmanager&lt;span class="w"&gt; &lt;/span&gt;--install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"system-images;android-34;google_apis_playstore;x86_64"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="avd-olusturma-pixel-8-pro-profili"&gt;AVD Olu&amp;scedil;turma (Pixel 8 Pro Profili) 🎮&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Modern cihaz profili ile em&amp;uuml;lat&amp;ouml;r olu&amp;scedil;tur&lt;/span&gt;
+avdmanager&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;avd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;Flutter_Pixel_8_Pro&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-k&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"system-images;android-36;google_apis_playstore;x86_64"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"pixel_8_pro"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="avd-hardware-acceleration"&gt;AVD Hardware Acceleration 🚀&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# KVM kontrol&amp;uuml;&lt;/span&gt;
+kvm-ok
+
+&lt;span class="c1"&gt;# Hardware acceleration aktifle&amp;scedil;tir&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'hw.gpu.enabled=yes'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.android/avd/Flutter_Pixel_8_Pro.avd/config.ini
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'hw.gpu.mode=host'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.android/avd/Flutter_Pixel_8_Pro.avd/config.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="emulatoru-baslatma-2025-optimized"&gt;Em&amp;uuml;lat&amp;ouml;r&amp;uuml; Ba&amp;scedil;latma (2025 Optimized) 🎯&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Y&amp;uuml;ksek performans ile ba&amp;scedil;lat&lt;/span&gt;
+emulator&lt;span class="w"&gt; &lt;/span&gt;@Flutter_Pixel_8_Pro&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-gpu&lt;span class="w"&gt; &lt;/span&gt;host&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-memory&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4096&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-cores&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-accel&lt;span class="w"&gt; &lt;/span&gt;on
+
+&lt;span class="c1"&gt;# Arka planda &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&lt;/span&gt;
+emulator&lt;span class="w"&gt; &lt;/span&gt;@Flutter_Pixel_8_Pro&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-gpu&lt;span class="w"&gt; &lt;/span&gt;host&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-no-boot-anim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;-no-snapshot&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-7-flutter-doctor-ile-dogrulama_1"&gt;🩺 Ad&amp;inodot;m 7: Flutter Doctor ile Do&amp;gbreve;rulama&lt;/h2&gt;
+&lt;h3 id="android-lisanslarini-kabul-etme"&gt;Android Lisanslar&amp;inodot;n&amp;inodot; Kabul Etme ✅&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# T&amp;uuml;m Android lisanslar&amp;inodot;n&amp;inodot; kabul et&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;doctor&lt;span class="w"&gt; &lt;/span&gt;--android-licenses
+
+&lt;span class="c1"&gt;# Otomatik 'y' ile kabul et&lt;/span&gt;
+yes&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;flutter&lt;span class="w"&gt; &lt;/span&gt;doctor&lt;span class="w"&gt; &lt;/span&gt;--android-licenses
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="flutter-doctor-calistirma"&gt;Flutter Doctor &amp;Ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rma 🔍&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Detayl&amp;inodot; Flutter doctor&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;doctor&lt;span class="w"&gt; &lt;/span&gt;-v
+
+&lt;span class="c1"&gt;# Web deste&amp;gbreve;ini aktifle&amp;scedil;tir&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--enable-web
+
+&lt;span class="c1"&gt;# Linux desktop deste&amp;gbreve;ini aktifle&amp;scedil;tir  &lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--enable-linux-desktop
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;2025 Ba&amp;scedil;ar&amp;inodot;l&amp;inodot; Kurulum &amp;Ccedil;&amp;inodot;kt&amp;inodot;s&amp;inodot;:&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;flutter&lt;span class="w"&gt; &lt;/span&gt;doctor&lt;span class="w"&gt; &lt;/span&gt;-v
+&lt;span class="o"&gt;[&lt;/span&gt;&amp;checkmark;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Flutter&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;Channel&lt;span class="w"&gt; &lt;/span&gt;stable,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.32.8,&lt;span class="w"&gt; &lt;/span&gt;on&lt;span class="w"&gt; &lt;/span&gt;Arch&lt;span class="w"&gt; &lt;/span&gt;Linux
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;.12.40-2-lts,&lt;span class="w"&gt; &lt;/span&gt;locale&lt;span class="w"&gt; &lt;/span&gt;en_US.UTF-8&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;73ms&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Flutter&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.32.8&lt;span class="w"&gt; &lt;/span&gt;on&lt;span class="w"&gt; &lt;/span&gt;channel&lt;span class="w"&gt; &lt;/span&gt;stable&lt;span class="w"&gt; &lt;/span&gt;at
+&lt;span class="w"&gt;      &lt;/span&gt;/opt/flutter
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Upstream&lt;span class="w"&gt; &lt;/span&gt;repository
+&lt;span class="w"&gt;      &lt;/span&gt;https://github.com/flutter/flutter.git
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Framework&lt;span class="w"&gt; &lt;/span&gt;revision&lt;span class="w"&gt; &lt;/span&gt;edada7c56e&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;days&lt;span class="w"&gt; &lt;/span&gt;ago&lt;span class="o"&gt;)&lt;/span&gt;,
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;2025&lt;/span&gt;-07-25&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;14&lt;/span&gt;:08:03&lt;span class="w"&gt; &lt;/span&gt;+0000
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Engine&lt;span class="w"&gt; &lt;/span&gt;revision&lt;span class="w"&gt; &lt;/span&gt;ef0cd00091
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Dart&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.8.1
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;DevTools&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.45.1
+
+&lt;span class="o"&gt;[&lt;/span&gt;&amp;checkmark;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;toolchain&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;develop&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;devices
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;SDK&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;35&lt;/span&gt;.0.1&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;867ms&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;SDK&lt;span class="w"&gt; &lt;/span&gt;at&lt;span class="w"&gt; &lt;/span&gt;/opt/android-sdk
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Platform&lt;span class="w"&gt; &lt;/span&gt;android-36,&lt;span class="w"&gt; &lt;/span&gt;build-tools&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;35&lt;/span&gt;.0.1
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_HOME&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt/android-sdk
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_SDK_ROOT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt/android-sdk
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Java&lt;span class="w"&gt; &lt;/span&gt;binary&lt;span class="w"&gt; &lt;/span&gt;at:
+&lt;span class="w"&gt;      &lt;/span&gt;/opt/android-studio/jbr/bin/java
+&lt;span class="w"&gt;      &lt;/span&gt;This&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;JDK&lt;span class="w"&gt; &lt;/span&gt;bundled&lt;span class="w"&gt; &lt;/span&gt;with&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;latest
+&lt;span class="w"&gt;      &lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;Studio&lt;span class="w"&gt; &lt;/span&gt;installation&lt;span class="w"&gt; &lt;/span&gt;on&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;machine.
+&lt;span class="w"&gt;      &lt;/span&gt;To&lt;span class="w"&gt; &lt;/span&gt;manually&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;JDK&lt;span class="w"&gt; &lt;/span&gt;path,&lt;span class="w"&gt; &lt;/span&gt;use:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;flutter
+&lt;span class="w"&gt;      &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--jdk-dir&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"path/to/jdk"&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;.
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Java&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;OpenJDK&lt;span class="w"&gt; &lt;/span&gt;Runtime&lt;span class="w"&gt; &lt;/span&gt;Environment
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;.0.6+-13391695-b895.109&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;All&lt;span class="w"&gt; &lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;licenses&lt;span class="w"&gt; &lt;/span&gt;accepted.
+
+&lt;span class="o"&gt;[&lt;/span&gt;&amp;checkmark;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Chrome&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;develop&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;web&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;11ms&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CHROME_EXECUTABLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;/usr/bin/google-chrome-stable
+
+&lt;span class="o"&gt;[&lt;/span&gt;&amp;checkmark;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Linux&lt;span class="w"&gt; &lt;/span&gt;toolchain&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;develop&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Linux&lt;span class="w"&gt; &lt;/span&gt;desktop
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;218ms&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;clang&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;.1.8
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;cmake&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;.0.3-dirty
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;ninja&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.12.1
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;pkg-config&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.5.1
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;core&lt;span class="w"&gt; &lt;/span&gt;renderer:&lt;span class="w"&gt; &lt;/span&gt;NVIDIA&lt;span class="w"&gt; &lt;/span&gt;GeForce&lt;span class="w"&gt; &lt;/span&gt;RTX&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4060&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;Ti/PCIe/SSE2&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;core&lt;span class="w"&gt; &lt;/span&gt;version:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;.6.0&lt;span class="w"&gt; &lt;/span&gt;NVIDIA&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;575&lt;/span&gt;.64.05
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;core&lt;span class="w"&gt; &lt;/span&gt;shading&lt;span class="w"&gt; &lt;/span&gt;language&lt;span class="w"&gt; &lt;/span&gt;version:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;.60
+&lt;span class="w"&gt;      &lt;/span&gt;NVIDIA&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;ES&lt;span class="w"&gt; &lt;/span&gt;renderer:&lt;span class="w"&gt; &lt;/span&gt;NVIDIA&lt;span class="w"&gt; &lt;/span&gt;GeForce&lt;span class="w"&gt; &lt;/span&gt;RTX&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4060&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;Ti/PCIe/SSE2&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;ES&lt;span class="w"&gt; &lt;/span&gt;version:&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;ES&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.2&lt;span class="w"&gt; &lt;/span&gt;NVIDIA
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;575&lt;/span&gt;.64.05&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;ES&lt;span class="w"&gt; &lt;/span&gt;shading&lt;span class="w"&gt; &lt;/span&gt;language&lt;span class="w"&gt; &lt;/span&gt;version:&lt;span class="w"&gt; &lt;/span&gt;OpenGL&lt;span class="w"&gt; &lt;/span&gt;ES
+&lt;span class="w"&gt;      &lt;/span&gt;GLSL&lt;span class="w"&gt; &lt;/span&gt;ES&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.20&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;GL_EXT_framebuffer_blit:&lt;span class="w"&gt; &lt;/span&gt;yes&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;GL_EXT_texture_format_BGRA8888:&lt;span class="w"&gt; &lt;/span&gt;yes&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;X11&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;&amp;checkmark;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;Studio&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2025&lt;/span&gt;.1.2&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;10ms&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Android&lt;span class="w"&gt; &lt;/span&gt;Studio&lt;span class="w"&gt; &lt;/span&gt;at&lt;span class="w"&gt; &lt;/span&gt;/opt/android-studio
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Flutter&lt;span class="w"&gt; &lt;/span&gt;plugin&lt;span class="w"&gt; &lt;/span&gt;can&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;from:
+&lt;span class="w"&gt;      &lt;/span&gt;🔨
+&lt;span class="w"&gt;      &lt;/span&gt;https://plugins.jetbrains.com/plugin/9212-flut
+&lt;span class="w"&gt;      &lt;/span&gt;ter
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Dart&lt;span class="w"&gt; &lt;/span&gt;plugin&lt;span class="w"&gt; &lt;/span&gt;can&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;from:
+&lt;span class="w"&gt;      &lt;/span&gt;🔨
+&lt;span class="w"&gt;      &lt;/span&gt;https://plugins.jetbrains.com/plugin/6351-dart
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Java&lt;span class="w"&gt; &lt;/span&gt;version&lt;span class="w"&gt; &lt;/span&gt;OpenJDK&lt;span class="w"&gt; &lt;/span&gt;Runtime&lt;span class="w"&gt; &lt;/span&gt;Environment
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;21&lt;/span&gt;.0.6+-13391695-b895.109&lt;span class="o"&gt;)&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;&amp;checkmark;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Connected&lt;span class="w"&gt; &lt;/span&gt;device&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;available&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;89ms&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Linux&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;desktop&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;linux&lt;span class="w"&gt;  &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;linux-x64&lt;span class="w"&gt;      &lt;/span&gt;&amp;bull;
+&lt;span class="w"&gt;      &lt;/span&gt;Arch&lt;span class="w"&gt; &lt;/span&gt;Linux&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;.12.40-2-lts
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;Chrome&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;web&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;chrome&lt;span class="w"&gt; &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;web-javascript&lt;span class="w"&gt; &lt;/span&gt;&amp;bull;
+&lt;span class="w"&gt;      &lt;/span&gt;Google&lt;span class="w"&gt; &lt;/span&gt;Chrome&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;138&lt;/span&gt;.0.7204.183
+
+&lt;span class="o"&gt;[&lt;/span&gt;&amp;checkmark;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Network&lt;span class="w"&gt; &lt;/span&gt;resources&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;827ms&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;All&lt;span class="w"&gt; &lt;/span&gt;expected&lt;span class="w"&gt; &lt;/span&gt;network&lt;span class="w"&gt; &lt;/span&gt;resources&lt;span class="w"&gt; &lt;/span&gt;are&lt;span class="w"&gt; &lt;/span&gt;available.
+
+&amp;bull;&lt;span class="w"&gt; &lt;/span&gt;No&lt;span class="w"&gt; &lt;/span&gt;issues&lt;span class="w"&gt; &lt;/span&gt;found!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-8-ileri-seviye-konfigurasyon_1"&gt;🔧 Ad&amp;inodot;m 8: &amp;Idot;leri Seviye Konfig&amp;uuml;rasyon&lt;/h2&gt;
+&lt;h3 id="modern-kvm-kurulumu"&gt;Modern KVM Kurulumu ⚡&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# KVM ve QEMU g&amp;uuml;ncel s&amp;uuml;r&amp;uuml;mler&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;qemu-full&lt;span class="w"&gt; &lt;/span&gt;libvirt&lt;span class="w"&gt; &lt;/span&gt;virt-manager&lt;span class="w"&gt; &lt;/span&gt;bridge-utils&lt;span class="w"&gt; &lt;/span&gt;dnsmasq
+
+&lt;span class="c1"&gt;# Kullan&amp;inodot;c&amp;inodot; gruplar&amp;inodot;&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;usermod&lt;span class="w"&gt; &lt;/span&gt;-aG&lt;span class="w"&gt; &lt;/span&gt;kvm,libvirt&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Servisleri aktifle&amp;scedil;tir&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;libvirtd
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--now&lt;span class="w"&gt; &lt;/span&gt;dnsmasq
+
+&lt;span class="c1"&gt;# Nested virtualization (Intel)&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'options kvm_intel nested=1'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;/etc/modprobe.d/kvm_intel.conf
+
+&lt;span class="c1"&gt;# Nested virtualization (AMD)&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'options kvm_amd nested=1'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;/etc/modprobe.d/kvm_amd.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="gradle-80-optimizasyonu"&gt;Gradle 8.0+ Optimizasyonu 🚀&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;~/.gradle/gradle.properties&lt;/code&gt; :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Properties&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Gradle 8.0+ performans ayarlar&amp;inodot;&lt;/span&gt;
+&lt;span class="na"&gt;org.gradle.daemon&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;org.gradle.parallel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;org.gradle.configureondemand&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;org.gradle.caching&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;org.gradle.jvmargs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;-Xmx8g -XX:MaxMetaspaceSize=2g -XX:+HeapDumpOnOutOfMemoryError&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Android build optimizasyonu&lt;/span&gt;
+&lt;span class="na"&gt;android.useAndroidX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;android.enableJetifier&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;android.enableR8.fullMode&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;android.experimental.enableSourceSetPathsMap&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;span class="na"&gt;android.experimental.legacyTransform&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;false&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Kotlin compiler optimizasyonu&lt;/span&gt;
+&lt;span class="na"&gt;kotlin.compiler.execution.strategy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;in-process&lt;/span&gt;
+&lt;span class="na"&gt;kotlin.incremental&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="flutter-analyticsi-kapatma-privacy"&gt;Flutter Analytics'i Kapatma (Privacy) 🔒&lt;/h3&gt;
+&lt;p&gt;Flutter varsay&amp;inodot;lan olarak Google Analytics g&amp;ouml;nderir. Bunu kapatmak isterseniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Analytics'i devre d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rak&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;--disable-analytics
+
+&lt;span class="c1"&gt;# Crash reporting'i de kapatmak i&amp;ccedil;in&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--no-analytics
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-9-ilk-flutter-projesi-2025-modern-template_1"&gt;🧪 Ad&amp;inodot;m 9: &amp;Idot;lk Flutter Projesi (2025 Modern Template)&lt;/h2&gt;
+&lt;h3 id="modern-proje-olusturma"&gt;Modern Proje Olu&amp;scedil;turma 🎯&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Material 3 ile yeni proje&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--platforms&lt;span class="o"&gt;=&lt;/span&gt;android,web,linux&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--template&lt;span class="o"&gt;=&lt;/span&gt;app&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;--project-name&lt;span class="w"&gt; &lt;/span&gt;my_arch_app_2025&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;my_arch_app_2025
+
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;my_arch_app_2025
+
+&lt;span class="c1"&gt;# Dependencies g&amp;uuml;ncelle&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;pub&lt;span class="w"&gt; &lt;/span&gt;get
+flutter&lt;span class="w"&gt; &lt;/span&gt;pub&lt;span class="w"&gt; &lt;/span&gt;upgrade
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="modern-pubspecyaml-template"&gt;Modern pubspec.yaml Template 📄&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;YAML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;my_arch_app_2025&lt;/span&gt;
+&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Modern Flutter app for Arch Linux&lt;/span&gt;
+&lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1.0.0+1&lt;/span&gt;
+
+&lt;span class="nt"&gt;environment&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;sdk&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;'&amp;gt;=3.8.0&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;lt;4.0.0'&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;flutter&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"&amp;gt;=3.32.0"&lt;/span&gt;
+
+&lt;span class="nt"&gt;dependencies&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;flutter&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;sdk&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;flutter&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# UI ve Material 3&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;material_color_utilities&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^0.8.0&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;dynamic_color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^1.7.0&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# State management&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^6.1.2&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;riverpod&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^2.5.1&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Networking&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;http&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^1.2.1&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;dio&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^5.4.3&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Storage&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;shared_preferences&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^2.2.3&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;sqflite&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^2.3.3&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Utils&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;intl&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^0.19.0&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;path&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^1.9.0&lt;/span&gt;
+
+&lt;span class="nt"&gt;dev_dependencies&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;flutter_test&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;sdk&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;flutter&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;flutter_lints&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;^4.0.0&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;integration_test&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;sdk&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;flutter&lt;/span&gt;
+
+&lt;span class="nt"&gt;flutter&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;uses-material-design&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="projeyi-calistirma"&gt;Projeyi &amp;Ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rma 🚀&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Android em&amp;uuml;lat&amp;ouml;rde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;emulator-5554
+
+&lt;span class="c1"&gt;# Web'de &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r (Chrome)&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;chrome&lt;span class="w"&gt; &lt;/span&gt;--web-port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;8080&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Linux desktop'ta &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;linux
+
+&lt;span class="c1"&gt;# Hot reload ile development&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;--hot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="yaygin-sorunlar-ve-cozumleri_1"&gt;⚠️ Yayg&amp;inodot;n Sorunlar ve &amp;Ccedil;&amp;ouml;z&amp;uuml;mleri&lt;/h2&gt;
+&lt;h3 id="sorun-1-java-24-uyumluluk-sorunlari"&gt;Sorun 1: Java 24 Uyumluluk Sorunlar&amp;inodot; ☕&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Hata&lt;/strong&gt;: &lt;code&gt;Unsupported Java version&lt;/code&gt; veya module system sorunlar&amp;inodot;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/strong&gt;:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Java flags ekle&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;JAVA_OPTS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED"&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Gradle i&amp;ccedil;in Java args&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"org.gradle.jvmargs=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.gradle/gradle.properties
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="sorun-1-sdk-manager-install-properties-hatasi"&gt;Sorun 1: SDK Manager Install Properties Hatas&amp;inodot; 🚫&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Hata&lt;/strong&gt;: &lt;code&gt;Warning: Failed to read or create install properties file.&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/strong&gt;:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# SDK dizininin sahipli&amp;gbreve;ini kullan&amp;inodot;c&amp;inodot;n&amp;inodot;za verin&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;chown&lt;span class="w"&gt; &lt;/span&gt;-R&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;:&lt;span class="nv"&gt;$USER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt/android-sdk/
+
+&lt;span class="c1"&gt;# &amp;Idot;htiya&amp;ccedil; duyulan installation settings dizinini olu&amp;scedil;turun&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;/opt/android-sdk/.installationSettings
+sudo&lt;span class="w"&gt; &lt;/span&gt;chown&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;:&lt;span class="nv"&gt;$USER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt/android-sdk/.installationSettings
+
+&lt;span class="c1"&gt;# &amp;Scedil;imdi sdkmanager &amp;ccedil;al&amp;inodot;&amp;scedil;acakt&amp;inodot;r&lt;/span&gt;
+sdkmanager&lt;span class="w"&gt; &lt;/span&gt;--install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"system-images;android-34;google_apis_playstore;x86_64"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not&lt;/strong&gt;: Bu hata genellikle AUR paketlerinin root izinleriyle kurulmas&amp;inodot;ndan kaynaklan&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="sorun-3-emulator-performance-sorunlari"&gt;Sorun 3: Em&amp;uuml;lat&amp;ouml;r Performance Sorunlar&amp;inodot; 📱&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Hata&lt;/strong&gt;: Em&amp;uuml;lat&amp;ouml;r yava&amp;scedil; &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor veya donuyor&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/strong&gt;:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Hardware acceleration kontrol&amp;uuml;&lt;/span&gt;
+/usr/bin/kvm-ok
+
+&lt;span class="c1"&gt;# AMD i&amp;ccedil;in KVM optimizasyonu&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amd_iommu=on iommu=pt"'&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;/etc/default/grub
+sudo&lt;span class="w"&gt; &lt;/span&gt;grub-mkconfig&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;/boot/grub/grub.cfg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h3 id="sorun-4-flutter-web-build-hatasi"&gt;Sorun 4: Flutter Web Build Hatas&amp;inodot; 🌐&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Hata&lt;/strong&gt;: &lt;code&gt;Failed to build for web&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/strong&gt;:
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Web dependencies kur&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;pub&lt;span class="w"&gt; &lt;/span&gt;global&lt;span class="w"&gt; &lt;/span&gt;activate&lt;span class="w"&gt; &lt;/span&gt;webdev
+
+&lt;span class="c1"&gt;# Chrome path'ini ayarla&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;CHROME_EXECUTABLE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/bin/google-chrome-stable
+
+&lt;span class="c1"&gt;# Web build'i temizle ve yeniden yap&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;clean
+flutter&lt;span class="w"&gt; &lt;/span&gt;pub&lt;span class="w"&gt; &lt;/span&gt;get
+flutter&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;web&lt;span class="w"&gt; &lt;/span&gt;--release
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h2 id="adim-10-modern-ide-kurulumu_1"&gt;🎨 Ad&amp;inodot;m 10: Modern IDE Kurulumu&lt;/h2&gt;
+&lt;h3 id="visual-studio-code-extensions"&gt;Visual Studio Code + Extensions 💻&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# VS Code g&amp;uuml;ncel s&amp;uuml;r&amp;uuml;m&lt;/span&gt;
+yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;visual-studio-code-bin
+
+&lt;span class="c1"&gt;# Essential Flutter extensions&lt;/span&gt;
+code&lt;span class="w"&gt; &lt;/span&gt;--install-extension&lt;span class="w"&gt; &lt;/span&gt;Dart-Code.flutter
+code&lt;span class="w"&gt; &lt;/span&gt;--install-extension&lt;span class="w"&gt; &lt;/span&gt;Dart-Code.dart-code
+code&lt;span class="w"&gt; &lt;/span&gt;--install-extension&lt;span class="w"&gt; &lt;/span&gt;alexisvt.flutter-snippets
+code&lt;span class="w"&gt; &lt;/span&gt;--install-extension&lt;span class="w"&gt; &lt;/span&gt;Nash.awesome-flutter-snippets
+code&lt;span class="w"&gt; &lt;/span&gt;--install-extension&lt;span class="w"&gt; &lt;/span&gt;usernamehw.errorlens
+code&lt;span class="w"&gt; &lt;/span&gt;--install-extension&lt;span class="w"&gt; &lt;/span&gt;bradlc.vscode-tailwindcss
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="vs-code-settings-2025-optimized"&gt;VS Code Settings (2025 Optimized) ⚙️&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.vscode/settings.json&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"dart.flutterSdkPath"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/opt/flutter"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"dart.enableSdkFormatter"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"dart.previewFlutterUiGuides"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"dart.previewFlutterUiGuidesCustomTracking"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"dart.hotReloadOnSave"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"allIfDirty"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"dart.flutterHotReloadOnSave"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"allIfDirty"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"editor.formatOnSave"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"editor.codeActionsOnSave"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"source.fixAll"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"files.associations"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"*.dart"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"dart"&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="neovim-modern-setup-ileri-seviye"&gt;Neovim Modern Setup (&amp;Idot;leri Seviye) 🔥&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Neovim 0.10+ kur&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;neovim
+
+&lt;span class="c1"&gt;# LazyVim ile modern Flutter setup&lt;/span&gt;
+git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/LazyVim/starter&lt;span class="w"&gt; &lt;/span&gt;~/.config/nvim
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;~/.config/nvim/lua/plugins/flutter.lua&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Lua&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kr"&gt;return&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;"akinsho/flutter-tools.nvim"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;lazy&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;dependencies&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="s2"&gt;"nvim-lua/plenary.nvim"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+      &lt;span class="s2"&gt;"stevearc/dressing.nvim"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="n"&gt;config&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kr"&gt;function&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+      &lt;span class="nb"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"flutter-tools"&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="n"&gt;setup&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
+        &lt;span class="n"&gt;flutter_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"/opt/flutter/bin/flutter"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;dart_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"/opt/flutter/bin/dart"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;fvm&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="n"&gt;widget_guides&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="n"&gt;enabled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;},&lt;/span&gt;
+        &lt;span class="n"&gt;dev_log&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+          &lt;span class="n"&gt;enabled&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+          &lt;span class="n"&gt;open_cmd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"tabedit"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="p"&gt;},&lt;/span&gt;
+      &lt;span class="p"&gt;})&lt;/span&gt;
+    &lt;span class="kr"&gt;end&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+  &lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="performance-ve-build-optimizasyonu_1"&gt;📊 Performance ve Build Optimizasyonu&lt;/h2&gt;
+&lt;h3 id="modern-build-configurations"&gt;Modern Build Configurations 🏗️&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;android/app/build.gradle&lt;/code&gt; optimizasyonlar&amp;inodot;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;android {
+    compileSdk 36
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // 2025: Modern signing config
+            signingConfig signingConfigs.release
+        }
+        profile {
+            matchingFallbacks = ['debug', 'release']
+        }
+    }
+
+    // 2025: Build optimization
+    packagingOptions {
+        pickFirst '**/libc++_shared.so'
+        pickFirst '**/libjsc.so'
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="cicd-ready-build-scripts"&gt;CI/CD Ready Build Scripts 🔄&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;scripts/build.sh&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-e
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"🏗️ Flutter Build Script "&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Temizlik&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;clean
+flutter&lt;span class="w"&gt; &lt;/span&gt;pub&lt;span class="w"&gt; &lt;/span&gt;get
+
+&lt;span class="c1"&gt;# Code generation&lt;/span&gt;
+dart&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;build_runner&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;--delete-conflicting-outputs
+
+&lt;span class="c1"&gt;# Tests&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--coverage
+
+&lt;span class="c1"&gt;# Builds&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"📱 Building Android..."&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;apk&lt;span class="w"&gt; &lt;/span&gt;--release&lt;span class="w"&gt; &lt;/span&gt;--target-platform&lt;span class="w"&gt; &lt;/span&gt;android-arm64
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"🌐 Building Web..."&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;web&lt;span class="w"&gt; &lt;/span&gt;--release&lt;span class="w"&gt; &lt;/span&gt;--web-renderer&lt;span class="w"&gt; &lt;/span&gt;canvaskit
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"🖥️ Building Linux..."&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;build&lt;span class="w"&gt; &lt;/span&gt;linux&lt;span class="w"&gt; &lt;/span&gt;--release
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"✅ All builds completed!"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="modern-development-workflow_1"&gt;🔗 Modern Development Workflow&lt;/h2&gt;
+&lt;h3 id="git-hooks-setup"&gt;Git Hooks Setup 🎯&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.git/hooks/pre-commit&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# Flutter pre-commit hook&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"🔍 Running Flutter pre-commit checks..."&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Format code&lt;/span&gt;
+dart&lt;span class="w"&gt; &lt;/span&gt;format&lt;span class="w"&gt; &lt;/span&gt;.
+
+&lt;span class="c1"&gt;# Analyze code&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;analyze
+
+&lt;span class="c1"&gt;# Run tests&lt;/span&gt;
+flutter&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;test&lt;/span&gt;
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"✅ Pre-commit checks passed!"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="docker-development-optional"&gt;Docker Development (Optional) 🐳&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Dockerfile.dev&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Docker&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;archlinux:latest&lt;/span&gt;
+
+&lt;span class="c"&gt;# Install dependencies&lt;/span&gt;
+&lt;span class="k"&gt;RUN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-Syu&lt;span class="w"&gt; &lt;/span&gt;--noconfirm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;--noconfirm&lt;span class="w"&gt; &lt;/span&gt;base-devel&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;unzip&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;--noconfirm&lt;span class="w"&gt; &lt;/span&gt;jdk-openjdk
+
+&lt;span class="c"&gt;# Install Flutter&lt;/span&gt;
+&lt;span class="k"&gt;RUN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/flutter/flutter.git&lt;span class="w"&gt; &lt;/span&gt;/opt/flutter
+&lt;span class="k"&gt;ENV&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;:/opt/flutter/bin"&lt;/span&gt;
+
+&lt;span class="c"&gt;# Setup Android SDK&lt;/span&gt;
+&lt;span class="k"&gt;ENV&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_HOME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"/opt/android-sdk"&lt;/span&gt;
+&lt;span class="k"&gt;ENV&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$ANDROID_HOME&lt;/span&gt;&lt;span class="s2"&gt;/cmdline-tools/latest/bin"&lt;/span&gt;
+
+&lt;span class="k"&gt;WORKDIR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/workspace&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="sonuc-ve-ileri-adimlar_1"&gt;🎯 Sonu&amp;ccedil; ve &amp;Idot;leri Ad&amp;inodot;mlar&lt;/h2&gt;
+&lt;p&gt;Tebrikler! 🎉 2025'in en g&amp;uuml;ncel teknolojileri ile Arch Linux'ta tam fonksiyonel bir Flutter geli&amp;scedil;tirme ortam&amp;inodot; kurdunuz.&lt;/p&gt;
+&lt;h3 id="2025te-yeni-ozellikler-new"&gt;2025'te Yeni &amp;Ouml;zellikler 🆕&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Java 24 Deste&amp;gbreve;i&lt;/strong&gt;: Modern JVM optimizasyonlar&amp;inodot;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Android SDK 36&lt;/strong&gt;: En son Android &amp;ouml;zelliklerine eri&amp;scedil;im&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flutter 3.32.8&lt;/strong&gt;: Geli&amp;scedil;mi&amp;scedil; performans ve yeni widget'lar&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Material 3&lt;/strong&gt;: Modern UI design system&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Web Assembly&lt;/strong&gt;: Geli&amp;scedil;mi&amp;scedil; web performans&amp;inodot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="ogrenme-kaynaklari"&gt;&amp;Ouml;&amp;gbreve;renme Kaynaklar&amp;inodot; 📚&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;📖 &lt;a href="https://flutter.dev/docs"&gt;Flutter 2025 Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🎥 &lt;a href="https://youtube.com/flutterdev"&gt;Flutter Forward 2025&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💻 &lt;a href="https://dart.dev/guides"&gt;Dart 3.6 Language Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🏗️ &lt;a href="https://github.com/flutter/samples"&gt;Modern Flutter Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="community-ve-destek"&gt;Community ve Destek 🤝&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;📱 &lt;a href="https://reddit.com/r/FlutterDev"&gt;r/FlutterDev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐧 &lt;a href="https://bbs.archlinux.org/"&gt;Arch Linux Forums&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="baslangic-projeleri"&gt;Ba&amp;scedil;lang&amp;inodot;&amp;ccedil; Projeleri  🚀&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;🤖 AI Chat App&lt;/strong&gt; - Gemini API entegrasyonu&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;💰 Crypto Tracker&lt;/strong&gt; - Real-time WebSocket&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🎵 Music Streaming&lt;/strong&gt; - Modern audio framework&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🏪 AR Shopping&lt;/strong&gt; - Augmented Reality features&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🌱 Sustainability Tracker&lt;/strong&gt; - Green tech initiative&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Arch Linux'un bleeding-edge yap&amp;inodot;s&amp;inodot; ile Flutter'&amp;inodot;n s&amp;uuml;rekli geli&amp;scedil;en ekosistemi, 2025'te mobil geli&amp;scedil;tirme i&amp;ccedil;in m&amp;uuml;kemmel bir kombinasyon sunuyor. Bu rehberle kurdu&amp;gbreve;unuz ortam, gelecekteki projeleriniz i&amp;ccedil;in solid bir temel olu&amp;scedil;turacak! 🌟&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ba&amp;scedil;ar&amp;inodot;l&amp;inodot; projeler dilerim!&lt;/strong&gt; 🚀✨&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;strong&gt;Son G&amp;uuml;ncelleme&lt;/strong&gt;: A&amp;gbreve;ustos 2025&lt;br/&gt;
+&lt;strong&gt;Test Edildi&lt;/strong&gt;: Flutter 3.32.8, Java 24 OpenJDK, Android SDK 36, Arch Linux 2025.08&lt;/p&gt;
+&lt;p&gt;&lt;img alt="arch-linux-flutter-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-flutter-kurulumu-xl.webp" srcset="/images/arch-linux-flutter-kurulumu-sm.webp 300w, /images/arch-linux-flutter-kurulumu-md.webp 500w, /images/arch-linux-flutter-kurulumu-xl.webp 800w, /images/arch-linux-flutter-kurulumu-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="arch-linux-flutter-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-flutter-kurulumu-test-xl.webp" srcset="/images/arch-linux-flutter-kurulumu-test-sm.webp 300w, /images/arch-linux-flutter-kurulumu-test-md.webp 500w, /images/arch-linux-flutter-kurulumu-test-xl.webp 800w, /images/arch-linux-flutter-kurulumu-test-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Yazılım Geliştirme"/><category term="flutter"/><category term="arch-linux"/><category term="android-development"/><category term="dart"/><category term="mobile-development"/><category term="aur"/><category term="android-sdk"/></entry><entry><title>Arch Linux'ta Conda Kurulumu ve Yönetimi</title><link href="https://yuceltoluyag.github.io/arch-linux-conda-kurulumu/" rel="alternate"/><published>2025-02-28T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-02-28:/arch-linux-conda-kurulumu/</id><summary type="html">&lt;p&gt;Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken adımlar ve en iyi uygulamalar.&lt;/p&gt;</summary><content type="html">&lt;h1 id="arch-linuxta-conda-kurulumu-ve-yonetimi"&gt;Arch Linux'ta Conda Kurulumu ve Y&amp;ouml;netimi&lt;/h1&gt;
+&lt;p&gt;Conda, yaz&amp;inodot;l&amp;inodot;m paketlerini ve ortamlar&amp;inodot;n&amp;inodot; y&amp;ouml;netmek i&amp;ccedil;in kullan&amp;inodot;lan pop&amp;uuml;ler bir a&amp;ccedil;&amp;inodot;k kaynakl&amp;inodot; ara&amp;ccedil;t&amp;inodot;r. Python geli&amp;scedil;tirme ortamlar&amp;inodot;nda &amp;ouml;zellikle kullan&amp;inodot;l&amp;inodot;r, ancak ba&amp;scedil;ka diller i&amp;ccedil;in de destek sunar. Bu makalede, Conda'n&amp;inodot;n kurulumu ve temel kullan&amp;inodot;m&amp;inodot; ad&amp;inodot;m ad&amp;inodot;m a&amp;ccedil;&amp;inodot;klanacak, ayr&amp;inodot;ca Arch Linux &amp;uuml;zerinde en verimli &amp;scedil;ekilde Conda nas&amp;inodot;l kurulmal&amp;inodot; ve y&amp;ouml;netilmeli, en iyi uygulamalarla birlikte ele al&amp;inodot;nacakt&amp;inodot;r.&lt;/p&gt;
+&lt;h2 id="1-conda-kurulumu"&gt;1. Conda Kurulumu&lt;/h2&gt;
+&lt;p&gt;Conda, Anaconda veya Miniconda da&amp;gbreve;&amp;inodot;t&amp;inodot;mlar&amp;inodot;n&amp;inodot; kullanarak kurulabilir. Miniconda, Anaconda'n&amp;inodot;n daha hafif bir versiyonudur ve yaln&amp;inodot;zca Conda y&amp;ouml;netici arac&amp;inodot;n&amp;inodot; i&amp;ccedil;erir. Arch Linux gibi sistemlerde Conda'y&amp;inodot; kurarken dikkat edilmesi gereken baz&amp;inodot; iyi uygulamalar vard&amp;inodot;r. &amp;Idot;&amp;scedil;te ba&amp;scedil;lang&amp;inodot;&amp;ccedil; noktas&amp;inodot;:&lt;/p&gt;
+&lt;h3 id="11-miniconda-kurulumu"&gt;1.1 Miniconda Kurulumu&lt;/h3&gt;
+&lt;p&gt;Miniconda, Conda'n&amp;inodot;n temel kurulumunu sa&amp;gbreve;lar ve ba&amp;scedil;lang&amp;inodot;&amp;ccedil;ta gereksiz paketlerden ka&amp;ccedil;&amp;inodot;nmak i&amp;ccedil;in tercih edilebilir. Miniconda'y&amp;inodot; kurmak i&amp;ccedil;in &amp;scedil;u ad&amp;inodot;mlar&amp;inodot; izleyebilirsiniz:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Miniconda'y&amp;inodot; &lt;a href="https://docs.conda.io/en/latest/miniconda.html" rel="noopener noreferrer" target="_blank"&gt;resmi web sitesinden&lt;/a&gt; indirin.&lt;/li&gt;
+&lt;li&gt;Terminali a&amp;ccedil;&amp;inodot;n ve Miniconda kurulum dosyas&amp;inodot;n&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:
+   &lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;bash&lt;span class="w"&gt; &lt;/span&gt;Miniconda3-latest-Linux-x86_64.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Kurulum s&amp;inodot;ras&amp;inodot;nda size bir lisans s&amp;ouml;zle&amp;scedil;mesi sunulacakt&amp;inodot;r. Kabul etmek i&amp;ccedil;in &lt;code&gt;yes&lt;/code&gt; yaz&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Kurulum klas&amp;ouml;r&amp;uuml;n&amp;uuml; se&amp;ccedil;in. Varsay&amp;inodot;lan olarak, Miniconda &lt;code&gt;~/miniconda3&lt;/code&gt; dizinine kurulacakt&amp;inodot;r. E&amp;gbreve;er bu dizini de&amp;gbreve;i&amp;scedil;tirmek isterseniz, kurulum s&amp;inodot;ras&amp;inodot;nda farkl&amp;inodot; bir dizin belirtmeniz yeterlidir.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ouml;neri&lt;/strong&gt;: Miniconda'y&amp;inodot; varsay&amp;inodot;lan dizinden farkl&amp;inodot; bir dizine kurmak istiyorsan&amp;inodot;z, kurulum s&amp;inodot;ras&amp;inodot;nda &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;bash&lt;span class="w"&gt; &lt;/span&gt;Miniconda3-latest-Linux-x86_64.sh&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;/yeni/dizin/miniconda3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Kurulum tamamland&amp;inodot;&amp;gbreve;&amp;inodot;nda, Conda'y&amp;inodot; etkinle&amp;scedil;tirmek i&amp;ccedil;in terminali yeniden ba&amp;scedil;lat&amp;inodot;n veya a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="12-condanin-versiyonunu-kontrol-etme"&gt;1.2 Conda'n&amp;inodot;n Versiyonunu Kontrol Etme&lt;/h3&gt;
+&lt;p&gt;Kurulumdan sonra Conda'n&amp;inodot;n do&amp;gbreve;ru &amp;scedil;ekilde y&amp;uuml;klendi&amp;gbreve;inden emin olmak i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;--version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er do&amp;gbreve;ru &amp;scedil;ekilde kurulduysa, Conda versiyonunu g&amp;ouml;rebilirsiniz.&lt;/p&gt;
+&lt;h2 id="2-condayi-guncelleme_1"&gt;2. Conda'y&amp;inodot; G&amp;uuml;ncelleme&lt;/h2&gt;
+&lt;p&gt;Conda'y&amp;inodot; g&amp;uuml;ncellemek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;base&lt;span class="w"&gt; &lt;/span&gt;-c&lt;span class="w"&gt; &lt;/span&gt;defaults&lt;span class="w"&gt; &lt;/span&gt;conda
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, &lt;code&gt;base&lt;/code&gt; ortam&amp;inodot;nda Conda'y&amp;inodot; g&amp;uuml;nceller ve en son s&amp;uuml;r&amp;uuml;m&amp;uuml; indirir.&lt;/p&gt;
+&lt;h2 id="3-conda-ortamlari-yonetme"&gt;3. Conda Ortamlar&amp;inodot; Y&amp;ouml;netme&lt;/h2&gt;
+&lt;p&gt;Conda, farkl&amp;inodot; projeler i&amp;ccedil;in ba&amp;gbreve;&amp;inodot;ms&amp;inodot;z ortamlar olu&amp;scedil;turman&amp;inodot;za olanak tan&amp;inodot;r. Bu sayede, projelerinizde farkl&amp;inodot; Python s&amp;uuml;r&amp;uuml;mleri veya paketler kullanabilirsiniz.&lt;/p&gt;
+&lt;h3 id="31-yeni-bir-ortam-olusturma"&gt;3.1 Yeni Bir Ortam Olu&amp;scedil;turma&lt;/h3&gt;
+&lt;p&gt;Yeni bir Conda ortam&amp;inodot; olu&amp;scedil;turmak i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;create&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;myenv&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Burada &lt;code&gt;myenv&lt;/code&gt;, ortam&amp;inodot;n ad&amp;inodot;d&amp;inodot;r ve &lt;code&gt;python=3.10&lt;/code&gt; ifadesi Python 3.10 s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; i&amp;ccedil;erir.&lt;/p&gt;
+&lt;h3 id="32-ortami-etkinlestirme"&gt;3.2 Ortam&amp;inodot; Etkinle&amp;scedil;tirme&lt;/h3&gt;
+&lt;p&gt;Olu&amp;scedil;turdu&amp;gbreve;unuz ortam&amp;inodot; etkinle&amp;scedil;tirmek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;activate&lt;span class="w"&gt; &lt;/span&gt;myenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="33-ortami-listeleme"&gt;3.3 Ortam&amp;inodot; Listeleme&lt;/h3&gt;
+&lt;p&gt;T&amp;uuml;m Conda ortamlar&amp;inodot;n&amp;inodot; listelemek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;env&lt;span class="w"&gt; &lt;/span&gt;list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, mevcut ortamlar&amp;inodot;n bir listesini d&amp;ouml;nd&amp;uuml;recektir.&lt;/p&gt;
+&lt;h2 id="4-paket-yonetimi_1"&gt;4. Paket Y&amp;ouml;netimi&lt;/h2&gt;
+&lt;p&gt;Conda, yaz&amp;inodot;l&amp;inodot;m paketlerini kolayca y&amp;ouml;netmek i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r. Yeni paketler y&amp;uuml;kleyebilir, g&amp;uuml;ncelleyebilir veya silebilirsiniz.&lt;/p&gt;
+&lt;h3 id="41-paket-yukleme"&gt;4.1 Paket Y&amp;uuml;kleme&lt;/h3&gt;
+&lt;p&gt;Bir paketi y&amp;uuml;klemek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, NumPy paketini y&amp;uuml;kleyecektir.&lt;/p&gt;
+&lt;h3 id="42-paket-guncelleme"&gt;4.2 Paket G&amp;uuml;ncelleme&lt;/h3&gt;
+&lt;p&gt;Mevcut bir paketi g&amp;uuml;ncellemek i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="43-paket-kaldirma"&gt;4.3 Paket Kald&amp;inodot;rma&lt;/h3&gt;
+&lt;p&gt;Bir paketi kald&amp;inodot;rmak i&amp;ccedil;in &amp;scedil;u komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;remove&lt;span class="w"&gt; &lt;/span&gt;numpy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="5-en-iyi-kurulum-uygulamalari_1"&gt;5. En &amp;Idot;yi Kurulum Uygulamalar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Arch Linux gibi bir sistemde Conda'n&amp;inodot;n kurulumunu yaparken baz&amp;inodot; iyi uygulamalara dikkat etmek gerekir. &amp;Idot;&amp;scedil;te bu konuda dikkat edilmesi gereken baz&amp;inodot; &amp;ouml;nemli noktalar:&lt;/p&gt;
+&lt;h3 id="51-sistem-genelinde-kurulumdan-kacinin"&gt;5.1 Sistem Genelinde Kurulumdan Ka&amp;ccedil;&amp;inodot;n&amp;inodot;n&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Neden Sistem Genelinde Kurulumdan Ka&amp;ccedil;&amp;inodot;nmal&amp;inodot;y&amp;inodot;z?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Anaconda'y&amp;inodot; sistem genelinde kurmak, sisteminizin d&amp;uuml;zenini bozabilir. Bunun yerine, Anaconda'y&amp;inodot; kendi &lt;code&gt;~/.anaconda&lt;/code&gt; dizininize kurarak sadece gerekti&amp;gbreve;inde etkinle&amp;scedil;tirmeniz &amp;ccedil;ok daha sa&amp;gbreve;l&amp;inodot;kl&amp;inodot;d&amp;inodot;r. Sistem genelinde kurulum, genellikle kar&amp;inodot;&amp;scedil;&amp;inodot;kl&amp;inodot;k yaratabilir ve farkl&amp;inodot; Python s&amp;uuml;r&amp;uuml;mleri veya paketleri aras&amp;inodot;nda uyumsuzluklara yol a&amp;ccedil;abilir. Sistemdeki di&amp;gbreve;er ara&amp;ccedil;larla da &amp;ccedil;ak&amp;inodot;&amp;scedil;malar ya&amp;scedil;anabilir.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;Ouml;nerilen Y&amp;ouml;ntem&lt;/strong&gt;: Conda'y&amp;inodot; kullan&amp;inodot;c&amp;inodot; dizininize kurarak, sadece gerekli oldu&amp;gbreve;unda kullanmak en iyi yakla&amp;scedil;&amp;inodot;md&amp;inodot;r. Bu y&amp;ouml;ntem, sistemi temiz tutman&amp;inodot;za yard&amp;inodot;mc&amp;inodot; olur ve paket y&amp;ouml;netimini daha kontroll&amp;uuml; hale getirir.&lt;/p&gt;
+&lt;p&gt;Kurulum s&amp;inodot;ras&amp;inodot;nda "Conda'y&amp;inodot; ba&amp;scedil;latmak ister misiniz?" sorusuna &lt;strong&gt;hay&amp;inodot;r&lt;/strong&gt; demek &amp;ouml;nemlidir. Bu, &lt;code&gt;.bashrc&lt;/code&gt; veya &lt;code&gt;.zshrc&lt;/code&gt; gibi dosyalar&amp;inodot;n&amp;inodot;za dokunmaz ve Conda'y&amp;inodot; yaln&amp;inodot;zca gerekti&amp;gbreve;inde &amp;scedil;u komutla etkinle&amp;scedil;tirirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;path_to_conda&amp;gt;/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu, Conda'n&amp;inodot;n sisteminizde izole bir &amp;scedil;ekilde &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lar, b&amp;ouml;ylece d&amp;uuml;zeninizi korur.&lt;/p&gt;
+&lt;h3 id="52-aur-uzerinden-kurulum-approach-2"&gt;5.2 AUR &amp;Uuml;zerinden Kurulum (Approach 2)&lt;/h3&gt;
+&lt;p&gt;E&amp;gbreve;er her &amp;scedil;eyinizi AUR (Arch User Repository) &amp;uuml;zerinden kuruyorsan&amp;inodot;z, pacman ile kurulum yaparak her &amp;scedil;eyin d&amp;uuml;zg&amp;uuml;n bir &amp;scedil;ekilde takip edilmesini sa&amp;gbreve;lars&amp;inodot;n&amp;inodot;z. Ancak, bu y&amp;ouml;ntemle Conda sistem genelinde kurulur ve &lt;code&gt;/usr/opt/bin&lt;/code&gt; veya &lt;code&gt;/usr/opt/lib&lt;/code&gt; gibi dizinlere yerle&amp;scedil;ir. Bu, Conda'y&amp;inodot; do&amp;gbreve;ru &amp;scedil;ekilde kullanmay&amp;inodot; zorla&amp;scedil;t&amp;inodot;rabilir.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Yine de Arch Linux'ta her &amp;scedil;eyin kolayca geri al&amp;inodot;nabilmesi sayesinde, sisteminizde herhangi bir karma&amp;scedil;a olu&amp;scedil;ursa, h&amp;inodot;zl&amp;inodot;ca kald&amp;inodot;r&amp;inodot;p tekrar kurabilirsiniz. Ancak, her zaman daha kontroll&amp;uuml; bir kurulum &amp;ouml;nerilir.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="53-conda-base-ortamini-yonetmek"&gt;5.3 Conda Base Ortam&amp;inodot;n&amp;inodot; Y&amp;ouml;netmek&lt;/h3&gt;
+&lt;p&gt;Conda'y&amp;inodot; kurduktan sonra, terminalde otomatik olarak base ortam&amp;inodot;n&amp;inodot;n etkinle&amp;scedil;mesi bazen kafa kar&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;c&amp;inodot; olabilir. Bu, terminalde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda bazen beklenmeyen sonu&amp;ccedil;lar do&amp;gbreve;urabilir. E&amp;gbreve;er &lt;code&gt;base&lt;/code&gt; ortam&amp;inodot;n&amp;inodot;n otomatik olarak etkinle&amp;scedil;mesini istemiyorsan&amp;inodot;z, &amp;scedil;u komutla devre d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rakabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;conda&lt;span class="w"&gt; &lt;/span&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ya da &lt;code&gt;.bashrc&lt;/code&gt; dosyan&amp;inodot;za &lt;code&gt;conda deactivate&lt;/code&gt; ekleyerek her terminal a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda otomatik olarak &lt;code&gt;base&lt;/code&gt; ortam&amp;inodot;n&amp;inodot;n devre d&amp;inodot;&amp;scedil;&amp;inodot; olmas&amp;inodot;n&amp;inodot; sa&amp;gbreve;layabilirsiniz.&lt;/p&gt;
+&lt;h2 id="6-sonuc_1"&gt;6. Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Bu makalede Conda'n&amp;inodot;n kurulumu, g&amp;uuml;ncellenmesi, ortam y&amp;ouml;netimi ve paket y&amp;ouml;netimi hakk&amp;inodot;nda temel bilgiler payla&amp;scedil;&amp;inodot;ld&amp;inodot;. Arch Linux'ta Conda kurulumunda en iyi uygulamalar&amp;inodot; benimsemek, sisteminizin d&amp;uuml;zenini korumaya yard&amp;inodot;mc&amp;inodot; olur ve yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirme s&amp;uuml;recinizi daha verimli hale getirir. Conda'y&amp;inodot; etkili bir &amp;scedil;ekilde kullanarak projelerinizde ba&amp;gbreve;&amp;inodot;ms&amp;inodot;z ortamlar olu&amp;scedil;turabilir ve Python geli&amp;scedil;tirme deneyiminizi bir &amp;uuml;st seviyeye ta&amp;scedil;&amp;inodot;yabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Unutmay&amp;inodot;n, Conda'y&amp;inodot; d&amp;uuml;zg&amp;uuml;n kurmak ve kullanmak, uzun vadede ba&amp;scedil;&amp;inodot;n&amp;inodot;z&amp;inodot; a&amp;gbreve;r&amp;inodot;tacak b&amp;uuml;y&amp;uuml;k sorunlardan ka&amp;ccedil;&amp;inodot;nman&amp;inodot;za yard&amp;inodot;mc&amp;inodot; olacakt&amp;inodot;r!&lt;/p&gt;
+&lt;h2 id="output"&gt;Output&lt;/h2&gt;
+&lt;p&gt;&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;[&lt;/span&gt;friday13@archlinux&lt;span class="w"&gt; &lt;/span&gt;~&lt;span class="o"&gt;]&lt;/span&gt;$&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-O&lt;span class="w"&gt; &lt;/span&gt;https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash&lt;span class="w"&gt; &lt;/span&gt;Miniconda3-latest-Linux-x86_64.sh
+&lt;span class="w"&gt;  &lt;/span&gt;%&lt;span class="w"&gt; &lt;/span&gt;Total&lt;span class="w"&gt;    &lt;/span&gt;%&lt;span class="w"&gt; &lt;/span&gt;Received&lt;span class="w"&gt; &lt;/span&gt;%&lt;span class="w"&gt; &lt;/span&gt;Xferd&lt;span class="w"&gt;  &lt;/span&gt;Average&lt;span class="w"&gt; &lt;/span&gt;Speed&lt;span class="w"&gt;   &lt;/span&gt;Time&lt;span class="w"&gt;    &lt;/span&gt;Time&lt;span class="w"&gt;     &lt;/span&gt;Time&lt;span class="w"&gt;  &lt;/span&gt;Current
+&lt;span class="w"&gt;                                 &lt;/span&gt;Dload&lt;span class="w"&gt;  &lt;/span&gt;Upload&lt;span class="w"&gt;   &lt;/span&gt;Total&lt;span class="w"&gt;   &lt;/span&gt;Spent&lt;span class="w"&gt;    &lt;/span&gt;Left&lt;span class="w"&gt;  &lt;/span&gt;Speed
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--:--:--&lt;span class="w"&gt; &lt;/span&gt;--:&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;8942k&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;9113k&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:15&lt;span class="w"&gt; &lt;/span&gt;--:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;14&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;14&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;.6M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.4M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:13&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;22&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;32&lt;/span&gt;.2M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.8M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:13&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;30&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;43&lt;/span&gt;.6M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.9M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;38&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;38&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;54&lt;/span&gt;.9M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.0M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;46&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;46&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;66&lt;/span&gt;.2M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.0M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;54&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;54&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;77&lt;/span&gt;.5M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.1M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;63&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;63&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;88&lt;/span&gt;.7M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.1M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;70&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;70&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;100M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.1M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;78&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;78&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;111M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.1M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;84&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;84&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;119M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.8M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;92&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;   &lt;/span&gt;&lt;span class="m"&gt;92&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;130M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.9M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:100&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;140M&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.9M&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;:00:12&lt;span class="w"&gt; &lt;/span&gt;--:--:--&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.6M
+
+Welcome&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;Miniconda3&lt;span class="w"&gt; &lt;/span&gt;py312_24.11.1-0
+
+In&lt;span class="w"&gt; &lt;/span&gt;order&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;continue&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;installation&lt;span class="w"&gt; &lt;/span&gt;process,&lt;span class="w"&gt; &lt;/span&gt;please&lt;span class="w"&gt; &lt;/span&gt;review&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;license
+agreement.
+Please,&lt;span class="w"&gt; &lt;/span&gt;press&lt;span class="w"&gt; &lt;/span&gt;ENTER&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;continue&lt;/span&gt;
+&amp;gt;&amp;gt;&amp;gt;
+ANACONDA&lt;span class="w"&gt; &lt;/span&gt;TERMS&lt;span class="w"&gt; &lt;/span&gt;OF&lt;span class="w"&gt; &lt;/span&gt;SERVICE
+
+Please&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;read&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;these&lt;span class="w"&gt; &lt;/span&gt;Terms&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;Service&lt;span class="w"&gt; &lt;/span&gt;carefully&lt;span class="w"&gt; &lt;/span&gt;before&lt;span class="w"&gt; &lt;/span&gt;purcha
+sing,&lt;span class="w"&gt; &lt;/span&gt;using,&lt;span class="w"&gt; &lt;/span&gt;accessing,&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;downloading&lt;span class="w"&gt; &lt;/span&gt;any&lt;span class="w"&gt; &lt;/span&gt;Anaconda&lt;span class="w"&gt; &lt;/span&gt;Offeri
+ngs&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Offerings"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;These&lt;span class="w"&gt; &lt;/span&gt;Anaconda&lt;span class="w"&gt; &lt;/span&gt;Terms&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;Service&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"T&lt;/span&gt;
+&lt;span class="s2"&gt;OS"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;are&lt;span class="w"&gt; &lt;/span&gt;between&lt;span class="w"&gt; &lt;/span&gt;Anaconda,&lt;span class="w"&gt; &lt;/span&gt;Inc.&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Anaconda"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"You&lt;/span&gt;
+&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;individual&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;entity&lt;span class="w"&gt; &lt;/span&gt;acquiring&lt;span class="w"&gt; &lt;/span&gt;and/or&lt;span class="w"&gt; &lt;/span&gt;providing&lt;span class="w"&gt; &lt;/span&gt;ac
+cess&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;Offerings.&lt;span class="w"&gt; &lt;/span&gt;These&lt;span class="w"&gt; &lt;/span&gt;TOS&lt;span class="w"&gt; &lt;/span&gt;govern&lt;span class="w"&gt; &lt;/span&gt;Your&lt;span class="w"&gt; &lt;/span&gt;access,&lt;span class="w"&gt; &lt;/span&gt;downl
+oad,&lt;span class="w"&gt; &lt;/span&gt;installation,&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;use&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;Anaconda&lt;span class="w"&gt; &lt;/span&gt;Offerings,&lt;span class="w"&gt; &lt;/span&gt;which
+&lt;span class="w"&gt; &lt;/span&gt;are&lt;span class="w"&gt; &lt;/span&gt;provided&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;You&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;combination&lt;span class="w"&gt; &lt;/span&gt;with&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;terms&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;
+th&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;applicable&lt;span class="w"&gt; &lt;/span&gt;Offering&lt;span class="w"&gt; &lt;/span&gt;Description,&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;are&lt;span class="w"&gt; &lt;/span&gt;hereby
+incorporated&lt;span class="w"&gt; &lt;/span&gt;into&lt;span class="w"&gt; &lt;/span&gt;these&lt;span class="w"&gt; &lt;/span&gt;TOS.&lt;span class="w"&gt; &lt;/span&gt;Except&lt;span class="w"&gt; &lt;/span&gt;where&lt;span class="w"&gt; &lt;/span&gt;indicated&lt;span class="w"&gt; &lt;/span&gt;otherw
+ise,&lt;span class="w"&gt; &lt;/span&gt;references&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"You"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;shall&lt;span class="w"&gt; &lt;/span&gt;include&lt;span class="w"&gt; &lt;/span&gt;Your&lt;span class="w"&gt; &lt;/span&gt;Users.&lt;span class="w"&gt; &lt;/span&gt;You&lt;span class="w"&gt; &lt;/span&gt;her
+eby&lt;span class="w"&gt; &lt;/span&gt;acknowledge&lt;span class="w"&gt; &lt;/span&gt;that&lt;span class="w"&gt; &lt;/span&gt;these&lt;span class="w"&gt; &lt;/span&gt;TOS&lt;span class="w"&gt; &lt;/span&gt;are&lt;span class="w"&gt; &lt;/span&gt;binding,&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;You&lt;span class="w"&gt; &lt;/span&gt;affirm
+&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;signify&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;consent&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;these&lt;span class="w"&gt; &lt;/span&gt;TOS&lt;span class="w"&gt; &lt;/span&gt;by&lt;span class="w"&gt; &lt;/span&gt;registering&lt;span class="w"&gt; &lt;/span&gt;to,
+using,&lt;span class="w"&gt; &lt;/span&gt;installing,&lt;span class="w"&gt; &lt;/span&gt;downloading,&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;accessing&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;Anaconda
+Offerings&lt;span class="w"&gt; &lt;/span&gt;effective&lt;span class="w"&gt; &lt;/span&gt;as&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;date&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;first&lt;span class="w"&gt; &lt;/span&gt;registration,
+use,&lt;span class="w"&gt; &lt;/span&gt;install,&lt;span class="w"&gt; &lt;/span&gt;download&lt;span class="w"&gt; &lt;/span&gt;or&lt;span class="w"&gt; &lt;/span&gt;access,&lt;span class="w"&gt; &lt;/span&gt;as&lt;span class="w"&gt; &lt;/span&gt;applicable&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Effe&lt;/span&gt;
+&lt;span class="s2"&gt;ctive Date"&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;Capitalized&lt;span class="w"&gt; &lt;/span&gt;definitions&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;otherwise&lt;span class="w"&gt; &lt;/span&gt;define
+d&lt;span class="w"&gt; &lt;/span&gt;herein&lt;span class="w"&gt; &lt;/span&gt;are&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;forth&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Section&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;15&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;Definitions&lt;span class="o"&gt;)&lt;/span&gt;.&lt;span class="w"&gt; &lt;/span&gt;If&lt;span class="w"&gt; &lt;/span&gt;You
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;agree&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;these&lt;span class="w"&gt; &lt;/span&gt;Terms&lt;span class="w"&gt; &lt;/span&gt;of&lt;span class="w"&gt; &lt;/span&gt;Service,&lt;span class="w"&gt; &lt;/span&gt;You&lt;span class="w"&gt; &lt;/span&gt;must&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;regi
+
+Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;accept&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;license&lt;span class="w"&gt; &lt;/span&gt;terms?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;yes&lt;span class="p"&gt;|&lt;/span&gt;no&lt;span class="o"&gt;]&lt;/span&gt;
+&amp;gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;yes
+
+Miniconda3&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;now&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;installed&lt;span class="w"&gt; &lt;/span&gt;into&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;location:
+/home/friday13/miniconda3
+
+&lt;span class="w"&gt;  &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;Press&lt;span class="w"&gt; &lt;/span&gt;ENTER&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;confirm&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;location
+&lt;span class="w"&gt;  &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;Press&lt;span class="w"&gt; &lt;/span&gt;CTRL-C&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;abort&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;installation
+&lt;span class="w"&gt;  &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;Or&lt;span class="w"&gt; &lt;/span&gt;specify&lt;span class="w"&gt; &lt;/span&gt;a&lt;span class="w"&gt; &lt;/span&gt;different&lt;span class="w"&gt; &lt;/span&gt;location&lt;span class="w"&gt; &lt;/span&gt;below
+
+&lt;span class="o"&gt;[&lt;/span&gt;/home/friday13/miniconda3&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.miniconda3
+&lt;span class="nv"&gt;PREFIX&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/friday13/.miniconda3
+Unpacking&lt;span class="w"&gt; &lt;/span&gt;payload&lt;span class="w"&gt; &lt;/span&gt;...
+
+Installing&lt;span class="w"&gt; &lt;/span&gt;base&lt;span class="w"&gt; &lt;/span&gt;environment...
+
+
+Downloading&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;Extracting&lt;span class="w"&gt; &lt;/span&gt;Packages:
+
+
+&lt;span class="c1"&gt;## Package Plan ##&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;environment&lt;span class="w"&gt; &lt;/span&gt;location:&lt;span class="w"&gt; &lt;/span&gt;/home/friday13/.miniconda3
+
+&lt;span class="w"&gt;  &lt;/span&gt;added&lt;span class="w"&gt; &lt;/span&gt;/&lt;span class="w"&gt; &lt;/span&gt;updated&lt;span class="w"&gt; &lt;/span&gt;specs:
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::_libgcc_mutex&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.1&lt;span class="o"&gt;=&lt;/span&gt;main&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;c3473ff8bdb3d124ed5ff11ec380d6f9&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::_openmp_mutex&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.1&lt;span class="o"&gt;=&lt;/span&gt;1_gnu&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;71d281e9c2192cb3fa425655a8defb85&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::anaconda-anon-usage&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.5.0&lt;span class="o"&gt;=&lt;/span&gt;py312hfc0e8ea_100&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;d47669c8f312a5d2be0a5e095bb8e896&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::boltons&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;23&lt;/span&gt;.0.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;36d464442713fc92897b7da029a08fb6&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::brotli-python&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0.9&lt;span class="o"&gt;=&lt;/span&gt;py312h6a678d5_8&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;e6bdf1f9e8e1ad3543aaec7e9ecea7e7&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::bzip2&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0.8&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_6&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;f21a3ff51c1b271977f53ce956a69297&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::c-ares&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.19.1&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;6cfbce52273a1cb888821f18ceaa83c4&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::ca-certificates&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2024&lt;/span&gt;.11.26&lt;span class="o"&gt;=&lt;/span&gt;h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;cebd61e6520159a1315d679321620f6c&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::certifi&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2024&lt;/span&gt;.8.30&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;42ef53b6872f15913c0d7d702ec7475e&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::cffi&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.17.1&lt;span class="o"&gt;=&lt;/span&gt;py312h1fdaa30_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;8472aea146fecf25898d67adea2ddbf8&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::conda-anaconda-telemetry&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.1.1&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;7b3f838270a69f22b366f74dab6e6f64&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::conda-content-trust&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.2.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fdcf7a04d9cc833ea3f397a414010206&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::conda-package-handling&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.4.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;20af9c2597fae0494f5d5a256dae433a&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::conda-package-streaming&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.11.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;d5ffa1f42c41b7cdad0cf9ac68f83772&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::conda&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;.11.1&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1124d7f759c3a610b10c2e21dec55ebe&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::cryptography&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;43&lt;/span&gt;.0.3&lt;span class="o"&gt;=&lt;/span&gt;py312h7825ff9_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1c255fd1f8a79304f4a316fb5304e07b&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::distro&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.9.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;71b90a563af005b336c976cc9466221c&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::expat&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.6.4&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;3ec804f5b85a66e64b262cc2341dd004&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::fmt&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;9&lt;/span&gt;.1.0&lt;span class="o"&gt;=&lt;/span&gt;hdb19cb5_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4f12930203ff2d84df5d287af9b29858&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::frozendict&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.4.2&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;76ae0259102a2156cc0e1ff9ada0f2c6&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::icu&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;73&lt;/span&gt;.1&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;6d09df641fc23f7d277a04dc7ea32dd4&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::idna&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.7&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;03cc59cdabff44c47be0fadffcef003c&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::jsonpatch&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.33&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;c3de52aaf670064f85106ddb32d720d9&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::krb5&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.20.1&lt;span class="o"&gt;=&lt;/span&gt;h143b758_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;cf1accc86321fa25d6b978cc748039ae&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::ld_impl_linux-64&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.40&lt;span class="o"&gt;=&lt;/span&gt;h12ee557_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ee672b5f635340734f58d618b7bca024&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libarchive&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.7.4&lt;span class="o"&gt;=&lt;/span&gt;hfab0078_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;fcc6a63f95a80a5d2ff9d3e208e9a638&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libcurl&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;.9.1&lt;span class="o"&gt;=&lt;/span&gt;h251f7ec_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;8133d8f19e8136a10f9f81180026c859&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libedit&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.1.20230828&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;850eb5a9d2d7d3c66cce12e84406ca08&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libev&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;.33&lt;span class="o"&gt;=&lt;/span&gt;h7f8727e_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;5065620db4393fb549f30114a33897d1&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libffi&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.4.4&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;70646cc713f0c43926cfdcfe9b695fe0&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libgcc-ng&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.2.0&lt;span class="o"&gt;=&lt;/span&gt;h1234567_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;a87728dabf3151fb9cfa990bd2eb0464&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libgomp&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.2.0&lt;span class="o"&gt;=&lt;/span&gt;h1234567_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;b372c0eea9b60732fdae4b817a63c8cd&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libmamba&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.5.11&lt;span class="o"&gt;=&lt;/span&gt;hfe524e5_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;c6cd365c4e32d3fa01daca8d1beb151b&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libmambapy&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.5.11&lt;span class="o"&gt;=&lt;/span&gt;py312haf1ee3a_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;256e6f590082a1cba3601be900ea2e81&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libnghttp2&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.57.0&lt;span class="o"&gt;=&lt;/span&gt;h2d74bed_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;674871621300f54e7ffcf93e6e341638&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libsolv&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.7.24&lt;span class="o"&gt;=&lt;/span&gt;he621ea3_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;c22067963515e7a8d27a5a222a48d870&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libssh2&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.11.1&lt;span class="o"&gt;=&lt;/span&gt;h251f7ec_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;dd68c24355431c0543339dda1404129d&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libstdcxx-ng&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;11&lt;/span&gt;.2.0&lt;span class="o"&gt;=&lt;/span&gt;h1234567_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;57623d10a70e09e1d048c2b2b6f4e2dd&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libuuid&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.41.5&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4a6a2354414c9080327274aa514e5299&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::libxml2&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.13.5&lt;span class="o"&gt;=&lt;/span&gt;hfdd30dd_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;491a355fbc51e30d42c76e1cb6716b8a&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::lz4-c&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.9.4&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2ee58861f2b92b868ce761abb831819d&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::menuinst&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.2.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2f79985b318b96f1a79d9ca27b350bde&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::ncurses&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;.4&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;5558eec6e2191741a92f832ea826251c&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::openssl&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.0.15&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;019e501b69841c6d4aeaef3b8619a678&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::packaging&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;.1&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;756ec42d4f934b642b8476689af2781f&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::pcre2&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;.42&lt;span class="o"&gt;=&lt;/span&gt;hebb0a14_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;727e15c3cfa02b032da4eb0c1123e977&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::pip&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;.2&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;798cbea8112672434d0cd7551f8fc4b9&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::platformdirs&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.10.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;39dc9eb538e73250dadcdec7a8ed6595&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::pluggy&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.5.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1287a7b660a041fbbb8931defb9111d6&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::pycosat&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.6.6&lt;span class="o"&gt;=&lt;/span&gt;py312h5eee18b_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4ccf6371e1ccb1ccbecac26ab4fd1607&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::pysocks&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.7.1&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;8efb8494277b7f0faedf9d437b23cbe1&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::python&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.12.8&lt;span class="o"&gt;=&lt;/span&gt;h5148396_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;30e7668cd39635e3b72f86b9053540b1&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::readline&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;.2&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;be42180685cce6e6b0329201d9f48efb&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::reproc-cpp&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;14&lt;/span&gt;.2.4&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_2&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;b03aa4903158279f003e7032ab9f5601&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::reproc&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;14&lt;/span&gt;.2.4&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_2&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;3c6dbc6c60b3897222d79359343e90fa&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::requests&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.32.3&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;8cc2fc3e2198c2efe6cd890a7684a16a&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::ruamel.yaml.clib&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.2.8&lt;span class="o"&gt;=&lt;/span&gt;py312h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;4e151915d3acb78754b5cd1be029fcd2&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::ruamel.yaml&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.18.6&lt;span class="o"&gt;=&lt;/span&gt;py312h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;b4817fd05fdab4ce718bf1e7aab55f75&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::setuptools&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;75&lt;/span&gt;.1.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;c96d08a405d335f2b0200c0f281b1fdc&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::sqlite&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.45.3&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;acf93d6aceb74d6110e20b44cc45939e&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::tk&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;.6.14&lt;span class="o"&gt;=&lt;/span&gt;h39e8969_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;78dbc5e3c69143ebc037fc5d5b22e597&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::tqdm&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;.66.5&lt;span class="o"&gt;=&lt;/span&gt;py312he106c6f_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;099959333950bef1a3d7d12133cbfafc&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::truststore&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.8.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ad93bd626fc17c1606394fe258b4ed18&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::urllib3&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.2.3&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;08b5f80f188ed801e9f463124a481289&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::wheel&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.44.0&lt;span class="o"&gt;=&lt;/span&gt;py312h06a4308_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;6d495438dd44e8f16b1a05d0a8648644&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::xz&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.4.6&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1562802f843297ee776a50b9329597ed&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::yaml-cpp&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.8.0&lt;span class="o"&gt;=&lt;/span&gt;h6a678d5_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;015d2d74ad3c8e53eec3358637433718&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::zlib&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.2.13&lt;span class="o"&gt;=&lt;/span&gt;h5eee18b_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;92e42d8310108b0a440fb2e60b2b2a25&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::zstandard&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.23.0&lt;span class="o"&gt;=&lt;/span&gt;py312h2c38b39_1&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;2cbafae57b8b4ec11666119d44ad4d71&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/linux-64::zstd&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.5.6&lt;span class="o"&gt;=&lt;/span&gt;hc292b87_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;78ae7abd3020b41f827b35085845e1b8&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/noarch::archspec&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.2.3&lt;span class="o"&gt;=&lt;/span&gt;pyhd3eb1b0_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;13d01ee2d343d8539bb47055a6c0b5b2&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/noarch::charset-normalizer&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.3.2&lt;span class="o"&gt;=&lt;/span&gt;pyhd3eb1b0_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;c6fea3691e85cf7f568b0618ec29fc4f&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/noarch::conda-libmamba-solver&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;.9.0&lt;span class="o"&gt;=&lt;/span&gt;pyhd3eb1b0_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;251a69a5bf578ef59fdf8255c7c25c5d&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/noarch::jsonpointer&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.1&lt;span class="o"&gt;=&lt;/span&gt;pyhd3eb1b0_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;298ff809e733cb04366e4e629c65aa8d&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/noarch::pybind11-abi&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="nv"&gt;5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;hd3eb1b0_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;7f0df6639fdf60ccd3045ee6faedd32f&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/noarch::pycparser&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.21&lt;span class="o"&gt;=&lt;/span&gt;pyhd3eb1b0_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;135a72ff2a31150a3a3ff0b1edd41ca9&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;defaults/noarch::tzdata&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="nv"&gt;2024b&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;h04d1e81_0&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;md5&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;9be694715c6a65f9631bb1b242125e9d&lt;span class="o"&gt;]&lt;/span&gt;
+
+
+The&lt;span class="w"&gt; &lt;/span&gt;following&lt;span class="w"&gt; &lt;/span&gt;NEW&lt;span class="w"&gt; &lt;/span&gt;packages&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;INSTALLED:
+
+&lt;span class="w"&gt;  &lt;/span&gt;_libgcc_mutex&lt;span class="w"&gt;      &lt;/span&gt;pkgs/main/linux-64::_libgcc_mutex-0.1-main
+&lt;span class="w"&gt;  &lt;/span&gt;_openmp_mutex&lt;span class="w"&gt;      &lt;/span&gt;pkgs/main/linux-64::_openmp_mutex-5.1-1_gnu
+&lt;span class="w"&gt;  &lt;/span&gt;anaconda-anon-usa~&lt;span class="w"&gt; &lt;/span&gt;pkgs/main/linux-64::anaconda-anon-usage-0.5.0-py312hfc0e8ea_100
+&lt;span class="w"&gt;  &lt;/span&gt;archspec&lt;span class="w"&gt;           &lt;/span&gt;pkgs/main/noarch::archspec-0.2.3-pyhd3eb1b0_0
+&lt;span class="w"&gt;  &lt;/span&gt;boltons&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::boltons-23.0.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;brotli-python&lt;span class="w"&gt;      &lt;/span&gt;pkgs/main/linux-64::brotli-python-1.0.9-py312h6a678d5_8
+&lt;span class="w"&gt;  &lt;/span&gt;bzip2&lt;span class="w"&gt;              &lt;/span&gt;pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6
+&lt;span class="w"&gt;  &lt;/span&gt;c-ares&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/linux-64::c-ares-1.19.1-h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;ca-certificates&lt;span class="w"&gt;    &lt;/span&gt;pkgs/main/linux-64::ca-certificates-2024.11.26-h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;certifi&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::certifi-2024.8.30-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;cffi&lt;span class="w"&gt;               &lt;/span&gt;pkgs/main/linux-64::cffi-1.17.1-py312h1fdaa30_0
+&lt;span class="w"&gt;  &lt;/span&gt;charset-normalizer&lt;span class="w"&gt; &lt;/span&gt;pkgs/main/noarch::charset-normalizer-3.3.2-pyhd3eb1b0_0
+&lt;span class="w"&gt;  &lt;/span&gt;conda&lt;span class="w"&gt;              &lt;/span&gt;pkgs/main/linux-64::conda-24.11.1-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;conda-anaconda-te~&lt;span class="w"&gt; &lt;/span&gt;pkgs/main/linux-64::conda-anaconda-telemetry-0.1.1-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;conda-content-tru~&lt;span class="w"&gt; &lt;/span&gt;pkgs/main/linux-64::conda-content-trust-0.2.0-py312h06a4308_1
+&lt;span class="w"&gt;  &lt;/span&gt;conda-libmamba-so~&lt;span class="w"&gt; &lt;/span&gt;pkgs/main/noarch::conda-libmamba-solver-24.9.0-pyhd3eb1b0_0
+&lt;span class="w"&gt;  &lt;/span&gt;conda-package-han~&lt;span class="w"&gt; &lt;/span&gt;pkgs/main/linux-64::conda-package-handling-2.4.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;conda-package-str~&lt;span class="w"&gt; &lt;/span&gt;pkgs/main/linux-64::conda-package-streaming-0.11.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;cryptography&lt;span class="w"&gt;       &lt;/span&gt;pkgs/main/linux-64::cryptography-43.0.3-py312h7825ff9_1
+&lt;span class="w"&gt;  &lt;/span&gt;distro&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/linux-64::distro-1.9.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;expat&lt;span class="w"&gt;              &lt;/span&gt;pkgs/main/linux-64::expat-2.6.4-h6a678d5_0
+&lt;span class="w"&gt;  &lt;/span&gt;fmt&lt;span class="w"&gt;                &lt;/span&gt;pkgs/main/linux-64::fmt-9.1.0-hdb19cb5_1
+&lt;span class="w"&gt;  &lt;/span&gt;frozendict&lt;span class="w"&gt;         &lt;/span&gt;pkgs/main/linux-64::frozendict-2.4.2-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;icu&lt;span class="w"&gt;                &lt;/span&gt;pkgs/main/linux-64::icu-73.1-h6a678d5_0
+&lt;span class="w"&gt;  &lt;/span&gt;idna&lt;span class="w"&gt;               &lt;/span&gt;pkgs/main/linux-64::idna-3.7-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;jsonpatch&lt;span class="w"&gt;          &lt;/span&gt;pkgs/main/linux-64::jsonpatch-1.33-py312h06a4308_1
+&lt;span class="w"&gt;  &lt;/span&gt;jsonpointer&lt;span class="w"&gt;        &lt;/span&gt;pkgs/main/noarch::jsonpointer-2.1-pyhd3eb1b0_0
+&lt;span class="w"&gt;  &lt;/span&gt;krb5&lt;span class="w"&gt;               &lt;/span&gt;pkgs/main/linux-64::krb5-1.20.1-h143b758_1
+&lt;span class="w"&gt;  &lt;/span&gt;ld_impl_linux-64&lt;span class="w"&gt;   &lt;/span&gt;pkgs/main/linux-64::ld_impl_linux-64-2.40-h12ee557_0
+&lt;span class="w"&gt;  &lt;/span&gt;libarchive&lt;span class="w"&gt;         &lt;/span&gt;pkgs/main/linux-64::libarchive-3.7.4-hfab0078_0
+&lt;span class="w"&gt;  &lt;/span&gt;libcurl&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::libcurl-8.9.1-h251f7ec_0
+&lt;span class="w"&gt;  &lt;/span&gt;libedit&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::libedit-3.1.20230828-h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;libev&lt;span class="w"&gt;              &lt;/span&gt;pkgs/main/linux-64::libev-4.33-h7f8727e_1
+&lt;span class="w"&gt;  &lt;/span&gt;libffi&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/linux-64::libffi-3.4.4-h6a678d5_1
+&lt;span class="w"&gt;  &lt;/span&gt;libgcc-ng&lt;span class="w"&gt;          &lt;/span&gt;pkgs/main/linux-64::libgcc-ng-11.2.0-h1234567_1
+&lt;span class="w"&gt;  &lt;/span&gt;libgomp&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::libgomp-11.2.0-h1234567_1
+&lt;span class="w"&gt;  &lt;/span&gt;libmamba&lt;span class="w"&gt;           &lt;/span&gt;pkgs/main/linux-64::libmamba-1.5.11-hfe524e5_0
+&lt;span class="w"&gt;  &lt;/span&gt;libmambapy&lt;span class="w"&gt;         &lt;/span&gt;pkgs/main/linux-64::libmambapy-1.5.11-py312haf1ee3a_0
+&lt;span class="w"&gt;  &lt;/span&gt;libnghttp2&lt;span class="w"&gt;         &lt;/span&gt;pkgs/main/linux-64::libnghttp2-1.57.0-h2d74bed_0
+&lt;span class="w"&gt;  &lt;/span&gt;libsolv&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::libsolv-0.7.24-he621ea3_1
+&lt;span class="w"&gt;  &lt;/span&gt;libssh2&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::libssh2-1.11.1-h251f7ec_0
+&lt;span class="w"&gt;  &lt;/span&gt;libstdcxx-ng&lt;span class="w"&gt;       &lt;/span&gt;pkgs/main/linux-64::libstdcxx-ng-11.2.0-h1234567_1
+&lt;span class="w"&gt;  &lt;/span&gt;libuuid&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;libxml2&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::libxml2-2.13.5-hfdd30dd_0
+&lt;span class="w"&gt;  &lt;/span&gt;lz4-c&lt;span class="w"&gt;              &lt;/span&gt;pkgs/main/linux-64::lz4-c-1.9.4-h6a678d5_1
+&lt;span class="w"&gt;  &lt;/span&gt;menuinst&lt;span class="w"&gt;           &lt;/span&gt;pkgs/main/linux-64::menuinst-2.2.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;ncurses&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::ncurses-6.4-h6a678d5_0
+&lt;span class="w"&gt;  &lt;/span&gt;openssl&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::openssl-3.0.15-h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;packaging&lt;span class="w"&gt;          &lt;/span&gt;pkgs/main/linux-64::packaging-24.1-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;pcre2&lt;span class="w"&gt;              &lt;/span&gt;pkgs/main/linux-64::pcre2-10.42-hebb0a14_1
+&lt;span class="w"&gt;  &lt;/span&gt;pip&lt;span class="w"&gt;                &lt;/span&gt;pkgs/main/linux-64::pip-24.2-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;platformdirs&lt;span class="w"&gt;       &lt;/span&gt;pkgs/main/linux-64::platformdirs-3.10.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;pluggy&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/linux-64::pluggy-1.5.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;pybind11-abi&lt;span class="w"&gt;       &lt;/span&gt;pkgs/main/noarch::pybind11-abi-5-hd3eb1b0_0
+&lt;span class="w"&gt;  &lt;/span&gt;pycosat&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::pycosat-0.6.6-py312h5eee18b_1
+&lt;span class="w"&gt;  &lt;/span&gt;pycparser&lt;span class="w"&gt;          &lt;/span&gt;pkgs/main/noarch::pycparser-2.21-pyhd3eb1b0_0
+&lt;span class="w"&gt;  &lt;/span&gt;pysocks&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::pysocks-1.7.1-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;python&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/linux-64::python-3.12.8-h5148396_0
+&lt;span class="w"&gt;  &lt;/span&gt;readline&lt;span class="w"&gt;           &lt;/span&gt;pkgs/main/linux-64::readline-8.2-h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;reproc&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/linux-64::reproc-14.2.4-h6a678d5_2
+&lt;span class="w"&gt;  &lt;/span&gt;reproc-cpp&lt;span class="w"&gt;         &lt;/span&gt;pkgs/main/linux-64::reproc-cpp-14.2.4-h6a678d5_2
+&lt;span class="w"&gt;  &lt;/span&gt;requests&lt;span class="w"&gt;           &lt;/span&gt;pkgs/main/linux-64::requests-2.32.3-py312h06a4308_1
+&lt;span class="w"&gt;  &lt;/span&gt;ruamel.yaml&lt;span class="w"&gt;        &lt;/span&gt;pkgs/main/linux-64::ruamel.yaml-0.18.6-py312h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;ruamel.yaml.clib&lt;span class="w"&gt;   &lt;/span&gt;pkgs/main/linux-64::ruamel.yaml.clib-0.2.8-py312h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;setuptools&lt;span class="w"&gt;         &lt;/span&gt;pkgs/main/linux-64::setuptools-75.1.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;sqlite&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/linux-64::sqlite-3.45.3-h5eee18b_0
+&lt;span class="w"&gt;  &lt;/span&gt;tk&lt;span class="w"&gt;                 &lt;/span&gt;pkgs/main/linux-64::tk-8.6.14-h39e8969_0
+&lt;span class="w"&gt;  &lt;/span&gt;tqdm&lt;span class="w"&gt;               &lt;/span&gt;pkgs/main/linux-64::tqdm-4.66.5-py312he106c6f_0
+&lt;span class="w"&gt;  &lt;/span&gt;truststore&lt;span class="w"&gt;         &lt;/span&gt;pkgs/main/linux-64::truststore-0.8.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;tzdata&lt;span class="w"&gt;             &lt;/span&gt;pkgs/main/noarch::tzdata-2024b-h04d1e81_0
+&lt;span class="w"&gt;  &lt;/span&gt;urllib3&lt;span class="w"&gt;            &lt;/span&gt;pkgs/main/linux-64::urllib3-2.2.3-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;wheel&lt;span class="w"&gt;              &lt;/span&gt;pkgs/main/linux-64::wheel-0.44.0-py312h06a4308_0
+&lt;span class="w"&gt;  &lt;/span&gt;xz&lt;span class="w"&gt;                 &lt;/span&gt;pkgs/main/linux-64::xz-5.4.6-h5eee18b_1
+&lt;span class="w"&gt;  &lt;/span&gt;yaml-cpp&lt;span class="w"&gt;           &lt;/span&gt;pkgs/main/linux-64::yaml-cpp-0.8.0-h6a678d5_1
+&lt;span class="w"&gt;  &lt;/span&gt;zlib&lt;span class="w"&gt;               &lt;/span&gt;pkgs/main/linux-64::zlib-1.2.13-h5eee18b_1
+&lt;span class="w"&gt;  &lt;/span&gt;zstandard&lt;span class="w"&gt;          &lt;/span&gt;pkgs/main/linux-64::zstandard-0.23.0-py312h2c38b39_1
+&lt;span class="w"&gt;  &lt;/span&gt;zstd&lt;span class="w"&gt;               &lt;/span&gt;pkgs/main/linux-64::zstd-1.5.6-hc292b87_0
+
+
+
+Downloading&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;Extracting&lt;span class="w"&gt; &lt;/span&gt;Packages:
+
+Preparing&lt;span class="w"&gt; &lt;/span&gt;transaction:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;done&lt;/span&gt;
+Executing&lt;span class="w"&gt; &lt;/span&gt;transaction:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;done&lt;/span&gt;
+installation&lt;span class="w"&gt; &lt;/span&gt;finished.
+Do&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;wish&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;shell&lt;span class="w"&gt; &lt;/span&gt;profile&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;automatically&lt;span class="w"&gt; &lt;/span&gt;initialize&lt;span class="w"&gt; &lt;/span&gt;conda?
+This&lt;span class="w"&gt; &lt;/span&gt;will&lt;span class="w"&gt; &lt;/span&gt;activate&lt;span class="w"&gt; &lt;/span&gt;conda&lt;span class="w"&gt; &lt;/span&gt;on&lt;span class="w"&gt; &lt;/span&gt;startup&lt;span class="w"&gt; &lt;/span&gt;and&lt;span class="w"&gt; &lt;/span&gt;change&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;prompt&lt;span class="w"&gt; &lt;/span&gt;when&lt;span class="w"&gt; &lt;/span&gt;activated.
+If&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="s1"&gt;'d prefer that conda'&lt;/span&gt;s&lt;span class="w"&gt; &lt;/span&gt;base&lt;span class="w"&gt; &lt;/span&gt;environment&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;be&lt;span class="w"&gt; &lt;/span&gt;activated&lt;span class="w"&gt; &lt;/span&gt;on&lt;span class="w"&gt; &lt;/span&gt;startup,
+&lt;span class="w"&gt;   &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;following&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;when&lt;span class="w"&gt; &lt;/span&gt;conda&lt;span class="w"&gt; &lt;/span&gt;is&lt;span class="w"&gt; &lt;/span&gt;activated:
+
+conda&lt;span class="w"&gt; &lt;/span&gt;config&lt;span class="w"&gt; &lt;/span&gt;--set&lt;span class="w"&gt; &lt;/span&gt;auto_activate_base&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;false&lt;/span&gt;
+
+You&lt;span class="w"&gt; &lt;/span&gt;can&lt;span class="w"&gt; &lt;/span&gt;undo&lt;span class="w"&gt; &lt;/span&gt;this&lt;span class="w"&gt; &lt;/span&gt;by&lt;span class="w"&gt; &lt;/span&gt;running&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;conda&lt;span class="w"&gt; &lt;/span&gt;init&lt;span class="w"&gt; &lt;/span&gt;--reverse&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$SHELL&lt;/span&gt;&lt;span class="sb"&gt;`&lt;/span&gt;?&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;yes&lt;span class="p"&gt;|&lt;/span&gt;no&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;no&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;no
+
+You&lt;span class="w"&gt; &lt;/span&gt;have&lt;span class="w"&gt; &lt;/span&gt;chosen&lt;span class="w"&gt; &lt;/span&gt;to&lt;span class="w"&gt; &lt;/span&gt;not&lt;span class="w"&gt; &lt;/span&gt;have&lt;span class="w"&gt; &lt;/span&gt;conda&lt;span class="w"&gt; &lt;/span&gt;modify&lt;span class="w"&gt; &lt;/span&gt;your&lt;span class="w"&gt; &lt;/span&gt;shell&lt;span class="w"&gt; &lt;/span&gt;scripts&lt;span class="w"&gt; &lt;/span&gt;at&lt;span class="w"&gt; &lt;/span&gt;all.
+To&lt;span class="w"&gt; &lt;/span&gt;activate&lt;span class="w"&gt; &lt;/span&gt;conda&lt;span class="s1"&gt;'s base environment in your current shell session:&lt;/span&gt;
+
+&lt;span class="s1"&gt;eval "$(/home/friday13/.miniconda3/bin/conda shell.YOUR_SHELL_NAME hook)"&lt;/span&gt;
+
+&lt;span class="s1"&gt;To install conda'&lt;/span&gt;s&lt;span class="w"&gt; &lt;/span&gt;shell&lt;span class="w"&gt; &lt;/span&gt;functions&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;easier&lt;span class="w"&gt; &lt;/span&gt;access,&lt;span class="w"&gt; &lt;/span&gt;first&lt;span class="w"&gt; &lt;/span&gt;activate,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;:
+
+conda&lt;span class="w"&gt; &lt;/span&gt;init
+
+Thank&lt;span class="w"&gt; &lt;/span&gt;you&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;installing&lt;span class="w"&gt; &lt;/span&gt;Miniconda3!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;img alt="arch-linux-conda-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/conda-xl.webp" srcset="/images/conda-sm.webp 300w, /images/conda-md.webp 500w, /images/conda-xl.webp 800w, /images/conda-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Yazılım Geliştirme"/><category term="archlinux"/><category term="python"/><category term="conda"/><category term="miniconda"/><category term="yazılım"/></entry></feed>

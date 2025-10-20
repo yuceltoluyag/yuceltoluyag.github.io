@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Raspberry Pi Nasıl Kurulur",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/raspberry-pi-nasil-kurulur-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Raspberry Pi Nasıl Kurulur" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/" />
+<meta property="og:title" content="Raspberry Pi Nasıl Kurulur" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-04-24T12:00:00+03:00" />
+<meta property="article:modified_time" content="2025-08-11T22:59:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Donanım" />
+  <meta property="article:tag" content="raspberry pi" />
+<meta property="article:tag" content="raspberry pi kurulumu" />
+<meta property="article:tag" content="microSD kart" />
+<meta property="article:tag" content="ssh ayarları" />
+<meta property="article:tag" content="statik ip" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Raspberry Pi kurulumu adım adım nasıl yapılır? microSD kartı hazırlamaktan SSH ile uzaktan bağlantıya kadar tüm detayları bu rehberde bulabilirsiniz." />
+<meta property="og:description" content="Raspberry Pi kurulumu adım adım nasıl yapılır? microSD kartı hazırlamaktan SSH ile uzaktan bağlantıya kadar tüm detayları bu rehberde bulabilirsiniz." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Raspberry Pi Nasıl Kurulur",
+        "description": "Raspberry Pi kurulumu adım adım nasıl yapılır? microSD kartı hazırlamaktan SSH ile uzaktan bağlantıya kadar tüm detayları bu rehberde bulabilirsiniz.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-04-24T12:00:00+03:00",
+"dateModified": "2025-08-11T22:59:00+03:00",        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+        },
+"articleSection": "Donanım","keywords": "raspberry pi, raspberry pi kurulumu, microSD kart, ssh ayarları, statik ip",        "url": "https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/",
+"image": "https://yuceltoluyag.github.io/images/raspberry-pi-nasil-kurulur-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>Raspberry Pi Nasıl Kurulur</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#raspberry-pi-nasil-kurulur" title="Raspberry Pi Nas&inodot;l Kurulur? 🛠️">Raspberry Pi Nas&inodot;l Kurulur? 🛠️</a><ul><li><a class="toc-href" href="#gerekli-donanimlar" title="📦 Gerekli Donan&inodot;mlar">📦 Gerekli Donan&inodot;mlar</a></li><li><a class="toc-href" href="#microsd-kartin-hazirlanmasi" title="💾 microSD Kart&inodot;n Haz&inodot;rlanmas&inodot;">💾 microSD Kart&inodot;n Haz&inodot;rlanmas&inodot;</a></li><li><a class="toc-href" href="#adim-1-microsd-kartinizi-flashlayin" title="Ad&inodot;m 1: MicroSD Kart&inodot;n&inodot;z&inodot; Flash&rsquo;lay&inodot;n">Ad&inodot;m 1: MicroSD Kart&inodot;n&inodot;z&inodot; Flash&rsquo;lay&inodot;n</a></li><li><a class="toc-href" href="#adim-2-raspberry-piyi-yapilandirma" title="Ad&inodot;m 2: Raspberry Pi&rsquo;yi Yap&inodot;land&inodot;rma">Ad&inodot;m 2: Raspberry Pi&rsquo;yi Yap&inodot;land&inodot;rma</a></li><li><a class="toc-href" href="#adim-3-raspberry-piyi-ozellestirme" title="Ad&inodot;m 3: Raspberry Pi&rsquo;yi &Ouml;zelle&scedil;tirme">Ad&inodot;m 3: Raspberry Pi&rsquo;yi &Ouml;zelle&scedil;tirme</a></li><li><a class="toc-href" href="#adim-4-ssh-kurulumu" title="Ad&inodot;m 4: SSH Kurulumu">Ad&inodot;m 4: SSH Kurulumu</a></li><li><a class="toc-href" href="#sonuc-ve-ozet" title="📌 Sonu&ccedil; ve &Ouml;zet">📌 Sonu&ccedil; ve &Ouml;zet</a></li></ul></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler</h4>
+                                    </a>
+                                </div>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Raspberry Pi Nasıl Kurulur</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-04-24T12:00:00+03:00" class="ml-1">
+                                    24 April 2025
+                                </time>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:history"></span>
+                                <time datetime="2025-08-11T22:59:00+03:00" class="ml-1">
+                                    11 August 2025
+                                </time>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/donanim/"
+                                    class="link link-hover ml-1">
+                                    Donanım
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">1192 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">5 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 10.72</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/raspberry-pi-nasil-kurulur.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><h1 id="raspberry-pi-nasil-kurulur">Raspberry Pi Nas&inodot;l Kurulur? 🛠️</h1>
+<p>G&uuml;&ccedil;l&uuml;, ucuz ve esnek bir mini bilgisayar olan <strong>Raspberry Pi</strong>, hobi projelerinden profesyonel uygulamalara kadar bir&ccedil;ok alanda kullan&inodot;labiliyor. Peki, bu cihaz&inodot; ilk kez elinize ald&inodot;&gbreve;&inodot;n&inodot;zda nas&inodot;l kurulum yapars&inodot;n&inodot;z? 🤔</p>
+<p>Bu rehberde, <strong>Raspberry Pi kurulumu</strong> ad&inodot;m ad&inodot;m anlat&inodot;l&inodot;yor. microSD kart haz&inodot;rlamadan SSH &uuml;zerinden uzaktan ba&gbreve;lant&inodot;ya kadar ihtiyac&inodot;n&inodot;z olan her &scedil;eyi bulacaks&inodot;n&inodot;z.</p>
+<hr/>
+<h2 id="gerekli-donanimlar">📦 Gerekli Donan&inodot;mlar</h2>
+<p>Raspberry Pi kurulumu i&ccedil;in &scedil;u donan&inodot;mlara ihtiyac&inodot;n&inodot;z olacak:</p>
+<ul>
+<li>Raspberry Pi (Bu rehberde Pi 3 Model B kullan&inodot;ld&inodot;)</li>
+<li>microSD kart (en az 8GB, tercihen Class 10)</li>
+<li>microSD kart okuyucu (bilgisayar&inodot;n&inodot;zda yoksa adapt&ouml;r gerekebilir)</li>
+<li>Bilgisayar (microSD kart&inodot; haz&inodot;rlamak i&ccedil;in)</li>
+<li>HDMI kablosu, ekran, klavye</li>
+<li>Ethernet kablosu (ya da Wi-Fi)</li>
+<li>microUSB g&uuml;&ccedil; kablosu (standart Android &scedil;arj cihaz&inodot;)</li>
+</ul>
+<p>T&uuml;m bu donan&inodot;mlar haz&inodot;rsa ba&scedil;layal&inodot;m. 👇</p>
+<hr/>
+<h2 id="microsd-kartin-hazirlanmasi">💾 microSD Kart&inodot;n Haz&inodot;rlanmas&inodot;</h2>
+<p>Harika, &scedil;imdi <strong>Ad&inodot;m 1: MicroSD Kart&inodot;n&inodot;z&inodot; Flash&rsquo;lay&inodot;n</strong> b&ouml;l&uuml;m&uuml;yle devam ediyorum:</p>
+<hr/>
+<h2 id="adim-1-microsd-kartinizi-flashlayin">Ad&inodot;m 1: MicroSD Kart&inodot;n&inodot;z&inodot; Flash&rsquo;lay&inodot;n</h2>
+<ol>
+<li>MicroSD kart&inodot;n&inodot;z&inodot; bilgisayar&inodot;n&inodot;za tak&inodot;n.</li>
+<li><a href="https://www.balena.io/etcher/" rel="noopener noreferrer" target="_blank">Etcher</a> uygulamas&inodot;n&inodot; indirin ve kurun.</li>
+<li><a href="https://downloads.raspberrypi.org/raspbian_lite_latest" rel="noopener noreferrer" target="_blank">Raspbian Stretch Lite</a> s&uuml;r&uuml;m&uuml;n&uuml; indirip zip dosyas&inodot;n&inodot; &ccedil;&inodot;kar&inodot;n. Bu s&uuml;r&uuml;m, sadece komut sat&inodot;r&inodot; ile &ccedil;al&inodot;&scedil;an, masa&uuml;st&uuml; aray&uuml;z&uuml; bulunmayan olduk&ccedil;a hafif bir Raspbian versiyonudur. Dosya boyutu yakla&scedil;&inodot;k 351MB (Kas&inodot;m 2018 s&uuml;r&uuml;m&uuml;), bu y&uuml;zden h&inodot;zl&inodot;ca indirilecektir.</li>
+<li>Etcher&rsquo;&inodot; a&ccedil;&inodot;n, &ccedil;&inodot;kard&inodot;&gbreve;&inodot;n&inodot;z <code>.img</code> uzant&inodot;l&inodot; Raspbian i&scedil;letim sistemi dosyas&inodot;n&inodot; se&ccedil;in ve hedef olarak MicroSD kart&inodot;n&inodot;z&inodot; g&ouml;sterin. Ard&inodot;ndan <strong>Flash</strong> butonuna t&inodot;klay&inodot;n ve i&scedil;lemin tamamlanmas&inodot;n&inodot; bekleyin. Windows kullan&inodot;yorsan&inodot;z, i&scedil;lem s&inodot;ras&inodot;nda baz&inodot; Explorer pencereleri a&ccedil;&inodot;labilir, bunlar&inodot; g&ouml;rmezden gelebilirsiniz.</li>
+<li>&Idot;&scedil;lem bittikten sonra MicroSD kart&inodot;n&inodot;z&inodot; <strong>&ccedil;&inodot;kar&inodot;n</strong> ve bilgisayar&inodot;n&inodot;zdan ay&inodot;r&inodot;n.</li>
+<li><strong>Raspberry Pi&rsquo;nizin kapal&inodot; oldu&gbreve;undan emin olun.</strong> Flashlad&inodot;&gbreve;&inodot;n&inodot;z MicroSD kart&inodot; Pi&rsquo;nize tak&inodot;n.</li>
+<li>Klavyenizi, ekran&inodot;n&inodot;z&inodot; (HDMI portu &uuml;zerinden) ve Ethernet kablosunu Raspberry Pi&rsquo;ye ba&gbreve;lay&inodot;n. Son olarak g&uuml;&ccedil; kablosunu tak&inodot;n. Raspberry Pi otomatik olarak a&ccedil;&inodot;lacakt&inodot;r.</li>
+</ol>
+<hr/>
+<h2 id="adim-2-raspberry-piyi-yapilandirma">Ad&inodot;m 2: Raspberry Pi&rsquo;yi Yap&inodot;land&inodot;rma</h2>
+<ol>
+<li>Ekran&inodot;n alt&inodot;nda <code>raspberrypi login:</code> yaz&inodot;s&inodot; ve yan&inodot;p s&ouml;nen bir imle&ccedil; g&ouml;rd&uuml;&gbreve;&uuml;n&uuml;zde, kullan&inodot;c&inodot; ad&inodot; olarak &scedil;unu yaz&inodot;n:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>pi
+</code></pre></div>
+Enter'a bas&inodot;n. Ard&inodot;ndan varsay&inodot;lan &scedil;ifreyi girin:</p>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>raspberry
+</code></pre></div>
+Bu &scedil;ifreyi birazdan de&gbreve;i&scedil;tirece&gbreve;iz.</p>
+<ol>
+<li>&Scedil;imdi sistem g&uuml;ncellemeleri i&ccedil;in &scedil;u komutu yaz&inodot;n:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+Bu komut, Raspbian&rsquo;&inodot;n g&uuml;ncellemeleri hangi kaynaklardan alaca&gbreve;&inodot;n&inodot; yeniler. <code>apt</code> bir paket y&ouml;neticisidir. <code>sudo</code> ise &ldquo;super-user do&rdquo; anlam&inodot;na gelir; yani bu komutu y&ouml;netici yetkileriyle &ccedil;al&inodot;&scedil;t&inodot;r&inodot;yorsunuz.<br/>
+Daha &ouml;nce <code>apt-get</code> g&ouml;rm&uuml;&scedil; olabilirsiniz, ama <code>apt</code> daha yeni ve kullan&inodot;c&inodot; dostu bir s&uuml;r&uuml;md&uuml;r. Komutun tamamlanmas&inodot;n&inodot; bekleyin.</p>
+<ol>
+<li>Ekranda tekrar <code>pi@raspberrypi:~ $</code> &ccedil;&inodot;kt&inodot;s&inodot;n&inodot; g&ouml;rd&uuml;&gbreve;&uuml;n&uuml;zde, g&uuml;ncelleme i&scedil;lemi tamamlanm&inodot;&scedil;t&inodot;r. &Scedil;imdi &scedil;u komutu girin:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>full-upgrade
+</code></pre></div>
+Size soruldu&gbreve;unda
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>y
+</code></pre></div>
+yaz&inodot;p Enter&rsquo;a bas&inodot;n. Bu i&scedil;lem biraz s&uuml;rebilir ama ekran&inodot;n alt&inodot;ndaki ilerleme &ccedil;ubu&gbreve;unu izleyebilirsiniz.</p>
+<ol>
+<li>G&uuml;ncellemeler tamamland&inodot;&gbreve;&inodot;nda, &scedil;u temizlik komutlar&inodot;n&inodot; &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>autoremove<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>clean
+</code></pre></div>
+Bu komutlar gereksiz paketleri kald&inodot;r&inodot;r ve bellekte yer a&ccedil;ar. <code>&amp;&amp;</code> i&scedil;areti, birden fazla komutu tek sat&inodot;rda birle&scedil;tirmenizi sa&gbreve;lar.</p>
+<ol>
+<li>&Scedil;imdi yap&inodot;land&inodot;rma ekran&inodot;n&inodot; a&ccedil;mak i&ccedil;in &scedil;u komutu yaz&inodot;n:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>raspi-config
+</code></pre></div>
+Mavi bir grafik ekran a&ccedil;&inodot;lacak. Ok tu&scedil;lar&inodot;yla men&uuml;de gezinebilir, Enter tu&scedil;uyla se&ccedil;im yapabilirsiniz. <code>8 Update</code> se&ccedil;ene&gbreve;ini se&ccedil;in ve Enter&rsquo;a basarak yap&inodot;land&inodot;rma arac&inodot;n&inodot; g&uuml;ncelleyin.</p>
+<ol>
+<li>
+<p>Birka&ccedil; saniye bekledikten sonra a&scedil;a&gbreve;&inodot; inerek <code>4. Localisation Options</code> se&ccedil;ene&gbreve;ine gelin ve Enter&rsquo;a bas&inodot;n. Ard&inodot;ndan yerel ayarlar&inodot; de&gbreve;i&scedil;tirmek i&ccedil;in tekrar Enter&rsquo;a bas&inodot;n.<br/>
+A&scedil;a&gbreve;&inodot; inerek <code>en_GB.UTF-8 UTF-8</code> se&ccedil;ene&gbreve;ini bulun, se&ccedil;iliyse bo&scedil;luk tu&scedil;uyla i&scedil;areti kald&inodot;r&inodot;n.<br/>
+Devam edip <code>en_US.UTF-8 UTF-8</code> se&ccedil;ene&gbreve;ini bulun ve bo&scedil;luk tu&scedil;uyla i&scedil;aretleyin. Sonra Enter&rsquo;a basarak i&scedil;lemi tamamlay&inodot;n. <code>en_US.UTF-8</code> se&ccedil;ene&gbreve;ini varsay&inodot;lan yapmak i&ccedil;in tekrar Enter&rsquo;a bas&inodot;n. Ard&inodot;ndan sizi tekrar <code>raspi-config</code> ekran&inodot;na d&ouml;nd&uuml;recektir.</p>
+</li>
+<li>
+<p>Yeniden <code>4. Localisation Options</code> men&uuml;s&uuml;ne girin. Bu kez <code>I2 Change Timezone</code> se&ccedil;ene&gbreve;ine gelin.<br/>
+&Ouml;nce k&inodot;tan&inodot;z&inodot;, sonra &scedil;ehrinizi se&ccedil;in. &Ouml;rne&gbreve;in ben <code>America/Toronto</code> se&ccedil;iyorum. ABD'deyseniz <code>US</code> alt&inodot;ndan bulundu&gbreve;unuz b&ouml;lgeyi se&ccedil;ebilirsiniz.</p>
+</li>
+<li>
+<p>Yine <code>Localisation Options</code> men&uuml;s&uuml;ne girin ve bu kez klavye d&uuml;zenini ayarlamak i&ccedil;in <code>I3 Change Keyboard Layout</code> se&ccedil;ene&gbreve;ini se&ccedil;in.<br/>
+Ben <code>Dell USB Multimedia Keyboard</code> kullan&inodot;yorum. Siz de kendi klavyenizi se&ccedil;in. &Idot;ngiltere&rsquo;deyseniz varsay&inodot;lan d&uuml;zeni se&ccedil;ebilirsiniz. De&gbreve;ilseniz <code>Other</code> se&ccedil;ene&gbreve;ine inip kendi klavye dilinizi se&ccedil;in.<br/>
+Ard&inodot;ndan klavye d&uuml;zeninin versiyonunu se&ccedil;in. Emin de&gbreve;ilseniz ilk se&ccedil;ene&gbreve;i tercih edin. Alt-Gr tu&scedil;u ve Compose Key se&ccedil;eneklerini de Enter ile ge&ccedil;in &mdash; &scedil;u anda ihtiyac&inodot;n&inodot;z olmayacak.</p>
+</li>
+<li>
+<p>Son olarak <code>Localisation Options</code> men&uuml;s&uuml;ne tekrar girip <code>I4 Change Wi-fi Country</code> se&ccedil;ene&gbreve;ini se&ccedil;in.<br/>
+Bu <strong>&ccedil;ok &ouml;nemli</strong>, &ccedil;&uuml;nk&uuml; bulundu&gbreve;unuz &uuml;lkeye uygun olmayan kablosuz ayarlar&inodot; kullanmak yasal sorunlara yol a&ccedil;abilir. &Uuml;lkenizi se&ccedil;in ve Enter&rsquo;a bas&inodot;n. <code>&lt;Ok&gt;</code> mesaj&inodot; geldi&gbreve;inde tekrar Enter&rsquo;a bas&inodot;n.</p>
+</li>
+<li>
+<p>&Scedil;imdi a&scedil;a&gbreve;&inodot; inerek <code>7. Advanced Options</code> men&uuml;s&uuml;ne girin ve <code>A1 Expand Filesystem</code> se&ccedil;ene&gbreve;ini se&ccedil;in.<br/>
+Bu i&scedil;lem, SD kart&inodot;n&inodot;z&inodot;n tamam&inodot;n&inodot;n Raspberry Pi taraf&inodot;ndan kullan&inodot;lmas&inodot;n&inodot; sa&gbreve;lar.</p>
+</li>
+<li>
+<p>Kullan&inodot;c&inodot; &scedil;ifresini de&gbreve;i&scedil;tirmek i&ccedil;in <code>1 Change User Password</code> se&ccedil;ene&gbreve;ine girin. Ekrandaki y&ouml;nergeleri izleyerek yeni &scedil;ifrenizi belirleyin.<br/>
+Son olarak sa&gbreve; ok tu&scedil;una iki kez basarak <code>&lt;Finish&gt;</code> se&ccedil;ene&gbreve;ine gelin ve Enter&rsquo;a bas&inodot;n.</p>
+</li>
+<li>
+<p>&Scedil;imdi <code>2 Network Options</code> men&uuml;s&uuml;ne gidin ve <code>N1 Hostname</code> se&ccedil;ene&gbreve;ini se&ccedil;in. Raspberry Pi&rsquo;nize bir ad verin. Ayarlar&inodot; yapt&inodot;ktan sonra sistem yeniden ba&scedil;lat&inodot;lacak. Yeniden ba&scedil;latma i&scedil;leminin tamamlanmas&inodot;n&inodot; bekleyin.</p>
+</li>
+</ol>
+<hr/>
+<h2 id="adim-3-raspberry-piyi-ozellestirme">Ad&inodot;m 3: Raspberry Pi&rsquo;yi &Ouml;zelle&scedil;tirme</h2>
+<ol>
+<li>Raspberry Pi&rsquo;niz yeniden ba&scedil;lat&inodot;ld&inodot;&gbreve;&inodot;nda, tekrar giri&scedil; yap&inodot;n:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>pi
+</code></pre></div>
+Ard&inodot;ndan az &ouml;nce belirledi&gbreve;iniz &scedil;ifreyi yaz&inodot;n ve Enter&rsquo;a bas&inodot;n.</p>
+<ol>
+<li>Ba&scedil;lang&inodot;&ccedil;ta &ccedil;&inodot;kan g&ouml;kku&scedil;a&gbreve;&inodot; ekran&inodot;n&inodot; kald&inodot;rmak i&ccedil;in &scedil;u komutu girin:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/boot/config.txt
+</code></pre></div>
+Nano, Linux&rsquo;ta kullan&inodot;m&inodot; kolay bir metin d&uuml;zenleyicisidir. Ok tu&scedil;lar&inodot;yla en alta inin ve &scedil;u sat&inodot;r&inodot; ekleyin:</p>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">disable_splash</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+Ctrl+X tu&scedil;lar&inodot;na basarak &ccedil;&inodot;k&inodot;n, ard&inodot;ndan <code>y</code> tu&scedil;una basarak de&gbreve;i&scedil;iklikleri kaydedin.</p>
+<ol>
+<li>
+<p>Raspberry Pi&rsquo;nizi yeniden ba&scedil;lat&inodot;n. Art&inodot;k ba&scedil;lang&inodot;&ccedil; ekran&inodot;nda g&ouml;kku&scedil;a&gbreve;&inodot; efekti g&ouml;r&uuml;nmeyecek.<br/>
+E&gbreve;er ileride tekrar g&ouml;rmek isterseniz, <code>/boot/config.txt</code> dosyas&inodot;na geri d&ouml;n&uuml;p bu sat&inodot;r&inodot; silebilirsiniz.</p>
+</li>
+<li>
+<p>Az &ouml;nce <code>nano</code> ile bir dosyay&inodot; d&uuml;zenlediniz. &Scedil;imdi de <code>/etc/motd</code> dosyas&inodot;n&inodot; d&uuml;zenleyece&gbreve;iz. Bu dosya, her giri&scedil; yapt&inodot;&gbreve;&inodot;n&inodot;zda ekranda g&ouml;z&uuml;ken &ldquo;g&uuml;n&uuml;n mesaj&inodot;n&inodot;&rdquo; belirler:</p>
+</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/motd
+</code></pre></div>
+Sadece <code>nano</code> yazarsan&inodot;z dosyay&inodot; d&uuml;zenleyemezsiniz, <code>sudo</code> &scedil;art.<br/>
+&Idot;mle&ccedil; dosyan&inodot;n ba&scedil;&inodot;ndayken <code>Ctrl+^</code> tu&scedil;lar&inodot;na bas&inodot;n, ok tu&scedil;lar&inodot;yla en alta kadar inin. Bu t&uuml;m metni se&ccedil;er. Ard&inodot;ndan <code>Ctrl+K</code> ile se&ccedil;imi silin.<br/>
+Dosya bo&scedil; kald&inodot;&gbreve;&inodot;nda, giri&scedil;te g&ouml;rmek istedi&gbreve;iniz mesaj&inodot; yaz&inodot;n. Kaydedip &ccedil;&inodot;kmak i&ccedil;in <code>Ctrl+X</code> ard&inodot;ndan <code>y</code> tu&scedil;una bas&inodot;n.</p>
+<ol>
+<li>
+<p>Art&inodot;k oturumdan &ccedil;&inodot;kmak i&ccedil;in <code>Ctrl+D</code> tu&scedil;lar&inodot;na bas&inodot;n.<br/>
+Tekrar giri&scedil; yapt&inodot;&gbreve;&inodot;n&inodot;zda, az &ouml;nce yazd&inodot;&gbreve;&inodot;n&inodot;z mesaj&inodot; g&ouml;receksiniz.</p>
+</li>
+<li>
+<p>Son olarak, root kullan&inodot;c&inodot;s&inodot; i&ccedil;in de bir &scedil;ifre belirleyin:</p>
+</li>
+</ol>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>passwd
+</code></pre></div>
+<hr/>
+<h2 id="adim-4-ssh-kurulumu">Ad&inodot;m 4: SSH Kurulumu</h2>
+<p>SSH, Raspberry Pi&rsquo;ye ba&scedil;ka bir cihazdan uzaktan terminal (komut sat&inodot;r&inodot;) &uuml;zerinden ba&gbreve;lanman&inodot; sa&gbreve;lar. &Ouml;ncelikle Pi&rsquo;ye statik bir IP adresi ataman gerekiyor.</p>
+<ol>
+<li>Raspberry Pi&rsquo;nin yerel IP adresini &ouml;&gbreve;ren:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>ip<span class="w"> </span>-4<span class="w"> </span>a<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>global
+</code></pre></div>
+A&scedil;a&gbreve;&inodot;daki gibi bir &ccedil;&inodot;kt&inodot; alabilirsin:</p>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>inet<span class="w"> </span><span class="m">192</span>.168.2.10/24<span class="w"> </span>brd<span class="w"> </span><span class="m">10</span>.1.1.255<span class="w"> </span>scope<span class="w"> </span>global<span class="w"> </span>eth0
+</code></pre></div>
+Buradaki <code>192.168.2.10</code> Pi&rsquo;nin yerel IP adresi. <code>/24</code> a&gbreve;&inodot;n b&uuml;y&uuml;kl&uuml;&gbreve;&uuml;n&uuml; g&ouml;steriyor, &ccedil;o&gbreve;u ev a&gbreve;&inodot; i&ccedil;in bu 24&rsquo;t&uuml;r. IP adresini bir yere not al.</p>
+<ol>
+<li>Modeminin (router) yerel IP adresini &ouml;&gbreve;ren:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>ip<span class="w"> </span>route<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>default
+</code></pre></div>
+&Scedil;&ouml;yle bir &scedil;ey g&ouml;receksin:</p>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>default<span class="w"> </span>via<span class="w"> </span><span class="m">192</span>.168.2.1<span class="w"> </span>dev<span class="w"> </span>eth0<span class="w"> </span>src<span class="w"> </span><span class="m">192</span>.168.2.10<span class="w"> </span>metric<span class="w"> </span><span class="m">202</span>
+</code></pre></div>
+Benim &ouml;rne&gbreve;imde <code>192.168.2.1</code> modem IP&rsquo;si. Seninki farkl&inodot; olabilir, bunu da not et.</p>
+<ol>
+<li>DNS sunucu adresini bul:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cat<span class="w"> </span>/etc/resolv.conf
+</code></pre></div>
+&Ouml;rnek &ccedil;&inodot;kt&inodot;:</p>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># Generated by resolvconf</span>
+domain<span class="w"> </span>home
+nameserver<span class="w"> </span><span class="m">192</span>.168.2.1
+nameserver<span class="w"> </span>XXX.XXX.XXX.XXX
+</code></pre></div>
+&Idot;lk <code>nameserver</code> sat&inodot;r&inodot;ndaki adres genellikle router IP&rsquo;siyle ayn&inodot;d&inodot;r. E&gbreve;er farkl&inodot;ysa, onu da not et.</p>
+<ol>
+<li>IP adresini sabitlemek i&ccedil;in <code>dhcpcd.conf</code> dosyas&inodot;n&inodot; d&uuml;zenle:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/dhcpcd.conf
+</code></pre></div>
+A&ccedil;&inodot;lan dosyada <code># Example static IP configuration</code> sat&inodot;r&inodot;na gel ve &scedil;u &scedil;ekilde d&uuml;zenle:</p>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>interface<span class="w"> </span>eth0
+static<span class="w"> </span><span class="nv">ip_address</span><span class="o">=</span><span class="m">192</span>.168.2.10/24
+static<span class="w"> </span><span class="nv">routers</span><span class="o">=</span><span class="m">192</span>.168.2.1
+static<span class="w"> </span><span class="nv">domain_name_servers</span><span class="o">=</span><span class="m">192</span>.168.2.1
+</code></pre></div>
+Buradaki adresleri kendi a&gbreve; bilgilerine g&ouml;re g&uuml;ncelle.<br/>
+Ctrl+X &rarr; <code>y</code> &rarr; Enter ile kaydedip &ccedil;&inodot;k, ard&inodot;ndan Raspberry Pi&rsquo;ni yeniden ba&scedil;lat.</p>
+<ol>
+<li>SSH servisini etkinle&scedil;tir:</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>ssh
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>ssh
+</code></pre></div>
+&Scedil;imdi tekrar yeniden ba&scedil;lat:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>reboot
+</code></pre></div>
+<ol>
+<li>
+<p>Raspberry Pi'ne ba&scedil;ka bir bilgisayardan ba&gbreve;lanmak i&ccedil;in, o bilgisayarda terminal a&ccedil;:<br/>
+(Linux/Mac&rsquo;te terminal, Windows'ta <code>cmd</code>)</p>
+</li>
+<li>
+<p>A&scedil;a&gbreve;&inodot;daki komutla SSH ba&gbreve;lant&inodot;s&inodot; kur:</p>
+</li>
+</ol>
+<p><div class="highlight"><span class="filename">Bash</span><pre><span></span><code>ssh<span class="w"> </span>pi@192.168.2.10
+</code></pre></div>
+Burada <code>192.168.2.10</code> senin Pi&rsquo;nin IP adresi. &Idot;lk ba&gbreve;lant&inodot;da <code>yes</code> yazarak devam et.</p>
+<ol>
+<li>Pi&rsquo;nin &scedil;ifresini yaz ve Enter&rsquo;a bas.<br/>
+Ba&scedil;ar&inodot;l&inodot; olursa, giri&scedil; mesaj&inodot; (MOTD) kar&scedil;&inodot;na &ccedil;&inodot;kacak ve art&inodot;k kendi bilgisayar&inodot;ndan Raspberry Pi&rsquo;yi komut sat&inodot;r&inodot; &uuml;zerinden kontrol edebileceksin.<br/>
+Bundan sonra ekran ve klavyeyi Raspberry Pi&rsquo;den &ccedil;&inodot;karabilirsin, uzaktan y&ouml;netebilirsin!</li>
+</ol>
+<hr/>
+<h2 id="sonuc-ve-ozet">📌 Sonu&ccedil; ve &Ouml;zet</h2>
+<ul>
+<li>microSD kart haz&inodot;rl&inodot;&gbreve;&inodot;</li>
+<li>Raspberry Pi ilk yap&inodot;land&inodot;rma</li>
+<li>Yerelle&scedil;tirme ve kullan&inodot;c&inodot; ayarlar&inodot;</li>
+<li>SSH ile uzaktan ba&gbreve;lant&inodot; kurma</li>
+</ul>
+<p>Bu yaz&inodot;da, <strong>Raspberry Pi kurulumu</strong> i&ccedil;in ihtiyac&inodot;n&inodot;z olan t&uuml;m ad&inodot;mlar&inodot; detayl&inodot;ca ele ald&inodot;k:
+ 💡</p>
+<p><img alt="raspberry-pi-nasil-kurulur" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/raspberry-pi-nasil-kurulur-xl.webp" srcset="/images/raspberry-pi-nasil-kurulur-sm.webp 300w, /images/raspberry-pi-nasil-kurulur-md.webp 500w, /images/raspberry-pi-nasil-kurulur-xl.webp 800w, /images/raspberry-pi-nasil-kurulur-xl.webp 1200w"/></p></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/&text=Raspberry Pi Nasıl Kurulur"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/&title=Raspberry Pi Nasıl Kurulur"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/&text=Raspberry Pi Nasıl Kurulur"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=Raspberry Pi Nasıl Kurulur https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=Raspberry Pi Nasıl Kurulur&body=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/&description=Raspberry Pi Nasıl Kurulur&media=https://yuceltoluyag.github.io/images/raspberry-pi-nasil-kurulur-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/&title=Raspberry Pi Nasıl Kurulur"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=Raspberry Pi Nasıl Kurulur%20-%20https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#raspberry-pi-nasil-kurulur" title="Raspberry Pi Nas&inodot;l Kurulur? 🛠️">Raspberry Pi Nas&inodot;l Kurulur? 🛠️</a><ul><li><a class="toc-href" href="#gerekli-donanimlar" title="📦 Gerekli Donan&inodot;mlar">📦 Gerekli Donan&inodot;mlar</a></li><li><a class="toc-href" href="#microsd-kartin-hazirlanmasi" title="💾 microSD Kart&inodot;n Haz&inodot;rlanmas&inodot;">💾 microSD Kart&inodot;n Haz&inodot;rlanmas&inodot;</a></li><li><a class="toc-href" href="#adim-1-microsd-kartinizi-flashlayin" title="Ad&inodot;m 1: MicroSD Kart&inodot;n&inodot;z&inodot; Flash&rsquo;lay&inodot;n">Ad&inodot;m 1: MicroSD Kart&inodot;n&inodot;z&inodot; Flash&rsquo;lay&inodot;n</a></li><li><a class="toc-href" href="#adim-2-raspberry-piyi-yapilandirma" title="Ad&inodot;m 2: Raspberry Pi&rsquo;yi Yap&inodot;land&inodot;rma">Ad&inodot;m 2: Raspberry Pi&rsquo;yi Yap&inodot;land&inodot;rma</a></li><li><a class="toc-href" href="#adim-3-raspberry-piyi-ozellestirme" title="Ad&inodot;m 3: Raspberry Pi&rsquo;yi &Ouml;zelle&scedil;tirme">Ad&inodot;m 3: Raspberry Pi&rsquo;yi &Ouml;zelle&scedil;tirme</a></li><li><a class="toc-href" href="#adim-4-ssh-kurulumu" title="Ad&inodot;m 4: SSH Kurulumu">Ad&inodot;m 4: SSH Kurulumu</a></li><li><a class="toc-href" href="#sonuc-ve-ozet" title="📌 Sonu&ccedil; ve &Ouml;zet">📌 Sonu&ccedil; ve &Ouml;zet</a></li></ul></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

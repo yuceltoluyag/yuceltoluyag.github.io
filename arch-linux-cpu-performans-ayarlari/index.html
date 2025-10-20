@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/arch-linux-cpu-performans-ayarlari-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/" />
+<meta property="og:title" content="Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-07-28T09:30:00+03:00" />
+<meta property="article:modified_time" content="2025-08-11T22:59:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Donanım" />
+  <meta property="article:tag" content="arch linux" />
+<meta property="article:tag" content="cpupower" />
+<meta property="article:tag" content="intel_pstate" />
+<meta property="article:tag" content="cpu frekansı" />
+<meta property="article:tag" content="güç yönetimi" />
+<meta property="article:tag" content="i3wm" />
+<meta property="article:tag" content="performans ayarı" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Arch Linux üzerinde modern Intel işlemcilerle nasıl CPU frekansı kontrol edilir ve güç yönetimi optimize edilir? cpupower ve intel_pstate ile adım adım..." />
+<meta property="og:description" content="Arch Linux üzerinde modern Intel işlemcilerle nasıl CPU frekansı kontrol edilir ve güç yönetimi optimize edilir? cpupower ve intel_pstate ile adım adım..." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları",
+        "description": "Arch Linux üzerinde modern Intel işlemcilerle nasıl CPU frekansı kontrol edilir ve güç yönetimi optimize edilir? cpupower ve intel_pstate ile adım adım...",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-07-28T09:30:00+03:00",
+"dateModified": "2025-08-11T22:59:00+03:00",        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+        },
+"articleSection": "Donanım","keywords": "arch linux, cpupower, intel_pstate, cpu frekansı, güç yönetimi, i3wm, performans ayarı",        "url": "https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/",
+"image": "https://yuceltoluyag.github.io/images/arch-linux-cpu-performans-ayarlari-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#neden-cpu-guc-yonetimi-onemlidir" title="🔍 Neden CPU G&uuml;&ccedil; Y&ouml;netimi &Ouml;nemlidir?">🔍 Neden CPU G&uuml;&ccedil; Y&ouml;netimi &Ouml;nemlidir?</a></li><li><a class="toc-href" href="#1-sistem-donanimim" title="🧰 1. Sistem Donan&inodot;m&inodot;m">🧰 1. Sistem Donan&inodot;m&inodot;m</a></li><li><a class="toc-href" href="#2-power-profiles-daemon-servisinin-durumu" title="🛑 2. power-profiles-daemon Servisinin Durumu">🛑 2. power-profiles-daemon Servisinin Durumu</a></li><li><a class="toc-href" href="#3-cpupower-kurulumu-ve-yapilandirilmasi" title="⚙️ 3. cpupower Kurulumu ve Yap&inodot;land&inodot;r&inodot;lmas&inodot;">⚙️ 3. cpupower Kurulumu ve Yap&inodot;land&inodot;r&inodot;lmas&inodot;</a><ul><li><a class="toc-href" href="#kurulum" title="Kurulum:">Kurulum:</a></li><li><a class="toc-href" href="#yapilandirma" title="Yap&inodot;land&inodot;rma:">Yap&inodot;land&inodot;rma:</a></li><li><a class="toc-href" href="#servisi-etkinlestir" title="Servisi etkinle&scedil;tir:">Servisi etkinle&scedil;tir:</a></li></ul></li><li><a class="toc-href" href="#4-frekans-bilgisi-ve-anlik-izleme_1" title="📊 4. Frekans Bilgisi ve Anl&inodot;k &Idot;zleme">📊 4. Frekans Bilgisi ve Anl&inodot;k &Idot;zleme</a></li><li><a class="toc-href" href="#5-intel_pstate-surucusunu-anlamak" title="🔍 5. intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Anlamak">🔍 5. intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Anlamak</a><ul><li><a class="toc-href" href="#alternatif-suruculer" title="Alternatif S&uuml;r&uuml;c&uuml;ler?">Alternatif S&uuml;r&uuml;c&uuml;ler?</a></li></ul></li><li><a class="toc-href" href="#6-i3wm-kullanicilari-icin-ekstra-tavsiyeler_1" title="🧱 6. i3wm Kullan&inodot;c&inodot;lar&inodot; i&ccedil;in Ekstra Tavsiyeler">🧱 6. i3wm Kullan&inodot;c&inodot;lar&inodot; i&ccedil;in Ekstra Tavsiyeler</a><ul><li><a class="toc-href" href="#xprofile-dosyasina-ekle" title=".xprofile Dosyas&inodot;na Ekle:">.xprofile Dosyas&inodot;na Ekle:</a></li><li><a class="toc-href" href="#systemd-user-servisi-olustur" title="Systemd user servisi olu&scedil;tur:">Systemd user servisi olu&scedil;tur:</a></li></ul></li><li><a class="toc-href" href="#7-ileri-duzey-ince-ayar-ve-analiz-araclari_1" title="🚀 7. &Idot;leri D&uuml;zey &Idot;nce Ayar ve Analiz Ara&ccedil;lar&inodot;">🚀 7. &Idot;leri D&uuml;zey &Idot;nce Ayar ve Analiz Ara&ccedil;lar&inodot;</a><ul><li><a class="toc-href" href="#71-boost-frekansinin-durumu-ve-kontrolu" title="7.1 Boost Frekans&inodot;n&inodot;n Durumu ve Kontrol&uuml;">7.1 Boost Frekans&inodot;n&inodot;n Durumu ve Kontrol&uuml;</a></li><li><a class="toc-href" href="#72-turbostat-ile-detayli-izleme" title="7.2 turbostat ile Detayl&inodot; &Idot;zleme">7.2 turbostat ile Detayl&inodot; &Idot;zleme</a></li><li><a class="toc-href" href="#73-guc-tuketim-analizi-powertop-ve-powerstat" title="7.3 G&uuml;&ccedil; T&uuml;ketim Analizi: powertop ve powerstat">7.3 G&uuml;&ccedil; T&uuml;ketim Analizi: powertop ve powerstat</a></li><li><a class="toc-href" href="#74-dinamik-guc-yonetimi-auto-cpufreq" title="7.4 Dinamik G&uuml;&ccedil; Y&ouml;netimi: auto-cpufreq">7.4 Dinamik G&uuml;&ccedil; Y&ouml;netimi: auto-cpufreq</a></li><li><a class="toc-href" href="#75-grub-ayarlariyla-intel_pstate-surucusunu-zorlamak" title="7.5 Grub Ayarlar&inodot;yla intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Zorlamak">7.5 Grub Ayarlar&inodot;yla intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Zorlamak</a></li><li><a class="toc-href" href="#76-governor-modlari-karsilastirmasi" title="7.6 Governor Modlar&inodot; Kar&scedil;&inodot;la&scedil;t&inodot;rmas&inodot;">7.6 Governor Modlar&inodot; Kar&scedil;&inodot;la&scedil;t&inodot;rmas&inodot;</a></li><li><a class="toc-href" href="#77-laptoplar-icin-tlp-ile-guc-tasarrufu" title="7.7 Laptoplar &Idot;&ccedil;in TLP ile G&uuml;&ccedil; Tasarrufu">7.7 Laptoplar &Idot;&ccedil;in TLP ile G&uuml;&ccedil; Tasarrufu</a></li></ul></li><li><a class="toc-href" href="#8-devam-etmek-isteyenler-icin_1" title="🔗 8. Devam Etmek &Idot;steyenler &Idot;&ccedil;in">🔗 8. Devam Etmek &Idot;steyenler &Idot;&ccedil;in</a></li><li><a class="toc-href" href="#9-yaygin-sorunlar-ve-cozumler" title="📌 9. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mler">📌 9. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mler</a></li><li><a class="toc-href" href="#sonuc" title="✅ Sonu&ccedil;">✅ Sonu&ccedil;</a></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-linux-firmware-nvidia-hatasi-cozumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/gpu-sogutmasinda-sivi-metal-kullanimi-ve-dikkat-edilmesi-gerekenler/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/raspberry-pi-nasil-kurulur/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Raspberry Pi Nasıl Kurulur</h4>
+                                    </a>
+                                </div>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-07-28T09:30:00+03:00" class="ml-1">
+                                    28 July 2025
+                                </time>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:history"></span>
+                                <time datetime="2025-08-11T22:59:00+03:00" class="ml-1">
+                                    11 August 2025
+                                </time>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/donanim/"
+                                    class="link link-hover ml-1">
+                                    Donanım
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">939 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">4 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 12.72</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/arch-linux-cpu-performans-ayarlari.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><p>Arch Linux kullan&inodot;yorsan ve &ouml;zellikle GNOME ya da KDE gibi masa&uuml;st&uuml; ortamlar&inodot;ndan uzak durup i3wm gibi hafif &ccedil;&ouml;z&uuml;mler tercih ediyorsan, sistem performans&inodot;n&inodot; kontrol etmek tamamen senin elinde! 💪</p>
+<p>Bu yaz&inodot;da, <strong>Intel i5-13400F i&scedil;lemcili, RTX 4060 Ti ekran kartl&inodot; ve i3wm kullanan</strong> bir sistemde CPU g&uuml;&ccedil; y&ouml;netimini nas&inodot;l yap&inodot;land&inodot;rd&inodot;&gbreve;&inodot;m&inodot; detayl&inodot;ca payla&scedil;&inodot;yorum. Hedefimiz:
+👉 Maksimum performans
+👉 D&uuml;&scedil;&uuml;k g&uuml;&ccedil; t&uuml;ketimi
+👉 Anl&inodot;k frekans takibi
+👉 Masa&uuml;st&uuml; ortam&inodot; ba&gbreve;&inodot;ms&inodot;z tam kontrol</p>
+<hr/>
+<h2 id="neden-cpu-guc-yonetimi-onemlidir">🔍 Neden CPU G&uuml;&ccedil; Y&ouml;netimi &Ouml;nemlidir?</h2>
+<p>Modern CPU'lar ola&gbreve;an&uuml;st&uuml; g&uuml;&ccedil;lere sahiptir, ancak bu g&uuml;c&uuml; kontrols&uuml;z kullanmak hem &inodot;s&inodot; art&inodot;&scedil;&inodot;na hem de gereksiz enerji t&uuml;ketimine yol a&ccedil;ar. &Idot;&scedil;te bu y&uuml;zden;</p>
+<ul>
+<li>Sistem fanlar&inodot;n&inodot;n sesi artar 😤</li>
+<li>Batarya s&uuml;resi d&uuml;&scedil;er (laptop&rsquo;ta) 🔋</li>
+<li>Gereksiz &inodot;s&inodot;nmalar ya&scedil;an&inodot;r 🔥</li>
+<li>Throttling nedeniyle performans d&uuml;&scedil;er 🐌</li>
+</ul>
+<p>&Ouml;zellikle Intel i&scedil;lemcili sistemlerde <code>intel_pstate</code> s&uuml;r&uuml;c&uuml;s&uuml;n&uuml;n davran&inodot;&scedil;&inodot;, do&gbreve;ru yap&inodot;land&inodot;r&inodot;lmazsa ya i&scedil;lemciyi s&uuml;rekli en y&uuml;ksek h&inodot;zda tutar ya da &ccedil;ok yava&scedil; davran&inodot;r.</p>
+<p><img alt="linux-cpu-performans-ayarlari" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-cpu-performans-ayarlari-xl.webp" srcset="/images/arch-linux-cpu-performans-ayarlari-sm.webp 300w, /images/arch-linux-cpu-performans-ayarlari-md.webp 500w, /images/arch-linux-cpu-performans-ayarlari-xl.webp 800w, /images/arch-linux-cpu-performans-ayarlari-xl.webp 1200w"/></p>
+<hr/>
+<h2 id="1-sistem-donanimim">🧰 1. Sistem Donan&inodot;m&inodot;m</h2>
+<p>Yap&inodot;land&inodot;rmay&inodot; ger&ccedil;ekle&scedil;tirdi&gbreve;im sistemin bile&scedil;enleri &scedil;unlar:</p>
+<ul>
+<li>💻 <strong>Intel i5-13400F</strong> (10 &ccedil;ekirdek: 6P+4E)</li>
+<li>🎮 <strong>Palit GeForce RTX 4060 Ti JetStream 16GB</strong></li>
+<li>🧠 <strong>16GB DDR5 6000MHz Team T-Force Vulcan RAM</strong></li>
+<li>🔌 <strong>Asus PRIME H610M-K DDR5 Anakart</strong></li>
+<li>❄️ <strong>Thermalright Peerless Assassin 120 SE</strong></li>
+<li>🖥️ <strong>MSI G244PF E2 165Hz Monit&ouml;r</strong></li>
+</ul>
+<p>Bu donan&inodot;mla y&uuml;ksek performans al&inodot;rken ayn&inodot; zamanda gereksiz g&uuml;&ccedil; t&uuml;ketimini &ouml;nlemek istedim.</p>
+<hr/>
+<h2 id="2-power-profiles-daemon-servisinin-durumu">🛑 2. <code>power-profiles-daemon</code> Servisinin Durumu</h2>
+<p>Arch Linux&rsquo;un baz&inodot; kurulumlar&inodot;nda (&ouml;zellikle GNOME veya KDE ile) <code>power-profiles-daemon</code> varsay&inodot;lan olarak etkindir. Bu servis, sistemin enerji profillerini otomatik y&ouml;netir.</p>
+<p>Durumunu kontrol etmek i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>power-profiles-daemon.service
+</code></pre></div>
+<p>E&gbreve;er bu servis &ccedil;al&inodot;&scedil;&inodot;yorsa ve hafif bir pencere y&ouml;neticisi (&ouml;rne&gbreve;in i3wm) kullan&inodot;yorsan, gereksiz olabilir. Devre d&inodot;&scedil;&inodot; b&inodot;rakmak i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>--now<span class="w"> </span>power-profiles-daemon.service
+</code></pre></div>
+<hr/>
+<h2 id="3-cpupower-kurulumu-ve-yapilandirilmasi">⚙️ 3. <code>cpupower</code> Kurulumu ve Yap&inodot;land&inodot;r&inodot;lmas&inodot;</h2>
+<p>Art&inodot;k CPU frekanslar&inodot;n&inodot; elle y&ouml;netebilece&gbreve;imiz <code>cpupower</code> arac&inodot;n&inodot; kurmam&inodot;z gerekiyor.</p>
+<h3 id="kurulum">Kurulum:</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>cpupower
+</code></pre></div>
+<h3 id="yapilandirma">Yap&inodot;land&inodot;rma:</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/default/cpupower
+</code></pre></div>
+<p>Dosyadaki &scedil;u sat&inodot;rlar&inodot;n ba&scedil;&inodot;ndaki <code>#</code> i&scedil;aretini kald&inodot;r&inodot;n ve de&gbreve;erleri a&scedil;a&gbreve;&inodot;daki gibi d&uuml;zenleyin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nv">governor</span><span class="o">=</span><span class="s1">'performance'</span>
+<span class="nv">min_freq</span><span class="o">=</span><span class="s2">"800MHz"</span>
+<span class="nv">max_freq</span><span class="o">=</span><span class="s2">"3.3GHz"</span>
+</code></pre></div>
+<blockquote>
+<p>💡 <strong>Not:</strong> Frekans s&inodot;n&inodot;rlar&inodot; sistemine g&ouml;re de&gbreve;i&scedil;ebilir. <code>cpupower frequency-info</code> komutu ile kontrol edebilirsin.</p>
+</blockquote>
+<h3 id="servisi-etkinlestir">Servisi etkinle&scedil;tir:</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>cpupower
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>cpupower
+</code></pre></div>
+<hr/>
+<h2 id="4-frekans-bilgisi-ve-anlik-izleme_1">📊 4. Frekans Bilgisi ve Anl&inodot;k &Idot;zleme</h2>
+<p>Yap&inodot;land&inodot;rman&inodot;n &ccedil;al&inodot;&scedil;t&inodot;&gbreve;&inodot;n&inodot; teyit etmek i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cpupower<span class="w"> </span>frequency-info
+</code></pre></div>
+<p>&Ouml;rnek &ccedil;&inodot;kt&inodot;:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>driver: intel_pstate
+available cpufreq governors: performance powersave
+current policy: frequency should be within 800 MHz and 3.30 GHz.
+</code></pre></div>
+<p>Her 10 saniyede bir &ccedil;ekirdek h&inodot;zlar&inodot;n&inodot; g&ouml;rmek i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>watch<span class="w"> </span>-n<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="s2">"grep 'cpu MHz' /proc/cpuinfo"</span>
+</code></pre></div>
+<p>🧠 <strong>Bu ne i&scedil;e yarar?</strong>
+Baz&inodot; &ccedil;ekirdeklerin d&uuml;&scedil;&uuml;k, baz&inodot;lar&inodot;n&inodot;n y&uuml;ksek frekansta &ccedil;al&inodot;&scedil;t&inodot;&gbreve;&inodot;n&inodot; g&ouml;r&uuml;rs&uuml;n. Bu, <code>intel_pstate</code> s&uuml;r&uuml;c&uuml;s&uuml;n&uuml;n dinamik g&uuml;&ccedil; y&ouml;netiminden kaynaklan&inodot;r.</p>
+<hr/>
+<h2 id="5-intel_pstate-surucusunu-anlamak">🔍 5. <code>intel_pstate</code> S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Anlamak</h2>
+<p>Modern Intel i&scedil;lemcilerde varsay&inodot;lan s&uuml;r&uuml;c&uuml; genellikle <code>intel_pstate</code>'tir. Bu s&uuml;r&uuml;c&uuml; sayesinde;</p>
+<ul>
+<li>&Idot;&scedil;lemci kendi frekans&inodot;n&inodot; anl&inodot;k ayarlayabilir 🔄</li>
+<li>"performance" modunda bile &ccedil;ekirdekler gerekti&gbreve;inde d&uuml;&scedil;ebilir</li>
+<li>Boost frekanslar&inodot; desteklenir ⚡</li>
+</ul>
+<h3 id="alternatif-suruculer">Alternatif S&uuml;r&uuml;c&uuml;ler?</h3>
+<p>Baz&inodot; kullan&inodot;c&inodot;lar <code>acpi-cpufreq</code> s&uuml;r&uuml;c&uuml;s&uuml;ne ge&ccedil;erek <code>schedutil</code>, <code>ondemand</code>, <code>conservative</code> gibi y&ouml;neticileri kullanmak isteyebilir. Fakat 12. nesil ve &uuml;zeri i&scedil;lemciler i&ccedil;in <strong><code>intel_pstate</code> en iyi se&ccedil;imdir.</strong></p>
+<hr/>
+<h2 id="6-i3wm-kullanicilari-icin-ekstra-tavsiyeler_1">🧱 6. i3wm Kullan&inodot;c&inodot;lar&inodot; i&ccedil;in Ekstra Tavsiyeler</h2>
+<p>E&gbreve;er masa&uuml;st&uuml; ortam&inodot; yerine i3wm kullan&inodot;yorsan, startup i&scedil;lemlerini elle yap&inodot;land&inodot;rmal&inodot;s&inodot;n. <code>cpupower</code> komutunu her a&ccedil;&inodot;l&inodot;&scedil;ta otomatik &ccedil;al&inodot;&scedil;t&inodot;rmak i&ccedil;in:</p>
+<h3 id="xprofile-dosyasina-ekle"><code>.xprofile</code> Dosyas&inodot;na Ekle:</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">'cpupower frequency-set -g performance'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.xprofile
+</code></pre></div>
+<p>veya</p>
+<h3 id="systemd-user-servisi-olustur">Systemd user servisi olu&scedil;tur:</h3>
+<div class="highlight"><span class="filename">INI</span><pre><span></span><code><span class="na">~/.config/systemd/user/cpupower.service</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">INI</span><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">Set cpupower governor</span>
+<span class="na">After</span><span class="o">=</span><span class="s">graphical.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">oneshot</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/cpupower frequency-set -g performance</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">default.target</span>
+</code></pre></div>
+<p>Aktifle&scedil;tir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>--user<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>cpupower.service
+</code></pre></div>
+<hr/>
+<h2 id="7-ileri-duzey-ince-ayar-ve-analiz-araclari_1">🚀 7. &Idot;leri D&uuml;zey &Idot;nce Ayar ve Analiz Ara&ccedil;lar&inodot;</h2>
+<h3 id="71-boost-frekansinin-durumu-ve-kontrolu">7.1 Boost Frekans&inodot;n&inodot;n Durumu ve Kontrol&uuml;</h3>
+<p>Boost &ouml;zelli&gbreve;inin a&ccedil;&inodot;k m&inodot; kapal&inodot; m&inodot; oldu&gbreve;unu kontrol etmek i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>cat<span class="w"> </span>/sys/devices/system/cpu/cpufreq/boost
+</code></pre></div>
+<ul>
+<li><code>1</code> ise boost a&ccedil;&inodot;k</li>
+<li><code>0</code> ise boost kapal&inodot;</li>
+</ul>
+<p>Gerekirse kapatmak i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/sys/devices/system/cpu/cpufreq/boost
+</code></pre></div>
+<blockquote>
+<p>⚠️ Oyun veya a&gbreve;&inodot;r i&scedil; y&uuml;klerinde boost a&ccedil;&inodot;k kalmal&inodot;, aksi takdirde performans d&uuml;&scedil;ebilir.</p>
+</blockquote>
+<hr/>
+<h3 id="72-turbostat-ile-detayli-izleme">7.2 <code>turbostat</code> ile Detayl&inodot; &Idot;zleme</h3>
+<p><code>Turbostat</code>, CPU &ccedil;ekirdeklerinin frekans&inodot;, s&inodot;cakl&inodot;&gbreve;&inodot; ve g&uuml;&ccedil; durumlar&inodot;n&inodot; ger&ccedil;ek zamanl&inodot; g&ouml;sterir.</p>
+<p>Kurulum:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>linux-tools
+</code></pre></div>
+<p>&Ccedil;al&inodot;&scedil;t&inodot;rma:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>turbostat
+</code></pre></div>
+<hr/>
+<h3 id="73-guc-tuketim-analizi-powertop-ve-powerstat">7.3 G&uuml;&ccedil; T&uuml;ketim Analizi: <code>powertop</code> ve <code>powerstat</code></h3>
+<ul>
+<li><code>powertop</code> sistemde en &ccedil;ok enerji t&uuml;keten bile&scedil;enleri tespit eder ve optimizasyon &ouml;nerileri sunar.</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>powertop
+sudo<span class="w"> </span>powertop
+</code></pre></div>
+<ul>
+<li><code>powerstat</code> ise anl&inodot;k watt t&uuml;ketimini &ouml;l&ccedil;mek i&ccedil;in kullan&inodot;l&inodot;r, &ouml;zellikle diz&uuml;st&uuml; kullan&inodot;c&inodot;lar&inodot; i&ccedil;in faydal&inodot;d&inodot;r.</li>
+</ul>
+<hr/>
+<h3 id="74-dinamik-guc-yonetimi-auto-cpufreq">7.4 Dinamik G&uuml;&ccedil; Y&ouml;netimi: <code>auto-cpufreq</code></h3>
+<p>Y&uuml;k ve pil durumuna g&ouml;re otomatik olarak CPU governor&rsquo;&inodot;n&inodot; ayarlar.</p>
+<p>Kurulum (AUR veya yay kullanarak):</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>yay<span class="w"> </span>-S<span class="w"> </span>auto-cpufreq
+sudo<span class="w"> </span>auto-cpufreq<span class="w"> </span>--install
+</code></pre></div>
+<hr/>
+<h3 id="75-grub-ayarlariyla-intel_pstate-surucusunu-zorlamak">7.5 Grub Ayarlar&inodot;yla <code>intel_pstate</code> S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Zorlamak</h3>
+<p>E&gbreve;er <code>intel_pstate</code> s&uuml;r&uuml;c&uuml;s&uuml; sistemde aktif de&gbreve;ilse, a&scedil;a&gbreve;&inodot;daki ad&inodot;mlar&inodot; uygulayarak etkinle&scedil;tirebilirsiniz:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/default/grub
+</code></pre></div>
+<p><code>GRUB_CMDLINE_LINUX_DEFAULT</code> sat&inodot;r&inodot;na a&scedil;a&gbreve;&inodot;daki parametreyi ekleyin:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>intel_pstate=active
+</code></pre></div>
+<p>De&gbreve;i&scedil;iklikleri kaydettikten sonra:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>grub-mkconfig<span class="w"> </span>-o<span class="w"> </span>/boot/grub/grub.cfg
+sudo<span class="w"> </span>reboot
+</code></pre></div>
+<hr/>
+<h3 id="76-governor-modlari-karsilastirmasi">7.6 Governor Modlar&inodot; Kar&scedil;&inodot;la&scedil;t&inodot;rmas&inodot;</h3>
+<table>
+<thead>
+<tr>
+<th>Governor</th>
+<th>A&ccedil;&inodot;klama</th>
+<th>Kullan&inodot;m Senaryosu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>performance</td>
+<td>Sabit y&uuml;ksek frekans</td>
+<td>Oyun, render, y&uuml;ksek performans</td>
+</tr>
+<tr>
+<td>powersave</td>
+<td>Sabit d&uuml;&scedil;&uuml;k frekans</td>
+<td>Batarya tasarrufu</td>
+</tr>
+<tr>
+<td>schedutil</td>
+<td>Kernel zamanlay&inodot;c&inodot;s&inodot;na ba&gbreve;l&inodot;</td>
+<td>Dengeli, modern</td>
+</tr>
+<tr>
+<td>ondemand</td>
+<td>Y&uuml;ke g&ouml;re frekans art&inodot;&scedil;&inodot;</td>
+<td>Eski sistemlerde</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><code>intel_pstate</code> s&uuml;r&uuml;c&uuml;s&uuml;nde genellikle sadece <code>performance</code> ve <code>powersave</code> modlar&inodot; aktiftir.</p>
+</blockquote>
+<hr/>
+<h3 id="77-laptoplar-icin-tlp-ile-guc-tasarrufu">7.7 Laptoplar &Idot;&ccedil;in TLP ile G&uuml;&ccedil; Tasarrufu</h3>
+<p>Laptop kullan&inodot;c&inodot;lar&inodot; i&ccedil;in <code>tlp</code>, Wi-Fi, USB, disk gibi bile&scedil;enlerin g&uuml;&ccedil; t&uuml;ketimini optimize eder.</p>
+<p>Kurulum ve ba&scedil;latma:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>tlp
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>tlp
+</code></pre></div>
+<hr/>
+<h2 id="8-devam-etmek-isteyenler-icin_1">🔗 8. Devam Etmek &Idot;steyenler &Idot;&ccedil;in</h2>
+<ul>
+<li>
+<p><strong><code>turbostat</code></strong>: CPU &ccedil;ekirdeklerinin frekans&inodot;, s&inodot;cakl&inodot;&gbreve;&inodot;, g&uuml;&ccedil; durumu gibi verileri ger&ccedil;ek zamanl&inodot; izler. Performans sorunlar&inodot; veya &inodot;s&inodot;nma problemlerini tespit etmek i&ccedil;in faydal&inodot;d&inodot;r.</p>
+</li>
+<li>
+<p><strong><code>powertop</code></strong>: Sistem genelinde hangi bile&scedil;enlerin ne kadar enerji t&uuml;ketti&gbreve;ini g&ouml;sterir ve g&uuml;&ccedil; tasarrufu i&ccedil;in &ouml;neriler sunar.</p>
+</li>
+<li>
+<p><strong><code>auto-cpufreq</code></strong>: Y&uuml;k ve pil durumuna g&ouml;re CPU frekans y&ouml;neticisini otomatik olarak ayarlayarak enerji verimlili&gbreve;i sa&gbreve;lar.</p>
+</li>
+</ul>
+<hr/>
+<p>&Idot;stersen, turbostat &ccedil;&inodot;kt&inodot;s&inodot;ndan k&uuml;&ccedil;&uuml;k bir ekran g&ouml;r&uuml;nt&uuml;s&uuml; veya &ouml;rnek komut &ccedil;&inodot;kt&inodot;s&inodot; da ekleyebiliriz. Yaz&inodot;n&inodot;n g&ouml;rsel olarak da desteklenmesi kullan&inodot;c&inodot; deneyimini art&inodot;r&inodot;r.
+Ba&scedil;ka d&uuml;zenleme veya ekleme talebin varsa memnuniyetle yard&inodot;mc&inodot; olurum!</p>
+<h2 id="9-yaygin-sorunlar-ve-cozumler">📌 9. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mler</h2>
+<table>
+<thead>
+<tr>
+<th>Sorun</th>
+<th>&Ccedil;&ouml;z&uuml;m</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cpupower: command not found</code></td>
+<td><code>sudo pacman -S cpupower</code> ile kur</td>
+<td></td>
+</tr>
+<tr>
+<td><code>intel_pstate</code> yerine ba&scedil;ka s&uuml;r&uuml;c&uuml; kullan&inodot;l&inodot;yor</td>
+<td>`dmesg</td>
+<td>grep pstate` ile s&uuml;r&uuml;c&uuml; kontrol&uuml;</td>
+</tr>
+<tr>
+<td>Frekanslar de&gbreve;i&scedil;miyor gibi g&ouml;r&uuml;n&uuml;yor</td>
+<td><code>watch -n 1 "grep MHz /proc/cpuinfo"</code> ile anl&inodot;k izle</td>
+<td></td>
+</tr>
+<tr>
+<td>Laptop kullan&inodot;c&inodot;lar&inodot; i&ccedil;in batarya h&inodot;zla t&uuml;keniyor</td>
+<td><code>governor='powersave'</code> olarak de&gbreve;i&scedil;tir</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="sonuc">✅ Sonu&ccedil;</h2>
+<p>Bu rehberde, masa&uuml;st&uuml; ortam&inodot; kullanmadan, sadece terminal ve <code>cpupower</code> arac&inodot;yla nas&inodot;l etkili bir CPU g&uuml;&ccedil; y&ouml;netimi yap&inodot;land&inodot;r&inodot;labilece&gbreve;ini ad&inodot;m ad&inodot;m g&ouml;sterdim. Modern bir sistemde:</p>
+<ul>
+<li>Performans&inodot; elle y&ouml;netmek 🎯</li>
+<li>Frekanslar&inodot; anl&inodot;k izlemek 🔬</li>
+<li><code>intel_pstate</code> s&uuml;r&uuml;c&uuml;s&uuml;n&uuml; do&gbreve;ru kullanmak 🛠️
+  gibi ad&inodot;mlarla sisteminiz daha verimli &ccedil;al&inodot;&scedil;acakt&inodot;r.</li>
+</ul>
+<hr/></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/&text=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/&title=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/&text=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları&body=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/&description=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları&media=https://yuceltoluyag.github.io/images/arch-linux-cpu-performans-ayarlari-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/&title=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları%20-%20https://yuceltoluyag.github.io/arch-linux-cpu-performans-ayarlari/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#neden-cpu-guc-yonetimi-onemlidir" title="🔍 Neden CPU G&uuml;&ccedil; Y&ouml;netimi &Ouml;nemlidir?">🔍 Neden CPU G&uuml;&ccedil; Y&ouml;netimi &Ouml;nemlidir?</a></li><li><a class="toc-href" href="#1-sistem-donanimim" title="🧰 1. Sistem Donan&inodot;m&inodot;m">🧰 1. Sistem Donan&inodot;m&inodot;m</a></li><li><a class="toc-href" href="#2-power-profiles-daemon-servisinin-durumu" title="🛑 2. power-profiles-daemon Servisinin Durumu">🛑 2. power-profiles-daemon Servisinin Durumu</a></li><li><a class="toc-href" href="#3-cpupower-kurulumu-ve-yapilandirilmasi" title="⚙️ 3. cpupower Kurulumu ve Yap&inodot;land&inodot;r&inodot;lmas&inodot;">⚙️ 3. cpupower Kurulumu ve Yap&inodot;land&inodot;r&inodot;lmas&inodot;</a><ul><li><a class="toc-href" href="#kurulum" title="Kurulum:">Kurulum:</a></li><li><a class="toc-href" href="#yapilandirma" title="Yap&inodot;land&inodot;rma:">Yap&inodot;land&inodot;rma:</a></li><li><a class="toc-href" href="#servisi-etkinlestir" title="Servisi etkinle&scedil;tir:">Servisi etkinle&scedil;tir:</a></li></ul></li><li><a class="toc-href" href="#4-frekans-bilgisi-ve-anlik-izleme_1" title="📊 4. Frekans Bilgisi ve Anl&inodot;k &Idot;zleme">📊 4. Frekans Bilgisi ve Anl&inodot;k &Idot;zleme</a></li><li><a class="toc-href" href="#5-intel_pstate-surucusunu-anlamak" title="🔍 5. intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Anlamak">🔍 5. intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Anlamak</a><ul><li><a class="toc-href" href="#alternatif-suruculer" title="Alternatif S&uuml;r&uuml;c&uuml;ler?">Alternatif S&uuml;r&uuml;c&uuml;ler?</a></li></ul></li><li><a class="toc-href" href="#6-i3wm-kullanicilari-icin-ekstra-tavsiyeler_1" title="🧱 6. i3wm Kullan&inodot;c&inodot;lar&inodot; i&ccedil;in Ekstra Tavsiyeler">🧱 6. i3wm Kullan&inodot;c&inodot;lar&inodot; i&ccedil;in Ekstra Tavsiyeler</a><ul><li><a class="toc-href" href="#xprofile-dosyasina-ekle" title=".xprofile Dosyas&inodot;na Ekle:">.xprofile Dosyas&inodot;na Ekle:</a></li><li><a class="toc-href" href="#systemd-user-servisi-olustur" title="Systemd user servisi olu&scedil;tur:">Systemd user servisi olu&scedil;tur:</a></li></ul></li><li><a class="toc-href" href="#7-ileri-duzey-ince-ayar-ve-analiz-araclari_1" title="🚀 7. &Idot;leri D&uuml;zey &Idot;nce Ayar ve Analiz Ara&ccedil;lar&inodot;">🚀 7. &Idot;leri D&uuml;zey &Idot;nce Ayar ve Analiz Ara&ccedil;lar&inodot;</a><ul><li><a class="toc-href" href="#71-boost-frekansinin-durumu-ve-kontrolu" title="7.1 Boost Frekans&inodot;n&inodot;n Durumu ve Kontrol&uuml;">7.1 Boost Frekans&inodot;n&inodot;n Durumu ve Kontrol&uuml;</a></li><li><a class="toc-href" href="#72-turbostat-ile-detayli-izleme" title="7.2 turbostat ile Detayl&inodot; &Idot;zleme">7.2 turbostat ile Detayl&inodot; &Idot;zleme</a></li><li><a class="toc-href" href="#73-guc-tuketim-analizi-powertop-ve-powerstat" title="7.3 G&uuml;&ccedil; T&uuml;ketim Analizi: powertop ve powerstat">7.3 G&uuml;&ccedil; T&uuml;ketim Analizi: powertop ve powerstat</a></li><li><a class="toc-href" href="#74-dinamik-guc-yonetimi-auto-cpufreq" title="7.4 Dinamik G&uuml;&ccedil; Y&ouml;netimi: auto-cpufreq">7.4 Dinamik G&uuml;&ccedil; Y&ouml;netimi: auto-cpufreq</a></li><li><a class="toc-href" href="#75-grub-ayarlariyla-intel_pstate-surucusunu-zorlamak" title="7.5 Grub Ayarlar&inodot;yla intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Zorlamak">7.5 Grub Ayarlar&inodot;yla intel_pstate S&uuml;r&uuml;c&uuml;s&uuml;n&uuml; Zorlamak</a></li><li><a class="toc-href" href="#76-governor-modlari-karsilastirmasi" title="7.6 Governor Modlar&inodot; Kar&scedil;&inodot;la&scedil;t&inodot;rmas&inodot;">7.6 Governor Modlar&inodot; Kar&scedil;&inodot;la&scedil;t&inodot;rmas&inodot;</a></li><li><a class="toc-href" href="#77-laptoplar-icin-tlp-ile-guc-tasarrufu" title="7.7 Laptoplar &Idot;&ccedil;in TLP ile G&uuml;&ccedil; Tasarrufu">7.7 Laptoplar &Idot;&ccedil;in TLP ile G&uuml;&ccedil; Tasarrufu</a></li></ul></li><li><a class="toc-href" href="#8-devam-etmek-isteyenler-icin_1" title="🔗 8. Devam Etmek &Idot;steyenler &Idot;&ccedil;in">🔗 8. Devam Etmek &Idot;steyenler &Idot;&ccedil;in</a></li><li><a class="toc-href" href="#9-yaygin-sorunlar-ve-cozumler" title="📌 9. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mler">📌 9. Yayg&inodot;n Sorunlar ve &Ccedil;&ouml;z&uuml;mler</a></li><li><a class="toc-href" href="#sonuc" title="✅ Sonu&ccedil;">✅ Sonu&ccedil;</a></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

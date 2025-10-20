@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "WSL Üzerinde Arch Linux Kurulumu",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/wls-archlinux-kurulumu-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="WSL Üzerinde Arch Linux Kurulumu" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/" />
+<meta property="og:title" content="WSL Üzerinde Arch Linux Kurulumu" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2022-06-26T10:00:00+03:00" />
+<meta property="article:modified_time" content="2025-08-11T22:59:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Windows" />
+  <meta property="article:tag" content="windows10" />
+<meta property="article:tag" content="linux" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Windows Subsystem for Linux (WSL) üzerinde Arch Linux kurulumunu adım adım anlatan rehber." />
+<meta property="og:description" content="Windows Subsystem for Linux (WSL) üzerinde Arch Linux kurulumunu adım adım anlatan rehber." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "WSL Üzerinde Arch Linux Kurulumu",
+        "description": "Windows Subsystem for Linux (WSL) üzerinde Arch Linux kurulumunu adım adım anlatan rehber.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2022-06-26T10:00:00+03:00",
+"dateModified": "2025-08-11T22:59:00+03:00",        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/"
+        },
+"articleSection": "Windows","keywords": "windows10, linux",        "url": "https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/",
+"image": "https://yuceltoluyag.github.io/images/wls-archlinux-kurulumu-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>WSL Üzerinde Arch Linux Kurulumu</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#wsl-nedir-windows-subsytem-linux" title="WSL Nedir (Windows Subsytem Linux) ?">WSL Nedir (Windows Subsytem Linux) ?</a></li><li><a class="toc-href" href="#malzemeler" title="Malzemeler 🥗">Malzemeler 🥗</a><ul><li><a class="toc-href" href="#wsl2-kurulumu" title="WSL2 Kurulumu">WSL2 Kurulumu</a></li><li><a class="toc-href" href="#archlinux-kurulumu" title="Archlinux Kurulumu">Archlinux Kurulumu</a></li><li><a class="toc-href" href="#yerel-dosyalarinizi-nasil-icer-aktarirsiniz" title="Yerel Dosyalar&inodot;n&inodot;z&inodot; Nas&inodot;l &Idot;&ccedil;er aktar&inodot;rs&inodot;n&inodot;z.">Yerel Dosyalar&inodot;n&inodot;z&inodot; Nas&inodot;l &Idot;&ccedil;er aktar&inodot;rs&inodot;n&inodot;z.</a></li><li><a class="toc-href" href="#ram-ve-cpu-yonetimi" title="Ram ve CPU Y&ouml;netimi">Ram ve CPU Y&ouml;netimi</a></li><li><a class="toc-href" href="#paketler-ve-ozellestirme" title="Paketler ve &Ouml;zelle&scedil;tirme">Paketler ve &Ouml;zelle&scedil;tirme</a></li></ul></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/windows-terminalimi-nasil-ozellestiriyorum/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Windows Terminalimi Nasıl Özelleştiriyorum</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/windows-uzerinde-redshift-kullanimi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Windows Üzerinde Redshift Kullanımı</h4>
+                                    </a>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">WSL Üzerinde Arch Linux Kurulumu</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2022-06-26T10:00:00+03:00" class="ml-1">
+                                    26 June 2022
+                                </time>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:history"></span>
+                                <time datetime="2025-08-11T22:59:00+03:00" class="ml-1">
+                                    11 August 2025
+                                </time>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/windows/"
+                                    class="link link-hover ml-1">
+                                    Windows
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">905 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">4 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 10.43</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/wsl-uzerinde-arch-linux-kurulumu.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><p><strong>Merhaba</strong></p>
+<p><a href="https://www.instagram.com/yuceltoluyag/" rel="noopener noreferrer" target="_blank">&Idot;nstagram</a> &uuml;zerinden <strong>hikaye</strong>lerimi takip edenler <strong>WSL</strong>'ye nas&inodot;l <strong>Arch Linux</strong> Kurdu&gbreve;umu soruyorlard&inodot;. Kurulum yapabilenler ise <strong>s&uuml;rekli &ccedil;&ouml;kt&uuml;&gbreve;&uuml;nden</strong> yak&inodot;nd&inodot;lar. Uzun s&uuml;redir kullan&inodot;yorum. &Ccedil;&ouml;kme patlama yanma yak&inodot;lma gibi &scedil;eyler <strong>ya&scedil;amad&inodot;m</strong>. 😎</p>
+<h1 id="wsl-nedir-windows-subsytem-linux">WSL Nedir (Windows Subsytem Linux) ?</h1>
+<p>Windows alt&inodot;nda &Uuml;&ccedil;&uuml;nc&uuml; parti yaz&inodot;l&inodot;m olmadan Linux &ccedil;al&inodot;&scedil;t&inodot;rmam&inodot;z&inodot; sa&gbreve;lar. <strong>WSL 1</strong> ve <strong>WSL 2</strong> aras&inodot;nda ne fark var ? <strong>WSL 2</strong> de <strong>Hyper -V</strong> teknolojisinin kullan&inodot;ld&inodot;&gbreve;&inodot; i&ccedil;in daha <strong>performansl&inodot;</strong> &ccedil;al&inodot;&scedil;&inodot;yor. &Scedil;u an resmi olarak grafik(<strong>Desktop</strong>) arabirimi desteklenmesede bir &ccedil;ok kullan&inodot;c&inodot; <strong>DE</strong> dahil kurulum yap&inodot;p kullan&inodot;yor. <strong>&Ouml;mr&uuml;n&uuml;</strong> <strong>Linux</strong> camias&inodot;nda ge&ccedil;iren arkada&scedil;lara kesinlikle <strong>tavsiye ediyorum</strong> 🤩</p>
+<table>
+<thead>
+<tr>
+<th>&Ouml;zellik</th>
+<th>WSL 1</th>
+<th>WSL 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows ve Linux aras&inodot;nda entegrasyon</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>H&inodot;zl&inodot; &ouml;ny&uuml;kleme s&uuml;releri</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Geleneksel Sanal Makinelere k&inodot;yasla k&uuml;&ccedil;&uuml;k kaynak ayak izi</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>VMware ve VirtualBox'&inodot;n g&uuml;ncel s&uuml;r&uuml;mleriyle &ccedil;al&inodot;&scedil;&inodot;r</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Sanal makine Y&ouml;netimi</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Tam Linux &Ccedil;ekirde&gbreve;i</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Tam sistem &ccedil;a&gbreve;r&inodot; uyumlulu&gbreve;u</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>OS dosya sistemlerinde performans</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<h1 id="malzemeler">Malzemeler 🥗</h1>
+<ul>
+<li>WSL 2 i&ccedil;in Windows 10 versionunuz <strong>2004</strong> veya <strong>daha &uuml;st&uuml; olmal&inodot;</strong> (<strong>19041</strong>) yada <strong>Windows 11</strong> kullan&inodot;yor olmal&inodot;s&inodot;n&inodot;z. S&uuml;r&uuml;m&uuml;n&uuml;z&uuml; &scedil;u &scedil;ekilde h&inodot;zl&inodot;ca &ouml;&gbreve;renebilirsiniz. <code>Windows + R</code>, tu&scedil;una bas&inodot;n gelen ekrana <code>winver</code> yaz&inodot;n size s&uuml;r&uuml;m numaran&inodot;z&inodot; g&ouml;sterecektir.</li>
+</ul>
+<p><img alt="wsl2-archlinux-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu-xl.webp" srcset="/images/wls-archlinux-kurulumu-sm.webp 300w, /images/wls-archlinux-kurulumu-md.webp 500w, /images/wls-archlinux-kurulumu-xl.webp 800w, /images/wls-archlinux-kurulumu-xl.webp 1200w"/>
+- E&gbreve;erki <strong>s&uuml;r&uuml;m&uuml;n&uuml;z eski</strong> ise &scedil;uradaki ad&inodot;mlar&inodot; takip edebilirsiniz. <a href="https://docs.microsoft.com/en-us/windows/wsl/install-manual" rel="noopener noreferrer" target="_blank">Install Linux on Windows with WSL</a></p>
+<ul>
+<li>
+<p><a href="/windows-terminalimi-nasil-ozellestiriyorum" rel="noopener noreferrer" target="_blank">Windows Terminal &Ouml;zelle&scedil;tirme</a></p>
+</li>
+<li>
+<p>WSL</p>
+</li>
+</ul>
+<h2 id="wsl2-kurulumu">WSL2 Kurulumu</h2>
+<p>Terminalinizi <strong>Y&ouml;netici</strong> olarak ba&scedil;lat&inodot;n. Ve &scedil;u komutu girin.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>wsl<span class="w"> </span>--install
+</code></pre></div>
+<p>output</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>Installing:<span class="w"> </span>Virtual<span class="w"> </span>Machine<span class="w"> </span>Platform
+
+Virtual<span class="w"> </span>Machine<span class="w"> </span>Platform<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>installed.
+
+Installing:<span class="w"> </span>Windows<span class="w"> </span>Subsystem<span class="w"> </span><span class="k">for</span><span class="w"> </span>Linux
+
+Windows<span class="w"> </span>Subsystem<span class="w"> </span><span class="k">for</span><span class="w"> </span>Linux<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>installed.
+
+Downloading:<span class="w"> </span>WSL<span class="w"> </span>Kernel
+
+Installing:<span class="w"> </span>WSL<span class="w"> </span>Kernel
+
+WSL<span class="w"> </span>Kernel<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>installed.
+
+Downloading:<span class="w"> </span>Ubuntu
+
+&Idot;stenen<span class="w"> </span>i&scedil;lem<span class="w"> </span>ba&scedil;ar&inodot;l&inodot;.<span class="w"> </span>De&gbreve;i&scedil;iklikler<span class="w"> </span>sistem<span class="w"> </span>yeniden<span class="w"> </span>&ouml;ny&uuml;kleninceye<span class="w"> </span>kadar<span class="w"> </span>etkili<span class="w"> </span>olmayacak.
+</code></pre></div>
+<p>Daha sonra <strong>sistemi yeniden ba&scedil;lat&inodot;n</strong> 👀 Bilgisayar&inodot;n&inodot;z <strong>yeniden ba&scedil;lad&inodot;ktan sonra</strong> <strong>WSL2</strong> <strong>kernel update</strong> paketi ve <strong>Ubuntu Linux</strong> da&gbreve;&inodot;t&inodot;m&inodot; <strong>otomatik</strong> olarak y&uuml;klenecektir. Kurulum internet h&inodot;z&inodot;n&inodot;za g&ouml;re de&gbreve;i&scedil;iklik g&ouml;sterecektir.Dondu kald&inodot;m&inodot; acaba diye &scedil;ey edip <strong>terminali kapatmay&inodot;n</strong> 🤡</p>
+<p>Kurulum tamamland&inodot;ktan sonra sizden <strong>kullan&inodot;c&inodot; ad&inodot;</strong> ve <strong>&scedil;ifre</strong> olu&scedil;turman&inodot;z&inodot; isteyecek. O k&inodot;s&inodot;mlar&inodot; doldurun.</p>
+<p><img alt="wsl2-archlinux-kurulumu2" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu2-xl.webp" srcset="/images/wls-archlinux-kurulumu2-sm.webp 300w, /images/wls-archlinux-kurulumu2-md.webp 500w, /images/wls-archlinux-kurulumu2-xl.webp 800w, /images/wls-archlinux-kurulumu2-xl.webp 1200w"/>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>Enter<span class="w"> </span>new<span class="w"> </span>UNIX<span class="w"> </span>username:<span class="w"> </span>kullan&inodot;c&inodot;ad&inodot;girin
+
+New<span class="w"> </span>password:&Scedil;ifre<span class="w"> </span>Girin
+
+Retype<span class="w"> </span>new<span class="w"> </span>password:<span class="w"> </span>&Scedil;ifrenizi<span class="w"> </span>Tekrar<span class="w"> </span>Girin
+</code></pre></div></p>
+<p>output</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>Installing,<span class="w"> </span>this<span class="w"> </span>may<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span>few<span class="w"> </span>minutes...
+
+Please<span class="w"> </span>create<span class="w"> </span>a<span class="w"> </span>default<span class="w"> </span>UNIX<span class="w"> </span>user<span class="w"> </span>account.<span class="w"> </span>The<span class="w"> </span>username<span class="w"> </span>does<span class="w"> </span>not<span class="w"> </span>need<span class="w"> </span>to<span class="w"> </span>match<span class="w"> </span>your<span class="w"> </span>Windows<span class="w"> </span>username.
+
+For<span class="w"> </span>more<span class="w"> </span>information<span class="w"> </span>visit:<span class="w"> </span>https://aka.ms/wslusers
+
+Enter<span class="w"> </span>new<span class="w"> </span>UNIX<span class="w"> </span>username:<span class="w"> </span>friday13
+
+New<span class="w"> </span>password:
+
+Retype<span class="w"> </span>new<span class="w"> </span>password:
+
+passwd:<span class="w"> </span>password<span class="w"> </span>updated<span class="w"> </span>successfully
+
+Installation<span class="w"> </span>successful!
+
+To<span class="w"> </span>run<span class="w"> </span>a<span class="w"> </span><span class="nb">command</span><span class="w"> </span>as<span class="w"> </span>administrator<span class="w"> </span><span class="o">(</span>user<span class="w"> </span><span class="s2">"root"</span><span class="o">)</span>,<span class="w"> </span>use<span class="w"> </span><span class="s2">"sudo &lt;command&gt;"</span>.
+
+See<span class="w"> </span><span class="s2">"man sudo_root"</span><span class="w">  </span><span class="k">for</span><span class="w"> </span>details.
+
+
+
+Welcome<span class="w"> </span>to<span class="w"> </span>Ubuntu<span class="w"> </span><span class="m">20</span>.04<span class="w"> </span>LTS<span class="w"> </span><span class="o">(</span>GNU/Linux<span class="w"> </span><span class="m">5</span>.10.16.3-microsoft-standard-WSL2<span class="w"> </span>x86_64<span class="o">)</span>
+
+
+
+*<span class="w"> </span>Documentation:<span class="w"> </span>https://help.ubuntu.com
+
+*<span class="w"> </span>Management:<span class="w"> </span>https://landscape.canonical.com
+
+*<span class="w"> </span>Support:<span class="w"> </span>https://ubuntu.com/advantage
+
+
+
+System<span class="w"> </span>information<span class="w"> </span>as<span class="w"> </span>of<span class="w"> </span>Tue<span class="w"> </span>May<span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">03</span>:07:17<span class="w"> </span>+03<span class="w"> </span><span class="m">2022</span>
+
+
+
+System<span class="w"> </span>load:<span class="w"> </span><span class="m">0</span>.18<span class="w"> </span>Processes:<span class="w"> </span><span class="m">8</span>
+
+Usage<span class="w"> </span>of<span class="w"> </span>/:<span class="w"> </span><span class="m">0</span>.4%<span class="w"> </span>of<span class="w"> </span><span class="m">250</span>.98GB<span class="w"> </span>Users<span class="w"> </span>logged<span class="w"> </span><span class="k">in</span>:<span class="w"> </span><span class="m">0</span>
+
+Memory<span class="w"> </span>usage:<span class="w"> </span><span class="m">0</span>%<span class="w"> </span>IPv4<span class="w"> </span>address<span class="w"> </span><span class="k">for</span><span class="w"> </span>eth0:<span class="w"> </span><span class="m">172</span>.30.160.142
+
+Swap<span class="w"> </span>usage:<span class="w"> </span><span class="m">0</span>%
+
+
+
+<span class="m">0</span><span class="w"> </span>updates<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>installed<span class="w"> </span>immediately.
+
+<span class="m">0</span><span class="w"> </span>of<span class="w"> </span>these<span class="w"> </span>updates<span class="w"> </span>are<span class="w"> </span>security<span class="w"> </span>updates.
+
+
+
+
+The<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>available<span class="w"> </span>updates<span class="w"> </span>is<span class="w"> </span>more<span class="w"> </span>than<span class="w"> </span>a<span class="w"> </span>week<span class="w"> </span>old.
+
+To<span class="w"> </span>check<span class="w"> </span><span class="k">for</span><span class="w"> </span>new<span class="w"> </span>updates<span class="w"> </span>run:<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+
+
+
+
+This<span class="w"> </span>message<span class="w"> </span>is<span class="w"> </span>shown<span class="w"> </span>once<span class="w"> </span>once<span class="w"> </span>a<span class="w"> </span>day.<span class="w"> </span>To<span class="w"> </span>disable<span class="w"> </span>it<span class="w"> </span>please<span class="w"> </span>create<span class="w"> </span>the
+
+/home/friday13/.hushlogin<span class="w"> </span>file.
+</code></pre></div>
+<p>WSL kurulumumuz buraya kadard&inodot;.Art&inodot;k <strong>terminal</strong> sekmenizde <strong>Ubuntu</strong> da&gbreve;&inodot;t&inodot;m&inodot;n&inodot; g&ouml;rebilirsiniz.</p>
+<p><img alt="wsl2-archlinux-kurulumu3" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu3-xl.webp" srcset="/images/wls-archlinux-kurulumu3-sm.webp 300w, /images/wls-archlinux-kurulumu3-md.webp 500w, /images/wls-archlinux-kurulumu3-xl.webp 800w, /images/wls-archlinux-kurulumu3-xl.webp 1200w"/></p>
+<p>Adettendir diyerek ubuntumuzu bir g&uuml;ncelleyelim 🤭</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</code></pre></div>
+<h2 id="archlinux-kurulumu">Archlinux Kurulumu</h2>
+<ul>
+<li><code>wsl --set-default-version 2</code> komutunu &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n. Baz&inodot; kullan&inodot;c&inodot;lar yukar&inodot;daki k&inodot;s&inodot;mlar&inodot; atlayarak yapabilir 😏 Sistemde hangi <strong>WSL</strong> s&uuml;r&uuml;m&uuml;n&uuml; kulland&inodot;&gbreve;&inodot;n&inodot;z&inodot; merak ediyorsan&inodot;z</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>wsl<span class="w"> </span>-l<span class="w"> </span>-v
+</code></pre></div>
+<p>output</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>NAME<span class="w"> </span>STATE<span class="w"> </span>VERSION
+
+*<span class="w"> </span>Ubuntu<span class="w"> </span>Running<span class="w"> </span><span class="m">2</span>
+</code></pre></div>
+<p>komutunu yaz&inodot;n hangi <strong>distro</strong>nun hangi s&uuml;r&uuml;m&uuml; kulland&inodot;&gbreve;&inodot;n&inodot; g&ouml;rebilirsiniz.</p>
+<ul>
+<li>
+<p><a href="https://github.com/yuk7/ArchWSL/releases" rel="noopener noreferrer" target="_blank">ArchWSL</a> Reposuna gidip son s&uuml;r&uuml;m&uuml; indirin. (Arch.zip)</p>
+</li>
+<li>
+<p><code>C</code> Dizini alt&inodot;nda <code>archlinux</code> ad&inodot;nda bir klas&ouml;r olu&scedil;turun.</p>
+</li>
+<li>
+<p>&Idot;ndirdi&gbreve;iniz dosyay&inodot; zipten &ccedil;&inodot;kart&inodot;n. &Idot;&ccedil;erisinde <code>Arch.exe</code> ve <code>rootfs.tar.gz</code> adl&inodot; iki dosyay&inodot; kopyalay&inodot;n ve <code>C:\archlinux</code> klas&ouml;r&uuml;ne yap&inodot;&scedil;t&inodot;r&inodot;n.</p>
+</li>
+<li>
+<p>Archlinux.exe yi &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n.</p>
+</li>
+</ul>
+<p><img alt="wsl2-archlinux-kurulumu4" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu4-xl.webp" srcset="/images/wls-archlinux-kurulumu4-sm.webp 300w, /images/wls-archlinux-kurulumu4-md.webp 500w, /images/wls-archlinux-kurulumu4-xl.webp 800w, /images/wls-archlinux-kurulumu4-xl.webp 1200w"/>
+- Kurulum Bittikten sonra terminalinizden <strong>Arch Linux</strong>u ba&scedil;lat&inodot;n.</p>
+<p><img alt="wsl2-archlinux-kurulumu5" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu5-xl.webp" srcset="/images/wls-archlinux-kurulumu5-sm.webp 300w, /images/wls-archlinux-kurulumu5-md.webp 500w, /images/wls-archlinux-kurulumu5-xl.webp 800w, /images/wls-archlinux-kurulumu5-xl.webp 1200w"/>
+- Hemen kullan&inodot;c&inodot; olu&scedil;tural&inodot;m ve kendimize sudo yetkisi verelim 🤖 <strong>Friday13</strong> benim yerli ve milli nickimdir. Siz oraya <strong>ali</strong> yaz&inodot;n <strong>mehmet</strong> yaz&inodot;n ne yazarsan&inodot;z yaz&inodot;n ☠️</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>useradd<span class="w"> </span>-m<span class="w"> </span>-g<span class="w"> </span>users<span class="w"> </span>-G<span class="w"> </span>optical,storage,wheel,video,audio,users,power,network,log<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>friday13<span class="w"> </span><span class="c1">#OLU&Scedil;TACA&Gbreve;INIZKULLANICIADINIG&Idot;R&Idot;N#</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>passwd<span class="w"> </span>friday13<span class="w"> </span><span class="c1">#olu&scedil;turdu&gbreve;unuz kullan&inodot;c&inodot;n&inodot;n &scedil;ifresini belirleyin.#</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>groupadd<span class="w"> </span>sudo<span class="w"> </span><span class="c1">#sudo grubu ekleyelim#</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>nano<span class="w"> </span>/etc/sudoers
+</code></pre></div>
+<p>dosyam&inodot;z&inodot; a&ccedil;&inodot;yoruz resimdeki gibi olu&scedil;turdu&gbreve;umuz kullan&inodot;c&inodot;y&inodot;da ekliyoruz.</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>%wheel<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:
+
+%sudo<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>ALL
+</code></pre></div>
+<p><img alt="wsl2-archlinux-kurulumu6" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu6-xl.webp" srcset="/images/wls-archlinux-kurulumu6-sm.webp 300w, /images/wls-archlinux-kurulumu6-md.webp 500w, /images/wls-archlinux-kurulumu6-xl.webp 800w, /images/wls-archlinux-kurulumu6-xl.webp 1200w"/>
+Bu sat&inodot;rlar&inodot;n ba&scedil;&inodot;nda bulunan <strong>diez(#)</strong> i&scedil;aretlerini <strong>kald&inodot;r&inodot;yoruz</strong>. <strong>F3</strong> ard&inodot;ndan <strong>enter</strong> ve <strong>F2</strong> ye basarak &ccedil;&inodot;k&inodot;yoruz.</p>
+<ul>
+<li>Sistem a&ccedil;&inodot;ld&inodot;&gbreve;&inodot;nda olu&scedil;turdu&gbreve;umuz kullan&inodot;c&inodot;y&inodot; varsay&inodot;lan olarak aktif etmek i&ccedil;in</li>
+</ul>
+<p>(<strong>Uyar&inodot;</strong> burada ki komutlar&inodot; <strong>Arch</strong> terminaline <strong>de&gbreve;il</strong>,<strong>normal terminal</strong>e gireceksiniz. 🎃)</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>C:<span class="se">\a</span>rchlinux<span class="w"> </span><span class="c1">#dizinine gidin</span>
+
+Arch.exe<span class="w"> </span>config<span class="w"> </span>--default-user<span class="w"> </span>friday13
+</code></pre></div>
+<p><img alt="wsl2-archlinux-kurulumu7" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu7-xl.webp" srcset="/images/wls-archlinux-kurulumu7-sm.webp 300w, /images/wls-archlinux-kurulumu7-md.webp 500w, /images/wls-archlinux-kurulumu7-xl.webp 800w, /images/wls-archlinux-kurulumu7-xl.webp 1200w"/></p>
+<p>Daha sonra a&ccedil;&inodot;k t&uuml;m terminalleri <strong>kapat&inodot;p</strong> yeniden <strong>a&ccedil;&inodot;n</strong> ve <strong>Arch</strong> sekmesinden <strong>Arch</strong> se&ccedil;in. Tada :)</p>
+<p><img alt="wsl2-archlinux-kurulumu8" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wls-archlinux-kurulumu8-xl.webp" srcset="/images/wls-archlinux-kurulumu8-sm.webp 300w, /images/wls-archlinux-kurulumu8-md.webp 500w, /images/wls-archlinux-kurulumu8-xl.webp 800w, /images/wls-archlinux-kurulumu8-xl.webp 1200w"/>
+Bundan sonra i&ccedil;erisinde at m&inodot; ko&scedil;turursunuz deveye hendek mi atlat&inodot;rs&inodot;n&inodot;z bilmem : ) Keyfinize g&ouml;re tak&inodot;l&inodot;n.</p>
+<h2 id="yerel-dosyalarinizi-nasil-icer-aktarirsiniz">Yerel Dosyalar&inodot;n&inodot;z&inodot; Nas&inodot;l &Idot;&ccedil;er aktar&inodot;rs&inodot;n&inodot;z.</h2>
+<p>Hali haz&inodot;rda bulunan dosyalar&inodot;n&inodot;z&inodot; <strong>Arch</strong> i&ccedil;ine aktarmak istiyorsan&inodot;z. <code>Windows + R</code>tu&scedil;una bas&inodot;n <code>\\wsl$</code> yaz&inodot;n art&inodot;k dosya dizinindesiniz 🤙</p>
+<h2 id="ram-ve-cpu-yonetimi">Ram ve CPU Y&ouml;netimi</h2>
+<ul>
+<li>Bu komutla sistemde <strong>aktif</strong> &ccedil;al&inodot;&scedil;an i&scedil;letim sistemlerini listelersiniz. 👨&zwj;💻</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>wsl<span class="w"> </span>--list<span class="w"> </span>--verbose
+</code></pre></div>
+<ul>
+<li>Daha sonra <strong>WSL</strong> kapat&inodot;yoruz.</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>wsl<span class="w"> </span>--shutdown
+</code></pre></div>
+<ul>
+<li>Kullan&inodot;c&inodot; dizinize gidin <code>C:\Users\&lt;Kullan&inodot;c&inodot;Ad&inodot;n&inodot;z&gt;</code> i&ccedil;erisine <code>.wslconfig</code> ad&inodot;nda bir dosya <strong>olu&scedil;turun</strong>. Ve dosyan&inodot;n i&ccedil;erisini &scedil;&ouml;yle <strong>doldurun</strong> :</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># Ayarlar, WSL 2 &uuml;zerinde &ccedil;al&inodot;&scedil;an t&uuml;m Linux da&gbreve;&inodot;t&inodot;mlar&inodot;nda ge&ccedil;erlidir</span>
+
+<span class="c1"># "free -m" ile wsl2'de Ram haf&inodot;zas&inodot;n&inodot; g&ouml;rebilirsiniz.</span>
+
+<span class="o">[</span>wsl2<span class="o">]</span>
+
+
+
+<span class="c1"># VM belle&gbreve;ini en fazla 12 GB kullanacak &scedil;ekilde s&inodot;n&inodot;rlar, varsay&inodot;lan olarak RAM'in %50'si</span>
+
+<span class="nv">memory</span><span class="o">=</span>12GB
+
+
+
+<span class="c1"># VM'yi 8 sanal i&scedil;lemci kullanacak &scedil;ekilde ayarlar(&Ccedil;ekirdek say&inodot;n&inodot;za g&ouml;re d&uuml;zenleyin)</span>
+
+<span class="nv">processors</span><span class="o">=</span><span class="m">4</span>
+
+
+
+<span class="c1"># Takas depolama alan&inodot; miktar&inodot;n&inodot; 4 GB olarak ayarlar, varsay&inodot;lan olarak kullan&inodot;labilir RAM'in %25'i</span>
+
+<span class="c1"># Kullanmak istemiyorsan&inodot;z 0 yazabilirsiniz.</span>
+
+<span class="nv">swap</span><span class="o">=</span>4GB
+</code></pre></div>
+<p>Bu ayarlar&inodot; sistem &ouml;zelliklerinize g&ouml;re <strong>de&gbreve;i&scedil;tirmeyi unutmay&inodot;n</strong>..</p>
+<h2 id="paketler-ve-ozellestirme">Paketler ve &Ouml;zelle&scedil;tirme</h2>
+<ul>
+<li>
+<p><code>/etc/pacman.conf</code> dosyam&inodot; d&uuml;zenledim.</p>
+</li>
+<li>
+<p><code>sudo pacman -S git openssh base base-devel wget htop neovim curl ruby nodejs python</code> temel ihtiya&ccedil; paketlerini kurdum.</p>
+</li>
+<li>
+<p>Paket kurarken &scedil;u uyar&inodot;y&inodot; g&ouml;r&uuml;rseniz</p>
+</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>fakeroot<span class="w"> </span>is<span class="w"> </span><span class="k">in</span><span class="w"> </span>IgnorePkg/IgnoreGroup.<span class="w"> </span>Install<span class="w"> </span>anyway?<span class="w"> </span><span class="o">[</span>Y/n<span class="o">]</span><span class="w"> </span>n<span class="se">\*\*</span>
+</code></pre></div>
+<p><strong>kesinlikle kald&inodot;rmay&inodot;n</strong> akl&inodot;n&inodot;zda bulunsun. Ne zaman g&ouml;rseniz <strong>n</strong> yapin 🐧</p>
+<ul>
+<li><strong>YAY</strong> paket y&ouml;neticisini kurdum</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://aur.archlinux.org/yay-git.git
+
+<span class="nb">cd</span><span class="w"> </span>yay-git/
+
+makepkg<span class="w"> </span>-sri
+
+<span class="nb">cd</span><span class="w"> </span>..
+
+rm<span class="w"> </span>-rf<span class="w"> </span>yay-git/
+
+yay<span class="w"> </span>-Syyu
+</code></pre></div>
+<p>Ayarlar&inodot;ma <strong><a href="https://github.com/yuceltoluyag/WindowsTerminal" rel="noopener noreferrer" target="_blank">Github</a></strong>  Sayfamdan ula&scedil;abilirsiniz.</p></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/&text=WSL Üzerinde Arch Linux Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/&title=WSL Üzerinde Arch Linux Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/&text=WSL Üzerinde Arch Linux Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=WSL Üzerinde Arch Linux Kurulumu https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=WSL Üzerinde Arch Linux Kurulumu&body=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/&description=WSL Üzerinde Arch Linux Kurulumu&media=https://yuceltoluyag.github.io/images/wls-archlinux-kurulumu-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/&title=WSL Üzerinde Arch Linux Kurulumu"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=WSL Üzerinde Arch Linux Kurulumu%20-%20https://yuceltoluyag.github.io/wsl-uzerinde-arch-linux-kurulumu/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#wsl-nedir-windows-subsytem-linux" title="WSL Nedir (Windows Subsytem Linux) ?">WSL Nedir (Windows Subsytem Linux) ?</a></li><li><a class="toc-href" href="#malzemeler" title="Malzemeler 🥗">Malzemeler 🥗</a><ul><li><a class="toc-href" href="#wsl2-kurulumu" title="WSL2 Kurulumu">WSL2 Kurulumu</a></li><li><a class="toc-href" href="#archlinux-kurulumu" title="Archlinux Kurulumu">Archlinux Kurulumu</a></li><li><a class="toc-href" href="#yerel-dosyalarinizi-nasil-icer-aktarirsiniz" title="Yerel Dosyalar&inodot;n&inodot;z&inodot; Nas&inodot;l &Idot;&ccedil;er aktar&inodot;rs&inodot;n&inodot;z.">Yerel Dosyalar&inodot;n&inodot;z&inodot; Nas&inodot;l &Idot;&ccedil;er aktar&inodot;rs&inodot;n&inodot;z.</a></li><li><a class="toc-href" href="#ram-ve-cpu-yonetimi" title="Ram ve CPU Y&ouml;netimi">Ram ve CPU Y&ouml;netimi</a></li><li><a class="toc-href" href="#paketler-ve-ozellestirme" title="Paketler ve &Ouml;zelle&scedil;tirme">Paketler ve &Ouml;zelle&scedil;tirme</a></li></ul></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

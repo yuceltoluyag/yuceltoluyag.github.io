@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/" />
+<meta property="og:title" content="Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-08-15T00:30:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Linux" />
+  <meta property="article:tag" content="[archlinux" />
+<meta property="article:tag" content="postgresql" />
+<meta property="article:tag" content="pgadmin4" />
+<meta property="article:tag" content="veritabanı" />
+<meta property="article:tag" content="kurulum" />
+<meta property="article:tag" content="rehber]" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Arch Linux üzerinde PostgreSQL veritabanını kurma, yapılandırma ve pgAdmin4 GUI aracıyla kullanma sürecini baştan sona anlatan samimi ve yeni başlayanlar..." />
+<meta property="og:description" content="Arch Linux üzerinde PostgreSQL veritabanını kurma, yapılandırma ve pgAdmin4 GUI aracıyla kullanma sürecini baştan sona anlatan samimi ve yeni başlayanlar..." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber",
+        "description": "Arch Linux üzerinde PostgreSQL veritabanını kurma, yapılandırma ve pgAdmin4 GUI aracıyla kullanma sürecini baştan sona anlatan samimi ve yeni başlayanlar...",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-08-15T00:30:00+03:00",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/"
+        },
+"articleSection": "Linux","keywords": "[archlinux, postgresql, pgadmin4, veritabanı, kurulum, rehber]",        "url": "https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/",
+"image": "https://yuceltoluyag.github.io/images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#1-postgresql-kurulumu" title="📌 1. PostgreSQL Kurulumu">📌 1. PostgreSQL Kurulumu</a><ul><li><a class="toc-href" href="#adim-1-paketi-indirme-ve-kurulum" title="✅ Ad&inodot;m 1: Paketi &Idot;ndirme ve Kurulum">✅ Ad&inodot;m 1: Paketi &Idot;ndirme ve Kurulum</a></li><li><a class="toc-href" href="#adim-2-servisi-baslatma-ve-enable-etme" title="✅ Ad&inodot;m 2: Servisi Ba&scedil;latma ve Enable Etme">✅ Ad&inodot;m 2: Servisi Ba&scedil;latma ve Enable Etme</a></li><li><a class="toc-href" href="#adim-3-varsayilan-kullaniciyi-sifreleme" title="✅ Ad&inodot;m 3: Varsay&inodot;lan Kullan&inodot;c&inodot;y&inodot; &Scedil;ifreleme">✅ Ad&inodot;m 3: Varsay&inodot;lan Kullan&inodot;c&inodot;y&inodot; &Scedil;ifreleme</a></li><li><a class="toc-href" href="#adim-4-veritabani-ve-kullanici-olusturma" title="✅ Ad&inodot;m 4: Veritaban&inodot; ve Kullan&inodot;c&inodot; Olu&scedil;turma">✅ Ad&inodot;m 4: Veritaban&inodot; ve Kullan&inodot;c&inodot; Olu&scedil;turma</a></li></ul></li><li><a class="toc-href" href="#2-postgresql-yapilandirmasi_1" title="🛠️ 2. PostgreSQL Yap&inodot;land&inodot;rmas&inodot;">🛠️ 2. PostgreSQL Yap&inodot;land&inodot;rmas&inodot;</a><ul><li><a class="toc-href" href="#adim-1-dosya-konumlarini-kontrol-etme" title="✅ Ad&inodot;m 1: Dosya Konumlar&inodot;n&inodot; Kontrol Etme">✅ Ad&inodot;m 1: Dosya Konumlar&inodot;n&inodot; Kontrol Etme</a></li><li><a class="toc-href" href="#adim-2-pg_hbaconf-duzenleme" title="✅ Ad&inodot;m 2: pg_hba.conf D&uuml;zenleme">✅ Ad&inodot;m 2: pg_hba.conf D&uuml;zenleme</a></li><li><a class="toc-href" href="#adim-3-postgresqlconf-ayarlari" title="✅ Ad&inodot;m 3: postgresql.conf Ayarlar&inodot;">✅ Ad&inodot;m 3: postgresql.conf Ayarlar&inodot;</a></li><li><a class="toc-href" href="#adim-4-servisi-yeniden-baslatma" title="✅ Ad&inodot;m 4: Servisi Yeniden Ba&scedil;latma">✅ Ad&inodot;m 4: Servisi Yeniden Ba&scedil;latma</a></li></ul></li><li><a class="toc-href" href="#3-pgadmin4-kurulumu_1" title="🖥️ 3. pgAdmin4 Kurulumu">🖥️ 3. pgAdmin4 Kurulumu</a><ul><li><a class="toc-href" href="#adim-1-gerekli-dizinleri-olusturma" title="✅ Ad&inodot;m 1: Gerekli Dizinleri Olu&scedil;turma">✅ Ad&inodot;m 1: Gerekli Dizinleri Olu&scedil;turma</a></li><li><a class="toc-href" href="#adim-2-python-sanal-ortami" title="✅ Ad&inodot;m 2: Python Sanal Ortam&inodot;">✅ Ad&inodot;m 2: Python Sanal Ortam&inodot;</a></li><li><a class="toc-href" href="#adim-3-pgadmin4-kurulumu" title="✅ Ad&inodot;m 3: pgAdmin4 Kurulumu">✅ Ad&inodot;m 3: pgAdmin4 Kurulumu</a></li><li><a class="toc-href" href="#adim-4-pgadmin4u-calistirma" title="✅ Ad&inodot;m 4: pgAdmin4&rsquo;&uuml; &Ccedil;al&inodot;&scedil;t&inodot;rma">✅ Ad&inodot;m 4: pgAdmin4&rsquo;&uuml; &Ccedil;al&inodot;&scedil;t&inodot;rma</a></li></ul></li><li><a class="toc-href" href="#4-otomasyon-scripti_1" title="⚙️ 4. Otomasyon Script&rsquo;i">⚙️ 4. Otomasyon Script&rsquo;i</a></li><li><a class="toc-href" href="#5-pgadmin4-ile-postgresqle-baglanti" title="🔗 5. pgAdmin4 ile PostgreSQL&rsquo;e Ba&gbreve;lant&inodot;">🔗 5. pgAdmin4 ile PostgreSQL&rsquo;e Ba&gbreve;lant&inodot;</a></li><li><a class="toc-href" href="#6-sik-karsilasilan-hatalar" title="❌ 6. S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Hatalar">❌ 6. S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Hatalar</a><ul><li><a class="toc-href" href="#hata-1-no-module-named-pgadmin4main" title="Hata 1: No module named &lsquo;pgadmin4.main&rsquo;">Hata 1: No module named &lsquo;pgadmin4.main&rsquo;</a></li><li><a class="toc-href" href="#hata-2-fatal-database-crm_db-does-not-exist" title="Hata 2: FATAL: database &ldquo;crm_db&rdquo; does not exist">Hata 2: FATAL: database &ldquo;crm_db&rdquo; does not exist</a></li></ul></li><li><a class="toc-href" href="#7-ipuclari-ve-oneriler_1" title="💡 7. &Idot;pu&ccedil;lar&inodot; ve &Ouml;neriler">💡 7. &Idot;pu&ccedil;lar&inodot; ve &Ouml;neriler</a></li><li><a class="toc-href" href="#8-postgresql-surum-yukseltmeleri" title="🔄 8. PostgreSQL S&uuml;r&uuml;m Y&uuml;kseltmeleri">🔄 8. PostgreSQL S&uuml;r&uuml;m Y&uuml;kseltmeleri</a></li><li><a class="toc-href" href="#9-phppgadmin-kurulumu-opsiyonel" title="📦 9. phpPgAdmin Kurulumu (Opsiyonel)">📦 9. phpPgAdmin Kurulumu (Opsiyonel)</a></li><li><a class="toc-href" href="#10-veri-yedekleme-ve-geri-yukleme" title="🧹 10. Veri Yedekleme ve Geri Y&uuml;kleme">🧹 10. Veri Yedekleme ve Geri Y&uuml;kleme</a><ul><li><a class="toc-href" href="#yedek-alma" title="✅ Yedek Alma">✅ Yedek Alma</a></li><li><a class="toc-href" href="#yedekten-geri-yukleme" title="✅ Yedekten Geri Y&uuml;kleme">✅ Yedekten Geri Y&uuml;kleme</a></li></ul></li><li><a class="toc-href" href="#sonuc_1" title="🎯 Sonu&ccedil;">🎯 Sonu&ccedil;</a></li><li><a class="toc-href" href="#_1" title=""></a></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/archlinux-valkey-redis-kurulumu/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde Valkey (Redis Alternatifi) Kurulumu</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/playwright-arch-linux-kurulum/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux Üzerinde Playwright Kurulumu: Adım Adım Rehber 🐧</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ghostmirror-arch-linux-kullanimi/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Rehber: Arch Linux'ta GhostMirror Kullanımı</h4>
+                                    </a>
+                                </div>
+                                       </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-08-15T00:30:00+03:00" class="ml-1">
+                                    15 August 2025
+                                </time>
+                            </div>
+
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/linux/"
+                                    class="link link-hover ml-1">
+                                    Linux
+                                </a>
+                            </div>
+                              <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">1348 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">6 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 6.45</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/arch-linux-postgresql-pgadmin4-kurulum-rehber.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><p>🚀 <strong>Giri&scedil;</strong></p>
+<p>PostgreSQL, g&uuml;&ccedil;l&uuml; bir ili&scedil;kisel veritaban&inodot; sistemi olarak veri g&uuml;venli&gbreve;i, JSON deste&gbreve;i ve esnek yap&inodot;s&inodot;yla bilinir. Arch Linux ise minimal yap&inodot;s&inodot; ve g&uuml;ncel paketleri sayesinde PostgreSQL kurulumu i&ccedil;in m&uuml;kemmel bir ortam sunar.</p>
+<p>Bu rehberde ad&inodot;m ad&inodot;m:</p>
+<ul>
+<li>PostgreSQL&rsquo;in kurulumu  </li>
+<li>Veritaban&inodot; ve kullan&inodot;c&inodot; olu&scedil;turma  </li>
+<li><code>pgAdmin4</code> ile g&ouml;rsel y&ouml;netim  </li>
+<li>Kar&scedil;&inodot;la&scedil;abilece&gbreve;iniz yayg&inodot;n hatalar ve &ccedil;&ouml;z&uuml;mler  </li>
+</ul>
+<p>&hellip;konular&inodot;n&inodot; i&scedil;leyece&gbreve;iz. Haz&inodot;rsan&inodot;z ba&scedil;layal&inodot;m! 🔧  </p>
+<hr/>
+<h2 id="1-postgresql-kurulumu">📌 1. PostgreSQL Kurulumu</h2>
+<p>Arch Linux&rsquo;ta <code>pacman</code> paket y&ouml;neticisi ile kurulum &ccedil;ok basittir. Hadi ba&scedil;layal&inodot;m.</p>
+<h3 id="adim-1-paketi-indirme-ve-kurulum">✅ Ad&inodot;m 1: Paketi &Idot;ndirme ve Kurulum</h3>
+<p>Terminali a&ccedil;&inodot;p a&scedil;a&gbreve;&inodot;daki komutu &ccedil;al&inodot;&scedil;t&inodot;r&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>postgresql
+</code></pre></div>
+<p>Onaylamak i&ccedil;in <code>y</code> tu&scedil;una basman&inodot;z yeterlidir.</p>
+<div class="info-box note">
+<div class="alert-title">Bilgi</div>
+<p>Arch Linux&rsquo;un rolling release yap&inodot;s&inodot; sayesinde PostgreSQL her zaman g&uuml;ncel gelir. Bu, g&uuml;venlik a&ccedil;&inodot;s&inodot;ndan b&uuml;y&uuml;k bir avantajd&inodot;r.</p>
+</div>
+<h3 id="adim-2-servisi-baslatma-ve-enable-etme">✅ Ad&inodot;m 2: Servisi Ba&scedil;latma ve Enable Etme</h3>
+<p>Kurulum tamamland&inodot;ktan sonra servisi ba&scedil;latal&inodot;m ve sistem a&ccedil;&inodot;l&inodot;&scedil;&inodot;nda otomatik &ccedil;al&inodot;&scedil;mas&inodot;n&inodot; sa&gbreve;layal&inodot;m:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>postgresql
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>postgresql
+</code></pre></div>
+<p>Durumu kontrol etmek i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>postgresql
+</code></pre></div>
+<div class="info-box note">
+<div class="alert-title">Bilgi</div>
+<p>Servis durumu: <code>active (running)</code> ise her &scedil;ey yolunda demektir. 👍</p>
+</div>
+<p>&ouml;rnek &ccedil;&inodot;kt&inodot;:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="o">[</span>friday13@baba<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>postgresql
+●<span class="w"> </span>postgresql.service<span class="w"> </span>-<span class="w"> </span>PostgreSQL<span class="w"> </span>database<span class="w"> </span>server
+<span class="w">     </span>Loaded:<span class="w"> </span>loaded<span class="w"> </span><span class="o">(</span>/usr/lib/systemd/system/postgresql.service<span class="p">;</span><span class="w"> </span>disabled<span class="p">;</span><span class="w"> </span>preset:<span class="w"> </span>disabled<span class="o">)</span>
+<span class="w">     </span>Active:<span class="w"> </span>active<span class="w"> </span><span class="o">(</span>running<span class="o">)</span><span class="w"> </span>since<span class="w"> </span>Fri<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">00</span>:38:54<span class="w"> </span>+03<span class="p">;</span><span class="w"> </span>3h<span class="w"> </span>17min<span class="w"> </span>ago
+<span class="w"> </span>Invocation:<span class="w"> </span>38373934efff4bf99d54aa90fadb77da
+<span class="w">       </span>Docs:<span class="w"> </span>man:postgres<span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="w">    </span>Process:<span class="w"> </span><span class="m">399869</span><span class="w"> </span><span class="nv">ExecStartPre</span><span class="o">=</span>/usr/bin/postgresql-check-db-dir<span class="w"> </span><span class="si">${</span><span class="nv">PGROOT</span><span class="si">}</span>/data<span class="w"> </span><span class="o">(</span><span class="nv">code</span><span class="o">=</span>exited,<span class="w"> </span><span class="nv">status</span><span class="o">=</span><span class="m">0</span>/SUCCESS<span class="o">)</span>
+<span class="w">   </span>Main<span class="w"> </span>PID:<span class="w"> </span><span class="m">399872</span><span class="w"> </span><span class="o">(</span>postgres<span class="o">)</span>
+<span class="w">      </span>Tasks:<span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="o">(</span>limit:<span class="w"> </span><span class="m">18626</span><span class="o">)</span>
+<span class="w">     </span>Memory:<span class="w"> </span><span class="m">36</span>.7M<span class="w"> </span><span class="o">(</span>peak:<span class="w"> </span><span class="m">92</span>.2M,<span class="w"> </span>swap:<span class="w"> </span><span class="m">31</span>.9M,<span class="w"> </span>swap<span class="w"> </span>peak:<span class="w"> </span><span class="m">31</span>.9M<span class="o">)</span>
+<span class="w">        </span>CPU:<span class="w"> </span><span class="m">2</span>.873s
+<span class="w">     </span>CGroup:<span class="w"> </span>/system.slice/postgresql.service
+<span class="w">             </span>&boxvr;&boxh;399872<span class="w"> </span>/usr/bin/postgres<span class="w"> </span>-D<span class="w"> </span>/var/lib/postgres/data
+<span class="w">             </span>&boxvr;&boxh;399875<span class="w"> </span><span class="s2">"postgres: checkpointer "</span>
+<span class="w">             </span>&boxvr;&boxh;399876<span class="w"> </span><span class="s2">"postgres: background writer "</span>
+<span class="w">             </span>&boxvr;&boxh;399879<span class="w"> </span><span class="s2">"postgres: walwriter "</span>
+<span class="w">             </span>&boxvr;&boxh;399880<span class="w"> </span><span class="s2">"postgres: autovacuum launcher "</span>
+<span class="w">             </span>&boxvr;&boxh;399881<span class="w"> </span><span class="s2">"postgres: logical replication launcher "</span>
+<span class="w">             </span>&boxvr;&boxh;479979<span class="w"> </span><span class="s2">"postgres: crm_user crm_db ::1(55162) idle"</span>
+<span class="w">             </span>&boxvr;&boxh;479980<span class="w"> </span><span class="s2">"postgres: crm_user postgres ::1(55176) idle"</span>
+<span class="w">             </span>&boxur;&boxh;479981<span class="w"> </span><span class="s2">"postgres: crm_user servis_crm_db ::1(55182) idle"</span>
+
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">00</span>:58:54<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">00</span>:58:54.656<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>starting:<span class="w"> </span><span class="nb">time</span>
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">00</span>:59:07<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">00</span>:59:07.122<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>complete:<span class="w"> </span>wrote<span class="w"> </span><span class="m">125</span><span class="w"> </span>buffers<span class="w"> </span><span class="o">(</span><span class="m">0</span>.8%<span class="o">)</span><span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>WAL<span class="w"> </span>file<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>added,<span class="w"> </span><span class="m">0</span><span class="w"> </span>removed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>recycled<span class="p">;</span><span class="w"> </span><span class="nv">write</span><span class="o">=</span><span class="m">12</span>.439<span class="w"> </span>s,<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="m">0</span>.019<span class="w"> </span>s,<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">12</span>.467<span class="w"> </span>s<span class="p">;</span><span class="w"> </span>sync<span class="w"> </span><span class="nv">files</span><span class="o">=</span><span class="m">125</span>,<span class="w"> </span><span class="nv">longest</span><span class="o">=</span><span class="m">0</span>.004<span class="w"> </span>s,<span class="w"> </span><span class="nv">average</span><span class="o">=</span><span class="m">0</span>.001<span class="w"> </span>s<span class="p">;</span><span class="w"> </span><span class="nv">distance</span><span class="o">=</span><span class="m">705</span><span class="w"> </span>kB,<span class="w"> </span><span class="nv">estimate</span><span class="o">=</span><span class="m">3540</span><span class="w"> </span>kB<span class="p">;</span><span class="w"> </span><span class="nv">lsn</span><span class="o">=</span><span class="m">0</span>/1EC&gt;
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">01</span>:53:54<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">01</span>:53:54.983<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>starting:<span class="w"> </span><span class="nb">time</span>
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">01</span>:53:55<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">01</span>:53:55.297<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>complete:<span class="w"> </span>wrote<span class="w"> </span><span class="m">3</span><span class="w"> </span>buffers<span class="w"> </span><span class="o">(</span><span class="m">0</span>.0%<span class="o">)</span><span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>WAL<span class="w"> </span>file<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>added,<span class="w"> </span><span class="m">0</span><span class="w"> </span>removed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>recycled<span class="p">;</span><span class="w"> </span><span class="nv">write</span><span class="o">=</span><span class="m">0</span>.302<span class="w"> </span>s,<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="m">0</span>.005<span class="w"> </span>s,<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">0</span>.314<span class="w"> </span>s<span class="p">;</span><span class="w"> </span>sync<span class="w"> </span><span class="nv">files</span><span class="o">=</span><span class="m">2</span>,<span class="w"> </span><span class="nv">longest</span><span class="o">=</span><span class="m">0</span>.005<span class="w"> </span>s,<span class="w"> </span><span class="nv">average</span><span class="o">=</span><span class="m">0</span>.003<span class="w"> </span>s<span class="p">;</span><span class="w"> </span><span class="nv">distance</span><span class="o">=</span><span class="m">15</span><span class="w"> </span>kB,<span class="w"> </span><span class="nv">estimate</span><span class="o">=</span><span class="m">3188</span><span class="w"> </span>kB<span class="p">;</span><span class="w"> </span><span class="nv">lsn</span><span class="o">=</span><span class="m">0</span>/1ECC7D0,<span class="w"> </span>r&gt;
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">02</span>:03:54<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">02</span>:03:54.447<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>starting:<span class="w"> </span><span class="nb">time</span>
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">02</span>:03:58<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">02</span>:03:58.975<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>complete:<span class="w"> </span>wrote<span class="w"> </span><span class="m">46</span><span class="w"> </span>buffers<span class="w"> </span><span class="o">(</span><span class="m">0</span>.3%<span class="o">)</span><span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>WAL<span class="w"> </span>file<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>added,<span class="w"> </span><span class="m">0</span><span class="w"> </span>removed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>recycled<span class="p">;</span><span class="w"> </span><span class="nv">write</span><span class="o">=</span><span class="m">4</span>.513<span class="w"> </span>s,<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="m">0</span>.009<span class="w"> </span>s,<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">4</span>.529<span class="w"> </span>s<span class="p">;</span><span class="w"> </span>sync<span class="w"> </span><span class="nv">files</span><span class="o">=</span><span class="m">30</span>,<span class="w"> </span><span class="nv">longest</span><span class="o">=</span><span class="m">0</span>.005<span class="w"> </span>s,<span class="w"> </span><span class="nv">average</span><span class="o">=</span><span class="m">0</span>.001<span class="w"> </span>s<span class="p">;</span><span class="w"> </span><span class="nv">distance</span><span class="o">=</span><span class="m">27</span><span class="w"> </span>kB,<span class="w"> </span><span class="nv">estimate</span><span class="o">=</span><span class="m">2871</span><span class="w"> </span>kB<span class="p">;</span><span class="w"> </span><span class="nv">lsn</span><span class="o">=</span><span class="m">0</span>/1ED3580,&gt;
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">02</span>:28:55<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">02</span>:28:55.350<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>starting:<span class="w"> </span><span class="nb">time</span>
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">02</span>:28:55<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">02</span>:28:55.562<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>complete:<span class="w"> </span>wrote<span class="w"> </span><span class="m">2</span><span class="w"> </span>buffers<span class="w"> </span><span class="o">(</span><span class="m">0</span>.0%<span class="o">)</span><span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>WAL<span class="w"> </span>file<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>added,<span class="w"> </span><span class="m">0</span><span class="w"> </span>removed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>recycled<span class="p">;</span><span class="w"> </span><span class="nv">write</span><span class="o">=</span><span class="m">0</span>.201<span class="w"> </span>s,<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="m">0</span>.005<span class="w"> </span>s,<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">0</span>.213<span class="w"> </span>s<span class="p">;</span><span class="w"> </span>sync<span class="w"> </span><span class="nv">files</span><span class="o">=</span><span class="m">2</span>,<span class="w"> </span><span class="nv">longest</span><span class="o">=</span><span class="m">0</span>.005<span class="w"> </span>s,<span class="w"> </span><span class="nv">average</span><span class="o">=</span><span class="m">0</span>.003<span class="w"> </span>s<span class="p">;</span><span class="w"> </span><span class="nv">distance</span><span class="o">=</span><span class="m">6</span><span class="w"> </span>kB,<span class="w"> </span><span class="nv">estimate</span><span class="o">=</span><span class="m">2585</span><span class="w"> </span>kB<span class="p">;</span><span class="w"> </span><span class="nv">lsn</span><span class="o">=</span><span class="m">0</span>/1ED4F08,<span class="w"> </span>re&gt;
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">03</span>:03:55<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">03</span>:03:55.741<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>starting:<span class="w"> </span><span class="nb">time</span>
+A&gbreve;u<span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">03</span>:03:56<span class="w"> </span>baba<span class="w"> </span>postgres<span class="o">[</span><span class="m">399875</span><span class="o">]</span>:<span class="w"> </span><span class="m">2025</span>-08-15<span class="w"> </span><span class="m">03</span>:03:56.153<span class="w"> </span>+03<span class="w"> </span><span class="o">[</span><span class="m">399875</span><span class="o">]</span><span class="w"> </span>LOG:<span class="w">  </span>checkpoint<span class="w"> </span>complete:<span class="w"> </span>wrote<span class="w"> </span><span class="m">4</span><span class="w"> </span>buffers<span class="w"> </span><span class="o">(</span><span class="m">0</span>.0%<span class="o">)</span><span class="p">;</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>WAL<span class="w"> </span>file<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>added,<span class="w"> </span><span class="m">0</span><span class="w"> </span>removed,<span class="w"> </span><span class="m">0</span><span class="w"> </span>recycled<span class="p">;</span><span class="w"> </span><span class="nv">write</span><span class="o">=</span><span class="m">0</span>.402<span class="w"> </span>s,<span class="w"> </span><span class="nv">sync</span><span class="o">=</span><span class="m">0</span>.004<span class="w"> </span>s,<span class="w"> </span><span class="nv">total</span><span class="o">=</span><span class="m">0</span>.412<span class="w"> </span>s<span class="p">;</span><span class="w"> </span>sync<span class="w"> </span><span class="nv">files</span><span class="o">=</span><span class="m">2</span>,<span class="w"> </span><span class="nv">longest</span><span class="o">=</span><span class="m">0</span>.004<span class="w"> </span>s,<span class="w"> </span><span class="nv">average</span><span class="o">=</span><span class="m">0</span>.002<span class="w"> </span>s<span class="p">;</span><span class="w"> </span><span class="nv">distance</span><span class="o">=</span><span class="m">12</span><span class="w"> </span>kB,<span class="w"> </span><span class="nv">estimate</span><span class="o">=</span><span class="m">2328</span><span class="w"> </span>kB<span class="p">;</span><span class="w"> </span><span class="nv">lsn</span><span class="o">=</span><span class="m">0</span>/1ED8100,<span class="w"> </span>r&gt;
+</code></pre></div>
+<div class="info-box note">
+<div class="alert-title">Bilgi</div>
+<p>PostgreSQL servisi &ccedil;al&inodot;&scedil;&inodot;yor ve durumu a&scedil;a&gbreve;&inodot;daki gibi g&ouml;zlemlenebilir:</p>
+<pre>
+[friday13@baba ~]$ systemctl status postgresql
+● postgresql.service - PostgreSQL database server
+     Loaded: loaded (/usr/lib/systemd/system/postgresql.service; disabled; preset: disabled)
+     Active: active (running) since Fri 2025-08-15 00:38:54 +03; 3h 17min ago
+     Main PID: 399872 (postgres)
+     Tasks: 9 (limit: 18626)
+    </pre>
+</div>
+<h3 id="adim-3-varsayilan-kullaniciyi-sifreleme">✅ Ad&inodot;m 3: Varsay&inodot;lan Kullan&inodot;c&inodot;y&inodot; &Scedil;ifreleme</h3>
+<p>PostgreSQL, <code>postgres</code> adl&inodot; bir kullan&inodot;c&inodot;yla birlikte gelir. Bu kullan&inodot;c&inodot;ya g&uuml;&ccedil;l&uuml; bir &scedil;ifre vermek kritik &ouml;nemdedir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">"ALTER USER postgres PASSWORD 'sizin_sifreniz';"</span>
+</code></pre></div>
+<div class="info-box tip">
+<div class="alert-title">&Idot;pucu</div>
+<p>💡 Ben genellikle test ortamlar&inodot; i&ccedil;in `postgres_test` gibi ge&ccedil;ici kullan&inodot;c&inodot;lar olu&scedil;turuyorum; b&ouml;ylece &uuml;retim ve test kar&inodot;&scedil;m&inodot;yor.</p>
+</div>
+<h3 id="adim-4-veritabani-ve-kullanici-olusturma">✅ Ad&inodot;m 4: Veritaban&inodot; ve Kullan&inodot;c&inodot; Olu&scedil;turma</h3>
+<p>&Ouml;rnek olarak bir CRM uygulamas&inodot; i&ccedil;in veritaban&inodot; ve kullan&inodot;c&inodot; olu&scedil;tural&inodot;m:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>crm_db
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createuser<span class="w"> </span>--superuser<span class="w"> </span>crm_user
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">"ALTER USER crm_user WITH PASSWORD 'crm_sifresi';"</span>
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>-c<span class="w"> </span><span class="s2">"GRANT ALL PRIVILEGES ON DATABASE crm_db TO crm_user;"</span>
+</code></pre></div>
+<div class="info-box tip">
+<div class="alert-title">&Idot;pucu</div>
+<p>Veritaban&inodot; ve kullan&inodot;c&inodot; adlar&inodot;n&inodot; proje isimlendirmesine uygun se&ccedil;mek ileride kar&inodot;&scedil;&inodot;kl&inodot;klar&inodot; &ouml;nler. &Ouml;rne&gbreve;in <code>crm_user_dev</code> veya <code>crm_user_prod</code> gibi adlar kullanabilirsiniz.</p>
+</div>
+<hr/>
+<h2 id="2-postgresql-yapilandirmasi_1">🛠️ 2. PostgreSQL Yap&inodot;land&inodot;rmas&inodot;</h2>
+<p>PostgreSQL&rsquo;in yap&inodot;land&inodot;rma dosyalar&inodot; genellikle <code>/var/lib/postgres/data/</code> dizininde bulunur. Bu dizin i&ccedil;inde <code>postgresql.conf</code> ve <code>pg_hba.conf</code> dosyalar&inodot; yer al&inodot;r ve veritaban&inodot;n&inodot;z&inodot;n davran&inodot;&scedil;&inodot;n&inodot; belirler.</p>
+<h3 id="adim-1-dosya-konumlarini-kontrol-etme">✅ Ad&inodot;m 1: Dosya Konumlar&inodot;n&inodot; Kontrol Etme</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>ls<span class="w"> </span>/var/lib/postgres/data/
+</code></pre></div>
+<h3 id="adim-2-pg_hbaconf-duzenleme">✅ Ad&inodot;m 2: <code>pg_hba.conf</code> D&uuml;zenleme</h3>
+<p>Ba&gbreve;lant&inodot; izinlerini ayarlamak i&ccedil;in dosyay&inodot; a&ccedil;&inodot;n:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/var/lib/postgres/data/pg_hba.conf
+</code></pre></div>
+<p>&Ouml;rnek ayar:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code># Yerel ba&gbreve;lant&inodot;lar
+host    all             all             127.0.0.1/32            trust
+
+# A&gbreve; ba&gbreve;lant&inodot;lar&inodot;
+host    all             all             192.168.1.0/24          md5
+</code></pre></div>
+<div class="info-box warning">
+<div class="alert-title">Uyar&inodot;</div>
+<p>&Uuml;retim ortam&inodot;nda 'trust' yerine 'md5' veya 'scram-sha-256' kullanman&inodot;z g&uuml;venlik a&ccedil;&inodot;s&inodot;ndan kritik &ouml;neme sahiptir.</p>
+</div>
+<h3 id="adim-3-postgresqlconf-ayarlari">✅ Ad&inodot;m 3: <code>postgresql.conf</code> Ayarlar&inodot;</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>nano<span class="w"> </span>/var/lib/postgres/data/postgresql.conf
+</code></pre></div>
+<p>Performans i&ccedil;in &ouml;nerilen parametreler:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>listen_addresses = '*'  
+port = 5432  
+max_connections = 100  
+shared_buffers = 128MB  
+</code></pre></div>
+<h3 id="adim-4-servisi-yeniden-baslatma">✅ Ad&inodot;m 4: Servisi Yeniden Ba&scedil;latma</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>postgresql
+</code></pre></div>
+<div class="info-box note">
+<div class="alert-title">Bilgi</div>
+<p>🔧 Not: De&gbreve;i&scedil;iklikleri hemen test etmek i&ccedil;in <code>psql</code> ile ba&gbreve;lan&inodot;p <code>\l</code> komutu ile veritabanlar&inodot;n&inodot; listeleyebilirsiniz.</p>
+</div>
+<hr/>
+<h2 id="3-pgadmin4-kurulumu_1">🖥️ 3. pgAdmin4 Kurulumu</h2>
+<h3 id="adim-1-gerekli-dizinleri-olusturma">✅ Ad&inodot;m 1: Gerekli Dizinleri Olu&scedil;turma</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/lib/pgadmin
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/log/pgadmin
+sudo<span class="w"> </span>chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>/var/lib/pgadmin
+sudo<span class="w"> </span>chown<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span>/var/log/pgadmin
+</code></pre></div>
+<h3 id="adim-2-python-sanal-ortami">✅ Ad&inodot;m 2: Python Sanal Ortam&inodot;</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>pgadmin-env
+<span class="nb">source</span><span class="w"> </span>pgadmin-env/bin/activate
+</code></pre></div>
+<h3 id="adim-3-pgadmin4-kurulumu">✅ Ad&inodot;m 3: pgAdmin4 Kurulumu</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>pgadmin4
+</code></pre></div>
+<h3 id="adim-4-pgadmin4u-calistirma">✅ Ad&inodot;m 4: pgAdmin4&rsquo;&uuml; &Ccedil;al&inodot;&scedil;t&inodot;rma</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>pgadmin4
+</code></pre></div>
+<p>Taray&inodot;c&inodot;da: <code>http://127.0.0.1:5050</code></p>
+<div class="info-box tip">
+<div class="alert-title">&Idot;pucu</div>
+<p>&Idot;lk kullan&inodot;c&inodot;y&inodot; olu&scedil;tururken basit bir test e-posta ve &scedil;ifre kullanabilirsiniz, sonra diledi&gbreve;iniz gibi de&gbreve;i&scedil;tirebilirsiniz.</p>
+</div>
+<hr/>
+<h2 id="4-otomasyon-scripti_1">⚙️ 4. Otomasyon Script&rsquo;i</h2>
+<p>Manuel &ccedil;al&inodot;&scedil;t&inodot;rmay&inodot; kolayla&scedil;t&inodot;rmak i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>nano<span class="w"> </span>~/bin/pgadmin-start.sh
+</code></pre></div>
+<p>&Idot;&ccedil;erik:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="ch">#!/bin/bash</span>
+<span class="nb">source</span><span class="w"> </span>~/pgadmin-env/bin/activate
+pgadmin4
+</code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>~/bin/pgadmin-start.sh
+<span class="nb">echo</span><span class="w"> </span><span class="s1">'export PATH="$HOME/bin:$PATH"'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"alias pgadmin='~/bin/pgadmin-start.sh'"</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+<span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
+<div class="info-box tip">
+<div class="alert-title">&Idot;pucu</div>
+<p>💡 Alias isimlerini k&inodot;sa ve ak&inodot;lda kal&inodot;c&inodot; se&ccedil;mek i&scedil;leri kolayla&scedil;t&inodot;r&inodot;r. &Ouml;rne&gbreve;in <code>pgadmin</code>.</p>
+</div>
+<hr/>
+<h2 id="5-pgadmin4-ile-postgresqle-baglanti">🔗 5. pgAdmin4 ile PostgreSQL&rsquo;e Ba&gbreve;lant&inodot;</h2>
+<p>Sunucu eklemek i&ccedil;in:</p>
+<table>
+<thead>
+<tr>
+<th>Alan</th>
+<th>De&gbreve;er</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td><code>CRM Database</code></td>
+</tr>
+<tr>
+<td>Host</td>
+<td><code>localhost</code></td>
+</tr>
+<tr>
+<td>Port</td>
+<td><code>5432</code></td>
+</tr>
+<tr>
+<td>Maintenance DB</td>
+<td><code>postgres</code></td>
+</tr>
+<tr>
+<td>Username</td>
+<td><code>crm_user</code></td>
+</tr>
+<tr>
+<td>Password</td>
+<td><code>crm_sifresi</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ba&gbreve;lant&inodot; sorunlar&inodot; i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>postgresql
+</code></pre></div>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--add-port<span class="o">=</span><span class="m">5432</span>/tcp<span class="w"> </span>--permanent
+sudo<span class="w"> </span>firewall-cmd<span class="w"> </span>--reload
+</code></pre></div>
+<hr/>
+<h2 id="6-sik-karsilasilan-hatalar">❌ 6. S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Hatalar</h2>
+<div class="info-box important">
+<div class="alert-title">&Ouml;nemli</div>
+<p>Her zaman &ouml;nce servisin &ccedil;al&inodot;&scedil;t&inodot;&gbreve;&inodot;ndan emin olun. &Ccedil;o&gbreve;u ba&gbreve;lant&inodot; hatas&inodot; buradan kaynaklan&inodot;r.</p>
+</div>
+<h3 id="hata-1-no-module-named-pgadmin4main">Hata 1: No module named &lsquo;pgadmin4.<strong>main</strong>&rsquo;</h3>
+<ul>
+<li>&Ccedil;&ouml;z&uuml;m: Sanal ortam&inodot; silip yeniden kurun.</li>
+</ul>
+<h3 id="hata-2-fatal-database-crm_db-does-not-exist">Hata 2: FATAL: database &ldquo;crm_db&rdquo; does not exist</h3>
+<ul>
+<li>&Ccedil;&ouml;z&uuml;m: Veritaban&inodot;n&inodot; yeniden olu&scedil;turun:</li>
+</ul>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>crm_db
+</code></pre></div>
+<hr/>
+<h2 id="7-ipuclari-ve-oneriler_1">💡 7. &Idot;pu&ccedil;lar&inodot; ve &Ouml;neriler</h2>
+<ul>
+<li><code>work_mem</code> ve <code>maintenance_work_mem</code> de&gbreve;erlerini art&inodot;rarak performans&inodot; iyile&scedil;tirin.</li>
+<li>SSD kullan&inodot;m&inodot; disk I/O&rsquo;yu h&inodot;zland&inodot;r&inodot;r.</li>
+<li>Haftal&inodot;k yedekleme i&ccedil;in cron job kullanabilirsiniz.</li>
+<li>&Uuml;retim ortam&inodot;nda &scedil;ifreleme y&ouml;ntemlerini g&uuml;ncel tutun.</li>
+</ul>
+<hr/>
+<h2 id="8-postgresql-surum-yukseltmeleri">🔄 8. PostgreSQL S&uuml;r&uuml;m Y&uuml;kseltmeleri</h2>
+<p>PostgreSQL&rsquo;i yeni bir s&uuml;r&uuml;me y&uuml;kseltmek bazen gerekli olabilir. Arch Linux&rsquo;ta rolling release yap&inodot;s&inodot; sayesinde paketler genellikle g&uuml;ncel gelir, ancak veritaban&inodot;n&inodot;z&inodot; manuel olarak y&uuml;kseltmeniz gerekebilir.</p>
+<div class="info-box tip">
+<div class="alert-title">&Idot;pucu</div>
+<p>pg_upgrade arac&inodot; kullan&inodot;labilir, ancak baz&inodot; kullan&inodot;c&inodot;lar i&ccedil;in karma&scedil;&inodot;k olabilir. Daha g&uuml;venli ve basit bir y&ouml;ntem, veritaban&inodot;n&inodot;z&inodot; <code>pg_dump</code> ile yedekleyip yeni s&uuml;r&uuml;mde <code>pg_restore</code> ile geri y&uuml;klemektir.</p>
+</div>
+<p>&Ouml;rnek:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># Veritaban&inodot;n&inodot; yedekleme</span>
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>pg_dump<span class="w"> </span>crm_db<span class="w"> </span>&gt;<span class="w"> </span>crm_db_backup.sql
+
+<span class="c1"># Yeni s&uuml;r&uuml;mde geri y&uuml;kleme</span>
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>crm_db
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>crm_db<span class="w"> </span>&lt;<span class="w"> </span>crm_db_backup.sql
+</code></pre></div>
+<p>Bu y&ouml;ntem, olas&inodot; uyumsuzluk sorunlar&inodot;n&inodot; &ouml;nlemeye yard&inodot;mc&inodot; olur.</p>
+<hr/>
+<h2 id="9-phppgadmin-kurulumu-opsiyonel">📦 9. phpPgAdmin Kurulumu (Opsiyonel)</h2>
+<p>Baz&inodot; kullan&inodot;c&inodot;lar pgAdmin4 yerine phpPgAdmin kullanmay&inodot; tercih edebilir. phpPgAdmin, web tabanl&inodot; bir aray&uuml;zd&uuml;r ve &ccedil;al&inodot;&scedil;abilmesi i&ccedil;in PHP&rsquo;nin pgsql uzant&inodot;s&inodot; etkin olmal&inodot;d&inodot;r.</p>
+<div class="info-box tip">
+<div class="alert-title">&Idot;pucu</div>
+<p>Apache web sunucusu ve PHP kurulumu yaparken <code>php-pgsql</code> paketinin y&uuml;kl&uuml; ve etkin oldu&gbreve;undan emin olun.</p>
+</div>
+<p>Kurulum &ouml;rne&gbreve;i:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-S<span class="w"> </span>php-apache<span class="w"> </span>php-pgsql<span class="w"> </span>phppgadmin
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>--now<span class="w"> </span>httpd
+</code></pre></div>
+<p>Apache konfig&uuml;rasyonunu yapt&inodot;ktan sonra taray&inodot;c&inodot;n&inodot;zdan phpPgAdmin&rsquo;e eri&scedil;ebilirsiniz.</p>
+<ul>
+<li>phpPgAdmin i&ccedil;in Apache ve PHP kurulumu yaparken detayl&inodot; bir rehbere ihtiyac&inodot;n&inodot;z varsa <a href="/arch-linux-apache-lampp-sanal-sunucu-kurulumu/">Arch Linux Apache (LAMPP) Sanal Sunucu Kurulumu</a> sayfas&inodot;na g&ouml;z atabilirsiniz.</li>
+</ul>
+<hr/>
+<h2 id="10-veri-yedekleme-ve-geri-yukleme">🧹 10. Veri Yedekleme ve Geri Y&uuml;kleme</h2>
+<p>Veri g&uuml;venli&gbreve;i i&ccedil;in yedekleme &scedil;artt&inodot;r. Makalemizde daha &ouml;nce cron job ile otomatik yedekleme &ouml;rne&gbreve;i verdik. &Scedil;imdi <strong>geri y&uuml;kleme</strong> &ouml;rne&gbreve;ini de ekleyelim.</p>
+<h3 id="yedek-alma">✅ Yedek Alma</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>pg_dump<span class="w"> </span>crm_db<span class="w"> </span>&gt;<span class="w"> </span>~/backups/crm_db_<span class="k">$(</span>date<span class="w"> </span>+%F<span class="k">)</span>.sql
+</code></pre></div>
+<h3 id="yedekten-geri-yukleme">✅ Yedekten Geri Y&uuml;kleme</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>createdb<span class="w"> </span>crm_db_restore
+sudo<span class="w"> </span>-u<span class="w"> </span>postgres<span class="w"> </span>psql<span class="w"> </span>crm_db_restore<span class="w"> </span>&lt;<span class="w"> </span>~/backups/crm_db_2025-08-15.sql
+</code></pre></div>
+<div class="info-box tip">
+<div class="alert-title">&Idot;pucu</div>
+<p>Farkl&inodot; ortamlar i&ccedil;in ayr&inodot; veritaban&inodot; isimleri kullanmak (&ouml;r. <code>crm_db_dev</code>, <code>crm_db_prod</code>) kar&inodot;&scedil;&inodot;kl&inodot;&gbreve;&inodot; &ouml;nler.</p>
+</div>
+<ul>
+<li>E&gbreve;er MySQL veya MariaDB ile &ccedil;al&inodot;&scedil;&inodot;yorsan&inodot;z, benzer yedekleme ve geri y&uuml;kleme i&scedil;lemleri i&ccedil;in <a href="/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> rehberine bakabilirsiniz.</li>
+</ul>
+<hr/>
+<h2 id="sonuc_1">🎯 Sonu&ccedil;</h2>
+<p>Art&inodot;k Arch Linux&rsquo;ta PostgreSQL ve pgAdmin4&rsquo;&uuml; kurmay&inodot;, yap&inodot;land&inodot;rmay&inodot; ve y&ouml;netmeyi &ouml;&gbreve;rendiniz. Kod &ouml;rnekleri, ipu&ccedil;lar&inodot; ve ad&inodot;m ad&inodot;m rehber ile veritaban&inodot; projelerinizi g&uuml;venle y&ouml;netebilirsiniz. 💻</p>
+<div class="info-box note">
+<div class="alert-title">Bilgi</div>
+<p>Herhangi bir sorunuz olursa yorum b&inodot;rak&inodot;n; memnuniyetle yard&inodot;mc&inodot; olurum! 😊</p>
+</div>
+<h2 id="_1"><img alt="Arch Linux PostgreSQL pgAdmin4 Kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp" srcset="/images/arch-linux-postgresql-pgadmin4-kurulum-rehber-sm.webp 300w, /images/arch-linux-postgresql-pgadmin4-kurulum-rehber-md.webp 500w, /images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp 800w, /images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp 1200w"/></h2></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/&text=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/&title=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/&text=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber&body=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/&description=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber&media=https://yuceltoluyag.github.io/images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/&title=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber%20-%20https://yuceltoluyag.github.io/arch-linux-postgresql-pgadmin4-kurulum-rehber/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#1-postgresql-kurulumu" title="📌 1. PostgreSQL Kurulumu">📌 1. PostgreSQL Kurulumu</a><ul><li><a class="toc-href" href="#adim-1-paketi-indirme-ve-kurulum" title="✅ Ad&inodot;m 1: Paketi &Idot;ndirme ve Kurulum">✅ Ad&inodot;m 1: Paketi &Idot;ndirme ve Kurulum</a></li><li><a class="toc-href" href="#adim-2-servisi-baslatma-ve-enable-etme" title="✅ Ad&inodot;m 2: Servisi Ba&scedil;latma ve Enable Etme">✅ Ad&inodot;m 2: Servisi Ba&scedil;latma ve Enable Etme</a></li><li><a class="toc-href" href="#adim-3-varsayilan-kullaniciyi-sifreleme" title="✅ Ad&inodot;m 3: Varsay&inodot;lan Kullan&inodot;c&inodot;y&inodot; &Scedil;ifreleme">✅ Ad&inodot;m 3: Varsay&inodot;lan Kullan&inodot;c&inodot;y&inodot; &Scedil;ifreleme</a></li><li><a class="toc-href" href="#adim-4-veritabani-ve-kullanici-olusturma" title="✅ Ad&inodot;m 4: Veritaban&inodot; ve Kullan&inodot;c&inodot; Olu&scedil;turma">✅ Ad&inodot;m 4: Veritaban&inodot; ve Kullan&inodot;c&inodot; Olu&scedil;turma</a></li></ul></li><li><a class="toc-href" href="#2-postgresql-yapilandirmasi_1" title="🛠️ 2. PostgreSQL Yap&inodot;land&inodot;rmas&inodot;">🛠️ 2. PostgreSQL Yap&inodot;land&inodot;rmas&inodot;</a><ul><li><a class="toc-href" href="#adim-1-dosya-konumlarini-kontrol-etme" title="✅ Ad&inodot;m 1: Dosya Konumlar&inodot;n&inodot; Kontrol Etme">✅ Ad&inodot;m 1: Dosya Konumlar&inodot;n&inodot; Kontrol Etme</a></li><li><a class="toc-href" href="#adim-2-pg_hbaconf-duzenleme" title="✅ Ad&inodot;m 2: pg_hba.conf D&uuml;zenleme">✅ Ad&inodot;m 2: pg_hba.conf D&uuml;zenleme</a></li><li><a class="toc-href" href="#adim-3-postgresqlconf-ayarlari" title="✅ Ad&inodot;m 3: postgresql.conf Ayarlar&inodot;">✅ Ad&inodot;m 3: postgresql.conf Ayarlar&inodot;</a></li><li><a class="toc-href" href="#adim-4-servisi-yeniden-baslatma" title="✅ Ad&inodot;m 4: Servisi Yeniden Ba&scedil;latma">✅ Ad&inodot;m 4: Servisi Yeniden Ba&scedil;latma</a></li></ul></li><li><a class="toc-href" href="#3-pgadmin4-kurulumu_1" title="🖥️ 3. pgAdmin4 Kurulumu">🖥️ 3. pgAdmin4 Kurulumu</a><ul><li><a class="toc-href" href="#adim-1-gerekli-dizinleri-olusturma" title="✅ Ad&inodot;m 1: Gerekli Dizinleri Olu&scedil;turma">✅ Ad&inodot;m 1: Gerekli Dizinleri Olu&scedil;turma</a></li><li><a class="toc-href" href="#adim-2-python-sanal-ortami" title="✅ Ad&inodot;m 2: Python Sanal Ortam&inodot;">✅ Ad&inodot;m 2: Python Sanal Ortam&inodot;</a></li><li><a class="toc-href" href="#adim-3-pgadmin4-kurulumu" title="✅ Ad&inodot;m 3: pgAdmin4 Kurulumu">✅ Ad&inodot;m 3: pgAdmin4 Kurulumu</a></li><li><a class="toc-href" href="#adim-4-pgadmin4u-calistirma" title="✅ Ad&inodot;m 4: pgAdmin4&rsquo;&uuml; &Ccedil;al&inodot;&scedil;t&inodot;rma">✅ Ad&inodot;m 4: pgAdmin4&rsquo;&uuml; &Ccedil;al&inodot;&scedil;t&inodot;rma</a></li></ul></li><li><a class="toc-href" href="#4-otomasyon-scripti_1" title="⚙️ 4. Otomasyon Script&rsquo;i">⚙️ 4. Otomasyon Script&rsquo;i</a></li><li><a class="toc-href" href="#5-pgadmin4-ile-postgresqle-baglanti" title="🔗 5. pgAdmin4 ile PostgreSQL&rsquo;e Ba&gbreve;lant&inodot;">🔗 5. pgAdmin4 ile PostgreSQL&rsquo;e Ba&gbreve;lant&inodot;</a></li><li><a class="toc-href" href="#6-sik-karsilasilan-hatalar" title="❌ 6. S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Hatalar">❌ 6. S&inodot;k Kar&scedil;&inodot;la&scedil;&inodot;lan Hatalar</a><ul><li><a class="toc-href" href="#hata-1-no-module-named-pgadmin4main" title="Hata 1: No module named &lsquo;pgadmin4.main&rsquo;">Hata 1: No module named &lsquo;pgadmin4.main&rsquo;</a></li><li><a class="toc-href" href="#hata-2-fatal-database-crm_db-does-not-exist" title="Hata 2: FATAL: database &ldquo;crm_db&rdquo; does not exist">Hata 2: FATAL: database &ldquo;crm_db&rdquo; does not exist</a></li></ul></li><li><a class="toc-href" href="#7-ipuclari-ve-oneriler_1" title="💡 7. &Idot;pu&ccedil;lar&inodot; ve &Ouml;neriler">💡 7. &Idot;pu&ccedil;lar&inodot; ve &Ouml;neriler</a></li><li><a class="toc-href" href="#8-postgresql-surum-yukseltmeleri" title="🔄 8. PostgreSQL S&uuml;r&uuml;m Y&uuml;kseltmeleri">🔄 8. PostgreSQL S&uuml;r&uuml;m Y&uuml;kseltmeleri</a></li><li><a class="toc-href" href="#9-phppgadmin-kurulumu-opsiyonel" title="📦 9. phpPgAdmin Kurulumu (Opsiyonel)">📦 9. phpPgAdmin Kurulumu (Opsiyonel)</a></li><li><a class="toc-href" href="#10-veri-yedekleme-ve-geri-yukleme" title="🧹 10. Veri Yedekleme ve Geri Y&uuml;kleme">🧹 10. Veri Yedekleme ve Geri Y&uuml;kleme</a><ul><li><a class="toc-href" href="#yedek-alma" title="✅ Yedek Alma">✅ Yedek Alma</a></li><li><a class="toc-href" href="#yedekten-geri-yukleme" title="✅ Yedekten Geri Y&uuml;kleme">✅ Yedekten Geri Y&uuml;kleme</a></li></ul></li><li><a class="toc-href" href="#sonuc_1" title="🎯 Sonu&ccedil;">🎯 Sonu&ccedil;</a></li><li><a class="toc-href" href="#_1" title=""></a></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

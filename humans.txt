@@ -1,0 +1,16 @@
+/* AUTHOR */
+yuceltoluyag, Babanın Yeni Evi
+Contact: info@yuceltoluyag.com
+Twitter: @yuceltoluyag
+From: İstanbul, Turkiye
+
+
+/* SITE */
+Last Updated: 01/05/2024
+Language: Turkish
+Tools: Python, Pelican, Sass, Node
+Theme: Pelican Theme
+IDE: Vscode
+
+/* THANKS */
+Name: babayorum-bot

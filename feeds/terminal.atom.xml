@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Terminal</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/terminal.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Newsboat RSS Feeds Kullanımı</title><link href="https://yuceltoluyag.github.io/newsboat-rss-feeds-kullanimi/" rel="alternate"/><published>2020-07-17T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-07-17:/newsboat-rss-feeds-kullanimi/</id><summary type="html">&lt;p&gt;Terminal tabanlı güçlü bir RSS okuyucu olan Newsboat'u nasıl yapılandıracağınızı ve verimli bir şekilde nasıl kullanacağınızı öğrenin.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Newsboat" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/newsboat-xl.webp" srcset="/images/newsboat-sm.webp 300w, /images/newsboat-md.webp 500w, /images/newsboat-xl.webp 800w, /images/newsboat-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h1 id="newsboat-nedir"&gt;Newsboat Nedir? 📰&lt;/h1&gt;
+&lt;p&gt;Newsboat, terminal tabanl&amp;inodot; g&amp;uuml;&amp;ccedil;l&amp;uuml; bir RSS / Atom besleme okuyucusudur. Blog yaz&amp;inodot;lar&amp;inodot;, haberler ve di&amp;gbreve;er i&amp;ccedil;erikleri takip etmek i&amp;ccedil;in idealdir. Unix benzeri sistemlerde &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;r ve esnek yap&amp;inodot;land&amp;inodot;rma se&amp;ccedil;enekleri sunar.&lt;/p&gt;
+&lt;h2 id="newsboat-kurulumu"&gt;Newsboat Kurulumu 🛠️&lt;/h2&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlarla Newsboat ve ek ara&amp;ccedil;lar&amp;inodot; kurabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;newsboat&lt;span class="w"&gt; &lt;/span&gt;mpv&lt;span class="w"&gt; &lt;/span&gt;youtube-dl&lt;span class="w"&gt; &lt;/span&gt;dunst
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mpv&lt;/strong&gt;: Medya oynat&amp;inodot;c&amp;inodot; (videolar&amp;inodot; oynatmak i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;youtube-dl&lt;/strong&gt;: RSS i&amp;ccedil;indeki video i&amp;ccedil;eriklerini indirmek i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dunst&lt;/strong&gt;: Masa&amp;uuml;st&amp;uuml; bildirimleri i&amp;ccedil;in (i3-wm kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in gereklidir, di&amp;gbreve;er masa&amp;uuml;st&amp;uuml; ortamlar&amp;inodot; i&amp;ccedil;in zorunlu de&amp;gbreve;ildir).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="yapilandirma"&gt;Yap&amp;inodot;land&amp;inodot;rma 🛠️&lt;/h2&gt;
+&lt;p&gt;Newsboat'un yap&amp;inodot;land&amp;inodot;rma dosyas&amp;inodot; &lt;code&gt;~/.config/newsboat/config&lt;/code&gt; i&amp;ccedil;inde yer al&amp;inodot;r. &amp;Ouml;rnek bir yap&amp;inodot;land&amp;inodot;rma:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;browser&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"xdg-open"&lt;/span&gt;
+
+macro&lt;span class="w"&gt; &lt;/span&gt;o&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;browser&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/bin/mpv %u &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 &amp;amp;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;open-in-browser&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;browser&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"xdg-open"&lt;/span&gt;
+
+macro&lt;span class="w"&gt; &lt;/span&gt;y&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;browser&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"youtube-dl %u"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;open-in-browser&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;browser&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"xdg-open"&lt;/span&gt;
+
+&lt;span class="c1"&gt;#general stuff&lt;/span&gt;
+
+show-read-articles&lt;span class="w"&gt; &lt;/span&gt;yes
+
+show-read-feeds&lt;span class="w"&gt; &lt;/span&gt;yes
+
+auto-reload&lt;span class="w"&gt; &lt;/span&gt;yes
+
+cleanup-on-quit&lt;span class="w"&gt; &lt;/span&gt;no
+
+max-items&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;
+
+feed-sort-order&lt;span class="w"&gt; &lt;/span&gt;title-desc
+
+mark-as-read-on-hover&lt;span class="w"&gt; &lt;/span&gt;yes
+
+display-article-progress&lt;span class="w"&gt; &lt;/span&gt;yes
+
+max-browser-tabs&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;
+
+show-keymap-hint&lt;span class="w"&gt; &lt;/span&gt;no
+
+feedlist-format&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"%4i %9u %t"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;#"%t %d %u %U %c %S %n"&lt;/span&gt;
+
+articlelist-format&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"%4i %D %?T? %-10T ?%t"&lt;/span&gt;
+
+feedlist-title-format&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;
+
+articlelist-title-format&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;""&lt;/span&gt;
+
+&lt;span class="c1"&gt;# reload-threads 4&lt;/span&gt;
+
+&lt;span class="c1"&gt;# reload-time 90&lt;/span&gt;
+
+&lt;span class="c1"&gt;# reload-only-visible-feeds yes&lt;/span&gt;
+
+cache-file&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"~/.config/newsboat/cache.db"&lt;/span&gt;
+
+&lt;span class="c1"&gt;# notifications&lt;/span&gt;
+
+notify-format&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Newsboat: %d new"&lt;/span&gt;
+
+notify-program&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"/usr/bin/notify-send"&lt;/span&gt;
+
+&lt;span class="c1"&gt;#keybinds&lt;/span&gt;
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;j&lt;span class="w"&gt; &lt;/span&gt;down
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;k&lt;span class="w"&gt; &lt;/span&gt;up
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;l&lt;span class="w"&gt; &lt;/span&gt;open
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;h&lt;span class="w"&gt; &lt;/span&gt;quit
+
+unbind-key&lt;span class="w"&gt; &lt;/span&gt;g&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# bound to `sort` by default&lt;/span&gt;
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;g&lt;span class="w"&gt; &lt;/span&gt;home
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;s&lt;span class="w"&gt; &lt;/span&gt;sort
+
+unbind-key&lt;span class="w"&gt; &lt;/span&gt;G&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# bound to `rev-sort` by default&lt;/span&gt;
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;G&lt;span class="w"&gt; &lt;/span&gt;end
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;O&lt;span class="w"&gt; &lt;/span&gt;open-all-unread-in-browser-and-mark-read
+
+unbind-key&lt;span class="w"&gt; &lt;/span&gt;r
+
+bind-key&lt;span class="w"&gt; &lt;/span&gt;r&lt;span class="w"&gt; &lt;/span&gt;reload-all
+
+color&lt;span class="w"&gt; &lt;/span&gt;background&lt;span class="w"&gt; &lt;/span&gt;default&lt;span class="w"&gt; &lt;/span&gt;default
+
+color&lt;span class="w"&gt; &lt;/span&gt;listnormal&lt;span class="w"&gt; &lt;/span&gt;default&lt;span class="w"&gt; &lt;/span&gt;default
+
+color&lt;span class="w"&gt; &lt;/span&gt;listnormal_unread&lt;span class="w"&gt; &lt;/span&gt;green&lt;span class="w"&gt; &lt;/span&gt;default
+
+color&lt;span class="w"&gt; &lt;/span&gt;listfocus&lt;span class="w"&gt; &lt;/span&gt;yellow&lt;span class="w"&gt; &lt;/span&gt;default&lt;span class="w"&gt; &lt;/span&gt;bold
+
+color&lt;span class="w"&gt; &lt;/span&gt;listfocus_unread&lt;span class="w"&gt; &lt;/span&gt;yellow&lt;span class="w"&gt; &lt;/span&gt;default&lt;span class="w"&gt; &lt;/span&gt;bold
+
+color&lt;span class="w"&gt; &lt;/span&gt;info&lt;span class="w"&gt; &lt;/span&gt;default&lt;span class="w"&gt; &lt;/span&gt;default
+
+color&lt;span class="w"&gt; &lt;/span&gt;article&lt;span class="w"&gt; &lt;/span&gt;magenta&lt;span class="w"&gt; &lt;/span&gt;default
+
+&lt;span class="c1"&gt;# highlights&lt;/span&gt;
+
+highlight&lt;span class="w"&gt; &lt;/span&gt;article&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"^(Title):.\*&lt;/span&gt;$&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;red&lt;span class="w"&gt; &lt;/span&gt;default
+
+highlight&lt;span class="w"&gt; &lt;/span&gt;article&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"https?://[^ ]+"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;blue&lt;span class="w"&gt; &lt;/span&gt;default
+
+highlight&lt;span class="w"&gt; &lt;/span&gt;article&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"\\[image\\ [0-9]+\\]"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;green&lt;span class="w"&gt; &lt;/span&gt;default
+
+&lt;span class="c1"&gt;# Killfiles&lt;/span&gt;
+
+&lt;span class="c1"&gt;#ignore-article "\*" "title =~ \"V&amp;auml;der\""&lt;/span&gt;
+
+&lt;span class="c1"&gt;#ignore-article "\*" "title =~ \"Rugby\""&lt;/span&gt;
+
+&lt;span class="c1"&gt;#ignore-article "\*" "title =~ \"Uutiset\""&lt;/span&gt;
+
+&lt;span class="c1"&gt;#ignore-article "\*" "title =~ \"Kulturnyheterna\""&lt;/span&gt;
+
+&lt;span class="c1"&gt;#ignore-article "\*" "title =~ \"fr&amp;aring;n dagen\""&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="url-listesi"&gt;URL Listesi 🌐&lt;/h3&gt;
+&lt;p&gt;RSS besleme adresleri &lt;code&gt;~/.config/newsboat/urls&lt;/code&gt; dosyas&amp;inodot;na eklenir. &amp;Ouml;rnek:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Blog&lt;/span&gt;
+
+http://feeds.feedburner.com/kushellig
+https://sunaku.github.io/index.atom
+https://lukesmith.xyz/rss.xml
+https://feeds2.feedburner.com/9lesson
+https://tewarid.github.io/feed.xml
+https://sushankpokharel.com.np/feed/
+http://ciftklik.blogspot.com/feeds/posts/default
+http://www.emrebuyukkurkcu.com/feed/
+https://itsalljs.com/rss.xml
+http://www.kurumsaljava.com/feed/
+https://www.larashout.com/feed
+https://laraveldaily.com/feed/
+https://gokmengorgen.net/tr/index.xml
+http://oguzkaganeren.com.tr/index.php/feed/
+https://omercitak.com/feed/
+https://ogunal.com/feed/
+http://selcukcelik.org/feed/
+https://simpleit.rocks/index.xml
+https://twitteinfo.com/feed/
+http://feeds.feedburner.com/TammerSaleh
+
+&lt;span class="c1"&gt;# deactive&lt;/span&gt;
+
+&lt;span class="c1"&gt;# https://www.datafloyd.com/tr/feed/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="kullanisli-kisayollar_1"&gt;Kullan&amp;inodot;&amp;scedil;l&amp;inodot; K&amp;inodot;sayollar ⌨️&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;K&amp;inodot;sayol&lt;/th&gt;
+&lt;th&gt;&amp;Idot;&amp;scedil;levi&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;T&amp;uuml;m&amp;uuml;n&amp;uuml; okundu i&amp;scedil;aretle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;O&lt;/td&gt;
+&lt;td&gt;Web taray&amp;inodot;c&amp;inodot;da a&amp;ccedil;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;J/K&lt;/td&gt;
+&lt;td&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;/Yukar&amp;inodot; hareket et&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Q&lt;/td&gt;
+&lt;td&gt;&amp;Ccedil;&amp;inodot;k&amp;inodot;&amp;scedil; yap&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;R&lt;/td&gt;
+&lt;td&gt;RSS beslemelerini yenile&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id="youtube-rss"&gt;YouTube RSS 📺&lt;/h2&gt;
+&lt;p&gt;Abone oldu&amp;gbreve;unuz YouTube kanallar&amp;inodot;n&amp;inodot; Newsboat'a eklemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/subscription_manager" rel="noopener noreferrer" target="_blank"&gt;YouTube Abonelikler Sayfas&amp;inodot;&lt;/a&gt;'na gidin.&lt;/li&gt;
+&lt;li&gt;"RSS okuyuculara d&amp;inodot;&amp;scedil;a aktar" se&amp;ccedil;ene&amp;gbreve;iyle dosyan&amp;inodot;z&amp;inodot; indirin.&lt;/li&gt;
+&lt;li&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla RSS adreslerini i&amp;ccedil;eri aktar&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;youtubebotu&lt;span class="w"&gt; &lt;/span&gt;-i&lt;span class="w"&gt; &lt;/span&gt;subscription_manager
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="newsboatu-daha-verimli-kullanmak"&gt;Newsboat'u Daha Verimli Kullanmak 🎯&lt;/h2&gt;
+&lt;p&gt;Yo&amp;gbreve;un RSS kullan&amp;inodot;m&amp;inodot; i&amp;ccedil;in alias tan&amp;inodot;mlayabilirsiniz. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;haberbotu&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"newsboat -u ~/.config/newsboat/haberurls -C ~/.config/newsboat/config"&lt;/span&gt;
+&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;youtubebotu&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"newsboat -u ~/.config/newsboat/yturls -C ~/.config/newsboat/ytconfig"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu &amp;scedil;ekilde terminalde &lt;code&gt;haberbotu&lt;/code&gt; veya &lt;code&gt;youtubebotu&lt;/code&gt; komutlar&amp;inodot;n&amp;inodot; kullanarak do&amp;gbreve;rudan belirli RSS beslemelerine eri&amp;scedil;ebilirsiniz.&lt;/p&gt;
+&lt;p&gt;Daha fazla bilgi i&amp;ccedil;in &lt;a href="https://newsboat.org/releases/2.19/docs/newsboat.html" rel="noopener noreferrer" target="_blank"&gt;Newsboat Belgeleri&lt;/a&gt; sayfas&amp;inodot;na g&amp;ouml;z atabilirsiniz. 📖&lt;/p&gt;</content><category term="Terminal"/><category term="linux"/><category term="newsboat"/></entry><entry><title>Zsh İçerisinde Shopt Kullanmak</title><link href="https://yuceltoluyag.github.io/zsh-icerisinde-shopt-kullanmak/" rel="alternate"/><published>2020-01-28T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-01-28:/zsh-icerisinde-shopt-kullanmak/</id><summary type="html">&lt;p&gt;Zsh içerisinde shopt komutunun nasıl kullanılacağını ve bash uyumsuzluklarını çözme yöntemlerini adım adım açıklıyoruz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! 😊&lt;/p&gt;
+&lt;p&gt;Shopt komutu nedir? &lt;code&gt;shopt&lt;/code&gt; komutu, bash (kabuk) i&amp;ccedil;erisindeki baz&amp;inodot; eylemleri de&amp;gbreve;i&amp;scedil;tirmenize olanak tan&amp;inodot;r. Bir bak&amp;inodot;ma alias komutuna benzer i&amp;scedil;lev g&amp;ouml;r&amp;uuml;r. &amp;Scedil;imdi bir &amp;ouml;rnek &amp;uuml;zerinden a&amp;ccedil;&amp;inodot;klayal&amp;inodot;m.&lt;/p&gt;
+&lt;p&gt;Bir dizine &lt;code&gt;cd dizin&lt;/code&gt; komutuyla girerken, bashrc dosyas&amp;inodot;na ekleyece&amp;gbreve;iniz &lt;code&gt;shopt&lt;/code&gt; komutuyla direkt olarak &lt;strong&gt;dizin&lt;/strong&gt; ismini yaz&amp;inodot;p bu dizine girebilirsiniz. Tabi ki &lt;code&gt;shopt&lt;/code&gt; komutunun kullan&amp;inodot;m alanlar&amp;inodot; bunlarla s&amp;inodot;n&amp;inodot;rl&amp;inodot; de&amp;gbreve;ildir. Daha fazla bilgi i&amp;ccedil;in &lt;a href="https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html"&gt;Detaylar&lt;/a&gt; adresini ziyaret edebilirsiniz.&lt;/p&gt;
+&lt;h1 id="zsh-icerisinde-kullanim"&gt;Zsh &amp;Idot;&amp;ccedil;erisinde Kullan&amp;inodot;m&lt;/h1&gt;
+&lt;p&gt;Shopt, bash temelli &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot; i&amp;ccedil;in zsh bash'inde do&amp;gbreve;al olarak &lt;strong&gt;'shopt command not found'&lt;/strong&gt; hatas&amp;inodot; al&amp;inodot;rs&amp;inodot;n&amp;inodot;z. Bunun &amp;ccedil;&amp;ouml;z&amp;uuml;m&amp;uuml; ise olduk&amp;ccedil;a basittir.&lt;/p&gt;
+&lt;h2 id="cozum"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;ncelikle, terminalinizde a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu girin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;touch&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;shopt&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sonras&amp;inodot;nda olu&amp;scedil;turdu&amp;gbreve;unuz dosyay&amp;inodot; &amp;scedil;u kodla g&amp;uuml;ncelleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="nv"&gt;args&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;item&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$@&lt;/span&gt;
+&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="nv"&gt;args&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$args&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$item&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$args&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha sonra bu dosyay&amp;inodot; a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla sisteme ta&amp;scedil;&amp;inodot;y&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mv&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/usr/bin/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Son olarak &lt;code&gt;.zshrc&lt;/code&gt; dosyan&amp;inodot;za &amp;scedil;u komutu ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;shopt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'/usr/bin/shopt'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu kadar! Art&amp;inodot;k Zsh i&amp;ccedil;erisinde &lt;code&gt;shopt&lt;/code&gt; komutunu sorunsuz &amp;scedil;ekilde kullanabilirsiniz. Afiyet olsun! 😄&lt;/p&gt;
+&lt;h2 id="ek-bilgiler"&gt;Ek Bilgiler&lt;/h2&gt;
+&lt;p&gt;Yedek al&amp;inodot;rken, olu&amp;scedil;turdu&amp;gbreve;unuz script'leri unutmaman&amp;inodot;z olduk&amp;ccedil;a &amp;ouml;nemli. &amp;Ouml;zellikle sistem ta&amp;scedil;&amp;inodot;malar&amp;inodot; s&amp;inodot;ras&amp;inodot;nda ben bazen unutabiliyorum. 🤣&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er script'leri unutmamak istiyorsan&amp;inodot;z, &lt;a href="https://github.com/yuceltoluyag/otoscript" rel="noopener noreferrer" target="_blank"&gt;Oto Script Olu&amp;scedil;turucuyu&lt;/a&gt; kullanabilirsiniz.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;alias&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;shopt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'ScriptDizinim/shopt'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Yararlan&amp;inodot;lan Kaynak: &lt;a href="https://github.com/larz258/Zshopt" rel="noopener noreferrer" target="_blank"&gt;larz258&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki &lt;code&gt;shopt&lt;/code&gt; ayarlar&amp;inodot;n&amp;inodot; &lt;code&gt;.zshrc&lt;/code&gt; veya &lt;code&gt;.bashrc&lt;/code&gt; dosyan&amp;inodot;za ekleyerek test edebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;#bash opts&lt;/span&gt;
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;autocd
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;cdspell
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;cmdhist
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;histappend
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;expand_aliases
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;checkwinsize
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;globstar&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;nocaseglob
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;autocd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;dirspell&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null
+&lt;span class="nb"&gt;shopt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;cdspell&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://github.com/yuceltoluyag/WindowsTerminal/blob/main/WSL/.zshrc" rel="noopener noreferrer" target="_blank"&gt;Zsh Ayarlar&amp;inodot;m!&lt;/a&gt; +  &lt;a href="https://github.com/yuceltoluyag/otoscript" rel="noopener noreferrer" target="_blank"&gt;Script Olu&amp;scedil;turucu!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="shopt" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/shopt-xl.webp" srcset="/images/shopt-sm.webp 300w, /images/shopt-md.webp 500w, /images/shopt-xl.webp 800w, /images/shopt-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Terminal"/><category term="linux"/><category term="terminal"/><category term="zsh"/></entry><entry><title>Oh My ZSH Kurulumu (Tema ve Eklentiler Dahil)</title><link href="https://yuceltoluyag.github.io/oh-my-zsh-kurulumu-tema-ve-eklentiler/" rel="alternate"/><published>2018-12-07T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-12-07:/oh-my-zsh-kurulumu-tema-ve-eklentiler/</id><summary type="html">&lt;p&gt;Oh My ZSH kurulumu, tema ve eklenti ayarları hakkında detaylı rehber.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! Uzun s&amp;uuml;redir &lt;strong&gt;fish shell&lt;/strong&gt; kullan&amp;inodot;yordum ancak &lt;strong&gt;Oh My ZSH&lt;/strong&gt;'yi denemek istedim. Kurulum ve kullan&amp;inodot;m s&amp;inodot;ras&amp;inodot;nda baz&amp;inodot; hatalarla kar&amp;scedil;&amp;inodot;la&amp;scedil;t&amp;inodot;m ve maalesef yeterince a&amp;ccedil;&amp;inodot;klay&amp;inodot;c&amp;inodot; T&amp;uuml;rk&amp;ccedil;e kaynak bulamad&amp;inodot;m. Resmi kaynaklardan edindi&amp;gbreve;im bilgilerle temiz bir kurulum ger&amp;ccedil;ekle&amp;scedil;tirdim ve bu rehberi haz&amp;inodot;rlad&amp;inodot;m. 🚀&lt;/p&gt;
+&lt;h2 id="kurulum"&gt;Kurulum&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;zsh&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Debian tabanl&amp;inodot; sistemler i&amp;ccedil;in&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;zsh&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Arch tabanl&amp;inodot; sistemler i&amp;ccedil;in&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Scedil;imdi, resmi sitede yer alan &lt;strong&gt;curl&lt;/strong&gt; veya &lt;strong&gt;wget&lt;/strong&gt; y&amp;ouml;ntemlerinden birini kullanarak y&amp;uuml;klemeyi ger&amp;ccedil;ekle&amp;scedil;tirebiliriz. Ben &lt;strong&gt;curl&lt;/strong&gt; kulland&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sh&lt;span class="w"&gt; &lt;/span&gt;-c&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-fsSL&lt;span class="w"&gt; &lt;/span&gt;https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+chsh&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;/usr/bin/zsh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="bilgilendirme-i"&gt;Bilgilendirme ℹ️&lt;/h2&gt;
+&lt;p&gt;Bu i&amp;scedil;lem varsay&amp;inodot;lan kabu&amp;gbreve;unuzu &lt;strong&gt;ZSH&lt;/strong&gt; olarak de&amp;gbreve;i&amp;scedil;tirecektir. Kurulumdan sonra &amp;scedil;ifrenizi girin ve &lt;strong&gt;bilgisayar&amp;inodot; yeniden ba&amp;scedil;lat&amp;inodot;n&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er kabuk de&amp;gbreve;i&amp;scedil;miyorsa, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; izleyin:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;Ouml;nceden &lt;strong&gt;fish&lt;/strong&gt; veya ba&amp;scedil;ka bir terminal eklentisi kurduysan&amp;inodot;z, bu durum soruna neden olabilir.&lt;/li&gt;
+&lt;li&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komut ile &lt;code&gt;/etc/passwd&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenleyerek varsay&amp;inodot;lan kabu&amp;gbreve;u de&amp;gbreve;i&amp;scedil;tirebilirsiniz:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/passwd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Burada kullan&amp;inodot;c&amp;inodot; sat&amp;inodot;r&amp;inodot;n&amp;inodot;z&amp;inodot;n sonunda &lt;code&gt;/bin/zsh&lt;/code&gt; yazd&amp;inodot;&amp;gbreve;&amp;inodot;ndan emin olun. De&amp;gbreve;i&amp;scedil;iklikleri kaydedip &amp;ccedil;&amp;inodot;k&amp;inodot;n. 📌&lt;/p&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;Uyar&amp;inodot;:&lt;/strong&gt; Ge&amp;ccedil;i&amp;scedil; yaparken eski kabu&amp;gbreve;unuzu direkt silmeyin! &amp;Ouml;ncelikle a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla varsay&amp;inodot;lan kabu&amp;gbreve;unuzu de&amp;gbreve;i&amp;scedil;tirin, ard&amp;inodot;ndan eski kabu&amp;gbreve;unuzu kald&amp;inodot;rabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chsh&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;/bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="oh-my-zsh" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/oh_my_zsh-xl.webp" srcset="/images/oh_my_zsh-sm.webp 300w, /images/oh_my_zsh-md.webp 500w, /images/oh_my_zsh-xl.webp 800w, /images/oh_my_zsh-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="oh-my-zsh-tema-kurulumu"&gt;Oh My ZSH Tema Kurulumu 🎨&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nano&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyan&amp;inodot;n i&amp;ccedil;inde &lt;strong&gt;ZSH_THEME="robbyrussell"&lt;/strong&gt; sat&amp;inodot;r&amp;inodot;n&amp;inodot; bulun ve &lt;strong&gt;be&amp;gbreve;endi&amp;gbreve;iniz teman&amp;inodot;n ad&amp;inodot;n&amp;inodot;&lt;/strong&gt; girin. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;ZSH_THEME&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"agnoster"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes" rel="noopener noreferrer" target="_blank"&gt;ZSH Temalar&amp;inodot;&lt;/a&gt; aras&amp;inodot;ndan se&amp;ccedil;im yapabilirsiniz.&lt;/p&gt;
+&lt;h2 id="oh-my-zsh-eklenti-kurulumu"&gt;Oh My ZSH Eklenti Kurulumu 🔌&lt;/h2&gt;
+&lt;p&gt;Eklenti y&amp;uuml;klemek i&amp;ccedil;in yine &lt;code&gt;~/.zshrc&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;nano&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Varsay&amp;inodot;lan olarak &lt;strong&gt;plugins=(git)&lt;/strong&gt; &amp;scedil;eklinde gelen sat&amp;inodot;r&amp;inodot; eklentilerle g&amp;uuml;ncelleyin. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;plugins&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;extract&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Burada &lt;code&gt;extract&lt;/code&gt; eklentisini eklemi&amp;scedil; olduk. Kaydedip &amp;ccedil;&amp;inodot;kt&amp;inodot;ktan sonra a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak de&amp;gbreve;i&amp;scedil;iklikleri etkinle&amp;scedil;tirin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/.zshrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🎯 Alternatif olarak terminali kapat&amp;inodot;p a&amp;ccedil;abilirsiniz.&lt;/p&gt;
+&lt;h2 id="sonuc"&gt;Sonu&amp;ccedil; ✅&lt;/h2&gt;
+&lt;p&gt;Oh My ZSH'nin kurulumu, tema ve eklenti ayarlar&amp;inodot;n&amp;inodot; ba&amp;scedil;ar&amp;inodot;l&amp;inodot; bir &amp;scedil;ekilde tamamlad&amp;inodot;k. Akl&amp;inodot;n&amp;inodot;za tak&amp;inodot;lan sorular i&amp;ccedil;in yorum b&amp;inodot;rakabilirsiniz. Keyifli kullan&amp;inodot;mlar! 🤗&lt;/p&gt;</content><category term="Terminal"/><category term="linux"/><category term="terminal"/><category term="zsh"/></entry><entry><title>Terminator, Git, Curl ve Fish Kurulumu (Terminali Özelleştirme)</title><link href="https://yuceltoluyag.github.io/terminator-git-curl-fish-kurulumu/" rel="alternate"/><published>2018-12-01T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-12-01:/terminator-git-curl-fish-kurulumu/</id><summary type="html">&lt;p&gt;Linux terminalinizi daha işlevsel ve estetik hale getirmek için Terminator, Git, Curl ve Fish kurulumu ve özelleştirme rehberi.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba! Linux&amp;rsquo;ta en &amp;ccedil;ok vakit ge&amp;ccedil;irdi&amp;gbreve;imiz alanlardan biri terminaldir. Peki terminalimizi nas&amp;inodot;l daha i&amp;scedil;levsel ve estetik hale getirebiliriz? &amp;Idot;&amp;scedil;te bu rehber tam size g&amp;ouml;re! 💪🚀&lt;/p&gt;
+&lt;p&gt;Terminali daha verimli ve keyifli hale getirmek i&amp;ccedil;in &lt;strong&gt;Terminator&lt;/strong&gt; ve &lt;strong&gt;Fish Shell&lt;/strong&gt; kombinasyonunu kullanaca&amp;gbreve;&amp;inodot;z. Bu sayede:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Terminalinizi yatay ve dikey olarak b&amp;ouml;lebilirsiniz.&lt;/li&gt;
+&lt;li&gt;Kod renklendirme ve otomatik tamamlama gibi geli&amp;scedil;mi&amp;scedil; &amp;ouml;zelliklere sahip olabilirsiniz.&lt;/li&gt;
+&lt;li&gt;&amp;Ouml;nceden kullan&amp;inodot;lan komutlar&amp;inodot; daha kolay g&amp;ouml;r&amp;uuml;nt&amp;uuml;leyebilirsiniz.&lt;/li&gt;
+&lt;li&gt;Tema ve eklentilerle terminalinize yepyeni bir hava katabilirsiniz. 🎨&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="kurulum-adimlari"&gt;🛠 Kurulum Ad&amp;inodot;mlar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;ncelikle, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; kullanarak gerekli ara&amp;ccedil;lar&amp;inodot; y&amp;uuml;kleyelim:&lt;/p&gt;
+&lt;h3 id="terminator-kurulumu"&gt;Terminator Kurulumu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;terminator
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Terminator&lt;/strong&gt;, birden fazla terminal penceresini ayn&amp;inodot; ekranda kullanman&amp;inodot;za olanak tan&amp;inodot;r. &amp;Ouml;zellikle geli&amp;scedil;tiriciler i&amp;ccedil;in b&amp;uuml;y&amp;uuml;k bir kolayl&amp;inodot;k sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;h3 id="fish-shell-kurulumu"&gt;Fish Shell Kurulumu&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;fish
+fish
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Fish&amp;rsquo;e ge&amp;ccedil;ti&amp;gbreve;inizde, simgenin de&amp;gbreve;i&amp;scedil;ti&amp;gbreve;ini g&amp;ouml;rebilirsiniz. Varsay&amp;inodot;lan shell olarak Fish'i ayarlamak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chsh&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;/usr/bin/fish
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu i&amp;scedil;lemden sonra &amp;ccedil;&amp;inodot;k&amp;inodot;&amp;scedil; yap&amp;inodot;p tekrar giri&amp;scedil; yapt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda Fish varsay&amp;inodot;lan shell olarak kullan&amp;inodot;lacakt&amp;inodot;r. 🐟&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="terminal-temalari_1"&gt;🎨 Terminal Temalar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;G&amp;ouml;rselli&amp;gbreve;e &amp;ouml;nem veriyorsan&amp;inodot;z, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; takip ederek terminalinizin temas&amp;inodot;n&amp;inodot; de&amp;gbreve;i&amp;scedil;tirebilirsiniz.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Idot;term2 Color Schemes&lt;/strong&gt; sitesinden &lt;a href="http://iterm2colorschemes.com/" rel="noopener noreferrer" target="_blank"&gt;be&amp;gbreve;endi&amp;gbreve;iniz bir temay&amp;inodot; se&amp;ccedil;in&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Terminator yap&amp;inodot;land&amp;inodot;rma dosyas&amp;inodot;na eri&amp;scedil;mek i&amp;ccedil;in &amp;scedil;u komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;gedit&lt;span class="w"&gt; &lt;/span&gt;~/.config/terminator/config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Se&amp;ccedil;ti&amp;gbreve;iniz tema kodlar&amp;inodot;n&amp;inodot; &lt;strong&gt;profile&lt;/strong&gt; k&amp;inodot;sm&amp;inodot;n&amp;inodot;n alt&amp;inodot;na yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n.&lt;/li&gt;
+&lt;li&gt;Terminator'u yeniden ba&amp;scedil;lat&amp;inodot;n.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="oh-my-fish-ile-gelismis-ozellestirme"&gt;🎩 Oh My Fish ile Geli&amp;scedil;mi&amp;scedil; &amp;Ouml;zelle&amp;scedil;tirme&lt;/h2&gt;
+&lt;p&gt;Fish&amp;rsquo;i daha da &amp;ouml;zelle&amp;scedil;tirmek i&amp;ccedil;in &lt;strong&gt;Oh My Fish&lt;/strong&gt; kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-L&lt;span class="w"&gt; &lt;/span&gt;https://get.oh-my.fish&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;fish
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="tema-secimi"&gt;🎭 Tema Se&amp;ccedil;imi&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md" rel="noopener noreferrer" target="_blank"&gt;Oh My Fish temalar&amp;inodot;na&lt;/a&gt; g&amp;ouml;z atarak be&amp;gbreve;endi&amp;gbreve;iniz bir temay&amp;inodot; y&amp;uuml;kleyebilirsiniz. &amp;Ouml;rne&amp;gbreve;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;omf&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;bobthefish
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="eklenti-yukleme"&gt;🛠 Eklenti Y&amp;uuml;kleme&lt;/h3&gt;
+&lt;p&gt;Oh My Fish, &amp;ccedil;e&amp;scedil;itli eklentiler sunmaktad&amp;inodot;r. Be&amp;gbreve;endi&amp;gbreve;iniz bir eklentiyi y&amp;uuml;klemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;omf&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;eklenti-ad&amp;inodot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href="https://github.com/oh-my-fish" rel="noopener noreferrer" target="_blank"&gt;Eklentileri ke&amp;scedil;fetmek i&amp;ccedil;in buraya g&amp;ouml;z atabilirsiniz&lt;/a&gt;. 🤩&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="video-anlatim_1"&gt;📺 Video Anlat&amp;inodot;m&lt;/h2&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="h78f3V4p09E"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="terminator-git-curl-fish-kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/terminator-git-curl-fish-kurulumu-xl.webp" srcset="/images/terminator-git-curl-fish-kurulumu-sm.webp 300w, /images/terminator-git-curl-fish-kurulumu-md.webp 500w, /images/terminator-git-curl-fish-kurulumu-xl.webp 800w, /images/terminator-git-curl-fish-kurulumu-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Terminal"/><category term="terminal"/><category term="linux"/><category term="fish"/><category term="git"/><category term="curl"/></entry></feed>

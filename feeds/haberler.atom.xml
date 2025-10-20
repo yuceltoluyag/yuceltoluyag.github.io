@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Haberler</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/haberler.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-28T10:00:00+03:00</updated><entry><title>Arch Linux'ta Süren DDoS Saldırısı ve Hızlı Çözüm Yolları</title><link href="https://yuceltoluyag.github.io/arch-linux-ddos-hizmet-kesintisi/" rel="alternate"/><published>2025-08-28T10:00:00+03:00</published><updated>2025-08-28T10:00:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-08-28:/arch-linux-ddos-hizmet-kesintisi/</id><summary type="html">&lt;p&gt;Arch Linux, 12 Ağustos’tan bu yana devam eden bir DDoS saldırısıyla boğuşuyor. Ana site, AUR ve forumlara erişimde sorunlar yaşanıyor. Kullanıcılar için alternatif erişim yolları ve yansılar bu yazıda.&lt;/p&gt;</summary><content type="html">&lt;hr/&gt;
+&lt;h3 id="1-giris-bolumu"&gt;1. Giri&amp;scedil; B&amp;ouml;l&amp;uuml;m&amp;uuml;&lt;/h3&gt;
+&lt;p&gt;Arch Linux, 12 A&amp;gbreve;ustos 2025 tarihinden itibaren devam eden bir &lt;strong&gt;Da&amp;gbreve;&amp;inodot;t&amp;inodot;lm&amp;inodot;&amp;scedil; Hizmet Engelleme (DDoS)&lt;/strong&gt; sald&amp;inodot;r&amp;inodot;s&amp;inodot;yla kar&amp;scedil;&amp;inodot; kar&amp;scedil;&amp;inodot;ya. Bu sald&amp;inodot;r&amp;inodot; sonucunda Arch Linux&amp;rsquo;un ana web sitesi, Arch User Repository (AUR) ve forumlar&amp;inodot;nda ciddi eri&amp;scedil;im problemleri ya&amp;scedil;an&amp;inodot;yor.  &lt;/p&gt;
+&lt;p&gt;Bu blog yaz&amp;inodot;s&amp;inodot;, T&amp;uuml;rk Arch kullan&amp;inodot;c&amp;inodot;lar&amp;inodot;na hem durumu &amp;ouml;zetlemeyi hem de kesintiye kar&amp;scedil;&amp;inodot; alternatif &amp;ccedil;&amp;ouml;z&amp;uuml;mler sunmay&amp;inodot; ama&amp;ccedil;l&amp;inodot;yor.  &lt;/p&gt;
+&lt;blockquote class="reddit-embed-bq" data-embed-height="240" data-embed-theme="dark" style="height:316px"&gt;&lt;a href="https://www.reddit.com/r/Kanunsuzlar/comments/1mo1rws/arch_linux_depolar%c4%b1na_t%c3%bcrkiye_saatiyle_sabah_800/"&gt;Arch linux depolar&amp;inodot;na T&amp;uuml;rkiye saatiyle sabah 8:00 dan itibaren ula&amp;scedil;&amp;inodot;lam&amp;inodot;yor. Endi&amp;scedil;e etmeyin d&amp;uuml;zelicektir.&lt;/a&gt;&lt;br/&gt; by&lt;a href="https://www.reddit.com/user/dolorisback/"&gt;u/dolorisback&lt;/a&gt; in&lt;a href="https://www.reddit.com/r/Kanunsuzlar/"&gt;Kanunsuzlar&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async="" charset="UTF-8" src="https://embed.reddit.com/widgets.js"&gt;&lt;/script&gt;
+&lt;hr/&gt;
+&lt;h3 id="2-ana-icerik"&gt;2. Ana &amp;Idot;&amp;ccedil;erik&lt;/h3&gt;
+&lt;h4&gt;2.1 Sald&amp;inodot;r&amp;inodot;n&amp;inodot;n Kapsam&amp;inodot; ve Proje Ekibi Ne Yap&amp;inodot;yor?&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sald&amp;inodot;r&amp;inodot; Detay&amp;inodot;&lt;/strong&gt;: 12 A&amp;gbreve;ustos&amp;rsquo;tan beri devam eden DDoS sald&amp;inodot;r&amp;inodot;s&amp;inodot;, Arch Linux&amp;rsquo;un ana web sitesi, AUR ve forumlar&amp;inodot;na ciddi &amp;scedil;ekilde zarar veriyor. (&lt;a href="https://www.securityweek.com/arch-linux-project-responding-to-week-long-ddos-attack/?utm_source=yuceltoluyag.github.io" title="Arch Linux Project Responding to Week-Long DDoS Attack"&gt;SecurityWeek&lt;/a&gt;, &lt;a href="https://www.tomshardware.com/software/linux/arch-linux-continues-to-feel-the-force-of-a-ddos-attack-after-two-brutal-weeks-attackers-yet-to-be-identified-as-project-struggles-to-restore-full-service?utm_source=yuceltoluyag.github.io" title="Arch Linux continues to feel the force of a DDoS attack after two brutal weeks - attackers yet to be identified as project struggles to restore full service"&gt;Tom's Hardware&lt;/a&gt;, &lt;a href="https://archlinux.org/news/recent-services-outages/?utm_source=yuceltoluyag.github.io" title="News: Recent service outages - Arch Linux"&gt;Arch Linux&lt;/a&gt;)  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Yan&amp;inodot;t ve Strateji&lt;/strong&gt;: Geli&amp;scedil;tiriciler, bar&amp;inodot;nd&amp;inodot;rma sa&amp;gbreve;lay&amp;inodot;c&amp;inodot;s&amp;inodot;yla yak&amp;inodot;n &amp;ccedil;al&amp;inodot;&amp;scedil;ma i&amp;ccedil;erisindeler. Ayr&amp;inodot;ca uzun vadeli &amp;ccedil;&amp;ouml;z&amp;uuml;mler i&amp;ccedil;in DDoS korumas&amp;inodot; sa&amp;gbreve;layabilecek hizmetleri de&amp;gbreve;erlendiriyorlar.  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;G&amp;uuml;ncelleme Kayna&amp;gbreve;&amp;inodot;&lt;/strong&gt;: Proje, d&amp;uuml;zenli bilgi payla&amp;scedil;&amp;inodot;m&amp;inodot; i&amp;ccedil;in hizmet durumu sayfas&amp;inodot;n&amp;inodot; aktif tutmaya ba&amp;scedil;lad&amp;inodot;.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h4&gt;2.2 Kullan&amp;inodot;c&amp;inodot;lar &amp;Idot;&amp;ccedil;in Alternatif Eri&amp;scedil;im Y&amp;ouml;ntemleri&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Web Sitesi Eri&amp;scedil;imi&lt;/strong&gt;:  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;reflector&lt;/code&gt; gibi ara&amp;ccedil;lar&amp;inodot;n kulland&amp;inodot;&amp;gbreve;&amp;inodot; mirror list endpoint'ine eri&amp;scedil;im kesildiyse, &lt;code&gt;pacman-mirrorlist&lt;/code&gt; paketinde yer alan yans&amp;inodot;lar kullan&amp;inodot;lmal&amp;inodot;.  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;Reflector kullanman&amp;inodot;z&amp;inodot; tavsiye etmiyorum. Bunun yerine &lt;a href="/ghostmirror-arch-linux-kullanimi/"&gt;Ghost Mirror Kullan&amp;inodot;n&lt;/a&gt; &lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="reddit-embed-bq" data-embed-height="548" data-embed-theme="dark"&gt;&lt;a href="https://www.reddit.com/r/Kanunsuzlar/comments/1mxfde9/comment/na8fh8q/"&gt;Comment&lt;/a&gt;&lt;br/&gt; by&lt;a href="https://www.reddit.com/user/dolorisback/"&gt;u/dolorisback&lt;/a&gt; from discussion&lt;a href="https://www.reddit.com/r/Kanunsuzlar/comments/1mxfde9/son_hizmet_kesintileri_aur_arch_linux/"&gt;&lt;/a&gt;&lt;br/&gt; in&lt;a href="https://www.reddit.com/r/Kanunsuzlar/"&gt;Kanunsuzlar&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async="" charset="UTF-8" src="https://embed.reddit.com/widgets.js"&gt;&lt;/script&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Kurulum ISO&amp;rsquo;lar&amp;inodot; alternatif yans&amp;inodot;lardan indirilebilir. &amp;Idot;ndirmeden &amp;ouml;nce b&amp;uuml;t&amp;uuml;nl&amp;uuml;k ve imza do&amp;gbreve;rulamas&amp;inodot; yap&amp;inodot;lmas&amp;inodot; &amp;ouml;nemlidir (&amp;ouml;rn. &lt;code&gt;0x54449A5C&lt;/code&gt;).  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;AUR Eri&amp;scedil;imi&lt;/strong&gt;:  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;AUR paketlerine eri&amp;scedil;im m&amp;uuml;mk&amp;uuml;n olmad&amp;inodot;&amp;gbreve;&amp;inodot;nda, GitHub&amp;rsquo;daki resmi AUR yans&amp;inodot; deposundan paketler manuel olarak klonlanabilir:  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;--branch&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package_name&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;--single-branch&lt;span class="w"&gt; &lt;/span&gt;https://github.com/archlinux/aur.git&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;package_name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Arch Linux DDoS" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-ddos-hizmet-kesintisi-xl.webp" srcset="/images/arch-linux-ddos-hizmet-kesintisi-sm.webp 300w, /images/arch-linux-ddos-hizmet-kesintisi-md.webp 500w, /images/arch-linux-ddos-hizmet-kesintisi-xl.webp 800w, /images/arch-linux-ddos-hizmet-kesintisi-xl.webp 1200w"/&gt; &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Paketleri klonlad&amp;inodot;ktan sonra &lt;code&gt;makepkg -si&lt;/code&gt; komutuyla kurulumu ger&amp;ccedil;ekle&amp;scedil;tirebilirsiniz.  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Wiki Eri&amp;scedil;imi&lt;/strong&gt;:  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Wiki sayfalar&amp;inodot;na ula&amp;scedil;amayanlar i&amp;ccedil;in &lt;code&gt;arch-wiki-docs&lt;/code&gt; ve &lt;code&gt;arch-wiki-lite&lt;/code&gt; gibi yans&amp;inodot;lar kullan&amp;inodot;labilir.  &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h4&gt;2.3 Teknik Detaylar ve Gizlilik Politikas&amp;inodot;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;Idot;lk ba&amp;gbreve;lant&amp;inodot; talepleri s&amp;inodot;ras&amp;inodot;nda TCP SYN kimlik do&amp;gbreve;rulamas&amp;inodot; nedeniyle ba&amp;gbreve;lant&amp;inodot;lar ilk ba&amp;scedil;ta reddediliyor olabilir; ancak denemeye devam etmek genellikle i&amp;scedil;e yar&amp;inodot;yor.  &lt;/li&gt;
+&lt;li&gt;Sald&amp;inodot;r&amp;inodot;n&amp;inodot;n teknik ayr&amp;inodot;nt&amp;inodot;lar&amp;inodot; ve kayna&amp;gbreve;&amp;inodot;yla ilgili bilgiler, sald&amp;inodot;r&amp;inodot; devam etti&amp;gbreve;i s&amp;uuml;rece gizli tutuluyor.  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h3 id="3-sonuc-ve-ozet"&gt;3. Sonu&amp;ccedil; ve &amp;Ouml;zet&lt;/h3&gt;
+&lt;p&gt;Arch Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; olarak &amp;scedil;u anda kar&amp;scedil;&amp;inodot;la&amp;scedil;&amp;inodot;lan durum can s&amp;inodot;k&amp;inodot;c&amp;inodot; olsa da, geli&amp;scedil;tirici ekibin aktif m&amp;uuml;dahalesi ve sunulan ge&amp;ccedil;ici &amp;ccedil;&amp;ouml;z&amp;uuml;mler sayesinde temel ihtiya&amp;ccedil;lar&amp;inodot;n&amp;inodot;z&amp;inodot; kar&amp;scedil;&amp;inodot;layabilirsiniz.  &lt;/p&gt;
+&lt;p&gt;AUR eri&amp;scedil;imi i&amp;ccedil;in GitHub klonlar&amp;inodot;, ISO ve paketler i&amp;ccedil;in yans&amp;inodot;lar h&amp;acirc;l&amp;acirc; eri&amp;scedil;ilebilir durumda. Ayr&amp;inodot;ca b&amp;uuml;t&amp;uuml;n i&amp;scedil;lemler s&amp;inodot;ras&amp;inodot;nda g&amp;uuml;venlik imzas&amp;inodot; do&amp;gbreve;rulamas&amp;inodot;n&amp;inodot; ihmal etmeyin.  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Archlinux sunucu durumlar&amp;inodot;n&amp;inodot; &lt;a href="https://status.archlinux.org/"&gt;buradan&lt;/a&gt; takip edebilirsiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;</content><category term="Haberler"/><category term="Arch Linux"/><category term="DDoS"/><category term="AUR"/><category term="hizmet kesintisi"/><category term="yansılar"/><category term="Arch Haberleri"/></entry><entry><title>Nesine.com: Veraset ve İntikal Vergisi ne anlama geliyor?</title><link href="https://yuceltoluyag.github.io/2025-veraset-intikal-vergisi-bilgilendirme/" rel="alternate"/><published>2025-05-17T10:30:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-17:/2025-veraset-intikal-vergisi-bilgilendirme/</id><summary type="html">&lt;p&gt;1 Ocak 2025 itibarıyla Veraset ve İntikal Vergisi istisna tutarı yükseltildi. Yeni sınır ne kadar? Kimleri etkiliyor? Detaylar yazımızda.&lt;/p&gt;</summary><content type="html">&lt;h2 id="2025-yili-veraset-ve-intikal-vergisi-hakkinda-bilgilendirme"&gt;2025 Y&amp;inodot;l&amp;inodot; Veraset ve &amp;Idot;ntikal Vergisi Hakk&amp;inodot;nda Bilgilendirme 📈&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;2025 y&amp;inodot;l&amp;inodot; Veraset ve &amp;Idot;ntikal Vergisi&lt;/strong&gt;, . 🔄 ikramiye ve benzeri kazan&amp;ccedil;lar &amp;uuml;zerinden al&amp;inodot;nan verginin nas&amp;inodot;l uygulanaca&amp;gbreve;&amp;inodot;n&amp;inodot; belirleyen &amp;ouml;nemli bir d&amp;uuml;zenlemedir. Bu y&amp;inodot;l itibar&amp;inodot;yla yap&amp;inodot;lan de&amp;gbreve;i&amp;scedil;iklik, &amp;ouml;zellikle &amp;scedil;ans oyunlar&amp;inodot; ve &amp;ouml;d&amp;uuml;l kazan&amp;ccedil;lar&amp;inodot; a&amp;ccedil;&amp;inodot;s&amp;inodot;ndan bir&amp;ccedil;ok vatanda&amp;scedil;&amp;inodot; do&amp;gbreve;rudan ilgilendirmektedir.&lt;/p&gt;
+&lt;p&gt;Yeni d&amp;uuml;zenleme ile birlikte vergi muafiyet s&amp;inodot;n&amp;inodot;r&amp;inodot;nda kayda de&amp;gbreve;er bir art&amp;inodot;&amp;scedil; yap&amp;inodot;lm&amp;inodot;&amp;scedil; ve ikramiyelerden al&amp;inodot;nan verginin kapsam&amp;inodot; yeniden tan&amp;inodot;mlanm&amp;inodot;&amp;scedil;t&amp;inodot;r. Peki bu de&amp;gbreve;i&amp;scedil;iklik kimleri nas&amp;inodot;l etkiliyor? Detaylara birlikte g&amp;ouml;z atal&amp;inodot;m.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="degisen-vergi-istisnasi-yeni-sinir-ne-kadar"&gt;De&amp;gbreve;i&amp;scedil;en Vergi &amp;Idot;stisnas&amp;inodot;: Yeni S&amp;inodot;n&amp;inodot;r Ne Kadar?  💡&lt;/h2&gt;
+&lt;p&gt;2025 y&amp;inodot;l&amp;inodot; itibar&amp;inodot;yla, Veraset ve &amp;Idot;ntikal Vergisi kapsam&amp;inodot;na giren &lt;strong&gt;ikramiye gelirleri&lt;/strong&gt; i&amp;ccedil;in uygulanan &lt;strong&gt;istisna tutar&amp;inodot;&lt;/strong&gt; art&amp;inodot;r&amp;inodot;ld&amp;inodot;.&lt;/p&gt;
+&lt;p&gt;📌 Eski istisna tutar&amp;inodot;: &lt;strong&gt;37.059 TL&lt;/strong&gt;
+📌 Yeni istisna tutar&amp;inodot; (01.01.2025 itibar&amp;inodot;yla): &lt;strong&gt;53.339 TL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Bu de&amp;gbreve;i&amp;scedil;iklik, &amp;ouml;zellikle piyango, &amp;ccedil;ekili&amp;scedil;, yar&amp;inodot;&amp;scedil;ma ve di&amp;gbreve;er &amp;ouml;d&amp;uuml;l t&amp;uuml;rlerinden elde edilen kazan&amp;ccedil;larda vergi muafiyet s&amp;inodot;n&amp;inodot;r&amp;inodot;n&amp;inodot; geni&amp;scedil;letmi&amp;scedil; durumda. Yani art&amp;inodot;k daha y&amp;uuml;ksek miktardaki ikramiyeler vergiden muaf olacak.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Y&amp;inodot;l&lt;/th&gt;
+&lt;th&gt;&amp;Idot;stisna Tutar&amp;inodot;&lt;/th&gt;
+&lt;th&gt;Vergi Oran&amp;inodot;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2024&lt;/td&gt;
+&lt;td&gt;37.059 TL&lt;/td&gt;
+&lt;td&gt;%20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2025&lt;/td&gt;
+&lt;td&gt;53.339 TL&lt;/td&gt;
+&lt;td&gt;%20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h3 id="istisnayi-asan-tutarlar-nasil-vergilendiriliyor"&gt;&amp;Idot;stisnay&amp;inodot; A&amp;scedil;an Tutarlar Nas&amp;inodot;l Vergilendiriliyor?  🧮&lt;/h3&gt;
+&lt;p&gt;Yeni d&amp;uuml;zenlemeye g&amp;ouml;re, &lt;strong&gt;53.339 TL&amp;rsquo;yi a&amp;scedil;an&lt;/strong&gt; t&amp;uuml;m ikramiyeler i&amp;ccedil;in &lt;strong&gt;%20 oran&amp;inodot;nda vergi kesintisi&lt;/strong&gt; uygulan&amp;inodot;yor. Bu vergi, do&amp;gbreve;rudan br&amp;uuml;t kazan&amp;ccedil; &amp;uuml;zerinden hesaplanmakta ve kesinti sonras&amp;inodot; kalan tutar ki&amp;scedil;iye &amp;ouml;denmektedir.&lt;/p&gt;
+&lt;h4&gt;&amp;Ouml;rnek Nesine.com'daki Hesaplama:&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Kazan&amp;inodot;lan ikramiye:&lt;/strong&gt; 70.000 TL 💵&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Idot;stisna tutar&amp;inodot;:&lt;/strong&gt; 53.339 TL  ✅&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Vergilendirilecek k&amp;inodot;s&amp;inodot;m:&lt;/strong&gt; 70.000 - 53.339 = 16.661 TL 🧾&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kesilecek vergi (%20):&lt;/strong&gt; 3.332,20 TL L 📉&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Net &amp;ouml;deme:&lt;/strong&gt; 66.667,80 TL 💰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu &amp;ouml;rnekle birlikte g&amp;ouml;r&amp;uuml;ld&amp;uuml;&amp;gbreve;&amp;uuml; gibi, vergi yaln&amp;inodot;zca belirlenen s&amp;inodot;n&amp;inodot;r&amp;inodot; a&amp;scedil;an k&amp;inodot;s&amp;inodot;m &amp;uuml;zerinden al&amp;inodot;nmakta; b&amp;ouml;ylece k&amp;uuml;&amp;ccedil;&amp;uuml;k kazan&amp;ccedil; sahipleri vergiden etkilenmemektedir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="kimler-etkileniyor"&gt;Kimler Etkileniyor?  🎯&lt;/h3&gt;
+&lt;p&gt;Bu d&amp;uuml;zenleme, &amp;ouml;zellikle a&amp;scedil;a&amp;gbreve;&amp;inodot;daki durumlar i&amp;ccedil;in ge&amp;ccedil;erlidir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Milli Piyango ve benzeri &amp;scedil;ans oyunlar&amp;inodot;ndan ikramiye kazananlar  🎰&lt;/li&gt;
+&lt;li&gt;TV program&amp;inodot;, yar&amp;inodot;&amp;scedil;ma veya sosyal medya &amp;ccedil;ekili&amp;scedil;lerinden para &amp;ouml;d&amp;uuml;l&amp;uuml; kazananlar  📺&lt;/li&gt;
+&lt;li&gt;Dernek, vak&amp;inodot;f ya da kurulu&amp;scedil;lardan para &amp;ouml;d&amp;uuml;l&amp;uuml; alan bireyler 🏛️&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yani bu vergi, yaln&amp;inodot;zca miras veya ba&amp;gbreve;&amp;inodot;&amp;scedil; de&amp;gbreve;il; &lt;strong&gt;kar&amp;scedil;&amp;inodot;l&amp;inodot;ks&amp;inodot;z kazan&amp;inodot;lm&amp;inodot;&amp;scedil; para gelirleri&lt;/strong&gt; i&amp;ccedil;in de ge&amp;ccedil;erli hale gelmi&amp;scedil;tir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="neden-onemli-bu-degisiklik-ne-anlama-geliyor_1"&gt;Neden &amp;Ouml;nemli? Bu De&amp;gbreve;i&amp;scedil;iklik Ne Anlama Geliyor? ? 🤔&lt;/h2&gt;
+&lt;p&gt;Bu de&amp;gbreve;i&amp;scedil;iklik, hem devletin vergi gelirlerini art&amp;inodot;rmay&amp;inodot; hem de daha d&amp;uuml;&amp;scedil;&amp;uuml;k tutarlarda kazanan bireyleri korumay&amp;inodot; hedefliyor. &amp;Idot;stisna tutar&amp;inodot;n&amp;inodot;n art&amp;inodot;r&amp;inodot;lmas&amp;inodot;, &lt;strong&gt;adil vergi uygulamas&amp;inodot;&lt;/strong&gt; a&amp;ccedil;&amp;inodot;s&amp;inodot;ndan olumlu bir geli&amp;scedil;me olarak de&amp;gbreve;erlendiriliyor.&lt;/p&gt;
+&lt;p&gt;Ayn&amp;inodot; zamanda y&amp;uuml;ksek ikramiyelerin daha &amp;scedil;effaf ve d&amp;uuml;zenli vergilendirilmesi, kay&amp;inodot;t d&amp;inodot;&amp;scedil;&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot;n &amp;ouml;n&amp;uuml;ne ge&amp;ccedil;ilmesine katk&amp;inodot; sa&amp;gbreve;layacakt&amp;inodot;r.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="dikkat-edilmesi-gereken-noktalar"&gt;Dikkat Edilmesi Gereken Noktalar ⚠️&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;Idot;kramiye kazan&amp;inodot;lmas&amp;inodot; durumunda, &amp;ouml;deme yap&amp;inodot;lmadan &amp;ouml;nce vergi kesintisi yap&amp;inodot;l&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;&amp;Idot;stisna s&amp;inodot;n&amp;inodot;r&amp;inodot; y&amp;inodot;ll&amp;inodot;k olarak g&amp;uuml;ncellenebilir, dolay&amp;inodot;s&amp;inodot;yla her y&amp;inodot;l g&amp;uuml;ncel rakamlar&amp;inodot; kontrol etmek &amp;ouml;nemlidir.&lt;/li&gt;
+&lt;li&gt;Bu vergi kesintisi, kazanan ki&amp;scedil;i i&amp;ccedil;in nihai vergilendirme olup, ek bir vergi &amp;ouml;deme y&amp;uuml;k&amp;uuml;ml&amp;uuml;l&amp;uuml;&amp;gbreve;&amp;uuml; do&amp;gbreve;urmaz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-seffaf-ve-guncel-vergi-sistemi-herkes-icin-faydali_1"&gt;Sonu&amp;ccedil;: &amp;Scedil;effaf ve G&amp;uuml;ncel Vergi Sistemi Herkes &amp;Idot;&amp;ccedil;in Faydal&amp;inodot; ✨&lt;/h2&gt;
+&lt;p&gt;2025 y&amp;inodot;l&amp;inodot;yla birlikte y&amp;uuml;r&amp;uuml;rl&amp;uuml;&amp;gbreve;e giren Veraset ve &amp;Idot;ntikal Vergisi istisna de&amp;gbreve;i&amp;scedil;ikli&amp;gbreve;i, &amp;ouml;zellikle &amp;ouml;d&amp;uuml;l ve ikramiye kazanan bireyler i&amp;ccedil;in olumlu bir geli&amp;scedil;medir. &lt;strong&gt;53.339 TL&amp;rsquo;ye kadar olan kazan&amp;ccedil;lar vergiden muaf tutulmakta&lt;/strong&gt;, a&amp;scedil;an k&amp;inodot;s&amp;inodot;mlar ise adil bir &amp;scedil;ekilde vergilendirilmektedir.&lt;/p&gt;
+&lt;p&gt;Bu d&amp;uuml;zenlemeyi anlamak ve ikramiye gelirlerini do&amp;gbreve;ru &amp;scedil;ekilde planlamak, hem bireylerin hem de kurumlar&amp;inodot;n yarar&amp;inodot;nad&amp;inodot;r. Yeni y&amp;inodot;lda bu g&amp;uuml;ncellemeleri dikkate alarak hareket etmek, mali s&amp;uuml;rprizlerin &amp;ouml;n&amp;uuml;ne ge&amp;ccedil;menizi sa&amp;gbreve;layacakt&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;📌 Unutmay&amp;inodot;n: Vergi bilinci, kazanc&amp;inodot;n&amp;inodot;z&amp;inodot; koruman&amp;inodot;n ilk ad&amp;inodot;m&amp;inodot;d&amp;inodot;r.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="sikca-sorulan-sorular"&gt;S&amp;inodot;k&amp;ccedil;a Sorulan Sorular ❓&lt;/h2&gt;
+&lt;h3 id="veraset-ve-intikal-vergisi-nedir"&gt;Veraset ve &amp;Idot;ntikal Vergisi nedir? 📜&lt;/h3&gt;
+&lt;p&gt;Veraset ve &amp;Idot;ntikal Vergisi, miras yoluyla veya kar&amp;scedil;&amp;inodot;l&amp;inodot;ks&amp;inodot;z olarak elde edilen kazan&amp;ccedil;lar &amp;uuml;zerinden al&amp;inodot;nan vergidir.&lt;/p&gt;
+&lt;h3 id="2025-yilinda-ikramiye-vergisi-ne-kadar"&gt;2025 y&amp;inodot;l&amp;inodot;nda ikramiye vergisi ne kadar? 💰&lt;/h3&gt;
+&lt;p&gt;53.339 TL'ye kadar olan ikramiyeler vergiden muaft&amp;inodot;r. Bu tutar&amp;inodot; a&amp;scedil;an k&amp;inodot;s&amp;inodot;m i&amp;ccedil;in %20 oran&amp;inodot;nda vergi uygulan&amp;inodot;r.&lt;/p&gt;
+&lt;h3 id="vergi-kesintisi-nasil-yapilir"&gt;Vergi kesintisi nas&amp;inodot;l yap&amp;inodot;l&amp;inodot;r? ✂️&lt;/h3&gt;
+&lt;p&gt;Vergi, &amp;ouml;deme yap&amp;inodot;lmadan &amp;ouml;nce br&amp;uuml;t kazan&amp;ccedil; &amp;uuml;zerinden otomatik olarak kesilir ve kazanc&amp;inodot; ilgilendiren kurum taraf&amp;inodot;ndan vergi dairesine &amp;ouml;denir.&lt;/p&gt;
+&lt;h3 id="istisna-tutari-her-yil-guncellenir-mi"&gt;&amp;Idot;stisna tutar&amp;inodot; her y&amp;inodot;l g&amp;uuml;ncellenir mi? 📅&lt;/h3&gt;
+&lt;p&gt;Evet, Veraset ve &amp;Idot;ntikal Vergisi istisna tutar&amp;inodot; her y&amp;inodot;l yeniden de&amp;gbreve;erleme oran&amp;inodot;nda art&amp;inodot;r&amp;inodot;larak g&amp;uuml;ncellenmektedir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="2025 Veraset ve &amp;Idot;ntikal Vergisi &amp;Idot;stisna Limiti Art&amp;inodot;&amp;scedil;&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/nesine-vergi-degisikligi-xl.webp" srcset="/images/nesine-vergi-degisikligi-sm.webp 300w, /images/nesine-vergi-degisikligi-md.webp 500w, /images/nesine-vergi-degisikligi-xl.webp 800w, /images/nesine-vergi-degisikligi-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Haberler"/><category term="veraset ve intikal vergisi"/><category term="2025 vergi istisnası"/><category term="ikramiye vergisi"/><category term="vergi kesintisi"/></entry><entry><title>Veda Zamanı: Rise of Kingdom Bot'un Sonu</title><link href="https://yuceltoluyag.github.io/veda-rise-of-kingdom-bot/" rel="alternate"/><published>2025-03-28T12:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-03-28:/veda-rise-of-kingdom-bot/</id><summary type="html">&lt;p&gt;Rise of Kingdom Bot'un geliştirilmesine artık devam edemeyeceğimi üzülerek duyuruyorum. Hem yeni hayatımın getirdiği sorumluluklar hem de teknik yetersizlikler bu kararı almamı zorunlu kıldı.&lt;/p&gt;</summary><content type="html">&lt;p&gt;🚨 &lt;strong&gt;Bir Yolun Sonu: Rise of Kingdom Bot'a Veda&lt;/strong&gt; 🚨&lt;/p&gt;
+&lt;p&gt;Merhaba herkes,&lt;/p&gt;
+&lt;p&gt;Bu yaz&amp;inodot;y&amp;inodot; yazmak benim i&amp;ccedil;in hi&amp;ccedil; kolay de&amp;gbreve;il. Ancak art&amp;inodot;k ka&amp;ccedil;&amp;inodot;n&amp;inodot;lmaz bir ger&amp;ccedil;e&amp;gbreve;i payla&amp;scedil;man&amp;inodot;n vakti geldi: &lt;strong&gt;Rise of Kingdom Bot'un geli&amp;scedil;tirilmesine devam edemeyece&amp;gbreve;im.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Bu karar&amp;inodot; almam&amp;inodot;n iki b&amp;uuml;y&amp;uuml;k sebebi var:&lt;/p&gt;
+&lt;p&gt;👶 &lt;strong&gt;Hayat&amp;inodot;mdaki Yeni D&amp;ouml;nem:&lt;/strong&gt; K&amp;inodot;sa s&amp;uuml;re &amp;ouml;nce bir ebeveyn oldum ve zaman&amp;inodot;m&amp;inodot;n b&amp;uuml;y&amp;uuml;k bir k&amp;inodot;sm&amp;inodot;n&amp;inodot; art&amp;inodot;k minik yavruma ay&amp;inodot;r&amp;inodot;yorum. &amp;Scedil;imdi ise di&amp;scedil; &amp;ccedil;&amp;inodot;karma s&amp;uuml;recinde ve ebeveynler bilir, bu d&amp;ouml;nemde olduk&amp;ccedil;a huysuz ve g&amp;uuml;r&amp;uuml;lt&amp;uuml;l&amp;uuml; olabiliyor. 😅&lt;/p&gt;
+&lt;p&gt;💻 &lt;strong&gt;Teknik Engeller:&lt;/strong&gt; Mevcut bilgisayar&amp;inodot;m art&amp;inodot;k modern oyunlar&amp;inodot; ve em&amp;uuml;lat&amp;ouml;rleri kald&amp;inodot;rm&amp;inodot;yor. FPS d&amp;uuml;&amp;scedil;&amp;uuml;&amp;scedil;leri o kadar b&amp;uuml;y&amp;uuml;k ki, oyunu test etmek neredeyse imk&amp;acirc;ns&amp;inodot;z hale geldi. YouTube i&amp;ccedil;in video kaydederken bile 25-30 FPS almak i&amp;ccedil;in saatlerce u&amp;gbreve;ra&amp;scedil;mak zorunda kal&amp;inodot;yordum. Ancak son oyun ve em&amp;uuml;lat&amp;ouml;r g&amp;uuml;ncellemeleriyle birlikte durum daha da k&amp;ouml;t&amp;uuml;le&amp;scedil;ti. Grafikler i&amp;scedil;lenirken FPS neredeyse s&amp;inodot;f&amp;inodot;ra d&amp;uuml;&amp;scedil;&amp;uuml;yor ve hi&amp;ccedil;bir optimizasyon bunu d&amp;uuml;zeltemiyor. 🥶
+&lt;img alt="FPS d&amp;uuml;&amp;scedil;&amp;uuml;&amp;scedil;&amp;uuml; g&amp;ouml;steren ekran g&amp;ouml;r&amp;uuml;nt&amp;uuml;s&amp;uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rok0fps-xl.webp" srcset="/images/rok0fps-sm.webp 300w, /images/rok0fps-md.webp 500w, /images/rok0fps-xl.webp 800w, /images/rok0fps-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;p&gt;Asl&amp;inodot;nda yeni bir &lt;strong&gt;GUI tasarlamak ve yeni &amp;ouml;zellikler eklemek&lt;/strong&gt; i&amp;ccedil;in olduk&amp;ccedil;a hevesliydim. Fakat test s&amp;uuml;reci bu kadar zorla&amp;scedil;&amp;inodot;nca, kullan&amp;inodot;c&amp;inodot;lara yeterince stabil ve g&amp;uuml;venilir bir &amp;scedil;ey sunamamak beni rahats&amp;inodot;z etti. &lt;strong&gt;Eksik ya da hatal&amp;inodot; bir i&amp;scedil; payla&amp;scedil;mak istemedi&amp;gbreve;im i&amp;ccedil;in, projeyi b&amp;inodot;rakmaya karar verdim.&lt;/strong&gt;
+&lt;img alt="Rise of Kingdom Bot kullan&amp;inodot;c&amp;inodot; aray&amp;uuml;z&amp;uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rokbot-gui-xl.webp" srcset="/images/rokbot-gui-sm.webp 300w, /images/rokbot-gui-md.webp 500w, /images/rokbot-gui-xl.webp 800w, /images/rokbot-gui-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;div class="info-box important"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Ho&amp;scedil;&amp;ccedil;akal ThinkPad&lt;/div&gt;
+&lt;p&gt;Bu s&amp;uuml;recin ard&amp;inodot;ndan k&amp;inodot;sa bir s&amp;uuml;re sonra yeni bir bilgisayar ald&amp;inodot;m, ThinkPad'imle vedala&amp;scedil;t&amp;inodot;k. 😄&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id="nasil-basladim"&gt;Nas&amp;inodot;l Ba&amp;scedil;lad&amp;inodot;m?&lt;/h1&gt;
+&lt;p&gt;Bu oyunu oynam&amp;inodot;yorum &amp;ccedil;&amp;uuml;nk&amp;uuml; &lt;strong&gt;pay-to-win (P2W)&lt;/strong&gt; sistemine sahip. Oyunlarda para harcamaya kar&amp;scedil;&amp;inodot; de&amp;gbreve;ilim; sonu&amp;ccedil;ta bu bir e&amp;gbreve;lence sekt&amp;ouml;r&amp;uuml; ve e&amp;gbreve;leniyorsan harcama yapmak tamamen senin tercihin. Ancak, bir arkada&amp;scedil;&amp;inodot;m benden bir bot geli&amp;scedil;tirip geli&amp;scedil;tiremeyece&amp;gbreve;imi sordu&amp;gbreve;unda, internette k&amp;uuml;&amp;ccedil;&amp;uuml;k bir ara&amp;scedil;t&amp;inodot;rma yapmaya karar verdim. Kar&amp;scedil;&amp;inodot;ma bir&amp;ccedil;ok hileli i&amp;ccedil;erik &amp;ccedil;&amp;inodot;kt&amp;inodot;. Daha sonra a&amp;ccedil;&amp;inodot;k kaynakl&amp;inodot; bir bot buldum ve onun &amp;uuml;zerinde &amp;ccedil;al&amp;inodot;&amp;scedil;maya ba&amp;scedil;lad&amp;inodot;m. Ancak bir s&amp;uuml;re sonra projenin geli&amp;scedil;imi yava&amp;scedil;lad&amp;inodot;. Ortaya &amp;ccedil;&amp;inodot;kan baz&amp;inodot; hatalar&amp;inodot; d&amp;uuml;zelttim, fakat sonras&amp;inodot;nda projeye ara verdim.  &lt;/p&gt;
+&lt;p&gt;YouTube'da payla&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;m videonun ard&amp;inodot;ndan gelen yo&amp;gbreve;un ilgi &amp;uuml;zerine bir depo olu&amp;scedil;turdum ve kodu g&amp;uuml;ncelleyerek elimden geldi&amp;gbreve;ince yeni &amp;ouml;zellikler eklemeye ba&amp;scedil;lad&amp;inodot;m. Peki, bunlar&amp;inodot; neden anlat&amp;inodot;yorum? &amp;Ccedil;&amp;uuml;nk&amp;uuml; bu oyunun uzman&amp;inodot; de&amp;gbreve;ilim, sadece temel bilgilere sahiptim.  &lt;/p&gt;
+&lt;p&gt;Zamanla oyunu daha iyi anlamak i&amp;ccedil;in oynamaya ba&amp;scedil;lad&amp;inodot;m ve ba&amp;scedil;lang&amp;inodot;&amp;ccedil;tan fetih sezonuna kadar ilerledim. T&amp;uuml;m bu s&amp;uuml;rede para harcad&amp;inodot;m, ancak fetih sezonuna ula&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;mda, yapt&amp;inodot;&amp;gbreve;&amp;inodot;m harcamalar&amp;inodot;n neredeyse hi&amp;ccedil;bir anlam&amp;inodot; olmad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; fark ettim. &lt;strong&gt;Bu oyunda sadece para harcamak yetmiyor, ayn&amp;inodot; zamanda Warren Buffet gibi zengin olman&amp;inodot;z gerekiyor.&lt;/strong&gt; E&amp;gbreve;er b&amp;uuml;y&amp;uuml;k bir "balina" (yani y&amp;uuml;ksek harcama yapan oyuncu) veya "kraken" de&amp;gbreve;ilseniz, t&amp;inodot;pk&amp;inodot; ger&amp;ccedil;ek hayatta oldu&amp;gbreve;u gibi, oyunda da bir i&amp;scedil;&amp;ccedil;isiniz. &amp;Ouml;n cephede sava&amp;scedil;amaz, sadece garnizona asker g&amp;ouml;nderir ya da sava&amp;scedil;lar&amp;inodot;n arka plan&amp;inodot;nda kal&amp;inodot;rs&amp;inodot;n&amp;inodot;z.  &lt;/p&gt;
+&lt;p&gt;&amp;Ouml;l&amp;uuml; krall&amp;inodot;klar olarak bilinen &lt;strong&gt;C-D tohumlar&amp;inodot;na&lt;/strong&gt; bile gitseniz, orada mutlaka &amp;ccedil;ok para harcam&amp;inodot;&amp;scedil; ama oyunu &amp;ouml;&amp;gbreve;renememi&amp;scedil; oyuncular bulunur ve yine size f&amp;inodot;rsat tan&amp;inodot;mazlar. &lt;strong&gt;Hi&amp;ccedil;bir zaman kendi g&amp;uuml;c&amp;uuml;n&amp;uuml;zle denk biriyle sava&amp;scedil;amazs&amp;inodot;n&amp;inodot;z.&lt;/strong&gt; En g&amp;uuml;&amp;ccedil;l&amp;uuml; Vali'den alt&amp;inodot;n kafa alamaz, hatta krall&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;z garipse etkinliklere bile al&amp;inodot;nmazs&amp;inodot;n&amp;inodot;z. Ben t&amp;uuml;m bunlar&amp;inodot; ya&amp;scedil;amad&amp;inodot;m ama aktiflik s&amp;uuml;rem y&amp;uuml;ksekti.1 ana karakter 6 adet farm hesab&amp;inodot;yla oynamaya ba&amp;scedil;lad&amp;inodot;m. G&amp;uuml;n&amp;uuml;m&amp;uuml;n b&amp;uuml;y&amp;uuml;k bir k&amp;inodot;sm&amp;inodot;n&amp;inodot; bu oyuna ay&amp;inodot;r&amp;inodot;yor ve &lt;strong&gt;ciddi anlamda bir hayats&amp;inodot;za d&amp;ouml;n&amp;uuml;&amp;scedil;&amp;uuml;yordum.&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;Dikkat ederseniz, b&amp;uuml;y&amp;uuml;k krall&amp;inodot;klarda &lt;strong&gt;sadece 50 ila 150 aras&amp;inodot;nda ciddi para harcayan aktif oyuncu bulunuyor.&lt;/strong&gt; Yani &lt;strong&gt;Free-to-Play (F2P)&lt;/strong&gt; oyuncular, sava&amp;scedil;larda sadece ekstra g&amp;uuml;&amp;ccedil; sa&amp;gbreve;lamak i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;yor. Bu konu hakk&amp;inodot;nda sayfalarca yaz&amp;inodot; yazabilirim ama muhtemelen s&amp;inodot;k&amp;inodot;lacaks&amp;inodot;n&amp;inodot;z. &lt;strong&gt;K&amp;inodot;sacas&amp;inodot;, bu oyun sadece pay-to-win de&amp;gbreve;il; onun tanr&amp;inodot;s&amp;inodot;!&lt;/strong&gt;&lt;br/&gt;
+&lt;img alt="Rise of Kingdom Bot kullan&amp;inodot;c&amp;inodot; aray&amp;uuml;z&amp;uuml;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rokbot-gui-xl.webp" srcset="/images/rokbot-gui-sm.webp 300w, /images/rokbot-gui-md.webp 500w, /images/rokbot-gui-xl.webp 800w, /images/rokbot-gui-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h1 id="bu-oyunu-anlamak-icin-zaten-1-yil-harcadim"&gt;Bu oyunu anlamak i&amp;ccedil;in zaten 1 y&amp;inodot;l harcad&amp;inodot;m.&lt;/h1&gt;
+&lt;p&gt;Sizlere &amp;ccedil;ok sevdi&amp;gbreve;im, F2P oyuncular&amp;inodot;n "tanr&amp;inodot;s&amp;inodot;" olarak bilinen &lt;strong&gt;Logic Bank&lt;/strong&gt;'&amp;inodot;n bir s&amp;ouml;z&amp;uuml;n&amp;uuml; payla&amp;scedil;mak istiyorum:  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ba&amp;scedil;ka oyunlarda iyi bir oyuncu olmak i&amp;ccedil;in emek harcar, kendinizi geli&amp;scedil;tirir ve e-spor camias&amp;inodot;nda para kazanabilirsiniz. Ama bu oyunda en &amp;ccedil;ok paras&amp;inodot; olan kazan&amp;inodot;r&amp;mdash;hatta turnuvalar&amp;inodot;nda bile.&lt;/p&gt;
+&lt;cite&gt;Logic Bank&lt;/cite&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="farm-yaparak-para-kazanabilir-miyim"&gt;Farm Yaparak Para Kazanabilir Miyim?&lt;/h2&gt;
+&lt;p&gt;Bu oyundaki en &amp;ouml;nemli &amp;scedil;ey &amp;scedil;&amp;uuml;phesiz ki &lt;strong&gt;kaynaklard&amp;inodot;r&lt;/strong&gt;. &lt;strong&gt;Balina da olsan&amp;inodot;z, kraken de olsan&amp;inodot;z kaynaklara ihtiyac&amp;inodot;n&amp;inodot;z vard&amp;inodot;r.&lt;/strong&gt; Lilith Games'in abart&amp;inodot;l&amp;inodot; fiyatland&amp;inodot;rma politikas&amp;inodot; nedeniyle en zengin oyuncular bile alternatif yollar aramak zorunda kal&amp;inodot;yor.  &lt;/p&gt;
+&lt;p&gt;Ben oyuna ba&amp;scedil;lad&amp;inodot;&amp;gbreve;&amp;inodot;mda, herkes istedi&amp;gbreve;i gibi kaynak satabiliyordu ve rekabet olduk&amp;ccedil;a fazlayd&amp;inodot;. Lilith Games her ne kadar bu durumu yasaklad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; s&amp;ouml;ylese de, ticaret h&amp;acirc;l&amp;acirc; devam ediyor. Ancak &amp;scedil;u an bu &amp;ouml;zg&amp;uuml;rl&amp;uuml;&amp;gbreve;&amp;uuml;n &amp;ouml;n&amp;uuml;ne &lt;strong&gt;krall&amp;inodot;klar ge&amp;ccedil;ti&lt;/strong&gt;. Art&amp;inodot;k her krall&amp;inodot;&amp;gbreve;&amp;inodot;n kendi &lt;strong&gt;resmi RSS (kaynak) sat&amp;inodot;c&amp;inodot;lar&amp;inodot;&lt;/strong&gt; var ve onlar&amp;inodot;n d&amp;inodot;&amp;scedil;&amp;inodot;nda kimseyle al&amp;inodot;&amp;scedil;veri&amp;scedil; yapm&amp;inodot;yorlar.  &lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er bir kral&amp;inodot;n g&amp;ouml;z&amp;uuml;ne girerseniz, para kazanma &amp;scedil;ans&amp;inodot;n&amp;inodot;z artar. Aksi takdirde, olduk&amp;ccedil;a fazla u&amp;gbreve;ra&amp;scedil;man&amp;inodot;z gerekir.  &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="uyanik-gozler"&gt;Uyan&amp;inodot;k G&amp;ouml;zler 🚨&lt;/h2&gt;
+&lt;p&gt;Bu projede baz&amp;inodot; &amp;ouml;zellikleri benden talep edip, daha sonra kendi &lt;strong&gt;&amp;uuml;cretli&lt;/strong&gt; satt&amp;inodot;klar&amp;inodot; botlara ekleyenleri biliyorum. Bununla ilgili bana bir&amp;ccedil;ok mesaj geliyor. &lt;strong&gt;Muhtemelen Dylan Zheng de bu y&amp;uuml;zden projeyi b&amp;inodot;rakt&amp;inodot;.&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;&amp;Idot;nsanlar sizi bir k&amp;ouml;le gibi kullanmak istiyor; s&amp;inodot;f&amp;inodot;r destekle, sadece kendi &amp;ccedil;&amp;inodot;karlar&amp;inodot; i&amp;ccedil;in u&amp;gbreve;ra&amp;scedil;t&amp;inodot;r&amp;inodot;yorlar. Destek illa ki para olmak zorunda de&amp;gbreve;il&amp;mdash;&lt;strong&gt;YouTube aboneli&amp;gbreve;i, sosyal medya hesaplar&amp;inodot;n&amp;inodot; takip etmek, projeye GitHub'da y&amp;inodot;ld&amp;inodot;z vermek vs.&lt;/strong&gt; gibi k&amp;uuml;&amp;ccedil;&amp;uuml;k jestler bile topluluk deste&amp;gbreve;i a&amp;ccedil;&amp;inodot;s&amp;inodot;ndan &amp;ouml;nemli. Ancak &amp;ccedil;o&amp;gbreve;u insan, yaln&amp;inodot;zca &amp;uuml;cretsiz bir alternatif pe&amp;scedil;inde ve hi&amp;ccedil;bir &amp;scedil;ekilde katk&amp;inodot;da bulunmuyor.  &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="neden-bu-projeyi-birakiyorum"&gt;Neden Bu Projeyi B&amp;inodot;rak&amp;inodot;yorum? 🚀&lt;/h3&gt;
+&lt;p&gt;Bu projeyi geli&amp;scedil;tirirken ve di&amp;gbreve;er botlar&amp;inodot; incelerken, insanlar&amp;inodot;n asl&amp;inodot;nda sadece "&amp;uuml;cretsiz" bir alternatif istediklerini fark ettim. &amp;Ccedil;&amp;uuml;nk&amp;uuml; piyasadaki di&amp;gbreve;er botlar ger&amp;ccedil;ekten pahal&amp;inodot; ve haftal&amp;inodot;k abonelik gerektiriyor. Sadece farm i&amp;scedil;levine odaklanan botlar daha ucuz, ancak sat&amp;inodot;c&amp;inodot;n&amp;inodot;n ne kadar g&amp;uuml;venilir oldu&amp;gbreve;u konusunda hi&amp;ccedil;bir fikrim yok.&lt;/p&gt;
+&lt;p&gt;Bu nedenle projeyi devam ettirmek istemiyorum. Ayr&amp;inodot;ca bu oyun bana ger&amp;ccedil;ekten bir oyun oynuyormu&amp;scedil;um gibi hissettirmiyor. &lt;strong&gt;Ne beni oynamaya te&amp;scedil;vik eden var ne de insanlar &amp;scedil;evk i&amp;ccedil;in destek sa&amp;gbreve;l&amp;inodot;yor.&lt;/strong&gt;
+&lt;img alt="Rise of Kingdom YouTube istatistikleri" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/rok-youtube-istatistik-xl.webp" srcset="/images/rok-youtube-istatistik-sm.webp 300w, /images/rok-youtube-istatistik-md.webp 500w, /images/rok-youtube-istatistik-xl.webp 800w, /images/rok-youtube-istatistik-xl.webp 1200w"/&gt;
+YouTube'daki videolar&amp;inodot;m &amp;scedil;u an yakla&amp;scedil;&amp;inodot;k &lt;strong&gt;30 bin g&amp;ouml;r&amp;uuml;nt&amp;uuml;lemeye sahip&lt;/strong&gt;, ancak abone say&amp;inodot;m olduk&amp;ccedil;a d&amp;uuml;&amp;scedil;&amp;uuml;k. &amp;Idot;nsanlar destek konusunda hi&amp;ccedil; yard&amp;inodot;mc&amp;inodot; olmuyor, sadece &amp;uuml;cretsiz bir alternatif ar&amp;inodot;yorlar. &amp;Scedil;imdi, neden as&amp;inodot;l geli&amp;scedil;tiricinin bu projeyi terk etti&amp;gbreve;ini &amp;ccedil;ok daha iyi anl&amp;inodot;yorum. &lt;strong&gt;Rip @Dylan-Zheng&lt;/strong&gt;&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="6IObh_HJvrk"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;p&gt;Bu oyunu anlamak i&amp;ccedil;in zaten 1 y&amp;inodot;l harcad&amp;inodot;m.&lt;/p&gt;
+&lt;h3 id="yasal-uyari-ve-son-dusunceler"&gt;Yasal Uyar&amp;inodot; ve Son D&amp;uuml;&amp;scedil;&amp;uuml;nceler&lt;/h3&gt;
+&lt;p&gt;Yak&amp;inodot;n zamanda &lt;strong&gt;Rise of Kingdoms ekibinden yasal bir uyar&amp;inodot; ald&amp;inodot;m&lt;/strong&gt; (botun geli&amp;scedil;tirilmemesi y&amp;ouml;n&amp;uuml;nde). Ben sadece e&amp;gbreve;itim ama&amp;ccedil;l&amp;inodot; olarak geli&amp;scedil;tirmeye devam ettim, ancak san&amp;inodot;r&amp;inodot;m son iki commit'ten sonra hala aktif oldu&amp;gbreve;umu d&amp;uuml;&amp;scedil;&amp;uuml;nd&amp;uuml;ler. 🙂&lt;/p&gt;
+&lt;p&gt;Bu y&amp;uuml;zden &amp;uuml;zg&amp;uuml;n&amp;uuml;m, sadece verdi&amp;gbreve;im s&amp;ouml;z&amp;uuml; tutmak i&amp;ccedil;in g&amp;uuml;ncelleme yap&amp;inodot;yordum, ama san&amp;inodot;r&amp;inodot;m duvara toslad&amp;inodot;k. 😅 &lt;strong&gt;Projeyi fork eden ve geli&amp;scedil;tirmeye devam eden arkada&amp;scedil;lar&amp;inodot;n dikkatli olmas&amp;inodot;n&amp;inodot; &amp;ouml;neririm:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Her &amp;scedil;ey i&amp;ccedil;in te&amp;scedil;ekk&amp;uuml;rler. 🙏&lt;/p&gt;
+&lt;p&gt;Sevgiyle kal&amp;inodot;n,
+&lt;strong&gt;&lt;a href="/hakkimda/"&gt;@yuceltoluyag&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;Ccedil;ok fazla mail ve &lt;a href="https://www.instagram.com/yuceltoluyag/" rel="noopener noreferrer" target="_blank"&gt;Instagram&lt;/a&gt; mesaj&amp;inodot; ald&amp;inodot;m. Projeyle ilgili t&amp;uuml;m detaylar linkte mevcut.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/yuceltoluyag/Rise-of-Kingdoms-Bot/issues/24" rel="noopener noreferrer" target="_blank"&gt;Rise Of Kingdom Bot&lt;/a&gt;&lt;/p&gt;</content><category term="Haberler"/><category term="oyun"/><category term="bot"/><category term="geliştirme"/><category term="veda"/></entry><entry><title>Önemli Değişiklikler</title><link href="https://yuceltoluyag.github.io/onemli-degisiklikler/" rel="alternate"/><published>2025-02-27T12:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-02-27:/onemli-degisiklikler/</id><summary type="html">&lt;p&gt;Site hakkında önemli gelişmeleri ve yenilikleri bu sayfadan takip edebilirsiniz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="akilli-semboller"&gt;Ak&amp;inodot;ll&amp;inodot; Semboller&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;mark&gt;Word&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="keys"&gt;&lt;kbd&gt;Word&lt;/kbd&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="keys"&gt;&lt;kbd class="key-delete"&gt;Del&lt;/kbd&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;Word&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;Inline code
+     #!py3 import pymdownx; pymdownx.&lt;strong&gt;version&lt;/strong&gt;&lt;br/&gt;
+     #!js var test = 0;&lt;/li&gt;
+&lt;li&gt;Emoji testi :emoji_name: as in I have a &lt;span class="emojione-64-people _1f604" title=":smile:"&gt;😄&lt;/span&gt; here. and here is a &lt;span class="emojione-64-objects _1f389" title=":tada:"&gt;🎉&lt;/span&gt; &lt;span class="emojione-64-people _1f604" title=":smile:"&gt;😄&lt;/span&gt; &lt;span class="emojione-64-symbols _2764" title=":heart:"&gt;❤️&lt;/span&gt; &lt;span class="emojione-64-people _1f44d" title=":thumbsup:"&gt;👍&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/" rel="noopener noreferrer" target="_blank"&gt;Smart symbols are enabled by default&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;trade;
+&amp;copy;
+&amp;reg;
+&amp;incare;
+&amp;plusmn;
+&amp;rarr;
+&amp;larr;
+&amp;harr;
+&amp;ne;
+&amp;frac14;, etc.
+1&lt;sup&gt;st&lt;/sup&gt; 2&lt;sup&gt;nd&lt;/sup&gt; etc.
+&lt;span class="keys"&gt;&lt;kbd class="key-control"&gt;Ctrl&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-alt"&gt;Alt&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-delete"&gt;Del&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id="klavye-tuslari-ornekleri"&gt;Klavye Tu&amp;scedil;lar&amp;inodot; &amp;Ouml;rnekleri&lt;/h1&gt;
+&lt;p&gt;PyMdown Extensions'da bulunan Keys uzant&amp;inodot;s&amp;inodot; ile klavye tu&amp;scedil;lar&amp;inodot;n&amp;inodot; kolayca g&amp;ouml;sterebilirsiniz. Tu&amp;scedil; kombinasyonlar&amp;inodot; &lt;code&gt;++&lt;/code&gt; sembolleri aras&amp;inodot;na, tu&amp;scedil;lar ise &lt;code&gt;+&lt;/code&gt; ile ayr&amp;inodot;larak yaz&amp;inodot;l&amp;inodot;r.&lt;/p&gt;
+&lt;h2 id="temel-tuslar"&gt;Temel Tu&amp;scedil;lar&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-a"&gt;A&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-b"&gt;B&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-c"&gt;C&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-1"&gt;1&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-2"&gt;2&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-3"&gt;3&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-space"&gt;Space&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id="ozel-karakterler"&gt;&amp;Ouml;zel Karakterler&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-colon"&gt;:&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-comma"&gt;,&lt;/kbd&gt;&lt;/span&gt; ++dot++&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-equal"&gt;=&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-plus"&gt;+&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-minus"&gt;-&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id="fonksiyon-tuslari"&gt;Fonksiyon Tu&amp;scedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-f1"&gt;F1&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-f2"&gt;F2&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-f3"&gt;F3&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-f4"&gt;F4&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-f5"&gt;F5&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id="yon-tuslari"&gt;Y&amp;ouml;n Tu&amp;scedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-arrow-up"&gt;Up&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-arrow-down"&gt;Down&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-arrow-left"&gt;Left&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-arrow-right"&gt;Right&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-page-up"&gt;Page Up&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-page-down"&gt;Page Down&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-home"&gt;Home&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-end"&gt;End&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id="duzenleme-tuslari"&gt;D&amp;uuml;zenleme Tu&amp;scedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-insert"&gt;Ins&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-delete"&gt;Del&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-backspace"&gt;Backspace&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-tab"&gt;Tab&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id="aksiyon-tuslari"&gt;Aksiyon Tu&amp;scedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-enter"&gt;Enter&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-escape"&gt;Esc&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-space"&gt;Space&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id="degistirici-tuslar"&gt;De&amp;gbreve;i&amp;scedil;tirici Tu&amp;scedil;lar&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-control"&gt;Ctrl&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-alt"&gt;Alt&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-shift"&gt;Shift&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-super"&gt;Super&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-windows"&gt;Win&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-command"&gt;Cmd&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-option"&gt;Option&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id="klavye-kisayollari-ornekleri"&gt;Klavye K&amp;inodot;sayollar&amp;inodot; &amp;Ouml;rnekleri&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-control"&gt;Ctrl&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-c"&gt;C&lt;/kbd&gt;&lt;/span&gt; (Kopyala)&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-control"&gt;Ctrl&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-v"&gt;V&lt;/kbd&gt;&lt;/span&gt; (Yap&amp;inodot;&amp;scedil;t&amp;inodot;r)&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-control"&gt;Ctrl&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-alt"&gt;Alt&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-delete"&gt;Del&lt;/kbd&gt;&lt;/span&gt; (Windows'ta G&amp;ouml;rev Y&amp;ouml;neticisi)&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-control"&gt;Ctrl&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-shift"&gt;Shift&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-escape"&gt;Esc&lt;/kbd&gt;&lt;/span&gt; (Windows'ta do&amp;gbreve;rudan G&amp;ouml;rev Y&amp;ouml;neticisi)&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-alt"&gt;Alt&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-tab"&gt;Tab&lt;/kbd&gt;&lt;/span&gt; (Pencereler aras&amp;inodot; ge&amp;ccedil;i&amp;scedil;)&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-windows"&gt;Win&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-e"&gt;E&lt;/kbd&gt;&lt;/span&gt; (Dosya Gezgini a&amp;ccedil;ma)&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-control"&gt;Ctrl&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-alt"&gt;Alt&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd&gt;&amp;Ouml;zel Tu&amp;scedil;&lt;/kbd&gt;&lt;/span&gt; (&amp;Ouml;zel tu&amp;scedil; &amp;ouml;rne&amp;gbreve;i)&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-command"&gt;Cmd&lt;/kbd&gt;&lt;span&gt;+&lt;/span&gt;&lt;kbd class="key-space"&gt;Space&lt;/kbd&gt;&lt;/span&gt; (macOS Spotlight)&lt;/p&gt;
+&lt;h2 id="multimedya-tuslari"&gt;Multimedya Tu&amp;scedil;lar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-volume-up"&gt;Volume Up&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-volume-down"&gt;Volume Down&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-volume-mute"&gt;Mute&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="keys"&gt;&lt;kbd class="key-media-play"&gt;Play&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-media-stop"&gt;Stop&lt;/kbd&gt;&lt;/span&gt; &lt;span class="keys"&gt;&lt;kbd class="key-media-next-track"&gt;Next Track&lt;/kbd&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;div class="info-box note"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Bilgi&lt;/div&gt;
+&lt;p&gt;Tema i&amp;ccedil;inde bulunan alert kutular&amp;inodot;n&amp;inodot; g&amp;ouml;rmektesiniz. Bu bir bilgi kutusudur ve &amp;ouml;nemli bilgileri vurgulamak i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="info-box warning"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Uyar&amp;inodot;&lt;/div&gt;
+&lt;p&gt;Dikkat edilmesi gereken durumlarda bu uyar&amp;inodot; kutusu kullan&amp;inodot;l&amp;inodot;r. Kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; potansiyel sorunlar hakk&amp;inodot;nda bilgilendirmek i&amp;ccedil;in idealdir.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="info-box important"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Ouml;nemli&lt;/div&gt;
+&lt;p&gt;Kritik bilgiler ve &amp;ouml;nemli duyurular i&amp;ccedil;in bu kutu kullan&amp;inodot;l&amp;inodot;r. G&amp;ouml;zden ka&amp;ccedil;&amp;inodot;r&amp;inodot;lmamas&amp;inodot; gereken bilgileri vurgular.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="info-box tip"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Idot;pucu&lt;/div&gt;
+&lt;p&gt;Yararl&amp;inodot; ipu&amp;ccedil;lar&amp;inodot; ve &amp;ouml;neriler i&amp;ccedil;in bu kutu kullan&amp;inodot;l&amp;inodot;r. Kullan&amp;inodot;c&amp;inodot;lara ek bilgi ve kolayla&amp;scedil;t&amp;inodot;r&amp;inodot;c&amp;inodot; &amp;ouml;neriler sunar.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id="kod-blogu-dil-testi_1"&gt;Kod Blo&amp;gbreve;u Dil Testi&lt;/h1&gt;
+&lt;p&gt;Bu sayfada farkl&amp;inodot; programlama dillerinin kod bloklar&amp;inodot;n&amp;inodot; test ediyoruz. A&amp;scedil;a&amp;gbreve;&amp;inodot;da &amp;ccedil;e&amp;scedil;itli dillerde &amp;ouml;rnekler bulabilirsiniz.&lt;/p&gt;
+&lt;h2 id="bashshell"&gt;Bash/Shell&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/var/www/html
+ls&lt;span class="w"&gt; &lt;/span&gt;-la
+sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;nginx
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="python"&gt;Python&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Python&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;merhaba_dunya&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;"__main__"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;merhaba_dunya&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;# S&amp;inodot;n&amp;inodot;f &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ad&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yas&lt;/span&gt;
+
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="sa"&gt;f&lt;/span&gt;&lt;span class="s2"&gt;"Merhaba, ben &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;. &lt;/span&gt;&lt;span class="si"&gt;{&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="javascript"&gt;JavaScript&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;JavaScript&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;// JavaScript &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;merhabaDunya&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="c1"&gt;// DOM manip&amp;uuml;lasyonu&lt;/span&gt;
+&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'DOMContentLoaded'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'test'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;innerHTML&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"JavaScript &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;yor!"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="html"&gt;HTML&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;HTML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt; &lt;span class="na"&gt;lang&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"tr"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"UTF-8"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;meta&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"viewport"&lt;/span&gt; &lt;span class="na"&gt;content&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"width=device-width, initial-scale=1.0"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Test Sayfas&amp;inodot;&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;head&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Merhaba D&amp;uuml;nya!&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;h1&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Bu bir HTML test sayfas&amp;inodot;d&amp;inodot;r.&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;html&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="css"&gt;CSS&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;CSS&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;font-family&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Arial'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;sans-serif&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;#f5f5f5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;#333&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;container&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1200&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;white&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;box-shadow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="sql"&gt;SQL&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;SQL&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;-- Veritaban&amp;inodot; olu&amp;scedil;turma&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;DATABASE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;test_db&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="c1"&gt;-- Tablo olu&amp;scedil;turma&lt;/span&gt;
+&lt;span class="k"&gt;CREATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;TABLE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kullanicilar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;id&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;INT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AUTO_INCREMENT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;PRIMARY&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;KEY&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;NOT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;soyad&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;NOT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;NULL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;VARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;UNIQUE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;kayit_tarihi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;TIMESTAMP&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;DEFAULT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;CURRENT_TIMESTAMP&lt;/span&gt;
+&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;-- Veri ekleme&lt;/span&gt;
+&lt;span class="k"&gt;INSERT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;INTO&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kullanicilar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;soyad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;email&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;VALUES&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Ali'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Y&amp;inodot;lmaz'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'ali@ornek.com'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="c1"&gt;-- Veri sorgulama&lt;/span&gt;
+&lt;span class="k"&gt;SELECT&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kullanicilar&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;WHERE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Ali'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="java"&gt;Java&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Java&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MerhabaDunya&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;static&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="o"&gt;[]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="c1"&gt;// Nesne olu&amp;scedil;turma&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Ahmet"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;private&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;private&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ad&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;yas&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Merhaba, ben "&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;". "&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;" ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="c"&gt;C++&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;C++&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;span class="cp"&gt;#include&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cpf"&gt;&amp;lt;string&amp;gt;&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="k"&gt;private&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;string&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Merhaba, ben "&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;". "&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;to_string&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;" ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Mehmet"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;cout&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;std&lt;/span&gt;&lt;span class="o"&gt;::&lt;/span&gt;&lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="go"&gt;Go&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Go&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"fmt"&lt;/span&gt;
+
+&lt;span class="kd"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;Ad&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;Yas&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;k&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Sprintf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba, ben %s. %d ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;k&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;k&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;:=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;Ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Ay&amp;scedil;e"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Yas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;fmt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Selamla&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="ruby"&gt;Ruby&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Ruby&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# Ruby &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;merhaba_dunya&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nb"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="n"&gt;merhaba_dunya&lt;/span&gt;
+
+&lt;span class="c1"&gt;# S&amp;inodot;n&amp;inodot;f &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;Kisi&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="kp"&gt;attr_reader&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ss"&gt;:yas&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;initialize&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="vi"&gt;@ad&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="vi"&gt;@yas&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;selamla&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;"Merhaba, ben &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="vi"&gt;@ad&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;. &lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="vi"&gt;@yas&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+
+&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="no"&gt;Kisi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Zeynep"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;puts&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;selamla&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="php"&gt;PHP&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;PHP&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;&amp;lt;?php&lt;/span&gt;
+&lt;span class="c1"&gt;// PHP &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;merhabaDunya&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;merhabaDunya&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+&lt;span class="c1"&gt;// S&amp;inodot;n&amp;inodot;f &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Kisi&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;private&lt;/span&gt; &lt;span class="nv"&gt;$ad&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;private&lt;/span&gt; &lt;span class="nv"&gt;$yas&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="fm"&gt;__construct&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nv"&gt;$yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;ad&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$ad&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;yas&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$yas&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="k"&gt;public&lt;/span&gt; &lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="nf"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;"Merhaba, ben "&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;ad&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s2"&gt;". "&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="nv"&gt;$this&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;yas&lt;/span&gt; &lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="s2"&gt;" ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nv"&gt;$kisi&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nx"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Mustafa"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;35&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$kisi&lt;/span&gt;&lt;span class="o"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="na"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="cp"&gt;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="rust"&gt;Rust&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Rust&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;struct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;u32&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;impl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;fn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kp"&gt;&amp;amp;&lt;/span&gt;&lt;span class="kt"&gt;str&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;u32&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;Self&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;to_string&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;fn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;-&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="fm"&gt;format!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba, ben {}. {} ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;fn&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;::&lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Fatma"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="fm"&gt;println!&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"{}"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="swift"&gt;Swift&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Swift&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;// Swift &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;merhabaDunya&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="bp"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;merhabaDunya&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="c1"&gt;// S&amp;inodot;n&amp;inodot;f &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Kisi&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;
+    &lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;Int&lt;/span&gt;
+
+    &lt;span class="kd"&gt;init&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="kc"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ad&lt;/span&gt;
+        &lt;span class="kc"&gt;self&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;yas&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="kd"&gt;func&lt;/span&gt; &lt;span class="nf"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;"Merhaba, ben &lt;/span&gt;&lt;span class="si"&gt;\(&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="si"&gt;)&lt;/span&gt;&lt;span class="s"&gt;. &lt;/span&gt;&lt;span class="si"&gt;\(&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="si"&gt;)&lt;/span&gt;&lt;span class="s"&gt; ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nv"&gt;kisi&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s"&gt;"Emre"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;31&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="bp"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="kotlin"&gt;Kotlin&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Kotlin&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kd"&gt;fun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;val&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"Selin"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;27&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;println&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;Kisi&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;val&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;val&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;yas&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;Int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kd"&gt;fun&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;String&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Merhaba, ben &lt;/span&gt;&lt;span class="si"&gt;$&lt;/span&gt;&lt;span class="n"&gt;ad&lt;/span&gt;&lt;span class="s"&gt;. &lt;/span&gt;&lt;span class="si"&gt;$&lt;/span&gt;&lt;span class="n"&gt;yas&lt;/span&gt;&lt;span class="s"&gt; ya&amp;scedil;&amp;inodot;nday&amp;inodot;m."&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="typescript"&gt;TypeScript&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;TypeScript&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;// TypeScript &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="kd"&gt;interface&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;ad&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;yas&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;number&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;class&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;KisiImpl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;implements&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kr"&gt;constructor&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ad&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;yas&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;number&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{}&lt;/span&gt;
+
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="sb"&gt;`Merhaba, ben &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;ad&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;. &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;yas&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt; ya&amp;scedil;&amp;inodot;nday&amp;inodot;m.`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;merhabaDunya&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;void&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Merhaba D&amp;uuml;nya!"&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="nx"&gt;merhabaDunya&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+&lt;span class="kd"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;kisi&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;Kisi&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;KisiImpl&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"Burak"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;33&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;kisi&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;selamla&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="yaml"&gt;YAML&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;YAML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# YAML &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;span class="nt"&gt;site&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;baslik&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Test&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;Sitesi"&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;aciklama&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"Bu&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;bir&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;test&lt;/span&gt;&lt;span class="nv"&gt; &lt;/span&gt;&lt;span class="s"&gt;sitesidir"&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;versiyon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;1.0&lt;/span&gt;
+
+&lt;span class="nt"&gt;kullanicilar&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Ali&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;soyad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Y&amp;inodot;lmaz&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;email&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ali@ornek.com&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;roller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;admin&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;editor&lt;/span&gt;
+
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;ad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Ay&amp;scedil;e&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;soyad&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Kaya&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;email&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ayse@ornek.com&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;roller&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;yazar&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="json"&gt;JSON&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"site"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"baslik"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Test Sitesi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"aciklama"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Bu bir test sitesidir"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"versiyon"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;1.0&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;"kullanicilar"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"ad"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Ali"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"soyad"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Y&amp;inodot;lmaz"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"email"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"ali@ornek.com"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"roller"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"admin"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"editor"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;},&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"ad"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Ay&amp;scedil;e"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"soyad"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"Kaya"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"email"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"ayse@ornek.com"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;"roller"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"yazar"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="markdown"&gt;Markdown&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Markdown&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;# Ba&amp;scedil;l&amp;inodot;k 1&lt;/span&gt;
+&lt;span class="gu"&gt;## Ba&amp;scedil;l&amp;inodot;k 2&lt;/span&gt;
+&lt;span class="gu"&gt;### Ba&amp;scedil;l&amp;inodot;k 3&lt;/span&gt;
+
+&lt;span class="gs"&gt;**Kal&amp;inodot;n metin**&lt;/span&gt; ve &lt;span class="ge"&gt;*italik metin*&lt;/span&gt;
+
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Liste &amp;ouml;&amp;gbreve;esi 1
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Liste &amp;ouml;&amp;gbreve;esi 2
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;Liste &amp;ouml;&amp;gbreve;esi 3
+
+&lt;span class="k"&gt;1.&lt;/span&gt; Numaral&amp;inodot; liste &amp;ouml;&amp;gbreve;esi 1
+&lt;span class="k"&gt;2.&lt;/span&gt; Numaral&amp;inodot; liste &amp;ouml;&amp;gbreve;esi 2
+
+[&lt;span class="nt"&gt;Ba&amp;gbreve;lant&amp;inodot; &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;](&lt;span class="na"&gt;https://example.com&lt;/span&gt;)
+
+![&lt;span class="nt"&gt;Resim a&amp;ccedil;&amp;inodot;klamas&amp;inodot;&lt;/span&gt;](&lt;span class="na"&gt;resim.jpg&lt;/span&gt;)
+
+&lt;span class="k"&gt;&amp;gt; &lt;/span&gt;&lt;span class="ge"&gt;Al&amp;inodot;nt&amp;inodot; &amp;ouml;rne&amp;gbreve;i&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu sayfada farkl&amp;inodot; programlama dillerinin kod bloklar&amp;inodot;n&amp;inodot; test ettik. Dil etiketlerinin do&amp;gbreve;ru &amp;scedil;ekilde g&amp;ouml;r&amp;uuml;nt&amp;uuml;lendi&amp;gbreve;inden emin olmak i&amp;ccedil;in bu &amp;ouml;rnekleri kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Duyuru" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/duyuru-xl.webp" srcset="/images/duyuru-sm.webp 300w, /images/duyuru-md.webp 500w, /images/duyuru-xl.webp 800w, /images/duyuru-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Haberler"/><category term="site"/><category term="Haberler"/></entry></feed>

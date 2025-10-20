@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="tr" />
+<meta name="language" content="tr" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="Ortaya Karışık" property="og:site_name" />
+<meta name="siteurl" content="https://yuceltoluyag.github.io" />
+<meta name="theme-static-dir" content="assets" />
+<meta name="is-homepage" content="false" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+<!-- Google Tag Manager -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    // Varsayılan çerez izinleri
+    dataLayer.push({
+        consent: "default",
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted",
+    });
+
+    // İçerikten veri katmanlarını ayarla
+    dataLayer.push({
+        pageTitleGTM:
+            "GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀",
+        pageTypeGTM: "article",
+        pageLanguage: "tr",
+        pageUrl: window.location.href,
+    });
+
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-KPLBQPPJ");
+</script>
+<!-- End Google Tag Manager --><!-- Open Graph Resim Etiketi -->
+<meta property="og:image" content="https://yuceltoluyag.github.io/images/github-commit-atma-rehberi-xl.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀" />
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuceltoluyag.github.io/github-commit-atma-rehberi/" />
+<meta property="og:title" content="GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="2025-08-15T09:15:00+03:00" />
+<meta property="article:author" content="https://yuceltoluyag.github.io/yazar/yuceltoluyag/" />
+<meta property="article:section" content="Git" />
+  <meta property="article:tag" content="git commit" />
+<meta property="article:tag" content="github" />
+<meta property="article:tag" content="versiyon kontrol" />
+<meta property="article:tag" content="ssh" />
+<meta property="article:tag" content="gpg" />
+<meta property="article:tag" content="açık kaynak" />
+  
+<!-- Meta Description -->
+<meta name="description" content="Git ve GitHub kullanmaya yeni başlayanlar için, adım adım bir projeye commit atma rehberi. SSH anahtarı ve GPG imzası önbilgisi gerektirir." />
+<meta property="og:description" content="Git ve GitHub kullanmaya yeni başlayanlar için, adım adım bir projeye commit atma rehberi. SSH anahtarı ve GPG imzası önbilgisi gerektirir." />
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ortaya Karışık",
+        "description": "Linux, Python ve Web Geliştirme Rehberleri",
+        "url": "https://yuceltoluyag.github.io"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ortaya Karışık",
+        "url": "https://yuceltoluyag.github.io",
+        "logo": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+        "sameAs": [
+"https://github.com/yuceltoluyag","https://instagram.com/yuceltoluyag","https://youtube.com/@yuceltoluyag","https://twitch.tv/yuceltoluyag","https://discord.com/users/188034964879573003","https://matrix.to/#/@fatpip:matrix.org:matrix.org","https://kick.com/babapy"        ]
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀",
+        "description": "Git ve GitHub kullanmaya yeni başlayanlar için, adım adım bir projeye commit atma rehberi. SSH anahtarı ve GPG imzası önbilgisi gerektirir.",
+        "author": {
+            "@type": "Person",
+            "name": "yuceltoluyag",
+            "url": "https://yuceltoluyag.github.io/yazar/yuceltoluyag/"
+        },
+        "datePublished": "2025-08-15T09:15:00+03:00",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Ortaya Karışık",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yuceltoluyag.github.io/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+        },
+"articleSection": "Git","keywords": "git commit, github, versiyon kontrol, ssh, gpg, açık kaynak",        "url": "https://yuceltoluyag.github.io/github-commit-atma-rehberi/",
+"image": "https://yuceltoluyag.github.io/images/github-commit-atma-rehberi-xl.webp",        "homepage": "https://yuceltoluyag.github.io/"
+    }
+</script>
+
+        <title>GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://yuceltoluyag.github.io/images/favicon.svg" />
+        <link rel="shortcut icon" href="https://yuceltoluyag.github.io/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://yuceltoluyag.github.io/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="https://yuceltoluyag.github.io/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://yuceltoluyag.github.io/github-commit-atma-rehberi/" />
+
+        <link rel="stylesheet" href="https://yuceltoluyag.github.io/assets/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+<header class="bg-base-100 shadow-xs sticky top-0 z-30">
+    <div class="container mx-auto px-4">
+        <div class="py-4">
+            <nav class="flex justify-between items-center" id="site-navigation">
+<!-- Site logosu -->
+<div class="shrink-0 mr-4">
+    <a href="https://yuceltoluyag.github.io/" class="flex items-center">
+        <img src="https://yuceltoluyag.github.io/images/logo-lg.webp" alt="Ortaya Karışık" class="h-10" />
+    </a>
+</div>
+
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center space-x-6">
+    <!-- Ana Sayfa -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Ana Sayfa">
+            <span class="iconify" data-icon="tabler:home"></span>
+            <span>Ana Sayfa</span>
+        </a>
+    </li>
+
+    <!-- Hakkımda -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/hakkimda"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Hakkımda">
+            <span class="iconify" data-icon="tabler:user"></span>
+            <span>Hakkımda</span>
+        </a>
+    </li>
+
+    <!-- Bağış -->
+    <li>
+        <a
+            href="https://yuceltoluyag.github.io/bagis"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Bağış">
+            <span class="iconify" data-icon="tabler:heart"></span>
+            <span>Bağış</span>
+        </a>
+    </li>
+
+    <li>
+        <a
+            href="https://www.reddit.com/r/Kanunsuzlar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors"
+            aria-label="Forum">
+            <span class="iconify" data-icon="mdi:reddit"></span>
+            <span>Forum</span>
+        </a>
+    </li>
+
+    <!-- Arama butonu -->
+    <li>
+        <a
+            href="#"
+            class="flex items-center gap-2 text-base-content hover:text-primary transition-colors search-trigger"
+            aria-label="Ara">
+            <span class="iconify" data-icon="tabler:search"></span>
+            <span>Ara</span>
+        </a>
+    </li>
+
+    <!-- Tema Değiştirici -->
+    <li>
+        <label for="desktop-theme-toggle" class="swap swap-rotate ml-2">
+            <!-- Bu gizli checkbox tema durumunu kontrol eder -->
+            <input
+                type="checkbox"
+                id="desktop-theme-toggle"
+                class="theme-controller"
+                value="autumn"
+                aria-label="Temayı değiştir" />
+
+            <!-- Güneş ikonu - açık tema -->
+            <span class="swap-on flex items-center">
+                <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+            </span>
+
+            <!-- Ay ikonu - koyu tema -->
+            <span class="swap-off flex items-center">
+                <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+            </span>
+        </label>
+    </li>
+</ul>
+
+<!-- Mobil Menü Butonu ve Tema Değiştirici -->
+<div class="md:hidden flex items-center gap-3">
+    <!-- Mobil Tema Değiştirici -->
+    <label for="mobile-theme-toggle" class="swap swap-rotate">
+        <input
+            type="checkbox"
+            id="mobile-theme-toggle"
+            class="theme-controller"
+            value="autumn"
+            aria-label="Temayı değiştir" />
+        <span class="swap-on flex items-center">
+            <span class="iconify text-yellow-500" data-icon="tabler:sun-filled"></span>
+        </span>
+        <span class="swap-off flex items-center">
+            <span class="iconify text-indigo-300" data-icon="tabler:moon-filled"></span>
+        </span>
+    </label>
+
+    <!-- Mobil Arama Butonu -->
+    <button class="btn btn-ghost btn-circle search-trigger" aria-label="Ara">
+        <span class="iconify" data-icon="tabler:search"></span>
+    </button>
+
+    <!-- Mobil Menü Butonu (DaisyUI Dropdown) -->
+    <div class="dropdown dropdown-end">
+        <button class="btn btn-ghost btn-circle" tabindex="0" aria-label="Menüyü Aç/Kapat">
+            <span class="iconify" data-icon="tabler:menu-2"></span>
+        </button>
+        <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 mt-4">
+            <li>
+                <a href="https://yuceltoluyag.github.io/">
+                    <span class="iconify" data-icon="tabler:home"></span>
+                    Ana Sayfa
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/hakkimda">
+                    <span class="iconify" data-icon="tabler:user"></span>
+                    Hakkımda
+                </a>
+            </li>
+            <li>
+                <a href="https://yuceltoluyag.github.io/bagis">
+                    <span class="iconify" data-icon="tabler:heart"></span>
+                    Bağış
+                </a>
+            </li>
+            <li>
+                <a href="https://www.reddit.com/r/Kanunsuzlar/" target="_blank" rel="noopener noreferrer">
+                    <span class="iconify" data-icon="mdi:reddit"></span>
+                    Forum
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>            </nav>
+        </div>
+    </div>
+</header>
+            <main id="main-content" class="swup-transition-fade flex-1"><script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
+<div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Sidebar bileşenleri -->
+        <aside class="order-2 lg:order-1 lg:col-span-1">
+            <div class="sticky top-20 sidebar-wrapper">
+                <div class="space-y-6">
+                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:list"></span>
+                                <span class="ml-2">İçindekiler</span>
+                            </h3>
+                            <div class="toc-container">
+                                <div class="toc-content max-h-[250px] overflow-y-auto"><div id="toc"><ul><li><a class="toc-href" href="#1-bu-yaziya-baslamadan-once-okuman-gerekenler" title="1️⃣ Bu Yaz&inodot;ya Ba&scedil;lamadan &Ouml;nce Okuman Gerekenler">1️⃣ Bu Yaz&inodot;ya Ba&scedil;lamadan &Ouml;nce Okuman Gerekenler</a></li><li><a class="toc-href" href="#2-on-hazirliklar" title="2️⃣ &Ouml;n Haz&inodot;rl&inodot;klar">2️⃣ &Ouml;n Haz&inodot;rl&inodot;klar</a><ul><li><a class="toc-href" href="#git-kurulumunu-kontrol-et" title="Git Kurulumunu Kontrol Et">Git Kurulumunu Kontrol Et</a></li><li><a class="toc-href" href="#github-hesabina-giris-yap" title="GitHub Hesab&inodot;na Giri&scedil; Yap">GitHub Hesab&inodot;na Giri&scedil; Yap</a></li><li><a class="toc-href" href="#ssh-baglantisini-test-et" title="SSH Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et">SSH Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et</a></li><li><a class="toc-href" href="#gpg-anahtarini-kontrol-et" title="GPG Anahtar&inodot;n&inodot; Kontrol Et">GPG Anahtar&inodot;n&inodot; Kontrol Et</a></li></ul></li><li><a class="toc-href" href="#3-repoyu-klonlama_1" title="3️⃣ Repoyu Klonlama">3️⃣ Repoyu Klonlama</a></li><li><a class="toc-href" href="#4-kendi-branchinde-calis-neden-ve-nasil" title="4️⃣ Kendi Branch&rsquo;inde &Ccedil;al&inodot;&scedil;: Neden ve Nas&inodot;l?">4️⃣ Kendi Branch&rsquo;inde &Ccedil;al&inodot;&scedil;: Neden ve Nas&inodot;l?</a></li><li><a class="toc-href" href="#5-projeyi-ilk-kez-lokalde-ayaga-kaldir-virtualenv-duty" title="5️⃣ Projeyi &Idot;lk Kez Lokalde Aya&gbreve;a Kald&inodot;r (virtualenv + duty)">5️⃣ Projeyi &Idot;lk Kez Lokalde Aya&gbreve;a Kald&inodot;r (virtualenv + duty)</a></li><li><a class="toc-href" href="#6-degisiklik-yapma-ornek" title="6️⃣ De&gbreve;i&scedil;iklik Yapma (&Ouml;rnek)">6️⃣ De&gbreve;i&scedil;iklik Yapma (&Ouml;rnek)</a></li><li><a class="toc-href" href="#7-degisiklikleri-kontrol-et" title="7️⃣ De&gbreve;i&scedil;iklikleri Kontrol Et">7️⃣ De&gbreve;i&scedil;iklikleri Kontrol Et</a></li><li><a class="toc-href" href="#8-commit-hazirlama-ve-imzalama-gpg-s" title="8️⃣ Commit Haz&inodot;rlama ve &Idot;mzalama (GPG -S)">8️⃣ Commit Haz&inodot;rlama ve &Idot;mzalama (GPG -S)</a></li><li><a class="toc-href" href="#9-branchini-remotea-gonder-push" title="9️⃣ Branch&rsquo;ini Remote&rsquo;a G&ouml;nder (push)">9️⃣ Branch&rsquo;ini Remote&rsquo;a G&ouml;nder (push)</a></li><li><a class="toc-href" href="#pull-request-pr-ac-her-zaman-pr" title="🔟 Pull Request (PR) A&ccedil;: Her Zaman PR!">🔟 Pull Request (PR) A&ccedil;: Her Zaman PR!</a></li><li><a class="toc-href" href="#11-github-uzerinden-kontrol" title="1️⃣1️⃣ GitHub &Uuml;zerinden Kontrol">1️⃣1️⃣ GitHub &Uuml;zerinden Kontrol</a></li><li><a class="toc-href" href="#12-ikinci-ve-sonraki-calisma-oturumlari-tekrarlanan-akis" title="1️⃣2️⃣ &Idot;kinci ve Sonraki &Ccedil;al&inodot;&scedil;ma Oturumlar&inodot; (Tekrarlanan Ak&inodot;&scedil;)">1️⃣2️⃣ &Idot;kinci ve Sonraki &Ccedil;al&inodot;&scedil;ma Oturumlar&inodot; (Tekrarlanan Ak&inodot;&scedil;)</a></li><li><a class="toc-href" href="#13-sik-yapilan-hatalar-ve-cozumleri" title="1️⃣3️⃣ S&inodot;k Yap&inodot;lan Hatalar ve &Ccedil;&ouml;z&uuml;mleri">1️⃣3️⃣ S&inodot;k Yap&inodot;lan Hatalar ve &Ccedil;&ouml;z&uuml;mleri</a></li><li><a class="toc-href" href="#14-ornek-tam-akis-kisa-ozet" title="1️⃣4️⃣ &Ouml;rnek Tam Ak&inodot;&scedil; (K&inodot;sa &Ouml;zet)">1️⃣4️⃣ &Ouml;rnek Tam Ak&inodot;&scedil; (K&inodot;sa &Ouml;zet)</a></li><li><a class="toc-href" href="#sonuc" title="🎯 Sonu&ccedil;">🎯 Sonu&ccedil;</a></li></ul></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:article"></span>
+                                <span class="ml-2">Son Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ninja-kamil-ghost-of-tsushima-linux-macerasi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/linux-vortex-clair-obscur-expedition-33-mod-kurulumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Linux’ta Vortex ile “Clair Obscur: Expedition 33” Mod Kurulumu Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/arch-linux-dnsmasq-dnscrypt-proxy/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/autocut-otomatik-video-kesme-markdown-rehberi/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Autocut ile Otomatik Video Kesme Rehberi</h4>
+                                    </a>
+                                </div>
+                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu/"
+                                        class="hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+                    <div class="card bg-base-100 shadow-xs hidden lg:block">
+                        <div class="card-body p-4">
+                            <h3 class="text-xl font-bold mb-3 flex items-center">
+                                <span class="iconify" data-icon="tabler:copy"></span>
+                                <span class="ml-2">Benzer Yazılar</span>
+                            </h3>
+                            <div class="space-y-3">
+                                 <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/git-gpg-imzali-commit-vscode-arch/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/git-commit-geri-donme-cherry-pick/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı</h4>
+                                    </a>
+                                </div>
+                                  <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                    <a
+                                        href="https://yuceltoluyag.github.io/ssh-gpg-yedekleme-geri-yukleme/"
+                                        class="link hover:text-primary visited:text-purple-200 no-underline">
+                                        <h4 class="text-md">SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme</h4>
+                                    </a>
+                                </div>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="order-1 lg:order-2 lg:col-span-3">
+            <article class="card bg-base-100 shadow-xs mb-8">
+                <div class="card-body p-6">
+                    <header class="mb-6">
+                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀</h1>
+
+                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:calendar"></span>
+                                <time datetime="2025-08-15T09:15:00+03:00" class="ml-1">
+                                    15 August 2025
+                                </time>
+                            </div>
+
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:folder"></span>
+                                <a
+                                    href="https://yuceltoluyag.github.io/kategori/git/"
+                                    class="link link-hover ml-1">
+                                    Git
+                                </a>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:list-numbers"></span>
+                                <span class="ml-1">
+                                    Git (7/8)
+                                </span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:text-recognition"></span>
+                                <span class="ml-1">1108 kelime</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:clock"></span>
+                                <span class="ml-1">5 dakika</span>
+                            </div>
+
+                            <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                                <span class="ml-1">Seviye 9.88</span>
+                            </div>
+                             <div class="flex items-center">
+                                <span class="iconify" data-icon="tabler:edit"></span>
+                                <a
+                                    href="https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/github-commit-atma-rehberi.md"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="link link-hover ml-1">
+                                    Düzenle
+                                </a>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div class="bg-base-200 p-4 rounded-xs mb-6">
+                        <h2 class="text-xl font-bold mb-2 text-base-content">Git Serisi</h2>
+                        <ol class="space-y-2 pl-5 list-decimal">
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-ssh-key-olusturma/"
+                                    class="link link-hover text-primary">
+                                    Git SSH-Key Oluşturma (Windows & Linux)
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/windows-terminalimi-nasil-ozellestiriyorum/"
+                                    class="link link-hover text-primary">
+                                    Windows Terminalimi Nasıl Özelleştiriyorum
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/ssh-gpg-yedekleme-geri-yukleme/"
+                                    class="link link-hover text-primary">
+                                    SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-gpg-imzali-etiket/"
+                                    class="link link-hover text-primary">
+                                    Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-commit-geri-donme-cherry-pick/"
+                                    class="link link-hover text-primary">
+                                    Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı
+                                </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin/"
+                                    class="link link-hover text-primary">
+                                    GitHub Copilot ile Commit Mesajlarınızı Otomatik Olarak Tamamlayın: Adım Adım Rehber
+                                </a>
+                            </li>
+                            <li class="font-bold text-primary">
+                                <span>GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀</span>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://yuceltoluyag.github.io/git-gpg-imzali-commit-vscode-arch/"
+                                    class="link link-hover text-primary">
+                                    VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="prose prose-xl dark:prose-invert max-w-none article-content"><blockquote>
+<p>&ldquo;Git commit atmak&rdquo; yaz&inodot;l&inodot;mc&inodot; d&uuml;nyas&inodot;n&inodot;n ekmek-su ikilisi gibi bir &scedil;eydir. E&gbreve;er kod yaz&inodot;yorsan, de&gbreve;i&scedil;ikliklerini versiyon kontrol sistemine kaydetmeyi bilmek zorundas&inodot;n. Bu rehberde sana, <strong>GitHub</strong> &uuml;zerinde bir projeye <strong>commit atma</strong> s&uuml;recini s&inodot;f&inodot;rdan, ad&inodot;m ad&inodot;m ve bol &ouml;rnekle anlataca&gbreve;&inodot;m.
+<strong>&Ouml;nemli g&uuml;ncelleme:</strong> Ana repoya do&gbreve;rudan de&gbreve;il, <strong>kendi branch&rsquo;inde</strong> &ccedil;al&inodot;&scedil;&inodot;p her zaman <strong>Pull Request (PR)</strong> ile g&ouml;nderiyoruz. Ayr&inodot;ca projeyi lokalde g&ouml;r&uuml;p test etmek i&ccedil;in <strong>virtualenv + duty</strong> ile nas&inodot;l aya&gbreve;a kald&inodot;raca&gbreve;&inodot;n&inodot; da anlat&inodot;yorum.</p>
+</blockquote>
+<h2 id="1-bu-yaziya-baslamadan-once-okuman-gerekenler">1️⃣ Bu Yaz&inodot;ya Ba&scedil;lamadan &Ouml;nce Okuman Gerekenler</h2>
+<p>E&gbreve;er daha &ouml;nce Git ile SSH anahtar&inodot; eklemediysen veya GPG imzal&inodot; commit/etiket konusuna g&ouml;z atmad&inodot;ysan, &ouml;nce &scedil;u iki makaleyi mutlaka oku:</p>
+<ul>
+<li><a href="/git-ssh-key-olusturma/">Git SSH-Key Olu&scedil;turma (Windows &amp; Linux)</a> 🔑</li>
+<li><a href="/git-gpg-imzali-etiket/">Git ile GPG &Idot;mzal&inodot; Etiket Olu&scedil;turma</a> ✍️</li>
+</ul>
+<div class="info-box important">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">&Ouml;nemli</div>
+<p>Bu rehberin sorunsuz ilerlemesi i&ccedil;in Git kurulu olmal&inodot;, GitHub hesab&inodot;na SSH anahtar&inodot;n ekli olmal&inodot;, commit imzas&inodot; i&ccedil;in GPG anahtar&inodot;n tan&inodot;ml&inodot; olmal&inodot; ve Python kurulu olmal&inodot;d&inodot;r (virtualenv ve <code>duty</code> kullanaca&gbreve;&inodot;z).</p>
+</div>
+</div>
+<hr/>
+<h2 id="2-on-hazirliklar">2️⃣ &Ouml;n Haz&inodot;rl&inodot;klar</h2>
+<h3 id="git-kurulumunu-kontrol-et">Git Kurulumunu Kontrol Et</h3>
+<p>Terminalini a&ccedil; ve &scedil;u komutu &ccedil;al&inodot;&scedil;t&inodot;r:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>--version
+</code></pre></div>
+<p>&Ouml;rnek &ccedil;&inodot;kt&inodot;:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>git version 2.50.1
+</code></pre></div>
+<p>Git yoksa <a href="https://git-scm.com/downloads">git-scm.com/downloads</a> &uuml;zerinden kurabilirsin.</p>
+<h3 id="github-hesabina-giris-yap">GitHub Hesab&inodot;na Giri&scedil; Yap</h3>
+<p>GitHub hesab&inodot;n yoksa <a href="https://github.com">github.com</a> &uuml;zerinden h&inodot;zl&inodot;ca olu&scedil;tur. Varsa taray&inodot;c&inodot;dan giri&scedil; yap.</p>
+<h3 id="ssh-baglantisini-test-et">SSH Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</code></pre></div>
+<p>Ba&scedil;ar&inodot;l&inodot;ysa &scedil;&ouml;yle bir mesaj gelir:</p>
+<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code>Hi yuceltoluyag! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre></div>
+<h3 id="gpg-anahtarini-kontrol-et">GPG Anahtar&inodot;n&inodot; Kontrol Et</h3>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.signingkey
+</code></pre></div>
+<p>Anahtar g&ouml;r&uuml;nm&uuml;yorsa GPG yaz&inodot;m&inodot; takip ederek ayarla.</p>
+<hr/>
+<h2 id="3-repoyu-klonlama_1">3️⃣ Repoyu Klonlama</h2>
+<p>&Ouml;rnek repo: <strong>yuceltoluyag.github.io</strong>
+<img alt="GitHub Repo Klonlama" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/github-commit-atma-rehberi-xl.webp" srcset="/images/github-commit-atma-rehberi-sm.webp 300w, /images/github-commit-atma-rehberi-md.webp 500w, /images/github-commit-atma-rehberi-xl.webp 800w, /images/github-commit-atma-rehberi-xl.webp 1200w"/></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:yuceltoluyag/yuceltoluyag.github.io.git
+<span class="nb">cd</span><span class="w"> </span>yuceltoluyag.github.io
+</code></pre></div>
+<div class="info-box tip">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">&Idot;pucu</div>
+<p>HTTPS ile klonlamak istersen: <code>git clone https://github.com/yuceltoluyag/yuceltoluyag.github.io.git</code>. Ancak HTTPS push s&inodot;ras&inodot;nda kullan&inodot;c&inodot; ad&inodot;/parola ister; SSH genellikle daha rahatt&inodot;r.</p>
+</div>
+</div>
+<hr/>
+<h2 id="4-kendi-branchinde-calis-neden-ve-nasil">4️⃣ Kendi Branch&rsquo;inde &Ccedil;al&inodot;&scedil;: Neden ve Nas&inodot;l?</h2>
+<p>Ana branch&rsquo;e (genellikle <code>main</code>) <b>do&gbreve;rudan commit/push yapm&inodot;yoruz</b>. Bunun yerine kendimize bir branch a&ccedil;&inodot;p orada &ccedil;al&inodot;&scedil;&inodot;yoruz. B&ouml;ylece ana repo d&uuml;zeni bozulmuyor, t&uuml;m katk&inodot;lar <b>Pull Request (PR)</b> ile geliyor.</p>
+<p>Yeni branch a&ccedil;:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>benim-branchim
+</code></pre></div>
+<p>&Ouml;rnek:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>arkadas-landing-duzenleme
+</code></pre></div>
+<div class="info-box tip">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">&Idot;pucu</div>
+<p>Branch isimlerini k&inodot;sa, a&ccedil;&inodot;klay&inodot;c&inodot; ve tireli se&ccedil;: <code>bugfix-typo-footer</code>, <code>feature-yeni-makale-sablonu</code> gibi.</p>
+</div>
+</div>
+<hr/>
+<h2 id="5-projeyi-ilk-kez-lokalde-ayaga-kaldir-virtualenv-duty">5️⃣ Projeyi &Idot;lk Kez Lokalde Aya&gbreve;a Kald&inodot;r (virtualenv + duty)</h2>
+<p>De&gbreve;i&scedil;ikliklerini g&ouml;r&uuml;p test edebilmek i&ccedil;in projeyi lokalde &ccedil;al&inodot;&scedil;t&inodot;rman &ccedil;ok &ouml;nemli. A&scedil;a&gbreve;&inodot;daki ad&inodot;mlar <b>ilk kurulum</b> i&ccedil;indir:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># 1) Sanal ortam olu&scedil;tur</span>
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+
+<span class="c1"># 2) Sanal ortam&inodot; aktif et</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">     </span><span class="c1"># Linux/Mac</span>
+<span class="c1"># Windows PowerShell: .\venv\Scripts\Activate.ps1</span>
+
+<span class="c1"># 3) Ba&gbreve;&inodot;ml&inodot;l&inodot;klar&inodot; kur</span>
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+
+<span class="c1"># 4) Proje g&ouml;revlerini/ba&gbreve;&inodot;ml&inodot;l&inodot;klar&inodot; g&uuml;ncelle</span>
+duty<span class="w"> </span>update
+
+<span class="c1"># 5) Edit&ouml;rde a&ccedil; (iste&gbreve;e ba&gbreve;l&inodot; ama &ouml;nerilir)</span>
+code<span class="w"> </span>.
+
+<span class="c1"># 6) Canl&inodot; yenileme ile lokal sunucuyu ba&scedil;lat</span>
+duty<span class="w"> </span>livereload
+</code></pre></div>
+<p>Terminal &ccedil;&inodot;kt&inodot;s&inodot;nda <b>lokal URL</b> g&ouml;r&uuml;rs&uuml;n (&ccedil;o&gbreve;unlukla <code><a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></code> veya <code><a href="http://localhost:8000">http://localhost:8000</a></code>). Taray&inodot;c&inodot;da bu adrese giderek yapt&inodot;&gbreve;&inodot;n de&gbreve;i&scedil;iklikleri anl&inodot;k g&ouml;rebilirsin. Sunucuyu durdurmak i&ccedil;in terminalde <code>ctrl c</code> tu&scedil;lar&inodot;na bas.</p>
+<div class="info-box warning">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">Uyar&inodot;</div>
+<p>Sanal ortam (<code>venv</code>) <b>aktif edilmeden</b> <code>duty</code> komutlar&inodot;n&inodot; &ccedil;al&inodot;&scedil;t&inodot;r&inodot;rsan uygulama a&ccedil;&inodot;lmayacakt&inodot;r. Do&gbreve;ru komut: <code>source venv/bin/activate</code> (Linux/Mac). Yanl&inodot;&scedil;: <code>source venv/bin/active</code> (sonu &ldquo;activate&rdquo; olmal&inodot;).</p>
+</div>
+</div>
+<hr/>
+<h2 id="6-degisiklik-yapma-ornek">6️⃣ De&gbreve;i&scedil;iklik Yapma (&Ouml;rnek)</h2>
+<p>&Ouml;rne&gbreve;in <code>README.md</code> dosyas&inodot;na ufak bir sat&inodot;r ekleyelim:</p>
+<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code>Bu sat&inodot;r, branch &uuml;zerinden yap&inodot;lan commit &ouml;rne&gbreve;idir. 🚀
+</code></pre></div>
+<p>VS Code&rsquo;da a&ccedil;mak i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>code<span class="w"> </span>.
+</code></pre></div>
+<p>Dosyay&inodot; d&uuml;zenleyip kaydetmeyi unutma. Lokal sunucu a&ccedil;&inodot;ksa (livereload), sayfa otomatik yenilenecektir.</p>
+<hr/>
+<h2 id="7-degisiklikleri-kontrol-et">7️⃣ De&gbreve;i&scedil;iklikleri Kontrol Et</h2>
+<p>Neler de&gbreve;i&scedil;mi&scedil;?</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>status
+</code></pre></div>
+<p>Sat&inodot;r baz&inodot;nda fark&inodot; g&ouml;rmek i&ccedil;in:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>diff
+</code></pre></div>
+<p>Ye&scedil;il yeni eklenenleri, k&inodot;rm&inodot;z&inodot; kald&inodot;r&inodot;lanlar&inodot; g&ouml;sterir.</p>
+<hr/>
+<h2 id="8-commit-hazirlama-ve-imzalama-gpg-s">8️⃣ Commit Haz&inodot;rlama ve &Idot;mzalama (GPG -S)</h2>
+<p>De&gbreve;i&scedil;ikliklerini stage&rsquo;e al:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>.
+<span class="c1"># veya tek dosya i&ccedil;in: git add README.md</span>
+</code></pre></div>
+<p>&Idot;mzal&inodot; commit at:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-S<span class="w"> </span>-m<span class="w"> </span><span class="s2">"README.md: &ouml;rnek sat&inodot;r eklendi"</span>
+</code></pre></div>
+<div class="info-box tip">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">&Idot;pucu</div>
+<p>&Idot;yi commit mesaj&inodot; k&inodot;sa ve nettir. K&ouml;t&uuml;: <code>update</code>. &Idot;yi: <code>docs: README.md'ye katk&inodot; ak&inodot;&scedil;&inodot; eklendi</code>.</p>
+</div>
+</div>
+<hr/>
+<h2 id="9-branchini-remotea-gonder-push">9️⃣ Branch&rsquo;ini Remote&rsquo;a G&ouml;nder (push)</h2>
+<p>Art&inodot;k branch&rsquo;ini GitHub&rsquo;a g&ouml;nderebilirsin:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>benim-branchim
+</code></pre></div>
+<p>&Ouml;rnek:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>arkadas-landing-duzenleme
+</code></pre></div>
+<p><code>-u</code> parametresi, sonraki push/pull komutlar&inodot;nda branch izlemeyi kolayla&scedil;t&inodot;r&inodot;r.</p>
+<hr/>
+<h2 id="pull-request-pr-ac-her-zaman-pr">🔟 Pull Request (PR) A&ccedil;: Her Zaman PR!</h2>
+<p>Taray&inodot;c&inodot;dan repo sayfas&inodot;na git: <code><a href="https://github.com/yuceltoluyag/yuceltoluyag.github.io">https://github.com/yuceltoluyag/yuceltoluyag.github.io</a></code></p>
+<p>GitHub genelde &ldquo;Compare &amp; pull request&rdquo; butonunu g&ouml;sterir. T&inodot;kla ve PR&rsquo;&inodot;n&inodot; olu&scedil;tur. A&ccedil;&inodot;klama alan&inodot;nda:</p>
+<ul>
+<li><b>Ne</b> yapt&inodot;&gbreve;&inodot;n&inodot;</li>
+<li><b>Neden</b> yapt&inodot;&gbreve;&inodot;n&inodot;</li>
+<li>Nas&inodot;l <b>test</b> etti&gbreve;ini</li>
+</ul>
+<p>k&inodot;saca anlat. Bu repo i&ccedil;in <b>2. ve sonraki &ccedil;al&inodot;&scedil;malarda her zaman PR</b> a&ccedil;&inodot;yoruz; b&ouml;ylece repo sahibiyle kar&inodot;&scedil;&inodot;kl&inodot;k olmaz, kod inceleme ak&inodot;&scedil;&inodot; korunur.</p>
+<div class="info-box important">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">&Ouml;nemli</div>
+<p>Bu projede ana branch&rsquo;e do&gbreve;rudan push yapma. T&uuml;m katk&inodot;lar <b>branch &rarr; PR</b> ak&inodot;&scedil;&inodot;yla gelmelidir.</p>
+</div>
+</div>
+<hr/>
+<h2 id="11-github-uzerinden-kontrol">1️⃣1️⃣ GitHub &Uuml;zerinden Kontrol</h2>
+<p>PR a&ccedil;&inodot;ld&inodot;ktan sonra commit&rsquo;lerini ve de&gbreve;i&scedil;ikliklerini GitHub aray&uuml;z&uuml;nde g&ouml;rebilirsin.
+GPG imzas&inodot; do&gbreve;ruysa commit yan&inodot;nda <b>Verified</b> etiketi g&ouml;r&uuml;n&uuml;r.</p>
+<div class="info-box note">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">Bilgi</div>
+<p>GPG imzas&inodot;, commit&rsquo;in ger&ccedil;ekten sana ait oldu&gbreve;unu do&gbreve;rular ve tak&inodot;m &ccedil;al&inodot;&scedil;mas&inodot;nda g&uuml;ven sa&gbreve;lar.</p>
+</div>
+</div>
+<hr/>
+<h2 id="12-ikinci-ve-sonraki-calisma-oturumlari-tekrarlanan-akis">1️⃣2️⃣ &Idot;kinci ve Sonraki &Ccedil;al&inodot;&scedil;ma Oturumlar&inodot; (Tekrarlanan Ak&inodot;&scedil;)</h2>
+<p>Projeyi tekrar a&ccedil;t&inodot;&gbreve;&inodot;nda &scedil;u ad&inodot;mlar&inodot; <b>her zaman uygula</b>:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>yuceltoluyag.github.io
+
+<span class="c1"># 1) Sanal ortam&inodot; aktif et</span>
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">      </span><span class="c1"># Windows: .\venv\Scripts\Activate.ps1</span>
+
+<span class="c1"># 2) Proje g&ouml;revlerini/ba&gbreve;&inodot;ml&inodot;l&inodot;klar&inodot; g&uuml;ncelle</span>
+duty<span class="w"> </span>update
+
+<span class="c1"># 3) Edit&ouml;rde a&ccedil; (opsiyonel)</span>
+code<span class="w"> </span>.
+
+<span class="c1"># 4) Lokal sunucuyu ba&scedil;lat (canl&inodot; yenileme)</span>
+duty<span class="w"> </span>livereload
+</code></pre></div>
+<blockquote>
+<p>Neden tekrar tekrar? &Ccedil;&uuml;nk&uuml; sanal ortam aktif edilmeden ba&scedil;lat&inodot;l&inodot;rsa <strong>uygulama a&ccedil;&inodot;lmayacakt&inodot;r</strong>. Ayr&inodot;ca <code>duty update</code>, g&ouml;revlerin/ba&gbreve;&inodot;ml&inodot;l&inodot;klar&inodot;n g&uuml;ncel kalmas&inodot;n&inodot; sa&gbreve;lar.</p>
+</blockquote>
+<p><strong>Yeni bir i&scedil;/&ouml;zellik</strong> i&ccedil;in &ouml;nerilen ak&inodot;&scedil;:</p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># Ana branch'i g&uuml;ncelle:</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># Yeni branch olu&scedil;tur:</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>task-kisa-adi
+
+<span class="c1"># &Ccedil;al&inodot;&scedil;, commit'le, push et:</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-S<span class="w"> </span>-m<span class="w"> </span><span class="s2">"feat: X &ouml;zelli&gbreve;i eklendi"</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>task-kisa-adi
+
+<span class="c1"># Her zaman PR a&ccedil;:</span>
+<span class="c1"># GitHub -&gt; Compare &amp; pull request</span>
+</code></pre></div>
+<hr/>
+<h2 id="13-sik-yapilan-hatalar-ve-cozumleri">1️⃣3️⃣ S&inodot;k Yap&inodot;lan Hatalar ve &Ccedil;&ouml;z&uuml;mleri</h2>
+<table>
+<thead>
+<tr>
+<th>Hata/Belirti</th>
+<th>Neden</th>
+<th>&Ccedil;&ouml;z&uuml;m</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>command not found: duty</code></td>
+<td>Sanal ortam aktif de&gbreve;il veya ba&gbreve;&inodot;ml&inodot;l&inodot;klar kurulmam&inodot;&scedil;</td>
+<td><code>source venv/bin/activate</code> &rarr; <code>pip install -r requirements.txt</code> &rarr; <code>duty update</code></td>
+</tr>
+<tr>
+<td>Uygulama a&ccedil;&inodot;lm&inodot;yor</td>
+<td>venv aktif edilmeden komut &ccedil;al&inodot;&scedil;t&inodot;r&inodot;ld&inodot;</td>
+<td>Her oturumda &ouml;nce <code>source venv/bin/activate</code></td>
+</tr>
+<tr>
+<td>Yanl&inodot;&scedil; komut: <code>source venv/bin/active</code></td>
+<td>Dosya ad&inodot; hatal&inodot; (<code>activate</code> olmal&inodot;)</td>
+<td>Do&gbreve;ru komut: <code>source venv/bin/activate</code></td>
+</tr>
+<tr>
+<td><code>Permission denied (publickey)</code></td>
+<td>SSH anahtar&inodot; yok/agent&rsquo;e ekli de&gbreve;il</td>
+<td>SSH anahtar&inodot;n&inodot; GitHub&rsquo;a ekle, ard&inodot;ndan <code>ssh-add</code> ile agent&rsquo;a ekle</td>
+</tr>
+<tr>
+<td><code>gpg: signing failed</code></td>
+<td>GPG anahtar&inodot; tan&inodot;ms&inodot;z/parola girilmedi</td>
+<td><code>git config --global user.signingkey</code> ile ayarla; pinentry kurulu mu kontrol et</td>
+</tr>
+<tr>
+<td>PR&rsquo;da &ldquo;conflict&rdquo; uyar&inodot;s&inodot;</td>
+<td>Ana branch&rsquo;te yeni commit&rsquo;ler var</td>
+<td>PR a&ccedil;madan &ouml;nce <code>git checkout main &amp;&amp; git pull origin main</code> ile g&uuml;ncelle</td>
+</tr>
+<tr>
+<td>PR a&ccedil;&inodot;lmad&inodot;, do&gbreve;rudan main&rsquo;e pushland&inodot;</td>
+<td>S&uuml;re&ccedil; ihlali</td>
+<td>De&gbreve;i&scedil;iklikleri geri al, ak&inodot;&scedil;&inodot; takip et: branch &rarr; push &rarr; PR</td>
+</tr>
+</tbody>
+</table>
+<div class="info-box tip">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div>
+<div class="alert-title">&Idot;pucu</div>
+<p>Lokal sunucuyu durdurmak i&ccedil;in terminalde <code>ctrl c</code> tu&scedil;lar&inodot;na bas. Yeniden ba&scedil;latmak i&ccedil;in yine <code>duty livereload</code> kullan.</p>
+</div>
+</div>
+<hr/>
+<h2 id="14-ornek-tam-akis-kisa-ozet">1️⃣4️⃣ &Ouml;rnek Tam Ak&inodot;&scedil; (K&inodot;sa &Ouml;zet)</h2>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="c1"># &Idot;lk kez:</span>
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:yuceltoluyag/yuceltoluyag.github.io.git
+<span class="nb">cd</span><span class="w"> </span>yuceltoluyag.github.io
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>arkadas-landing-duzenleme
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+duty<span class="w"> </span>update
+code<span class="w"> </span>.
+duty<span class="w"> </span>livereload<span class="w">   </span><span class="c1"># Lokal URL'de de&gbreve;i&scedil;iklikleri g&ouml;r</span>
+
+<span class="c1"># &Ccedil;al&inodot;&scedil;, d&uuml;zenle, sonra:</span>
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-S<span class="w"> </span>-m<span class="w"> </span><span class="s2">"docs: README'ye katk&inodot; ak&inodot;&scedil;&inodot; eklendi"</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>arkadas-landing-duzenleme
+<span class="c1"># GitHub'da: Compare &amp; pull request &rarr; A&ccedil;&inodot;klamay&inodot; yaz &rarr; PR g&ouml;nder</span>
+</code></pre></div>
+<p><strong>Sonraki oturumlarda:</strong></p>
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>yuceltoluyag.github.io
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+duty<span class="w"> </span>update
+code<span class="w"> </span>.
+duty<span class="w"> </span>livereload
+<span class="c1"># Yeni i&scedil; i&ccedil;in:</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>yeni-gorev
+<span class="c1"># de&gbreve;i&scedil;tir &rarr; commit &rarr; push &rarr; PR</span>
+</code></pre></div>
+<hr/>
+<h2 id="sonuc">🎯 Sonu&ccedil;</h2>
+<p>Art&inodot;k &ldquo;GitHub&rsquo;ta bir projeye nas&inodot;l commit at&inodot;l&inodot;r?&rdquo; sorusunun cevab&inodot;n&inodot; sadece &ouml;&gbreve;renmekle kalmad&inodot;n; <b>do&gbreve;ru ak&inodot;&scedil;</b> olan <b>branch &uuml;zerinde &ccedil;al&inodot;&scedil; + PR ile g&ouml;nder</b> s&uuml;recini, ayr&inodot;ca projeyi <b>lokalde aya&gbreve;a kald&inodot;rma</b> ad&inodot;mlar&inodot;n&inodot; da biliyorsun. Bu yakla&scedil;&inodot;m:</p>
+<ul>
+<li>Ana branch&rsquo;i temiz ve stabil tutar,</li>
+<li>&Idot;nceleme (code review) s&uuml;recini m&uuml;mk&uuml;n k&inodot;lar,</li>
+<li>Ekip i&ccedil;i kar&inodot;&scedil;&inodot;kl&inodot;klar&inodot; engeller,</li>
+<li>De&gbreve;i&scedil;ikliklerini g&uuml;venle test edip do&gbreve;rulaman&inodot; sa&gbreve;lar.</li>
+</ul>
+<p>K&inodot;sacas&inodot;, profesyonel bir kat&inodot;l&inodot;m i&ccedil;in ihtiya&ccedil; duydu&gbreve;un t&uuml;m yap&inodot; ta&scedil;lar&inodot; bu rehberde. &Scedil;imdi s&inodot;ra sende: Kendi branch&rsquo;ini a&ccedil;, lokalde &ccedil;al&inodot;&scedil;t&inodot;r, a&ccedil;&inodot;klay&inodot;c&inodot; commit mesajlar&inodot; yaz ve <b>her zaman PR</b> ile g&ouml;nder. 🚀</p></div>
+
+                    <!-- Sosyal Medya Paylaşım Butonları -->
+                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+                        <span class="text-sm text-base-content/70 flex items-center mr-2">
+                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+                            Paylaş:
+                        </span>
+
+                        <!-- Twitter/X Paylaşım -->
+                        <a
+                            href="https://twitter.com/intent/tweet?url=https://yuceltoluyag.github.io/github-commit-atma-rehberi/&text=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn twitter-share"
+                            aria-label="Twitter'da Paylaş">
+                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
+                        </a>
+
+                        <!-- Facebook Paylaşım -->
+                        <a
+                            href="https://www.facebook.com/sharer/sharer.php?u=https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn facebook-share"
+                            aria-label="Facebook'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+                        </a>
+
+                        <!-- LinkedIn Paylaşım -->
+                        <a
+                            href="https://www.linkedin.com/sharing/share-offsite/?url=https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn linkedin-share"
+                            aria-label="LinkedIn'de Paylaş">
+                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+                        </a>
+
+                        <!-- Reddit Paylaşım -->
+                        <a
+                            href="https://www.reddit.com/submit?url=https://yuceltoluyag.github.io/github-commit-atma-rehberi/&title=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn reddit-share"
+                            aria-label="Reddit'te Paylaş">
+                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+                        </a>
+
+                        <!-- Telegram Paylaşım -->
+                        <a
+                            href="https://t.me/share/url?url=https://yuceltoluyag.github.io/github-commit-atma-rehberi/&text=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn telegram-share"
+                            aria-label="Telegram'da Paylaş">
+                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+                        </a>
+
+                        <!-- WhatsApp Paylaşım -->
+                        <a
+                            href="https://api.whatsapp.com/send?text=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀 https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn whatsapp-share"
+                            aria-label="WhatsApp'ta Paylaş">
+                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+                        </a>
+
+
+                        <!-- Email Paylaşım -->
+                        <a
+                            href="mailto:?subject=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀&body=https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn email-share"
+                            aria-label="Email ile Paylaş">
+                            <iconify-icon icon="tabler:mail"></iconify-icon>
+                        </a>
+
+                        <!-- Pinterest Paylaşım -->
+                        <a
+                            href="https://pinterest.com/pin/create/button/?url=https://yuceltoluyag.github.io/github-commit-atma-rehberi/&description=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀&media=https://yuceltoluyag.github.io/images/github-commit-atma-rehberi-xl.webp"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn pinterest-share"
+                            aria-label="Pinterest'te Paylaş">
+                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+                        </a>
+
+                        <!-- Tumblr Paylaşım -->
+                        <a
+                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://yuceltoluyag.github.io/github-commit-atma-rehberi/&title=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn tumblr-share"
+                            aria-label="Tumblr'da Paylaş">
+                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+                        </a>
+
+                        <!-- Bluesky Paylaşım -->
+                        <a
+                            href="https://bsky.app/intent/compose?text=GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀%20-%20https://yuceltoluyag.github.io/github-commit-atma-rehberi/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-share-btn bluesky-share"
+                            aria-label="Bluesky'da Paylaş">
+                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+                        </a>
+
+                        <!-- Kopyala Butonu -->
+                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+                            <iconify-icon icon="tabler:copy"></iconify-icon>
+                        </button>
+                    </div>
+
+                    
+
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+<!-- Mobil için TOC açılır menüsü -->
+<div
+    id="mobile-toc-drawer"
+    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
+    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
+        <h3 class="font-bold text-base flex items-center">
+            <span class="iconify mr-2" data-icon="tabler:list"></span>
+            İçindekiler
+        </h3>
+        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
+            <span class="iconify" data-icon="tabler:x"></span>
+        </button>
+    </div>
+    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]"><div id="toc"><ul><li><a class="toc-href" href="#1-bu-yaziya-baslamadan-once-okuman-gerekenler" title="1️⃣ Bu Yaz&inodot;ya Ba&scedil;lamadan &Ouml;nce Okuman Gerekenler">1️⃣ Bu Yaz&inodot;ya Ba&scedil;lamadan &Ouml;nce Okuman Gerekenler</a></li><li><a class="toc-href" href="#2-on-hazirliklar" title="2️⃣ &Ouml;n Haz&inodot;rl&inodot;klar">2️⃣ &Ouml;n Haz&inodot;rl&inodot;klar</a><ul><li><a class="toc-href" href="#git-kurulumunu-kontrol-et" title="Git Kurulumunu Kontrol Et">Git Kurulumunu Kontrol Et</a></li><li><a class="toc-href" href="#github-hesabina-giris-yap" title="GitHub Hesab&inodot;na Giri&scedil; Yap">GitHub Hesab&inodot;na Giri&scedil; Yap</a></li><li><a class="toc-href" href="#ssh-baglantisini-test-et" title="SSH Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et">SSH Ba&gbreve;lant&inodot;s&inodot;n&inodot; Test Et</a></li><li><a class="toc-href" href="#gpg-anahtarini-kontrol-et" title="GPG Anahtar&inodot;n&inodot; Kontrol Et">GPG Anahtar&inodot;n&inodot; Kontrol Et</a></li></ul></li><li><a class="toc-href" href="#3-repoyu-klonlama_1" title="3️⃣ Repoyu Klonlama">3️⃣ Repoyu Klonlama</a></li><li><a class="toc-href" href="#4-kendi-branchinde-calis-neden-ve-nasil" title="4️⃣ Kendi Branch&rsquo;inde &Ccedil;al&inodot;&scedil;: Neden ve Nas&inodot;l?">4️⃣ Kendi Branch&rsquo;inde &Ccedil;al&inodot;&scedil;: Neden ve Nas&inodot;l?</a></li><li><a class="toc-href" href="#5-projeyi-ilk-kez-lokalde-ayaga-kaldir-virtualenv-duty" title="5️⃣ Projeyi &Idot;lk Kez Lokalde Aya&gbreve;a Kald&inodot;r (virtualenv + duty)">5️⃣ Projeyi &Idot;lk Kez Lokalde Aya&gbreve;a Kald&inodot;r (virtualenv + duty)</a></li><li><a class="toc-href" href="#6-degisiklik-yapma-ornek" title="6️⃣ De&gbreve;i&scedil;iklik Yapma (&Ouml;rnek)">6️⃣ De&gbreve;i&scedil;iklik Yapma (&Ouml;rnek)</a></li><li><a class="toc-href" href="#7-degisiklikleri-kontrol-et" title="7️⃣ De&gbreve;i&scedil;iklikleri Kontrol Et">7️⃣ De&gbreve;i&scedil;iklikleri Kontrol Et</a></li><li><a class="toc-href" href="#8-commit-hazirlama-ve-imzalama-gpg-s" title="8️⃣ Commit Haz&inodot;rlama ve &Idot;mzalama (GPG -S)">8️⃣ Commit Haz&inodot;rlama ve &Idot;mzalama (GPG -S)</a></li><li><a class="toc-href" href="#9-branchini-remotea-gonder-push" title="9️⃣ Branch&rsquo;ini Remote&rsquo;a G&ouml;nder (push)">9️⃣ Branch&rsquo;ini Remote&rsquo;a G&ouml;nder (push)</a></li><li><a class="toc-href" href="#pull-request-pr-ac-her-zaman-pr" title="🔟 Pull Request (PR) A&ccedil;: Her Zaman PR!">🔟 Pull Request (PR) A&ccedil;: Her Zaman PR!</a></li><li><a class="toc-href" href="#11-github-uzerinden-kontrol" title="1️⃣1️⃣ GitHub &Uuml;zerinden Kontrol">1️⃣1️⃣ GitHub &Uuml;zerinden Kontrol</a></li><li><a class="toc-href" href="#12-ikinci-ve-sonraki-calisma-oturumlari-tekrarlanan-akis" title="1️⃣2️⃣ &Idot;kinci ve Sonraki &Ccedil;al&inodot;&scedil;ma Oturumlar&inodot; (Tekrarlanan Ak&inodot;&scedil;)">1️⃣2️⃣ &Idot;kinci ve Sonraki &Ccedil;al&inodot;&scedil;ma Oturumlar&inodot; (Tekrarlanan Ak&inodot;&scedil;)</a></li><li><a class="toc-href" href="#13-sik-yapilan-hatalar-ve-cozumleri" title="1️⃣3️⃣ S&inodot;k Yap&inodot;lan Hatalar ve &Ccedil;&ouml;z&uuml;mleri">1️⃣3️⃣ S&inodot;k Yap&inodot;lan Hatalar ve &Ccedil;&ouml;z&uuml;mleri</a></li><li><a class="toc-href" href="#14-ornek-tam-akis-kisa-ozet" title="1️⃣4️⃣ &Ouml;rnek Tam Ak&inodot;&scedil; (K&inodot;sa &Ouml;zet)">1️⃣4️⃣ &Ouml;rnek Tam Ak&inodot;&scedil; (K&inodot;sa &Ouml;zet)</a></li><li><a class="toc-href" href="#sonuc" title="🎯 Sonu&ccedil;">🎯 Sonu&ccedil;</a></li></ul></div></div>
+</div>
+
+<!-- Sabit Butonlar - Yukarı Git ve TOC -->
+<div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
+    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
+        <span class="iconify text-xl" data-icon="tabler:list"></span>
+    </button>
+
+    <!-- Yukarı Git Butonu -->
+    <button
+        id="back-to-top"
+        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+        aria-label="Yukarı Git">
+        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+    </button>
+</div>
+</main>
+
+<footer class="bg-base-200 py-12 mt-12">
+    <div class="container mx-auto px-4">
+        <h2 class="sr-only">Site Footer</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Hızlı Bağlantılar</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/kategoriler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kategoriler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/etiketler/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Etiketler
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/arsiv/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Arşiv
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/privacy-policy/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Gizlilik
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://yuceltoluyag.github.io/terms/"
+                            class="text-base-content/80 hover:text-primary transition-colors">
+                            Kullanım Koşulları
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Takip Et</h3>
+                <div class="flex flex-wrap gap-3">
+                    <a
+                        href="https://github.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub">
+                        <span class="iconify text-xl" data-icon="tabler:brand-github"></span>
+                    </a>
+                     <a
+                        href="https://bsky.app/profile/yuceltoluyag.bsky.social"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="BlueSky">
+                        <span class="iconify text-xl" data-icon="tabler:brand-bluesky"></span>
+                    </a>
+                     <a
+                        href="https://matrix.to/#/@fatpip:matrix.org"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Matrix">
+                        <span class="iconify text-xl" data-icon="tabler:message"></span>
+                    </a>
+                     <a
+                        href="https://discord.com/users/188034964879573003"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Discord">
+                        <span class="iconify text-xl" data-icon="tabler:brand-discord"></span>
+                    </a>
+                     <a
+                        href="https://instagram.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Instagram">
+                        <span class="iconify text-xl" data-icon="tabler:brand-instagram"></span>
+                    </a>
+                     <a
+                        href="https://youtube.com/@yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="YouTube">
+                        <span class="iconify text-xl" data-icon="tabler:brand-youtube"></span>
+                    </a>
+                     <a
+                        href="https://twitch.tv/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Twitch">
+                        <span class="iconify text-xl" data-icon="tabler:brand-twitch"></span>
+                    </a>
+                     <a
+                        href="https://kick.com/babapy"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Kick">
+                        <span class="iconify text-xl" data-icon="tabler:device-gamepad-2"></span>
+                    </a>
+                     <a
+                        href="https://papara.com/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="Papara">
+                        <span class="iconify text-xl" data-icon="tabler:wallet"></span>
+                    </a>
+                     <a
+                        href="https://github.com/sponsors/yuceltoluyag"
+                        class="btn btn-circle btn-sm btn-ghost hover:bg-primary/10 hover:text-primary"
+                        target="_blank"
+                        rel="me noopener"
+                        aria-label="GitHub Sponsor">
+                        <span class="iconify text-xl" data-icon="tabler:heart"></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-base-content mb-4">Abone Ol</h3>
+                <form
+                    action="https://listmonk.minel.yuceltoluyag.github.io/subscription/form"
+                    method="post"
+                    class="flex flex-col sm:flex-row gap-2"
+                    disabled>
+                    <input type="hidden" name="nonce" disabled />
+                    <input type="hidden" name="l" value="54f72a45-a9d6-44ad-a688-430c1806785a" disabled />
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="E-posta adresin"
+                        required
+                        class="input input-bordered w-full"
+                        disabled />
+                    <button type="submit" class="btn btn-primary" disabled>Abone Ol</button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            class="border-t border-base-300 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-base-content/60 text-sm">
+            <p>&copy; 2024 Ortaya Karışık</p>
+            <p>
+                <a
+                    href="https://getpelican.com"
+                    target="_blank"
+                    rel="noopener"
+                    class="hover:text-primary transition-colors">
+                    Pelican
+                </a>
+                ile oluşturuldu
+            </p>
+        </div>
+    </div>
+</footer>
+            <!-- Arama Modalı -->
+<dialog id="search-modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box bg-base-100 p-6 w-full max-w-3xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Aramayı kapat">
+                <span class="iconify" data-icon="tabler:x" width="20" height="20"></span>
+            </button>
+        </form>
+
+        <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-4 text-base-content">Site Araması</h2>
+
+            <form id="search-form" class="w-full">
+                <div class="relative">
+                    <input
+                        type="text"
+                        id="search-input"
+                        class="input input-bordered w-full pr-12"
+                        placeholder="Makale, etiket veya kategori ara..."
+                        autocomplete="off"
+                        aria-label="Arama" />
+                    <button
+                        id="search-button"
+                        class="btn btn-ghost btn-circle absolute right-1 top-1/2 -translate-y-1/2"
+                        type="submit"
+                        aria-label="Ara">
+                        <span class="iconify" data-icon="tabler:search" width="20" height="20"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="search-results" class="overflow-y-auto max-h-[60vh]">
+            <!-- Arama sonuçları burada gösterilecek -->
+        </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+        <button>Kapat</button>
+    </form>
+</dialog>        </div>
+
+        <!-- Temel JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="https://yuceltoluyag.github.io/assets/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js"></script>
+ <!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KPLBQPPJ"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JLZ9JH5GKD"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    // Varsayılan olarak çerezleri devre dışı bırak
+    gtag("consent", "default", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+        functionality_storage: "denied",
+        personalization_storage: "denied",
+        security_storage: "granted", // Güvenlik için gereken çerezlere izin ver
+    });
+
+    // Kullanıcı daha önce izin verdiyse, çerezleri etkinleştir
+    const cookiePreferences = localStorage.getItem("cookie-preferences")
+        ? JSON.parse(localStorage.getItem("cookie-preferences"))
+        : null;
+
+    if (cookiePreferences) {
+        gtag("consent", "update", {
+            analytics_storage: cookiePreferences.analytics ? "granted" : "denied",
+            ad_storage: cookiePreferences.marketing ? "granted" : "denied",
+            functionality_storage: cookiePreferences.personalization ? "granted" : "denied",
+            personalization_storage: cookiePreferences.personalization ? "granted" : "denied",
+        });
+    }
+
+    // Temel yapılandırma
+    gtag("js", new Date());
+    gtag("config", "G-JLZ9JH5GKD", {
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        cookie_flags: "SameSite=None;Secure",
+    });
+</script>
+ <!-- TOC JS -->
+<script src="https://yuceltoluyag.github.io/assets/js/unified-toc.js" defer></script>
+
+ 
+
+
+<!-- Mobil TOC ve Yukarı Git Butonları JS -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Yukarı git butonu
+        const backToTopButton = document.getElementById("back-to-top");
+
+        if (backToTopButton) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add("opacity-100", "visible");
+                    backToTopButton.classList.remove("opacity-0", "invisible");
+                } else {
+                    backToTopButton.classList.add("opacity-0", "invisible");
+                    backToTopButton.classList.remove("opacity-100", "visible");
+                }
+            });
+
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            });
+        }
+
+        // Mobil İçindekiler
+        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+
+        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+            toggleMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.toggle("translate-y-full");
+                mobileTocDrawer.classList.toggle("opacity-0");
+                mobileTocDrawer.classList.toggle("invisible");
+            });
+
+            closeMobileTocButton.addEventListener("click", function () {
+                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+            });
+
+            // İçindekiler linkleri tıklandığında menüyü kapat
+            const tocLinks = mobileTocDrawer.querySelectorAll("a");
+            tocLinks.forEach((link) => {
+                link.addEventListener("click", function () {
+                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
+                });
+            });
+        }
+
+        // URL Kopyalama İşlevi
+        const copyUrlButton = document.getElementById("copy-url-btn");
+        if (copyUrlButton) {
+            copyUrlButton.addEventListener("click", function () {
+                // Sayfanın URL'sini al
+                const url = window.location.href;
+
+                // Panoya kopyala
+                navigator.clipboard.writeText(url).then(() => {
+                    // Kopyalama başarılı olduğunda
+                    copyUrlButton.classList.add("copied");
+
+                    // İkonu değiştir (başarılı olduğunu göstermek için)
+                    const icon = copyUrlButton.querySelector("iconify-icon");
+                    icon.setAttribute("icon", "tabler:check");
+
+                    // 2 saniye sonra eski haline döndür
+                    setTimeout(() => {
+                        copyUrlButton.classList.remove("copied");
+                        icon.setAttribute("icon", "tabler:copy");
+                    }, 2000);
+                });
+            });
+        }
+
+    });
+</script>
+
+
+<!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
+         
+        
+    </body>
+</html>

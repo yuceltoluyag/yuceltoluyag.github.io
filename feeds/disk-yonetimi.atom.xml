@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Disk Yönetimi</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/disk-yonetimi.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Linux’ta Disklerin Mount ve Unmount İşlemleri: Temel Bilgiler ve Uygulamalar</title><link href="https://yuceltoluyag.github.io/linux-disk-mount-unmount-temel-bilgiler/" rel="alternate"/><published>2025-08-05T12:30:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-08-05:/linux-disk-mount-unmount-temel-bilgiler/</id><summary type="html">&lt;p&gt;Linux’ta disklerin mount edilmesi ve unmount edilmesi işlemlerini temel kavramlar, komutlar ve örneklerle anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="linuxta-disklerin-mount-edilmesi-ve-unmount-edilmesi-temel-bilgiler"&gt;💽 Linux&amp;rsquo;ta Disklerin Mount Edilmesi ve Unmount Edilmesi: Temel Bilgiler&lt;/h1&gt;
+&lt;p&gt;Linux ve Unix benzeri sistemlerde diskler do&amp;gbreve;rudan de&amp;gbreve;il, &lt;strong&gt;mount&lt;/strong&gt; i&amp;scedil;lemi ile dosya sistemi a&amp;gbreve;ac&amp;inodot;na ba&amp;gbreve;lan&amp;inodot;r. Bu sayede disk &amp;uuml;zerindeki verilere belirli klas&amp;ouml;rler arac&amp;inodot;l&amp;inodot;&amp;gbreve;&amp;inodot;yla eri&amp;scedil;ilir. &amp;Idot;&amp;scedil;lemi tamamlanan disklerin ba&amp;gbreve;lant&amp;inodot;s&amp;inodot;n&amp;inodot;n kesilmesi ise &lt;strong&gt;unmount&lt;/strong&gt; olarak adland&amp;inodot;r&amp;inodot;l&amp;inodot;r.  &lt;/p&gt;
+&lt;p&gt;Peki, Linux&amp;rsquo;ta diskler nas&amp;inodot;l mount ve unmount edilir? Hangi komutlar kullan&amp;inodot;l&amp;inodot;r? Bu makalede, bu temel konular&amp;inodot; detayl&amp;inodot; ve anla&amp;scedil;&amp;inodot;l&amp;inodot;r &amp;scedil;ekilde &amp;ouml;&amp;gbreve;reneceksiniz. 🚀&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="mount-nedir"&gt;🧐 Mount Nedir?&lt;/h2&gt;
+&lt;p&gt;Mount, fiziksel ya da sanal disk ayg&amp;inodot;t&amp;inodot;n&amp;inodot;, dosya sistemini Linux dizin a&amp;gbreve;ac&amp;inodot;na ba&amp;gbreve;lama i&amp;scedil;lemidir. B&amp;ouml;ylece disk i&amp;ccedil;eri&amp;gbreve;i o dizin (mount point) alt&amp;inodot;nda g&amp;ouml;r&amp;uuml;n&amp;uuml;r ve eri&amp;scedil;ilebilir olur.  &lt;/p&gt;
+&lt;p&gt;&amp;Ouml;rne&amp;gbreve;in bir USB belle&amp;gbreve;i takt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda, sistem onu otomatik ya da manuel olarak &lt;code&gt;/mnt/usb&lt;/code&gt; veya &lt;code&gt;/run/media/kullanici/usb&lt;/code&gt; gibi dizinlere ba&amp;gbreve;lar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="mount-point-baglama-noktasi-nedir"&gt;📂 Mount Point (Ba&amp;gbreve;lama Noktas&amp;inodot;) Nedir?&lt;/h2&gt;
+&lt;p&gt;Mount point, disk veya dosya sistemi ba&amp;gbreve;land&amp;inodot;&amp;gbreve;&amp;inodot;nda i&amp;ccedil;eri&amp;gbreve;in eri&amp;scedil;ilece&amp;gbreve;i klas&amp;ouml;rd&amp;uuml;r.  &lt;/p&gt;
+&lt;p&gt;Mount i&amp;scedil;lemi yap&amp;inodot;lmadan &amp;ouml;nce bu dizinin var olmas&amp;inodot; gerekir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;/mnt/mydisk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="mount-komutunun-temel-kullanimi"&gt;🛠️ Mount Komutunun Temel Kullan&amp;inodot;m&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Disk veya dosya sistemini mount etmek i&amp;ccedil;in &amp;scedil;u yap&amp;inodot;y&amp;inodot; kullan&amp;inodot;r&amp;inodot;z:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;ayg&amp;inodot;t&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;mount_point&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ouml;rnek:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;/dev/sdb1&lt;span class="w"&gt; &lt;/span&gt;/mnt/mydisk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu komut, &lt;code&gt;/dev/sdb1&lt;/code&gt; ayg&amp;inodot;t&amp;inodot;ndaki dosya sistemini &lt;code&gt;/mnt/mydisk&lt;/code&gt; klas&amp;ouml;r&amp;uuml;ne ba&amp;gbreve;lar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="loop-mount-iso-ve-disk-imajlari"&gt;📀 Loop Mount: ISO ve Disk &amp;Idot;majlar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;ISO gibi dosya imajlar&amp;inodot;n&amp;inodot; mount etmek i&amp;ccedil;in &lt;code&gt;-o loop&lt;/code&gt; se&amp;ccedil;ene&amp;gbreve;i gerekir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;loop&lt;span class="w"&gt; &lt;/span&gt;dosya.iso&lt;span class="w"&gt; &lt;/span&gt;/mnt/iso
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu sayede ISO dosyas&amp;inodot;n&amp;inodot;n i&amp;ccedil;eri&amp;gbreve;i &lt;code&gt;/mnt/iso&lt;/code&gt; &amp;uuml;zerinden eri&amp;scedil;ilebilir olur.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="unmount-komutu-ile-baglantiyi-kaldirma"&gt;📴 Unmount Komutu ile Ba&amp;gbreve;lant&amp;inodot;y&amp;inodot; Kald&amp;inodot;rma&lt;/h2&gt;
+&lt;p&gt;Mount edilmi&amp;scedil; disk veya dosya sistemini sistemden &amp;ccedil;&amp;inodot;karmak i&amp;ccedil;in &lt;code&gt;umount&lt;/code&gt; komutu kullan&amp;inodot;l&amp;inodot;r:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;umount&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;mount_point&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;veya&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;ayg&amp;inodot;t&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ouml;rnek:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;umount&lt;span class="w"&gt; &lt;/span&gt;/mnt/mydisk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Unmount yapmadan &amp;ouml;nce diskin kullan&amp;inodot;mda olmamas&amp;inodot; gerekir; aksi takdirde hata al&amp;inodot;n&amp;inodot;r.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="mount-ve-unmount-islemlerinin-onemi"&gt;⚠️ Mount ve Unmount &amp;Idot;&amp;scedil;lemlerinin &amp;Ouml;nemi&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Veri G&amp;uuml;venli&amp;gbreve;i:&lt;/strong&gt; Disk kullan&amp;inodot;mdayken &amp;ccedil;&amp;inodot;kar&amp;inodot;l&amp;inodot;rsa veri kayb&amp;inodot; olabilir, bu y&amp;uuml;zden &amp;ouml;nce unmount yap&amp;inodot;lmal&amp;inodot;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sistem D&amp;uuml;zeni:&lt;/strong&gt; Dosya sistemlerinin d&amp;uuml;zg&amp;uuml;n ba&amp;gbreve;lanmas&amp;inodot; ve ayr&amp;inodot;lmas&amp;inodot; sistemi kararl&amp;inodot; tutar.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eri&amp;scedil;im Kontrol&amp;uuml;:&lt;/strong&gt; Dosyalara eri&amp;scedil;im mount point &amp;uuml;zerinden sa&amp;gbreve;lan&amp;inodot;r.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Ccedil;oklu Dosya Sistemleri:&lt;/strong&gt; Linux ext4, ntfs, iso9660 gibi farkl&amp;inodot; dosya sistemlerini ayn&amp;inodot; anda y&amp;ouml;netebilir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="otomatik-mount-ve-udisksctl-komutlari"&gt;🔄 Otomatik Mount ve &lt;code&gt;udisksctl&lt;/code&gt; Komutlar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;GNOME, KDE gibi masa&amp;uuml;st&amp;uuml; ortamlar&amp;inodot; USB ve ISO dosyalar&amp;inodot;n&amp;inodot; otomatik olarak mount eder. Arkas&amp;inodot;nda &lt;code&gt;udisks&lt;/code&gt; servisleri vard&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;Manuel loop mount i&amp;scedil;lemi i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;udisksctl&lt;span class="w"&gt; &lt;/span&gt;loop-setup&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;dosya.iso
+udisksctl&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;/dev/loopX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Manuel unmount ve loop ayg&amp;inodot;t&amp;inodot;n&amp;inodot; kald&amp;inodot;rmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;udisksctl&lt;span class="w"&gt; &lt;/span&gt;unmount&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;/dev/loopX
+udisksctl&lt;span class="w"&gt; &lt;/span&gt;loop-delete&lt;span class="w"&gt; &lt;/span&gt;-b&lt;span class="w"&gt; &lt;/span&gt;/dev/loopX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="mount-edilen-dosya-sistemlerini-goruntuleme"&gt;🔍 Mount Edilen Dosya Sistemlerini G&amp;ouml;r&amp;uuml;nt&amp;uuml;leme&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mount&lt;/code&gt; &amp;mdash; T&amp;uuml;m ba&amp;gbreve;l&amp;inodot; dosya sistemlerini listeler.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;df -h&lt;/code&gt; &amp;mdash; Disk kullan&amp;inodot;m &amp;ouml;zetini g&amp;ouml;sterir.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lsblk&lt;/code&gt; &amp;mdash; Blok ayg&amp;inodot;tlar&amp;inodot; ve mount noktalar&amp;inodot;n&amp;inodot; g&amp;ouml;sterir.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="pratik-ornek-iso-dosyasini-mount-edip-kullanmak"&gt;🎯 Pratik &amp;Ouml;rnek: ISO Dosyas&amp;inodot;n&amp;inodot; Mount Edip Kullanmak&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Mount noktas&amp;inodot; olu&amp;scedil;turun:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;~/iso
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;ISO dosyas&amp;inodot;n&amp;inodot; mount edin:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;-o&lt;span class="w"&gt; &lt;/span&gt;loop&lt;span class="w"&gt; &lt;/span&gt;oyun.iso&lt;span class="w"&gt; &lt;/span&gt;~/iso
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;Dosyalara eri&amp;scedil;in, i&amp;scedil;iniz bitince unmount yap&amp;inodot;n:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;umount&lt;span class="w"&gt; &lt;/span&gt;~/iso
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc"&gt;📝 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Linux&amp;rsquo;ta disklerin mount ve unmount edilmesi, verilerin g&amp;uuml;venli ve d&amp;uuml;zenli y&amp;ouml;netimi i&amp;ccedil;in kritik i&amp;scedil;lemlerdir. Do&amp;gbreve;ru yap&amp;inodot;lan mount/unmount i&amp;scedil;lemleri, veri kayb&amp;inodot;n&amp;inodot; &amp;ouml;nler ve sistemin stabil &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;n&amp;inodot; sa&amp;gbreve;lar.&lt;/p&gt;
+&lt;p&gt;Yeni ba&amp;scedil;layanlar i&amp;ccedil;in bu temel bilgileri anlamak, Linux sistem y&amp;ouml;netimi yolculu&amp;gbreve;unda sa&amp;gbreve;lam bir ad&amp;inodot;m olacakt&amp;inodot;r. Siz de deneyimlerinizi ve sorular&amp;inodot;n&amp;inodot;z&amp;inodot; yorumlarda payla&amp;scedil;abilirsiniz! 👨&amp;zwj;💻✨&lt;/p&gt;
+&lt;hr/&gt;</content><category term="Disk Yönetimi"/><category term="linux"/><category term="mount"/><category term="unmount"/><category term="disk"/><category term="dosya-sistemi"/><category term="sistem-yonetimi"/></entry><entry><title>Arch Linux’ta Disk Alanı Eksik Görünüyor mu? İşte Adım Adım Çözüm Rehberi 🧹💾</title><link href="https://yuceltoluyag.github.io/arch-linux-disk-alani-gorunmuyor-cozum/" rel="alternate"/><published>2025-07-26T09:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-07-26:/arch-linux-disk-alani-gorunmuyor-cozum/</id><summary type="html">&lt;p&gt;Arch Linux’ta disk alanınız az mı görünüyor? Gerçekte boş yer olmasına rağmen sistem neden farklı gösteriyor? Bu kapsamlı rehberde, root rezerve alanı, silinmiş ama hâlâ kullanılan dosyalar, yeniden başlatma gibi tüm olasılıkları adım adım inceliyoruz.&lt;/p&gt;</summary><content type="html">&lt;h2 id="giris"&gt;🎯 Giri&amp;scedil;&lt;/h2&gt;
+&lt;p&gt;Arch Linux kullan&amp;inodot;c&amp;inodot;s&amp;inodot;ysan&amp;inodot;z, sisteminizde y&amp;uuml;zlerce gigabayt bo&amp;scedil; alan olmas&amp;inodot;na ra&amp;gbreve;men neden yaln&amp;inodot;zca belirli bir miktar g&amp;ouml;r&amp;uuml;n&amp;uuml;r oldu&amp;gbreve;unu merak etmi&amp;scedil;sinizdir. &amp;Ouml;rne&amp;gbreve;in: Diskinizde 300 GB bo&amp;scedil; yer oldu&amp;gbreve;unu biliyorsunuz, ama &lt;code&gt;df -h&lt;/code&gt; size yaln&amp;inodot;zca 173 GB g&amp;ouml;steriyor. Peki neden?&lt;/p&gt;
+&lt;p&gt;Bu rehberde, bu kafa kar&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;c&amp;inodot; problemi ad&amp;inodot;m ad&amp;inodot;m analiz edecek ve &amp;ccedil;&amp;ouml;zece&amp;gbreve;iz. Hedefimiz, &lt;strong&gt;Arch Linux sisteminde eksik g&amp;ouml;r&amp;uuml;nen disk alan&amp;inodot;n&amp;inodot;n nerelere &amp;ldquo;kayboldu&amp;gbreve;unu&amp;rdquo;&lt;/strong&gt; anlamak ve etkili &amp;scedil;ekilde geri kazanmakt&amp;inodot;r. 🤓
+&lt;img alt="Linux&amp;rsquo;ta Disk Alan&amp;inodot; Eksik G&amp;ouml;r&amp;uuml;n&amp;uuml;yor mu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp" srcset="/images/arch-linux-disk-alani-gorunmuyor-cozum-sm.webp 300w, /images/arch-linux-disk-alani-gorunmuyor-cozum-md.webp 500w, /images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp 800w, /images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="hedef-kitle"&gt;👤 Hedef Kitle&lt;/h2&gt;
+&lt;p&gt;Bu yaz&amp;inodot;, &lt;strong&gt;orta ve ileri seviye Linux kullan&amp;inodot;c&amp;inodot;lar&amp;inodot;&lt;/strong&gt; i&amp;ccedil;in yaz&amp;inodot;lm&amp;inodot;&amp;scedil;t&amp;inodot;r. &amp;Ouml;zellikle Arch Linux, Manjaro, Artix gibi sistemlerde disk y&amp;ouml;netimini kendi ba&amp;scedil;&amp;inodot;na yapmak isteyenler i&amp;ccedil;in uygundur. Terminal kullan&amp;inodot;m&amp;inodot;, disk b&amp;ouml;l&amp;uuml;mleri, &lt;code&gt;ext4&lt;/code&gt; dosya sistemi gibi konulara a&amp;scedil;ina olan kullan&amp;inodot;c&amp;inodot;lar i&amp;ccedil;in optimize edilmi&amp;scedil;tir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="hizli-bakis-sorun-neden-olur"&gt;🧠 H&amp;inodot;zl&amp;inodot; Bak&amp;inodot;&amp;scedil;: Sorun Neden Olur?&lt;/h2&gt;
+&lt;p&gt;En yayg&amp;inodot;n sebepler:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ext4&lt;/code&gt; dosya sisteminin root i&amp;ccedil;in rezerve etti&amp;gbreve;i bloklar&lt;/li&gt;
+&lt;li&gt;Silinmi&amp;scedil; ama h&amp;acirc;l&amp;acirc; &amp;ccedil;al&amp;inodot;&amp;scedil;an i&amp;scedil;lemlerce tutulan dosyalar&lt;/li&gt;
+&lt;li&gt;Steam gibi uygulamalar&amp;inodot;n devasa &amp;ouml;nbellekleri&lt;/li&gt;
+&lt;li&gt;Hatal&amp;inodot; veya eksik b&amp;ouml;l&amp;uuml;mleme&lt;/li&gt;
+&lt;li&gt;Kullan&amp;inodot;c&amp;inodot;n&amp;inodot;n yanl&amp;inodot;&amp;scedil; yorumlad&amp;inodot;&amp;gbreve;&amp;inodot; bo&amp;scedil; alan hesaplar&amp;inodot;&lt;/li&gt;
+&lt;li&gt;Sistemin yeniden ba&amp;scedil;lat&amp;inodot;lmamas&amp;inodot; nedeniyle kal&amp;inodot;c&amp;inodot; olmayan dosya kullan&amp;inodot;m&amp;inodot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bu yaz&amp;inodot;, t&amp;uuml;m bu senaryolar&amp;inodot; kapsayan bir &amp;ccedil;&amp;ouml;z&amp;uuml;m haritas&amp;inodot; sunar.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="adim-adim-sorun-tespiti-ve-cozum"&gt;📋 Ad&amp;inodot;m Ad&amp;inodot;m Sorun Tespiti ve &amp;Ccedil;&amp;ouml;z&amp;uuml;m&lt;/h2&gt;
+&lt;h3 id="adim-1-disk-yapisini-dogru-anlayin"&gt;✅ Ad&amp;inodot;m 1: Disk Yap&amp;inodot;s&amp;inodot;n&amp;inodot; Do&amp;gbreve;ru Anlay&amp;inodot;n&lt;/h3&gt;
+&lt;p&gt;Komut:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lsblk&lt;span class="w"&gt; &lt;/span&gt;-f
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🔎 A&amp;ccedil;&amp;inodot;klama: Bu komut, disk b&amp;ouml;l&amp;uuml;mlerinin hangi dosya sistemlerini kulland&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; ve nereye ba&amp;gbreve;land&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; g&amp;ouml;sterir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="adim-2-disk-kullanim-oranlarini-goruntuleyin"&gt;✅ Ad&amp;inodot;m 2: Disk Kullan&amp;inodot;m Oranlar&amp;inodot;n&amp;inodot; G&amp;ouml;r&amp;uuml;nt&amp;uuml;leyin&lt;/h3&gt;
+&lt;p&gt;Komut:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;df&lt;span class="w"&gt; &lt;/span&gt;-h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🔎 A&amp;ccedil;&amp;inodot;klama: Dosya sistemlerinin toplam, kullan&amp;inodot;lan ve bo&amp;scedil; alanlar&amp;inodot;n&amp;inodot; listeler.&lt;/p&gt;
+&lt;p&gt;&amp;Ouml;rnek &amp;ccedil;&amp;inodot;kt&amp;inodot;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       916G  697G  173G  81% /mnt/steam_depo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h3 id="adim-3-root-rezerve-alanini-kontrol-edin"&gt;✅ Ad&amp;inodot;m 3: Root Rezerve Alan&amp;inodot;n&amp;inodot; Kontrol Edin&lt;/h3&gt;
+&lt;p&gt;Linux&amp;rsquo;ta &lt;code&gt;ext4&lt;/code&gt; dosya sisteminde, diskin yakla&amp;scedil;&amp;inodot;k %5&amp;rsquo;i root kullan&amp;inodot;c&amp;inodot; i&amp;ccedil;in ayr&amp;inodot;l&amp;inodot;r. Bu alan kullan&amp;inodot;c&amp;inodot;lar taraf&amp;inodot;ndan g&amp;ouml;r&amp;uuml;nmez.&lt;/p&gt;
+&lt;p&gt;Komut:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tune2fs&lt;span class="w"&gt; &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;/dev/sda1&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'Reserved block count'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alternatif:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;dumpe2fs&lt;span class="w"&gt; &lt;/span&gt;/dev/sda1&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;Reserved
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🔧 &amp;Ccedil;&amp;ouml;z&amp;uuml;m:
+Rezerve alan miktar&amp;inodot;n&amp;inodot; s&amp;inodot;f&amp;inodot;rlamak (iste&amp;gbreve;e ba&amp;gbreve;l&amp;inodot;):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tune2fs&lt;span class="w"&gt; &lt;/span&gt;-m&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/sda1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;⚠️ Uyar&amp;inodot;: Sunucu sistemlerde %0 yapmak &amp;ouml;nerilmez; sadece masa&amp;uuml;st&amp;uuml; kullan&amp;inodot;c&amp;inodot;lar&amp;inodot; i&amp;ccedil;in.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="adim-4-silinmis-ama-kullanilan-dosyalari-bulun"&gt;✅ Ad&amp;inodot;m 4: Silinmi&amp;scedil; Ama Kullan&amp;inodot;lan Dosyalar&amp;inodot; Bulun&lt;/h3&gt;
+&lt;p&gt;Silinen dosyalar, s&amp;uuml;re&amp;ccedil;ler taraf&amp;inodot;ndan tutuluyorsa h&amp;acirc;l&amp;acirc; disk alan&amp;inodot; kaplayabilir.&lt;/p&gt;
+&lt;p&gt;Komut:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;lsof&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;deleted
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;🔧 &amp;Ccedil;&amp;ouml;z&amp;uuml;m:
+Bu dosyalar&amp;inodot; tutan i&amp;scedil;lemi sonland&amp;inodot;r&amp;inodot;n veya &lt;code&gt;kill&lt;/code&gt; komutuyla durdurun.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h3 id="adim-5-buyuk-klasorleri-ve-dosyalari-tespit-edin"&gt;✅ Ad&amp;inodot;m 5: B&amp;uuml;y&amp;uuml;k Klas&amp;ouml;rleri ve Dosyalar&amp;inodot; Tespit Edin&lt;/h3&gt;
+&lt;p&gt;Hangi klas&amp;ouml;rlerin en &amp;ccedil;ok yer kaplad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; &amp;ouml;&amp;gbreve;renmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;p&gt;Komut:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;du&lt;span class="w"&gt; &lt;/span&gt;-h&lt;span class="w"&gt; &lt;/span&gt;--max-depth&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/mnt/steam_depo&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sort&lt;span class="w"&gt; &lt;/span&gt;-hr&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;head&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;20&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ouml;rnek &amp;ccedil;&amp;inodot;kt&amp;inodot;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Text Only&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;606G    /mnt/steam_depo/BaBaGames
+72G     /mnt/steam_depo/SteamLibrary
+20G     /mnt/steam_depo/Age of Empires II Definitive Edition
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h3 id="adim-6-gereksiz-dosyalari-temizleyin"&gt;✅ Ad&amp;inodot;m 6: Gereksiz Dosyalar&amp;inodot; Temizleyin 🧹&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Silinebilir yer kaplay&amp;inodot;c&amp;inodot;lar:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🎮 Eski oyun dosyalar&amp;inodot;&lt;/li&gt;
+&lt;li&gt;🧱 Steam indirme &amp;ouml;nbelle&amp;gbreve;i&lt;/li&gt;
+&lt;li&gt;🗑️ &lt;code&gt;.Trash-*&lt;/code&gt; klas&amp;ouml;rleri&lt;/li&gt;
+&lt;li&gt;🐳 Docker kullan&amp;inodot;lmayan imajlar:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;system&lt;span class="w"&gt; &lt;/span&gt;prune&lt;span class="w"&gt; &lt;/span&gt;-a
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h3 id="adim-7-sistemi-yeniden-baslatin"&gt;✅ Ad&amp;inodot;m 7: Sistemi Yeniden Ba&amp;scedil;lat&amp;inodot;n 🔁&lt;/h3&gt;
+&lt;p&gt;Baz&amp;inodot; durumlarda, her &amp;scedil;eyi do&amp;gbreve;ru yapsan&amp;inodot;z bile bo&amp;scedil; alan olmas&amp;inodot; gerekti&amp;gbreve;i h&amp;acirc;lde g&amp;ouml;r&amp;uuml;nmeyebilir. Bu t&amp;uuml;r durumlarda &lt;strong&gt;sistemi yeniden ba&amp;scedil;latmak&lt;/strong&gt;, i&amp;scedil;lemde tutulan dosyalar&amp;inodot; ger&amp;ccedil;ekten serbest b&amp;inodot;rak&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;🔎 Neden i&amp;scedil;e yarar?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bellekte kalan silinmi&amp;scedil; dosyalar temizlenir&lt;/li&gt;
+&lt;li&gt;Disk &amp;ouml;nbelle&amp;gbreve;i diske yaz&amp;inodot;l&amp;inodot;r&lt;/li&gt;
+&lt;li&gt;Steam gibi kapat&amp;inodot;lmam&amp;inodot;&amp;scedil; uygulamalar b&amp;inodot;rak&amp;inodot;lan alan&amp;inodot; serbest b&amp;inodot;rak&amp;inodot;r&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔧 &amp;Ccedil;&amp;ouml;z&amp;uuml;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h3 id="adim-8-dis-ortamlara-yedekleme-yapin"&gt;✅ Ad&amp;inodot;m 8: D&amp;inodot;&amp;scedil; Ortamlara Yedekleme Yap&amp;inodot;n ☁️&lt;/h3&gt;
+&lt;p&gt;Bo&amp;scedil; alan yaratmak i&amp;ccedil;in b&amp;uuml;y&amp;uuml;k dosyalar&amp;inodot; ta&amp;scedil;&amp;inodot;yabilece&amp;gbreve;iniz yerler:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Harici HDD/SSD&lt;/li&gt;
+&lt;li&gt;Google Drive, Dropbox, Mega gibi bulut &amp;ccedil;&amp;ouml;z&amp;uuml;mleri&lt;/li&gt;
+&lt;li&gt;NAS sunucular&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-alan-acmanin-anahtari-dogru-analiz_1"&gt;📦 Sonu&amp;ccedil;: Alan A&amp;ccedil;man&amp;inodot;n Anahtar&amp;inodot; Do&amp;gbreve;ru Analiz&lt;/h2&gt;
+&lt;p&gt;Diskinizde neden az bo&amp;scedil; alan g&amp;ouml;r&amp;uuml;nd&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml; anlamak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki noktalar&amp;inodot; kontrol etti&amp;gbreve;inizden emin olun:&lt;/p&gt;
+&lt;p&gt;✅ &lt;code&gt;df&lt;/code&gt; ve &lt;code&gt;lsblk&lt;/code&gt; ile disk g&amp;ouml;r&amp;uuml;n&amp;uuml;rl&amp;uuml;&amp;gbreve;&amp;uuml;
+✅ Root rezerve alan&amp;inodot;
+✅ Silinmi&amp;scedil; ama a&amp;ccedil;&amp;inodot;k dosyalar
+✅ Dev klas&amp;ouml;rler ve oyunlar
+✅ &amp;Ccedil;&amp;ouml;p kutular&amp;inodot; ve &amp;ouml;nbellek dosyalar&amp;inodot;
+✅ Sistem yeniden ba&amp;scedil;latma ad&amp;inodot;m&amp;inodot;&lt;/p&gt;
+&lt;p&gt;Bu ad&amp;inodot;mlar sayesinde, Arch Linux sisteminizde disk alan&amp;inodot; y&amp;ouml;netimini ustal&amp;inodot;kla yapabilirsiniz. 🧠&lt;/p&gt;
+&lt;hr/&gt;</content><category term="Disk Yönetimi"/><category term="arch-linux"/><category term="disk"/><category term="boş-alan"/><category term="ext4"/><category term="linux-disk-sorunları"/><category term="df"/><category term="lsblk"/><category term="disk-temizliği"/></entry><entry><title>Linux'ta Disk Nasıl Sıfırlanır? Herhangi Bir Diski Güvenli Şekilde Silme Rehberi</title><link href="https://yuceltoluyag.github.io/linux-disk-sifirlama-rehberi/" rel="alternate"/><published>2025-04-18T12:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-04-18:/linux-disk-sifirlama-rehberi/</id><summary type="html">&lt;p&gt;Bu yazıda,  Linux üzerinde disk sıfırlamayı öğreneceksiniz..&lt;/p&gt;</summary><content type="html">&lt;p&gt;💣 &lt;strong&gt;Linux'ta disk s&amp;inodot;f&amp;inodot;rlama&lt;/strong&gt; i&amp;scedil;lemi, sistem y&amp;ouml;neticileri ve teknik kullan&amp;inodot;c&amp;inodot;lar i&amp;ccedil;in zaman zaman ka&amp;ccedil;&amp;inodot;n&amp;inodot;lmazd&amp;inodot;r. Yeni bir kurulum &amp;ouml;ncesi, eski verileri silerken veya diskleri geri d&amp;ouml;n&amp;uuml;&amp;scedil;&amp;uuml; olmayacak &amp;scedil;ekilde temizlerken, do&amp;gbreve;ru y&amp;ouml;ntemlerle ilerlemek &amp;ccedil;ok &amp;ouml;nemlidir.&lt;/p&gt;
+&lt;p&gt;Bu rehberde, &lt;code&gt;/dev/sdX&lt;/code&gt; format&amp;inodot;ndaki &lt;strong&gt;herhangi bir diski g&amp;uuml;venli ve etkili &amp;scedil;ekilde nas&amp;inodot;l s&amp;inodot;f&amp;inodot;rlayabilece&amp;gbreve;inizi&lt;/strong&gt; detayl&amp;inodot;ca anlataca&amp;gbreve;&amp;inodot;m. Ayr&amp;inodot;ca hangi y&amp;ouml;ntemin ne zaman uygun oldu&amp;gbreve;unu &amp;ouml;rneklerle a&amp;ccedil;&amp;inodot;klayaca&amp;gbreve;&amp;inodot;m.  &lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="neden-disk-sifirlama-gerekir"&gt;🧠 Neden Disk S&amp;inodot;f&amp;inodot;rlama Gerekir?&lt;/h2&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki durumlarda disk s&amp;inodot;f&amp;inodot;rlama ihtiyac&amp;inodot; do&amp;gbreve;abilir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yeni i&amp;scedil;letim sistemi kurulumu &amp;ouml;ncesi temiz ba&amp;scedil;lang&amp;inodot;&amp;ccedil; yapmak&lt;/li&gt;
+&lt;li&gt;Verilerin geri d&amp;ouml;nd&amp;uuml;r&amp;uuml;lemeyecek &amp;scedil;ekilde silinmesi&lt;/li&gt;
+&lt;li&gt;Diskteki hatal&amp;inodot; partition yap&amp;inodot;lar&amp;inodot;ndan kurtulmak&lt;/li&gt;
+&lt;li&gt;Disk format&amp;inodot; de&amp;gbreve;i&amp;scedil;ikli&amp;gbreve;i veya s&amp;inodot;f&amp;inodot;rdan b&amp;ouml;l&amp;uuml;mleme i&amp;scedil;lemi i&amp;ccedil;in haz&amp;inodot;rl&amp;inodot;k&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;UYARI:&lt;/strong&gt; Yanl&amp;inodot;&amp;scedil; diskin s&amp;inodot;f&amp;inodot;rlanmas&amp;inodot; sistemin tamamen kullan&amp;inodot;lmaz hale gelmesine neden olabilir. &lt;strong&gt;Disk adlar&amp;inodot;n&amp;inodot; dikkatli kontrol edin.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="diskleri-listeleyin-ve-kontrol-edin"&gt;🛠️ Diskleri Listeleyin ve Kontrol Edin&lt;/h2&gt;
+&lt;p&gt;Disklerinizi ve ba&amp;gbreve;l&amp;inodot; b&amp;ouml;l&amp;uuml;mleri g&amp;ouml;rmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;fdisk&lt;span class="w"&gt; &lt;/span&gt;-l
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Alternatif olarak:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lsblk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Ccedil;&amp;inodot;kt&amp;inodot;da &lt;code&gt;/dev/sda&lt;/code&gt;, &lt;code&gt;/dev/sdb&lt;/code&gt;, &lt;code&gt;/dev/sdc&lt;/code&gt; gibi disk adlar&amp;inodot;n&amp;inodot; g&amp;ouml;receksiniz. S&amp;inodot;f&amp;inodot;rlamak istedi&amp;gbreve;iniz diski net &amp;scedil;ekilde tan&amp;inodot;mlad&amp;inodot;ktan sonra i&amp;scedil;leme ge&amp;ccedil;in.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="yontem-1-dd-ile-disk-sifirlama"&gt;⚡ Y&amp;ouml;ntem 1: &lt;code&gt;dd&lt;/code&gt; ile Disk S&amp;inodot;f&amp;inodot;rlama&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;dd&lt;/code&gt;, diski s&amp;inodot;f&amp;inodot;rlarla (0) doldurarak siler. Basit ama g&amp;uuml;&amp;ccedil;l&amp;uuml; bir ara&amp;ccedil;t&amp;inodot;r.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# &amp;Ouml;rnek: /dev/sdX diski s&amp;inodot;f&amp;inodot;rlan&amp;inodot;yor&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;dd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/zero&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sdX&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;bs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;1M&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;progress
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A&amp;ccedil;&amp;inodot;klamalar:
+- &lt;code&gt;if=/dev/zero&lt;/code&gt;: Girdi kayna&amp;gbreve;&amp;inodot; s&amp;inodot;f&amp;inodot;r bayt &amp;uuml;retir
+- &lt;code&gt;of=/dev/sdX&lt;/code&gt;: Hedef disk
+- &lt;code&gt;bs=1M&lt;/code&gt;: 1 MB blok boyutu ile daha h&amp;inodot;zl&amp;inodot; i&amp;scedil;lem
+- &lt;code&gt;status=progress&lt;/code&gt;: Anl&amp;inodot;k ilerleme durumu&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🕒 Bu i&amp;scedil;lem, disk boyutuna g&amp;ouml;re uzun s&amp;uuml;rebilir (&amp;ouml;rne&amp;gbreve;in 500 GB i&amp;ccedil;in 10&amp;ndash;30 dk).&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="yontem-2-shred-ile-guvenli-silme"&gt;🔐 Y&amp;ouml;ntem 2: &lt;code&gt;shred&lt;/code&gt; ile G&amp;uuml;venli Silme&lt;/h2&gt;
+&lt;p&gt;Verilerin kurtar&amp;inodot;lamayacak &amp;scedil;ekilde silinmesi gerekiyorsa &lt;code&gt;shred&lt;/code&gt; kullan&amp;inodot;l&amp;inodot;r.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;shred&lt;span class="w"&gt; &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/sdX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A&amp;ccedil;&amp;inodot;klamalar:
+- &lt;code&gt;-v&lt;/code&gt;: Ayr&amp;inodot;nt&amp;inodot;l&amp;inodot; &amp;ccedil;&amp;inodot;kt&amp;inodot;
+- &lt;code&gt;-n 3&lt;/code&gt;: 3 kez &amp;uuml;zerine rastgele veri yaz
+- &lt;code&gt;-z&lt;/code&gt;: (opsiyonel) Son ge&amp;ccedil;i&amp;scedil;te s&amp;inodot;f&amp;inodot;rlarla yaz&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🔐 Bu y&amp;ouml;ntem &amp;ouml;zellikle ki&amp;scedil;isel veriler veya hassas dosyalar i&amp;ccedil;in uygundur.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="yontem-3-wipefs-ile-dosya-sistemi-izlerini-temizleme"&gt;🧼 Y&amp;ouml;ntem 3: &lt;code&gt;wipefs&lt;/code&gt; ile Dosya Sistemi &amp;Idot;zlerini Temizleme&lt;/h2&gt;
+&lt;p&gt;Sadece partition ve dosya sistemi imzalar&amp;inodot;n&amp;inodot; silmek i&amp;ccedil;in h&amp;inodot;zl&amp;inodot; bir y&amp;ouml;ntemdir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;wipefs&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;/dev/sdX
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-a&lt;/code&gt;: T&amp;uuml;m dosya sistemi imzalar&amp;inodot;n&amp;inodot; temizler&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚡ H&amp;inodot;zl&amp;inodot;d&amp;inodot;r, ancak fiziksel veri diskte kalabilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="temizlik-sonrasi-disk-durumunu-kontrol-et"&gt;🔍 Temizlik Sonras&amp;inodot; Disk Durumunu Kontrol Et&lt;/h2&gt;
+&lt;p&gt;Silme i&amp;scedil;lemi tamamland&amp;inodot;ktan sonra &amp;scedil;u komutlarla kontrol yapabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lsblk
+sudo&lt;span class="w"&gt; &lt;/span&gt;fdisk&lt;span class="w"&gt; &lt;/span&gt;-l
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Partition g&amp;ouml;r&amp;uuml;nm&amp;uuml;yorsa, disk ba&amp;scedil;ar&amp;inodot;yla temizlenmi&amp;scedil; demektir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="hangi-yontemi-ne-zaman-kullanmaliyim"&gt;🧾 Hangi Y&amp;ouml;ntemi Ne Zaman Kullanmal&amp;inodot;y&amp;inodot;m?&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Y&amp;ouml;ntem&lt;/th&gt;
+&lt;th&gt;A&amp;ccedil;&amp;inodot;klama&lt;/th&gt;
+&lt;th&gt;H&amp;inodot;z&lt;/th&gt;
+&lt;th&gt;G&amp;uuml;venlik&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dd&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Diski s&amp;inodot;f&amp;inodot;rlarla doldurur&lt;/td&gt;
+&lt;td&gt;Orta&lt;/td&gt;
+&lt;td&gt;Orta&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;shred&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Rastgele veriyle veri yok eder&lt;/td&gt;
+&lt;td&gt;Yava&amp;scedil;&lt;/td&gt;
+&lt;td&gt;Y&amp;uuml;ksek&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;wipefs&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Partition tablolar&amp;inodot;n&amp;inodot; ve FS imzalar&amp;inodot;n&amp;inodot; siler&lt;/td&gt;
+&lt;td&gt;&amp;Ccedil;ok H&amp;inodot;zl&amp;inodot;&lt;/td&gt;
+&lt;td&gt;D&amp;uuml;&amp;scedil;&amp;uuml;k&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Kritik veri varsa&lt;/strong&gt; &lt;code&gt;shred&lt;/code&gt; en iyi tercihtir. &lt;strong&gt;Sadece kurulum &amp;ouml;ncesi s&amp;inodot;f&amp;inodot;rlama gerekiyorsa&lt;/strong&gt; &lt;code&gt;dd&lt;/code&gt; veya &lt;code&gt;wipefs&lt;/code&gt; yeterlidir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="bonus-sifirlama-sonrasi-disk-bolumleme-ve-formatlama"&gt;🚀 Bonus: S&amp;inodot;f&amp;inodot;rlama Sonras&amp;inodot; Disk B&amp;ouml;l&amp;uuml;mleme ve Formatlama&lt;/h2&gt;
+&lt;p&gt;Yeni bir dosya sistemi olu&amp;scedil;turmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;parted&lt;span class="w"&gt; &lt;/span&gt;/dev/sdX&lt;span class="w"&gt; &lt;/span&gt;mklabel&lt;span class="w"&gt; &lt;/span&gt;gpt
+sudo&lt;span class="w"&gt; &lt;/span&gt;parted&lt;span class="w"&gt; &lt;/span&gt;/dev/sdX&lt;span class="w"&gt; &lt;/span&gt;mkpart&lt;span class="w"&gt; &lt;/span&gt;primary&lt;span class="w"&gt; &lt;/span&gt;ext4&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;%&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;100&lt;/span&gt;%
+sudo&lt;span class="w"&gt; &lt;/span&gt;mkfs.ext4&lt;span class="w"&gt; &lt;/span&gt;/dev/sdX1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;ext4&lt;/code&gt; yerine &lt;code&gt;xfs&lt;/code&gt;, &lt;code&gt;btrfs&lt;/code&gt; gibi di&amp;gbreve;er dosya sistemleri de kullan&amp;inodot;labilir.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-guvenli-ve-bilincli-disk-temizligi-sart"&gt;📣 Sonu&amp;ccedil;: G&amp;uuml;venli ve Bilin&amp;ccedil;li Disk Temizli&amp;gbreve;i &amp;Scedil;art&lt;/h2&gt;
+&lt;p&gt;Linux'ta diskleri s&amp;inodot;f&amp;inodot;rlamak, hem sistem g&amp;uuml;venli&amp;gbreve;i hem de stabilitesi a&amp;ccedil;&amp;inodot;s&amp;inodot;ndan olduk&amp;ccedil;a &amp;ouml;nemlidir. Hangi diski sildi&amp;gbreve;inizden &lt;strong&gt;%100 emin olmadan&lt;/strong&gt; hi&amp;ccedil;bir i&amp;scedil;lem yapmay&amp;inodot;n. &amp;Ouml;zellikle sunucularda veya &amp;ccedil;oklu disk bulunan sistemlerde ekstra dikkat gereklidir.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;E&amp;gbreve;er bu rehber i&amp;scedil;ine yarad&amp;inodot;ysa payla&amp;scedil;abilir, a&amp;scedil;a&amp;gbreve;&amp;inodot;ya yorum b&amp;inodot;rakabilir veya blogumu takip edebilirsin. Daha fazla Linux ipucu ve sistem y&amp;ouml;netimi rehberi i&amp;ccedil;in buraday&amp;inodot;m! 🐧&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;Senin de kulland&amp;inodot;&amp;gbreve;&amp;inodot;n ba&amp;scedil;ka y&amp;ouml;ntemler varsa yorumlarda payla&amp;scedil;, birlikte b&amp;uuml;y&amp;uuml;yelim! 🙌&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Linux &amp;uuml;zerinde disk s&amp;inodot;f&amp;inodot;rlama" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/Linux-uzerinde-disk-sifirlama-xl.webp" srcset="/images/Linux-uzerinde-disk-sifirlama-sm.webp 300w, /images/Linux-uzerinde-disk-sifirlama-md.webp 500w, /images/Linux-uzerinde-disk-sifirlama-xl.webp 800w, /images/Linux-uzerinde-disk-sifirlama-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Disk Yönetimi"/><category term="linux"/><category term="disk silme"/><category term="dd komutu"/><category term="shred komutu"/><category term="wipefs"/><category term="veri temizleme"/><category term="disk sıfırlama"/></entry><entry><title>Arch Linux'ta NTFS Nasıl Yapılandırılır</title><link href="https://yuceltoluyag.github.io/arch-linux-ntfs-yapilandirma/" rel="alternate"/><published>2020-07-05T12:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-07-05:/arch-linux-ntfs-yapilandirma/</id><summary type="html">&lt;p&gt;Arch Linux'ta NTFS dosya sistemine sahip disklerin nasıl bağlanacağı ve yetki sorunlarının nasıl çözüleceği açıklanmaktadır.&lt;/p&gt;</summary><content type="html">&lt;h2 id="sorun-nedir"&gt;Sorun Nedir? ⚠️&lt;/h2&gt;
+&lt;p&gt;Linux'un varsay&amp;inodot;lan dosya sistemi &lt;strong&gt;ext&lt;/strong&gt; (ext1, ext2, ext3, ext4) oldu&amp;gbreve;undan, yeni bir sistem kuruldu&amp;gbreve;unda NTFS format&amp;inodot;ndaki diskleri ba&amp;gbreve;lamaya &amp;ccedil;al&amp;inodot;&amp;scedil;&amp;inodot;rken &lt;strong&gt;"failed to mount diskad&amp;inodot; -&amp;gt; not authorized to perform operation"&lt;/strong&gt; hatas&amp;inodot;yla kar&amp;scedil;&amp;inodot;la&amp;scedil;abilirsiniz. Daha modern bir dosya y&amp;ouml;neticisi kullan&amp;inodot;yorsan&amp;inodot;z, ba&amp;gbreve;lanmak istedi&amp;gbreve;inizde &lt;strong&gt;parola&lt;/strong&gt; istemesi de olas&amp;inodot;d&amp;inodot;r. Linux, di&amp;gbreve;er dosya sistemlerini tan&amp;inodot;r ancak i&amp;scedil;lem yapabilmek i&amp;ccedil;in yetkilendirme gerektirir.
+&lt;img alt="NTFS Yetki Hatas&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/ntfs_yetki_hatasi-xl.webp" srcset="/images/ntfs_yetki_hatasi-sm.webp 300w, /images/ntfs_yetki_hatasi-md.webp 500w, /images/ntfs_yetki_hatasi-xl.webp 800w, /images/ntfs_yetki_hatasi-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="cozum-1-yetkilendirme-ayarlari"&gt;&amp;Ccedil;&amp;ouml;z&amp;uuml;m 1️⃣: Yetkilendirme Ayarlar&amp;inodot;&lt;/h2&gt;
+&lt;p&gt;Terminali a&amp;ccedil;arak a&amp;scedil;a&amp;gbreve;&amp;inodot;daki paketleri y&amp;uuml;kleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;gvfs&lt;span class="w"&gt; &lt;/span&gt;ntfs-3g&lt;span class="w"&gt; &lt;/span&gt;dosfstools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ard&amp;inodot;ndan, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; uygulay&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;su
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/usr/share/polkit-1/rules.d
+touch&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;-drives.rules
+vim&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt;-drives.rules&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Nano veya ba&amp;scedil;ka bir edit&amp;ouml;r de kullanabilirsiniz.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;A&amp;ccedil;&amp;inodot;lan dosyan&amp;inodot;n i&amp;ccedil;ine a&amp;scedil;a&amp;gbreve;&amp;inodot;daki kodu ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;polkit.addRule&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;action,&lt;span class="w"&gt; &lt;/span&gt;subject&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;action.id.indexOf&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"org.freedesktop.udisks2."&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="o"&gt;){&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;polkit.Result.YES&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;})&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er sisteminizde bu ayarlar etkinle&amp;scedil;mezse, tekrar a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak g&amp;uuml;ncellemeyi deneyebilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;gvfs&lt;span class="w"&gt; &lt;/span&gt;ntfs-3g&lt;span class="w"&gt; &lt;/span&gt;dosfstools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Son olarak, kullan&amp;inodot;c&amp;inodot;y&amp;inodot; &lt;strong&gt;disk&lt;/strong&gt; grubuna ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;gpasswd&lt;span class="w"&gt; &lt;/span&gt;-a&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$USER&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;disk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bilgisayar&amp;inodot;n&amp;inodot;z&amp;inodot; yeniden ba&amp;scedil;latt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda, sorun &amp;ccedil;&amp;ouml;z&amp;uuml;lm&amp;uuml;&amp;scedil; olacakt&amp;inodot;r. 🚀&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="alternatif-cozum-2-manuel-baglama"&gt;Alternatif &amp;Ccedil;&amp;ouml;z&amp;uuml;m 2️⃣: Manuel Ba&amp;gbreve;lama&lt;/h2&gt;
+&lt;p&gt;Tak&amp;inodot;l&amp;inodot; disklerin listesini ve UUID bilgilerini g&amp;ouml;rmek i&amp;ccedil;in &amp;scedil;u komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;blkid
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bir NTFS diskini belirli bir klas&amp;ouml;re ba&amp;gbreve;lamak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;/mnt/ntfsdisk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;mount&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;ntfs-3g&lt;span class="w"&gt; &lt;/span&gt;/dev/sdXX&lt;span class="w"&gt; &lt;/span&gt;/mnt/ntfsdisk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="info-box tip"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Disk Ad&amp;inodot;&lt;/div&gt;
+&lt;p&gt;&lt;b&gt;sdXX&lt;/b&gt; k&amp;inodot;sm&amp;inodot;na, `blkid` komutuyla buldu&amp;gbreve;unuz disk ad&amp;inodot;n&amp;inodot; yaz&amp;inodot;n (&amp;ouml;rne&amp;gbreve;in: sda1, sdb2 vb.).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Ba&amp;gbreve;l&amp;inodot; diskten &amp;ccedil;&amp;inodot;kmak isterseniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;umount&lt;span class="w"&gt; &lt;/span&gt;/mnt/ntfsdisk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr/&gt;
+&lt;h2 id="diskin-otomatik-baglanmasi"&gt;Diskin Otomatik Ba&amp;gbreve;lanmas&amp;inodot; 🔄&lt;/h2&gt;
+&lt;p&gt;Ba&amp;scedil;lang&amp;inodot;&amp;ccedil;ta otomatik ba&amp;gbreve;lanmas&amp;inodot;n&amp;inodot; istiyorsan&amp;inodot;z &lt;strong&gt;fstab&lt;/strong&gt; dosyan&amp;inodot;z&amp;inodot; d&amp;uuml;zenlemelisiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;vim&lt;span class="w"&gt; &lt;/span&gt;/etc/fstab&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Nano veya ba&amp;scedil;ka bir edit&amp;ouml;r de kullanabilirsiniz.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyan&amp;inodot;n en alt&amp;inodot;na &amp;scedil;u sat&amp;inodot;r&amp;inodot; ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/dev/sdXX&lt;span class="w"&gt; &lt;/span&gt;/mnt/ntfsdisk&lt;span class="w"&gt; &lt;/span&gt;ntfs-3g&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;uid&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;kullaniciadiniz,gid&lt;span class="o"&gt;=&lt;/span&gt;users,umask&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0022&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bilgisayar&amp;inodot;n&amp;inodot;z&amp;inodot; yeniden ba&amp;scedil;latt&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda, disk otomatik olarak ba&amp;gbreve;lanacakt&amp;inodot;r. 🚀&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="daha-fazla-bilgi"&gt;Daha Fazla Bilgi 📚&lt;/h2&gt;
+&lt;p&gt;Daha detayl&amp;inodot; bilgi i&amp;ccedil;in &lt;a href="https://wiki.archlinux.org/index.php/NTFS-3G" rel="noopener noreferrer" target="_blank"&gt;Arch Linux NTFS-3G Wiki&lt;/a&gt; sayfas&amp;inodot;na g&amp;ouml;z atabilirsiniz. 💡&lt;/p&gt;</content><category term="Disk Yönetimi"/><category term="linux"/><category term="ntfs"/></entry></feed>

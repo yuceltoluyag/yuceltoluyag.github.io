@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Laravel Geliştirme</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/laravel-gelistirme.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Laravel IDE Helper Kullanımı</title><link href="https://yuceltoluyag.github.io/laravel-ide-helper-kullanimi/" rel="alternate"/><published>2020-07-03T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-07-03:/laravel-ide-helper-kullanimi/</id><summary type="html">&lt;p&gt;Laravel IDE Helper paketi ile PHPStorm'da otomatik tamamlama ve kod yardımcısı nasıl geliştirilir?&lt;/p&gt;</summary><content type="html">&lt;h2 id="laravel-ide-helper-nedir"&gt;Laravel IDE Helper Nedir? 🚀&lt;/h2&gt;
+&lt;p&gt;Bir &lt;strong&gt;IDE (Entegre Geli&amp;scedil;tirme Ortam&amp;inodot;)&lt;/strong&gt;, yaz&amp;inodot;l&amp;inodot;m geli&amp;scedil;tirme s&amp;uuml;recini kolayla&amp;scedil;t&amp;inodot;ran ve bir&amp;ccedil;ok geli&amp;scedil;tirme arac&amp;inodot;n&amp;inodot; bir araya getiren yaz&amp;inodot;l&amp;inodot;md&amp;inodot;r. Pop&amp;uuml;ler IDE'ler aras&amp;inodot;nda Eclipse, Microsoft Visual Studio, Code Blocks, Dev-C++, NetBeans ve JetBrains &amp;uuml;r&amp;uuml;nleri bulunur.&lt;/p&gt;
+&lt;p&gt;Laravel projeleri geli&amp;scedil;tirirken &lt;strong&gt;PHPStorm&lt;/strong&gt; s&amp;inodot;k&amp;ccedil;a tercih edilen bir IDE'dir. Ancak, &lt;strong&gt;PHPStorm&lt;/strong&gt; baz&amp;inodot; model, class ve route bilgilerini otomatik olarak alg&amp;inodot;layamayabilir. Bu noktada, &lt;strong&gt;Laravel IDE Helper&lt;/strong&gt; paketi devreye girerek geli&amp;scedil;tirme deneyimini iyile&amp;scedil;tirir.&lt;/p&gt;
+&lt;p&gt;E&amp;gbreve;er bu paket olmasayd&amp;inodot;, &lt;strong&gt;PHPDoc&lt;/strong&gt; kullanarak bu bilgileri elle eklemek gerekecekti. Konu hakk&amp;inodot;nda daha fazla bilgi almak i&amp;ccedil;in &lt;strong&gt;Abdulkadir D&amp;inodot;lo S&amp;uuml;r&amp;uuml;c&amp;uuml;&lt;/strong&gt;'n&amp;uuml;n a&amp;ccedil;&amp;inodot;klamalar&amp;inodot;na &amp;scedil;uradan ula&amp;scedil;abilirsiniz:&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="0NZHzmAgH-M"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;h2 id="laravel-ide-helper-nasil-kurulur"&gt;Laravel IDE Helper Nas&amp;inodot;l Kurulur? 🛠️&lt;/h2&gt;
+&lt;p&gt;Laravel projelerinde &lt;strong&gt;Laravel IDE Helper&lt;/strong&gt; paketini kurmak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki ad&amp;inodot;mlar&amp;inodot; takip edebilirsiniz.&lt;/p&gt;
+&lt;h3 id="1-paketi-kurun"&gt;1. Paketi Kurun&lt;/h3&gt;
+&lt;p&gt;Terminal veya komut sat&amp;inodot;r&amp;inodot;n&amp;inodot;zda a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;require&lt;span class="w"&gt; &lt;/span&gt;--dev&lt;span class="w"&gt; &lt;/span&gt;barryvdh/laravel-ide-helper
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="2-kod-tamamlamayi-etkinlestirin"&gt;2. Kod Tamamlamay&amp;inodot; Etkinle&amp;scedil;tirin&lt;/h3&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak proje dizininize &lt;strong&gt;_ide_helper.php&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; olu&amp;scedil;turabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php&lt;span class="w"&gt; &lt;/span&gt;artisan&lt;span class="w"&gt; &lt;/span&gt;ide-helper:generate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="3-konfigurasyon-dosyasini-yayimlayin"&gt;3. Konfig&amp;uuml;rasyon Dosyas&amp;inodot;n&amp;inodot; Yay&amp;inodot;mlay&amp;inodot;n&lt;/h3&gt;
+&lt;p&gt;Konfig&amp;uuml;rasyonu yay&amp;inodot;nlamak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php&lt;span class="w"&gt; &lt;/span&gt;artisan&lt;span class="w"&gt; &lt;/span&gt;vendor:publish&lt;span class="w"&gt; &lt;/span&gt;--provider&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;--tag&lt;span class="o"&gt;=&lt;/span&gt;config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="4-modeller-icin-dokumantasyon-olusturun"&gt;4. Modeller &amp;Idot;&amp;ccedil;in Dok&amp;uuml;mantasyon Olu&amp;scedil;turun 📌&lt;/h3&gt;
+&lt;p&gt;Baz&amp;inodot; modellerde &lt;strong&gt;"fonksiyon bulunamad&amp;inodot;"&lt;/strong&gt; uyar&amp;inodot;s&amp;inodot; ile kar&amp;scedil;&amp;inodot;la&amp;scedil;abilirsiniz. Bunu &amp;ccedil;&amp;ouml;zmek i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu kullanabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php&lt;span class="w"&gt; &lt;/span&gt;artisan&lt;span class="w"&gt; &lt;/span&gt;ide-helper:models&lt;span class="w"&gt; &lt;/span&gt;User
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er model dosyalar&amp;inodot;n&amp;inodot;z farkl&amp;inodot; bir klas&amp;ouml;rdeyse, tam yolu belirtmelisiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;php&lt;span class="w"&gt; &lt;/span&gt;artisan&lt;span class="w"&gt; &lt;/span&gt;ide-helper:models&lt;span class="w"&gt; &lt;/span&gt;Model&lt;span class="se"&gt;\U&lt;/span&gt;ser
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu i&amp;scedil;lemin sonunda, &lt;strong&gt;User.php&lt;/strong&gt; gibi model dosyalar&amp;inodot;n&amp;inodot;n ba&amp;scedil;&amp;inodot;nda &amp;scedil;u &amp;scedil;ekilde bir PHPDoc blok olu&amp;scedil;turulur:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;PHP&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;/**&lt;/span&gt;
+&lt;span class="x"&gt; * App\User&lt;/span&gt;
+&lt;span class="x"&gt; *&lt;/span&gt;
+&lt;span class="x"&gt; * @property int $id&lt;/span&gt;
+&lt;span class="x"&gt; * @property string $name&lt;/span&gt;
+&lt;span class="x"&gt; * @property string $email&lt;/span&gt;
+&lt;span class="x"&gt; * @property \Illuminate\Support\Carbon|null $created_at&lt;/span&gt;
+&lt;span class="x"&gt; * @property \Illuminate\Support\Carbon|null $updated_at&lt;/span&gt;
+&lt;span class="x"&gt; * @mixin \Eloquent&lt;/span&gt;
+&lt;span class="x"&gt; */&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="5-composera-otomatik-komutlar-ekleyin"&gt;5. Composer'a Otomatik Komutlar Ekleyin 🔄&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;composer.json&lt;/code&gt; dosyan&amp;inodot;za a&amp;scedil;a&amp;gbreve;&amp;inodot;daki scriptleri ekleyerek, &lt;strong&gt;composer update&lt;/strong&gt; komutu &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda dok&amp;uuml;mantasyon dosyalar&amp;inodot;n&amp;inodot;n otomatik olarak g&amp;uuml;ncellenmesini sa&amp;gbreve;layabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;JSON&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;"scripts"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;"post-update-cmd"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"Illuminate\\Foundation\\ComposerScripts::postUpdate"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"@php artisan ide-helper:generate"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="s2"&gt;"@php artisan ide-helper:meta"&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="sonuc_1"&gt;Sonu&amp;ccedil; 🎯&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Laravel IDE Helper&lt;/strong&gt;, &lt;strong&gt;PHPStorm&lt;/strong&gt; gibi IDE'lerde kod tamamlama ve otomatik &amp;ouml;nerileri iyile&amp;scedil;tirerek geli&amp;scedil;tirme deneyimini &amp;ccedil;ok daha verimli hale getirir. Daha fazla bilgi i&amp;ccedil;in &lt;a href="https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md" rel="noopener noreferrer" target="_blank"&gt;Laravel IDE Helper Wiki&lt;/a&gt; sayfas&amp;inodot;n&amp;inodot; ziyaret edebilirsiniz.&lt;/p&gt;
+&lt;p&gt;PhpStorm ile ilgili daha fazla yaz&amp;inodot;ya &lt;a href="/etiket/phpstorm/"&gt;buradan ula&amp;scedil;abilirsiniz&lt;/a&gt;. 🚀&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Laravel IDE Helper" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/laravel_7x_ide_helper-xl.webp" srcset="/images/laravel_7x_ide_helper-sm.webp 300w, /images/laravel_7x_ide_helper-md.webp 500w, /images/laravel_7x_ide_helper-xl.webp 800w, /images/laravel_7x_ide_helper-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Laravel Geliştirme"/><category term="phpstorm"/><category term="cmder"/></entry><entry><title>Arch Linux Laravel Valet Kurulumu</title><link href="https://yuceltoluyag.github.io/arch-linux-laravel-valet-kurulumu/" rel="alternate"/><published>2020-06-15T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2020-06-15:/arch-linux-laravel-valet-kurulumu/</id><summary type="html">&lt;p&gt;Valet Linux, minimalist geliştirme ortamını sevenler için ideal bir Laravel geliştirme ortamıdır. Vagrant veya /etc/hosts ayarlamaya gerek kalmadan, yerel tünelleri kullanarak sitelerinizi kolayca paylaşabilirsiniz.&lt;/p&gt;</summary><content type="html">&lt;h1 id="merhaba"&gt;Merhaba 👋&lt;/h1&gt;
+&lt;p&gt;Valet Linux, minimalist bir geli&amp;scedil;tirme ortam&amp;inodot;n&amp;inodot; tercih edenler i&amp;ccedil;in Laravel geli&amp;scedil;tirme ortam&amp;inodot;d&amp;inodot;r. &lt;a href="/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu" rel="noopener noreferrer" target="_blank"&gt;Vagrant&lt;/a&gt; veya &lt;code&gt;/etc/hosts&lt;/code&gt; ayarlamaya gerek yoktur. Yerel t&amp;uuml;nelleri (Ngrok vb.) kullanarak sitelerinizi herkese a&amp;ccedil;&amp;inodot;k olarak payla&amp;scedil;abilirsiniz. 🚀&lt;/p&gt;
+&lt;p&gt;Valet, sisteminizi makine a&amp;ccedil;&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda &lt;strong&gt;Nginx'i arka planda &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;racak &amp;scedil;ekilde yap&amp;inodot;land&amp;inodot;r&amp;inodot;r&lt;/strong&gt;. Ard&amp;inodot;ndan, &lt;strong&gt;DnsMasq&lt;/strong&gt; kullanarak &lt;code&gt;*.test&lt;/code&gt; uzant&amp;inodot;l&amp;inodot; domainlerinizi ilgili dizinlere y&amp;ouml;nlendirir. &lt;strong&gt;Sadece 7MB RAM kullanarak &amp;ccedil;al&amp;inodot;&amp;scedil;an, h&amp;inodot;zl&amp;inodot; ve hafif bir Laravel geli&amp;scedil;tirme ortam&amp;inodot; sunar.&lt;/strong&gt; 🎯&lt;/p&gt;
+&lt;div class="info-box warning"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;&amp;Ouml;nceki Kurulumlar&lt;/div&gt;
+&lt;p&gt;Daha &amp;ouml;nce &lt;a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" rel="noopener noreferrer" target="_blank"&gt;Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)&lt;/a&gt; veya benzeri kurulumlar yapt&amp;inodot;ysan&amp;inodot;z, devre d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rakmal&amp;inodot; ya da kald&amp;inodot;rmal&amp;inodot;s&amp;inodot;n&amp;inodot;z. Aksi takdirde &amp;ccedil;ak&amp;inodot;&amp;scedil;malar ya&amp;scedil;anabilir.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="kurulum"&gt;🛠 Kurulum&lt;/h2&gt;
+&lt;p&gt;Terminali a&amp;ccedil;&amp;inodot;n ve a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutlar&amp;inodot; s&amp;inodot;ras&amp;inodot;yla &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;nss&lt;span class="w"&gt; &lt;/span&gt;jq&lt;span class="w"&gt; &lt;/span&gt;xsel&lt;span class="w"&gt; &lt;/span&gt;networkmanager
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;PHP'nin kurulu ve 5.6'dan y&amp;uuml;ksek bir s&amp;uuml;r&amp;uuml;m oldu&amp;gbreve;undan emin olun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;php&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Kurulum sonras&amp;inodot; kontrol i&amp;ccedil;in: php -v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Gerekli ek PHP paketlerini y&amp;uuml;kleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;php71-mcrypt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;ste&amp;gbreve;e ba&amp;gbreve;l&amp;inodot; paketler:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;php&lt;span class="w"&gt; &lt;/span&gt;php-dblib&lt;span class="w"&gt; &lt;/span&gt;php-fpm&lt;span class="w"&gt; &lt;/span&gt;php-gd&lt;span class="w"&gt; &lt;/span&gt;php-odbc&lt;span class="w"&gt; &lt;/span&gt;php-pgsql&lt;span class="w"&gt; &lt;/span&gt;php-sqlite
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Composer kurun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;composer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Daha sonra &lt;code&gt;.bashrc&lt;/code&gt; i&amp;ccedil;erisine &amp;scedil;u sat&amp;inodot;r&amp;inodot; ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.config/composer/vendor/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Composer'&amp;inodot; haz&amp;inodot;r hale getirin ve Valet Linux'u y&amp;uuml;kleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;composer&lt;span class="w"&gt; &lt;/span&gt;global&lt;span class="w"&gt; &lt;/span&gt;require&lt;span class="w"&gt; &lt;/span&gt;cpriego/valet-linux
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="valet-ile-calisma"&gt;🎉 Valet ile &amp;Ccedil;al&amp;inodot;&amp;scedil;ma&lt;/h2&gt;
+&lt;p&gt;Ana dizine gidip &lt;code&gt;Sites&lt;/code&gt; ad&amp;inodot;nda bir klas&amp;ouml;r olu&amp;scedil;turun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;~/Sites
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu klas&amp;ouml;r i&amp;ccedil;inde her alt klas&amp;ouml;r bir domain ad&amp;inodot; gibi &amp;ccedil;al&amp;inodot;&amp;scedil;acakt&amp;inodot;r. &amp;Ouml;rne&amp;gbreve;in, &lt;code&gt;blog&lt;/code&gt; isimli bir Laravel projesi olu&amp;scedil;turup park edelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/Sites
+php&lt;span class="w"&gt; &lt;/span&gt;valet&lt;span class="w"&gt; &lt;/span&gt;park
+laravel&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;blog
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Taray&amp;inodot;c&amp;inodot;dan &lt;strong&gt;http://blog.test&lt;/strong&gt; adresine girerek projenizi g&amp;ouml;r&amp;uuml;nt&amp;uuml;leyebilirsiniz! 🎊&lt;/p&gt;
+&lt;h2 id="valet-link-komutu"&gt;🌍 Valet Link Komutu&lt;/h2&gt;
+&lt;p&gt;Belirli bir proje i&amp;ccedil;in &amp;ouml;zel link olu&amp;scedil;turabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;valet&lt;span class="w"&gt; &lt;/span&gt;link&lt;span class="w"&gt; &lt;/span&gt;projeadi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ba&amp;gbreve;lant&amp;inodot;lar&amp;inodot; listelemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;valet&lt;span class="w"&gt; &lt;/span&gt;links
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="Laravel Valet Link Arch Linux" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/laravel-valet-link-archlinux-xl.webp" srcset="/images/laravel-valet-link-archlinux-sm.webp 300w, /images/laravel-valet-link-archlinux-md.webp 500w, /images/laravel-valet-link-archlinux-xl.webp 800w, /images/laravel-valet-link-archlinux-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="domain-uzantisini-degistirme"&gt;🔧 Domain Uzant&amp;inodot;s&amp;inodot;n&amp;inodot; De&amp;gbreve;i&amp;scedil;tirme&lt;/h2&gt;
+&lt;p&gt;Varsay&amp;inodot;lan &lt;code&gt;.test&lt;/code&gt; uzant&amp;inodot;s&amp;inodot;n&amp;inodot; de&amp;gbreve;i&amp;scedil;tirmek isterseniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;valet&lt;span class="w"&gt; &lt;/span&gt;domain&lt;span class="w"&gt; &lt;/span&gt;.app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Mevcut domain uzant&amp;inodot;s&amp;inodot;n&amp;inodot; &amp;ouml;&amp;gbreve;renmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;valet&lt;span class="w"&gt; &lt;/span&gt;domain
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Valet'in kulland&amp;inodot;&amp;gbreve;&amp;inodot; portu de&amp;gbreve;i&amp;scedil;tirmek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;valet&lt;span class="w"&gt; &lt;/span&gt;port&lt;span class="w"&gt; &lt;/span&gt;xxxx&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# xxxx yerine yeni port numaras&amp;inodot;n&amp;inodot; yaz&amp;inodot;n&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="ssl-hatalarini-giderme"&gt;🔒 SSL Hatalar&amp;inodot;n&amp;inodot; Giderme&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;zellikle &lt;code&gt;.app&lt;/code&gt; veya &lt;code&gt;.dev&lt;/code&gt; gibi uzant&amp;inodot;lar kullan&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda SSL hatas&amp;inodot; alabilirsiniz. Bunu &amp;ouml;nlemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;valet&lt;span class="w"&gt; &lt;/span&gt;secure&lt;span class="w"&gt; &lt;/span&gt;projeadi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;SSL'yi devre d&amp;inodot;&amp;scedil;&amp;inodot; b&amp;inodot;rakmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;valet&lt;span class="w"&gt; &lt;/span&gt;unsecure&lt;span class="w"&gt; &lt;/span&gt;projeadi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="video-anlatim"&gt;📺 Video Anlat&amp;inodot;m&lt;/h2&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="-Qdxa0XjkgQ"&gt;&lt;/lite-youtube&gt;&lt;/p&gt;
+&lt;h2 id="kaynaklar"&gt;📚 Kaynaklar&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://cpriego.github.io/valet-linux/index#installation" rel="noopener noreferrer" target="_blank"&gt;Valet Linux Resmi Belgeleri&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cpriego.github.io/valet-linux/requirements.html#arch" rel="noopener noreferrer" target="_blank"&gt;Valet Linux Gereksinimler&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🎯 Art&amp;inodot;k Valet ile Laravel projelerinizi h&amp;inodot;zla geli&amp;scedil;tirebilir ve yerel ortam&amp;inodot;n&amp;inodot;z&amp;inodot; optimize edebilirsiniz! 🚀&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Laravel Valet Kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/laravel-valet-kurulumu-linux-xl.webp" srcset="/images/laravel-valet-kurulumu-linux-sm.webp 300w, /images/laravel-valet-kurulumu-linux-md.webp 500w, /images/laravel-valet-kurulumu-linux-xl.webp 800w, /images/laravel-valet-kurulumu-linux-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Laravel Geliştirme"/><category term="linux"/><category term="laravel"/></entry><entry><title>Arch Linux Üzerinde VirtualBox + Vagrant + Laravel + PhpMyAdmin Kurulumu (Homestead)</title><link href="https://yuceltoluyag.github.io/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu/" rel="alternate"/><published>2019-09-16T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2019-09-16:/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu/</id><summary type="html">&lt;p&gt;Arch Linux üzerinde VirtualBox, Vagrant, Laravel ve PhpMyAdmin kurulumunu adım adım anlatan detaylı rehber.&lt;/p&gt;</summary><content type="html">&lt;h2 id="virtualbox-kurulumu"&gt;VirtualBox Kurulumu 🚀&lt;/h2&gt;
+&lt;p&gt;&amp;Ouml;ncelikle VirtualBox'&amp;inodot; y&amp;uuml;kleyelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;pacman&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;virtualbox
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kurulum s&amp;inodot;ras&amp;inodot;nda a&amp;scedil;a&amp;gbreve;&amp;inodot;daki se&amp;ccedil;enekler kar&amp;scedil;&amp;inodot;n&amp;inodot;za &amp;ccedil;&amp;inodot;kacakt&amp;inodot;r:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;virtualbox-host-dkms&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;virtualbox-host-modules-arch&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Hangi se&amp;ccedil;ene&amp;gbreve;i kullanaca&amp;gbreve;&amp;inodot;n&amp;inodot;z&amp;inodot; bilmiyorsan&amp;inodot;z:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;E&amp;gbreve;er &lt;strong&gt;Linux kerneli&lt;/strong&gt; kullan&amp;inodot;yorsan&amp;inodot;z &lt;strong&gt;2. se&amp;ccedil;ene&amp;gbreve;i&lt;/strong&gt; (&lt;strong&gt;virtualbox-host-modules-arch&lt;/strong&gt;) se&amp;ccedil;melisiniz.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Farkl&amp;inodot; bir kernel&lt;/strong&gt; kullan&amp;inodot;yorsan&amp;inodot;z &lt;strong&gt;1. se&amp;ccedil;ene&amp;gbreve;i&lt;/strong&gt; (&lt;strong&gt;virtualbox-host-dkms&lt;/strong&gt;) tercih etmelisiniz.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ben &lt;strong&gt;2. se&amp;ccedil;ene&amp;gbreve;i&lt;/strong&gt; se&amp;ccedil;erek devam ediyorum.&lt;/p&gt;
+&lt;p&gt;Kurulum tamamland&amp;inodot;ktan sonra VirtualBox'&amp;inodot; ba&amp;scedil;latmadan &amp;ouml;nce mod&amp;uuml;l&amp;uuml; etkinle&amp;scedil;tirelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;modprobe&lt;span class="w"&gt; &lt;/span&gt;vboxdrv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;VirtualBox'&amp;inodot; bir kez &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rarak &lt;strong&gt;hata olup olmad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; kontrol edin&lt;/strong&gt;. E&amp;gbreve;er hata al&amp;inodot;rsan&amp;inodot;z, hata mesaj&amp;inodot;n&amp;inodot; payla&amp;scedil;arak destek alabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Mod&amp;uuml;l&amp;uuml;n her a&amp;ccedil;&amp;inodot;l&amp;inodot;&amp;scedil;ta otomatik y&amp;uuml;klenmesi i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/modules-load.d/virtualbox.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyaya &lt;strong&gt;vboxdrv&lt;/strong&gt; ekleyin ve kaydedip &amp;ccedil;&amp;inodot;k&amp;inodot;n (&lt;strong&gt;F3&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Enter&lt;/strong&gt; -&amp;gt; &lt;strong&gt;F2&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Son olarak, kullan&amp;inodot;c&amp;inodot;n&amp;inodot;z&amp;inodot; &lt;strong&gt;vboxusers&lt;/strong&gt; grubuna ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;usermod&lt;span class="w"&gt; &lt;/span&gt;-aG&lt;span class="w"&gt; &lt;/span&gt;vboxusers&lt;span class="w"&gt; &lt;/span&gt;KULLANICI_ADINIZ
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bilgisayar&amp;inodot;n&amp;inodot;z&amp;inodot; yeniden ba&amp;scedil;latt&amp;inodot;ktan sonra a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla mod&amp;uuml;l&amp;uuml;n y&amp;uuml;kl&amp;uuml; olup olmad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot; do&amp;gbreve;rulayabilirsiniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;lsmod&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;grep&lt;span class="w"&gt; &lt;/span&gt;vboxdrv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="vagrant-kurulumu"&gt;Vagrant Kurulumu 🏗️&lt;/h2&gt;
+&lt;p&gt;Vagrant'&amp;inodot; y&amp;uuml;klemek i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;vagrant
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;E&amp;gbreve;er &lt;strong&gt;Vagrant plugin&lt;/strong&gt; ve &lt;strong&gt;plugin manager&lt;/strong&gt; y&amp;uuml;klemek isterseniz:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vagrant&lt;span class="w"&gt; &lt;/span&gt;plugin&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;vagrant-vbguest&lt;span class="w"&gt; &lt;/span&gt;vagrant-share
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Scedil;imdi, Vagrant taraf&amp;inodot;ndan sa&amp;gbreve;lanan haz&amp;inodot;r imaj&amp;inodot; indirelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vagrant&lt;span class="w"&gt; &lt;/span&gt;box&lt;span class="w"&gt; &lt;/span&gt;add&lt;span class="w"&gt; &lt;/span&gt;laravel/homestead
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ba&amp;scedil;ar&amp;inodot;yla eklendi&amp;gbreve;ini belirten mesaj&amp;inodot; g&amp;ouml;rd&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml;zde, sanal makine imaj&amp;inodot; olu&amp;scedil;turulmu&amp;scedil; olacakt&amp;inodot;r.&lt;/p&gt;
+&lt;h2 id="homestead-kurulumu"&gt;Homestead Kurulumu 🏡&lt;/h2&gt;
+&lt;p&gt;Ev dizininizde &lt;strong&gt;www&lt;/strong&gt; ad&amp;inodot;nda bir klas&amp;ouml;r olu&amp;scedil;turup, i&amp;ccedil;ine Homestead dosyalar&amp;inodot;n&amp;inodot; &amp;ccedil;ekelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;~/www
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/www
+git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/laravel/homestead.git&lt;span class="w"&gt; &lt;/span&gt;Homestead
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Homestead'i ba&amp;scedil;latmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/www/Homestead
+bash&lt;span class="w"&gt; &lt;/span&gt;init.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;"Homestead initialized!"&lt;/strong&gt; mesaj&amp;inodot;n&amp;inodot; g&amp;ouml;rd&amp;uuml;&amp;gbreve;&amp;uuml;n&amp;uuml;zde ba&amp;scedil;ar&amp;inodot;yla kurulmu&amp;scedil; demektir.&lt;/p&gt;
+&lt;p&gt;&amp;Scedil;imdi &lt;strong&gt;Homestead.yaml&lt;/strong&gt; dosyas&amp;inodot;n&amp;inodot; d&amp;uuml;zenlememiz gerekiyor:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;~/www/Homestead/Homestead.yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;YAML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;ip&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;"192.168.10.10"&lt;/span&gt;
+&lt;span class="nt"&gt;memory&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;2048&lt;/span&gt;
+&lt;span class="nt"&gt;cpus&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;2&lt;/span&gt;
+&lt;span class="nt"&gt;provider&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;virtualbox&lt;/span&gt;
+
+&lt;span class="nt"&gt;authorize&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/.ssh/id_rsa.pub&lt;/span&gt;
+
+&lt;span class="nt"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/.ssh/id_rsa&lt;/span&gt;
+
+&lt;span class="nt"&gt;folders&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;map&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;~/www&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;to&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/home/vagrant/www&lt;/span&gt;
+
+&lt;span class="nt"&gt;sites&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;map&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;laravel6.test&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;to&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/home/vagrant/www/laravel6/public&lt;/span&gt;
+
+&lt;span class="nt"&gt;databases&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;homestead&lt;/span&gt;
+
+&lt;span class="nt"&gt;features&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;mariadb&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;ohmyzsh&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;webdriver&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;false&lt;/span&gt;
+
+&lt;span class="c1"&gt;# ports:&lt;/span&gt;
+&lt;span class="c1"&gt;#     - send: 50000&lt;/span&gt;
+&lt;span class="c1"&gt;#       to: 5000&lt;/span&gt;
+&lt;span class="c1"&gt;#     - send: 7777&lt;/span&gt;
+&lt;span class="c1"&gt;#       to: 777&lt;/span&gt;
+&lt;span class="c1"&gt;#       protocol: udp&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyan&amp;inodot;n ba&amp;scedil;&amp;inodot;nda &lt;strong&gt;ip: \"192.168.10.10\"&lt;/strong&gt; adresini g&amp;ouml;receksiniz. Laravel projemizi bu IP &amp;uuml;zerinden &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmak i&amp;ccedil;in &lt;strong&gt;hosts&lt;/strong&gt; dosyam&amp;inodot;za ekleme yapal&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyan&amp;inodot;n i&amp;ccedil;ine &amp;scedil;unu ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.10.10&lt;span class="w"&gt; &lt;/span&gt;laravel6.test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kaydedip &amp;ccedil;&amp;inodot;k&amp;inodot;n (&lt;strong&gt;F3&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Enter&lt;/strong&gt; -&amp;gt; &lt;strong&gt;F2&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Sonras&amp;inodot;nda sanal makineyi ba&amp;scedil;latal&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/www/Homestead
+vagrant&lt;span class="w"&gt; &lt;/span&gt;up
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;lk a&amp;ccedil;&amp;inodot;l&amp;inodot;&amp;scedil; biraz uzun s&amp;uuml;rebilir. E&amp;gbreve;er hata al&amp;inodot;rsan&amp;inodot;z yorum b&amp;inodot;rakabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Ba&amp;gbreve;lanmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vagrant&lt;span class="w"&gt; &lt;/span&gt;ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img alt="SSH Ba&amp;gbreve;lant&amp;inodot;s&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/pic-selected-190916-0818-54-xl.webp" srcset="/images/pic-selected-190916-0818-54-sm.webp 300w, /images/pic-selected-190916-0818-54-md.webp 500w, /images/pic-selected-190916-0818-54-xl.webp 800w, /images/pic-selected-190916-0818-54-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="laravel-kurulumu"&gt;Laravel Kurulumu 🌐&lt;/h2&gt;
+&lt;p&gt;SSH ile sanal makineye ba&amp;gbreve;land&amp;inodot;ktan sonra Laravel'i kurmak i&amp;ccedil;in:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;www
+composer&lt;span class="w"&gt; &lt;/span&gt;create-project&lt;span class="w"&gt; &lt;/span&gt;--prefer-dist&lt;span class="w"&gt; &lt;/span&gt;laravel/laravel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu i&amp;scedil;lem tamamland&amp;inodot;&amp;gbreve;&amp;inodot;nda &lt;strong&gt;www&lt;/strong&gt; klas&amp;ouml;r&amp;uuml;n&amp;uuml;z&amp;uuml;n i&amp;ccedil;inde &lt;strong&gt;laravel&lt;/strong&gt; ad&amp;inodot;nda bir klas&amp;ouml;r olu&amp;scedil;acakt&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Laravel Kurulumu" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/pic-full-190916-0808-36-xl.webp" srcset="/images/pic-full-190916-0808-36-sm.webp 300w, /images/pic-full-190916-0808-36-md.webp 500w, /images/pic-full-190916-0808-36-xl.webp 800w, /images/pic-full-190916-0808-36-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="phpmyadmin-kurulumu"&gt;PhpMyAdmin Kurulumu 🛠️&lt;/h2&gt;
+&lt;p&gt;SSH ile ba&amp;gbreve;l&amp;inodot; oldu&amp;gbreve;unuzdan emin olun ve &lt;strong&gt;www&lt;/strong&gt; dizininde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zdan emin olun:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-sS&lt;span class="w"&gt; &lt;/span&gt;https://raw.githubusercontent.com/grrnikos/pma/master/pma.sh&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;PhpMyAdmin'e eri&amp;scedil;im i&amp;ccedil;in hosts dosyan&amp;inodot;za yeni bir sat&amp;inodot;r ekleyelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;&amp;ccedil;erisine &amp;scedil;unu ekleyin:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="m"&gt;192&lt;/span&gt;.168.10.10&lt;span class="w"&gt; &lt;/span&gt;phpmyadmin.test
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kaydedip &amp;ccedil;&amp;inodot;k&amp;inodot;n (&lt;strong&gt;F3&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Enter&lt;/strong&gt; -&amp;gt; &lt;strong&gt;F2&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;&amp;Scedil;imdi &lt;strong&gt;Homestead.yaml&lt;/strong&gt; dosyam&amp;inodot;z&amp;inodot; d&amp;uuml;zenleyelim ve yeni bir site ekleyelim:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;YAML&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;sites&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;map&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;laravel6.test&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;to&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/home/vagrant/www/laravel6/public&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;map&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;phpmyadmin.test&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;to&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/home/vagrant/www/phpmyadmin&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;T&amp;uuml;m ayarlamalar tamamland&amp;inodot;! 🚀 &lt;strong&gt;PhpMyAdmin'e eri&amp;scedil;mek i&amp;ccedil;in:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://phpmyadmin.test/" rel="noopener noreferrer" target="_blank"&gt;http://phpmyadmin.test/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Kullan&amp;inodot;c&amp;inodot; ad&amp;inodot;: &lt;strong&gt;homestead&lt;/strong&gt;
+&amp;Scedil;ifre: &lt;strong&gt;secret&lt;/strong&gt;&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js" type="module"&gt;&lt;/script&gt;
+&lt;p&gt;&lt;lite-youtube videoid="d9ITbD5Mn3w"&gt;&lt;/lite-youtube&gt;
+&lt;img alt="Kurulum G&amp;ouml;rseli" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/pic-selected-190916-0747-49-xl.webp" srcset="/images/pic-selected-190916-0747-49-sm.webp 300w, /images/pic-selected-190916-0747-49-md.webp 500w, /images/pic-selected-190916-0747-49-xl.webp 800w, /images/pic-selected-190916-0747-49-xl.webp 1200w"/&gt;&lt;/p&gt;</content><category term="Laravel Geliştirme"/><category term="linux"/><category term="laravel"/></entry></feed>

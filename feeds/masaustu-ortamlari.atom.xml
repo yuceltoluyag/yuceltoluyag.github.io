@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ortaya Karışık - Masaüstü Ortamları</title><link href="https://yuceltoluyag.github.io/" rel="alternate"/><link href="https://yuceltoluyag.github.io/feeds/masaustu-ortamlari.atom.xml" rel="self"/><id>https://yuceltoluyag.github.io/</id><updated>2025-08-11T22:59:00+03:00</updated><entry><title>Linux’ta Oturum Ayarları: .xinitrc mi .xprofile mı?</title><link href="https://yuceltoluyag.github.io/lightdm-xprofile-xinitrc-farki/" rel="alternate"/><published>2025-05-09T16:30:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-05-09:/lightdm-xprofile-xinitrc-farki/</id><summary type="html">&lt;p&gt;LightDM gibi bir display manager kullanıyorsanız &lt;code&gt;.xinitrc&lt;/code&gt; dosyanız neden çalışmaz? Doğru başlangıç dosyasının &lt;code&gt;.xprofile&lt;/code&gt; olduğunu anlatan bu rehber, kafa karışıklığını ortadan kaldırıyor.&lt;/p&gt;</summary><content type="html">&lt;h1 id="lightdm-kullaniyorsan-neden-xprofile-kullanmalisin"&gt;LightDM Kullan&amp;inodot;yorsan Neden &lt;code&gt;.xprofile&lt;/code&gt; Kullanmal&amp;inodot;s&amp;inodot;n?&lt;/h1&gt;
+&lt;p&gt;Arch Linux ya da di&amp;gbreve;er Linux da&amp;gbreve;&amp;inodot;t&amp;inodot;mlar&amp;inodot;nda masa&amp;uuml;st&amp;uuml; ortam&amp;inodot;n&amp;inodot; ba&amp;scedil;latmak i&amp;ccedil;in &lt;code&gt;~/.xinitrc&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; m&amp;inodot; d&amp;uuml;zenliyorsun ama hi&amp;ccedil;bir &amp;scedil;ey &amp;ccedil;al&amp;inodot;&amp;scedil;m&amp;inodot;yor mu? 🤔&lt;br/&gt;
+Bu durumun tek bir sebebi olabilir: &lt;strong&gt;LightDM veya benzeri bir Display Manager kullan&amp;inodot;yorsun ve &lt;code&gt;.xinitrc&lt;/code&gt; dosyan hi&amp;ccedil;bir i&amp;scedil;e yaram&amp;inodot;yor!&lt;/strong&gt; Bu yaz&amp;inodot;da, &lt;code&gt;.xinitrc&lt;/code&gt; ile &lt;code&gt;.xprofile&lt;/code&gt; fark&amp;inodot;n&amp;inodot; detayl&amp;inodot;ca inceleyecek ve neden &lt;code&gt;.xprofile&lt;/code&gt; kullanman gerekti&amp;gbreve;ini ad&amp;inodot;m ad&amp;inodot;m g&amp;ouml;sterece&amp;gbreve;iz.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;&lt;img alt="xinitrc ve xprofile fark&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/xinitvsxprofile-xl.webp" srcset="/images/xinitvsxprofile-sm.webp 300w, /images/xinitvsxprofile-md.webp 500w, /images/xinitvsxprofile-xl.webp 800w, /images/xinitvsxprofile-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="xinitrc-ve-xprofile-nedir"&gt;&lt;code&gt;.xinitrc&lt;/code&gt; ve &lt;code&gt;.xprofile&lt;/code&gt; Nedir?&lt;/h2&gt;
+&lt;h3 id="xinitrc-dosyasi-ne-yapar"&gt;&lt;code&gt;.xinitrc&lt;/code&gt; Dosyas&amp;inodot; Ne Yapar?&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.xinitrc&lt;/code&gt;, klasik olarak &lt;strong&gt;&lt;code&gt;startx&lt;/code&gt; komutu&lt;/strong&gt; kullan&amp;inodot;larak masa&amp;uuml;st&amp;uuml; ortam&amp;inodot; ba&amp;scedil;lat&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda devreye girer. Genellikle &amp;scedil;u durumlarda kullan&amp;inodot;l&amp;inodot;r:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Oturumu &lt;code&gt;tty&lt;/code&gt; &amp;uuml;zerinden manuel ba&amp;scedil;latanlar&lt;/li&gt;
+&lt;li&gt;Hafif sistemler (Display Manager kullanmayanlar)&lt;/li&gt;
+&lt;li&gt;Tam kontrol isteyen minimalist kullan&amp;inodot;c&amp;inodot;lar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;Ouml;rnek bir &lt;code&gt;.xinitrc&lt;/code&gt; i&amp;ccedil;eri&amp;gbreve;i:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+xsetroot&lt;span class="w"&gt; &lt;/span&gt;-cursor_name&lt;span class="w"&gt; &lt;/span&gt;left_ptr&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+&lt;span class="nb"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;i3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="xprofile-dosyasi-ne-icin-kullanilir"&gt;&lt;code&gt;.xprofile&lt;/code&gt; Dosyas&amp;inodot; Ne &amp;Idot;&amp;ccedil;in Kullan&amp;inodot;l&amp;inodot;r?&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;.xprofile&lt;/code&gt;, GUI oturumlar&amp;inodot;n&amp;inodot; &lt;strong&gt;otomatik olarak ba&amp;scedil;latan Display Manager&amp;rsquo;lar&lt;/strong&gt; taraf&amp;inodot;ndan &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;l&amp;inodot;r. &amp;Ouml;zellikle &amp;scedil;u durumlar i&amp;ccedil;in kullan&amp;inodot;l&amp;inodot;r:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lightdm&lt;/code&gt;, &lt;code&gt;gdm&lt;/code&gt;, &lt;code&gt;sddm&lt;/code&gt; gibi display manager kullanan sistemler&lt;/li&gt;
+&lt;li&gt;Ortam de&amp;gbreve;i&amp;scedil;kenleri (&lt;code&gt;PATH&lt;/code&gt;, &lt;code&gt;XCURSOR_PATH&lt;/code&gt;), oturum ba&amp;scedil;lang&amp;inodot;&amp;ccedil; uygulamalar&amp;inodot; (&lt;code&gt;numlockx&lt;/code&gt;, &lt;code&gt;dunst&lt;/code&gt; vs.)&lt;/li&gt;
+&lt;li&gt;Arka plan servisleri (&lt;code&gt;mpd&lt;/code&gt;, &lt;code&gt;ssh-agent&lt;/code&gt; gibi)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="lightdm-xinitrcyi-neden-yoksayar_1"&gt;LightDM &lt;code&gt;.xinitrc&lt;/code&gt;'yi Neden Yoksayar?&lt;/h2&gt;
+&lt;p&gt;Display Manager'lar (&amp;ouml;zellikle LightDM):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Oturumu kendi ba&amp;scedil;&amp;inodot;na ba&amp;scedil;lat&amp;inodot;r&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~/.xinitrc&lt;/code&gt;'yi &lt;strong&gt;&amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;rmaz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Sadece &lt;code&gt;~/.xprofile&lt;/code&gt;, &lt;code&gt;~/.xsession&lt;/code&gt;, &lt;code&gt;~/.pam_environment&lt;/code&gt; gibi dosyalara bakar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Yani, &lt;code&gt;.xinitrc&lt;/code&gt; dosyas&amp;inodot;na ne yazarsan yaz, &lt;strong&gt;LightDM onu okumaz&lt;/strong&gt;.
+Bu nedenle ba&amp;scedil;lang&amp;inodot;&amp;ccedil;ta &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;n&amp;inodot; istedi&amp;gbreve;in t&amp;uuml;m komutlar&amp;inodot; &lt;code&gt;.xprofile&lt;/code&gt; i&amp;ccedil;ine ta&amp;scedil;&amp;inodot;mal&amp;inodot;s&amp;inodot;n.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="uygulamali-senaryo-xprofile-ile-dogru-baslatma"&gt;Uygulamal&amp;inodot; Senaryo: &lt;code&gt;.xprofile&lt;/code&gt; ile Do&amp;gbreve;ru Ba&amp;scedil;latma&lt;/h2&gt;
+&lt;p&gt;A&amp;scedil;a&amp;gbreve;&amp;inodot;daki &amp;ouml;rnek &lt;code&gt;.xprofile&lt;/code&gt; dosyas&amp;inodot;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# Ortam de&amp;gbreve;i&amp;scedil;kenleri&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;XCURSOR_PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.local/share/icons:&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.icons:/usr/share/icons"&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Arkaplan servisleri&lt;/span&gt;
+pgrep&lt;span class="w"&gt; &lt;/span&gt;-x&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"mpd"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;setsid&lt;span class="w"&gt; &lt;/span&gt;mpd&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+setsid&lt;span class="w"&gt; &lt;/span&gt;xscreensaver&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+setsid&lt;span class="w"&gt; &lt;/span&gt;dunst&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# SSH agent&lt;/span&gt;
+&lt;span class="nb"&gt;eval&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ssh-agent&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Nvidia ayarlar&amp;inodot;&lt;/span&gt;
+nvidia-settings&lt;span class="w"&gt; &lt;/span&gt;--load-config-only&lt;span class="w"&gt; &lt;/span&gt;--config&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.config/.nvidia-settings-rc"&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# i3 pencere y&amp;ouml;neticisi&lt;/span&gt;
+&lt;span class="nb"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;dbus-launch&lt;span class="w"&gt; &lt;/span&gt;--sh-syntax&lt;span class="w"&gt; &lt;/span&gt;--exit-with-session&lt;span class="w"&gt; &lt;/span&gt;i3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Yukar&amp;inodot;daki komutlar&amp;inodot; &lt;code&gt;.xinitrc&lt;/code&gt; i&amp;ccedil;inde tuttu&amp;gbreve;un s&amp;uuml;rece hi&amp;ccedil;bir &amp;scedil;ey olmayacak. Ama &lt;code&gt;.xprofile&lt;/code&gt; i&amp;ccedil;ine koyarsan her &amp;scedil;ey sihir gibi &amp;ccedil;al&amp;inodot;&amp;scedil;acak! 🪄&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="adim-adim-gecis-xinitrc-xprofile"&gt;Ad&amp;inodot;m Ad&amp;inodot;m Ge&amp;ccedil;i&amp;scedil;: &lt;code&gt;.xinitrc&lt;/code&gt; &amp;rarr; &lt;code&gt;.xprofile&lt;/code&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;.xinitrc&lt;/code&gt; i&amp;ccedil;eri&amp;gbreve;ini analiz et&lt;/li&gt;
+&lt;li&gt;Ortam de&amp;gbreve;i&amp;scedil;kenlerini ve servis ba&amp;scedil;latmalar&amp;inodot;n&amp;inodot; &lt;code&gt;.xprofile&lt;/code&gt; i&amp;ccedil;ine ta&amp;scedil;&amp;inodot;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;exec&lt;/code&gt; komutlar&amp;inodot;n&amp;inodot; yaln&amp;inodot;zca bir kere yaz (i&amp;ccedil; i&amp;ccedil;e &amp;ccedil;a&amp;gbreve;&amp;inodot;rma yapma)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.xinitrc&lt;/code&gt; dosyas&amp;inodot;n&amp;inodot; temizle veya sil (iste&amp;gbreve;e ba&amp;gbreve;l&amp;inodot;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="sik-yapilan-hatalar"&gt;S&amp;inodot;k Yap&amp;inodot;lan Hatalar&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.xprofile&lt;/code&gt; i&amp;ccedil;inde &lt;code&gt;source ~/.xinitrc&lt;/code&gt; yapmak ve &lt;code&gt;xinitrc&lt;/code&gt; i&amp;ccedil;inde tekrar &lt;code&gt;exec i3&lt;/code&gt; yazmak &amp;rarr; &lt;strong&gt;&amp;Ccedil;ift ba&amp;scedil;latma hatas&amp;inodot;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.xinitrc&lt;/code&gt;'ye sadece &lt;code&gt;export&lt;/code&gt; komutlar&amp;inodot; yazmak &amp;rarr; &lt;strong&gt;Hi&amp;ccedil;bir &amp;scedil;ey &amp;ccedil;al&amp;inodot;&amp;scedil;maz&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.xprofile&lt;/code&gt;'&amp;inodot; &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;labilir yapmamak &amp;rarr; &lt;code&gt;chmod +x ~/.xprofile&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr/&gt;
+&lt;h2 id="ozet-hangi-dosyayi-ne-zaman-kullanmalisin"&gt;&amp;Ouml;zet: Hangi Dosyay&amp;inodot; Ne Zaman Kullanmal&amp;inodot;s&amp;inodot;n?&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Durum&lt;/th&gt;
+&lt;th&gt;Do&amp;gbreve;ru Dosya&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;startx&lt;/code&gt; ile oturum a&amp;ccedil;&amp;inodot;yorsan&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.xinitrc&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;LightDM gibi bir DM varsa&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;.xprofile&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sistem genel ortam de&amp;gbreve;i&amp;scedil;kenleri&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/etc/environment&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr/&gt;
+&lt;h2 id="sonuc-ve-cagri-hangisini-kullanacagini-biliyor-musun"&gt;Sonu&amp;ccedil; ve &amp;Ccedil;a&amp;gbreve;r&amp;inodot;: Hangisini Kullanaca&amp;gbreve;&amp;inodot;n&amp;inodot; Biliyor musun?&lt;/h2&gt;
+&lt;p&gt;Art&amp;inodot;k &lt;code&gt;.xinitrc&lt;/code&gt; ile &lt;code&gt;.xprofile&lt;/code&gt; aras&amp;inodot;ndaki farklar&amp;inodot; biliyorsun. Display Manager kullan&amp;inodot;yorsan, t&amp;uuml;m ba&amp;scedil;lang&amp;inodot;&amp;ccedil; komutlar&amp;inodot;n&amp;inodot; &lt;strong&gt;&lt;code&gt;.xprofile&lt;/code&gt;&lt;/strong&gt; dosyana ta&amp;scedil;&amp;inodot;.
+Bu sayede ba&amp;scedil;lat&amp;inodot;lamayan servisler, &amp;ccedil;al&amp;inodot;&amp;scedil;mayan tema ayarlar&amp;inodot;, eksik ikonlar gibi dertlerden kurtul!&lt;/p&gt;
+&lt;p&gt;👇
+&lt;strong&gt;Sen de &lt;code&gt;.xinitrc&lt;/code&gt; mi yoksa &lt;code&gt;.xprofile&lt;/code&gt; mi kullan&amp;inodot;yorsun? Deneyimlerini yorum olarak payla&amp;scedil;!&lt;/strong&gt;
+Sorular&amp;inodot;n varsa da &amp;ccedil;ekinmeden yaz! 💬&lt;/p&gt;</content><category term="Masaüstü Ortamları"/><category term="lightdm"/><category term="xinitrc"/><category term="xprofile"/><category term="arch linux"/><category term="oturum ayarları"/></entry><entry><title>i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?</title><link href="https://yuceltoluyag.github.io/i3lock-uyku-modu-kilit-ekrani/" rel="alternate"/><published>2025-04-24T14:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2025-04-24:/i3lock-uyku-modu-kilit-ekrani/</id><summary type="html">&lt;p&gt;i3lock kullanarak Linux sisteminiz uyku modundan uyandığında ekranın otomatik olarak kilitlenmesini sağlayın. Bu rehber, systemd servisleriyle nasıl yapılandırılacağını adım adım gösteriyor.&lt;/p&gt;</summary><content type="html">&lt;h1 id="i3lock-ile-uyku-modundan-uyanirken-otomatik-kilit-ekrani-nasil-ayarlanir"&gt;i3lock ile Uyku Modundan Uyan&amp;inodot;rken Otomatik Kilit Ekran&amp;inodot; Nas&amp;inodot;l Ayarlan&amp;inodot;r?&lt;/h1&gt;
+&lt;p&gt;Linux kullan&amp;inodot;yorsan&amp;inodot;z ve bilgisayar&amp;inodot;n&amp;inodot;z uyku modundan uyand&amp;inodot;&amp;gbreve;&amp;inodot;nda otomatik olarak ekran&amp;inodot;n kilitlenmesini istiyorsan&amp;inodot;z, do&amp;gbreve;ru yerdesiniz. Bu rehberde, pop&amp;uuml;ler ekran kilitleyici &lt;strong&gt;i3lock&lt;/strong&gt; (&amp;ouml;zellikle &lt;code&gt;i3lock-color&lt;/code&gt;) ile bu i&amp;scedil;lemi nas&amp;inodot;l yapabilece&amp;gbreve;inizi anlataca&amp;gbreve;&amp;inodot;m.&lt;/p&gt;
+&lt;p&gt;G&amp;uuml;venlik &amp;ouml;nemli, &amp;ouml;zellikle bilgisayar&amp;inodot;n&amp;inodot;z&amp;inodot; k&amp;inodot;sa s&amp;uuml;reli&amp;gbreve;ine bile olsa ba&amp;scedil;&amp;inodot;bo&amp;scedil; b&amp;inodot;rak&amp;inodot;yorsan&amp;inodot;z. &amp;Idot;&amp;scedil;te &amp;ccedil;&amp;ouml;z&amp;uuml;m: &lt;code&gt;systemd&lt;/code&gt; ile entegre &amp;ccedil;al&amp;inodot;&amp;scedil;an otomatik bir ekran kilit sistemi. 👇&lt;/p&gt;
+&lt;h2 id="hazirlik-gereksiz-ekran-kilitleyicileri-devre-disi-birakin"&gt;📦 Haz&amp;inodot;rl&amp;inodot;k: Gereksiz Ekran Kilitleyicileri Devre D&amp;inodot;&amp;scedil;&amp;inodot; B&amp;inodot;rak&amp;inodot;n&lt;/h2&gt;
+&lt;p&gt;&amp;Idot;lk ad&amp;inodot;m, sisteminizdeki mevcut ekran kilitleyicilerin otomatik devreye girmesini engellemek. Ben &lt;strong&gt;KDE&lt;/strong&gt; masa&amp;uuml;st&amp;uuml; ortam&amp;inodot; kullan&amp;inodot;yorum (Arch Linux &amp;uuml;zerinde), bu y&amp;uuml;zden &lt;strong&gt;KScreenLocker&lt;/strong&gt; ayarlar&amp;inodot;n&amp;inodot; &amp;scedil;u &amp;scedil;ekilde d&amp;uuml;zenledim:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="RKScreenLocker ayarlar&amp;inodot;" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/wake-up-lock-xl.webp" srcset="/images/wake-up-lock-sm.webp 300w, /images/wake-up-lock-md.webp 500w, /images/wake-up-lock-xl.webp 800w, /images/wake-up-lock-xl.webp 1200w"/&gt;
+⚠️ &lt;em&gt;"Otomatik olarak kilitle" ve "devam etti&amp;gbreve;inde kilitle" gibi se&amp;ccedil;eneklerin i&amp;scedil;aretli olmad&amp;inodot;&amp;gbreve;&amp;inodot;ndan emin olun.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Ard&amp;inodot;ndan &lt;code&gt;i3lock&lt;/code&gt;'un sisteminizde kurulu oldu&amp;gbreve;undan emin olun. Tavsiyem: &lt;a href="https://github.com/Raymo111/i3lock-color" rel="noopener noreferrer" target="_blank"&gt;i3lock-color&lt;/a&gt;'u tercih etmeniz. Daha fazla &amp;ouml;zelle&amp;scedil;tirme se&amp;ccedil;ene&amp;gbreve;i sunuyor.&lt;/p&gt;
+&lt;h1 id="arch-tabanlilar-icin_1"&gt;Arch tabanl&amp;inodot;lar i&amp;ccedil;in&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yay&lt;span class="w"&gt; &lt;/span&gt;-S&lt;span class="w"&gt; &lt;/span&gt;i3lock-color&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Arch tabanl&amp;inodot;lar i&amp;ccedil;in&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="debian-tabanlilar-icin"&gt;Debian tabanl&amp;inodot;lar i&amp;ccedil;in&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;autoconf&lt;span class="w"&gt; &lt;/span&gt;gcc&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;pkg-config&lt;span class="w"&gt; &lt;/span&gt;libpam0g-dev&lt;span class="w"&gt; &lt;/span&gt;libcairo2-dev&lt;span class="w"&gt; &lt;/span&gt;libfontconfig1-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-composite0-dev&lt;span class="w"&gt; &lt;/span&gt;libev-dev&lt;span class="w"&gt; &lt;/span&gt;libx11-xcb-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-xkb-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-xinerama0-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-randr0-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-image0-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-util0-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-xrm-dev&lt;span class="w"&gt; &lt;/span&gt;libxkbcommon-dev&lt;span class="w"&gt; &lt;/span&gt;libxkbcommon-x11-dev&lt;span class="w"&gt; &lt;/span&gt;libjpeg-dev&lt;span class="w"&gt; &lt;/span&gt;libgif-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="fedora"&gt;Fedora&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;dnf&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;autoconf&lt;span class="w"&gt; &lt;/span&gt;automake&lt;span class="w"&gt; &lt;/span&gt;cairo-devel&lt;span class="w"&gt; &lt;/span&gt;fontconfig&lt;span class="w"&gt; &lt;/span&gt;gcc&lt;span class="w"&gt; &lt;/span&gt;libev-devel&lt;span class="w"&gt; &lt;/span&gt;libjpeg-turbo-devel&lt;span class="w"&gt; &lt;/span&gt;libXinerama&lt;span class="w"&gt; &lt;/span&gt;libxkbcommon-devel&lt;span class="w"&gt; &lt;/span&gt;libxkbcommon-x11-devel&lt;span class="w"&gt; &lt;/span&gt;libXrandr&lt;span class="w"&gt; &lt;/span&gt;pam-devel&lt;span class="w"&gt; &lt;/span&gt;pkgconf&lt;span class="w"&gt; &lt;/span&gt;xcb-util-image-devel&lt;span class="w"&gt; &lt;/span&gt;xcb-util-xrm-devel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id="ubuntu-182004-lts"&gt;Ubuntu 18/20.04 LTS&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;autoconf&lt;span class="w"&gt; &lt;/span&gt;gcc&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;pkg-config&lt;span class="w"&gt; &lt;/span&gt;libpam0g-dev&lt;span class="w"&gt; &lt;/span&gt;libcairo2-dev&lt;span class="w"&gt; &lt;/span&gt;libfontconfig1-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-composite0-dev&lt;span class="w"&gt; &lt;/span&gt;libev-dev&lt;span class="w"&gt; &lt;/span&gt;libx11-xcb-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-xkb-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-xinerama0-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-randr0-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-image0-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-util-dev&lt;span class="w"&gt; &lt;/span&gt;libxcb-xrm-dev&lt;span class="w"&gt; &lt;/span&gt;libxkbcommon-dev&lt;span class="w"&gt; &lt;/span&gt;libxkbcommon-x11-dev&lt;span class="w"&gt; &lt;/span&gt;libjpeg-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-1-kilit-komut-dosyasini-olusturun"&gt;🔐 Ad&amp;inodot;m 1: Kilit Komut Dosyas&amp;inodot;n&amp;inodot; Olu&amp;scedil;turun&lt;/h2&gt;
+&lt;p&gt;&amp;Idot;lk olarak, ekran kilitleme komutlar&amp;inodot;n&amp;inodot; i&amp;ccedil;eren bir bash script olu&amp;scedil;tural&amp;inodot;m:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;~/scripts
+nano&lt;span class="w"&gt; &lt;/span&gt;~/scripts/i3lock.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;Idot;&amp;ccedil;eri&amp;gbreve;i &amp;scedil;&amp;ouml;yle olacak:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+i3lock&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;# Kullanmak istedi&amp;gbreve;iniz parametrelerle birlikte. i3lock -h ile se&amp;ccedil;enekleri g&amp;ouml;r&amp;uuml;nt&amp;uuml;leyebilirsiniz.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dosyay&amp;inodot; kaydedin ve &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;labilir yap&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;~/scripts/i3lock.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="adim-2-systemd-servisini-tanimlayin"&gt;⚙️ Ad&amp;inodot;m 2: systemd Servisini Tan&amp;inodot;mlay&amp;inodot;n&lt;/h2&gt;
+&lt;p&gt;&amp;Scedil;imdi, uyku modundan &amp;ccedil;&amp;inodot;k&amp;inodot;ld&amp;inodot;&amp;gbreve;&amp;inodot;nda yukar&amp;inodot;daki script&amp;rsquo;in otomatik &amp;ccedil;al&amp;inodot;&amp;scedil;mas&amp;inodot;n&amp;inodot; sa&amp;gbreve;layacak bir &lt;code&gt;systemd&lt;/code&gt; servisi olu&amp;scedil;turaca&amp;gbreve;&amp;inodot;z.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;nano&lt;span class="w"&gt; &lt;/span&gt;/etc/systemd/system/wakelock@.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ve a&amp;scedil;a&amp;gbreve;&amp;inodot;daki i&amp;ccedil;eri&amp;gbreve;i yap&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;INI&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;[Unit]&lt;/span&gt;
+&lt;span class="na"&gt;Description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;Uyku modundan &amp;ccedil;&amp;inodot;k&amp;inodot;nca ekran&amp;inodot; kilitle&lt;/span&gt;
+&lt;span class="na"&gt;Before&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;sleep.target suspend.target&lt;/span&gt;
+
+&lt;span class="k"&gt;[Service]&lt;/span&gt;
+&lt;span class="na"&gt;User&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;%i&lt;/span&gt;
+&lt;span class="na"&gt;Type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;forking&lt;/span&gt;
+&lt;span class="na"&gt;Environment&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;DISPLAY=:0&lt;/span&gt;
+&lt;span class="na"&gt;ExecStart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;/home/%i/scripts/i3lock.sh&lt;/span&gt;
+
+&lt;span class="k"&gt;[Install]&lt;/span&gt;
+&lt;span class="na"&gt;WantedBy&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;sleep.target suspend.target&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bu yap&amp;inodot;land&amp;inodot;rma, &lt;code&gt;DISPLAY=:0&lt;/code&gt; tan&amp;inodot;m&amp;inodot; sayesinde X oturumunu tan&amp;inodot;mlar ve belirtilen kullan&amp;inodot;c&amp;inodot; i&amp;ccedil;in script&amp;rsquo;i &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;r.&lt;/p&gt;
+&lt;h2 id="adim-3-servisi-etkinlestirin"&gt;🚀 Ad&amp;inodot;m 3: Servisi Etkinle&amp;scedil;tirin&lt;/h2&gt;
+&lt;p&gt;Servisi etkinle&amp;scedil;tirip an&amp;inodot;nda ba&amp;scedil;latmak i&amp;ccedil;in a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu kullan&amp;inodot;n:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;enable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;wakelock@&amp;lt;KULLANICI_ADINIZ&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;--now
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yerine kendi kullan&amp;inodot;c&amp;inodot; ad&amp;inodot;n&amp;inodot;z&amp;inodot; yazmay&amp;inodot; unutmay&amp;inodot;n. &amp;Ouml;rnek:
+&lt;code&gt;sudo systemctl enable wakelock@yucel --now&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Bundan sonra, sisteminiz her uyku modundan d&amp;ouml;nd&amp;uuml;&amp;gbreve;&amp;uuml;nde otomatik olarak &lt;code&gt;i3lock&lt;/code&gt; ekran kilitleyicisi devreye girecek. 🔒&lt;/p&gt;
+&lt;h2 id="yapilandirma-guncellemeleri-nasil-uygulanir"&gt;🔁 Yap&amp;inodot;land&amp;inodot;rma G&amp;uuml;ncellemeleri Nas&amp;inodot;l Uygulan&amp;inodot;r?&lt;/h2&gt;
+&lt;p&gt;Script&amp;rsquo;te ya da servis dosyas&amp;inodot;nda bir de&amp;gbreve;i&amp;scedil;iklik yapt&amp;inodot;ysan&amp;inodot;z, t&amp;uuml;m sistemi yeniden ba&amp;scedil;latman&amp;inodot;za gerek yok. A&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutla servisi yeniden ba&amp;scedil;latman&amp;inodot;z yeterli:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;systemctl&lt;span class="w"&gt; &lt;/span&gt;restart&lt;span class="w"&gt; &lt;/span&gt;wakelock@&amp;lt;KULLANICI_ADINIZ&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id="sonuc"&gt;📝 Sonu&amp;ccedil;&lt;/h2&gt;
+&lt;p&gt;Bu yaz&amp;inodot;da, i3lock ve systemd kullanarak Linux sisteminizi daha g&amp;uuml;venli hale getirmenin pratik bir yolunu &amp;ouml;&amp;gbreve;rendiniz. Minimal ama etkili bir yap&amp;inodot;land&amp;inodot;rma ile, bilgisayar&amp;inodot;n&amp;inodot;z uyku modundan uyand&amp;inodot;&amp;gbreve;&amp;inodot;nda ekran&amp;inodot;n otomatik olarak kilitlenmesini sa&amp;gbreve;layabilirsiniz. Bu t&amp;uuml;r g&amp;uuml;venlik &amp;ouml;nlemleri, &amp;ouml;zellikle ta&amp;scedil;&amp;inodot;nabilir cihazlarda b&amp;uuml;y&amp;uuml;k &amp;ouml;nem ta&amp;scedil;&amp;inodot;yor.&lt;/p&gt;
+&lt;p&gt;💬 E&amp;gbreve;er bu rehber i&amp;scedil;inize yarad&amp;inodot;ysa, yorum b&amp;inodot;rakarak bana destek olabilirsiniz. Sorular&amp;inodot;n&amp;inodot;z ya da &amp;ouml;nerileriniz varsa duymaktan memnuniyet duyar&amp;inodot;m!&lt;/p&gt;
+&lt;hr/&gt;</content><category term="Masaüstü Ortamları"/><category term="i3lock"/><category term="systemd"/><category term="linux güvenlik"/><category term="ekran kilidi"/><category term="suspend"/></entry><entry><title>Linux Tema Nasıl Yüklenir (Gnome Shell ve Eklentileri)</title><link href="https://yuceltoluyag.github.io/linux-tema-nasil-yuklenir/" rel="alternate"/><published>2018-09-21T10:00:00+03:00</published><updated>2025-08-11T22:59:00+03:00</updated><author><name>yuceltoluyag</name></author><id>tag:yuceltoluyag.github.io,2018-09-21:/linux-tema-nasil-yuklenir/</id><summary type="html">&lt;p&gt;Linux'ta tema yükleme işlemi oldukça basittir. Gnome Shell ve eklentileri kullanarak nasıl özelleştirme yapabileceğinizi bu rehberde adım adım anlatıyoruz.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Merhaba, uzun s&amp;uuml;redir bloga bir &amp;scedil;eyler yazm&amp;inodot;yordum. Daha &amp;ouml;nce Unity kullan&amp;inodot;rken video &amp;ccedil;ekmi&amp;scedil;tim, ancak sabit diskimin bozulmas&amp;inodot; ve s&amp;inodot;cak hava derken g&amp;uuml;nler h&amp;inodot;zla ge&amp;ccedil;ti. 😃 Linux'ta tema y&amp;uuml;kleme i&amp;scedil;lemi olduk&amp;ccedil;a kolayd&amp;inodot;r. Hangi da&amp;gbreve;&amp;inodot;t&amp;inodot;m&amp;inodot; veya masa&amp;uuml;st&amp;uuml; ortam&amp;inodot;n&amp;inodot; kullan&amp;inodot;yor olursan&amp;inodot;z olun, s&amp;uuml;re&amp;ccedil; genellikle benzerdir. &amp;Ouml;rne&amp;gbreve;in, Unity i&amp;ccedil;in &lt;code&gt;unity-tweak-tool&lt;/code&gt; kullan&amp;inodot;l&amp;inodot;rken, Gnome i&amp;ccedil;in &lt;code&gt;gnome-tweak-tool&lt;/code&gt; tercih edilmektedir. XFCE kulland&amp;inodot;&amp;gbreve;&amp;inodot;m d&amp;ouml;nemde, &amp;ouml;zelle&amp;scedil;tirmeleri do&amp;gbreve;rudan yapabiliyorduk (yan&amp;inodot;l&amp;inodot;yor olabilirim 🤔).&lt;/p&gt;
+&lt;p&gt;&lt;img alt="linux-tema-nasil-yuklenir-gnome-shell-ve" class="responsive-img" loading="lazy" sizes="(max-width: 576px) 100vw, (max-width: 992px) 80vw, (max-width: 1400px) 70vw, 60vw" src="/images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp" srcset="/images/linux-tema-nasil-yuklenir-gnome-shell-ve-sm.webp 300w, /images/linux-tema-nasil-yuklenir-gnome-shell-ve-md.webp 500w, /images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp 800w, /images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp 1200w"/&gt;&lt;/p&gt;
+&lt;h2 id="arka-plan-wallpaper-icin-kullandigim-siteler"&gt;🌄 Arka Plan (Wallpaper) i&amp;ccedil;in Kulland&amp;inodot;&amp;gbreve;&amp;inodot;m Siteler&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://alpha.wallhaven.cc/latest" rel="noopener noreferrer" target="_blank"&gt;Alpha&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://interfacelift.com/wallpaper/downloads/date/any/" rel="noopener noreferrer" target="_blank"&gt;InterfaceLIFT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.deviantart.com/customization/wallpaper/popular-24-hours/" rel="noopener noreferrer" target="_blank"&gt;DeviantArt (S&amp;inodot;k Kullan&amp;inodot;lm&amp;inodot;yor)&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr/&gt;
+&lt;h2 id="tema-ikon-imlec-ve-shell-icin-kaynaklar"&gt;🎨 Tema, &amp;Idot;kon, &amp;Idot;mle&amp;ccedil; ve Shell &amp;Idot;&amp;ccedil;in Kaynaklar&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://www.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/newest/?offset=0" rel="noopener noreferrer" target="_blank"&gt;DeviantArt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gnome-look.org/" rel="noopener noreferrer" target="_blank"&gt;Gnome-Look&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.xfce-look.org/" rel="noopener noreferrer" target="_blank"&gt;XFCE Masa&amp;uuml;st&amp;uuml; &amp;Idot;&amp;ccedil;in&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;Ouml;zellikle DeviantArt'ta do&amp;gbreve;ru aramalar yaparak veya men&amp;uuml;leri kullanarak istedi&amp;gbreve;iniz i&amp;ccedil;eri&amp;gbreve;e kolayca ula&amp;scedil;abilirsiniz. Yukar&amp;inodot;da belirtti&amp;gbreve;im siteler genellikle g&amp;uuml;ncel ve organize edilmi&amp;scedil; kaynaklard&amp;inodot;r.&lt;/p&gt;
+&lt;p&gt;Ubuntu 17.10 beta s&amp;uuml;r&amp;uuml;m&amp;uuml;nden itibaren Gnome 3.x kullanmaya ba&amp;scedil;lad&amp;inodot;m. Bu nedenle anlat&amp;inodot;m&amp;inodot;m Gnome 3.x i&amp;ccedil;in olacak, ancak ayn&amp;inodot; mant&amp;inodot;kla di&amp;gbreve;er masa&amp;uuml;st&amp;uuml; ortamlar&amp;inodot;nda da uygulayabilirsiniz. 💡&lt;/p&gt;
+&lt;hr/&gt;
+&lt;h2 id="gnome-eklentileri"&gt;🔌 Gnome Eklentileri&lt;/h2&gt;
+&lt;p&gt;Gnome'un bir eklenti sistemi bulunmaktad&amp;inodot;r. &lt;a href="https://extensions.gnome.org/" rel="noopener noreferrer" target="_blank"&gt;Gnome Eklentileri&lt;/a&gt; sitesinden nas&amp;inodot;l eklenti ekleyebilece&amp;gbreve;inizi ve y&amp;ouml;netebilece&amp;gbreve;inizi &amp;ouml;&amp;gbreve;renebilirsiniz.&lt;/p&gt;
+&lt;h3 id="kurulumla-ilgili-notlar"&gt;📌 Kurulumla &amp;Idot;lgili Notlar&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Dash to Dock&lt;/code&gt; yerine &lt;code&gt;Plank&lt;/code&gt; kullanabilirsiniz, ancak tavsiye etmiyorum.&lt;/li&gt;
+&lt;li&gt;Her tema &lt;code&gt;install.sh&lt;/code&gt; komut dosyas&amp;inodot;yla y&amp;uuml;klenmez. Tema geli&amp;scedil;tiricisi y&amp;uuml;kleme y&amp;ouml;ntemini a&amp;ccedil;&amp;inodot;klama sat&amp;inodot;rlar&amp;inodot;nda belirtir.&lt;/li&gt;
+&lt;li&gt;&amp;Idot;nce ayar ara&amp;ccedil;lar&amp;inodot;, Linux dosya yap&amp;inodot;s&amp;inodot;n&amp;inodot; &amp;ouml;&amp;gbreve;rendikten sonra gereksiz hale gelir. Videoda bilin&amp;ccedil;li olarak dosyalar&amp;inodot; a&amp;ccedil;arak nereye y&amp;uuml;klendiklerini g&amp;ouml;steriyorum.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dosya Konumlar&amp;inodot;:&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fontlar:&lt;/strong&gt; &lt;code&gt;~/.fonts&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;Idot;kon &amp;amp; &amp;Idot;mle&amp;ccedil;:&lt;/strong&gt; &lt;code&gt;~/.icons&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Temalar:&lt;/strong&gt; &lt;code&gt;~/.themes&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kurulum &amp;ouml;ncesi indirdi&amp;gbreve;iniz dosyalar&amp;inodot;n nereye gitti&amp;gbreve;ini kontrol edin!&lt;/strong&gt; 😏&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;cat&lt;span class="w"&gt; &lt;/span&gt;/etc/*release&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# S&amp;uuml;r&amp;uuml;m bilgisi almak i&amp;ccedil;in&lt;/span&gt;
+gnome-shell&lt;span class="w"&gt; &lt;/span&gt;--version&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="c1"&gt;# Gnome s&amp;uuml;r&amp;uuml;m&amp;uuml;n&amp;uuml; &amp;ouml;&amp;gbreve;renmek i&amp;ccedil;in&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bir pencere k&amp;uuml;&amp;ccedil;&amp;uuml;lt&amp;uuml;ld&amp;uuml;&amp;gbreve;&amp;uuml;nde tekrar t&amp;inodot;klad&amp;inodot;&amp;gbreve;&amp;inodot;n&amp;inodot;zda a&amp;ccedil;&amp;inodot;lm&amp;inodot;yorsa&lt;/strong&gt;, a&amp;scedil;a&amp;gbreve;&amp;inodot;daki komutu terminalde &amp;ccedil;al&amp;inodot;&amp;scedil;t&amp;inodot;r&amp;inodot;n:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;span class="filename"&gt;Bash&lt;/span&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;gsettings&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;org.gnome.shell.extensions.dash-to-dock&lt;span class="w"&gt; &lt;/span&gt;click-action&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;'minimize'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;😞 Eski Unity temam&amp;inodot; &amp;ouml;zl&amp;uuml;yorum...&lt;/p&gt;
+&lt;div class="info-box important"&gt;
+&lt;svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"&gt;
+&lt;path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"&gt;&lt;/path&gt;
+&lt;/svg&gt;
+&lt;div&gt;
+&lt;div class="alert-title"&gt;Eksik G&amp;ouml;rseller&lt;/div&gt;
+&lt;p&gt;Konu ge&amp;ccedil;erli olup, konuya ait g&amp;ouml;rseller &amp;ouml;nceki blogumdan silindi&amp;gbreve;i i&amp;ccedil;in, &amp;ouml;zelle&amp;scedil;tirme yapt&amp;inodot;&amp;gbreve;&amp;inodot;m da&amp;gbreve;&amp;inodot;t&amp;inodot;m resimleri de silindi.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;🚀 Bu rehber ile Linux'ta tema y&amp;uuml;kleme s&amp;uuml;recini rahat&amp;ccedil;a tamamlayabilirsiniz!&lt;/p&gt;</content><category term="Masaüstü Ortamları"/><category term="linux"/><category term="unixporn"/></entry></feed>
