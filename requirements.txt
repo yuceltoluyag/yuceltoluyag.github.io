@@ -5,7 +5,7 @@ feedgenerator==2.2.1
 inquirer==3.4.1
 Jinja2==3.1.6
 Markdown==3.9
-markdown-it-py==3.0.0
+markdown-it-py==4.0.0
 MarkupSafe==3.0.3
 minchin.pelican.plugins.nojekyll==1.2.0
 mdurl==0.1.2
