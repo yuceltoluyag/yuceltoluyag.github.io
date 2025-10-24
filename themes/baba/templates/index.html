@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block content_title %}
+{% endblock %}
+<section id="content">
+<div id="main-page">
+    <ol id="post-list">
+        {% for article in articles_page.object_list %}
+        <li style="list-style-type: none">
+            <article class="hentry">
+                <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+                        title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+                <div style="margin-bottom: 1em" class="entry-content"><strong>{{ article.description }}</strong> </div>
+                <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+                <address class="vcard author">Yazan:
+                    {% for author in article.authors %}
+                    <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                    {% endfor %}
+                </address>
+            </article>
+        </li>
+        {% if loop.index == 1 %}
+        <li style="list-style-type: none; margin-top: 2em; margin-bottom: 2em;">
+            {% if GOOGLE_ADSENSE and PUBLISH %}
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+                 crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-fb+5w+4e-db+86"
+                 data-ad-client="ca-pub-6089943780218266"
+                 data-ad-slot="4390516236"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+</div>
+    {% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+    {% endif %}
+</section>
+{% endblock content %}

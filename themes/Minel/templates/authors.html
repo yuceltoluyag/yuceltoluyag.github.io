@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %} {% if SITENAME %}{{ SITENAME }} - {% endif %}Yazarlar {% endblock %} {%
+block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold mb-4">Yazarlar</h1>
+        <p class="text-base-content/70">Blog yazarlarımız ve katkıda bulunanlar</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for author, articles in authors|sort %}
+        <div class="card bg-base-100 shadow-xl hover:shadow-xl transition-all duration-300">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <a href="{{ SITEURL }}/{{ author.url }}" class="hover:text-primary transition-colors">
+                        {{ author }}
+                    </a>
+                </h2>
+                <p class="text-base-content/70">{{ articles|count }} Makale</p>
+                <div class="card-actions mt-4">
+                    <a href="{{ SITEURL }}/{{ author.url }}" class="btn btn-primary btn-sm">Yazıları Gör</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

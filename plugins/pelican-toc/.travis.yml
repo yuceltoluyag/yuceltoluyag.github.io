@@ -1,0 +1,18 @@
+language: python
+matrix:
+  include:
+    - python: 3.7
+      env: TOX_ENV=py37-pelican45
+    - python: 3.7
+      env: TOX_ENV=py37-pelicandev
+
+    - python: 3.8
+      env: TOX_ENV=py38-pelican45
+    - python: 3.8
+      env: TOX_ENV=py38-pelicandev
+    - python: 3.8
+      env: TOX_ENV=flake8
+
+install:
+  - pip install tox==3.21.3
+script: tox -e $TOX_ENV

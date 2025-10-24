@@ -1,0 +1,227 @@
+{% extends "base.html" %} {% block title %}Bağış Yap{% endblock title %} {%
+block head %} {{ super() }} {% endblock %} {% block seo %}
+<meta
+  name="description"
+  content="Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
+/>
+<link rel="canonical" href="{{ SITEURL }}/bagis/" />
+{% endblock %} {% block content %}
+<div>
+  <article>
+    <!-- Hero Bölümü -->
+    <div class="container">
+      <div class="headings">
+        <h1>Bağış Yap</h1>
+        <p>
+          Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek
+          istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz.
+        </p>
+      </div>
+
+      <div class="grid">
+        <!-- Neden Bağış? -->
+        <article>
+          <header>
+            <h2>Neden Bağış?</h2>
+          </header>
+          {% for item in [ "Daha fazla içerik üretebiliyorum", "Daha kaliteli
+          eğitim videoları hazırlayabiliyorum", "Açık kaynak projelere daha
+          fazla zaman ayırabiliyorum", "Teknolojik altyapımı ve ekipmanlarımı
+          geliştirebiliyorum", "Topluluk için daha fazla etkinlik ve proje
+          düzenleyebiliyorum", "Yeni teknolojileri araştırıp deneyimlemeye daha
+          fazla vakit ayırabiliyorum", ] %}
+          <figure>
+            <div class="grid">
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <p>{{ item }}</p>
+            </div>
+          </figure>
+          {% endfor %}
+        </article>
+
+        <!-- Bağış Seçenekleri -->
+        <article>
+          <header>
+            <h2>Bağış Seçenekleri</h2>
+          </header>
+          {% if SOCIAL.papara %}
+          <a
+            href="https://www.papara.com/donate/{{ SOCIAL.papara }}"
+            class="contrast"
+            data-tooltip="Hızlı ve Güvenli Bağış"
+            aria-label="Hızlı ve Güvenli Bağış"
+          >
+            <article>
+              <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+              <h3>Papara</h3>
+            </article>
+          </a>
+          {% endif %} {% if SOCIAL.github_sponsor %}
+          <a
+            href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}"
+            class="secondary"
+            data-tooltip="Aylık Destek"
+          >
+            <article>
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <h3>GitHub Sponsors</h3>
+            </article>
+          </a>
+          {% endif %}
+        </article>
+      </div>
+
+      <!-- Kripto Bölümü -->
+      <article>
+        <header>
+          <h2>Kripto Para Bağışları</h2>
+        </header>
+
+        <article class="notice" aria-label="Ağ bilgisi">
+          <div class="notice-content">
+            <i class="fa-solid fa-circle-info"></i>
+            <div>
+              <strong> Önemli:</strong>
+              <span>Tüm adresler <kbd>BSC / BEP20</kbd> ağını kullanır.</span>
+              <footer>
+                Farklı ağlar için lütfen
+                <a href="/hakkimda" role="button" class="outline"
+                  >iletişime geçin</a
+                >
+              </footer>
+            </div>
+          </div>
+        </article>
+<hr> </hr>
+       <div class="grid">
+          {% for coin in [ {'name': 'Bitcoin (BTC)', 'id': 'btc',
+          'qr_code_image': 'btc.jpg'}, {'name': 'Ethereum (ETH)', 'id': 'eth',
+          'qr_code_image': 'eth.jpg'}, {'name': 'Litecoin (LTC)', 'id': 'ltc',
+          'qr_code_image': 'lite.jpg'}, {'name': 'Dogecoin (DOGE)', 'id':
+          'doge', 'qr_code_image': 'doge.jpg'}, {'name': 'Solana (SOL)', 'id':
+          'sol', 'qr_code_image': 'sol.jpg'}, {'name': 'Binance Coin (BNB)',
+          'id': 'bnb', 'qr_code_image': 'bnb.jpg'}, {'name': 'Tether (USDT)',
+          'id': 'usdt', 'qr_code_image': 'usdt.jpg'}, {'name': 'Ripple (XRP)',
+          'id': 'xrp', 'qr_code_image': 'xrp.jpg'}, {'name': 'Basic Attention
+          Token (BAT)', 'id': 'bat', 'qr_code_image': 'bat.jpg'} ] %}
+          <figure>
+            <img
+              src="{{ SITEURL }}/images/{{ coin.qr_code_image }}"
+              alt="{{ coin.name }}"
+              loading="lazy"
+              style="cursor: pointer"
+              onclick="openModal('modal-{{ coin.id }}')"
+            />
+            <figcaption>{{ coin.name }}</figcaption>
+
+            <dialog id="modal-{{ coin.id }}">
+              <article>
+                <header>
+                  <button
+                    class="close"
+                    aria-label="Close dialog"
+                    onclick="closeModal('modal-{{ coin.id }}')"
+                  ></button>
+                  {{ coin.name }}
+                </header>
+                <img
+                  src="{{ SITEURL }}/images/{{ coin.qr_code_image }}"
+                  alt="{{ coin.name }}"
+                  style="max-width: 300px; height: auto"
+                />
+              </article>
+            </dialog>
+          </figure>
+          {% endfor %}
+        </div>
+
+        <details>
+          <summary>Bağış Adresi</summary>
+          <div>
+            <kbd>0x012e2a56828990ef0aa97de827297456aabccc63</kbd>
+            <button
+              class="outline"
+              onclick="navigator.clipboard.writeText('0x012e2a56828990ef0aa97de827297456aabccc63')"
+            >
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+        </details>
+      </article>
+    </div>
+  </article>
+</div>
+
+<style>
+  .grid {
+    gap: var(--spacing);
+  }
+  figure {
+    margin: 0;
+  }
+  /* Modal stillerini ekle */
+  dialog article {
+    margin: 0;
+    padding: 1rem;
+  }
+  dialog article header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .notice {
+    background: var(--card-background-color);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary);
+    margin-bottom: var(--spacing);
+  }
+  .notice-content {
+    display: flex;
+    gap: var(--spacing);
+    align-items: flex-start;
+  }
+  .notice i {
+    color: var(--primary);
+    font-size: 1.2rem;
+  }
+  .notice footer {
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+  }
+  .notice kbd {
+    background: var(--primary);
+    color: var(--primary-inverse);
+  }
+</style>
+
+<script>
+  // Modal işlemleri
+  function openModal(id) {
+    document.getElementById(id).showModal();
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).close();
+  }
+
+  // Modal dışı tıklama ile kapatma
+  document.querySelectorAll("dialog").forEach((dialog) => {
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
+
+  // Kopyalama işlemi
+  document.querySelectorAll("button.outline").forEach((button) => {
+    button.addEventListener("click", () => {
+      const text = "0x012e2a56828990ef0aa97de827297456aabccc63";
+      navigator.clipboard.writeText(text).then(() => {
+        button.classList.add("copied");
+        setTimeout(() => button.classList.remove("copied"), 2000);
+      });
+    });
+  });
+</script>
+{% endblock content %}

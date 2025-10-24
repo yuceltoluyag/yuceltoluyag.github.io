@@ -1,0 +1,151 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Language" content="{{ DEFAULT_LANG|default('tr') }}" />
+<meta name="language" content="{{ DEFAULT_LANG|default('tr') }}" />
+<meta property="og:locale" content="tr_TR" />
+<meta content="{{ SITENAME }}" property="og:site_name" />
+<meta name="siteurl" content="{{ SITEURL }}" />
+<meta name="theme-static-dir" content="{{ THEME_STATIC_DIR }}" />
+<meta name="is-homepage" content="{% if output_file == 'index.html' %}true{% else %}false{% endif %}" />
+<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta name="cookie-consent-default" content="denied" />
+{% include 'includes/tagmanager_head.html' %}
+<!-- Open Graph Resim Etiketi -->
+{% if article and article.image %}
+<meta property="og:image" content="{{ SITEURL }}/{{ article.image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ article.title }}" />
+{% elif page and page.image %}
+<meta property="og:image" content="{{ SITEURL }}/{{ page.image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ page.title }}" />
+{% elif article and article.content %}
+<!-- İçerikten resim çıkarma kontrolü yapılmıyor, varsayılan resim kullanılıyor -->
+<meta property="og:image" content="{{ SITEURL }}/images/logo-lg.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ article.title }}" />
+{% else %}
+<meta property="og:image" content="{{ SITEURL }}/images/logo-lg.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ SITENAME }}" />
+{% endif %}
+
+<!-- Open Graph Tip ve URL Etiketleri -->
+{% if article %}
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+<meta property="og:title" content="{{ article.title }}" />
+<!-- Article Özel Etiketleri -->
+<meta property="article:published_time" content="{{ article.date.isoformat() }}" />
+{% if article.modified %}
+<meta property="article:modified_time" content="{{ article.modified.isoformat() }}" />
+{% endif %}
+<meta property="article:author" content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/" />
+{% if article.category %}
+<meta property="article:section" content="{{ article.category }}" />
+{% endif %} {% if article.tags %} {% for tag in article.tags %}
+<meta property="article:tag" content="{{ tag }}" />
+{% endfor %} {% endif %} {% elif page %}
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/{{ page.url }}" />
+<meta property="og:title" content="{{ page.title }}" />
+{% if page.date %}
+<meta property="article:published_time" content="{{ page.date.isoformat() }}" />
+{% endif %} {% if page.modified %}
+<meta property="article:modified_time" content="{{ page.modified.isoformat() }}" />
+{% endif %}
+<meta property="article:author" content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/" />
+{% if page.tags %} {% for tag in page.tags %}
+<meta property="article:tag" content="{{ tag }}" />
+{% endfor %} {% endif %} {% else %}
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}{% if output_file != 'index.html' %}/{{ output_file }}{% endif %}" />
+<meta property="og:title" content="{{ SITENAME }}{% if page_name %} - {{ page_name }}{% endif %}" />
+{% endif %}
+
+<!-- Meta Description -->
+{% if article %}
+<meta name="description" content="{{ article.summary|striptags|truncate(160) }}" />
+<meta property="og:description" content="{{ article.summary|striptags|truncate(160) }}" />
+{% elif page %}
+<meta name="description" content="{{ page.summary|striptags|truncate(160) }}" />
+<meta property="og:description" content="{{ page.summary|striptags|truncate(160) }}" />
+{% elif category %}
+<meta name="description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
+<meta property="og:description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
+{% elif tag %}
+<meta name="description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
+<meta property="og:description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
+{% else %}
+<meta name="description" content="{{ DESCRIPTION }}" />
+<meta property="og:description" content="{{ DESCRIPTION }}" />
+{% endif %}
+
+<!-- Schema.org markup -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ SITENAME }}",
+        "description": "{{ DESCRIPTION }}",
+        "url": "{{ SITEURL }}"
+    }
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "{{ SITENAME }}",
+        "url": "{{ SITEURL }}",
+        "logo": "{{ SITEURL }}/images/logo-lg.webp",
+        "sameAs": [
+            {% if SOCIAL.github %}"https://github.com/{{ SOCIAL.github }}",{% endif %}
+            {% if SOCIAL.instagram %}"https://instagram.com/{{ SOCIAL.instagram }}",{% endif %}
+            {% if SOCIAL.youtube %}"https://youtube.com/@{{ SOCIAL.youtube }}",{% endif %}
+            {% if SOCIAL.twitch %}"https://twitch.tv/{{ SOCIAL.twitch }}",{% endif %}
+            {% if SOCIAL.discord %}"https://discord.com/users/{{ SOCIAL.discord }}",{% endif %}
+            {% if SOCIAL.matrix %}"https://matrix.to/#/@{{ SOCIAL.matrix }}:matrix.org",{% endif %}
+            {% if SOCIAL.kick %}"https://kick.com/{{ SOCIAL.kick }}"{% endif %}
+        ]
+    }
+</script>
+
+{% if article %}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{ article.title }}",
+        "description": "{{ article.summary|striptags|truncate(160) }}",
+        "author": {
+            "@type": "Person",
+            "name": "{{ AUTHOR }}",
+            "url": "{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/"
+        },
+        "datePublished": "{{ article.date.isoformat() }}",
+        {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ SITENAME }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ SITEURL }}/images/logo-lg.webp"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ SITEURL }}/{{ article.url }}"
+        },
+        {% if article.category %}"articleSection": "{{ article.category }}",{% endif %}
+        {% if article.tags %}"keywords": "{{ article.tags|join(', ') }}",{% endif %}
+        "url": "{{ SITEURL }}/{{ article.url }}",
+        {% if article.image %}"image": "{{ SITEURL }}/{{ article.image }}",{% endif %}
+        "homepage": "{{ SITEURL }}/"
+    }
+</script>
+{% endif %}

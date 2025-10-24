@@ -1,0 +1,164 @@
+{% extends "minimal.html" %} {% block head %} {{ super() }} {% endblock %} {% block content %}
+<article class="prose prose-xl max-w-none mx-auto px-4">
+    <!-- Hero Bölümü -->
+    <div class="py-10 text-center mb-8">
+        <div class="relative w-20 h-20 mx-auto mb-6">
+            <div class="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
+            <div
+                class="relative w-full h-full flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                <span class="iconify" data-icon="tabler:settings" width="32" height="32"></span>
+            </div>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-base-content">Yasal Bilgiler</h1>
+    </div>
+
+    <!-- İçerik Bölümü -->
+    <div class="container mx-auto max-w-3xl">
+        <div class="card bg-base-100 shadow-xs rounded-xl p-6">
+            <!-- Kullanım Şartları -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 text-base-content border-b pb-2">Kullanım Şartları</h2>
+                <div class="mt-4">
+                    <p class="mb-4 text-base-content/80">
+                        Bu web sitesi ve içeriği, bireysel kullanım için paylaşılmış olup, aşağıdaki şartlara tabidir:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Telif Hakkı:</span>
+                                Bu sitedeki tüm içerikler, aksi belirtilmedikçe, site sahibinin telif hakkına tabidir ve
+                                her hakkı saklıdır.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">İçerik Kullanımı:</span>
+                                Site içeriği, eğitim ve kişisel bilgi amaçlı referans olarak kullanılabilir. Kaynak
+                                gösterilmesi şartıyla, sınırlı alıntılar yapılabilir.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Yeniden Yayın:</span>
+                                İçeriğin tamamen veya kısmen ticari amaçla yeniden yayınlanması, ancak site sahibinin
+                                yazılı izni ile mümkündür.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Gizlilik Politikası -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 text-base-content border-b pb-2">Gizlilik Politikası</h2>
+                <div class="mt-4">
+                    <p class="mb-4 text-base-content/80">
+                        Kişisel bilgilerinizin korunmasına önem veriyoruz. Sitemizde aşağıdaki gizlilik uygulamaları
+                        bulunmaktadır:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Veri Toplama:</span>
+                                Bu site, analitik amaçlarla anonim kullanım verileri toplamaktadır. Bu verilerde kişisel
+                                tanımlayıcı bilgiler yer almaz.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Çerezler:</span>
+                                Sitede çerezler kullanılmaktadır. Bunlar, site deneyiminizi geliştirmek ve anonim
+                                kullanım istatistikleri toplamak için gereklidir.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Üçüncü Taraf Hizmetleri:</span>
+                                Site, Google Analytics gibi üçüncü taraf analitik hizmetlerini kullanmaktadır. Bu
+                                hizmetlerin kendi gizlilik politikaları bulunmaktadır.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Sorumluluk Reddi -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-bold mb-4 text-base-content border-b pb-2">Sorumluluk Reddi</h2>
+                <div class="mt-4">
+                    <p class="mb-4 text-base-content/80">
+                        Lütfen aşağıdaki sorumluluk reddi bildirimini dikkate alınız:
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Doğruluk:</span>
+                                Sitedeki bilgilerin doğruluğu ve güncelliği için her türlü çaba gösterilmekle birlikte,
+                                bilgilerin kesinliği garanti edilmemektedir.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Kullanım Sorumluluğu:</span>
+                                Site içeriğinin kullanımından doğabilecek herhangi bir zarar veya kayıptan site sahibi
+                                sorumlu değildir.
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-primary mt-2"></div>
+                            <p class="text-base-content/80">
+                                <span class="font-bold text-primary">Dış Bağlantılar:</span>
+                                Sitede yer alan dış bağlantılar, yalnızca bilgi amaçlıdır. Bu sitelerin içeriğinden ve
+                                güvenliğinden site sahibi sorumlu değildir.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- İletişim -->
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold mb-4 text-base-content border-b pb-2">İletişim</h2>
+                <div class="mt-4">
+                    <p class="mb-4 text-base-content/80">
+                        Yasal konularla ilgili sorularınız veya talepleriniz için aşağıdaki kanallardan iletişime
+                        geçebilirsiniz:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                                <span class="iconify" data-icon="tabler:mail" width="20" height="20"></span>
+                            </div>
+                            <span class="text-base-content">legal@example.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                                <span class="iconify" data-icon="tabler:phone" width="20" height="20"></span>
+                            </div>
+                            <span class="text-base-content">+90 XXX XXX XX XX</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Son Güncelleme -->
+            <div class="text-sm text-base-content/60 text-right mt-6 pt-4 border-t">
+                <p>
+                    Son güncelleme:
+                    <time datetime="2023-09-01" class="font-medium">1 Eylül 2023</time>
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

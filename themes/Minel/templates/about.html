@@ -1,0 +1,83 @@
+{% extends "minimal.html" %} {% block content %}
+<article class="prose prose-xl dark:prose-invert max-w-none">
+    <!-- Hero Section -->
+    <div
+        class="relative overflow-hidden rounded-box mb-8 bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-xs">
+        <div class="absolute inset-0 bg-base-200/10"></div>
+        <div class="relative px-6 py-8 sm:px-10 sm:py-10 text-center">
+            <div
+                class="w-24 h-24 md:w-32 md:h-32 mx-auto mb-6 rounded-full ring-3 ring-primary/20 overflow-hidden bg-primary/10 flex items-center justify-center">
+                <svg
+                    class="w-14 h-14 md:w-18 md:h-18 text-primary"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.5"
+                        d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                </svg>
+            </div>
+            <h1
+                class="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-primary/70 text-transparent bg-clip-text">
+                Hakkımda
+            </h1>
+            <div class="w-16 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full mb-4"></div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Sol Sidebar - Sosyal Medya -->
+        <div class="space-y-6">
+            <div class="bg-base-100 rounded-box p-6 shadow-xs hover:shadow-sm transition-shadow">
+                <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                    <span class="iconify w-5 h-5 text-primary" data-icon="mdi:message-text"></span>
+                    İletişim
+                </h3>
+                <div class="space-y-3">
+                    {% for platform, username in SOCIAL.items() %} {% set href = { 'github': 'https://github.com/',
+                    'matrix': 'https://matrix.to/#/@', 'discord': 'https://discord.com/users/', 'instagram':
+                    'https://instagram.com/', 'youtube': 'https://youtube.com/@', 'twitch': 'https://twitch.tv/',
+                    'papara': 'https://www.papara.com/donate/', 'github_sponsor': 'https://github.com/sponsors/',
+                    'kick': 'https://kick.com/' } %} {% if platform in href %}
+                    <a
+                        href="{{ href[platform] }}{{ username }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-3 p-3 rounded-xs bg-base-200 hover:bg-primary/10 transition-colors group">
+                        <div
+                            class="w-10 h-10 rounded-xs bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                            <span
+                                class="iconify w-5 h-5 text-primary"
+                                data-icon="mdi:{% if platform == 'github' %}github{% elif platform == 'matrix' %}matrix{% elif platform == 'discord' %}discord{% elif platform == 'instagram' %}instagram{% elif platform == 'youtube' %}youtube{% elif platform == 'twitch' %}twitch{% elif platform == 'papara' %}credit-card-outline{% elif platform == 'github_sponsor' %}heart{% elif platform == 'kick' %}golf{% endif %}"></span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-sm font-medium">{{ platform|title }}</div>
+                            <div class="text-sm text-base-content/60">@{{ username }}</div>
+                        </div>
+                        <span
+                            class="iconify w-5 h-5 text-base-content/60 group-hover:text-primary transition-colors"
+                            data-icon="mdi:chevron-right"></span>
+                    </a>
+                    {% endif %} {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Ana İçerik -->
+        <div class="lg:col-span-2 space-y-8">
+            <!-- Hakkımda -->
+            <div class="bg-base-100 rounded-box p-6 shadow-xs hover:shadow-sm transition-shadow">
+                <div class="prose prose-xl dark:prose-invert max-w-none">{{ page.content }}</div>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}
