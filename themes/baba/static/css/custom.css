@@ -515,3 +515,91 @@ article.article {
 [data-theme="dark"] .highlight pre::before {
     left: 1em;
 }
+
+/* Admonition styles */
+.admonition {
+  margin: 1.5em 0;
+  padding: 1em;
+  border-left: 5px solid;
+  border-radius: 5px;
+}
+
+.admonition-title {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+/* Light theme admonition colors */
+.admonition.tip {
+  background-color: #eafaf1;
+  border-color: #28a745;
+  color: #155724;
+}
+.admonition.tip .admonition-title {
+  color: #155724;
+}
+
+.admonition.note {
+  background-color: #e7f6f8;
+  border-color: #17a2b8;
+  color: #0c5460;
+}
+.admonition.note .admonition-title {
+  color: #0c5460;
+}
+
+.admonition.warning {
+  background-color: #fff8e6;
+  border-color: #ffc107;
+  color: #856404;
+}
+.admonition.warning .admonition-title {
+  color: #856404;
+}
+
+.admonition.danger {
+  background-color: #fbebec;
+  border-color: #dc3545;
+  color: #721c24;
+}
+.admonition.danger .admonition-title {
+  color: #721c24;
+}
+
+/* Dark theme admonition colors */
+[data-theme="dark"] .admonition.tip {
+  background-color: #1c3a26;
+  border-color: #39d353;
+  color: #c8f7d1;
+}
+[data-theme="dark"] .admonition.tip .admonition-title {
+  color: #c8f7d1;
+}
+
+[data-theme="dark"] .admonition.note {
+  background-color: #1c363b;
+  border-color: #28c8e0;
+  color: #b8f1fa;
+}
+[data-theme="dark"] .admonition.note .admonition-title {
+  color: #b8f1fa;
+}
+
+[data-theme="dark"] .admonition.warning {
+  background-color: #4d3c11;
+  border-color: #ffd700;
+  color: #fff2cc;
+}
+[data-theme="dark"] .admonition.warning .admonition-title {
+  color: #fff2cc;
+}
+
+[data-theme="dark"] .admonition.danger {
+  background-color: #441e22;
+  border-color: #ff6b81;
+  color: #fdd8db;
+}
+[data-theme="dark"] .admonition.danger .admonition-title {
+  color: #fdd8db;
+}
