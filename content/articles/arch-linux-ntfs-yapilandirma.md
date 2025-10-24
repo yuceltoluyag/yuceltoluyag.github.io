@@ -11,7 +11,6 @@ Status: published
 Template: article
 Image: images/ntfs_yetki_hatasi-xl.webp
 
-
 ## Sorun Nedir? ⚠️
 
 Linux'un varsayılan dosya sistemi **ext** (ext1, ext2, ext3, ext4) olduğundan, yeni bir sistem kurulduğunda NTFS formatındaki diskleri bağlamaya çalışırken **"failed to mount diskadı -> not authorized to perform operation"** hatasıyla karşılaşabilirsiniz. Daha modern bir dosya yöneticisi kullanıyorsanız, bağlanmak istediğinizde **parola** istemesi de olasıdır. Linux, diğer dosya sistemlerini tanır ancak işlem yapabilmek için yetkilendirme gerektirir.
@@ -80,10 +79,7 @@ sudo mkdir /mnt/ntfsdisk
 sudo mount -t ntfs-3g /dev/sdXX /mnt/ntfsdisk
 ```
 
-
-!!! tip "Disk Adı"
-    <b>sdXX</b> kısmına, `blkid` komutuyla bulduğunuz disk adını yazın (örneğin: sda1, sdb2 vb.).
-</div>
+!!! tip "Disk Adı <b>sdXX</b> kısmına, `blkid` komutuyla bulduğunuz disk adını yazın (örneğin: sda1, sdb2 vb.)."
 
 Bağlı diskten çıkmak isterseniz:
 
@@ -112,5 +108,5 @@ Bilgisayarınızı yeniden başlattığınızda, disk otomatik olarak bağlanaca
 ---
 
 ## Daha Fazla Bilgi 📚
-Daha detaylı bilgi için [Arch Linux NTFS-3G Wiki](https://wiki.archlinux.org/index.php/NTFS-3G){: target="_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 💡
 
+Daha detaylı bilgi için [Arch Linux NTFS-3G Wiki](https://wiki.archlinux.org/index.php/NTFS-3G){: target="\_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 💡

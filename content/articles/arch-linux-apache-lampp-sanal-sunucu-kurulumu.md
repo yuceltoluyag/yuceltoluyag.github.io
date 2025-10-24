@@ -15,7 +15,7 @@ Image: images/babatest-xl.webp
 
 Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sıkça kullandığım bir yöntemin **Türkçe Dökümantasyonu**nu yazmak istedim. Bu yöntemin adı **Virtual Host** olarak bilinir. Her projeye bir domain atayarak, kodlama ve proje isimlerinin akılda kalmasını sağlar. Bu yöntem, CSS, JS gibi dosyaların entegrasyonu sırasında rahatlık da sağlar.
 
-1. [Arch Linux XAMPP/LAMPP Kurulumu](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin){: target="\_blank" rel="noopener noreferrer"} yapılmalıdır.
+1. [Arch Linux XAMPP/LAMPP Kurulumu](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin){: target="_blank" rel="noopener noreferrer"} yapılmalıdır.
 
 **baba.test** adında bir domain oluşturacağız.
 

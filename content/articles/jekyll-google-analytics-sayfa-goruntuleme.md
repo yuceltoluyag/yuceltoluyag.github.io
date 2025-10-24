@@ -13,7 +13,7 @@ Image: images/superproxy-xl.webp
 
 **Merhaba!** 🌟
 
-Statik web sitelerinizde sayfa görüntülenmesini nasıl gösterebileceğinizi araştırırken, **Google Analytics** üzerinden **Super Proxy** kütüphanesini kullanarak verileri dışarıya açabileceğimizi öğrendim. Konuyla ilgili, Google ekibinin eski bir videosunu buldum: [Google Analytics Super Proxy](https://developers.google.com/analytics/solutions/google-analytics-super-proxy){: target="_blank" rel="noopener noreferrer"}. Bu video üzerinden ilerleyerek çözümümü buldum. 🥰
+Statik web sitelerinizde sayfa görüntülenmesini nasıl gösterebileceğinizi araştırırken, **Google Analytics** üzerinden **Super Proxy** kütüphanesini kullanarak verileri dışarıya açabileceğimizi öğrendim. Konuyla ilgili, Google ekibinin eski bir videosunu buldum: [Google Analytics Super Proxy](https://developers.google.com/analytics/solutions/google-analytics-super-proxy){: target="\_blank" rel="noopener noreferrer"}. Bu video üzerinden ilerleyerek çözümümü buldum. 🥰
 
 # Malzemeler 🥗
 
@@ -24,35 +24,29 @@ Statik web sitelerinizde sayfa görüntülenmesini nasıl gösterebileceğinizi 
 
 Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı yapmayı unutmayın: "Create a Universal Analytics property" kısmını açıp, resimdeki gibi işaretleyin.
 
-
 [responsive_img src="/images/superproxy.webp" alt="GA-superproxy-kurulumu" /]
 
 # Google App Engine Kurulumu
 
-1. [Appengine](https://console.cloud.google.com/appengine){: target="_blank" rel="noopener noreferrer"} sitesine gidin.
+1. [Appengine](https://console.cloud.google.com/appengine){: target="\_blank" rel="noopener noreferrer"} sitesine gidin.
 2. "Proje Oluştur" seçeneğine tıklayın.
 3. Projenize bir isim verin ve devam edin.
 4. Dil olarak Python, ortam olarak ise "standart"ı seçin.
 5. Faturalandırma hesabınızı etkinleştirin. Kredi kartınızı bağlamanız gerekecek, ancak ücretsiz kotayı aşmadığınız sürece ücretlendirilmezsiniz. Basit bir blog için bu kota fazlasıyla yeterlidir.
 6. Sol menüden **API ve Hizmetler** kısmını seçin ve ardından **API'leri ve Hizmetleri Etkinleştir**i tıklayın.
 
-
 [responsive_img src="/images/superproxy2-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 - `Google Analytics API`'yi seçin ve API'yi aktif edin.
 - `APIs & Services` menüsünde, `OAuth consent Screen`e tıklayın ve gelen pencerede **Harici (External)** seçeneğini işaretleyerek devam edin.
 
-
 [responsive_img src="/images/superproxy3-xl.webp" alt="GA-superproxy-kurulumu" /]
 
-
-!!! tip""
-    Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz. Zaten logoluk bir durum yok :)
+!!! tip " Projenizi oluştururken logo eklemeyin, aksi takdirde onay sürecine girersiniz. Zaten logoluk bir durum yok :)"
 
 - Projeyi **yayınlayın**.
 
 * `Credentials` kısmından `OAuth 2.0 Client IDs` kısmını aktif edin.
-
 
 [responsive_img src="/images/superproxy4-xl.webp" alt="GA-superproxy-kurulumu" /]
 
@@ -61,12 +55,11 @@ Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı ya
   - `Authorized JavaScript origins` kısmına projenizi oluşturduktan sonra verilen URL'yi girin.
   - `Authorized redirect URIs` kısmına ise sadece **`/admin/auth`** uzantısını dahil edin.
 
-
 [responsive_img src="/images/superproxy5-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 ## Cloud SDK
 
-1. İlk olarak [Google Cloud CLI](https://cloud.google.com/sdk/docs/quickstart){: target="_blank" rel="noopener noreferrer"} adresine gidin ve işletim sisteminize uygun yazılımı indirin.
+1. İlk olarak [Google Cloud CLI](https://cloud.google.com/sdk/docs/quickstart){: target="\_blank" rel="noopener noreferrer"} adresine gidin ve işletim sisteminize uygun yazılımı indirin.
 2. Daha sonra terminali açın ve şu komutu girin:
 
 ```bash
@@ -81,7 +74,7 @@ gcloud info
 
 Seçtiğiniz proje bilgileri burada görüntülenmelidir.
 
-3. Şimdi [google-analytics-super-proxy](https://github.com/googleanalytics/google-analytics-super-proxy){: target="_blank" rel="noopener noreferrer"} reposuna gidin ve dosyaları indirin.
+3. Şimdi [google-analytics-super-proxy](https://github.com/googleanalytics/google-analytics-super-proxy){: target="\_blank" rel="noopener noreferrer"} reposuna gidin ve dosyaları indirin.
 4. **`src/app.yaml`** dosyasını editörle açın ve ilk başta bulunan şu iki satırı silin:
 
 ```yaml
@@ -92,7 +85,6 @@ version: 1
 Dosyayı kaydedin.
 
 5. **`src/config.py`** dosyasını açın. `OAUTH_CLIENT_ID` ve `OAUTH_CLIENT_SECRET` kısımlarını yukarıda oluşturduğunuz Client ID ve Secret ile doldurun.
-
 
 [responsive_img src="/images/superproxy6-xl.webp" alt="GA-superproxy-kurulumu" /]
 
@@ -117,25 +109,22 @@ gcloud app browse
 
 Açılan linkin sonuna `/admin` ekleyin ve bağlı olduğunuz Analytics hesabınıza giriş yapın. Her şey yolunda gitmişse, şu ekranla karşılaşmalısınız:
 
-
 [responsive_img src="/images/superproxy7-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 ## Google Analytics Sorgusu
 
 1. `Create Query` butonuna tıklayın ve orada bekleyin.
-2. [UA Query Explorer](https://ga-dev-tools.web.app/query-explorer/){: target="_blank" rel="noopener noreferrer"}'ı açın. Reklam engelleyici eklentileri kullanıyorsanız, bu sitede çalışırken kapatmayı unutmayın.
+2. [UA Query Explorer](https://ga-dev-tools.web.app/query-explorer/){: target="\_blank" rel="noopener noreferrer"}'ı açın. Reklam engelleyici eklentileri kullanıyorsanız, bu sitede çalışırken kapatmayı unutmayın.
 3. **Start Date** => En eski yazınızın tarihini girin.
 4. **End Date** => "Today" seçeneğini seçin.
 5. **Metrics** => "Pageviews" seçin.
 6. **Dimensions** => "PagePath" seçin.
 7. **Filters** => `ga:pagePath=~^.\*/$;ga:pagePath!@=` olarak doldurun.
 
-
 [responsive_img src="/images/superproxy8-xl.webp" alt="GA-superproxy-kurulumu" /]
 
 8. `Run Query` butonuna tıklayın ve oluşan URL'yi not alın.
 9. `Create Query` kısmını aşağıdaki gibi doldurun.
-
 
 [responsive_img src="/images/superproxy9-xl.webp" alt="GA-superproxy-kurulumu" /]
 
@@ -149,22 +138,21 @@ Açılan linkin sonuna `/admin` ekleyin ve bağlı olduğunuz Analytics hesabın
 
 ```yaml
 google_analytics:
-  id: 'G-V6XXXXXXX'   # Google Analytics Kimliğinizi girin
+  id: "G-V6XXXXXXX" # Google Analytics Kimliğinizi girin
   pv:
-    proxy_endpoint: 'https://PROJE_IDNIZ.appspot.com/query?id=<SUPER PROXY IDNIZ>'
-    cache_path:       # Bölgesel olduğu için boş bırakabilirsiniz.
+    proxy_endpoint: "https://PROJE_IDNIZ.appspot.com/query?id=<SUPER PROXY IDNIZ>"
+    cache_path: # Bölgesel olduğu için boş bırakabilirsiniz.
 ```
 
 ## Filtreleme
 
-[Core Reporting API Filters](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters){: target="_blank" rel="noopener noreferrer"} sayfasından filtreleme değişkenlerini inceleyebilirsiniz.
+[Core Reporting API Filters](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#filters){: target="\_blank" rel="noopener noreferrer"} sayfasından filtreleme değişkenlerini inceleyebilirsiniz.
 
 ## Örnek Dosyalar
 
-- [_Config.yml Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_config.yml#L39){: target="_blank" rel="noopener noreferrer}
-- [Script.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_includes/script.html#L35){: target="_blank" rel="noopener noreferrer}
-- [Post.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_layouts/post.html#L46){: target="_blank" rel="noopener noreferrer}
-
+- [\_Config.yml Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_config.yml#L39){: target="\_blank" rel="noopener noreferrer}
+- [Script.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_includes/script.html#L35){: target="\_blank" rel="noopener noreferrer}
+- [Post.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_layouts/post.html#L46){: target="\_blank" rel="noopener noreferrer}
 
 # Sonuç
 

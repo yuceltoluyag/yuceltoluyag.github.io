@@ -20,6 +20,7 @@ Linux dünyasına yeni adım atan kullanıcılar için doğru dağıtımı seçm
 ## 1. Linux Mint
 
 **Özellikler:**
+
 - Windows'a benzer arayüz (Cinnamon masaüstü ortamı)
 - Hafif ve hızlı çalışması
 - Yeni başlayanlar için daha az terminal komutu gerektirmesi
@@ -33,13 +34,14 @@ Linux Mint, özellikle Windows'tan geçen kullanıcılar için son derece rahat 
 ## 2. Fedora (PHP geliştiricileri için öneri)
 
 **Özellikler:**
+
 - Güncellemeleri hızlı alan, modern bir sistem
 - Geliştiriciler için güçlü araçlar
 - GNOME masaüstü ortamıyla modern tasarım
 
 Fedora, özellikle **PHP geliştiricileri** için güncel paketler ve güçlü geliştirme araçları sunar.  
 Neden Fedora’yı önerdiğimi bu yazıya ekli **videoda** detaylıca anlattım.  
-Kısaca: *güncel PHP sürümleri, sağlam paket yönetimi, güvenli yapı ve geliştirme odaklı kararlılık*.  
+Kısaca: _güncel PHP sürümleri, sağlam paket yönetimi, güvenli yapı ve geliştirme odaklı kararlılık_.  
 Yani Fedora, modern teknolojileri hızlıca deneyimlemek ve yazılım geliştirme süreçlerinde güncel kalmak isteyenler için idealdir.
 
 ---
@@ -53,10 +55,10 @@ Yazar olarak önerilerim:
 - **Void Linux** – Hafiflik, hız ve farklı bir paket yönetim deneyimi
 
 > 💡 **Not:** İsterseniz bu iki dağıtımla yaşam döngünüz sona erene kadar devam edebilirsiniz.  
-> Eğer olur da *distrohop* hastalığına yakalanırsanız, aşağıdaki iki dağıtım sizi yeterince meşgul edecektir.  
+> Eğer olur da _distrohop_ hastalığına yakalanırsanız, aşağıdaki iki dağıtım sizi yeterince meşgul edecektir.  
 > Videoda da söylediğim gibi, sizin için en iyisi ve en rahat ortamınız hangisiyse orada kalın.  
 > Önemli olan ikon değiştirmekle veya pencere yöneticileriyle saatler harcamak değil; **kodunuzu yazın, oyununuzu oynayın, işinize odaklanın**.  
-> Unutmayın, hedef *unixporn*’daki configler değil, kendi verimli çalışma ortamınız.
+> Unutmayın, hedef _unixporn_’daki configler değil, kendi verimli çalışma ortamınız.
 
 ---
 
@@ -66,9 +68,7 @@ Linux Mint ve Fedora, geniş ve yardımsever bir destek topluluğuna sahiptir. F
 
 ---
 
-!!! warning "Yardım İsteyin"
-    Aklınıza takılan bir soru veya kurulumlarda hata alırsanız yorum bırakın, yardımcı olurum. İyi çalışmalar!
-</div>
+!!! warning "Yardım İsteyin,Aklınıza takılan bir soru veya kurulumlarda hata alırsanız yorum bırakın, yardımcı olurum. İyi çalışmalar!"
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 

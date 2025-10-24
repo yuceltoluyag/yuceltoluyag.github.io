@@ -9,27 +9,26 @@ Summary: Arch Linux üzerinde Redis'in özgür alternatifi Valkey’in nasıl ku
 Template: article
 Image: images/archlinux-valkey-redis-kurulumu-xl.webp
 
+## Giriş: Redis mi, Valkey mi? 🤔
 
+Son zamanlarda **Redis Inc. lisans değişikliği** yaptı ve bu da açık kaynak dünyasında tartışmalara yol açtı. Topluluk da boş durmadı ve **Valkey** adında özgür, topluluk odaklı bir fork oluşturdu.
 
-## Giriş: Redis mi, Valkey mi? 🤔  
+Valkey aslında Redis’in birebir alternatifi diyebileceğimiz bir yazılım:
 
-Son zamanlarda **Redis Inc. lisans değişikliği** yaptı ve bu da açık kaynak dünyasında tartışmalara yol açtı. Topluluk da boş durmadı ve **Valkey** adında özgür, topluluk odaklı bir fork oluşturdu.  
-
-Valkey aslında Redis’in birebir alternatifi diyebileceğimiz bir yazılım:  
-
-- **Bellek içi veritabanı** 🧠  
-- **Dağıtık cache sistemi** ⚡  
-- **Mesaj kuyruğu & broker** 📬  
+- **Bellek içi veritabanı** 🧠
+- **Dağıtık cache sistemi** ⚡
+- **Mesaj kuyruğu & broker** 📬
 
 Eğer daha önce Redis kullandıysanız, Valkey’i hiç zorlanmadan kullanabilirsiniz. Bu yazıda Arch Linux üzerinde Valkey kurulumu, yapılandırması ve yaygın sorunların çözümünü adım adım anlatacağım.  
 [responsive_img src="/images/archlinux-valkey-redis-kurulumu-xl.webp" alt="Arch Linux Valkey Kurulumu" /]
+
 ---
 
-## 1. Valkey Kurulumu 🚀  
+## 1. Valkey Kurulumu 🚀
 
-Arch Linux kullanıyorsanız işiniz çok kolay çünkü Valkey resmi depolarda mevcut.  
+Arch Linux kullanıyorsanız işiniz çok kolay çünkü Valkey resmi depolarda mevcut.
 
-### Adım 1: Paket kurulumu  
+### Adım 1: Paket kurulumu
 
 ```bash
 sudo pacman -S valkey
@@ -51,7 +50,7 @@ systemctl status valkey.service
 Yeşil bir `active (running)` görüyorsanız, Valkey başarıyla çalışıyor demektir. 🎉
 
 ```bash
-[friday13@baba ~]$ systemctl status valkey.service  
+[friday13@baba ~]$ systemctl status valkey.service
 ● valkey.service - Advanced key-value store
      Loaded: loaded (/usr/lib/systemd/system/valkey.service; enabled; preset: disabled)
      Active: active (running) since Fri 2025-08-15 15:49:17 +03; 1 day 15h ago
@@ -82,9 +81,9 @@ Ağu 17 07:20:02 baba valkey-server[220586]: 220586:M 17 Aug 2025 07:20:02.585 *
 
 Valkey’i kullanacak uygulamalar için istemci kütüphaneleri gerekir. Öne çıkanlar:
 
-* **Python:** `python-redis`
-* **PHP:** `php-redis`
-* **C:** `hiredis`
+- **Python:** `python-redis`
+- **PHP:** `php-redis`
+- **C:** `hiredis`
 
 Örneğin Python için:
 
@@ -152,9 +151,7 @@ sudo systemctl restart valkey.service
 
 ### Transparent Huge Pages (THP) Uyarısı
 
-!!! warning "Uyarı"
-    THP açık kalırsa Valkey performans sorunlarına yol açabilir.
-</div>
+!!! warning "THP açık kalırsa Valkey performans sorunlarına yol açabilir."
 
 ```bash
 sudo nano /etc/tmpfiles.d/valkey.conf
@@ -227,10 +224,10 @@ flushall          # Tüm verileri sil
 
 ## 6. Gerçek Hayatta Kullanım Senaryoları 💡
 
-* **Cache sistemi:** Veritabanı sorgularını hızlandırma.
-* **Oturum yönetimi:** Kullanıcı oturumlarını tutma.
-* **Mesaj kuyruğu:** Mikro servisler arasında iletişim.
-* **Sayaçlar:** Ziyaretçi, beğeni vb. gerçek zamanlı sayaçlar.
+- **Cache sistemi:** Veritabanı sorgularını hızlandırma.
+- **Oturum yönetimi:** Kullanıcı oturumlarını tutma.
+- **Mesaj kuyruğu:** Mikro servisler arasında iletişim.
+- **Sayaçlar:** Ziyaretçi, beğeni vb. gerçek zamanlı sayaçlar.
 
 ---
 
@@ -240,8 +237,4 @@ Bu yazıda Arch Linux üzerinde **Valkey (Redis alternatifi)** kurulumu, yapıla
 
 Artık Valkey’i hem geliştirme ortamınızda hem de üretim sunucularınızda gönül rahatlığıyla kullanabilirsiniz. 💚
 
-
-
 ---
-
-

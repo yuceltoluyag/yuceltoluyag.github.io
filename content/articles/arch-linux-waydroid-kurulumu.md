@@ -86,8 +86,7 @@ sudo modprobe binder_linux
 sudo modprobe ashmem_linux
 ```
 
-!!! note "Kalıcı yapmak için ⚡"
-Modülleri her yeniden başlatmada otomatik yüklemek istiyorsan:
+!!! note "Kalıcı yapmak için ⚡ Modülleri her yeniden başlatmada otomatik yüklemek istiyorsan:"
 
 ```bash
 echo -e "binder_linux\nashmem_linux" | sudo tee /etc/modules-load.d/waydroid.conf
@@ -114,8 +113,7 @@ Durumu kontrol et:
 systemctl status waydroid-container.service
 ```
 
-!!! tip "Binder modülü aktif değilse servis başlatılamaz ⚡"
-`dmesg | grep binder` ile kontrol edebilirsin.
+!!! tip "Binder modülü aktif değilse servis başlatılamaz ⚡ `dmesg | grep binder` ile kontrol edebilirsin."
 
 ---
 
@@ -135,8 +133,7 @@ waydroid session start
 waydroid show-full-ui
 ```
 
-!!! tip "Wayland veya GNOME Shell kullanıyorsan 💡"
-`waydroid show-full-ui` komutu masaüstü üzerinde Android arayüzünü açar.
+!!! tip "Wayland veya GNOME Shell kullanıyorsan 💡 `waydroid show-full-ui` komutu masaüstü üzerinde Android arayüzünü açar."
 
 ---
 
@@ -160,8 +157,7 @@ waydroid app launch com.android.settings
 waydroid app install ~/Downloads/uygulama.apk
 ```
 
-!!! note "Bazı APK'lar çalışmayabilir ⚡"
-Google servisleri gerektiren uygulamalar GApps olmadan çalışmaz.
+!!! note "Bazı APK'lar çalışmayabilir ⚡ Google servisleri gerektiren uygulamalar GApps olmadan çalışmaz."
 
 ---
 
@@ -189,8 +185,7 @@ sudo modprobe binder_linux
 sudo systemctl restart waydroid-container.service
 ```
 
-!!! warning "No binder devices found hatası alırsan ⚠️"
-Gerekirse özel çekirdek yükle.
+!!! warning "No binder devices found hatası alırsan ⚠️ Gerekirse özel çekirdek yükle."
 
 ---
 
@@ -260,17 +255,16 @@ waydroid session start
 Artık **Arch Linux’ta Waydroid kurulumu ve gelişmiş ayarlar** tamam!
 Android oyunları, gamepad, sahte Wi-Fi ve tuş eşlemeleri ile optimize bir deneyim elde edebilirsin.
 
-!!! tip "Gelişmiş ayar 💡"
-`waydroid prop set persist.waydroid.debug_shell true` ile canlı Android shell hatalarını görebilirsin.
+!!! tip "Gelişmiş ayar 💡 `waydroid prop set persist.waydroid.debug_shell true` ile canlı Android shell hatalarını görebilirsin."
 
 ---
 
 ## Kaynaklar
 
-- [Waydroid - Arch Linux Wiki](https://wiki.archlinux.org/title/Waydroid)
-- [Waydroid GitHub](https://github.com/waydroid/waydroid)
-- [LXC Containers Documentation](https://linuxcontainers.org/lxc/introduction/)
-- [XTR KeyMapper Projesi](https://github.com/Xtr126/XtMapper)
+- [Waydroid - Arch Linux Wiki](https://wiki.archlinux.org/title/Waydroid){: target="\_blank" rel="noopener noreferrer"}
+- [Waydroid GitHub](https://github.com/waydroid/waydroid){: target="\_blank" rel="noopener noreferrer"}
+- [LXC Containers Documentation](https://linuxcontainers.org/lxc/introduction/){: target="\_blank" rel="noopener noreferrer"}
+- [XTR KeyMapper Projesi](https://github.com/Xtr126/XtMapper){: target="\_blank" rel="noopener noreferrer"}
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 

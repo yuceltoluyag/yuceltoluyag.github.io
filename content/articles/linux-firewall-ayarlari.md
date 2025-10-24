@@ -22,14 +22,17 @@ Güvenlik duvarı, sisteminize gelen ve giden ağ trafiğini kontrol ederek yetk
 
 ### Terim Açıklamaları
 
-**iptables nedir?**  
-iptables, Linux çekirdeği için paket filtreleme aracıdır. Ağ paketlerini kurallar seti ile kontrol eder ve sisteminize gelen/giden trafiği yönetir.
+**iptables nedir?**
 
-**nftables nedir?**  
-nftables, iptables’ın modern ve esnek bir alternatifi olarak geliştirilmiştir. Daha performanslıdır ve karmaşık kuralları daha basit bir şekilde yönetmenizi sağlar. Kernel seviyesinde bağlantı takibi ve paket filtreleme sağlar.
+- iptables, Linux çekirdeği için paket filtreleme aracıdır. Ağ paketlerini kurallar seti ile kontrol eder ve sisteminize gelen/giden trafiği yönetir.
 
-**ufw nedir?**  
-UFW (Uncomplicated Firewall), iptables veya nftables üzerinde çalışan kullanıcı dostu bir firewall yönetim aracıdır. Basit komutlarla firewall kuralları eklemenize olanak tanır.
+**nftables nedir?**
+
+- nftables, iptables’ın modern ve esnek bir alternatifi olarak geliştirilmiştir. Daha performanslıdır ve karmaşık kuralları daha basit bir şekilde yönetmenizi sağlar. Kernel seviyesinde bağlantı takibi ve paket filtreleme sağlar.
+
+**ufw nedir?**
+
+- UFW (Uncomplicated Firewall), iptables veya nftables üzerinde çalışan kullanıcı dostu bir firewall yönetim aracıdır. Basit komutlarla firewall kuralları eklemenize olanak tanır.
 
 ---
 

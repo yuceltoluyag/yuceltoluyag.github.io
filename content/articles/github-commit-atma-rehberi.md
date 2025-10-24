@@ -21,10 +21,7 @@ Eğer daha önce Git ile SSH anahtarı eklemediysen veya GPG imzalı commit/etik
 - [Git SSH-Key Oluşturma (Windows & Linux)](/git-ssh-key-olusturma/) 🔑
 - [Git ile GPG İmzalı Etiket Oluşturma](/git-gpg-imzali-etiket/) ✍️
 
-!!! important "Önemli"
-Bu rehberin sorunsuz ilerlemesi için Git kurulu olmalı, GitHub hesabına SSH anahtarın ekli olmalı, commit imzası için GPG anahtarın tanımlı olmalı ve Python kurulu olmalıdır (virtualenv ve <code>duty</code> kullanacağız).
-
-</div>
+!!! note "Bu rehberin sorunsuz ilerlemesi için Git kurulu olmalı, GitHub hesabına SSH anahtarın ekli olmalı, commit imzası için GPG anahtarın tanımlı olmalı ve Python kurulu olmalıdır (virtualenv ve <code>duty</code> kullanacağız)."
 
 ---
 
@@ -82,10 +79,7 @@ git clone git@github.com:yuceltoluyag/yuceltoluyag.github.io.git
 cd yuceltoluyag.github.io
 ```
 
-!!! tip "İpucu"
-HTTPS ile klonlamak istersen: <code>git clone https://github.com/yuceltoluyag/yuceltoluyag.github.io.git</code>. Ancak HTTPS push sırasında kullanıcı adı/parola ister; SSH genellikle daha rahattır.
-
-</div>
+!!! tip "HTTPS ile klonlamak istersen: <code>git clone https://github.com/yuceltoluyag/yuceltoluyag.github.io.git</code>. Ancak HTTPS push sırasında kullanıcı adı/parola ister; SSH genellikle daha rahattır."
 
 ---
 
@@ -105,10 +99,7 @@ git checkout -b benim-branchim
 git checkout -b arkadas-landing-duzenleme
 ```
 
-!!! tip "İpucu"
-Branch isimlerini kısa, açıklayıcı ve tireli seç: <code>bugfix-typo-footer</code>, <code>feature-yeni-makale-sablonu</code> gibi.
-
-</div>
+!!! tip "Branch isimlerini kısa, açıklayıcı ve tireli seç: <code>bugfix-typo-footer</code>, <code>feature-yeni-makale-sablonu</code> gibi."
 
 ---
 
@@ -139,10 +130,7 @@ duty livereload
 
 Terminal çıktısında <b>lokal URL</b> görürsün (çoğunlukla <code>[http://127.0.0.1:8000](http://127.0.0.1:8000)</code> veya <code>[http://localhost:8000](http://localhost:8000)</code>). Tarayıcıda bu adrese giderek yaptığın değişiklikleri anlık görebilirsin. Sunucuyu durdurmak için terminalde <code>ctrl c</code> tuşlarına bas.
 
-!!! warning "Uyarı"
-Sanal ortam (<code>venv</code>) <b>aktif edilmeden</b> <code>duty</code> komutlarını çalıştırırsan uygulama açılmayacaktır. Doğru komut: <code>source venv/bin/activate</code> (Linux/Mac). Yanlış: <code>source venv/bin/active</code> (sonu “activate" olmalı).
-
-</div>
+!!! warning "Sanal ortam (<code>venv</code>) <b>aktif edilmeden</b> <code>duty</code> komutlarını çalıştırırsan uygulama açılmayacaktır. Doğru komut: <code>source venv/bin/activate</code> (Linux/Mac). Yanlış: <code>source venv/bin/active</code> (sonu “activate" olmalı)."
 
 ---
 
@@ -197,10 +185,7 @@ git add .
 git commit -S -m "README.md: örnek satır eklendi"
 ```
 
-!!! tip "İpucu"
-İyi commit mesajı kısa ve nettir. Kötü: <code>update</code>. İyi: <code>docs: README.md'ye katkı akışı eklendi</code>.
-
-</div>
+!!! tip "İyi commit mesajı kısa ve nettir. Kötü: <code>update</code>. İyi: <code>docs: README.md'ye katkı akışı eklendi</code>."
 
 ---
 
@@ -234,10 +219,7 @@ GitHub genelde “Compare & pull request" butonunu gösterir. Tıkla ve PR’ın
 
 kısaca anlat. Bu repo için <b>2. ve sonraki çalışmalarda her zaman PR</b> açıyoruz; böylece repo sahibiyle karışıklık olmaz, kod inceleme akışı korunur.
 
-!!! important "Önemli"
-Bu projede ana branch’e doğrudan push yapma. Tüm katkılar <b>branch → PR</b> akışıyla gelmelidir.
-
-</div>
+!!! note "Bu projede ana branch’e doğrudan push yapma. Tüm katkılar <b>branch → PR</b> akışıyla gelmelidir."
 
 ---
 
@@ -246,10 +228,7 @@ Bu projede ana branch’e doğrudan push yapma. Tüm katkılar <b>branch → PR<
 PR açıldıktan sonra commit’lerini ve değişikliklerini GitHub arayüzünde görebilirsin.
 GPG imzası doğruysa commit yanında <b>Verified</b> etiketi görünür.
 
-!!! note "Bilgi"
-GPG imzası, commit’in gerçekten sana ait olduğunu doğrular ve takım çalışmasında güven sağlar.
-
-</div>
+!!! note "GPG imzası, commit’in gerçekten sana ait olduğunu doğrular ve takım çalışmasında güven sağlar."
 
 ---
 
@@ -308,10 +287,7 @@ git push -u origin task-kisa-adi
 | PR’da “conflict" uyarısı               | Ana branch’te yeni commit’ler var                     | PR açmadan önce `git checkout main && git pull origin main` ile güncelle        |
 | PR açılmadı, doğrudan main’e pushlandı | Süreç ihlali                                          | Değişiklikleri geri al, akışı takip et: branch → push → PR                      |
 
-!!! tip "İpucu"
-Lokal sunucuyu durdurmak için terminalde <code>ctrl c</code> tuşlarına bas. Yeniden başlatmak için yine <code>duty livereload</code> kullan.
-
-</div>
+!!! tip "Lokal sunucuyu durdurmak için terminalde <code>ctrl c</code> tuşlarına bas. Yeniden başlatmak için yine <code>duty livereload</code> kullan."
 
 ---
 

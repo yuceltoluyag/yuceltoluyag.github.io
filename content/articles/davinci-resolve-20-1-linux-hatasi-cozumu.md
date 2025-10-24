@@ -8,7 +8,6 @@ Status: published
 Summary: DaVinci Resolve 20.1 Linux’ta açılmıyor mu? Arch tabanlı sistemlerde yaşanan libglib hatasının kolay çözümünü adım adım öğrenin.
 Template: article
 Image: images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp
-Bluesky_Link: https://bsky.app/profile/yuceltoluyag.bsky.social/post/3lxtdptsnrk2a
 
 ---
 
@@ -35,10 +34,7 @@ DaVinci Resolve, kurulumla birlikte `/opt/resolve/libs` dizinine birçok bağım
 
 Dolayısıyla Resolve’un içindeki eski sürümler, sistemdeki yenileriyle çakışır ve “**undefined symbol**" gibi hatalara yol açar.
 
-!!! note "Bilgi"
-Resolve’un kendi kütüphaneleri aslında uyumluluk amaçlı ekleniyor. Ancak Arch tabanlı sistemlerde güncel sürümlerle çalışmak her zaman daha stabil sonuç verir.
-
-</div>
+!!! note "Resolve’un kendi kütüphaneleri aslında uyumluluk amaçlı ekleniyor. Ancak Arch tabanlı sistemlerde güncel sürümlerle çalışmak her zaman daha stabil sonuç verir."
 
 ---
 
@@ -94,10 +90,7 @@ Bunu çalıştırarak eksik bağımlılıkları ve potansiyel hataları tespit e
 python3 davinci-resolve-checker.py
 ```
 
-!!! tip "İpucu"
-Checker aracı her zaman %100 doğru sonuç vermese de, eksik bağımlılıkları hızlıca fark etmenizi sağlar.
-
-</div>
+!!! tip "Checker aracı her zaman %100 doğru sonuç vermese de, eksik bağımlılıkları hızlıca fark etmenizi sağlar."
 
 ---
 
@@ -107,18 +100,15 @@ Checker aracı her zaman %100 doğru sonuç vermese de, eksik bağımlılıklar�
 - ✅ Eğer Resolve yine açılmazsa, hangi kütüphanelerin çakıştığını görmek için terminal çıktısını dikkatlice inceleyin.
 - ❌ Çözüm sonrası sistem güncellemelerinde Resolve’un kütüphane dizinine tekrar bakmanız gerekebilir.
 
-!!! warning "Uyarı"
-Sistem kütüphanelerini elle değiştirmeyin. Sadece Resolve’un kendi klasöründe işlem yapın. Yanlışlıkla /usr/lib altında dosya silerseniz sisteminiz çalışmaz hale gelebilir.
-
-</div>
+!!! warning "Sistem kütüphanelerini elle değiştirmeyin. Sadece Resolve’un kendi klasöründe işlem yapın. Yanlışlıkla /usr/lib altında dosya silerseniz sisteminiz çalışmaz hale gelebilir."
 
 ---
 
 ## 📚 Ek Kaynaklar
 
-- [Arch Linux Wiki: DaVinci Resolve](https://wiki.archlinux.org/title/DaVinci_Resolve)
-- [AUR: davinci-resolve-studio](https://aur.archlinux.org/packages/davinci-resolve-studio)
-- [Reddit Tartışması: Symbol Lookup Error](https://www.reddit.com/r/davinciresolve/comments/1d7cr2w/optresolvebinresolve_symbol_lookup_error/)
+- [Arch Linux Wiki: DaVinci Resolve](https://wiki.archlinux.org/title/DaVinci_Resolve){: target="\_blank" rel="noopener noreferrer"}
+- [AUR: davinci-resolve-studio](https://aur.archlinux.org/packages/davinci-resolve-studio){: target="\_blank" rel="noopener noreferrer"}
+- [Reddit Tartışması: Symbol Lookup Error](https://www.reddit.com/r/davinciresolve/comments/1d7cr2w/optresolvebinresolve_symbol_lookup_error/){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 

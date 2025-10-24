@@ -23,6 +23,7 @@
         </li>
         {% if loop.index == 1 %}
         <li style="list-style-type: none; margin-top: 2em; margin-bottom: 2em;">
+            {% if GOOGLE_ADSENSE and PUBLISH %}
             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
                  crossorigin="anonymous"></script>
             <ins class="adsbygoogle"
@@ -34,6 +35,7 @@
             <script>
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+            {% endif %}
         </li>
         {% endif %}
         {% endfor %}

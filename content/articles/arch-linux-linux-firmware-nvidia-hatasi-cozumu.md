@@ -136,7 +136,7 @@ Ayrıca arkadaşların da benzer bir sorun yaşıyorsa paylaşarak onlara da yar
 
 **Kaynak:**
 
-* [Arch Linux News – linux-firmware >= 20250613.12fe085f-5 upgrade requires manual intervention](https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/)
+* [Arch Linux News – linux-firmware >= 20250613.12fe085f-5 upgrade requires manual intervention](https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/){: target="_blank" rel="noopener noreferrer"}
 
 
 

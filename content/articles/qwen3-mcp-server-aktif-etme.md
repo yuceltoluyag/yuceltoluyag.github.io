@@ -9,7 +9,6 @@ Summary: Qwen 3 ve Qwen3-Coder-Plus üzerinde MCP server’ları nasıl aktif ed
 Template: article
 Image: images/qwen-active-mcp-xl.webp
 
-
 Yapay zekâ destekli geliştirme araçlarının yükselişiyle birlikte **Model Context Protocol (MCP)** server’ları da hayatımıza girdi. Bu protokol sayesinde farklı servisleri Qwen gibi büyük dil modellerine kolayca entegre edebiliyor, tarayıcı otomasyonu, bağlamsal analizler ve hatta sihirli API bağlantıları kurabiliyoruz.
 
 Bu rehberde, **Qwen 3, Qwen 3++ ve Qwen3-Coder-Plus** kullanıcıları için MCP server’ların nasıl aktif edileceğini adım adım göstereceğim. 🙂
@@ -20,10 +19,10 @@ Bu rehberde, **Qwen 3, Qwen 3++ ve Qwen3-Coder-Plus** kullanıcıları için MCP
 
 MCP (Model Context Protocol), dil modellerinin harici servislerle güvenli ve standart bir yöntemle iletişim kurmasını sağlar. Örneğin:
 
-* 🌐 **Puppeteer** ile tarayıcı otomasyonu yapabilirsiniz.
-* 🧠 **Sequential Thinking** ile daha planlı akıl yürütme sağlayabilirsiniz.
-* 📊 **Context7** gibi servislerle ek bağlam ve hafıza katabilirsiniz.
-* ✨ **Magic** gibi özel eklentilerle API tabanlı çözümler üretebilirsiniz.
+- 🌐 **Puppeteer** ile tarayıcı otomasyonu yapabilirsiniz.
+- 🧠 **Sequential Thinking** ile daha planlı akıl yürütme sağlayabilirsiniz.
+- 📊 **Context7** gibi servislerle ek bağlam ve hafıza katabilirsiniz.
+- ✨ **Magic** gibi özel eklentilerle API tabanlı çözümler üretebilirsiniz.
 
 > Eğer daha önce okumadıysanız, ilgili yazımıza da göz atın: [MCP ile Tarayıcı Otomasyonunu Kolayca Başlatın: Puppeteer Sunucusu Kurulumu](/mcp-puppeteer-sunucusu-kurulumu/)
 
@@ -63,9 +62,7 @@ Açılan dosyaya aşağıdaki ayarları ekleyin:
 }
 ```
 
-!!! warning "Uyarı"
-    <code>selectedAuthType</code> alanı sizde farklı olabilir. Örneğin GitHub veya başka bir OAuth yöntemi seçmiş olabilirsiniz. Buradaki örnek yalnızca referans içindir.
-</div>
+!!! warning "Uyarı <code>selectedAuthType</code> alanı sizde farklı olabilir. Örneğin GitHub veya başka bir OAuth yöntemi seçmiş olabilirsiniz. Buradaki örnek yalnızca referans içindir."
 
 ---
 
@@ -85,11 +82,9 @@ CLI açıldığında, aktif MCP server’larınızı görmek için `/mcp` komutu
 
 Eğer her şey doğru yapılandırıldıysa, biraz önce eklediğiniz server’lar (örneğin **puppeteer**, **sequential-thinking**, **context7**, **magic**) listelenecektir. 🎉
 
-\[responsive\_img src="/images/qwen-active-mcp-xl.webp" alt="Qwen MCP Server Aktif" /]
+\[responsive_img src="/images/qwen-active-mcp-xl.webp" alt="Qwen MCP Server Aktif" /]
 
-!!! tip "İpucu"
-    Eğer CLI’de MCP server görünmüyorsa, önce <code>npx</code> ve ilgili paketlerin kurulu olduğundan emin olun. Ardından ayarlar dosyasındaki JSON formatını kontrol edin.
-</div>
+!!! tip "İpucu Eğer CLI’de MCP server görünmüyorsa, önce <code>npx</code> ve ilgili paketlerin kurulu olduğundan emin olun. Ardından ayarlar dosyasındaki JSON formatını kontrol edin."
 
 ---
 
@@ -97,8 +92,8 @@ Eğer her şey doğru yapılandırıldıysa, biraz önce eklediğiniz server’l
 
 Artık **Qwen 3, Qwen 3++ ve Qwen3-Coder-Plus** üzerinde MCP server’ları nasıl aktif edeceğinizi biliyorsunuz. 🎯
 
-* `.qwen/settings.json` dosyasını düzenlediniz ✅
-* Qwen CLI’yi başlattınız ✅
-* `/mcp` ile server’ların çalıştığını test ettiniz ✅
+- `.qwen/settings.json` dosyasını düzenlediniz ✅
+- Qwen CLI’yi başlattınız ✅
+- `/mcp` ile server’ların çalıştığını test ettiniz ✅
 
 Bundan sonrası sizin hayal gücünüze kalmış. MCP sayesinde Qwen’i yalnızca bir dil modeli olmaktan çıkarıp, güçlü bir geliştirme yardımcısına dönüştürebilirsiniz. 🚀

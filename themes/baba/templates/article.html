@@ -52,6 +52,7 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
     </div>
   </div>
   <div style="margin-top: 2em; margin-bottom: 2em; text-align: center">
+    {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
@@ -68,10 +69,12 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+    {% endif %}
   </div>
   <article class="article">
     {{ article.content }}
     <div style="margin-top: 2em; margin-bottom: 2em">
+      {% if GOOGLE_ADSENSE and PUBLISH %}
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
@@ -87,6 +90,7 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
+      {% endif %}
     </div>
   </article>
 
@@ -127,6 +131,7 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
     </div>
   </div>
   <div style="margin-top: 2em; margin-bottom: 2em; text-align: center">
+    {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
@@ -144,6 +149,7 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+    {% endif %}
   </div>
 
   {% if article.prev_article or article.next_article %}

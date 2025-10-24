@@ -8,12 +8,9 @@ Authors: yuceltoluyag
 Status: published
 Summary: GPU soğutmasında sıvı metal kullanımı hakkında bilmeniz gereken her şey. Alüminyum reaksiyonları, doğru yüzey seçimi, malzeme önerileri ve detaylı uygulama rehberi.
 Template: article
-Image: /images/rtx-4060-sıvı-metal-xl.webp
+Image: images/rtx-4060-sivi-metal-xl.webp
 
-<div class="alert alert-warning">
-  <strong>Dikkat:</strong>Sıvı metal kullanımı doğru yapılırsa GPU'nuzda %10-20'ye kadar sıcaklık iyileştirmesi sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı geri dönüşümsüz şekilde bozabilir. Riski yüksek bir işlem,buna göre düşünün.Sorumluluk size aittir.
-</div>
-
+!!! warning "<strong>Dikkat:</strong> Sıvı metal kullanımı doğru yapılırsa GPU'nuzda %10-20'ye kadar sıcaklık iyileştirmesi sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı geri dönüşümsüz şekilde bozabilir. Riski yüksek bir işlem,buna göre düşünün.Sorumluluk size aittir."
 
 # GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler
 
@@ -33,21 +30,22 @@ Bu yüzden sıvı metal uygularken kesinlikle yüzeyin **alüminyum olmadığın
 
 ## Doğru Yüzey Seçimi: Nikel ve Bakır
 
-* **Nikel** ve **Bakır** yüzeylerde sıvı metal sorunsuz kullanılabilir.
-* Birçok GPU'da çekirdek bloğu bakır veya nikel kaplamalı olur.
+- **Nikel** ve **Bakır** yüzeylerde sıvı metal sorunsuz kullanılabilir.
+- Birçok GPU'da çekirdek bloğu bakır veya nikel kaplamalı olur.
 
 ### Yüzey Malzemesini Nasıl Anlarsınız?
 
-* **Alüminyum** resmi:
+- **Alüminyum** resmi:
   [responsive_img src="/images/alimunyum-xl.webp" alt="Alüminyum" /]
 
-* **Nikel** resmi:
+- **Nikel** resmi:
 
   [responsive_img src="/images/hurda-nikel-bursada-xl.webp" alt="Nikel Resmi" /]
+
 ### Pratik Yöntem: Mıknatıs Testi
 
-* **Mıknatıs nikeli çeker**.
-* **Alüminyum ve bakır** mıknatısla çekilmez.
+- **Mıknatıs nikeli çeker**.
+- **Alüminyum ve bakır** mıknatısla çekilmez.
 
 Bu basit testle hangi malzeme üzerinde çalıştığınızı anlayabilirsiniz.
 
@@ -60,14 +58,14 @@ Bu basit testle hangi malzeme üzerinde çalıştığınızı anlayabilirsiniz.
 | **Thermal Grizzly Hydronaut**    | 11.8                    | 2.6              | 350°C                  | 1900 puaz  |
 | **Thermal Grizzly Conductonaut** | 73                      | 6.24             | 140°C                  | 0.021 puaz |
 
-🔗 Hydronaut (26gr - xxx TL): [Ürün Linki](https://www.pazarama.com/thermal-grizzly-hydronaut-26gr-yuksek-performansli-termal-macun-p-4260711990328?magaza=think24&utm_source)
-🔗 Conductonaut (1gr - xxx TL): [Ürün Linki](https://www.teknobiyotik.com/thermal-grizzly-1gr-conductonaut-liquid-metal-termal-macun-tg-c-001-r.html?ref)
+🔗 Hydronaut (26gr - xxx TL): [Ürün Linki](https://www.pazarama.com/thermal-grizzly-hydronaut-26gr-yuksek-performansli-termal-macun-p-4260711990328?magaza=think24&utm_source){: target="\_blank" rel="noopener noreferrer"}
+🔗 Conductonaut (1gr - xxx TL): [Ürün Linki](https://www.teknobiyotik.com/thermal-grizzly-1gr-conductonaut-liquid-metal-termal-macun-tg-c-001-r.html?ref){: target="\_blank" rel="noopener noreferrer"}
 
 ### Isı İletkenlik Değerleri
 
-* **Bakır**: 413 W/m-K
-* **Çinko**: 116 W/m-K
-* **Pirinç** (Bakır + Çinko karışımı): Arasında bir değer.
+- **Bakır**: 413 W/m-K
+- **Çinko**: 116 W/m-K
+- **Pirinç** (Bakır + Çinko karışımı): Arasında bir değer.
 
 ℹ️ **Isı iletim** W/m-K birimiyle ifade edilir. **Viskozite** ise akışkanlığa karşı dirençtir.
 
@@ -75,14 +73,13 @@ Bu basit testle hangi malzeme üzerinde çalıştığınızı anlayabilirsiniz.
 
 ## Gerekli Ekstra Malzemeler
 
-* **1.5 MM Kalın Pul**:
+- **1.5 MM Kalın Pul**:
 
-  * Materyal: Bakır alaşımlı sarı (pirinç)
-  * 100 gramda yaklaşık 51 adet → 180 TL
-  * [Ürün Linki](https://www.erturkmetalaksesuar.com/15x12-mm-yuvarlak-tek-delik-duz-kalin-pul-ham-pirinc)
+  - Materyal: Bakır alaşımlı sarı (pirinç)
+  - 100 gramda yaklaşık 51 adet → 180 TL
+  - [Ürün Linki](https://www.erturkmetalaksesuar.com/15x12-mm-yuvarlak-tek-delik-duz-kalin-pul-ham-pirinc){: target="\_blank" rel="noopener noreferrer"}
 
-* **0.5 MM Kaplamasız Bakır Tel (20 Metre)**:
-
+- **0.5 MM Kaplamasız Bakır Tel (20 Metre)**:
 
 ---
 
@@ -105,62 +102,49 @@ Bu bölümde işlemleri tek tek numaralandırıyoruz:
 
 ## 1. GPU Blok Demontajı
 
-* PC üzerinde GPU bloğunu kaldırın.
-* Fan pinlerini, varsa ARGB pinlerini çıkarın.
-* PCB'yi, VRAM padlerini ve çip üzerindeki eski termal macunu dikkatlice temizleyin.
-* Soğutma bloğunu sökün ve diş fırçasıyla temizleyin.
-* Fanların plastik cover'ını hava ile temizleyin.
-
-
+- PC üzerinde GPU bloğunu kaldırın.
+- Fan pinlerini, varsa ARGB pinlerini çıkarın.
+- PCB'yi, VRAM padlerini ve çip üzerindeki eski termal macunu dikkatlice temizleyin.
+- Soğutma bloğunu sökün ve diş fırçasıyla temizleyin.
+- Fanların plastik cover'ını hava ile temizleyin.
 
 ## 2. Kenar Bantlama
 
-* GPU çip kenarına ve tüm VRAM çiplerinin dışına şeffaf sarı bant çekin.
-* Amaç: Sıvı metal taşması veya dökülmesi olursa kısa devreyi önlemek.
-
-
+- GPU çip kenarına ve tüm VRAM çiplerinin dışına şeffaf sarı bant çekin.
+- Amaç: Sıvı metal taşması veya dökülmesi olursa kısa devreyi önlemek.
 
 ## 3. Sıvı Metal ve Termal Macun Uygulaması
 
-* Çipe az miktarda sıvı metal damlatın ve üzerine Hydronaut macun sıkın.
-* Bir spatula ile çip üzerinde karıştırarak ince bir katman oluşturun.
-
-
+- Çipe az miktarda sıvı metal damlatın ve üzerine Hydronaut macun sıkın.
+- Bir spatula ile çip üzerinde karıştırarak ince bir katman oluşturun.
 
 ## 4. VRAM Üzerine Pul Montajı
 
-* VRAM'lere az sıvı metal + Hydronaut karışımı sürün.
-* Her VRAM'in üzerine 1.5 MM kalınlıkta pul yerleştirin.
-* Pulların üzerine yine az sıvı metal ve Hydronaut karışımı uygulayın.
-
-
+- VRAM'lere az sıvı metal + Hydronaut karışımı sürün.
+- Her VRAM'in üzerine 1.5 MM kalınlıkta pul yerleştirin.
+- Pulların üzerine yine az sıvı metal ve Hydronaut karışımı uygulayın.
 
 ## 5. VRM ve Diğer Alanlar İçin Ekstra Destek
 
-* Fabrika çıkışındaki VRM, mosfet, kapasitör gibi bölgelere Hydronaut sürün.
-* Üzerine uygun boyutta pad yerleştirin.
+- Fabrika çıkışındaki VRM, mosfet, kapasitör gibi bölgelere Hydronaut sürün.
+- Üzerine uygun boyutta pad yerleştirin.
   **Sakın sıvı metal kullanmayın!**
-
-
 
 ## 6. Yeniden Montaj
 
-* Fanları plastik kalıba takın.
-* Soğutma bloğunu plastik cover'a vidalayın.
-* GPU bloğunu PCB'ye dikkatlice yerleştirip fan ve ARGB pinlerini takın.
-* Çarpraz şekilde bloğu sıkıca vidalayın.
-* Soğutma bloğunun çekirdeğe ve VRAM'lere tam temas ettiğinden gözle kontrol edin.
+- Fanları plastik kalıba takın.
+- Soğutma bloğunu plastik cover'a vidalayın.
+- GPU bloğunu PCB'ye dikkatlice yerleştirip fan ve ARGB pinlerini takın.
+- Çarpraz şekilde bloğu sıkıca vidalayın.
+- Soğutma bloğunun çekirdeğe ve VRAM'lere tam temas ettiğinden gözle kontrol edin.
 
-
-[responsive_img src="/images/rtx-4060-sıvı-metal-xl.webp" alt="4060 sıvı metal" /]
----
+## [responsive_img src="/images/rtx-4060-sivi-metal-xl.webp" alt="4060 sıvı metal" /]
 
 # Sonuç
 
-Sıvı metal kullanımı doğru yapılırsa GPU'nuzda **%10-20'ye kadar sıcaklık iyileştirmesi** sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı geri dönüşümsüz şekilde bozabilir.
+Sıvı metal kullanımı doğru yapılırsa GPU'nuzda **%10-20'ye kadar sıcaklık iyileştirmesi** sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı **geri dönüşümsüz şekilde bozabilir**.
 
 Bu rehberi adım adım uygularsanız, en yüksek performansı güvenli bir şekilde elde edebilirsiniz.
 Unutmayın: **Alüminyum yüzeylerde sıvı metal kullanmayın!**
 
 ---
-

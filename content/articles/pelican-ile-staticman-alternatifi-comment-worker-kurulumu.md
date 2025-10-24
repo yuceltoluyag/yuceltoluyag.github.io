@@ -19,7 +19,6 @@ Statik blog altyapısı kullanan geliştiriciler için dinamik yorum sistemleri 
 
 `comment-worker`, Cloudflare Workers üzerinde çalışan, kullanıcı yorumlarını GitHub ya da GitLab gibi platformlara JSON dosyası olarak pushlayan modern bir yorum altyapısı çözümüdür. Statik sitelere dinamik içerik eklemenin güvenli ve sürdürülebilir bir yoludur.
 
-
 [responsive_img src="/images/comment-worker-kurulumu-xl.webp" alt="comment-worker-cloudflare-settings" /]
 
 ### Öne Çıkan Özellikleri
@@ -47,9 +46,7 @@ Statik blog altyapısı kullanan geliştiriciler için dinamik yorum sistemleri 
 - Kimlikler artık `cuid2` ile oluşturuluyor.
 - Giriş doğrulama ve veri dönüşümleri için Zod kullanılıyor.
 
-!!! note "Eksik Özellikler"
-    ⚠️ Henüz mevcut olmayan özellikler: dokümantasyon, testler, JSON/frontmatter desteği, GitHub token auth, bildirim, anti-spam, auth, generatedFields ve OneDev/GitLab desteği. Yorumlara artık `date` alanı otomatik olarak ekleniyor.
-</div>
+!!! note "Eksik Özellikler ⚠️ Henüz mevcut olmayan özellikler: dokümantasyon, testler, JSON/frontmatter desteği, GitHub token auth, bildirim, anti-spam, auth, generatedFields ve OneDev/GitLab desteği. Yorumlara artık `date` alanı otomatik olarak ekleniyor."
 
 ## Kurulum Aşamaları 📆
 
@@ -57,28 +54,24 @@ Statik blog altyapısı kullanan geliştiriciler için dinamik yorum sistemleri 
 
 Cloudflare hesabınıza giriş yaparak yeni bir Worker oluşturun ve `comment-worker` kodlarını deploy edin:
 
-👉 [Cloudflare'a Hemen Deploy Et](https://deploy.workers.cloudflare.com/?url=https://github.com/smooshy/comment-worker){: target="_blank" rel="noopener noreferrer"}
+👉 [Cloudflare'a Hemen Deploy Et](https://deploy.workers.cloudflare.com/?url=https://github.com/smooshy/comment-worker){: target="\_blank" rel="noopener noreferrer"}
 
-!!! warning "Hata Durumunda"
-    ⚠️ Eğer hata alırsanız, oluşturulan reponuzdan src, package.json ve wrangler.toml dosyalarını ana projeden kopyalayarak tekrar deploy edebilirsiniz.
-</div>
-
-
+!!! warning "Hata Durumunda ⚠️ Eğer hata alırsanız, oluşturulan reponuzdan src, package.json ve wrangler.toml dosyalarını ana projeden kopyalayarak tekrar deploy edebilirsiniz."
 
 Lokalde test etmek için:
+
 ```bash
 wrangler dev
 ```
 
-Ayrıca kendi örnek projemi de inceleyebilirsiniz: [comment-worker örneği](https://github.com/yuceltoluyag/comment-worker){: target="_blank" rel="noopener noreferrer"}
+Ayrıca kendi örnek projemi de inceleyebilirsiniz: [comment-worker örneği](https://github.com/yuceltoluyag/comment-worker){: target="\_blank" rel="noopener noreferrer"}
 
 ### 2. GitHub Uygulaması Kurulumu
 
-- [GitHub Apps](https://github.com/settings/apps){: target="_blank" rel="noopener noreferrer"} sayfasından yeni bir uygulama oluşturun
+- [GitHub Apps](https://github.com/settings/apps){: target="\_blank" rel="noopener noreferrer"} sayfasından yeni bir uygulama oluşturun
 - Aşağıdaki izinleri tanımlayın:
   - **Contents**: read & write
   - **Pull requests**: read & write
-
 
 [responsive_img src="/images/comment-worker-staticman-app-xl.webp" alt="GHA Permissions" /]
 
@@ -86,27 +79,22 @@ Ayrıca kendi örnek projemi de inceleyebilirsiniz: [comment-worker örneği](ht
 
 Cloudflare Workers Settings kısmından aşağıdaki bilgileri ekleyin:
 
-| key                      | örnek                                       | açıklama                                                |
-|--------------------------|----------------------------------------------|---------------------------------------------------------|
-| GITHUB_APP_ID            | 123456                                      | GitHub Uygulamasının Kimliği                           |
-| GITHUB_APP_PRIVATE_KEY   | -----BEGIN PRIVATE KEY-----...               | GitHub Özel Anahtarı                                    |
-| GITHUB_ORGANIZATION_SLUG| github kullanıcı adı                         | Kuruluş veya kullanıcı adı                              |
-| GITHUB_REPOSITORY_SLUG   | yuceltoluyag.github.io                      | Yorumların pushlanacağı repo                           |
-| GITHUB_REPOSITORY_BRANCH | main                                        | Hedef dal (branch)                                      |
-| CW_ALLOWED_ORIGINS       | https://example.com, https://www.example.com| CORS whitelist                                          |
-| CW_DEBUG                 | true / false                                | Hata ayıklama modu                                      |
-| TURNSTILE_SECRET_KEY                 |           https://developers.cloudflare.com/turnstile/get-started/                      | Im Not Human : )                                      |
+| key                      | örnek                                                    | açıklama                     |
+| ------------------------ | -------------------------------------------------------- | ---------------------------- |
+| GITHUB_APP_ID            | 123456                                                   | GitHub Uygulamasının Kimliği |
+| GITHUB_APP_PRIVATE_KEY   | -----BEGIN PRIVATE KEY-----...                           | GitHub Özel Anahtarı         |
+| GITHUB_ORGANIZATION_SLUG | github kullanıcı adı                                     | Kuruluş veya kullanıcı adı   |
+| GITHUB_REPOSITORY_SLUG   | yuceltoluyag.github.io                                   | Yorumların pushlanacağı repo |
+| GITHUB_REPOSITORY_BRANCH | main                                                     | Hedef dal (branch)           |
+| CW_ALLOWED_ORIGINS       | https://example.com, https://www.example.com             | CORS whitelist               |
+| CW_DEBUG                 | true / false                                             | Hata ayıklama modu           |
+| TURNSTILE_SECRET_KEY     | https://developers.cloudflare.com/turnstile/get-started/ | Im Not Human : )             |
 
-
-!!! important "Debug Modu"
-    CW_DEBUG başlangıçta true olarak ayarlanmalıdır. Böylece sorunları kolayca görebilirsiniz.
-</div>
-
+!!! note "Debug Modu CW_DEBUG başlangıçta true olarak ayarlanmalıdır. Böylece sorunları kolayca görebilirsiniz."
 
 [responsive_img src="/images/comment-worker-staticman-xl.webp" alt="comment-worker-cloudflare-settings" /]
 
 Build ayarlarında da aynı env değişkenlerini tanımlamayı unutmayın:
-
 
 [responsive_img src="/images/comment-worker-staticman-pelican-xl.webp" alt="comment-worker-cloudflare-settings" /]
 
@@ -161,17 +149,18 @@ comments:
   <button type="reset">Reset</button>
 </form>
 ```
+
 ### 6. API İsteklerinde İçerik Türü Belirtme
 
 API'ye veri gönderirken dikkat etmeniz gereken bir nokta var. Sistem iki farklı format kabul ediyor:
 
--   **Form verisi formatı** (`application/x-www-form-urlencoded`)
--   HTML formlarından alışık olduğunuz format
--   Veriler `isim=değer&diğer=başkadeğer` şeklinde gönderilir
--   Örnek: `kullaniciadi=ahmet&sifre=123456`
--   **JSON formatı** (`application/json`)
--   Veri nesne olarak gönderilir
--   Örnek: `{"kullaniciadi": "ahmet", "sifre": "123456"}`
+- **Form verisi formatı** (`application/x-www-form-urlencoded`)
+- HTML formlarından alışık olduğunuz format
+- Veriler `isim=değer&diğer=başkadeğer` şeklinde gönderilir
+- Örnek: `kullaniciadi=ahmet&sifre=123456`
+- **JSON formatı** (`application/json`)
+- Veri nesne olarak gönderilir
+- Örnek: `{"kullaniciadi": "ahmet", "sifre": "123456"}`
 
 **Önemli**: Hangi formatı kullanırsanız kullanın, bunu isteğinizin `Content-Type` başlığında belirtmeniz gerekiyor. API, veri formatını otomatik tespit etmiyor. Kullandığınız formatı açıkça belirtmek zorundasınız.
 
@@ -194,6 +183,7 @@ kullaniciadi=ahmet&sifre=123456
 ```
 
 İsteğinizi gönderirken bu kurala dikkat etmezseniz, API büyük ihtimalle hatalar verecektir.
+
 ```json
 {
   "fields": {
@@ -213,4 +203,3 @@ kullaniciadi=ahmet&sifre=123456
 comment-worker ile Pelican blogunuza dinamik yorum sistemi entegre etmek artık hem kolay hem de modern bir çözüm sunuyor. Cloudflare Workers sayesinde dünya genelinde hızlı, ölçeklenebilir ve ücretsiz bir yapı elde edebilirsiniz.
 
 Okuyucularınızdan gelen yorumlarla blogunuzu daha interaktif hale getirin ve topluluğunuzu büyütün! 🚀💬
-

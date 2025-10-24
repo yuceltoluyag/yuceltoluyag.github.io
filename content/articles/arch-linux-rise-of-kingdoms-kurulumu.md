@@ -53,13 +53,7 @@ yay -S wine-ge lutris winetricks
 winetricks corefonts vcrun2019 d3dcompiler_47
 ```
 
-<div role="alert" class="alert alert-warning alert-soft">
-<iconify-icon icon="line-md:account-alert-loop" width="24" height="24"></iconify-icon>
-  <h4>Not:</h4>
-<p>
-    <strong>Bu ayarları Lutris sizin için yapıyor. Olurda başka oyunlarda bir hatayla karşılaşırsanız, bu ayarları kendiniz yapabilirsiniz.</strong>
-</p>
-</div>
+!!! note "<strong>Bu ayarları Lutris sizin için yapıyor. Olurda başka oyunlarda bir hatayla karşılaşırsanız, bu ayarları kendiniz yapabilirsiniz.</strong>"
 
 ## 🗅️ 4. Grafik Glitch ve Titreme Sorunlarının Giderilmesi
 
@@ -153,4 +147,4 @@ Linux kullanıcıları için Lutris büyük bir nimet. Rise of Kingdoms gibi nat
 
 -- [/rise-of-kingdom-bot ](/veda-rise-of-kingdom-bot)
 
-Canlı Yayın Tekrarı : [Canlı Yayın tekrarını izlemek için dıkla](https://kick.com/babapy/videos/2063d6f8-eba5-44af-8877-2ba34dd2d9c9)
+Canlı Yayın Tekrarı : [Canlı Yayın tekrarını izlemek için dıkla](https://kick.com/babapy/videos/2063d6f8-eba5-44af-8877-2ba34dd2d9c9){: target="\_blank" rel="noopener noreferrer"}

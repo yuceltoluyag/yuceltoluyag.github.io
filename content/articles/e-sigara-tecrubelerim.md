@@ -16,6 +16,7 @@ Image: images/esigara-yararlimi-zararlimi-xl.webp
 Günde **bir paket sigara** içen biri olarak, elektronik sigaraya geçtikten sonraki deneyimlerimi paylaşmak istiyorum. Öncelikle, bu cihazı **bilinçli olarak almadım**; tamamen arkadaşımın "Al abi, bir dene" önerisiyle ortaya çıkan bir serüven oldu.
 
 # Neden E-Sigara?
+
 Cihazı aldıktan sonra, kendi kendime "Acaba sigarayı bıraksaydım, bu ürün gerçekten sigarayı bırakmaya yardımcı olur muydu? Sigaradan daha az mı masraflı olurdu?" gibi sorular sordum. Bu soruların yanıtlarını ararken, kendimi **kobay faresi** olarak kullandım. Cihaz elime geçene kadar, **sigarayı bırakma** gibi bir niyetim yoktu.
 
 ## Smok NORD KIT
@@ -26,12 +27,13 @@ Arkadaşım bu cihazı bana verdiğinde, üç adet nikotinsiz 30 ml likit vardı
 - 30 ml likit => 30 TL (ortalama)
 - Coil (5'li paket) => 150 TL
 
-| **Artılar**                         | **Eksiler**                         |
-|-------------------------------------|-------------------------------------|
-| 1. Kurulumu ve kullanımı oldukça kolay | 1. Batarya kapasitesi düşük         |
-| 2. Taşınabilir                      | 2. Tank kapasitesi küçük            |
+| **Artılar**                            | **Eksiler**                 |
+| -------------------------------------- | --------------------------- |
+| 1. Kurulumu ve kullanımı oldukça kolay | 1. Batarya kapasitesi düşük |
+| 2. Taşınabilir                         | 2. Tank kapasitesi küçük    |
 
 # Smok NORD KIT Kullanımı
+
 Cihazı yanınızda taşırken dikkat etmeniz gerekir çünkü tuşu çok hassastır. Cebinizdeyken coili yakabilirsiniz. Geniş bir eşofman cebine koymama rağmen, birkaç coilim böylece zarar gördü. Bana göre, bu cihazın aslında kullanım amacı şu: Evde kullandığınız büyük bir e-sigara (**Smok Alien 220 W, Vaporesso Revenger** vb.) varsa, bu cihazı dışarıda kısa süreli işlerinizde yanınızda taşırsınız. Kısa süreli derken, şarjı ortalama 2 saat gidiyor. (Emzik gibi ağzımdan düşmüyor 😊) Bu 2 saatlik sürenin dışında dışarıda daha fazla zaman geçirecekseniz, likitinizi ve şarj kablonuzu yanınıza almanızda fayda var. Web sitelerinde 45 dakikada şarj olduğunu söyleseler de, benim kullandığım cihaz 1-1.5 saatte şarj oluyor. Belki şarj adaptörü ve kablomdandır diye onları da değiştirdim ama değişen bir şey olmadı. Bu 2 saatlik süre boyunca, benim gibi sürekli kullanan biriyseniz 2-3 kez tankı doldurmanız gerekebilir. Bu da yaklaşık 9 ml yapar.
 
 # Sigarayı Arattı mı?
@@ -60,7 +62,6 @@ Diyelim ki **son coiliniz** ömrünü doldurmak üzere ya da yandı, sipariş ve
 
 # Kullandığım Tatlar
 
-
 [responsive_img src="/images/esigara-yararlimi-zararlimi-xl.webp" alt="Manhattan Likit" /]
 
 Resimden de anlaşılacağı üzere ben Manhattan likitlerini kullanıyorum. Sık kullandıklarım:
@@ -75,17 +76,13 @@ Site ilgili, yazılımı otomatiğe bağlamış. Siparişinizi verin, arkanıza 
 
 Sigara bırakmaya yardımcı olduğunu düşünüyorum. Eğer çok ağır bir içiciyseniz, 9 mg nikotinli seviyeden başlayıp, yavaşça nikotinsizliğe geçebilirsiniz. Sigara gibi yorgunluk veya tembellik hissiyatı vermez. En önemlisi de kullandığınız likitler çok güzel kokar; sigaranın o kötü kokusu yoktur artık. Sabahları uyandığınızda boğazınızdaki yanma ve ağzınızın içinin kötü kokması gibi durumlar yoktur. Bunun neden yasak olduğuna gelince, bilemiyorum, altan bilemiyorum... 😄
 
-!!! important "Önemli Dozaj Bilgisi"
-    6 mg, 9 mg nikotinlerde nikotin oranı arttığı için yukarıdaki paket hesabının geçersiz olduğunu unutmayın. Ben, lark ve kırmızı Winston içen birisiyim. Bana 3 mg nikotinli likitler yeterli oluyordu. Siz kömür içiyorsanız, salt likitten aşağısı sizi kurtarmaz. 😊 Yani abartmanın anlamı yok, salt likitlere yaklaşmanızı tavsiye etmem. Kendiniz deneyimleyip görün. 3 mg'le başlayın, yavaş yavaş azaltın... İnsan olun azıcık! 😄
-</div>
+!!! danger "Önemli Dozaj Bilgisi; 6 mg, 9 mg nikotinlerde nikotin oranı arttığı için yukarıdaki paket hesabının geçersiz olduğunu unutmayın. Ben, lark ve kırmızı Winston içen birisiyim. Bana 3 mg nikotinli likitler yeterli oluyordu. Siz kömür içiyorsanız, salt likitten aşağısı sizi kurtarmaz. 😊 Yani abartmanın anlamı yok, salt likitlere yaklaşmanızı tavsiye etmem. Kendiniz deneyimleyip görün. 3 mg'le başlayın, yavaş yavaş azaltın... İnsan olun azıcık! 😄"
 
 # Zararları
 
 Ağız kuruluğu yapar, bol bol su içersiniz. Olur olmadık yerde gaz çıkartabilirsiniz 😊 Başka bir şeyini görmedim. Dediğim gibi, bu alet gerçekten sigarayı bırakmaya yardımcı olabilir. Kullanalı iki ay oldu, sigarayı hiç aramadım. Bir keresinde yakayım dedim, leş gibi koktu ve çok ekşi bir tat geldiği için direkt söndürdüm.
 
-!!! important "Sağlık Uyarısı"
-    Arkadaşlar, kullanmadan önce mutlaka doktorunuza danışın. Dişleriniz hassastır ya da damak rahatsızlığınız vardır, yazımla gaza gelip kullanmaya kalkmayın. Sonuçta ağzınıza ısı veriyorsunuz. Kullanırken de mutlaka kaliteli likitler kullanın; piyasada o kadar kalitesiz likit var ki, sigarayı bırakacağım derken başka yerinizden olmayın...
-</div>
+!!! danger "Sağlık Uyarısı; Arkadaşlar, kullanmadan önce mutlaka doktorunuza danışın. Dişleriniz hassastır ya da damak rahatsızlığınız vardır, yazımla gaza gelip kullanmaya kalkmayın. Sonuçta ağzınıza ısı veriyorsunuz. Kullanırken de mutlaka kaliteli likitler kullanın; piyasada o kadar kalitesiz likit var ki, sigarayı bırakacağım derken başka yerinizden olmayın..."
 
 # Sezon Finali
 

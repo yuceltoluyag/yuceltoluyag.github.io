@@ -1,4 +1,4 @@
-{% if GTM_ID %}
+{% if GTM_ID and PUBLISH %}
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe
@@ -8,7 +8,7 @@
         style="display: none; visibility: hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-{% endif %} {% if GOOGLE_ANALYTICS %}
+{% endif %} {% if GOOGLE_ANALYTICS and PUBLISH %}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
 <script>

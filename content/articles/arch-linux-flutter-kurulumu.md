@@ -760,15 +760,15 @@ Tebrikler! 🎉 2025'in en güncel teknolojileri ile Arch Linux'ta tam fonksiyon
 
 ### Öğrenme Kaynakları 📚
 
-- 📖 [Flutter 2025 Documentation](https://flutter.dev/docs)
-- 🎥 [Flutter Forward 2025](https://youtube.com/flutterdev)
-- 💻 [Dart 3.6 Language Guide](https://dart.dev/guides)
-- 🏗️ [Modern Flutter Architecture](https://github.com/flutter/samples)
+- 📖 [Flutter 2025 Documentation](https://flutter.dev/docs){: target="_blank" rel="noopener noreferrer"}
+- 🎥 [Flutter Forward 2025](https://youtube.com/flutterdev){: target="_blank" rel="noopener noreferrer"}
+- 💻 [Dart 3.6 Language Guide](https://dart.dev/guides){: target="_blank" rel="noopener noreferrer"}
+- 🏗️ [Modern Flutter Architecture](https://github.com/flutter/samples){: target="_blank" rel="noopener noreferrer"}
 
 ### Community ve Destek 🤝
 
-- 📱 [r/FlutterDev](https://reddit.com/r/FlutterDev)
-- 🐧 [Arch Linux Forums](https://bbs.archlinux.org/)
+- 📱 [r/FlutterDev](https://reddit.com/r/FlutterDev){: target="_blank" rel="noopener noreferrer"}
+- 🐧 [Arch Linux Forums](https://bbs.archlinux.org/){: target="_blank" rel="noopener noreferrer"}
 
 ### Başlangıç Projeleri  🚀
 

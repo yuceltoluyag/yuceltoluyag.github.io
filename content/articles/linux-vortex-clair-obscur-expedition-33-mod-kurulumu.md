@@ -33,10 +33,7 @@ Ancak Linux’ta Proton veya Wine ortamında bu yolun karşılığı şöyledir:
 ENOTDIR: not a directory
 ```
 
-!!! note "Bilgi"
-Bu hata, Vortex’in beklediği klasör yapısının bir dosya ile çakıştığını gösterir. Genellikle yanlış bağlama (symlink) veya eksik dizin yapısından kaynaklanır.
-
-</div>
+!!! note "Bu hata, Vortex’in beklediği klasör yapısının bir dosya ile çakıştığını gösterir. Genellikle yanlış bağlama (symlink) veya eksik dizin yapısından kaynaklanır."
 
 Bu durumda **symlink (sembolik bağlantı)** veya **bind mount** kullanabilirsiniz. Ancak bazı modlar IO-Store üzerinden fiziksel dosya kontrolü yaptığı için **dosyaları gerçekten taşımak** daha güvenli bir çözümdür.
 
@@ -50,10 +47,7 @@ Modlama işlemi öncesi mutlaka oyun dosyalarınızı ve kayıtlarınızı yedek
 cp -r "/mnt/steam_depo/BaBaGames/Clair Obscur Expedition 33" "/home/friday13/backup/Clair Obscur Expedition 33"
 ```
 
-!!! important "Önemli"
-Yedek almadan yapılan değişiklikler geri alınamaz hale gelebilir. Özellikle `.sav` uzantılı kayıt dosyaları kritik öneme sahiptir.
-
-</div>
+!!! danger "Yedek almadan yapılan değişiklikler geri alınamaz hale gelebilir. Özellikle `.sav` uzantılı kayıt dosyaları kritik öneme sahiptir."
 
 ---
 
@@ -72,10 +66,7 @@ mv "/mnt/steam_depo/BaBaGames/Clair Obscur Expedition 33" \
    "/home/friday13/.config/steamtinkerlaunch/vortex/compatdata/pfx/drive_c/Games/"
 ```
 
-!!! tip "İpucu"
-Eğer dosya izinleriyle ilgili hata alırsanız, komutun başına <code>sudo</code> ekleyebilirsiniz. Ancak mümkünse kullanıcı izinlerini değiştirmek yerine kendi hesabınızla işlem yapın.
-
-</div>
+!!! tip "Eğer dosya izinleriyle ilgili hata alırsanız, komutun başına <code>sudo</code> ekleyebilirsiniz. Ancak mümkünse kullanıcı izinlerini değiştirmek yerine kendi hesabınızla işlem yapın."
 
 ---
 
@@ -123,10 +114,7 @@ C:\Games\Vortex Mods\clairobscurexpedition33
 2. Oyunu “Modlu" olarak başlatın.
 3. “ENOTDIR" hatası görünmüyorsa kurulum başarılı demektir.
 
-!!! note "Bilgi"
-Modlar yüklenmiyorsa staging folder ve oyun dizinlerini kontrol edin. Yanlış dosya izinleri veya eksik dizinler sorun çıkarabilir.
-
-</div>
+!!! note "Modlar yüklenmiyorsa staging folder ve oyun dizinlerini kontrol edin. Yanlış dosya izinleri veya eksik dizinler sorun çıkarabilir."
 
 ---
 

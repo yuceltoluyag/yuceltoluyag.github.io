@@ -14,24 +14,13 @@ Image: images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp
 
 # 📱 Redmi Note 8 Pro'ya Custom ROM Yükleme: Arch Linux'ta Adım Adım Kılavuz
 
-!!! important "Önemli"
-    ⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.  
-            Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.  
-            Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz.
-</div>
+!!! danger "Önemli ⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz."
 
-!!! warning "Uyarı"
-    📱 İşlem sırasında telefonunuzdaki önemli veriler (uygulamalar, ayarlar, dosyalar vb.) kaybolabilir.  
-            Mutlaka işlem öncesi yedeklerinizi alın ve önemli dosyalarınızı yedekleyin.
-</div>
+!!! warning "Uyarı 📱 İşlem sırasında telefonunuzdaki önemli veriler (uygulamalar, ayarlar, dosyalar vb.) kaybolabilir.Mutlaka işlem öncesi yedeklerinizi alın ve önemli dosyalarınızı yedekleyin."
 
-!!! tip "İpucu"
-    🔧 Ben <strong>Redmi Note 8 Pro</strong> kullanıcısıyım ve bu rehberi kendi cihazımda uyguladım.
-</div>
+!!! tip "🔧 Ben <strong>Redmi Note 8 Pro</strong> kullanıcısıyım ve bu rehberi kendi cihazımda uyguladım."
 
-!!! warning "Kritik Uyarı"
-    <a href="/mediatek-imei-onarma-rehberi/" style="color: #dc2626; font-weight: bold;">/mediatek-imei-onarma-rehberi/</a> adresindeki adımları eksiksiz tamamlamadan bu işleme geçmeyin! IMEI yedekleme/onarma işlemleri ROM kurulumundan önce mutlaka yapılmalıdır.
-</div>
+!!! warning "Kritik Uyarı <a href="/mediatek-imei-onarma-rehberi/" style="color: #dc2626; font-weight: bold;">/mediatek-imei-onarma-rehberi/</a> adresindeki adımları eksiksiz tamamlamadan bu işleme geçmeyin! IMEI yedekleme/onarma işlemleri ROM kurulumundan önce mutlaka yapılmalıdır."
 
 ## 🔍 Giriş
 
@@ -40,6 +29,7 @@ Android cihazlarınıza custom ROM yüklemek, hem performans artışı sağlamak
 ## 🛠️ Ön Hazırlıklar
 
 ### ADB ve Fastboot Kurulumu
+
 İlk olarak, cihazınızla iletişim kurmak için gerekli araçları kurmanız gerekiyor. Arch Linux'ta terminal açın ve şu komutu çalıştırın:
 
 ```bash
@@ -47,9 +37,11 @@ sudo pacman -S android-tools
 ```
 
 ### USB Hata Ayıklama Aktif Etme
+
 Cihazınızda **Ayarlar > Geliştirici Seçenekleri > USB hata ayıklama** seçeneğinin aktif olduğundan emin olun. Geliştirici seçeneklerini görmek için **Ayarlar > Telefon Hakkında > Yapım Numarası** üzerine 7 kez dokunmanız gerekebilir.
 
 ### Cihaz Bağlantısını Kontrol Etme
+
 Cihazınızı USB ile bilgisayarınıza bağlayın ve terminalde şu komutu çalıştırın:
 
 ```bash
@@ -60,11 +52,10 @@ Eğer cihazınız listede görünüyorsa, bağlantı başarılı demektir. 🟢
 
 ## 💾 IMEI Yedeği Alma
 
-!!! important "Önemli"
-    IMEI yedeği almak kritik öneme sahiptir! ROM yüklerken IMEI kaybolursa, cihazınız şebeke bulamaz.
-</div>
+!!! note "Önemli IMEI yedeği almak kritik öneme sahiptir! ROM yüklerken IMEI kaybolursa, cihazınız şebeke bulamaz."
 
 ### IMEI Bilgilerini Öğrenme
+
 Terminalde şu komutları çalıştırarak IMEI numaranızı öğrenebilirsiniz: [MediaTek IMEI Onarma Rehberi](/mediatek-imei-onarma-rehberi/) burada detaylı anlatılmıştır.Otamatik olarak yedekler,ancak manuel olarak da yedek alabilirsiniz. İleride lazım olabilir.
 
 ```bash
@@ -86,28 +77,30 @@ adb shell getprop | grep imei
 ```
 
 Örnek çıktı:
+
 ```
 [ro.ril.miui.imei0]: [xxxxxxxxxx]
 [ro.ril.miui.imei1]: [xxxxxxxxxxx]
 ```
+
 > Bu sadece IMEI numaralarını gösterir. Eğer cihazınızda çift SIM kart varsa, her iki kartın IMEI numarasını da not alın. Bu yöntem patch işlemi uygulamaz. Lütfen 1. yöntemi kullanın.
 
-
 ### NVRAM Yedeği Alma (Root Gerekli)
+
 NVRAM yedeği almak genellikle root erişimi gerektirir. Root erişiminiz yoksa, IMEI numaralarınızı not alarak yedekleme yapabilirsiniz. Makaleyi [MediaTek IMEI Onarma Rehberi](/mediatek-imei-onarma-rehberi/) adresinden inceleyebilirsiniz.
 
 ## 🔓 Bootloader Kilidini Açma
 
-!!! warning "Uyarı"
-    Bu işlem cihazınızdaki tüm verileri silecektir! Önemli verilerinizi yedeklediğinizden emin olun.
-</div>
+!!! warning "Bu işlem cihazınızdaki tüm verileri silecektir! Önemli verilerinizi yedeklediğinizden emin olun."
 
 ### Bootloader Moduna Geçme
+
 Cihazınızı bootloader moduna almak için:
 
 ```bash
 adb reboot bootloader
 ```
+
 örnek çıktı:
 
 ```bash
@@ -117,6 +110,7 @@ kvqcxo4xkr59oflf      fastboot
 ```
 
 ### Bootloader Kilidini Kontrol Etme
+
 Kilidin durumunu kontrol etmek için:
 
 ```bash
@@ -134,6 +128,7 @@ Finished. Total time: 0.000s
 ```
 
 ### Bootloader Kilidini Açma
+
 Xiaomi cihazlar için:
 
 ```bash
@@ -153,6 +148,7 @@ Cihazınızda onaylama istendiğinde, ses tuşlarıyla onaylayın.
 Cihazınıza uygun TWRP recovery imajını indirin. Redmi Note 8 Pro için genellikle `twrp.img` dosyası kullanılır.
 
 ### Recovery İmajını Flashlama
+
 İndirdiğiniz imajı flashlamak için:
 
 ```bash
@@ -169,6 +165,7 @@ Finished. Total time: 1.910s
 ```
 
 ### Recovery Moduna Başlatma
+
 Flash işleminden sonra cihazı recovery modunda başlatın:
 
 ```bash
@@ -199,11 +196,11 @@ TWRP menüsünden:
 ### ROM Yükleme Yöntemleri
 
 #### Yöntem 1: ADB Sideload Kullanımı
-!!! tip "İpucu"
-    Sideload, dosya transferi sorunları yaşadığınızda en güvenilir yöntemdir.
-</div>
+
+!!! tip "Sideload, dosya transferi sorunları yaşadığınızda en güvenilir yöntemdir."
 
 TWRP'de:
+
 1. **Advanced** > **ADB Sideload** seçeneğine girin
 2. **Swipe to Start Sideload** ile onaylayın
 3. PC'de şu komutu çalıştırın:
@@ -235,6 +232,7 @@ ROM kurulumundan sonra:
 ## ⚠️ Karşılaşılan Sorunlar ve Çözümleri
 
 ### "Failed to Mount Metadata" Hatası
+
 Bu hata Android 10+ sürümlerde metadata bölümünün mount edilememesinden kaynaklanır.
 
 **Çözüm:**
@@ -257,6 +255,7 @@ adb: error: failed to copy '/home/friday13/Downloads/Telegram Desktop/crDroid.zi
 Android 11+ sürümlerde dosya yazma kısıtlamalarından kaynaklanır.
 
 **Çözüm:**
+
 1. `/data/media/0/` dizinine kopyalamayı deneyin:
 
 ```bash
@@ -266,28 +265,27 @@ adb push "/path/to/rom.zip" /data/media/0/
 2. Veya sideload yöntemini kullanın (önerilir)
 
 ### "Corrupted NVRAM" Hatası
-!!! note "Bilgi"
-    Bu hata özellikle MediaTek cihazlarda NVRAM bölümünün bozulmasından kaynaklanır.
-</div>
+
+!!! note "Bu hata özellikle MediaTek cihazlarda NVRAM bölümünün bozulmasından kaynaklanır."
 
 **Çözüm:**
 
 1. Öncelikle ROM kurulumunu tamamlayın
-2. IMEI onarma için özel bir zip dosyası indirin (mtk_imei script)  [MediaTek IMEI Onarma Rehberi](/mediatek-imei-onarma-rehberi/)
+2. IMEI onarma için özel bir zip dosyası indirin (mtk_imei script) [MediaTek IMEI Onarma Rehberi](/mediatek-imei-onarma-rehberi/)
 3. TWRP'den bu zip dosyasını flashlayın
 4. Cihazı yeniden başlatın ve IMEI numaralarınızı kontrol edin
 
 ## 📋 Özet Tablo
 
-| İşlem | Komut / Yöntem | Notlar |
-|-------|----------------|--------|
-| ADB Kontrol | `adb devices` | Cihazın bağlı olduğunu doğrulayın |
-| IMEI Öğrenme | `adb shell getprop \| grep imei` | IMEI numaralarını not alın |
-| Bootloader Kilidi Açma | `fastboot flashing unlock` | Tüm verileri siler! |
-| TWRP Flashlama | `fastboot flash recovery twrp.img` | Cihaza uygun imaj kullanın |
-| ROM Yükleme | `adb sideload rom.zip` | En güvenilir yöntem |
-| Veri Temizleme | TWRP > Advanced Wipe | System, Data, Cache seçin |
-| NVRAM Onarma | mtk_imei script flashlama | ROM kurulumundan sonra yapın |
+| İşlem                  | Komut / Yöntem                     | Notlar                            |
+| ---------------------- | ---------------------------------- | --------------------------------- |
+| ADB Kontrol            | `adb devices`                      | Cihazın bağlı olduğunu doğrulayın |
+| IMEI Öğrenme           | `adb shell getprop \| grep imei`   | IMEI numaralarını not alın        |
+| Bootloader Kilidi Açma | `fastboot flashing unlock`         | Tüm verileri siler!               |
+| TWRP Flashlama         | `fastboot flash recovery twrp.img` | Cihaza uygun imaj kullanın        |
+| ROM Yükleme            | `adb sideload rom.zip`             | En güvenilir yöntem               |
+| Veri Temizleme         | TWRP > Advanced Wipe               | System, Data, Cache seçin         |
+| NVRAM Onarma           | mtk_imei script flashlama          | ROM kurulumundan sonra yapın      |
 
 ## 🎯 Sonuç
 

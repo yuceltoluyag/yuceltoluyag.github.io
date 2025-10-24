@@ -23,10 +23,7 @@ Bu yazıda, tam da bu senaryoda yaşanan sorunu nasıl çözdüğümü, neden ka
 
 Git commit’lerinizi GPG ile imzalamak, yaptığınız değişikliklerin gerçekten size ait olduğunu kanıtlar. Projelerde güvenilirlik sağlar ve özellikle açık kaynak dünyasında "kim yazdı bu kodu?" sorusunu ortadan kaldırır.
 
-!!! important "Önemli"
-GitHub ve GitLab gibi platformlar, imzalı commit’leri otomatik olarak doğrular ve “Verified" etiketiyle işaretler. Bu, güvenilirliğinizi artırır.
-
-</div>
+!!! note "Önemli : GitHub ve GitLab gibi platformlar, imzalı commit’leri otomatik olarak doğrular ve “Verified" etiketiyle işaretler. Bu, güvenilirliğinizi artırır."
 
 ---
 
@@ -90,10 +87,7 @@ Sonra agent’i yeniden başlatın:
 gpgconf --kill gpg-agent
 ```
 
-!!! tip "İpucu"
-VSCode + AI kombinasyonunda terminal tabanlı giriş bozuluyorsa, `pinentry-gtk` hayat kurtarıyor. Artık şifreyi eksiksiz ve sorunsuz girebilirsiniz.
-
-</div>
+!!! tip "VSCode + AI kombinasyonunda terminal tabanlı giriş bozuluyorsa, `pinentry-gtk` hayat kurtarıyor. Artık şifreyi eksiksiz ve sorunsuz girebilirsiniz."
 
 ---
 
@@ -135,10 +129,7 @@ git commit -S -m "Yeni özellik eklendi"
 git push origin main
 ```
 
-!!! warning "Uyarı"
-Sık yapılan hata: Commit’i attıktan sonra GitHub’da görememek. Bunun nedeni push yapmayı unutmanızdır.
-
-</div>
+!!! warning "Sık yapılan hata: Commit’i attıktan sonra GitHub’da görememek. Bunun nedeni push yapmayı unutmanızdır."
 
 ---
 
@@ -162,10 +153,7 @@ Sık yapılan hata: Commit’i attıktan sonra GitHub’da görememek. Bunun ned
   git push origin main
 ```
 
-!!! note "Bilgi"
-`default-cache-ttl` ayarı sayesinde aynı gün içinde defalarca commit atsanız bile şifreyi her seferinde sormaz.
-
-</div>
+!!! note "`default-cache-ttl` ayarı sayesinde aynı gün içinde defalarca commit atsanız bile şifreyi her seferinde sormaz."
 
 ---
 

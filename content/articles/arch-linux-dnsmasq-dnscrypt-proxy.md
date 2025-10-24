@@ -8,15 +8,15 @@ status: published
 summary: Arch Linux üzerinde dnsmasq ve dnscrypt-proxy kurulumunu yapın, port çakışmasını kontrol edin ve DNS çözümlemeyi test edin.
 template: article
 
-
 İnternet performansınızın temel taşlarından biri DNS’tir.  
-Bu makalede **Arch Linux üzerinde dnsmasq ve dnscrypt-proxy** kullanarak hem hızlı hem güvenli bir DNS altyapısı kuracak ve **çakışmaları, logları ve DNS çözümlemeyi test etmeyi** öğreneceksiniz.  
+Bu makalede **Arch Linux üzerinde dnsmasq ve dnscrypt-proxy** kullanarak hem hızlı hem güvenli bir DNS altyapısı kuracak ve **çakışmaları, logları ve DNS çözümlemeyi test etmeyi** öğreneceksiniz.
 
-💡 Bu makalede bulacaklarınız:  
-- dnsmasq kurulumu ve yapılandırması  
-- dnscrypt-proxy kurulumu ve güvenli DNS ayarları  
-- Port çakışması tespiti  
-- DNS çözümleme testi  
+💡 Bu makalede bulacaklarınız:
+
+- dnsmasq kurulumu ve yapılandırması
+- dnscrypt-proxy kurulumu ve güvenli DNS ayarları
+- Port çakışması tespiti
+- DNS çözümleme testi
 - Servis log kontrolü
 
 ---
@@ -27,6 +27,7 @@ Bu makalede **Arch Linux üzerinde dnsmasq ve dnscrypt-proxy** kullanarak hem h�
 Yerel DNS önbellekleme ve DHCP hizmetleri sağlar.
 
 ### 1.1 Kurulum
+
 ```bash
 sudo pacman -S dnsmasq
 ```
@@ -47,10 +48,7 @@ sudo systemctl start dnsmasq
 sudo systemctl enable dnsmasq
 ```
 
-!!! tip""
-    <div class="alert-title">İpucu</div>
-  Yerel ağınızda hız kazanmak için dnsmasq'ın DNS önbelleklemesini etkin kullanabilirsiniz.
-</div>
+!!! tip "Yerel ağınızda hız kazanmak için dnsmasq'ın DNS önbelleklemesini etkin kullanabilirsiniz."
 
 ---
 
@@ -84,10 +82,7 @@ sudo systemctl start dnscrypt-proxy
 sudo systemctl enable dnscrypt-proxy
 ```
 
-!!! important""
-    <div class="alert-title">Önemli</div>
-  listen_addresses farklı portta olmalı (ör. 5300), böylece dnsmasq ile çakışma olmaz.
-</div>
+!!! note "listen_addresses farklı portta olmalı (ör. 5300), böylece dnsmasq ile çakışma olmaz."
 
 ---
 
@@ -99,10 +94,7 @@ dnsmasq → dnscrypt-proxy zinciri ile hem hız hem güvenlik sağlar.
 2. dnscrypt-proxy’yi dnsmasq’a gelen sorguları şifreleyecek şekilde ayarlayın.
 3. Her iki servisi başlatın ve otomatik açılmalarını sağlayın.
 
-!!! warning""
-    <div class="alert-title">Uyarı</div>
-  Port çakışmalarını önlemek için dnscrypt-proxy farklı bir portta dinlemeli (ör. 5300).
-</div>
+!!! warning "Port çakışmalarını önlemek için dnscrypt-proxy farklı bir portta dinlemeli (ör. 5300)."
 
 ---
 
@@ -137,14 +129,11 @@ dig @127.0.0.1 archlinux.org
 
 Beklenen çıktıda:
 
-* **Status: NOERROR**
-* IP adresi dönmeli (ör. 95.217.163.246)
-* Query time makul olmalı
+- **Status: NOERROR**
+- IP adresi dönmeli (ör. 95.217.163.246)
+- Query time makul olmalı
 
-!!! note""
-    <div class="alert-title">Bilgi</div>
-  Bu adım DNS zincirinin doğru çalışıp çalışmadığını hızlıca doğrular.
-</div>
+!!! note "Bu adım DNS zincirinin doğru çalışıp çalışmadığını hızlıca doğrular."
 
 ---
 
@@ -156,20 +145,17 @@ Hataları veya uyarıları görmek için:
 journalctl -u dnsmasq -u dnscrypt-proxy --since "10 minutes ago"
 ```
 
-* Eğer **No entries** görünüyorsa her şey sorunsuz çalışıyor demektir.
+- Eğer **No entries** görünüyorsa her şey sorunsuz çalışıyor demektir.
 
-!!! tip""
-    <div class="alert-title">İpucu</div>
-  Logları düzenli kontrol etmek, özellikle ağ değişikliklerinden sonra olası problemleri yakalamanıza yardımcı olur.
-</div>
+!!! tip "Logları düzenli kontrol etmek, özellikle ağ değişikliklerinden sonra olası problemleri yakalamanıza yardımcı olur."
 
 ---
 
 ## 7. Sonuç 🌟
 
-* dnsmasq + dnscrypt-proxy ile güvenli ve hızlı DNS çözümleme kuruldu.
-* Port çakışması kontrol edildi, DNS sorguları doğru şekilde yönlendiriliyor.
-* Log ve test adımları ile sistem stabilitesi doğrulandı.
+- dnsmasq + dnscrypt-proxy ile güvenli ve hızlı DNS çözümleme kuruldu.
+- Port çakışması kontrol edildi, DNS sorguları doğru şekilde yönlendiriliyor.
+- Log ve test adımları ile sistem stabilitesi doğrulandı.
 
 💡 Öneri: LAN cihazlarınızın da güvenli DNS kullanmasını istiyorsanız, dnsmasq’ı ilgili ağ arayüzlerinde dinleyecek şekilde yapılandırabilirsiniz.
 
@@ -177,11 +163,7 @@ journalctl -u dnsmasq -u dnscrypt-proxy --since "10 minutes ago"
 
 ## Kaynaklar 📚
 
-* [Dnsmasq - ArchWiki](https://wiki.archlinux.org/title/Dnsmasq)
-* [Dnscrypt-proxy - ArchWiki](https://wiki.archlinux.org/title/Dnscrypt-proxy)
-
-
+- [Dnsmasq - ArchWiki](https://wiki.archlinux.org/title/Dnsmasq){: target="_blank" rel="noopener noreferrer"}
+- [Dnscrypt-proxy - ArchWiki](https://wiki.archlinux.org/title/Dnscrypt-proxy){: target="_blank" rel="noopener noreferrer"}
 
 ---
-
-
