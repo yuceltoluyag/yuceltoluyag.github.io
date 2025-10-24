@@ -27,6 +27,7 @@ Kimi zaman donan, kimi zaman kahkaha attıran bu yayın; teknik sorunların, oyu
 - **00:23:32** – FPS limitleri ve sohbet karışıklığı
 - **00:28:54** – Performans iyileştirme denemeleri
 - **00:34:18** – Karakter görünürlüğü ve dövüş zorlukları
+
   [responsive_img src="/images/ninja_qamil-xl.webp" alt="Ninja Qamil Ghost Of Tsushima" /]
 
 ---
@@ -64,10 +65,7 @@ Stuttering başladığında çözüm önerisi hazır:
 
 Yine de denemekten vazgeçmiyor. Yayın performansını artırmak için grafik ayarlarını minimize ediyor, ama oyunun sanatsal güzelliği hâlâ etkileyici. 🌸
 
-!!! tip "İpucu"
-Linux'ta OBS kullanırken kare düşüşlerini azaltmak için <code>ffmpeg_vaapi</code> veya <code>nvenc</code> donanım hızlandırmasını etkinleştirmeyi deneyin.
-
-</div>
+!!! tip "Linux'ta OBS kullanırken kare düşüşlerini azaltmak için <code>ffmpeg_vaapi</code> veya <code>nvenc</code> donanım hızlandırmasını etkinleştirmeyi deneyin."
 
 ---
 
@@ -94,10 +92,7 @@ Bir düşman burnunun dibine kadar geliyor ama duymuyor; diğeri duvardan fısı
 Karanlıkta yön bulmakta zorlanıyor, ışık arıyor, kılıç istiyor…
 Derken: “Biri bana meşale verin, hiçbir şey göremiyorum!"
 
-!!! warning "Uyarı"
-Linux'ta bazı grafik motorları düşük gamma değerleriyle çalışabilir. Oyun içi “Brightness" ayarını %60 üzerine çıkarın.
-
-</div>
+!!! warning "Linux'ta bazı grafik motorları düşük gamma değerleriyle çalışabilir. Oyun içi “Brightness" ayarını %60 üzerine çıkarın."
 
 ---
 
@@ -120,10 +115,7 @@ Ninja Kamil’in _Ghost of Tsushima_ macerası, hem oyun severler hem de Linux k
 Teknik hatalar, donmalar, beklenmedik telefon aramaları…
 Ama sonunda geriye kalan şey saf eğlenceydi.
 
-!!! important "Önemli"
-Yayınlarda karşılaşılan teknik hatalar sinir bozucu olsa da, izleyici için mizahın en saf haline dönüşebilir. Özellikle Linux üzerinde yayın yapmak cesaret ister!
-
-</div>
+!!! important "Yayınlarda karşılaşılan teknik hatalar sinir bozucu olsa da, izleyici için mizahın en saf haline dönüşebilir. Özellikle Linux üzerinde yayın yapmak cesaret ister!"
 
 ---
 

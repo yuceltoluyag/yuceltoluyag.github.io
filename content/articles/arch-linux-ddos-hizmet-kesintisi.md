@@ -73,7 +73,7 @@ Arch Linux kullanıcıları olarak şu anda karşılaşılan durum can sıkıcı
 
 AUR erişimi için GitHub klonları, ISO ve paketler için yansılar hâlâ erişilebilir durumda. Ayrıca bütün işlemler sırasında güvenlik imzası doğrulamasını ihmal etmeyin.
 
-- Archlinux sunucu durumlarını [buradan](https://status.archlinux.org/) takip edebilirsiniz.
+- Archlinux sunucu durumlarını [buradan](https://status.archlinux.org/){: target="_blank" rel="noopener noreferrer"} takip edebilirsiniz.
 
 ---
 

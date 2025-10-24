@@ -13,17 +13,14 @@ Status: published
 Template: article
 Image: images/laravel-valet-kurulumu-linux-xl.webp
 
-
-
 # Merhaba 👋
 
-Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel geliştirme ortamıdır. [Vagrant](/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu){: target="_blank" rel="noopener noreferrer"} veya `/etc/hosts` ayarlamaya gerek yoktur. Yerel tünelleri (Ngrok vb.) kullanarak sitelerinizi herkese açık olarak paylaşabilirsiniz. 🚀
+Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel geliştirme ortamıdır. [Vagrant](/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu){: target="\_blank" rel="noopener noreferrer"} veya `/etc/hosts` ayarlamaya gerek yoktur. Yerel tünelleri (Ngrok vb.) kullanarak sitelerinizi herkese açık olarak paylaşabilirsiniz. 🚀
 
 Valet, sisteminizi makine açıldığında **Nginx'i arka planda çalıştıracak şekilde yapılandırır**. Ardından, **DnsMasq** kullanarak `*.test` uzantılı domainlerinizi ilgili dizinlere yönlendirir. **Sadece 7MB RAM kullanarak çalışan, hızlı ve hafif bir Laravel geliştirme ortamı sunar.** 🎯
 
-!!! warning "Önceki Kurulumlar"
-    Daha önce <a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" rel="noopener noreferrer" target="_blank">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir.
-</div>
+!!! warning "Önceki Kurulumlar Daha önce <a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" rel="noopener noreferrer" target="_blank">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir."
+
 ## 🛠 Kurulum
 
 Terminali açın ve aşağıdaki komutları sırasıyla çalıştırın:
@@ -100,7 +97,6 @@ Bağlantıları listelemek için:
 valet links
 ```
 
-
 [responsive_img src="/images/laravel-valet-link-archlinux-xl.webp" alt="Laravel Valet Link Arch Linux" /]
 
 ## 🔧 Domain Uzantısını Değiştirme
@@ -145,8 +141,8 @@ valet unsecure projeadi
 
 ## 📚 Kaynaklar
 
-- [Valet Linux Resmi Belgeleri](https://cpriego.github.io/valet-linux/index#installation){: target="_blank" rel="noopener noreferrer"}
-- [Valet Linux Gereksinimler](https://cpriego.github.io/valet-linux/requirements.html#arch){: target="_blank" rel="noopener noreferrer"}
+- [Valet Linux Resmi Belgeleri](https://cpriego.github.io/valet-linux/index#installation){: target="\_blank" rel="noopener noreferrer"}
+- [Valet Linux Gereksinimler](https://cpriego.github.io/valet-linux/requirements.html#arch){: target="\_blank" rel="noopener noreferrer"}
 
 🎯 Artık Valet ile Laravel projelerinizi hızla geliştirebilir ve yerel ortamınızı optimize edebilirsiniz! 🚀
 

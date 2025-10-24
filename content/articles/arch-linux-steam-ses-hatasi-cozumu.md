@@ -26,10 +26,7 @@ Ingilizce hatalar:
 [responsive_img src="/images/Tannenberg-xl.webp" alt="Tannenberg Ses Motoru Hatası" /]
 [responsive_img src="/images/verdun-xl.webp" alt="Verdun audio engine error" /]
 
-!!! warning "Önemli Not"
-Bu rehberde sorunu, eklentileri tanıtarak yani 3. numaralı adımları uygulayarak çözdük. Bu nedenle diğer başlatma seçeneklerini kaldırdık. Ancak, sorunu bu yöntemle çözemeyen kullanıcılar için ek bilgileri bırakmaya devam ettim. Kafa karışıklığı yaşarsanız, önce rehberdeki 3. adımlarını uygulayın. Eğer işe yaramazsa diğer alternatif adımları deneyebilirsiniz.
-
-</div>
+!!! warning "Önemli Not Bu rehberde sorunu, eklentileri tanıtarak yani 3. numaralı adımları uygulayarak çözdük. Bu nedenle diğer başlatma seçeneklerini kaldırdık. Ancak, sorunu bu yöntemle çözemeyen kullanıcılar için ek bilgileri bırakmaya devam ettim. Kafa karışıklığı yaşarsanız, önce rehberdeki 3. adımlarını uygulayın. Eğer işe yaramazsa diğer alternatif adımları deneyebilirsiniz."
 
 ---
 
@@ -250,9 +247,9 @@ Bu ayar, oyunların sisteminizdeki düşük seviyeli ses yöneticileriyle daha u
 
 🧠 Eğer yukarıdaki tüm adımlara rağmen sorun yaşamaya devam ediyorsanız:
 
-- [Arch Linux forumlarını](https://bbs.archlinux.org/)
-- [Steam Topluluğu Tartışmalarını](https://steamcommunity.com/app) ziyaret edebilirsiniz.
-- [Steam'in resmi GitHub deposunu](https://github.com/ValveSoftware/steam) inceleyebilirsiniz.
+- [Arch Linux forumlarını](https://bbs.archlinux.org/){: target="_blank" rel="noopener noreferrer"}
+- [Steam Topluluğu Tartışmalarını](https://steamcommunity.com/app){: target="_blank" rel="noopener noreferrer"} ziyaret edebilirsiniz.
+- [Steam'in resmi GitHub deposunu](https://github.com/ValveSoftware/steam){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
 
 Benzer sorunları yaşamış kullanıcılar, sizinle çözüm yollarını paylaşabilir.
 

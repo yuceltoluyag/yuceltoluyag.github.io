@@ -29,7 +29,7 @@ Mod kurulumuna başlamadan önce sisteminizde bulunması gerekenler:
 
 ### Adım 1: Cyber Engine Tweaks İndirme 📥
 
-1. [Cyber Engine Tweaks GitHub sayfasına](https://github.com/yamashi/CyberEngineTweaks) gidin
+1. [Cyber Engine Tweaks GitHub sayfasına](https://github.com/yamashi/CyberEngineTweaks){: target="_blank" rel="noopener noreferrer"} gidin
 2. En son sürümü indirin
 3. ZIP dosyasını oyun dizininize çıkarın
 
@@ -215,8 +215,8 @@ Linux gaming topluluğu sürekli büyüyor ve Cyberpunk 2077 gibi AAA oyunlar ar
 
 ## 🔗 Faydalı Kaynaklar
 
-- [ProtonDB Cyberpunk Reports](https://www.protondb.com/app/1091500)
-- [r/linux_gaming Community](https://reddit.com/r/linux_gaming)
-- [NexusMods Cyberpunk Section](https://www.nexusmods.com/cyberpunk2077)
+- [ProtonDB Cyberpunk Reports](https://www.protondb.com/app/1091500){: target="_blank" rel="noopener noreferrer"}
+- [r/linux_gaming Community](https://reddit.com/r/linux_gaming){: target="_blank" rel="noopener noreferrer"}
+- [NexusMods Cyberpunk Section](https://www.nexusmods.com/cyberpunk2077){: target="_blank" rel="noopener noreferrer"}
 
 **Not:** Bu rehber sürekli güncellenmektedir. Yeni mod versiyonları ve Linux uyumluluğu değişiklikleri için takipte kalın! 🎮✨

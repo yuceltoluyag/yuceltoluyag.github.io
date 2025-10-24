@@ -9,21 +9,17 @@ Summary: Windows, Linux ve Android platformlarında sıkça kullandığım progr
 Translation: false
 Status: published
 Template: article
-Image: /images/comodo_firewall-xl.webp
+Image: images/comodo_firewall-xl.webp
 
 # Merhaba! 👋
 
 Uzun zamandır bu tür bir yazı yazmayı planlıyordum ama bir türlü fırsat bulamamıştım. 😊 Bu yazıda **Windows**, **Linux** ve **Android** platformlarında sıkça kullandığım ve tavsiye ettiğim uygulamalardan bahsedeceğim. Umarım faydalı olur! 🚀
 
+!!! note " Bu yazıyı bir seri haline getirmek istiyorum. Bakalım başarabilecek miyim? 🤞"
 
-!!! important "Yazı Serisi"
-    Bu yazıyı bir seri haline getirmek istiyorum. Bakalım başarabilecek miyim? 🤞
-</div>
 ## **Comodo Firewall (Güvenlik Duvarı) 🔥**
 
-
 [responsive_img src="/images/comodo_firewall.webp" alt="Comodo Firewall kullanıcı arayüzü" /]
-
 
 **Ücretsiz** versiyonunu kullanıyorum ve içerisinde **container (sanal ortam), antivirüs, güvenli tarayıcı** gibi birçok özellik barındırıyor. Güvenmediğiniz dosyaları sanal ortamda çalıştırabilirsiniz. Benzer bir özellik Windows 10'da **Windows Defender** ile de sunulmaya başlandı.
 
@@ -33,11 +29,9 @@ Ayrıca ağ trafiğinizi takip edebilir, hangi uygulamanın nereye veri gönderd
 
 Bu program, klavyede bastığınız tuşları anlık olarak şifreleyerek olası **keylogger saldırılarına** karşı koruma sağlar. Eğer bilgisayarınıza zararlı bir yazılım bulaşmışsa, **şifrelerinizi ve hassas verilerinizi koruyabilirsiniz.** 💻🛡️
 
-Programı [buradan indirebilirsiniz](https://www.qfxsoftware.com/download.htm){: target="_blank" rel="noopener noreferrer"}. Kurulumdan sonra bilgisayarınızı yeniden başlatın ve ekranın herhangi bir köşesinde şifreleme işlemini görüntüleyin.
-
+Programı [buradan indirebilirsiniz](https://www.qfxsoftware.com/download.htm){: target="\_blank" rel="noopener noreferrer"}. Kurulumdan sonra bilgisayarınızı yeniden başlatın ve ekranın herhangi bir köşesinde şifreleme işlemini görüntüleyin.
 
 [responsive_img src="/images/keyscrambler.webp" alt="Program Aktif" /]
-
 
 [responsive_img src="/images/keyscrambler2.webp" alt="Şifreleme Ekranı" /]
 
@@ -51,7 +45,7 @@ Güvenlik konusunda "Ben kimim ki?" demeyin, önlem almak her zaman iyidir! 😊
 
 **AdBlock** gibi popüler reklam engelleyicilerin kullanıcı verilerini topladığı iddialarından sonra, açık kaynak bir alternatif olan **uBlock Origin**'i kullanmaya başladım. Son derece hafif ve güçlü bir reklam engelleyici!
 
-Son zamanlarda ayrıca **[Pi-hole](https://pi-hole.net/){: target="_blank" rel="noopener noreferrer"}** kullanıyorum ve gerçekten memnunum. Eğer ağ bazlı bir reklam engelleyici arıyorsanız kesinlikle göz atmalısınız. 😁
+Son zamanlarda ayrıca **[Pi-hole](https://pi-hole.net/){: target="\_blank" rel="noopener noreferrer"}** kullanıyorum ve gerçekten memnunum. Eğer ağ bazlı bir reklam engelleyici arıyorsanız kesinlikle göz atmalısınız. 😁
 
 ## **Mobilde Reklamsız YouTube Deneyimi: Vanced App 📺**
 
@@ -75,4 +69,3 @@ Ayrıca aynı grubun geliştirdiği **Insta Aero** da mevcut. WhatsApp üzerinde
 💡 **Bu serinin ikinci bölümünde daha fazla program ve uygulama önereceğim!**
 
 **Part 2'de görüşmek üzere! 🚀**
-

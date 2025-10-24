@@ -45,10 +45,7 @@ Hazırsanız adım adım çözümlere geçelim. 🚀
   ERROR: ld.so: object '.../libfmodstudio.so' from LD_PRELOAD cannot be preloaded: ignored.
 ```
 
-!!! important "Önemli"
-Bu hatalar genellikle oyun çalıştırmayı engeller. Ancak çözüm basit: eksik kütüphaneleri ve doğru GameMode paketlerini kurmak.
-
-</div>
+!!! note "Bu hatalar genellikle oyun çalıştırmayı engeller. Ancak çözüm basit: eksik kütüphaneleri ve doğru GameMode paketlerini kurmak."
 
 ---
 
@@ -90,10 +87,7 @@ steam
 
 Bu şekilde Steam’i terminalden başlatın ve oyunu deneyin. Çalışırsa bu satırı **Steam başlatıcı ayarlarına** veya `~/.bashrc` dosyasına ekleyebilirsiniz.
 
-!!! tip "İpucu"
-Bu yöntem yalnızca test amaçlıdır. Kalıcı çözüm için manuel GameMode kurulumu (Yöntem 2) daha sağlıklıdır.
-
-</div>
+!!! tip "Bu yöntem yalnızca test amaçlıdır. Kalıcı çözüm için manuel GameMode kurulumu (Yöntem 2) daha sağlıklıdır."
 
 ---
 

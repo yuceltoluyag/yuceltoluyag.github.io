@@ -19,10 +19,10 @@ Bu yazıda, kendi yaşadığım deneyimlerden ve topluluk çözümlerinden yola 
 
 Öncelikle kısa bir özetle başlayalım. **Playwright**, Microsoft tarafından geliştirilen açık kaynaklı bir test otomasyon aracıdır. Sunduğu başlıca özellikler:
 
-* 🌐 Chromium, Firefox ve WebKit desteği
-* 🖥️ Headless (görünmez) ve headed (görünür) mod desteği
-* 📱 Mobil cihaz simülasyonu
-* ⚡ Hızlı ve güvenilir test otomasyonu
+- 🌐 Chromium, Firefox ve WebKit desteği
+- 🖥️ Headless (görünmez) ve headed (görünür) mod desteği
+- 📱 Mobil cihaz simülasyonu
+- ⚡ Hızlı ve güvenilir test otomasyonu
 
 Eğer bir web geliştiriciyseniz veya CI/CD süreçlerinizi otomatize etmek istiyorsanız Playwright oldukça işinize yarayacaktır.
 
@@ -39,9 +39,7 @@ sudo pacman -S --needed core/nss core/nspr extra/at-spi2-core extra/libcups extr
   extra/pango extra/cairo extra/alsa-lib extra/xorg-server-xvfb
 ```
 
-!!! important "Önemli"
-    Bu paketlerin çoğu tarayıcıların GUI ile ilgili ihtiyaçlarını karşılar. Özellikle headless modda bile çalışmak için bu bağımlılıklar gereklidir.
-</div>
+!!! note "Önemli Bu paketlerin çoğu tarayıcıların GUI ile ilgili ihtiyaçlarını karşılar. Özellikle headless modda bile çalışmak için bu bağımlılıklar gereklidir."
 
 ---
 
@@ -111,9 +109,7 @@ make get_voices
 sudo cp build/x86_64-linux-gnu/lib/*.so* /usr/lib
 ```
 
-!!! warning "Uyarı"
-    AUR’daki <code>flite1</code> paketi eksik kütüphanelerle geldiği için genellikle elle derlemek daha sağlıklıdır.
-</div>
+!!! warning "Uyarı AUR’daki <code>flite1</code> paketi eksik kütüphanelerle geldiği için genellikle elle derlemek daha sağlıklıdır."
 
 ### 🔹 `libxml2` Bağlantı Sorunları
 
@@ -152,9 +148,7 @@ Bu yöntem artık eskidi. Doğrusu şu şekilde olmalı:
 from playwright.sync_api import sync_playwright
 ```
 
-!!! tip "İpucu"
-    Playwright sürüm notlarını takip edin. Import yolları sık sık değişebiliyor.
-</div>
+!!! tip "İpucu Playwright sürüm notlarını takip edin. Import yolları sık sık değişebiliyor."
 
 ---
 
@@ -162,10 +156,10 @@ from playwright.sync_api import sync_playwright
 
 Arch Linux üzerinde Playwright kurulumu, diğer dağıtımlara göre biraz daha zahmetli olsa da doğru bağımlılıkları yükledikten sonra sorunsuz şekilde çalışıyor. Bu rehberde paylaştığım adımlar ile:
 
-* Gerekli bağımlılıkları kurdunuz ✅
-* AUR üzerinden Playwright yüklediniz ✅
-* Eksik kütüphaneleri giderdiniz ✅
-* Yaygın hatalara çözümler buldunuz ✅
+- Gerekli bağımlılıkları kurdunuz ✅
+- AUR üzerinden Playwright yüklediniz ✅
+- Eksik kütüphaneleri giderdiniz ✅
+- Yaygın hatalara çözümler buldunuz ✅
 
 Artık web uygulamalarınızı gönül rahatlığıyla Playwright kullanarak test edebilirsiniz. 🚀
 

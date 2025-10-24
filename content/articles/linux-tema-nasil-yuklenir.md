@@ -13,22 +13,21 @@ Image: images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp
 
 Merhaba, uzun süredir bloga bir şeyler yazmıyordum. Daha önce Unity kullanırken video çekmiştim, ancak sabit diskimin bozulması ve sıcak hava derken günler hızla geçti. 😃 Linux'ta tema yükleme işlemi oldukça kolaydır. Hangi dağıtımı veya masaüstü ortamını kullanıyor olursanız olun, süreç genellikle benzerdir. Örneğin, Unity için `unity-tweak-tool` kullanılırken, Gnome için `gnome-tweak-tool` tercih edilmektedir. XFCE kullandığım dönemde, özelleştirmeleri doğrudan yapabiliyorduk (yanılıyor olabilirim 🤔).
 
-
 [responsive_img src="/images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp" alt="linux-tema-nasil-yuklenir-gnome-shell-ve" /]
 
 ## 🌄 Arka Plan (Wallpaper) için Kullandığım Siteler
 
-1. [Alpha](https://alpha.wallhaven.cc/latest){: target="_blank" rel="noopener noreferrer"}
-2. [InterfaceLIFT](https://interfacelift.com/wallpaper/downloads/date/any/){: target="_blank" rel="noopener noreferrer"}
-3. [DeviantArt (Sık Kullanılmıyor)](https://www.deviantart.com/customization/wallpaper/popular-24-hours/){: target="_blank" rel="noopener noreferrer"}
+1. [Alpha](https://alpha.wallhaven.cc/latest){: target="\_blank" rel="noopener noreferrer"}
+2. [InterfaceLIFT](https://interfacelift.com/wallpaper/downloads/date/any/){: target="\_blank" rel="noopener noreferrer"}
+3. [DeviantArt (Sık Kullanılmıyor)](https://www.deviantart.com/customization/wallpaper/popular-24-hours/){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 
 ## 🎨 Tema, İkon, İmleç ve Shell İçin Kaynaklar
 
-1. [DeviantArt](https://www.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/newest/?offset=0){: target="_blank" rel="noopener noreferrer"}
-2. [Gnome-Look](https://www.gnome-look.org/){: target="_blank" rel="noopener noreferrer"}
-3. [XFCE Masaüstü İçin](https://www.xfce-look.org/){: target="_blank" rel="noopener noreferrer"}
+1. [DeviantArt](https://www.deviantart.com/customization/skins/linuxutil/desktopenv/gnome/gtk3/newest/?offset=0){: target="\_blank" rel="noopener noreferrer"}
+2. [Gnome-Look](https://www.gnome-look.org/){: target="\_blank" rel="noopener noreferrer"}
+3. [XFCE Masaüstü İçin](https://www.xfce-look.org/){: target="\_blank" rel="noopener noreferrer"}
 
 Özellikle DeviantArt'ta doğru aramalar yaparak veya menüleri kullanarak istediğiniz içeriğe kolayca ulaşabilirsiniz. Yukarıda belirttiğim siteler genellikle güncel ve organize edilmiş kaynaklardır.
 
@@ -38,7 +37,7 @@ Ubuntu 17.10 beta sürümünden itibaren Gnome 3.x kullanmaya başladım. Bu ned
 
 ## 🔌 Gnome Eklentileri
 
-Gnome'un bir eklenti sistemi bulunmaktadır. [Gnome Eklentileri](https://extensions.gnome.org/){: target="_blank" rel="noopener noreferrer"} sitesinden nasıl eklenti ekleyebileceğinizi ve yönetebileceğinizi öğrenebilirsiniz.
+Gnome'un bir eklenti sistemi bulunmaktadır. [Gnome Eklentileri](https://extensions.gnome.org/){: target="\_blank" rel="noopener noreferrer"} sitesinden nasıl eklenti ekleyebileceğinizi ve yönetebileceğinizi öğrenebilirsiniz.
 
 ### 📌 Kurulumla İlgili Notlar
 
@@ -46,9 +45,9 @@ Gnome'un bir eklenti sistemi bulunmaktadır. [Gnome Eklentileri](https://extensi
 - Her tema `install.sh` komut dosyasıyla yüklenmez. Tema geliştiricisi yükleme yöntemini açıklama satırlarında belirtir.
 - İnce ayar araçları, Linux dosya yapısını öğrendikten sonra gereksiz hale gelir. Videoda bilinçli olarak dosyaları açarak nereye yüklendiklerini gösteriyorum.
 - **Dosya Konumları:**
-  - **Fontlar:**  `~/.fonts`
-  - **İkon & İmleç:**  `~/.icons`
-  - **Temalar:**  `~/.themes`
+  - **Fontlar:** `~/.fonts`
+  - **İkon & İmleç:** `~/.icons`
+  - **Temalar:** `~/.themes`
   - **Kurulum öncesi indirdiğiniz dosyaların nereye gittiğini kontrol edin!** 😏
 
 ```bash
@@ -63,8 +62,6 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 ```
 
 😞 Eski Unity temamı özlüyorum...
-!!! important "Eksik Görseller"
-    Konu geçerli olup, konuya ait görseller önceki blogumdan silindiği için, özelleştirme yaptığım dağıtım resimleri de silindi.
-</div>
+!!! note "Eksik Görseller Konu geçerli olup, konuya ait görseller önceki blogumdan silindiği için, özelleştirme yaptığım dağıtım resimleri de silindi."
 
 🚀 Bu rehber ile Linux'ta tema yükleme sürecini rahatça tamamlayabilirsiniz!

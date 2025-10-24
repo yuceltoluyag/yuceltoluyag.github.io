@@ -200,12 +200,10 @@ COMMENTS_ENABLED = True
 # SEO ayarları
 ENHANCE_META = True  # Meta geliştiricisini etkinleştir
 # --- Google Analytics ---
-GOOGLE_ANALYTICS = (
-    "G-JLZ9JH5GKD"  # Google Analytics Ölçüm Kimliğinizi buraya yazın
-)
+GOOGLE_ANALYTICS = "G-JLZ9JH5GKD"  # Google Analytics Ölçüm Kimliği
 # --- Google Tag Manager ---
-GTM_ID = "GTM-KPLBQPPJ"  # Google Tag Manager ID'nizi buraya yazın
-GOOGLE_ADSENSE = "ca-pub-6089943780218266"
+GTM_ID = "GTM-KPLBQPPJ"  # Google Tag Manager ID
+GOOGLE_ADSENSE = "ca-pub-6089943780218266"  # Google AdSense
 
 # Sitemap ayarları
 SITEMAP = {

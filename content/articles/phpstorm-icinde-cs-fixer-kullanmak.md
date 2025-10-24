@@ -17,16 +17,14 @@ Image: images/php_phpstorm_csfixer-xl.webp
 
 PSR, "PHP Standards Recommendations" anlamına gelir ve PHP ile yazılan kodların belirli bir formatta yazılmasını sağlayan standartlardır. Günümüz IDE'leri **code refactor** adı altında bu işlemi **otomatik** hale getirdiği için çoğu yazılımcı bu standartlardan habersiz olabilir (bu durum genelde freelance çalışanlar için geçerlidir). Başlangıçta, IDE'ler standartlar değiştikçe otomatik işlemi kullanıcıya bırakabiliyor.
 
-!!! note "Kullanımdan Kaldırıldı"
-    <b>Deprecated</b> - 2019-08-10 tarihi itibariyle PSR-2 standartları kullanım dışı bırakılmıştır. <a href="https://www.php-fig.org/psr/psr-12/" rel="noopener noreferrer" target="_blank">PSR-12 </a> şu anda alternatif olarak tavsiye edilmektedir.
-</div>
+!!! note "Kullanımdan Kaldırıldı <b>Deprecated</b> - 2019-08-10 tarihi itibariyle PSR-2 standartları kullanım dışı bırakılmıştır. <a href="https://www.php-fig.org/psr/psr-12/" rel="noopener noreferrer" target="_blank">PSR-12 </a> şu anda alternatif olarak tavsiye edilmektedir."
 
-[PSR-2](https://www.php-fig.org/psr/psr-2/){: target="_blank" rel="noopener noreferrer"} kod standartlarının kullanımı artık tavsiye edilmemektedir. Ancak bu işlemi IDE ile yapıyorsanız, doğrudan [PSR-12](https://www.php-fig.org/psr/psr-12/){: target="_blank" rel="noopener noreferrer"} standartlarına geçmenizi tavsiye etmiyorum, çünkü hala bazı problemleri mevcut gibi görünüyor. PSR-12 hakkında daha fazla bilgiye [buradan](https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4502){: target="_blank" rel="noopener noreferrer"} ulaşabilirsiniz.
+[PSR-2](https://www.php-fig.org/psr/psr-2/){: target="\_blank" rel="noopener noreferrer"} kod standartlarının kullanımı artık tavsiye edilmemektedir. Ancak bu işlemi IDE ile yapıyorsanız, doğrudan [PSR-12](https://www.php-fig.org/psr/psr-12/){: target="\_blank" rel="noopener noreferrer"} standartlarına geçmenizi tavsiye etmiyorum, çünkü hala bazı problemleri mevcut gibi görünüyor. PSR-12 hakkında daha fazla bilgiye [buradan](https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4502){: target="\_blank" rel="noopener noreferrer"} ulaşabilirsiniz.
 
 # PhpStorm İçerisinde CS Fixer Kullanmak
 
-- Daha önce ekstra ayarlar yapmanız gerekse de, PhpStorm 2018.3 versiyonundan itibaren bu özellik varsayılan olarak eklenmiştir. [PHP CS Fixer Desteği](https://blog.jetbrains.com/phpstorm/2018/09/phpstorm-2018-3-early-access-program-is-open/){: target="_blank" rel="noopener noreferrer"}.
-- [Composer](https://getcomposer.org/download/){: target="_blank" rel="noopener noreferrer"}'ı kurunuz.
+- Daha önce ekstra ayarlar yapmanız gerekse de, PhpStorm 2018.3 versiyonundan itibaren bu özellik varsayılan olarak eklenmiştir. [PHP CS Fixer Desteği](https://blog.jetbrains.com/phpstorm/2018/09/phpstorm-2018-3-early-access-program-is-open/){: target="\_blank" rel="noopener noreferrer"}.
+- [Composer](https://getcomposer.org/download/){: target="\_blank" rel="noopener noreferrer"}'ı kurunuz.
 - Php CS Fixer'ı Composer yardımıyla kurun:
 
 ```bash
@@ -42,7 +40,6 @@ C:\Users\kullaniciadiniz\AppData\Roaming\Composer\vendor\bin\php-cs-fixer.bat # 
 
 Bu yolları yazdıktan sonra, `Validate` (Doğrulama) butonuna basarak CS Fixer'ın sürüm bilgisini kontrol edebilirsiniz.
 
-
 [responsive_img src="/images/php_phpstorm_csfixer-xl.webp" alt="phpstorm_inside_phpcsfixer" /]
 [responsive_img src="/images/php_phpstorm_csfixer2-xl.webp" alt="phpstorm_inside_phpcsfixer" /]
 [responsive_img src="/images/php_phpstorm_csfixer3-xl.webp" alt="phpstorm_inside_phpcsfixer" /]
@@ -51,7 +48,7 @@ Bu yolları yazdıktan sonra, `Validate` (Doğrulama) butonuna basarak CS Fixer'
 - `Name`: Bu kısma istediğiniz ismi yazabilirsiniz.
 - `Description`: Bu kısma açıklama ekleyebilirsiniz.
 - `Program`: CS Fixer'ın kurulu olduğu yolu buraya yazın. Yolu üstte vermiştim.
-- `Arguments`: Kullandığınız argümanları buraya yazın. Argümanların ne işe yaradığını öğrenmek için [Cs Fixer Kullanımı](https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage){: target="_blank" rel="noopener noreferrer"} kısmından bilgi edinebilirsiniz. Burada tüm argümanları yazmak yerine, config dosyasının yolunu göstererek tüm ayarlarınızı bu dosya içinde yapabilirsiniz.
+- `Arguments`: Kullandığınız argümanları buraya yazın. Argümanların ne işe yaradığını öğrenmek için [Cs Fixer Kullanımı](https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage){: target="\_blank" rel="noopener noreferrer"} kısmından bilgi edinebilirsiniz. Burada tüm argümanları yazmak yerine, config dosyasının yolunu göstererek tüm ayarlarınızı bu dosya içinde yapabilirsiniz.
 
 ```bash
 fix --verbose --config=C:\xampp\htdocs\urunsat\.php_cs.dist --path-mode=intersection "$FileDir$/$FileName$"
@@ -67,7 +64,7 @@ Seçeneğini kullanabilirsiniz. Bu sayede, diğer projelerde de CS Fixer işlemi
 
 [responsive_img src="/images/php_phpstorm_csfixer4-xl.webp" alt="phpstorm_inside_phpcsfixer" /]
 
-Örnek `.php_cs` dosyasını [buradan](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/.php_cs.dist){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz. Daha fazla bilgi için [Cs Fixer Kullanımı](https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage){: target="_blank" rel="noopener noreferrer"} kısmına göz atabilirsiniz. Ayrıca başka bir örnek için [Doctrine coding style](https://gist.github.com/azdanov/8f637142115feebf4b44e11a0971e5cb){: target="_blank" rel="noopener noreferrer"}'ı kontrol edebilirsiniz.
+Örnek `.php_cs` dosyasını [buradan](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/.php_cs.dist){: target="\_blank" rel="noopener noreferrer"} inceleyebilirsiniz. Daha fazla bilgi için [Cs Fixer Kullanımı](https://github.com/FriendsOfPHP/PHP-CS-Fixer#usage){: target="\_blank" rel="noopener noreferrer"} kısmına göz atabilirsiniz. Ayrıca başka bir örnek için [Doctrine coding style](https://gist.github.com/azdanov/8f637142115feebf4b44e11a0971e5cb){: target="\_blank" rel="noopener noreferrer"}'ı kontrol edebilirsiniz.
 
 PhpStorm'u yeniden başlatın. `Tools -> External Tools` menüsünde, eklediğiniz araç ismini göreceksiniz. Kısayol eklemek isterseniz, `Settings -> Keymap -> External Tools` menüsünden istediğiniz kısayolu ekleyebilirsiniz. Ben `Alt + F` kısayolunu ekledim, siz dilediğinizi ekleyebilirsiniz.
 

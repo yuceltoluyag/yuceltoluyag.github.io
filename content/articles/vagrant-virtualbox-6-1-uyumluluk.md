@@ -11,8 +11,6 @@ Status: published
 Template: article
 Image: images/ol_vbox_vagrant-min-xl.webp
 
-
-
 2019-12-11'da VirtualBox'un yeni sürümü yayınlandı. Ancak bu güncellemeyle birlikte Vagrant ile VirtualBox arasında bir uyumsuzluk sorunu ortaya çıktı. Vagrant'ı çalıştırdığınızda aşağıdaki hata mesajını alabilirsiniz:
 
 ```bash
@@ -49,16 +47,14 @@ driver_map = {
 }
 ```
 
-!!! important "Windows Kullanıcıları İçin"
-    <b>Not:</b> Windows kullanıcıları dosyayı düzenlerken <b>Notepad++</b> veya <b>Visual Studio Code</b> gibi bir metin editörünü <b>yönetici </b>olarak çalıştırmalıdır.
-</div>
+!!! note "Windows Kullanıcıları İçin <b>Not:</b> Windows kullanıcıları dosyayı düzenlerken <b>Notepad++</b> veya <b>Visual Studio Code</b> gibi bir metin editörünü <b>yönetici </b>olarak çalıştırmalıdır."
 
 ## Adım 2: version_6_1.rb Dosyasını Oluşturun
 
 Aynı dizinde `version_6_1.rb` adında bir dosya oluşturun. Eğer uğraşmak istemiyorsanız, hazır dosyayı aşağıdaki bağlantılardan indirebilirsiniz:
 
-- [version_6_1.rb (Alternatif 1)](http://www.coter.net/upload/version_6_1.rb){: target="_blank" rel="noopener noreferrer"}
-- [version_6_1.rb (Alternatif 2)](http://www.mediafire.com/file/wzq4l2xe6ul2dnw/version_6_1.rb/file){: target="_blank" rel="noopener noreferrer"}
+- [version_6_1.rb (Alternatif 1)](http://www.coter.net/upload/version_6_1.rb){: target="\_blank" rel="noopener noreferrer"}
+- [version_6_1.rb (Alternatif 2)](http://www.mediafire.com/file/wzq4l2xe6ul2dnw/version_6_1.rb/file){: target="\_blank" rel="noopener noreferrer"}
 
 ## Adım 3: plugin.rb Dosyasına Gerekli Satırı Ekleyin
 

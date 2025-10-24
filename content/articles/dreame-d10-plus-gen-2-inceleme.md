@@ -11,9 +11,7 @@ Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-xl.webp
 
-!!! warning "Reklam Değildir"
-    Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Dreame ve Roborge markalarıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir.
-</div>
+!!! warning "Reklam Değildir Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Dreame ve Roborge markalarıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir."
 
 # Dreame D10 Plus Gen 2 İnceleme
 
@@ -75,5 +73,3 @@ Bu durumda iki seçenek var: Ya Roborge’ye baskı yapılacak ya da yurt dış�
 Genel olarak Dreame D10 Plus Gen 2, güçlü çekiş gücü, akıllı haritalama ve kullanıcı dostu tasarımıyla beklentilerimi fazlasıyla karşıladı. Eğer bir robot süpürge almayı düşünüyorsanız, kesinlikle göz atmalısınız! 💡
 
 [responsive_img src="/images/dreame-d10-plus-gen-2-xl.webp" alt="dreame-d10-plus-gen-2" /]
-
-

@@ -43,8 +43,8 @@ Harika, şimdi **Adım 1: MicroSD Kartınızı Flash’layın** bölümüyle dev
 ## Adım 1: MicroSD Kartınızı Flash’layın
 
 1. MicroSD kartınızı bilgisayarınıza takın.
-2. [Etcher](https://www.balena.io/etcher/){: target="\_blank" rel="noopener noreferrer"} uygulamasını indirin ve kurun.
-3. [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest){: target="\_blank" rel="noopener noreferrer"} sürümünü indirip zip dosyasını çıkarın. Bu sürüm, sadece komut satırı ile çalışan, masaüstü arayüzü bulunmayan oldukça hafif bir Raspbian versiyonudur. Dosya boyutu yaklaşık 351MB (Kasım 2018 sürümü), bu yüzden hızlıca indirilecektir.
+2. [Etcher](https://www.balena.io/etcher/){: target="_blank" rel="noopener noreferrer"} uygulamasını indirin ve kurun.
+3. [Raspbian Stretch Lite](https://downloads.raspberrypi.org/raspbian_lite_latest){: target="_blank" rel="noopener noreferrer"} sürümünü indirip zip dosyasını çıkarın. Bu sürüm, sadece komut satırı ile çalışan, masaüstü arayüzü bulunmayan oldukça hafif bir Raspbian versiyonudur. Dosya boyutu yaklaşık 351MB (Kasım 2018 sürümü), bu yüzden hızlıca indirilecektir.
 4. Etcher’ı açın, çıkardığınız `.img` uzantılı Raspbian işletim sistemi dosyasını seçin ve hedef olarak MicroSD kartınızı gösterin. Ardından **Flash** butonuna tıklayın ve işlemin tamamlanmasını bekleyin. Windows kullanıyorsanız, işlem sırasında bazı Explorer pencereleri açılabilir, bunları görmezden gelebilirsiniz.
 5. İşlem bittikten sonra MicroSD kartınızı **çıkarın** ve bilgisayarınızdan ayırın.
 6. **Raspberry Pi’nizin kapalı olduğundan emin olun.** Flashladığınız MicroSD kartı Pi’nize takın.

@@ -224,10 +224,7 @@ Deneyimlerinizi paylaşmayı ve topluluğa katkıda bulunmayı unutmayın.
 
 ---
 
-!!! tip "İpucu"
-GhostMirror ile otomatik ayna güncelleme işlemlerini systemd timer ile kolayca halledebilirsiniz. Bu sayede manuel işlemlerden kurtulursunuz.
-
-</div>
+!!! tip "İpucu : GhostMirror ile otomatik ayna güncelleme işlemlerini systemd timer ile kolayca halledebilirsiniz. Bu sayede manuel işlemlerden kurtulursunuz."
 
 ## Örnek Çıktılar
 

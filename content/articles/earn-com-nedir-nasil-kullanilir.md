@@ -11,18 +11,17 @@ Status: published
 Template: article
 Image: images/earncom-xl.webp
 
-!!! warning "Önemli Güncelleme"
-    <a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" rel="noopener noreferrer" target="_blank">Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı</a> bu sebeple bu makalenin artık geçerli olmadığını unutmayın. Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil. Yeni sistemde yatırım yap kazan-kaybet mantığı ile çalışıyor.
-</div>
-
+!!! warning "Önemli Güncelleme; <a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" rel="noopener noreferrer" target="_blank">Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı</a> bu sebeple bu makalenin artık geçerli olmadığını unutmayın. Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil. Yeni sistemde yatırım yap kazan-kaybet mantığı ile çalışıyor."
 
 Merhaba, internet üzerinden **para kazanmak** isteyenler için benim de kullandığım bir sistemden bahsedeceğim. Earn.com, yatırım yapmadan kazanç sağlayabileceğiniz bir platformdur. Kullanıcılara, anket doldurarak veya gruplara katılarak para kazanma fırsatı sunar.
 
 ## Earn.com Nasıl Çalışır?
+
 Earn.com, anketör şirketlerle anlaşarak size anketler gönderir. Bu anketleri tamamladıktan sonra en az 1 dolar kazanç sağlarsınız. Peki, bu süreç nasıl işliyor?
 
 ## Cüzdan Oluşturma
-Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kripto cüzdanına ihtiyacınız olabilir. Cüzdanınızı şu adresten oluşturabilirsiniz: [MyEtherWallet](https://www.myetherwallet.com/){: target="_blank" rel="noopener noreferrer"}. Cüzdan kodunuzu kimseyle paylaşmayın ve güvenli bir yerde saklayın.
+
+Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kripto cüzdanına ihtiyacınız olabilir. Cüzdanınızı şu adresten oluşturabilirsiniz: [MyEtherWallet](https://www.myetherwallet.com/){: target="\_blank" rel="noopener noreferrer"}. Cüzdan kodunuzu kimseyle paylaşmayın ve güvenli bir yerde saklayın.
 
 <div class="video-container">
   <video autoplay loop muted playsinline>
@@ -33,25 +32,27 @@ Sistem genellikle Bitcoin ve Ethereum üzerinden ödeme yapar. Bu yüzden bir kr
 ## Asıl Kazanç Nerede?
 
 - Yetkinliklerinize göre gruplara katılarak yüksek gelir elde edebilirsiniz. Örneğin, PHP grubu gibi teknik gruplarda soru başına 100 $ kazanmak mümkündür.
-- Katılmak istediğiniz gruplarda doğrulama sürecinden geçmeniz gerekir. Örneğin, [Earn.com Grupları](https://earn.com/lists/){: target="_blank" rel="noopener noreferrer"} sayfasında başvururken yeteneklerinizi kanıtlamanız istenir.
+- Katılmak istediğiniz gruplarda doğrulama sürecinden geçmeniz gerekir. Örneğin, [Earn.com Grupları](https://earn.com/lists/){: target="\_blank" rel="noopener noreferrer"} sayfasında başvururken yeteneklerinizi kanıtlamanız istenir.
 - Kullanıcılar soru sormak için ödeme yapar, siz de bu soruları yanıtlayarak para kazanırsınız.
 
 ## Neden Earn.com?
+
 - Yatırım yapmanızı gerektirmez.
 - Kazançlarınızı zamanında öder.
 - Türkiye'de uygulanabilecek bir fikir ancak yerel benzeri pek yoktur.
 - Haftalık ortalama kazanç: **150-350 TL**
 
 ## Gerekli Olan Hesaplar
+
 Earn.com'dan verimli şekilde yararlanabilmek için aşağıdaki hesaplara sahip olmanız önerilir:
 
-- [LinkedIn](https://www.linkedin.com/in/yuceltoluyag/){: target="_blank" rel="noopener noreferrer"} → Profilinizin eksiksiz ve doğru bilgilerle doldurulmuş olması gereklidir.
-- [GitHub](https://github.com/yuceltoluyag){: target="_blank" rel="noopener noreferrer"} → Teknik gruplara katılım için önemlidir.
-- [Telegram](https://t.me/yuceltoluyag){: target="_blank" rel="noopener noreferrer"} → Anketler ve iletişim için gereklidir.
+- [LinkedIn](https://www.linkedin.com/in/yuceltoluyag/){: target="\_blank" rel="noopener noreferrer"} → Profilinizin eksiksiz ve doğru bilgilerle doldurulmuş olması gereklidir.
+- [GitHub](https://github.com/yuceltoluyag){: target="\_blank" rel="noopener noreferrer"} → Teknik gruplara katılım için önemlidir.
+- [Telegram](https://t.me/yuceltoluyag){: target="\_blank" rel="noopener noreferrer"} → Anketler ve iletişim için gereklidir.
 
 Sisteme kaydolmak için referans bağlantısı kullanırsanız onay süreciniz hızlanır. Eğer referansınız yoksa aşağıdaki bağlantıyı kullanabilirsiniz:
 
-[Earn.com Referans Bağlantısı](http://earn.com/friday13/referral/?a=b6bpe21djavw2sar){: target="_blank" rel="noopener noreferrer"}
+[Earn.com Referans Bağlantısı](http://earn.com/friday13/referral/?a=b6bpe21djavw2sar){: target="\_blank" rel="noopener noreferrer"}
 
 <div class="video-container">
   <video autoplay loop muted playsinline>

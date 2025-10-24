@@ -15,61 +15,52 @@ Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika ek
 
 ## Sublime Text Eklenti Kurulumu
 
-Öncelikle Sublime Text 3 sürümünü kullandığımı belirtmek isterim. Editöre paket yüklemek için şu adımları izleyebilirsiniz: **view -> show console** menüsünü açın ve sürümünüze uygun gerekli kodları yapıştırarak Enter tuşuna basın. Paket yüklendikten sonra `Ctrl + Shift + P` kombinasyonu ile paket yöneticisini açabilir ve `Install` yazıp Enter’a basarak kurmak istediğiniz paketi seçebilirsiniz.  
+Öncelikle Sublime Text 3 sürümünü kullandığımı belirtmek isterim. Editöre paket yüklemek için şu adımları izleyebilirsiniz: **view -> show console** menüsünü açın ve sürümünüze uygun gerekli kodları yapıştırarak Enter tuşuna basın. Paket yüklendikten sonra `Ctrl + Shift + P` kombinasyonu ile paket yöneticisini açabilir ve `Install` yazıp Enter’a basarak kurmak istediğiniz paketi seçebilirsiniz.
 
-!!! important "Kolay Kurulum Yöntemi"
-    <strong>Güncelleme:</strong> <code>Ctrl + Shift + P</code> tuşlarına basarak 'Install Package Manager' seçeneğiyle paket yöneticisini kolayca yükleyebilirsiniz.
-</div>
+!!! note "Kolay Kurulum Yöntemi <strong>Güncelleme:</strong> <code>Ctrl + Shift + P</code> tuşlarına basarak 'Install Package Manager' seçeneğiyle paket yöneticisini kolayca yükleyebilirsiniz."
 
+Ayarlarımı GitHub'dan alabilirsiniz: [Sublime Repom](https://github.com/yuceltoluyag/sublime-text-3){: target="\_blank" rel="noopener noreferrer"} ve **Alternatif Ayarlarım**
 
-
-
-Ayarlarımı GitHub'dan alabilirsiniz: [Sublime Repom](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"} ve **Alternatif Ayarlarım**
 ```json
 {
-"auto_complete_triggers": [
-{
-"characters": "<",
-"selector": "text.html"
-},
-{
-"characters": ".",
-"selector": "source.js"
-}
-],
-"theme": "Agila Neon.sublime-theme",
-"color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
-"bold_folder_labels": true,
-"caret_extra_width": 2,
-"caret_style": "smooth",
-"fade_fold_buttons": false,
-"font_face": "Inconsolata",
-"font_size": 16,
-"highlight_line": true,
-"highlight_modified_tabs": true,
-"ignored_packages": [
-"JavaScript",
-"Vintage"
-],
-"indent_guide_options": [
-"draw_normal",
-"draw_active"
-],
-"line_padding_bottom": 1,
-"line_padding_top": 1,
-"show_line_endings": true,
-"tab_size": 4,
-"theme": "Agila.sublime-theme",
-"theme_agila_sidebar_light_icons": true,
-"theme_agila_sidebar_selected_entry_yellow": true,
-"theme_agila_auto_complete_yellow": true,
-"theme_agila_active_tab_entry_yellow": true,
-"translate_tabs_to_spaces": true,
-"trim_trailing_white_space_on_save": true,
-"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
-"word_wrap": false
+  "auto_complete_triggers": [
+    {
+      "characters": "<",
+      "selector": "text.html"
+    },
+    {
+      "characters": ".",
+      "selector": "source.js"
+    }
+  ],
+  "theme": "Agila Neon.sublime-theme",
+  "color_scheme": "Packages/Agila Theme/Agila Neon Monocyanide.tmTheme",
+  "bold_folder_labels": true,
+  "caret_extra_width": 2,
+  "caret_style": "smooth",
+  "fade_fold_buttons": false,
+  "font_face": "Inconsolata",
+  "font_size": 16,
+  "highlight_line": true,
+  "highlight_modified_tabs": true,
+  "ignored_packages": ["JavaScript", "Vintage"],
+  "indent_guide_options": ["draw_normal", "draw_active"],
+  "line_padding_bottom": 1,
+  "line_padding_top": 1,
+  "show_line_endings": true,
+  "tab_size": 4,
+  "theme": "Agila.sublime-theme",
+  "theme_agila_sidebar_light_icons": true,
+  "theme_agila_sidebar_selected_entry_yellow": true,
+  "theme_agila_auto_complete_yellow": true,
+  "theme_agila_active_tab_entry_yellow": true,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
+  "word_wrap": false
 }
 ```
+
 ## EMMET
 
 Emmet, kod yazma hızınızı önemli ölçüde artırabilecek harika bir eklentidir. Ancak, kod yazmaya yeni başlayanlara önerilmez.
@@ -97,18 +88,15 @@ Düzen takıntınız varsa, bu eklenti tam size göre! Kodlarınızı hizalamak 
 
 ## SublimeGit
 
-Sublime Text için Git entegrasyonu sağlayan harika bir eklentidir. Dökümantasyon için [SublimeGit Dökümantasyon](https://sublimegit.readthedocs.io/en/latest/){: target="_blank" rel="noopener noreferrer"} sayfasını ziyaret edebilirsiniz.
+Sublime Text için Git entegrasyonu sağlayan harika bir eklentidir. Dökümantasyon için [SublimeGit Dökümantasyon](https://sublimegit.readthedocs.io/en/latest/){: target="\_blank" rel="noopener noreferrer"} sayfasını ziyaret edebilirsiniz.
 
 ## GitGutter
 
 GitGutter, projenizde yaptığınız değişiklikleri gösteren bir eklentidir. `git status` komutunun Sublime'deki halini düşünebilirsiniz.
 
-
-
 ## GitHubinator
 
 Bu eklenti, seçtiğiniz alanı doğrudan GitHub reposunda aramanıza yardımcı olur. Artık "Acaba bunu nerede yazmışım?" sorusu ortadan kalkıyor.
-
 
 [responsive_img src="/images/GitHubinator-xl.webp" alt="GitHubinator" /]
 
@@ -116,14 +104,12 @@ Bu eklenti, seçtiğiniz alanı doğrudan GitHub reposunda aramanıza yardımcı
 
 GitGutter'dan farkı, yalnızca değişiklik yapılan satırları gösterip, repo içinde arama yapabilmesidir. `Ctrl + Shift + O` tuşlarına basarak hızlıca kullanabilirsiniz.
 
-
-
 ## SublimeLinter
 
-SublimeLinter, kod hatalarını ve uyarılarını göstermek için harika bir araçtır. [SublimeLinter Dökümantasyonu](http://www.sublimelinter.com){: target="_blank" rel="noopener noreferrer"} adresini mutlaka inceleyin.
-
+SublimeLinter, kod hatalarını ve uyarılarını göstermek için harika bir araçtır. [SublimeLinter Dökümantasyonu](http://www.sublimelinter.com){: target="\_blank" rel="noopener noreferrer"} adresini mutlaka inceleyin.
 
 [responsive_img src="/images/SublimeLinter-xl.webp" alt="SublimeLinter" /]
+
 ## ChangeQuotes
 
 Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok kolaylaştırıyor. Hızlı bir işlem için mükemmel bir yardımcıdır.
@@ -132,12 +118,11 @@ Bu eklenti, özellikle çift tırnakları tek tırnakla değiştirme işini çok
 
 Bu eklentiyle birlikte, sol taraftaki sidebarda sağ tıkladığınızda pek çok ek özellik eklenir.
 
-
 [responsive_img src="/images/sidebar-enhancements-xl.webp" alt="SidebarEnhancements" /]
+
 ## BracketHighlighter
 
 Bu eklenti, seçtiğiniz etiketi veya parantezi nerede açıp nerede kapandığını görmenizi sağlar.
-
 
 [responsive_img src="/images/BracketHighlighter-xl.webp" alt="BracketHighlighter" /]
 
@@ -145,15 +130,14 @@ Bu eklenti, seçtiğiniz etiketi veya parantezi nerede açıp nerede kapandığ�
 
 Renk seçimlerinizi ekstra bir program kullanmadan rahatça yapabilirsiniz. Ayrıca **Color Highlighter** kullanarak renklerinizi doğrudan görmek mümkündür.
 
-
 [responsive_img src="/images/GutterColor-xl.webp" alt="GutterColor" /]
 
 ## AlignTab
 
 Vim editöründeki tabuler hizalamayı taklit eden bu eklenti, çok sayıda özellik sunuyor.
 
-
 [responsive_img src="/images/AlignTab-xl.webp" alt="AlignTab" /]
+
 ## AutoFileName
 
 Dosya yollarınızı otomatik olarak tamamlar. Eksik dosya yolları yazıldığında öneri gelmez, böylece hataları azaltabilirsiniz.
@@ -166,21 +150,17 @@ HTML, CSS, JavaScript ve JSON kodlarını formatlamak için kullanılan bir ekle
 
 Bu eklenti, kod bloklarınızın üzerine açıklamalar eklemenizi sağlar.
 
-
-
 ## A File Icon
 
 Dosya uzantılarına göre simgeler ekler, böylece dosyalarınız daha düzenli görünür.
 
-
 [responsive_img src="/images/AFileIcon-xl.webp" alt="AFileIcon" /]
+
 ## Tema
 
-Material Tema kullanıyorum: [Material Theme GitHub Sayfası](https://github.com/equinusocio/material-theme){: target="_blank" rel="noopener noreferrer"}.
+Material Tema kullanıyorum: [Material Theme GitHub Sayfası](https://github.com/equinusocio/material-theme){: target="\_blank" rel="noopener noreferrer"}.
 
-
-
-Yeni kullandığım temalar ve pluginler hakkında bilgi almak için [GitHub Repo](https://github.com/yuceltoluyag/sublime-text-3){: target="_blank" rel="noopener noreferrer"}
+Yeni kullandığım temalar ve pluginler hakkında bilgi almak için [GitHub Repo](https://github.com/yuceltoluyag/sublime-text-3){: target="\_blank" rel="noopener noreferrer"}
 
 ### Ayarlarım
 

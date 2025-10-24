@@ -24,10 +24,7 @@ Bu kapsamlı rehberde, Stremio'nun ne olduğunu, nasıl kurulduğunu, temel kull
 
 Stremio, kendi sunucularında içerik barındırmayan, farklı platformlardan (Netflix, YouTube, torrent siteleri gibi) içerik akışlarını organize eden güçlü bir medya merkezidir.
 
-!!! note "Bilgi"
-Stremio bir içerik sağlayıcı değil, bir içerik toplayıcıdır. İzlemek istediğiniz içeriği kolayca bulmanızı sağlar.
-
-</div>
+!!! note "Stremio bir içerik sağlayıcı değil, bir içerik toplayıcıdır. İzlemek istediğiniz içeriği kolayca bulmanızı sağlar."
 
 ---
 
@@ -45,15 +42,9 @@ Stremio bir içerik sağlayıcı değil, bir içerik toplayıcıdır. İzlemek i
 
 Stremio uygulaması kendisi %100 yasaldır ve resmi mağazalarda bulunur. Ancak kullandığınız **eklenti türüne** göre yasal durum değişir.
 
-!!! warning "Uyarı"
-Üçüncü parti torrent tabanlı eklentiler kullanmak yasal sorunlar yaratabilir. Lütfen yerel yasalarınıza dikkat edin.
+!!! warning "Üçüncü parti torrent tabanlı eklentiler kullanmak yasal sorunlar yaratabilir. Lütfen yerel yasalarınıza dikkat edin."
 
-</div>
-
-!!! important "Önemli"
-Stremio ve eklentilerini kullanırken, yerel telif hakkı yasalarına uymak ve güvenliğinizi sağlamak sizin sorumluluğunuzdadır.
-
-</div>
+!!! info "Stremio ve eklentilerini kullanırken, yerel telif hakkı yasalarına uymak ve güvenliğinizi sağlamak sizin sorumluluğunuzdadır."
 
 ---
 
@@ -61,7 +52,7 @@ Stremio ve eklentilerini kullanırken, yerel telif hakkı yasalarına uymak ve g
 
 ### 1. Windows ve macOS
 
-- Resmi web sitesine gidin: [https://www.stremio.com](https://www.stremio.com)
+- Resmi web sitesine gidin: [https://www.stremio.com](https://www.stremio.com){: target="\_blank" rel="noopener noreferrer"}
 - İndirip basit talimatlarla kurulumu tamamlayın.
 
 ### 2. Linux (Arch/EndeavourOS)
@@ -79,7 +70,7 @@ flatpak install flathub com.stremio.Stremio
 ### 4. Android ve Android TV
 
 - Google Play Store’dan “Stremio" aratın ve resmi uygulamayı yükleyin.
-- Alternatif olarak, APK dosyasını [resmi sitesinden](https://www.stremio.com/downloads) indirebilirsiniz.
+- Alternatif olarak, APK dosyasını [resmi sitesinden](https://www.stremio.com/downloads){: target="\_blank" rel="noopener noreferrer"} indirebilirsiniz.
 
 ---
 
@@ -124,15 +115,9 @@ flatpak install flathub com.stremio.Stremio
 
 [responsive_img src="/images/eklenti-yapilandir-xl.webp" alt="Stremio eklenti yapılandırma" /]
 
-!!! tip "İpucu"
-Real-Debrid gibi Debrid servisleri ile bağlantılarınız daha hızlı ve kesintisiz olur.
+!!! tip "Real-Debrid gibi Debrid servisleri ile bağlantılarınız daha hızlı ve kesintisiz olur."
 
-</div>
-
-!!! tip "İpucu"
-<strong>Real-Debrid Nedir?</strong> Kısaca <strong>RD</strong>, ücretli bir dosya indirme hizmetidir. Temel amacı, torrent ve premium dosya barındıran sitelerden gelen bağlantıların hızını ve kararlılığını artırmaktır.
-
-</div>
+!!! tip "<strong>Real-Debrid Nedir?</strong> Kısaca <strong>RD</strong>, ücretli bir dosya indirme hizmetidir. Temel amacı, torrent ve premium dosya barındıran sitelerden gelen bağlantıların hızını ve kararlılığını artırmaktır."
 
 ---
 

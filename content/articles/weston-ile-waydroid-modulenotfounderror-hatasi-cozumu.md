@@ -274,8 +274,8 @@ Linux üzerinde Android deneyimin keyfini çıkar! 🎯
 
 ## Kaynaklar
 
-- [Waydroid Documentation](https://docs.waydro.id/)
-- [Arch Linux Wiki - Waydroid](https://wiki.archlinux.org/title/Waydroid)
-- [Python Docs - ModuleNotFoundError](https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError)
+- [Waydroid Documentation](https://docs.waydro.id/){: target="_blank" rel="noopener noreferrer"}
+- [Arch Linux Wiki - Waydroid](https://wiki.archlinux.org/title/Waydroid){: target="_blank" rel="noopener noreferrer"}
+- [Python Docs - ModuleNotFoundError](https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError){: target="_blank" rel="noopener noreferrer"}
 
 ---

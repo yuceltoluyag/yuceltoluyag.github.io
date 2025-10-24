@@ -32,10 +32,7 @@ Autocut, Python ile yazılmış bir video düzenleme aracıdır ve şu özellikl
 - MoviePy ile **otomatik video ve ses birleştirme**
 - GPU (CUDA) desteği ile hızlı işlem yapabilme
 
-!!! tip "İpucu"
-Autocut, özellikle uzun videolarda zamandan tasarruf etmek ve içerik kalitesini artırmak için idealdir.
-
-</div>
+!!! tip "Autocut, özellikle uzun videolarda zamandan tasarruf etmek ve içerik kalitesini artırmak için idealdir."
 
 [responsive_img src="/images/autocut-otomatik-video-kesme-markdown-rehberi-xl.webp" alt="AutoCut ile otomatik gürültü engelleme "/]
 
@@ -81,10 +78,7 @@ autocut -t -c -m --lang Turkish --device cuda /home/friday13/Videos/editle.mp4
 - `--lang Turkish` → Dil seçimi
 - `--device cuda` → GPU ile işlem
 
-!!! note "Bilgi"
-Markdown çıktısı, hangi cümleleri tutacağınızı işaretlemenizi sağlar. Bu sayede kesim sırasında gereksiz kısımlar atılır.
-
-</div>
+!!! note "Markdown çıktısı, hangi cümleleri tutacağınızı işaretlemenizi sağlar. Bu sayede kesim sırasında gereksiz kısımlar atılır."
 
 ---
 
@@ -121,10 +115,7 @@ autocut -c /home/friday13/Videos/editle.mp4 /home/friday13/Videos/editle.srt /ho
 - Örnek çıktı: `/home/friday13/Videos/editle_cut.mp4`
 - Orijinal süre: 317.8 sn → Kesilmiş süre: 181 sn
 
-!!! important "Önemli"
-Kesilen video, sadece işaretlenen cümleleri içerir. Gereksiz boşluklar ve "No Speech" kısımları atılmış olur.
-
-</div>
+!!! note "Kesilen video, sadece işaretlenen cümleleri içerir. Gereksiz boşluklar ve "No Speech" kısımları atılmış olur."
 
 ---
 

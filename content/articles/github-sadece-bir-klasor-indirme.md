@@ -62,8 +62,7 @@ git config core.sparseCheckout true
 echo "v2-sass-customized-design-system/" >> .git/info/sparse-checkout
 ```
 
-!!! tip "Dikkat 💡"
-Klasör yolu repository kök dizinine göre yazılmalıdır.
+!!! tip "Dikkat 💡 Klasör yolu repository kök dizinine göre yazılmalıdır."
 
 ### 5️⃣ Sadece İlgili Klasörü İndir
 
@@ -71,8 +70,7 @@ Klasör yolu repository kök dizinine göre yazılmalıdır.
 git pull origin master
 ```
 
-!!! warning "Branch kontrolü ⚠️"
-Eğer repo `main` branch kullanıyorsa `git pull origin main` kullanmalısınız.
+!!! warning "Branch kontrolü ⚠️ Eğer repo `main` branch kullanıyorsa `git pull origin main` kullanmalısınız."
 
 ---
 
@@ -94,7 +92,7 @@ pico-v2/v2-sass-customized-design-system/
 
 ## Kaynaklar
 
-- [GitHub Repository](https://github.com/picocss/examples)
-- [Git Sparse Checkout Documentation](https://git-scm.com/docs/git-sparse-checkout)
+- [GitHub Repository](https://github.com/picocss/examples){: target="_blank" rel="noopener noreferrer"}
+- [Git Sparse Checkout Documentation](https://git-scm.com/docs/git-sparse-checkout){: target="_blank" rel="noopener noreferrer"}
 
 Bu özellik gitlab ui'inde var,github ui'inde neden yok acaba? 🤔

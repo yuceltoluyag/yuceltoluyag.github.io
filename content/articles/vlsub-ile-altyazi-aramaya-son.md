@@ -17,24 +17,20 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 
 ---
 
-
-
-!!! tip "Yeni VLC Sürümleri"
-    Yeni VLC sürümlerinde bu özellik <b>yerleşik olarak</b> gelebilir. Eğer <b>Görünüm</b> sekmesinde <b>VLSub</b> menüsünü görüyorsanız, ayrıca bir eklenti kurmanıza gerek yoktur. ✅
-</div>
+!!! tip "Yeni VLC sürümlerinde bu özellik <b>yerleşik olarak</b> gelebilir. Eğer <b>Görünüm</b> sekmesinde <b>VLSub</b> menüsünü görüyorsanız, ayrıca bir eklenti kurmanıza gerek yoktur. ✅"
 
 ---
 
 ## 🛠 Kurulum
 
-1. **[VLC Media Player](https://www.videolan.org/vlc/index.tr.html){: target="_blank" rel="noopener noreferrer"}** programını indirin ve kurun. (Tamamen ücretsiz ve açık kaynak kodludur.)
+1. **[VLC Media Player](https://www.videolan.org/vlc/index.tr.html){: target="\_blank" rel="noopener noreferrer"}** programını indirin ve kurun. (Tamamen ücretsiz ve açık kaynak kodludur.)
 2. Eğer **Görünüm** menüsü altında **VLSub** seçeneğini göremiyorsanız, şu adımları izleyin:
 
-
 [responsive_img src="/images/vlsub0-xl.webp" alt="VLSub Kurulumu" /]
-   - **[Buradan](https://addons.videolan.org/p/1154045/){: target="_blank" rel="noopener noreferrer"}** eklentiyi indirin.
-   - **C:\Program Files\VideoLAN\VLC\lua\extensions** dizinine kopyalayın.
-   - **VLC kapalı olmalıdır!** Kopyalama işlemini yaptıktan sonra VLC'yi yeniden başlatın.
+
+- **[Buradan](https://addons.videolan.org/p/1154045/){: target="\_blank" rel="noopener noreferrer"}** eklentiyi indirin.
+- **C:\Program Files\VideoLAN\VLC\lua\extensions** dizinine kopyalayın.
+- **VLC kapalı olmalıdır!** Kopyalama işlemini yaptıktan sonra VLC'yi yeniden başlatın.
 
 ---
 
@@ -53,11 +49,12 @@ Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde 
 
 1. **İzleyeceğiniz videoyu açın.**
 2. **Menüden**: `Görünüm -> VLSub` seçeneğine tıklayın.
-[responsive_img src="/images/vlbsub-xl.webp" alt="VLSub Açma" /]
+   [responsive_img src="/images/vlbsub-xl.webp" alt="VLSub Açma" /]
 3. Açılan pencerede film ya da dizi ismini otomatik arayabilir veya manuel olarak girebilirsiniz.
 4. **Sonuçlardan birine tıklayın** ve **Download Selection** butonuna basın.
 5. Altyazı **otomatik olarak aynı klasöre** indirilecektir.
-[responsive_img src="/images/vlsub1-xl.webp" alt="VLSub Altyazı Bulma" /]
+   [responsive_img src="/images/vlsub1-xl.webp" alt="VLSub Altyazı Bulma" /]
+
 ---
 
 ## ℹ️ Ekstra Bilgi

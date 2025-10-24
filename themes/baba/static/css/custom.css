@@ -303,6 +303,18 @@ h6:hover .headerlink {
   width: 100%; /* Ensure it takes full width */
 }
 
+/* Dark overlay for better text readability */
+.article-hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  z-index: 0;
+}
+
 .article-hero::before {
   content: '';
   position: absolute;
@@ -319,10 +331,22 @@ h6:hover .headerlink {
   z-index: -1; /* Place behind content */
 }
 
+/* Hero overlay positioning */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero title with stronger text shadow */
+.hero-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 8px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
 .hero-meta {
   font-size: 1.1em; /* Slightly larger */
-  opacity: 0.9;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -344,7 +368,10 @@ h6:hover .headerlink {
   max-width: 700px; /* Slightly narrower for better readability */
   font-size: 1.3em; /* Larger */
   line-height: 1.7; /* More readable line height */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2); /* Subtle background for extra contrast */
+  padding: 1em;
+  border-radius: 8px;
 }
 
 /* Adjust article content to start below the hero */

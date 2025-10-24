@@ -38,12 +38,7 @@ sudo pacman -S postgresql
 
 Onaylamak için `y` tuşuna basmanız yeterlidir.
 
-!!! note""
-
-<div class="alert-title">Bilgi</div>
-<p>Arch Linux’un rolling release yapısı sayesinde PostgreSQL her zaman güncel gelir. Bu, güvenlik açısından büyük bir avantajdır.</p>
-
-</div>
+!!! note "Arch Linux’un rolling release yapısı sayesinde PostgreSQL her zaman güncel gelir. Bu, güvenlik açısından büyük bir avantajdır."
 
 ### ✅ Adım 2: Servisi Başlatma ve Enable Etme
 
@@ -60,12 +55,7 @@ Durumu kontrol etmek için:
 systemctl status postgresql
 ```
 
-!!! note""
-
-<div class="alert-title">Bilgi</div>
-<p>Servis durumu: <code>active (running)</code> ise her şey yolunda demektir. 👍</p>
-
-</div>
+!!! note "Servis durumu: <code>active (running)</code> ise her şey yolunda demektir. 👍"
 
 örnek çıktı:
 
@@ -104,20 +94,16 @@ Ağu 15 03:03:55 baba postgres[399875]: 2025-08-15 03:03:55.741 +03 [399875] LOG
 Ağu 15 03:03:56 baba postgres[399875]: 2025-08-15 03:03:56.153 +03 [399875] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.402 s, sync=0.004 s, total=0.412 s; sync files=2, longest=0.004 s, average=0.002 s; distance=12 kB, estimate=2328 kB; lsn=0/1ED8100, r>
 ```
 
-!!! note""
+!!! note "PostgreSQL servisi çalışıyor ve durumu aşağıdaki gibi gözlemlenebilir:"
 
-<div class="alert-title">Bilgi</div>
-<p>PostgreSQL servisi çalışıyor ve durumu aşağıdaki gibi gözlemlenebilir:</p>
-<pre>
+```bash
 [friday13@baba ~]$ systemctl status postgresql
 ● postgresql.service - PostgreSQL database server
 Loaded: loaded (/usr/lib/systemd/system/postgresql.service; disabled; preset: disabled)
 Active: active (running) since Fri 2025-08-15 00:38:54 +03; 3h 17min ago
 Main PID: 399872 (postgres)
 Tasks: 9 (limit: 18626)
-</pre>
-
-</div>
+```
 
 ### ✅ Adım 3: Varsayılan Kullanıcıyı Şifreleme
 
@@ -127,12 +113,7 @@ PostgreSQL, `postgres` adlı bir kullanıcıyla birlikte gelir. Bu kullanıcıya
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'sizin_sifreniz';"
 ```
 
-!!! tip""
-
-<div class="alert-title">İpucu</div>
-<p>💡 Ben genellikle test ortamları için `postgres_test` gibi geçici kullanıcılar oluşturuyorum; böylece üretim ve test karışmıyor.</p>
-
-</div>
+!!! tip "💡 Ben genellikle test ortamları için `postgres_test` gibi geçici kullanıcılar oluşturuyorum; böylece üretim ve test karışmıyor."
 
 ### ✅ Adım 4: Veritabanı ve Kullanıcı Oluşturma
 
@@ -145,12 +126,7 @@ sudo -u postgres psql -c "ALTER USER crm_user WITH PASSWORD 'crm_sifresi';"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE crm_db TO crm_user;"
 ```
 
-!!! tip""
-
-<div class="alert-title">İpucu</div>
-<p>Veritabanı ve kullanıcı adlarını proje isimlendirmesine uygun seçmek ileride karışıklıkları önler. Örneğin <code>crm_user_dev</code> veya <code>crm_user_prod</code> gibi adlar kullanabilirsiniz.</p>
-
-</div>
+!!! tip "Veritabanı ve kullanıcı adlarını proje isimlendirmesine uygun seçmek ileride karışıklıkları önler. Örneğin <code>crm_user_dev</code> veya <code>crm_user_prod</code> gibi adlar kullanabilirsiniz."
 
 ---
 
@@ -182,12 +158,7 @@ host    all             all             127.0.0.1/32            trust
 host    all             all             192.168.1.0/24          md5
 ```
 
-!!! warning""
-
-<div class="alert-title">Uyarı</div>
-<p>Üretim ortamında 'trust' yerine 'md5' veya 'scram-sha-256' kullanmanız güvenlik açısından kritik öneme sahiptir.</p>
-
-</div>
+!!! warning "Üretim ortamında 'trust' yerine 'md5' veya 'scram-sha-256' kullanmanız güvenlik açısından kritik öneme sahiptir."
 
 ### ✅ Adım 3: `postgresql.conf` Ayarları
 
@@ -210,12 +181,7 @@ shared_buffers = 128MB
 sudo systemctl restart postgresql
 ```
 
-!!! note""
-
-<div class="alert-title">Bilgi</div>
-<p>🔧 Not: Değişiklikleri hemen test etmek için <code>psql</code> ile bağlanıp <code>\l</code> komutu ile veritabanlarını listeleyebilirsiniz.</p>
-
-</div>
+!!! note "🔧 Not: Değişiklikleri hemen test etmek için <code>psql</code> ile bağlanıp <code>\l</code> komutu ile veritabanlarını listeleyebilirsiniz."
 
 ---
 
@@ -251,12 +217,7 @@ pgadmin4
 
 Tarayıcıda: `http://127.0.0.1:5050`
 
-!!! tip""
-
-<div class="alert-title">İpucu</div>
-<p>İlk kullanıcıyı oluştururken basit bir test e-posta ve şifre kullanabilirsiniz, sonra dilediğiniz gibi değiştirebilirsiniz.</p>
-
-</div>
+!!! tip "İlk kullanıcıyı oluştururken basit bir test e-posta ve şifre kullanabilirsiniz, sonra dilediğiniz gibi değiştirebilirsiniz."
 
 ---
 
@@ -284,12 +245,7 @@ echo "alias pgadmin='~/bin/pgadmin-start.sh'" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-!!! tip""
-
-<div class="alert-title">İpucu</div>
-<p>💡 Alias isimlerini kısa ve akılda kalıcı seçmek işleri kolaylaştırır. Örneğin <code>pgadmin</code>.</p>
-
-</div>
+!!! tip "💡 Alias isimlerini kısa ve akılda kalıcı seçmek işleri kolaylaştırır. Örneğin <code>pgadmin</code>."
 
 ---
 
@@ -321,12 +277,7 @@ sudo firewall-cmd --reload
 
 ## ❌ 6. Sık Karşılaşılan Hatalar
 
-!!! important""
-
-<div class="alert-title">Önemli</div>
-<p>Her zaman önce servisin çalıştığından emin olun. Çoğu bağlantı hatası buradan kaynaklanır.</p>
-
-</div>
+!!! warning "Her zaman önce servisin çalıştığından emin olun. Çoğu bağlantı hatası buradan kaynaklanır."
 
 ### Hata 1: No module named ‘pgadmin4.**main**’
 
@@ -355,12 +306,7 @@ sudo -u postgres createdb crm_db
 
 PostgreSQL’i yeni bir sürüme yükseltmek bazen gerekli olabilir. Arch Linux’ta rolling release yapısı sayesinde paketler genellikle güncel gelir, ancak veritabanınızı manuel olarak yükseltmeniz gerekebilir.
 
-!!! tip""
-
-<div class="alert-title">İpucu</div>
-<p>pg_upgrade aracı kullanılabilir, ancak bazı kullanıcılar için karmaşık olabilir. Daha güvenli ve basit bir yöntem, veritabanınızı <code>pg_dump</code> ile yedekleyip yeni sürümde <code>pg_restore</code> ile geri yüklemektir.</p>
-
-</div>
+!!! tip "pg_upgrade aracı kullanılabilir, ancak bazı kullanıcılar için karmaşık olabilir. Daha güvenli ve basit bir yöntem, veritabanınızı <code>pg_dump</code> ile yedekleyip yeni sürümde <code>pg_restore</code> ile geri yüklemektir."
 
 Örnek:
 
@@ -381,12 +327,7 @@ Bu yöntem, olası uyumsuzluk sorunlarını önlemeye yardımcı olur.
 
 Bazı kullanıcılar pgAdmin4 yerine phpPgAdmin kullanmayı tercih edebilir. phpPgAdmin, web tabanlı bir arayüzdür ve çalışabilmesi için PHP’nin pgsql uzantısı etkin olmalıdır.
 
-!!! tip""
-
-<div class="alert-title">İpucu</div>
-<p>Apache web sunucusu ve PHP kurulumu yaparken <code>php-pgsql</code> paketinin yüklü ve etkin olduğundan emin olun.</p>
-
-</div>
+!!! tip "Apache web sunucusu ve PHP kurulumu yaparken <code>php-pgsql</code> paketinin yüklü ve etkin olduğundan emin olun."
 
 Kurulum örneği:
 
@@ -418,12 +359,7 @@ sudo -u postgres createdb crm_db_restore
 sudo -u postgres psql crm_db_restore < ~/backups/crm_db_2025-08-15.sql
 ```
 
-!!! tip""
-
-<div class="alert-title">İpucu</div>
-<p>Farklı ortamlar için ayrı veritabanı isimleri kullanmak (ör. <code>crm_db_dev</code>, <code>crm_db_prod</code>) karışıklığı önler.</p>
-
-</div>
+!!! tip "Farklı ortamlar için ayrı veritabanı isimleri kullanmak (ör. <code>crm_db_dev</code>, <code>crm_db_prod</code>) karışıklığı önler."
 
 - Eğer MySQL veya MariaDB ile çalışıyorsanız, benzer yedekleme ve geri yükleme işlemleri için [Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/) rehberine bakabilirsiniz.
 
@@ -433,11 +369,6 @@ sudo -u postgres psql crm_db_restore < ~/backups/crm_db_2025-08-15.sql
 
 Artık Arch Linux’ta PostgreSQL ve pgAdmin4’ü kurmayı, yapılandırmayı ve yönetmeyi öğrendiniz. Kod örnekleri, ipuçları ve adım adım rehber ile veritabanı projelerinizi güvenle yönetebilirsiniz. 💻
 
-!!! note""
-
-<div class="alert-title">Bilgi</div>
-<p>Herhangi bir sorunuz olursa yorum bırakın; memnuniyetle yardımcı olurum! 😊</p>
-
-</div>
+!!! note "Herhangi bir sorunuz olursa yorum bırakın; memnuniyetle yardımcı olurum! 😊"
 
 ## [responsive_img src="/images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp" alt="Arch Linux PostgreSQL pgAdmin4 Kurulumu" /]
