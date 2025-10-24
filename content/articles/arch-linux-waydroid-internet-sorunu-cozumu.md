@@ -55,9 +55,7 @@ Bu sorunun temelinde iki ana faktör yatıyor. İlki, Arch Linux'un varsayılan 
 
 Kısaca ne oluyor? Waydroid, ağ kurulum betiğini çalıştırırken Linux firewall kurallarını düzenlemeye çalışıyor. Ancak nft backend ile legacy kuralları eşleştirmiyor ve bu nedenle gerekli NAT (Network Address Translation) kuralları oluşturamıyor. NAT kurulmazsa, konteyner içindeki Android sistem internete erişemiyor. Bu yüzden açılırken çalışmaya devam ediyor ancak ağ başlatılamadığından boot aşamasında takılıyor.
 
-!!! note "Not"
-    <strong>NAT Nedir?</strong> Network Address Translation (NAT), bir özel ağdaki cihazları (bu durumda Waydroid konteyneri) ana sisteme bağlayan ve onları internete çıkmasını sağlayan bir ağ tekniğidir. Konteyner içindeki Android'in kendi IP adresi vardır ama bu IP'yi internet'e doğrudan gösteremez. NAT kuralları sayesinde konteyner dışarıya çıkabiliyor.
-</div>
+!!! note "<strong>NAT Nedir?</strong> Network Address Translation (NAT), bir özel ağdaki cihazları (bu durumda Waydroid konteyneri) ana sisteme bağlayan ve onları internete çıkmasını sağlayan bir ağ tekniğidir. Konteyner içindeki Android'in kendi IP adresi vardır ama bu IP'yi internet'e doğrudan gösteremez. NAT kuralları sayesinde konteyner dışarıya çıkabiliyor."
 
 ## Çözüm Adımları: Waydroid'i Çalıştırmak
 
@@ -93,9 +91,7 @@ sudo ln -sf /usr/bin/ip6tables-nft /usr/bin/ip6tables
 
 Bu komutlar iptables-nft paketini kurar ve sistem komutlarını legacy yerine nft versiyonlarıyla bağlantılandırır.
 
-!!! warning "Dikkat"
-    Eğer sistemde başka containerlar çalışıyorsa (Docker, Podman vb.), bu adımı yapmadan önce onları da kontrol etmeniz önerilir çünkü iptables değişiklikleri onları etkileyebilir.
-</div>
+!!! warning "Eğer sistemde başka containerlar çalışıyorsa (Docker, Podman vb.), bu adımı yapmadan önce onları da kontrol etmeniz önerilir çünkü iptables değişiklikleri onları etkileyebilir."
 
 ### Adım 3: Eski ve Bozuk Kuralları Temizle
 
@@ -118,7 +114,7 @@ Bu komutlar firewall kurallarını sıfırlarlar. `-F` seçeneği kuralları sil
 sudo /usr/lib/waydroid/data/scripts/waydroid-net.sh start
 ```
 
-Eğer bu komut hatasız çalışırsa, bir sonraki adıma geçebilirsiniz. Ancak hâlâ "Bad rule" hatası alıyorsanız, manuel NAT kurulumu yapmanız gerekecektir. [Docker ve konteyner teknolojisi hakkında daha fazla bilgi almak için yazımızı okuyabilirsiniz](/docker-nedir-containerlar).
+Eğer bu komut hatasız çalışırsa, bir sonraki adıma geçebilirsiniz. Ancak hâlâ "Bad rule" hatası alıyorsanız, manuel NAT kurulumu yapmanız gerekecektir. [Docker ve konteyner teknolojisi hakkında daha fazla bilgi almak için yazımızı okuyabilirsiniz](/arch-linux-docker-kurulumu/).
 
 ### Adım 5: Manuel NAT Kuralları Ekle (Çalışan Çözüm)
 
@@ -142,9 +138,7 @@ ip a
 
 Çıktıda internet bağlantınız olan arayüzü bulun. Genellikle `eth0`, `en0`, `wlan0` veya `wlp` ile başlayan isimler olabilir. Bu adımı doğru yapmazsanız Waydroid yine internete çıkamayacaktır.
 
-!!! tip "İpucu"
-    <strong>Ağ arayüzünü bulma:</strong> Eğer WiFi kullanıyorsanız genellikle "wlan" ile başlayan isim vardır. Kablolu ağ kullanıyorsanız "eth" veya "enp" ile başlayan isim ararsınız. Her durumda `ip a` komutu size tüm arayüzleri gösterecektir.
-</div>
+!!! tip "<strong>Ağ arayüzünü bulma:</strong> Eğer WiFi kullanıyorsanız genellikle "wlan" ile başlayan isim vardır. Kablolu ağ kullanıyorsanız "eth" veya "enp" ile başlayan isim ararsınız. Her durumda `ip a` komutu size tüm arayüzleri gösterecektir."
 
 ### Adım 6: IP Yönlendirmesini Etkinleştir
 
@@ -178,8 +172,6 @@ Session: RUNNING
 Vendor type: MAINLINE
 ```
 
-Eğer Session'ın STOPPED göründüğünü görürseniz, hatalar için kontrol etmek amacıyla Adım 8'e geçmeden önce [Linux sistem yönetimi rehberimize](/linux-sistem-yonetimi) göz atmanız faydalı olabilir.
-
 ### Adım 8: İnternet Bağlantısını Test Et
 
 Artık Waydroid içinde internet bağlantısının çalışıp çalışmadığını test edebilirsiniz. Ping komutlarıyla bağlantıyı kontrol edin:
@@ -194,7 +186,7 @@ Alternatif olarak bir alan adı ile de test edebilirsiniz:
 waydroid shell ping -c 3 google.com
 ```
 
-Eğer ping cevap alıyorsa (3 satır çıktı görüyorsa), Waydroid içinde internet bağlantısı başarılı demektir. Şimdi Android arayüzü açılacak ve sistem başarıyla boot olacaktır. Logolar geçecek, sistem açılacak ve uygulamaları kullanabileceksiniz. [Waydroid kurulumundan sonra performans optimizasyonu için konteyner yönetimi makalemizi](/linux-container-optimizasyonu) inceleyebilirsiniz.
+Eğer ping cevap alıyorsa (3 satır çıktı görüyorsa), Waydroid içinde internet bağlantısı başarılı demektir. Şimdi Android arayüzü açılacak ve sistem başarıyla boot olacaktır. Logolar geçecek, sistem açılacak ve uygulamaları kullanabileceksiniz.
 
 ## Ekstra Bilgiler ve İpuçları
 
@@ -212,7 +204,7 @@ Bu komut, başlatma sırasında neler olduğunu adım adım gösterecek ve hatan
 
 **NAT kuralları kalıcı hale getirmek:**
 
-Kurduğunuz NAT kuralları sistem yeniden başlatıldığında kaybolabilir. Kalıcı hale getirmek için `iptables-save` komutunu kullanabilirsiniz. Daha detaylı bilgi için [Linux firewall yapılandırması makalemizi](/linux-firewall-ayarları) okumanız önerilir.
+Kurduğunuz NAT kuralları sistem yeniden başlatıldığında kaybolabilir. Kalıcı hale getirmek için `iptables-save` komutunu kullanabilirsiniz. Daha detaylı bilgi için [Linux firewall yapılandırması makalemizi](/linux-firewall-ayarlari) okumanız önerilir.
 
 ```bash
 sudo iptables-save > /etc/iptables/iptables.rules
@@ -230,6 +222,6 @@ Yaygın sorunlar ve hızlı çözümleri şöyledir: Android logosunda takılma,
 
 Bu makalede öğrendiğiniz çözümler sayesinde Waydroid'de internetin çalışmasını ve Android sisteminin düzgün açılmasını sağlayabileceksiniz. Arch Linux'ta Waydroid sorunları neredeyse her zaman bu adımlarla çözülebilir. Sistem yeniden başlatıldığında kurallar kaybolmaması için IP forwarding ayarını ve NAT kurallarını kalıcı hale getirdiğinizden emin olun.
 
-Waydroid tam olarak çalıştıktan sonra, sisteminizi optimize etmek isteyebilirsiniz. [Linux konteyner optimizasyonu rehberimizi](/linux-container-optimizasyonu) okuyarak performansı arttırabilirsiniz. Ayrıca [Docker ve Waydroid gibi konteyner teknolojilerinin farkları hakkında daha fazla bilgi edinmek için yazımızı ziyaret edin](/docker-vs-waydroid-karsilastirma). Herhangi bir sorunda bu makalenin adımlarını tekrar gözden geçirin ve kontrol listesini kullanarak doğru yaptığınızı teyit edin.
+Waydroid tam olarak çalıştıktan sonra, sisteminizi optimize etmek isteyebilirsiniz. Herhangi bir sorunda bu makalenin adımlarını tekrar gözden geçirin ve kontrol listesini kullanarak doğru yaptığınızı teyit edin.
 
 Başarılar dilerim! Waydroid'in tam olarak çalışmaya başlamışsa, Linux üzerinizde Android uygulamalarını sorunsuz şekilde kullanabileceksiniz.

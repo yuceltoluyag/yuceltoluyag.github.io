@@ -149,7 +149,6 @@ common_plugins = [
     "pelican.plugins.related_posts",
     "pelican.plugins.neighbors",
     "pelican.plugins.statistics",
- 
     "plugins.fix_sitemap",
     "plugins.json_feed",
     "plugins.responsive_image_shortcode",  # Responsive Image Shortcode
