@@ -117,6 +117,10 @@ STATISTICS_CATEGORIES = True  # Kategori istatistikleri
 STATISTICS_AUTHORS = True  # Yazar istatistikleri
 READING_SPEED_WPM = 200  # Dakikada ortalama kelime sayısı (varsayılan: 250)
 
+# Series eklentisi ayarları
+SERIES_DEFAULT_INDEXING = "date"  # Makaleler için varsayılan sıralama (date/title)
+SERIES_PAGE_INDEXING = "title"  # Sayfalar için varsayılan sıralama
+
 # --- SEO Settings ---
 SEO_REPORT = True  # SEO report is enabled by default
 SEO_ENHANCER = False  # SEO enhancer is disabled by default
@@ -149,6 +153,7 @@ common_plugins = [
     "pelican.plugins.related_posts",
     "pelican.plugins.neighbors",
     "pelican.plugins.statistics",
+    "pelican.plugins.series",  # Series eklentisi
     "plugins.fix_sitemap",
     "plugins.json_feed",
     "plugins.responsive_image_shortcode",  # Responsive Image Shortcode
@@ -278,6 +283,12 @@ NAVBAR_LINKS = [
         "url": "/hakkimda",
         "target": "_self",
         "icon": "fa-solid fa-user",
+    },
+    {
+        "name": "İstatistikler",
+        "url": "/istatistikler",
+        "target": "_self",
+        "icon": "fa-solid fa-chart-bar",
     },
     {
         "name": "Bağış",
