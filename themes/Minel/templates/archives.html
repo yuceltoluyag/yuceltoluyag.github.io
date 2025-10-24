@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mx-auto px-4">
+    <article class="bg-base-100 rounded-xl p-6 shadow-xs mb-8">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2 text-base-content">Arşiv</h1>
+            <p class="text-xl text-base-content/70">Zamana göre sıralanmış tüm içerikler</p>
+        </header>
+
+        <div class="prose prose-xl max-w-none">
+            <div class="space-y-12">
+                {% set current_year = None %} {% set current_month = None %} {% set articles_by_year_month = {} %} {#
+                İlk olarak, yazıları yıl ve aylara göre düzenliyoruz #} {% for article in dates %} {% set year =
+                article.date.strftime('%Y') %} {% set month = article.date.strftime('%m') %} {% set month_name =
+                article.date.strftime('%B') %} {# Yıl sözlüğünü oluştur #} {% if year not in articles_by_year_month %}
+                {% if articles_by_year_month.update({year: {}}) %}{% endif %} {% endif %} {# Ay sözlüğünü oluştur #} {%
+                if month not in articles_by_year_month[year] %} {% if articles_by_year_month[year].update({month:
+                {'name': month_name, 'articles': []}}) %}{% endif %} {% endif %} {# Makaleyi ekle #} {% if
+                articles_by_year_month[year][month]['articles'].append(article) %}{% endif %} {% endfor %} {# Şimdi
+                yıllara göre gruplandırılmış arşivi gösteriyoruz #} {% for year, months in
+                articles_by_year_month.items()|sort(reverse=true) %}
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold px-4 py-2 bg-primary/10 text-primary rounded-xl mb-4">{{ year }}</h2>
+                    <div class="space-y-6 pl-4">
+                        {% for month, month_data in months.items()|sort(reverse=true) %}
+                        <div class="mb-6">
+                            <h3 class="text-xl font-semibold mb-3 text-base-content">{{ month_data['name'] }}</h3>
+                            <ul class="space-y-2 pl-4">
+                                {% for article in month_data['articles'] %}
+                                <li class="flex items-start">
+                                    <span class="text-base-content/70 w-24 shrink-0">
+                                        {{ article.date.strftime('%d %B') }}
+                                    </span>
+                                    <a href="{{ SITEURL }}/{{ article.url }}" class="link link-hover text-primary">
+                                        <span>{{ article.title }}</span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %} {% if not dates %}
+                <div class="alert alert-info">
+                    <span class="iconify mr-2" data-icon="mdi:information"></span>
+                    <p>Henüz arşivlenmiş içerik bulunmuyor.</p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </article>
+</div>
+{% endblock %}

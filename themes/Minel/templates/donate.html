@@ -1,0 +1,240 @@
+{% extends "base.html" %} {% block title %}Bağış Yap{% endblock title %} {% block head %} {{ super() }} {% endblock %}
+{% block seo %}
+<meta
+    name="description"
+    content="Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz." />
+<link rel="canonical" href="{{ SITEURL }}/bagis/" />
+{% endblock %} {% block content %}
+<div class="container mx-auto px-4">
+    <article class="card bg-base-100 rounded-xl shadow-xs">
+        <!-- Hero Bölümü -->
+        <div class="p-8 text-center">
+            <div class="relative w-20 h-20 mx-auto mb-6">
+                <div class="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
+                <div
+                    class="relative w-full h-full flex items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <span class="iconify" data-icon="tabler:heart" width="32" height="32"></span>
+                </div>
+            </div>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Bağış Yap</h1>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-xl text-base-content/70 mb-4">
+                    Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki
+                    yöntemlerle bağış yapabilirsiniz.
+                </p>
+                <div class="flex flex-wrap justify-center gap-2 mt-4">
+                    {% for feature in ["✍️ İçerik", "🎥 Eğitim", "💻 Açık Kaynak", "🚀 Topluluk"] %}
+                    <span class="badge badge-primary">{{ feature }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- İçerik Bölümü -->
+        <div class="p-6">
+            <div class="card bg-base-200 rounded-xl">
+                <div class="grid md:grid-cols-2 gap-8 p-6">
+                    <!-- Neden Bağış? -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                <span class="iconify" data-icon="tabler:bulb" width="24" height="24"></span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-base-content">Neden Bağış?</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="iconify text-success"
+                                    data-icon="tabler:check"
+                                    width="20"
+                                    height="20"></span>
+                                <p class="text-base-content/80">Daha fazla içerik üretebiliyorum</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="iconify text-success"
+                                    data-icon="tabler:check"
+                                    width="20"
+                                    height="20"></span>
+                                <p class="text-base-content/80">Daha kaliteli eğitim videoları hazırlayabiliyorum</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span
+                                    class="iconify text-success"
+                                    data-icon="tabler:check"
+                                    width="20"
+                                    height="20"></span>
+                                <p class="text-base-content/80">
+                                    Açık kaynak projelere daha fazla zaman ayırabiliyorum
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bağış Seçenekleri -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div
+                                class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                <span class="iconify" data-icon="tabler:wallet" width="24" height="24"></span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-base-content">Bağış Seçenekleri</h2>
+                        </div>
+
+                        <!-- Papara ve GitHub Sponsors -->
+                        <div class="space-y-4">
+                            <!-- Papara -->
+                            {% if SOCIAL.papara %}
+                            <a
+                                href="https://www.papara.com/donate/{{ SOCIAL.papara }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card bg-base-100 hover:shadow-md transition-all duration-200 overflow-hidden">
+                                <div class="card-body p-4 flex flex-row items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-purple-100 text-purple-600">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:credit-card"
+                                                width="20"
+                                                height="20"></span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-base-content">Papara</h3>
+                                            <p class="text-sm text-base-content/70">Hızlı ve Güvenli Bağış</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center text-primary font-medium">
+                                        <span>Bağış Yap</span>
+                                        <span
+                                            class="iconify ml-2"
+                                            data-icon="tabler:chevron-right"
+                                            width="20"
+                                            height="20"></span>
+                                    </div>
+                                </div>
+                            </a>
+                            {% endif %}
+
+                            <!-- GitHub Sponsors -->
+                            {% if SOCIAL.github_sponsor %}
+                            <a
+                                href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="card bg-base-100 hover:shadow-md transition-all duration-200 overflow-hidden">
+                                <div class="card-body p-4 flex flex-row items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 text-gray-800">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:brand-github"
+                                                width="20"
+                                                height="20"></span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-bold text-base-content">GitHub Sponsors</h3>
+                                            <p class="text-sm text-base-content/70">Aylık Destek</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center text-primary font-medium">
+                                        <span>Sponsor Ol</span>
+                                        <span
+                                            class="iconify ml-2"
+                                            data-icon="tabler:chevron-right"
+                                            width="20"
+                                            height="20"></span>
+                                    </div>
+                                </div>
+                            </a>
+                            {% endif %}
+                        </div>
+
+                        <!-- Kripto Adresler -->
+                        {% if DONATE_CRYPTO %}
+                        <div class="space-y-4 mt-6">
+                            {% for coin in DONATE_CRYPTO %}
+                            <div class="card bg-base-100 overflow-hidden">
+                                <div class="card-body p-4 space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-xl bg-accent/10 text-accent">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:currency-bitcoin"
+                                                width="18"
+                                                height="18"></span>
+                                        </div>
+                                        <div class="font-medium text-base-content">{{ coin.name }}</div>
+                                    </div>
+                                    <div class="flex items-center justify-between bg-base-200 rounded-xl p-2">
+                                        <div class="text-sm text-base-content/70 truncate pr-2">{{ coin.address }}</div>
+                                        <button
+                                            onclick="navigator.clipboard.writeText('{{ coin.address }}')"
+                                            class="btn btn-sm btn-ghost"
+                                            aria-label="{{ coin.name }} adresini kopyala">
+                                            <span class="iconify" data-icon="tabler:copy" width="18" height="18"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <div class="space-y-4 mt-6">
+                            {% for coin in [{'name': 'Bitcoin (BTC)', 'address':
+                            'bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}, {'name': 'Ethereum (ETH)', 'address':
+                            '0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}] %}
+                            <div class="card bg-base-100 overflow-hidden">
+                                <div class="card-body p-4 space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 flex items-center justify-center rounded-xl bg-accent/10 text-accent">
+                                            <span
+                                                class="iconify"
+                                                data-icon="tabler:currency-bitcoin"
+                                                width="18"
+                                                height="18"></span>
+                                        </div>
+                                        <div class="font-medium text-base-content">{{ coin.name }}</div>
+                                    </div>
+                                    <div class="flex items-center justify-between bg-base-200 rounded-xl p-2">
+                                        <div class="text-sm text-base-content/70 truncate pr-2">{{ coin.address }}</div>
+                                        <button
+                                            onclick="navigator.clipboard.writeText('{{ coin.address }}')"
+                                            class="btn btn-sm btn-ghost"
+                                            aria-label="{{ coin.name }} adresini kopyala">
+                                            <span class="iconify" data-icon="tabler:copy" width="18" height="18"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+<script>
+    // Kopyalama butonlarının işlevselliği
+    document.querySelectorAll(".btn-ghost").forEach((button) => {
+        button.addEventListener("click", function () {
+            // Kopyalandı sınıfını ekle
+            this.classList.add("btn-success");
+
+            // 2 saniye sonra kopyalandı sınıfını kaldır
+            setTimeout(() => {
+                this.classList.remove("btn-success");
+            }, 2000);
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block main %}
+<div
+    class="min-h-screen bg-base-100 flex flex-col {% if output_file == 'index.html' %}py-12 lg:py-16{% else %}py-16 lg:py-20{% endif %}">
+    <div class="container mx-auto px-4">{% block content %}{% endblock %}</div>
+</div>
+{% endblock %}

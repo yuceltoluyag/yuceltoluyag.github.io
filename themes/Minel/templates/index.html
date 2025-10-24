@@ -1,0 +1,136 @@
+{% extends "base.html" %} {% block content %}
+<div class="container mx-auto px-4">
+    <div class="hero min-h-[30vh] bg-base-200 rounded-box shadow-xs mb-6 onload-animation">
+        <div class="hero-content text-center">
+            <div class="max-w-3xl">
+                <h1
+                    id="header-content"
+                    class="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-base-content onload-animation">
+                    {{ SITENAME }}
+                </h1>
+                {% if DESCRIPTION %}
+                <p class="text-xl md:text-2xl text-base-content/70 mb-4 onload-animation">{{ DESCRIPTION }}</p>
+                {% endif %}
+                <a href="#icerikler" class="btn btn-primary btn-outline transition-all duration-300">
+                    <span class="iconify mr-2" data-icon="tabler:article"></span>
+                    İçeriklere Göz At
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="main-content" class="mb-8 onload-animation" id="icerikler">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold text-base-content">İçerikler</h2>
+            {% if articles_page.has_other_pages() %}
+            <div class="text-sm breadcrumbs hidden md:inline-flex">
+                <ul>
+                    <li>
+                        <a href="{{ SITEURL }}/" class="link link-hover">
+                            <span class="iconify mr-1" data-icon="tabler:home"></span>
+                            Ana Sayfa
+                        </a>
+                    </li>
+                    <li>
+                        <span>Sayfa {{ articles_page.number }} / {{ articles_paginator.num_pages }}</span>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if FEATURED_ARTICLE %}
+        <div class="mb-3">
+            <article
+                class="card bg-base-100 shadow-xs overflow-hidden border-l-4 border-primary hover:shadow-sm transition-all duration-300 hover:-translate-y-1">
+                <div class="card-body p-4">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+                        <div class="flex-1">
+                            <h3 class="card-title text-xl md:text-xl mb-1 group">
+                                <a
+                                    href="{{ SITEURL }}/{{ FEATURED_ARTICLE.slug }}"
+                                    class="link link-hover text-primary flex items-center transition-all duration-300 hover:translate-x-1">
+                                    <span
+                                        class="iconify mr-2 transition-transform duration-300 group-hover:rotate-12"
+                                        data-icon="tabler:star-filled"></span>
+                                    {{ FEATURED_ARTICLE.title }}
+                                </a>
+                            </h3>
+                            {% if FEATURED_ARTICLE.summary %}
+                            <p class="text-base-content/80 text-sm mb-2 line-clamp-1">
+                                {{ FEATURED_ARTICLE.summary|striptags }}
+                            </p>
+                            {% endif %}
+                        </div>
+                        <time
+                            datetime="{{ FEATURED_ARTICLE.date }}"
+                            class="text-sm text-base-content/60 whitespace-nowrap flex items-center">
+                            <span class="iconify mr-1" data-icon="tabler:calendar"></span>
+                            {{ FEATURED_ARTICLE.date|strftime('%d %B %Y') }}
+                        </time>
+                    </div>
+                </div>
+            </article>
+        </div>
+        {% endif %}
+
+        <div class="space-y-2">
+            {% for article in articles_page.object_list %}
+            <article
+                class="card bg-base-100 shadow-xs hover:shadow-sm transition-all duration-300 hover:-translate-y-1">
+                <div class="card-body p-3">
+                    <div class="flex flex-row items-center justify-between gap-2">
+                        <div class="flex-1 group">
+                            <a
+                                href="{{ SITEURL }}/{{ article.url }}"
+                                class="link hover:text-primary visited:text-purple-200 no-underline font-medium transition-all duration-300 group-hover:translate-x-1 inline-flex items-center">
+                                <span
+                                    class="iconify mr-2 opacity-0 group-hover:opacity-100 transition-all duration-300 -ml-6 group-hover:ml-0"
+                                    data-icon="tabler:arrow-right"></span>
+                                {{ article.title }}
+                            </a>
+                        </div>
+                        <time
+                            datetime="{{ article.date.isoformat() }}"
+                            class="text-xs text-base-content/60 whitespace-nowrap flex items-center transition-all duration-300 hover:text-primary">
+                            <span class="iconify mr-1" data-icon="tabler:calendar"></span>
+                            {{ article.date|strftime('%d %B %Y') }}
+                        </time>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if articles_page.has_other_pages() %}
+        <div class="flex justify-center mt-6">
+            <div class="join">
+                {% if articles_page.has_previous() %}
+                <a
+                    class="btn btn-xs join-item transition-transform hover:-translate-x-1"
+                    href="{{ SITEURL }}/{{ articles_previous_page.url }}"
+                    aria-label="Önceki Sayfa">
+                    <span class="iconify" data-icon="tabler:chevron-left"></span>
+                    Önceki
+                </a>
+                {% endif %}
+
+                <span class="btn btn-xs join-item btn-primary" aria-current="page">
+                    {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+                </span>
+
+                {% if articles_page.has_next() %}
+                <a
+                    class="btn btn-xs join-item transition-transform hover:translate-x-1"
+                    href="{{ SITEURL }}/{{ articles_next_page.url }}"
+                    aria-label="Sonraki Sayfa">
+                    Sonraki
+                    <span class="iconify" data-icon="tabler:chevron-right"></span>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </section>
+</div>
+{% endblock %}

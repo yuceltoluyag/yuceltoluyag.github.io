@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG|default('tr') }}">
+    <head>
+        {% include 'includes/metadata.html' %}
+
+        <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{{ SITEURL }}/images/favicon.ico" />
+        <link rel="icon" type="image/png" href="{{ SITEURL }}/images/favicon-96x96-xl.webp" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="{{ SITEURL }}/images/favicon.svg" />
+        <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/images/apple-touch-icon-xl.webp" />
+        <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+        <link rel="manifest" href="{{ SITEURL }}/site.webmanifest" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="{{ SITEURL }}/{% if article %}{{ article.url }}{% elif page %}{{ page.url }}{% else %}{{ output_file|replace('index.html','') }}{% endif %}" />
+
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css" />
+
+        <!-- Iconify CDN - Her iki kullanımı da destekleyen sürüm -->
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js" async></script>
+        <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+        <!-- Swup - Sayfa Geçiş Animasyonları -->
+        <script src="https://unpkg.com/swup@4"></script>
+        <script src="https://unpkg.com/@swup/scroll-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/js-plugin@3"></script>
+        <script src="https://unpkg.com/@swup/progress-plugin@3"></script>
+
+
+        {% if GOOGLE_ADSENSE and PUBLISH %}
+        <!-- Google AdSense -->
+        <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"></script>
+        {% endif %}
+
+        <!-- Debug modu kontrolü - Sadece geliştirme ortamında console.log gösterecek -->
+        <script>
+            // Global debug kontrolü - Sadece localhost veya yerel IP'lerde çalışır
+            (function () {
+                window.isDebugMode =
+                    window.location.hostname === "localhost" ||
+                    window.location.hostname === "127.0.0.1" ||
+                    window.location.hostname.includes("192.168.");
+
+                // Global debugLog fonksiyonu
+                window.debugLog = function (message, ...args) {
+                    if (window.isDebugMode) {
+                        console.log(message, ...args);
+                    }
+                };
+
+                // Konsol fonksiyonlarını yeniden tanımla
+                if (!window.isDebugMode) {
+                    const noop = function () {};
+                    // Sadece log fonksiyonunu değiştir (error, warn gibi önemli mesajlar korunsun)
+                    console.log = noop;
+                }
+            })();
+        </script>
+    </head>
+
+    <body>
+        <div class="bg-base-100 min-h-screen flex flex-col">
+            {% include 'includes/header.html' %}
+
+            <main id="main-content" class="swup-transition-fade flex-1">{% block content %}{% endblock %}</main>
+
+            {% include 'includes/footer.html' %}
+
+            <!-- Arama Modalı -->
+            {% include "includes/search-modal.html" %}
+        </div>
+
+        <!-- Temel JS -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/main.js" defer></script>
+
+        <!-- Arama JS -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js" defer></script>
+
+        <!-- Kod Kopyalama JS -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/code-copy.js" defer></script>
+
+        <!-- Sayfa Geçiş Animasyonları JS -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/swup.js" defer></script>
+
+        <!-- İçindekiler Tablosu JS -->
+        {% if article and article.toc %}
+        <!-- Birleştirilmiş İçindekiler Tablosu (TOC) JavaScript -->
+        <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-toc.js"></script>
+        {% endif %} {% include 'includes/tagmanager.html' %} {% block scripts %}{% endblock %}
+        
+        
+    </body>
+</html>

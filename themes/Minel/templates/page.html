@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %}{{ page.title }}{% endblock %} {% block seo %}
+<meta name="description" content="{% if page.summary %}{{ page.summary | striptags }}{% endif %}" />
+<link rel="canonical" href="{{ SITEURL }}/{{ page.url }}" />
+<link rel="author" href="{{ SITEURL }}/yazar/yuceltoluyag/" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<script type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "{{ page.title }}",
+            "name": "{{ page.title }}",
+            "url": "{{ SITEURL }}/{{ page.url }}",
+            "datePublished": "{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
+            {% if page.modified -%}
+            "dateModified": "{{ page.modified | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
+            {% else -%}
+            "dateModified": "{{ page.date | strftime("%Y-%m-%dT%H:%M:%S%z") }}",
+            {% endif -%}
+            {% if page.summary -%}
+            "description": "{{ page.summary | striptags }}",
+            {% endif -%}
+            {% if page.tags -%}
+            "keywords": ["{{ page.tags | join(',') }}"],
+            {% endif -%}
+            "author": {
+                "@type": "Person",
+                "name": "Yücel Toluyağ",
+                "alternateName": "yucel toluyag",
+                "url": "{{ SITEURL }}",
+                "image": "{{ SITEURL }}/static/images/avatar.webp",
+                "sameAs": ["https://facebook.com/yuceltoluyag", "https://twitter.com/yuceltoluyag", "https://www.linkedin.com/in/yuceltoluyag/"]
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Yücel Toluyağ",
+                "alternateName": "yucel toluyag",
+                "url": "{{ SITEURL }}",
+                "image": "{{ SITEURL }}/static/images/avatar.webp",
+                "sameAs": ["https://facebook.com/yuceltoluyag", "https://twitter.com/yuceltoluyag", "https://www.linkedin.com/in/yuceltoluyag/"]
+            },
+            "copyrightYear": "{{ YEAR }}",
+            "copyrightHolder": {
+                "@type": "Person",
+                "name": "Yücel Toluyağ",
+                "alternateName": "yucel toluyag"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ SITEURL }}{{ page.url }}"
+            }
+        }
+</script>
+<!-- Sayfa için ek meta etiketleri (base.html'deki OG etiketlerini ezmek için) -->
+{% if page.image %}
+<meta property="og:image" content="{{ SITEURL }}/{{ page.image }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="{{ page.title }}" />
+{% endif %} {% endblock seo %} {% block content %}
+<div class="container mx-auto px-4">
+    <article class="prose prose-xl dark:prose-invert max-w-none">
+        <h1 class="text-3xl md:text-4xl font-bold mb-8 text-base-content">{{ page.title }}</h1>
+        {{ page.content }}
+    </article>
+</div>
+{% endblock content%}

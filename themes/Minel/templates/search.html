@@ -1,0 +1,61 @@
+{% extends "base.html" %} {% block title %}Arama - {{ SITENAME }}{% endblock %} {% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="card bg-base-100 shadow-xs rounded-xl p-6 md:p-8">
+        <h1 class="text-3xl font-bold mb-6 text-base-content">Site İçi Arama</h1>
+
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Aramak istediğiniz kelimeyi yazın..."
+                class="input input-bordered flex-1 focus:outline-hidden focus:border-primary bg-base-200 text-base-content"
+                autofocus />
+            <button id="search-button" class="btn btn-primary">Ara</button>
+        </div>
+
+        <div id="search-results" class="mt-8"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.getElementById("search-input");
+        const searchButton = document.getElementById("search-button");
+        const resultsContainer = document.getElementById("search-results");
+
+        function performSearch() {
+            const query = searchInput.value.trim();
+            if (!query) {
+                resultsContainer.innerHTML =
+                    '<div class="text-center text-base-content/60 py-8">Lütfen arama yapmak için bir kelime girin.</div>';
+                return;
+            }
+
+            resultsContainer.innerHTML = '<div class="text-center text-base-content/60 py-8">Aranıyor...</div>';
+            // Burada arama işlemi yapılacak
+            // Pelican search plugin'i ile entegre edilecek
+
+            // Arama sonuç linklerine tıklama olayını izle ve gerekli işlemi yap
+            setTimeout(() => {
+                const resultLinks = document.querySelectorAll("#search-results a");
+                resultLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        // Dialog/modal kapanmasını ele al
+                        const searchModal = document.getElementById("search-modal");
+                        if (searchModal && typeof searchModal.close === "function") {
+                            searchModal.close();
+                        }
+                    });
+                });
+            }, 500); // Sonuçların oluşturulması için kısa bir bekleme süresi
+        }
+
+        searchButton.addEventListener("click", performSearch);
+        searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                performSearch();
+            }
+        });
+    });
+</script>
+{% endblock %}

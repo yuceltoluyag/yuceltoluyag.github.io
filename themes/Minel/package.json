@@ -1,0 +1,47 @@
+{
+    "name": "minel-theme",
+    "version": "1.0.0",
+    "description": "Minimal Pelican theme with Tailwind CSS",
+    "scripts": {
+        "build": "postcss ./_assets/css/input.css -o ./static/css/style.css",
+        "build:prod": "cross-env NODE_ENV=production postcss ./_assets/css/input.css -o ./static/css/style.css",
+        "watch": "postcss ./_assets/css/input.css -o ./static/css/style.css --watch",
+        "build:css": "npx @tailwindcss/cli -i ./_assets/css/input.css -o ./static/css/style.css",
+        "tailwind": "npx @tailwindcss/cli -i ./_assets/css/input.css -o ./static/css/style.css --watch",
+        "build:js": "node baba.js",
+        "watch:js": "node watcher.js",
+        "watch:all": "npm-run-all --parallel tailwind build:js watch:js",
+        "build:all": "npm-run-all build:css build:js",
+        "build:all:prod": "cross-env NODE_ENV=production npm-run-all build:css build:js"
+    },
+    "dependencies": {
+        "@babel/cli": "^7.28.3",
+        "@babel/preset-env": "^7.28.3",
+        "@tailwindcss/cli": "^4.1.14",
+        "@tailwindcss/postcss": "^4.1.14",
+        "autoprefixer": "^10.4.21",
+        "chokidar": "^4.0.3",
+        "cross-env": "^10.1.0",
+        "cssnano": "^7.1.1",
+        "daisyui": "^5.3.3",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.5.6",
+        "postcss-cli": "^11.0.1",
+        "postcss-import": "^16.1.1",
+        "postcss-nesting": "^13.0.2",
+        "tailwindcss": "^4.1.14",
+        "terser": "^5.44.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
