@@ -7,6 +7,7 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
 {% endif %} {% for tag in article.tags %}
 <meta name="tags" content="{{tag}}" />
 {% endfor %} {% endblock %} {% block content %}
+
 <main class="content container">
   <div class="article-hero" style="position: relative; overflow: hidden">
     {% if article.image %}
@@ -72,7 +73,24 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
     {% endif %}
   </div>
   <article class="article">
-    {{ article.content }}
+     <!-- Series Navigation -->
+  {% if article.series %}
+  <div class="card mb-4" style="margin-top: 2em;">
+    <p>Bu yazı "{{ article.series.name }}" serisinin {{ article.series.index }}. bölümüdür.</p>
+    
+    <!-- Series Index -->
+    <details style="margin-top: 1em;">
+      <summary>Seri İçindekileri</summary>
+      <ol style="margin-top: 0.5em;">
+        {% for part_article in article.series.all %}
+        <li {% if part_article == article %}class="active" style="font-weight: bold;"{% endif %}>
+          <a href="{{ SITEURL }}/{{ part_article.url }}">{{ part_article.title }}</a>
+        </li>
+        {% endfor %}
+      </ol>
+    </details>
+  </div>
+  {% endif %} {{ article.content }}
     <div style="margin-top: 2em; margin-bottom: 2em">
       {% if GOOGLE_ADSENSE and PUBLISH %}
       <script
@@ -93,6 +111,8 @@ translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
       {% endif %}
     </div>
   </article>
+
+ 
 
   <div class="grid">
     <!-- Left Column: Benzer Yazılar -->

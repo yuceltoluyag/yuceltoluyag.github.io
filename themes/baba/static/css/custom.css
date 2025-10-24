@@ -268,22 +268,52 @@ h6:hover .headerlink {
     border-color: transparent !important;
 }
 
-/* Ensure the navbar list doesn't cause overflow */
-.navbar ul {
-  flex-direction: column;
-  align-items: center; /* Center the items horizontally */
-  width: 100%;
-  padding: 0; /* Remove all padding */
-  margin: 0; /* Remove all margin */
-  box-sizing: border-box;
-  list-style: none; /* Remove bullets */
+/* CRITICAL: Force horizontal layout for ALL mobile devices */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 5px !important;
+    align-items: center !important;
+    width: 100% !important;
+    list-style: none !important;
+    height: auto !important;
+  }
+
+  .navbar ul li {
+    display: inline-block !important;
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+    min-width: 50px !important;
+    text-align: center !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+  }
 }
 
-.navbar ul li {
-  margin: 15px 0;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
+/* Default navbar styles - Desktop only */
+@media (min-width: 769px) {
+  .navbar ul {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    list-style: none !important;
+  }
+
+  .navbar ul li {
+    margin: 15px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
 }
 
 /* --- Article Hero Section --- */
@@ -385,14 +415,57 @@ article.article {
   .article-hero {
     height: 40vh;
     background-attachment: scroll; /* Disable parallax on mobile */
+    margin-top: 0; /* Remove any top margin */
+    border-radius: 0; /* Remove border radius on mobile */
   }
 
   .hero-title {
-    font-size: 2em;
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
   }
 
   .hero-summary {
     font-size: 1em;
+    padding: 0.8em;
+    margin-top: 1em;
+  }
+
+  .hero-meta {
+    font-size: 0.9em;
+    gap: 10px;
+    margin-top: 0.8em;
+  }
+
+  .hero-meta time, .hero-meta address {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-hero {
+    height: 35vh;
+    padding: 1em;
+  }
+
+  .hero-title {
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+  }
+
+  .hero-summary {
+    font-size: 0.9em;
+    padding: 0.6em;
+    margin-top: 0.8em;
+  }
+
+  .hero-meta {
+    font-size: 0.8em;
+    gap: 8px;
+    margin-top: 0.6em;
+  }
+
+  .hero-meta time, .hero-meta address {
+    font-size: 0.8em;
   }
 }
 
@@ -402,8 +475,11 @@ article.article {
   width: 100%;
 }
 
-.navbar a:hover {
-  transform: translateX(5px); /* Move right on hover */
+/* Hover effects only for desktop */
+@media (min-width: 769px) {
+  .navbar a:hover {
+    transform: translateX(5px); /* Move right on hover */
+  }
 }
 
 .navbar a::after {
@@ -414,21 +490,213 @@ article.article {
   width: 2px;
 }
 
-/* Responsive adjustments */
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .sidebar {
+    width: 80px; /* Slightly smaller sidebar */
+  }
+
+  .content-wrapper {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+
+  .navbar ul li {
+    margin: 10px 0; /* Smaller margins */
+  }
+}
+
+/* Medium mobile adjustments */
+@media (max-width: 600px) and (min-width: 481px) {
+  .sidebar {
+    padding: 6px 8px;
+  }
+
+  .content-wrapper {
+    margin-top: 65px;
+  }
+
+  .navbar ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+    width: 100% !important;
+    list-style: none !important;
+  }
+
+  .navbar ul li {
+    display: inline-block !important;
+    min-width: 48px !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+
+  .navbar a {
+    padding: 7px 5px;
+    font-size: 0.85em;
+    min-height: 38px;
+  }
+
+  /* Show more items on medium mobile */
+  .navbar ul li:nth-child(n+9) {
+    display: none;
+  }
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
+  /* Override wrapper flex direction for mobile */
+  .wrapper {
+    flex-direction: column;
+  }
+
+  /* Make sidebar horizontal navbar on mobile */
   .sidebar {
     width: 100%;
     height: auto;
-    position: relative;
+    position: fixed; /* Keep it fixed but at top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top */
+    padding: 8px 10px; /* Slightly more padding */
+    background-color: var(--pico-card-background-color);
+    border-bottom: 1px solid var(--pico-card-border-color);
+  }
+
+  /* Dark mode sidebar override for mobile */
+  [data-theme="dark"] .sidebar {
+    background-color: #0b1014;
+    border-bottom-color: #333;
+  }
+
+  /* Adjust content wrapper to account for fixed navbar */
+  .content-wrapper {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 70px; /* Space for fixed navbar */
   }
 
   .content {
     margin-left: 0;
     width: 100%;
+    padding: 10px;
   }
 
-  .wrapper {
-    flex-direction: column;
+  /* CRITICAL: Force navbar items to be horizontal on mobile */
+  .navbar ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 5px !important;
+    align-items: center !important;
+    width: 100% !important;
+    list-style: none !important;
+    height: auto !important;
+  }
+
+  .navbar ul li {
+    display: inline-block !important;
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+    min-width: 50px !important;
+    text-align: center !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+  }
+
+  /* Adjust navbar links for mobile */
+  .navbar a {
+    padding: 8px 6px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px; /* Touch-friendly height */
+  }
+
+  /* Show more items on mobile - only hide very non-essential ones */
+  .navbar ul li:nth-child(n+8) {
+    display: none;
+  }
+}
+
+/* Additional mobile optimizations for very small screens */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 5px 8px;
+  }
+
+  .content-wrapper {
+    margin-top: 60px; /* Smaller margin for smaller navbar */
+  }
+
+  .content {
+    padding: 5px;
+  }
+
+  .navbar ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    flex-wrap: wrap !important;
+    gap: 3px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+    width: 100% !important;
+    list-style: none !important;
+  }
+
+  .navbar ul li {
+    display: inline-block !important;
+    margin: 0 !important;
+    min-width: 45px !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    text-align: center !important;
+  }
+
+  .navbar a {
+    padding: 6px 4px;
+    font-size: 0.8em;
+    min-height: 35px; /* Smaller touch target */
+  }
+
+  /* Hide fewer items on very small screens - prioritize essential ones */
+  .navbar ul li:nth-child(n+7) {
+    display: none;
+  }
+
+  /* Adjust article padding for very small screens */
+  article.article,
+  article.page {
+    padding: 1em;
+    margin-top: 0;
+  }
+
+  /* Reduce hero section height on very small screens */
+  .article-hero {
+    height: 30vh;
+  }
+
+  .hero-title {
+    font-size: 1.5em;
+  }
+
+  .hero-summary {
+    font-size: 0.9em;
+    padding: 0.5em;
   }
 }
 
