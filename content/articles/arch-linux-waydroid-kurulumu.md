@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux üzerinde Waydroid kurulumu ve gelişmiş ayarlarla Android uygulamalarını masaüstünde çalıştırın. Binder modüllerini etkinleştirin ve oyun deneyiminizi geliştirin.
 Template: article
+Series: Waydroid
+Series_index: 1
 
 ## Giriş
 
