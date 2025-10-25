@@ -1,12 +1,13 @@
+{% if 'jinja2.ext.i18n' not in JINJA_ENVIRONMENT.extensions %} {%- macro _(msg)
+-%} {{ msg % kwargs }} {%- endmacro -%} {% endif %}
+
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
   <head>
     {% block head %}
+    {% include 'includes/metadata.html' %}
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta charset="utf-8" />
     <meta name="generator" content="Pelican" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ DESCRIPTION }}" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -26,7 +27,6 @@
       src="https://kit.fontawesome.com/44040beaf0.js"
       crossorigin="anonymous"
     ></script>
-
 
     {% if FEED_ALL_ATOM %}
     <link
@@ -120,7 +120,6 @@
   </head>
 
   <body>
-
     <div class="wrapper">
       <aside class="sidebar">
         <section id="nav">
@@ -200,6 +199,17 @@
         <div id="search-results"></div>
       </div>
     </div>
+    <footer class="container">
+      <small>
+        &copy; {{ COPYRIGHT_YEAR }} - {{ current_year }}
+        <a href="{{ SITEURL }}">{{ SITENAME }}</a>. All rights reserved.
+        <br />
+        <a href="/kategoriler/">Kategoriler</a> |
+        <a href="/etiketler/">Etiketler</a> |
+        <a href="/terms/">Kullanım Koşulları</a> |
+        <a href="/privacy-policy/">Gizlilik</a>
+      </small>
+    </footer>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
 

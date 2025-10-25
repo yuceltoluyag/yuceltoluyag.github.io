@@ -52,16 +52,19 @@ content %}
                                 <span class="ml-2">Benzer Yazılar</span>
                             </h3>
                             <div class="space-y-3">
-                                {% for related in articles if related.category == article.category and related !=
-                                article %} {% if loop.index <= 4 %}
-                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
-                                    <a
-                                        href="{{ SITEURL }}/{{ related.url }}"
-                                        class="link hover:text-primary visited:text-purple-200 no-underline">
-                                        <h4 class="text-md">{{ related.title }}</h4>
-                                    </a>
-                                </div>
-                                {% endif %} {% endfor %}
+                                {% for related in articles %}
+                                    {% if related.category == article.category and related != article %}
+                                        {% if loop.index <= 4 %}
+                                            <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
+                                                <a
+                                                    href="{{ SITEURL }}/{{ related.url }}"
+                                                    class="link hover:text-primary visited:text-purple-200 no-underline">
+                                                    <h4 class="text-md">{{ related.title }}</h4>
+                                                </a>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

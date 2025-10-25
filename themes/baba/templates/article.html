@@ -1,14 +1,22 @@
 {% extends "base.html" %} {% block html_lang %}{{ article.lang }}{% endblock %}
 {% block title %}{{ article.title|striptags }}{% endblock %} {% block head %} {{
-super() }} {% import 'translations.html' as translations with context %} {% if
-translations.entry_hreflang(article) %} {{ translations.entry_hreflang(article)
-}} {% endif %} {% if article.description %}
+super() }} {% if article.translations -%}
+<link rel="alternate" href="{{ SITEURL }}/{{ article.url }}" hreflang="{{ article.lang }}" />
+{% for a in article.translations %}
+<link rel="alternate" href="{{ SITEURL }}/{{ a.url }}" hreflang="{{ a.lang }}" />
+{% endfor %}
+{% endif %}
+{% if article.description %}
 <meta name="description" content="{{article.description}}" />
 {% endif %} {% for tag in article.tags %}
 <meta name="tags" content="{{tag}}" />
 {% endfor %} {% endblock %} {% block content %}
 
 <main class="content container">
+    {% if not ARTICLE_HIDE_TRANSLATION %}
+      {% import 'translations.html' as translations with context %}
+      {{ translations.translations_for(article) }}
+    {% endif %}
   <div class="article-hero" style="position: relative; overflow: hidden">
     {% if article.image %}
     <img

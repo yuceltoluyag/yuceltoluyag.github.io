@@ -6,6 +6,23 @@
 {% endblock %}
 <section id="content">
 <div id="main-page">
+{% if FEATURED_ARTICLE %}
+  {# Find the featured article from the list of all articles #}
+  {% for article in articles if article.slug == FEATURED_ARTICLE.slug %}
+    <section class="featured-article" style="margin-bottom: 2em; padding: 1.5em; background-color: var(--card-background-color); border: 1px solid var(--card-border-color); border-radius: var(--border-radius);">
+        <article class="hentry">
+            <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+            <div style="margin-bottom: 1em" class="entry-content"><strong>{{ article.summary }}</strong> </div>
+            <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+            <address class="vcard author">Yazan:
+                {% for author in article.authors %}
+                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                {% endfor %}
+            </address>
+        </article>
+    </section>
+  {% endfor %}
+{% endif %}
     <ol id="post-list">
         {% for article in articles_page.object_list %}
         <li style="list-style-type: none">
