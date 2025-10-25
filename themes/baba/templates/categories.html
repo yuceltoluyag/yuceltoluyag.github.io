@@ -1,34 +1,43 @@
-{% extends "base.html" %} {% block title %}Kategoriler - {{ SITENAME }}{% endblock title %} {% block seo %}
+{% extends "base.html" %} {% block title %}Kategoriler - {{ SITENAME }}{%
+endblock title %} {% block seo %}
 <meta
-    name="description"
-    content="Bu sayfada {{ SITENAME }} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz." />
+  name="description"
+  content="Bu sayfada {{ SITENAME }} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz."
+/>
 <link rel="canonical" href="{{ SITEURL }}/kategoriler.html" />
 {% endblock seo %} {% block content %}
-<div class="container mx-auto px-4">
-    <div class="text-center mb-12 py-8">
-        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Kategoriler</h1>
-        <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
-            Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara
-            ulaşabilirsiniz.
-        </p>
-    </div>
+<div style="text-align: center; margin-bottom: 2rem">
+  <h1>Kategoriler</h1>
+  <p>
+    Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz
+    kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz.
+  </p>
+</div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {% for category, articles in categories|sort %}
+<div class="grid">
+  {% for category, articles in categories|sort %}
+  <article class="category-card">
+    <div class="card-header">
+      <div class="category-title">
         <a
-            href="{{ SITEURL }}/kategori/{{ category.slug }}/"
-            class="card bg-base-100 hover:shadow-xl transition-shadow p-5 flex items-center gap-4 border border-base-200 group"
-            aria-label="{{ category }} kategorisine git">
-            <div
-                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
-                <span class="iconify" data-icon="tabler:tag" width="24" height="24"></span>
-            </div>
-            <div class="flex-1">
-                <h2 class="text-xl font-semibold group-hover:text-primary transition-colors">{{ category }}</h2>
-                <span class="text-sm text-base-content/70">{{ articles|length }} yazı</span>
-            </div>
+          href="{{ SITEURL }}/kategori/{{ category.slug }}/"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+<i class="fa-solid fa-folder" aria-hidden="true"></i>
+          <h3>{{ category }}</h3>
         </a>
-        {% endfor %}
+      </div>
     </div>
+    <footer>
+      <span class="article-count">{{ articles|length }} yazı</span>
+    </footer>
+  </article>
+  {% endfor %}
 </div>
 {% endblock content %}
