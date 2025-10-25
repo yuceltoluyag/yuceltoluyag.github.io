@@ -34,3 +34,4 @@ pelican-seo
 livereload
 pelican-statistics
 pelican-series
+

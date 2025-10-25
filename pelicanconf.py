@@ -118,7 +118,9 @@ STATISTICS_AUTHORS = True  # Yazar istatistikleri
 READING_SPEED_WPM = 200  # Dakikada ortalama kelime sayısı (varsayılan: 250)
 
 # Series eklentisi ayarları
-SERIES_DEFAULT_INDEXING = "date"  # Makaleler için varsayılan sıralama (date/title)
+SERIES_DEFAULT_INDEXING = (
+    "date"  # Makaleler için varsayılan sıralama (date/title)
+)
 SERIES_PAGE_INDEXING = "title"  # Sayfalar için varsayılan sıralama
 
 # --- SEO Settings ---
@@ -419,6 +421,7 @@ REDIRECTS = {
     "/arch-linux-lampp-kurulumuphp7xmariadbmy": "/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin",
     "/jekyll-staticman-eklentisi": "/jekyll-staticman-eklentisi-kurulumu",
     "/imap-openssl-terminalde-kullanimi": "/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin/",
+    "/imap-openssl-terminalde-kullanim": "/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin/",
 }
 
 # Cache Settings
@@ -438,3 +441,5 @@ TOC = {
     "TOC_RUN": "true",
     "TOC_INCLUDE_TITLE": "false",
 }
+
+JINJA_GLOBALS = {"current_year": date.today().year}

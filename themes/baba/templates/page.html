@@ -7,7 +7,7 @@
 {{ super() }}
 
 {% import 'translations.html' as translations with context %}
-{% if translations.entry_hreflang(page) %}
+{% if translations.entry_hreflang is defined %}
 {{ translations.entry_hreflang(page) }}
 {% endif %}
 {% endblock %}
