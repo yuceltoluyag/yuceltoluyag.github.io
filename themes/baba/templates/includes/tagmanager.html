@@ -1,3 +1,4 @@
+{% if PUBLISH %}
 {% if GTM_ID %}
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -49,4 +50,5 @@
         cookie_flags: "SameSite=None;Secure",
     });
 </script>
+{% endif %}
 {% endif %}

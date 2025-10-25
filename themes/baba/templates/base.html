@@ -184,9 +184,12 @@
         </section>
       </aside>
       <div class="content-wrapper">
-        <main id="main-content" class="content container">
-          {% block content %} {% endblock %}
-        </main>
+        <div>
+          <main id="main-content" class="content container">
+            {% block content %} {% endblock %}
+          </main>
+          {% include 'includes/footer.html' %}
+        </div>
       </div>
     </div>
 
@@ -199,17 +202,6 @@
         <div id="search-results"></div>
       </div>
     </div>
-    <footer class="container">
-      <small>
-        &copy; {{ COPYRIGHT_YEAR }} - {{ current_year }}
-        <a href="{{ SITEURL }}">{{ SITENAME }}</a>. All rights reserved.
-        <br />
-        <a href="/kategoriler/">Kategoriler</a> |
-        <a href="/etiketler/">Etiketler</a> |
-        <a href="/terms/">Kullanım Koşulları</a> |
-        <a href="/privacy-policy/">Gizlilik</a>
-      </small>
-    </footer>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
 

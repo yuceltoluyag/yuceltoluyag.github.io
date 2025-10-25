@@ -154,7 +154,7 @@ common_plugins = [
     "pelican.plugins.sitemap",
     "pelican.plugins.related_posts",
     "pelican.plugins.neighbors",
-    "pelican.plugins.statistics",
+
     "pelican.plugins.series",  # Series eklentisi
     "plugins.fix_sitemap",
     "plugins.json_feed",
@@ -286,12 +286,7 @@ NAVBAR_LINKS = [
         "target": "_self",
         "icon": "fa-solid fa-user",
     },
-    {
-        "name": "İstatistikler",
-        "url": "/istatistikler",
-        "target": "_self",
-        "icon": "fa-solid fa-chart-bar",
-    },
+
     {
         "name": "Bağış",
         "url": "/bagis",

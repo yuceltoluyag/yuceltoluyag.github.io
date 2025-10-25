@@ -13,6 +13,7 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
 ## Genel İstatistikler
 
 {% if statistics %}
+
 <div class="grid">
   <div class="card">
     <h3>Toplam Makale Sayısı</h3>
@@ -46,6 +47,7 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
 ## Kategori İstatistikleri
 
 {% if statistics.categories %}
+
 <div class="card" style="margin-top: 2em;">
   <h3>En Popüler Kategoriler</h3>
   <ul>
@@ -62,6 +64,7 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
 ## Yazar İstatistikleri
 
 {% if statistics.authors %}
+
 <div class="card" style="margin-top: 2em;">
   <h3>Yazarlar</h3>
   <ul>
@@ -78,6 +81,7 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
 ## En Uzun Makaleler
 
 {% if statistics.longest_articles %}
+
 <div class="card" style="margin-top: 2em;">
   <h3>En Uzun Makaleler</h3>
   <ol>
@@ -92,5 +96,6 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
 {% endif %}
 
 {% else %}
+
 <p>İstatistikler henüz yüklenemedi.</p>
 {% endif %}

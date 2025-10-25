@@ -9,66 +9,68 @@
     content="{{ SITENAME }} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/etiketler.html" />
-{% endblock seo %} {% block content %}
-<div class="container mx-auto px-4">
-    <div class="text-center mb-12 py-8">
-        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">Etiketler</h1>
-        <p class="text-xl text-base-content/70 max-w-3xl mx-auto">
+{% endblock seo %}
+{% block content %}
+    <div class="text-center" style="margin-bottom: 2rem;">
+        <h1>Etiketler</h1>
+        <p>
             Site içerisindeki tüm konulara ait etiketler. Büyüklük, içerik sayısını gösterir.
         </p>
     </div>
 
-    {% set max_count = 1 %} {% for tag, articles in tags %} {% if articles|length > max_count %} {% set max_count =
-    articles|length %} {% endif %} {% endfor %} {% set sorted_tags = [] %} {% for tag, articles in tags %} {% set _ =
-    sorted_tags.append((tag, articles, articles|length)) %} {% endfor %} {% set sorted_tags =
-    sorted_tags|sort(attribute=2, reverse=true) %}
+    {% set max_count = 1 %}
+    {% for tag, articles in tags %}
+        {% if articles|length > max_count %}
+            {% set max_count = articles|length %}
+        {% endif %}
+    {% endfor %}
+    {% set sorted_tags = [] %}
+    {% for tag, articles in tags %}
+        {% set _ = sorted_tags.append((tag, articles, articles|length)) %}
+    {% endfor %}
+    {% set sorted_tags = sorted_tags|sort(attribute=2, reverse=true) %}
 
-    <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-16">
-        {% for tag, articles, count in sorted_tags %} {% set tag_size = 1 %} {% if max_count > 1 %} {% set size_ratio =
-        count / max_count %} {% if size_ratio < 0.2 %} {% set tag_size = 1 %} {% elif size_ratio < 0.4 %} {% set
-        tag_size = 2 %} {% elif size_ratio < 0.6 %} {% set tag_size = 3 %} {% elif size_ratio < 0.8 %} {% set tag_size =
-        4 %} {% else %} {% set tag_size = 5 %} {% endif %} {% endif %}
+    <div class="tag-cloud-container">
+        {% for tag, articles, count in sorted_tags[:50] %}
+            {% set tag_size = 1 %}
+            {% if max_count > 1 %}
+                {% set size_ratio = count / max_count %}
+                {% if size_ratio < 0.2 %}
+                    {% set tag_size = 1 %}
+                {% elif size_ratio < 0.4 %}
+                    {% set tag_size = 2 %}
+                {% elif size_ratio < 0.6 %}
+                    {% set tag_size = 3 %}
+                {% elif size_ratio < 0.8 %}
+                    {% set tag_size = 4 %}
+                {% else %}
+                    {% set tag_size = 5 %}
+                {% endif %}
+            {% endif %}
 
-        <a
-            href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-            class="badge badge-xl {% if tag_size == 1 %}badge-outline text-xs{% elif tag_size == 2 %}badge-outline text-sm{% elif tag_size == 3 %}badge-primary text-sm{% elif tag_size == 4 %}badge-primary text-base{% else %}badge-primary text-xl{% endif %} hover:badge-secondary transition-colors"
-            aria-label="{{ tag }} etiketli {{ count }} yazıya git">
-            #{{ tag }}
-            <span class="ml-1 opacity-70">{{ count }}</span>
-        </a>
+            <a
+                href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
+                class="tag-item tag-size-{{ tag_size }}"
+                aria-label="{{ tag }} etiketli {{ count }} yazıya git">
+                #{{ tag }}
+                <span class="tag-count">{{ count }}</span>
+            </a>
         {% endfor %}
     </div>
 
-    <div class="card bg-base-100 shadow-xs rounded-box p-6 mb-12">
-        <h2 class="text-2xl font-bold mb-6 pb-3 border-b text-base-content">En Çok Kullanılan Etiketler</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <article class="card" style="margin-top: 3rem;">
+        <h2 style="margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--pico-muted-border-color);">En Çok Kullanılan Etiketler</h2>
+        <div class="grid">
             {% for tag, articles, count in sorted_tags[:5] %}
-            <div class="card bg-base-200 shadow-xs">
-                <div class="card-body p-4">
-                    <div class="flex justify-between items-center mb-3">
-                        <h3 class="font-bold text-xl">
-                            <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/" class="hover:text-primary transition-colors">
-                                #{{ tag }}
-                            </a>
-                        </h3>
-                        <span class="badge badge-primary">{{ count }} yazı</span>
-                    </div>
-                    <ul class="space-y-2">
-                        {% for article in articles[:3] %}
-                        <li class="truncate">
-                            <a
-                                href="{{ SITEURL }}/{{ article.url }}"
-                                class="hover:text-primary transition-colors flex items-center gap-1">
-                                <span class="iconify" data-icon="tabler:file-text" width="16" height="16"></span>
-                                {{ article.title }}
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+            <article class="tag-summary-card">
+                <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/" class="tag-summary-link">
+                    <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                    <h3>#{{ tag }}</h3>
+                    <span class="tag-summary-count">{{ count }} yazı</span>
+                </a>
+            </article>
             {% endfor %}
         </div>
-    </div>
-</div>
+    </article>
 {% endblock content %}
