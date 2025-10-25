@@ -18,7 +18,7 @@ from pelican.settings import DEFAULT_CONFIG, get_settings_from_file
 CI = os.environ.get("CI", "0") in {"1", "true", "yes", ""}
 DEBUG_MODE = os.environ.get("DEBUG_MODE", "0") in {"1", "true", "yes", ""}
 
-OPEN_BROWSER_ON_SERVE = True
+OPEN_BROWSER_ON_SERVE = False
 SETTINGS = {}
 SETTINGS_FILE_BASE = "pelicanconf.py"
 SETTINGS_FILE_PUBLISH = "publishconf.py"

@@ -1,32 +1,44 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}{{ category }} - {{ SITENAME }}{% endblock title %} {% block seo %}
+<meta
+    name="description"
+    content="{{ category }} kategorisindeki tüm yazılar. Bu kategoride {{ articles|length }} adet yazı bulabilirsiniz." />
+<link rel="canonical" href="{{ SITEURL }}/kategori/{{ category.slug }}/" />
+<meta property="og:title" content="{{ category }} - {{ SITENAME }}" />
+<meta
+    property="og:description"
+    content="{{ category }} kategorisindeki tüm yazılar. Bu kategoride {{ articles|length }} adet yazı bulabilirsiniz." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/kategori/{{ category.slug }}/" />
+{% endblock seo %} {% block content %}
+<div class="container mx-auto px-4">
+    <!-- Kategori Başlığı -->
+    <div class="flex items-center gap-4 mb-12 bg-base-100 p-6 rounded-xl shadow-xs">
+        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <span class="iconify" data-icon="tabler:tag" width="28" height="28"></span>
+        </div>
+        <div class="flex-1">
+            <h1 class="text-3xl md:text-4xl font-bold text-base-content">{{ category }}</h1>
+            <p class="text-base-content/70 mt-1">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
+        </div>
+    </div>
 
-{% block title %}{{ SITENAME }} - {{ category }} kategorisi{% endblock %}
-
-{% block content %}
-{% block content_title %}
-<h1 class="author-category-tags-title">Kategori: {{ category }}</h1>
-{% endblock %}
-
-<section id="content">
-      <ol id="post-list">
-          {% for article in articles_page.object_list %}
-          <li style="list-style-type: none">
-              <article class="hentry">
-                  <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                          title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-                  <div style="margin-bottom: 1em" class="entry-content"><strong>{{ article.description }}</strong> </div>
-                  <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-                  <address class="vcard author">By
-                      {% for author in article.authors %}
-                      <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                      {% endfor %}
-                  </address>
-              </article>
-          </li>
-          {% endfor %}
-      </ol>
-      {% if articles_page.has_other_pages() %}
-      {% include 'pagination.html' %}
-      {% endif %}
-  </section>
-  {% endblock content %}
+    <!-- Yazı Listesi -->
+    <div class="space-y-6">
+        {% for article in articles %}
+        <article class="card bg-base-100 shadow-xs hover:shadow-xl transition-all duration-200">
+            <a href="{{ SITEURL }}/{{ article.url }}" class="card-body p-6">
+                <div class="mb-3">
+                    <h2 class="text-xl font-bold hover:text-primary transition-colors">{{ article.title }}</h2>
+                    <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" class="text-sm text-base-content/60">
+                        {{ article.date.strftime('%d %b %Y') }}
+                    </time>
+                </div>
+                {% if article.summary %}
+                <div class="text-base-content/70">{{ article.summary|striptags|truncate(150) }}</div>
+                {% endif %}
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

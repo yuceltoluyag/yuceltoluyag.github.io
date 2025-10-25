@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Status: published
 Summary: Waydroid kurulumu sırasında sıkça görülen “ModuleNotFoundError” hatasının nedenlerini ve adım adım çözümünü öğren. Weston üzerinde sorunsuz çalıştır! ⚡
 Template: article
+Series: Waydroid
+Series_index: 3
 
 ---
 
@@ -274,8 +276,12 @@ Linux üzerinde Android deneyimin keyfini çıkar! 🎯
 
 ## Kaynaklar
 
-- [Waydroid Documentation](https://docs.waydro.id/){: target="_blank" rel="noopener noreferrer"}
-- [Arch Linux Wiki - Waydroid](https://wiki.archlinux.org/title/Waydroid){: target="_blank" rel="noopener noreferrer"}
-- [Python Docs - ModuleNotFoundError](https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError){: target="_blank" rel="noopener noreferrer"}
+- [Waydroid Documentation](https://docs.waydro.id/){: target="\_blank" rel="noopener noreferrer"}
+- [Arch Linux Wiki - Waydroid](https://wiki.archlinux.org/title/Waydroid){: target="\_blank" rel="noopener noreferrer"}
+- [Python Docs - ModuleNotFoundError](https://docs.python.org/3/library/exceptions.html#ModuleNotFoundError){: target="\_blank" rel="noopener noreferrer"}
 
 ---
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="HVQBmWN5ZaU"></lite-youtube>

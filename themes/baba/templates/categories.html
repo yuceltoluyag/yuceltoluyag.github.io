@@ -1,12 +1,43 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}Kategoriler - {{ SITENAME }}{%
+endblock title %} {% block seo %}
+<meta
+  name="description"
+  content="Bu sayfada {{ SITENAME }} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz."
+/>
+<link rel="canonical" href="{{ SITEURL }}/kategoriler.html" />
+{% endblock seo %} {% block content %}
+<div style="text-align: center; margin-bottom: 2rem">
+  <h1>Kategoriler</h1>
+  <p>
+    Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz
+    kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz.
+  </p>
+</div>
 
-{% block title %}{{ SITENAME }} - Kategoriler{% endblock %}
-
-{% block content %}
-<h2>Kategoriler</h2>
-<ul>
-    {% for category, articles in categories|sort %}
-    <li><a href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a> ({{ articles|count }})</li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<div class="grid">
+  {% for category, articles in categories|sort %}
+  <article class="category-card">
+    <div class="card-header">
+      <div class="category-title">
+        <a
+          href="{{ SITEURL }}/kategori/{{ category.slug }}/"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+          "
+        >
+<i class="fa-solid fa-folder" aria-hidden="true"></i>
+          <h3>{{ category }}</h3>
+        </a>
+      </div>
+    </div>
+    <footer>
+      <span class="article-count">{{ articles|length }} yazı</span>
+    </footer>
+  </article>
+  {% endfor %}
+</div>
+{% endblock content %}

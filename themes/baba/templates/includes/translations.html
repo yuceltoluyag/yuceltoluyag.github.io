@@ -1,0 +1,14 @@
+{% macro translations_for(article) %} {% if article.translations %}
+<div id="list-of-translations" class="translations-box">
+    <span class="translations-label">Bu yazı aşağıdaki dillerde de mevcuttur:</span>
+    <div class="translations-links">
+        {% for translation in article.translations|sort(attribute='lang') %}
+        <a href="{{ SITEURL }}/{{ translation.url }}" class="translation-link" hreflang="{{ translation.lang }}">
+            <span class="translation-icon">🌐</span>
+            {{ translation.lang }}
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endif %} {% endmacro %}

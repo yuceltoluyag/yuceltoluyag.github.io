@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Status: published
 Summary: GitHub reposunun tamamını değil, sadece belirli bir klasörünü indir. Sparse checkout yöntemi ile zaman ve disk alanı tasarrufu sağla.
 Template: article
+Series: Git
+Series_index: 9
 
 ---
 
@@ -92,7 +94,7 @@ pico-v2/v2-sass-customized-design-system/
 
 ## Kaynaklar
 
-- [GitHub Repository](https://github.com/picocss/examples){: target="_blank" rel="noopener noreferrer"}
-- [Git Sparse Checkout Documentation](https://git-scm.com/docs/git-sparse-checkout){: target="_blank" rel="noopener noreferrer"}
+- [GitHub Repository](https://github.com/picocss/examples){: target="\_blank" rel="noopener noreferrer"}
+- [Git Sparse Checkout Documentation](https://git-scm.com/docs/git-sparse-checkout){: target="\_blank" rel="noopener noreferrer"}
 
 Bu özellik gitlab ui'inde var,github ui'inde neden yok acaba? 🤔
