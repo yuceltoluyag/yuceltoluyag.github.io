@@ -6,11 +6,11 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
 />
 <link rel="canonical" href="{{ SITEURL }}/bagis/" />
 {% endblock %} {% block content %}
-<div>
-  <article>
+<div class="donate-page pico-container">
+  <article class="donate-article">
     <!-- Hero Bölümü -->
-    <div class="container">
-      <div class="headings">
+    <div class="donate-container">
+      <div class="donate-headings">
         <h1>Bağış Yap</h1>
         <p>
           Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek
@@ -18,9 +18,9 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
         </p>
       </div>
 
-      <div class="grid">
+      <div class="donate-grid">
         <!-- Neden Bağış? -->
-        <article>
+        <article class="donate-section pico-card">
           <header>
             <h2>Neden Bağış?</h2>
           </header>
@@ -30,8 +30,8 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
           geliştirebiliyorum", "Topluluk için daha fazla etkinlik ve proje
           düzenleyebiliyorum", "Yeni teknolojileri araştırıp deneyimlemeye daha
           fazla vakit ayırabiliyorum", ] %}
-          <figure>
-            <div class="grid">
+          <figure class="donate-figure">
+            <div class="donate-figure-grid">
               <i class="fa-solid fa-check" aria-hidden="true"></i>
               <p>{{ item }}</p>
             </div>
@@ -40,29 +40,29 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
         </article>
 
         <!-- Bağış Seçenekleri -->
-        <article>
+        <article class="donate-options pico-card">
           <header>
             <h2>Bağış Seçenekleri</h2>
           </header>
-          {% if SOCIAL.papara %}
+          {% if SOCIAL.bynogame %}
           <a
-            href="https://www.papara.com/donate/{{ SOCIAL.papara }}"
-            class="contrast"
+            href="{{ SOCIAL.bynogame }}"
+            class="donate-option papara-option"
             data-tooltip="Hızlı ve Güvenli Bağış"
             aria-label="Hızlı ve Güvenli Bağış"
           >
-            <article>
+            <article class="donate-option-card">
               <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
-              <h3>Papara</h3>
+              <h3>ByNoGame</h3>
             </article>
           </a>
           {% endif %} {% if SOCIAL.github_sponsor %}
           <a
             href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}"
-            class="secondary"
+            class="donate-option github-option"
             data-tooltip="Aylık Destek"
           >
-            <article>
+            <article class="donate-option-card">
               <i class="fa-brands fa-github" aria-hidden="true"></i>
               <h3>GitHub Sponsors</h3>
             </article>
@@ -72,13 +72,13 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
       </div>
 
       <!-- Kripto Bölümü -->
-      <article>
+      <article class="crypto-section pico-card">
         <header>
           <h2>Kripto Para Bağışları</h2>
         </header>
 
-        <article class="notice" aria-label="Ağ bilgisi">
-          <div class="notice-content">
+        <article class="crypto-notice" aria-label="Ağ bilgisi">
+          <div class="crypto-notice-content">
             <i class="fa-solid fa-circle-info"></i>
             <div>
               <strong> Önemli:</strong>
@@ -93,7 +93,7 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
           </div>
         </article>
 <hr> </hr>
-       <div class="grid">
+       <div class="crypto-grid">
           {% for coin in [ {'name': 'Bitcoin (BTC)', 'id': 'btc',
           'qr_code_image': 'btc.jpg'}, {'name': 'Ethereum (ETH)', 'id': 'eth',
           'qr_code_image': 'eth.jpg'}, {'name': 'Litecoin (LTC)', 'id': 'ltc',
@@ -104,19 +104,19 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
           'id': 'usdt', 'qr_code_image': 'usdt.jpg'}, {'name': 'Ripple (XRP)',
           'id': 'xrp', 'qr_code_image': 'xrp.jpg'}, {'name': 'Basic Attention
           Token (BAT)', 'id': 'bat', 'qr_code_image': 'bat.jpg'} ] %}
-          <figure>
+          <figure class="crypto-figure">
             <img
               src="{{ SITEURL }}/images/{{ coin.qr_code_image }}"
               alt="{{ coin.name }}"
               loading="lazy"
-              style="cursor: pointer"
+              class="crypto-qr-image"
               onclick="openModal('modal-{{ coin.id }}')"
             />
             <figcaption>{{ coin.name }}</figcaption>
 
-            <dialog id="modal-{{ coin.id }}">
-              <article>
-                <header>
+            <dialog id="modal-{{ coin.id }}" class="crypto-modal">
+              <article class="crypto-modal-article">
+                <header class="crypto-modal-header">
                   <button
                     class="close"
                     aria-label="Close dialog"
@@ -127,7 +127,7 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
                 <img
                   src="{{ SITEURL }}/images/{{ coin.qr_code_image }}"
                   alt="{{ coin.name }}"
-                  style="max-width: 300px; height: auto"
+                  class="crypto-modal-image"
                 />
               </article>
             </dialog>
@@ -135,12 +135,12 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
           {% endfor %}
         </div>
 
-        <details>
+        <details class="crypto-details">
           <summary>Bağış Adresi</summary>
-          <div>
-            <kbd>0x012e2a56828990ef0aa97de827297456aabccc63</kbd>
+          <div class="crypto-address-container">
+            <kbd class="crypto-address">0x012e2a56828990ef0aa97de827297456aabccc63</kbd>
             <button
-              class="outline"
+              class="outline copy-button"
               onclick="navigator.clipboard.writeText('0x012e2a56828990ef0aa97de827297456aabccc63')"
             >
               <i class="fa-solid fa-copy"></i>

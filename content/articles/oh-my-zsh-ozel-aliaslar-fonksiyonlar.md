@@ -1,13 +1,13 @@
 Title: Oh My Zsh Özel Alias'lar ve Fonksiyonlar
 Date: 2020-02-05 12:00
-Modified: 2024-01-01
+Modified: 2025-10-26
 Category: Terminal
-Tags: linux, terminal, zsh, oh-my-zsh, alias
+Tags: linux, terminal, zsh, oh-my-zsh, alias, customization
 Slug: oh-my-zsh-ozel-aliaslar-fonksiyonlar
 Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 3
-Summary: Oh My Zsh'de özel alias'lar ve fonksiyonlar oluşturmayı ve kullanmayı öğreniyoruz.
+Summary: Oh My Zsh'de özel alias'lar ve fonksiyonlar oluşturarak terminalinizi özelleştirin ve günlük işlerinizi hızlandırın.
 Translation: false
 Status: published
 Template: article
@@ -15,25 +15,45 @@ Image: images/zsh-alias-xl.webp
 
 Merhaba! 😊
 
-Bu makale, **Oh My Zsh** serisinin üçüncü bölümüdür. Bu bölümde Oh My Zsh'de özel alias'lar ve fonksiyonlar oluşturmayı öğreneceğiz.
+Bu makale, **Oh My Zsh** serisinin üçüncü bölümüdür.  
+Bu yazıda Oh My Zsh’de **özel alias’lar (kısayollar)** ve **fonksiyonlar (komut grupları)** oluşturarak terminal deneyiminizi nasıl hızlandırabileceğinizi öğreneceğiz.
 
-## Alias Nedir?
+---
 
-Alias, uzun komutları kısa isimlerle çağırmamızı sağlayan bir özelliktir. Örneğin `ls -la` komutunu `ll` olarak kısaltabiliriz.
+## 🔹 Alias Nedir?
 
-## Temel Alias'lar
+Alias, uzun komutları kısa isimlerle çağırmamızı sağlayan bir özelliktir.  
+Örneğin `ls -la` komutunu `ll` olarak kısaltabiliriz.
+
+Alias’lar sayesinde zamandan tasarruf eder, hata olasılığını azaltırsınız.
+
+---
+
+## 🧩 Alias ve Fonksiyon Arasındaki Fark
+
+Alias genellikle **tek satırlık kısayollar** içindir.  
+Fonksiyonlar ise **birden fazla komut** veya **koşullu işlem** içerir.
+
+| Kullanım                                   | Önerilen Yapı |
+| ------------------------------------------ | ------------- |
+| Basit tekrar eden komutlar                 | `alias`       |
+| Parametre alan veya mantık içeren işlemler | `function`    |
+
+---
+
+## ⚙️ Temel Alias'lar
 
 ### .zshrc Dosyasına Ekleme
 
 ```bash
-# Dosyayı düzenlemek için
+# 🧭 Dosyayı düzenlemek için
 nano ~/.zshrc
 ```
 
 ### Faydalı Alias'lar
 
 ```bash
-# Dosya işlemleri
+# 📁 Dosya işlemleri
 alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -CF'
@@ -41,7 +61,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# Git alias'ları
+# 🧩 Git alias'ları
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
@@ -51,53 +71,61 @@ alias gd='git diff'
 alias gb='git branch'
 alias gco='git checkout'
 
-# Sistem alias'ları
+# ⚙️ Sistem alias'ları
 alias df='df -h'
 alias du='du -h'
 alias free='free -h'
 alias ps='ps aux'
 alias top='htop'
 
-# Editör alias'ları
+# 📝 Editör alias'ları
 alias v='vim'
 alias n='nano'
 alias c='code'
 ```
 
-## Özel Fonksiyonlar
+---
+
+## 🧠 Özel Fonksiyonlar
 
 ### 1. Dizin Oluşturma ve Gitme
 
 ```bash
-# .zshrc dosyasına ekleyin
+# 📂 Dizin oluşturup içine gir
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 ```
 
 Kullanım:
+
 ```bash
 mkcd yeni-klasor
 ```
 
+---
+
 ### 2. Dosya Arama ve Düzenleme
 
 ```bash
-# Dosya bulup düzenleme
+# 🔍 Dosya bulup düzenleme
 findedit() {
     find . -name "*$1*" -type f | head -1 | xargs vim
 }
 ```
 
 Kullanım:
+
 ```bash
 findedit config
 ```
 
+---
+
 ### 3. Git Commit Mesajı ile Dosya Ekleme
 
 ```bash
-# Git add ve commit
+# 💬 Git add ve commit
 gac() {
     git add .
     git commit -m "$1"
@@ -105,14 +133,17 @@ gac() {
 ```
 
 Kullanım:
+
 ```bash
 gac "Yeni özellik eklendi"
 ```
 
+---
+
 ### 4. Sistem Bilgileri
 
 ```bash
-# Sistem bilgilerini gösterme
+# 🖥️ Sistem bilgilerini göster
 sysinfo() {
     echo "=== Sistem Bilgileri ==="
     echo "İşletim Sistemi: $(uname -s)"
@@ -125,11 +156,11 @@ sysinfo() {
 }
 ```
 
-## Oh My Zsh Eklentileri ile Alias'lar
+---
+
+## 🔌 Oh My Zsh Eklentileri ile Alias'lar
 
 ### Git Eklentisi Alias'ları
-
-Git eklentisi aktifken kullanabileceğiniz alias'lar:
 
 ```bash
 # Git alias'ları
@@ -165,9 +196,9 @@ dcu=docker-compose up
 dcud=docker-compose up -d
 ```
 
-## Özel Tema ile Alias Gösterimi
+---
 
-### Powerlevel10k ile Alias Gösterimi
+## 🎨 Özel Tema ile Alias Gösterimi (Powerlevel10k)
 
 ```bash
 # .zshrc dosyasına ekleyin
@@ -175,42 +206,37 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 ```
 
-## Alias Yönetimi
+Bu ayarlar uzun dizin yollarını kısaltır ve terminali daha temiz gösterir.
+
+---
+
+## 🧰 Alias Yönetimi
 
 ### Mevcut Alias'ları Görme
 
 ```bash
-# Tüm alias'ları listele
-alias
-
-# Belirli bir alias'ı kontrol et
-alias ll
+alias       # Tüm alias'ları listele
+alias ll    # Belirli bir alias'ı kontrol et
 ```
 
-### Alias'ı Geçici Olarak Kaldırma
+### Alias'ı Kaldırma
 
 ```bash
-# Geçici olarak kaldır
-unalias ll
-
-# Yeniden tanımla
-alias ll='ls -la'
+unalias ll  # Geçici olarak kaldır
+alias ll='ls -la'  # Yeniden tanımla
 ```
 
-### Alias'ı Kalıcı Olarak Kaldırma
+### Kalıcı Olarak Silme
 
-```bash
-# .zshrc dosyasından kaldır
-nano ~/.zshrc
-# İlgili satırı sil veya yorum satırı yap
-```
+`.zshrc` dosyasını açıp ilgili satırı silmeniz yeterli.
 
-## İleri Seviye Teknikler
+---
+
+## 🧪 İleri Seviye Teknikler
 
 ### 1. Koşullu Alias'lar
 
 ```bash
-# Sadece belirli koşullarda çalışan alias
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias open='xdg-open'
 elif [[ "$OSTYPE" == "darwin"* ]]; then
@@ -221,7 +247,6 @@ fi
 ### 2. Parametreli Alias'lar
 
 ```bash
-# Parametreli fonksiyon
 mkfile() {
     mkdir -p "$(dirname "$1")" && touch "$1"
 }
@@ -230,27 +255,25 @@ mkfile() {
 ### 3. Alias Zincirleme
 
 ```bash
-# Birden fazla komutu zincirleme
 alias llp='ll | grep -E "\.(py|js|html|css)$"'
 ```
 
-## Performans İpuçları
+---
+
+## 🚀 Performans İpuçları
 
 ### 1. Lazy Loading
 
 ```bash
-# Sadece gerektiğinde yükle
 alias nvm='unalias nvm && source /usr/share/nvm/nvm.sh && nvm'
 ```
 
 ### 2. Fonksiyon vs Alias
 
 ```bash
-# Alias (basit)
-alias ll='ls -la'
+alias ll='ls -la'  # Basit
 
-# Fonksiyon (karmaşık)
-ll() {
+ll() {              # Karmaşık
     if [[ $# -eq 0 ]]; then
         ls -la
     else
@@ -259,20 +282,37 @@ ll() {
 }
 ```
 
-## Sonraki Adımlar
+### 3. Zsh Profiler ile Başlangıç Süresi Ölçme
+
+```bash
+# Zsh başlatma süresini analiz et
+zmodload zsh/zprof
+zprof
+```
+
+---
+
+## 🎯 Sonraki Adımlar
 
 Bu makaleyi tamamladıktan sonra:
-- Kendi alias'larınızı oluşturabilirsiniz
-- Oh My Zsh eklentilerini keşfedebilirsiniz
-- Terminal deneyiminizi özelleştirebilirsiniz
 
-## Seri İçindekileri
+- Kendi alias ve fonksiyonlarınızı oluşturabilirsiniz
+- Oh My Zsh eklentilerini keşfedebilirsiniz
+- Terminalinizi kişisel bir araç haline getirebilirsiniz
+
+👉 Sıradaki yazı: _“Oh My Zsh ile Plugin Yönetimi ve Tema Özelleştirme”_
+
+---
+
+## 📚 Seri İçindekiler
 
 1. [Oh My Zsh Kurulumu ve Temel Ayarlar](/oh-my-zsh-kurulumu-temel-ayarlar/)
 2. [Zsh İçerisinde Shopt Kullanmak](/zsh-icerisinde-shopt-kullanmak/)
 3. **Oh My Zsh Özel Alias'lar ve Fonksiyonlar** (Bu makale)
 
-## Kaynaklar
+---
+
+## 🔗 Kaynaklar
 
 - [Oh My Zsh Alias Dokümantasyonu](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet)
 - [Zsh Fonksiyon Dokümantasyonu](https://zsh.sourceforge.io/Doc/Release/Functions.html)
@@ -280,4 +320,5 @@ Bu makaleyi tamamladıktan sonra:
 
 ---
 
-Bu makale **Oh My Zsh** serisinin üçüncü bölümüdür. Serinin diğer makalelerini de okuyarak Oh My Zsh'i tam olarak öğrenebilirsiniz.
+Bu makale **Oh My Zsh** serisinin üçüncü bölümüdür.
+Serinin diğer makalelerini de okuyarak Zsh’i profesyonel seviyede kullanmayı öğrenebilirsiniz.

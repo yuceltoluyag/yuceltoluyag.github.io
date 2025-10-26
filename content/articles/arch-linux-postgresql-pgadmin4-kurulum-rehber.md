@@ -1,7 +1,7 @@
 title: Arch Linux’ta PostgreSQL ve pgAdmin4 Kurulumu ve Kullanımı – Adım Adım Rehber
 date: 2025-08-15 00:30
 category: Linux
-tags: [archlinux, postgresql, pgadmin4, veritabanı, kurulum, rehber]
+tags: archlinux, postgresql, pgadmin4, veritabanı, kurulum, rehber
 slug: arch-linux-postgresql-pgadmin4-kurulum-rehber
 authors: yuceltoluyag
 status: published

@@ -4,8 +4,7 @@
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
   <head>
-    {% block head %}
-    {% include 'includes/metadata.html' %}
+    {% block head %} {% include 'includes/metadata.html' %}
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     <meta name="generator" content="Pelican" />
     <link
@@ -17,6 +16,11 @@
       rel="stylesheet"
       type="text/css"
       href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/modern-styles.css"
     />
     <link
       rel="stylesheet"

@@ -1,19 +1,13 @@
 {% extends "base.html" %} {% block content %}
-<article>
+<article class="about-page">
   <!-- Hero Section -->
-  <div class="hero-section" style="text-align: center; padding: 20px 0">
-    <div class="hero-content">
-      <div class="hero-icon" style="margin-bottom: 10px">
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <div class="about-hero-icon">
         <img
           src="{{ SITEURL }}/images/16064131.jpeg"
           alt="Avatar"
-          style="
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #eee;
-          "
+          class="about-avatar"
         />
       </div>
       <h1>Yücel Toluyağ Kimdir ?</h1>
@@ -21,53 +15,28 @@
   </div>
 
   <!-- Main Content Area - Two Columns -->
-  <div
-    class="main-content-area"
-    style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center"
-  >
-    <div
-      class="about-me-column"
-      style="flex: 2; min-width: 300px; max-width: 700px"
-    >
-      <div class="about-content">{{ page.content }}</div>
+  <div class="about-main-content">
+    <div class="about-content-column">
+      <div class="about-content pico-prose">{{ page.content }}</div>
     </div>
-    <div
-      class="contact-column"
-      style="flex: 1; min-width: 250px; max-width: 350px"
-    >
-      <div
-        class="contact-card"
-        style="border: 1px solid #eee; padding: 20px; border-radius: 8px"
-      >
+    <div class="about-contact-column">
+      <div class="about-contact-card pico-card">
         <h3>İletişim</h3>
-        <div
-          class="social-links"
-          style="display: flex; flex-direction: column; gap: 15px"
-        >
+        <div class="about-social-links">
           {% for platform, username in SOCIAL.items() %} {% set href = {
           'github': 'https://github.com/', 'matrix': 'https://matrix.to/#/@',
           'discord': 'https://discord.com/users/', 'instagram':
           'https://instagram.com/', 'youtube': 'https://youtube.com/@',
-          'twitch': 'https://twitch.tv/', 'papara':
-          'https://www.papara.com/donate/', 'github_sponsor':
-          'https://github.com/sponsors/', 'kick': 'https://kick.com/' } %} {% if
+          'twitch': 'https://twitch.tv/', 'bynogame': '',
+          'github_sponsor': 'https://github.com/sponsors/', 'kick': 'https://kick.com/' } %} {% if
           platform in href %}
           <a
-            href="{{ href[platform] }}{{ username }}"
+            href="{% if platform == 'bynogame' %}{{ username }}{% else %}{{ href[platform] }}{{ username }}{% endif %}"
             target="_blank"
             rel="noopener noreferrer"
-            style="
-              display: flex;
-              align-items: center;
-              gap: 10px;
-              text-decoration: none;
-              color: inherit;
-            "
+            class="about-social-link"
           >
-            <span
-              class="social-icon"
-              style="font-size: 24px; width: 30px; text-align: center"
-            >
+            <span class="about-social-icon">
               {% if platform == 'github' %}<i class="fa-brands fa-github"></i>
               {% elif platform == 'matrix' %}<i
                 class="fa-solid fa-comments"
@@ -82,7 +51,7 @@
                 class="fa-brands fa-youtube"
               ></i>
               {% elif platform == 'twitch' %}<i class="fa-brands fa-twitch"></i>
-              {% elif platform == 'papara' %}<i
+              {% elif platform == 'bynogame' %}<i
                 class="fa-solid fa-credit-card"
               ></i>
               {% elif platform == 'github_sponsor' %}<i
@@ -91,7 +60,7 @@
               {% elif platform == 'kick' %}<i class="fa-solid fa-gamepad"></i>
               {% endif %}
             </span>
-            <span class="social-username">@{{ username }}</span>
+            <span class="about-social-username">{% if platform == 'bynogame' %}ByNoGame{% else %}@{{ username }}{% endif %}</span>
           </a>
           {% endif %} {% endfor %}
         </div>

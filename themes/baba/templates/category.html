@@ -10,31 +10,31 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/kategori/{{ category.slug }}/" />
 {% endblock seo %} {% block content %}
-<div class="container mx-auto px-4">
+<div class="container pico-container">
     <!-- Kategori Başlığı -->
-    <div class="flex items-center gap-4 mb-12 bg-base-100 p-6 rounded-xl shadow-xs">
-        <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary">
+    <div class="category-header pico-card pico-spacing-large">
+        <div class="category-icon">
             <span class="iconify" data-icon="tabler:tag" width="28" height="28"></span>
         </div>
-        <div class="flex-1">
-            <h1 class="text-3xl md:text-4xl font-bold text-base-content">{{ category }}</h1>
-            <p class="text-base-content/70 mt-1">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
+        <div class="category-info">
+            <h1 class="category-title">{{ category }}</h1>
+            <p class="category-count">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
         </div>
     </div>
 
     <!-- Yazı Listesi -->
-    <div class="space-y-6">
+    <div class="articles-list">
         {% for article in articles %}
-        <article class="card bg-base-100 shadow-xs hover:shadow-xl transition-all duration-200">
-            <a href="{{ SITEURL }}/{{ article.url }}" class="card-body p-6">
-                <div class="mb-3">
-                    <h2 class="text-xl font-bold hover:text-primary transition-colors">{{ article.title }}</h2>
-                    <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" class="text-sm text-base-content/60">
+        <article class="article-card pico-card">
+            <a href="{{ SITEURL }}/{{ article.url }}" class="article-link">
+                <div class="article-content">
+                    <h2 class="article-title">{{ article.title }}</h2>
+                    <time datetime="{{ article.date.strftime('%Y-%m-%d') }}" class="article-date">
                         {{ article.date.strftime('%d %b %Y') }}
                     </time>
                 </div>
                 {% if article.summary %}
-                <div class="text-base-content/70">{{ article.summary|striptags|truncate(150) }}</div>
+                <div class="article-summary">{{ article.summary|striptags|truncate(150) }}</div>
                 {% endif %}
             </a>
         </article>

@@ -12,55 +12,49 @@ super() }} {% if article.translations -%}
 <meta name="tags" content="{{tag}}" />
 {% endfor %} {% endblock %} {% block content %}
 
-<main class="content container">
+<main class="article-content-container container pico-container">
     {% if not ARTICLE_HIDE_TRANSLATION %}
       {% import 'translations.html' as translations with context %}
       {{ translations.translations_for(article) }}
     {% endif %}
-  <div class="article-hero" style="position: relative; overflow: hidden">
+  <div class="article-hero cyberpunk-hero-glow">
     {% if article.image %}
-    <img
-      src="{{ SITEURL }}/{{ article.image }}"
-      style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: blur(5px);
-        z-index: -1;
-      "
-      alt="Hero Background"
-    />
+    <div class="hero-image-container cyberpunk-image-glow">
+      <img
+        src="{{ SITEURL }}/{{ article.image }}"
+        class="hero-background cyberpunk-hero-image"
+        alt="Hero Background"
+      />
+      <div class="hero-overlay-gradient cyberpunk-glow-effect"></div>
+    </div>
     {% endif %}
-    <div class="hero-overlay">
-      <h1 class="hero-title">{{ article.title }}</h1>
-      <div class="hero-meta">
-        <time class="published" datetime="{{ article.date.isoformat() }}">
-          {{ article.locale_date }}
+    <div class="hero-content cyberpunk-hero-content">
+      <h1 class="hero-title cyberpunk-hero-title">{{ article.title }}</h1>
+      <div class="hero-meta cyberpunk-hero-meta">
+        <time class="published cyberpunk-published" datetime="{{ article.date.isoformat() }}">
+          <i class="fa-solid fa-calendar-days"></i> {{ article.locale_date }}
         </time>
         {% if article.authors %}
-        <address class="vcard author">Yazan:
+        <address class="vcard author cyberpunk-author">
+          <i class="fa-solid fa-user"></i>
           {% for author in article.authors %}
-          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}"
+          <a class="url fn cyberpunk-author-link" href="{{ SITEURL }}/{{ author.url }}"
             >{{ author }}</a
           >
           {% endfor %}
         </address>
         {% endif %} {% if article.category %}
-        <span class="category">
-          <a href="{{ SITEURL }}/{{ article.category.url }}"
+        <span class="category cyberpunk-category">
+          <i class="fa-solid fa-folder-open"></i>
+          <a href="{{ SITEURL }}/{{ article.category.url }}" class="cyberpunk-category-link"
             >{{ article.category }}</a
           >
         </span>
-        {% endif %} {% if article.summary %}
-        <p class="hero-summary">{{ article.summary }}</p>
         {% endif %}
       </div>
     </div>
   </div>
-  <div style="margin-top: 2em; margin-bottom: 2em; text-align: center">
+  <div class="article-ad-container">
     {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async
@@ -80,85 +74,109 @@ super() }} {% if article.translations -%}
     </script>
     {% endif %}
   </div>
-  <article class="article">
-     <!-- Series Navigation -->
-  {% if article.series %}
-  <div class="card mb-4" style="margin-top: 2em;">
-    <p>Bu yazı "{{ article.series.name }}" serisinin {{ article.series.index }}. bölümüdür.</p>
-    
-    <!-- Series Index -->
-    <details style="margin-top: 1em;">
-      <summary>Seri İçindekileri</summary>
-      <ol style="margin-top: 0.5em;">
-        {% for part_article in article.series.all %}
-        <li {% if part_article == article %}class="active" style="font-weight: bold;"{% endif %}>
-          <a href="{{ SITEURL }}/{{ part_article.url }}">{{ part_article.title }}</a>
-        </li>
-        {% endfor %}
-      </ol>
-    </details>
-  </div>
-  {% endif %} {{ article.content }}
-    <div style="margin-top: 2em; margin-bottom: 2em">
-      {% if GOOGLE_ADSENSE and PUBLISH %}
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
-        crossorigin="anonymous"
-      ></script>
-      <ins
-        class="adsbygoogle"
-        style="display: block"
-        data-ad-format="autorelaxed"
-        data-ad-client="ca-pub-6089943780218266"
-        data-ad-slot="6307583586"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      {% endif %}
-    </div>
-  </article>
-
- 
-
-  <div class="grid">
-    <!-- Left Column: Benzer Yazılar -->
-    <div>
-      {% if article.related_posts %}
-      <div class="card mb-4">
-        <hgroup>
-          <h3>Benzer Yazılar</h3>
-        </hgroup>
-        <ul>
-          {% for related_article in article.related_posts %}
-          <li>
-            <a href="{{ SITEURL }}/{{ related_article.url }}"
-              >{{ related_article.title }}</a
-            >
-          </li>
-          {% endfor %}
-        </ul>
+  <div class="article-content-grid">
+    <article class="article-main-content">
+      <!-- Series Navigation -->
+      {% if article.series %}
+      <div class="series-navigation-card pico-card">
+        <div class="series-header">
+          <h3><i class="fa-solid fa-bookmark"></i> Seri: {{ article.series.name }}</h3>
+          <span class="series-progress">Bölüm {{ article.series.index }}/{{ article.series.all|length }}</span>
+        </div>
+        
+        <div class="series-progress-bar">
+          <div class="progress-fill" style="width: {{ (article.series.index / article.series.all|length * 100)|int }}%"></div>
+        </div>
+        
+        <p class="series-description">Bu yazı "{{ article.series.name }}" serisinin {{ article.series.index }}. bölümüdür.</p>
+        
+        <!-- Series Index -->
+        <details class="series-contents">
+          <summary><i class="fa-solid fa-list"></i> Seri İçindekileri</summary>
+          <ol class="series-list">
+            {% for part_article in article.series.all %}
+            <li {% if part_article == article %}class="active"{% endif %}>
+              {% if part_article == article %}
+              <span class="current-article">
+                <i class="fa-solid fa-circle-check"></i> {{ part_article.title }}
+              </span>
+              {% else %}
+              <a href="{{ SITEURL }}/{{ part_article.url }}">
+                <i class="fa-solid fa-file-alt"></i> {{ part_article.title }}
+              </a>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ol>
+        </details>
       </div>
       {% endif %}
-    </div>
-
-    <!-- Right Column: Bağış Section -->
-    <div>
-      <div class="card mb-4">
-        <hgroup>
-          <h3>Destek Olun</h3>
-        </hgroup>
-        <p>
-          Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz.
-        </p>
-        <a href="{{ SITEURL }}/bagis/" role="button" class="primary">
-          <i class="fa-solid fa-heart" aria-hidden="true"></i> Destek Ol
-        </a>
+      
+      <div class="article-content-wrapper pico-prose">
+        {{ article.content }}
       </div>
-    </div>
+      
+      <div class="article-ad-section">
+        {% if GOOGLE_ADSENSE and PUBLISH %}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+          crossorigin="anonymous"
+        ></script>
+        <ins
+          class="adsbygoogle"
+          style="display: block"
+          data-ad-format="autorelaxed"
+          data-ad-client="ca-pub-6089943780218266"
+          data-ad-slot="6307583586"
+        ></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        {% endif %}
+      </div>
+      
+      <!-- Related Posts and Support Section Side by Side -->
+      <div class="article-bottom-section">
+        {% if article.related_posts %}
+        <div class="related-posts-section">
+          <div class="related-posts-card pico-card">
+            <hgroup>
+              <h3><i class="fa-solid fa-star"></i> Benzer Yazılar</h3>
+            </hgroup>
+            <ul class="related-posts-list">
+              {% for related_article in article.related_posts %}
+              <li>
+                <a href="{{ SITEURL }}/{{ related_article.url }}">
+                  <i class="fa-solid fa-file-alt"></i> {{ related_article.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+        
+        <div class="support-section">
+          <div class="support-card pico-card">
+            <hgroup>
+              <h3><i class="fa-solid fa-heart"></i> Destek Olun</h3>
+            </hgroup>
+            <p>
+              Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz.
+            </p>
+            <a href="{{ SITEURL }}/bagis/" role="button" class="primary">
+              <i class="fa-solid fa-heart" aria-hidden="true"></i> Destek Ol
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <aside class="article-sidebar">
+    </aside>
   </div>
-  <div style="margin-top: 2em; margin-bottom: 2em; text-align: center">
+  <div class="article-ad-container">
     {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async
@@ -181,23 +199,21 @@ super() }} {% if article.translations -%}
   </div>
 
   {% if article.prev_article or article.next_article %}
-  <nav class="grid" aria-label="Makale navigasyonu">
+  <nav class="article-nav-arrows" aria-label="Makale navigasyonu">
     {% if article.prev_article %}
     <a
       href="{{ SITEURL }}/{{ article.prev_article.url }}"
-      role="button"
-      class="secondary outline"
+      class="article-nav-arrow secondary outline prev"
     >
-      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Önceki: {{
-      article.prev_article.title }}
+      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      <span>Önceki: {{ article.prev_article.title|truncate(50, True) }}</span>
     </a>
     {% endif %} {% if article.next_article %}
     <a
       href="{{ SITEURL }}/{{ article.next_article.url }}"
-      role="button"
-      class="secondary outline"
+      class="article-nav-arrow secondary outline next"
     >
-      Sonraki: {{ article.next_article.title }}
+      <span>Sonraki: {{ article.next_article.title|truncate(50, True) }}</span>
       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
     </a>
     {% endif %}

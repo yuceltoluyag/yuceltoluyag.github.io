@@ -6,6 +6,7 @@ Tags: wine, wineprefix, linux, oyun, uyumluluk, rehber
 Slug: wineprefix-nedir-nasil-kullanilir
 Authors: yuceltoluyag
 Status: published
+Summary: WinePrefix nedir, nasıl oluşturulur ve farklı oyunlar için nasıl kullanılır? Bu rehberde, Wine ile Windows oyunlarını Linux'ta sorunsuz çalıştırmak için gerekli adımları öğrenin.
 Images: images/wineprefix-nedir-nasil-kullanilir-xl.webp
 
 # 🍷 WinePrefix Nedir ve Neden Önemlidir?

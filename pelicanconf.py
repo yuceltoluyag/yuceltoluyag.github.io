@@ -264,7 +264,7 @@ SOCIAL = {
     "youtube": "yuceltoluyag",
     "twitch": "yuceltoluyag",
     "kick": "babapy",
-    "papara": "yuceltoluyag",
+    "bynogame": "https://donate.bynogame.com/yuceltoluyag",
     "github_sponsor": "yuceltoluyag",
     "bluesky": "yuceltoluyag.bsky.social",
 }
