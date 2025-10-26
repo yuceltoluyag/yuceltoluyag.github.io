@@ -58,6 +58,7 @@ super() }} {% if article.translations -%}
       </div>
     </div>
   </div>
+
   <div class="article-ad-container">
     {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
@@ -227,21 +228,98 @@ super() }} {% if article.translations -%}
   {% endif %}
 </main>
 
-<!-- TOC Menüsü -->
+<!-- TOC Toggle Button - Fixed Position Right Side -->
 {% if article.toc %}
-<div id="toc-menu" class="toc-menu">
-  <div class="toc-header">
-    <h3>İçindekiler</h3>
-    <button class="toc-close">&times;</button>
+<button class="toc-toggle-fixed-btn" id="toc-toggle-btn" aria-label="İçindekiler Menüsü">
+  <i class="fa-solid fa-list"></i>
+</button>
+{% endif %}
+
+<!-- TOC Sidebar Menu -->
+{% if article.toc %}
+<aside class="toc-sidebar" id="toc-sidebar">
+  <div class="toc-sidebar-header">
+    <h3><i class="fa-solid fa-list"></i> İçindekiler</h3>
+    <button class="toc-sidebar-close" id="toc-close-btn" aria-label="Kapat">
+      <i class="fa-solid fa-times"></i>
+    </button>
   </div>
-  <div class="toc-content">
+  <div class="toc-sidebar-content">
     {{ article.toc }}
   </div>
-</div>
-{% else %}
-<!-- Debug: TOC is empty or not generated -->
-<div style="display: none;" id="toc-debug">TOC is empty</div>
+</aside>
 {% endif %}
+
+<script>
+  // Close series contents details by default
+  document.addEventListener('DOMContentLoaded', function() {
+    const seriesDetails = document.querySelector('.series-contents');
+    if (seriesDetails && seriesDetails.hasAttribute('open')) {
+      seriesDetails.removeAttribute('open');
+    }
+  });
+  
+  // TOC sidebar functions - exposed globally for navbar button
+  window.openTocSidebar = function() {
+    const tocSidebar = document.getElementById('toc-sidebar');
+    if (tocSidebar) {
+      tocSidebar.classList.add('active');
+    }
+  };
+  
+  window.closeTocSidebar = function() {
+    const tocSidebar = document.getElementById('toc-sidebar');
+    if (tocSidebar) {
+      tocSidebar.classList.remove('active');
+    }
+  };
+  
+  // TOC sidebar toggle functionality for article pages
+  document.addEventListener('DOMContentLoaded', function() {
+    const tocToggleBtn = document.getElementById('toc-toggle-btn');
+    const tocCloseBtn = document.getElementById('toc-close-btn');
+    const tocSidebar = document.getElementById('toc-sidebar');
+    
+    // Toggle TOC sidebar when button is clicked
+    if (tocToggleBtn) {
+      tocToggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const tocSidebar = document.getElementById('toc-sidebar');
+        
+        if (tocSidebar && tocSidebar.classList.contains('active')) {
+          window.closeTocSidebar();
+        } else {
+          window.openTocSidebar();
+        }
+      });
+      
+      // Show button on scroll
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          tocToggleBtn.classList.add('show');
+        } else {
+          tocToggleBtn.classList.remove('show');
+        }
+      });
+    }
+    
+    // Close TOC sidebar with close button
+    if (tocCloseBtn) {
+      tocCloseBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeTocSidebar();
+      });
+    }
+    
+    // Close sidebar with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && tocSidebar && tocSidebar.classList.contains('active')) {
+        window.closeTocSidebar();
+      }
+    });
+  });
+</script>
 
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy.js" data-copy="Kopyala" data-copied="Kopyalandı!"></script>
 

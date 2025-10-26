@@ -254,6 +254,477 @@ article.article a {
   text-decoration: none;
 }
 
+/* Modern integrated TOC in content area */
+.article-toc {
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.toc-header {
+  padding: 0.75rem 1rem;
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.toc-header:hover {
+  background: var(--pico-primary-hover-background);
+}
+
+.toc-header .toc-toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.toc-header.collapsed .toc-toggle-icon {
+  transform: rotate(-90deg);
+}
+
+.toc-content {
+  padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  display: none; /* Başlangıçta gizli - JavaScript ile gösterilecek */
+}
+
+.toc-content.show {
+  display: block;
+}
+
+/* Hide the fixed TOC menu since we're using integrated TOC */
+.toc-menu {
+  display: none !important;
+}
+
+/* Additional style for when TOC is visible - this would be handled by JS adding a class to body if needed */
+
+.toc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--pico-card-border-color);
+  margin-bottom: 1rem;
+}
+
+.toc-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.toc-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--pico-color);
+  padding: 0.25rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.toc-close:hover {
+  background-color: var(--pico-muted-background-color);
+}
+
+.toc-content {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* Style for the TOC list inside the menu */
+.toc-content .toc {
+  display: block;
+}
+
+.toc-content .toc ul {
+  padding-left: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.toc-content .toc li {
+  margin-bottom: 0.3rem;
+}
+
+.toc-content .toc a {
+  color: var(--pico-color);
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.toc-content .toc a:hover {
+  color: var(--pico-primary);
+}
+
+/* TOC Sidebar Styles - Minimal and positioned near button */
+.toc-sidebar {
+  position: fixed;
+  bottom: 140px; /* Above the TOC button */
+  right: 20px;
+  width: 320px;
+  max-height: 50vh; /* Limit height */
+  background: var(--pico-background-color);
+  border: 1px solid var(--pico-border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 2000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+}
+
+.toc-sidebar.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.toc-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--pico-primary-background), var(--pico-secondary-background));
+  color: var(--pico-primary-inverse);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toc-sidebar-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.toc-sidebar-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--pico-primary-inverse);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.toc-sidebar-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg) scale(1.05);
+}
+
+.toc-sidebar-content {
+  padding: 1.25rem;
+  overflow-y: auto;
+  max-height: calc(50vh - 70px);
+  scrollbar-width: thin;
+  scrollbar-color: var(--pico-muted-border-color) transparent;
+}
+
+.toc-sidebar-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.toc-sidebar-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toc-sidebar-content::-webkit-scrollbar-thumb {
+  background: var(--pico-muted-border-color);
+  border-radius: 10px;
+}
+
+.toc-sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: var(--pico-primary);
+}
+
+.toc-sidebar-content .toc {
+  margin: 0;
+}
+
+/* TOC Main List - Remove left padding */
+.toc-sidebar-content .toc > ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.toc-sidebar-content .toc ul {
+  padding-left: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.toc-sidebar-content .toc ul li {
+  list-style-type: none !important;
+  margin-bottom: 0 !important;
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+}
+
+/* H1 Level - Clean, prominent */
+.toc-sidebar-content .toc > ul > li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+}
+
+/* H2 Level - Subtle indent with visual guide */
+.toc-sidebar-content .toc > ul > li > ul {
+  padding-left: 0.75rem;
+  margin-top: 0.25rem;
+  border-left: 2px solid var(--pico-muted-border-color);
+  margin-left: 0.5rem;
+}
+
+.toc-sidebar-content .toc > ul > li > ul > li {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+/* H3 Level - Deeper indent */
+.toc-sidebar-content .toc > ul > li > ul > li > ul {
+  padding-left: 0.5rem;
+  margin-top: 0.2rem;
+  border-left: 1px solid var(--pico-muted-border-color);
+}
+
+.toc-sidebar-content .toc > ul > li > ul > li > ul > li {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+/* H4+ Level - Even deeper */
+.toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul {
+  padding-left: 0.4rem;
+  margin-top: 0.15rem;
+}
+
+.toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul > li {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.toc-sidebar-content .toc a {
+  color: var(--pico-color) !important;
+  text-decoration: none !important;
+  display: block !important;
+  padding: 0.5rem 0.75rem !important;
+  margin: 0.2rem 0 !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+  border-left: 3px solid transparent !important;
+  background: transparent !important;
+  position: relative !important;
+}
+
+.toc-sidebar-content .toc a:hover {
+  color: var(--pico-primary) !important;
+  background: var(--pico-muted-background-color) !important;
+  border-left-color: var(--pico-primary) !important;
+  transform: translateX(3px) !important;
+  padding-left: 0.9rem !important;
+}
+
+/* Active section indicator */
+.toc-sidebar-content .toc a.current {
+  background: var(--pico-primary-background) !important;
+  color: var(--pico-primary-inverse) !important;
+  border-left-color: var(--pico-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* TOC Toggle Button - Fixed Position Above Back to Top */
+.toc-toggle-fixed-btn {
+  position: fixed;
+  bottom: 80px; /* Positioned above the back to top button */
+  right: 20px; /* Positioned on the right side */
+  z-index: 1000;
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.toc-toggle-fixed-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toc-toggle-fixed-btn:hover {
+  background: var(--pico-primary-hover-background);
+  transform: scale(1.05);
+}
+
+/* Mobile responsive adjustments for TOC sidebar */
+@media (max-width: 768px) {
+  .toc-sidebar {
+    width: 280px;
+    bottom: 140px;
+    max-height: 45vh;
+  }
+  
+  .toc-toggle-fixed-btn {
+    bottom: 70px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toc-sidebar {
+    width: calc(100% - 30px);
+    right: 15px;
+    max-height: 40vh;
+  }
+  
+  .toc-sidebar-header,
+  .toc-sidebar-content {
+    padding: 0.8rem;
+  }
+  
+  .toc-sidebar-header h3 {
+    font-size: 0.9rem;
+  }
+  
+  /* Smaller font sizes for mobile TOC */
+  .toc-sidebar-content .toc ul li {
+    font-size: 0.75rem;
+  }
+  
+  .toc-sidebar-content .toc > ul > li {
+    font-size: 0.85rem;
+  }
+  
+  .toc-sidebar-content .toc > ul > li > ul > li {
+    font-size: 0.75rem;
+  }
+  
+  .toc-sidebar-content .toc > ul > li > ul > li > ul > li {
+    font-size: 0.7rem;
+  }
+  
+  .toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul > li {
+    font-size: 0.65rem;
+  }
+}
+
+/* Make sure TOC button is positioned above the back to top button */
+.back-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999; /* Lower z-index to appear below the TOC button */
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* Back to top button styles */
+.back-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.back-to-top-button.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-button:hover {
+  background: var(--pico-primary-hover-background);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments for TOC menu */
+@media (max-width: 768px) {
+  .toc-menu {
+    width: 280px;
+    right: -280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toc-menu {
+    width: 260px;
+    right: -260px;
+  }
+}
+
 main img,
 main video {
   max-width: 100%;
