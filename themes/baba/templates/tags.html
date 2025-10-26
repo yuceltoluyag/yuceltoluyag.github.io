@@ -11,7 +11,7 @@
 <meta property="og:url" content="{{ SITEURL }}/etiketler.html" />
 {% endblock seo %}
 {% block content %}
-    <div class="text-center" style="margin-bottom: 2rem;">
+    <div class="tags-hero text-center">
         <h1>Etiketler</h1>
         <p>
             Site içerisindeki tüm konulara ait etiketler. Büyüklük, içerik sayısını gösterir.
@@ -30,7 +30,7 @@
     {% endfor %}
     {% set sorted_tags = sorted_tags|sort(attribute=2, reverse=true) %}
 
-    <div class="tag-cloud-container">
+    <div class="tags-cloud-container">
         {% for tag, articles, count in sorted_tags[:50] %}
             {% set tag_size = 1 %}
             {% if max_count > 1 %}
@@ -50,24 +50,24 @@
 
             <a
                 href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-                class="tag-item tag-size-{{ tag_size }}"
+                class="tags-item tag-size-{{ tag_size }} pico-tag"
                 aria-label="{{ tag }} etiketli {{ count }} yazıya git">
                 #{{ tag }}
-                <span class="tag-count">{{ count }}</span>
+                <span class="tags-count">{{ count }}</span>
             </a>
         {% endfor %}
     </div>
 
 
-    <article class="card" style="margin-top: 3rem;">
-        <h2 style="margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--pico-muted-border-color);">En Çok Kullanılan Etiketler</h2>
-        <div class="grid">
+    <article class="tags-popular-card pico-card">
+        <h2>En Çok Kullanılan Etiketler</h2>
+        <div class="tags-grid">
             {% for tag, articles, count in sorted_tags[:5] %}
-            <article class="tag-summary-card">
-                <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/" class="tag-summary-link">
+            <article class="tags-summary-card pico-card">
+                <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/" class="tags-summary-link">
                     <i class="fa-solid fa-tag" aria-hidden="true"></i>
                     <h3>#{{ tag }}</h3>
-                    <span class="tag-summary-count">{{ count }} yazı</span>
+                    <span class="tags-summary-count">{{ count }} yazı</span>
                 </a>
             </article>
             {% endfor %}

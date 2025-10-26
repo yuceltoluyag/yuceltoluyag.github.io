@@ -11,7 +11,7 @@ Summary: Oh My Zsh'in kurulumu ve temel ayarlarının nasıl yapılacağını ad
 Translation: false
 Status: published
 Template: article
-Image: images/oh-my-zsh-xl.webp
+Image: images/oh-my-zsh-setup-xl.webp
 
 Merhaba! 😊
 
@@ -22,6 +22,7 @@ Bu makale, **Oh My Zsh** serisinin ilk bölümüdür. Bu seride Zsh shell'i ve O
 Oh My Zsh, Zsh shell'i için geliştirilmiş açık kaynaklı bir framework'tür. Zsh'in güçlü özelliklerini kullanarak terminal deneyiminizi geliştirir.
 
 ### Özellikler:
+
 - 🎨 **Temalar**: 200+ hazır tema
 - 🔌 **Eklentiler**: 500+ eklenti
 - ⚡ **Hızlı**: Otomatik tamamlama ve öneriler
@@ -87,16 +88,19 @@ DISABLE_AUTO_UPDATE="false"
 ## Popüler Temalar
 
 ### 1. Robbyrussell (Varsayılan)
+
 ```bash
 ZSH_THEME="robbyrussell"
 ```
 
 ### 2. Powerlevel10k
+
 ```bash
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
 ### 3. Agnoster
+
 ```bash
 ZSH_THEME="agnoster"
 ```
@@ -104,19 +108,23 @@ ZSH_THEME="agnoster"
 ## Faydalı Eklentiler
 
 ### 1. Git Eklentisi
+
 ```bash
 plugins=(git)
 ```
+
 - Git durumu gösterimi
 - Git alias'ları
 - Branch bilgisi
 
 ### 2. Zsh Autosuggestions
+
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ### 3. Zsh Syntax Highlighting
+
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
@@ -124,6 +132,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ## Sonraki Adımlar
 
 Bu kurulum tamamlandıktan sonra:
+
 - [Zsh İçerisinde Shopt Kullanmak](/zsh-icerisinde-shopt-kullanmak/) makalesini okuyabilirsiniz
 - Özel alias'larınızı ekleyebilirsiniz
 - Tema ve eklentileri özelleştirebilirsiniz

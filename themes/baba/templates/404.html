@@ -4,15 +4,15 @@
     content="Aradığınız sayfa bulunamadı. Ana sayfaya veya kategorilere göz atarak istediğiniz içeriğe ulaşabilirsiniz." />
 <meta name="robots" content="noindex, follow" />
 {% endblock seo %} {% block content %}
-<div class="error-container">
-    <div class="error-content">
-        <div class="error-code">404</div>
-        <h1 class="error-title">Sayfa Bulunamadı</h1>
-        <p class="error-message">
+<div class="not-found-container">
+    <div class="not-found-content pico-card">
+        <div class="not-found-code">404</div>
+        <h1 class="not-found-title">Sayfa Bulunamadı</h1>
+        <p class="not-found-message">
             Aradığınız sayfa kaldırılmış, ismi değiştirilmiş veya geçici olarak ulaşılamıyor olabilir.
         </p>
-        <div class="error-actions">
-            <a href="{{ SITEURL }}/" class="error-home-button" aria-label="Ana sayfaya dön">
+        <div class="not-found-actions">
+            <a href="{{ SITEURL }}/" class="not-found-button" role="button" aria-label="Ana sayfaya dön">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                         stroke-linecap="round"
@@ -22,7 +22,7 @@
                 </svg>
                 Ana Sayfaya Dön
             </a>
-            <a href="{{ SITEURL }}/kategoriler.html" class="error-categories-button" aria-label="Kategorilere göz at">
+            <a href="{{ SITEURL }}/kategoriler.html" class="not-found-button" role="button" aria-label="Kategorilere göz at">
                 <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                         stroke-linecap="round"

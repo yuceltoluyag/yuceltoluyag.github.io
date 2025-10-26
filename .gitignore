@@ -163,3 +163,29 @@ cython_debug/
 output/
 cache/
 themes/baba/node_modules/
+
+# AI related files
+*Gemini.md
+*Qwen.md
+*QWEN.md
+
+# Python, Linux, Node.js related but not project specific files
+*.pyc
+__pycache__/
+.pytest_cache/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+node_modules/
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+.DS_Store
+
+# Local configuration files
+*.local
+*.env.local
+*.env.*
+!*.env.example

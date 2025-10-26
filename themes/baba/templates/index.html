@@ -1,65 +1,128 @@
-{% extends "base.html" %}
-
-{% block content %}
-
-{% block content_title %}
-{% endblock %}
+{% extends "base.html" %} {% block content %} {% block content_title %} {%
+endblock %}
 <section id="content">
-<div id="main-page">
-{% if FEATURED_ARTICLE %}
-  {# Find the featured article from the list of all articles #}
-  {% for article in articles if article.slug == FEATURED_ARTICLE.slug %}
-    <section class="featured-article" style="margin-bottom: 2em; padding: 1.5em; background-color: var(--card-background-color); border: 1px solid var(--card-border-color); border-radius: var(--border-radius);">
-        <article class="hentry">
-            <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-            <div style="margin-bottom: 1em" class="entry-content"><strong>{{ article.summary }}</strong> </div>
-            <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-            <address class="vcard author">Yazan:
-                {% for author in article.authors %}
-                <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                {% endfor %}
-            </address>
-        </article>
-    </section>
-  {% endfor %}
-{% endif %}
-    <ol id="post-list">
-        {% for article in articles_page.object_list %}
-        <li style="list-style-type: none">
-            <article class="hentry">
-                <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                        title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-                <div style="margin-bottom: 1em" class="entry-content"><strong>{{ article.description }}</strong> </div>
-                <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-                <address class="vcard author">Yazan:
-                    {% for author in article.authors %}
-                    <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                    {% endfor %}
-                </address>
-            </article>
-        </li>
-        {% if loop.index == 1 %}
-        <li style="list-style-type: none; margin-top: 2em; margin-bottom: 2em;">
-            {% if GOOGLE_ADSENSE and PUBLISH %}
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
-                 crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-format="fluid"
-                 data-ad-layout-key="-fb+5w+4e-db+86"
-                 data-ad-client="ca-pub-6089943780218266"
-                 data-ad-slot="4390516236"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+  <div id="main-page">
+    {% if FEATURED_ARTICLE %} {# Find the featured article from the list of all
+    articles #} {% for article in articles if article.slug ==
+    FEATURED_ARTICLE.slug %}
+    <article class="featured-article-glow">
+      <div class="featured-article-content">
+        <div class="featured-image-glow">
+          <img
+            src="{{ SITEURL }}/{{ article.image }}"
+            alt="{{ article.title }}"
+            class="featured-article-image"
+            loading="lazy"
+          />
+          <div class="glow-effect"></div>
+        </div>
+        <div class="featured-article-text">
+          <div class="article-meta-glow">
+            {% if article.category %}
+            <span class="category-glow">
+              <i class="fa-solid fa-folder-open"></i>
+              <a href="{{ SITEURL }}/{{ article.category.url }}"
+                >{{ article.category }}</a
+              >
+            </span>
             {% endif %}
-        </li>
-        {% endif %}
-        {% endfor %}
-    </ol>
-</div>
-    {% if articles_page.has_other_pages() %}
-    {% include 'pagination.html' %}
-    {% endif %}
+            <time class="published" datetime="{{ article.date.isoformat() }}">
+              <i class="fa-solid fa-calendar-days"></i> {{ article.locale_date
+              }}
+            </time>
+          </div>
+          <h1 class="featured-article-title">
+            <a
+              href="{{ SITEURL }}/{{ article.url }}"
+              rel="bookmark"
+              title="{{ article.title|striptags }}"
+              >{{ article.title }}</a
+            >
+          </h1>
+
+          <div class="featured-article-summary">
+            <p>{{ article.summary }}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %} {% endif %}
+    <div class="articles-list-container">
+      <h2 class="list-section-title">Son Makaleler</h2>
+      <div class="articles-list">
+        {% for article in articles_page.object_list %}
+        <article class="article-list-item-glow pico-card">
+          {% if article.image %}
+          <div class="list-item-image half-width">
+            <img
+              src="{{ SITEURL }}/{{ article.image }}"
+              alt="{{ article.title }}"
+              class="list-article-image"
+              loading="lazy"
+            />
+          </div>
+          <div class="list-item-content half-width">
+            <div class="list-item-header">
+              <h3 class="list-item-title">
+                <a
+                  href="{{ SITEURL }}/{{ article.url }}"
+                  rel="bookmark"
+                  title="{{ article.title|striptags }}"
+                  >{{ article.title }}</a
+                >
+              </h3>
+            </div>
+
+            <div class="list-item-summary">
+              <p>{{ article.summary }}</p>
+            </div>
+          </div>
+          {% else %}
+          <div class="list-item-content full-width">
+            <div class="list-item-header">
+              <h3 class="list-item-title">
+                <a
+                  href="{{ SITEURL }}/{{ article.url }}"
+                  rel="bookmark"
+                  title="{{ article.title|striptags }}"
+                  >{{ article.title }}</a
+                >
+              </h3>
+            </div>
+
+            <div class="list-item-summary">
+              <p>{{ article.summary }}</p>
+            </div>
+          </div>
+          {% endif %}
+          <div class="list-item-glow-effect"></div>
+        </article>
+        {% if loop.index == 1 %}
+        <div class="ad-container">
+          {% if GOOGLE_ADSENSE and PUBLISH %}
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+            crossorigin="anonymous"
+          ></script>
+          <ins
+            class="adsbygoogle"
+            style="display: block"
+            data-ad-format="fluid"
+            data-ad-layout-key="-fb+5w+4e-db+86"
+            data-ad-client="ca-pub-6089943780218266"
+            data-ad-slot="4390516236"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          {% endif %}
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% if articles_page.has_other_pages() %} {% include 'pagination.html' %} {%
+  endif %}
 </section>
 {% endblock content %}

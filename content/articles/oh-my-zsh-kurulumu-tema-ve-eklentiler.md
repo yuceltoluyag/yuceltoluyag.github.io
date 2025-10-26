@@ -1,96 +1,197 @@
-Title: Oh My ZSH Kurulumu (Tema ve Eklentiler Dahil)
-Date: 2018-12-07 12:00 10:00
-Modified: 2025-08-11 22:59
+Title: Oh My Zsh Kurulumu (Tema ve Eklentiler Dahil)
+Date: 2018-12-07 12:00
+Modified: 2025-10-26 03:00
 Category: Terminal
-Tags: linux, terminal, zsh
+Tags: linux, terminal, zsh, oh-my-zsh, shell
 Slug: oh-my-zsh-kurulumu-tema-ve-eklentiler
 Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 1
-Summary: Oh My ZSH kurulumu, tema ve eklenti ayarları hakkında detaylı rehber.
+Summary: Oh My Zsh kurulumu, tema ve eklenti ayarları hakkında detaylı ve güncel bir rehber.
 Translation: false
 Status: published
 Template: article
-Image: images/oh_my_zsh-xl.webp
+Image: images/oh-my-zsh-setup-xl.webp
 
+Merhaba! 👋
 
-Merhaba! Uzun süredir **fish shell** kullanıyordum ancak **Oh My ZSH**'yi denemek istedim. Kurulum ve kullanım sırasında bazı hatalarla karşılaştım ve maalesef yeterince açıklayıcı Türkçe kaynak bulamadım. Resmi kaynaklardan edindiğim bilgilerle temiz bir kurulum gerçekleştirdim ve bu rehberi hazırladım. 🚀
+Uzun süredir **Fish Shell** kullanıyordum, ancak terminal deneyimimi daha fazla özelleştirmek için **Oh My Zsh**’yi denemek istedim.  
+Kurulum sürecinde bazı hatalarla karşılaştım ve yeterince güncel Türkçe kaynak bulamayınca, kendi deneyimlerimi bu rehberde topladım. 🚀
 
+---
 
+## 🔧 Kurulum
 
-## Kurulum
-
-```bash
-sudo apt-get install zsh # Debian tabanlı sistemler için
-sudo pacman -S zsh # Arch tabanlı sistemler için
-```
-
-Şimdi, resmi sitede yer alan **curl** veya **wget** yöntemlerinden birini kullanarak yüklemeyi gerçekleştirebiliriz. Ben **curl** kullandım:
+Öncelikle **Zsh** kabuğunu yükleyelim:
 
 ```bash
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-chsh -s /usr/bin/zsh
+sudo apt install zsh          # Debian/Ubuntu
+sudo dnf install zsh          # Fedora
+sudo pacman -S zsh            # Arch Linux
 ```
 
-## Bilgilendirme ℹ️
+### Oh My Zsh’yi Yükleme
 
-Bu işlem varsayılan kabuğunuzu **ZSH** olarak değiştirecektir. Kurulumdan sonra şifrenizi girin ve **bilgisayarı yeniden başlatın**.
+Oh My Zsh, Zsh için bir yapılandırma framework’üdür.
+Kurulumu oldukça basittir — `curl` veya `wget` yöntemlerinden biriyle gerçekleştirebilirsiniz:
 
-Eğer kabuk değişmiyorsa, aşağıdaki adımları izleyin:
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
-1. Önceden **fish** veya başka bir terminal eklentisi kurduysanız, bu durum soruna neden olabilir.
-2. Aşağıdaki komut ile `/etc/passwd` dosyasını düzenleyerek varsayılan kabuğu değiştirebilirsiniz:
+veya
+
+```bash
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+```
+
+Kurulum tamamlandığında kabuğunuzu **Zsh** olarak değiştirin:
+
+```bash
+chsh -s $(which zsh)
+```
+
+🧠 **Not:** Değişikliklerin etkili olması için oturumu kapatıp yeniden açın veya sistemi yeniden başlatın.
+
+---
+
+## ⚙️ Kabuk Değiştirme Sorunu
+
+Bazı sistemlerde varsayılan kabuk değişimi anında gerçekleşmeyebilir.
+Böyle bir durumda `/etc/passwd` dosyasını manuel olarak düzenleyebilirsiniz:
 
 ```bash
 sudo nano /etc/passwd
 ```
 
-Burada kullanıcı satırınızın sonunda `/bin/zsh` yazdığından emin olun. Değişiklikleri kaydedip çıkın. 📌
+Kendi kullanıcı satırınızın sonunda `/bin/zsh` olduğundan emin olun.
+Değişiklikleri kaydedip terminali yeniden başlatın.
 
-⚠️ **Uyarı:** Geçiş yaparken eski kabuğunuzu direkt silmeyin! Öncelikle aşağıdaki komutla varsayılan kabuğunuzu değiştirin, ardından eski kabuğunuzu kaldırabilirsiniz:
+> ⚠️ **Uyarı:** Kullandığınız eski shell’i (örneğin Bash veya Fish) kaldırmadan önce kabuğunuzu değiştirdiğinizden emin olun.
 
-```bash
-chsh -s /bin/bash
-```
+---
 
-[responsive_img src="/images/oh_my_zsh-xl.webp" alt="oh-my-zsh" /]
-## Oh My ZSH Tema Kurulumu 🎨
+## 🎨 Tema Kurulumu
+
+Kurulumdan sonra `.zshrc` dosyasını düzenleyelim:
 
 ```bash
 nano ~/.zshrc
 ```
 
-Dosyanın içinde **ZSH_THEME="robbyrussell"** satırını bulun ve **beğendiğiniz temanın adını** girin. Örneğin:
+`ZSH_THEME` satırını bulun ve beğendiğiniz temayı seçin:
 
 ```bash
 ZSH_THEME="agnoster"
 ```
 
-[ZSH Temaları](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes){: target="_blank" rel="noopener noreferrer"} arasından seçim yapabilirsiniz.
+Popüler temalardan bazıları:
 
-## Oh My ZSH Eklenti Kurulumu 🔌
+- `agnoster` — minimal ve sade
+- `powerlevel10k` — gelişmiş, özelleştirilebilir prompt
+- `ys` — klasik ve hızlı
 
-Eklenti yüklemek için yine `~/.zshrc` dosyasını düzenleyin:
+🔗 [Zsh Temaları Listesi (Resmi Wiki)](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+
+💡 **Powerlevel10k Teması (Önerilir)**
+Daha gelişmiş bir görünüm için aşağıdaki komutla Powerlevel10k’yi yükleyebilirsiniz:
+
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+Ardından `.zshrc` dosyasında:
+
+```bash
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+---
+
+## 🔌 Eklenti (Plugin) Kurulumu
+
+Oh My Zsh, yüzlerce eklentiyle terminal verimliliğini artırır.
+Eklentileri etkinleştirmek için `.zshrc` dosyasını tekrar düzenleyin:
 
 ```bash
 nano ~/.zshrc
 ```
 
-Varsayılan olarak **plugins=(git)** şeklinde gelen satırı eklentilerle güncelleyin. Örneğin:
+`plugins` satırını bulun:
 
 ```bash
-plugins=(git extract)
+plugins=(git)
 ```
 
-Burada `extract` eklentisini eklemiş olduk. Kaydedip çıktıktan sonra aşağıdaki komutu çalıştırarak değişiklikleri etkinleştirin:
+Ve yeni eklentileri ekleyin, örneğin:
+
+```bash
+plugins=(git extract z)
+```
+
+💡 Önerilen eklentiler:
+
+- `git` → Git kısayolları
+- `z` → Sık kullanılan dizinlere hızlı geçiş
+- `extract` → Arşiv dosyalarını otomatik açma
+- `colored-man` → Renkli man sayfaları
+- `history-substring-search` → Geçmişte arama
+
+Değişiklikleri etkinleştirmek için:
 
 ```bash
 source ~/.zshrc
 ```
 
-🎯 Alternatif olarak terminali kapatıp açabilirsiniz.
+---
 
-## Sonuç ✅
+## 🚀 Bonus: Powerlevel10k Yapılandırması
 
-Oh My ZSH'nin kurulumu, tema ve eklenti ayarlarını başarılı bir şekilde tamamladık. Aklınıza takılan sorular için yorum bırakabilirsiniz. Keyifli kullanımlar! 🤗
+İlk çalıştırmada Powerlevel10k otomatik olarak bir yapılandırma sihirbazı başlatır.
+Görsel tercihlerinizi seçerek terminalinizi tamamen kişiselleştirebilirsiniz.
 
+İstediğiniz zaman tekrar başlatmak için:
+
+```bash
+p10k configure
+```
+
+---
+
+## 🧩 Sorun Giderme
+
+- **Zsh başlatılmıyor:**
+  → `chsh -s $(which zsh)` komutunu tekrar çalıştırın.
+- **Tema bozuk görünüyor:**
+  → Uyumlu bir font (örneğin “MesloLGS NF”) kullanın.
+- **Eklenti yüklenmiyor:**
+  → `.zshrc` dosyasında eklenti adlarının doğru yazıldığından emin olun.
+
+---
+
+## ✅ Sonuç
+
+Artık sisteminizde **Oh My Zsh** kurulu, tema ve eklentiler etkin!
+Terminaliniz hem daha güçlü hem de çok daha estetik bir hale geldi. ✨
+
+Bir sonraki adımda, [özel alias’lar ve fonksiyonlar](/oh-my-zsh-ozel-aliaslar-fonksiyonlar/) ekleyerek Zsh deneyiminizi geliştirebilirsiniz.
+
+---
+
+## 🔗 Kaynaklar
+
+- [Oh My Zsh Resmi Sitesi](https://ohmyz.sh)
+- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh)
+- [Powerlevel10k Tema Rehberi](https://github.com/romkatv/powerlevel10k)
+- [Zsh Plugin Listesi](https://github.com/unixorn/awesome-zsh-plugins)
+
+---
+
+Bu makale **Oh My Zsh Serisi**’nin ilk bölümüdür:
+
+1. **Oh My Zsh Kurulumu (Tema ve Eklentiler Dahil)** ✅
+2. [Zsh İçerisinde Shopt Kullanmak](/zsh-icerisinde-shopt-kullanmak/)
+3. [Oh My Zsh Özel Alias’lar ve Fonksiyonlar](/oh-my-zsh-ozel-aliaslar-fonksiyonlar/)
+
+---
