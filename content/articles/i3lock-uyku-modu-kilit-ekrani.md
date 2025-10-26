@@ -20,21 +20,25 @@ Güvenlik önemli, özellikle bilgisayarınızı kısa süreliğine bile olsa ba
 
 İlk adım, sisteminizdeki mevcut ekran kilitleyicilerin otomatik devreye girmesini engellemek. Ben **KDE** masaüstü ortamı kullanıyorum (Arch Linux üzerinde), bu yüzden **KScreenLocker** ayarlarını şu şekilde düzenledim:
 
-
 [responsive_img src="/images/wake-up-lock-xl.webp" alt="RKScreenLocker ayarları" /]
-⚠️ *"Otomatik olarak kilitle" ve "devam ettiğinde kilitle" gibi seçeneklerin işaretli olmadığından emin olun.*
+⚠️ _"Otomatik olarak kilitle" ve "devam ettiğinde kilitle" gibi seçeneklerin işaretli olmadığından emin olun._
 
-Ardından `i3lock`'un sisteminizde kurulu olduğundan emin olun. Tavsiyem: [i3lock-color](https://github.com/Raymo111/i3lock-color){: target="_blank" rel="noopener noreferrer"}'u tercih etmeniz. Daha fazla özelleştirme seçeneği sunuyor.
+Ardından `i3lock`'un sisteminizde kurulu olduğundan emin olun. Tavsiyem: [i3lock-color](https://github.com/Raymo111/i3lock-color){: target="\_blank" rel="noopener noreferrer"}'u tercih etmeniz. Daha fazla özelleştirme seçeneği sunuyor.
 
 # Arch tabanlılar için
+
 ```bash
 yay -S i3lock-color # Arch tabanlılar için
 ```
+
 # Debian tabanlılar için
+
 ```bash
 sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev
 ```
+
 # Fedora
+
 ```bash
 sudo dnf install -y autoconf automake cairo-devel fontconfig gcc libev-devel libjpeg-turbo-devel libXinerama libxkbcommon-devel libxkbcommon-x11-devel libXrandr pam-devel pkgconf xcb-util-image-devel xcb-util-xrm-devel
 ```
@@ -44,7 +48,6 @@ sudo dnf install -y autoconf automake cairo-devel fontconfig gcc libev-devel lib
 ```bash
 sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev
 ```
-
 
 ## 🔐 Adım 1: Kilit Komut Dosyasını Oluşturun
 

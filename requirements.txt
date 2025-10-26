@@ -32,3 +32,6 @@ pelican-related-posts
 pelican-neighbors
 pelican-seo
 livereload
+pelican-statistics
+pelican-series
+

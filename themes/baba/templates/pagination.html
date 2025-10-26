@@ -1,15 +1,25 @@
 {% if DEFAULT_PAGINATION %}
 {% set first_page = articles_paginator.page(1) %}
 {% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
-<p class="paginator">
-    {% if articles_page.has_previous() %}
-    <a  href="{{ SITEURL }}/{{ first_page.url }}">&#8647;</a>
-    <a style="font-size: 1.75em" href="{{ SITEURL }}/{{ articles_previous_page.url }}">&laquo;</a>
-    {% endif %}
-    Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
-    {% if articles_page.has_next() %}
-    <a style="font-size: 1.75em" href="{{ SITEURL }}/{{ articles_next_page.url }}">&raquo;</a>
-    <a href="{{ SITEURL }}/{{ last_page.url }}">&#8649;</a>
-    {% endif %}
-</p>
+<nav class="pagination-container" aria-label="Sayfalama">
+    <ul class="pagination">
+        {% if articles_page.has_previous() %}
+        <li><a href="{{ SITEURL }}/{{ first_page.url }}" role="button" class="secondary outline" aria-label="İlk Sayfa"><i class="fa-solid fa-angles-left"></i></a></li>
+        <li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}" role="button" class="secondary outline" aria-label="Önceki Sayfa"><i class="fa-solid fa-angle-left"></i></a></li>
+        {% else %}
+        <li><span role="button" class="secondary outline disabled" aria-label="İlk Sayfa"><i class="fa-solid fa-angles-left"></i></span></li>
+        <li><span role="button" class="secondary outline disabled" aria-label="Önceki Sayfa"><i class="fa-solid fa-angle-left"></i></span></li>
+        {% endif %}
+
+        <li><span class="current-page">Sayfa {{ articles_page.number }} / {{ articles_paginator.num_pages }}</span></li>
+
+        {% if articles_page.has_next() %}
+        <li><a href="{{ SITEURL }}/{{ articles_next_page.url }}" role="button" class="secondary outline" aria-label="Sonraki Sayfa"><i class="fa-solid fa-angle-right"></i></a></li>
+        <li><a href="{{ SITEURL }}/{{ last_page.url }}" role="button" class="secondary outline" aria-label="Son Sayfa"><i class="fa-solid fa-angles-right"></i></a></li>
+        {% else %}
+        <li><span role="button" class="secondary outline disabled" aria-label="Sonraki Sayfa"><i class="fa-solid fa-angle-right"></i></span></li>
+        <li><span role="button" class="secondary outline disabled" aria-label="Son Sayfa"><i class="fa-solid fa-angles-right"></i></span></li>
+        {% endif %}
+    </ul>
+</nav>
 {% endif %}

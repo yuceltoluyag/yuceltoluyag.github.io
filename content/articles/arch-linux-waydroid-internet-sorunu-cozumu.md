@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Status: published
 Summary: Waydroid Android logosunda takılıyor mu? İnternet yok mu? Iptables-nft uyumsuzluğunu çöz ve Arch Linux'ta Waydroid'i çalıştır. Adım adım rehber başlayan içeriyle.
 Template: article
+Series: Waydroid
+Series_index: 2
 
 # Arch Linux'ta Waydroid İnternet ve Boot Sorununun Çözümü
 
@@ -225,3 +227,7 @@ Bu makalede öğrendiğiniz çözümler sayesinde Waydroid'de internetin çalı�
 Waydroid tam olarak çalıştıktan sonra, sisteminizi optimize etmek isteyebilirsiniz. Herhangi bir sorunda bu makalenin adımlarını tekrar gözden geçirin ve kontrol listesini kullanarak doğru yaptığınızı teyit edin.
 
 Başarılar dilerim! Waydroid'in tam olarak çalışmaya başlamışsa, Linux üzerinizde Android uygulamalarını sorunsuz şekilde kullanabileceksiniz.
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="HVQBmWN5ZaU"></lite-youtube>

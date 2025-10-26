@@ -6,9 +6,10 @@ Tags: Arch Linux, Depo Temizliği, Pacman, Sistem Yönetimi, Linux, Yazılım G�
 Slug: arch-linux-eski-depolar-temizlenmesi  
 Authors: yuceltoluyag  
 Status: published
+Summary: Arch Linux Kullanıcıları İçin Eski Depoların Temizlenmesi Hakkında Bilmeniz Gereken Her Şey
 Image: images/arch-linux-yeni-pacman-ayarlari-xl.webp
 
-## Arch Linux Kullanıcıları İçin Eski Depoların Temizlenmesi Hakkında Bilmeniz Gereken Her Şey
+## Arch Linux Eski Depoların Temizlenmesi Hakkında Bilmeniz Gereken Her Şey
 
 **Arch Linux** kullanıcıları için yeni bir duyuru geldi: Eskimiş ve artık kullanılmayan depoların temizlenmesi işlemi başlıyor! Bu yazıda, eski depoların sisteminizden nasıl kaldırılacağını ve bu değişikliğin ne anlama geldiğini inceleyeceğiz. Eğer Arch Linux kullanıyorsanız ve sisteminizde hala eski depo referansları varsa, bu yazıyı dikkatle okumanızda fayda var.
 

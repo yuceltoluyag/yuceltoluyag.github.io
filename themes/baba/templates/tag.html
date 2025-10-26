@@ -1,34 +1,73 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %}#{{ tag }} Etiketli Yazılar - {{ SITENAME }}{% endblock title %} {% block seo
+%}
+<meta
+    name="description"
+    content="#{{ tag }} etiketi ile ilgili tüm yazılar. Bu etikette toplam {{ articles|length }} yazı bulunuyor." />
+<link rel="canonical" href="{{ SITEURL }}/etiket/{{ tag.slug }}/" />
+<meta property="og:title" content="#{{ tag }} Etiketli Yazılar - {{ SITENAME }}" />
+<meta
+    property="og:description"
+    content="#{{ tag }} etiketi ile ilgili tüm yazılar. Bu etikette toplam {{ articles|length }} yazı bulunuyor." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ SITEURL }}/etiket/{{ tag.slug }}/" />
+{% endblock seo %} {% block content %}
+<div class="container pico-container">
+    <div class="tag-header pico-card pico-spacing-large">
+        <div class="tag-icon">
+            <span class="iconify" data-icon="tabler:hash" width="28" height="28"></span>
+        </div>
+        <div class="tag-info">
+            <h1 class="tag-title">#{{ tag }} Etiketli Yazılar</h1>
+            <p class="tag-count">Bu etikete sahip {{ articles|length }} yazı bulundu</p>
+        </div>
+    </div>
 
-{% block title %}{{ SITENAME }} - {{ tag }} etiketi{% endblock %}
+    <div class="articles-list">
+        {% for article in articles_page.object_list %}
+        <article class="article-card pico-card">
+            <a href="{{ SITEURL }}/{{ article.url }}" class="article-link">
+                <h2 class="article-title">{{ article.title }}</h2>
+                
+                <div class="article-meta">
+                    <time datetime="{{ article.date.isoformat() }}" class="article-date">
+                        <span class="iconify" data-icon="tabler:calendar" width="16" height="16"></span>
+                        {{ article.locale_date }}
+                    </time>
+                    {% if article.category %}
+                    <a href="{{ SITEURL }}/kategori/{{ article.category.slug }}/" class="article-category">
+                        <span class="iconify" data-icon="tabler:folder" width="16" height="16"></span>
+                        {{ article.category }}
+                    </a>
+                    {% endif %}
+                </div>
 
-{% block content %}
-{% block content_title %}
-<h1 class="author-category-tags-title">Etiket: {{ tag }}</h1>
-{% endblock %}
+                <p class="article-summary">{{ article.summary }}</p>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
 
-<section id="content">
-  <div>
-      <ol id="post-list">
-          {% for article in articles_page.object_list %}
-          <li style="list-style-type: none">
-              <article class="hentry">
-                  <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-                          title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
-                  <div style="margin-bottom: 1em" class="entry-content"><strong>{{ article.description }}</strong> </div>
-                  <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-                  <address class="vcard author">By
-                      {% for author in article.authors %}
-                      <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                      {% endfor %}
-                  </address>
-              </article>
-          </li>
-          {% endfor %}
-      </ol>
-  </div>
-      {% if articles_page.has_other_pages() %}
-      {% include 'pagination.html' %}
-      {% endif %}
-  </section>
-  {% endblock content %}
+    {% if articles_page.has_other_pages() %}
+    <div class="pagination-container">
+        {% if articles_page.has_previous() %}
+        <a
+            href="{{ SITEURL }}/{{ articles_previous_page.url }}"
+            class="btn btn-outline"
+            aria-label="Önceki sayfa">
+            <span class="iconify" data-icon="tabler:chevron-left" width="20" height="20"></span>
+            Önceki
+        </a>
+        {% endif %}
+        {% if articles_page.has_next() %}
+        <a
+            href="{{ SITEURL }}/{{ articles_next_page.url }}"
+            class="btn btn-outline"
+            aria-label="Sonraki sayfa">
+            Sonraki
+            <span class="iconify" data-icon="tabler:chevron-right" width="20" height="20"></span>
+        </a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

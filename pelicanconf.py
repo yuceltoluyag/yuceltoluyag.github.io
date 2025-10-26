@@ -117,6 +117,12 @@ STATISTICS_CATEGORIES = True  # Kategori istatistikleri
 STATISTICS_AUTHORS = True  # Yazar istatistikleri
 READING_SPEED_WPM = 200  # Dakikada ortalama kelime sayısı (varsayılan: 250)
 
+# Series eklentisi ayarları
+SERIES_DEFAULT_INDEXING = (
+    "date"  # Makaleler için varsayılan sıralama (date/title)
+)
+SERIES_PAGE_INDEXING = "title"  # Sayfalar için varsayılan sıralama
+
 # --- SEO Settings ---
 SEO_REPORT = True  # SEO report is enabled by default
 SEO_ENHANCER = False  # SEO enhancer is disabled by default
@@ -148,7 +154,8 @@ common_plugins = [
     "pelican.plugins.sitemap",
     "pelican.plugins.related_posts",
     "pelican.plugins.neighbors",
-    "pelican.plugins.statistics",
+
+    "pelican.plugins.series",  # Series eklentisi
     "plugins.fix_sitemap",
     "plugins.json_feed",
     "plugins.responsive_image_shortcode",  # Responsive Image Shortcode
@@ -257,7 +264,7 @@ SOCIAL = {
     "youtube": "yuceltoluyag",
     "twitch": "yuceltoluyag",
     "kick": "babapy",
-    "papara": "yuceltoluyag",
+    "bynogame": "https://donate.bynogame.com/yuceltoluyag",
     "github_sponsor": "yuceltoluyag",
     "bluesky": "yuceltoluyag.bsky.social",
 }
@@ -279,6 +286,7 @@ NAVBAR_LINKS = [
         "target": "_self",
         "icon": "fa-solid fa-user",
     },
+
     {
         "name": "Bağış",
         "url": "/bagis",
@@ -408,6 +416,7 @@ REDIRECTS = {
     "/arch-linux-lampp-kurulumuphp7xmariadbmy": "/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin",
     "/jekyll-staticman-eklentisi": "/jekyll-staticman-eklentisi-kurulumu",
     "/imap-openssl-terminalde-kullanimi": "/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin/",
+    "/imap-openssl-terminalde-kullanim": "/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin/",
 }
 
 # Cache Settings
@@ -427,3 +436,5 @@ TOC = {
     "TOC_RUN": "true",
     "TOC_INCLUDE_TITLE": "false",
 }
+
+JINJA_GLOBALS = {"current_year": date.today().year}

@@ -8,9 +8,7 @@ Authors: yuceltoluyag
 Summary: PowerShell profil dosyası ile ilgili yaşanan hata mesajları, OneDrive kaldırıldıktan sonra bile dizinlerin görünmeye devam etmesi ve eksik modüller nedeniyle alınan hataların çözümü.
 Status: published
 Template: article
-Image: images/windows11-onedrive-sorunu.webp
-
-![Hosts Dosyası Düzenleme](/images/windows11-onedrive-sorunu.webp)
+Image: images/windows11-onedrive-sorunu-xl.webp
 
 ## Bir Windows 11 Kullanıcısının Hikayesi
 
@@ -172,39 +170,46 @@ Sonrasında `$PROFILE` dosyanızı çalıştırarak değişiklikleri test edin:
 PowerShell'i kapatıp tekrar açarak hataların giderildiğini kontrol edin. 🚀
 
 ---
+
 # 📌 Çözüm: Klasör Yollarını Manuel Olarak Düzeltme
 
 ## 1️⃣ Kayıt Defteri (Registry) Üzerinden Yolları Güncelleme
+
 Windows, özel klasör yollarını Kayıt Defteri (Registry) üzerinden yönetir. Eski OneDrive yollarını değiştirmek için:
 
 ### 📌 Adım 1: Kayıt Defterini Aç
+
 - Windows + R tuşlarına bas
 - `regedit` yaz ve Enter tuşuna bas
 
 ### 📌 Adım 2: Aşağıdaki Yolu Aç
+
 ```powershell
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
 ```
 
 Burada, aşağıdaki anahtarları göreceksin. OneDrive ile başlayan yolları düzeltmelisin:
 
-| Anahtar Adı       | Varsayılan Yol                          |
-|-------------------|-----------------------------------------|
-| Desktop           | C:\Users\KullanıcıAdı\Desktop           |
-| Personal          | C:\Users\KullanıcıAdı\Documents         |
-| My Pictures       | C:\Users\KullanıcıAdı\Pictures          |
-| My Video          | C:\Users\KullanıcıAdı\Videos            |
-| My Music          | C:\Users\KullanıcıAdı\Music             |
+| Anahtar Adı | Varsayılan Yol                  |
+| ----------- | ------------------------------- |
+| Desktop     | C:\Users\KullanıcıAdı\Desktop   |
+| Personal    | C:\Users\KullanıcıAdı\Documents |
+| My Pictures | C:\Users\KullanıcıAdı\Pictures  |
+| My Video    | C:\Users\KullanıcıAdı\Videos    |
+| My Music    | C:\Users\KullanıcıAdı\Music     |
 
 ### 📌 Adım 3: Yanlış Olan Yolları Düzelt
+
 - OneDrive içeren yolları bulun. (Örneğin: `C:\Users\KullanıcıAdı\OneDrive\Belgeler`)
 - Çift tıklayın ve `C:\Users\KullanıcıAdı` şeklinde değiştirin.
 - Bilgisayarı yeniden başlatın.
 
 ## 2️⃣ Klasörleri Elle Taşı ve Konumu Değiştir
+
 Eğer yukarıdaki yöntem sorunu çözmezse, aşağıdaki manuel yöntemi dene:
 
 ### 📌 Adım 1: Varsayılan Konumları Değiştir
+
 - Belgeler, Masaüstü, Resimler vb. klasörlerine sağ tıkla.
 - Özellikler > Konum sekmesine gir.
 - "Taşı" butonuna bas ve uygun dizini seç (`C:\Users\KullanıcıAdı\Documents` vb.).
@@ -212,6 +217,7 @@ Eğer yukarıdaki yöntem sorunu çözmezse, aşağıdaki manuel yöntemi dene:
 - Bu adımları Masaüstü, Belgeler, Müzikler, Videolar ve Resimler için tekrar et.
 
 ## 3️⃣ PowerShell ile Klasör Yollarını Onarma (Otomatik)
+
 Eğer yukarıdaki adımları elle yapmak istemiyorsan, aşağıdaki PowerShell betiğini çalıştırarak yolları otomatik düzeltebilirsin:
 
 ```powershell
@@ -230,3 +236,4 @@ Bu komut:
 - Windows kayıt defterindeki yanlış yolları düzeltir.
 
 Bilgisayarı yeniden başlattıktan sonra düzelip düzelmediğini kontrol et. 🚀
+![Hosts Dosyası Düzenleme](/images/windows11-onedrive-sorunu-xl.webp)

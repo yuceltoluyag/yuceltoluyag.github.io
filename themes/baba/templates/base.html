@@ -1,12 +1,12 @@
+{% if 'jinja2.ext.i18n' not in JINJA_ENVIRONMENT.extensions %} {%- macro _(msg)
+-%} {{ msg % kwargs }} {%- endmacro -%} {% endif %}
+
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
   <head>
-    {% block head %}
+    {% block head %} {% include 'includes/metadata.html' %}
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta charset="utf-8" />
     <meta name="generator" content="Pelican" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ DESCRIPTION }}" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -20,13 +20,17 @@
     <link
       rel="stylesheet"
       type="text/css"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/modern-styles.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
       href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css"
     />
     <script
       src="https://kit.fontawesome.com/44040beaf0.js"
       crossorigin="anonymous"
     ></script>
-
 
     {% if FEED_ALL_ATOM %}
     <link
@@ -119,8 +123,10 @@
     {% endblock head %}
   </head>
 
-  <body>
-
+  <body class="{% block body_class %}{% endblock %}">
+    <a href="#" class="back-to-top-button" aria-label="Sayfanın başına dön">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
     <div class="wrapper">
       <aside class="sidebar">
         <section id="nav">
@@ -185,9 +191,12 @@
         </section>
       </aside>
       <div class="content-wrapper">
-        <main id="main-content" class="content container">
-          {% block content %} {% endblock %}
-        </main>
+        <div>
+          <main id="main-content" class="content container">
+            {% block content %} {% endblock %}
+          </main>
+          {% include 'includes/footer.html' %}
+        </div>
       </div>
     </div>
 
@@ -226,6 +235,33 @@
           newTheme === "dark"
             ? "fa-solid fa-moon fa-2x"
             : "fa-solid fa-sun fa-2x";
+      });
+
+      // Back to top functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const backToTopButton = document.querySelector('.back-to-top-button');
+        
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+          if (backToTopButton) {
+            if (window.pageYOffset > 300) {
+              backToTopButton.classList.add('show');
+            } else {
+              backToTopButton.classList.remove('show');
+            }
+          }
+        });
+        
+        // Smooth scroll to top
+        if (backToTopButton) {
+          backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            });
+          });
+        }
       });
     </script>
   </body>

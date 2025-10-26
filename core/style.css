@@ -1,0 +1,74 @@
+
+:root {
+  --pico-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --pico-font-size: 16px;
+  --pico-line-height: 1.5;
+  --pico-background-color: #fff;
+  --pico-color: #333;
+  --pico-primary: #007bff;
+  --pico-card-background-color: #f8f9fa;
+  --pico-card-border-color: #dee2e6;
+}
+[data-theme="dark"] {
+  --pico-background-color: #1a1a1a;
+  --pico-color: #f8f9fa;
+  --pico-primary: #007bff;
+  --pico-card-background-color: #2c2c2c;
+  --pico-card-border-color: #444;
+}
+body {
+  font-family: var(--pico-font-family);
+  font-size: var(--pico-font-size);
+  line-height: var(--pico-line-height);
+  background-color: var(--pico-background-color);
+  color: var(--pico-color);
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+a {
+  color: var(--pico-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.wrapper {
+  display: flex;
+}
+.sidebar {
+  width: 250px;
+  background-color: var(--pico-card-background-color);
+  padding: 20px;
+  border-right: 1px solid var(--pico-card-border-color);
+}
+.content-wrapper {
+  flex: 1;
+  padding: 20px;
+}
+.article-hero {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--pico-primary);
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.article {
+  background-color: var(--pico-card-background-color);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--pico-card-border-color);
+}
+.hentry {
+  background-color: var(--pico-card-background-color);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid var(--pico-card-border-color);
+  margin-bottom: 20px;
+}
