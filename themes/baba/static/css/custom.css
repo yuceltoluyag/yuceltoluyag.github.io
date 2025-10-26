@@ -467,243 +467,91 @@ article.article a {
   margin: 0;
 }
 
-/* TOC Main List - Remove left padding */
-.toc-sidebar-content .toc > ul {
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
+/* --- FINAL TOC STYLES (Flat, Compact, Cyberpunk) --- */
 
+/* Base list styling - NO INDENTATION */
 .toc-sidebar-content .toc ul {
-  padding-left: 1.4rem;
-  margin-bottom: 0.3rem;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.toc-sidebar-content .toc ul li {
-  list-style-type: none !important;
-  margin-bottom: 0.15rem !important;
-  font-size: 0.87rem !important;
-  line-height: 1.6 !important;
-  position: relative;
-  opacity: 0.95;
-  transform: translateX(0);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Hover effect for list items */
-.toc-sidebar-content .toc ul li:hover {
-  opacity: 1;
-  transform: translateX(2px);
-}
-
-/* H1 Level - Clean, prominent */
-.toc-sidebar-content .toc > ul > li {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 0.7rem;
+  list-style: none;
   padding-left: 0;
-  border-left: 3px solid transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  background: transparent;
-  border-radius: 6px;
+  margin: 0;
 }
 
-/* H2 Level - Subtle indent with visual guide */
-.toc-sidebar-content .toc > ul > li > ul {
-  padding-left: 1.2rem;
-  margin-top: 0.4rem;
-  border-left: 3px solid rgba(92, 107, 192, 0.2);
-  margin-left: 0.5rem;
-  border-radius: 0 6px 6px 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* All list items - NO INDENTATION */
+.toc-sidebar-content .toc li {
   position: relative;
-  background: rgba(92, 107, 192, 0.03);
-  box-shadow: inset 2px 2px 4px rgba(92, 107, 192, 0.05);
+  padding-left: 0; /* REMOVED indentation */
+  margin-bottom: 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
 }
 
+/* Adjustments for nested lists - NO INDENTATION */
+.toc-sidebar-content .toc ul ul {
+  padding-left: 0; /* REMOVED indentation */
+  margin-top: 0; /* Remove top margin */
+}
+
+/* Style for different heading levels using font-weight */
+.toc-sidebar-content .toc > ul > li {
+  font-weight: 700; /* H1/H2 level */
+  font-size: 0.8rem;
+}
 .toc-sidebar-content .toc > ul > li > ul > li {
-  font-size: 0.92rem;
-  font-weight: 500;
-  margin-bottom: 0.4rem;
-  padding-left: 0.6rem;
-  border-left: 2px solid transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border-radius: 5px;
-  padding: 0.25rem 0.6rem;
-  position: relative;
-  background: transparent;
+  font-weight: 500; /* H3 level */
 }
-
-/* H3 Level - Deeper indent */
-.toc-sidebar-content .toc > ul > li > ul > li > ul {
-  padding-left: 1rem;
-  margin-top: 0.3rem;
-  border-left: 2px solid rgba(92, 107, 192, 0.15);
-  border-radius: 0 4px 4px 0;
-  position: relative;
-  background: rgba(92, 107, 192, 0.02);
-  box-shadow: inset 1px 1px 3px rgba(92, 107, 192, 0.03);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .toc-sidebar-content .toc > ul > li > ul > li > ul > li {
-  font-size: 0.87rem;
-  font-weight: 400;
-  margin-bottom: 0.3rem;
-  padding-left: 0.5rem;
-  border-radius: 4px;
-  padding: 0.2rem 0.5rem;
-  background: transparent;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 400; /* H4 level */
+  color: var(--pico-muted-color); /* Make deeper levels less prominent */
 }
 
-/* H4+ Level - Even deeper */
-.toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul {
-  padding-left: 0.8rem;
-  margin-top: 0.25rem;
-  border-left: 1px solid rgba(92, 107, 192, 0.1);
-  border-radius: 0 3px 3px 0;
-  background: rgba(92, 107, 192, 0.01);
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul > li {
-  font-size: 0.82rem;
-  font-weight: 300;
-  margin-bottom: 0.25rem;
-  padding-left: 0.4rem;
-  border-radius: 3px;
-  padding: 0.15rem 0.4rem;
-  background: transparent;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Modern connection lines for nested items with enhanced styling */
-.toc-sidebar-content .toc ul::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 3px;
-  background: linear-gradient(to bottom, 
-    rgba(92, 107, 192, 0.3) 0%, 
-    rgba(92, 107, 192, 0.15) 100%);
-  border-radius: 2px;
-  box-shadow: 0 0 2px rgba(92, 107, 192, 0.2);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.8;
-}
-
-/* Enhanced hover effect for connection lines */
-.toc-sidebar-content .toc ul:hover::before {
-  background: linear-gradient(to bottom, 
-    rgba(92, 107, 192, 0.5) 0%, 
-    rgba(92, 107, 192, 0.25) 100%);
-  opacity: 1;
-  width: 4px;
-}
-
-/* Special styling for active/current section parent containers */
-.toc-sidebar-content .toc ul:has(.current) {
-  background: rgba(92, 107, 192, 0.05);
-  border-left-color: rgba(92, 107, 192, 0.4) !important;
-  box-shadow: inset 3px 3px 6px rgba(92, 107, 192, 0.1);
-}
-
-/* Enhanced visual hierarchy with indentation guides */
-.toc-sidebar-content .toc > ul > li > ul::before {
-  background: linear-gradient(to bottom, 
-    rgba(92, 107, 192, 0.25) 0%, 
-    rgba(92, 107, 192, 0.12) 100%);
-}
-
-.toc-sidebar-content .toc > ul > li > ul > li > ul::before {
-  background: linear-gradient(to bottom, 
-    rgba(92, 107, 192, 0.2) 0%, 
-    rgba(92, 107, 192, 0.1) 100%);
-}
-
-.toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul::before {
-  background: linear-gradient(to bottom, 
-    rgba(92, 107, 192, 0.15) 0%, 
-    rgba(92, 107, 192, 0.08) 100%);
-}
-
+/* TOC Link Styling */
 .toc-sidebar-content .toc a {
-  color: var(--pico-color) !important;
-  text-decoration: none !important;
   display: block !important;
-  padding: 0.45rem 0.7rem !important;
-  margin: 0.15rem 0 !important;
+  padding: 0.4rem 0.8rem !important;
+  margin: 1px 0 !important;
   border-radius: 6px !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  border-left: 3px solid transparent !important;
-  background: transparent !important;
+  transition: all 0.2s ease-out !important;
   position: relative !important;
-  overflow: hidden !important;
-  z-index: 1 !important;
-}
-
-.toc-sidebar-content .toc a::before {
-  content: '';
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--pico-primary-background) !important;
-  opacity: 0 !important;
-  z-index: -1 !important;
-  transform: scaleX(0) !important;
-  transform-origin: left !important;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.toc-sidebar-content .toc a:hover {
-  color: var(--pico-primary-inverse) !important;
   background: transparent !important;
-  border-left-color: var(--pico-primary) !important;
-  transform: translateX(4px) scale(1.01) !important;
-  padding-left: 0.85rem !important;
+  color: var(--pico-muted-color) !important;
+  text-shadow: none;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  /* Add a left border for visual feedback instead of transform */
+  border-left: 3px solid transparent;
 }
 
-.toc-sidebar-content .toc a:hover::before {
-  opacity: 1 !important;
-  transform: scaleX(1) !important;
+/* Cyberpunk Hover/Focus Effect */
+.toc-sidebar-content .toc a:hover,
+.toc-sidebar-content .toc a:focus {
+    color: #00f0ff !important;
+    background: rgba(0, 240, 255, 0.05) !important;
+    text-shadow: 
+        0 0 2px #00f0ff,
+        0 0 5px #00f0ff;
+    border-left-color: #00f0ff;
 }
 
-/* Active section indicator */
+/* Cyberpunk Active (Current) Section Indicator */
 .toc-sidebar-content .toc a.current {
-  background: rgba(92, 107, 192, 0.1) !important;
-  color: var(--pico-primary) !important;
-  border-left-color: var(--pico-primary) !important;
-  font-weight: 600 !important;
-  position: relative !important;
-  box-shadow: 0 2px 8px rgba(92, 107, 192, 0.15) !important;
+    color: #ff00ff !important;
+    font-weight: 700 !important;
+    background: rgba(255, 0, 255, 0.07) !important;
+    text-shadow: 
+        0 0 2px #ff00ff,
+        0 0 5px #ff00ff;
+    border-left-color: #ff00ff;
 }
 
-/* Active section with special indicator */
-.toc-sidebar-content .toc a.current::after {
-  content: '●';
-  position: absolute !important;
-  right: 0.7rem !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  color: var(--pico-primary) !important;
-  font-size: 0.8rem !important;
-  font-weight: bold !important;
+/* Cleanup any old pseudo-elements */
+.toc-sidebar-content .toc li::before,
+.toc-sidebar-content .toc li::after,
+.toc-sidebar-content .toc a::before,
+.toc-sidebar-content .toc a::after {
+    content: none !important;
 }
 
-.toc-sidebar-content .toc a.current:hover {
-  background: var(--pico-primary-background) !important;
-  color: var(--pico-primary-inverse) !important;
-}
 
 /* TOC Toggle Button - Fixed Position Above Back to Top */
 .toc-toggle-fixed-btn {
@@ -2144,7 +1992,6 @@ article.article {
     transform: translateX(5px); /* Move right on hover */
   }
 }
-
 .navbar a::after {
   /* Reposition underline for vertical layout */
   bottom: 0;
@@ -2857,8 +2704,6 @@ article.article {
 
 
 }
-
-
 
 
 
@@ -4204,1387 +4049,6 @@ li,
         gap: 1rem;
     }
     
-    .article-nav-arrow {
-        justify-content: center;
-        padding: 0.8rem 1rem;
-    }
-    
-    .article-nav-arrow.prev,
-    .article-nav-arrow.next {
-        justify-content: center;
-    }
-    
-    .article-nav-arrow span {
-        display: none;
-    }
-    
-    .article-nav-arrow i {
-        margin: 0 !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .article-hero {
-        height: 40vh;
-        padding: 1em;
-    }
-    
-    .hero-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.3em;
-    }
-    
-    .hero-summary {
-        font-size: 0.9rem;
-        padding: 0.6rem;
-        margin-top: 0.8rem;
-    }
-    
-    .hero-meta {
-        font-size: 0.8rem;
-        gap: 8px;
-        margin-top: 0.6rem;
-    }
-    
-    .hero-meta time,
-    .hero-meta address {
-        font-size: 0.8rem;
-    }
-    
-    .series-navigation-card {
-        padding: 1.2rem;
-    }
-    
-    .article-content-wrapper {
-        padding: 1.2rem;
-    }
-    
-    .article-bottom-section {
-        gap: 1.2rem;
-    }
-    
-    .series-contents summary {
-        font-size: 1rem;
-    }
-    
-    .series-list a,
-    .current-article {
-        gap: 0.6rem;
-        font-size: 0.9rem;
-    }
-    
-    .related-posts-list a {
-        font-size: 0.9rem;
-    }
-    
-    .article-bottom-section {
-        gap: 1rem;
-    }
-    
-    .article-nav-arrows {
-        gap: 0.5rem;
-    }
-    
-    .article-nav-arrow {
-        padding: 0.7rem 0.9rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Index Page Styles */
-.index-page {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 var(--pico-spacing);
-}
-
-.featured-article-glow {
-    position: relative;
-    background: var(--pico-card-background-color);
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 3rem;
-    overflow: hidden;
-    /* Subtle cyberpunk neon glow effect */
-    box-shadow: 0 0 12px rgba(100, 100, 255, 0.25), 0 0 6px rgba(255, 100, 100, 0.15);
-    border: 1px solid rgba(100, 100, 255, 0.25);
-    transition: all 0.3s ease;
-    /* Additional cyberpunk styling */
-    background: 
-        linear-gradient(145deg, 
-            rgba(15, 15, 30, 0.7), 
-            rgba(20, 20, 35, 0.7));
-    /* Apply the same pulsing animation as article list items */
-    animation: cyberPulse 3.5s infinite;
-}
-
-.featured-article-glow:hover {
-    transform: translateY(-5px);
-    /* Subtle cyberpunk glow on hover */
-    box-shadow: 0 0 20px rgba(100, 100, 255, 0.4), 0 0 12px rgba(255, 100, 100, 0.25);
-    border-color: rgba(100, 100, 255, 0.4);
-    background: 
-        linear-gradient(145deg, 
-            rgba(25, 25, 45, 0.7), 
-            rgba(30, 30, 50, 0.7));
-}
-
-.featured-article-content {
-    display: flex;
-    align-items: stretch;
-    gap: 2rem;
-    position: relative;
-    z-index: 2;
-}
-
-.featured-image-glow {
-    position: relative;
-    flex-shrink: 0;
-    width: 45%;
-    clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
-    border-radius: 8px 0 0 8px;
-    overflow: hidden;
-}
-
-.featured-article-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.featured-article-glow:hover .featured-article-image {
-    transform: scale(1.05);
-}
-
-.glow-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Enhanced cyberpunk glow effect */
-    background: radial-gradient(circle at center, rgba(100, 100, 255, 0.25) 0%, rgba(100, 100, 255, 0.1) 30%, transparent 70%);
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.4;
-    transition: opacity 0.5s ease;
-    animation: glowPulse 3s infinite alternate;
-}
-
-.featured-article-glow:hover .glow-effect {
-    opacity: 0.7;
-    animation: glowPulse 2s infinite alternate;
-}
-
-@keyframes glowPulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.7; }
-}
-
-.featured-article-text {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.article-meta-glow {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    align-items: center;
-    font-size: 0.95rem;
-    color: var(--pico-muted-color);
-}
-
-.category-glow {
-    background: linear-gradient(45deg, var(--pico-primary-background), #6a11cb);
-    color: var(--pico-primary-inverse);
-    padding: 0.4rem 0.9rem;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    box-shadow: 0 0 15px rgba(106, 17, 203, 0.4);
-}
-
-.category-glow a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.category-glow a:hover {
-    text-decoration: underline;
-}
-
-.featured-article-title {
-    font-size: 2rem;
-    margin: 0;
-    line-height: 1.3;
-}
-
-.featured-article-title a {
-    color: var(--pico-color);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.featured-article-title a:hover {
-    color: var(--pico-primary);
-    text-shadow: 0 0 8px rgba(100, 100, 255, 0.5);
-}
-
-.featured-article-summary p {
-    margin: 0;
-    color: var(--pico-muted-color);
-    line-height: 1.7;
-}
-
-.articles-list-container {
-    margin-top: 2rem;
-}
-
-.list-section-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    color: var(--pico-color);
-    text-shadow: 0 0 10px rgba(100, 100, 255, 0.3);
-}
-
-.articles-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.article-list-item-glow {
-    position: relative;
-    background: var(--pico-card-background-color);
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: 10px;
-    padding: 1.2rem;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: stretch;
-    gap: 1.2rem;
-    overflow: hidden;
-    min-height: auto; /* Changed from 220px to allow content to determine height */
-    box-sizing: border-box;
-    /* Subtle cyberpunk neon glow effect */
-    box-shadow: 0 0 8px rgba(100, 100, 255, 0.2), 0 0 3px rgba(255, 100, 100, 0.1);
-    border: 1px solid rgba(100, 100, 255, 0.2);
-    /* Cyberpunk neon background */
-    background: 
-        linear-gradient(145deg, 
-            rgba(15, 15, 30, 0.6), 
-            rgba(20, 20, 35, 0.6));
-}
-
-.article-list-item-glow:hover {
-    transform: translateX(5px);
-    /* Subtle cyberpunk glow on hover */
-    box-shadow: 0 0 15px rgba(100, 100, 255, 0.4), 0 0 10px rgba(255, 100, 100, 0.2);
-    border-color: rgba(100, 100, 255, 0.4);
-    /* Hover background */
-    background: 
-        linear-gradient(145deg, 
-            rgba(25, 25, 45, 0.7), 
-            rgba(30, 30, 50, 0.7));
-}
-
-.list-item-content {
-    flex: 1;
-    min-width: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    justify-content: center;
-    overflow: hidden;
-    height: 100%;
-}
-
-.list-item-content.half-width {
-    perspective: 62.5rem;
-    width: 50%;
-    padding: 1rem 1.5rem 1rem 0;
-    position: relative;
-}
-
-.list-item-content.full-width {
-    flex: 1;
-    width: 100%;
-    /* Add subtle cyberpunk glow to text for full-width items */
-    text-shadow: 0 0 3px rgba(100, 100, 255, 0.1);
-}
-
-.list-item-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.list-item-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-}
-
-.category-tag {
-    background: var(--pico-secondary-background);
-    color: var(--pico-secondary-inverse);
-    padding: 0.25rem 0.6rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    /* Cyberpunk neon effect for category tags */
-    box-shadow: 0 0 8px rgba(100, 100, 255, 0.4);
-}
-
-.category-tag a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.list-item-meta time {
-    font-size: 0.75rem;
-    color: var(--pico-muted-color);
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    /* Cyberpunk glow for time */
-    text-shadow: 0 0 5px rgba(100, 100, 255, 0.3);
-}
-
-.list-item-title {
-    font-size: 1.1rem;
-    margin: 0;
-    line-height: 1.3;
-}
-
-.list-item-title a {
-    color: var(--pico-color);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    /* Subtle initial cyberpunk glow */
-    text-shadow: 0 0 3px rgba(100, 100, 255, 0.15);
-}
-
-.list-item-title a:hover {
-    color: var(--pico-primary);
-    /* Subtle cyberpunk text glow on hover */
-    text-shadow: 0 0 8px rgba(100, 100, 255, 0.4), 0 0 12px rgba(100, 100, 255, 0.3);
-}
-
-.list-item-author .author {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    color: var(--pico-muted-color);
-}
-
-.list-item-author .author a {
-    color: var(--pico-primary);
-    text-decoration: none;
-}
-
-.list-item-image {
-    flex-shrink: 0;
-    width: 180px;
-    height: 120px;
-    border-radius: 6px;
-    object-fit: cover;
-}
-
-.list-item-image.half-width {
-    clip-path: polygon(0 0, 92% 0%, 100% 100%, 0% 100%);
-    border-radius: 0.625rem 0 0 0.625rem;
-    width: 50%;
-    margin-right: 1.5rem;
-    overflow: hidden;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.list-item-image.half-width img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Add subtle cyberpunk border effect to images */
-    border: 1px solid rgba(100, 100, 255, 0.2);
-    box-shadow: 0 0 10px rgba(100, 100, 255, 0.1);
-}
-
-.list-item-image.half-width::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(124deg, 
-        transparent 40%, 
-        rgba(100, 100, 255, 0.15) 50%, 
-        transparent 60%);
-    background-size: 200% 200%;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.3;
-}
-
-.list-item-summary {
-    margin-top: 0.5rem;
-}
-
-.list-item-summary p {
-    margin: 0;
-    color: var(--pico-muted-color);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    /* Add subtle glow to summary text */
-    text-shadow: 0 0 3px rgba(100, 100, 255, 0.2);
-}
-
-.list-item-glow-effect {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(100, 100, 255, 0.25),
-        rgba(255, 100, 100, 0.25),
-        rgba(100, 100, 255, 0.25),
-        transparent
-    );
-    transition: left 2s; /* Slower transition for smoother effect */
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.3;
-}
-
-.article-list-item-glow:hover .list-item-glow-effect {
-    left: 100%;
-    opacity: 0.5;
-}
-
-/* Additional cyberpunk styling for article list items */
-.article-list-item-glow::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    padding: 2px;
-    background: linear-gradient(45deg, 
-        rgba(100, 100, 255, 0.3), 
-        rgba(255, 100, 100, 0.3), 
-        rgba(100, 100, 255, 0.3), 
-        rgba(255, 200, 100, 0.3));
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    pointer-events: none;
-    z-index: -1;
-    transition: all 0.3s ease;
-}
-
-.article-list-item-glow:hover::before {
-    background: linear-gradient(45deg, 
-        rgba(100, 100, 255, 0.5), 
-        rgba(255, 100, 100, 0.5), 
-        rgba(100, 100, 255, 0.5), 
-        rgba(255, 200, 100, 0.5));
-}
-
-/* Add subtle pulsing cyberpunk border animation */
-@keyframes cyberPulse {
-    0%, 100% { 
-        box-shadow: 0 0 5px rgba(100, 100, 255, 0.2), 
-                    0 0 3px rgba(255, 100, 100, 0.1),
-                    inset 0 0 5px rgba(100, 100, 255, 0.1);
-    }
-    50% { 
-        box-shadow: 0 0 12px rgba(100, 100, 255, 0.3), 
-                    0 0 8px rgba(255, 100, 100, 0.2),
-                    inset 0 0 12px rgba(100, 100, 255, 0.2);
-    }
-}
-
-.article-list-item-glow {
-    animation: cyberPulse 3.5s infinite;
-}
-
-.ad-container {
-    text-align: center;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-radius: 8px;
-    background-color: var(--pico-muted-background-color);
-}
-
-/* Responsive adjustments for 404 page */
-@media (max-width: 768px) {
-    .not-found-container {
-        min-height: 60vh;
-        padding: 1rem;
-    }
-    
-    .not-found-content {
-        padding: 2rem 1.5rem;
-    }
-    
-    .not-found-code {
-        font-size: 4rem;
-    }
-    
-    .not-found-title {
-        font-size: 1.75rem;
-    }
-    
-    .not-found-message {
-        font-size: 1rem;
-    }
-    
-    .not-found-button {
-        padding: 0.625rem 1.25rem;
-    }
-    
-    /* Responsive adjustments for about page */
-    .about-hero {
-        padding: 1.5rem 0;
-    }
-    
-    .about-avatar {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .about-main-content {
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-    }
-    
-    .about-content-column,
-    .about-contact-column {
-        min-width: 100%;
-        max-width: 100%;
-    }
-    
-    .about-contact-card {
-        padding: 1.25rem;
-    }
-    
-    .about-social-links {
-        gap: 0.75rem;
-        margin-top: 1rem;
-    }
-    
-    /* Responsive adjustments for article page */
-    .article-hero {
-        height: 45vh;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-meta {
-        flex-direction: column;
-        gap: 0.8rem;
-        font-size: 1rem;
-    }
-    
-    .hero-summary {
-        font-size: 1rem;
-        margin-top: 0.8rem;
-    }
-    
-    .hero-content {
-        padding: 1.5rem;
-    }
-    
-    .series-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .series-header h3 {
-        font-size: 1.2rem;
-    }
-    
-    .article-content-wrapper {
-        padding: 1.5rem;
-    }
-    
-    /* Responsive grid for bottom section */
-    .article-bottom-section {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .related-posts-section,
-    .support-section {
-        order: initial;
-    }
-    
-    .article-nav-arrows {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .article-nav-arrow.prev,
-    .article-nav-arrow.next {
-        justify-content: center;
-    }
-    
-    .article-nav-arrow span {
-        display: none;
-    }
-    
-    .article-nav-arrow i {
-        margin: 0 !important;
-    }
-    
-    /* Responsive adjustments for index page */
-    .featured-article-content {
-        flex-direction: column;
-    }
-    
-    .featured-image-glow {
-        width: 100%;
-        height: 250px;
-        clip-path: polygon(0 0, 100% 0%, 100% 92%, 0% 100%);
-        border-radius: 8px 8px 0 0;
-    }
-    
-    .featured-article-text {
-        width: 100%;
-        padding: 1.5rem 0 0 0;
-    }
-    
-    .featured-article-title {
-        font-size: 1.6rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .featured-article-summary p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-    
-    .articles-list {
-        gap: 1rem;
-    }
-    
-    .article-list-item-glow {
-        flex-direction: column;
-        gap: 0.8rem;
-        height: auto;
-    }
-    
-    .list-item-content.half-width {
-        width: 100%;
-        padding: 0;
-    }
-    
-    .list-item-image.half-width {
-        width: 100%;
-        height: 150px;
-        clip-path: polygon(0 0, 100% 0%, 100% 92%, 0% 100%);
-        border-radius: 8px 8px 0 0;
-        margin-right: 0;
-    }
-    
-    .list-section-title {
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-    }
-    
-    .list-item-title {
-        font-size: 1.1rem;
-    }
-    
-    .list-item-meta {
-        font-size: 0.85rem;
-        gap: 0.75rem;
-    }
-    
-    .list-item-summary p {
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-}
-
-@media (max-width: 480px) {
-    .article-hero {
-        height: 40vh;
-        padding: 1em;
-    }
-    
-    .hero-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.3em;
-    }
-    
-    .hero-summary {
-        font-size: 0.9rem;
-        padding: 0.6em;
-        margin-top: 0.8em;
-    }
-    
-    .hero-meta {
-        font-size: 0.9rem;
-        gap: 10px;
-        margin-top: 0.8em;
-    }
-    
-    .hero-meta time,
-    .hero-meta address {
-        font-size: 0.9rem;
-    }
-    
-    .series-navigation-card {
-        padding: 1.2rem;
-    }
-    
-    .article-content-wrapper {
-        padding: 1.2rem;
-    }
-    
-    .article-bottom-section {
-        gap: 1.2rem;
-    }
-    
-    .series-contents summary {
-        font-size: 1rem;
-    }
-    
-    .series-list a,
-    .current-article {
-        gap: 0.6rem;
-        font-size: 0.9rem;
-    }
-    
-    .related-posts-list a {
-        font-size: 0.9rem;
-    }
-    
-    .article-bottom-section {
-        gap: 1rem;
-    }
-    
-    /* Ultra small mobile adjustments */
-    .article-hero {
-        height: 38vh;
-    }
-    
-    .hero-title {
-        font-size: 1.4rem;
-    }
-    
-    .hero-meta {
-        font-size: 0.85rem;
-    }
-    
-    .hero-summary {
-        font-size: 0.9rem;
-    }
-    
-    /* Index page adjustments for small screens */
-    .featured-article-content {
-        padding: 1.2rem;
-    }
-    
-    .featured-image-glow {
-        height: 200px;
-    }
-    
-    .featured-article-title {
-        font-size: 1.4rem;
-    }
-    
-    .featured-article-summary p {
-        font-size: 0.9rem;
-    }
-    
-    .article-list-item-glow {
-        padding: 1rem;
-    }
-    
-    .list-item-title {
-        font-size: 1rem;
-    }
-    
-    .list-item-meta time,
-    .list-item-meta address,
-    .list-item-meta .category {
-        font-size: 0.8rem;
-    }
-    
-    .list-item-summary p {
-        font-size: 0.85rem;
-    }
-    
-    .category-tag {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.5rem;
-    }
-    
-    .article-meta-glow {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.6rem;
-    }
-    
-    .category-glow {
-        font-size: 0.8rem;
-        padding: 0.3rem 0.7rem;
-    }
-    
-    .featured-article-text {
-        gap: 1rem;
-    }
-    
-    .list-item-image.half-width {
-        height: 130px;
-    }
-}
-
-/* Donate Page Styles */
-.donate-page {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 var(--pico-spacing);
-}
-
-.donate-article {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.donate-container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 var(--pico-spacing);
-}
-
-.donate-headings {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 2rem 0;
-}
-
-.donate-headings h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--pico-color);
-}
-
-.donate-headings p {
-    font-size: 1.2rem;
-    color: var(--pico-muted-color);
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.donate-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.donate-section {
-    padding: 2rem;
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    background: var(--pico-card-background-color);
-    box-shadow: var(--pico-box-shadow);
-}
-
-.donate-section header h2 {
-    margin-top: 0;
-    font-size: 1.8rem;
-    color: var(--pico-color);
-    border-bottom: 1px solid var(--pico-muted-border-color);
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.donate-figure {
-    margin: 0 0 1rem 0;
-    padding: 0;
-}
-
-.donate-figure-grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.donate-figure-grid i {
-    color: var(--pico-primary);
-    font-size: 1.2rem;
-    margin-top: 0.2rem;
-}
-
-.donate-figure-grid p {
-    margin: 0;
-    color: var(--pico-muted-color);
-    line-height: 1.6;
-}
-
-.donate-options {
-    padding: 2rem;
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    background: var(--pico-card-background-color);
-    box-shadow: var(--pico-box-shadow);
-}
-
-.donate-options header h2 {
-    margin-top: 0;
-    font-size: 1.8rem;
-    color: var(--pico-color);
-    border-bottom: 1px solid var(--pico-muted-border-color);
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.donate-option {
-    display: block;
-    text-decoration: none;
-    margin-bottom: 1.5rem;
-    border-radius: var(--pico-border-radius);
-    transition: all 0.3s ease;
-    border: 1px solid var(--pico-primary);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.donate-option:last-child {
-    margin-bottom: 0;
-}
-
-.donate-option::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        124deg, 
-        transparent 40%, 
-        rgba(100, 100, 255, 0.1) 50%, 
-        transparent 60%
-    );
-    background-size: 200% 200%;
-    z-index: -1;
-    transition: all 0.5s ease;
-    opacity: 0;
-}
-
-.donate-option:hover::before {
-    opacity: 1;
-    animation: shine 1.5s infinite;
-}
-
-.donate-option:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.donate-option:active {
-    transform: translateY(-1px);
-}
-
-.donate-option-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    color: var(--pico-color);
-}
-
-.donate-option-card i {
-    font-size: 2rem;
-    color: var(--pico-primary);
-}
-
-.donate-option-card h3 {
-    margin: 0;
-    font-size: 1.4rem;
-    font-weight: 500;
-}
-
-.papara-option {
-    background: linear-gradient(135deg, #ff9900, #ff6600);
-    border-color: #ff9900;
-}
-
-.papara-option .donate-option-card {
-    color: white;
-}
-
-.papara-option .donate-option-card i,
-.papara-option .donate-option-card h3 {
-    color: white;
-}
-
-.github-option {
-    background: linear-gradient(135deg, #333, #666);
-    border-color: #333;
-}
-
-.github-option .donate-option-card {
-    color: white;
-}
-
-.github-option .donate-option-card i,
-.github-option .donate-option-card h3 {
-    color: white;
-}
-
-.crypto-section {
-    padding: 2rem;
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    background: var(--pico-card-background-color);
-    box-shadow: var(--pico-box-shadow);
-    margin-top: 2rem;
-}
-
-.crypto-section header h2 {
-    margin-top: 0;
-    font-size: 1.8rem;
-    color: var(--pico-color);
-    border-bottom: 1px solid var(--pico-muted-border-color);
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.crypto-notice {
-    background: var(--pico-primary-background);
-    color: var(--pico-primary-inverse);
-    padding: 1.5rem;
-    border-radius: var(--pico-border-radius);
-    margin-bottom: 2rem;
-    border: 1px solid var(--pico-primary);
-}
-
-.crypto-notice-content {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.crypto-notice-content i {
-    font-size: 1.5rem;
-    color: var(--pico-primary-inverse);
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-}
-
-.crypto-notice-content div {
-    flex: 1;
-}
-
-.crypto-notice-content strong {
-    font-size: 1.1rem;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.crypto-notice-content span kbd {
-    background: var(--pico-primary-inverse);
-    color: var(--pico-primary-background);
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.9rem;
-}
-
-.crypto-notice footer {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-}
-
-.crypto-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.crypto-figure {
-    text-align: center;
-    margin: 0;
-}
-
-.crypto-qr-image {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    border-radius: var(--pico-border-radius);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    border: 1px solid var(--pico-muted-border-color);
-    padding: 0.5rem;
-    background: white;
-}
-
-.crypto-qr-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.crypto-figure figcaption {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--pico-muted-color);
-    font-weight: 500;
-}
-
-.crypto-modal {
-    border: none;
-    border-radius: var(--pico-border-radius);
-    padding: 0;
-    max-width: 90vw;
-    width: 100%;
-    max-height: 90vh;
-}
-
-.crypto-modal-article {
-    margin: 0;
-    padding: 0;
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    background: var(--pico-card-background-color);
-}
-
-.crypto-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid var(--pico-muted-border-color);
-    margin-bottom: 0;
-}
-
-.crypto-modal-header button.close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0;
-    width: auto;
-    height: auto;
-    color: var(--pico-color);
-}
-
-.crypto-modal-image {
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-.crypto-details {
-    margin-top: 2rem;
-    border: 1px solid var(--pico-muted-border-color);
-    border-radius: var(--pico-border-radius);
-}
-
-.crypto-details summary {
-    padding: 1rem;
-    cursor: pointer;
-    font-weight: 500;
-    background: var(--pico-muted-background-color);
-    border-radius: var(--pico-border-radius);
-}
-
-.crypto-details[open] summary {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.crypto-address-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: var(--pico-muted-background-color);
-    border-top: 1px solid var(--pico-muted-border-color);
-}
-
-.crypto-address {
-    flex: 1;
-    font-family: monospace;
-    font-size: 0.9rem;
-    padding: 0.5rem;
-    background: white;
-    border: 1px solid var(--pico-muted-border-color);
-    border-radius: var(--pico-border-radius);
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-.copy-button {
-    padding: 0.5rem;
-    border-radius: var(--pico-border-radius);
-    border: 1px solid var(--pico-muted-border-color);
-    background: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.copy-button:hover {
-    background: var(--pico-primary-background);
-    color: var(--pico-primary-inverse);
-    border-color: var(--pico-primary);
-}
-
-.copy-button.copied {
-    background: var(--pico-success-background);
-    color: var(--pico-success-inverse);
-    border-color: var(--pico-success);
-}
-
-/* Responsive adjustments for 404 page */
-@media (max-width: 768px) {
-    .not-found-container {
-        min-height: 60vh;
-        padding: 1rem;
-    }
-    
-    .not-found-content {
-        padding: 2rem 1.5rem;
-    }
-    
-    .not-found-code {
-        font-size: 4rem;
-    }
-    
-    .not-found-title {
-        font-size: 1.75rem;
-    }
-    
-    .not-found-message {
-        font-size: 1rem;
-    }
-    
-    .not-found-button {
-        padding: 0.625rem 1.25rem;
-    }
-    
-    /* Responsive adjustments for about page */
-    .about-hero {
-        padding: 1.5rem 0;
-    }
-    
-    .about-avatar {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .about-main-content {
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-    }
-    
-    .about-content-column,
-    .about-contact-column {
-        min-width: 100%;
-        max-width: 100%;
-    }
-    
-    .about-contact-card {
-        padding: 1.25rem;
-    }
-    
-    .about-social-links {
-        gap: 0.75rem;
-        margin-top: 1rem;
-    }
-    
-    /* Responsive adjustments for article page */
-    .article-hero {
-        height: 45vh;
-        margin-bottom: 1.5rem;
-    }
-    
-    .hero-title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .hero-meta {
-        flex-direction: column;
-        gap: 0.8rem;
-        font-size: 1rem;
-    }
-    
-    .hero-summary {
-        font-size: 1rem;
-        margin-top: 0.8rem;
-    }
-    
-    .hero-content {
-        padding: 1.5rem;
-    }
-    
-    .series-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .series-header h3 {
-        font-size: 1.2rem;
-    }
-    
-    .article-content-wrapper {
-        padding: 1.5rem;
-    }
-    
-    /* Responsive grid for bottom section */
-    .article-bottom-section {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .related-posts-section,
-    .support-section {
-        order: initial;
-    }
-    
-    .article-nav-arrows {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
     .article-nav-arrow.prev,
     .article-nav-arrow.next {
         justify-content: center;
@@ -5980,163 +4444,695 @@ li,
     }
 }
 
-/* Tags Page Styles */
-.tags-hero {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem 0;
-}
 
-.tags-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--pico-color);
-}
+/* 886px and below adjustments - make sidebar horizontal at top */
+/* 886px and below adjustments - make sidebar horizontal at top */
+@media (max-width: 886px) {
+  /* CRITICAL: Make sidebar horizontal navbar at the top for mobile */
+  .sidebar {
+    position: fixed; /* Fixed position at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;
+    padding: 8px 10px;
+    background-color: var(--pico-card-background-color);
+    border-bottom: 1px solid var(--pico-card-border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow for visibility */
+  }
 
-.tags-hero p {
-    font-size: 1.2rem;
-    color: var(--pico-muted-color);
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
+  /* Dark mode sidebar override for mobile */
+  [data-theme="dark"] .sidebar {
+    background-color: #0b1014;
+    border-bottom-color: #333;
+  }
 
-.tags-cloud-container {
+  /* Adjust content wrapper to account for fixed top navbar */
+  .content-wrapper {
+    margin-top: calc(60px + 20px); /* Make space for the fixed sidebar (60px height + padding) */
+    margin-left: 0;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
     justify-content: center;
-    margin: 2rem 0;
-    padding: 2rem;
-    background: var(--pico-muted-background-color);
-    border-radius: var(--pico-border-radius);
-    border: 1px solid var(--pico-muted-border-color);
-}
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
 
-.tags-item {
-    display: inline-flex;
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* CRITICAL: Force navbar items to be horizontal on mobile */
+  .navbar ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+    flex-wrap: wrap !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 5px !important;
+    align-items: center !important;
+    width: 100% !important;
+    list-style: none !important;
+    height: auto !important;
+  }
+
+  .navbar ul li {
+    display: inline-flex !important;  /* Make items flex containers */
+    margin: 0 !important;
+    flex: 1 !important;  /* Allow items to grow equally */
+    min-width: 45px !important;  /* Minimum touch target */
+    text-align: center !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    justify-content: center !important; /* Center content horizontally */
+    align-items: center !important;     /* Center content vertically */
+  }
+
+  /* Adjust navbar links for mobile */
+  .navbar a {
+    padding: 8px 6px;
+    font-size: 0.9em;
+    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    position: relative;
+    justify-content: center;
+    min-height: 40px; /* Touch-friendly height */
+    width: 100%; /* Take full width of the flex item */
+  }
+
+  /* Show more items on mobile - only hide very non-essential ones */
+  .navbar ul li:nth-child(n + 8) {
+    display: none;
+  }
+
+  /* Category cards: 2 per row on tablets */
+  .category-card {
+    width: calc(50% - var(--pico-grid-column-gap, 1.5rem) / 2);
+  }
+  
+  /* Responsive adjustments for article list items */
+  .article-list-item-glow {
+    flex-direction: column;
+    height: auto;
+    gap: 0.8rem;
+    min-height: auto;  /* Remove min-height constraint */
+  }
+  
+  .list-item-content.half-width {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .list-item-image.half-width {
+    width: 100%;
+    height: 120px; /* Reduce height to make more room for content */
+    clip-path: polygon(0 0, 100% 0%, 100% 92%, 0% 100%);
+    border-radius: 8px 8px 0 0;
+    margin-right: 0;
     overflow: hidden;
-    z-index: 1;
-    border: 1px solid var(--pico-primary);
-    color: var(--pico-primary);
-    background: var(--pico-primary-background);
-    padding: 0.5rem 1rem;
+  }
+  
+  .list-item-image.half-width img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Adjust title and summary for better readability on mobile */
+  .list-item-title {
+    font-size: 1rem; /* Slightly smaller font */
+    margin: 0.25rem 0; /* Reduce margin */
+  }
+  
+  .list-item-summary {
+    font-size: 0.85rem; /* Smaller font */
+    margin-top: 0.25rem; /* Reduce margin */
+  }
+  
+  .list-item-summary p {
+    margin: 0; /* Remove paragraph margins */
+    line-height: 1.4; /* Tighter line height */
+  }
+  
+  /* Featured article adjustments for mobile */
+  .featured-article-glow {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .featured-article-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .featured-image-glow {
+    width: 100%;
+    height: 300px;
+    clip-path: polygon(0 0, 100% 0%, 100% 92%, 0% 100%);
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .featured-article-text {
+    min-width: 100%;
+  }
+  
+  .glow-effect {
+    opacity: 0.7;
+    animation: glowPulse 2s infinite;
+  }
+  
+  /* Article Hero Section Improvements for mobile */
+  .article-hero {
+    height: 45vh;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-meta {
+    flex-direction: column;
+    gap: 0.8rem;
+    font-size: 1rem;
+  }
+  
+  .hero-summary {
+    font-size: 1rem;
+    margin-top: 0.8rem;
+  }
+  
+  .hero-content {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .series-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .series-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .article-content-wrapper {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Responsive grid for bottom section */
+  .article-bottom-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .related-posts-section,
+  .support-section {
+    order: initial;
+  }
+  
+  .article-nav-arrows {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .article-nav-arrow {
+    justify-content: center;
+    padding: 1rem 1.5rem;
+  }
+  
+  .article-nav-arrow.prev,
+  .article-nav-arrow.next {
+    justify-content: center;
+  }
+  
+  .article-nav-arrow span {
+    display: none;
+  }
+  
+  .article-nav-arrow i {
+    margin: 0 !important;
+  }
 }
 
-.tags-item:hover {
-    background: var(--pico-primary-hover-background);
-    color: var(--pico-primary-inverse);
-    text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Additional mobile optimizations for very small screens */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 5px 8px;
+    position: fixed; /* Fixed position at top */
+    top: 0;
+    left: 0;
+  }
+
+  .content-wrapper {
+    margin-top: calc(60px + 20px); /* Make space for the fixed sidebar */
+  }
+
+  .content {
+    padding: 5px;
+  }
+  
+  /* Further adjustments for cyberpunk effects on small screens */
+  .featured-article-glow {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Responsive adjustments for article list items on very small screens */
+  .article-list-item-glow {
+    flex-direction: column;
+    height: auto;
+    gap: 0.8rem;
+    min-height: auto;  /* Remove min-height constraint */
+  }
+  
+  .list-item-content.half-width {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .list-item-image.half-width {
+    width: 100%;
+    height: 100px; /* Further reduce height for very small screens */
+    clip-path: polygon(0 0, 100% 0%, 100% 92%, 0% 100%);
+    border-radius: 8px 8px 0 0;
+    margin-right: 0;
+    overflow: hidden;
+  }
+  
+  .list-item-image.half-width img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Adjust title and summary for better readability on very small screens */
+  .list-item-title {
+    font-size: 0.95rem; /* Even smaller font for very small screens */
+    margin: 0.2rem 0; /* Reduce margin */
+  }
+  
+  .list-item-summary {
+    font-size: 0.8rem; /* Smaller font */
+    margin-top: 0.2rem; /* Reduce margin */
+  }
+  
+  .list-item-summary p {
+    margin: 0; /* Remove paragraph margins */
+    line-height: 1.4; /* Tighter line height */
+  }
+  
+  .featured-image-glow {
+    height: 200px;
+  }
+  
+  .featured-article-title {
+    font-size: 1.4rem;
+  }
+  
+  .featured-article-summary p {
+    font-size: 0.9rem;
+  }
+  
+  .category-glow {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+  
+  .navbar a {
+    font-size: 0.75em;
+    padding: 5px 3px;
+    min-height: 35px;
+  }
+  
+  .navbar ul li {
+    min-width: 45px !important;
+  }
+  
+  .articles-list {
+    gap: 1rem;
+  }
+  
+  .article-list-item {
+    padding: 1rem;
+  }
+  
+  .list-item-image.half-width {
+    height: 140px;
+  }
+  
+  .list-item-title {
+    font-size: 1.1rem;
+  }
+  
+  .list-item-summary p {
+    font-size: 0.85rem;
+  }
+  
+  .crypto-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 0.7rem;
+  }
+  
+  .crypto-qr-image {
+    max-width: 90px;
+    padding: 0.25rem;
+  }
+  
+  .crypto-figure figcaption {
+    font-size: 0.7rem;
+  }
+  
+  .crypto-address {
+    font-size: 0.7rem;
+    padding: 0.25rem;
+  }
+  
+  .copy-button {
+    padding: 0.25rem;
+  }
+  
+  .crypto-modal-image {
+    max-width: 200px;
+  }
 }
 
-.tags-item::before {
-    content: '';
+
+/* Additional fixes for content overflow on mobile devices */
+@media (max-width: 768px) {
+  /* Ensure all content elements respect the viewport width */
+  .content-wrapper,
+  .article-content-grid,
+  .article-main-content,
+  .article-content-wrapper,
+  main.content.container,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  
+  /* Add horizontal scrolling for content that might overflow */
+  .article-content-wrapper {
+    overflow-x: auto;
+  }
+  
+  /* Prevent images from overflowing */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure code blocks don't cause overflow */
+  pre,
+  code {
+    overflow-x: auto;
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  
+  /* Tables should be responsive */
+  table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    white-space: nowrap;
+  }
+  
+  /* Ensure any nested elements also respect width constraints */
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Cyberpunk Hero Styles */
+.cyberpunk-hero-glow {
+    position: relative;
+    height: 60vh; /* Keep original height */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 2rem;
+    /* Subtle cyberpunk neon glow effect */
+    box-shadow: 0 0 12px rgba(100, 100, 255, 0.25), 0 0 6px rgba(255, 100, 100, 0.15);
+    border: 1px solid rgba(100, 100, 255, 0.25);
+    transition: all 0.3s ease;
+    /* Additional cyberpunk styling */
+    animation: cyberPulse 3.5s infinite;
+}
+
+.cyberpunk-hero-glow:hover {
+    transform: translateY(-5px);
+    /* Subtle cyberpunk glow on hover */
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.4), 0 0 12px rgba(255, 100, 100, 0.25);
+    border-color: rgba(100, 100, 255, 0.4);
+}
+
+.cyberpunk-image-glow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        124deg, 
-        transparent 40%, 
-        rgba(100, 100, 255, 0.1) 50%, 
-        transparent 60%
-    );
-    background-size: 200% 200%;
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.5s ease;
+    overflow: hidden;
 }
 
-.tags-item:hover::before {
-    opacity: 1;
-    animation: shine 1.5s infinite;
+.cyberpunk-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Add blur effect to improve text readability */
+    filter: brightness(0.4) saturate(1.2) blur(2px);
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    background-attachment: fixed; /* Parallax effect */
 }
 
-.tags-count {
-    background: var(--pico-primary-inverse);
-    color: var(--pico-primary-background);
-    padding: 0.2rem 0.6rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: bold;
+.cyberpunk-hero-glow:hover .cyberpunk-hero-image {
+    transform: scale(1.1);
 }
 
-.tag-size-1 {
-    font-size: 0.9rem;
+.cyberpunk-glow-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+    transition: opacity 0.5s ease;
+    animation: glowPulse 3s infinite alternate;
 }
 
-.tag-size-2 {
-    font-size: 1.1rem;
+.cyberpunk-hero-glow:hover .cyberpunk-glow-effect {
+    opacity: 0.7;
+    animation: glowPulse 2s infinite alternate;
 }
 
-.tag-size-3 {
-    font-size: 1.3rem;
-}
-
-.tag-size-4 {
-    font-size: 1.5rem;
-}
-
-.tag-size-5 {
-    font-size: 1.7rem;
-}
-
-.tags-popular-card {
-    margin-top: 3rem;
+.cyberpunk-hero-content {
+    position: relative;
+    z-index: 2;
     padding: 2rem;
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    background: var(--pico-card-background-color);
-    box-shadow: var(--pico-box-shadow);
-}
-
-.tags-popular-card h2 {
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--pico-muted-border-color);
-    font-size: 1.8rem;
-    color: var(--pico-color);
-}
-
-.tags-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
-
-.tags-summary-card {
-    padding: 1.5rem;
-    border: 1px solid var(--pico-card-border-color);
-    border-radius: var(--pico-border-radius);
-    background: var(--pico-card-background-color);
-    transition: all 0.3s ease;
-}
-
-.tags-summary-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.tags-summary-link {
+    max-width: 100%;
+    width: 90%;
+    /* Ensure content is constrained but allows more space */
+    box-sizing: border-box;
+    /* Center content vertically within the hero */
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
+    text-align: center;
+    /* Add max-height to prevent overflow and allow scrolling if needed */
+    max-height: 100%;
+    overflow: auto;
+}
+
+.cyberpunk-hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    /* Ensure long titles wrap properly */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Limit the height to prevent overflow and add scrolling if needed */
+    max-height: 30vh;
+    overflow: hidden;
+    /* Subtle initial cyberpunk glow */
+    text-shadow: 0 0 3px rgba(100, 100, 255, 0.15), 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.cyberpunk-hero-title a {
+    color: inherit;
     text-decoration: none;
-    color: var(--pico-color);
     transition: all 0.3s ease;
 }
 
+.cyberpunk-hero-title a:hover {
+    color: var(--pico-primary);
+    /* Subtle cyberpunk text glow on hover */
+    text-shadow: 0 0 8px rgba(100, 100, 255, 0.4), 0 0 12px rgba(100, 100, 255, 0.3);
+}
+
+.cyberpunk-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Align items in the center vertically */
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    /* Ensure meta items wrap on smaller screens */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Add height limit to prevent overflow */
+    max-height: 15vh;
+    overflow: hidden;
+    /* Cyberpunk glow for meta */
+    text-shadow: 0 0 5px rgba(100, 100, 255, 0.3);
+}
+
+.cyberpunk-hero-meta time,
+.cyberpunk-hero-meta address,
+.cyberpunk-hero-meta .category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    /* Ensure each meta element can wrap if needed */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Cyberpunk glow for time */
+    text-shadow: 0 0 5px rgba(100, 100, 255, 0.3);
+}
+
+/* Specific styling for icons inside hero meta elements */
+.cyberpunk-hero-meta i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Center icon vertically within text */
+    vertical-align: middle;
+    /* Maintain consistent size and alignment */
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* Override pico.css default margins for elements inside hero section */
+.cyberpunk-hero-meta address,
+.cyberpunk-hero-meta blockquote,
+.cyberpunk-hero-meta dl,
+.cyberpunk-hero-meta ol,
+.cyberpunk-hero-meta p,
+.cyberpunk-hero-meta pre,
+.cyberpunk-hero-meta table,
+.cyberpunk-hero-meta ul {
+    margin-bottom: 0;
+}
+
+.cyberpunk-hero-meta a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.cyberpunk-hero-meta a:hover {
+    color: var(--pico-primary);
+}
+
+.cyberpunk-published,
+.cyberpunk-author,
+.cyberpunk-category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Cyberpunk glow */
+    text-shadow: 0 0 5px rgba(100, 100, 255, 0.3);
+}
+
+.cyberpunk-author-link,
+.cyberpunk-category-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.cyberpunk-author-link:hover,
+.cyberpunk-category-link:hover {
+    color: var(--pico-primary);
+}
+
+.cyberpunk-hero-summary {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
+    /* Ensure summary text wraps properly */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    /* Add subtle glow to summary text */
+    text-shadow: 0 0 3px rgba(100, 100, 255, 0.2);
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+/* Additional fixes for very small screens */
+@media (max-width: 480px) {
+  .content-wrapper,
+  .article-content-grid,
+  .article-main-content,
+  .article-content-wrapper,
+  main.content.container,
+  .container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding: 0.5rem;
+  }
+  
+  /* Ensure padding doesn't cause overflow */
+  .article-content-wrapper {
+    padding: 1rem;
+  }
+  
+  /* Prevent any element from causing horizontal overflow */
+  * {
+    max-width: 100%;
+  }
+}
 .tags-summary-link:hover {
     color: var(--pico-primary);
     text-decoration: none;
@@ -7112,4 +6108,21 @@ li,
   * {
     max-width: 100%;
   }
+}
+
+/* ============================================= */
+/*      TOC Underline Override (Final Attempt)   */
+/* ============================================= */
+#toc-sidebar #toc .toc-href {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important; /* In case a box-shadow is being used to simulate an underline */
+}
+
+#toc-sidebar #toc .toc-href:hover,
+#toc-sidebar #toc .toc-href:focus,
+#toc-sidebar #toc .toc-href:active {
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
