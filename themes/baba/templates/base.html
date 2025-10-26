@@ -124,9 +124,6 @@
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
-    <a href="#" class="toc-toggle-button" aria-label="İçindekiler">
-      <i class="fa-solid fa-list"></i>
-    </a>
     <a href="#" class="back-to-top-button" aria-label="Sayfanın başına dön">
       <i class="fa-solid fa-arrow-up"></i>
     </a>
@@ -243,9 +240,6 @@
       // Back to top functionality
       document.addEventListener('DOMContentLoaded', function() {
         const backToTopButton = document.querySelector('.back-to-top-button');
-        const tocToggleButton = document.querySelector('.toc-toggle-button');
-        const tocMenu = document.querySelector('#toc-menu');
-        const tocCloseButton = document.querySelector('.toc-close');
         
         // Show/hide back to top button based on scroll position
         window.addEventListener('scroll', function() {
@@ -268,44 +262,6 @@
             });
           });
         }
-
-        // Show TOC button only on article pages
-        if (tocToggleButton && document.body.classList.contains('type-article')) {
-          tocToggleButton.classList.add('show');
-        }
-
-        // Toggle TOC menu
-        if (tocToggleButton) {
-          tocToggleButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Check if tocMenu exists before toggling
-            if (tocMenu) {
-              tocMenu.classList.toggle('show');
-            }
-          });
-        }
-
-        // Close TOC menu
-        if (tocCloseButton) {
-          tocCloseButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Check if tocMenu exists before removing show class
-            if (tocMenu) {
-              tocMenu.classList.remove('show');
-            }
-          });
-        }
-
-        // Close TOC menu when clicking outside
-        document.addEventListener('click', function(e) {
-          // Check if tocMenu exists and is shown before closing
-          if (tocMenu && tocMenu.classList.contains('show')) {
-            if (!tocMenu.contains(e.target) && 
-                tocToggleButton && !tocToggleButton.contains(e.target)) {
-              tocMenu.classList.remove('show');
-            }
-          }
-        });
       });
     </script>
   </body>
