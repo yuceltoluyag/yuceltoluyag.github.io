@@ -471,93 +471,169 @@ article.article a {
 .toc-sidebar-content .toc > ul {
   padding-left: 0;
   margin-bottom: 0;
+  list-style: none;
 }
 
 .toc-sidebar-content .toc ul {
-  padding-left: 0.8rem;
+  padding-left: 1.2rem;
   margin-bottom: 0.2rem;
+  position: relative;
 }
 
 .toc-sidebar-content .toc ul li {
   list-style-type: none !important;
-  margin-bottom: 0 !important;
+  margin-bottom: 0.1rem !important;
   font-size: 0.85rem !important;
-  line-height: 1.4 !important;
+  line-height: 1.5 !important;
+  position: relative;
 }
 
 /* H1 Level - Clean, prominent */
 .toc-sidebar-content .toc > ul > li {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   padding-left: 0;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
 }
 
 /* H2 Level - Subtle indent with visual guide */
 .toc-sidebar-content .toc > ul > li > ul {
-  padding-left: 0.75rem;
-  margin-top: 0.25rem;
-  border-left: 2px solid var(--pico-muted-border-color);
-  margin-left: 0.5rem;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+  border-left: 3px solid rgba(92, 107, 192, 0.2);
+  margin-left: 0.4rem;
+  border-radius: 0 4px 4px 0;
+  transition: border-color 0.3s ease;
 }
 
 .toc-sidebar-content .toc > ul > li > ul > li {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.35rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
 }
 
 /* H3 Level - Deeper indent */
 .toc-sidebar-content .toc > ul > li > ul > li > ul {
-  padding-left: 0.5rem;
-  margin-top: 0.2rem;
-  border-left: 1px solid var(--pico-muted-border-color);
+  padding-left: 0.8rem;
+  margin-top: 0.25rem;
+  border-left: 2px solid rgba(92, 107, 192, 0.15);
+  border-radius: 0 3px 3px 0;
 }
 
 .toc-sidebar-content .toc > ul > li > ul > li > ul > li {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 400;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
+  padding-left: 0.4rem;
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
 }
 
 /* H4+ Level - Even deeper */
 .toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul {
-  padding-left: 0.4rem;
-  margin-top: 0.15rem;
+  padding-left: 0.6rem;
+  margin-top: 0.2rem;
+  border-left: 1px solid rgba(92, 107, 192, 0.1);
+  border-radius: 0 2px 2px 0;
 }
 
 .toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul > li {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 300;
+  padding-left: 0.3rem;
+  border-radius: 2px;
+  padding: 0.1rem 0.3rem;
+}
+
+/* Modern connection lines for nested items */
+.toc-sidebar-content .toc ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, 
+    rgba(92, 107, 192, 0.2) 0%, 
+    rgba(92, 107, 192, 0.1) 100%);
+  border-radius: 1px;
 }
 
 .toc-sidebar-content .toc a {
   color: var(--pico-color) !important;
   text-decoration: none !important;
   display: block !important;
-  padding: 0.5rem 0.75rem !important;
-  margin: 0.2rem 0 !important;
+  padding: 0.45rem 0.7rem !important;
+  margin: 0.15rem 0 !important;
   border-radius: 6px !important;
-  transition: all 0.2s ease !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   border-left: 3px solid transparent !important;
   background: transparent !important;
   position: relative !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
+.toc-sidebar-content .toc a::before {
+  content: '';
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--pico-primary-background) !important;
+  opacity: 0 !important;
+  z-index: -1 !important;
+  transform: scaleX(0) !important;
+  transform-origin: left !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .toc-sidebar-content .toc a:hover {
-  color: var(--pico-primary) !important;
-  background: var(--pico-muted-background-color) !important;
+  color: var(--pico-primary-inverse) !important;
+  background: transparent !important;
   border-left-color: var(--pico-primary) !important;
-  transform: translateX(3px) !important;
-  padding-left: 0.9rem !important;
+  transform: translateX(4px) scale(1.01) !important;
+  padding-left: 0.85rem !important;
+}
+
+.toc-sidebar-content .toc a:hover::before {
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
 }
 
 /* Active section indicator */
 .toc-sidebar-content .toc a.current {
-  background: var(--pico-primary-background) !important;
-  color: var(--pico-primary-inverse) !important;
+  background: rgba(92, 107, 192, 0.1) !important;
+  color: var(--pico-primary) !important;
   border-left-color: var(--pico-primary) !important;
   font-weight: 600 !important;
+  position: relative !important;
+  box-shadow: 0 2px 8px rgba(92, 107, 192, 0.15) !important;
+}
+
+/* Active section with special indicator */
+.toc-sidebar-content .toc a.current::after {
+  content: '●';
+  position: absolute !important;
+  right: 0.7rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: var(--pico-primary) !important;
+  font-size: 0.8rem !important;
+  font-weight: bold !important;
+}
+
+.toc-sidebar-content .toc a.current:hover {
+  background: var(--pico-primary-background) !important;
+  color: var(--pico-primary-inverse) !important;
 }
 
 /* TOC Toggle Button - Fixed Position Above Back to Top */
