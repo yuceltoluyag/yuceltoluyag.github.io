@@ -475,95 +475,164 @@ article.article a {
 }
 
 .toc-sidebar-content .toc ul {
-  padding-left: 1.2rem;
-  margin-bottom: 0.2rem;
+  padding-left: 1.4rem;
+  margin-bottom: 0.3rem;
   position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toc-sidebar-content .toc ul li {
   list-style-type: none !important;
-  margin-bottom: 0.1rem !important;
-  font-size: 0.85rem !important;
-  line-height: 1.5 !important;
+  margin-bottom: 0.15rem !important;
+  font-size: 0.87rem !important;
+  line-height: 1.6 !important;
   position: relative;
+  opacity: 0.95;
+  transform: translateX(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect for list items */
+.toc-sidebar-content .toc ul li:hover {
+  opacity: 1;
+  transform: translateX(2px);
 }
 
 /* H1 Level - Clean, prominent */
 .toc-sidebar-content .toc > ul > li {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.7rem;
   padding-left: 0;
   border-left: 3px solid transparent;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  background: transparent;
+  border-radius: 6px;
 }
 
 /* H2 Level - Subtle indent with visual guide */
 .toc-sidebar-content .toc > ul > li > ul {
-  padding-left: 1rem;
-  margin-top: 0.3rem;
+  padding-left: 1.2rem;
+  margin-top: 0.4rem;
   border-left: 3px solid rgba(92, 107, 192, 0.2);
-  margin-left: 0.4rem;
-  border-radius: 0 4px 4px 0;
-  transition: border-color 0.3s ease;
+  margin-left: 0.5rem;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  background: rgba(92, 107, 192, 0.03);
+  box-shadow: inset 2px 2px 4px rgba(92, 107, 192, 0.05);
 }
 
 .toc-sidebar-content .toc > ul > li > ul > li {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: 500;
-  margin-bottom: 0.35rem;
-  padding-left: 0.5rem;
+  margin-bottom: 0.4rem;
+  padding-left: 0.6rem;
   border-left: 2px solid transparent;
-  transition: all 0.3s ease;
-  border-radius: 4px;
-  padding: 0.2rem 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 5px;
+  padding: 0.25rem 0.6rem;
+  position: relative;
+  background: transparent;
 }
 
 /* H3 Level - Deeper indent */
 .toc-sidebar-content .toc > ul > li > ul > li > ul {
-  padding-left: 0.8rem;
-  margin-top: 0.25rem;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
   border-left: 2px solid rgba(92, 107, 192, 0.15);
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 4px 4px 0;
+  position: relative;
+  background: rgba(92, 107, 192, 0.02);
+  box-shadow: inset 1px 1px 3px rgba(92, 107, 192, 0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toc-sidebar-content .toc > ul > li > ul > li > ul > li {
-  font-size: 0.85rem;
+  font-size: 0.87rem;
   font-weight: 400;
-  margin-bottom: 0.25rem;
-  padding-left: 0.4rem;
-  border-radius: 3px;
-  padding: 0.15rem 0.4rem;
+  margin-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  background: transparent;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* H4+ Level - Even deeper */
 .toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul {
-  padding-left: 0.6rem;
-  margin-top: 0.2rem;
+  padding-left: 0.8rem;
+  margin-top: 0.25rem;
   border-left: 1px solid rgba(92, 107, 192, 0.1);
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 3px 3px 0;
+  background: rgba(92, 107, 192, 0.01);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul > li {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 300;
-  padding-left: 0.3rem;
-  border-radius: 2px;
-  padding: 0.1rem 0.3rem;
+  margin-bottom: 0.25rem;
+  padding-left: 0.4rem;
+  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Modern connection lines for nested items */
+/* Modern connection lines for nested items with enhanced styling */
 .toc-sidebar-content .toc ul::before {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 2px;
+  width: 3px;
+  background: linear-gradient(to bottom, 
+    rgba(92, 107, 192, 0.3) 0%, 
+    rgba(92, 107, 192, 0.15) 100%);
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(92, 107, 192, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.8;
+}
+
+/* Enhanced hover effect for connection lines */
+.toc-sidebar-content .toc ul:hover::before {
+  background: linear-gradient(to bottom, 
+    rgba(92, 107, 192, 0.5) 0%, 
+    rgba(92, 107, 192, 0.25) 100%);
+  opacity: 1;
+  width: 4px;
+}
+
+/* Special styling for active/current section parent containers */
+.toc-sidebar-content .toc ul:has(.current) {
+  background: rgba(92, 107, 192, 0.05);
+  border-left-color: rgba(92, 107, 192, 0.4) !important;
+  box-shadow: inset 3px 3px 6px rgba(92, 107, 192, 0.1);
+}
+
+/* Enhanced visual hierarchy with indentation guides */
+.toc-sidebar-content .toc > ul > li > ul::before {
+  background: linear-gradient(to bottom, 
+    rgba(92, 107, 192, 0.25) 0%, 
+    rgba(92, 107, 192, 0.12) 100%);
+}
+
+.toc-sidebar-content .toc > ul > li > ul > li > ul::before {
   background: linear-gradient(to bottom, 
     rgba(92, 107, 192, 0.2) 0%, 
     rgba(92, 107, 192, 0.1) 100%);
-  border-radius: 1px;
+}
+
+.toc-sidebar-content .toc > ul > li > ul > li > ul > li > ul::before {
+  background: linear-gradient(to bottom, 
+    rgba(92, 107, 192, 0.15) 0%, 
+    rgba(92, 107, 192, 0.08) 100%);
 }
 
 .toc-sidebar-content .toc a {
