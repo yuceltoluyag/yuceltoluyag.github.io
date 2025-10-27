@@ -10,7 +10,7 @@ Summary: Stremio ile tüm film, dizi ve video içeriklerinizi tek bir yerden yö
 Template: article
 Image: images/kesfet-xl.webp
 
-# Stremio Detaylı Rehber 🚀
+## Stremio Detaylı Rehber 🚀
 
 Günümüz dijital çağında içerik tüketimi tam bir karmaşaya dönüştü. Netflix, Disney+, Amazon Prime gibi birçok platform arasında hangi dizinin nerede olduğunu takip etmek ve hepsine ayrı ayrı abone olmak hem yorucu hem de maliyetli. 😩 Cüzdanınızın ve sabrınızın çığlıklarını duyar gibiyim!
 

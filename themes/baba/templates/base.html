@@ -7,29 +7,65 @@
     {% block head %} {% include 'includes/metadata.html' %}
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     <meta name="generator" content="Pelican" />
+    <!-- Favicon -->
     <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pico.indigo.min.css"
+      rel="icon"
+      type="image/x-icon"
+      href="{{ SITEURL }}/images/favicon.ico"
     />
     <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom.css"
+      rel="icon"
+      type="image/png"
+      href="{{ SITEURL }}/images/favicon-96x96-xl.webp"
+      sizes="96x96"
     />
     <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/modern-styles.css"
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ SITEURL }}/images/favicon.svg"
+    />
+    <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ SITEURL }}/images/apple-touch-icon-xl.webp"
+    />
+    <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+    <link rel="manifest" href="{{ SITEURL }}/site.webmanifest" />
+    <link
+      rel="shortcut icon"
+      href="{{ SITEURL }}/images/favicon.ico"
+      type="image/x-icon"
     />
     <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css"
+      rel="icon"
+      href="{{ SITEURL }}/images/animated.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="preload"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css"
+      />
+    </noscript>
+
+    <link
+      rel="preload"
+      href="https://kit.fontawesome.com/1669dfc729.js"
+      as="script"
+      onload="this.onload=null;this.remove()"
     />
     <script
-      src="https://kit.fontawesome.com/44040beaf0.js"
+      src="https://kit.fontawesome.com/1669dfc729.js"
       crossorigin="anonymous"
+      defer
     ></script>
 
     {% if FEED_ALL_ATOM %}
@@ -91,36 +127,14 @@
     {% endif %}
 
     <!-- IndieWeb -->
-    <link
-      rel="webmention"
-      href="https://webmention.io/yuceltoluyag.github.io/webmention"
-    />
-    <link
-      rel="pingback"
-      href="https://webmention.io/yuceltoluyag.github.io/xmlrpc"
-    />
+
     <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
     <!-- Bridgy -->
     <link rel="me" href="https://github.com/{{ SOCIAL.github }}" />
     {% if SOCIAL.mastodon %}
     <link rel="me" href="{{ SOCIAL.mastodon }}" />
-    {% endif %}
-
-    <!-- Webmention.io Feeds -->
-    <link
-      rel="alternate"
-      type="application/atom+xml"
-      href="https://webmention.io/api/mentions.atom?token=Ap4Pb-YQo7Ne68a7rpJ0qA"
-      title="Webmentions Atom Feed"
-    />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      href="https://webmention.io/api/mentions.rss?token=Ap4Pb-YQo7Ne68a7rpJ0qA"
-      title="Webmentions RSS Feed"
-    />
-    {% endblock head %}
+    {% endif %} {% endblock head %}
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
@@ -210,7 +224,6 @@
       </div>
     </div>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
 
     <script>
       const themeSwitcher = document.getElementById("theme-switcher");
@@ -238,27 +251,27 @@
       });
 
       // Back to top functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const backToTopButton = document.querySelector('.back-to-top-button');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.querySelector(".back-to-top-button");
+
         // Show/hide back to top button based on scroll position
-        window.addEventListener('scroll', function() {
+        window.addEventListener("scroll", function () {
           if (backToTopButton) {
             if (window.pageYOffset > 300) {
-              backToTopButton.classList.add('show');
+              backToTopButton.classList.add("show");
             } else {
-              backToTopButton.classList.remove('show');
+              backToTopButton.classList.remove("show");
             }
           }
         });
-        
+
         // Smooth scroll to top
         if (backToTopButton) {
-          backToTopButton.addEventListener('click', function(e) {
+          backToTopButton.addEventListener("click", function (e) {
             e.preventDefault();
             window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           });
         }

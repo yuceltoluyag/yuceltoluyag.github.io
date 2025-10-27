@@ -10,7 +10,7 @@ Summary: Arch Linux üzerinde Sharp modülünü Node.js projelerine kurarken kar
 Template: article
 Image: images/fckthisnodejsharp-xl.webp
 
-# Node.js'de Sharp Modülünü Kurarken Karşılaşılan C++17 Derleme Hatası ve Çözümü
+## Node.js'de Sharp Modülünü Kurarken Karşılaşılan C++17 Derleme Hatası ve Çözümü
 
 Node.js ile geliştirme yaparken görsel işleme ihtiyaçlarınızı karşılamak için kullandığınız **sharp** modülünü kurarken aşağıdaki gibi garip bir derleme hatası mı aldınız?
 

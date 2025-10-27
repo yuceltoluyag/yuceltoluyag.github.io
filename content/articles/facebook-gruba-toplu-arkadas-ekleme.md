@@ -13,8 +13,10 @@ Status: published
 Template: article
 Image: images/facebookgrupkodu-xl.webp
 
+## Merhaba 👋
 
-# Merhaba 👋
+
+## Merhaba 👋
 
 Yaklaşık iki yıl önce yayınladığım videolardan sonra bu konuda bana sıkça sorular gelmeye başladı. Bu süreçte Instagram üzerinden gelen tüm soruları yanıtlamaya çalıştım. Ancak, Facebook'un değişen tasarımıyla birlikte gruba arkadaş ekleme işlemi daha da sınırlandırıldı. Günlük **25 arkadaş ekleme sınırı** getirildi ve ekleme arayüzünde bazı değişiklikler yapıldı. Dolayısıyla eski yöntemler artık çalışmıyor. 😕
 

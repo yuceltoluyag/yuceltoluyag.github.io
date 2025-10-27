@@ -11,7 +11,7 @@ Template: article
 
 ---
 
-# 🎮 Ninja Kamil'in Kaotik Macerası
+## 🎮 Ninja Kamil'in Kaotik Macerası
 
 Linux üzerinde _Ghost of Tsushima_ oynarken hem gülmek hem de stres atmak ister misiniz?
 O zaman **Ninja Kamil**’in bu kaotik macerasına hazır olun! 🎭

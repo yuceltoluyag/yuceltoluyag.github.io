@@ -11,7 +11,7 @@ Status: published
 Template: article
 Image: images/comment-worker-kurulumu-xl.webp
 
-# Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu ✨
+## Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu ✨
 
 Statik blog altyapısı kullanan geliştiriciler için dinamik yorum sistemleri her zaman bir sorun olmuştur. Bu yazıda, **Pelican** tabanlı bir bloga, **Staticman** alternatifi olarak geliştirilen **comment-worker** aracı ile nasıl yorum sistemi entegre edeceğinizi detaylı olarak anlatacağız. ✨
 

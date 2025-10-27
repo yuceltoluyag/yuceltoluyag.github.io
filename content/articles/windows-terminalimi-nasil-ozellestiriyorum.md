@@ -13,11 +13,11 @@ Status: published
 Template: article
 Image: images/windows-terminal-xl.webp
 
-**Merhaba**
+## **Merhaba**
 
 Instagram üzerinden **hikaye**lerimi takip edenler, **Windows Terminal**imi nasıl özelleştirdiğimi soruyordu. 🙄 Bu konu hakkında blog yazımı bekleyin dedim ve o beklenen an geldi 😂🥱
 
-# Malzemeler 🥗
+## Malzemeler 🥗
 
 - Nerd Fonts
 - Windows Terminal Preview
@@ -34,13 +34,13 @@ Instagram üzerinden **hikaye**lerimi takip edenler, **Windows Terminal**imi nas
 
 Eğer terminalinizde **ikon**ların doğru şekilde **görüntülenmesini** istiyorsanız:
 
-- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) **kullanmalısınız**.
+- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts){: target="_blank" rel="noopener noreferrer"} **kullanmalısınız**.
 - Nerd Fonts'un tamamı 2 GB'dan daha fazladır. Hepsini indirmenize gerek yok; beğendiğiniz fontu seçip kurabilirsiniz. Keyfinize bakın! =)
 
 ## Microsoft Mağaza
 
-- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701)
-- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D)
+- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701){: target="_blank" rel="noopener noreferrer"}
+- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D){: target="_blank" rel="noopener noreferrer"}
 
 Bu iki uygulamayı **kuruyoruz**. Kurduktan sonra **Windows Terminal** uygulamamızı **açıyoruz** ve **ayarlara** giriyoruz.
 
@@ -375,7 +375,7 @@ Installing 'fzf'  (0.30.0)  [64bit]
 Install-Module -Name PSFzf -Scope CurrentUser -Force
 ```
 
-# Sonuç
+## Sonuç
 
 [responsive_img src="/images/windows-terminal-son-xl.webp" alt="windows-terminal6" /]
 ## Bana Balık Tutmasını Öğretme, Bana Balık Ver
@@ -386,4 +386,4 @@ Bu yazımı okuyorsanız, muhtemelen **Git** nedir biliyorsunuzdur 👊 Linux ta
 scoop install gpg4win
 ```
 
-[Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal) ayarlarıma buradan ulaşabilir ve kendinize göre düzenleyebilirsiniz.
+[Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="_blank" rel="noopener noreferrer"} ayarlarıma buradan ulaşabilir ve kendinize göre düzenleyebilirsiniz.

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "lightningcss": "^1.30.2",
+    "lightningcss-cli": "^1.30.2"
+  }
+}

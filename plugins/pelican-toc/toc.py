@@ -88,27 +88,40 @@ class HtmlTreeNode(object):
 
     def __str__(self):
         ret = ""
-        if self.parent or self.include_title:
-            ret = "<a class='toc-href' href='#{0}' title='{1}'>{1}</a>".format(
-                self.id.replace("¶", ""),
-                self.header.replace("¶", ""),
-            )
-
+        # Create the main clickable element (button or anchor)
         if self.children:
-            ret += "<ul>{}</ul>".format("{}" * len(self.children)).format(
-                *self.children
-            )
+            # It has children, so it's a button
+            level = self.level[1:] if self.level and self.level.startswith('h') else '1'
+            ret = "<button class='h{}-btn'><span class='arrow'>▶</span>{}</button>".format(level, self.header.replace("¶", ""))
+        else:
+            # No children, so it's a link
+            if self.parent or self.include_title:
+                ret = "<a class='toc-href' href='#{0}' title='{1}'>{1}</a>".format(
+                    self.id.replace("¶", ""),
+                    self.header.replace("¶", ""),
+                )
 
-        # each list
+        # Add the nested list of children, if any
+        if self.children:
+            ret += "<ul class='nested'>{}</ul>".format("".join(map(str, self.children)))
+
+        # Wrap in an <li> if it's not the root
         if self.parent or self.include_title:
-            ret = "<li>{}</li>".format(ret)
+            # Add 'expanded' to top-level items by default.
+            li_class = " class='expanded'" if self.children and not self.parent.parent else ""
+            ret = "<li{}>{}</li>".format(li_class, ret)
 
-        # end wrapper
+        # If this is the root node, wrap it in the final container.
         if not self.parent:
             if self.include_title:
-                ret = "<div id='toc'><ul>{}</ul></div>".format(ret)
+                # The root is the title, which should also be a collapsible button
+                title_button = "<button class='h1-btn'><span class='arrow'>▶</span>{}</button>".format(self.header.replace("¶", ""))
+                # The 'ret' here contains the list of children from the first part of the function
+                title_li = "<li class='expanded'>{}{}</li>".format(title_button, ret)
+                ret = "<div id='toc'><ul>{}</ul></div>".format(title_li)
             else:
-                ret = "<div id='toc'>{}</div>".format(ret)
+                # No title, just the list of items
+                ret = "<div id='toc'><ul>{}</ul></div>".format("".join(map(str, self.children)))
 
         return ret
 

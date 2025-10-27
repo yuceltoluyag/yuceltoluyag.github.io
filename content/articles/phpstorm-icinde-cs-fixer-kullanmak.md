@@ -13,7 +13,7 @@ Status: published
 Template: article
 Image: images/php_phpstorm_csfixer-xl.webp
 
-# PSR Standartı Nedir?
+## PSR Standartı Nedir?
 
 PSR, "PHP Standards Recommendations" anlamına gelir ve PHP ile yazılan kodların belirli bir formatta yazılmasını sağlayan standartlardır. Günümüz IDE'leri **code refactor** adı altında bu işlemi **otomatik** hale getirdiği için çoğu yazılımcı bu standartlardan habersiz olabilir (bu durum genelde freelance çalışanlar için geçerlidir). Başlangıçta, IDE'ler standartlar değiştikçe otomatik işlemi kullanıcıya bırakabiliyor.
 
@@ -21,7 +21,7 @@ PSR, "PHP Standards Recommendations" anlamına gelir ve PHP ile yazılan kodlar�
 
 [PSR-2](https://www.php-fig.org/psr/psr-2/){: target="\_blank" rel="noopener noreferrer"} kod standartlarının kullanımı artık tavsiye edilmemektedir. Ancak bu işlemi IDE ile yapıyorsanız, doğrudan [PSR-12](https://www.php-fig.org/psr/psr-12/){: target="\_blank" rel="noopener noreferrer"} standartlarına geçmenizi tavsiye etmiyorum, çünkü hala bazı problemleri mevcut gibi görünüyor. PSR-12 hakkında daha fazla bilgiye [buradan](https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4502){: target="\_blank" rel="noopener noreferrer"} ulaşabilirsiniz.
 
-# PhpStorm İçerisinde CS Fixer Kullanmak
+## PhpStorm İçerisinde CS Fixer Kullanmak
 
 - Daha önce ekstra ayarlar yapmanız gerekse de, PhpStorm 2018.3 versiyonundan itibaren bu özellik varsayılan olarak eklenmiştir. [PHP CS Fixer Desteği](https://blog.jetbrains.com/phpstorm/2018/09/phpstorm-2018-3-early-access-program-is-open/){: target="\_blank" rel="noopener noreferrer"}.
 - [Composer](https://getcomposer.org/download/){: target="\_blank" rel="noopener noreferrer"}'ı kurunuz.

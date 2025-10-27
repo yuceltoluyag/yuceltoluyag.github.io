@@ -10,7 +10,7 @@ Status: published
 Template: article
 Image: images/spotify-xl.webp
 
-# Neden?
+## Neden?
 
 Merhaba! **Spotify**, çevrimdışı müzik dinleme özelliğini yalnızca **premium** abonelerine sunuyor. Ancak, bu anlatımda premium hesap kullanmadan beğendiğiniz çalma listelerini nasıl ücretsiz olarak indirebileceğinizi adım adım göstereceğim.
 

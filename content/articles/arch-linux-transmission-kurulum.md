@@ -10,7 +10,7 @@ Summary: Arch Linux üzerinde Transmission'ı nasıl kurar ve kullanırsınız? 
 Template: article
 Image: images/Transmission-xl.webp
 
-# Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
+## Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
 
 Transmission, açık kaynaklı bir BitTorrent istemcisidir. Hızlı, hafif ve kullanımı kolay olmasıyla tanınır. Bu yazıda, Arch Linux üzerinde Transmission'ı nasıl kurup yapılandırabileceğinizi detaylı adımlar ile açıklayacağız. Ayrıca, Transmission'ı hem komut satırı (CLI) hem de grafiksel kullanıcı arayüzü (GUI) üzerinden nasıl kullanabileceğinizi de göstereceğiz. İster torrent dosyaları indiriyor olun, ister torrent paylaşımı yapıyor olun, bu rehber size yardımcı olacaktır.
 

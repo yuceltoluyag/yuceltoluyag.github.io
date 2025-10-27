@@ -26,7 +26,7 @@ Abartıdan neyi kastettiğimi açıklayayım:
 2. Günde 10-100 kişi arasında ekleme yapın ve her bir eklemenin onaylanmasını bekleyin. Takibini gönderilen istekler kısmından yapabilirsiniz.
 3. 10 kişiyi ekleseniz de 100 kişiyi ekleseniz de, videoda yaptığım gibi saniyede 1 istek atmayın. Hesabımın bir önemi olmadığı için saniyede 1 istek gönderdim, ancak en az 3-5 saniye aralıklarla ekleme işlemi yapmalısınız.
 
-# Kod Linki
+## Kod Linki
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 

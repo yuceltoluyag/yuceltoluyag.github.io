@@ -12,7 +12,7 @@ Series: Android Rehberleri
 Series_index: 1
 Image: images/crDroid-95-xl.webp
 
-# MediaTek IMEI Yedek Alma - Onarma Rehberi 📱
+## MediaTek IMEI Yedek Alma - Onarma Rehberi 📱
 
 !!! danger "⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz."
 
@@ -48,7 +48,7 @@ Bu rehberle bu sorunu teknik olarak nasıl çözeceğinizi öğreneceksiniz.
 1. **Linux, Windows, Mac** tabanlı bir sistem (Arch Linux kullanıyoruz)
 2. `adb` ve `fastboot` araçları kurulu olmalı
 3. `php` kurulumu (mtk_imei aracı PHP ile çalışır)
-4. **mtk_imei** aracı (GitHub: [timjosten/mtk_imei](https://github.com/timjosten/mtk_imei))
+4. **mtk_imei** aracı (GitHub: [timjosten/mtk_imei](https://github.com/timjosten/mtk_imei){: target="\_blank" rel="noopener noreferrer"}))
 5. TWRP Recovery yüklü MediaTek cihaz
 6. USB kablo
 
@@ -215,15 +215,15 @@ Her zaman işlem öncesi yedek almayı unutmayın ve adımları dikkatlice takip
 
 ### 🔗 İlgili Kaynaklar ve Sonraki Adımlar
 
-- **MTK IMEI Aracı**: [GitHub'da mtk_imei](https://github.com/timjosten/mtk_imei)
+- **MTK IMEI Aracı**: [GitHub'da mtk_imei](https://github.com/timjosten/mtk_imei){: target="\_blank" rel="noopener noreferrer"}
 - **TWRP Kurulumu**: Cihazınız için uygun TWRP sürümünü : ROM'un resmi telegram kanalından veya XDA Developers forumundan bulabilirsiniz. [ROM UNOFFICIAL begonia 13 crDroidAndroid
-  ](https://xdaforums.com/t/rom-unofficial-begonia-13-crdroidandroid.4558845/)
-- **ADB/Fastboot Kurulumu**: [Android Geliştirici Sitesi](https://developer.android.com/studio/command-line/adb)
+  ](https://xdaforums.com/t/rom-unofficial-begonia-13-crdroidandroid.4558845/){: target="\_blank" rel="noopener noreferrer"}
+- **ADB/Fastboot Kurulumu**: [Android Geliştirici Sitesi](https://developer.android.com/studio/command-line/adb){: target="\_blank" rel="noopener noreferrer"}
 - **Diğer Sorun Giderme Rehberleri**: [Sorun Giderme Kategorimiz](/kategori/sorun-giderme)
 
 ### 📞 Sen de Deneyimlerini Paylaş!
 
-Bu rehber işine yaradıysa veya takıldığın noktalar olduysa, yorumlarda sorularını ve görüşlerini paylaşabilirsin. Başka MediaTek sorunları için [forumumuz](https://www.reddit.com/r/Kanunsuzlar/)da destek alabilirsin. 🙌
+Bu rehber işine yaradıysa veya takıldığın noktalar olduysa, yorumlarda sorularını ve görüşlerini paylaşabilirsin. Başka MediaTek sorunları için [forumumuz](https://www.reddit.com/r/Kanunsuzlar/){: target="\_blank" rel="noopener noreferrer"} da destek alabilirsin. 🙌
 
 ---
 

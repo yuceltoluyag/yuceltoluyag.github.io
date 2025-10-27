@@ -29,7 +29,7 @@ Aslında yeni bir **GUI tasarlamak ve yeni özellikler eklemek** için oldukça 
 
 !!! tip "Hoşçakal ThinkPad,Bu sürecin ardından kısa bir süre sonra yeni bir bilgisayar aldım, ThinkPad'imle vedalaştık. 😄"
 
-# Nasıl Başladım?
+## Nasıl Başladım?
 
 Bu oyunu oynamıyorum çünkü **pay-to-win (P2W)** sistemine sahip. Oyunlarda para harcamaya karşı değilim; sonuçta bu bir eğlence sektörü ve eğleniyorsan harcama yapmak tamamen senin tercihin. Ancak, bir arkadaşım benden bir bot geliştirip geliştiremeyeceğimi sorduğunda, internette küçük bir araştırma yapmaya karar verdim. Karşıma birçok hileli içerik çıktı. Daha sonra açık kaynaklı bir bot buldum ve onun üzerinde çalışmaya başladım. Ancak bir süre sonra projenin gelişimi yavaşladı. Ortaya çıkan bazı hataları düzelttim, fakat sonrasında projeye ara verdim.
 
@@ -42,7 +42,7 @@ Zamanla oyunu daha iyi anlamak için oynamaya başladım ve başlangıçtan feti
 Dikkat ederseniz, büyük krallıklarda **sadece 50 ila 150 arasında ciddi para harcayan aktif oyuncu bulunuyor.** Yani **Free-to-Play (F2P)** oyuncular, savaşlarda sadece ekstra güç sağlamak için kullanılıyor. Bu konu hakkında sayfalarca yazı yazabilirim ama muhtemelen sıkılacaksınız. **Kısacası, bu oyun sadece pay-to-win değil; onun tanrısı!**  
 [responsive_img src="/images/rokbot-gui-xl.webp" alt="Rise of Kingdom Bot kullanıcı arayüzü" /]
 
-# Bu oyunu anlamak için zaten 1 yıl harcadım.
+## Bu oyunu anlamak için zaten 1 yıl harcadım.
 
 Sizlere çok sevdiğim, F2P oyuncuların "tanrısı" olarak bilinen **Logic Bank**'ın bir sözünü paylaşmak istiyorum:
 

@@ -31,3 +31,30 @@ To make a post using the template, run:
 ```bash
 make post
 ```
+
+# CSS Bundle ve Küçültme
+
+Bu projede CSS dosyalarını birleştirip küçültmek için LightningCSS kullanılmaktadır.
+
+## Kurulum
+
+```bash
+npm install lightningcss-cli
+```
+
+## Kullanım
+
+Tüm CSS dosyalarını birleştirip küçültmek için:
+
+```bash
+# CSS dosyalarını birleştir
+cat themes/baba/static/css/pico.indigo.min.css themes/baba/static/css/custom.css themes/baba/static/css/modern-styles.css themes/baba/static/css/pygments.css themes/baba/static/css/copy.css themes/baba/static/css/toc.css > themes/baba/static/css/combined.css
+
+# CSS dosyasını küçült
+npx lightningcss-cli --minify themes/baba/static/css/combined.css -o themes/baba/static/css/bundle.min.css
+
+# Gereksiz combined.css dosyasını sil (opsiyonel)
+rm themes/baba/static/css/combined.css
+```
+
+Bu işlem sonucunda oluşan `bundle.min.css` dosyası tüm stilleri içerir ve performansı artırır.

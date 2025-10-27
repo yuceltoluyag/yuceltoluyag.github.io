@@ -11,11 +11,11 @@ Status: published
 Template: article
 Image: images/staticman-xl.webp
 
-**Merhaba** 😄
+## **Merhaba** 😄
 
 Blogumda daha önce **Disqus** yorum eklentisini kullanıyordum. Fakat uzun zamandır görmek istediğim ancak bir türlü deneme fırsatım olmayan **Staticman** ile tanışmış oldum. Bu yazımda, Staticman kurulumu ve kullanımı hakkında sizlere detaylı bilgi vereceğim. Kurulum süreci biraz zorlu olsa da, adım adım anlatacağım ve bu süreçten fayda sağlayacağınızı umuyorum. 😌
 
-# Staticman Nedir?
+## Staticman Nedir?
 
 **Staticman**, tamamen sizin kontrolünüzde olan ve **statik** siteler için geliştirilmiş harika bir kütüphanedir. **Yorum alanı**, **ziyaretçi defteri** ya da **iletişim formu** gibi çeşitli işlevlerde kullanılabilir. 🐒 Ancak, repodaki belgeler eski sürümlere göre güncellenmediği için, o belgelere bakarak işlem yaparsanız zorluk yaşayabilirsiniz. Merak etmeyin, ben burada sizlerin duvara çarpmasını engellemek için varım! 🥰
 
@@ -45,7 +45,7 @@ Yeni bir Github hesabı oluşturun. Bu hesabı, örneğin `benimşekillinickim-b
 
 Şimdilik işlem bu kadar, ilerleyen adımlarda ayarları detaylıca düzenleyeceğiz.
 
-# Github Uygulamaları
+## Github Uygulamaları
 
 1. İlk önce [Github Apps](https://github.com/settings/apps){: target="\_blank" rel="noopener noreferrer"}'dan bir uygulama oluşturun. Uygulama ismini, açıklamasını ve Heroku adresinizi kendinize göre düzenlemeyi unutmayın.
 
@@ -83,7 +83,7 @@ Yeni oluşturduğumuz Github hesabını, repomuza davet edeceğiz. Repomuza gidi
 
 Github ayarlarımız burada tamamlandı! 🤯
 
-# Heroku Ayarları
+## Heroku Ayarları
 
 Heroku paneline gidin ve oluşturduğunuz uygulamaya tıklayın. **Settings** kısmından **Config Vars** bölümüne gelin ve **Reveal Config Vars**'ı tıklayın.
 
@@ -127,7 +127,7 @@ Eğer terminal kullanamıyorsanız, çevrimiçi RSA anahtar üreticilerini kulla
 
 !!! note "RSA Key Hakkında Github'dan aldığımız <code>GITHUB_PRIVATE_KEY</code> ile <code>RSA Key</code>'imiz aynı olabilir. Bu yüzden RSA Key oluşturma adımını atlayabilirsiniz."
 
-# Staticman Ayarları
+## Staticman Ayarları
 
 Staticman ayarları YAML formatında saklanır. `staticman.yml` dosyasının içeriği şu şekilde olmalıdır:
 
@@ -203,7 +203,7 @@ Bu dosyaları inceleyin arkadaşlar, kafanızda ışıkların patlayacağından 
 * Canlı Test => [Yorum Yap](https://baba-project.github.io/jekyll-staticman/){: target="\_blank" rel="noopener noreferrer"}
 * Kaynak Dosyaları => [Beleş İndir](https://github.com/Baba-Project/jekyll-staticman){: target="\_blank" rel="noopener noreferrer"}
 
-# Sonuç
+## Sonuç
 
 Artık Disqus kullanmak zorunda değilsiniz! Staticman, eksiklikleri olsa da oldukça kullanışlı ve özelleştirilebilir bir sistem. Geliştirilmesi gereken alanlar olsa da, şimdilik statik sitelerinizde yorumları rahatça yönetebilirsiniz. ✨
 

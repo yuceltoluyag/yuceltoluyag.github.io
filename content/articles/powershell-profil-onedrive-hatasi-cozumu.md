@@ -171,7 +171,7 @@ PowerShell'i kapatıp tekrar açarak hataların giderildiğini kontrol edin. �
 
 ---
 
-# 📌 Çözüm: Klasör Yollarını Manuel Olarak Düzeltme
+## 📌 Çözüm: Klasör Yollarını Manuel Olarak Düzeltme
 
 ## 1️⃣ Kayıt Defteri (Registry) Üzerinden Yolları Güncelleme
 

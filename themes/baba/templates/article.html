@@ -13,7 +13,7 @@ super() }} {% if article.translations -%}
 {% endif %} {% for tag in article.tags %}
 <meta name="tags" content="{{tag}}" />
 {% endfor %}
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/copy.css" />
+
 {% endblock %} {% block content %}
 
 <main class="article-content-container container pico-container">
@@ -28,6 +28,10 @@ super() }} {% if article.translations -%}
         src="{{ SITEURL }}/{{ article.image }}"
         class="hero-background cyberpunk-hero-image"
         alt="Hero Background"
+        width="1200"
+        height="630"
+        fetchpriority="high"
+        decoding="async"
       />
       <div class="hero-overlay-gradient cyberpunk-glow-effect"></div>
     </div>
@@ -59,7 +63,7 @@ super() }} {% if article.translations -%}
     </div>
   </div>
 
-  <div class="article-ad-container">
+  <div class="article-ad-container" style="min-height: 280px;">
     {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async
@@ -85,7 +89,7 @@ super() }} {% if article.translations -%}
       {% if article.series %}
       <div class="series-navigation-card pico-card">
         <div class="series-header">
-          <h3><i class="fa-solid fa-bookmark"></i> Seri: {{ article.series.name }}</h3>
+          <h2><i class="fa-solid fa-bookmark"></i> Seri: {{ article.series.name }}</h2>
           <span class="series-progress">Bölüm {{ article.series.index }}/{{ article.series.all|length }}</span>
         </div>
         
@@ -117,11 +121,11 @@ super() }} {% if article.translations -%}
       </div>
       {% endif %}
       
-      <div class="article-content-wrapper pico-prose">
+      <div id="article-content" class="article-content-wrapper pico-prose">
         {{ article.content }}
       </div>
       
-      <div class="article-ad-section">
+      <div class="article-ad-section" style="min-height: 400px;">
         {% if GOOGLE_ADSENSE and PUBLISH %}
         <script
           async
@@ -181,7 +185,7 @@ super() }} {% if article.translations -%}
     <aside class="article-sidebar">
     </aside>
   </div>
-  <div class="article-ad-container">
+  <div class="article-ad-container" style="min-height: 100px;">
     {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async
@@ -228,26 +232,14 @@ super() }} {% if article.translations -%}
   {% endif %}
 </main>
 
-<!-- TOC Toggle Button - Fixed Position Right Side -->
+<!-- Collapsible TOC -->
 {% if article.toc %}
-<button class="toc-toggle-fixed-btn" id="toc-toggle-btn" aria-label="İçindekiler Menüsü">
-  <i class="fa-solid fa-list"></i>
-</button>
-{% endif %}
-
-<!-- TOC Sidebar Menu -->
-{% if article.toc %}
-<aside class="toc-sidebar" id="toc-sidebar">
-  <div class="toc-sidebar-header">
-    <h3><i class="fa-solid fa-list"></i> İçindekiler</h3>
-    <button class="toc-sidebar-close" id="toc-close-btn" aria-label="Kapat">
-      <i class="fa-solid fa-times"></i>
+<div class="toc-fab-container">
+    <button id="toc-fab-btn" aria-label="İçindekiler Menüsü">
+        <i class="fa-solid fa-list"></i>
     </button>
-  </div>
-  <div class="toc-sidebar-content">
-    {{ article.toc }}
-  </div>
-</aside>
+    <nav id="toc-collapsible-menu" class="pico-card">{{ article.toc }}</nav>
+</div>
 {% endif %}
 
 <script>
@@ -258,69 +250,95 @@ super() }} {% if article.translations -%}
       seriesDetails.removeAttribute('open');
     }
   });
-  
-  // TOC sidebar functions - exposed globally for navbar button
-  window.openTocSidebar = function() {
-    const tocSidebar = document.getElementById('toc-sidebar');
-    if (tocSidebar) {
-      tocSidebar.classList.add('active');
-    }
-  };
-  
-  window.closeTocSidebar = function() {
-    const tocSidebar = document.getElementById('toc-sidebar');
-    if (tocSidebar) {
-      tocSidebar.classList.remove('active');
-    }
-  };
-  
-  // TOC sidebar toggle functionality for article pages
-  document.addEventListener('DOMContentLoaded', function() {
-    const tocToggleBtn = document.getElementById('toc-toggle-btn');
-    const tocCloseBtn = document.getElementById('toc-close-btn');
-    const tocSidebar = document.getElementById('toc-sidebar');
-    
-    // Toggle TOC sidebar when button is clicked
-    if (tocToggleBtn) {
-      tocToggleBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const tocSidebar = document.getElementById('toc-sidebar');
-        
-        if (tocSidebar && tocSidebar.classList.contains('active')) {
-          window.closeTocSidebar();
-        } else {
-          window.openTocSidebar();
-        }
-      });
-      
-      // Show button on scroll
-      window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-          tocToggleBtn.classList.add('show');
-        } else {
-          tocToggleBtn.classList.remove('show');
-        }
-      });
-    }
-    
-    // Close TOC sidebar with close button
-    if (tocCloseBtn) {
-      tocCloseBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.closeTocSidebar();
-      });
-    }
-    
-    // Close sidebar with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && tocSidebar && tocSidebar.classList.contains('active')) {
-        window.closeTocSidebar();
-      }
-    });
-  });
 </script>
 
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy.js" data-copy="Kopyala" data-copied="Kopyalandı!"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const tocFabBtn = document.getElementById('toc-fab-btn');
+    const tocMenu = document.getElementById('toc-collapsible-menu');
+    const articleContent = document.getElementById('article-content'); // Added for scrollspy
+
+    // --- TOC Toggle Logic ---
+    if (tocFabBtn && tocMenu) {
+        // Hide button if TOC is empty
+        if (!tocMenu.querySelector('#toc ul li')) {
+            tocFabBtn.style.display = 'none';
+        }
+
+        // Logic to toggle the main menu visibility
+        tocFabBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            tocMenu.classList.toggle('active');
+        });
+
+        // Logic to handle clicks on collapsible buttons inside the TOC
+        tocMenu.addEventListener('click', function (e) {
+            const button = e.target.closest('button');
+            // Ensure the click is on a button inside the TOC, not the FAB itself
+            if (button && tocMenu.contains(button)) {
+                const parentLi = button.parentElement;
+                if (parentLi && parentLi.tagName === 'LI') {
+                    parentLi.classList.toggle('expanded');
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (tocMenu.classList.contains('active') && !tocMenu.contains(e.target) && e.target !== tocFabBtn) {
+                tocMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // --- NEW Scrollspy Logic ---
+    if (articleContent && tocMenu) { // Check if articleContent exists
+        const headings = Array.from(articleContent.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+        const tocLinks = Array.from(tocMenu.querySelectorAll('a[href^="#"]')); // Select links with hash href
+
+        const onScroll = () => {
+            let activeHeadingId = null;
+
+            // Find the last heading that is above the middle of the screen
+            for (const heading of headings) {
+                if (heading.getBoundingClientRect().top < window.innerHeight / 2) {
+                    activeHeadingId = heading.id;
+                } else {
+                    break; // Stop when we find one that is not in view
+                }
+            }
+
+            // Update classes on all links
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) { // Ensure href is valid for ID
+                    if (href === `#${activeHeadingId}`) {
+                        link.classList.add('active');
+                        link.classList.add('readed'); // The active one is also read
+                        // Scroll the active link into view within the menu if it's not visible
+                        link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                    } else {
+                        link.classList.remove('active');
+                    }
+                    // Mark as read if its heading is out of view at the top
+                    const correspondingHeading = document.getElementById(href.substring(1));
+                    if (correspondingHeading && correspondingHeading.getBoundingClientRect().top < 0) {
+                        link.classList.add('readed');
+                    } else if (link.classList.contains('readed') && correspondingHeading && correspondingHeading.getBoundingClientRect().top > window.innerHeight) {
+                        // If it's below the viewport and was marked read, unmark it.
+                        link.classList.remove('readed');
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll(); // Initial check
+    }
+});
+</script>
 
 {% endblock %}

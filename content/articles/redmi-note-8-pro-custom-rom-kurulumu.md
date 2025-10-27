@@ -12,7 +12,7 @@ Series: Android Rehberleri
 Series_index: 2
 Image: images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp
 
-# 📱 Redmi Note 8 Pro'ya Custom ROM Yükleme: Arch Linux'ta Adım Adım Kılavuz
+## 📱 Redmi Note 8 Pro'ya Custom ROM Yükleme: Arch Linux'ta Adım Adım Kılavuz
 
 !!! danger "Önemli ⚠️ <strong>Dikkat!</strong> Bu işlemler risklidir ve cihazınızda geri dönüşü olmayan sorunlara yol açabilir.Bu rehberde anlatılan adımları uygulamak tamamen <strong>kendi sorumluluğunuzdadır</strong>.Herhangi bir sorun yaşanması durumunda içerik sahibi sorumlu tutulamaz."
 

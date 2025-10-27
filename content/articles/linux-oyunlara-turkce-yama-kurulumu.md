@@ -10,8 +10,7 @@ Summary: Linux kullanıcıları için hazırladığımız bu kapsamlı rehberde,
 Template: article
 Image: images/linux-oyunlara-turkce-yama-kurulumu-xl.webp
 
-
-### Giriş
+## Giriş
 
 Linux’ta oyun oynamak son yıllarda çok daha erişilebilir hale geldi. Ancak **oyun yerelleştirme** ve **Türkçe dil desteği** hâlâ her oyun için varsayılan olarak sunulmuyor. Bu rehberde, özellikle Arch Linux kullanıcıları başta olmak üzere, Linux sistemlerde oyunlara Türkçe yama nasıl kurulur sorusunu adım adım açıklıyoruz.
 
@@ -25,10 +24,10 @@ Hazırsanız başlayalım 🎮🇹🇷
 
 Kuruluma geçmeden önce sisteminizde aşağıdaki bileşenlerin hazır olması gerekiyor:
 
-* **Wine** – Windows uygulamalarını çalıştırmak için
-* **Lutris** – (İsteğe bağlı, ancak birçok oyun için kurulum kolaylığı sağlar)
-* **Kurulu oyun dosyaları**
-* **Türkçe yama dosyaları** – Genellikle `.zip`, `.rar` veya `.exe` formatında olur
+- **Wine** – Windows uygulamalarını çalıştırmak için
+- **Lutris** – (İsteğe bağlı, ancak birçok oyun için kurulum kolaylığı sağlar)
+- **Kurulu oyun dosyaları**
+- **Türkçe yama dosyaları** – Genellikle `.zip`, `.rar` veya `.exe` formatında olur
 
 ---
 
@@ -38,15 +37,15 @@ Türkçe yamalar, gönüllü çeviri ekipleri ve topluluklar tarafından hazırl
 
 🔗 **Önerilen Yama Siteleri:**
 
-* [oyunceviri.net](https://www.oyunceviri.net/) – En büyük ve aktif Türkçe yama platformu
-* [sinnerclownceviri.net](https://sinnerclownceviri.net/) – Özellikle korku/macera oyunları için çeviriler
-* [Donanım Haber Forum – Yayınlanmış Yamalar](https://forum.donanimhaber.com/yayinlanmis-yamalar--f2632) – Topluluk bazlı arşiv
+- [oyunceviri.net](https://www.oyunceviri.net/){: target="\_blank" rel="noopener noreferrer"} – En büyük ve aktif Türkçe yama platformu
+- [sinnerclownceviri.net](https://sinnerclownceviri.net/){: target="\_blank" rel="noopener noreferrer"} – Özellikle korku/macera oyunları için çeviriler
+- [Donanım Haber Forum – Yayınlanmış Yamalar](https://forum.donanimhaber.com/yayinlanmis-yamalar--f2632){: target="\_blank" rel="noopener noreferrer"} – Topluluk bazlı arşiv
 
 📌 **İndirirken dikkat edilmesi gerekenler:**
 
-* Yorumları ve sürüm bilgilerini okuyun
-* Oyun sürümünüzle uyumlu olduğundan emin olun
-* Gerekirse oyun klasörünüzün yedeğini alın
+- Yorumları ve sürüm bilgilerini okuyun
+- Oyun sürümünüzle uyumlu olduğundan emin olun
+- Gerekirse oyun klasörünüzün yedeğini alın
 
 ---
 
@@ -72,8 +71,8 @@ Bu nedenle, Proton ya da Wine kullanmayan **native Linux oyunlarında da** bu t�
 
 `.exe` uzantılı yamalar, genellikle aşağıdaki işlemleri yapar:
 
-* Oyunun bazı klasörlerine (`data`, `lang`, `resource`, `localization`) dosyalar ekler
-* Mevcut dosyaların üzerine yazar veya yeni klasör oluşturur
+- Oyunun bazı klasörlerine (`data`, `lang`, `resource`, `localization`) dosyalar ekler
+- Mevcut dosyaların üzerine yazar veya yeni klasör oluşturur
 
 Linux'ta bu işlemi manuel olarak yapmanız mümkündür:
 
@@ -100,9 +99,9 @@ Yamayı Wine ya da bir dosya yöneticisiyle açarak içerikleri geçici bir klas
 
 Eğer oyunu **Lutris** üzerinden çalıştırıyorsanız:
 
-* Lutris → Oyunu sağ tıklayın → **Configure** → **Game Options**
-* Dosya yollarını ve environment variable’ları kontrol edin
-* Gerekirse `run directory` alanını elle yama yapılan klasöre yönlendirin
+- Lutris → Oyunu sağ tıklayın → **Configure** → **Game Options**
+- Dosya yollarını ve environment variable’ları kontrol edin
+- Gerekirse `run directory` alanını elle yama yapılan klasöre yönlendirin
 
 Bu ayarlar sayesinde yama dosyalarının oyun sırasında doğru şekilde okunmasını sağlayabilirsiniz.
 
@@ -137,7 +136,7 @@ echo "Yama başarıyla kuruldu!"
 
 Linux üzerinde oyunlara Türkçe yama kurmak ilk bakışta karmaşık görünse de, temel prensipler anlaşıldığında oldukça basittir. Bu rehber sayesinde ister Wine ile kurulu ister native Linux oyunu olsun, artık oyunlarınızı Türkçe oynamanın keyfini çıkarabilirsiniz.
 
-💬 *Sen de hangi oyunlara Türkçe yama kurdun? Yorumlarda paylaş, birlikte deneyim kazanalım!*
+💬 _Sen de hangi oyunlara Türkçe yama kurdun? Yorumlarda paylaş, birlikte deneyim kazanalım!_
 
 ---
 
@@ -159,6 +158,3 @@ Yedek dosyadan geri dönün veya Wine/Proton sürümünüzü değiştirerek yeni
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="mdyl6kkFTGQ"></lite-youtube>
-
-
-
