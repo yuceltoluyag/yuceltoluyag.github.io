@@ -43,26 +43,24 @@
       type="image/x-icon"
     />
     <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pico.indigo.min.css"
+      rel="preload"
+      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css"
+      />
+    </noscript>
+    
     <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/custom.css"
+      rel="preload"
+      href="https://kit.fontawesome.com/1669dfc729.js"
+      as="script"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/modern-styles.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css"
-    />
-    <link rel="preload" href="https://kit.fontawesome.com/1669dfc729.js" as="script">
     <script
       src="https://kit.fontawesome.com/1669dfc729.js"
       crossorigin="anonymous"
