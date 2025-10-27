@@ -183,12 +183,23 @@ document.addEventListener("DOMContentLoaded", () => {
     loadSearchData();
 
     // Arama butonları
-    searchTriggers.forEach((trigger) => {
-        trigger.addEventListener("click", (e) => {
-            e.preventDefault();
-            openSearchModal();
+    if (searchTriggers.length > 0) {
+        searchTriggers.forEach((trigger) => {
+            trigger.addEventListener("click", (e) => {
+                e.preventDefault();
+                openSearchModal();
+            });
         });
-    });
+    } else {
+        // Eğer search-trigger bulunamazsa, manuel olarak kontrol et
+        const fallbackTriggers = document.querySelectorAll("a[href='#'][aria-label='Search'], .search-trigger");
+        fallbackTriggers.forEach((trigger) => {
+            trigger.addEventListener("click", (e) => {
+                e.preventDefault();
+                openSearchModal();
+            });
+        });
+    }
 
     // Kapat butonu
     if (searchModalClose) {
@@ -196,25 +207,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Modalın dışına tıklama
-    searchModal.addEventListener("click", handleOutsideClick);
+    if (searchModal) {
+        searchModal.addEventListener("click", handleOutsideClick);
+    }
 
     // Form gönderimi
-    searchForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        performSearch(searchInput.value);
-    });
+    if (searchForm) {
+        searchForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            performSearch(searchInput.value);
+        });
+    }
 
     // Debounce ile anlık arama
-    searchInput.addEventListener("input", (e) => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            performSearch(e.target.value);
-        }, 200); // 200ms gecikme ekle
-    });
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                performSearch(e.target.value);
+            }, 200); // 200ms gecikme ekle
+        });
+    }
 
     // ESC tuşu ile kapatma
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && searchModal.classList.contains("show")) {
+        if (e.key === "Escape" && searchModal && searchModal.classList.contains("show")) {
             closeSearchModal();
         }
     });

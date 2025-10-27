@@ -1,0 +1,232 @@
+.tags-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.tags-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--pico-primary);
+}
+
+.tags-hero p {
+  color: var(--pico-muted-color);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tags-cloud-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--pico-card-background-color);
+  border-radius: var(--pico-border-radius);
+  border: 1px solid var(--pico-card-border-color);
+}
+
+.pico-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--pico-border-radius);
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid var(--pico-muted-border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.pico-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1));
+  z-index: 1;
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+}
+
+.pico-tag:hover::before {
+  transform: translateX(0);
+}
+
+.pico-tag:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--pico-box-shadow);
+  border-color: var(--pico-primary-focus);
+  text-decoration: none;
+}
+
+.tag-size-1 {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.tag-size-2 {
+  font-size: 0.9rem;
+  padding: 0.45rem 0.9rem;
+}
+
+.tag-size-3 {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.tag-size-4 {
+  font-size: 1.1rem;
+  padding: 0.55rem 1.1rem;
+}
+
+.tag-size-5 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+}
+
+.tags-count {
+  margin-left: 0.5rem;
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  border-radius: 50px;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.tags-popular-card {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+}
+
+.tags-popular-card h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: var(--pico-primary);
+}
+
+.tags-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.tags-summary-card {
+  border: 1px solid var(--pico-card-border-color);
+  border-radius: var(--pico-border-radius);
+  padding: 1rem;
+  transition: 0.2s ease-in-out;
+  box-sizing: border-box;
+  min-width: 200px;
+  text-align: center;
+}
+
+.tags-summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .tags-summary-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tags-summary-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  flex-direction: column;
+}
+
+.tags-summary-link i {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--pico-primary);
+}
+
+.tags-summary-link h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  flex-grow: 1;
+  word-break: break-word;
+}
+
+.tags-summary-count {
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.tags-search-container {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.tags-search-wrapper {
+  position: relative;
+}
+
+.tags-search-wrapper input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border-radius: 50px;
+  border: 2px solid var(--pico-border-color);
+  font-size: 1rem;
+  background-color: var(--pico-background-color);
+  color: var(--pico-color);
+  box-sizing: border-box;
+}
+
+.tags-search-wrapper .search-icon {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--pico-muted-color);
+  z-index: 2;
+  font-size: 1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tags-section {
+  margin: 3rem 0;
+}
+
+.tags-section h2 {
+  color: var(--pico-primary);
+  border-bottom: 2px solid var(--pico-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tags-section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.tags-all-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

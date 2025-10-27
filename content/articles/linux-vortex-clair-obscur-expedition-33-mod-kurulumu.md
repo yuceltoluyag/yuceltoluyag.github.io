@@ -1,4 +1,4 @@
-Title: Linux’ta Vortex ile “Clair Obscur: Expedition 33" Mod Kurulumu Rehberi
+Title: Linux’ta Vortex ile Clair Obscur: Expedition 33 Mod Kurulumu Rehberi
 Date: 2025-10-14 19:00
 Category: Oyun
 Tags: linux, vortex, nexusmods, clairobscur, proton, wine, modlama

@@ -126,40 +126,14 @@ article.article h3 {
   margin-top: 0.75em;
 }
 
-.search-modal.show,
-.article-category:hover,
-.article-date:hover,
-.article-list-meta a:hover,
-.article-list-title a:hover,
-.article-nav-arrow:hover span,
-.cyberpunk-author-link:hover,
-.cyberpunk-category-link:hover,
-.cyberpunk-hero-meta a:hover,
-.footer-links a:hover,
-.hero-meta a:hover,
-.nav-arrow:hover span,
-.back-to-top-button,
-.pagination li,
-.back-to-top-button.show {
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  z-index: 999;
-  border: none;
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  display: flex;
-  background-color: var(--pico-primary-background);
-  color: var(--pico-primary-inverse);
-  box-shadow: var(--pico-card-box-shadow);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+/* Arama modalı için özel stiller */
+.search-modal.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
 }
 
 .footer-credit {
@@ -834,6 +808,7 @@ li {
 .article-ad-section {
   border-radius: 10px;
   padding: 1.5rem;
+  min-width: 250px;
 }
 .related-posts-list {
   padding: 0 !important;
@@ -2288,6 +2263,7 @@ li::marker {
 .article-ad-section {
   text-align: center;
   margin: 2rem 0;
+  min-width: 250px;
 }
 .article-content-grid {
   display: block;

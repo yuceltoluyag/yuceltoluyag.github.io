@@ -1,0 +1,301 @@
+.donate-page {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.donate-headings {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.donate-headings h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--pico-primary);
+}
+
+.donate-headings p {
+  font-size: 1.1rem;
+  color: var(--pico-muted-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.donate-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .donate-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.donate-section, .donate-options {
+  padding: 1.5rem;
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+}
+
+.donate-section h2, .donate-options h2 {
+  margin-top: 0;
+  color: var(--pico-primary);
+}
+
+.donate-figure {
+  margin: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.donate-figure-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.donate-figure i {
+  color: var(--pico-success);
+  margin-top: 0.2rem;
+}
+
+.donate-option {
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.donate-option:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.donate-option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.donate-option-card:hover {
+  box-shadow: var(--pico-box-shadow);
+  border-color: var(--pico-primary-focus);
+}
+
+.donate-option-card i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+}
+
+.donate-option-card h3 {
+  margin: 0;
+  color: var(--pico-color);
+}
+
+.crypto-section {
+  padding: 2rem;
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+  margin-top: 2rem;
+}
+
+.crypto-section h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--pico-primary);
+}
+
+.crypto-notice {
+  background: var(--pico-info-background);
+  border: 1px solid var(--pico-info-border);
+  border-radius: var(--pico-border-radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.crypto-notice-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.crypto-notice i {
+  color: var(--pico-info);
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+}
+
+.crypto-notice strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.crypto-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.crypto-figure:hover {
+  transform: translateY(-5px);
+}
+
+.crypto-qr-image {
+  width: 100%;
+  max-width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: var(--pico-border-radius);
+  border: 1px solid var(--pico-card-border-color);
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+}
+
+.crypto-figure:hover .crypto-qr-image {
+  border-color: var(--pico-primary);
+  box-shadow: 0 0 0 2px var(--pico-primary-focus);
+}
+
+.crypto-figure figcaption {
+  font-size: 0.9rem;
+  color: var(--pico-color);
+  margin: 0;
+}
+
+.crypto-modal {
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  padding: 0;
+}
+
+.crypto-modal[open] {
+  display: grid;
+  place-items: center;
+}
+
+.crypto-modal-article {
+  background: var(--pico-background-color);
+  color: var(--pico-color);
+  border-radius: var(--pico-border-radius);
+  padding: 1.5rem;
+  margin: 1rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid var(--pico-card-border-color);
+}
+
+.crypto-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.crypto-modal-image {
+  max-width: 100%;
+  max-height: 60vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--pico-color);
+  padding: 0.25rem;
+}
+
+.crypto-details {
+  margin-top: 1.5rem;
+}
+
+.crypto-details summary {
+  cursor: pointer;
+  padding: 1rem;
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+  border-radius: var(--pico-border-radius);
+  text-align: center;
+  font-weight: bold;
+  color: var(--pico-color);
+  list-style: none;
+}
+
+.crypto-details summary::marker {
+  content: "";
+}
+
+.crypto-details summary::after {
+  content: " ▼";
+  float: right;
+  transition: transform 0.2s;
+}
+
+.crypto-details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.crypto-address-container {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+  border-top: none;
+  border-radius: 0 0 var(--pico-border-radius) var(--pico-border-radius);
+  align-items: center;
+  justify-content: center;
+}
+
+.crypto-address {
+  flex: 1;
+  text-align: center;
+  word-break: break-all;
+  background: var(--pico-muted-background-color);
+  padding: 0.5rem;
+  border-radius: var(--pico-border-radius);
+  color: var(--pico-color);
+}
+
+.copy-button {
+  margin: 0;
+  min-height: auto;
+  padding: 0.5rem 1rem;
+}
