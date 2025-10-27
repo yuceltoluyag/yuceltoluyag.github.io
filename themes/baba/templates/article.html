@@ -13,7 +13,7 @@ super() }} {% if article.translations -%}
 {% endif %} {% for tag in article.tags %}
 <meta name="tags" content="{{tag}}" />
 {% endfor %}
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/copy.css" />
+
 {% endblock %} {% block content %}
 
 <main class="article-content-container container pico-container">
