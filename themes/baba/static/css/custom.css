@@ -144,11 +144,7 @@ article.article h3 {
   font-size: 0.8rem;
 }
 
-.back-to-top-button.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+
 .article-list-title a,
 .tag-item {
   color: var(--pico-color);
