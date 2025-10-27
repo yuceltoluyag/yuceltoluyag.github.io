@@ -1479,7 +1479,7 @@ h6:hover .headerlink {
   gap: 1rem;
 }
 
-.series-header h3 {
+.series-header h2 {
   margin: 0;
   color: var(--pico-primary);
   font-size: 1.4rem;
@@ -1726,7 +1726,7 @@ h6:hover .headerlink {
     align-items: flex-start;
   }
 
-  .series-header h3 {
+  .series-header h2 {
     font-size: 1.2rem;
   }
 
@@ -1801,7 +1801,7 @@ h6:hover .headerlink {
   }
 }
 
-.series-header h3 {
+.series-header h2 {
   font-size: 1.1rem;
 }
 
@@ -3963,7 +3963,7 @@ li,
     align-items: flex-start;
   }
 
-  .series-header h3 {
+  .series-header h2 {
     font-size: 1.2rem;
   }
 
@@ -4577,7 +4577,7 @@ li,
     align-items: flex-start;
   }
 
-  .series-header h3 {
+  .series-header h2 {
     font-size: 1.2rem;
   }
 
@@ -5565,7 +5565,7 @@ li,
     align-items: flex-start;
   }
 
-  .series-header h3 {
+  .series-header h2 {
     font-size: 1.2rem;
   }
 
