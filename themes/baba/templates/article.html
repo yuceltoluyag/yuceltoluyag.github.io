@@ -30,7 +30,7 @@ super() }} {% if article.translations -%}
         alt="Hero Background"
         width="1200"
         height="630"
-        loading="lazy"
+        fetchpriority="high"
         decoding="async"
       />
       <div class="hero-overlay-gradient cyberpunk-glow-effect"></div>
@@ -63,7 +63,7 @@ super() }} {% if article.translations -%}
     </div>
   </div>
 
-  <div class="article-ad-container">
+  <div class="article-ad-container" style="min-height: 280px;">
     {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async
@@ -125,7 +125,7 @@ super() }} {% if article.translations -%}
         {{ article.content }}
       </div>
       
-      <div class="article-ad-section">
+      <div class="article-ad-section" style="min-height: 400px;">
         {% if GOOGLE_ADSENSE and PUBLISH %}
         <script
           async
@@ -185,7 +185,7 @@ super() }} {% if article.translations -%}
     <aside class="article-sidebar">
     </aside>
   </div>
-  <div class="article-ad-container">
+  <div class="article-ad-container" style="min-height: 100px;">
     {% if GOOGLE_ADSENSE and PUBLISH %}
     <script
       async

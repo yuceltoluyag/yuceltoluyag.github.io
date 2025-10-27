@@ -127,14 +127,7 @@
     {% endif %}
 
     <!-- IndieWeb -->
-    <link
-      rel="webmention"
-      href="https://webmention.io/yuceltoluyag.github.io/webmention"
-    />
-    <link
-      rel="pingback"
-      href="https://webmention.io/yuceltoluyag.github.io/xmlrpc"
-    />
+
     <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
     <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
     <!-- Bridgy -->
@@ -143,19 +136,7 @@
     <link rel="me" href="{{ SOCIAL.mastodon }}" />
     {% endif %}
 
-    <!-- Webmention.io Feeds -->
-    <link
-      rel="alternate"
-      type="application/atom+xml"
-      href="https://webmention.io/api/mentions.atom?token=Ap4Pb-YQo7Ne68a7rpJ0qA"
-      title="Webmentions Atom Feed"
-    />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      href="https://webmention.io/api/mentions.rss?token=Ap4Pb-YQo7Ne68a7rpJ0qA"
-      title="Webmentions RSS Feed"
-    />
+
     {% endblock head %}
   </head>
 
@@ -246,7 +227,7 @@
       </div>
     </div>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
+
 
     <script>
       const themeSwitcher = document.getElementById("theme-switcher");
