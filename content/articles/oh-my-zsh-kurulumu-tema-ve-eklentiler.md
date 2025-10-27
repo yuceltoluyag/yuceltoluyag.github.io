@@ -91,7 +91,7 @@ Popüler temalardan bazıları:
 - `powerlevel10k` — gelişmiş, özelleştirilebilir prompt
 - `ys` — klasik ve hızlı
 
-🔗 [Zsh Temaları Listesi (Resmi Wiki)](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+🔗 [Zsh Temaları Listesi (Resmi Wiki)](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes){: target="_blank" rel="noopener noreferrer"}
 
 💡 **Powerlevel10k Teması (Önerilir)**
 Daha gelişmiş bir görünüm için aşağıdaki komutla Powerlevel10k’yi yükleyebilirsiniz:
@@ -181,10 +181,10 @@ Bir sonraki adımda, [özel alias’lar ve fonksiyonlar](/oh-my-zsh-ozel-aliasla
 
 ## 🔗 Kaynaklar
 
-- [Oh My Zsh Resmi Sitesi](https://ohmyz.sh)
-- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh)
-- [Powerlevel10k Tema Rehberi](https://github.com/romkatv/powerlevel10k)
-- [Zsh Plugin Listesi](https://github.com/unixorn/awesome-zsh-plugins)
+- [Oh My Zsh Resmi Sitesi](https://ohmyz.sh){: target="_blank" rel="noopener noreferrer"}
+- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="_blank" rel="noopener noreferrer"}
+- [Powerlevel10k Tema Rehberi](https://github.com/romkatv/powerlevel10k){: target="_blank" rel="noopener noreferrer"}
+- [Zsh Plugin Listesi](https://github.com/unixorn/awesome-zsh-plugins){: target="_blank" rel="noopener noreferrer"}
 
 ---
 

@@ -147,9 +147,9 @@ Bu kurulum tamamlandıktan sonra:
 
 ## Kaynaklar
 
-- [Oh My Zsh Resmi Sitesi](https://ohmyz.sh/)
-- [Zsh Dokümantasyonu](https://zsh.sourceforge.io/Doc/)
-- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh)
+- [Oh My Zsh Resmi Sitesi](https://ohmyz.sh/){: target="_blank" rel="noopener noreferrer"}
+- [Zsh Dokümantasyonu](https://zsh.sourceforge.io/Doc/){: target="_blank" rel="noopener noreferrer"}
+- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="_blank" rel="noopener noreferrer"}
 
 ---
 
