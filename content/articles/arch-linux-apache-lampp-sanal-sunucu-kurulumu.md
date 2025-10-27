@@ -19,7 +19,7 @@ Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sık�
 
 **baba.test** adında bir domain oluşturacağız.
 
-# Domain Oluşturma
+## Domain Oluşturma
 
 Domaini oluşturmak için aşağıdaki komutu kullanabilirsiniz:
 
@@ -56,7 +56,7 @@ sudo nano /srv/http/baba.test/index.html
 
 F3 ardından F2'ye basarak kaydedip çıkıyoruz.
 
-# HTTPD Konfigurasyonu
+## HTTPD Konfigurasyonu
 
 HTTPD yapılandırmasını düzenlemek için şu komutu kullanın:
 
@@ -96,7 +96,7 @@ CustomLog "/var/log/httpd/baba.test-access_log" common
 
 Bu, standart kullanım şeklidir. Ancak yalnızca `DocumentRoot` ve `ServerName` kısımlarını kullanabilirsiniz. Diğerlerini kullanmak istemiyorsanız, başlarına `#` işareti koyarak pasif hale getirebilirsiniz.
 
-# Apache Konfigürasyon Testi
+## Apache Konfigürasyon Testi
 
 Yapılandırmanızı test etmek için şu komutu kullanabilirsiniz:
 

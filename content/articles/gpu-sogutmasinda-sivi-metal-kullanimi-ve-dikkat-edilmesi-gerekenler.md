@@ -12,7 +12,7 @@ Image: images/rtx-4060-sivi-metal-xl.webp
 
 !!! warning "<strong>Dikkat:</strong> Sıvı metal kullanımı doğru yapılırsa GPU'nuzda %10-20'ye kadar sıcaklık iyileştirmesi sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı geri dönüşümsüz şekilde bozabilir. Riski yüksek bir işlem,buna göre düşünün.Sorumluluk size aittir."
 
-# GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler
+## GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler
 
 GPU'ların daha serin ve verimli çalışması için sıvı metal kullanımı oldukça popüler hale geldi. Ancak yanlış uygulama, özellikle alüminyum yüzeylerde ciddi sorunlara yol açabiliyor. Bu rehberde, **sıvı metal ile GPU soğutma blokları üzerinde nasıl güvenli ve etkili çalışabileceğinizi** adım adım anlatacağım.
 
@@ -96,7 +96,7 @@ Bu basit testle hangi malzeme üzerinde çalıştığınızı anlayabilirsiniz.
 
 ---
 
-# Adım Adım GPU'ya Sıvı Metal Uygulama Rehberi
+## Adım Adım GPU'ya Sıvı Metal Uygulama Rehberi
 
 Bu bölümde işlemleri tek tek numaralandırıyoruz:
 
@@ -140,7 +140,7 @@ Bu bölümde işlemleri tek tek numaralandırıyoruz:
 
 ## [responsive_img src="/images/rtx-4060-sivi-metal-xl.webp" alt="4060 sıvı metal" /]
 
-# Sonuç
+## Sonuç
 
 Sıvı metal kullanımı doğru yapılırsa GPU'nuzda **%10-20'ye kadar sıcaklık iyileştirmesi** sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı **geri dönüşümsüz şekilde bozabilir**.
 

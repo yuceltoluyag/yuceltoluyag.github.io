@@ -16,7 +16,7 @@ Merhaba! Windows üzerinden paylaşılan dosya, yazıcı gibi kaynaklara Linux �
 
 
 
-# Samba Kurulumu
+## Samba Kurulumu
 
 Samba kurulumunu gerçekleştirmek için aşağıdaki komutu kullanabilirsiniz:
 
@@ -92,7 +92,7 @@ sudo systemctl start smb.service nmb.service
 sudo systemctl enable smb.service nmb.service
 ```
 
-# Dikkat Edilmesi Gerekenler
+## Dikkat Edilmesi Gerekenler
 
 Windows üzerinde dosya paylaşımı yaparken, mutlaka gelişmiş paylaşım ayarlarından şifreli paylaşımı kapatın. Ayrıca, dosya paylaşımı sırasında "everyone" ve "guest" kullanıcılarını eklemeyi unutmayın. İsterseniz eklemeyebilirsiniz, tercih sizin! 😄 Paylaşıma bağlanmak için şu formatı kullanabilirsiniz: `smb://192.168.1.150`. Bu IP adresi sadece örnektir, kendi Windows makinenizin IP adresini öğrenmek için "ipconfig" komutunu kullanabilirsiniz.
 

@@ -10,7 +10,7 @@ Summary: Arch Linux üzerinde Wayland ile Steam oyunlarında karşılaşılan se
 Template: article
 Image: images/Tannenberg-xl.webp
 
-# Arch Linux Üzerinde Steam Ses Hatalarını Çözme
+## Arch Linux Üzerinde Steam Ses Hatalarını Çözme
 
 🎮 Wayland altında **Arch Linux** kullanırken Steam oyunlarında “Ses motoru başlatılamadı" hatası mı alıyorsunuz? Endişelenmeyin — bu rehber, ses sorunlarını çözmek için tüm gereken adımları size adım adım anlatacak!
 

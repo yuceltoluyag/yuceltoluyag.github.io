@@ -11,22 +11,22 @@ Status: published
 Template: article
 Image: images/superproxy-xl.webp
 
-**Merhaba!** 🌟
+## **Merhaba!** 🌟
 
 Statik web sitelerinizde sayfa görüntülenmesini nasıl gösterebileceğinizi araştırırken, **Google Analytics** üzerinden **Super Proxy** kütüphanesini kullanarak verileri dışarıya açabileceğimizi öğrendim. Konuyla ilgili, Google ekibinin eski bir videosunu buldum: [Google Analytics Super Proxy](https://developers.google.com/analytics/solutions/google-analytics-super-proxy){: target="\_blank" rel="noopener noreferrer"}. Bu video üzerinden ilerleyerek çözümümü buldum. 🥰
 
-# Malzemeler 🥗
+## Malzemeler 🥗
 
 - Google Analytics Hesabı
 - Google Console Hesabı
 
-# İlk Adım
+## İlk Adım
 
 Google Analytics hesabınızı açtıktan sonra, sitenizi eklerken şu ayarı yapmayı unutmayın: "Create a Universal Analytics property" kısmını açıp, resimdeki gibi işaretleyin.
 
 [responsive_img src="/images/superproxy.webp" alt="GA-superproxy-kurulumu" /]
 
-# Google App Engine Kurulumu
+## Google App Engine Kurulumu
 
 1. [Appengine](https://console.cloud.google.com/appengine){: target="\_blank" rel="noopener noreferrer"} sitesine gidin.
 2. "Proje Oluştur" seçeneğine tıklayın.
@@ -154,7 +154,7 @@ google_analytics:
 - [Script.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_includes/script.html#L35){: target="\_blank" rel="noopener noreferrer}
 - [Post.html Dosyam](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/c95d1676917ad36cdb479d81718d07b575bcfafd/_layouts/post.html#L46){: target="\_blank" rel="noopener noreferrer}
 
-# Sonuç
+## Sonuç
 
 Bu çözümü blogumda kullanıyorum. **Google Console** servisi, **Amazon** gibi ücretsiz deyip de ay sonunda kartınızdan para çekmeye **çalışmıyor**, **yedi aydır** sorunsuz kullanıyorum. Yine de, tedbir amaçlı ödeme alarmı kurabilirsiniz. Ödemeler kısmından alarmlara tıklayıp **1 TL**'yi aşınca beni uyar diye ayarlayabilirsiniz. 😉
 

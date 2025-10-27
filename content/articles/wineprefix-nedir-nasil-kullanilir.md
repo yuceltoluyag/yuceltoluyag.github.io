@@ -9,7 +9,7 @@ Status: published
 Summary: WinePrefix nedir, nasıl oluşturulur ve farklı oyunlar için nasıl kullanılır? Bu rehberde, Wine ile Windows oyunlarını Linux'ta sorunsuz çalıştırmak için gerekli adımları öğrenin.
 Images: images/wineprefix-nedir-nasil-kullanilir-xl.webp
 
-# 🍷 WinePrefix Nedir ve Neden Önemlidir?
+## 🍷 WinePrefix Nedir ve Neden Önemlidir?
 
 Linux üzerinde Windows oyunları ve uygulamaları çalıştırmak için Wine kullanıyorsanız, karşınıza mutlaka `WINEPREFIX` kavramı çıkmıştır. Bu ortam değişkeni sayesinde farklı programlar için izole sanal Windows ortamları oluşturabilir, sorun yaşamadan çalıştırabilirsiniz.
 

@@ -7,6 +7,41 @@
     {% block head %} {% include 'includes/metadata.html' %}
     <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
     <meta name="generator" content="Pelican" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ SITEURL }}/images/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ SITEURL }}/images/favicon-96x96-xl.webp"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="{{ SITEURL }}/images/favicon.svg"
+    />
+    <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ SITEURL }}/images/apple-touch-icon-xl.webp"
+    />
+    <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+    <link rel="manifest" href="{{ SITEURL }}/site.webmanifest" />
+    <link
+      rel="shortcut icon"
+      href="{{ SITEURL }}/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="{{ SITEURL }}/images/animated.ico"
+      type="image/x-icon"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -238,27 +273,27 @@
       });
 
       // Back to top functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const backToTopButton = document.querySelector('.back-to-top-button');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTopButton = document.querySelector(".back-to-top-button");
+
         // Show/hide back to top button based on scroll position
-        window.addEventListener('scroll', function() {
+        window.addEventListener("scroll", function () {
           if (backToTopButton) {
             if (window.pageYOffset > 300) {
-              backToTopButton.classList.add('show');
+              backToTopButton.classList.add("show");
             } else {
-              backToTopButton.classList.remove('show');
+              backToTopButton.classList.remove("show");
             }
           }
         });
-        
+
         // Smooth scroll to top
         if (backToTopButton) {
-          backToTopButton.addEventListener('click', function(e) {
+          backToTopButton.addEventListener("click", function (e) {
             e.preventDefault();
             window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
           });
         }

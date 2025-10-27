@@ -19,7 +19,7 @@ Shopt komutu nedir? `shopt` komutu, bash (kabuk) içerisindeki bazı eylemleri d
 
 Bir dizine `cd dizin` komutuyla girerken, bashrc dosyasına ekleyeceğiniz `shopt` komutuyla direkt olarak **dizin** ismini yazıp bu dizine girebilirsiniz. Tabi ki `shopt` komutunun kullanım alanları bunlarla sınırlı değildir. Daha fazla bilgi için [Detaylar](https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html){: target="_blank" rel="noopener noreferrer"} adresini ziyaret edebilirsiniz.
 
-# Zsh İçerisinde Kullanım
+## Zsh İçerisinde Kullanım
 
 Shopt, bash temelli çalıştığı için zsh bash'inde doğal olarak **'shopt command not found'** hatası alırsınız. Bunun çözümü ise oldukça basittir.
 

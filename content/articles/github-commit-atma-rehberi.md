@@ -41,11 +41,11 @@ git --version
 git version 2.50.1
 ```
 
-Git yoksa [git-scm.com/downloads](https://git-scm.com/downloads) üzerinden kurabilirsin.
+Git yoksa [git-scm.com/downloads](https://git-scm.com/downloads){: target="_blank" rel="noopener noreferrer"} üzerinden kurabilirsin.
 
 ### GitHub Hesabına Giriş Yap
 
-GitHub hesabın yoksa [github.com](https://github.com) üzerinden hızlıca oluştur. Varsa tarayıcıdan giriş yap.
+GitHub hesabın yoksa [github.com](https://github.com){: target="_blank" rel="noopener noreferrer"} üzerinden hızlıca oluştur. Varsa tarayıcıdan giriş yap.
 
 ### SSH Bağlantısını Test Et
 

@@ -10,7 +10,7 @@ Summary: i3lock kullanarak Linux sisteminiz uyku modundan uyandığında ekranı
 Template: article
 Image: images/wake-up-lock-xl.webp
 
-# i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?
+## i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?
 
 Linux kullanıyorsanız ve bilgisayarınız uyku modundan uyandığında otomatik olarak ekranın kilitlenmesini istiyorsanız, doğru yerdesiniz. Bu rehberde, popüler ekran kilitleyici **i3lock** (özellikle `i3lock-color`) ile bu işlemi nasıl yapabileceğinizi anlatacağım.
 
@@ -25,25 +25,25 @@ Güvenlik önemli, özellikle bilgisayarınızı kısa süreliğine bile olsa ba
 
 Ardından `i3lock`'un sisteminizde kurulu olduğundan emin olun. Tavsiyem: [i3lock-color](https://github.com/Raymo111/i3lock-color){: target="\_blank" rel="noopener noreferrer"}'u tercih etmeniz. Daha fazla özelleştirme seçeneği sunuyor.
 
-# Arch tabanlılar için
+## Arch tabanlılar için
 
 ```bash
 yay -S i3lock-color # Arch tabanlılar için
 ```
 
-# Debian tabanlılar için
+## Debian tabanlılar için
 
 ```bash
 sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev
 ```
 
-# Fedora
+## Fedora
 
 ```bash
 sudo dnf install -y autoconf automake cairo-devel fontconfig gcc libev-devel libjpeg-turbo-devel libXinerama libxkbcommon-devel libxkbcommon-x11-devel libXrandr pam-devel pkgconf xcb-util-image-devel xcb-util-xrm-devel
 ```
 
-# Ubuntu 18/20.04 LTS
+20.04 LTS$/20.04 LTS
 
 ```bash
 sudo apt install autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev

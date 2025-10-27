@@ -11,7 +11,7 @@ Status: published
 Template: article
 Image: images/vlsub0-xl.webp
 
-# VLSub ile Altyazı Aramaya Son (Resimli Anlatım) 🎬
+## VLSub ile Altyazı Aramaya Son (Resimli Anlatım) 🎬
 
 Merhaba! Yıllardır severek kullandığım ve her film ya da dizi izlediğimde mutlaka önerdiğim **VLSub** eklentisinden bahsedeceğim. Film ve dizileri **orijinal sesleriyle, altyazılı** izlemeyi seviyorum çünkü bu, hem dile aşinalık kazandırıyor hem de yapımı daha doğal bir şekilde deneyimlememi sağlıyor. Eskiden altyazıları manuel olarak bulup uyumlu olup olmadığını test etmek zorundaydık. Neyse ki **VLSub**, bu süreci otomatikleştirerek bize büyük bir kolaylık sağlıyor! 🚀
 

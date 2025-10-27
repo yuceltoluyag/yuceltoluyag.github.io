@@ -10,7 +10,7 @@ Summary: Raspberry Pi kurulumu adım adım nasıl yapılır? microSD kartı haz�
 Template: article
 Image: images/raspberry-pi-nasil-kurulur-xl.webp
 
-# Raspberry Pi Nasıl Kurulur? 🛠️
+## Raspberry Pi Nasıl Kurulur? 🛠️
 
 Güçlü, ucuz ve esnek bir mini bilgisayar olan **Raspberry Pi**, hobi projelerinden profesyonel uygulamalara kadar birçok alanda kullanılabiliyor. Peki, bu cihazı ilk kez elinize aldığınızda nasıl kurulum yaparsınız? 🤔
 

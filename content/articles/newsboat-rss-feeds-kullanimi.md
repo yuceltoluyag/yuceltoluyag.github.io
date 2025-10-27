@@ -13,7 +13,7 @@ Image: images/newsboat-xl.webp
 
 [responsive_img src="/images/newsboat-xl.webp" alt="Newsboat" /]
 
-# Newsboat Nedir? 📰
+## Newsboat Nedir? 📰
 
 Newsboat, terminal tabanlı güçlü bir RSS / Atom besleme okuyucusudur. Blog yazıları, haberler ve diğer içerikleri takip etmek için idealdir. Unix benzeri sistemlerde çalışır ve esnek yapılandırma seçenekleri sunar.
 

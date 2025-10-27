@@ -11,7 +11,7 @@ Series: Linux-disk
 Series_index: 2
 Template: article  
 
-# 💽 Linux’ta Disklerin Mount Edilmesi ve Unmount Edilmesi: Temel Bilgiler
+## 💽 Linux’ta Disklerin Mount Edilmesi ve Unmount Edilmesi: Temel Bilgiler
 
 Linux ve Unix benzeri sistemlerde diskler doğrudan değil, **mount** işlemi ile dosya sistemi ağacına bağlanır. Bu sayede disk üzerindeki verilere belirli klasörler aracılığıyla erişilir. İşlemi tamamlanan disklerin bağlantısının kesilmesi ise **unmount** olarak adlandırılır.  
 

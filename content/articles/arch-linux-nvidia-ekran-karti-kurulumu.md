@@ -12,7 +12,7 @@ Template: article
 Image: images/nvidia-linux-performans-ayari-xl.webp
 
 
-# Merhaba
+## Merhaba
 
 Merhaba! Uzun zamandır yazmak istediğim konulardan biri de **Nvidia** ekran kartlarının kurulumu. 😊 Linux'ta **Nvidia** kartlarının kurulumu ile ilgili Türkçe kaynaklar mevcut ancak çoğu zaman kurduğunuz sürücünün performansından memnun kalmayabilirsiniz. Bu durumda, " **Linux'ta Nvidia tam verimli çalışmıyor galiba**" gibi yorumlarla karşılaşmak oldukça yaygın. Aslında burada sorun, çoğu kaynağın **3D render, oyun** gibi uygulamalarla ilgilenmemesi olabilir. Benim amacım, burada size performans sıralaması yaparak **Nvidia** kartınızın nasıl en verimli şekilde çalıştığını göstermek olacak. 😁 Hadi, fazla vakit kaybetmeden kurulumlara geçelim!
 
@@ -179,7 +179,7 @@ shutdown -r now
 - Harici Gpu Performansı
 [responsive_img src="/images/optirun-performansi-xl.webp" alt="Harici Gpu Performansı" /]
 
-# Videolu Anlatım
+## Videolu Anlatım
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 

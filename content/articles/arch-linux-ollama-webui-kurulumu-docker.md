@@ -10,7 +10,7 @@ Summary: Arch Linux üzerinde Docker kullanarak Ollama ve WebUI kurulumunu, GPU 
 Template: article
 Image: images/arch-linux-ollama-webui-kurulumu-docker-xl.webp
 
-# Arch Linux'ta Ollama ve WebUI Kurulumu (Docker ile) 🤖
+## Arch Linux'ta Ollama ve WebUI Kurulumu (Docker ile) 🤖
 
 **Ollama**, yerel olarak çalışan büyük dil modellerini (LLM) yönetmenizi sağlayan modern bir platformdur.
 **Open WebUI** ise bu modelleri tarayıcı üzerinden kolayca kullanabilmeniz için görsel bir arayüz sunar.

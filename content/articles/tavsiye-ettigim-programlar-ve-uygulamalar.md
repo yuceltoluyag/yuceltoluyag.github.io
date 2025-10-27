@@ -11,7 +11,7 @@ Status: published
 Template: article
 Image: images/comodo_firewall-xl.webp
 
-# Merhaba! 👋
+## Merhaba! 👋
 
 Uzun zamandır bu tür bir yazı yazmayı planlıyordum ama bir türlü fırsat bulamamıştım. 😊 Bu yazıda **Windows**, **Linux** ve **Android** platformlarında sıkça kullandığım ve tavsiye ettiğim uygulamalardan bahsedeceğim. Umarım faydalı olur! 🚀
 

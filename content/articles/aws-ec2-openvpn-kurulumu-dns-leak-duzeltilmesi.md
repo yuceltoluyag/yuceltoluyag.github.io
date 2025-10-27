@@ -12,7 +12,7 @@ Template: article
 Image: images/amazon-openvpn-kurulumu-xl.webp
 
 
-# Merhaba
+## Merhaba
 
 Aylarca önce yazmam gereken bir konu daha bugün nasip oldu 😌
 

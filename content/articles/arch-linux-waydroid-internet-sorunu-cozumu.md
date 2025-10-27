@@ -10,7 +10,7 @@ Template: article
 Series: Waydroid
 Series_index: 2
 
-# Arch Linux'ta Waydroid İnternet ve Boot Sorununun Çözümü
+## Arch Linux'ta Waydroid İnternet ve Boot Sorununun Çözümü
 
 Waydroid'i Arch Linux'a kurmaya çalıştığında Android logosunda takılıp kalıyor mu? Veya içinde internet bağlantısı olmuyor mu? Bu sorunlar, Linux ve Android arasındaki ağ yapılandırmasında yaşanan uyumsuzluklardan kaynaklanıyor. Bu makalede, Waydroid nedir, neden bu sorunlar oluşur ve adım adım nasıl çözeceğiniz anlatacağım. Makaleyi bitirdiğinde sisteminiz tam olarak çalışacak ve internet bağlantısı sorunsuz olacak.
 

@@ -12,7 +12,7 @@ Template: article
 Image: images/linux_windows10_uefi_format-xl.webp
 
 
-# Linux'ta UEFI Windows 10 Format USB Oluşturma
+## Linux'ta UEFI Windows 10 Format USB Oluşturma
 
 Windows'tan Linux'a geçiş yaparken, Rufus gibi programlar ile USB'den format oluşturmak oldukça kolaydır. Ancak, Linux üzerinde Wine kullanılsa bile Rufus'un düzgün çalışmadığı sıkça görülmektedir. Neyse ki, Linux tarafında kullanılabilecek çeşitli uygulamalar mevcuttur. Bunlardan biri de **WoeUSB**'dir. Bu rehberde, WoeUSB ile nasıl UEFI destekli bir Windows 10 format USB'si oluşturabileceğinizi anlatacağız.
 

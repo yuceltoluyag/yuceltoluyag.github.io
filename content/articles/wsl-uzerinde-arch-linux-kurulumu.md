@@ -11,11 +11,11 @@ Status: published
 Template: article
 Image: images/wls-archlinux-kurulumu-xl.webp
 
-**Merhaba**
+## **Merhaba**
 
 [İnstagram](https://www.instagram.com/yuceltoluyag/){: target="_blank" rel="noopener noreferrer"} üzerinden **hikaye**lerimi takip edenler **WSL**'ye nasıl **Arch Linux** Kurduğumu soruyorlardı. Kurulum yapabilenler ise **sürekli çöktüğünden** yakındılar. Uzun süredir kullanıyorum. Çökme patlama yanma yakılma gibi şeyler **yaşamadım**. 😎
 
-# WSL Nedir (Windows Subsytem Linux) ?
+## WSL Nedir (Windows Subsytem Linux) ?
 
 Windows altında Üçüncü parti yazılım olmadan Linux çalıştırmamızı sağlar. **WSL 1** ve **WSL 2** arasında ne fark var ? **WSL 2** de **Hyper -V** teknolojisinin kullanıldığı için daha **performanslı** çalışıyor. Şu an resmi olarak grafik(**Desktop**) arabirimi desteklenmesede bir çok kullanıcı **DE** dahil kurulum yapıp kullanıyor. **Ömrünü** **Linux** camiasında geçiren arkadaşlara kesinlikle **tavsiye ediyorum** 🤩
 
@@ -30,7 +30,7 @@ Windows altında Üçüncü parti yazılım olmadan Linux çalıştırmamızı s
 | Tam sistem çağrı uyumluluğu                               | ❌    | ✅    |
 | OS dosya sistemlerinde performans                         | ✅    | ❌    |
 
-# Malzemeler 🥗
+## Malzemeler 🥗
 
 - WSL 2 için Windows 10 versionunuz **2004** veya **daha üstü olmalı** (**19041**) yada **Windows 11** kullanıyor olmalısınız. Sürümünüzü şu şekilde hızlıca öğrenebilirsiniz. `Windows + R`, tuşuna basın gelen ekrana `winver` yazın size sürüm numaranızı gösterecektir.
 

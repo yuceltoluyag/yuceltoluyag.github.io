@@ -10,7 +10,7 @@ Summary: MangoHud ile oyunlarınızda FPS, sıcaklık, kullanım gibi sistem per
 Template: article
 Image: images/mangohud_linux-xl.webp
 
-# Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin 🎮
+## Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin 🎮
 
 Linux'ta oyun oynarken *oyun performansını gerçek zamanlı* izlemek ister misiniz? Peki ya ekranın bir köşesinde FPS, CPU sıcaklığı, GPU kullanımı gibi bilgileri görmek? İşte tam da bu noktada **MangoHud** devreye giriyor. Bu rehberde, MangoHud'un Arch Linux üzerinde nasıl kurulacağı, yapılandırılacağı ve oyunlarla nasıl kullanılacağı hakkında adım adım bilgi vereceğim.
 

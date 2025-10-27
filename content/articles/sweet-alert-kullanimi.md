@@ -11,7 +11,7 @@ Status: published
 Template: article
 Image: images/sweetalert-xl.webp
 
-# Sweet Alert Nedir?
+## Sweet Alert Nedir?
 
 Klasik uyarı pencerelerinden sıkıldıysanız, modern ve mobil uyumlu bir alternatif olan **SweetAlert** kütüphanesini kullanabilirsiniz. Eğer PHP ile nasıl kullanabileceğinizi merak ediyorsanız, [PHP Morris Js](/pdo-sum-fonksiyonu-kullanimi-morris-js/){: target="_blank" rel="noopener noreferrer"} yazısını inceleyebilirsiniz.
 

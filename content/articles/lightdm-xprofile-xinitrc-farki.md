@@ -11,7 +11,7 @@ Template: article
 Image: images/xinitvsxprofile-xl.webp
 
 
-# LightDM Kullanıyorsan Neden `.xprofile` Kullanmalısın?
+## LightDM Kullanıyorsan Neden `.xprofile` Kullanmalısın?
 
 Arch Linux ya da diğer Linux dağıtımlarında masaüstü ortamını başlatmak için `~/.xinitrc` dosyasını mı düzenliyorsun ama hiçbir şey çalışmıyor mu? 🤔  
 Bu durumun tek bir sebebi olabilir: **LightDM veya benzeri bir Display Manager kullanıyorsun ve `.xinitrc` dosyan hiçbir işe yaramıyor!** Bu yazıda, `.xinitrc` ile `.xprofile` farkını detaylıca inceleyecek ve neden `.xprofile` kullanman gerektiğini adım adım göstereceğiz.

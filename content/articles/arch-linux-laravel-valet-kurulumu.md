@@ -13,7 +13,7 @@ Status: published
 Template: article
 Image: images/laravel-valet-kurulumu-linux-xl.webp
 
-# Merhaba 👋
+## Merhaba 👋
 
 Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel geliştirme ortamıdır. [Vagrant](/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu){: target="\_blank" rel="noopener noreferrer"} veya `/etc/hosts` ayarlamaya gerek yoktur. Yerel tünelleri (Ngrok vb.) kullanarak sitelerinizi herkese açık olarak paylaşabilirsiniz. 🚀
 

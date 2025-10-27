@@ -19,7 +19,7 @@ Image: images/archlinuxlampp-xl.webp
 Merhaba! Çok uzun bir süre önce  Arch Linux'a geçiş yaptım. Ancak notlarımı bir türlü bloguma aktarma fırsatım olmadı. Bundan sonraki yazılarım, Arch Linux üzerine olacaktır. Sorular gelirse Ubuntu, Linux Mint gibi dağıtımlar için de ara ara yazılar paylaşacağım.
 
 
-# Apache Kurulumu
+## Apache Kurulumu
 
 Apache kurulumu için aşağıdaki komutları kullanabilirsiniz:
 
@@ -31,7 +31,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 - Burada, `LoadModule unique_id_module modules/mod_unique_id.so` satırının başına `#` işareti koyuyoruz. Ardından kaydedip çıkıyoruz.
 -  Nano kullanıyorsanız, F3 ile kaydedip, F2 ile çıkabilirsiniz. Nano yerine gedit, Sublime veya mousepad gibi diğer metin editörlerini de kullanabilirsiniz.
 
-# MySQL & MariaDB Kurulumu
+## MySQL & MariaDB Kurulumu
 
 MySQL ve MariaDB kurulumu için şu adımları takip edin:
 
@@ -47,7 +47,7 @@ mysql_secure_installation
 
 - `mysql_secure_installation` komutunu çalıştırdıktan sonra, "change the root password" seçeneğine `y` tuşuna basarak şifrenizi belirleyin. Şifreyi unutmayacağınız bir şekilde girmeniz önemlidir. Diğer tüm seçeneklere `Y` diyebilirsiniz. Sistem diliniz Türkçe ise `E` tuşuna basarak devam edebilirsiniz. Eğer "Thanks for using MariaDB" yazısını görürseniz, kurulum tamamlanmıştır.
 
-# PHP Kurulumu
+## PHP Kurulumu
 
 PHP kurulumu için şu komutları kullanabilirsiniz:
 
@@ -71,7 +71,7 @@ Include conf/extra/php7_module.conf
 Include conf/extra/phpmyadmin.conf
 ```
 
-# PHPMyAdmin Kurulumu
+## PHPMyAdmin Kurulumu
 
 PHPMyAdmin kurulumu için şu adımları takip edin:
 
@@ -132,7 +132,7 @@ Ardından Apache'yi yeniden başlatın:
 sudo systemctl restart httpd
 ```
 
-# Ekstra Eklentiler
+## Ekstra Eklentiler
 
 PHP ile düzgün çalışması için bazı ek eklentileri yüklememiz gerekecek:
 
@@ -154,7 +154,7 @@ Eğer `error` ifadesini görmüyorsanız, kurulumunuz başarıyla tamamlanmışt
 PHP 7.2.2 (cli) (built: Jan 30 2018 19:18:38) ( NTS )
 ```
 
-# Ekstra Bilgiler
+## Ekstra Bilgiler
 
 Projelerinizi kaydedeceğiniz dizin: **/srv/http/**
 

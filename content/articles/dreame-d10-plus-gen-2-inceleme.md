@@ -13,7 +13,7 @@ Image: images/dreame-d10-plus-gen-2-xl.webp
 
 !!! warning "Reklam Değildir Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Dreame ve Roborge markalarıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir."
 
-# Dreame D10 Plus Gen 2 İnceleme
+## Dreame D10 Plus Gen 2 İnceleme
 
 Herkese merhaba! 🎉 Robot süpürge deneyimimi sizlerle paylaşmak istiyorum. Daha önce hiç robot süpürge kullanmamış biri olarak, başlangıçta bazı çekincelerim vardı. Ancak Dreame D10 Plus Gen 2'yi aldıktan sonra tüm endişelerim kayboldu. İşte deneyimlerim ve ürünün öne çıkan özellikleri! 👇
 

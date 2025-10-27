@@ -11,7 +11,7 @@ Template: article
 Image: images/arch-linux-flutter-kurulumu-xl.webp
 
 
-# Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi
+## Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi
 
 ## 🎯 Giriş
 

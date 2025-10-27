@@ -12,7 +12,7 @@ Bluesky_Link: https://bsky.app/profile/yuceltoluyag.bsky.social/post/3lyh3gmmjn2
 
 ---
 
-# Autocut ile Otomatik Video Kesme 🎬
+## Autocut ile Otomatik Video Kesme 🎬
 
 ## Giriş 📝
 
@@ -135,7 +135,7 @@ autocut -c /home/friday13/Videos/editle.mp4 /home/friday13/Videos/editle.srt /ho
 
 ## 7️⃣ Markdown Örneği
 
-# Autocut Video Kesim Akışı
+## Autocut Video Kesim Akışı
 
 ## 1️⃣ Orijinal Video
 

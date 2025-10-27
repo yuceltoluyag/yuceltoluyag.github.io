@@ -11,7 +11,7 @@ Series_index: 8
 Template: article
 Image: images/git-gpg-imzali-commit-vscode-arch-xl.webp
 
-# VSCode ve Arch Linux Üzerinde GPG İmzalı Commit Sorunlarını Çözme Rehberi
+## VSCode ve Arch Linux Üzerinde GPG İmzalı Commit Sorunlarını Çözme Rehberi
 
 GPG anahtarıyla commit imzalamak, Git dünyasında güvenliğinizi ve güvenilirliğinizi artırmanın en önemli yollarından biri. Ancak Arch Linux üzerinde i3wm gibi minimalist bir pencere yöneticisi kullanırken ve işi VSCode terminalinden yürütmeye çalışırken bazı özel sorunlarla karşılaşabilirsiniz. Özellikle de VSCode içinde herhangi bir AI eklentisi aktifken commit atmak istediğinizde şifre ekranı doğru çalışmayabiliyor. Rakamlar veya bazı tuşlar basılmıyor gibi davranıyor; defalarca bastığınız halde algılanmıyor. 🙄
 
