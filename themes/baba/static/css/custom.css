@@ -126,33 +126,25 @@ article.article h3 {
   margin-top: 0.75em;
 }
 
-.search-modal.show,
-.article-category:hover,
-.article-date:hover,
-.article-list-meta a:hover,
-.article-list-title a:hover,
-.article-nav-arrow:hover span,
-.cyberpunk-author-link:hover,
-.cyberpunk-category-link:hover,
-.cyberpunk-hero-meta a:hover,
-.footer-links a:hover,
-.hero-meta a:hover,
-.nav-arrow:hover span,
-.back-to-top-button,
-.footer-credit,
-.pagination li,
-.back-to-top-button.show,
-.back-to-top-button {
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-  border: none;
-  border-radius: 50%;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+
+
+/* Arama modalı için özel stiller */
+.search-modal.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
 }
+
+.footer-credit {
+  padding-top: 1rem;
+  text-align: center;
+  color: var(--pico-muted-color);
+  font-size: 0.8rem;
+}
+
+
 .article-list-title a,
 .tag-item {
   color: var(--pico-color);
@@ -813,6 +805,7 @@ li {
 .article-ad-section {
   border-radius: 10px;
   padding: 1.5rem;
+  min-width: 250px;
 }
 .related-posts-list {
   padding: 0 !important;
@@ -2267,6 +2260,7 @@ li::marker {
 .article-ad-section {
   text-align: center;
   margin: 2rem 0;
+  min-width: 250px;
 }
 .article-content-grid {
   display: block;

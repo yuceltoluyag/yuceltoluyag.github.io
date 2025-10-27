@@ -1,5 +1,7 @@
 {% extends "base.html" %} {% block title %}Bağış Yap{% endblock title %} {%
-block head %} {{ super() }} {% endblock %} {% block seo %}
+block head %} {{ super() }} 
+<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/donate.css">
+{% endblock %} {% block seo %}
 <meta
   name="description"
   content="Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
@@ -11,7 +13,9 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
     <!-- Hero Bölümü -->
     <div class="donate-container">
       <div class="donate-headings">
-        <h1>Bağış Yap</h1>
+        <h1>
+          <i class="fa-solid fa-heart" style="color: #e74c3c;"></i> Bağış Yap
+        </h1>
         <p>
           Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek
           istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz.
@@ -22,14 +26,16 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
         <!-- Neden Bağış? -->
         <article class="donate-section pico-card">
           <header>
-            <h2>Neden Bağış?</h2>
+            <h2><i class="fa-solid fa-question-circle"></i> Neden Bağış?</h2>
           </header>
-          {% for item in [ "Daha fazla içerik üretebiliyorum", "Daha kaliteli
-          eğitim videoları hazırlayabiliyorum", "Açık kaynak projelere daha
-          fazla zaman ayırabiliyorum", "Teknolojik altyapımı ve ekipmanlarımı
-          geliştirebiliyorum", "Topluluk için daha fazla etkinlik ve proje
-          düzenleyebiliyorum", "Yeni teknolojileri araştırıp deneyimlemeye daha
-          fazla vakit ayırabiliyorum", ] %}
+          {% for item in [
+            "Daha fazla içerik üretebiliyorum",
+            "Daha kaliteli eğitim videoları hazırlayabiliyorum", 
+            "Açık kaynak projelere daha fazla zaman ayırabiliyorum",
+            "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum",
+            "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum",
+            "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
+          ] %}
           <figure class="donate-figure">
             <div class="donate-figure-grid">
               <i class="fa-solid fa-check" aria-hidden="true"></i>
@@ -42,57 +48,61 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
         <!-- Bağış Seçenekleri -->
         <article class="donate-options pico-card">
           <header>
-            <h2>Bağış Seçenekleri</h2>
+            <h2><i class="fa-solid fa-hand-holding-heart"></i> Bağış Seçenekleri</h2>
           </header>
-          {% if SOCIAL.bynogame %}
-          <a
-            href="{{ SOCIAL.bynogame }}"
-            class="donate-option papara-option"
-            data-tooltip="Hızlı ve Güvenli Bağış"
-            aria-label="Hızlı ve Güvenli Bağış"
-          >
-            <article class="donate-option-card">
-              <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
-              <h3>ByNoGame</h3>
-            </article>
-          </a>
-          {% endif %} {% if SOCIAL.github_sponsor %}
-          <a
-            href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}"
-            class="donate-option github-option"
-            data-tooltip="Aylık Destek"
-          >
-            <article class="donate-option-card">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-              <h3>GitHub Sponsors</h3>
-            </article>
-          </a>
-          {% endif %}
+          <div class="donate-options-grid">
+            {% if SOCIAL.bynogame %}
+            <a
+              href="{{ SOCIAL.bynogame }}"
+              class="donate-option papara-option"
+              data-tooltip="Hızlı ve Güvenli Bağış"
+              aria-label="Hızlı ve Güvenli Bağış"
+            >
+              <article class="donate-option-card">
+                <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+                <h3>ByNoGame</h3>
+                <p>Türk lirası ile hızlı bağış</p>
+              </article>
+            </a>
+            {% endif %} {% if SOCIAL.github_sponsor %}
+            <a
+              href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}"
+              class="donate-option github-option"
+              data-tooltip="Aylık Destek"
+            >
+              <article class="donate-option-card">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <h3>GitHub Sponsors</h3>
+                <p>Aylık düzenli destek</p>
+              </article>
+            </a>
+            {% endif %}
+          </div>
         </article>
       </div>
 
       <!-- Kripto Bölümü -->
       <article class="crypto-section pico-card">
         <header>
-          <h2>Kripto Para Bağışları</h2>
+          <h2><i class="fa-solid fa-coins"></i> Kripto Para Bağışları</h2>
         </header>
 
         <article class="crypto-notice" aria-label="Ağ bilgisi">
           <div class="crypto-notice-content">
             <i class="fa-solid fa-circle-info"></i>
             <div>
-              <strong> Önemli:</strong>
+              <strong> <i class="fa-solid fa-exclamation-circle"></i> Önemli:</strong>
               <span>Tüm adresler <kbd>BSC / BEP20</kbd> ağını kullanır.</span>
               <footer>
                 Farklı ağlar için lütfen
                 <a href="/hakkimda" role="button" class="outline"
-                  >iletişime geçin</a
-                >
+                  >iletişime geçin</a>
               </footer>
             </div>
           </div>
         </article>
-<hr> </hr>
+        
+        <hr>
        <div class="crypto-grid">
           {% for coin in [ {'name': 'Bitcoin (BTC)', 'id': 'btc',
           'qr_code_image': 'btc.jpg'}, {'name': 'Ethereum (ETH)', 'id': 'eth',
@@ -121,8 +131,10 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
                     class="close"
                     aria-label="Close dialog"
                     onclick="closeModal('modal-{{ coin.id }}')"
-                  ></button>
-                  {{ coin.name }}
+                  >
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                  <h3>{{ coin.name }}</h3>
                 </header>
                 <img
                   src="{{ SITEURL }}/images/{{ coin.qr_code_image }}"
@@ -136,14 +148,14 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
         </div>
 
         <details class="crypto-details">
-          <summary>Bağış Adresi</summary>
+          <summary><i class="fa-solid fa-wallet"></i> Cüzdan Adresini Göster</summary>
           <div class="crypto-address-container">
             <kbd class="crypto-address">0x012e2a56828990ef0aa97de827297456aabccc63</kbd>
             <button
               class="outline copy-button"
-              onclick="navigator.clipboard.writeText('0x012e2a56828990ef0aa97de827297456aabccc63')"
+              onclick="copyToClipboard('0x012e2a56828990ef0aa97de827297456aabccc63')"
             >
-              <i class="fa-solid fa-copy"></i>
+              <i class="fa-solid fa-copy"></i> Kopyala
             </button>
           </div>
         </details>
@@ -151,50 +163,6 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
     </div>
   </article>
 </div>
-
-<style>
-  .grid {
-    gap: var(--spacing);
-  }
-  figure {
-    margin: 0;
-  }
-  /* Modal stillerini ekle */
-  dialog article {
-    margin: 0;
-    padding: 1rem;
-  }
-  dialog article header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  .notice {
-    background: var(--card-background-color);
-    padding: var(--spacing);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--primary);
-    margin-bottom: var(--spacing);
-  }
-  .notice-content {
-    display: flex;
-    gap: var(--spacing);
-    align-items: flex-start;
-  }
-  .notice i {
-    color: var(--primary);
-    font-size: 1.2rem;
-  }
-  .notice footer {
-    margin-top: 0.5rem;
-    font-size: 0.9em;
-  }
-  .notice kbd {
-    background: var(--primary);
-    color: var(--primary-inverse);
-  }
-</style>
 
 <script>
   // Modal işlemleri
@@ -214,14 +182,18 @@ block head %} {{ super() }} {% endblock %} {% block seo %}
   });
 
   // Kopyalama işlemi
-  document.querySelectorAll("button.outline").forEach((button) => {
-    button.addEventListener("click", () => {
-      const text = "0x012e2a56828990ef0aa97de827297456aabccc63";
-      navigator.clipboard.writeText(text).then(() => {
-        button.classList.add("copied");
-        setTimeout(() => button.classList.remove("copied"), 2000);
-      });
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      // Kopyalama işlemi başarılı
+      const button = event.target.closest('.copy-button');
+      const originalHTML = button.innerHTML;
+      button.innerHTML = '<i class="fa-solid fa-check"></i> Kopyalandı!';
+      setTimeout(() => {
+        button.innerHTML = originalHTML;
+      }, 2000);
+    }).catch(err => {
+      console.error('Kopyalama başarısız: ', err);
     });
-  });
+  }
 </script>
 {% endblock content %}

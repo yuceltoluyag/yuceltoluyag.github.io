@@ -1,0 +1,27 @@
+.back-to-top-button {
+  z-index: 999;
+  background-color: var(--pico-primary-background);
+  width: 50px;
+  height: 50px;
+  color: var(--pico-primary-inverse);
+  box-shadow: var(--pico-card-box-shadow);
+  opacity: 0;
+  visibility: hidden;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity .3s,visibility .3s,transform .3s;
+  display: flex;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  transform: translateY(10px);
+}
+
+.back-to-top-button.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
