@@ -126,6 +126,8 @@ article.article h3 {
   margin-top: 0.75em;
 }
 
+
+
 /* Arama modalı için özel stiller */
 .search-modal.show {
   display: block;
@@ -133,7 +135,6 @@ article.article h3 {
   visibility: visible;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
-}
 }
 
 .footer-credit {
