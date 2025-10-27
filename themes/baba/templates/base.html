@@ -55,7 +55,7 @@
         href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css"
       />
     </noscript>
-    
+
     <link
       rel="preload"
       href="https://kit.fontawesome.com/1669dfc729.js"
@@ -134,10 +134,7 @@
     <link rel="me" href="https://github.com/{{ SOCIAL.github }}" />
     {% if SOCIAL.mastodon %}
     <link rel="me" href="{{ SOCIAL.mastodon }}" />
-    {% endif %}
-
-
-    {% endblock head %}
+    {% endif %} {% endblock head %}
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
@@ -227,7 +224,6 @@
       </div>
     </div>
     <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
-
 
     <script>
       const themeSwitcher = document.getElementById("theme-switcher");

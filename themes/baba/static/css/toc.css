@@ -1,0 +1,179 @@
+/* TOC Floating Action Button and Menu Styles */
+
+.toc-fab-container {
+  position: fixed;
+  bottom: 90px; /* Positioned above the 'back-to-top' button */
+  right: 20px;
+  z-index: 1050;
+}
+
+#toc-fab-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: var(--pico-card-box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  /* Using Pico.css variables for consistency */
+  background-color: var(--pico-primary-background);
+  border: 1px solid var(--pico-primary-border);
+  color: var(--pico-primary-inverse);
+  transition: transform 0.2s ease-in-out, background-color 0.2s;
+}
+
+#toc-fab-btn:hover {
+  background-color: var(--pico-primary-hover-background);
+  transform: scale(1.05);
+}
+
+/* The collapsible TOC menu itself */
+#toc-collapsible-menu {
+  position: absolute;
+  bottom: 65px; /* Position it above the button */
+  right: 0;
+  width: 320px;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 1.25rem;
+  border-radius: var(--pico-border-radius);
+  background-color: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+  box-shadow: var(--pico-card-box-shadow);
+  z-index: -1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+  visibility: hidden;
+  /* Hide scrollbar visually */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* For Chrome, Safari, and Opera */
+#toc-collapsible-menu::-webkit-scrollbar {
+  display: none;
+}
+
+#toc-collapsible-menu.active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  z-index: 1051; /* Bring to front when active */
+}
+
+/* Styles adapted from your example for the list */
+
+/* Override Pico's flex direction for the TOC menu only */
+#toc-collapsible-menu #toc > ul {
+    flex-direction: column;
+}
+
+#toc-collapsible-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#toc-collapsible-menu li {
+  /* display: block is not needed when parent is flex-direction: column */
+  padding: 0;
+  margin: 0;
+}
+
+#toc-collapsible-menu .nested {
+  display: none;
+  padding-left: 1em; /* Indent nested lists */
+  background-color: var(--pico-muted-background-color); /* Subtle background for expanded nested menus */
+  border-radius: var(--pico-border-radius);
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+#toc-collapsible-menu .expanded > .nested {
+  display: block;
+}
+
+/* Reset button styles within the TOC list */
+#toc-collapsible-menu button {
+  all: unset; /* Reset all browser default button styles */
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.4rem 0.2rem;
+  color: var(--pico-color) !important; /* Force text color */
+  transition: color 0.2s, background-color 0.2s, transform 0.2s; /* Added transform for animation */
+  border-radius: var(--pico-border-radius);
+}
+
+#toc-collapsible-menu button:hover {
+  color: var(--pico-primary) !important;
+  background-color: var(--pico-muted-background-color) !important;
+  transform: translateX(5px) !important; /* Subtle slide animation */
+}
+
+
+#toc-collapsible-menu .arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  width: 1em;
+  text-align: center;
+}
+
+#toc-collapsible-menu .expanded > button .arrow {
+  transform: rotate(90deg);
+}
+
+/* Standardize Fonts */
+#toc-collapsible-menu button {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+#toc-collapsible-menu .h1-btn {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#toc-collapsible-menu .h2-btn {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+#toc-collapsible-menu .article-list li {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--pico-muted-color);
+  padding: 0.2em 0 0.2em 1em;
+  margin: 0;
+}
+
+#toc-collapsible-menu a.toc-href { /* Changed selector */
+  color: var(--pico-muted-color) !important; /* Force text color */
+  text-decoration: none !important; /* Underline none */
+  transition: color 0.2s, background-color 0.2s, transform 0.2s; /* Added transform for animation */
+  display: block; /* Ensure link takes full clickable area */
+  padding: 0.4rem 0.2rem; /* Match button padding */
+  border-radius: var(--pico-border-radius);
+}
+
+#toc-collapsible-menu a.toc-href:hover { /* Changed selector */
+  color: var(--pico-primary) !important;
+  background-color: var(--pico-muted-background-color) !important;
+  text-decoration: none !important; /* Ensure no underline on hover */
+  transform: translateX(5px) !important; /* Subtle slide animation */
+}
+
+/* Styles for scrollspy feature */
+#toc-collapsible-menu a.readed:not(.active):before {
+  content: '✅ ';
+}
+
+#toc-collapsible-menu a.active:before {
+  content: '👀 ';
+}
