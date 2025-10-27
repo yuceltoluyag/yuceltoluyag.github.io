@@ -139,19 +139,40 @@ article.article h3 {
 .hero-meta a:hover,
 .nav-arrow:hover span,
 .back-to-top-button,
-.footer-credit,
 .pagination li,
-.back-to-top-button.show,
-.back-to-top-button {
-  bottom: 20px;
+.back-to-top-button.show {
+  position: fixed;
+  bottom: 30px;
   right: 20px;
   z-index: 999;
   border: none;
   border-radius: 50%;
   height: 50px;
+  width: 50px;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  display: flex;
+  background-color: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  box-shadow: var(--pico-card-box-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.footer-credit {
+  padding-top: 1rem;
+  text-align: center;
+  color: var(--pico-muted-color);
+  font-size: 0.8rem;
+}
+
+.back-to-top-button.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 .article-list-title a,
 .tag-item {
