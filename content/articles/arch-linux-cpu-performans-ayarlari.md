@@ -3,6 +3,8 @@ Date: 2025-07-28 09:30
 Modified: 2025-08-11 22:59
 Category: Donanım
 Tags: arch linux, cpupower, intel_pstate, cpu frekansı, güç yönetimi, i3wm, performans ayarı
+Series: ArchLinuxCPU
+Series_index: 1
 Slug: arch-linux-cpu-performans-ayarlari
 Authors: yuceltoluyag
 Status: published

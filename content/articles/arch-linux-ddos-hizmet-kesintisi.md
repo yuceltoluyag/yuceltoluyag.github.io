@@ -46,13 +46,13 @@ Bu blog yazısı, Türk Arch kullanıcılarına hem durumu özetlemeyi hem de ke
 
   - AUR paketlerine erişim mümkün olmadığında, GitHub’daki resmi AUR yansı deposundan paketler manuel olarak klonlanabilir:
 
-  ```bash
+```bash
     git clone --branch <package_name> --single-branch https://github.com/archlinux/aur.git <package_name>
-  ```
+```
 
-  [responsive_img src="/images/arch-linux-ddos-hizmet-kesintisi-xl.webp" alt="Arch Linux DDoS" /]
+[responsive_img src="/images/arch-linux-ddos-hizmet-kesintisi-xl.webp" alt="Arch Linux DDoS" /]
 
-  - Paketleri klonladıktan sonra `makepkg -si` komutuyla kurulumu gerçekleştirebilirsiniz.
+- Paketleri klonladıktan sonra `makepkg -si` komutuyla kurulumu gerçekleştirebilirsiniz.
 
 - **Wiki Erişimi**:
 
@@ -73,7 +73,7 @@ Arch Linux kullanıcıları olarak şu anda karşılaşılan durum can sıkıcı
 
 AUR erişimi için GitHub klonları, ISO ve paketler için yansılar hâlâ erişilebilir durumda. Ayrıca bütün işlemler sırasında güvenlik imzası doğrulamasını ihmal etmeyin.
 
-- Archlinux sunucu durumlarını [buradan](https://status.archlinux.org/){: target="_blank" rel="noopener noreferrer"} takip edebilirsiniz.
+- Archlinux sunucu durumlarını [buradan](https://status.archlinux.org/){: target="\_blank" rel="noopener noreferrer"} takip edebilirsiniz.
 
 ---
 

@@ -1,0 +1,84 @@
+/* Modern language switcher styles with flags */
+.translations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.translations a {
+  padding: 0.5rem 1rem;
+  border-radius: var(--pico-border-radius);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  text-indent: -9999px; /* Hide text initially */
+  position: relative;
+}
+
+.translations a::before {
+  display: inline-block;
+  margin-right: 0;
+  text-indent: 0; /* Show flag */
+  font-size: 1.2em;
+}
+
+.translations a.tr::before {
+  content: "🇹🇷";
+}
+
+.translations a.en::before {
+  content: "🇺🇸";
+}
+
+.translations a.active {
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  font-weight: var(--pico-font-weight);
+}
+
+.translations a:not(.active) {
+  background: var(--pico-muted-background-color);
+  color: var(--pico-color);
+  border: 1px solid var(--pico-muted-border-color);
+}
+
+.translations a:not(.active):hover {
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  border-color: var(--pico-primary-border);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .translations {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .translations a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .translations a:not(.active) {
+  background: var(--pico-card-background-color);
+  border: 1px solid var(--pico-card-border-color);
+}
+
+[data-theme="dark"] .translations a:not(.active):hover {
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+  border-color: var(--pico-primary-border);
+}

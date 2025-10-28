@@ -1,183 +1,174 @@
-Title: Arch Linux'ta Conda Kurulumu ve Yönetimi
-Date: 2025-02-28 10:00 10:00
+Title: Arch Linux Conda Installation and Management
+Date: 2025-02-28 10:00
 Modified: 2025-08-11 22:59
 Category: Yazılım Geliştirme
 Tags: archlinux, python, conda, miniconda, yazılım
 Slug: arch-linux-conda-kurulumu
 Authors: yuceltoluyag
-Summary: Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken adımlar ve en iyi uygulamalar.
-Translation: false
+Summary: A step-by-step guide to installing and managing Conda on Arch Linux with best practices.
+Translation: true
 Status: published
 Template: article
+Lang: en
 Image: images/conda-xl.webp
 
-## Arch Linux'ta Conda Kurulumu ve Yönetimi
+## Arch Linux Conda Installation and Management
 
-Conda, yazılım paketlerini ve ortamlarını yönetmek için kullanılan popüler bir açık kaynaklı araçtır. Python geliştirme ortamlarında özellikle kullanılır, ancak başka diller için de destek sunar. Bu makalede, Conda'nın kurulumu ve temel kullanımı adım adım açıklanacak, ayrıca Arch Linux üzerinde en verimli şekilde Conda nasıl kurulmalı ve yönetilmeli, en iyi uygulamalarla birlikte ele alınacaktır.
+Conda is a popular open-source tool used to manage software packages and environments. It is especially used in Python development environments, but also offers support for other languages. In this article, we will explain step by step how to install and use Conda, and also cover how to install and manage Conda most efficiently on Arch Linux with best practices.
 
-## 1. Conda Kurulumu
+## 1. Installing Conda
 
-Conda, Anaconda veya Miniconda dağıtımlarını kullanarak kurulabilir. Miniconda, Anaconda'nın daha hafif bir versiyonudur ve yalnızca Conda yönetici aracını içerir. Arch Linux gibi sistemlerde Conda'yı kurarken dikkat edilmesi gereken bazı iyi uygulamalar vardır. İşte başlangıç noktası:
+Conda can be installed using either the Anaconda or Miniconda distributions. Miniconda is a lighter version of Anaconda and contains only the Conda manager tool. There are some good practices to consider when installing Conda on systems like Arch Linux. Here's the starting point:
 
-### 1.1 Miniconda Kurulumu
+### 1.1 Installing Miniconda
 
-Miniconda, Conda'nın temel kurulumunu sağlar ve başlangıçta gereksiz paketlerden kaçınmak için tercih edilebilir. Miniconda'yı kurmak için şu adımları izleyebilirsiniz:
+Miniconda provides the basic installation of Conda and can be preferred to avoid unnecessary packages at the beginning. You can follow these steps to install Miniconda:
 
-1. Miniconda'yı [resmi web sitesinden](https://docs.conda.io/en/latest/miniconda.html){: target="\_blank" rel="noopener noreferrer"} indirin.
-2. Terminali açın ve Miniconda kurulum dosyasını çalıştırın:
+1. Download Miniconda from the [official website](https://docs.conda.io/en/latest/miniconda.html){: target="_blank" rel="noopener noreferrer"}.
+2. Open the terminal and run the Miniconda installation file:
 
 ```bash
   bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
-3. Kurulum sırasında size bir lisans sözleşmesi sunulacaktır. Kabul etmek için `yes` yazın.
-4. Kurulum klasörünü seçin. Varsayılan olarak, Miniconda `~/miniconda3` dizinine kurulacaktır. Eğer bu dizini değiştirmek isterseniz, kurulum sırasında farklı bir dizin belirtmeniz yeterlidir.
+3. During installation, you will be presented with a license agreement. Type `yes` to accept.
+4. Select the installation folder. By default, Miniconda will be installed in the `~/miniconda3` directory. If you want to change this directory, you can specify a different directory during installation.
 
-   **Öneri**: Miniconda'yı varsayılan dizinden farklı bir dizine kurmak istiyorsanız, kurulum sırasında şu komutu kullanabilirsiniz:
+   **Recommendation**: If you want to install Miniconda in a directory other than the default, you can use the following command during installation:
 
 ```bash
-  bash Miniconda3-latest-Linux-x86_64.sh -p /yeni/dizin/miniconda3
+  bash Miniconda3-latest-Linux-x86_64.sh -p /new/directory/miniconda3
 ```
 
-5. Kurulum tamamlandığında, Conda'yı etkinleştirmek için terminali yeniden başlatın veya aşağıdaki komutu çalıştırın:
+5. After installation is complete, restart the terminal to activate Conda or run the following command:
 
 ```bash
   source ~/.bashrc
 ```
 
-### 1.2 Conda'nın Versiyonunu Kontrol Etme
+### 1.2 Checking Conda Version
 
-Kurulumdan sonra Conda'nın doğru şekilde yüklendiğinden emin olmak için şu komutu kullanabilirsiniz:
+After installation, you can use the following command to make sure Conda has been installed correctly:
 
 ```bash
 conda --version
-
 ```
 
-Eğer doğru şekilde kurulduysa, Conda versiyonunu görebilirsiniz.
+If installed correctly, you can see the Conda version.
 
-## 2. Conda'yı Güncelleme
+## 2. Updating Conda
 
-Conda'yı güncellemek için şu komutu kullanabilirsiniz:
+To update Conda, you can use the following command:
 
 ```bash
 conda update -n base -c defaults conda
-
 ```
 
-Bu komut, `base` ortamında Conda'yı günceller ve en son sürümü indirir.
+This command updates Conda in the `base` environment and downloads the latest version.
 
-## 3. Conda Ortamları Yönetme
+## 3. Managing Conda Environments
 
-Conda, farklı projeler için bağımsız ortamlar oluşturmanıza olanak tanır. Bu sayede, projelerinizde farklı Python sürümleri veya paketler kullanabilirsiniz.
+Conda allows you to create independent environments for different projects. This way, you can use different Python versions or packages in your projects.
 
-### 3.1 Yeni Bir Ortam Oluşturma
+### 3.1 Creating a New Environment
 
-Yeni bir Conda ortamı oluşturmak için şu komutu kullanabilirsiniz:
+You can use the following command to create a new Conda environment:
 
 ```bash
 conda create -n myenv python=3.10
-
 ```
 
-Burada `myenv`, ortamın adıdır ve `python=3.10` ifadesi Python 3.10 sürümünü içerir.
+Here `myenv` is the name of the environment and `python=3.10` includes Python version 3.10.
 
-### 3.2 Ortamı Etkinleştirme
+### 3.2 Activating an Environment
 
-Oluşturduğunuz ortamı etkinleştirmek için şu komutu kullanabilirsiniz:
+You can use the following command to activate the environment you created:
 
 ```bash
 conda activate myenv
-
 ```
 
-### 3.3 Ortamı Listeleme
+### 3.3 Listing Environments
 
-Tüm Conda ortamlarını listelemek için şu komutu kullanabilirsiniz:
+You can use the following command to list all Conda environments:
 
 ```bash
 conda env list
-
 ```
 
-Bu komut, mevcut ortamların bir listesini döndürecektir.
+This command will return a list of existing environments.
 
-## 4. Paket Yönetimi
+## 4. Package Management
 
-Conda, yazılım paketlerini kolayca yönetmek için kullanılır. Yeni paketler yükleyebilir, güncelleyebilir veya silebilirsiniz.
+Conda is used to easily manage software packages. You can install, update or delete new packages.
 
-### 4.1 Paket Yükleme
+### 4.1 Installing Packages
 
-Bir paketi yüklemek için şu komutu kullanabilirsiniz:
+You can use the following command to install a package:
 
 ```bash
 conda install numpy
-
 ```
 
-Bu komut, NumPy paketini yükleyecektir.
+This command will install the NumPy package.
 
-### 4.2 Paket Güncelleme
+### 4.2 Updating Packages
 
-Mevcut bir paketi güncellemek için şu komutu kullanabilirsiniz:
+You can use the following command to update an existing package:
 
 ```bash
 conda update numpy
-
 ```
 
-### 4.3 Paket Kaldırma
+### 4.3 Removing Packages
 
-Bir paketi kaldırmak için şu komutu kullanabilirsiniz:
+You can use the following command to remove a package:
 
 ```bash
 conda remove numpy
-
 ```
 
-## 5. En İyi Kurulum Uygulamaları
+## 5. Best Installation Practices
 
-Arch Linux gibi bir sistemde Conda'nın kurulumunu yaparken bazı iyi uygulamalara dikkat etmek gerekir. İşte bu konuda dikkat edilmesi gereken bazı önemli noktalar:
+When installing Conda on a system like Arch Linux, it is important to pay attention to some good practices. Here are some important points to consider on this subject:
 
-### 5.1 Sistem Genelinde Kurulumdan Kaçının
+### 5.1 Avoid System-wide Installation
 
-**Neden Sistem Genelinde Kurulumdan Kaçınmalıyız?**
+**Why Should We Avoid System-wide Installation?**
 
-Anaconda'yı sistem genelinde kurmak, sisteminizin düzenini bozabilir. Bunun yerine, Anaconda'yı kendi `~/.anaconda` dizininize kurarak sadece gerektiğinde etkinleştirmeniz çok daha sağlıklıdır. Sistem genelinde kurulum, genellikle karışıklık yaratabilir ve farklı Python sürümleri veya paketleri arasında uyumsuzluklara yol açabilir. Sistemdeki diğer araçlarla da çakışmalar yaşanabilir.
+Installing Anaconda system-wide can disrupt your system's order. Instead, it is much healthier to install Anaconda in your own `~/.anaconda` directory and activate it only when needed. System-wide installation can generally cause confusion and cause incompatibilities between different Python versions or packages. Conflicts can also occur with other tools in the system.
 
-**Önerilen Yöntem**: Conda'yı kullanıcı dizininize kurarak, sadece gerekli olduğunda kullanmak en iyi yaklaşımdır. Bu yöntem, sistemi temiz tutmanıza yardımcı olur ve paket yönetimini daha kontrollü hale getirir.
+**Recommended Method**: Installing Conda in your user directory and using it only when necessary is the best approach. This method helps you keep your system clean and makes package management more controlled.
 
-Kurulum sırasında "Conda'yı başlatmak ister misiniz?" sorusuna **hayır** demek önemlidir. Bu, `.bashrc` veya `.zshrc` gibi dosyalarınıza dokunmaz ve Conda'yı yalnızca gerektiğinde şu komutla etkinleştirirsiniz:
+It is important to say **no** to the question "Do you want to start Conda?" during installation. This does not touch your `.bashrc` or `.zshrc` files and you activate Conda only when needed with the following command:
 
 ```bash
 source <path_to_conda>/bin/activate
-
 ```
 
-Bu, Conda'nın sisteminizde izole bir şekilde çalışmasını sağlar, böylece düzeninizi korur.
+This ensures that Conda runs in an isolated manner on your system, thus preserving your order.
 
-### 5.2 AUR Üzerinden Kurulum (Approach 2)
+### 5.2 Installation via AUR (Approach 2)
 
-Eğer her şeyinizi AUR (Arch User Repository) üzerinden kuruyorsanız, pacman ile kurulum yaparak her şeyin düzgün bir şekilde takip edilmesini sağlarsınız. Ancak, bu yöntemle Conda sistem genelinde kurulur ve `/usr/opt/bin` veya `/usr/opt/lib` gibi dizinlere yerleşir. Bu, Conda'yı doğru şekilde kullanmayı zorlaştırabilir.
+If you install everything through AUR (Arch User Repository), you can ensure that everything is tracked properly by installing with pacman. However, this method installs Conda system-wide and places it in directories such as `/usr/opt/bin` or `/usr/opt/lib`. This can make it difficult to use Conda properly.
 
-**Yine de Arch Linux'ta her şeyin kolayca geri alınabilmesi sayesinde, sisteminizde herhangi bir karmaşa oluşursa, hızlıca kaldırıp tekrar kurabilirsiniz. Ancak, her zaman daha kontrollü bir kurulum önerilir.**
+**Still, thanks to the fact that everything can be easily reversed on Arch Linux, if any confusion occurs in your system, you can quickly uninstall and reinstall it. However, a more controlled installation is always recommended.**
 
-### 5.3 Conda Base Ortamını Yönetmek
+### 5.3 Managing the Conda Base Environment
 
-Conda'yı kurduktan sonra, terminalde otomatik olarak base ortamının etkinleşmesi bazen kafa karıştırıcı olabilir. Bu, terminalde çalıştığınızda bazen beklenmeyen sonuçlar doğurabilir. Eğer `base` ortamının otomatik olarak etkinleşmesini istemiyorsanız, şu komutla devre dışı bırakabilirsiniz:
+After installing Conda, the automatic activation of the base environment in the terminal can sometimes be confusing. This can sometimes lead to unexpected results when you are working in the terminal. If you don't want the `base` environment to be activated automatically, you can disable it with the following command:
 
 ```bash
 conda deactivate
-
 ```
 
-Ya da `.bashrc` dosyanıza `conda deactivate` ekleyerek her terminal açıldığında otomatik olarak `base` ortamının devre dışı olmasını sağlayabilirsiniz.
+Or you can add `conda deactivate` to your `.bashrc` file to automatically disable the `base` environment every time the terminal opens.
 
-## 6. Sonuç
+## 6. Conclusion
 
-Bu makalede Conda'nın kurulumu, güncellenmesi, ortam yönetimi ve paket yönetimi hakkında temel bilgiler paylaşıldı. Arch Linux'ta Conda kurulumunda en iyi uygulamaları benimsemek, sisteminizin düzenini korumaya yardımcı olur ve yazılım geliştirme sürecinizi daha verimli hale getirir. Conda'yı etkili bir şekilde kullanarak projelerinizde bağımsız ortamlar oluşturabilir ve Python geliştirme deneyiminizi bir üst seviyeye taşıyabilirsiniz.
+In this article, basic information about Conda installation, updating, environment management and package management was shared. Adopting best practices in Conda installation on Arch Linux helps maintain the order of your system and makes your software development process more efficient. By using Conda effectively, you can create independent environments in your projects and take your Python development experience to a higher level.
 
-Unutmayın, Conda'yı düzgün kurmak ve kullanmak, uzun vadede başınızı ağrıtacak büyük sorunlardan kaçınmanıza yardımcı olacaktır!
+Remember, installing and using Conda properly will help you avoid major problems that can cause headaches in the long run!
 
 ## Output
 
@@ -242,9 +233,9 @@ Downloading and Extracting Packages:
 
   added / updated specs:
     - defaults/linux-64::_libgcc_mutex==0.1=main[md5=c3473ff8bdb3d124ed5ff11ec380d6f9]
-    - defaults/linux-64::_openmp_mutex==5.1=1_gnu[md5=71d281e9c2192cb3fa425655a8defb85]
+    - defaults/linux-64::_openmp_mutex==5.1=1_gnu[md5=71d281e9c2191741a92f832ea826251c]
     - defaults/linux-64::anaconda-anon-usage==0.5.0=py312hfc0e8ea_100[md5=d47669c8f312a5d2be0a5e095bb8e896]
-    - defaults/linux-64::boltons==23.0.0=py312h06a4308_0[md5=36d464442713fc92897b7da029a08fb6]
+    - defaults/linux-64::boltons==23.0.0=py312h06a4308_0[md5=36d46444273a1cb888821f18ceaa83c4]
     - defaults/linux-64::brotli-python==1.0.9=py312h6a678d5_8[md5=e6bdf1f9e8e1ad3543aaec7e9ecea7e7]
     - defaults/linux-64::bzip2==1.0.8=h5eee18b_6[md5=f21a3ff51c1b271977f53ce956a69297]
     - defaults/linux-64::c-ares==1.19.1=h5eee18b_0[md5=6cfbce52273a1cb888821f18ceaa83c4]
@@ -264,7 +255,7 @@ Downloading and Extracting Packages:
     - defaults/linux-64::icu==73.1=h6a678d5_0[md5=6d09df641fc23f7d277a04dc7ea32dd4]
     - defaults/linux-64::idna==3.7=py312h06a4308_0[md5=03cc59cdabff44c47be0fadffcef003c]
     - defaults/linux-64::jsonpatch==1.33=py312h06a4308_1[md5=c3de52aaf670064f85106ddb32d720d9]
-    - defaults/linux-64::krb5==1.20.1=h143b758_1[md5=cf1accc86321fa25d6b978cc748039ae]
+    - defaults/linux-64::krb5==1.20.1=h143b758_1[md5=cf1accc86321fa25898d67adea2ddbf8]
     - defaults/linux-64::ld_impl_linux-64==2.40=h12ee557_0[md5=ee672b5f635340734f58d618b7bca024]
     - defaults/linux-64::libarchive==3.7.4=hfab0078_0[md5=fcc6a63f95a80a5d2ff9d3e208e9a638]
     - defaults/linux-64::libcurl==8.9.1=h251f7ec_0[md5=8133d8f19e8136a10f9f81180026c859]
@@ -295,9 +286,9 @@ Downloading and Extracting Packages:
     - defaults/linux-64::python==3.12.8=h5148396_0[md5=30e7668cd39635e3b72f86b9053540b1]
     - defaults/linux-64::readline==8.2=h5eee18b_0[md5=be42180685cce6e6b0329201d9f48efb]
     - defaults/linux-64::reproc-cpp==14.2.4=h6a678d5_2[md5=b03aa4903158279f003e7032ab9f5601]
-    - defaults/linux-64::reproc==14.2.4=h6a678d5_2[md5=3c6dbc6c60b3897222d79359343e90fa]
+    - defaults/linux-64::reproc==14.2.4=h6a678d5_2[md5=3c6dbc6c60b3896222d79359343e90fa]
     - defaults/linux-64::requests==2.32.3=py312h06a4308_1[md5=8cc2fc3e2198c2efe6cd890a7684a16a]
-    - defaults/linux-64::ruamel.yaml.clib==0.2.8=py312h5eee18b_0[md5=4e151915d3acb78754b5cd1be029fcd2]
+    - defaults/linux-64::ruamel.yaml.clib==0.2.8=py312h5eee18b_0[md5=4e151915d39415e3b72f86b9053540b1]
     - defaults/linux-64::ruamel.yaml==0.18.6=py312h5eee18b_0[md5=b4817fd05fdab4ce718bf1e7aab55f75]
     - defaults/linux-64::setuptools==75.1.0=py312h06a4308_0[md5=c96d08a405d335f2b0200c0f281b1fdc]
     - defaults/linux-64::sqlite==3.45.3=h5eee18b_0[md5=acf93d6aceb74d6110e20b44cc45939e]

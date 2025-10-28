@@ -149,3 +149,6 @@
     }
 </script>
 {% endif %}
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{% if article %}{{ SITEURL }}/{{ article.url }}{% elif page %}{{ SITEURL }}/{{ page.url }}{% elif category %}{{ SITEURL }}/{{ category.url }}{% elif tag %}{{ SITEURL }}/{{ tag.url }}{% elif author %}{{ SITEURL }}/{{ author.url }}{% else %}{{ SITEURL }}{% endif %}" />

@@ -47,5 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
+        // Add functionality for social share copy button
+        const socialCopyButton = document.querySelector('#copy-url-btn');
+        if (socialCopyButton) {
+            socialCopyButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    const originalHTML = socialCopyButton.innerHTML;
+                    socialCopyButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+                    socialCopyButton.classList.add('copied');
+                    
+                    setTimeout(() => {
+                        socialCopyButton.innerHTML = originalHTML;
+                        socialCopyButton.classList.remove('copied');
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy URL: ', err);
+                });
+            });
+        }
     }, 100); // 100ms delay to ensure content is loaded
 });

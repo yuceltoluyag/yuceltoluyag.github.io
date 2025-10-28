@@ -1,411 +1,469 @@
-{% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {% block head %} {% endblock %} {% block
-content %}
+{% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {%
+block head %} {% endblock %} {% block content %}
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.5/dist/purify.min.js"></script>
 <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <!-- Sidebar bileşenleri -->
-        <aside class="order-2 lg:order-1 lg:col-span-1">
-            <div class="sticky top-20 sidebar-wrapper">
-                <div class="space-y-6">
-                    {% if article.toc %}
-                    <!-- Masaüstü TOC - sadece geniş ekranlarda -->
-                    <div class="card bg-base-100 shadow-xs hidden lg:block">
-                        <div class="card-body p-4">
-                            <h3 class="text-xl font-bold mb-3 flex items-center">
-                                <span class="iconify" data-icon="tabler:list"></span>
-                                <span class="ml-2">İçindekiler</span>
-                            </h3>
-                            <div class="toc-container">
-                                <div class="toc-content max-h-[250px] overflow-y-auto">{{ article.toc }}</div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                    <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
-                    <div class="card bg-base-100 shadow-xs hidden lg:block">
-                        <div class="card-body p-4">
-                            <h3 class="text-xl font-bold mb-3 flex items-center">
-                                <span class="iconify" data-icon="tabler:article"></span>
-                                <span class="ml-2">Son Yazılar</span>
-                            </h3>
-                            <div class="space-y-3">
-                                {% for article in articles[:5] %}
-                                <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
-                                    <a
-                                        href="{{ SITEURL }}/{{ article.url }}"
-                                        class="hover:text-primary visited:text-purple-200 no-underline">
-                                        <h4 class="text-md">{{ article.title }}</h4>
-                                    </a>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-
-                    {% if article.category %}
-                    <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
-                    <div class="card bg-base-100 shadow-xs hidden lg:block">
-                        <div class="card-body p-4">
-                            <h3 class="text-xl font-bold mb-3 flex items-center">
-                                <span class="iconify" data-icon="tabler:copy"></span>
-                                <span class="ml-2">Benzer Yazılar</span>
-                            </h3>
-                            <div class="space-y-3">
-                                {% for related in articles %}
-                                    {% if related.category == article.category and related != article %}
-                                        {% if loop.index <= 4 %}
-                                            <div class="border-b border-base-200 last:border-0 pb-3 last:pb-0">
-                                                <a
-                                                    href="{{ SITEURL }}/{{ related.url }}"
-                                                    class="link hover:text-primary visited:text-purple-200 no-underline">
-                                                    <h4 class="text-md">{{ related.title }}</h4>
-                                                </a>
-                                            </div>
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                    {% endif %}
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <!-- Sidebar bileşenleri -->
+    <aside class="order-2 lg:order-1 lg:col-span-1">
+      <div class="sticky top-20 sidebar-wrapper">
+        <div class="space-y-6">
+          {% if article.toc %}
+          <!-- Masaüstü TOC - sadece geniş ekranlarda -->
+          <div class="card bg-base-100 shadow-xs hidden lg:block">
+            <div class="card-body p-4">
+              <h3 class="text-xl font-bold mb-3 flex items-center">
+                <span class="iconify" data-icon="tabler:list"></span>
+                <span class="ml-2">İçindekiler</span>
+              </h3>
+              <div class="toc-container">
+                <div class="toc-content max-h-[250px] overflow-y-auto">
+                  {{ article.toc }}
                 </div>
+              </div>
             </div>
-        </aside>
+          </div>
+          {% endif %}
 
-        <div class="order-1 lg:order-2 lg:col-span-3">
-            <article class="card bg-base-100 shadow-xs mb-8">
-                <div class="card-body p-6">
-                    <header class="mb-6">
-                        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">{{ article.title }}</h1>
-
-                        <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:calendar"></span>
-                                <time datetime="{{ article.date.isoformat() }}" class="ml-1">
-                                    {{ article.date|strftime('%d %B %Y') }}
-                                </time>
-                            </div>
-
-                            {% if article.modified %}
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:history"></span>
-                                <time datetime="{{ article.modified.isoformat() }}" class="ml-1">
-                                    {{ article.modified|strftime('%d %B %Y') }}
-                                </time>
-                            </div>
-                            {% endif %} {% if article.category %}
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:folder"></span>
-                                <a
-                                    href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
-                                    class="link link-hover ml-1">
-                                    {{ article.category }}
-                                </a>
-                            </div>
-                            {% endif %} {% if article.series %}
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:list-numbers"></span>
-                                <span class="ml-1">
-                                    {{ article.series.name }} ({{ article.series.index }}/{{ article.series.all|length
-                                    }})
-                                </span>
-                            </div>
-                            {% endif %} {% if article.statistics is defined %}
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:text-recognition"></span>
-                                <span class="ml-1">{{ article.statistics.wc }} kelime</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:clock"></span>
-                                <span class="ml-1">{{ article.statistics.read_mins }} dakika</span>
-                            </div>
-
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:chart-bar"></span>
-                                <span class="ml-1">Seviye {{ article.statistics.fk }}</span>
-                            </div>
-                            {% endif %} {% if ARTICLE_EDIT_LINK %}
-                            <div class="flex items-center">
-                                <span class="iconify" data-icon="tabler:edit"></span>
-                                <a
-                                    href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}"
-                                    target="_blank"
-                                    rel="noopener"
-                                    class="link link-hover ml-1">
-                                    Düzenle
-                                </a>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </header>
-
-                    {% if article.series %}
-                    <div class="bg-base-200 p-4 rounded-xs mb-6">
-                        <h2 class="text-xl font-bold mb-2 text-base-content">{{ article.series.name }} Serisi</h2>
-                        <ol class="space-y-2 pl-5 list-decimal">
-                            {% for article_in_series in article.series.all %}
-                            <li class="{% if article_in_series == article %}font-bold text-primary{% endif %}">
-                                {% if article_in_series == article %}
-                                <span>{{ article_in_series.title }}</span>
-                                {% else %}
-                                <a
-                                    href="{{ SITEURL }}/{{ article_in_series.url }}"
-                                    class="link link-hover text-primary">
-                                    {{ article_in_series.title }}
-                                </a>
-                                {% endif %}
-                            </li>
-                            {% endfor %}
-                        </ol>
-                    </div>
-                    {% endif %}
-
-                    <div class="prose prose-xl dark:prose-invert max-w-none article-content">{{ article.content }}</div>
-
-                    <!-- Sosyal Medya Paylaşım Butonları -->
-                    <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
-                        <span class="text-sm text-base-content/70 flex items-center mr-2">
-                            <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
-                            Paylaş:
-                        </span>
-
-                        <!-- Twitter/X Paylaşım -->
-                        <a
-                            href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn twitter-share"
-                            aria-label="Twitter'da Paylaş">
-                            <iconify-icon icon="tabler:brand-x"></iconify-icon>
-                        </a>
-
-                        <!-- Facebook Paylaşım -->
-                        <a
-                            href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn facebook-share"
-                            aria-label="Facebook'ta Paylaş">
-                            <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
-                        </a>
-
-                        <!-- LinkedIn Paylaşım -->
-                        <a
-                            href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn linkedin-share"
-                            aria-label="LinkedIn'de Paylaş">
-                            <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
-                        </a>
-
-                        <!-- Reddit Paylaşım -->
-                        <a
-                            href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn reddit-share"
-                            aria-label="Reddit'te Paylaş">
-                            <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
-                        </a>
-
-                        <!-- Telegram Paylaşım -->
-                        <a
-                            href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn telegram-share"
-                            aria-label="Telegram'da Paylaş">
-                            <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
-                        </a>
-
-                        <!-- WhatsApp Paylaşım -->
-                        <a
-                            href="https://api.whatsapp.com/send?text={{ article.title }} {{ SITEURL }}/{{ article.url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn whatsapp-share"
-                            aria-label="WhatsApp'ta Paylaş">
-                            <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
-                        </a>
-
-
-                        <!-- Email Paylaşım -->
-                        <a
-                            href="mailto:?subject={{ article.title }}&body={{ SITEURL }}/{{ article.url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn email-share"
-                            aria-label="Email ile Paylaş">
-                            <iconify-icon icon="tabler:mail"></iconify-icon>
-                        </a>
-
-                        <!-- Pinterest Paylaşım -->
-                        <a
-                            href="https://pinterest.com/pin/create/button/?url={{ SITEURL }}/{{ article.url }}&description={{ article.title }}{% if article.image %}&media={{ SITEURL }}/{{ article.image }}{% endif %}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn pinterest-share"
-                            aria-label="Pinterest'te Paylaş">
-                            <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
-                        </a>
-
-                        <!-- Tumblr Paylaşım -->
-                        <a
-                            href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn tumblr-share"
-                            aria-label="Tumblr'da Paylaş">
-                            <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
-                        </a>
-
-                        <!-- Bluesky Paylaşım -->
-                        <a
-                            href="https://bsky.app/intent/compose?text={{ article.title }}%20-%20{{ SITEURL }}/{{ article.url }}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="social-share-btn bluesky-share"
-                            aria-label="Bluesky'da Paylaş">
-                            <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
-                        </a>
-
-                        <!-- Kopyala Butonu -->
-                        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
-                            <iconify-icon icon="tabler:copy"></iconify-icon>
-                        </button>
-                    </div>
-
-                    
-
+          <!-- Son Yazılar - sadece geniş ekranlarda görünecek -->
+          <div class="card bg-base-100 shadow-xs hidden lg:block">
+            <div class="card-body p-4">
+              <h3 class="text-xl font-bold mb-3 flex items-center">
+                <span class="iconify" data-icon="tabler:article"></span>
+                <span class="ml-2">Son Yazılar</span>
+              </h3>
+              <div class="space-y-3">
+                {% for article in articles[:5] %}
+                <div
+                  class="border-b border-base-200 last:border-0 pb-3 last:pb-0"
+                >
+                  <a
+                    href="{{ SITEURL }}/{{ article.url }}"
+                    class="hover:text-primary visited:text-purple-200 no-underline"
+                  >
+                    <h4 class="text-md">{{ article.title }}</h4>
+                  </a>
                 </div>
-            </article>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          {% if article.category %}
+          <!-- Benzer Yazılar - sadece geniş ekranlarda görünecek -->
+          <div class="card bg-base-100 shadow-xs hidden lg:block">
+            <div class="card-body p-4">
+              <h3 class="text-xl font-bold mb-3 flex items-center">
+                <span class="iconify" data-icon="tabler:copy"></span>
+                <span class="ml-2">Benzer Yazılar</span>
+              </h3>
+              <div class="space-y-3">
+                {% for related in articles %} {% if related.category ==
+                article.category and related != article %} {% if loop.index <= 4
+                %}
+                <div
+                  class="border-b border-base-200 last:border-0 pb-3 last:pb-0"
+                >
+                  <a
+                    href="{{ SITEURL }}/{{ related.url }}"
+                    class="link hover:text-primary visited:text-purple-200 no-underline"
+                  >
+                    <h4 class="text-md">{{ related.title }}</h4>
+                  </a>
+                </div>
+                {% endif %} {% endif %} {% endfor %}
+              </div>
+            </div>
+          </div>
+          {% endif %}
         </div>
+      </div>
+    </aside>
+
+    <div class="order-1 lg:order-2 lg:col-span-3">
+      <article class="card bg-base-100 shadow-xs mb-8">
+        <div class="card-body p-6">
+          <header class="mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-base-content">
+              {{ article.title }}
+            </h1>
+
+            <div class="flex flex-wrap gap-4 text-sm text-base-content/70">
+              <div class="flex items-center">
+                <span class="iconify" data-icon="tabler:calendar"></span>
+                <time datetime="{{ article.date.isoformat() }}" class="ml-1">
+                  {{ article.date|strftime('%d %B %Y') }}
+                </time>
+              </div>
+
+              {% if article.modified %}
+              <div class="flex items-center">
+                <span class="iconify" data-icon="tabler:history"></span>
+                <time
+                  datetime="{{ article.modified.isoformat() }}"
+                  class="ml-1"
+                >
+                  {{ article.modified|strftime('%d %B %Y') }}
+                </time>
+              </div>
+              {% endif %} {% if article.category %}
+              <div class="flex items-center">
+                <span class="iconify" data-icon="tabler:folder"></span>
+                <a
+                  href="{{ SITEURL }}/kategori/{{ article.category.slug }}/"
+                  class="link link-hover ml-1"
+                >
+                  {{ article.category }}
+                </a>
+              </div>
+              {% endif %} {% if article.series %}
+              <div class="flex items-center">
+                <span class="iconify" data-icon="tabler:list-numbers"></span>
+                <span class="ml-1">
+                  {{ article.series.name }} ({{ article.series.index }}/{{
+                  article.series.all|length }})
+                </span>
+              </div>
+              {% endif %} {% if article.statistics is defined %}
+              <div class="flex items-center">
+                <span
+                  class="iconify"
+                  data-icon="tabler:text-recognition"
+                ></span>
+                <span class="ml-1">{{ article.statistics.wc }} kelime</span>
+              </div>
+
+              <div class="flex items-center">
+                <span class="iconify" data-icon="tabler:clock"></span>
+                <span class="ml-1"
+                  >{{ article.statistics.read_mins }} dakika</span
+                >
+              </div>
+
+              <div class="flex items-center">
+                <span class="iconify" data-icon="tabler:chart-bar"></span>
+                <span class="ml-1">Seviye {{ article.statistics.fk }}</span>
+              </div>
+              {% endif %} {% if ARTICLE_EDIT_LINK %}
+              <div class="flex items-center">
+                <span class="iconify" data-icon="tabler:edit"></span>
+                <a
+                  href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}"
+                  target="_blank"
+                  rel="noopener"
+                  class="link link-hover ml-1"
+                >
+                  Düzenle
+                </a>
+              </div>
+              {% endif %}
+            </div>
+          </header>
+
+          {% if article.series %}
+          <div class="bg-base-200 p-4 rounded-xs mb-6">
+            <h2 class="text-xl font-bold mb-2 text-base-content">
+              {{ article.series.name }} Serisi
+            </h2>
+            <ol class="space-y-2 pl-5 list-decimal">
+              {% for article_in_series in article.series.all %}
+              <li
+                class="{% if article_in_series == article %}font-bold text-primary{% endif %}"
+              >
+                {% if article_in_series == article %}
+                <span>{{ article_in_series.title }}</span>
+                {% else %}
+                <a
+                  href="{{ SITEURL }}/{{ article_in_series.url }}"
+                  class="link link-hover text-primary"
+                >
+                  {{ article_in_series.title }}
+                </a>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ol>
+          </div>
+          {% endif %}
+
+          <div
+            class="prose prose-xl dark:prose-invert max-w-none article-content"
+          >
+            {{ article.content }}
+          </div>
+
+          <!-- Sosyal Medya Paylaşım Butonları -->
+          <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+            <span class="text-sm text-base-content/70 flex items-center mr-2">
+              <iconify-icon icon="tabler:share" class="mr-1"></iconify-icon>
+              Paylaş:
+            </span>
+
+            <!-- Twitter/X Paylaşım -->
+            <a
+              href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn twitter-share"
+              aria-label="Twitter'da Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-x"></iconify-icon>
+            </a>
+
+            <!-- Facebook Paylaşım -->
+            <a
+              href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn facebook-share"
+              aria-label="Facebook'ta Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-facebook"></iconify-icon>
+            </a>
+
+            <!-- LinkedIn Paylaşım -->
+            <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn linkedin-share"
+              aria-label="LinkedIn'de Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-linkedin"></iconify-icon>
+            </a>
+
+            <!-- Reddit Paylaşım -->
+            <a
+              href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn reddit-share"
+              aria-label="Reddit'te Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-reddit"></iconify-icon>
+            </a>
+
+            <!-- Telegram Paylaşım -->
+            <a
+              href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn telegram-share"
+              aria-label="Telegram'da Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-telegram"></iconify-icon>
+            </a>
+
+            <!-- WhatsApp Paylaşım -->
+            <a
+              href="https://api.whatsapp.com/send?text={{ article.title }} {{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn whatsapp-share"
+              aria-label="WhatsApp'ta Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-whatsapp"></iconify-icon>
+            </a>
+
+            <!-- Email Paylaşım -->
+            <a
+              href="mailto:?subject={{ article.title }}&body={{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn email-share"
+              aria-label="Email ile Paylaş"
+            >
+              <iconify-icon icon="tabler:mail"></iconify-icon>
+            </a>
+
+            <!-- Pinterest Paylaşım -->
+            <a
+              href="https://pinterest.com/pin/create/button/?url={{ SITEURL }}/{{ article.url }}&description={{ article.title }}{% if article.image %}&media={{ SITEURL }}/{{ article.image }}{% endif %}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn pinterest-share"
+              aria-label="Pinterest'te Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-pinterest"></iconify-icon>
+            </a>
+
+            <!-- Tumblr Paylaşım -->
+            <a
+              href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn tumblr-share"
+              aria-label="Tumblr'da Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-tumblr"></iconify-icon>
+            </a>
+
+            <!-- Bluesky Paylaşım -->
+            <a
+              href="https://bsky.app/intent/compose?text={{ article.title }}%20-%20{{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn bluesky-share"
+              aria-label="Bluesky'da Paylaş"
+            >
+              <iconify-icon icon="tabler:brand-bluesky"></iconify-icon>
+            </a>
+
+            <!-- Kopyala Butonu -->
+            <button
+              class="social-share-btn copy-share"
+              id="copy-url-btn"
+              aria-label="URL'yi Kopyala"
+            >
+              <iconify-icon icon="tabler:copy"></iconify-icon>
+            </button>
+          </div>
+        </div>
+      </article>
     </div>
+  </div>
 </div>
 
 <!-- Mobil için TOC açılır menüsü -->
 {% if article.toc %}
 <div
-    id="mobile-toc-drawer"
-    class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden">
-    <div class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10">
-        <h3 class="font-bold text-base flex items-center">
-            <span class="iconify mr-2" data-icon="tabler:list"></span>
-            İçindekiler
-        </h3>
-        <button id="close-mobile-toc" class="btn btn-sm btn-ghost p-1" aria-label="Kapat">
-            <span class="iconify" data-icon="tabler:x"></span>
-        </button>
-    </div>
-    <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]">{{ article.toc }}</div>
+  id="mobile-toc-drawer"
+  class="lg:hidden fixed right-6 bottom-20 z-50 bg-base-100 rounded-xs shadow-md transform transition-transform duration-300 translate-y-full opacity-0 invisible max-w-xs w-full max-h-[70vh] overflow-hidden"
+>
+  <div
+    class="px-4 py-3 bg-base-200 flex justify-between items-center sticky top-0 z-10"
+  >
+    <h3 class="font-bold text-base flex items-center">
+      <span class="iconify mr-2" data-icon="tabler:list"></span>
+      İçindekiler
+    </h3>
+    <button
+      id="close-mobile-toc"
+      class="btn btn-sm btn-ghost p-1"
+      aria-label="Kapat"
+    >
+      <span class="iconify" data-icon="tabler:x"></span>
+    </button>
+  </div>
+  <div class="p-4 overflow-y-auto max-h-[calc(70vh-3rem)]">
+    {{ article.toc }}
+  </div>
 </div>
 {% endif %}
 
 <!-- Sabit Butonlar - Yukarı Git ve TOC -->
 <div class="fixed right-6 bottom-6 flex flex-col gap-2 z-40">
-    <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
-    {% if article.toc %}
-    <button id="toggle-mobile-toc" class="btn btn-circle btn-secondary lg:hidden" aria-label="İçindekiler">
-        <span class="iconify text-xl" data-icon="tabler:list"></span>
-    </button>
-    {% endif %}
+  <!-- Mobil TOC Butonu - Sadece mobilde görünecek -->
+  {% if article.toc %}
+  <button
+    id="toggle-mobile-toc"
+    class="btn btn-circle btn-secondary lg:hidden"
+    aria-label="İçindekiler"
+  >
+    <span class="iconify text-xl" data-icon="tabler:list"></span>
+  </button>
+  {% endif %}
 
-    <!-- Yukarı Git Butonu -->
-    <button
-        id="back-to-top"
-        class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
-        aria-label="Yukarı Git">
-        <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
-    </button>
+  <!-- Yukarı Git Butonu -->
+  <button
+    id="back-to-top"
+    class="btn btn-circle btn-primary opacity-0 invisible transition-all duration-300"
+    aria-label="Yukarı Git"
+  >
+    <span class="iconify text-xl" data-icon="tabler:chevron-up"></span>
+  </button>
 </div>
 {% endblock %} {% block scripts %}
 <!-- TOC JS -->
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-toc.js" defer></script>
-
- 
-
+<script
+  src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-toc.js"
+  defer
+></script>
 
 <!-- Mobil TOC ve Yukarı Git Butonları JS -->
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Yukarı git butonu
-        const backToTopButton = document.getElementById("back-to-top");
+  document.addEventListener("DOMContentLoaded", function () {
+    // Yukarı git butonu
+    const backToTopButton = document.getElementById("back-to-top");
 
-        if (backToTopButton) {
-            window.addEventListener("scroll", function () {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.add("opacity-100", "visible");
-                    backToTopButton.classList.remove("opacity-0", "invisible");
-                } else {
-                    backToTopButton.classList.add("opacity-0", "invisible");
-                    backToTopButton.classList.remove("opacity-100", "visible");
-                }
-            });
-
-            backToTopButton.addEventListener("click", function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                });
-            });
+    if (backToTopButton) {
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("opacity-100", "visible");
+          backToTopButton.classList.remove("opacity-0", "invisible");
+        } else {
+          backToTopButton.classList.add("opacity-0", "invisible");
+          backToTopButton.classList.remove("opacity-100", "visible");
         }
+      });
 
-        // Mobil İçindekiler
-        const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
-        const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
-        const closeMobileTocButton = document.getElementById("close-mobile-toc");
+      backToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    }
 
-        if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
-            toggleMobileTocButton.addEventListener("click", function () {
-                mobileTocDrawer.classList.toggle("translate-y-full");
-                mobileTocDrawer.classList.toggle("opacity-0");
-                mobileTocDrawer.classList.toggle("invisible");
-            });
+    // Mobil İçindekiler
+    const mobileTocDrawer = document.getElementById("mobile-toc-drawer");
+    const toggleMobileTocButton = document.getElementById("toggle-mobile-toc");
+    const closeMobileTocButton = document.getElementById("close-mobile-toc");
 
-            closeMobileTocButton.addEventListener("click", function () {
-                mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
-            });
+    if (mobileTocDrawer && toggleMobileTocButton && closeMobileTocButton) {
+      toggleMobileTocButton.addEventListener("click", function () {
+        mobileTocDrawer.classList.toggle("translate-y-full");
+        mobileTocDrawer.classList.toggle("opacity-0");
+        mobileTocDrawer.classList.toggle("invisible");
+      });
 
-            // İçindekiler linkleri tıklandığında menüyü kapat
-            const tocLinks = mobileTocDrawer.querySelectorAll("a");
-            tocLinks.forEach((link) => {
-                link.addEventListener("click", function () {
-                    mobileTocDrawer.classList.add("translate-y-full", "opacity-0", "invisible");
-                });
-            });
-        }
+      closeMobileTocButton.addEventListener("click", function () {
+        mobileTocDrawer.classList.add(
+          "translate-y-full",
+          "opacity-0",
+          "invisible",
+        );
+      });
 
-        // URL Kopyalama İşlevi
-        const copyUrlButton = document.getElementById("copy-url-btn");
-        if (copyUrlButton) {
-            copyUrlButton.addEventListener("click", function () {
-                // Sayfanın URL'sini al
-                const url = window.location.href;
+      // İçindekiler linkleri tıklandığında menüyü kapat
+      const tocLinks = mobileTocDrawer.querySelectorAll("a");
+      tocLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          mobileTocDrawer.classList.add(
+            "translate-y-full",
+            "opacity-0",
+            "invisible",
+          );
+        });
+      });
+    }
 
-                // Panoya kopyala
-                navigator.clipboard.writeText(url).then(() => {
-                    // Kopyalama başarılı olduğunda
-                    copyUrlButton.classList.add("copied");
+    // URL Kopyalama İşlevi
+    const copyUrlButton = document.getElementById("copy-url-btn");
+    if (copyUrlButton) {
+      copyUrlButton.addEventListener("click", function () {
+        // Sayfanın URL'sini al
+        const url = window.location.href;
 
-                    // İkonu değiştir (başarılı olduğunu göstermek için)
-                    const icon = copyUrlButton.querySelector("iconify-icon");
-                    icon.setAttribute("icon", "tabler:check");
+        // Panoya kopyala
+        navigator.clipboard.writeText(url).then(() => {
+          // Kopyalama başarılı olduğunda
+          copyUrlButton.classList.add("copied");
 
-                    // 2 saniye sonra eski haline döndür
-                    setTimeout(() => {
-                        copyUrlButton.classList.remove("copied");
-                        icon.setAttribute("icon", "tabler:copy");
-                    }, 2000);
-                });
-            });
-        }
+          // İkonu değiştir (başarılı olduğunu göstermek için)
+          const icon = copyUrlButton.querySelector("iconify-icon");
+          icon.setAttribute("icon", "tabler:check");
 
-    });
+          // 2 saniye sonra eski haline döndür
+          setTimeout(() => {
+            copyUrlButton.classList.remove("copied");
+            icon.setAttribute("icon", "tabler:copy");
+          }, 2000);
+        });
+      });
+    }
+  });
 </script>
 
-
 <!-- Admin Panel (sadece geliştirme modunda veya ADMIN_TOOLS aktifse) -->
-{% if DEVELOPMENT_MODE or ADMIN_TOOLS %} {% include "includes/admin-panel.html" %} {% endif %} {% endblock %}
+{% if DEVELOPMENT_MODE or ADMIN_TOOLS %} {% include "includes/admin-panel.html"
+%} {% endif %} {% endblock %}
