@@ -98,6 +98,13 @@ DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "authors"]
 # Do we want to wipe the /output folder every build,
 # or just accumulate new stuff?
 DELETE_OUTPUT_DIRECTORY = True
+
+# JINJA ENVIRONMENT
+JINJA_ENVIRONMENT = {
+    'extensions': [
+        'jinja2.ext.i18n',
+    ],
+}
 DISABLE_URL_HASH = True
 BROWSER_COLOR = "#333333"
 PYGMENTS_STYLE = "dracula"
