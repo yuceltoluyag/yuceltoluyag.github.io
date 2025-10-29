@@ -8,6 +8,8 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux üzerinde Docker kurulumu, yapılandırması ve temel kullanım adımlarını adım adım anlatan kapsamlı rehber.
 Template: article
+Series: Docker
+Series_index: 1
 
 **Docker**, modern yazılım geliştirme ve dağıtım dünyasının vazgeçilmez araçlarından biri.
 Peki, **Arch Linux’ta Docker nasıl kurulur ve yapılandırılır?** Bu rehberde hem **kurulum adımlarını** hem de **temel kullanım ipuçlarını** adım adım öğreneceksiniz.

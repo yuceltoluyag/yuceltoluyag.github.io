@@ -1,0 +1,113 @@
+/* Sosyal Medya Paylaşım Butonları */
+.social-share-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: var(--pico-muted-background-color);
+  border-radius: var(--pico-border-radius);
+}
+
+.social-share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--pico-card-background-color);
+  color: var(--pico-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.social-share-btn i {
+  font-size: 1.2rem;
+}
+
+.social-share-btn:hover,
+.social-share-btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.social-share-btn.twitter-share:hover,
+.social-share-btn.twitter-share:focus {
+  background-color: #1da1f2;
+  color: white;
+}
+
+.social-share-btn.facebook-share:hover,
+.social-share-btn.facebook-share:focus {
+  background-color: #1877f2;
+  color: white;
+}
+
+.social-share-btn.linkedin-share:hover,
+.social-share-btn.linkedin-share:focus {
+  background-color: #0077b5;
+  color: white;
+}
+
+.social-share-btn.reddit-share:hover,
+.social-share-btn.reddit-share:focus {
+  background-color: #ff4500;
+  color: white;
+}
+
+.social-share-btn.telegram-share:hover,
+.social-share-btn.telegram-share:focus {
+  background-color: #2aabee;
+  color: white;
+}
+
+.social-share-btn.whatsapp-share:hover,
+.social-share-btn.whatsapp-share:focus {
+  background-color: #25d366;
+  color: white;
+}
+
+.social-share-btn.email-share:hover,
+.social-share-btn.email-share:focus {
+  background-color: #ea4335;
+  color: white;
+}
+
+.social-share-btn.pinterest-share:hover,
+.social-share-btn.pinterest-share:focus {
+  background-color: #bd081c;
+  color: white;
+}
+
+.social-share-btn.tumblr-share:hover,
+.social-share-btn.tumblr-share:focus {
+  background-color: #35465c;
+  color: white;
+}
+
+.social-share-btn.bluesky-share:hover,
+.social-share-btn.bluesky-share:focus {
+  background-color: #0a7aff;
+  color: white;
+}
+
+.social-share-btn.copy-share:hover,
+.social-share-btn.copy-share:focus {
+  background-color: var(--pico-primary);
+  color: var(--pico-primary-inverse);
+}
+
+.social-share-btn.copy-share.copied {
+  background-color: #28a745;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .social-share-container {
+    justify-content: center;
+  }
+}

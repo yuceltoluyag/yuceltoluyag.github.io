@@ -93,9 +93,15 @@ super() }} {% if article.translations -%}
           <span class="series-progress">Bölüm {{ article.series.index }}/{{ article.series.all|length }}</span>
         </div>
         
+        {% if article.series.all|length > 0 %}
         <div class="series-progress-bar">
-          <div class="progress-fill" style="width: {{ (article.series.index / article.series.all|length * 100)|int }}%"></div>
+          <div class="progress-fill" style="width: {{ ((article.series.index|float) / (article.series.all|length|float) * 100)|int }}%"></div>
         </div>
+        {% else %}
+        <div class="series-progress-bar">
+          <div class="progress-fill" style="width: 100%"></div>
+        </div>
+        {% endif %}
         
         <p class="series-description">Bu yazı "{{ article.series.name }}" serisinin {{ article.series.index }}. bölümüdür.</p>
         
@@ -177,8 +183,132 @@ super() }} {% if article.translations -%}
             <a href="{{ SITEURL }}/bagis/" role="button" class="primary">
               <i class="fa-solid fa-heart" aria-hidden="true"></i> Destek Ol
             </a>
+            
+            {% if ARTICLE_EDIT_LINK %}
+            <a href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}" 
+               role="button" 
+               class="secondary"
+               style="margin-top: 0.5rem;"
+               target="_blank"
+               rel="noopener noreferrer nofollow">
+              <i class="fa-solid fa-edit" aria-hidden="true"></i> Düzenle
+            </a>
+            {% endif %}
           </div>
         </div>
+      </div>
+
+      <!-- Sosyal Medya Paylaşım Butonları -->
+      <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
+          <span class="text-sm text-base-content/70 flex items-center mr-2">
+              <i class="fa-solid fa-share mr-1"></i>
+              Paylaş:
+          </span>
+
+          <!-- Twitter/X Paylaşım -->
+          <a
+              href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn twitter-share"
+              aria-label="Twitter'da Paylaş">
+              <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+          <!-- Facebook Paylaşım -->
+          <a
+              href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn facebook-share"
+              aria-label="Facebook'ta Paylaş">
+              <i class="fa-brands fa-facebook"></i>
+          </a>
+
+          <!-- LinkedIn Paylaşım -->
+          <a
+              href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn linkedin-share"
+              aria-label="LinkedIn'de Paylaş">
+              <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <!-- Reddit Paylaşım -->
+          <a
+              href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn reddit-share"
+              aria-label="Reddit'te Paylaş">
+              <i class="fa-brands fa-reddit"></i>
+          </a>
+
+          <!-- Telegram Paylaşım -->
+          <a
+              href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn telegram-share"
+              aria-label="Telegram'da Paylaş">
+              <i class="fa-brands fa-telegram"></i>
+          </a>
+
+          <!-- WhatsApp Paylaşım -->
+          <a
+              href="https://api.whatsapp.com/send?text={{ article.title }} {{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn whatsapp-share"
+              aria-label="WhatsApp'ta Paylaş">
+              <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <!-- Email Paylaşım -->
+          <a
+              href="mailto:?subject={{ article.title }}&body={{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn email-share"
+              aria-label="Email ile Paylaş">
+              <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <!-- Pinterest Paylaşım -->
+          <a
+              href="https://pinterest.com/pin/create/button/?url={{ SITEURL }}/{{ article.url }}&description={{ article.title }}{% if article.image %}&media={{ SITEURL }}/{{ article.image }}{% endif %}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn pinterest-share"
+              aria-label="Pinterest'te Paylaş">
+              <i class="fa-brands fa-pinterest"></i>
+          </a>
+
+          <!-- Tumblr Paylaşım -->
+          <a
+              href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn tumblr-share"
+              aria-label="Tumblr'da Paylaş">
+              <i class="fa-brands fa-tumblr"></i>
+          </a>
+
+          <!-- Bluesky Paylaşım -->
+          <a
+              href="https://bsky.app/intent/compose?text={{ article.title }}%20-%20{{ SITEURL }}/{{ article.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-share-btn bluesky-share"
+              aria-label="Bluesky'da Paylaş">
+              <i class="fa-solid fa-cloud"></i>
+          </a>
+
+          <!-- Kopyala Butonu -->
+          <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+              <i class="fa-solid fa-copy"></i>
+          </button>
       </div>
     </article>
 

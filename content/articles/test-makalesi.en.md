@@ -7,5 +7,6 @@ Lang: en
 Authors: baba
 Status: draft
 Summary: This is a test article created to test the translation feature.
+Translation: true
 
 This is a test article.

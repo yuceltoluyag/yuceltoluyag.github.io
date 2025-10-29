@@ -178,3 +178,9 @@ Bu adımları uyguladığınızda **Clair Obscur: Expedition 33** oyununda Linux
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="23E4RxRsG_o"></lite-youtube>
+
+---
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
+
+<lite-youtube videoid="9-V718wNWXU"></lite-youtube>

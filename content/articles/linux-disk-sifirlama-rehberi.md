@@ -6,15 +6,15 @@ Tags: linux, disk silme, dd komutu, shred komutu, wipefs, veri temizleme, disk s
 Slug: linux-disk-sifirlama-rehberi
 Authors: yuceltoluyag
 Status: published
-Summary: Bu yazıda,  Linux üzerinde disk sıfırlamayı öğreneceksiniz..
+Summary: Bu yazıda, Linux üzerinde disk sıfırlamayı öğreneceksiniz..
 Template: article
 Image: images/Linux-uzerinde-disk-sifirlama-xl.webp
-
+Series: Linux-disk
+Series_index: 3
 
 💣 **Linux'ta disk sıfırlama** işlemi, sistem yöneticileri ve teknik kullanıcılar için zaman zaman kaçınılmazdır. Yeni bir kurulum öncesi, eski verileri silerken veya diskleri geri dönüşü olmayacak şekilde temizlerken, doğru yöntemlerle ilerlemek çok önemlidir.
 
-Bu rehberde, `/dev/sdX` formatındaki **herhangi bir diski güvenli ve etkili şekilde nasıl sıfırlayabileceğinizi** detaylıca anlatacağım. Ayrıca hangi yöntemin ne zaman uygun olduğunu örneklerle açıklayacağım.  
-
+Bu rehberde, `/dev/sdX` formatındaki **herhangi bir diski güvenli ve etkili şekilde nasıl sıfırlayabileceğinizi** detaylıca anlatacağım. Ayrıca hangi yöntemin ne zaman uygun olduğunu örneklerle açıklayacağım.
 
 ---
 
@@ -59,6 +59,7 @@ sudo dd if=/dev/zero of=/dev/sdX bs=1M status=progress
 ```
 
 Açıklamalar:
+
 - `if=/dev/zero`: Girdi kaynağı sıfır bayt üretir
 - `of=/dev/sdX`: Hedef disk
 - `bs=1M`: 1 MB blok boyutu ile daha hızlı işlem
@@ -77,6 +78,7 @@ sudo shred -v -n 3 /dev/sdX
 ```
 
 Açıklamalar:
+
 - `-v`: Ayrıntılı çıktı
 - `-n 3`: 3 kez üzerine rastgele veri yaz
 - `-z`: (opsiyonel) Son geçişte sıfırlarla yaz
@@ -114,11 +116,11 @@ Partition görünmüyorsa, disk başarıyla temizlenmiş demektir.
 
 ## 🧾 Hangi Yöntemi Ne Zaman Kullanmalıyım?
 
-| Yöntem   | Açıklama                                 | Hız  | Güvenlik |
-|----------|-------------------------------------------|------|----------|
-| `dd`     | Diski sıfırlarla doldurur                 | Orta | Orta     |
-| `shred`  | Rastgele veriyle veri yok eder            | Yavaş| Yüksek   |
-| `wipefs` | Partition tablolarını ve FS imzalarını siler | Çok Hızlı | Düşük  |
+| Yöntem   | Açıklama                                     | Hız       | Güvenlik |
+| -------- | -------------------------------------------- | --------- | -------- |
+| `dd`     | Diski sıfırlarla doldurur                    | Orta      | Orta     |
+| `shred`  | Rastgele veriyle veri yok eder               | Yavaş     | Yüksek   |
+| `wipefs` | Partition tablolarını ve FS imzalarını siler | Çok Hızlı | Düşük    |
 
 **Kritik veri varsa** `shred` en iyi tercihtir. **Sadece kurulum öncesi sıfırlama gerekiyorsa** `dd` veya `wipefs` yeterlidir.
 
@@ -151,4 +153,3 @@ Eğer bu rehber işine yaradıysa paylaşabilir, aşağıya yorum bırakabilir v
 Senin de kullandığın başka yöntemler varsa yorumlarda paylaş, birlikte büyüyelim! 🙌
 
 [responsive_img src="/images/Linux-uzerinde-disk-sifirlama-xl.webp" alt="Linux üzerinde disk sıfırlama" /]
-

@@ -15,7 +15,6 @@ Image: images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp
 Arch Linux kullanıcısıysanız, sisteminizde yüzlerce gigabayt boş alan olmasına rağmen neden yalnızca belirli bir miktar görünür olduğunu merak etmişsinizdir. Örneğin: Diskinizde 300 GB boş yer olduğunu biliyorsunuz, ama `df -h` size yalnızca 173 GB gösteriyor. Peki neden?
 
 Bu rehberde, bu kafa karıştırıcı problemi adım adım analiz edecek ve çözeceğiz. Hedefimiz, **Arch Linux sisteminde eksik görünen disk alanının nerelere “kaybolduğunu"** anlamak ve etkili şekilde geri kazanmaktır. 🤓
-[responsive_img src="/images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp" alt="Linux’ta Disk Alanı Eksik Görünüyor mu" /]
 
 ---
 
@@ -192,3 +191,5 @@ Diskinizde neden az boş alan göründüğünü anlamak için aşağıdaki nokta
 Bu adımlar sayesinde, Arch Linux sisteminizde disk alanı yönetimini ustalıkla yapabilirsiniz. 🧠
 
 ---
+
+[responsive_img src="/images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp" alt="Linux’ta Disk Alanı Eksik Görünüyor mu" /]

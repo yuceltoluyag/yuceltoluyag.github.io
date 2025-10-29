@@ -8,7 +8,6 @@ Status: published
 Summary: Python tabanlı Autocut ile videolarınızı SRT ve Markdown işaretlemeleri kullanarak otomatik kesmenin adım adım rehberi.
 Template: article
 Image: images/autocut-otomatik-video-kesme-markdown-rehberi-xl.webp
-Bluesky_Link: https://bsky.app/profile/yuceltoluyag.bsky.social/post/3lyh3gmmjn223
 
 ---
 

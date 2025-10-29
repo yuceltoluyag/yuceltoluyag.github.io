@@ -1,4 +1,4 @@
-Title: Steam Debian Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü
+Title: Steam Oyun Açılmıyor: Wrong ELF Class ve Libgamemodeauto Hatası Çözümü
 Date: 2025-09-03 03:45
 Category: Sorun Giderme
 Tags: steam,debian,linux,oyun,wrong elf class,libgamemodeauto,gamemode,fmod

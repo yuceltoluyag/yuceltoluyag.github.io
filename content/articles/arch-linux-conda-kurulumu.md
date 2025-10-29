@@ -23,7 +23,7 @@ Conda, Anaconda veya Miniconda dağıtımlarını kullanarak kurulabilir. Minico
 
 Miniconda, Conda'nın temel kurulumunu sağlar ve başlangıçta gereksiz paketlerden kaçınmak için tercih edilebilir. Miniconda'yı kurmak için şu adımları izleyebilirsiniz:
 
-1. Miniconda'yı [resmi web sitesinden](https://docs.conda.io/en/latest/miniconda.html){: target="_blank" rel="noopener noreferrer"} indirin.
+1. Miniconda'yı [resmi web sitesinden](https://docs.conda.io/en/latest/miniconda.html){: target="\_blank" rel="noopener noreferrer"} indirin.
 2. Terminali açın ve Miniconda kurulum dosyasını çalıştırın:
 
 ```bash
