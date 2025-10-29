@@ -101,8 +101,8 @@ DELETE_OUTPUT_DIRECTORY = True
 
 # JINJA ENVIRONMENT
 JINJA_ENVIRONMENT = {
-    'extensions': [
-        'jinja2.ext.i18n',
+    "extensions": [
+        "jinja2.ext.i18n",
     ],
 }
 DISABLE_URL_HASH = True
@@ -159,10 +159,9 @@ PLUGIN_PATHS = ["plugins"]
 
 common_plugins = [
     "pelican.plugins.sitemap",
-    "pelican.plugins.related_posts",
+    "plugins.related_posts",
     "pelican.plugins.neighbors",
-
-    "pelican.plugins.series",  # Series eklentisi
+    "plugins.series",  # Series eklentisi
     "plugins.fix_sitemap",
     "plugins.json_feed",
     "plugins.responsive_image_shortcode",  # Responsive Image Shortcode
@@ -293,7 +292,6 @@ NAVBAR_LINKS = [
         "target": "_self",
         "icon": "fa-solid fa-user",
     },
-
     {
         "name": "Bağış",
         "url": "/bagis",

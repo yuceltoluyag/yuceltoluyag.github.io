@@ -183,6 +183,17 @@ super() }} {% if article.translations -%}
             <a href="{{ SITEURL }}/bagis/" role="button" class="primary">
               <i class="fa-solid fa-heart" aria-hidden="true"></i> Destek Ol
             </a>
+            
+            {% if ARTICLE_EDIT_LINK %}
+            <a href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}" 
+               role="button" 
+               class="secondary"
+               style="margin-top: 0.5rem;"
+               target="_blank"
+               rel="noopener noreferrer nofollow">
+              <i class="fa-solid fa-edit" aria-hidden="true"></i> Düzenle
+            </a>
+            {% endif %}
           </div>
         </div>
       </div>

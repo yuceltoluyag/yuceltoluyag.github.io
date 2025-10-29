@@ -6,7 +6,7 @@ Tags: linux, ntfs
 Slug: arch-linux-ntfs-yapilandirma
 Authors: yuceltoluyag
 Summary: Arch Linux'ta NTFS dosya sistemine sahip disklerin nasıl bağlanacağı ve yetki sorunlarının nasıl çözüleceği açıklanmaktadır.
-Translation: false
+Translation: true
 Status: published
 Template: article
 Image: images/ntfs_yetki_hatasi-xl.webp
