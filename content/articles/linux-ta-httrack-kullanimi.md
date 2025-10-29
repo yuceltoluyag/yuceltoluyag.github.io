@@ -13,10 +13,6 @@ Image: images/httrack-xl.webp
 
 Merhaba! HTTrack, internet bağlantınız olmadığında bile web sitelerini kullanabilmenizi sağlayan bir yazılımdır. Windows tarafında sıkça kullandığım bu yazılımı, Linux terminali üzerinden nasıl kullanabileceğinizi anlatan bir döküman hazırlamak istedim.
 
-
-[responsive_img src="/images/httrack-xl.webp" alt="httrack" /]
-
-
 Adım 1: HTTrack Kurulumu
 
 Öncelikle HTTrack’i kurmamız gerekiyor. Aşağıdaki komutla yazılımı kurabilirsiniz:
@@ -48,6 +44,8 @@ Adım 3: Aksiyon Seçimi
 
 Genellikle 1. seçeneği kullanıyorum, çünkü diğer seçeneklere ihtiyaç duymadım. Bazı web siteleri HTTrack karşı önlem almış olabilir, dolayısıyla her URL'yi indireceksiniz diye bir kural yok. Çevrimdışı olarak indirdiğiniz siteyi sağ tıklayıp "Öğeyi İncele" menüsünden incelemeniz faydalı olacaktır. Eğer kırmızı renk ile yazılmış hata mesajları görürseniz, bunları düzeltmeniz gerekebilir.
 
-Adım 4: [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber){: target="_blank" rel="noopener noreferrer"}
+Adım 4: [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber){: target="\_blank" rel="noopener noreferrer"}
 
 Daha fazla rehber ve video için kanalımı ziyaret edebilirsiniz.
+
+[responsive_img src="/images/httrack-xl.webp" alt="httrack" /]

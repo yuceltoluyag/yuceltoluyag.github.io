@@ -45,11 +45,12 @@
   z-index: -1;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0.2s;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,
+    visibility 0.2s;
   visibility: hidden;
   /* Hide scrollbar visually */
   scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 /* For Chrome, Safari, and Opera */
@@ -68,7 +69,7 @@
 
 /* Override Pico's flex direction for the TOC menu only */
 #toc-collapsible-menu #toc > ul {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 #toc-collapsible-menu ul {
@@ -86,7 +87,9 @@
 #toc-collapsible-menu .nested {
   display: none;
   padding-left: 1em; /* Indent nested lists */
-  background-color: var(--pico-muted-background-color); /* Subtle background for expanded nested menus */
+  background-color: var(
+    --pico-muted-background-color
+  ); /* Subtle background for expanded nested menus */
   border-radius: var(--pico-border-radius);
   margin-top: 0.2em;
   margin-bottom: 0.2em;
@@ -106,7 +109,7 @@
   align-items: center;
   gap: 0.5em;
   padding: 0.4rem 0.2rem;
-  color: var(--pico-color) !important; /* Force text color */
+  color: var(--pico-primary-focus) !important; /* Force text color */
   transition: color 0.2s, background-color 0.2s, transform 0.2s; /* Added transform for animation */
   border-radius: var(--pico-border-radius);
 }
@@ -116,7 +119,6 @@
   background-color: var(--pico-muted-background-color) !important;
   transform: translateX(5px) !important; /* Subtle slide animation */
 }
-
 
 #toc-collapsible-menu .arrow {
   display: inline-block;
@@ -153,7 +155,8 @@
   margin: 0;
 }
 
-#toc-collapsible-menu a.toc-href { /* Changed selector */
+#toc-collapsible-menu a.toc-href {
+  /* Changed selector */
   color: var(--pico-muted-color) !important; /* Force text color */
   text-decoration: none !important; /* Underline none */
   transition: color 0.2s, background-color 0.2s, transform 0.2s; /* Added transform for animation */
@@ -162,7 +165,8 @@
   border-radius: var(--pico-border-radius);
 }
 
-#toc-collapsible-menu a.toc-href:hover { /* Changed selector */
+#toc-collapsible-menu a.toc-href:hover {
+  /* Changed selector */
   color: var(--pico-primary) !important;
   background-color: var(--pico-muted-background-color) !important;
   text-decoration: none !important; /* Ensure no underline on hover */
@@ -171,9 +175,9 @@
 
 /* Styles for scrollspy feature */
 #toc-collapsible-menu a.readed:not(.active):before {
-  content: '✅ ';
+  content: "✅ ";
 }
 
 #toc-collapsible-menu a.active:before {
-  content: '👀 ';
+  content: "👀 ";
 }

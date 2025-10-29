@@ -13,8 +13,6 @@ Image: images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp
 
 Merhaba, uzun süredir bloga bir şeyler yazmıyordum. Daha önce Unity kullanırken video çekmiştim, ancak sabit diskimin bozulması ve sıcak hava derken günler hızla geçti. 😃 Linux'ta tema yükleme işlemi oldukça kolaydır. Hangi dağıtımı veya masaüstü ortamını kullanıyor olursanız olun, süreç genellikle benzerdir. Örneğin, Unity için `unity-tweak-tool` kullanılırken, Gnome için `gnome-tweak-tool` tercih edilmektedir. XFCE kullandığım dönemde, özelleştirmeleri doğrudan yapabiliyorduk (yanılıyor olabilirim 🤔).
 
-[responsive_img src="/images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp" alt="linux-tema-nasil-yuklenir-gnome-shell-ve" /]
-
 ## 🌄 Arka Plan (Wallpaper) için Kullandığım Siteler
 
 1. [Alpha](https://alpha.wallhaven.cc/latest){: target="\_blank" rel="noopener noreferrer"}
@@ -65,3 +63,5 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 !!! note "Eksik Görseller Konu geçerli olup, konuya ait görseller önceki blogumdan silindiği için, özelleştirme yaptığım dağıtım resimleri de silindi."
 
 🚀 Bu rehber ile Linux'ta tema yükleme sürecini rahatça tamamlayabilirsiniz!
+
+[responsive_img src="/images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp" alt="linux-tema-nasil-yuklenir-gnome-shell-ve" /]

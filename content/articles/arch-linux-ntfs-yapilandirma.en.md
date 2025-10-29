@@ -11,6 +11,8 @@ Status: published
 Template: article
 Image: images/ntfs_yetki_hatasi-xl.webp
 Lang: en
+Series: Linux-disk
+Series_index: 1
 
 ## What is the Problem? ⚠️
 

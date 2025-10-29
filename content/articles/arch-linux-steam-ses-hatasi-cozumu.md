@@ -247,9 +247,9 @@ Bu ayar, oyunların sisteminizdeki düşük seviyeli ses yöneticileriyle daha u
 
 🧠 Eğer yukarıdaki tüm adımlara rağmen sorun yaşamaya devam ediyorsanız:
 
-- [Arch Linux forumlarını](https://bbs.archlinux.org/){: target="_blank" rel="noopener noreferrer"}
-- [Steam Topluluğu Tartışmalarını](https://steamcommunity.com/app){: target="_blank" rel="noopener noreferrer"} ziyaret edebilirsiniz.
-- [Steam'in resmi GitHub deposunu](https://github.com/ValveSoftware/steam){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
+- [Arch Linux forumlarını](https://bbs.archlinux.org/){: target="\_blank" rel="noopener noreferrer"}
+- [Steam Topluluğu Tartışmalarını](https://steamcommunity.com/app){: target="\_blank" rel="noopener noreferrer"} ziyaret edebilirsiniz.
+- [Steam'in resmi GitHub deposunu](https://github.com/ValveSoftware/){: target="\_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
 
 Benzer sorunları yaşamış kullanıcılar, sizinle çözüm yollarını paylaşabilir.
 

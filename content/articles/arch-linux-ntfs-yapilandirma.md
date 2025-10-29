@@ -10,6 +10,8 @@ Translation: true
 Status: published
 Template: article
 Image: images/ntfs_yetki_hatasi-xl.webp
+Series: Linux-disk
+Series_index: 1
 
 ## Sorun Nedir? ⚠️
 
