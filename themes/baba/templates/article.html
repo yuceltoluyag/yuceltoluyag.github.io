@@ -44,7 +44,7 @@ super() }} {% if article.translations -%}
         </time>
         {% if article.authors %}
         <address class="vcard author cyberpunk-author">
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
           {% for author in article.authors %}
           <a class="url fn cyberpunk-author-link" href="{{ SITEURL }}/{{ author.url }}"
             >{{ author }}</a
@@ -53,7 +53,7 @@ super() }} {% if article.translations -%}
         </address>
         {% endif %} {% if article.category %}
         <span class="category cyberpunk-category">
-          <i class="fa-solid fa-folder-open"></i>
+          <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
           <a href="{{ SITEURL }}/{{ article.category.url }}" class="cyberpunk-category-link"
             >{{ article.category }}</a
           >
@@ -113,11 +113,11 @@ super() }} {% if article.translations -%}
             <li {% if part_article == article %}class="active"{% endif %}>
               {% if part_article == article %}
               <span class="current-article">
-                <i class="fa-solid fa-circle-check"></i> {{ part_article.title }}
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> {{ part_article.title }}
               </span>
               {% else %}
               <a href="{{ SITEURL }}/{{ part_article.url }}">
-                <i class="fa-solid fa-file-alt"></i> {{ part_article.title }}
+                <i class="fa-solid fa-file-alt" aria-hidden="true"></i> {{ part_article.title }}
               </a>
               {% endif %}
             </li>
@@ -163,7 +163,7 @@ super() }} {% if article.translations -%}
               {% for related_article in article.related_posts %}
               <li>
                 <a href="{{ SITEURL }}/{{ related_article.url }}">
-                  <i class="fa-solid fa-file-alt"></i> {{ related_article.title }}
+                  <i class="fa-solid fa-file-alt" aria-hidden="true"></i> {{ related_article.title }}
                 </a>
               </li>
               {% endfor %}
@@ -175,7 +175,7 @@ super() }} {% if article.translations -%}
         <div class="support-section">
           <div class="support-card pico-card">
             <hgroup>
-              <h3><i class="fa-solid fa-heart"></i> Destek Olun</h3>
+              <h3><i class="fa-solid fa-heart" aria-hidden="true"></i> Destek Olun</h3>
             </hgroup>
             <p>
               Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz.
@@ -212,7 +212,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn twitter-share"
               aria-label="Twitter'da Paylaş">
-              <i class="fa-brands fa-x-twitter"></i>
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+              <span class="sr-only">Twitter'da Paylaş</span>
           </a>
 
           <!-- Facebook Paylaşım -->
@@ -222,7 +223,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn facebook-share"
               aria-label="Facebook'ta Paylaş">
-              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              <span class="sr-only">Facebook'ta Paylaş</span>
           </a>
 
           <!-- LinkedIn Paylaşım -->
@@ -232,7 +234,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn linkedin-share"
               aria-label="LinkedIn'de Paylaş">
-              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+              <span class="sr-only">LinkedIn'de Paylaş</span>
           </a>
 
           <!-- Reddit Paylaşım -->
@@ -242,7 +245,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn reddit-share"
               aria-label="Reddit'te Paylaş">
-              <i class="fa-brands fa-reddit"></i>
+              <i class="fa-brands fa-reddit" aria-hidden="true"></i>
+              <span class="sr-only">Reddit'te Paylaş</span>
           </a>
 
           <!-- Telegram Paylaşım -->
@@ -252,7 +256,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn telegram-share"
               aria-label="Telegram'da Paylaş">
-              <i class="fa-brands fa-telegram"></i>
+              <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+              <span class="sr-only">Telegram'da Paylaş</span>
           </a>
 
           <!-- WhatsApp Paylaşım -->
@@ -262,7 +267,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn whatsapp-share"
               aria-label="WhatsApp'ta Paylaş">
-              <i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              <span class="sr-only">WhatsApp'ta Paylaş</span>
           </a>
 
           <!-- Email Paylaşım -->
@@ -272,7 +278,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn email-share"
               aria-label="Email ile Paylaş">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <span class="sr-only">Email ile Paylaş</span>
           </a>
 
           <!-- Pinterest Paylaşım -->
@@ -282,7 +289,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn pinterest-share"
               aria-label="Pinterest'te Paylaş">
-              <i class="fa-brands fa-pinterest"></i>
+              <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
+              <span class="sr-only">Pinterest'te Paylaş</span>
           </a>
 
           <!-- Tumblr Paylaşım -->
@@ -292,7 +300,8 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn tumblr-share"
               aria-label="Tumblr'da Paylaş">
-              <i class="fa-brands fa-tumblr"></i>
+              <i class="fa-brands fa-tumblr" aria-hidden="true"></i>
+              <span class="sr-only">Tumblr'da Paylaş</span>
           </a>
 
           <!-- Bluesky Paylaşım -->
@@ -302,12 +311,14 @@ super() }} {% if article.translations -%}
               rel="noopener noreferrer"
               class="social-share-btn bluesky-share"
               aria-label="Bluesky'da Paylaş">
-              <i class="fa-solid fa-cloud"></i>
+              <i class="fa-solid fa-cloud" aria-hidden="true"></i>
+              <span class="sr-only">Bluesky'da Paylaş</span>
           </a>
 
           <!-- Kopyala Butonu -->
           <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
-              <i class="fa-solid fa-copy"></i>
+              <i class="fa-solid fa-copy" aria-hidden="true"></i>
+              <span class="sr-only">URL'yi Kopyala</span>
           </button>
       </div>
     </article>
@@ -366,7 +377,8 @@ super() }} {% if article.translations -%}
 {% if article.toc %}
 <div class="toc-fab-container">
     <button id="toc-fab-btn" aria-label="İçindekiler Menüsü">
-        <i class="fa-solid fa-list"></i>
+        <i class="fa-solid fa-list" aria-hidden="true"></i>
+        <span class="sr-only">İçindekiler Menüsü</span>
     </button>
     <nav id="toc-collapsible-menu" class="pico-card">{{ article.toc }}</nav>
 </div>

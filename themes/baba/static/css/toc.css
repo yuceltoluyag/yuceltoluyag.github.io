@@ -22,6 +22,8 @@
   border: 1px solid var(--pico-primary-border);
   color: var(--pico-primary-inverse);
   transition: transform 0.2s ease-in-out, background-color 0.2s;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 #toc-fab-btn:hover {
@@ -63,6 +65,35 @@
   transform: translateY(0);
   visibility: visible;
   z-index: 1051; /* Bring to front when active */
+}
+
+/* Mobil cihazlar için TOC menüsü optimize ediliyor */
+@media (max-width: 768px) {
+  .toc-fab-container {
+    bottom: 100px;
+    right: 15px;
+  }
+  
+  #toc-collapsible-menu {
+    width: calc(100vw - 30px);
+    max-width: 300px;
+    right: 0;
+    left: auto;
+    max-height: 50vh;
+    min-width: 250px;
+  }
+  
+  #toc-collapsible-menu button,
+  #toc-collapsible-menu a.toc-href {
+    padding: 0.75rem 0.5rem;
+    min-height: 44px;
+  }
+  
+  /* Mobil için buton boyutunu optimize et */
+  #toc-fab-btn {
+    width: 55px;
+    height: 55px;
+  }
 }
 
 /* Styles adapted from your example for the list */
