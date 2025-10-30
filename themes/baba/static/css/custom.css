@@ -5,9 +5,7 @@ article.article a,
 h2.entry-title a {
   text-decoration: none;
 }
-main img,
-main video,
-video {
+main img {
   height: auto;
   max-width: 100%;
 }
@@ -326,8 +324,7 @@ article.article h3 {
   flex-direction: column;
   align-items: stretch;
 }
-img,
-video {
+img {
   border-style: none;
   border-radius: 5px;
 }
