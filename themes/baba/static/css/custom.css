@@ -124,8 +124,6 @@ article.article h3 {
   margin-top: 0.75em;
 }
 
-
-
 /* Erişilebilirlik için gizli metin sınıfı */
 .sr-only {
   position: absolute;
@@ -147,9 +145,6 @@ article.article h3 {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
 }
-
-
-
 
 .article-list-title a,
 .tag-item {
@@ -1427,7 +1422,6 @@ article.article {
 }
 #search-input,
 .article-main-content,
-
 .search-result-item {
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -1682,7 +1676,6 @@ li::marker {
   transition: transform 0.2s;
 }
 .article-nav-arrow span,
-.footer-links a,
 .hero-meta a,
 .nav-arrow span {
   transition: color 0.3s;
@@ -2256,7 +2249,6 @@ li::marker {
   }
   .article-nav-arrow.next,
   .article-nav-arrow.prev,
-  .footer-links,
   .nav-arrow.next,
   .nav-arrow.prev {
     justify-content: center;
@@ -2298,17 +2290,7 @@ li::marker {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
-  .footer-content,
-  .footer-support {
-    text-align: center;
-  }
-  .footer-content {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .footer-section {
-    min-width: 100%;
-  }
+
   .article-meta {
     flex-direction: column;
     gap: 0.5rem;
