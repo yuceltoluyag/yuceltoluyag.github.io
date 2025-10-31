@@ -48,7 +48,7 @@ Tüm CSS dosyalarını birleştirip küçültmek için:
 
 ```bash
 # CSS dosyalarını birleştir
-cat themes/baba/static/css/pico.indigo.min.css themes/baba/static/css/custom.css themes/baba/static/css/modern-styles.css themes/baba/static/css/pygments.css themes/baba/static/css/copy.css themes/baba/static/css/toc.css themes/baba/static/css/language-switcher.css themes/baba/static/css/social-share.css themes/baba/static/css/back-to-top.css themes/baba/static/css/donate.css themes/baba/static/css/tags.css > themes/baba/static/css/combined.css
+cat themes/baba/static/css/pico.indigo.min.css themes/baba/static/css/custom.css themes/baba/static/css/modern-styles.css themes/baba/static/css/pygments.css themes/baba/static/css/copy.css themes/baba/static/css/toc.css themes/baba/static/css/language-switcher.css themes/baba/static/css/social-share.css themes/baba/static/css/back-to-top.css themes/baba/static/css/donate.css themes/baba/static/css/tags.css themes/baba/static/css/video.css > themes/baba/static/css/combined.css
 
 # CSS dosyasını küçült
 npx lightningcss-cli --minify themes/baba/static/css/combined.css -o themes/baba/static/css/bundle.min.css
