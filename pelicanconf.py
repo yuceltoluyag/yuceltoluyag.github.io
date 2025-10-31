@@ -28,7 +28,7 @@ DEVELOPMENT_MODE = False
 
 # Disqus Yorum Sistemi
 DISQUS_SITENAME = "yuceltoluyag"
-
+DEFAULT_DATE_FORMAT = "%d %B %Y"
 DEFAULT_LANG = "tr"
 
 

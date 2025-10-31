@@ -8,7 +8,7 @@ import os
 import sys
 
 sys.path.append(os.curdir)
-from pelicanconf import *
+from pelicanconf import *  # noqa: F403
 
 # Publish modunu aktif et
 PUBLISH = True
