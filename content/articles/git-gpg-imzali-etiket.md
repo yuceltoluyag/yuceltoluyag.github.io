@@ -7,8 +7,9 @@ Slug: git-gpg-imzali-etiket
 Authors: yuceltoluyag  
 Series: Git
 Series_index: 4
-Summary: Git ile GPG imzalı etiket oluşturmayı ve karşılaşılabilecek sorunları nasıl çözeceğinizi öğrenin.  
-Translation: false  
+Summary: Git ile GPG imzalı etiket oluşturmayı ve karşılaşılabilecek sorunları nasıl çözeceğinizi öğrenin.
+Lang: tr
+Translation: false
 Status: published  
 Template: article  
 Image: images/git-gpg-imzali-etiket-xl.webp

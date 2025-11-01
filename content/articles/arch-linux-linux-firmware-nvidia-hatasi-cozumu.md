@@ -9,7 +9,8 @@ Status: published
 Summary: linux-firmware paketinin 20250613.12fe085f-5 sürümüne yapılan güncelleme sonrası yaşanan NVIDIA firmware çakışma hatası ve adım adım çözüm rehberi.
 Template: article
 Image: images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp
-
+Lang: tr
+Translation: false
 
 Arch Linux kullanıyorsanız ve son güncellemeleri yaparken `linux-firmware` paketine dair can sıkıcı bir hata mesajıyla karşılaştıysanız, yalnız değilsiniz. Özellikle NVIDIA donanımına sahip sistemlerde, `linux-firmware-nvidia` ile ilgili dosya çakışmaları (`exists in filesystem`) birçok kullanıcının sistemini yükseltmesini engelliyor. Bu makalede, bu sorunun nedenini ve kalıcı çözümünü adım adım açıklıyoruz. ✅
 
@@ -21,9 +22,9 @@ Arch Linux kullanıyorsanız ve son güncellemeleri yaparken `linux-firmware` pa
 
 Örneğin:
 
-* `linux-firmware-nvidia`
-* `linux-firmware-intel`
-* `linux-firmware-amd`
+- `linux-firmware-nvidia`
+- `linux-firmware-intel`
+- `linux-firmware-amd`
 
 Bu ayrıştırma sayesinde sistemde yalnızca ihtiyaç duyulan firmware'ler kurulabiliyor. Ana paket olan `linux-firmware` artık sadece bu alt paketlere bağımlı olan boş (metapackage) bir yapıya sahip.
 
@@ -55,9 +56,9 @@ Bu durumun ortaya çıkmasının iki ana nedeni var:
 
 Bu problem, aşağıdaki koşulları sağlayan kullanıcıları etkiler:
 
-* `linux-firmware` sürümü 20250508.788aadc8-2 veya daha eski bir sürüm kullanılıyor
-* Sistem güncellenmek isteniyor (`pacman -Syu`)
-* Sistemde NVIDIA donanımı mevcut (ya da `linux-firmware-nvidia` otomatik olarak yükleniyor)
+- `linux-firmware` sürümü 20250508.788aadc8-2 veya daha eski bir sürüm kullanılıyor
+- Sistem güncellenmek isteniyor (`pacman -Syu`)
+- Sistemde NVIDIA donanımı mevcut (ya da `linux-firmware-nvidia` otomatik olarak yükleniyor)
 
 ## Çözüm: linux-firmware Paketini Manuel Olarak Kaldırıp Yeniden Yükleyin
 
@@ -96,9 +97,9 @@ Sonrasında tekrar `sudo pacman -Syu` komutunu çalıştırarak sisteminizi gün
 
 ## Özet: Sorun Neden Oldu, Nasıl Çözülür?
 
-* `linux-firmware` artık boş bir paket ve firmware'ler ayrı ayrı paketlendi.
-* NVIDIA firmware dosyalarının upstream’de yeniden düzenlenmesi, Pacman’ın dosya çakışması uyarısı vermesine yol açtı.
-* Sorunu çözmek için:
+- `linux-firmware` artık boş bir paket ve firmware'ler ayrı ayrı paketlendi.
+- NVIDIA firmware dosyalarının upstream’de yeniden düzenlenmesi, Pacman’ın dosya çakışması uyarısı vermesine yol açtı.
+- Sorunu çözmek için:
 
   1. `linux-firmware` paketini kaldırın (`pacman -Rdd`)
   2. Sistem güncellemesini çalıştırın (`pacman -Syu`)
@@ -136,9 +137,6 @@ Ayrıca arkadaşların da benzer bir sorun yaşıyorsa paylaşarak onlara da yar
 
 **Kaynak:**
 
-* [Arch Linux News – linux-firmware >= 20250613.12fe085f-5 upgrade requires manual intervention](https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/){: target="_blank" rel="noopener noreferrer"}
-
-
+- [Arch Linux News – linux-firmware >= 20250613.12fe085f-5 upgrade requires manual intervention](https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/){: target="\_blank" rel="noopener noreferrer"}
 
 ---
-

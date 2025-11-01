@@ -1,18 +1,18 @@
 Title: Modern Bir Mutt Kurulumu 1. Bölüm
 Date: 2020-02-03 12:00 10:00
 Modified: 2025-08-11 22:59
-Category:  Linux
+Category: Linux
 Tags: linux, e-mail
 Slug: modern-bir-mutt-kurulumu-1-bolum
 Authors: yuceltoluyag
 Series: mutt
 Series_index: 1
 Summary: Neomutt, mbsync, msmtp ve mu ile modern bir mutt kurulumu yapmayı adım adım anlatıyoruz.
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/neomutt_senkron-xl.webp
-
 
 Merhaba! Bu yazımızın ilk bölümünde, harika bir e-posta istemcisi olan Mutt ayarlarımızı yapılandıracağız. 😊
 
@@ -20,17 +20,17 @@ Merhaba! Bu yazımızın ilk bölümünde, harika bir e-posta istemcisi olan Mut
 
 Aşağıdaki yazılımlar, mutt'ı kullanabilmek için gereklidir:
 
-1. [Mbsync/isync](https://wiki.archlinux.org/index.php/Isync#Installing){: target="_blank" rel="noopener noreferrer"}
-2. [Msmtp](https://wiki.archlinux.org/index.php/Msmtp){: target="_blank" rel="noopener noreferrer"}
-3. [Mu](https://aur.archlinux.org/packages/mu/){: target="_blank" rel="noopener noreferrer"}
+1. [Mbsync/isync](https://wiki.archlinux.org/index.php/Isync#Installing){: target="\_blank" rel="noopener noreferrer"}
+2. [Msmtp](https://wiki.archlinux.org/index.php/Msmtp){: target="\_blank" rel="noopener noreferrer"}
+3. [Mu](https://aur.archlinux.org/packages/mu/){: target="\_blank" rel="noopener noreferrer"}
 4. Vim ya da türevleri
-5. [NeoMutt](https://www.archlinux.org/packages/community/x86_64/neomutt/){: target="_blank" rel="noopener noreferrer"}
-6. [Vdirsyncer](https://aur.archlinux.org/packages/vdirsyncer-git/){: target="_blank" rel="noopener noreferrer"}
-7. [Khard](https://www.archlinux.org/packages/community/any/khard/){: target="_blank" rel="noopener noreferrer"}
-8. [Ripmime](https://aur.archlinux.org/packages/ripmime/){: target="_blank" rel="noopener noreferrer"}
-9. [UrlScan](https://www.archlinux.org/packages/community/any/urlscan/){: target="_blank" rel="noopener noreferrer"}
-10. [W3m](https://www.archlinux.org/packages/extra/x86_64/w3m/){: target="_blank" rel="noopener noreferrer"}
-11. [Gpgme](https://www.archlinux.org/packages/core/x86_64/gpgme/){: target="_blank" rel="noopener noreferrer"}
+5. [NeoMutt](https://www.archlinux.org/packages/community/x86_64/neomutt/){: target="\_blank" rel="noopener noreferrer"}
+6. [Vdirsyncer](https://aur.archlinux.org/packages/vdirsyncer-git/){: target="\_blank" rel="noopener noreferrer"}
+7. [Khard](https://www.archlinux.org/packages/community/any/khard/){: target="\_blank" rel="noopener noreferrer"}
+8. [Ripmime](https://aur.archlinux.org/packages/ripmime/){: target="\_blank" rel="noopener noreferrer"}
+9. [UrlScan](https://www.archlinux.org/packages/community/any/urlscan/){: target="\_blank" rel="noopener noreferrer"}
+10. [W3m](https://www.archlinux.org/packages/extra/x86_64/w3m/){: target="\_blank" rel="noopener noreferrer"}
+11. [Gpgme](https://www.archlinux.org/packages/core/x86_64/gpgme/){: target="\_blank" rel="noopener noreferrer"}
 
 ## Yukarıdaki Programlar Ne İşe Yarar?
 
@@ -164,9 +164,9 @@ touch ~/.msmtprc
 
 Bu dosyada ise mail bağlantı ayarlarını yapıyoruz. Eğer mail bağlantınızın imap, port, ssl gibi bilgilerini bilmiyorsanız, aşağıdaki kaynaklara göz atabilirsiniz:
 
-- [Gmail İMAP Ayarları](https://support.google.com/mail/answer/7126229?hl=tr){: target="_blank" rel="noopener noreferrer"}
-- [Yandex İMAP Ayarları](https://yandex.com.tr/support/mail/mail-clients.html){: target="_blank" rel="noopener noreferrer"}
-- [Hotmail İMAP Ayarları](https://support.office.com/tr-tr/article/outlook-com-i%C3%A7in-pop-imap-ve-smtp-ayarlar%C4%B1-d088b986-291d-42b8-9564-9c414e2aa040){: target="_blank" rel="noopener noreferrer"}
+- [Gmail İMAP Ayarları](https://support.google.com/mail/answer/7126229?hl=tr){: target="\_blank" rel="noopener noreferrer"}
+- [Yandex İMAP Ayarları](https://yandex.com.tr/support/mail/mail-clients.html){: target="\_blank" rel="noopener noreferrer"}
+- [Hotmail İMAP Ayarları](https://support.office.com/tr-tr/article/outlook-com-i%C3%A7in-pop-imap-ve-smtp-ayarlar%C4%B1-d088b986-291d-42b8-9564-9c414e2aa040){: target="\_blank" rel="noopener noreferrer"}
 
 ```bash
 account ytoluyagmail
@@ -201,7 +201,7 @@ echo "Mail Test Ediyoruz" | msmtp -a ytoluyagmail ytoluyag@gmail.com
 [responsive_img src="/images/uygulama_sifresi_gmail-xl.webp" alt="Test Sonucu" /]
 Eğer hata alırsanız, çözüm için tekrar gözden geçirebilirsiniz. Özellikle Gmail'in iki
 
- faktörlü doğrulama gereksinimlerini göz önünde bulundurmalısınız.
+faktörlü doğrulama gereksinimlerini göz önünde bulundurmalısınız.
 
 Eğer bağlantınız başarılı olduysa, Muttr'ı başlatalım.
 
@@ -210,11 +210,10 @@ neomutt
 ```
 
 Burada göreceğiniz hata loglarını da düzeltmek gerekebilir. Eğer hata alıyorsanız, dosyanızı tekrar gözden geçirebilirsiniz.
+
 ```bash
 mbsync -a
 ```
 
 [responsive_img src="/images/neomutt_senkron-xl.webp" alt="neomutt_senkron" /]
-Bu yazı dizisinin [2.Bölüm](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="_blank" rel="noopener noreferrer"}'ünde, e-posta istemcinizi daha ayrıntılı olarak yapılandırmaya devam edeceğiz. 🙂
-
-
+Bu yazı dizisinin [2.Bölüm](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="\_blank" rel="noopener noreferrer"}'ünde, e-posta istemcinizi daha ayrıntılı olarak yapılandırmaya devam edeceğiz. 🙂

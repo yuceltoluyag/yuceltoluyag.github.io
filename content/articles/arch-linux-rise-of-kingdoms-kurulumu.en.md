@@ -10,7 +10,6 @@ Summary: It's possible to play Rise of Kingdoms on Arch Linux! In this guide, we
 Template: article
 Image: images/rok-lutris-fps-test-xl.webp
 Lang: en
-Translation: true
 
 ## 🧐 Introduction: Why Should You Play Rise of Kingdoms on Linux?
 

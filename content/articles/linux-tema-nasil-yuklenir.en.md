@@ -6,7 +6,6 @@ Tags: linux, unixporn
 Slug: linux-tema-nasil-yuklenir
 authors: yuceltoluyag
 Summary: Installing themes on Linux is quite easy. In this guide, we explain step by step how to customize with Gnome Shell and extensions.
-Translation: true
 Status: published
 Template: article
 Image: images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp

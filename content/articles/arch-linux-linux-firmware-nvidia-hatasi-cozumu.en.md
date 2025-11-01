@@ -10,7 +10,6 @@ Summary: NVIDIA firmware conflict error encountered after updating the linux-fir
 Template: article
 Image: images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp
 Lang: en
-Translation: true
 
 ---
 
@@ -26,9 +25,9 @@ The `linux-firmware` package, released on 2025-06-13, underwent a significant st
 
 For example:
 
-* `linux-firmware-nvidia`
-* `linux-firmware-intel`
-* `linux-firmware-amd`
+- `linux-firmware-nvidia`
+- `linux-firmware-intel`
+- `linux-firmware-amd`
 
 This separation allows only the necessary firmware to be installed on the system. The main `linux-firmware` package is now just an empty (metapackage) structure that depends on these sub-packages.
 
@@ -60,9 +59,9 @@ There are two main reasons for this situation:
 
 This problem affects users who meet the following conditions:
 
-* `linux-firmware` version 20250508.788aadc8-2 or older is being used
-* The system needs to be updated (`pacman -Syu`)
-* NVIDIA hardware is present on the system (or `linux-firmware-nvidia` is installed automatically)
+- `linux-firmware` version 20250508.788aadc8-2 or older is being used
+- The system needs to be updated (`pacman -Syu`)
+- NVIDIA hardware is present on the system (or `linux-firmware-nvidia` is installed automatically)
 
 ## Solution: Manually Remove and Reinstall the linux-firmware Package
 
@@ -101,9 +100,9 @@ Afterward, you can update your system by running the `sudo pacman -Syu` command 
 
 ## Summary: Why Did the Problem Occur, How to Solve It?
 
-* `linux-firmware` is now an empty package, and firmware is packaged separately.
-* The reorganization of NVIDIA firmware files upstream led to Pacman issuing a file conflict warning.
-* To solve the problem:
+- `linux-firmware` is now an empty package, and firmware is packaged separately.
+- The reorganization of NVIDIA firmware files upstream led to Pacman issuing a file conflict warning.
+- To solve the problem:
 
   1. Remove the `linux-firmware` package (`pacman -Rdd`)
   2. Run the system update (`pacman -Syu`)
@@ -141,6 +140,6 @@ You can also help your friends by sharing it if they are experiencing a similar 
 
 **Source:**
 
-* [Arch Linux News – linux-firmware >= 20250613.12fe085f-5 upgrade requires manual intervention](https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/){: target="_blank" rel="noopener noreferrer"}
+- [Arch Linux News – linux-firmware >= 20250613.12fe085f-5 upgrade requires manual intervention](https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/){: target="\_blank" rel="noopener noreferrer"}
 
 ---

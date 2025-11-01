@@ -11,6 +11,8 @@ Template: article
 Image: images/arch-linux-ollama-webui-kurulumu-docker-xl.webp
 Series: Docker
 Series_index: 2
+Lang: tr
+Translation: false
 
 ## Arch Linux'ta Ollama ve WebUI Kurulumu (Docker ile) 🤖
 

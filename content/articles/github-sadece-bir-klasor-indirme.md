@@ -9,6 +9,8 @@ Summary: GitHub reposunun tamamını değil, sadece belirli bir klasörünü ind
 Template: article
 Series: Git
 Series_index: 9
+Lang: tr
+Translation: false
 
 ---
 

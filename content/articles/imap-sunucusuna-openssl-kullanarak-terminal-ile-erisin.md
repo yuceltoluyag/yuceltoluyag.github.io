@@ -8,21 +8,20 @@ Authors: yuceltoluyag
 Series: mutt
 Series_index: 2
 Summary: IMAP sunucusuna OpenSSL kullanarak terminal ile nasıl bağlanabileceğinizi gösteren bir rehber.
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/imap_openssl_terminal-xl.webp
 
-
-
-[# Modern bir mutt kurulumu 1. bölüm](/modern-bir-mutt-kurulumu-1-bolum){: target="_blank" rel="noopener noreferrer"} anlatırken **remote** kısımlarının çok önemli olduğunu söylemiştim. Her e-postanın kendi arayüzü, kendi remote tag'ı hatta dile göre değişen tag'lar varken, biz bunları nasıl öğreneceğiz? IMAP ve OpenSSL kullanarak bunu öğrenebileceğiz.
+[# Modern bir mutt kurulumu 1. bölüm](/modern-bir-mutt-kurulumu-1-bolum){: target="\_blank" rel="noopener noreferrer"} anlatırken **remote** kısımlarının çok önemli olduğunu söylemiştim. Her e-postanın kendi arayüzü, kendi remote tag'ı hatta dile göre değişen tag'lar varken, biz bunları nasıl öğreneceğiz? IMAP ve OpenSSL kullanarak bunu öğrenebileceğiz.
 
 Windows kullanan arkadaşlar için öneriler:
 
-- [nmap](https://nmap.org/){: target="_blank" rel="noopener noreferrer"}
-- [ncat](https://nmap.org/ncat/){: target="_blank" rel="noopener noreferrer"}
-- [telnet](https://www.gnu.org/software/inetutils/manual/html_node/telnet-invocation.html){: target="_blank" rel="noopener noreferrer"}
-- Cmder terminali Windows kullananlara tavsiye ederim. [Cmder](https://cmder.app/){: target="_blank" rel="noopener noreferrer"} adresinden full sürümünü indirip istediğiniz dizine çıkarabilirsiniz. İsveç çakısı gibi bir terminaldir, isteğe göre düzenlenebilir, yeni uygulamalar eklenebilir vs. Bu uygulamalara gerek bile duymayabilirsiniz 😃
+- [nmap](https://nmap.org/){: target="\_blank" rel="noopener noreferrer"}
+- [ncat](https://nmap.org/ncat/){: target="\_blank" rel="noopener noreferrer"}
+- [telnet](https://www.gnu.org/software/inetutils/manual/html_node/telnet-invocation.html){: target="\_blank" rel="noopener noreferrer"}
+- Cmder terminali Windows kullananlara tavsiye ederim. [Cmder](https://cmder.app/){: target="\_blank" rel="noopener noreferrer"} adresinden full sürümünü indirip istediğiniz dizine çıkarabilirsiniz. İsveç çakısı gibi bir terminaldir, isteğe göre düzenlenebilir, yeni uygulamalar eklenebilir vs. Bu uygulamalara gerek bile duymayabilirsiniz 😃
 
 ## Başlayalım 🥗
 
@@ -208,7 +207,6 @@ read R BLOCK
 
 ```
 
-
 ### Posta Kutusuna Bağlanma
 
 Bağlantıyı kurduktan sonra, kullanıcı adı ve şifrenizi girmeniz istenecektir.
@@ -313,6 +311,5 @@ tag FETCH 15 (BODY)
 tag FETCH 6388 (BODY[n])
 
 ```
-
 
 [responsive_img src="/images/imap_openssl_terminal-xl.webp" alt="imap_openssl_terminal" /]

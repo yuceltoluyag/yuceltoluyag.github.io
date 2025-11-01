@@ -5,15 +5,17 @@ Category: Disk Yönetimi
 Tags: linux, mount, unmount, disk, dosya-sistemi, sistem-yonetimi  
 Slug: linux-disk-mount-unmount-temel-bilgiler  
 Authors: yuceltoluyag  
+Lang: tr
+Translation: false
 Status: published  
 Summary: Linux’ta disklerin mount edilmesi ve unmount edilmesi işlemlerini temel kavramlar, komutlar ve örneklerle anlatıyoruz.
 Series: Linux-disk
 Series_index: 2
-Template: article  
+Template: article
 
 ## 💽 Linux’ta Disklerin Mount Edilmesi ve Unmount Edilmesi: Temel Bilgiler
 
-Linux ve Unix benzeri sistemlerde diskler doğrudan değil, **mount** işlemi ile dosya sistemi ağacına bağlanır. Bu sayede disk üzerindeki verilere belirli klasörler aracılığıyla erişilir. İşlemi tamamlanan disklerin bağlantısının kesilmesi ise **unmount** olarak adlandırılır.  
+Linux ve Unix benzeri sistemlerde diskler doğrudan değil, **mount** işlemi ile dosya sistemi ağacına bağlanır. Bu sayede disk üzerindeki verilere belirli klasörler aracılığıyla erişilir. İşlemi tamamlanan disklerin bağlantısının kesilmesi ise **unmount** olarak adlandırılır.
 
 Peki, Linux’ta diskler nasıl mount ve unmount edilir? Hangi komutlar kullanılır? Bu makalede, bu temel konuları detaylı ve anlaşılır şekilde öğreneceksiniz. 🚀
 
@@ -21,7 +23,7 @@ Peki, Linux’ta diskler nasıl mount ve unmount edilir? Hangi komutlar kullanı
 
 ## 🧐 Mount Nedir?
 
-Mount, fiziksel ya da sanal disk aygıtını, dosya sistemini Linux dizin ağacına bağlama işlemidir. Böylece disk içeriği o dizin (mount point) altında görünür ve erişilebilir olur.  
+Mount, fiziksel ya da sanal disk aygıtını, dosya sistemini Linux dizin ağacına bağlama işlemidir. Böylece disk içeriği o dizin (mount point) altında görünür ve erişilebilir olur.
 
 Örneğin bir USB belleği taktığınızda, sistem onu otomatik ya da manuel olarak `/mnt/usb` veya `/run/media/kullanici/usb` gibi dizinlere bağlar.
 
@@ -29,7 +31,7 @@ Mount, fiziksel ya da sanal disk aygıtını, dosya sistemini Linux dizin ağac�
 
 ## 📂 Mount Point (Bağlama Noktası) Nedir?
 
-Mount point, disk veya dosya sistemi bağlandığında içeriğin erişileceği klasördür.  
+Mount point, disk veya dosya sistemi bağlandığında içeriğin erişileceği klasördür.
 
 Mount işlemi yapılmadan önce bu dizinin var olması gerekir:
 
@@ -89,10 +91,10 @@ Unmount yapmadan önce diskin kullanımda olmaması gerekir; aksi takdirde hata 
 
 ## ⚠️ Mount ve Unmount İşlemlerinin Önemi
 
-* **Veri Güvenliği:** Disk kullanımdayken çıkarılırsa veri kaybı olabilir, bu yüzden önce unmount yapılmalı.
-* **Sistem Düzeni:** Dosya sistemlerinin düzgün bağlanması ve ayrılması sistemi kararlı tutar.
-* **Erişim Kontrolü:** Dosyalara erişim mount point üzerinden sağlanır.
-* **Çoklu Dosya Sistemleri:** Linux ext4, ntfs, iso9660 gibi farklı dosya sistemlerini aynı anda yönetebilir.
+- **Veri Güvenliği:** Disk kullanımdayken çıkarılırsa veri kaybı olabilir, bu yüzden önce unmount yapılmalı.
+- **Sistem Düzeni:** Dosya sistemlerinin düzgün bağlanması ve ayrılması sistemi kararlı tutar.
+- **Erişim Kontrolü:** Dosyalara erişim mount point üzerinden sağlanır.
+- **Çoklu Dosya Sistemleri:** Linux ext4, ntfs, iso9660 gibi farklı dosya sistemlerini aynı anda yönetebilir.
 
 ---
 
@@ -118,9 +120,9 @@ udisksctl loop-delete -b /dev/loopX
 
 ## 🔍 Mount Edilen Dosya Sistemlerini Görüntüleme
 
-* `mount` — Tüm bağlı dosya sistemlerini listeler.
-* `df -h` — Disk kullanım özetini gösterir.
-* `lsblk` — Blok aygıtları ve mount noktalarını gösterir.
+- `mount` — Tüm bağlı dosya sistemlerini listeler.
+- `df -h` — Disk kullanım özetini gösterir.
+- `lsblk` — Blok aygıtları ve mount noktalarını gösterir.
 
 ---
 
@@ -153,5 +155,3 @@ Linux’ta disklerin mount ve unmount edilmesi, verilerin güvenli ve düzenli y
 Yeni başlayanlar için bu temel bilgileri anlamak, Linux sistem yönetimi yolculuğunda sağlam bir adım olacaktır. Siz de deneyimlerinizi ve sorularınızı yorumlarda paylaşabilirsiniz! 👨‍💻✨
 
 ---
-
-

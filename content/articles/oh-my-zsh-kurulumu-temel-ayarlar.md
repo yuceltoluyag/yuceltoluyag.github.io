@@ -8,6 +8,7 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 1
 Summary: Oh My Zsh'in kurulumu ve temel ayarlarının nasıl yapılacağını adım adım açıklıyoruz.
+Lang: tr
 Translation: false
 Status: published
 Template: article
@@ -147,9 +148,9 @@ Bu kurulum tamamlandıktan sonra:
 
 ## Kaynaklar
 
-- [Oh My Zsh Resmi Sitesi](https://ohmyz.sh/){: target="_blank" rel="noopener noreferrer"}
-- [Zsh Dokümantasyonu](https://zsh.sourceforge.io/Doc/){: target="_blank" rel="noopener noreferrer"}
-- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="_blank" rel="noopener noreferrer"}
+- [Oh My Zsh Resmi Sitesi](https://ohmyz.sh/){: target="\_blank" rel="noopener noreferrer"}
+- [Zsh Dokümantasyonu](https://zsh.sourceforge.io/Doc/){: target="\_blank" rel="noopener noreferrer"}
+- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 

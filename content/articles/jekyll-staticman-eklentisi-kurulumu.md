@@ -6,6 +6,7 @@ Tags: staticman, jekyll
 Slug: jekyll-staticman-eklentisi-kurulumu
 Authors: yuceltoluyag
 Summary: Jekyll blog sitesinde yorumlar için Staticman eklentisini kurma sürecini anlatan detaylı bir rehber.
+Lang: tr
 Translation: false
 Status: published
 Template: article

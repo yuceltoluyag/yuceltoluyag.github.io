@@ -6,6 +6,7 @@ Tags: kulaklık, claw's sonic, oyuncu kulaklığı, rgb kulaklık, fiyat perform
 Slug: claws-sonic-v1-rgb-spectrum-kulaklik-incelemesi
 Authors: yuceltoluyag
 Summary: Claw's Sonic V1 RGB Spectrum 7.1 oyuncu kulaklığına dair detaylı kullanıcı deneyimi, mikrofon testi, ses kalitesi, konfor ve fiyat-performans değerlendirmesi bu blog yazısında!
+Lang: tr
 Translation: false
 Status: published
 Template: article

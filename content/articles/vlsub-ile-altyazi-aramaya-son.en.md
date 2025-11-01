@@ -6,7 +6,6 @@ Tags: vlc, film
 Slug: vlsub-ile-altyazi-aramaya-son
 Authors: yuceltoluyag
 Summary: We explain how to easily find and download subtitles using the VLSub plugin for VLC media player.
-Translation: true
 Status: published
 Template: article
 Image: images/vlsub0-xl.webp

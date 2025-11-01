@@ -8,6 +8,7 @@ Authors: yuceltoluyag
 Series: Git
 Series_index: 2
 Summary: Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağını keşfedin.
+Lang: tr
 Translation: false
 Status: published
 Template: article
@@ -34,33 +35,28 @@ Instagram üzerinden **hikaye**lerimi takip edenler, **Windows Terminal**imi nas
 
 Eğer terminalinizde **ikon**ların doğru şekilde **görüntülenmesini** istiyorsanız:
 
-- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts){: target="_blank" rel="noopener noreferrer"} **kullanmalısınız**.
+- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts){: target="\_blank" rel="noopener noreferrer"} **kullanmalısınız**.
 - Nerd Fonts'un tamamı 2 GB'dan daha fazladır. Hepsini indirmenize gerek yok; beğendiğiniz fontu seçip kurabilirsiniz. Keyfinize bakın! =)
 
 ## Microsoft Mağaza
 
-- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701){: target="_blank" rel="noopener noreferrer"}
-- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D){: target="_blank" rel="noopener noreferrer"}
+- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701){: target="\_blank" rel="noopener noreferrer"}
+- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D){: target="\_blank" rel="noopener noreferrer"}
 
 Bu iki uygulamayı **kuruyoruz**. Kurduktan sonra **Windows Terminal** uygulamamızı **açıyoruz** ve **ayarlara** giriyoruz.
-
 
 [responsive_img src="/images/windows-terminal-xl.webp" alt="windows-terminal" /]
 
 Ayarlara girdikten sonra **görünüm** sekmesindeki ayarlarınız şu şekilde **olmalı**.
 
-
 [responsive_img src="/images/windows-terminal2-xl.webp" alt="windows-terminal2" /]
-
 
 Ayarları **kaydettikten** sonra **Startup** kısmına tıklayın. Yüklemiş olduğumuz **Powershell**'i **varsayılan** olarak ayarlayın.
 [responsive_img src="/images/windows-terminal3-xl.webp" alt="windows-terminal3" /]
 Ayarları **kaydedin** ve **Defaults** sekmesine gelin, oradan **Appearance** kısmından **Font** ayarlarınızı yapın.
 
-
 [responsive_img src="/images/windows-terminal4-xl.webp" alt="windows-terminal4" /]
 **Font** ayarlarınızı yaptıktan sonra aynı ekranda bulunan "**Enable Acrylic**"i **aktif** hale getirin ve ayarları **kaydedin**.
-
 
 [responsive_img src="/images/windows-terminal5-xl.webp" alt="windows-terminal5" /]
 
@@ -378,6 +374,7 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 ## Sonuç
 
 [responsive_img src="/images/windows-terminal-son-xl.webp" alt="windows-terminal6" /]
+
 ## Bana Balık Tutmasını Öğretme, Bana Balık Ver
 
 Bu yazımı okuyorsanız, muhtemelen **Git** nedir biliyorsunuzdur 👊 Linux tarafında sorunsuz çalışan araçlar **Windows**ta bazen sorunlu olabiliyor. Örneğin, **GPG** kullanırken sorun yaşamıyorsanız, kullanmaya devam edin 🧠 Ancak sorun yaşıyorsanız, "**gpg4win**" kullanmanızı tavsiye ederim.
@@ -386,4 +383,4 @@ Bu yazımı okuyorsanız, muhtemelen **Git** nedir biliyorsunuzdur 👊 Linux ta
 scoop install gpg4win
 ```
 
-[Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="_blank" rel="noopener noreferrer"} ayarlarıma buradan ulaşabilir ve kendinize göre düzenleyebilirsiniz.
+[Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="\_blank" rel="noopener noreferrer"} ayarlarıma buradan ulaşabilir ve kendinize göre düzenleyebilirsiniz.

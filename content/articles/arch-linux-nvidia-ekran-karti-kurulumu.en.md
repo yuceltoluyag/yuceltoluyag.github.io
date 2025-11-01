@@ -7,7 +7,6 @@ Slug: arch-linux-nvidia-ekran-karti-kurulumu
 Authors: yuceltoluyag
 Status: published
 Summary: I explain step by step the installation of Nvidia graphics card in Arch Linux, driver selection, optimus-manager and performance settings for maximum performance.
-Translation: true
 Template: article
 Image: images/nvidia-linux-performans-ayari-xl.webp
 Lang: en
@@ -41,7 +40,7 @@ Kernel driver in use: nvidia
 ```
 
 The **GF106GLM** part is your card's "code name".
-You can use this name to check which generation your card belongs to on the [Nvidia CodeNames](https://nouveau.freedesktop.org/wiki/CodeNames/){:target="_blank" rel="noopener noreferrer"} page.
+You can use this name to check which generation your card belongs to on the [Nvidia CodeNames](https://nouveau.freedesktop.org/wiki/CodeNames/){:target="\_blank" rel="noopener noreferrer"} page.
 My card belongs to the "**Fermi**" family.
 
 ---
@@ -51,15 +50,15 @@ My card belongs to the "**Fermi**" family.
 Some older cards no longer support the newest drivers.
 To see up to which driver version your card is supported:
 
-👉 [Nvidia Legacy GPU List](https://www.nvidia.com/en-us/drivers/unix/legacy-gpu/){:target="_blank" rel="noopener noreferrer"}
+👉 [Nvidia Legacy GPU List](https://www.nvidia.com/en-us/drivers/unix/legacy-gpu/){:target="\_blank" rel="noopener noreferrer"}
 
 If your card is in this list, for example, it's supported up to version **340xx** or **390xx**, installing newer drivers may cause problems.
 
 !!! warning "Common Mistake ⚠️ Most users install the `nvidia` package even though their card is only supported up to the 390xx series. This situation can cause problems such as black screen, kernel module errors or low FPS on your system."
 
-You can search for your appropriate version on the [Nvidia Driver Search](https://www.nvidia.com/Download/index.aspx){:target="_blank" rel="noopener noreferrer"} page, and according to the result, you can choose the `nvidia-390xx` or `nvidia-340xx` package in Arch Linux AUR.
+You can search for your appropriate version on the [Nvidia Driver Search](https://www.nvidia.com/Download/index.aspx){:target="\_blank" rel="noopener noreferrer"} page, and according to the result, you can choose the `nvidia-390xx` or `nvidia-340xx` package in Arch Linux AUR.
 
-📖 Additional resource: [Arch Linux Nvidia Document](https://wiki.archlinux.org/index.php/NVIDIA#Installation){:target="_blank" rel="noopener noreferrer"}
+📖 Additional resource: [Arch Linux Nvidia Document](https://wiki.archlinux.org/index.php/NVIDIA#Installation){:target="\_blank" rel="noopener noreferrer"}
 
 ---
 
@@ -94,7 +93,7 @@ optimus-manager --switch nvidia  # Dedicated GPU
 optimus-manager --switch hybrid  # Hybrid mode
 ```
 
-- You can follow the [Optimus Manager](https://github.com/Askannz/optimus-manager/wiki){:target="_blank" rel="noopener noreferrer"} wiki page.
+- You can follow the [Optimus Manager](https://github.com/Askannz/optimus-manager/wiki){:target="\_blank" rel="noopener noreferrer"} wiki page.
 
 ### 🔴 Prime (My recommendation)
 
@@ -113,7 +112,7 @@ Performance-wise, it gives results that are **half of Windows**, so it's not rec
 
 [responsive_img src="/images/optirun-dahili-gpu-xl.webp" alt="Integrated Gpu Performance" /]
 
-* Dedicated Gpu Performance
+- Dedicated Gpu Performance
 
 [responsive_img src="/images/optirun-performansi-xl.webp" alt="Dedicated Gpu Performance" /]
 
@@ -152,11 +151,11 @@ Then open the **NVIDIA Settings** application:
 
 ## 📊 Bumblebee Performance Comparison
 
-| Test             | Bumblebee            | Prime             |
-| ---------------- | -------------------- | ----------------- |
-| GPUTest          | 215 FPS              | 877 FPS           |
-| OBS Broadcast    | High CPU usage       | Stable            |
-| Render (Blender) | 2× slower            | Full GPU usage    |
+| Test             | Bumblebee      | Prime          |
+| ---------------- | -------------- | -------------- |
+| GPUTest          | 215 FPS        | 877 FPS        |
+| OBS Broadcast    | High CPU usage | Stable         |
+| Render (Blender) | 2× slower      | Full GPU usage |
 
 ---
 

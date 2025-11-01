@@ -5,12 +5,13 @@ Category: Sorun Giderme
 Tags: pyenv, arch-linux, aur, python, python-modülleri, hata-çözümü  
 Slug: pyenv-arch-linux-aur-python-modul-hatalari-cozumleri  
 Authors: yuceltoluyag  
+Lang: tr
+Translation: false
 Status: published  
 Summary: Arch Linux’ta pyenv kullandığınızda AUR paketleri derlerken karşılaşılan Python modül hatalarını ve çözümlerini adım adım anlatıyoruz.  
 Template: article
 
-
-Python geliştirme ortamlarını kolaylaştıran **pyenv**, Arch Linux üzerinde AUR paketlerini kurarken bazı sorunlara yol açabiliyor. Özellikle `pyenv global` komutuyla sistem Python sürümünü değiştirdiğinizde, AUR’dan yüklemeye çalıştığınız Python paketlerinde eksik modül hataları almanız olasıdır.  
+Python geliştirme ortamlarını kolaylaştıran **pyenv**, Arch Linux üzerinde AUR paketlerini kurarken bazı sorunlara yol açabiliyor. Özellikle `pyenv global` komutuyla sistem Python sürümünü değiştirdiğinizde, AUR’dan yüklemeye çalıştığınız Python paketlerinde eksik modül hataları almanız olasıdır.
 
 Peki bu hatalar neden ortaya çıkıyor? Ve nasıl hızlıca çözebilirsiniz? Gelin, pyenv ile AUR paketleri kurarken çıkan bu yaygın Python modül sorunlarını birlikte inceleyelim.
 
@@ -106,8 +107,8 @@ Bu sayede pyenv ayarları geçici olarak devre dışı kalır ve sistemde yükl�
 
 Bu problemleri aşmak için:
 
-* **Gerekli Python modüllerini pyenv aktif sürümünde kurmak**
-* **Gerekirse AUR paketlerini sistem Python ile derlemek**
+- **Gerekli Python modüllerini pyenv aktif sürümünde kurmak**
+- **Gerekirse AUR paketlerini sistem Python ile derlemek**
 
 işe yarayacaktır. Böylece sorunsuz ve hızlı bir kurulum deneyimi elde edersiniz. 😊
 
@@ -128,5 +129,3 @@ işe yarayacaktır. Böylece sorunsuz ve hızlı bir kurulum deneyimi elde eders
 Pyenv ile Python sürüm yönetiminde karşılaştığınız sorunları ve çözümlerini öğrendiniz. Siz de deneyimlerinizi ve sorularınızı yorumlarda paylaşabilirsiniz! 🚀
 
 ---
-
-

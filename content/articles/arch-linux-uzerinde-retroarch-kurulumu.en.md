@@ -6,7 +6,6 @@ Tags: archlinux, retroarch, emulator, oyun, yazılım
 Slug: arch-linux-uzerinde-retroarch-kurulumu
 Authors: yuceltoluyag
 Summary: A guide explaining step-by-step RetroArch installation and configuration on Arch Linux.
-Translation: true
 Status: published
 Template: article
 Image: images/retroarch-xl.webp
@@ -32,6 +31,7 @@ sudo pacman -S retroarch retroarch-assets-xmb libretro-core-info libretro-overla
 ```
 
 ### Package Descriptions:
+
 - **retroarch-assets-xmb**: Graphics and interface files for RetroArch.
 - **retroarch-assets-ozone**: A desktop-friendly RetroArch interface.
 - **libretro-core-info**: Information files about emulator cores.
@@ -55,6 +55,7 @@ In the startup screen, you can configure basic settings and customize them accor
 ## 3️⃣ Basic Configuration ⚙️
 
 ### Configuration File
+
 All settings of RetroArch are located in the following file:
 
 ```bash
@@ -62,11 +63,13 @@ All settings of RetroArch are located in the following file:
 ```
 
 Some basic settings you can make in this file:
+
 - **Video Settings**: In-game resolution and screen mode.
 - **Audio Settings**: Selecting audio drivers like ALSA or PulseAudio.
 - **Input Settings**: Configuring keyboard and joystick controls.
 
 #### Example Configurations
+
 If you are using RetroArch components in the user directory:
 
 ```bash
@@ -89,11 +92,13 @@ libretro_directory = "/usr/lib/libretro"
 RetroArch uses emulator cores to run games. You can use the following methods to install cores:
 
 ### Installing Cores with Online Updater
+
 1. Open RetroArch.
 2. Follow the steps **Main Menu > Online Updater > Core Updater**.
 3. Select and download the core you want.
 
 ### Manual Core Installation
+
 To install cores from AUR:
 
 ```bash
@@ -111,6 +116,7 @@ retroarch --libretro /path/to/some_core_libretro.so /path/to/rom
 ## 5️⃣ Graphic Shaders and Overlays 🎨
 
 You can use shaders and overlays to enhance your gaming experience:
+
 - **Shaders**: Add effects like CRT and scanline.
 - **Overlays**: Imitate retro console frame designs.
 
@@ -131,6 +137,7 @@ Keyboard and joystick controls can be set from the **Settings > Input** menu. Mo
 ## 7️⃣ Improving System Performance 🚀
 
 To optimize RetroArch performance, you can try the following settings:
+
 - Reduce shader usage.
 - Use a lightweight video driver like OpenGL.
 - Optimize **Audio Latency** settings (**Settings > Audio > Latency**).
@@ -175,7 +182,7 @@ audio_out_rate = 48000
 
 ---
 
-This guide provides a comprehensive source for those who want to install and optimize RetroArch on Arch Linux. For more information, you can check the [Arch Wiki: RetroArch](https://wiki.archlinux.org/title/RetroArch){: target="_blank" rel="noopener noreferrer"} page. 📖
+This guide provides a comprehensive source for those who want to install and optimize RetroArch on Arch Linux. For more information, you can check the [Arch Wiki: RetroArch](https://wiki.archlinux.org/title/RetroArch){: target="\_blank" rel="noopener noreferrer"} page. 📖
 
 Have fun gaming! 🎮
 [responsive_img src="/images/retroarch-xl.webp" alt="RetroArch user interface" /]

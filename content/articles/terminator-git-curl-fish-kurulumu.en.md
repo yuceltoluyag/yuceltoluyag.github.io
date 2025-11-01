@@ -6,7 +6,6 @@ Tags: terminal, linux, fish, git, curl
 Slug: terminator-git-curl-fish-kurulumu
 Authors: yuceltoluyag
 Summary: Guide to installing and customizing Terminator, Git, Curl and Fish to make your Linux terminal more functional and aesthetic.
-Translation: true
 Status: published
 Template: article
 Image: images/terminator-git-curl-fish-kurulumu-xl.webp
@@ -56,7 +55,7 @@ After this process, when you log out and log back in, Fish will be used as the d
 
 If you care about visuals, you can change your terminal theme by following the steps below.
 
-1. From the **iTerm2 Color Schemes** site, [choose a theme you like](http://iterm2colorschemes.com/){: target="_blank" rel="noopener noreferrer"}.
+1. From the **iTerm2 Color Schemes** site, [choose a theme you like](http://iterm2colorschemes.com/){: target="\_blank" rel="noopener noreferrer"}.
 2. To access the Terminator configuration file, run the following command:
 
 ```bash
@@ -78,7 +77,7 @@ curl -L https://get.oh-my.fish | fish
 
 ### 🎭 Theme Selection
 
-[Check out Oh My Fish themes](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md){: target="_blank" rel="noopener noreferrer"} and install a theme you like. For example:
+[Check out Oh My Fish themes](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md){: target="\_blank" rel="noopener noreferrer"} and install a theme you like. For example:
 
 ```bash
 omf install bobthefish
@@ -92,7 +91,7 @@ Oh My Fish offers various plugins. To install a plugin you like:
 omf install plugin-name
 ```
 
-[You can check out plugins here](https://github.com/oh-my-fish){: target="_blank" rel="noopener noreferrer"}. 🤩
+[You can check out plugins here](https://github.com/oh-my-fish){: target="\_blank" rel="noopener noreferrer"}. 🤩
 
 ---
 

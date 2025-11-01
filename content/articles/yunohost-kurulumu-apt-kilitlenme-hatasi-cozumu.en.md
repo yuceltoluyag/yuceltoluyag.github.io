@@ -6,7 +6,6 @@ Tags: yunohost, ssh, debian, apt, linux
 Slug: yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu
 Authors: yuceltoluyag
 Summary: Learn step by step how to solve the "APT lock" error encountered during YunoHost installation on a Debian server.
-Translation: true
 Status: published
 Template: article
 Image: images/yunohost-hata-cozumu-xl.webp
@@ -14,11 +13,9 @@ Lang: en
 
 ## 🚀 Introduction
 
-When trying to install [YunoHost](https://yunohost.org){: target="_blank" rel="noopener noreferrer"} on a Debian-based server, you may encounter the "`Could not get lock /var/lib/dpkg/lock-frontend`" error. This error usually occurs due to another `apt` process running on the system and interrupts the installation.
+When trying to install [YunoHost](https://yunohost.org){: target="\_blank" rel="noopener noreferrer"} on a Debian-based server, you may encounter the "`Could not get lock /var/lib/dpkg/lock-frontend`" error. This error usually occurs due to another `apt` process running on the system and interrupts the installation.
 
 In this article, we will explain step by step why this error occurs, how to detect it and how to solve it safely. ✅
-
-
 
 ---
 

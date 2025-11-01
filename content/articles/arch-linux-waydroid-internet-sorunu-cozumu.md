@@ -9,6 +9,8 @@ Summary: Waydroid Android logosunda takılıyor mu? İnternet yok mu? Iptables-n
 Template: article
 Series: Waydroid
 Series_index: 2
+Lang: tr
+Translation: false
 
 ## Arch Linux'ta Waydroid İnternet ve Boot Sorununun Çözümü
 

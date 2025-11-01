@@ -6,6 +6,7 @@ Tags: pelican, staticman, comment-worker, cloudflare, github
 Slug: pelican-ile-staticman-alternatifi-comment-worker-kurulumu
 Authors: yuceltoluyag
 Summary: Pelican tabanlı statik blogunuza yorum sistemi entegre etmek istiyorsanız, Staticman alternatifi olan comment-worker kurulumu ve Cloudflare Workers ile nasıl kullanılacağını adım adım anlatıyoruz.
+Lang: tr
 Translation: false
 Status: published
 Template: article

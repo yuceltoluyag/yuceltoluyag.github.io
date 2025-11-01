@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: ArchLampp
 Series_index: 4
 Summary: Valet Linux is an ideal Laravel development environment for those who love a minimalist development setup. You can easily share your sites using local tunnels without needing to configure Vagrant or /etc/hosts.
-Translation: true
 Status: published
 Template: article
 Image: images/laravel-valet-kurulumu-linux-xl.webp
@@ -18,7 +17,7 @@ Lang: en
 
 ## Hello 👋
 
-Valet Linux is a Laravel development environment for those who prefer a minimalist development setup. There is no need to configure [Vagrant](/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu){: target="_blank" rel="noopener noreferrer"} or `/etc/hosts`. You can easily share your sites publicly using local tunnels (Ngrok, etc.). 🚀
+Valet Linux is a Laravel development environment for those who prefer a minimalist development setup. There is no need to configure [Vagrant](/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu){: target="\_blank" rel="noopener noreferrer"} or `/etc/hosts`. You can easily share your sites publicly using local tunnels (Ngrok, etc.). 🚀
 
 Valet configures your system to run **Nginx in the background** when the machine starts. Then, it directs your `*.test` domains to the relevant directories using **DnsMasq**. **It offers a fast and lightweight Laravel development environment that runs using only 7MB of RAM.** 🎯
 
@@ -144,8 +143,8 @@ valet unsecure projectname
 
 ## 📚 Resources
 
-- [Valet Linux Official Documentation](https://cpriego.github.io/valet-linux/index#installation){: target="_blank" rel="noopener noreferrer"}
-- [Valet Linux Requirements](https://cpriego.github.io/valet-linux/requirements.html#arch){: target="_blank" rel="noopener noreferrer"}
+- [Valet Linux Official Documentation](https://cpriego.github.io/valet-linux/index#installation){: target="\_blank" rel="noopener noreferrer"}
+- [Valet Linux Requirements](https://cpriego.github.io/valet-linux/requirements.html#arch){: target="\_blank" rel="noopener noreferrer"}
 
 🎯 Now you can quickly develop your Laravel projects with Valet and optimize your local environment! 🚀
 

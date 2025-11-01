@@ -5,6 +5,8 @@ category: Sorun Giderme
 tags: linux, x11, proton-authenticator, webkit, dmabuf, hata-cozumu
 slug: x11-proton-authenticator-buton-gorunmeme-cozumu
 authors: yuceltoluyag
+Lang: tr
+Translation: false
 status: published
 summary: "X11 ortamında Proton Authenticator butonlarının görünmemesi sorununu yaşıyorsanız, `WEBKIT_DISABLE_DMABUF_RENDERER` parametresi ile kesin çözümü bu yazıda bulabilirsiniz."
 template: article

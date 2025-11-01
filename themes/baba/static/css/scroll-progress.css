@@ -1,0 +1,24 @@
+/* Scroll Progress Bar - Shows progress as user scrolls down the page */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #64b5f6, #2196f3);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Alternative style with different color */
+.scroll-progress-bar-alt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: #ff5722;
+  box-shadow: 0 0 10px #ff5722;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}

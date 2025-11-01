@@ -5,6 +5,8 @@ Category: Medya
 Tags: stremio, eklenti, film izleme, dizi izleme, torrentio, linux, windows, macos, streaming, medya merkezi, real-debrid
 Slug: stremio-nedir-nasil-kullanilir-eklenti-kurulumu-rehberi
 Authors: galipdede
+Lang: tr
+Translation: false
 Status: published
 Summary: Stremio ile tüm film, dizi ve video içeriklerinizi tek bir yerden yönetin. Kurulumdan eklenti kullanımına 2025 güncel rehber.
 Template: article

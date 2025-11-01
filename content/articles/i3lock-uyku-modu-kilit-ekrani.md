@@ -5,6 +5,8 @@ Category: Masaüstü Ortamları
 Tags: i3lock, systemd, linux güvenlik, ekran kilidi, suspend
 Slug: i3lock-uyku-modu-kilit-ekrani
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: i3lock kullanarak Linux sisteminiz uyku modundan uyandığında ekranın otomatik olarak kilitlenmesini sağlayın. Bu rehber, systemd servisleriyle nasıl yapılandırılacağını adım adım gösteriyor.
 Template: article

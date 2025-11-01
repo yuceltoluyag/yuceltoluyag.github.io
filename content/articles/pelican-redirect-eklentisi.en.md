@@ -6,14 +6,12 @@ Tags: pelican, python, seo, redirect, yönlendirme, statik site
 Slug: pelican-redirect-eklentisi
 Authors: yuceltoluyag
 Summary: Custom plugin developed to protect old URLs and seamlessly redirect visitors to new pages on static sites built with Pelican
-Translation: true
 Status: published
 Template: article
 Image: images/pelican-redirect-eklentisi-xl.webp
 Lang: en
 
 One of the biggest problems encountered when using static site generators is that old links stop working after changes to site structure or URLs. 🤔 This can be very harmful for SEO and can cause you to lose your visitors. Especially external links to your content that ranks high on search engines like Google will result in "404 Page Not Found" errors after URL changes.
-
 
 [responsive_img src="/images/pelican-redirect-eklentisi-xl.webp" alt="pelican-redirect-plugin" /]
 
@@ -25,8 +23,8 @@ The Pelican Redirect plugin offers two basic redirection mechanisms:
 
 1. Redirection via **.302 extension** files
 2. Redirection via **REDIRECTS** configuration variable
-3. Here are sample source files: [pelican_redirect.py](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/plugins/pelican_redirect.py){: target="_blank" rel="noopener noreferrer"} + [redirect.html](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/themes/Minel/templates/redirect.html){: target="_blank" rel="noopener noreferrer"}
-Both methods use HTML meta-refresh and JavaScript location redirections to redirect visitors to the new URLs you specify.
+3. Here are sample source files: [pelican_redirect.py](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/plugins/pelican_redirect.py){: target="\_blank" rel="noopener noreferrer"} + [redirect.html](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/themes/Minel/templates/redirect.html){: target="\_blank" rel="noopener noreferrer"}
+   Both methods use HTML meta-refresh and JavaScript location redirections to redirect visitors to the new URLs you specify.
 
 ## Installation 💻
 
@@ -47,20 +45,23 @@ PLUGINS = [
 ```html
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="utf-8" />
-        <title>Redirecting...</title>
-        <link rel="canonical" href="{{ page.location }}" />
-        <script>
-            location = "{{ page.location }}";
-        </script>
-        <meta http-equiv="refresh" content="{{ page.delay }}; url={{ page.location }}" />
-        <meta name="robots" content="noindex" />
-    </head>
-    <body>
-        <h1>Redirecting...</h1>
-        <a href="{{ page.location }}">Click here if you are not redirected.</a>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <link rel="canonical" href="{{ page.location }}" />
+    <script>
+      location = "{{ page.location }}";
+    </script>
+    <meta
+      http-equiv="refresh"
+      content="{{ page.delay }}; url={{ page.location }}"
+    />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <a href="{{ page.location }}">Click here if you are not redirected.</a>
+  </body>
 </html>
 ```
 

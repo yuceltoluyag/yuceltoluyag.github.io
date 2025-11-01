@@ -8,7 +8,6 @@ status: published
 summary: Set up dnsmasq and dnscrypt-proxy on Arch Linux, check for port conflicts, and test DNS resolution.
 template: article
 Lang: en
-Translation: true
 
 ---
 
@@ -169,7 +168,7 @@ journalctl -u dnsmasq -u dnscrypt-proxy --since "10 minutes ago"
 
 ## Resources 📚
 
-- [Dnsmasq - ArchWiki](https://wiki.archlinux.org/title/Dnsmasq){: target="_blank" rel="noopener noreferrer"}
-- [Dnscrypt-proxy - ArchWiki](https://wiki.archlinux.org/title/Dnscrypt-proxy){: target="_blank" rel="noopener noreferrer"}
+- [Dnsmasq - ArchWiki](https://wiki.archlinux.org/title/Dnsmasq){: target="\_blank" rel="noopener noreferrer"}
+- [Dnscrypt-proxy - ArchWiki](https://wiki.archlinux.org/title/Dnscrypt-proxy){: target="\_blank" rel="noopener noreferrer"}
 
 ---

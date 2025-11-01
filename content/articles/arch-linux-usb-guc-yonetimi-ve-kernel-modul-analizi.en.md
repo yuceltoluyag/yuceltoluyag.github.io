@@ -10,7 +10,6 @@ Summary: In this guide, we explain step by step how to analyze USB device power 
 Template: article
 Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp
 Lang: en
-Translation: true
 
 ---
 
@@ -18,15 +17,16 @@ Translation: true
 
 **USB power management** and **kernel module settings** are quite important for efficiently using hardware resources on Linux systems, reducing power consumption, and fixing compatibility issues. In this guide, you will learn how to examine the state of USB devices and module parameters on your system using a Bash script. 🚀
 [responsive_img src="/images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp" alt="arch-linux-usb-power-management-and-kernel-module-analysis-xl" /]
+
 ---
 
 ## 🧠 Who Is This Guide For?
 
-* ⚙️ Linux users with technical knowledge
-* 🐧 Users of Arch Linux or similar minimalist distributions
-* 🧪 Users experiencing sleep/wake problems with USB devices
-* 🔋 Users who want to save power on their laptops
-* 🎧 Users who want to examine management of hardware like sound devices, wireless adapters, keyboard/mouse
+- ⚙️ Linux users with technical knowledge
+- 🐧 Users of Arch Linux or similar minimalist distributions
+- 🧪 Users experiencing sleep/wake problems with USB devices
+- 🔋 Users who want to save power on their laptops
+- 🎧 Users who want to examine management of hardware like sound devices, wireless adapters, keyboard/mouse
 
 ---
 
@@ -111,19 +111,19 @@ When you run it, you will get an output like the following:
 
 ### 🖱️ USB Mouse (Silicon Labs)
 
-* **Status:** Active, didn't sleep even though `autosuspend=2`.
-* **Power Consumption:** Continuing.
-* **Wakeup:** Disabled, so the system may not wake up with mouse while sleeping.
+- **Status:** Active, didn't sleep even though `autosuspend=2`.
+- **Power Consumption:** Continuing.
+- **Wakeup:** Disabled, so the system may not wake up with mouse while sleeping.
 
 ### ⌨️ USB Keyboard (CASUE)
 
-* **Wakeup:** On. This device may trigger wake-up while the system is sleeping.
-* **runtime\_status=active** so didn't sleep.
+- **Wakeup:** On. This device may trigger wake-up while the system is sleeping.
+- **runtime_status=active** so didn't sleep.
 
 ### 📶 Wireless Network Adapter (Realtek RTL8188RU)
 
-* **Sleep supported** but **runtime\_status=active** → not sleeping.
-* **wakeup=disabled** → Cannot trigger wake-up from network.
+- **Sleep supported** but **runtime_status=active** → not sleeping.
+- **wakeup=disabled** → Cannot trigger wake-up from network.
 
 ---
 
@@ -143,11 +143,11 @@ Example module in the output:
 
 These parameters directly affect system performance, power management, and hardware compatibility.
 
-| Module          | Critical Parameters                      |
-| --------------- | -------------------------------------- |
-| `snd_hda_intel` | power\_save, enable\_msi, jackpoll\_ms |
-| `nvme`          | io\_queue\_depth, use\_cmb\_sqes       |
-| `xhci_hcd`      | quirks, link\_quirk                    |
+| Module          | Critical Parameters                 |
+| --------------- | ----------------------------------- |
+| `snd_hda_intel` | power_save, enable_msi, jackpoll_ms |
+| `nvme`          | io_queue_depth, use_cmb_sqes        |
+| `xhci_hcd`      | quirks, link_quirk                  |
 
 ---
 
@@ -171,14 +171,14 @@ find /sys/bus/usb/devices/*/power -name runtime_status -exec grep -H active {} \
 
 ## ✅ 6. Improvement Suggestions
 
-* For devices with `autosuspend=2` but always in **`active`** state, `control=auto` can be set.
-* For devices like keyboard with `wakeup=disabled`:
+- For devices with `autosuspend=2` but always in **`active`** state, `control=auto` can be set.
+- For devices like keyboard with `wakeup=disabled`:
 
 ```bash
 echo enabled | sudo tee /sys/bus/usb/devices/1-3/power/wakeup
 ```
 
-* To make driver parameters permanent, you can add `.conf` files under `/etc/modprobe.d`.
+- To make driver parameters permanent, you can add `.conf` files under `/etc/modprobe.d`.
 
 ---
 

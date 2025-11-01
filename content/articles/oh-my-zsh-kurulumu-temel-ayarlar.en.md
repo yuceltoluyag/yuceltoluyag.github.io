@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 1
 Summary: We explain step by step how to install Oh My Zsh and configure basic settings.
-Translation: true
 Status: published
 Template: article
 Image: images/oh-my-zsh-setup-xl.webp
@@ -148,9 +147,9 @@ After this installation is complete:
 
 ## Resources
 
-- [Oh My Zsh Official Site](https://ohmyz.sh/){: target="_blank" rel="noopener noreferrer"}
-- [Zsh Documentation](https://zsh.sourceforge.io/Doc/){: target="_blank" rel="noopener noreferrer"}
-- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="_blank" rel="noopener noreferrer"}
+- [Oh My Zsh Official Site](https://ohmyz.sh/){: target="\_blank" rel="noopener noreferrer"}
+- [Zsh Documentation](https://zsh.sourceforge.io/Doc/){: target="\_blank" rel="noopener noreferrer"}
+- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 

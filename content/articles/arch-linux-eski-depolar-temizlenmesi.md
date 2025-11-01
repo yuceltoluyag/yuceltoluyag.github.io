@@ -8,6 +8,8 @@ Authors: yuceltoluyag
 Status: published
 Summary: Arch Linux Kullanıcıları İçin Eski Depoların Temizlenmesi Hakkında Bilmeniz Gereken Her Şey
 Image: images/arch-linux-yeni-pacman-ayarlari-xl.webp
+Lang: tr
+Translation: false
 
 ## Arch Linux Eski Depoların Temizlenmesi Hakkında Bilmeniz Gereken Her Şey
 

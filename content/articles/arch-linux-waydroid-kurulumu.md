@@ -9,6 +9,8 @@ Summary: Arch Linux üzerinde Waydroid kurulumu ve gelişmiş ayarlarla Android 
 Template: article
 Series: Waydroid
 Series_index: 1
+Lang: tr
+Translation: false
 
 ## Giriş
 

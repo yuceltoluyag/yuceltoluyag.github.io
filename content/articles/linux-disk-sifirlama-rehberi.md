@@ -5,6 +5,8 @@ Category: Disk Yönetimi
 Tags: linux, disk silme, dd komutu, shred komutu, wipefs, veri temizleme, disk sıfırlama
 Slug: linux-disk-sifirlama-rehberi
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Bu yazıda, Linux üzerinde disk sıfırlamayı öğreneceksiniz..
 Template: article

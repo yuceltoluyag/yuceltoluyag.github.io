@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Series: Git
 Series_index: 5
 Summary: Git'te belirli bir commit'e geri dönmek ve git cherry-pick komutuyla seçili değişiklikleri farklı bir branch'e taşımak için kullanabileceğiniz yöntemleri anlatıyoruz. 🚀
-Translation: false
+Lang: tr
 Status: published
 Template: article
 Image: images/git-chery-xl.webp

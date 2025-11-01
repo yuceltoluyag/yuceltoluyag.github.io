@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 1
 Summary: Steps to set environment variables and make necessary configurations to use Cmder as terminal in PHPStorm.
-Translation: true
 Status: published
 Template: article
 Image: images/phpstorm_terminal-xl.webp
@@ -28,12 +27,9 @@ To use the terminal in PHPStorm, we need to specify the path in **environment va
 📌 **Variable Name:** `CMDER_ROOT`  
 📌 **Path:** `C:\cmder`
 
-
 [responsive_img src="/images/ortam_degiskenleri1-xl.webp" alt="Environment Variables" /]
 
-
 I had downloaded the full version of Cmder and extracted it to the `C:` directory. Show the directory where you installed it.
-
 
 [responsive_img src="/images/ortam_degiskenleri3-xl.webp" alt="Environment Variable Setting" /]
 
@@ -47,16 +43,14 @@ I had downloaded the full version of Cmder and extracted it to the `C:` director
 "cmd" /k ""%CMDER_ROOT%\vendor\init.bat""
 ```
 
-
 [responsive_img src="/images/phpstorm_terminal-xl.webp" alt="PHPStorm Cmder Setting" /]
 
 ### Restarting PHPStorm 🔄
 
 After applying the settings, restart PHPStorm. When it opens again, you can see that Cmder is working by clicking on the **Terminal** tab. 🎉
 
-
 [responsive_img src="/images/phpstorm_terminal2-xl.webp" alt="PHPStorm Cmder Terminal" /]
 
-Cmder terminal is a very practical tool for Windows users. You can download the full version from [here](https://cmder.app/){: target="_blank" rel="noopener noreferrer"} and extract it to any directory you want. 😊
+Cmder terminal is a very practical tool for Windows users. You can download the full version from [here](https://cmder.app/){: target="\_blank" rel="noopener noreferrer"} and extract it to any directory you want. 😊
 
 See you in the next guide! 🚀

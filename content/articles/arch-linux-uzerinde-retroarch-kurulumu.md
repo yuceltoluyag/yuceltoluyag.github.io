@@ -6,11 +6,11 @@ Tags: archlinux, retroarch, emulator, oyun, yazılım
 Slug: arch-linux-uzerinde-retroarch-kurulumu
 Authors: yuceltoluyag
 Summary: Arch Linux üzerinde RetroArch kurulumu ve yapılandırmasını adım adım anlatan rehber.
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/retroarch-xl.webp
-
 
 ## RetroArch Kurulumu ve Yapılandırılması 🎮
 
@@ -32,6 +32,7 @@ sudo pacman -S retroarch retroarch-assets-xmb libretro-core-info libretro-overla
 ```
 
 ### Paket Açıklamaları:
+
 - **retroarch-assets-xmb**: RetroArch için grafik ve arayüz dosyaları.
 - **retroarch-assets-ozone**: Masaüstü dostu bir RetroArch arayüzü.
 - **libretro-core-info**: Emülatör çekirdekleri hakkında bilgi dosyaları.
@@ -55,6 +56,7 @@ Başlatma ekranında temel ayarları yapılandırarak ihtiyacınıza göre özel
 ## 3️⃣ Temel Yapılandırma ⚙️
 
 ### Konfigürasyon Dosyası
+
 RetroArch’ın tüm ayarları şu dosyada bulunur:
 
 ```bash
@@ -62,11 +64,13 @@ RetroArch’ın tüm ayarları şu dosyada bulunur:
 ```
 
 Bu dosyada yapabileceğiniz bazı temel ayarlar:
+
 - **Video Ayarları**: Oyun içindeki çözünürlük ve ekran modu.
 - **Ses Ayarları**: ALSA veya PulseAudio gibi ses sürücülerini seçme.
 - **Girdi (Input) Ayarları**: Klavye ve joystick kontrollerini yapılandırma.
 
 #### Örnek Yapılandırmalar
+
 Eğer RetroArch bileşenlerini kullanıcı dizininde kullanıyorsanız:
 
 ```bash
@@ -89,11 +93,13 @@ libretro_directory = "/usr/lib/libretro"
 RetroArch, oyunları çalıştırmak için emülatör çekirdekleri kullanır. Çekirdek yüklemek için aşağıdaki yöntemleri kullanabilirsiniz:
 
 ### Online Updater ile Çekirdek Yükleme
+
 1. RetroArch'ı açın.
 2. **Main Menu > Online Updater > Core Updater** adımlarını takip edin.
 3. İstediğiniz çekirdeği seçip indirin.
 
 ### Manuel Çekirdek Yükleme
+
 Çekirdekleri AUR üzerinden yüklemek için:
 
 ```bash
@@ -111,6 +117,7 @@ retroarch --libretro /path/to/some_core_libretro.so /path/to/rom
 ## 5️⃣ Grafik Gölgelendiriciler ve Kaplamalar 🎨
 
 Oyun deneyiminizi geliştirmek için shader ve overlay kullanabilirsiniz:
+
 - **Shaders**: CRT ve scanline gibi efektler ekler.
 - **Overlays**: Retro konsolların çerçeve tasarımlarını taklit eder.
 
@@ -131,6 +138,7 @@ Klavye ve joystick kontrolleri **Settings > Input** menüsünden ayarlanabilir. 
 ## 7️⃣ Sistem Performansını Artırma 🚀
 
 RetroArch performansını optimize etmek için şu ayarları deneyebilirsiniz:
+
 - Shader kullanımını azaltın.
 - OpenGL gibi hafif bir video sürücüsü kullanın.
 - **Audio Latency** ayarlarını optimize edin (**Settings > Audio > Latency**).
@@ -175,7 +183,7 @@ audio_out_rate = 48000
 
 ---
 
-Bu rehber, Arch Linux üzerinde RetroArch'ı kurup optimize etmek isteyenler için kapsamlı bir kaynak sunuyor. Daha fazla bilgi için [Arch Wiki: RetroArch](https://wiki.archlinux.org/title/RetroArch){: target="_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖
+Bu rehber, Arch Linux üzerinde RetroArch'ı kurup optimize etmek isteyenler için kapsamlı bir kaynak sunuyor. Daha fazla bilgi için [Arch Wiki: RetroArch](https://wiki.archlinux.org/title/RetroArch){: target="\_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖
 
 Keyifli oyunlar! 🎮
 [responsive_img src="/images/retroarch-xl.webp" alt="RetroArch kullanıcı arayüzü" /]

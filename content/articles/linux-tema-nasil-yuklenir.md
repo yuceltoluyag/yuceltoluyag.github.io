@@ -6,6 +6,7 @@ Tags: linux, unixporn
 Slug: linux-tema-nasil-yuklenir
 authors: yuceltoluyag
 Summary: Linux'ta tema yükleme işlemi oldukça basittir. Gnome Shell ve eklentileri kullanarak nasıl özelleştirme yapabileceğinizi bu rehberde adım adım anlatıyoruz.
+Lang: tr
 Translation: false
 Status: published
 Template: article

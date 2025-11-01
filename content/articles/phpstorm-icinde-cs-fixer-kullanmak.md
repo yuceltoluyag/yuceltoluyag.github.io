@@ -8,6 +8,7 @@ Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 2
 Summary: PhpStorm içerisinde CS Fixer kullanımını adım adım anlatan rehber.
+Lang: tr
 Translation: false
 Status: published
 Template: article

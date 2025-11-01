@@ -6,6 +6,7 @@ Tags: site,Haberler
 Slug: onemli-degisiklikler
 Authors: yuceltoluyag
 Summary: Site hakkında önemli gelişmeleri ve yenilikleri bu sayfadan takip edebilirsiniz.
+Lang: tr
 Translation: false
 Status: published
 Template: article

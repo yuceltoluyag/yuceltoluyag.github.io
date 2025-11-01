@@ -6,7 +6,6 @@ Tags: linux, başlangıç, dağıtım, rehber
 Slug: yeni-baslayanlar-linux-surumu
 Authors: yuceltoluyag
 Summary: We explain the most suitable distributions for beginners starting with Linux. We help you make the right choice by considering factors such as ease of use, support community and system requirements.
-Translation: true
 Status: published
 Template: article
 Image: images/ubuntu-logo-xl.webp

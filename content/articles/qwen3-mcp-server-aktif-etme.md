@@ -4,6 +4,8 @@ Category: Geliştirme Araçları
 Tags: qwen3, qwen3-coder-plus, qwen3++, mcp server, model context protocol, qwen ayarları, yapay-zeka
 Slug: qwen3-mcp-server-aktif-etme
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Qwen 3 ve Qwen3-Coder-Plus üzerinde MCP server’ları nasıl aktif edeceğinizi adım adım anlatıyoruz. Ayar dosyası düzenleme, CLI kullanımı ve test etme sürecini bu rehberde bulabilirsiniz.
 Template: article

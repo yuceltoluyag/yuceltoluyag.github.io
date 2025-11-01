@@ -6,7 +6,6 @@ Tags: linux, newsboat
 Slug: newsboat-rss-feeds-kullanimi
 Authors: yuceltoluyag
 Summary: Learn how to configure and use Newsboat, a powerful terminal-based RSS reader, efficiently.
-Translation: true
 Status: published
 Template: article
 Image: images/newsboat-xl.webp
@@ -184,19 +183,19 @@ http://feeds.feedburner.com/TammerSaleh
 
 ## Useful Shortcuts ⌨️
 
-| Shortcut | Function |
-|---------|--------|
-| A       | Mark all as read |
-| O       | Open in web browser |
-| J/K     | Move Down/Up |
-| Q       | Quit |
-| R       | Refresh RSS feeds |
+| Shortcut | Function            |
+| -------- | ------------------- |
+| A        | Mark all as read    |
+| O        | Open in web browser |
+| J/K      | Move Down/Up        |
+| Q        | Quit                |
+| R        | Refresh RSS feeds   |
 
 ## YouTube RSS 📺
 
 To add YouTube channels you subscribe to Newsboat:
 
-1. Go to [YouTube Subscriptions Page](https://www.youtube.com/subscription_manager){: target="_blank" rel="noopener noreferrer"}.
+1. Go to [YouTube Subscriptions Page](https://www.youtube.com/subscription_manager){: target="\_blank" rel="noopener noreferrer"}.
 2. Download your file with the "Export to RSS readers" option.
 3. Import RSS addresses with the following command:
 
@@ -215,4 +214,4 @@ alias youtubebotu="newsboat -u ~/.config/newsboat/yturls -C ~/.config/newsboat/y
 
 This way, you can access specific RSS feeds directly by using `haberbotu` or `youtubebotu` commands in the terminal.
 
-For more information, you can check the [Newsboat Documentation](https://newsboat.org/releases/2.19/docs/newsboat.html){: target="_blank" rel="noopener noreferrer"} page. 📖
+For more information, you can check the [Newsboat Documentation](https://newsboat.org/releases/2.19/docs/newsboat.html){: target="\_blank" rel="noopener noreferrer"} page. 📖

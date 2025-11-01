@@ -8,6 +8,7 @@ Authors: yuceltoluyag
 Series: ArchLampp
 Series_index: 4
 Summary: Valet Linux, minimalist geliştirme ortamını sevenler için ideal bir Laravel geliştirme ortamıdır. Vagrant veya /etc/hosts ayarlamaya gerek kalmadan, yerel tünelleri kullanarak sitelerinizi kolayca paylaşabilirsiniz.
+Lang: tr
 Translation: false
 Status: published
 Template: article

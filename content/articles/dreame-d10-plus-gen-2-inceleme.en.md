@@ -6,7 +6,6 @@ Tags: robot süpürge, akıllı temizlik, Dreame D10 Plus
 Slug: dreame-d10-plus-gen-2-inceleme
 Authors: yuceltoluyag
 Summary: We experienced the Dreame D10 Plus Gen 2! Does this robot vacuum cleaner with smart mapping, strong suction and user-friendly structure meet expectations? Here is our detailed review! 🚀
-Translation: true
 Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-xl.webp

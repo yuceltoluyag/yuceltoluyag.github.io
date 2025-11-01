@@ -6,7 +6,6 @@ Slug: davinci-resolve-20-1-linux-hatasi-cozumu
 Authors: yuceltoluyag
 Status: published
 Summary: DaVinci Resolve 20.1 not opening on Linux? Learn the easy solution to the libglib error on Arch-based systems step by step.
-Translation: true
 Status: published
 Template: article
 Image: images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp

@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: Git
 Series_index: 3
 Summary: Learn how to securely backup and restore SSH and GPG keys.
-Translation: true
 Status: published
 Template: article
 Image: images/ssh-gpg-yedekleme-geri-yukleme-xl.webp
@@ -17,7 +16,6 @@ Lang: en
 ## Backing Up and Restoring SSH and GPG Keys 🔑
 
 SSH and GPG keys are critical for authentication and data security. **In this article, you will learn how to backup and restore SSH and GPG keys.** 💾
-
 
 ## 1️⃣ Backup
 

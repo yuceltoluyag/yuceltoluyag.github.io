@@ -6,7 +6,6 @@ Tags: pelican, staticman, comment-worker, cloudflare, github
 Slug: pelican-ile-staticman-alternatifi-comment-worker-kurulumu
 Authors: yuceltoluyag
 Summary: If you want to integrate a comment system into your Pelican-based static blog, we explain step by step how to install comment-worker, an alternative to Staticman, and how to use it with Cloudflare Workers.
-Translation: true
 Status: published
 Template: article
 Image: images/comment-worker-kurulumu-xl.webp
@@ -80,16 +79,16 @@ You can also review my sample project: [comment-worker example](https://github.c
 
 Add the following information from the Cloudflare Workers Settings section:
 
-| key                      | example                                                    | description                  |
-| ------------------------ | -------------------------------------------------------- | ---------------------------- |
-| GITHUB_APP_ID            | 123456                                                   | GitHub Application ID        |
-| GITHUB_APP_PRIVATE_KEY   | -----BEGIN PRIVATE KEY-----...                           | GitHub Private Key           |
-| GITHUB_ORGANIZATION_SLUG | github username                                          | Organization or username     |
-| GITHUB_REPOSITORY_SLUG   | yuceltoluyag.github.io                                   | Repository to push comments  |
-| GITHUB_REPOSITORY_BRANCH | main                                                     | Target branch                |
-| CW_ALLOWED_ORIGINS       | https://example.com, https://www.example.com             | CORS whitelist               |
-| CW_DEBUG                 | true / false                                             | Debug mode                   |
-| TURNSTILE_SECRET_KEY     | https://developers.cloudflare.com/turnstile/get-started/ | Im Not Human : )             |
+| key                      | example                                                  | description                 |
+| ------------------------ | -------------------------------------------------------- | --------------------------- |
+| GITHUB_APP_ID            | 123456                                                   | GitHub Application ID       |
+| GITHUB_APP_PRIVATE_KEY   | -----BEGIN PRIVATE KEY-----...                           | GitHub Private Key          |
+| GITHUB_ORGANIZATION_SLUG | github username                                          | Organization or username    |
+| GITHUB_REPOSITORY_SLUG   | yuceltoluyag.github.io                                   | Repository to push comments |
+| GITHUB_REPOSITORY_BRANCH | main                                                     | Target branch               |
+| CW_ALLOWED_ORIGINS       | https://example.com, https://www.example.com             | CORS whitelist              |
+| CW_DEBUG                 | true / false                                             | Debug mode                  |
+| TURNSTILE_SECRET_KEY     | https://developers.cloudflare.com/turnstile/get-started/ | Im Not Human : )            |
 
 !!! note "Debug Mode CW_DEBUG should be set to true initially. This way you can easily see the problems."
 

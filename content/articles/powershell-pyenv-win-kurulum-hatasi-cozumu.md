@@ -6,6 +6,7 @@ Tags: pyenv-win, powershell, python, hata çözümü
 Slug: powershell-pyenv-win-kurulum-hatasi-cozumu
 Authors: yuceltoluyag
 Summary: PowerShell 7.5.0 sürümünde Pyenv-Win kurulumu sırasında karşılaşılan Microsoft.PowerShell.Archive hatasını ve çözüm yöntemini adım adım anlatıyoruz. 🚀
+Lang: tr
 Translation: false
 Status: published
 Template: article

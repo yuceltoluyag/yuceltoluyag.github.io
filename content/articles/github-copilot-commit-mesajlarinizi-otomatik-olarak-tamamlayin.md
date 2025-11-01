@@ -11,6 +11,8 @@ Template: article
 Image: images/copilot-commit-xl.webp
 Series: Git
 Series_index: 6
+Lang: tr
+Translation: false
 
 Yazılım geliştirmede sürekli karşılaştığımız bir zorluk var: **anlamlı commit mesajları yazmak**. Hiç düşündünüz mü, bu rutini otomatikleştirebilir misiniz? İyi haber: **GitHub Copilot** artık yaptığınız değişiklikleri analiz edip anlamlı commit mesajları önerebiliyor! 🚀
 
@@ -50,7 +52,7 @@ Kurulum tamamlandıktan sonra:
 3. Gerekli izinleri onaylayın
 4. VS Code'a geri döndüğünüzde, Copilot'ın aktif olduğunu bildiren bir mesaj göreceksiniz
 
-> **Not**: GitHub Copilot'un ücretsiz sürümü de bulunmaktadır! Ücretsiz sürümde ayda 2,000 tamamlama ve 50 sohbet isteği hakkınız var. Daha fazla kullanım için ücretli plana geçebilirsiniz. Öğrenciyseniz ücretsiz erişim için [GitHub Student Developer Pack](https://education.github.com/pack){: target="_blank" rel="noopener noreferrer"} başvurusu yapabilirsiniz.
+> **Not**: GitHub Copilot'un ücretsiz sürümü de bulunmaktadır! Ücretsiz sürümde ayda 2,000 tamamlama ve 50 sohbet isteği hakkınız var. Daha fazla kullanım için ücretli plana geçebilirsiniz. Öğrenciyseniz ücretsiz erişim için [GitHub Student Developer Pack](https://education.github.com/pack){: target="\_blank" rel="noopener noreferrer"} başvurusu yapabilirsiniz.
 
 ## Özel Kodlama ve Commit Talimatları Oluşturma (Güncel Yöntem)
 
@@ -106,7 +108,7 @@ touch .github/copilot-instructions.md
 
 ## Commit Style Guide
 
-We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/){: target="_blank" rel="noopener noreferrer"} style for our commit messages. Here are some examples:
+We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/){: target="\_blank" rel="noopener noreferrer"} style for our commit messages. Here are some examples:
 
 - `feat: add new user authentication module`
 - `fix: resolve issue with data fetching.`
@@ -138,7 +140,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0
 
 > **NOT**: Eski yöntemde kullanılan `github.copilot.chat.codeGeneration.instructions` ve `github.copilot.chat.commitMessageGeneration.instructions` ayarları artık kullanılmıyor. Bu ayarları kaldırmanız gerekiyor.
 
-Bu yapılandırma, GitHub Copilot'a kodlama stilinizi ve commit mesajı formatınızı öğretecektir. 🎯 Detaylı incelemek için [GitHub Copilot'ın resmi belgelerine](https://aka.ms/vscode-ghcp-custom-instructions){: target="_blank" rel="noopener noreferrer"} bakın.
+Bu yapılandırma, GitHub Copilot'a kodlama stilinizi ve commit mesajı formatınızı öğretecektir. 🎯 Detaylı incelemek için [GitHub Copilot'ın resmi belgelerine](https://aka.ms/vscode-ghcp-custom-instructions){: target="\_blank" rel="noopener noreferrer"} bakın.
 
 ## Verbose Modu Etkinleştirme
 

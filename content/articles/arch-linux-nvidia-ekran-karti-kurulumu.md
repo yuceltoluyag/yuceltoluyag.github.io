@@ -9,6 +9,8 @@ Status: published
 Summary: Arch Linux'ta Nvidia ekran kartı kurulumu, sürücü seçimi, optimus-manager ve performans ayarlarını adım adım açıklıyorum. 💻  
 Template: article
 Image: images/nvidia-linux-performans-ayari-xl.webp
+Lang: tr
+Translation: false
 
 ---
 

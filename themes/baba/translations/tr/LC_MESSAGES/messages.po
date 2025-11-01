@@ -1,130 +1,248 @@
 # Turkish translations for Pelican
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-03-07 04:30+0300\n"
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-01 23:30+0300\n"
 "PO-Revision-Date: 2024-03-07 04:30+0300\n"
 "Last-Translator: Yücel Toluyağ\n"
-"Language-Team: Turkish\n"
 "Language: tr\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
-# Genel çeviriler
-msgid "Home"
-msgstr "Ana Sayfa"
+#: themes/baba/templates/article.html:92
+msgid "Series:"
+msgstr ""
 
-msgid "Categories"
-msgstr "Kategoriler"
+#: themes/baba/templates/article.html:106
+#, python-format
+msgid "This article is part %(index)s of the '%(name)s' series."
+msgstr ""
 
-msgid "Tags"
-msgstr "Etiketler"
+#: themes/baba/templates/article.html:110
+msgid "Series Contents"
+msgstr ""
 
-msgid "Authors"
-msgstr "Yazarlar"
-
-msgid "Archives"
-msgstr "Arşiv"
-
-msgid "Search"
-msgstr "Ara"
-
-msgid "About"
-msgstr "Hakkında"
-
-msgid "Donate"
-msgstr "Bağış"
+#: themes/baba/templates/article.html:160
+msgid "Related Posts"
+msgstr ""
 
 # Makale sayfası çevirileri
-msgid "Posted on"
+#: themes/baba/templates/article.html:178
+#, fuzzy
+msgid "Destek Olun"
 msgstr "Yayınlanma Tarihi"
 
-msgid "By"
-msgstr "Yazar"
+#: themes/baba/templates/article.html:181
+msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
+msgstr ""
 
-msgid "In"
-msgstr "Kategori"
+#: themes/baba/templates/article.html:184
+msgid "Destek Ol"
+msgstr ""
 
-msgid "Tagged as"
-msgstr "Etiketler"
+#: themes/baba/templates/article.html:194
+msgid "Düzenle"
+msgstr ""
 
-msgid "Read more"
-msgstr "Devamını Oku"
+#: themes/baba/templates/article.html:205
+msgid "Paylaş:"
+msgstr ""
 
-msgid "Previous Post"
-msgstr "Önceki Yazı"
+#: themes/baba/templates/article.html:360
+msgid "Önceki:"
+msgstr ""
 
-msgid "Next Post"
-msgstr "Sonraki Yazı"
+#: themes/baba/templates/article.html:368
+msgid "Sonraki:"
+msgstr ""
 
-msgid "Related Posts"
-msgstr "Benzer Yazılar"
+#: themes/baba/templates/includes/footer.html:6
+msgid "Tüm hakları saklıdır."
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:9
+msgid "Kategoriler sayfasına git"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:11
+#: themes/baba/templates/includes/footer.html:12
+msgid "Kategoriler"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:14
+msgid "Etiketler sayfasına git"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:16
+#: themes/baba/templates/includes/footer.html:17
+msgid "Etiketler"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:19
+msgid "Kullanım Koşulları sayfasına git"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:21
+#: themes/baba/templates/includes/footer.html:22
+msgid "Kullanım Koşulları"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:24
+msgid "Gizlilik Politikası sayfasına git"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:26
+msgid "Gizlilik"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:27
+msgid "Gizlilik Politikası"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:30
+msgid "Atom beslemesine git"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:32
+msgid "Atom"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:33
+msgid "Atom Beslemesi"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:37
+msgid "RSS beslemesine git"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:39
+msgid "RSS"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:40
+msgid "RSS Beslemesi"
+msgstr ""
+
+#: themes/baba/templates/includes/footer.html:48
+#, python-brace-format
+msgid "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube kanalıma</a> abone olarak destek olabilirsiniz."
+msgstr ""
+
+# Genel çeviriler
+#~ msgid "Home"
+#~ msgstr "Ana Sayfa"
+
+#~ msgid "Categories"
+#~ msgstr "Kategoriler"
+
+#~ msgid "Tags"
+#~ msgstr "Etiketler"
+
+#~ msgid "Authors"
+#~ msgstr "Yazarlar"
+
+#~ msgid "Archives"
+#~ msgstr "Arşiv"
+
+#~ msgid "Search"
+#~ msgstr "Ara"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
+
+#~ msgid "Donate"
+#~ msgstr "Bağış"
+
+#~ msgid "By"
+#~ msgstr "Yazar"
+
+#~ msgid "In"
+#~ msgstr "Kategori"
+
+#~ msgid "Tagged as"
+#~ msgstr "Etiketler"
+
+#~ msgid "Read more"
+#~ msgstr "Devamını Oku"
+
+#~ msgid "Previous Post"
+#~ msgstr "Önceki Yazı"
+
+#~ msgid "Next Post"
+#~ msgstr "Sonraki Yazı"
+
+#~ msgid "Related Posts"
+#~ msgstr "Benzer Yazılar"
 
 # Yan menü çevirileri
-msgid "Table of Contents"
-msgstr "İçindekiler"
+#~ msgid "Table of Contents"
+#~ msgstr "İçindekiler"
 
-msgid "Statistics"
-msgstr "İstatistikler"
+#~ msgid "Statistics"
+#~ msgstr "İstatistikler"
 
-msgid "Posts"
-msgstr "Yazılar"
+#~ msgid "Posts"
+#~ msgstr "Yazılar"
 
-msgid "Category"
-msgstr "Kategori"
+#~ msgid "Category"
+#~ msgstr "Kategori"
 
 # Arama çevirileri
-msgid "Search Results"
-msgstr "Arama Sonuçları"
+#~ msgid "Search Results"
+#~ msgstr "Arama Sonuçları"
 
-msgid "No results found"
-msgstr "Sonuç bulunamadı"
+#~ msgid "No results found"
+#~ msgstr "Sonuç bulunamadı"
 
-msgid "Search..."
-msgstr "Ara..."
+#~ msgid "Search..."
+#~ msgstr "Ara..."
 
 # Tema çevirileri
-msgid "Light Mode"
-msgstr "Açık Tema"
+#~ msgid "Light Mode"
+#~ msgstr "Açık Tema"
 
-msgid "Dark Mode"
-msgstr "Koyu Tema"
+#~ msgid "Dark Mode"
+#~ msgstr "Koyu Tema"
 
 # Tarih çevirileri
-msgid "January"
-msgstr "Ocak"
+#~ msgid "January"
+#~ msgstr "Ocak"
 
-msgid "February"
-msgstr "Şubat"
+#~ msgid "February"
+#~ msgstr "Şubat"
 
-msgid "March"
-msgstr "Mart"
+#~ msgid "March"
+#~ msgstr "Mart"
 
-msgid "April"
-msgstr "Nisan"
+#~ msgid "April"
+#~ msgstr "Nisan"
 
-msgid "May"
-msgstr "Mayıs"
+#~ msgid "May"
+#~ msgstr "Mayıs"
 
-msgid "June"
-msgstr "Haziran"
+#~ msgid "June"
+#~ msgstr "Haziran"
 
-msgid "July"
-msgstr "Temmuz"
+#~ msgid "July"
+#~ msgstr "Temmuz"
 
-msgid "August"
-msgstr "Ağustos"
+#~ msgid "August"
+#~ msgstr "Ağustos"
 
-msgid "September"
-msgstr "Eylül"
+#~ msgid "September"
+#~ msgstr "Eylül"
 
-msgid "October"
-msgstr "Ekim"
+#~ msgid "October"
+#~ msgstr "Ekim"
 
-msgid "November"
-msgstr "Kasım"
+#~ msgid "November"
+#~ msgstr "Kasım"
 
-msgid "December"
-msgstr "Aralık" 
+#~ msgid "December"
+#~ msgstr "Aralık"
+

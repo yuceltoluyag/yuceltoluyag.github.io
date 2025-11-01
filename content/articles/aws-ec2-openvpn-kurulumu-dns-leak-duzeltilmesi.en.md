@@ -6,12 +6,10 @@ Tags: linux, vpn
 Slug: aws-ec2-openvpn-kurulumu-dns-leak-duzeltilmesi
 Authors: yuceltoluyag
 Summary: Step-by-step guide on how to install OpenVPN on AWS EC2 and how to fix DNS leak issues.
-Translation: true
 Status: published
 Template: article
 Image: images/amazon-openvpn-kurulumu-xl.webp
 Lang: en
-
 
 ## Hello
 
@@ -28,35 +26,31 @@ If you have money and little time, then use it by all means, dear reader 🐸 Al
 ## Installation
 
 1.  If you don't have an account, create an Amazon account.
-2.  [OpenVPN Access Server](https://aws.amazon.com/marketplace/pp/prodview-y3m73u6jd5srk){: target="_blank" rel="noopener noreferrer"} Click **Continue to Subscribe**
+2.  [OpenVPN Access Server](https://aws.amazon.com/marketplace/pp/prodview-y3m73u6jd5srk){: target="\_blank" rel="noopener noreferrer"} Click **Continue to Subscribe**
 
 [responsive_img src="/images/amazon-openvpn-kurulumu-xl.webp" alt="amazon-openvpn-kurulumu" /]
 
 3.  Accept the License Agreement
 
-
-     [responsive_img src="/images/amazon-openvpn-kurulumu-2-xl.webp" alt="amazon-openvpn-kurulumu-2" /]
+    [responsive_img src="/images/amazon-openvpn-kurulumu-2-xl.webp" alt="amazon-openvpn-kurulumu-2" /]
 
 4.  The license information will appear as in the image. Click **Continue to Configuration** and proceed
 
-
-     [responsive_img src="/images/amazon-openvpn-kurulumu-3-xl.webp" alt="amazon-openvpn-kurulumu-3" /]
+    [responsive_img src="/images/amazon-openvpn-kurulumu-3-xl.webp" alt="amazon-openvpn-kurulumu-3" /]
 
 5.  Select software version and choose **Germany Frankfurt** region as location. Then click **Continue to Launch**.
 
-      [responsive_img src="/images/amazon-openvpn-kurulumu-4-xl.webp" alt="amazon-openvpn-kurulumu-4" /]
+    [responsive_img src="/images/amazon-openvpn-kurulumu-4-xl.webp" alt="amazon-openvpn-kurulumu-4" /]
 
 6.  Our selections in the new form should be as follows:
 
-
-      [responsive_img src="/images/amazon-openvpn-kurulumu-5-xl.webp" alt="amazon-openvpn-kurulumu-5" /]
+    [responsive_img src="/images/amazon-openvpn-kurulumu-5-xl.webp" alt="amazon-openvpn-kurulumu-5" /]
 
 7.  You need to create Security Group Settings and Key Pair Settings. I gave my daughter's name 🏌️‍♂️
 
     [responsive_img src="/images/amazon-openvpn-kurulumu-6-xl.webp" alt="amazon-openvpn-kurulumu-6" /]
 
     Let me also show an example of the key creation process
-
 
     [responsive_img src="/images/amazon-openvpn-kurulumu-7-xl.webp" alt="amazon-openvpn-kurulumu-7" /]
 
@@ -74,7 +68,7 @@ If you have money and little time, then use it by all means, dear reader 🐸 Al
 
 ## DNS LEAK
 
-When we connect to cousin's network, when we make a request to a site, our DNS addresses are still requesting from our own ISP. Attackers usually create fake websites and can collect many pieces of information such as your IP address, location, operating system, etc. with analysis services. Even if the other party can't do anything after getting your IP address, they can attack you and disturb your peace. Now I'm giving you an address where you can automatically do DNS Leak test when VPN is open 😁 [dnsleaktest.com](https://www.dnsleaktest.com/){: target="_blank" rel="noopener noreferrer"} You just need to enter the site and do Extended test. This image shows the test of a cheap, free VPN 😆 ![Extended-test](/images/Extended-test-xl.webp) **So what can they do with this? You can read from the bonus section if you want 😁** Let's continue with the solution...
+When we connect to cousin's network, when we make a request to a site, our DNS addresses are still requesting from our own ISP. Attackers usually create fake websites and can collect many pieces of information such as your IP address, location, operating system, etc. with analysis services. Even if the other party can't do anything after getting your IP address, they can attack you and disturb your peace. Now I'm giving you an address where you can automatically do DNS Leak test when VPN is open 😁 [dnsleaktest.com](https://www.dnsleaktest.com/){: target="\_blank" rel="noopener noreferrer"} You just need to enter the site and do Extended test. This image shows the test of a cheap, free VPN 😆 ![Extended-test](/images/Extended-test-xl.webp) **So what can they do with this? You can read from the bonus section if you want 😁** Let's continue with the solution...
 
 ### EC2 Elastic IP
 
@@ -126,13 +120,13 @@ sudo passwd openvpn
 
 Type `exit` to close the SSH connection. Then you can connect to the web panel from **https://elastic-ip-address:943/**. If you get an SSL error, click on the advanced menu and continue.
 
- [responsive_img src="/images/amazon-openvpn-kurulumu-12-xl.webp" alt="amazon-openvpn-kurulumu-12" /]
+[responsive_img src="/images/amazon-openvpn-kurulumu-12-xl.webp" alt="amazon-openvpn-kurulumu-12" /]
+
 ## Results
 
+[responsive_img src="/images/amazon-openvpn-kurulumu-13-xl.webp" alt="amazon-openvpn-kurulumu-13" /]
 
- [responsive_img src="/images/amazon-openvpn-kurulumu-13-xl.webp" alt="amazon-openvpn-kurulumu-13" /]
-
- [responsive_img src="/images/amazon-openvpn-kurulumu-14-xl.webp" alt="amazon-openvpn-kurulumu-14" /]
+[responsive_img src="/images/amazon-openvpn-kurulumu-14-xl.webp" alt="amazon-openvpn-kurulumu-14" /]
 
 ## Bonus: Cool Story Bro 🧿
 

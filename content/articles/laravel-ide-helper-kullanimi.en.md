@@ -8,12 +8,10 @@ Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 3
 Summary: How to improve auto-completion and code assistance in PHPStorm with Laravel IDE Helper package?
-Translation: true
 Status: published
 Template: article
 Image: images/laravel_7x_ide_helper-xl.webp
 Lang: en
-
 
 ## What is Laravel IDE Helper? 🚀
 
@@ -26,8 +24,6 @@ If this package didn't exist, it would be necessary to manually add this informa
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="0NZHzmAgH-M"></lite-youtube>
-
-
 
 ## How to Install Laravel IDE Helper? 🛠️
 
@@ -43,7 +39,7 @@ composer require --dev barryvdh/laravel-ide-helper
 
 ### 2. Enable Code Completion
 
-You can create the **_ide_helper.php** file in your project directory by running the following command:
+You can create the **\_ide_helper.php** file in your project directory by running the following command:
 
 ```bash
 php artisan ide-helper:generate
@@ -102,7 +98,7 @@ By adding the following scripts to your `composer.json` file, you can ensure tha
 
 ## Conclusion 🎯
 
-**Laravel IDE Helper** significantly improves the development experience by enhancing code completion and auto-suggestions in IDEs like **PHPStorm**. For more information, you can visit the [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){: target="_blank" rel="noopener noreferrer"} page.
+**Laravel IDE Helper** significantly improves the development experience by enhancing code completion and auto-suggestions in IDEs like **PHPStorm**. For more information, you can visit the [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){: target="\_blank" rel="noopener noreferrer"} page.
 
 You can access more articles about PhpStorm [from here](/etiket/phpstorm/). 🚀
 

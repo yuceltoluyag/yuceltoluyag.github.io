@@ -6,12 +6,11 @@ Tags: terminal, linux, fish, git, curl
 Slug: terminator-git-curl-fish-kurulumu
 Authors: yuceltoluyag
 Summary: Linux terminalinizi daha işlevsel ve estetik hale getirmek için Terminator, Git, Curl ve Fish kurulumu ve özelleştirme rehberi.
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/terminator-git-curl-fish-kurulumu-xl.webp
-
-
 
 Merhaba! Linux’ta en çok vakit geçirdiğimiz alanlardan biri terminaldir. Peki terminalimizi nasıl daha işlevsel ve estetik hale getirebiliriz? İşte bu rehber tam size göre! 💪🚀
 
@@ -57,7 +56,7 @@ Bu işlemden sonra çıkış yapıp tekrar giriş yaptığınızda Fish varsayı
 
 Görselliğe önem veriyorsanız, aşağıdaki adımları takip ederek terminalinizin temasını değiştirebilirsiniz.
 
-1. **İterm2 Color Schemes** sitesinden [beğendiğiniz bir temayı seçin](http://iterm2colorschemes.com/){: target="_blank" rel="noopener noreferrer"}.
+1. **İterm2 Color Schemes** sitesinden [beğendiğiniz bir temayı seçin](http://iterm2colorschemes.com/){: target="\_blank" rel="noopener noreferrer"}.
 2. Terminator yapılandırma dosyasına erişmek için şu komutu çalıştırın:
 
 ```bash
@@ -79,7 +78,7 @@ curl -L https://get.oh-my.fish | fish
 
 ### 🎭 Tema Seçimi
 
-[Oh My Fish temalarına](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md){: target="_blank" rel="noopener noreferrer"} göz atarak beğendiğiniz bir temayı yükleyebilirsiniz. Örneğin:
+[Oh My Fish temalarına](https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md){: target="\_blank" rel="noopener noreferrer"} göz atarak beğendiğiniz bir temayı yükleyebilirsiniz. Örneğin:
 
 ```bash
 omf install bobthefish
@@ -93,7 +92,7 @@ Oh My Fish, çeşitli eklentiler sunmaktadır. Beğendiğiniz bir eklentiyi yük
 omf install eklenti-adı
 ```
 
-[Eklentileri keşfetmek için buraya göz atabilirsiniz](https://github.com/oh-my-fish){: target="_blank" rel="noopener noreferrer"}. 🤩
+[Eklentileri keşfetmek için buraya göz atabilirsiniz](https://github.com/oh-my-fish){: target="\_blank" rel="noopener noreferrer"}. 🤩
 
 ---
 

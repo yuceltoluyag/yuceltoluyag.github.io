@@ -6,11 +6,11 @@ Tags: composer, hızlandırma, çözüm
 Slug: composer-yavas-indirme-sorunu-cozumu
 Authors: yuceltoluyag
 Summary: Composer kullanırken yavaş indirme sorunu mu yaşıyorsunuz? Bu rehberde, hız sorunlarını çözmek için kullanabileceğiniz yöntemleri adım adım açıklıyoruz. 🚀
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/composer-xl.webp
-
 
 ## Composer Yavaş İndirme Sorunu ve Çözümleri ⚡
 
@@ -29,7 +29,6 @@ Missing pubkey for dev verification
 Run composer self-update --update-keys to set them up Checking composer version: OK
 Composer version: 1.9.1 PHP version: 7.4.0 PHP binary path: /usr/bin/php
 ```
-
 
 ### 1️⃣ Sorun Teşhisi: `composer diagnose`
 
@@ -53,14 +52,12 @@ Bu sorunu çözmek için:
 composer self-update --update-keys
 ```
 
-Alternatif olarak, `~/.config/composer/` dizinine gidip aşağıdaki iki dosyayı oluşturun ve [Composer Public Key](https://composer.github.io/pubkeys.html){: target="_blank" rel="noopener noreferrer"} sayfasından aldığınız güncel anahtarları ekleyin:
+Alternatif olarak, `~/.config/composer/` dizinine gidip aşağıdaki iki dosyayı oluşturun ve [Composer Public Key](https://composer.github.io/pubkeys.html){: target="\_blank" rel="noopener noreferrer"} sayfasından aldığınız güncel anahtarları ekleyin:
 
 - `keys.dev.pub`
 - `keys.tags.pub`
 
 Ardından terminalinizi kapatıp tekrar açın ve `composer diagnose` komutunu yeniden çalıştırın. ✅
-
-
 
 ### 2️⃣ IPv6 Sorunu ve Çözümü 🌍
 
@@ -72,8 +69,6 @@ sudo sh -c "echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf"
 
 Bu işlemi yaptıktan sonra Composer'ı tekrar test edin. 🚀
 
-
-
 ### 3️⃣ Composer Paket Kaynağını Güncelleme 🔄
 
 Varsayılan olarak Composer, `packagist.org` üzerinden çalışır. Eğer bağlantınız yavaşsa, aşağıdaki komut ile `packagist` adresini güncelleyebilirsiniz:
@@ -83,8 +78,6 @@ composer config --global repo.packagist composer https://packagist.org
 ```
 
 Bu işlem, paketlerin daha hızlı yüklenmesini sağlayabilir. 🔥
-
-
 
 ### 4️⃣ Paralel İndirme Kullanımı ⏩
 
@@ -96,8 +89,6 @@ composer global require hirak/prestissimo
 
 Ancak unutmayın, `prestissimo` Composer 2.0 ve üzeri sürümlerde gereksiz hale gelmiştir. Eğer Composer 1.x kullanıyorsanız bu yöntemi deneyebilirsiniz. 😉
 
-
-
 ### 5️⃣ Derinlemesine Hata Ayıklama 🕵️‍♂️
 
 Composer'ın ne yaptığını ayrıntılı görmek için aşağıdaki komutları kullanabilirsiniz:
@@ -107,8 +98,6 @@ composer -vvv require phpunit/phpunit
 ```
 
 Bu komut, indirilen dosyaları ve ağ bağlantılarını detaylı bir şekilde gösterecektir. Eğer bir sorun fark ederseniz, hata mesajlarına göre yukarıdaki çözümleri uygulayabilirsiniz. 🛠️
-
-
 
 ## Sonuç 🎯
 

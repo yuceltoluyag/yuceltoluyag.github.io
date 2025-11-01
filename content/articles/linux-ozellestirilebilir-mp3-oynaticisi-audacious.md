@@ -6,6 +6,7 @@ Tags: linux, mp3, müzik oynatıcı
 Slug: linux-ozellestirilebilir-mp3-oynaticisi-audacious
 Authors: yuceltoluyag
 Summary: Audacious, Linux için özelleştirilebilir ve güçlü bir MP3 oynatıcıdır. Winamp 2.x temalarını desteklemesi ve geniş eklenti desteği ile öne çıkıyor.
+Lang: tr
 Translation: false
 Status: published
 Template: article

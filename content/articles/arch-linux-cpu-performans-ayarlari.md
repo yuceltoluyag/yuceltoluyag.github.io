@@ -11,8 +11,8 @@ Status: published
 Summary: Arch Linux üzerinde modern Intel işlemcilerle nasıl CPU frekansı kontrol edilir ve güç yönetimi optimize edilir? cpupower ve intel_pstate ile adım adım yapılandırma rehberi.
 Template: article
 Image: images/arch-linux-cpu-performans-ayarlari-xl.webp
-
-
+Lang: tr
+Translation: false
 
 Arch Linux kullanıyorsan ve özellikle GNOME ya da KDE gibi masaüstü ortamlarından uzak durup i3wm gibi hafif çözümler tercih ediyorsan, sistem performansını kontrol etmek tamamen senin elinde! 💪
 
@@ -28,10 +28,10 @@ Bu yazıda, **Intel i5-13400F işlemcili, RTX 4060 Ti ekran kartlı ve i3wm kull
 
 Modern CPU'lar olağanüstü güçlere sahiptir, ancak bu gücü kontrolsüz kullanmak hem ısı artışına hem de gereksiz enerji tüketimine yol açar. İşte bu yüzden;
 
-* Sistem fanlarının sesi artar 😤
-* Batarya süresi düşer (laptop’ta) 🔋
-* Gereksiz ısınmalar yaşanır 🔥
-* Throttling nedeniyle performans düşer 🐌
+- Sistem fanlarının sesi artar 😤
+- Batarya süresi düşer (laptop’ta) 🔋
+- Gereksiz ısınmalar yaşanır 🔥
+- Throttling nedeniyle performans düşer 🐌
 
 Özellikle Intel işlemcili sistemlerde `intel_pstate` sürücüsünün davranışı, doğru yapılandırılmazsa ya işlemciyi sürekli en yüksek hızda tutar ya da çok yavaş davranır.
 
@@ -43,12 +43,12 @@ Modern CPU'lar olağanüstü güçlere sahiptir, ancak bu gücü kontrolsüz kul
 
 Yapılandırmayı gerçekleştirdiğim sistemin bileşenleri şunlar:
 
-* 💻 **Intel i5-13400F** (10 çekirdek: 6P+4E)
-* 🎮 **Palit GeForce RTX 4060 Ti JetStream 16GB**
-* 🧠 **16GB DDR5 6000MHz Team T-Force Vulcan RAM**
-* 🔌 **Asus PRIME H610M-K DDR5 Anakart**
-* ❄️ **Thermalright Peerless Assassin 120 SE**
-* 🖥️ **MSI G244PF E2 165Hz Monitör**
+- 💻 **Intel i5-13400F** (10 çekirdek: 6P+4E)
+- 🎮 **Palit GeForce RTX 4060 Ti JetStream 16GB**
+- 🧠 **16GB DDR5 6000MHz Team T-Force Vulcan RAM**
+- 🔌 **Asus PRIME H610M-K DDR5 Anakart**
+- ❄️ **Thermalright Peerless Assassin 120 SE**
+- 🖥️ **MSI G244PF E2 165Hz Monitör**
 
 Bu donanımla yüksek performans alırken aynı zamanda gereksiz güç tüketimini önlemek istedim.
 
@@ -138,9 +138,9 @@ Bazı çekirdeklerin düşük, bazılarının yüksek frekansta çalıştığın
 
 Modern Intel işlemcilerde varsayılan sürücü genellikle `intel_pstate`'tir. Bu sürücü sayesinde;
 
-* İşlemci kendi frekansını anlık ayarlayabilir 🔄
-* "performance" modunda bile çekirdekler gerektiğinde düşebilir
-* Boost frekansları desteklenir ⚡
+- İşlemci kendi frekansını anlık ayarlayabilir 🔄
+- "performance" modunda bile çekirdekler gerektiğinde düşebilir
+- Boost frekansları desteklenir ⚡
 
 ### Alternatif Sürücüler?
 
@@ -187,7 +187,6 @@ systemctl --user enable --now cpupower.service
 
 ---
 
-
 ## 🚀 7. İleri Düzey İnce Ayar ve Analiz Araçları
 
 ### 7.1 Boost Frekansının Durumu ve Kontrolü
@@ -198,8 +197,8 @@ Boost özelliğinin açık mı kapalı mı olduğunu kontrol etmek için:
 cat /sys/devices/system/cpu/cpufreq/boost
 ```
 
-* `1` ise boost açık
-* `0` ise boost kapalı
+- `1` ise boost açık
+- `0` ise boost kapalı
 
 Gerekirse kapatmak için:
 
@@ -231,14 +230,14 @@ sudo turbostat
 
 ### 7.3 Güç Tüketim Analizi: `powertop` ve `powerstat`
 
-* `powertop` sistemde en çok enerji tüketen bileşenleri tespit eder ve optimizasyon önerileri sunar.
+- `powertop` sistemde en çok enerji tüketen bileşenleri tespit eder ve optimizasyon önerileri sunar.
 
 ```bash
 sudo pacman -S powertop
 sudo powertop
 ```
 
-* `powerstat` ise anlık watt tüketimini ölçmek için kullanılır, özellikle dizüstü kullanıcıları için faydalıdır.
+- `powerstat` ise anlık watt tüketimini ölçmek için kullanılır, özellikle dizüstü kullanıcıları için faydalıdır.
 
 ---
 
@@ -306,18 +305,16 @@ sudo systemctl enable --now tlp
 
 ## 🔗 8. Devam Etmek İsteyenler İçin
 
-* **`turbostat`**: CPU çekirdeklerinin frekansı, sıcaklığı, güç durumu gibi verileri gerçek zamanlı izler. Performans sorunları veya ısınma problemlerini tespit etmek için faydalıdır.
+- **`turbostat`**: CPU çekirdeklerinin frekansı, sıcaklığı, güç durumu gibi verileri gerçek zamanlı izler. Performans sorunları veya ısınma problemlerini tespit etmek için faydalıdır.
 
-* **`powertop`**: Sistem genelinde hangi bileşenlerin ne kadar enerji tükettiğini gösterir ve güç tasarrufu için öneriler sunar.
+- **`powertop`**: Sistem genelinde hangi bileşenlerin ne kadar enerji tükettiğini gösterir ve güç tasarrufu için öneriler sunar.
 
-* **`auto-cpufreq`**: Yük ve pil durumuna göre CPU frekans yöneticisini otomatik olarak ayarlayarak enerji verimliliği sağlar.
+- **`auto-cpufreq`**: Yük ve pil durumuna göre CPU frekans yöneticisini otomatik olarak ayarlayarak enerji verimliliği sağlar.
 
 ---
 
 İstersen, turbostat çıktısından küçük bir ekran görüntüsü veya örnek komut çıktısı da ekleyebiliriz. Yazının görsel olarak da desteklenmesi kullanıcı deneyimini artırır.
 Başka düzenleme veya ekleme talebin varsa memnuniyetle yardımcı olurum!
-
-
 
 ## 📌 9. Yaygın Sorunlar ve Çözümler
 
@@ -334,12 +331,9 @@ Başka düzenleme veya ekleme talebin varsa memnuniyetle yardımcı olurum!
 
 Bu rehberde, masaüstü ortamı kullanmadan, sadece terminal ve `cpupower` aracıyla nasıl etkili bir CPU güç yönetimi yapılandırılabileceğini adım adım gösterdim. Modern bir sistemde:
 
-* Performansı elle yönetmek 🎯
-* Frekansları anlık izlemek 🔬
-* `intel_pstate` sürücüsünü doğru kullanmak 🛠️
+- Performansı elle yönetmek 🎯
+- Frekansları anlık izlemek 🔬
+- `intel_pstate` sürücüsünü doğru kullanmak 🛠️
   gibi adımlarla sisteminiz daha verimli çalışacaktır.
 
 ---
-
-
-

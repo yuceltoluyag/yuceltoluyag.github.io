@@ -10,7 +10,6 @@ Template: article
 Series: Waydroid
 Series_index: 2
 Lang: en
-Translation: true
 
 ## Waydroid Internet and Boot Problem Solution on Arch Linux
 

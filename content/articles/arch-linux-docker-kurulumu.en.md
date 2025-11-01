@@ -9,7 +9,6 @@ Status: published
 Summary: A comprehensive guide detailing Docker installation, configuration, and basic usage steps on Arch Linux.
 Template: article
 Lang: en
-Translation: true
 Series: Docker
 Series_index: 1
 

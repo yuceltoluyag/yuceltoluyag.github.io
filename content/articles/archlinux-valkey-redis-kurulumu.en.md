@@ -9,7 +9,6 @@ Summary: Learn step by step how to install, configure and solve common issues wi
 Template: article
 Image: images/archlinux-valkey-redis-kurulumu-xl.webp
 Lang: en
-Translation: true
 
 ## Introduction: Redis or Valkey? 🤔
 

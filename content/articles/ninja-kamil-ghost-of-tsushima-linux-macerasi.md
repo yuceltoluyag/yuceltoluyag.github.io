@@ -4,6 +4,8 @@ Category: Oyun
 Tags: ghost-of-tsushima, linux, ninja-kamil, oyun-izlenimleri, oyun-performans, mizah, oyun-inceleme
 Slug: ninja-kamil-ghost-of-tsushima-linux-macerasi
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Linux'ta Ghost of Tsushima oynayan Ninja Kamil’in kaotik, eğlenceli ve teknik sorunlarla dolu macerasına mizahi bir bakış.
 Image: images/ninja_qamil-xl.webp

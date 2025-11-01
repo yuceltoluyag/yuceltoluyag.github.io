@@ -5,6 +5,8 @@ Category: Sorun Giderme
 Tags: node.js, sharp, derleme hatası, c++17, arch linux, node-gyp  
 Slug: nodejs-sharp-cpp17-derleme-hatasi-cozumu  
 Authors: yuceltoluyag  
+Lang: tr
+Translation: false
 Status: published  
 Summary: Arch Linux üzerinde Sharp modülünü Node.js projelerine kurarken karşılaşılan C++17 derleme hatasının ne anlama geldiğini ve nasıl çözüleceğini adım adım anlatıyoruz.  
 Template: article
@@ -76,8 +78,8 @@ Bu noktada `node-gyp` C++17 uyumlu şekilde derleme yapacak ve önceki hata art�
 
 Eğer hata devam ederse:
 
-* `g++` sürümünüzü kontrol edin: `g++ --version`
-* Node.js sürümünüzü kontrol edin: `node -v`
+- `g++` sürümünüzü kontrol edin: `g++ --version`
+- Node.js sürümünüzü kontrol edin: `node -v`
 
 Her iki bileşenin de güncel olduğundan emin olun. Özellikle `g++` sürümünüz 7 ve üzeri olmalı (C++17 desteği için).
 
@@ -87,7 +89,7 @@ Her iki bileşenin de güncel olduğundan emin olun. Özellikle `g++` sürümün
 
 ## 🧹 Ekstra İpuçları
 
- - `export CXXFLAGS="--std=c++17"` sorununuzu çözecektir ama yine de Linux kullanıcıları için bazı ek ipuçları aşağıdadır:  
+- `export CXXFLAGS="--std=c++17"` sorununuzu çözecektir ama yine de Linux kullanıcıları için bazı ek ipuçları aşağıdadır:
 
 * **Gerekli geliştirme paketlerini kurun:**
 
@@ -95,25 +97,25 @@ Her iki bileşenin de güncel olduğundan emin olun. Özellikle `g++` sürümün
 sudo pacman -S base-devel gcc
 ```
 
-* **node-gyp'i global olarak kurun ve güncel tutun:**
+- **node-gyp'i global olarak kurun ve güncel tutun:**
 
 ```bash
 npm install -g node-gyp
 ```
 
-* Eğer `node-gyp` hala hata veriyorsa, `python` sürümünüzü kontrol edin ve sisteminizde **Python 3.6+** olduğundan emin olun:
+- Eğer `node-gyp` hala hata veriyorsa, `python` sürümünüzü kontrol edin ve sisteminizde **Python 3.6+** olduğundan emin olun:
 
 ```bash
 python --version
 ```
 
-* Ayrıca, `libvips` kütüphanesini kurarak `sharp` modülünün sistem kütüphanelerine erişimini garanti altına alabilirsiniz:
+- Ayrıca, `libvips` kütüphanesini kurarak `sharp` modülünün sistem kütüphanelerine erişimini garanti altına alabilirsiniz:
 
 ```bash
 sudo pacman -S libvips
 ```
 
-* Yaygın Node.js yönetim aracı olan **nvm**'yi kullanarak uyumlu bir Node sürümüne geçebilirsiniz:
+- Yaygın Node.js yönetim aracı olan **nvm**'yi kullanarak uyumlu bir Node sürümüne geçebilirsiniz:
 
 ```bash
 nvm install 18
@@ -136,6 +138,7 @@ Bu yazıda, **Node.js ortamında `sharp` modülünü kurarken alınan C++17 kayn
 
 Bu yöntemle %90 olasılıkla sorun çözülecektir. Eğer hâlâ problem yaşıyorsanız, log çıktısıyla birlikte destek forumlarına danışabilirsiniz.
 [responsive_img src="/images/fckthisnodejsharp-xl.webp" alt="Sharp Derleme Hatası Çözümü" /]
+
 ---
 
 ## 💬 Söz Sende!
@@ -144,4 +147,3 @@ Sen de bu hatayı yaşadın mı? Ya da farklı bir çözüm yöntemi mi kulland�
 **Yorumlarda bizimle paylaş!** Yardımcı olabileceğimiz başka konular varsa da çekinmeden yazabilirsin.
 
 ---
-

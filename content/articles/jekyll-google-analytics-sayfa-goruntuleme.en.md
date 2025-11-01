@@ -6,7 +6,6 @@ Tags: superproxy, jekyll, google analytics
 Slug: jekyll-google-analytics-sayfa-goruntuleme
 Authors: yuceltoluyag
 Summary: A guide explaining how to track page view counts with Google Analytics on your Jekyll site.
-Translation: true
 Status: published
 Template: article
 Image: images/superproxy-xl.webp

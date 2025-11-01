@@ -6,7 +6,6 @@ Tags: linux, ntfs
 Slug: arch-linux-ntfs-yapilandirma
 Authors: yuceltoluyag
 Summary: Explains how to mount disks with NTFS file system in Arch Linux and how to resolve permission issues.
-Translation: true
 Status: published
 Template: article
 Image: images/ntfs_yetki_hatasi-xl.webp

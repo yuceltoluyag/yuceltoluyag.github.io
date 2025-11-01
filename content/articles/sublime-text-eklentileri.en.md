@@ -6,7 +6,6 @@ Tags: ipucu, sublime
 Slug: sublime-text-eklentileri
 Authors: yuceltoluyag
 Summary: I introduce the most useful Sublime Text plugins and themes I use.
-Translation: true
 Status: published
 Template: article
 Image: images/AFileIcon-xl.webp

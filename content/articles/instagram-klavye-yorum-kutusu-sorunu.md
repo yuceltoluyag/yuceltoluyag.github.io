@@ -5,6 +5,8 @@ Category: Sorun Giderme
 Tags: instagram, klavye sorunu, android ipuçları, yorum kutusu, mobil rehber
 Slug: instagram-klavye-yorum-kutusu-sorunu
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Android telefonlarda Instagram'da yorum yazarken klavyenin yorum kutusunun üstüne çıkması sinir bozucu olabilir. Bu rehber, problemi kalıcı olarak nasıl çözeceğinizi adım adım anlatıyor.
 Template: article

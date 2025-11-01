@@ -132,6 +132,26 @@ def clean(ctx: Context) -> None:
     os.makedirs(SETTINGS["OUTPUT_PATH"])
 
 
+@duty(silent=True)
+def clean_cache(ctx: Context) -> None:
+    """Clean only the cache directory."""
+    cache_path = SETTINGS.get("CACHE_PATH", "cache")
+    if Path(cache_path).is_dir():
+        shutil.rmtree(cache_path)
+    # Also remove potential cache files in the output directory
+    for cache_file in Path(SETTINGS["OUTPUT_PATH"]).glob("**/*.cache"):
+        cache_file.unlink()
+
+
+@duty(silent=True)
+def clean_output(ctx: Context) -> None:
+    """Clean only the output directory."""
+    output_path = SETTINGS["OUTPUT_PATH"]
+    if Path(output_path).is_dir():
+        shutil.rmtree(output_path)
+        os.makedirs(output_path)
+
+
 @duty(post=[cache_bust])
 def build(ctx: Context) -> None:
     """Build the project."""
@@ -201,15 +221,15 @@ def livereload(ctx: Context):
     from livereload import Server
 
     def cached_build():
+        # Clean cache and output directories before building to avoid EOFError
+        clean_cache(ctx)
+        clean_output(ctx)
+        
         pelican_args = [
             "-s",
             SETTINGS_FILE_BASE,
-            "-e",
-            "CACHE_CONTENT=true",
-            "LOAD_CONTENT_CACHE=true",
+            "--debug"  # Always use debug mode to get more detailed error info
         ]
-        if DEBUG_MODE:
-            pelican_args.append("--debug")
         ctx.run(
             run_pelican(pelican_args)
         )
@@ -316,5 +336,4 @@ def lint(ctx: Context) -> None:
         title=pyprefix("pre-commit hooks"),
         command="SKIP=typos,djlint pre-commit run --all-files",
     )
-
 

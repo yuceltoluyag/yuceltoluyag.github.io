@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 2
 Summary: Step-by-step guide on using CS Fixer in PhpStorm.
-Translation: true
 Status: published
 Template: article
 Image: images/php_phpstorm_csfixer-xl.webp

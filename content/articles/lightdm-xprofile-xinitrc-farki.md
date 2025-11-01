@@ -5,11 +5,12 @@ Category: Masaüstü Ortamları
 Tags: lightdm, xinitrc, xprofile, arch linux, oturum ayarları
 Slug: lightdm-xprofile-xinitrc-farki
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: LightDM gibi bir display manager kullanıyorsanız `.xinitrc` dosyanız neden çalışmaz? Doğru başlangıç dosyasının `.xprofile` olduğunu anlatan bu rehber, kafa karışıklığını ortadan kaldırıyor.
 Template: article
 Image: images/xinitvsxprofile-xl.webp
-
 
 ## LightDM Kullanıyorsan Neden `.xprofile` Kullanmalısın?
 
@@ -17,7 +18,9 @@ Arch Linux ya da diğer Linux dağıtımlarında masaüstü ortamını başlatma
 Bu durumun tek bir sebebi olabilir: **LightDM veya benzeri bir Display Manager kullanıyorsun ve `.xinitrc` dosyan hiçbir işe yaramıyor!** Bu yazıda, `.xinitrc` ile `.xprofile` farkını detaylıca inceleyecek ve neden `.xprofile` kullanman gerektiğini adım adım göstereceğiz.
 
 ---
+
 [responsive_img src="/images/xinitvsxprofile-xl.webp" alt="xinitrc ve xprofile farkı" /]
+
 ## `.xinitrc` ve `.xprofile` Nedir?
 
 ### `.xinitrc` Dosyası Ne Yapar?
@@ -40,9 +43,9 @@ exec i3
 
 `.xprofile`, GUI oturumlarını **otomatik olarak başlatan Display Manager’lar** tarafından çalıştırılır. Özellikle şu durumlar için kullanılır:
 
-* `lightdm`, `gdm`, `sddm` gibi display manager kullanan sistemler
-* Ortam değişkenleri (`PATH`, `XCURSOR_PATH`), oturum başlangıç uygulamaları (`numlockx`, `dunst` vs.)
-* Arka plan servisleri (`mpd`, `ssh-agent` gibi)
+- `lightdm`, `gdm`, `sddm` gibi display manager kullanan sistemler
+- Ortam değişkenleri (`PATH`, `XCURSOR_PATH`), oturum başlangıç uygulamaları (`numlockx`, `dunst` vs.)
+- Arka plan servisleri (`mpd`, `ssh-agent` gibi)
 
 ---
 
@@ -50,9 +53,9 @@ exec i3
 
 Display Manager'lar (özellikle LightDM):
 
-* Oturumu kendi başına başlatır
-* `~/.xinitrc`'yi **çalıştırmaz**
-* Sadece `~/.xprofile`, `~/.xsession`, `~/.pam_environment` gibi dosyalara bakar
+- Oturumu kendi başına başlatır
+- `~/.xinitrc`'yi **çalıştırmaz**
+- Sadece `~/.xprofile`, `~/.xsession`, `~/.pam_environment` gibi dosyalara bakar
 
 Yani, `.xinitrc` dosyasına ne yazarsan yaz, **LightDM onu okumaz**.
 Bu nedenle başlangıçta çalışmasını istediğin tüm komutları `.xprofile` içine taşımalısın.
@@ -98,9 +101,9 @@ Yukarıdaki komutları `.xinitrc` içinde tuttuğun sürece hiçbir şey olmayac
 
 ## Sık Yapılan Hatalar
 
-* `.xprofile` içinde `source ~/.xinitrc` yapmak ve `xinitrc` içinde tekrar `exec i3` yazmak → **Çift başlatma hatası**
-* `.xinitrc`'ye sadece `export` komutları yazmak → **Hiçbir şey çalışmaz**
-* `.xprofile`'ı çalıştırılabilir yapmamak → `chmod +x ~/.xprofile`
+- `.xprofile` içinde `source ~/.xinitrc` yapmak ve `xinitrc` içinde tekrar `exec i3` yazmak → **Çift başlatma hatası**
+- `.xinitrc`'ye sadece `export` komutları yazmak → **Hiçbir şey çalışmaz**
+- `.xprofile`'ı çalıştırılabilir yapmamak → `chmod +x ~/.xprofile`
 
 ---
 
@@ -122,7 +125,3 @@ Bu sayede başlatılamayan servisler, çalışmayan tema ayarları, eksik ikonla
 👇
 **Sen de `.xinitrc` mi yoksa `.xprofile` mi kullanıyorsun? Deneyimlerini yorum olarak paylaş!**
 Soruların varsa da çekinmeden yaz! 💬
-
-
-
-
