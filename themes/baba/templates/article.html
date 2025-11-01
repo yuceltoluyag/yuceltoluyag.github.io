@@ -25,7 +25,7 @@ super() }} {% if article.translations -%}
     {% if article.image %}
     <div class="hero-image-container cyberpunk-image-glow">
       <img
-        src="{{ SITEURL }}/{{ article.image }}"
+        src="{{ SITEURL_ROOT }}/{{ article.image }}"
         class="hero-background cyberpunk-hero-image"
         alt="Hero Background"
         width="1200"
@@ -89,7 +89,7 @@ super() }} {% if article.translations -%}
       {% if article.series %}
       <div class="series-navigation-card pico-card">
         <div class="series-header">
-          <h2><i class="fa-solid fa-bookmark"></i> Seri: {{ article.series.name }}</h2>
+          <h2><i class="fa-solid fa-bookmark"></i> {{ _('Series:') }} {{ article.series.name }}</h2>
           <span class="series-progress">Bölüm {{ article.series.index }}/{{ article.series.all|length }}</span>
         </div>
         
@@ -103,11 +103,11 @@ super() }} {% if article.translations -%}
         </div>
         {% endif %}
         
-        <p class="series-description">Bu yazı "{{ article.series.name }}" serisinin {{ article.series.index }}. bölümüdür.</p>
+        <p class="series-description">{{ _('This article is part %(index)s of the \'%(name)s\' series.', index=article.series.index, name=article.series.name) }}</p>
         
         <!-- Series Index -->
         <details class="series-contents">
-          <summary><i class="fa-solid fa-list"></i> Seri İçindekileri</summary>
+          <summary><i class="fa-solid fa-list"></i> {{ _('Series Contents') }}</summary>
           <ol class="series-list">
             {% for part_article in article.series.all %}
             <li {% if part_article == article %}class="active"{% endif %}>
@@ -157,7 +157,7 @@ super() }} {% if article.translations -%}
         <div class="related-posts-section">
           <div class="related-posts-card pico-card">
             <hgroup>
-              <h3><i class="fa-solid fa-star"></i> Benzer Yazılar</h3>
+              <h3><i class="fa-solid fa-star"></i> {{ _('Related Posts') }}</h3>
             </hgroup>
             <ul class="related-posts-list">
               {% for related_article in article.related_posts %}

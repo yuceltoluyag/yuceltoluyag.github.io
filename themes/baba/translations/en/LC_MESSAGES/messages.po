@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the Flex project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Flex 2.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-11-01 10:38+0300\n"
+"POT-Creation-Date: 2025-11-01 23:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -19,90 +18,122 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: templates/article.html:178
+#: themes/baba/templates/article.html:92
+msgid "Series:"
+msgstr "Series:"
+
+#: themes/baba/templates/article.html:106
+msgid "This article is part %(index)s of the '%(name)s' series."
+msgstr "This article is part %(index)s of the '%(name)s' series."
+
+#: themes/baba/templates/article.html:110
+msgid "Series Contents"
+msgstr "Series Contents"
+
+#: themes/baba/templates/article.html:160
+msgid "Related Posts"
+msgstr "Related Posts"
+
+#: themes/baba/templates/article.html:178
 msgid "Destek Olun"
 msgstr "Support Us"
 
-#: templates/article.html:181
+#: themes/baba/templates/article.html:181
 msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
 msgstr "If you find this content useful, you can support my work."
 
-#: templates/article.html:199
+#: themes/baba/templates/article.html:184
 msgid "Destek Ol"
 msgstr "Support"
 
-#: templates/article.html:200
+#: themes/baba/templates/article.html:194
 msgid "Düzenle"
 msgstr "Edit"
 
-#: templates/article.html:XXX
+#: themes/baba/templates/article.html:205
 msgid "Paylaş:"
 msgstr "Share:"
 
-#: templates/article.html:XXX
+#: themes/baba/templates/article.html:360
 msgid "Önceki:"
 msgstr "Previous:"
 
-#: templates/article.html:XXX
+#: themes/baba/templates/article.html:368
 msgid "Sonraki:"
 msgstr "Next:"
 
-#: templates/includes/footer.html:3
+#: themes/baba/templates/includes/footer.html:6
 msgid "Tüm hakları saklıdır."
 msgstr "All rights reserved."
 
-#: templates/includes/footer.html:6
+#: themes/baba/templates/includes/footer.html:9
 msgid "Kategoriler sayfasına git"
 msgstr "Go to categories page"
 
-#: templates/includes/footer.html:7
+#: themes/baba/templates/includes/footer.html:11
+#: themes/baba/templates/includes/footer.html:12
 msgid "Kategoriler"
 msgstr "Categories"
 
-#: templates/includes/footer.html:10
+#: themes/baba/templates/includes/footer.html:14
 msgid "Etiketler sayfasına git"
 msgstr "Go to tags page"
 
-#: templates/includes/footer.html:11
+#: themes/baba/templates/includes/footer.html:16
+#: themes/baba/templates/includes/footer.html:17
 msgid "Etiketler"
 msgstr "Tags"
 
-#: templates/includes/footer.html:14
+#: themes/baba/templates/includes/footer.html:19
 msgid "Kullanım Koşulları sayfasına git"
 msgstr "Go to terms of use page"
 
-#: templates/includes/footer.html:15
+#: themes/baba/templates/includes/footer.html:21
+#: themes/baba/templates/includes/footer.html:22
 msgid "Kullanım Koşulları"
 msgstr "Terms of Use"
 
-#: templates/includes/footer.html:18
+#: themes/baba/templates/includes/footer.html:24
 msgid "Gizlilik Politikası sayfasına git"
 msgstr "Go to privacy policy page"
 
-#: templates/includes/footer.html:19
+#: themes/baba/templates/includes/footer.html:26
 msgid "Gizlilik"
 msgstr "Privacy"
 
-#: templates/includes/footer.html:20
+#: themes/baba/templates/includes/footer.html:27
 msgid "Gizlilik Politikası"
 msgstr "Privacy Policy"
 
-#: templates/includes/footer.html:23
+#: themes/baba/templates/includes/footer.html:30
 msgid "Atom beslemesine git"
 msgstr "Go to Atom feed"
 
-#: templates/includes/footer.html:24
+#: themes/baba/templates/includes/footer.html:32
 msgid "Atom"
 msgstr "Atom"
 
-#: templates/includes/footer.html:25
+#: themes/baba/templates/includes/footer.html:33
 msgid "Atom Beslemesi"
 msgstr "Atom Feed"
 
-#: templates/includes/footer.html:28
+#: themes/baba/templates/includes/footer.html:37
 msgid "RSS beslemesine git"
 msgstr "Go to RSS feed"
 
-#: templates/includes/footer.html:29
+#: themes/baba/templates/includes/footer.html:39
 msgid "RSS"
 msgstr "RSS"
+
+#: themes/baba/templates/includes/footer.html:40
+msgid "RSS Beslemesi"
+msgstr "RSS Feed"
+
+#: themes/baba/templates/includes/footer.html:48
+#, python-brace-format
+msgid "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube kanalıma</a> abone olarak destek olabilirsiniz."
+msgstr ""
+
+#~ msgid "Benzer Yazılar"
+#~ msgstr "Related Posts"
+

@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
 function extract_pot() {
-    pybabel extract -s --no-wrap --project="Flex" --copyright-holder="Alexandre Vicenzi" --version="2.1.0" --mapping translations/babel.cfg --output translations/messages.pot ./
+    pybabel extract -s --no-wrap --project="Baba" --copyright-holder="Yücel Toluyag" --version="2.1.0" --mapping themes/baba/babel.cfg --output themes/baba/messages.pot ./
 }
 
 function new_translation() {
-    pybabel init --no-wrap --input-file translations/messages.pot --output-dir translations/ --locale $1 --domain messages
+    pybabel init --no-wrap --input-file themes/baba/messages.pot --output-dir themes/baba/translations/ --locale $1 --domain messages
 }
 
 function update_translation() {
-    pybabel update --no-wrap --input-file translations/messages.pot --output-dir translations/ --domain messages
+    pybabel update --no-wrap --input-file themes/baba/messages.pot --output-dir themes/baba/translations/ --domain messages
 }
 
 function compile_translations() {
-    pybabel compile -f --directory translations/ --domain messages
+    pybabel compile -f --directory themes/baba/translations/ --domain messages
 }
 
 function can_run() {

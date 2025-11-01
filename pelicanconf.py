@@ -184,6 +184,7 @@ common_plugins = [
     "plugins.video_schema",
     "plugins.comments",
     "plugins.pelican-toc", 
+    "plugins.related_posts",
 ]
 
 dev_plugins = common_plugins.copy()
