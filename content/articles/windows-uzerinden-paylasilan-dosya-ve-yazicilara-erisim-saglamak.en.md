@@ -6,7 +6,6 @@ Tags: linux, windows10
 Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak
 Authors: yuceltoluyag
 Summary: This guide explains how to access files and printers shared from Windows with Linux. Samba usage and settings are explained in detail.
-Translation: true
 Status: published
 Template: article
 Image: images/linux_samba-xl.webp

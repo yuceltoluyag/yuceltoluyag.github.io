@@ -8,12 +8,10 @@ Series: ArchLampp
 Series_index: 3
 Authors: yuceltoluyag
 Summary: Detailed guide explaining step by step installation of VirtualBox, Vagrant, Laravel and PhpMyAdmin on Arch Linux.
-Translation: true
 Status: published
 Template: article
 Image: images/pic-selected-190916-0747-49-xl.webp
 Lang: en
-
 
 ## Installing VirtualBox 🚀
 
@@ -111,7 +109,6 @@ sudo nano ~/www/Homestead/Homestead.yaml
 ```
 
 ```yaml
-
 ip: "192.168.10.10"
 memory: 2048
 cpus: 2
@@ -120,24 +117,23 @@ provider: virtualbox
 authorize: ~/.ssh/id_rsa.pub
 
 keys:
-    - ~/.ssh/id_rsa
+  - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/www
-      to: /home/vagrant/www
+  - map: ~/www
+    to: /home/vagrant/www
 
 sites:
-    - map: laravel6.test
-      to: /home/vagrant/www/laravel6/public
+  - map: laravel6.test
+    to: /home/vagrant/www/laravel6/public
 
 databases:
-    - homestead
+  - homestead
 
 features:
-    - mariadb: false
-    - ohmyzsh: false
-    - webdriver: false
-
+  - mariadb: false
+  - ohmyzsh: false
+  - webdriver: false
 # ports:
 #     - send: 50000
 #       to: 5000
@@ -175,9 +171,7 @@ To connect:
 vagrant ssh
 ```
 
-
 [responsive_img src="/images/pic-selected-190916-0818-54-xl.webp" alt="SSH Connection" /]
-
 
 ## Installing Laravel 🌐
 
@@ -189,7 +183,6 @@ composer create-project --prefer-dist laravel/laravel
 ```
 
 When this process is completed, a folder named **laravel** will be created inside your **www** folder.
-
 
 [responsive_img src="/images/pic-full-190916-0808-36-xl.webp" alt="Laravel Installation" /]
 
@@ -227,7 +220,7 @@ sites:
 
 All settings are complete! 🚀 **To access PhpMyAdmin:**
 
-[http://phpmyadmin.test/](http://phpmyadmin.test/){: target="_blank" rel="noopener noreferrer"}
+[http://phpmyadmin.test/](http://phpmyadmin.test/){: target="\_blank" rel="noopener noreferrer"}
 
 Username: **homestead**
 Password: **secret**

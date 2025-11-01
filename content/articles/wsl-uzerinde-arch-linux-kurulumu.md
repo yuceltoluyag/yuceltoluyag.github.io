@@ -6,7 +6,6 @@ Tags: windows10, linux
 Slug: wsl-uzerinde-arch-linux-kurulumu
 Authors: yuceltoluyag
 Summary: Windows Subsystem for Linux (WSL) üzerinde Arch Linux kurulumunu adım adım anlatan rehber.
-
 Lang: tr
 Translation: false
 Status: published

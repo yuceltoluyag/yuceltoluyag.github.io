@@ -6,7 +6,6 @@ Tags: linux, vagrant, windows10
 Slug: vagrant-virtualbox-6-1-uyumluluk
 Authors: yuceltoluyag
 Summary: We explain step by step how to fix the compatibility issue between Vagrant and VirtualBox 6.1.
-Translation: true
 Status: published
 Template: article
 Image: images/ol_vbox_vagrant-min-xl.webp

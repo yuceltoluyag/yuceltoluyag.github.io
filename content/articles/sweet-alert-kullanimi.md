@@ -6,7 +6,6 @@ Tags: yazılım, sweetalert
 Slug: sweet-alert-kullanimi
 Authors: yuceltoluyag
 Summary: Sweet Alert sınıfının kullanımını, tüm argümanlarıyla birlikte detaylı bir şekilde anlatıyoruz. Mobil uyumlu, şık uyarı pencereleri oluşturmak için rehberimizi inceleyin.
-
 Lang: tr
 Translation: false
 Status: published

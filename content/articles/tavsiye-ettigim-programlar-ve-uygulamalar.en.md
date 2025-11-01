@@ -6,7 +6,6 @@ Tags: program, güvenlik, internet
 Slug: tavsiye-ettigim-programlar-ve-uygulamalar
 Authors: yuceltoluyag
 Summary: The first part of the series where I share programs I frequently use on Windows, Linux and Android platforms.
-Translation: true
 Status: published
 Template: article
 Image: images/comodo_firewall-xl.webp

@@ -8,20 +8,19 @@ Authors: yuceltoluyag
 Series: mutt
 Series_index: 2
 Summary: A guide showing how to connect to an IMAP server using OpenSSL via terminal.
-Translation: true
 Status: published
 Template: article
 Image: images/imap_openssl_terminal-xl.webp
 Lang: en
 
-[# Modern mutt setup part 1](/modern-bir-mutt-kurulumu-1-bolum){: target="_blank" rel="noopener noreferrer"} while explaining the **remote** parts, I mentioned how important they are. When each email has its own interface, its own remote tag, and tags that change by language, how will we learn them? We can learn this using IMAP and OpenSSL.
+[# Modern mutt setup part 1](/modern-bir-mutt-kurulumu-1-bolum){: target="\_blank" rel="noopener noreferrer"} while explaining the **remote** parts, I mentioned how important they are. When each email has its own interface, its own remote tag, and tags that change by language, how will we learn them? We can learn this using IMAP and OpenSSL.
 
 Suggestions for Windows users:
 
-- [nmap](https://nmap.org/){: target="_blank" rel="noopener noreferrer"}
-- [ncat](https://nmap.org/ncat/){: target="_blank" rel="noopener noreferrer"}
-- [telnet](https://www.gnu.org/software/inetutils/manual/html_node/telnet-invocation.html){: target="_blank" rel="noopener noreferrer"}
-- I recommend Cmder terminal for Windows users. You can download the full version from [Cmder](https://cmder.app/){: target="_blank" rel="noopener noreferrer"} and extract it to any directory you want. It's a Swiss army knife-like terminal that can be customized as needed, new applications can be added, etc. You may not even need these applications 😃
+- [nmap](https://nmap.org/){: target="\_blank" rel="noopener noreferrer"}
+- [ncat](https://nmap.org/ncat/){: target="\_blank" rel="noopener noreferrer"}
+- [telnet](https://www.gnu.org/software/inetutils/manual/html_node/telnet-invocation.html){: target="\_blank" rel="noopener noreferrer"}
+- I recommend Cmder terminal for Windows users. You can download the full version from [Cmder](https://cmder.app/){: target="\_blank" rel="noopener noreferrer"} and extract it to any directory you want. It's a Swiss army knife-like terminal that can be customized as needed, new applications can be added, etc. You may not even need these applications 😃
 
 ## Let's Start 🥗
 
@@ -207,7 +206,6 @@ read R BLOCK
 
 ```
 
-
 ### Connecting to Mailbox
 
 After establishing the connection, you will be asked to enter your username and password.
@@ -312,6 +310,5 @@ Since the content parts are multipart (happens in reply to reply situations), if
 tag FETCH 6388 (BODY[n])
 
 ```
-
 
 [responsive_img src="/images/imap_openssl_terminal-xl.webp" alt="imap_openssl_terminal" /]

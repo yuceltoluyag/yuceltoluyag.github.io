@@ -6,7 +6,6 @@ Tags: vlc, film
 Slug: vlsub-ile-altyazi-aramaya-son
 Authors: yuceltoluyag
 Summary: VLC medya oynatıcısı için VLSub eklentisiyle kolayca altyazı bulma ve indirme yöntemlerini anlatıyoruz.
-
 Lang: tr
 Translation: false
 Status: published

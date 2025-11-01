@@ -6,7 +6,6 @@ Tags: kulaklık, claw's sonic, oyuncu kulaklığı, rgb kulaklık, fiyat perform
 Slug: claws-sonic-v1-rgb-spectrum-kulaklik-incelemesi
 Authors: yuceltoluyag
 Summary: Detailed user experience, microphone test, sound quality, comfort and price-performance evaluation of Claw's Sonic V1 RGB Spectrum 7.1 headphones in this blog post!
-Translation: true
 Status: published
 Template: article
 Image: images/claws-sonic-v1-rgb-xl.webp

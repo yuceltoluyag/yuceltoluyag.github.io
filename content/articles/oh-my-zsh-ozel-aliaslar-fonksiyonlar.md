@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 3
 Summary: Oh My Zsh'de özel alias'lar ve fonksiyonlar oluşturarak terminalinizi özelleştirin ve günlük işlerinizi hızlandırın.
-
 Lang: tr
 Translation: false
 Status: published

@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: Git
 Series_index: 2
 Summary: Discover step by step how to customize your Windows Terminal.
-Translation: true
 Status: published
 Template: article
 Image: images/windows-terminal-xl.webp
@@ -35,33 +34,28 @@ Those who follow my stories on Instagram were asking how I customize my **Window
 
 If you want **icons** to be displayed correctly in your terminal:
 
-- You **must use** [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts){: target="_blank" rel="noopener noreferrer"}.
+- You **must use** [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts){: target="\_blank" rel="noopener noreferrer"}.
 - The full Nerd Fonts collection is more than 2 GB. You don't need to download all of them; you can select and install the font you like. Enjoy! =)
 
 ## Microsoft Store
 
-- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701){: target="_blank" rel="noopener noreferrer"}
-- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D){: target="_blank" rel="noopener noreferrer"}
+- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701){: target="\_blank" rel="noopener noreferrer"}
+- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D){: target="\_blank" rel="noopener noreferrer"}
 
 Install these two applications. After installation, **open** our **Windows Terminal** application and **go to settings**.
-
 
 [responsive_img src="/images/windows-terminal-xl.webp" alt="windows-terminal" /]
 
 After going to settings, your settings in the **appearance** tab should be as follows.
 
-
 [responsive_img src="/images/windows-terminal2-xl.webp" alt="windows-terminal2" /]
-
 
 After **saving** the settings, click on the **Startup** section. Set the **Powershell** we installed as **default**.
 [responsive_img src="/images/windows-terminal3-xl.webp" alt="windows-terminal3" /]
 **Save** the settings and go to the **Defaults** tab, then make your **Font** settings from the **Appearance** section there.
 
-
 [responsive_img src="/images/windows-terminal4-xl.webp" alt="windows-terminal4" /]
 After making your **Font** settings, activate "**Enable Acrylic**" which is on the same screen and **save** the settings.
-
 
 [responsive_img src="/images/windows-terminal5-xl.webp" alt="windows-terminal5" /]
 
@@ -379,6 +373,7 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 ## Result
 
 [responsive_img src="/images/windows-terminal-son-xl.webp" alt="windows-terminal6" /]
+
 ## Don't Teach Me How to Fish, Give Me the Fish
 
 If you're reading this article, you probably know what **Git** is 👊 Tools that work seamlessly on Linux sometimes have problems on **Windows**. For example, if you're not having problems using **GPG**, continue using it 🧠 But if you are having problems, I recommend using "**gpg4win**".
@@ -387,4 +382,4 @@ If you're reading this article, you probably know what **Git** is 👊 Tools tha
 scoop install gpg4win
 ```
 
-You can access my [Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="_blank" rel="noopener noreferrer"} settings from here and customize them according to yourself.
+You can access my [Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="\_blank" rel="noopener noreferrer"} settings from here and customize them according to yourself.

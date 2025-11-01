@@ -6,7 +6,6 @@ Tags: linux, newsboat
 Slug: newsboat-rss-feeds-kullanimi
 Authors: yuceltoluyag
 Summary: Terminal tabanlı güçlü bir RSS okuyucu olan Newsboat'u nasıl yapılandıracağınızı ve verimli bir şekilde nasıl kullanacağınızı öğrenin.
-
 Lang: tr
 Translation: false
 Status: published

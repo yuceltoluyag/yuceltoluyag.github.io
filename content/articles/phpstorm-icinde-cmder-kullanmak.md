@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 1
 Summary: PHPStorm içerisinde terminal olarak Cmder kullanmak için ortam değişkenlerini ayarlama ve gerekli konfigürasyonları yapma adımları.
-
 Lang: tr
 Translation: false
 Status: published

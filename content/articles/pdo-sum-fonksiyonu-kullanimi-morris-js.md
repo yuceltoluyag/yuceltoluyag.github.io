@@ -6,7 +6,6 @@ Tags: php, pdo
 Slug: pdo-sum-fonksiyonu-kullanimi-morris-js
 Authors: yuceltoluyag
 Summary: PDO kullanarak MySQL veritabanındaki verileri toplama işlemi ve bu verileri morris.js ile grafik halinde görselleştirme.
-
 Lang: tr
 Translation: false
 Status: published

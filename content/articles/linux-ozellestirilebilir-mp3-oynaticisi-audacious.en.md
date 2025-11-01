@@ -6,7 +6,6 @@ Tags: linux, mp3, müzik oynatıcı
 Slug: linux-ozellestirilebilir-mp3-oynaticisi-audacious
 Authors: yuceltoluyag
 Summary: Audacious is a customizable and powerful MP3 player for Linux. It stands out with its support for Winamp 2.x themes and extensive plugin support.
-Translation: true
 Status: published
 Template: article
 Image: images/audacious-xl.webp

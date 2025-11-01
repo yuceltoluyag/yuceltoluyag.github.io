@@ -10,7 +10,6 @@ Summary: Flutter development environment setup on Arch Linux without Android Stu
 Template: article
 Image: images/arch-linux-flutter-kurulumu-xl.webp
 Lang: en
-Translation: true
 
 ---
 
@@ -253,8 +252,6 @@ flutter doctor --android-licenses
 yes | flutter doctor --android-licenses
 ```
 
-
-
 ### Running Flutter Doctor 🔍
 
 ```bash
@@ -403,7 +400,7 @@ description: Modern Flutter app for Arch Linux
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.8.0 <4.0.0'
+  sdk: ">=3.8.0 <4.0.0"
   flutter: ">=3.32.0"
 
 dependencies:
@@ -464,6 +461,7 @@ flutter run --hot
 **Error**: `Unsupported Java version` or module system issues
 
 **Solution**:
+
 ```bash
 # Add Java flags
 export JAVA_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED"
@@ -477,6 +475,7 @@ echo "org.gradle.jvmargs=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens
 **Error**: `Warning: Failed to read or create install properties file.`
 
 **Solution**:
+
 ```bash
 # Grant ownership of SDK directory to your user
 sudo chown -R $USER:$USER /opt/android-sdk/
@@ -496,6 +495,7 @@ sudo chown $USER:$USER /opt/android-sdk/.installationSettings
 **Error**: Emulator runs slowly or freezes
 
 **Solution**:
+
 ```bash
 # Hardware acceleration check
 /usr/bin/kvm-ok
@@ -510,6 +510,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 **Error**: `Failed to build for web`
 
 **Solution**:
+
 ```bash
 # Install web dependencies
 flutter pub global activate webdev
@@ -732,15 +733,15 @@ Congratulations! 🎉 You have set up a fully functional Flutter development env
 
 ### Learning Resources 📚
 
-- 📖 [Flutter 2025 Documentation](https://flutter.dev/docs){: target="_blank" rel="noopener noreferrer"}
-- 🎥 [Flutter Forward 2025](https://youtube.com/flutterdev){: target="_blank" rel="noopener noreferrer"}
-- 💻 [Dart 3.6 Language Guide](https://dart.dev/guides){: target="_blank" rel="noopener noreferrer"}
-- 🏗️ [Modern Flutter Architecture](https://github.com/flutter/samples){: target="_blank" rel="noopener noreferrer"}
+- 📖 [Flutter 2025 Documentation](https://flutter.dev/docs){: target="\_blank" rel="noopener noreferrer"}
+- 🎥 [Flutter Forward 2025](https://youtube.com/flutterdev){: target="\_blank" rel="noopener noreferrer"}
+- 💻 [Dart 3.6 Language Guide](https://dart.dev/guides){: target="\_blank" rel="noopener noreferrer"}
+- 🏗️ [Modern Flutter Architecture](https://github.com/flutter/samples){: target="\_blank" rel="noopener noreferrer"}
 
 ### Community and Support 🤝
 
-- 📱 [r/FlutterDev](https://reddit.com/r/FlutterDev){: target="_blank" rel="noopener noreferrer"}
-- 🐧 [Arch Linux Forums](https://bbs.archlinux.org/){: target="_blank" rel="noopener noreferrer"}
+- 📱 [r/FlutterDev](https://reddit.com/r/FlutterDev){: target="\_blank" rel="noopener noreferrer"}
+- 🐧 [Arch Linux Forums](https://bbs.archlinux.org/){: target="\_blank" rel="noopener noreferrer"}
 
 ### Starter Projects 🚀
 

@@ -6,7 +6,6 @@ Tags: tanitim
 Slug: e-sigara-tecrubelerim
 Authors: yuceltoluyag
 Summary: My electronic cigarette experiences with Smok Nord.
-Translation: true
 Status: published
 Template: article
 Image: images/esigara-yararlimi-zararlimi-xl.webp
@@ -28,10 +27,10 @@ When my friend gave me this device, there were three 30ml nicotine-free liquids 
 - 30ml liquid => 30 TL (average)
 - Coil (5-pack) => 150 TL
 
-| **Positives**                          | **Negatives**               |
-| -------------------------------------- | --------------------------- |
-| 1. Setup and usage quite easy          | 1. Low battery capacity     |
-| 2. Portable                            | 2. Small tank capacity      |
+| **Positives**                 | **Negatives**           |
+| ----------------------------- | ----------------------- |
+| 1. Setup and usage quite easy | 1. Low battery capacity |
+| 2. Portable                   | 2. Small tank capacity  |
 
 ## Using Smok NORD KIT
 

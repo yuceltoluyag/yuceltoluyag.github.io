@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 2
 Summary: We explain step by step how to use the shopt command within Zsh and how to solve bash incompatibilities.
-Translation: true
 Status: published
 Template: article
 Image: images/shopt-xl.webp

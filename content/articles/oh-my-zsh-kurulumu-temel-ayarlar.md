@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 1
 Summary: Oh My Zsh'in kurulumu ve temel ayarlarının nasıl yapılacağını adım adım açıklıyoruz.
-
 Lang: tr
 Translation: false
 Status: published

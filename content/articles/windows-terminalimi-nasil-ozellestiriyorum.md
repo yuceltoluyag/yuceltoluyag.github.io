@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: Git
 Series_index: 2
 Summary: Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağını keşfedin.
-
 Lang: tr
 Translation: false
 Status: published

@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: Git
 Series_index: 5
 Summary: We explain the methods you can use to revert to a specific commit in Git and move selected changes to a different branch with git cherry-pick command. 🚀
-Translation: true
 Status: published
 Template: article
 Image: images/git-chery-xl.webp

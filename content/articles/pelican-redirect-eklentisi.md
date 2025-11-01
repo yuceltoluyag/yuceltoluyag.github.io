@@ -6,7 +6,6 @@ Tags: pelican, python, seo, redirect, yönlendirme, statik site
 Slug: pelican-redirect-eklentisi
 Authors: yuceltoluyag
 Summary: Pelican ile oluşturulmuş statik sitelerinizde eski URL'leri korumak ve ziyaretçileri yeni sayfalara sorunsuz bir şekilde yönlendirmek için geliştirilmiş özel eklenti
-
 Lang: tr
 Translation: false
 Status: published

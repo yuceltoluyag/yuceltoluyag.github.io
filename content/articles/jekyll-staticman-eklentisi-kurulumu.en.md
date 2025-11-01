@@ -6,7 +6,6 @@ Tags: staticman, jekyll
 Slug: jekyll-staticman-eklentisi-kurulumu
 Authors: yuceltoluyag
 Summary: Detailed guide about installing Staticman plugin for comments on Jekyll blog sites.
-Translation: true
 Status: published
 Template: article
 Image: images/staticman-xl.webp

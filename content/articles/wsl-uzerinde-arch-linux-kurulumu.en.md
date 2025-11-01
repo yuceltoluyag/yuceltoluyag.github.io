@@ -6,7 +6,6 @@ Tags: windows10, linux
 Slug: wsl-uzerinde-arch-linux-kurulumu
 Authors: yuceltoluyag
 Summary: Step-by-step guide on installing Arch Linux on Windows Subsystem for Linux (WSL). We explain the necessary steps, dependencies and solutions to possible problems.
-Translation: true
 Status: published
 Template: article
 Image: images/wls-archlinux-kurulumu-xl.webp

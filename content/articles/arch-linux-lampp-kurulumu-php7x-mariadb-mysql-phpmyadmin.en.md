@@ -8,7 +8,6 @@ Series_index: 1
 Slug: arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin
 Authors: yuceltoluyag
 Summary: In this guide, you will learn step-by-step how to install Apache, PHP, MariaDB, MySQL, and PhpMyAdmin on Arch Linux.
-Translation: true
 Status: published
 Template: article
 Image: images/archlinuxlampp-xl.webp
@@ -17,7 +16,6 @@ Lang: en
 ---
 
 Hello! A long time ago, I switched to Arch Linux. However, I never had the opportunity to transfer my notes to my blog. My future articles will be about Arch Linux. If there are questions, I will occasionally share articles for distributions like Ubuntu and Linux Mint.
-
 
 ## Apache Installation
 

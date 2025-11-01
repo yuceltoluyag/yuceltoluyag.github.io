@@ -6,7 +6,6 @@ Tags: linux, windows10
 Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak
 Authors: yuceltoluyag
 Summary: Bu rehberde, Windows üzerinden paylaşılan dosya ve yazıcılara Linux ile nasıl erişileceği anlatılmaktadır. Samba kullanımı ve ayarları detaylı bir şekilde açıklanmıştır.
-
 Lang: tr
 Translation: false
 Status: published

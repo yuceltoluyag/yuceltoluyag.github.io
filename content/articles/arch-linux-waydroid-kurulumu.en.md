@@ -10,7 +10,6 @@ Template: article
 Series: Waydroid
 Series_index: 1
 Lang: en
-Translation: true
 
 ## Introduction
 
@@ -43,12 +42,12 @@ Waydroid uses **LXC** based container technology. Thanks to this:
 
 ### Basic Components
 
-| Component              | Description                                |
-| ---------------------- | ------------------------------------------ |
-| **waydroid**           | Main command line tool                     |
-| **binder_linux**       | Provides Android binder interface          |
-| **ashmem_linux**       | Android shared memory module               |
-| **systemd services**   | Automatically starts Waydroid's container  |
+| Component            | Description                               |
+| -------------------- | ----------------------------------------- |
+| **waydroid**         | Main command line tool                    |
+| **binder_linux**     | Provides Android binder interface         |
+| **ashmem_linux**     | Android shared memory module              |
+| **systemd services** | Automatically starts Waydroid's container |
 
 ---
 

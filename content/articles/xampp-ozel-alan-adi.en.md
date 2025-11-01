@@ -6,7 +6,6 @@ Tags: windows10, apache
 Slug: xampp-ozel-alan-adi
 Authors: yuceltoluyag
 Summary: How to create a custom domain name in localhost environment using XAMPP? Step by step guide.
-Translation: true
 Status: published
 Template: article
 Image: images/hosts-xl.webp

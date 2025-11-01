@@ -6,12 +6,10 @@ Tags: composer, hızlandırma, çözüm
 Slug: composer-yavas-indirme-sorunu-cozumu
 Authors: yuceltoluyag
 Summary: Are you experiencing slow download problems with Composer? This guide explains step by step the methods you can use to solve speed issues. 🚀
-Translation: true
 Status: published
 Template: article
 Image: images/composer-xl.webp
 Lang: en
-
 
 ## Composer Slow Download Issues and Solutions ⚡
 
@@ -30,7 +28,6 @@ Missing pubkey for dev verification
 Run composer self-update --update-keys to set them up Checking composer version: OK
 Composer version: 1.9.1 PHP version: 7.4.0 PHP binary path: /usr/bin/php
 ```
-
 
 ### 1️⃣ Diagnosing the Issue: `composer diagnose`
 
@@ -54,14 +51,12 @@ To solve this issue:
 composer self-update --update-keys
 ```
 
-Alternatively, go to the `~/.config/composer/` directory and create the following two files, then add the updated keys from the [Composer Public Key](https://composer.github.io/pubkeys.html){: target="_blank" rel="noopener noreferrer"} page:
+Alternatively, go to the `~/.config/composer/` directory and create the following two files, then add the updated keys from the [Composer Public Key](https://composer.github.io/pubkeys.html){: target="\_blank" rel="noopener noreferrer"} page:
 
 - `keys.dev.pub`
 - `keys.tags.pub`
 
 Then close and reopen your terminal and run the `composer diagnose` command again. ✅
-
-
 
 ### 2️⃣ IPv6 Issue and Solution 🌍
 
@@ -73,8 +68,6 @@ sudo sh -c "echo 'precedence ::ffff:0:0/96 100' >> /etc/gai.conf"
 
 After performing this operation, test Composer again. 🚀
 
-
-
 ### 3️⃣ Updating Composer Package Source 🔄
 
 By default, Composer works through `packagist.org`. If your connection is slow, you can update the `packagist` address with the following command:
@@ -84,8 +77,6 @@ composer config --global repo.packagist composer https://packagist.org
 ```
 
 This operation can enable packages to load faster. 🔥
-
-
 
 ### 4️⃣ Using Parallel Download ⏩
 
@@ -97,8 +88,6 @@ composer global require hirak/prestissimo
 
 However, remember that `prestissimo` has become unnecessary in Composer 2.0 and later versions. If you are using Composer 1.x, you can try this method. 😉
 
-
-
 ### 5️⃣ In-depth Debugging 🕵️‍♂️
 
 To see what Composer is doing in detail, you can use the following commands:
@@ -108,8 +97,6 @@ composer -vvv require phpunit/phpunit
 ```
 
 This command will show downloaded files and network connections in detail. If you notice any problems, you can apply the above solutions according to the error messages. 🛠️
-
-
 
 ## Conclusion 🎯
 

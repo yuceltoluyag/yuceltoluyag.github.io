@@ -9,7 +9,6 @@ Slug: arch-linux-cpu-performans-ayarlari
 Authors: yuceltoluyag
 Status: published
 Summary: How to control CPU frequency and optimize power management with modern Intel processors on Arch Linux? Step-by-step configuration guide with cpupower and intel_pstate.
-Translation: true
 Template: article
 Lang: en
 Image: images/arch-linux-cpu-performans-ayarlari-xl.webp
@@ -30,10 +29,10 @@ In this article, I'm sharing in detail how I configured CPU power management on 
 
 Modern CPUs have extraordinary power, but using this power uncontrollably causes both heat increase and unnecessary energy consumption. That's why;
 
-* System fans get louder 😤
-* Battery life decreases (on laptops) 🔋
-* Unnecessary heating occurs 🔥
-* Performance drops due to throttling 🐌
+- System fans get louder 😤
+- Battery life decreases (on laptops) 🔋
+- Unnecessary heating occurs 🔥
+- Performance drops due to throttling 🐌
 
 Especially on Intel processor systems, the behavior of the `intel_pstate` driver, if not configured correctly, either keeps the processor at maximum speed constantly or responds very slowly.
 
@@ -45,12 +44,12 @@ Especially on Intel processor systems, the behavior of the `intel_pstate` driver
 
 The components of the system where I performed the configuration are as follows:
 
-* 💻 **Intel i5-13400F** (10 cores: 6P+4E)
-* 🎮 **Palit GeForce RTX 4060 Ti JetStream 16GB**
-* 🧠 **16GB DDR5 6000MHz Team T-Force Vulcan RAM**
-* 🔌 **Asus PRIME H610M-K DDR5 Motherboard**
-* ❄️ **Thermalright Peerless Assassin 120 SE**
-* 🖥️ **MSI G244PF E2 165Hz Monitor**
+- 💻 **Intel i5-13400F** (10 cores: 6P+4E)
+- 🎮 **Palit GeForce RTX 4060 Ti JetStream 16GB**
+- 🧠 **16GB DDR5 6000MHz Team T-Force Vulcan RAM**
+- 🔌 **Asus PRIME H610M-K DDR5 Motherboard**
+- ❄️ **Thermalright Peerless Assassin 120 SE**
+- 🖥️ **MSI G244PF E2 165Hz Monitor**
 
 With this hardware, I wanted to achieve high performance while preventing unnecessary power consumption.
 
@@ -140,9 +139,9 @@ You see some cores running at low frequencies and some at high frequencies. This
 
 Modern Intel processors typically use `intel_pstate` as the default driver. With this driver;
 
-* The processor can adjust its frequency instantly 🔄
-* Even in "performance" mode, cores can drop when needed
-* Boost frequencies are supported ⚡
+- The processor can adjust its frequency instantly 🔄
+- Even in "performance" mode, cores can drop when needed
+- Boost frequencies are supported ⚡
 
 ### Alternative Drivers?
 
@@ -199,8 +198,8 @@ To check if the boost feature is on or off:
 cat /sys/devices/system/cpu/cpufreq/boost
 ```
 
-* `1` means boost is on
-* `0` means boost is off
+- `1` means boost is on
+- `0` means boost is off
 
 To turn it off if needed:
 
@@ -232,14 +231,14 @@ sudo turbostat
 
 ### 7.3 Power Consumption Analysis: `powertop` and `powerstat`
 
-* `powertop` identifies the components consuming the most energy in the system and offers optimization suggestions.
+- `powertop` identifies the components consuming the most energy in the system and offers optimization suggestions.
 
 ```bash
 sudo pacman -S powertop
 sudo powertop
 ```
 
-* `powerstat` is used to measure instantaneous watt consumption, especially useful for laptop users.
+- `powerstat` is used to measure instantaneous watt consumption, especially useful for laptop users.
 
 ---
 
@@ -281,12 +280,12 @@ sudo reboot
 
 ### 7.6 Governor Mode Comparison
 
-| Governor    | Description                  | Use Case                        |
-| ----------- | ---------------------------- | ------------------------------- |
-| performance | Constant high frequency      | Gaming, rendering, high performance |
-| powersave   | Constant low frequency       | Battery saving                  |
-| schedutil   | Linked to kernel scheduler   | Balanced, modern                 |
-| ondemand    | Frequency increase by load   | Older systems                   |
+| Governor    | Description                | Use Case                            |
+| ----------- | -------------------------- | ----------------------------------- |
+| performance | Constant high frequency    | Gaming, rendering, high performance |
+| powersave   | Constant low frequency     | Battery saving                      |
+| schedutil   | Linked to kernel scheduler | Balanced, modern                    |
+| ondemand    | Frequency increase by load | Older systems                       |
 
 > With the `intel_pstate` driver, usually only `performance` and `powersave` modes are active.
 
@@ -307,11 +306,11 @@ sudo systemctl enable --now tlp
 
 ## 🔗 8. For Those Who Want to Continue
 
-* **`turbostat`**: Real-time monitoring of CPU core frequencies, temperatures, power status, etc. Useful for detecting performance issues or heating problems.
+- **`turbostat`**: Real-time monitoring of CPU core frequencies, temperatures, power status, etc. Useful for detecting performance issues or heating problems.
 
-* **`powertop`**: Shows which components consume how much energy throughout the system and offers suggestions for power saving.
+- **`powertop`**: Shows which components consume how much energy throughout the system and offers suggestions for power saving.
 
-* **`auto-cpufreq`**: Automatically adjusts the CPU frequency manager according to load and battery status, providing energy efficiency.
+- **`auto-cpufreq`**: Automatically adjusts the CPU frequency manager according to load and battery status, providing energy efficiency.
 
 ---
 
@@ -320,12 +319,12 @@ If you have any other editing or addition requests, I'm happy to help!
 
 ## 📌 9. Common Issues and Solutions
 
-| Issue                                              | Solution                                              |                                   |
-| -------------------------------------------------- | ----------------------------------------------------- | --------------------------------- |
-| `cpupower: command not found`                      | Install with `sudo pacman -S cpupower`                |                                   |
-| Another driver is being used instead of `intel_pstate` | Check driver with `dmesg | grep pstate`               |                                   |
-| Frequencies seem unchanged                         | Monitor in real-time with `watch -n 1 "grep MHz /proc/cpuinfo"` |                                   |
-| Battery drains quickly for laptop users             | Change to `governor='powersave'`                      |                                   |
+| Issue                                                  | Solution                                                        |              |
+| ------------------------------------------------------ | --------------------------------------------------------------- | ------------ | --- |
+| `cpupower: command not found`                          | Install with `sudo pacman -S cpupower`                          |              |
+| Another driver is being used instead of `intel_pstate` | Check driver with `dmesg                                        | grep pstate` |     |
+| Frequencies seem unchanged                             | Monitor in real-time with `watch -n 1 "grep MHz /proc/cpuinfo"` |              |
+| Battery drains quickly for laptop users                | Change to `governor='powersave'`                                |              |
 
 ---
 
@@ -333,7 +332,7 @@ If you have any other editing or addition requests, I'm happy to help!
 
 In this guide, I showed step by step how to configure effective CPU power management without using a desktop environment, just with the terminal and `cpupower` tool. On a modern system:
 
-* Managing performance manually 🎯
-* Monitoring frequencies in real-time 🔬
-* Properly using the `intel_pstate` driver 🛠️
+- Managing performance manually 🎯
+- Monitoring frequencies in real-time 🔬
+- Properly using the `intel_pstate` driver 🛠️
   such steps will make your system work more efficiently.

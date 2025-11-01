@@ -6,7 +6,6 @@ Tags: windows10, redshift, gece_modu
 Slug: windows-uzerinde-redshift-kullanimi
 Authors: yuceltoluyag
 Summary: We explain step by step how to use the Redshift program on Windows operating system. Discover the best settings to protect your eye health! 👀
-Translation: true
 Status: published
 Template: article
 Image: images/redshift_windows-xl.webp
@@ -26,10 +25,10 @@ Before using Redshift, I tried a few alternative programs:
 
 ## 🔧 How to Install Redshift?
 
-1. Download the [latest version of Redshift](https://github.com/jonls/redshift/releases){: target="_blank" rel="noopener noreferrer"}.
+1. Download the [latest version of Redshift](https://github.com/jonls/redshift/releases){: target="\_blank" rel="noopener noreferrer"}.
 2. Create a folder named **Redshift** inside **C:\Program Files (x86)**.
 3. Extract the downloaded files into this folder.
-4. You need registry (reg) files to remove gamma limits. You can download them from [here](http://www.mediafire.com/file/ylw89legwkyp04t/redshift.7z/file){: target="_blank" rel="noopener noreferrer"}.
+4. You need registry (reg) files to remove gamma limits. You can download them from [here](http://www.mediafire.com/file/ylw89legwkyp04t/redshift.7z/file){: target="\_blank" rel="noopener noreferrer"}.
 
 📂 **The folder structure should be as follows:**
 
@@ -45,9 +44,9 @@ C:\Program Files (x86)\Redshift
 Before starting Redshift, you need to make some configurations:
 
 1. Press **Windows + R** keys to open the run window.
-2. Go to **%USERPROFILE%\AppData\Local\** directory.
+2. Go to \*\*%USERPROFILE%\AppData\Local\*\* directory.
 3. Create a new file named **redshift.conf**.
-4. Go to [LatLong.net](https://www.latlong.net/){: target="_blank" rel="noopener noreferrer"} site and get the latitude and longitude information of your location.
+4. Go to [LatLong.net](https://www.latlong.net/){: target="\_blank" rel="noopener noreferrer"} site and get the latitude and longitude information of your location.
 5. Edit your **redshift.conf** file as follows:
 
 ```conf

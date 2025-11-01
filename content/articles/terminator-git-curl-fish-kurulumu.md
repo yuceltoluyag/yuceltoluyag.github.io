@@ -6,7 +6,6 @@ Tags: terminal, linux, fish, git, curl
 Slug: terminator-git-curl-fish-kurulumu
 Authors: yuceltoluyag
 Summary: Linux terminalinizi daha işlevsel ve estetik hale getirmek için Terminator, Git, Curl ve Fish kurulumu ve özelleştirme rehberi.
-
 Lang: tr
 Translation: false
 Status: published

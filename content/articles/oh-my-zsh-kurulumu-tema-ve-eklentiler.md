@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 1
 Summary: Oh My Zsh kurulumu, tema ve eklenti ayarları hakkında detaylı ve güncel bir rehber.
-
 Lang: tr
 Translation: false
 Status: published

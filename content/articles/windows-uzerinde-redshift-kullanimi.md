@@ -6,7 +6,6 @@ Tags: windows10, redshift, gece_modu
 Slug: windows-uzerinde-redshift-kullanimi
 Authors: yuceltoluyag
 Summary: Windows işletim sisteminde Redshift programını nasıl kullanacağınızı adım adım anlatıyoruz. Göz sağlığınızı korumak için en iyi ayarları keşfedin! 👀
-
 Lang: tr
 Translation: false
 Status: published

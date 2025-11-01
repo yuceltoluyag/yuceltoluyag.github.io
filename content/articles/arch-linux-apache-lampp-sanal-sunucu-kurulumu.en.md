@@ -8,7 +8,6 @@ Series_index: 2
 Slug: arch-linux-apache-lampp-sanal-sunucu-kurulumu
 Authors: yuceltoluyag
 Summary: In this article, you will learn how to set up Apache (LAMPP) virtual host on Arch Linux.
-Translation: true
 Status: published
 Template: article
 Image: images/babatest-xl.webp

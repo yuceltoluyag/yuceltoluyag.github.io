@@ -6,7 +6,6 @@ Tags: linux, windows10, usb, format, uefi
 Slug: linux-uefi-windows10-usb
 Authors: yuceltoluyag
 Summary: Linux kullanarak UEFI destekli Windows 10 format USB'si nasıl oluşturulur? WoeUSB aracıyla adım adım resimli anlatımı bu makalede bulabilirsiniz.
-
 Lang: tr
 Translation: false
 Status: published

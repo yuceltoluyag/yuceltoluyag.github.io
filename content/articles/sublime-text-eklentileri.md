@@ -6,7 +6,6 @@ Tags: ipucu, sublime
 Slug: sublime-text-eklentileri
 Authors: yuceltoluyag
 Summary: Kullandığım en faydalı Sublime Text eklentilerini ve temalarını tanıtıyorum.
-
 Lang: tr
 Translation: false
 Status: published

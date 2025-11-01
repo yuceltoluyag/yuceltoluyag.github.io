@@ -7,8 +7,8 @@ Slug: yunohost-robots-txt-olusturmak
 Authors: yuceltoluyag
 Status: published
 Image: images/yunohost-robotstxt-xl.webp
-
-
+Lang: tr
+Translation: false
 
 🚀 **Web sitenizin arama motorları tarafından nasıl tarandığını kontrol etmek ister misiniz?** Yunohost üzerinde barındırdığınız uygulamalara özel `robots.txt` dosyası oluşturarak bu kontrolü tamamen elinize alabilirsiniz.
 
@@ -49,7 +49,7 @@ Disallow: /private/
 Allow: /
 ```
 
-> *Bu örnekte `/private/` dizini hariç tüm içerik taramaya açık.*
+> _Bu örnekte `/private/` dizini hariç tüm içerik taramaya açık._
 
 ---
 
@@ -116,7 +116,6 @@ https://listmonk.minel.yuceltoluyag.github.io/robots.txt
 Dosya düzgün görüntüleniyorsa, yapılandırmanız başarıyla tamamlanmış demektir.
 
 ---
-
 
 [responsive_img src="/images/yunohost-robotstxt-xl.webp" alt="yunohost üzerinde oluşturulmuş örnek robots.txt dosyası" /]
 

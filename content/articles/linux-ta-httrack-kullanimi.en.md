@@ -6,7 +6,6 @@ Tags: httrack, linux
 Slug: linux-ta-httrack-kullanimi
 Authors: yuceltoluyag
 Summary: In this article, I explain step by step how to download websites offline using HTTrack on Linux.
-Translation: true
 Status: published
 Template: article
 Image: images/httrack-xl.webp

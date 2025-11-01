@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 3
 Summary: Customize your terminal with custom aliases and functions in Oh My Zsh and speed up your daily tasks.
-Translation: true
 Status: published
 Template: article
 Image: images/zsh-alias-xl.webp
@@ -35,10 +34,10 @@ With aliases, you save time and reduce the possibility of errors.
 Alias is generally for **single-line shortcuts**.  
 Functions, on the other hand, contain **multiple commands** or **conditional operations**.
 
-| Usage                                   | Recommended Structure |
-| ------------------------------------------ | ------------- |
-| Simple repetitive commands                 | `alias`       |
-| Operations that take parameters or contain logic | `function`    |
+| Usage                                            | Recommended Structure |
+| ------------------------------------------------ | --------------------- |
+| Simple repetitive commands                       | `alias`               |
+| Operations that take parameters or contain logic | `function`            |
 
 ---
 
@@ -315,9 +314,9 @@ After completing this article:
 
 ## 🔗 Resources
 
-- [Oh My Zsh Alias Documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet){: target="_blank" rel="noopener noreferrer"}
-- [Zsh Function Documentation](https://zsh.sourceforge.io/Doc/Release/Functions.html){: target="_blank" rel="noopener noreferrer"}
-- [Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases){: target="_blank" rel="noopener noreferrer"}
+- [Oh My Zsh Alias Documentation](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet){: target="\_blank" rel="noopener noreferrer"}
+- [Zsh Function Documentation](https://zsh.sourceforge.io/Doc/Release/Functions.html){: target="\_blank" rel="noopener noreferrer"}
+- [Git Aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 

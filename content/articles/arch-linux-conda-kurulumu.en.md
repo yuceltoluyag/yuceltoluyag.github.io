@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Summary: A step-by-step guide to installing and managing Conda on Arch Linux with best practices.
 Status: published
 Template: article
-Translation: true
 Lang: en
 Image: images/conda-xl.webp
 

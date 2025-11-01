@@ -7,12 +7,9 @@ Slug: cyberpunk-2077-linux-mod-kurulum-rehberi
 Authors: yuceltoluyag  
 Status: published  
 Summary: Mod Cyberpunk 2077 on Linux! Detailed Cyber Engine Tweaks installation guide for packaged and unpackaged versions.  
-Translation: true
 Status: published
 Template: article
 Lang: en
-
-
 
 ## 🚀 Introduction
 
@@ -32,7 +29,7 @@ Things that should be present on your system before starting mod installation:
 
 ### Step 1: Download Cyber Engine Tweaks 📥
 
-1. Go to [Cyber Engine Tweaks GitHub page](https://github.com/yamashi/CyberEngineTweaks){: target="_blank" rel="noopener noreferrer"}
+1. Go to [Cyber Engine Tweaks GitHub page](https://github.com/yamashi/CyberEngineTweaks){: target="\_blank" rel="noopener noreferrer"}
 2. Download the latest version
 3. Extract the ZIP file to your game directory
 
@@ -136,6 +133,7 @@ WINEPREFIX=~/.steam/steam/steamapps/compatdata/1091500/pfx winetricks d3dcompile
 ### Issue 1: Overlay Not Opening 🚫
 
 **Solution:**
+
 ```bash
 # Check CET logs in the game directory
 cat cyber_engine_tweaks.log
@@ -144,12 +142,14 @@ cat cyber_engine_tweaks.log
 ### Issue 2: Crash on Startup 💥
 
 **Solution:**
+
 - Change Proton version (GE-Proton recommended)
 - Steam launch options: `PROTON_LOG=1 %command%`
 
 ### Issue 3: Mods Not Loading 📁
 
 **Solution:**
+
 1. Check that mod files are in the correct directory
 2. Verify `bin/x64/plugins/cyber_engine_tweaks/mods/` directory structure
 
@@ -178,6 +178,7 @@ cat cyber_engine_tweaks.log
 ### Performance Optimization ⚡
 
 Launch parameters:
+
 ```bash
 DXVK_LOG_LEVEL=none DXVK_HUD=fps %command%
 ```
@@ -185,6 +186,7 @@ DXVK_LOG_LEVEL=none DXVK_HUD=fps %command%
 ### Memory Management 💾
 
 In `user.ini` file:
+
 ```ini
 [Engine]
 MemoryPoolBudgets.PoolCPU=3GB
@@ -204,12 +206,14 @@ Performance test after mod installation:
 Modding Cyberpunk 2077 on Linux may seem complex at first, but by following the correct steps, you can achieve great results! 🚀
 
 **Best Practices:**
+
 - 💾 Backup your game files
 - 🔄 Test mods one by one
 - 📋 Keep installation notes
 - 🎮 Follow community forums
 
 **Security Tips:**
+
 - ✅ Download mods only from trusted sources
 - 🛡️ Run antivirus scan
 - 📝 Keep mod list updated
@@ -218,8 +222,8 @@ The Linux gaming community is constantly growing and AAA games like Cyberpunk 20
 
 ## 🔗 Useful Resources
 
-- [ProtonDB Cyberpunk Reports](https://www.protondb.com/app/1091500){: target="_blank" rel="noopener noreferrer"}
-- [r/linux_gaming Community](https://reddit.com/r/linux_gaming){: target="_blank" rel="noopener noreferrer"}
-- [NexusMods Cyberpunk Section](https://www.nexusmods.com/cyberpunk2077){: target="_blank" rel="noopener noreferrer"}
+- [ProtonDB Cyberpunk Reports](https://www.protondb.com/app/1091500){: target="\_blank" rel="noopener noreferrer"}
+- [r/linux_gaming Community](https://reddit.com/r/linux_gaming){: target="\_blank" rel="noopener noreferrer"}
+- [NexusMods Cyberpunk Section](https://www.nexusmods.com/cyberpunk2077){: target="\_blank" rel="noopener noreferrer"}
 
 **Note:** This guide is continuously updated. Stay tuned for new mod versions and Linux compatibility changes! 🎮✨

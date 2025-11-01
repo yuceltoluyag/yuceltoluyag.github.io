@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: Git
 Series_index: 4
 Summary: Learn how to create GPG signed tags with Git and how to solve possible issues.
-Translation: true
 Status: published
 Template: article
 Image: images/git-gpg-imzali-etiket-xl.webp

@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: mutt
 Series_index: 1
 Summary: Neomutt, mbsync, msmtp ve mu ile modern bir mutt kurulumu yapmayı adım adım anlatıyoruz.
-
 Lang: tr
 Translation: false
 Status: published

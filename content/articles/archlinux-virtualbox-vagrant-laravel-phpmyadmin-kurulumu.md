@@ -8,10 +8,11 @@ Series: ArchLampp
 Series_index: 3
 Authors: yuceltoluyag
 Summary: Arch Linux üzerinde VirtualBox, Vagrant, Laravel ve PhpMyAdmin kurulumunu adım adım anlatan detaylı rehber.
-
 Status: published
 Template: article
 Image: images/pic-selected-190916-0747-49-xl.webp
+Lang: tr
+Translation: false
 
 ## VirtualBox Kurulumu 🚀
 

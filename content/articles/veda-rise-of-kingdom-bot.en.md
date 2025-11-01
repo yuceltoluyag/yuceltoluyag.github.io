@@ -6,7 +6,6 @@ Tags: oyun, bot, geliştirme, veda
 Slug: veda-rise-of-kingdom-bot
 Authors: yuceltoluyag
 Summary: I regret to announce that I can no longer continue developing Rise of Kingdom Bot. Both the responsibilities brought by my new life and technical limitations forced me to make this decision.
-Translation: true
 Status: published
 Template: article
 Image: images/rokbot-gui-xl.webp

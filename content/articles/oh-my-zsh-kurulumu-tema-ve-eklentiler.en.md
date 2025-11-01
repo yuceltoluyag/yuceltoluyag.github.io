@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 1
 Summary: A detailed and up-to-date guide on Oh My Zsh installation, theme and plugin settings.
-Translation: true
 Status: published
 Template: article
 Image: images/oh-my-zsh-setup-xl.webp
@@ -92,7 +91,7 @@ Some popular themes:
 - `powerlevel10k` — advanced, customizable prompt
 - `ys` — classic and fast
 
-🔗 [Zsh Themes List (Official Wiki)](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes){: target="_blank" rel="noopener noreferrer"}
+🔗 [Zsh Themes List (Official Wiki)](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes){: target="\_blank" rel="noopener noreferrer"}
 
 💡 **Powerlevel10k Theme (Recommended)**
 For a more advanced look, you can install Powerlevel10k with the following command:
@@ -182,10 +181,10 @@ In the next step, you can enhance your Zsh experience by adding [custom aliases 
 
 ## 🔗 Resources
 
-- [Oh My Zsh Official Site](https://ohmyz.sh){: target="_blank" rel="noopener noreferrer"}
-- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="_blank" rel="noopener noreferrer"}
-- [Powerlevel10k Theme Guide](https://github.com/romkatv/powerlevel10k){: target="_blank" rel="noopener noreferrer"}
-- [Zsh Plugin List](https://github.com/unixorn/awesome-zsh-plugins){: target="_blank" rel="noopener noreferrer"}
+- [Oh My Zsh Official Site](https://ohmyz.sh){: target="\_blank" rel="noopener noreferrer"}
+- [Oh My Zsh GitHub](https://github.com/ohmyzsh/ohmyzsh){: target="\_blank" rel="noopener noreferrer"}
+- [Powerlevel10k Theme Guide](https://github.com/romkatv/powerlevel10k){: target="\_blank" rel="noopener noreferrer"}
+- [Zsh Plugin List](https://github.com/unixorn/awesome-zsh-plugins){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 

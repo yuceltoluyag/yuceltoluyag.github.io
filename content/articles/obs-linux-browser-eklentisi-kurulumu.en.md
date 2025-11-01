@@ -6,7 +6,6 @@ Tags: linux, obs, discord
 Slug: obs-linux-browser-eklentisi-kurulumu
 Authors: yuceltoluyag
 Summary: We explain step by step how to install the browser plugin for OBS on Linux environment and how to integrate Discord chat.
-Translation: true
 Status: published
 Template: article
 Image: images/linux_browser_kaynaklar-xl.webp

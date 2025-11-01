@@ -8,7 +8,6 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 2
 Summary: Zsh içerisinde shopt komutunun nasıl kullanılacağını ve bash uyumsuzluklarını çözme yöntemlerini adım adım açıklıyoruz.
-
 Lang: tr
 Translation: false
 Status: published

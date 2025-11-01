@@ -12,7 +12,6 @@ Image: images/arch-linux-ollama-webui-kurulumu-docker-xl.webp
 Series: Docker
 Series_index: 2
 Lang: en
-Translation: true
 
 ## Ollama and WebUI Installation on Arch Linux (with Docker) 🤖
 

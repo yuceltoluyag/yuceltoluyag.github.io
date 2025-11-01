@@ -6,7 +6,6 @@ Tags: yunohost, ssh, debian, apt, linux
 Slug: yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu
 Authors: yuceltoluyag
 Summary: Learn step by step how to solve the "APT lock" error encountered during YunoHost installation on a Debian server.
-Translation: true
 Status: published
 Template: article
 Image: images/yunohost-hata-cozumu-xl.webp

@@ -6,7 +6,6 @@ Tags: windows10, apache
 Slug: xampp-ozel-alan-adi
 Authors: yuceltoluyag
 Summary: XAMPP kullanarak localhost ortamında özel bir alan adı nasıl oluşturulur? Adım adım rehber.
-
 Lang: tr
 Translation: false
 Status: published

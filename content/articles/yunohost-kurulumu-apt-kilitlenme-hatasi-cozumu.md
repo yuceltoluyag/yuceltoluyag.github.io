@@ -6,7 +6,6 @@ Tags: yunohost, ssh, debian, apt, linux
 Slug: yunohost-kurulumu-apt-kilitlenme-hatasi-cozumu
 Authors: yuceltoluyag
 Summary: Debian sunucusunda YunoHost kurulumu sırasında karşılaşılan "APT kilitlenme" hatasını adım adım nasıl çözeceğinizi öğrenin.
-
 Lang: tr
 Translation: false
 Status: published

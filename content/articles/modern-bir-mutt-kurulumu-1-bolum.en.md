@@ -1,14 +1,13 @@
 Title: Modern Mutt Setup Part 1
 Date: 2020-02-03 12:00 10:00
 Modified: 2025-08-11 22:59
-Category:  Linux
+Category: Linux
 Tags: linux, e-mail
 Slug: modern-bir-mutt-kurulumu-1-bolum
 Authors: yuceltoluyag
 Series: mutt
 Series_index: 1
 Summary: We explain step by step how to set up a modern mutt with Neomutt, mbsync, msmtp and mu.
-Translation: true
 Status: published
 Template: article
 Image: images/neomutt_senkron-xl.webp
@@ -20,17 +19,17 @@ Hello! In the first part of this article, we will configure our Mutt settings, w
 
 The following software is required to use mutt:
 
-1. [Mbsync/isync](https://wiki.archlinux.org/index.php/Isync#Installing){: target="_blank" rel="noopener noreferrer"}
-2. [Msmtp](https://wiki.archlinux.org/index.php/Msmtp){: target="_blank" rel="noopener noreferrer"}
-3. [Mu](https://aur.archlinux.org/packages/mu/){: target="_blank" rel="noopener noreferrer"}
+1. [Mbsync/isync](https://wiki.archlinux.org/index.php/Isync#Installing){: target="\_blank" rel="noopener noreferrer"}
+2. [Msmtp](https://wiki.archlinux.org/index.php/Msmtp){: target="\_blank" rel="noopener noreferrer"}
+3. [Mu](https://aur.archlinux.org/packages/mu/){: target="\_blank" rel="noopener noreferrer"}
 4. Vim or derivatives
-5. [NeoMutt](https://www.archlinux.org/packages/community/x86_64/neomutt/){: target="_blank" rel="noopener noreferrer"}
-6. [Vdirsyncer](https://aur.archlinux.org/packages/vdirsyncer-git/){: target="_blank" rel="noopener noreferrer"}
-7. [Khard](https://www.archlinux.org/packages/community/any/khard/){: target="_blank" rel="noopener noreferrer"}
-8. [Ripmime](https://aur.archlinux.org/packages/ripmime/){: target="_blank" rel="noopener noreferrer"}
-9. [UrlScan](https://www.archlinux.org/packages/community/any/urlscan/){: target="_blank" rel="noopener noreferrer"}
-10. [W3m](https://www.archlinux.org/packages/extra/x86_64/w3m/){: target="_blank" rel="noopener noreferrer"}
-11. [Gpgme](https://www.archlinux.org/packages/core/x86_64/gpgme/){: target="_blank" rel="noopener noreferrer"}
+5. [NeoMutt](https://www.archlinux.org/packages/community/x86_64/neomutt/){: target="\_blank" rel="noopener noreferrer"}
+6. [Vdirsyncer](https://aur.archlinux.org/packages/vdirsyncer-git/){: target="\_blank" rel="noopener noreferrer"}
+7. [Khard](https://www.archlinux.org/packages/community/any/khard/){: target="\_blank" rel="noopener noreferrer"}
+8. [Ripmime](https://aur.archlinux.org/packages/ripmime/){: target="\_blank" rel="noopener noreferrer"}
+9. [UrlScan](https://www.archlinux.org/packages/community/any/urlscan/){: target="\_blank" rel="noopener noreferrer"}
+10. [W3m](https://www.archlinux.org/packages/extra/x86_64/w3m/){: target="\_blank" rel="noopener noreferrer"}
+11. [Gpgme](https://www.archlinux.org/packages/core/x86_64/gpgme/){: target="\_blank" rel="noopener noreferrer"}
 
 ## What Do the Above Programs Do?
 
@@ -164,9 +163,9 @@ touch ~/.msmtprc
 
 In this file, we make mail connection settings. If you don't know the information such as imap, port, ssl of your mail connection, you can look at the following resources:
 
-- [Gmail IMAP Settings](https://support.google.com/mail/answer/7126229?hl=en){: target="_blank" rel="noopener noreferrer"}
-- [Yandex IMAP Settings](https://yandex.com/support/mail/mail-clients.html){: target="_blank" rel="noopener noreferrer"}
-- [Hotmail IMAP Settings](https://support.office.com/en-us/article/pop-and-imap-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040){: target="_blank" rel="noopener noreferrer"}
+- [Gmail IMAP Settings](https://support.google.com/mail/answer/7126229?hl=en){: target="\_blank" rel="noopener noreferrer"}
+- [Yandex IMAP Settings](https://yandex.com/support/mail/mail-clients.html){: target="\_blank" rel="noopener noreferrer"}
+- [Hotmail IMAP Settings](https://support.office.com/en-us/article/pop-and-imap-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040){: target="\_blank" rel="noopener noreferrer"}
 
 ```bash
 account ytoluyagmail
@@ -208,9 +207,10 @@ neomutt
 ```
 
 Here, you may need to correct the error logs you will see. If you are getting an error, you can review your file again.
+
 ```bash
 mbsync -a
 ```
 
 [responsive_img src="/images/neomutt_senkron-xl.webp" alt="neomutt_senkron" /]
-In [Part 2](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="_blank" rel="noopener noreferrer"} of this article series, we will continue configuring your email client in more detail. 🙂
+In [Part 2](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="\_blank" rel="noopener noreferrer"} of this article series, we will continue configuring your email client in more detail. 🙂
