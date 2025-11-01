@@ -6,6 +6,8 @@ Tags: PowerShell, OneDrive, Execution Policy, Modül Kurulumu
 Slug: powershell-profil-onedrive-hatasi-cozumu
 Authors: yuceltoluyag
 Summary: PowerShell profil dosyası ile ilgili yaşanan hata mesajları, OneDrive kaldırıldıktan sonra bile dizinlerin görünmeye devam etmesi ve eksik modüller nedeniyle alınan hataların çözümü.
+Lang: tr
+Translation: false
 Status: published
 Template: article
 Image: images/windows11-onedrive-sorunu-xl.webp

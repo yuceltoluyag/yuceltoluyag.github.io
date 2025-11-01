@@ -10,6 +10,8 @@ Series: Git
 Series_index: 8
 Template: article
 Image: images/git-gpg-imzali-commit-vscode-arch-xl.webp
+Lang: tr
+Translation: false
 
 ## VSCode ve Arch Linux Üzerinde GPG İmzalı Commit Sorunlarını Çözme Rehberi
 

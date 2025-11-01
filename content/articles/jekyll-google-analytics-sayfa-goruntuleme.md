@@ -6,6 +6,7 @@ Tags: superproxy, jekyll, google analytics
 Slug: jekyll-google-analytics-sayfa-goruntuleme
 Authors: yuceltoluyag
 Summary: Jekyll sitenizde Google Analytics ile sayfa görüntüleme sayısını nasıl takip edebileceğinizi anlatan bir rehber.
+Lang: tr
 Translation: false
 Status: published
 Template: article

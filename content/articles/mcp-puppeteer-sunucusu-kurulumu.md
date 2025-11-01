@@ -5,13 +5,14 @@ Category: Geliştirme Araçları
 Tags: mcp, puppeteer, npx, browser automation, nodejs, tarayıcı otomasyonu, yapay zeka, mcp kurulumu
 Slug: mcp-puppeteer-sunucusu-kurulumu
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
-Summary: Bu yazıda,  Continue Eklentisinde mcp kurulumu
+Summary: Bu yazıda, Continue Eklentisinde mcp kurulumu
 Template: article
 Image: images/mcp-puppeteer-sunucusu-kurulumu-xl.webp
 
-
-**MCP (Model Context Protocol)** kullanarak *tarayıcı otomasyonuna* başlamak mı istiyorsun? Kafa karıştırıcı kurulum adımlarını unut! Bu rehberde, sadece tek bir `npx` komutuyla **Puppeteer destekli bir MCP sunucusunun nasıl çalıştırılacağını** adım adım göstereceğim. Üstelik tüm işlemler Windows ortamında! 💻
+**MCP (Model Context Protocol)** kullanarak _tarayıcı otomasyonuna_ başlamak mı istiyorsun? Kafa karıştırıcı kurulum adımlarını unut! Bu rehberde, sadece tek bir `npx` komutuyla **Puppeteer destekli bir MCP sunucusunun nasıl çalıştırılacağını** adım adım göstereceğim. Üstelik tüm işlemler Windows ortamında! 💻
 
 Makaleyi sonuna kadar okuduğunda, sen de LLM’lerin (Large Language Models) gerçek bir tarayıcı üzerinden nasıl işlem yaptığını anlayacak, kendi geliştirme ortamına kolayca entegre edebileceksin.
 
@@ -31,9 +32,10 @@ Peki neden bu kadar önemli?
 
 ## Puppeteer Nedir?
 
-[Puppeteer](https://pptr.dev/){: target="_blank" rel="noopener noreferrer"} bir Node.js kütüphanesidir ve Chrome/Chromium tarayıcısını programatik olarak kontrol etmene olanak tanır.
+[Puppeteer](https://pptr.dev/){: target="\_blank" rel="noopener noreferrer"} bir Node.js kütüphanesidir ve Chrome/Chromium tarayıcısını programatik olarak kontrol etmene olanak tanır.
 
 Puppeteer ile:
+
 - Web sayfalarında gezinebilir,
 - Ekran görüntüleri alabilir,
 - Formlar doldurabilir,
@@ -61,6 +63,7 @@ Aşağıdaki yazılımların sistemine kurulu olduğundan emin ol:
 - `npx` komutu (Node ile birlikte gelir)
 
 Kontrol etmek için terminale şunu yaz:
+
 ```bash
 node -v
 npx -v
@@ -100,7 +103,9 @@ mcpServers:
       - -y
       - "@modelcontextprotocol/server-puppeteer"
 ```
+
 Continue eklentisinde şu şekilde kullanıyorum,ollama ile birlikte
+
 ```yaml
 name: Local Assistant
 version: 1.0.0
@@ -142,8 +147,8 @@ mcpServers:
       - npx
       - -y
       - "@modelcontextprotocol/server-puppeteer"
-
 ```
+
 Bu sayede config tabanlı başlatmalar mümkün olur. 🔧
 
 ---
@@ -178,7 +183,8 @@ Tek bir komutla güçlü bir tarayıcı destekli LLM ortamı kurabilirsin. Bu ya
 
 ---
 
-Hazırsan, şimdi terminalini aç ve komutu çalıştır:  
+Hazırsan, şimdi terminalini aç ve komutu çalıştır:
+
 ```bash
 npx -y @modelcontextprotocol/server-puppeteer
 ```

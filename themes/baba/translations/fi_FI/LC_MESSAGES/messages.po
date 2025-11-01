@@ -1,0 +1,113 @@
+# Finnish (Finland) translations for Flex.
+# Copyright (C) 2020 Alexandre Vicenzi
+# This file is distributed under the same license as the Flex project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+# Translators:
+# i r, 2021
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flex 2.1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-01 10:38+0300\n"
+"PO-Revision-Date: 2016-08-25 02:15+0000\n"
+"Last-Translator: i r, 2021\n"
+"Language: fi_FI\n"
+"Language-Team: Finnish (Finland) (https://www.transifex.com/alexandrevicenzi/teams/66327/fi_FI/)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/article.html:178
+msgid "Destek Olun"
+msgstr ""
+
+#: templates/article.html:181
+msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
+msgstr ""
+
+#: templates/article.html:184
+msgid "Destek Ol"
+msgstr ""
+
+#~ msgid "Archives"
+#~ msgstr "Arkisto"
+
+#~ msgid "Posted on %(when)s in %(category)s"
+#~ msgstr "Julkaistu %(when)s kategoriassa %(category)s"
+
+#~ msgid "%(minutes)s min read"
+#~ msgstr "%(minutes)s min"
+
+#~ msgid "Like this article? Share it with your friends!"
+#~ msgstr "Piditkö tästä postauksesta? Jaa se kavereillesi!"
+
+#~ msgid "You might enjoy"
+#~ msgstr "Voisit pitää myös näistä"
+
+#~ msgid "Posts by %(name)s"
+#~ msgstr "Kirjoittajan %(name)s postaukset"
+
+#~ msgid "Authors"
+#~ msgstr "Kirjoittajat"
+
+#~ msgid "Search..."
+#~ msgstr "Hae..."
+
+#~ msgid "Home"
+#~ msgstr "Koti"
+
+#~ msgid "Atom"
+#~ msgstr "Atom"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Categories"
+#~ msgstr "Kategoriat"
+
+#~ msgid "Category %(name)s"
+#~ msgstr "Kategoria %(name)s"
+
+#~ msgid "Tagged with"
+#~ msgstr "Tägit:"
+
+#~ msgid "Continue reading"
+#~ msgstr "Jatka lukemista"
+
+#~ msgid "Search"
+#~ msgstr "Haku"
+
+#~ msgid "Search Results"
+#~ msgstr "Hakutulokset"
+
+#~ msgid "Tag %(name)s"
+#~ msgstr "Tägi %(name)s"
+
+#~ msgid "Tags"
+#~ msgstr "Tägit"
+
+#~ msgid "Please enable JavaScript to view comments."
+#~ msgstr "Ole hyvä ja laita JavaScript päälle nähdäksesi kommentit."
+
+#~ msgid "Built with %(pelican_url)s using %(flex_url)s theme"
+#~ msgstr "Rakennettu %(pelican_url)s-generaattoria ja %(flex_url)s-teemaa käyttäen"
+
+#~ msgid "Switch to the %(dark_url)s | %(light_url)s | %(browser_url)s theme"
+#~ msgstr "Vaihda teemaa: %(dark_url)s | %(light_url)s | %(browser_url)s"
+
+#~ msgid "Previous Post"
+#~ msgstr "Edellinen postaus"
+
+#~ msgid "Next Post"
+#~ msgstr "Seuraava postaus"
+
+#~ msgid "Older Posts"
+#~ msgstr "Vanhemmat postaukset"
+
+#~ msgid "Newer Posts"
+#~ msgstr "Uudemmat postaukset"
+

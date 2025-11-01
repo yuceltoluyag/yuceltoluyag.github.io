@@ -8,6 +8,8 @@ Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 1
 Summary: PHPStorm içerisinde terminal olarak Cmder kullanmak için ortam değişkenlerini ayarlama ve gerekli konfigürasyonları yapma adımları.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article
@@ -27,12 +29,9 @@ PHPStorm içerisinde terminali kullanabilmek için **ortam değişkenleri**ne yo
 📌 **Değişken Adı:** `CMDER_ROOT`  
 📌 **Yol:** `C:\cmder`
 
-
 [responsive_img src="/images/ortam_degiskenleri1-xl.webp" alt="Ortam Değişkenleri" /]
 
-
 Ben Cmder'in full sürümünü indirip `C:` dizinine çıkarmıştım. Siz nereye kurduysanız, o dizini gösterin.
-
 
 [responsive_img src="/images/ortam_degiskenleri3-xl.webp" alt="Ortam Değişkenleri Ayarı" /]
 
@@ -46,18 +45,14 @@ Ben Cmder'in full sürümünü indirip `C:` dizinine çıkarmıştım. Siz nerey
 "cmd" /k ""%CMDER_ROOT%\vendor\init.bat""
 ```
 
-
 [responsive_img src="/images/phpstorm_terminal-xl.webp" alt="PHPStorm Cmder Ayarı" /]
 
 ### PHPStorm'u Yeniden Başlatma 🔄
 
 Ayarları uyguladıktan sonra PHPStorm'u yeniden başlatın. Yeniden açıldığında **Terminal** sekmesine tıklayarak Cmder’in çalıştığını görebilirsiniz. 🎉
 
-
 [responsive_img src="/images/phpstorm_terminal2-xl.webp" alt="PHPStorm Cmder Terminal" /]
 
-Cmder terminali, Windows kullanıcıları için oldukça pratik bir araçtır. Full sürümünü [buradan](https://cmder.app/){: target="_blank" rel="noopener noreferrer"} indirerek istediğiniz dizine çıkarabilirsiniz. 😊
+Cmder terminali, Windows kullanıcıları için oldukça pratik bir araçtır. Full sürümünü [buradan](https://cmder.app/){: target="\_blank" rel="noopener noreferrer"} indirerek istediğiniz dizine çıkarabilirsiniz. 😊
 
 Bir sonraki rehberde görüşmek üzere! 🚀
-
-

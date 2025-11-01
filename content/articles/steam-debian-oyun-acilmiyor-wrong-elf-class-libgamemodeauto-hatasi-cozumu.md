@@ -4,6 +4,8 @@ Category: Sorun Giderme
 Tags: steam,debian,linux,oyun,wrong elf class,libgamemodeauto,gamemode,fmod
 Slug: steam-debian-oyun-acilmiyor-wrong-elf-class-libgamemodeauto-hatasi-cozumu
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Debian'da Steam oyunları açılmıyor mu? Wrong ELF Class, libgamemodeauto preload ve FMOD hatalarını çözmek için iki farklı yöntemi öğrenin.
 Template: article

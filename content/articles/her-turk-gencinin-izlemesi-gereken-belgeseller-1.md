@@ -6,6 +6,7 @@ Tags: film, belgesel
 Slug: her-turk-gencinin-izlemesi-gereken-belgeseller-1
 Authors: yuceltoluyag
 Summary: Yakın tarihimizle ilgili izlenmesi gereken en önemli belgeselleri derledim. İzlemeden önce yorumlara bakmamanızı tavsiye ederim. 😉
+Lang: tr
 Translation: false
 Status: published
 Template: article

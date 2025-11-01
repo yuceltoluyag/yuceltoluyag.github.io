@@ -6,6 +6,8 @@ Tags: linux, newsboat
 Slug: newsboat-rss-feeds-kullanimi
 Authors: yuceltoluyag
 Summary: Terminal tabanlı güçlü bir RSS okuyucu olan Newsboat'u nasıl yapılandıracağınızı ve verimli bir şekilde nasıl kullanacağınızı öğrenin.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article
@@ -183,19 +185,19 @@ http://feeds.feedburner.com/TammerSaleh
 
 ## Kullanışlı Kısayollar ⌨️
 
-| Kısayol | İşlevi |
-|---------|--------|
-| A       | Tümünü okundu işaretle |
-| O       | Web tarayıcıda aç |
-| J/K     | Aşağı/Yukarı hareket et |
-| Q       | Çıkış yap |
+| Kısayol | İşlevi                   |
+| ------- | ------------------------ |
+| A       | Tümünü okundu işaretle   |
+| O       | Web tarayıcıda aç        |
+| J/K     | Aşağı/Yukarı hareket et  |
+| Q       | Çıkış yap                |
 | R       | RSS beslemelerini yenile |
 
 ## YouTube RSS 📺
 
 Abone olduğunuz YouTube kanallarını Newsboat'a eklemek için:
 
-1. [YouTube Abonelikler Sayfası](https://www.youtube.com/subscription_manager){: target="_blank" rel="noopener noreferrer"}'na gidin.
+1. [YouTube Abonelikler Sayfası](https://www.youtube.com/subscription_manager){: target="\_blank" rel="noopener noreferrer"}'na gidin.
 2. "RSS okuyuculara dışa aktar" seçeneğiyle dosyanızı indirin.
 3. Aşağıdaki komutla RSS adreslerini içeri aktarın:
 
@@ -214,5 +216,4 @@ alias youtubebotu="newsboat -u ~/.config/newsboat/yturls -C ~/.config/newsboat/y
 
 Bu şekilde terminalde `haberbotu` veya `youtubebotu` komutlarını kullanarak doğrudan belirli RSS beslemelerine erişebilirsiniz.
 
-Daha fazla bilgi için [Newsboat Belgeleri](https://newsboat.org/releases/2.19/docs/newsboat.html){: target="_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖
-
+Daha fazla bilgi için [Newsboat Belgeleri](https://newsboat.org/releases/2.19/docs/newsboat.html){: target="\_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖

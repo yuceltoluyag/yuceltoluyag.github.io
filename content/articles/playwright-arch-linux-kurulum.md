@@ -4,6 +4,8 @@ Category: Linux
 Tags: playwright, arch linux, e2e test, web test otomasyonu, playwright kurulumu, aur
 Slug: playwright-arch-linux-kurulum
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Arch Linux üzerinde Playwright kurulumu için gerekli adımlar, bağımlılıklar ve olası sorunların çözümlerini adım adım anlatıyoruz. Bu rehber ile E2E test ortamınızı kolayca hazırlayabilirsiniz.
 Template: article

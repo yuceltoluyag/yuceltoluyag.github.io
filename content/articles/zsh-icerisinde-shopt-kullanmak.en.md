@@ -3,7 +3,7 @@ Date: 2020-01-28 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Terminal
 Tags: linux, terminal, zsh
-Slug: zsh-icerisinde-shopt-kullanmak
+Slug: zsh-icerisinde-shopt-kullanmak-en
 Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 2

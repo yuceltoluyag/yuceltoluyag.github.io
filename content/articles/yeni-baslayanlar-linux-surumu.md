@@ -6,6 +6,8 @@ Tags: linux, başlangıç, dağıtım, rehber
 Slug: yeni-baslayanlar-linux-surumu
 Authors: yuceltoluyag
 Summary: Linux'a yeni başlayanlar için en uygun dağıtımları ve seçim kriterlerini anlatıyoruz. Kullanım kolaylığı, destek topluluğu ve sistem gereksinimleri gibi faktörleri göz önünde bulundurarak doğru seçimi yapmanıza yardımcı oluyoruz.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article

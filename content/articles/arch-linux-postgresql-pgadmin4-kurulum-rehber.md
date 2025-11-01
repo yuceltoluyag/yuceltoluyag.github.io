@@ -8,6 +8,10 @@ status: published
 summary: Arch Linux üzerinde PostgreSQL veritabanını kurma, yapılandırma ve pgAdmin4 GUI aracıyla kullanma sürecini baştan sona anlatan samimi ve yeni başlayanlar için anlaşılır rehber.
 template: article
 Image: images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp
+Lang: tr
+Translation: false
+
+---
 
 🚀 **Giriş**
 

@@ -3,7 +3,7 @@ Date: 2019-03-06 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Geliştirme Araçları
 Tags: windows10, apache
-Slug: xampp-ozel-alan-adi
+Slug: xampp-ozel-alan-adi-en
 Authors: yuceltoluyag
 Summary: How to create a custom domain name in localhost environment using XAMPP? Step by step guide.
 Translation: true

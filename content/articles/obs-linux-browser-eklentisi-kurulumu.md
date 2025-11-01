@@ -6,6 +6,8 @@ Tags: linux, obs, discord
 Slug: obs-linux-browser-eklentisi-kurulumu
 Authors: yuceltoluyag
 Summary: Linux ortamında OBS için browser eklentisinin nasıl kurulacağını ve Discord chat entegrasyonunun nasıl yapılacağını adım adım anlatıyoruz.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article

@@ -5,6 +5,8 @@ Category: Web Geliştirme
 Tags: codeigniter, linux, php, framework kurulumu, web geliştirme
 Slug: linux-ta-codeigniter-nasil-kurulur
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Linux sunucuna CodeIgniter kurulumu mu arıyorsun? Bu rehberde adım adım, kolayca CodeIgniter kurulumunu öğrenerek projene hemen başla!
 Template: article

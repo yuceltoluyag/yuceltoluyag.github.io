@@ -9,6 +9,8 @@ Status: published
 Summary: Bu rehberde, bir Bash scripti yardımıyla Linux sisteminizdeki USB cihazların güç yönetimi ayarlarını ve aktif kernel modüllerinin parametrelerini nasıl analiz edebileceğinizi adım adım anlatıyoruz.
 Template: article
 Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp
+Lang: tr
+Translation: false
 
 ---
 
@@ -16,15 +18,16 @@ Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp
 
 Linux sistemlerde donanım kaynaklarını verimli kullanmak, güç tüketimini azaltmak ve uyumluluk sorunlarını gidermek için **USB güç yönetimi** ve **çekirdek modül ayarları** oldukça önemlidir. Bu rehberde, bir Bash scripti yardımıyla sisteminizdeki USB aygıtlarının durumunu ve modül parametrelerini nasıl inceleyebileceğinizi öğreneceksiniz. 🚀
 [responsive_img src="/images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp" alt="arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl" /]
+
 ---
 
 ## 🧠 Bu Rehber Kimler İçin?
 
-* ⚙️ Teknik bilgiye sahip Linux kullanıcıları
-* 🐧 Arch Linux veya benzeri minimalist dağıtımları kullananlar
-* 🧪 USB cihazlarla ilgili uyku/uyanma sorunları yaşayanlar
-* 🔋 Dizüstü bilgisayarlarında güç tasarrufu sağlamak isteyenler
-* 🎧 Ses aygıtları, kablosuz adaptörler, klavye/fare gibi donanımların yönetimini incelemek isteyenler
+- ⚙️ Teknik bilgiye sahip Linux kullanıcıları
+- 🐧 Arch Linux veya benzeri minimalist dağıtımları kullananlar
+- 🧪 USB cihazlarla ilgili uyku/uyanma sorunları yaşayanlar
+- 🔋 Dizüstü bilgisayarlarında güç tasarrufu sağlamak isteyenler
+- 🎧 Ses aygıtları, kablosuz adaptörler, klavye/fare gibi donanımların yönetimini incelemek isteyenler
 
 ---
 
@@ -109,19 +112,19 @@ chmod +x usb-kernel-analyzer.sh
 
 ### 🖱️ USB Mouse (Silicon Labs)
 
-* **Durum:** Aktif, `autosuspend=2` olmasına rağmen uyumamış.
-* **Güç Tüketimi:** Devam ediyor.
-* **Wakeup:** Kapalı, bu yüzden sistem uykudan mouse ile uyanmayabilir.
+- **Durum:** Aktif, `autosuspend=2` olmasına rağmen uyumamış.
+- **Güç Tüketimi:** Devam ediyor.
+- **Wakeup:** Kapalı, bu yüzden sistem uykudan mouse ile uyanmayabilir.
 
 ### ⌨️ USB Klavye (CASUE)
 
-* **Wakeup:** Açık. Bu cihaz sistem uykudayken uyanma tetikleyebilir.
-* **runtime\_status=active** olduğundan uyumamış.
+- **Wakeup:** Açık. Bu cihaz sistem uykudayken uyanma tetikleyebilir.
+- **runtime_status=active** olduğundan uyumamış.
 
 ### 📶 Kablosuz Ağ Adaptörü (Realtek RTL8188RU)
 
-* **Uyku destekleniyor** ama **runtime\_status=active** → uyumuyor.
-* **wakeup=disabled** → Ağdan uyanma tetikleyemez.
+- **Uyku destekleniyor** ama **runtime_status=active** → uyumuyor.
+- **wakeup=disabled** → Ağdan uyanma tetikleyemez.
 
 ---
 
@@ -141,11 +144,11 @@ chmod +x usb-kernel-analyzer.sh
 
 Bu parametreler sistemin performansı, güç yönetimi ve donanım uyumluluğu üzerinde doğrudan etkilidir.
 
-| Modül           | Kritik Parametreler                    |
-| --------------- | -------------------------------------- |
-| `snd_hda_intel` | power\_save, enable\_msi, jackpoll\_ms |
-| `nvme`          | io\_queue\_depth, use\_cmb\_sqes       |
-| `xhci_hcd`      | quirks, link\_quirk                    |
+| Modül           | Kritik Parametreler                 |
+| --------------- | ----------------------------------- |
+| `snd_hda_intel` | power_save, enable_msi, jackpoll_ms |
+| `nvme`          | io_queue_depth, use_cmb_sqes        |
+| `xhci_hcd`      | quirks, link_quirk                  |
 
 ---
 
@@ -169,14 +172,14 @@ find /sys/bus/usb/devices/*/power -name runtime_status -exec grep -H active {} \
 
 ## ✅ 6. İyileştirme Önerileri
 
-* `autosuspend=2` olan ama sürekli **`active`** durumda kalan cihazlar için `control=auto` yapılabilir.
-* `wakeup=disabled` olan klavye gibi aygıtlar için:
+- `autosuspend=2` olan ama sürekli **`active`** durumda kalan cihazlar için `control=auto` yapılabilir.
+- `wakeup=disabled` olan klavye gibi aygıtlar için:
 
 ```bash
 echo enabled | sudo tee /sys/bus/usb/devices/1-3/power/wakeup
 ```
 
-* Sürücü parametrelerini kalıcı yapmak için `/etc/modprobe.d` altına `.conf` dosyası ekleyebilirsiniz.
+- Sürücü parametrelerini kalıcı yapmak için `/etc/modprobe.d` altına `.conf` dosyası ekleyebilirsiniz.
 
 ---
 

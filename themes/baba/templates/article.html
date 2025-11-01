@@ -175,13 +175,13 @@ super() }} {% if article.translations -%}
         <div class="support-section">
           <div class="support-card pico-card">
             <hgroup>
-              <h3><i class="fa-solid fa-heart" aria-hidden="true"></i> Destek Olun</h3>
+              <h3><i class="fa-solid fa-heart" aria-hidden="true"></i> {{ _('Destek Olun') }}</h3>
             </hgroup>
             <p>
-              Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz.
+              {{ _('Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz.') }}
             </p>
             <a href="{{ SITEURL }}/bagis/" role="button" class="primary">
-              <i class="fa-solid fa-heart" aria-hidden="true"></i> Destek Ol
+              <i class="fa-solid fa-heart" aria-hidden="true"></i> {{ _('Destek Ol') }}
             </a>
             
             {% if ARTICLE_EDIT_LINK %}

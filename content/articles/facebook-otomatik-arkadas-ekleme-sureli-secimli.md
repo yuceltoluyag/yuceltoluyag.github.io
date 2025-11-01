@@ -8,17 +8,15 @@ Series_index: 2
 Slug: facebook-otomatik-arkadas-ekleme-sureli-secimli
 Authors: yuceltoluyag
 Summary: Facebook otomatik arkadaş ekleme kodu hakkında bilgi ve kullanım önerileri. Dikkat edilmesi gerekenler ve güvenli kullanım tavsiyeleri.
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/facebook-5000-xl.webp
 
-
 Facebook Toplu Arkadaş Ekleme (Gruba + Süreli) videosundan sonra **"Arkadaş ekleme kodu var mı?"** şeklinde çok sayıda soru aldım. Bu yazıyı ve taslağı daha önce hazırlamıştım, ancak dalgınlığıma ve iş yoğunluğuna bağlı olarak unuttum. 😅
 
-
 Facebook'un son güncellemesiyle birlikte, bu tarz uygulamalar ve kodlar kullanırken dikkatli olmanız çok önemli. Aksi takdirde hesabınızın kapanması, kitlenmesi ya da IP adresinizin kara listeye alınması riskiyle karşı karşıya kalabilirsiniz. Ayrıca, açtığınız sahte hesaplar **anında kapatılabilir**. Kullanım sırasında dikkatli olun; kullanımdan doğacak tüm sorumluluk tamamen kullanıcıya aittir. Bu kod yalnızca bilgi amaçlı paylaşılmaktadır.
-
 
 Abartıdan neyi kastettiğimi açıklayayım:
 

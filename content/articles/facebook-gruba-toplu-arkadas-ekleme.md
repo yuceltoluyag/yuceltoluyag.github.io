@@ -8,6 +8,7 @@ Series: Facebook
 Series_index: 3
 Authors: yuceltoluyag
 Summary: Facebook grubunuza veya katıldığınız bir gruba topluca arkadaş eklemek için güncellenmiş yöntemleri paylaşıyoruz.
+Lang: tr
 Translation: false
 Status: published
 Template: article
@@ -15,18 +16,13 @@ Image: images/facebookgrupkodu-xl.webp
 
 ## Merhaba 👋
 
-
 ## Merhaba 👋
 
 Yaklaşık iki yıl önce yayınladığım videolardan sonra bu konuda bana sıkça sorular gelmeye başladı. Bu süreçte Instagram üzerinden gelen tüm soruları yanıtlamaya çalıştım. Ancak, Facebook'un değişen tasarımıyla birlikte gruba arkadaş ekleme işlemi daha da sınırlandırıldı. Günlük **25 arkadaş ekleme sınırı** getirildi ve ekleme arayüzünde bazı değişiklikler yapıldı. Dolayısıyla eski yöntemler artık çalışmıyor. 😕
 
-
-Önceki yazımda bahsettiğim [Facebook Toplu Arkadaş Ekleme Version 1](/facebook-toplu-arkadas-ekleme/){: target="_blank" rel="noopener noreferrer"} yöntemindeki kurallar hâlâ geçerlidir. **Lütfen bu araçları aşırı kullanıp hesabınızı spam riskiyle karşı karşıya bırakmayın!** Çünkü "Hesabım spama düştü", "Kimseyi ekleyemiyorum", "Ban yedim" gibi şikayetlerle geri dönmenizi istemem. 😊 **Araçları ölçülü ve dikkatli kullanın!**
+Önceki yazımda bahsettiğim [Facebook Toplu Arkadaş Ekleme Version 1](/facebook-toplu-arkadas-ekleme/){: target="\_blank" rel="noopener noreferrer"} yöntemindeki kurallar hâlâ geçerlidir. **Lütfen bu araçları aşırı kullanıp hesabınızı spam riskiyle karşı karşıya bırakmayın!** Çünkü "Hesabım spama düştü", "Kimseyi ekleyemiyorum", "Ban yedim" gibi şikayetlerle geri dönmenizi istemem. 😊 **Araçları ölçülü ve dikkatli kullanın!**
 
 ## Güncellenmiş Facebook Grup Arkadaş Ekleme Yöntemi 🚀
-
-
-
 
 Yukarıdaki resimde gösterildiği gibi:
 
@@ -40,15 +36,13 @@ Yukarıdaki resimde gösterildiği gibi:
 - Eklentiyi çalıştırıyoruz.
 - Arkadaş listesi geldikten sonra, grup bağlantımızı ilgili alana yapıştırıyoruz.
 - Eğer davet mesajı eklemek istiyorsak, **"Enter an invitation note (optional)"** kısmına mesajımızı yazıyoruz.
-- Arkadaş bulmakta zorlanıyorsanız, [Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli](/facebook-otomatik-arkadas-ekleme-sureli-secimli/){: target="_blank" rel="noopener noreferrer"} yazımı inceleyebilirsiniz.
+- Arkadaş bulmakta zorlanıyorsanız, [Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli](/facebook-otomatik-arkadas-ekleme-sureli-secimli/){: target="\_blank" rel="noopener noreferrer"} yazımı inceleyebilirsiniz.
 
 ### Video Rehber 🎥
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="pggW_tyFG7k"></lite-youtube>
-
-
 
 Bu yöntemleri uygulayarak Facebook gruplarınızı daha etkili şekilde yönetebilirsiniz. **Ancak unutmayın, spam yapmadan, doğal bir şekilde hareket edin!** 🚀 Eğer sorularınız varsa, yorum bırakabilirsiniz. 😊
 

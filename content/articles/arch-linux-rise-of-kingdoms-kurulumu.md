@@ -9,6 +9,8 @@ Status: published
 Summary: Arch Linux'ta Rise of Kingdoms oynamak mümkün! Bu rehberde Lutris ile nasıl kurulum yapacağınızı ve yaşanan grafik sorunlarını nasıl çözeceğinizi adım adım anlatıyoruz.
 Template: article
 Image: images/rok-lutris-fps-test-xl.webp
+Lang: tr
+Translation: false
 
 ## 🧐 Giriş: Neden Rise of Kingdoms'u Linux'ta Oynamalısınız?
 

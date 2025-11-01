@@ -6,10 +6,11 @@ Tags: linux, apache, mysql, phpmyadmin
 Slug: linux-apache2-mysql-phpmyadmin-kurulumu
 Authors: yuceltoluyag
 Summary: Debian ve türevlerinde Apache2, MySQL ve PhpMyAdmin kurulumunu adım adım nasıl gerçekleştirebileceğinizi anlatıyoruz.
+Lang: tr
+Translation: false
 Status: published
 Template: article
 Image: images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp
-
 
 Debian ve türevlerinde Apache2, MySQL ve PhpMyAdmin kurulumunu adım adım nasıl gerçekleştirebileceğinizi anlatıyoruz. XAMPP kullanmak yerine doğrudan Apache kurmak isteyenler için rehber niteliğindedir.
 

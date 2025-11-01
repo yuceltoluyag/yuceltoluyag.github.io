@@ -6,6 +6,8 @@ Tags: linux, vagrant, windows10
 Slug: vagrant-virtualbox-6-1-uyumluluk
 Authors: yuceltoluyag
 Summary: Vagrant'ın VirtualBox 6.1 ile yaşadığı uyumsuzluk sorununu nasıl gidereceğinizi adım adım anlatıyoruz.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article

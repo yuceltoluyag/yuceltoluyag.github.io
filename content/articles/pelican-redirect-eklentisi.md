@@ -6,13 +6,14 @@ Tags: pelican, python, seo, redirect, yönlendirme, statik site
 Slug: pelican-redirect-eklentisi
 Authors: yuceltoluyag
 Summary: Pelican ile oluşturulmuş statik sitelerinizde eski URL'leri korumak ve ziyaretçileri yeni sayfalara sorunsuz bir şekilde yönlendirmek için geliştirilmiş özel eklenti
+
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/pelican-redirect-eklentisi-xl.webp
 
 Statik site oluşturucuları kullanırken karşılaşılan en büyük sorunlardan biri, site yapısı veya URL'lerde yapılan değişikliklerden sonra eski bağlantıların çalışmaması problemidir. 🤔 Bu durum SEO açısından oldukça zararlı olabilir ve ziyaretçilerinizi kaybetmenize neden olabilir. Özellikle Google gibi arama motorlarında üst sıralarda yer alan içeriklerinize yapılan dış bağlantılar, URL değişiklikleri sonrasında "404 Sayfa Bulunamadı" hatasına düşecektir.
-
 
 [responsive_img src="/images/pelican-redirect-eklentisi-xl.webp" alt="pelican-redirect-eklentisi" /]
 
@@ -24,8 +25,8 @@ Pelican Redirect eklentisi, iki temel yönlendirme mekanizması sunar:
 
 1. **.302 uzantılı** dosyalar aracılığıyla yönlendirme
 2. **REDIRECTS** yapılandırma değişkeni ile yönlendirme
-3. İşte örnek kaynak dosyalar: [pelican_redirect.py](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/plugins/pelican_redirect.py){: target="_blank" rel="noopener noreferrer"} + [redirect.html](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/themes/Minel/templates/redirect.html){: target="_blank" rel="noopener noreferrer"}
-Her iki yöntem de HTML meta-refresh ve JavaScript location yönlendirmelerini kullanarak ziyaretçileri belirttiğiniz yeni URL'lere yönlendirir.
+3. İşte örnek kaynak dosyalar: [pelican_redirect.py](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/plugins/pelican_redirect.py){: target="\_blank" rel="noopener noreferrer"} + [redirect.html](https://github.com/yuceltoluyag/yuceltoluyag.github.io/blob/main/themes/Minel/templates/redirect.html){: target="\_blank" rel="noopener noreferrer"}
+   Her iki yöntem de HTML meta-refresh ve JavaScript location yönlendirmelerini kullanarak ziyaretçileri belirttiğiniz yeni URL'lere yönlendirir.
 
 ## Kurulum 💻
 
@@ -46,20 +47,23 @@ PLUGINS = [
 ```html
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="utf-8" />
-        <title>Redirecting...</title>
-        <link rel="canonical" href="{{ page.location }}" />
-        <script>
-            location = "{{ page.location }}";
-        </script>
-        <meta http-equiv="refresh" content="{{ page.delay }}; url={{ page.location }}" />
-        <meta name="robots" content="noindex" />
-    </head>
-    <body>
-        <h1>Redirecting...</h1>
-        <a href="{{ page.location }}">Click here if you are not redirected.</a>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <link rel="canonical" href="{{ page.location }}" />
+    <script>
+      location = "{{ page.location }}";
+    </script>
+    <meta
+      http-equiv="refresh"
+      content="{{ page.delay }}; url={{ page.location }}"
+    />
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <a href="{{ page.location }}">Click here if you are not redirected.</a>
+  </body>
 </html>
 ```
 

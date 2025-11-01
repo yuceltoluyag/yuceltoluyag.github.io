@@ -6,10 +6,11 @@ Tags: archlinux, python, conda, miniconda, yazılım
 Slug: arch-linux-conda-kurulumu
 Authors: yuceltoluyag
 Summary: Arch Linux üzerinde Conda kurulumunu yaparken dikkat edilmesi gereken adımlar ve en iyi uygulamalar.
-Translation: false
 Status: published
 Template: article
 Image: images/conda-xl.webp
+Lang: tr
+Translation: false
 
 ## Arch Linux'ta Conda Kurulumu ve Yönetimi
 

@@ -9,6 +9,8 @@ Status: published
 Summary: Arch Linux’ta disk alanınız az mı görünüyor? Gerçekte boş yer olmasına rağmen sistem neden farklı gösteriyor? Bu kapsamlı rehberde, root rezerve alanı, silinmiş ama hâlâ kullanılan dosyalar, yeniden başlatma gibi tüm olasılıkları adım adım inceliyoruz.
 Template: article
 Image: images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp
+Lang: tr
+Translation: false
 
 ## 🎯 Giriş
 

@@ -8,6 +8,7 @@ Authors: yuceltoluyag
 Series: Facebook
 Series_index: 4
 Summary: Facebook'ta 5000 arkadaş ekleme işlemi için güncellenmiş versiyon.
+Lang: tr
 Translation: false
 Status: published
 Template: article

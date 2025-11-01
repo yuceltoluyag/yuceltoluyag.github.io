@@ -1,130 +1,143 @@
 # Turkish translations for Pelican
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
-"POT-Creation-Date: 2024-03-07 04:30+0300\n"
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-01 10:38+0300\n"
 "PO-Revision-Date: 2024-03-07 04:30+0300\n"
 "Last-Translator: Yücel Toluyağ\n"
-"Language-Team: Turkish\n"
 "Language: tr\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-# Genel çeviriler
-msgid "Home"
-msgstr "Ana Sayfa"
-
-msgid "Categories"
-msgstr "Kategoriler"
-
-msgid "Tags"
-msgstr "Etiketler"
-
-msgid "Authors"
-msgstr "Yazarlar"
-
-msgid "Archives"
-msgstr "Arşiv"
-
-msgid "Search"
-msgstr "Ara"
-
-msgid "About"
-msgstr "Hakkında"
-
-msgid "Donate"
-msgstr "Bağış"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
 # Makale sayfası çevirileri
-msgid "Posted on"
+#: templates/article.html:178
+#, fuzzy
+msgid "Destek Olun"
 msgstr "Yayınlanma Tarihi"
 
-msgid "By"
-msgstr "Yazar"
+#: templates/article.html:181
+msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
+msgstr ""
 
-msgid "In"
-msgstr "Kategori"
+#: templates/article.html:184
+msgid "Destek Ol"
+msgstr ""
 
-msgid "Tagged as"
-msgstr "Etiketler"
+# Genel çeviriler
+#~ msgid "Home"
+#~ msgstr "Ana Sayfa"
 
-msgid "Read more"
-msgstr "Devamını Oku"
+#~ msgid "Categories"
+#~ msgstr "Kategoriler"
 
-msgid "Previous Post"
-msgstr "Önceki Yazı"
+#~ msgid "Tags"
+#~ msgstr "Etiketler"
 
-msgid "Next Post"
-msgstr "Sonraki Yazı"
+#~ msgid "Authors"
+#~ msgstr "Yazarlar"
 
-msgid "Related Posts"
-msgstr "Benzer Yazılar"
+#~ msgid "Archives"
+#~ msgstr "Arşiv"
+
+#~ msgid "Search"
+#~ msgstr "Ara"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
+
+#~ msgid "Donate"
+#~ msgstr "Bağış"
+
+#~ msgid "By"
+#~ msgstr "Yazar"
+
+#~ msgid "In"
+#~ msgstr "Kategori"
+
+#~ msgid "Tagged as"
+#~ msgstr "Etiketler"
+
+#~ msgid "Read more"
+#~ msgstr "Devamını Oku"
+
+#~ msgid "Previous Post"
+#~ msgstr "Önceki Yazı"
+
+#~ msgid "Next Post"
+#~ msgstr "Sonraki Yazı"
+
+#~ msgid "Related Posts"
+#~ msgstr "Benzer Yazılar"
 
 # Yan menü çevirileri
-msgid "Table of Contents"
-msgstr "İçindekiler"
+#~ msgid "Table of Contents"
+#~ msgstr "İçindekiler"
 
-msgid "Statistics"
-msgstr "İstatistikler"
+#~ msgid "Statistics"
+#~ msgstr "İstatistikler"
 
-msgid "Posts"
-msgstr "Yazılar"
+#~ msgid "Posts"
+#~ msgstr "Yazılar"
 
-msgid "Category"
-msgstr "Kategori"
+#~ msgid "Category"
+#~ msgstr "Kategori"
 
 # Arama çevirileri
-msgid "Search Results"
-msgstr "Arama Sonuçları"
+#~ msgid "Search Results"
+#~ msgstr "Arama Sonuçları"
 
-msgid "No results found"
-msgstr "Sonuç bulunamadı"
+#~ msgid "No results found"
+#~ msgstr "Sonuç bulunamadı"
 
-msgid "Search..."
-msgstr "Ara..."
+#~ msgid "Search..."
+#~ msgstr "Ara..."
 
 # Tema çevirileri
-msgid "Light Mode"
-msgstr "Açık Tema"
+#~ msgid "Light Mode"
+#~ msgstr "Açık Tema"
 
-msgid "Dark Mode"
-msgstr "Koyu Tema"
+#~ msgid "Dark Mode"
+#~ msgstr "Koyu Tema"
 
 # Tarih çevirileri
-msgid "January"
-msgstr "Ocak"
+#~ msgid "January"
+#~ msgstr "Ocak"
 
-msgid "February"
-msgstr "Şubat"
+#~ msgid "February"
+#~ msgstr "Şubat"
 
-msgid "March"
-msgstr "Mart"
+#~ msgid "March"
+#~ msgstr "Mart"
 
-msgid "April"
-msgstr "Nisan"
+#~ msgid "April"
+#~ msgstr "Nisan"
 
-msgid "May"
-msgstr "Mayıs"
+#~ msgid "May"
+#~ msgstr "Mayıs"
 
-msgid "June"
-msgstr "Haziran"
+#~ msgid "June"
+#~ msgstr "Haziran"
 
-msgid "July"
-msgstr "Temmuz"
+#~ msgid "July"
+#~ msgstr "Temmuz"
 
-msgid "August"
-msgstr "Ağustos"
+#~ msgid "August"
+#~ msgstr "Ağustos"
 
-msgid "September"
-msgstr "Eylül"
+#~ msgid "September"
+#~ msgstr "Eylül"
 
-msgid "October"
-msgstr "Ekim"
+#~ msgid "October"
+#~ msgstr "Ekim"
 
-msgid "November"
-msgstr "Kasım"
+#~ msgid "November"
+#~ msgstr "Kasım"
 
-msgid "December"
-msgstr "Aralık" 
+#~ msgid "December"
+#~ msgstr "Aralık"
+

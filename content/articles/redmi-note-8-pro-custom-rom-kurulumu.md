@@ -5,6 +5,8 @@ Category: Sorun Giderme
 Tags: Android, custom ROM, TWRP, IMEI onarma, Redmi Note 8 Pro, Arch Linux
 Slug: redmi-note-8-pro-custom-rom-kurulumu
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Redmi Note 8 Pro'ya custom ROM yükleme süreci. ADB, TWRP kurulumu, IMEI yedekleme ve sorun çözümleriyle eksiksiz rehber.
 Template: article

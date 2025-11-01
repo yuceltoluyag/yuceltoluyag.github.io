@@ -6,6 +6,8 @@ Tags: program, güvenlik, internet
 Slug: tavsiye-ettigim-programlar-ve-uygulamalar
 Authors: yuceltoluyag
 Summary: Windows, Linux ve Android platformlarında sıkça kullandığım programları paylaştığım serinin ilk bölümü.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article

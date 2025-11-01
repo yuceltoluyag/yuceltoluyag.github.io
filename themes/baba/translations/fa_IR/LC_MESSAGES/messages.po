@@ -1,0 +1,113 @@
+# Persian (Iran) translations for Flex.
+# Copyright (C) 2020 Alexandre Vicenzi
+# This file is distributed under the same license as the Flex project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+# Translators:
+# AmirMahmood <amma4ww@gmail.com>, 2017
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flex 2.1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-01 10:38+0300\n"
+"PO-Revision-Date: 2016-08-25 02:15+0000\n"
+"Last-Translator: AmirMahmood <amma4ww@gmail.com>, 2017\n"
+"Language: fa_IR\n"
+"Language-Team: Persian (Iran) (https://www.transifex.com/alexandrevicenzi/teams/66327/fa_IR/)\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/article.html:178
+msgid "Destek Olun"
+msgstr ""
+
+#: templates/article.html:181
+msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
+msgstr ""
+
+#: templates/article.html:184
+msgid "Destek Ol"
+msgstr ""
+
+#~ msgid "Archives"
+#~ msgstr "بایگانی"
+
+#~ msgid "Posted on %(when)s in %(category)s"
+#~ msgstr "نوشته شده در تاریخ  %(when)s در  %(category)s"
+
+#~ msgid "%(minutes)s min read"
+#~ msgstr ""
+
+#~ msgid "Like this article? Share it with your friends!"
+#~ msgstr "از این مقاله لذت بردید؟ آن را با دوستانتان به اشتراک بگذارید!"
+
+#~ msgid "You might enjoy"
+#~ msgstr "ممکن است علاق‏ه‌مند باشید به"
+
+#~ msgid "Posts by %(name)s"
+#~ msgstr "نوشته شده توسط  %(name)s"
+
+#~ msgid "Authors"
+#~ msgstr "نویسندگان"
+
+#~ msgid "Search..."
+#~ msgstr ""
+
+#~ msgid "Home"
+#~ msgstr "خانه"
+
+#~ msgid "Atom"
+#~ msgstr "اشتراک Atom"
+
+#~ msgid "RSS"
+#~ msgstr "اشتراک RSS"
+
+#~ msgid "Categories"
+#~ msgstr "دسته بندی ها"
+
+#~ msgid "Category %(name)s"
+#~ msgstr "دسته بندی  %(name)s"
+
+#~ msgid "Tagged with"
+#~ msgstr "برچسب شده توسط"
+
+#~ msgid "Continue reading"
+#~ msgstr "ادامه مطلب"
+
+#~ msgid "Search"
+#~ msgstr ""
+
+#~ msgid "Search Results"
+#~ msgstr ""
+
+#~ msgid "Tag %(name)s"
+#~ msgstr "برچسب %(name)s"
+
+#~ msgid "Tags"
+#~ msgstr "برچسب ها"
+
+#~ msgid "Please enable JavaScript to view comments."
+#~ msgstr "لطفا برای دیدن نظرات، جاوا اسکریپت را فعال کنید."
+
+#~ msgid "Built with %(pelican_url)s using %(flex_url)s theme"
+#~ msgstr ""
+
+#~ msgid "Switch to the %(dark_url)s | %(light_url)s | %(browser_url)s theme"
+#~ msgstr ""
+
+#~ msgid "Previous Post"
+#~ msgstr ""
+
+#~ msgid "Next Post"
+#~ msgstr ""
+
+#~ msgid "Older Posts"
+#~ msgstr "نوشته‌های کهنه‌تر"
+
+#~ msgid "Newer Posts"
+#~ msgstr "نوشته‌های تازه‌تر"
+

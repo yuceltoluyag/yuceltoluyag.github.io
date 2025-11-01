@@ -8,12 +8,10 @@ Series: ArchLampp
 Series_index: 3
 Authors: yuceltoluyag
 Summary: Arch Linux üzerinde VirtualBox, Vagrant, Laravel ve PhpMyAdmin kurulumunu adım adım anlatan detaylı rehber.
-Translation: false
+
 Status: published
 Template: article
 Image: images/pic-selected-190916-0747-49-xl.webp
-
-
 
 ## VirtualBox Kurulumu 🚀
 
@@ -111,7 +109,6 @@ sudo nano ~/www/Homestead/Homestead.yaml
 ```
 
 ```yaml
-
 ip: "192.168.10.10"
 memory: 2048
 cpus: 2
@@ -120,24 +117,23 @@ provider: virtualbox
 authorize: ~/.ssh/id_rsa.pub
 
 keys:
-    - ~/.ssh/id_rsa
+  - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/www
-      to: /home/vagrant/www
+  - map: ~/www
+    to: /home/vagrant/www
 
 sites:
-    - map: laravel6.test
-      to: /home/vagrant/www/laravel6/public
+  - map: laravel6.test
+    to: /home/vagrant/www/laravel6/public
 
 databases:
-    - homestead
+  - homestead
 
 features:
-    - mariadb: false
-    - ohmyzsh: false
-    - webdriver: false
-
+  - mariadb: false
+  - ohmyzsh: false
+  - webdriver: false
 # ports:
 #     - send: 50000
 #       to: 5000
@@ -175,9 +171,7 @@ Bağlanmak için:
 vagrant ssh
 ```
 
-
 [responsive_img src="/images/pic-selected-190916-0818-54-xl.webp" alt="SSH Bağlantısı" /]
-
 
 ## Laravel Kurulumu 🌐
 
@@ -189,7 +183,6 @@ composer create-project --prefer-dist laravel/laravel
 ```
 
 Bu işlem tamamlandığında **www** klasörünüzün içinde **laravel** adında bir klasör oluşacaktır.
-
 
 [responsive_img src="/images/pic-full-190916-0808-36-xl.webp" alt="Laravel Kurulumu" /]
 
@@ -227,7 +220,7 @@ sites:
 
 Tüm ayarlamalar tamamlandı! 🚀 **PhpMyAdmin'e erişmek için:**
 
-[http://phpmyadmin.test/](http://phpmyadmin.test/){: target="_blank" rel="noopener noreferrer"}
+[http://phpmyadmin.test/](http://phpmyadmin.test/){: target="\_blank" rel="noopener noreferrer"}
 
 Kullanıcı adı: **homestead**
 Şifre: **secret**

@@ -9,7 +9,8 @@ Status: published
 Summary: Arch Linux'ta Android Studio kurmadan Flutter geliştirme ortamı kurulumu. 2025 güncel paketleri ve Java 24 desteği ile hafif ve etkili kurulum.  
 Template: article
 Image: images/arch-linux-flutter-kurulumu-xl.webp
-
+Lang: tr
+Translation: false
 
 ## Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi
 
@@ -250,8 +251,6 @@ flutter doctor --android-licenses
 yes | flutter doctor --android-licenses
 ```
 
-
-
 ### Flutter Doctor Çalıştırma 🔍
 
 ```bash
@@ -261,7 +260,7 @@ flutter doctor -v
 # Web desteğini aktifleştir
 flutter config --enable-web
 
-# Linux desktop desteğini aktifleştir  
+# Linux desktop desteğini aktifleştir
 flutter config --enable-linux-desktop
 ```
 
@@ -431,7 +430,7 @@ description: Modern Flutter app for Arch Linux
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.8.0 <4.0.0'
+  sdk: ">=3.8.0 <4.0.0"
   flutter: ">=3.32.0"
 
 dependencies:
@@ -492,6 +491,7 @@ flutter run --hot
 **Hata**: `Unsupported Java version` veya module system sorunları
 
 **Çözüm**:
+
 ```bash
 # Java flags ekle
 export JAVA_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED"
@@ -505,6 +505,7 @@ echo "org.gradle.jvmargs=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens
 **Hata**: `Warning: Failed to read or create install properties file.`
 
 **Çözüm**:
+
 ```bash
 # SDK dizininin sahipliğini kullanıcınıza verin
 sudo chown -R $USER:$USER /opt/android-sdk/
@@ -524,6 +525,7 @@ sdkmanager --install "system-images;android-34;google_apis_playstore;x86_64"
 **Hata**: Emülatör yavaş çalışıyor veya donuyor
 
 **Çözüm**:
+
 ```bash
 # Hardware acceleration kontrolü
 /usr/bin/kvm-ok
@@ -538,6 +540,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 **Hata**: `Failed to build for web`
 
 **Çözüm**:
+
 ```bash
 # Web dependencies kur
 flutter pub global activate webdev
@@ -760,17 +763,17 @@ Tebrikler! 🎉 2025'in en güncel teknolojileri ile Arch Linux'ta tam fonksiyon
 
 ### Öğrenme Kaynakları 📚
 
-- 📖 [Flutter 2025 Documentation](https://flutter.dev/docs){: target="_blank" rel="noopener noreferrer"}
-- 🎥 [Flutter Forward 2025](https://youtube.com/flutterdev){: target="_blank" rel="noopener noreferrer"}
-- 💻 [Dart 3.6 Language Guide](https://dart.dev/guides){: target="_blank" rel="noopener noreferrer"}
-- 🏗️ [Modern Flutter Architecture](https://github.com/flutter/samples){: target="_blank" rel="noopener noreferrer"}
+- 📖 [Flutter 2025 Documentation](https://flutter.dev/docs){: target="\_blank" rel="noopener noreferrer"}
+- 🎥 [Flutter Forward 2025](https://youtube.com/flutterdev){: target="\_blank" rel="noopener noreferrer"}
+- 💻 [Dart 3.6 Language Guide](https://dart.dev/guides){: target="\_blank" rel="noopener noreferrer"}
+- 🏗️ [Modern Flutter Architecture](https://github.com/flutter/samples){: target="\_blank" rel="noopener noreferrer"}
 
 ### Community ve Destek 🤝
 
-- 📱 [r/FlutterDev](https://reddit.com/r/FlutterDev){: target="_blank" rel="noopener noreferrer"}
-- 🐧 [Arch Linux Forums](https://bbs.archlinux.org/){: target="_blank" rel="noopener noreferrer"}
+- 📱 [r/FlutterDev](https://reddit.com/r/FlutterDev){: target="\_blank" rel="noopener noreferrer"}
+- 🐧 [Arch Linux Forums](https://bbs.archlinux.org/){: target="\_blank" rel="noopener noreferrer"}
 
-### Başlangıç Projeleri  🚀
+### Başlangıç Projeleri 🚀
 
 1. **🤖 AI Chat App** - Gemini API entegrasyonu
 2. **💰 Crypto Tracker** - Real-time WebSocket

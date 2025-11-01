@@ -6,6 +6,8 @@ Tags: httrack, linux
 Slug: linux-ta-httrack-kullanimi
 Authors: yuceltoluyag
 Summary: Bu yazıda, Linux üzerinde HTTrack kullanarak web sitelerini çevrimdışı olarak nasıl indirebileceğinizi adım adım anlatıyorum.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article

@@ -6,6 +6,7 @@ Tags: robot süpürge, akıllı temizlik, Dreame D10 Plus
 Slug: dreame-d10-plus-gen-2-inceleme
 Authors: yuceltoluyag
 Summary: Dreame D10 Plus Gen 2'yi deneyimledik! Akıllı haritalama, güçlü çekiş ve kullanıcı dostu yapısıyla bu robot süpürge beklentileri karşılıyor mu? İşte detaylı incelememiz! 🚀
+Lang: tr
 Translation: false
 Status: published
 Template: article

@@ -4,6 +4,8 @@ Category: Linux
 Tags: linux, waydroid, python, pyenv, arch-linux, troubleshooting
 Slug: weston-ile-waydroid-modulenotfounderror-hatasi-cozumu
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Waydroid kurulumu sırasında sıkça görülen “ModuleNotFoundError” hatasının nedenlerini ve adım adım çözümünü öğren. Weston üzerinde sorunsuz çalıştır! ⚡
 Template: article

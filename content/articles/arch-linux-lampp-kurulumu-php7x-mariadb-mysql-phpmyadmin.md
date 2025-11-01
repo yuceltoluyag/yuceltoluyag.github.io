@@ -8,16 +8,13 @@ Series_index: 1
 Slug: arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin
 Authors: yuceltoluyag
 Summary: Bu rehberde, Arch Linux üzerinde Apache, PHP, MariaDB, MySQL ve PhpMyAdmin kurulumlarını adım adım öğreneceksiniz.
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/archlinuxlampp-xl.webp
 
-
-
-
-Merhaba! Çok uzun bir süre önce  Arch Linux'a geçiş yaptım. Ancak notlarımı bir türlü bloguma aktarma fırsatım olmadı. Bundan sonraki yazılarım, Arch Linux üzerine olacaktır. Sorular gelirse Ubuntu, Linux Mint gibi dağıtımlar için de ara ara yazılar paylaşacağım.
-
+Merhaba! Çok uzun bir süre önce Arch Linux'a geçiş yaptım. Ancak notlarımı bir türlü bloguma aktarma fırsatım olmadı. Bundan sonraki yazılarım, Arch Linux üzerine olacaktır. Sorular gelirse Ubuntu, Linux Mint gibi dağıtımlar için de ara ara yazılar paylaşacağım.
 
 ## Apache Kurulumu
 
@@ -29,7 +26,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 ```
 
 - Burada, `LoadModule unique_id_module modules/mod_unique_id.so` satırının başına `#` işareti koyuyoruz. Ardından kaydedip çıkıyoruz.
--  Nano kullanıyorsanız, F3 ile kaydedip, F2 ile çıkabilirsiniz. Nano yerine gedit, Sublime veya mousepad gibi diğer metin editörlerini de kullanabilirsiniz.
+- Nano kullanıyorsanız, F3 ile kaydedip, F2 ile çıkabilirsiniz. Nano yerine gedit, Sublime veya mousepad gibi diğer metin editörlerini de kullanabilirsiniz.
 
 ## MySQL & MariaDB Kurulumu
 

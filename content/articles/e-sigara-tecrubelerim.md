@@ -6,6 +6,7 @@ Tags: tanitim
 Slug: e-sigara-tecrubelerim
 Authors: yuceltoluyag
 Summary: Smok Nord ile elektronik sigara deneyimlerim.
+Lang: tr
 Translation: false
 Status: published
 Template: article

@@ -121,6 +121,7 @@ def clean(ctx: Context) -> None:
         ".reports",
         ".ruff_cache",
         SETTINGS["OUTPUT_PATH"],
+        "cache",
     ):
         if Path(path).is_dir():
             shutil.rmtree(path)

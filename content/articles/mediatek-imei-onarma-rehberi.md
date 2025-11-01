@@ -5,6 +5,8 @@ Category: Sorun Giderme
 Tags: MediaTek IMEI onarma, MTK IMEI fix, TWRP IMEI repair, MediaTek imei patch, Arch Linux  
 Slug: mediatek-imei-onarma-rehberi  
 Authors: yuceltoluyag  
+Lang: tr
+Translation: false
 Status: published  
 Summary: MediaTek işlemcili telefonlarda IMEI onarma adımlarını, Arch Linux ortamında mtk_imei aracıyla nasıl yapacağınızı detaylı olarak öğrenin.  
 Template: article

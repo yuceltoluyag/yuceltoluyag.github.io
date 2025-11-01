@@ -10,6 +10,8 @@ Template: article
 Series: Git
 Series_index: 7
 Image: images/github-commit-atma-rehberi-xl.webp
+Lang: tr
+Translation: false
 
 > “Git commit atmak" yazılımcı dünyasının ekmek-su ikilisi gibi bir şeydir. Eğer kod yazıyorsan, değişikliklerini versiyon kontrol sistemine kaydetmeyi bilmek zorundasın. Bu rehberde sana, **GitHub** üzerinde bir projeye **commit atma** sürecini sıfırdan, adım adım ve bol örnekle anlatacağım.
 > **Önemli güncelleme:** Ana repoya doğrudan değil, **kendi branch’inde** çalışıp her zaman **Pull Request (PR)** ile gönderiyoruz. Ayrıca projeyi lokalde görüp test etmek için **virtualenv + duty** ile nasıl ayağa kaldıracağını da anlatıyorum.
@@ -41,11 +43,11 @@ git --version
 git version 2.50.1
 ```
 
-Git yoksa [git-scm.com/downloads](https://git-scm.com/downloads){: target="_blank" rel="noopener noreferrer"} üzerinden kurabilirsin.
+Git yoksa [git-scm.com/downloads](https://git-scm.com/downloads){: target="\_blank" rel="noopener noreferrer"} üzerinden kurabilirsin.
 
 ### GitHub Hesabına Giriş Yap
 
-GitHub hesabın yoksa [github.com](https://github.com){: target="_blank" rel="noopener noreferrer"} üzerinden hızlıca oluştur. Varsa tarayıcıdan giriş yap.
+GitHub hesabın yoksa [github.com](https://github.com){: target="\_blank" rel="noopener noreferrer"} üzerinden hızlıca oluştur. Varsa tarayıcıdan giriş yap.
 
 ### SSH Bağlantısını Test Et
 

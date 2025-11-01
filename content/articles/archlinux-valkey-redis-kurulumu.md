@@ -8,6 +8,8 @@ Status: published
 Summary: Arch Linux üzerinde Redis'in özgür alternatifi Valkey’in nasıl kurulacağını, yapılandırılacağını ve yaygın hataların nasıl çözüleceğini adım adım öğrenin.
 Template: article
 Image: images/archlinux-valkey-redis-kurulumu-xl.webp
+Lang: tr
+Translation: false
 
 ## Giriş: Redis mi, Valkey mi? 🤔
 

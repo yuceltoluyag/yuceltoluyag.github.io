@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- #
 import os
 from datetime import date
+from blinker import signal
 
 # --- Environmental Variables ---
 PUBLISH = os.environ.get("PUBLISH")
@@ -22,23 +23,23 @@ PATH = "content"
 CONTENT_DIR = PATH
 CONTENT_BASE_URL = os.path.abspath(os.path.dirname(__file__))
 OUTPUT_PATH = "output"
-TIMEZONE = "Europe/Istanbul"
-
 DEVELOPMENT_MODE = False
 
 # Disqus Yorum Sistemi
 DISQUS_SITENAME = "yuceltoluyag"
 DEFAULT_DATE_FORMAT = "%d %B %Y"
 DEFAULT_LANG = "tr"
-
-
+TIMEZONE = "Europe/Istanbul"
+LOCALE = (
+    "tr_TR",
+    "en_US",
+)
 # Feed generation is usually not desired when developing
 # Geliştirme sırasında da beslemeleri göstermek için ayarladık
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 FEED_ALL_RSS = "feeds/all.rss.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 CATEGORY_FEED_RSS = "feeds/{slug}.rss.xml"
-TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = "feeds/{slug}.atom.xml"
 AUTHOR_FEED_RSS = "feeds/{slug}.rss.xml"
 HOME_HIDE_TAGS = True
@@ -83,6 +84,9 @@ ARTICLE_LANG_URL = "{slug}-{lang}/"
 ARTICLE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
 PAGE_LANG_URL = "{slug}-{lang}/"
 PAGE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
+
+I18N_UNTRANSLATED_ARTICLES_LANG = 'tr'
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
@@ -103,11 +107,17 @@ DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "authors"]
 DELETE_OUTPUT_DIRECTORY = True
 
 # JINJA ENVIRONMENT
-JINJA_ENVIRONMENT = {
-    "extensions": [
-        "jinja2.ext.i18n",
-    ],
-}
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+tmpsig = signal('tmpsig')
+I18N_FILTER_SIGNALS = [tmpsig]
+
+I18N_SUBSITES = {
+    'en': {
+        'SITENAME': 'Ortaya Karışık (EN)',
+        'AUTHOR': 'yuceltoluyag',
+        'LOCALE': 'en_US.UTF-8',
+        },
+    }
 DISABLE_URL_HASH = True
 BROWSER_COLOR = "#333333"
 PYGMENTS_STYLE = "dracula"
@@ -161,18 +171,18 @@ EXTRA_PATH_METADATA = {
 PLUGIN_PATHS = ["plugins"]
 
 common_plugins = [
+    "plugins.i18n_subsites",
     "pelican.plugins.sitemap",
-    "plugins.related_posts",
     "pelican.plugins.neighbors",
-    "plugins.series",  # Series eklentisi
+    "plugins.series",  
     "plugins.fix_sitemap",
     "plugins.json_feed",
-    "plugins.responsive_image_shortcode",  # Responsive Image Shortcode
+    "plugins.responsive_image_shortcode", 
     "plugins.search",
     "plugins.pelican_redirect",
     "plugins.video_schema",
     "plugins.comments",
-    "plugins.pelican-toc",  # İçindekiler tablosu eklentisi
+    "plugins.pelican-toc", 
 ]
 
 dev_plugins = common_plugins.copy()

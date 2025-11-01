@@ -8,8 +8,8 @@ Authors: yuceltoluyag
 Status: published  
 Summary: Cyberpunk 2077'yi Linux'ta modlayın! Paketlenmiş ve paketlenmemiş sürümler için detaylı Cyber Engine Tweaks kurulum rehberi.  
 Template: article
-
-
+Lang: tr
+Translation: false
 
 ## 🚀 Giriş
 
@@ -29,7 +29,7 @@ Mod kurulumuna başlamadan önce sisteminizde bulunması gerekenler:
 
 ### Adım 1: Cyber Engine Tweaks İndirme 📥
 
-1. [Cyber Engine Tweaks GitHub sayfasına](https://github.com/yamashi/CyberEngineTweaks){: target="_blank" rel="noopener noreferrer"} gidin
+1. [Cyber Engine Tweaks GitHub sayfasına](https://github.com/yamashi/CyberEngineTweaks){: target="\_blank" rel="noopener noreferrer"} gidin
 2. En son sürümü indirin
 3. ZIP dosyasını oyun dizininize çıkarın
 
@@ -133,6 +133,7 @@ WINEPREFIX=~/.steam/steam/steamapps/compatdata/1091500/pfx winetricks d3dcompile
 ### Sorun 1: Overlay Açılmıyor 🚫
 
 **Çözüm:**
+
 ```bash
 # Oyun dizininde CET loglarını kontrol edin
 cat cyber_engine_tweaks.log
@@ -141,12 +142,14 @@ cat cyber_engine_tweaks.log
 ### Sorun 2: Crash on Startup 💥
 
 **Çözüm:**
+
 - Proton versiyonunu değiştirin (GE-Proton önerilir)
 - Steam launch options: `PROTON_LOG=1 %command%`
 
 ### Sorun 3: Mods Yüklenmiyor 📁
 
 **Çözüm:**
+
 1. Mod dosyalarının doğru dizinde olduğunu kontrol edin
 2. `bin/x64/plugins/cyber_engine_tweaks/mods/` dizini yapısını doğrulayın
 
@@ -175,6 +178,7 @@ cat cyber_engine_tweaks.log
 ### Performance Optimizasyonu ⚡
 
 Launch parametreleri:
+
 ```bash
 DXVK_LOG_LEVEL=none DXVK_HUD=fps %command%
 ```
@@ -182,6 +186,7 @@ DXVK_LOG_LEVEL=none DXVK_HUD=fps %command%
 ### Memory Management 💾
 
 `user.ini` dosyasında:
+
 ```ini
 [Engine]
 MemoryPoolBudgets.PoolCPU=3GB
@@ -201,12 +206,14 @@ Mod kurulumu sonrası performans testi:
 Cyberpunk 2077'yi Linux'ta modlamak başlangıçta karmaşık görünse de, doğru adımları takip ederek harika sonuçlar elde edebilirsiniz! 🚀
 
 **En İyi Uygulamalar:**
+
 - 💾 Oyun dosyalarınızı yedekleyin
 - 🔄 Modları tek tek test edin
 - 📋 Kurulum notlarınızı tutun
 - 🎮 Community forumlarını takip edin
 
 **Güvenlik İpuçları:**
+
 - ✅ Sadece güvenilir kaynaklardan mod indirin
 - 🛡️ Antivirus taraması yapın
 - 📝 Mod listesini güncel tutun
@@ -215,8 +222,8 @@ Linux gaming topluluğu sürekli büyüyor ve Cyberpunk 2077 gibi AAA oyunlar ar
 
 ## 🔗 Faydalı Kaynaklar
 
-- [ProtonDB Cyberpunk Reports](https://www.protondb.com/app/1091500){: target="_blank" rel="noopener noreferrer"}
-- [r/linux_gaming Community](https://reddit.com/r/linux_gaming){: target="_blank" rel="noopener noreferrer"}
-- [NexusMods Cyberpunk Section](https://www.nexusmods.com/cyberpunk2077){: target="_blank" rel="noopener noreferrer"}
+- [ProtonDB Cyberpunk Reports](https://www.protondb.com/app/1091500){: target="\_blank" rel="noopener noreferrer"}
+- [r/linux_gaming Community](https://reddit.com/r/linux_gaming){: target="\_blank" rel="noopener noreferrer"}
+- [NexusMods Cyberpunk Section](https://www.nexusmods.com/cyberpunk2077){: target="\_blank" rel="noopener noreferrer"}
 
 **Not:** Bu rehber sürekli güncellenmektedir. Yeni mod versiyonları ve Linux uyumluluğu değişiklikleri için takipte kalın! 🎮✨

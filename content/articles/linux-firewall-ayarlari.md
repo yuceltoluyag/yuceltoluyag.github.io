@@ -4,6 +4,8 @@ Category: Linux
 Tags: arch linux, firewall, nftables, ufw, güvenlik
 Slug: linux-firewall-ayarlari
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Arch Linux’ta firewall yapılandırmasını adım adım öğren. nftables ve ufw ile güvenliğinizi artırın! ⚡
 Template: article

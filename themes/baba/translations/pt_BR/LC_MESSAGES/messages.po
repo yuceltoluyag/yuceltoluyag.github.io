@@ -1,0 +1,113 @@
+# Portuguese (Brazil) translations for Flex.
+# Copyright (C) 2020 Alexandre Vicenzi
+# This file is distributed under the same license as the Flex project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+# Translators:
+# Alexandre Vicenzi <transifex@alxd.me>, 2020
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flex 2.1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-01 10:38+0300\n"
+"PO-Revision-Date: 2016-08-25 02:15+0000\n"
+"Last-Translator: Alexandre Vicenzi <transifex@alxd.me>, 2020\n"
+"Language: pt_BR\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/alexandrevicenzi/teams/66327/pt_BR/)\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/article.html:178
+msgid "Destek Olun"
+msgstr ""
+
+#: templates/article.html:181
+msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
+msgstr ""
+
+#: templates/article.html:184
+msgid "Destek Ol"
+msgstr ""
+
+#~ msgid "Archives"
+#~ msgstr "Arquivos"
+
+#~ msgid "Posted on %(when)s in %(category)s"
+#~ msgstr "Publicado em %(when)s na categoria %(category)s"
+
+#~ msgid "%(minutes)s min read"
+#~ msgstr "%(minutes)s min de leitura "
+
+#~ msgid "Like this article? Share it with your friends!"
+#~ msgstr "Gostou do artigo? Compartilhe com seus amigos!"
+
+#~ msgid "You might enjoy"
+#~ msgstr "Artigos relacionados"
+
+#~ msgid "Posts by %(name)s"
+#~ msgstr "Publicações de %(name)s"
+
+#~ msgid "Authors"
+#~ msgstr "Autores"
+
+#~ msgid "Search..."
+#~ msgstr "Pesquisar..."
+
+#~ msgid "Home"
+#~ msgstr "Início"
+
+#~ msgid "Atom"
+#~ msgstr "Atom"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Categories"
+#~ msgstr "Categorias"
+
+#~ msgid "Category %(name)s"
+#~ msgstr "Categoria %(name)s"
+
+#~ msgid "Tagged with"
+#~ msgstr "Com as tags"
+
+#~ msgid "Continue reading"
+#~ msgstr "Continue lendo"
+
+#~ msgid "Search"
+#~ msgstr "Pesquisa"
+
+#~ msgid "Search Results"
+#~ msgstr "Resultados da pesquisa"
+
+#~ msgid "Tag %(name)s"
+#~ msgstr "Tag %(name)s"
+
+#~ msgid "Tags"
+#~ msgstr "Tags"
+
+#~ msgid "Please enable JavaScript to view comments."
+#~ msgstr "Habilite JavaScript para ver os comentários."
+
+#~ msgid "Built with %(pelican_url)s using %(flex_url)s theme"
+#~ msgstr "Criado com o %(pelican_url)s usando o tema %(flex_url)s"
+
+#~ msgid "Switch to the %(dark_url)s | %(light_url)s | %(browser_url)s theme"
+#~ msgstr "Alterar tema para %(dark_url)s | %(light_url)s | %(browser_url)s "
+
+#~ msgid "Previous Post"
+#~ msgstr "Artigo Anterior"
+
+#~ msgid "Next Post"
+#~ msgstr "Próximo Artigo"
+
+#~ msgid "Older Posts"
+#~ msgstr "Anteriores"
+
+#~ msgid "Newer Posts"
+#~ msgstr "Próximos"
+

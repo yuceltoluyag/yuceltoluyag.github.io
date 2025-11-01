@@ -1,0 +1,113 @@
+# Indonesian translations for Flex.
+# Copyright (C) 2020 Alexandre Vicenzi
+# This file is distributed under the same license as the Flex project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+# Translators:
+# Yongkie Wiyogo <yongkie.wiyogo@gmail.com>, 2018
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Flex 2.1.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-11-01 10:38+0300\n"
+"PO-Revision-Date: 2016-08-25 02:15+0000\n"
+"Last-Translator: Yongkie Wiyogo <yongkie.wiyogo@gmail.com>, 2018\n"
+"Language: id\n"
+"Language-Team: Indonesian (https://www.transifex.com/alexandrevicenzi/teams/66327/id/)\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: templates/article.html:178
+msgid "Destek Olun"
+msgstr ""
+
+#: templates/article.html:181
+msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
+msgstr ""
+
+#: templates/article.html:184
+msgid "Destek Ol"
+msgstr ""
+
+#~ msgid "Archives"
+#~ msgstr "Arsip"
+
+#~ msgid "Posted on %(when)s in %(category)s"
+#~ msgstr "Ditulis tanggal %(when)s di %(category)s"
+
+#~ msgid "%(minutes)s min read"
+#~ msgstr ""
+
+#~ msgid "Like this article? Share it with your friends!"
+#~ msgstr "Suka artikel ini? Bagikan dengan teman-teman Anda!"
+
+#~ msgid "You might enjoy"
+#~ msgstr "Anda mungkin menikmati"
+
+#~ msgid "Posts by %(name)s"
+#~ msgstr "Ditulis oleh %(name)s"
+
+#~ msgid "Authors"
+#~ msgstr "Penulis"
+
+#~ msgid "Search..."
+#~ msgstr ""
+
+#~ msgid "Home"
+#~ msgstr "Beranda"
+
+#~ msgid "Atom"
+#~ msgstr "Atom"
+
+#~ msgid "RSS"
+#~ msgstr "RSS"
+
+#~ msgid "Categories"
+#~ msgstr "Kategori"
+
+#~ msgid "Category %(name)s"
+#~ msgstr "Kategori %(name)s"
+
+#~ msgid "Tagged with"
+#~ msgstr "Kata kunci"
+
+#~ msgid "Continue reading"
+#~ msgstr "Lanjut membaca"
+
+#~ msgid "Search"
+#~ msgstr ""
+
+#~ msgid "Search Results"
+#~ msgstr ""
+
+#~ msgid "Tag %(name)s"
+#~ msgstr "Kata kunci %(name)s"
+
+#~ msgid "Tags"
+#~ msgstr "Kata-kata kunci"
+
+#~ msgid "Please enable JavaScript to view comments."
+#~ msgstr "Harap aktifkan JavaScript untuk melihat komentar."
+
+#~ msgid "Built with %(pelican_url)s using %(flex_url)s theme"
+#~ msgstr ""
+
+#~ msgid "Switch to the %(dark_url)s | %(light_url)s | %(browser_url)s theme"
+#~ msgstr ""
+
+#~ msgid "Previous Post"
+#~ msgstr ""
+
+#~ msgid "Next Post"
+#~ msgstr ""
+
+#~ msgid "Older Posts"
+#~ msgstr "Tulisan lama"
+
+#~ msgid "Newer Posts"
+#~ msgstr "Tulisan baru"
+

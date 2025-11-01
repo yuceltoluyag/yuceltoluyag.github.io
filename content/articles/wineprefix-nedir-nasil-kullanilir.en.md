@@ -3,7 +3,7 @@ Date: 2025-07-29
 Modified: 2025-08-11 22:59
 Category: Oyun
 Tags: wine, wineprefix, linux, oyun, uyumluluk, rehber
-Slug: wineprefix-nedir-nasil-kullanilir
+Slug: wineprefix-nedir-nasil-kullanilir-en
 Authors: yuceltoluyag
 Status: published
 Summary: What is WinePrefix, how is it created and used for different games? Learn the necessary steps to run Windows games smoothly on Linux with Wine in this guide.

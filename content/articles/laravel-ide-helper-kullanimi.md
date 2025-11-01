@@ -8,11 +8,11 @@ Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 3
 Summary: Laravel IDE Helper paketi ile PHPStorm'da otomatik tamamlama ve kod yardımcısı nasıl geliştirilir?
+Lang: tr
 Translation: false
 Status: published
 Template: article
 Image: images/laravel_7x_ide_helper-xl.webp
-
 
 ## Laravel IDE Helper Nedir? 🚀
 
@@ -25,8 +25,6 @@ Eğer bu paket olmasaydı, **PHPDoc** kullanarak bu bilgileri elle eklemek gerek
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="0NZHzmAgH-M"></lite-youtube>
-
-
 
 ## Laravel IDE Helper Nasıl Kurulur? 🛠️
 
@@ -42,7 +40,7 @@ composer require --dev barryvdh/laravel-ide-helper
 
 ### 2. Kod Tamamlamayı Etkinleştirin
 
-Aşağıdaki komutu çalıştırarak proje dizininize **_ide_helper.php** dosyasını oluşturabilirsiniz:
+Aşağıdaki komutu çalıştırarak proje dizininize **\_ide_helper.php** dosyasını oluşturabilirsiniz:
 
 ```bash
 php artisan ide-helper:generate
@@ -101,7 +99,7 @@ Bu işlemin sonunda, **User.php** gibi model dosyalarının başında şu şekil
 
 ## Sonuç 🎯
 
-**Laravel IDE Helper**, **PHPStorm** gibi IDE'lerde kod tamamlama ve otomatik önerileri iyileştirerek geliştirme deneyimini çok daha verimli hale getirir. Daha fazla bilgi için [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){: target="_blank" rel="noopener noreferrer"} sayfasını ziyaret edebilirsiniz.
+**Laravel IDE Helper**, **PHPStorm** gibi IDE'lerde kod tamamlama ve otomatik önerileri iyileştirerek geliştirme deneyimini çok daha verimli hale getirir. Daha fazla bilgi için [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){: target="\_blank" rel="noopener noreferrer"} sayfasını ziyaret edebilirsiniz.
 
 PhpStorm ile ilgili daha fazla yazıya [buradan ulaşabilirsiniz](/etiket/phpstorm/). 🚀
 

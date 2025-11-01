@@ -6,9 +6,9 @@ Tags: archlinux, python, conda, miniconda, yazılım
 Slug: arch-linux-conda-kurulumu
 Authors: yuceltoluyag
 Summary: A step-by-step guide to installing and managing Conda on Arch Linux with best practices.
-Translation: true
 Status: published
 Template: article
+Translation: true
 Lang: en
 Image: images/conda-xl.webp
 
@@ -24,7 +24,7 @@ Conda can be installed using either the Anaconda or Miniconda distributions. Min
 
 Miniconda provides the basic installation of Conda and can be preferred to avoid unnecessary packages at the beginning. You can follow these steps to install Miniconda:
 
-1. Download Miniconda from the [official website](https://docs.conda.io/en/latest/miniconda.html){: target="_blank" rel="noopener noreferrer"}.
+1. Download Miniconda from the [official website](https://docs.conda.io/en/latest/miniconda.html){: target="\_blank" rel="noopener noreferrer"}.
 2. Open the terminal and run the Miniconda installation file:
 
 ```bash

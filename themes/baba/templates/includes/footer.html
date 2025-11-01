@@ -44,7 +44,11 @@
     </div>
     <div class="footer-section">
       <p class="footer-support">
+        {% if DEFAULT_LANG == 'tr' %}
         Bağış yapamıyorsanız, <a href="https://youtube.com/@{{ SOCIAL.youtube }}" target="_blank">YouTube kanalıma</a> abone olarak destek olabilirsiniz.
+        {% else %}
+        If you can't donate, you can support by subscribing to <a href="https://youtube.com/@{{ SOCIAL.youtube }}" target="_blank">my YouTube channel</a>.
+        {% endif %}
       </p>
     </div>
   </div>

@@ -4,6 +4,8 @@ Category: Oyun
 Tags: linux, vortex, nexusmods, clairobscur, proton, wine, modlama
 Slug: linux-vortex-clair-obscur-expedition-33-mod-kurulumu
 Authors: yuceltoluyag
+Lang: tr
+Translation: false
 Status: published
 Summary: Linux’ta Vortex ve Proton kullanarak Clair Obscur: Expedition 33 modlarını güvenli şekilde kurmanın adım adım rehberi.
 Template: article

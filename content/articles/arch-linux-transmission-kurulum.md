@@ -9,6 +9,8 @@ Status: published
 Summary: Arch Linux üzerinde Transmission'ı nasıl kurar ve kullanırsınız? Bu rehberde, Transmission'ın kurulumunu, yapılandırmasını ve en verimli şekilde nasıl kullanabileceğinizi adım adım keşfedeceksiniz.
 Template: article
 Image: images/Transmission-xl.webp
+Lang: tr
+Translation: false
 
 ## Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
 

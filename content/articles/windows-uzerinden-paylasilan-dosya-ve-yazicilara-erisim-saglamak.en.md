@@ -3,7 +3,7 @@ Date: 2018-11-17 10:00 10:00
 Modified: 2025-08-11 22:59
 Category: Ağ ve İnternet
 Tags: linux, windows10
-Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak
+Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak-en
 Authors: yuceltoluyag
 Summary: This guide explains how to access files and printers shared from Windows with Linux. Samba usage and settings are explained in detail.
 Translation: true

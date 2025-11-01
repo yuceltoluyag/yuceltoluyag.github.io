@@ -6,6 +6,7 @@ Tags: internetten para kazanma, earn
 Slug: earn-com-nedir-nasil-kullanilir
 Authors: yuceltoluyag
 Summary: Earn.com, anket doldurarak ve gruplara katılarak kazanç elde edebileceğiniz bir platformdur. Sisteme para yatırmadan nasıl kazanç sağlayabileceğinizi anlatıyoruz.
+Lang: tr
 Translation: false
 Status: published
 Template: article

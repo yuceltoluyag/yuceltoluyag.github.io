@@ -8,6 +8,8 @@ Authors: yuceltoluyag
 Series: oh-my-zsh
 Series_index: 3
 Summary: Oh My Zsh'de özel alias'lar ve fonksiyonlar oluşturarak terminalinizi özelleştirin ve günlük işlerinizi hızlandırın.
+
+Lang: tr
 Translation: false
 Status: published
 Template: article
@@ -314,9 +316,9 @@ Bu makaleyi tamamladıktan sonra:
 
 ## 🔗 Kaynaklar
 
-- [Oh My Zsh Alias Dokümantasyonu](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet){: target="_blank" rel="noopener noreferrer"}
-- [Zsh Fonksiyon Dokümantasyonu](https://zsh.sourceforge.io/Doc/Release/Functions.html){: target="_blank" rel="noopener noreferrer"}
-- [Git Alias'ları](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases){: target="_blank" rel="noopener noreferrer"}
+- [Oh My Zsh Alias Dokümantasyonu](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet){: target="\_blank" rel="noopener noreferrer"}
+- [Zsh Fonksiyon Dokümantasyonu](https://zsh.sourceforge.io/Doc/Release/Functions.html){: target="\_blank" rel="noopener noreferrer"}
+- [Git Alias'ları](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 
