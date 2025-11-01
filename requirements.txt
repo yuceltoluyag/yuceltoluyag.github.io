@@ -9,7 +9,7 @@ markdown-it-py==3.0.0
 MarkupSafe==3.0.3
 minchin.pelican.plugins.nojekyll==1.2.0
 mdurl==0.1.2
-pelican==4.11.0
+pelican==4.11.0.post0
 pelican-liquid-tags==1.0.4
 pelican-sitemap==1.2.2
 Pygments==2.18.0
