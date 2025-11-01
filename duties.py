@@ -205,9 +205,6 @@ def livereload(ctx: Context):
         pelican_args = [
             "-s",
             SETTINGS_FILE_BASE,
-            "-e",
-            "CACHE_CONTENT=true",
-            "LOAD_CONTENT_CACHE=true",
         ]
         if DEBUG_MODE:
             pelican_args.append("--debug")
@@ -221,6 +218,7 @@ def livereload(ctx: Context):
         f"{theme_path}/templates/**/*.html",
     ]
 
+    clean(ctx)
     cached_build()
     server = Server()
 

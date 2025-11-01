@@ -116,6 +116,7 @@ I18N_SUBSITES = {
         'SITENAME': 'Ortaya Karışık (EN)',
         'AUTHOR': 'yuceltoluyag',
         'LOCALE': 'en_US.UTF-8',
+        'STATIC_PATHS': ["images", "extra", "files"],
         },
     }
 DISABLE_URL_HASH = True
