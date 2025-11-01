@@ -121,7 +121,6 @@ def clean(ctx: Context) -> None:
         ".reports",
         ".ruff_cache",
         SETTINGS["OUTPUT_PATH"],
-        "cache",
     ):
         if Path(path).is_dir():
             shutil.rmtree(path)
@@ -131,6 +130,26 @@ def clean(ctx: Context) -> None:
     ctx.run("find . -type d -name __pycache__ | xargs rm -rf")
     ctx.run("find . -name '.DS_Store' -delete")
     os.makedirs(SETTINGS["OUTPUT_PATH"])
+
+
+@duty(silent=True)
+def clean_cache(ctx: Context) -> None:
+    """Clean only the cache directory."""
+    cache_path = SETTINGS.get("CACHE_PATH", "cache")
+    if Path(cache_path).is_dir():
+        shutil.rmtree(cache_path)
+    # Also remove potential cache files in the output directory
+    for cache_file in Path(SETTINGS["OUTPUT_PATH"]).glob("**/*.cache"):
+        cache_file.unlink()
+
+
+@duty(silent=True)
+def clean_output(ctx: Context) -> None:
+    """Clean only the output directory."""
+    output_path = SETTINGS["OUTPUT_PATH"]
+    if Path(output_path).is_dir():
+        shutil.rmtree(output_path)
+        os.makedirs(output_path)
 
 
 @duty(post=[cache_bust])
@@ -202,12 +221,15 @@ def livereload(ctx: Context):
     from livereload import Server
 
     def cached_build():
+        # Clean cache and output directories before building to avoid EOFError
+        clean_cache(ctx)
+        clean_output(ctx)
+        
         pelican_args = [
             "-s",
             SETTINGS_FILE_BASE,
+            "--debug"  # Always use debug mode to get more detailed error info
         ]
-        if DEBUG_MODE:
-            pelican_args.append("--debug")
         ctx.run(
             run_pelican(pelican_args)
         )
@@ -218,7 +240,6 @@ def livereload(ctx: Context):
         f"{theme_path}/templates/**/*.html",
     ]
 
-    clean(ctx)
     cached_build()
     server = Server()
 
@@ -315,5 +336,4 @@ def lint(ctx: Context) -> None:
         title=pyprefix("pre-commit hooks"),
         command="SKIP=typos,djlint pre-commit run --all-files",
     )
-
 

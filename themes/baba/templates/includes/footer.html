@@ -3,41 +3,41 @@
     <div class="footer-section">
       <p class="footer-copyright">
         &copy; {{ COPYRIGHT_YEAR }} - {{ current_year }}
-        <a href="{{ SITEURL }}">{{ SITENAME }}</a>. Tüm hakları saklıdır.
+        <a href="{{ SITEURL }}">{{ SITENAME }}</a>. {{ _('Tüm hakları saklıdır.') }}
       </p>
       <div class="footer-links">
-        <a href="/kategoriler/" aria-label="Kategoriler sayfasına git">
+        <a href="/kategoriler/" aria-label="{{ _('Kategoriler sayfasına git') }}">
           <span class="icon"><i class="fa-solid fa-folder" aria-hidden="true"></i></span>
-          <span class="text">Kategoriler</span>
-          <span class="sr-only">Kategoriler</span>
+          <span class="text">{{ _('Kategoriler') }}</span>
+          <span class="sr-only">{{ _('Kategoriler') }}</span>
         </a>
-        <a href="/etiketler/" aria-label="Etiketler sayfasına git">
+        <a href="/etiketler/" aria-label="{{ _('Etiketler sayfasına git') }}">
           <span class="icon"><i class="fa-solid fa-tags" aria-hidden="true"></i></span>
-          <span class="text">Etiketler</span>
-          <span class="sr-only">Etiketler</span>
+          <span class="text">{{ _('Etiketler') }}</span>
+          <span class="sr-only">{{ _('Etiketler') }}</span>
         </a>
-        <a href="/terms/" aria-label="Kullanım Koşulları sayfasına git">
+        <a href="/terms/" aria-label="{{ _('Kullanım Koşulları sayfasına git') }}">
           <span class="icon"><i class="fa-solid fa-file-contract" aria-hidden="true"></i></span>
-          <span class="text">Kullanım Koşulları</span>
-          <span class="sr-only">Kullanım Koşulları</span>
+          <span class="text">{{ _('Kullanım Koşulları') }}</span>
+          <span class="sr-only">{{ _('Kullanım Koşulları') }}</span>
         </a>
-        <a href="/privacy-policy/" aria-label="Gizlilik Politikası sayfasına git">
+        <a href="/privacy-policy/" aria-label="{{ _('Gizlilik Politikası sayfasına git') }}">
           <span class="icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
-          <span class="text">Gizlilik</span>
-          <span class="sr-only">Gizlilik Politikası</span>
+          <span class="text">{{ _('Gizlilik') }}</span>
+          <span class="sr-only">{{ _('Gizlilik Politikası') }}</span>
         </a>
         {% if FEED_ALL_ATOM %}
-        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" aria-label="Atom beslemesine git">
+        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" aria-label="{{ _('Atom beslemesine git') }}">
           <span class="icon"><i class="fa-solid fa-rss" aria-hidden="true"></i></span>
-          <span class="text">Atom</span>
-          <span class="sr-only">Atom Beslemesi</span>
+          <span class="text">{{ _('Atom') }}</span>
+          <span class="sr-only">{{ _('Atom Beslemesi') }}</span>
         </a>
         {% endif %}
         {% if FEED_ALL_RSS %}
-        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" aria-label="RSS beslemesine git">
+        <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" aria-label="{{ _('RSS beslemesine git') }}">
           <span class="icon"><i class="fa-solid fa-wifi" aria-hidden="true"></i></span>
-          <span class="text">RSS</span>
-          <span class="sr-only">RSS Beslemesi</span>
+          <span class="text">{{ _('RSS') }}</span>
+          <span class="sr-only">{{ _('RSS Beslemesi') }}</span>
         </a>
         {% endif %}
       </div>
@@ -45,7 +45,7 @@
     <div class="footer-section">
       <p class="footer-support">
         {% if DEFAULT_LANG == 'tr' %}
-        Bağış yapamıyorsanız, <a href="https://youtube.com/@{{ SOCIAL.youtube }}" target="_blank">YouTube kanalıma</a> abone olarak destek olabilirsiniz.
+        {{ _('Bağış yapamıyorsanız, <a href="https://youtube.com/@{youtube}" target="_blank">YouTube kanalıma</a> abone olarak destek olabilirsiniz.').format(youtube=SOCIAL.youtube) | safe }}
         {% else %}
         If you can't donate, you can support by subscribing to <a href="https://youtube.com/@{{ SOCIAL.youtube }}" target="_blank">my YouTube channel</a>.
         {% endif %}

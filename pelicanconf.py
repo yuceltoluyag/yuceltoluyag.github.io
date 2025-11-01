@@ -113,7 +113,7 @@ I18N_FILTER_SIGNALS = [tmpsig]
 
 I18N_SUBSITES = {
     'en': {
-        'SITENAME': 'Ortaya Karışık (EN)',
+        'SITENAME': "Yucel's Tech Blog",
         'AUTHOR': 'yuceltoluyag',
         'LOCALE': 'en_US.UTF-8',
         'STATIC_PATHS': ["images", "extra", "files"],

@@ -27,88 +27,82 @@ msgstr "Support Us"
 msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
 msgstr "If you find this content useful, you can support my work."
 
-#: templates/article.html:184
+#: templates/article.html:199
 msgid "Destek Ol"
 msgstr "Support"
 
-#~ msgid "Powered by %(pelican_url)s - %(flex_url)s theme by %(alexandrevicenzi_url)s"
-#~ msgstr "Powered by %(pelican_url)s - %(flex_url)s theme by %(alexandrevicenzi_url)s"
+#: templates/article.html:200
+msgid "Düzenle"
+msgstr "Edit"
 
-#~ msgid "Archives"
-#~ msgstr "Archives"
+#: templates/article.html:XXX
+msgid "Paylaş:"
+msgstr "Share:"
 
-#~ msgid "Posted on %(when)s in %(category)s"
-#~ msgstr "Posted on %(when)s in %(category)s"
+#: templates/article.html:XXX
+msgid "Önceki:"
+msgstr "Previous:"
 
-#~ msgid "%(minutes)s min read"
-#~ msgstr ""
+#: templates/article.html:XXX
+msgid "Sonraki:"
+msgstr "Next:"
 
-#~ msgid "Like this article? Share it with your friends!"
-#~ msgstr "Like this article? Share it with your friends!"
+#: templates/includes/footer.html:3
+msgid "Tüm hakları saklıdır."
+msgstr "All rights reserved."
 
-#~ msgid "You might enjoy"
-#~ msgstr "You might enjoy"
+#: templates/includes/footer.html:6
+msgid "Kategoriler sayfasına git"
+msgstr "Go to categories page"
 
-#~ msgid "Posts by %(name)s"
-#~ msgstr "Posts by %(name)s"
+#: templates/includes/footer.html:7
+msgid "Kategoriler"
+msgstr "Categories"
 
-#~ msgid "Authors"
-#~ msgstr "Authors"
+#: templates/includes/footer.html:10
+msgid "Etiketler sayfasına git"
+msgstr "Go to tags page"
 
-#~ msgid "Search..."
-#~ msgstr ""
+#: templates/includes/footer.html:11
+msgid "Etiketler"
+msgstr "Tags"
 
-#~ msgid "Home"
-#~ msgstr "Home"
+#: templates/includes/footer.html:14
+msgid "Kullanım Koşulları sayfasına git"
+msgstr "Go to terms of use page"
 
-#~ msgid "Atom"
-#~ msgstr "Atom"
+#: templates/includes/footer.html:15
+msgid "Kullanım Koşulları"
+msgstr "Terms of Use"
 
-#~ msgid "RSS"
-#~ msgstr "RSS"
+#: templates/includes/footer.html:18
+msgid "Gizlilik Politikası sayfasına git"
+msgstr "Go to privacy policy page"
 
-#~ msgid "Categories"
-#~ msgstr "Categories"
+#: templates/includes/footer.html:19
+msgid "Gizlilik"
+msgstr "Privacy"
 
-#~ msgid "Category %(name)s"
-#~ msgstr "Category %(name)s"
+#: templates/includes/footer.html:20
+msgid "Gizlilik Politikası"
+msgstr "Privacy Policy"
 
-#~ msgid "Tagged with"
-#~ msgstr "Tagged with"
+#: templates/includes/footer.html:23
+msgid "Atom beslemesine git"
+msgstr "Go to Atom feed"
 
-#~ msgid "Continue reading"
-#~ msgstr "Continue reading"
+#: templates/includes/footer.html:24
+msgid "Atom"
+msgstr "Atom"
 
-#~ msgid "Search"
-#~ msgstr ""
+#: templates/includes/footer.html:25
+msgid "Atom Beslemesi"
+msgstr "Atom Feed"
 
-#~ msgid "Search Results"
-#~ msgstr ""
+#: templates/includes/footer.html:28
+msgid "RSS beslemesine git"
+msgstr "Go to RSS feed"
 
-#~ msgid "Tag %(name)s"
-#~ msgstr "Tag %(name)s"
-
-#~ msgid "Tags"
-#~ msgstr "Tags"
-
-#~ msgid "Please enable JavaScript to view comments."
-#~ msgstr "Please enable JavaScript to view comments."
-
-#~ msgid "Built with %(pelican_url)s using %(flex_url)s theme"
-#~ msgstr ""
-
-#~ msgid "Switch to the %(dark_url)s | %(light_url)s | %(browser_url)s theme"
-#~ msgstr ""
-
-#~ msgid "Previous Post"
-#~ msgstr ""
-
-#~ msgid "Next Post"
-#~ msgstr ""
-
-#~ msgid "Older Posts"
-#~ msgstr "Older Posts"
-
-#~ msgid "Newer Posts"
-#~ msgstr "Newer Posts"
-
+#: templates/includes/footer.html:29
+msgid "RSS"
+msgstr "RSS"

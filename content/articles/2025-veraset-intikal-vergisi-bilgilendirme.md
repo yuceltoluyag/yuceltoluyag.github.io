@@ -18,7 +18,7 @@ Yeni düzenleme ile birlikte vergi muafiyet sınırında kayda değer bir artı�
 
 ---
 
-## Değişen Vergi İstisnası: Yeni Sınır Ne Kadar?  💡
+## Değişen Vergi İstisnası: Yeni Sınır Ne Kadar? 💡
 
 2025 yılı itibarıyla, Veraset ve İntikal Vergisi kapsamına giren **ikramiye gelirleri** için uygulanan **istisna tutarı** artırıldı.
 
@@ -27,37 +27,36 @@ Yeni düzenleme ile birlikte vergi muafiyet sınırında kayda değer bir artı�
 
 Bu değişiklik, özellikle piyango, çekiliş, yarışma ve diğer ödül türlerinden elde edilen kazançlarda vergi muafiyet sınırını genişletmiş durumda. Yani artık daha yüksek miktardaki ikramiyeler vergiden muaf olacak.
 
-| Yıl | İstisna Tutarı | Vergi Oranı |
-|-----|----------------|-------------|
+| Yıl  | İstisna Tutarı | Vergi Oranı |
+| ---- | -------------- | ----------- |
 | 2024 | 37.059 TL      | %20         |
 | 2025 | 53.339 TL      | %20         |
 
-
 ---
 
-### İstisnayı Aşan Tutarlar Nasıl Vergilendiriliyor?  🧮
+### İstisnayı Aşan Tutarlar Nasıl Vergilendiriliyor? 🧮
 
 Yeni düzenlemeye göre, **53.339 TL’yi aşan** tüm ikramiyeler için **%20 oranında vergi kesintisi** uygulanıyor. Bu vergi, doğrudan brüt kazanç üzerinden hesaplanmakta ve kesinti sonrası kalan tutar kişiye ödenmektedir.
 
 #### Örnek Nesine.com'daki Hesaplama:
 
-* **Kazanılan ikramiye:** 70.000 TL 💵
-* **İstisna tutarı:** 53.339 TL  ✅
-* **Vergilendirilecek kısım:** 70.000 - 53.339 = 16.661 TL 🧾
-* **Kesilecek vergi (%20):** 3.332,20 TL L 📉
-* **Net ödeme:** 66.667,80 TL 💰
+- **Kazanılan ikramiye:** 70.000 TL 💵
+- **İstisna tutarı:** 53.339 TL ✅
+- **Vergilendirilecek kısım:** 70.000 - 53.339 = 16.661 TL 🧾
+- **Kesilecek vergi (%20):** 3.332,20 TL L 📉
+- **Net ödeme:** 66.667,80 TL 💰
 
 Bu örnekle birlikte görüldüğü gibi, vergi yalnızca belirlenen sınırı aşan kısım üzerinden alınmakta; böylece küçük kazanç sahipleri vergiden etkilenmemektedir.
 
 ---
 
-### Kimler Etkileniyor?  🎯
+### Kimler Etkileniyor? 🎯
 
 Bu düzenleme, özellikle aşağıdaki durumlar için geçerlidir:
 
-* Milli Piyango ve benzeri şans oyunlarından ikramiye kazananlar  🎰
-* TV programı, yarışma veya sosyal medya çekilişlerinden para ödülü kazananlar  📺
-* Dernek, vakıf ya da kuruluşlardan para ödülü alan bireyler 🏛️
+- Milli Piyango ve benzeri şans oyunlarından ikramiye kazananlar 🎰
+- TV programı, yarışma veya sosyal medya çekilişlerinden para ödülü kazananlar 📺
+- Dernek, vakıf ya da kuruluşlardan para ödülü alan bireyler 🏛️
 
 Yani bu vergi, yalnızca miras veya bağış değil; **karşılıksız kazanılmış para gelirleri** için de geçerli hale gelmiştir.
 
@@ -73,9 +72,9 @@ Aynı zamanda yüksek ikramiyelerin daha şeffaf ve düzenli vergilendirilmesi, 
 
 ### Dikkat Edilmesi Gereken Noktalar ⚠️
 
-* İkramiye kazanılması durumunda, ödeme yapılmadan önce vergi kesintisi yapılır.
-* İstisna sınırı yıllık olarak güncellenebilir, dolayısıyla her yıl güncel rakamları kontrol etmek önemlidir.
-* Bu vergi kesintisi, kazanan kişi için nihai vergilendirme olup, ek bir vergi ödeme yükümlülüğü doğurmaz.
+- İkramiye kazanılması durumunda, ödeme yapılmadan önce vergi kesintisi yapılır.
+- İstisna sınırı yıllık olarak güncellenebilir, dolayısıyla her yıl güncel rakamları kontrol etmek önemlidir.
+- Bu vergi kesintisi, kazanan kişi için nihai vergilendirme olup, ek bir vergi ödeme yükümlülüğü doğurmaz.
 
 ---
 
@@ -92,19 +91,21 @@ Bu düzenlemeyi anlamak ve ikramiye gelirlerini doğru şekilde planlamak, hem b
 ## Sıkça Sorulan Sorular ❓
 
 ### Veraset ve İntikal Vergisi nedir? 📜
+
 Veraset ve İntikal Vergisi, miras yoluyla veya karşılıksız olarak elde edilen kazançlar üzerinden alınan vergidir.
 
 ### 2025 yılında ikramiye vergisi ne kadar? 💰
+
 53.339 TL'ye kadar olan ikramiyeler vergiden muaftır. Bu tutarı aşan kısım için %20 oranında vergi uygulanır.
 
 ### Vergi kesintisi nasıl yapılır? ✂️
+
 Vergi, ödeme yapılmadan önce brüt kazanç üzerinden otomatik olarak kesilir ve kazancı ilgilendiren kurum tarafından vergi dairesine ödenir.
 
 ### İstisna tutarı her yıl güncellenir mi? 📅
+
 Evet, Veraset ve İntikal Vergisi istisna tutarı her yıl yeniden değerleme oranında artırılarak güncellenmektedir.
 
 ---
-[responsive_img src="/images/nesine-vergi-degisikligi-xl.webp" alt="2025 Veraset ve İntikal Vergisi İstisna Limiti Artışı"  /]
 
-
-
+[responsive_img src="/images/nesine-vergi-degisikligi-xl.webp" alt="2025 Veraset ve İntikal Vergisi İstisna Limiti Artışı" /]
