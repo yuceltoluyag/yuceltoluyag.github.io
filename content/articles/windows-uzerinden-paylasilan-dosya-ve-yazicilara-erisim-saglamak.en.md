@@ -3,7 +3,7 @@ Date: 2018-11-17 10:00 10:00
 Modified: 2025-08-11 22:59
 Category: Ağ ve İnternet
 Tags: linux, windows10
-Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak-en
+Slug: windows-uzerinden-paylasilan-dosya-ve-yazicilara-erisim-saglamak
 Authors: yuceltoluyag
 Summary: This guide explains how to access files and printers shared from Windows with Linux. Samba usage and settings are explained in detail.
 Translation: true
@@ -13,8 +13,6 @@ Image: images/linux_samba-xl.webp
 Lang: en
 
 Hello! I've prepared a guide explaining how to access resources such as shared files and printers from Windows through Linux. This topic was asked to me about 2-3 months ago, but I couldn't answer it yet due to workload. Now, I'll cover the topic from start to finish and collect all settings in a single article. Don't worry, everything will be explained step by step!
-
-
 
 ## Samba Installation
 
@@ -102,8 +100,8 @@ You can mount the share with the following command:
 sudo mount -t cifs //ipaddress/sharedfolder /mnt/virtual -o username=createdusername,password=createdpassword,workgroup=workgroup,iocharset=utf8,uid=createdusername,gid=root
 ```
 
-
 [responsive_img src="/images/linux_samba-xl.webp" alt="linux_samba_worked" /]
+
 ## Optional Features
 
 The "**Usershares**" feature allows non-root users to add, modify and delete their own sharing settings. If you're using the Thunar file manager (in XFCE desktop environment), you can install the required package with the following command:

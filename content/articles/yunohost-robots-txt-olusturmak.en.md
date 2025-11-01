@@ -3,7 +3,7 @@ Date: 2025-04-14 10:00
 Modified: 2025-08-11 22:59
 Category: Sunucu
 Tags: yunohost, robots.txt, nginx, seo, listeleme engelleme
-Slug: yunohost-robots-txt-olusturmak-en
+Slug: yunohost-robots-txt-olusturmak
 Authors: yuceltoluyag
 Status: published
 Image: images/yunohost-robotstxt-xl.webp
@@ -51,7 +51,7 @@ Disallow: /private/
 Allow: /
 ```
 
-> *In this example, all content except the `/private/` directory is open to crawling.*
+> _In this example, all content except the `/private/` directory is open to crawling._
 
 ---
 
@@ -118,7 +118,6 @@ https://listmonk.minel.yuceltoluyag.github.io/robots.txt
 If the file displays properly, your configuration has been successfully completed.
 
 ---
-
 
 [responsive_img src="/images/yunohost-robotstxt-xl.webp" alt="Sample robots.txt file created on yunohost" /]
 

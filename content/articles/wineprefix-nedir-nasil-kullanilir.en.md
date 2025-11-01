@@ -3,7 +3,7 @@ Date: 2025-07-29
 Modified: 2025-08-11 22:59
 Category: Oyun
 Tags: wine, wineprefix, linux, oyun, uyumluluk, rehber
-Slug: wineprefix-nedir-nasil-kullanilir-en
+Slug: wineprefix-nedir-nasil-kullanilir
 Authors: yuceltoluyag
 Status: published
 Summary: What is WinePrefix, how is it created and used for different games? Learn the necessary steps to run Windows games smoothly on Linux with Wine in this guide.
@@ -149,11 +149,11 @@ Here you can see HKEY_LOCAL_MACHINE and HKEY_CURRENT_USER structures just like i
 
 ## 💡 7. Useful Tips
 
-| Tip                                                         | Explanation                              |
-| ----------------------------------------------------------- | ---------------------------------------- |
-| Use separate `WINEPREFIX` for each game                     | Prevents conflicts and confusion         |
-| Default prefix is `~/.wine`                                 | Uses this if you don't specify anything  |
-| Specify prefix when installing DLLs with `winetricks`        | `WINEPREFIX=... winetricks ...`          |
+| Tip                                                   | Explanation                             |
+| ----------------------------------------------------- | --------------------------------------- |
+| Use separate `WINEPREFIX` for each game               | Prevents conflicts and confusion        |
+| Default prefix is `~/.wine`                           | Uses this if you don't specify anything |
+| Specify prefix when installing DLLs with `winetricks` | `WINEPREFIX=... winetricks ...`         |
 
 ### 🎯 DLL Installation Example:
 
@@ -228,15 +228,15 @@ WINEPREFIX=~/.steam/steam/steamapps/compatdata/APPID/pfx winetricks corefonts
 
 ## ✅ 12. Quick Command Table
 
-| Command                 | Purpose                  |
-| ----------------------- | ------------------------ |
-| `export WINEPREFIX=...` | Specifies prefix         |
-| `wineboot -u`           | Creates new prefix       |
-| `wine file.exe`         | Runs application         |
-| `winetricks dll`        | Installs DLL (e.g: d3dx9)|
-| `winecfg`               | Configures settings      |
-| `wine regedit`          | Edits registry           |
-| `WINEDEBUG=...`         | Shows error logs         |
+| Command                 | Purpose                   |
+| ----------------------- | ------------------------- |
+| `export WINEPREFIX=...` | Specifies prefix          |
+| `wineboot -u`           | Creates new prefix        |
+| `wine file.exe`         | Runs application          |
+| `winetricks dll`        | Installs DLL (e.g: d3dx9) |
+| `winecfg`               | Configures settings       |
+| `wine regedit`          | Edits registry            |
+| `WINEDEBUG=...`         | Shows error logs          |
 
 ---
 

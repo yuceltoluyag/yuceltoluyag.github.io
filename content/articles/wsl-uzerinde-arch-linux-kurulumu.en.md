@@ -3,7 +3,7 @@ Date: 2022-06-26 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Windows
 Tags: windows10, linux
-Slug: wsl-uzerinde-arch-linux-kurulumu-en
+Slug: wsl-uzerinde-arch-linux-kurulumu
 Authors: yuceltoluyag
 Summary: Step-by-step guide on installing Arch Linux on Windows Subsystem for Linux (WSL). We explain the necessary steps, dependencies and solutions to possible problems.
 Translation: true
@@ -14,32 +14,32 @@ Lang: en
 
 ## **Hello**
 
-Those who follow my stories on [Instagram](https://www.instagram.com/yuceltoluyag/){: target="_blank" rel="noopener noreferrer"} were asking how I installed **Arch Linux** on **WSL**. Those who managed to install it were complaining that it **kept crashing**. I've been using it for a long time. I haven't experienced any crashes, breakdowns, burns or anything similar. 😎
+Those who follow my stories on [Instagram](https://www.instagram.com/yuceltoluyag/){: target="\_blank" rel="noopener noreferrer"} were asking how I installed **Arch Linux** on **WSL**. Those who managed to install it were complaining that it **kept crashing**. I've been using it for a long time. I haven't experienced any crashes, breakdowns, burns or anything similar. 😎
 
 ## What is WSL (Windows Subsystem Linux)?
 
 It allows us to run Linux under Windows without third-party software. What's the difference between **WSL 1** and **WSL 2**? Because **Hyper-V** technology is used in **WSL 2**, it works more **performantly**. Although graphical (**Desktop**) interface is not officially supported yet, many users are installing and using it with **DE** included. I definitely **recommend** it to friends who spend their **lifetime** in the **Linux** community 🤩
 
-| Feature | WSL 1 | WSL 2 |
-| --------------------------------------------------------- | ----- | ----- |
-| Integration between Windows and Linux | ✅ | ✅ |
-| Fast boot times | ✅ | ✅ |
-| Small resource footprint compared to traditional Virtual Machines | ✅ | ✅ |
-| Works with current versions of VMware and VirtualBox | ✅ | ✅ |
-| Virtual Machine Management | ❌ | ✅ |
-| Full Linux Kernel | ❌ | ✅ |
-| Full system call compatibility | ❌ | ✅ |
-| Performance on OS file systems | ✅ | ❌ |
+| Feature                                                           | WSL 1 | WSL 2 |
+| ----------------------------------------------------------------- | ----- | ----- |
+| Integration between Windows and Linux                             | ✅    | ✅    |
+| Fast boot times                                                   | ✅    | ✅    |
+| Small resource footprint compared to traditional Virtual Machines | ✅    | ✅    |
+| Works with current versions of VMware and VirtualBox              | ✅    | ✅    |
+| Virtual Machine Management                                        | ❌    | ✅    |
+| Full Linux Kernel                                                 | ❌    | ✅    |
+| Full system call compatibility                                    | ❌    | ✅    |
+| Performance on OS file systems                                    | ✅    | ❌    |
 
 ## Ingredients 🥗
 
 - Your Windows 10 version for WSL 2 should be **2004** or **higher** (**19041**) or you should be using **Windows 11**. You can quickly find out your version like this. Press `Windows + R`, type `winver` in the screen that appears, it will show you your version number.
 
-
 [responsive_img src="/images/wls-archlinux-kurulumu-xl.webp" alt="wsl2-archlinux-installation" /]
-- If your **version is old**, you can follow the steps here. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual){: target="_blank" rel="noopener noreferrer"}
 
-- [Customizing Windows Terminal](/windows-terminalimi-nasil-ozellestiriyorum){: target="_blank" rel="noopener noreferrer"}
+- If your **version is old**, you can follow the steps here. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual){: target="\_blank" rel="noopener noreferrer"}
+
+- [Customizing Windows Terminal](/windows-terminalimi-nasil-ozellestiriyorum){: target="\_blank" rel="noopener noreferrer"}
 
 - WSL
 
@@ -81,8 +81,8 @@ Then **restart the system** 👀 After your computer **restarts**, the **WSL2** 
 
 After the installation is complete, it will ask you to create a **username** and **password**. Fill in those sections.
 
-
 [responsive_img src="/images/wls-archlinux-kurulumu2-xl.webp" alt="wsl2-archlinux-installation2" /]
+
 ```bash
 
 Enter new UNIX username: enterusername
@@ -167,7 +167,6 @@ This message is shown once once a day. To disable it please create the
 
 Our WSL installation is complete up to this point. Now you can see the **Ubuntu** distribution in your **terminal** tab.
 
-
 [responsive_img src="/images/wls-archlinux-kurulumu3-xl.webp" alt="wsl2-archlinux-installation3" /]
 
 As usual, let's update our ubuntu 🤭
@@ -200,7 +199,7 @@ NAME STATE VERSION
 
 type the command to see which **distro** is using which version.
 
-- Go to the [ArchWSL](https://github.com/yuk7/ArchWSL/releases){: target="_blank" rel="noopener noreferrer"} repository and download the latest version. (Arch.zip)
+- Go to the [ArchWSL](https://github.com/yuk7/ArchWSL/releases){: target="\_blank" rel="noopener noreferrer"} repository and download the latest version. (Arch.zip)
 
 - Create a folder named `archlinux` under the `C` directory.
 
@@ -208,12 +207,12 @@ type the command to see which **distro** is using which version.
 
 - Run Archlinux.exe.
 
-
 [responsive_img src="/images/wls-archlinux-kurulumu4-xl.webp" alt="wsl2-archlinux-installation4" /]
+
 - After the installation is complete, start **Arch Linux** from your terminal.
 
-
 [responsive_img src="/images/wls-archlinux-kurulumu5-xl.webp" alt="wsl2-archlinux-installation5" /]
+
 - Let's create a user immediately and give ourselves sudo privileges 🤖 **Friday13** is my native and national nickname. You can write **ali** or **mehmet** there, write whatever you want ☠️
 
 ```bash
@@ -250,7 +249,6 @@ we open our file and add the user we created as shown in the picture.
 
 ```
 
-
 [responsive_img src="/images/wls-archlinux-kurulumu6-xl.webp" alt="wsl2-archlinux-installation6" /]
 We are **removing** the **hash (#)** signs at the beginning of these lines. Press **F3** then **enter** and **F2** to exit.
 
@@ -266,11 +264,9 @@ Arch.exe config --default-user friday13
 
 ```
 
-
 [responsive_img src="/images/wls-archlinux-kurulumu7-xl.webp" alt="wsl2-archlinux-installation7" /]
 
 Then **close** all open terminals and **open** them again, select **Arch** from the **Arch** tab. Tada :)
-
 
 [responsive_img src="/images/wls-archlinux-kurulumu8-xl.webp" alt="wsl2-archlinux-installation8" /]
 After that, I don't know if you run horses or make camels jump over ditches : ) Hang out as you please.
@@ -365,4 +361,4 @@ yay -Syyu
 
 ```
 
-You can reach my settings from my **[Github](https://github.com/yuceltoluyag/WindowsTerminal){: target="_blank" rel="noopener noreferrer"}** page.
+You can reach my settings from my **[Github](https://github.com/yuceltoluyag/WindowsTerminal){: target="\_blank" rel="noopener noreferrer"}** page.
