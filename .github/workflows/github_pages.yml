@@ -56,8 +56,8 @@ jobs:
       - name: Build Pelican site
         run: |
           pelican --settings publishconf.py \
-                  --extra-settings "SITEURL='https://yuceltoluyag.github.io'" \
-                  --extra-settings "FEED_DOMAIN='https://yuceltoluyag.github.io'" \
+                  --extra-settings "SITEURL=\"https://yuceltoluyag.github.io\"" \
+                  --extra-settings "FEED_DOMAIN=\"https://yuceltoluyag.github.io\"" \
                   --output output
       - name: Fix permissions
         run: |
