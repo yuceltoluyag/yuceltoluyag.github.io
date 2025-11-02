@@ -48,7 +48,7 @@ jobs:
         run: |
           SITEURL_VALUE="${{ github.event.inputs.siteurl || steps.pages.outputs.base_url }}"
           FEED_DOMAIN_VALUE="${{ github.event.inputs.feed_domain || steps.pages.outputs.base_url }}"
-          pelican --settings publishconf.py --extra-settings "SITEURL='$SITEURL_VALUE'" "FEED_DOMAIN='$FEED_DOMAIN_VALUE'" --output output/
+          pelican --settings publishconf.py --extra-settings "SITEURL='\"$SITEURL_VALUE\"'" "FEED_DOMAIN='\"$FEED_DOMAIN_VALUE\"'" --output output/
       - name: Fix permissions
         run: |
           find "output/" -type d -exec chmod 755 {} \;
