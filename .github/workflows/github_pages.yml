@@ -34,10 +34,10 @@ jobs:
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Install Turkish language pack
+      - name: Install Turkish language pack and gettext
         run: |
           sudo apt-get update
-          sudo apt-get install -y language-pack-tr
+          sudo apt-get install -y language-pack-tr gettext
       - name: Install requirements
         run: pip install -r requirements.txt
 
