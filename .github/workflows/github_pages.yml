@@ -41,9 +41,10 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
 
-      - name: Reinstall docutils and verify locale data
+      - name: Reinstall docutils from source and verify locale data
         run: |
-          pip install --force-reinstall --no-cache-dir docutils
+          pip uninstall -y docutils
+          pip install --no-binary :all: --force-reinstall docutils==0.21.2
           DOCUTILS_PATH=$(pip show docutils | grep Location | awk '{print $2}')
           echo "Docutils path: $DOCUTILS_PATH"
           ls -l $DOCUTILS_PATH/docutils/locale
