@@ -6,7 +6,6 @@ Slug: ghostmirror-arch-linux-kullanimi
 Authors: yuceltoluyag
 Status: published
 Summary: GhostMirror is an intelligent mirror repository management tool developed for Arch Linux users. It analyzes mirrors without manual intervention, detects errors, and creates optimal mirror lists.
-Status: published
 Template: article
 Image: images/ghostmirror-arch-linux-kullanimi-xl.webp
 Lang: en

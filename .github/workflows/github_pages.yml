@@ -12,13 +12,67 @@ on:
         description: "Whether to deploy the site. If checked then build the site and deploy it. If not checked then just test that the site builds successfully but don't deploy anything."
         type: boolean
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Checkout theme
+        if: github.repository != 'getpelican/pelican-themes' && '' != ''
+        uses: actions/checkout@v4
+        with:
+          repository: ''
+          path: .theme
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Install Turkish language pack
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y language-pack-tr
+      - name: Install requirements
+        run: pip install -r requirements.txt
+      - name: Build Pelican site
+        env:
+          GITHUB_PAGES: true
+          LANG: tr_TR.UTF-8
+          LC_ALL: tr_TR.UTF-8
+        run: |
+          import subprocess
+          cmd = "pelican"
+          cmd += " --settings publishconf.py"
+          cmd += " --extra-settings"
+          cmd += f""" SITEURL='"{github.event.inputs.siteurl || steps.pages.outputs.base_url }}"'"""
+          cmd += f""" FEED_DOMAIN='"{github.event.inputs.feed_domain || steps.pages.outputs.base_url }}"'"""
+          cmd += " --output output/"
+          if '' != '':
+              cmd += " --theme-path .theme"
+          subprocess.run(cmd, shell=True, check=True)
+        shell: python {0}
+      - name: Fix permissions
+        run: |
+          find "output/" -type d -exec chmod 755 {} \;
+          find "output/" -type f -exec chmod 644 {} \;
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "output/"
+
   deploy:
-    uses: "getpelican/pelican/.github/workflows/github_pages.yml@4.11.0"
-    permissions:
-      id-token: write
-      contents: read
-      pages: write
-    with:
-      settings: "publishconf.py"
-      requirements: "-r requirements.txt"
-      deploy: ${{ (github.event_name == 'workflow_dispatch' && inputs.deploy == true) || (github.event_name == 'push' && github.ref_type == 'branch' && github.ref_name == github.event.repository.default_branch) }}
+    concurrency:
+      group: github-pages
+      cancel-in-progress: true
+    if: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.deploy == true) || (github.event_name == 'push' && github.ref_type == 'branch' && github.ref_name == github.event.repository.default_branch) }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

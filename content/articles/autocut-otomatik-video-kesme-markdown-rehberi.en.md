@@ -6,7 +6,6 @@ Slug: autocut-otomatik-video-kesme-markdown-rehberi
 Authors: yuceltoluyag
 Status: published
 Summary: Step-by-step guide to automatically cut your videos using Python-based Autocut with SRT and Markdown markings.
-Status: published
 Template: article
 Image: images/autocut-otomatik-video-kesme-markdown-rehberi-xl.webp
 Lang: en
