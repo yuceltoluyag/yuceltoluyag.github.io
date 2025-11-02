@@ -1,9 +1,10 @@
+# English translations for Pelican
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 10:00+0000\n"
-"PO-Revision-Date: 2023-10-27 10:00+0000\n"
+"POT-Creation-Date: 2025-11-02 14:00+0300\n"
+"PO-Revision-Date: 2025-11-02 14:00+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: English\n"
 "MIME-Version: 1.0\n"
@@ -11,6 +12,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Series:"
+msgstr "Series:"
+
+, python-format
+msgid "This article is part %(index)s of the '%(name)s' series."
+msgstr "This article is part %(index)s of the '%(name)s' series."
+
+msgid "Series Contents"
+msgstr "Series Contents"
+
+msgid "Related Posts"
+msgstr "Related Posts"
+
+msgid "Share:"
+msgstr "Share:"
+
+msgid "Support Me"
+msgstr "Support Me"
+
+msgid "If you find this content useful, you can support my work."
+msgstr "If you find this content useful, you can support my work."
+
+msgid "Support"
+msgstr "Support"
+
+msgid "Edit"
+msgstr "Edit"
 
 msgid "Previous:"
 msgstr "Previous:"
@@ -26,3 +55,55 @@ msgstr "Previous article:"
 
 msgid "Next article:"
 msgstr "Next article:"
+
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+msgid "Go to Categories page"
+msgstr "Go to Categories page"
+
+msgid "Categories"
+msgstr "Categories"
+
+msgid "Go to Tags page"
+msgstr "Go to Tags page"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Go to Terms of Use page"
+msgstr "Go to Terms of Use page"
+
+msgid "Terms of Use"
+msgstr "Terms of Use"
+
+msgid "Go to Privacy Policy page"
+msgstr "Go to Privacy Policy page"
+
+msgid "Privacy"
+msgstr "Privacy"
+
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+msgid "Go to Atom feed"
+msgstr "Go to Atom feed"
+
+msgid "Atom"
+msgstr "Atom"
+
+msgid "Atom Feed"
+msgstr "Atom Feed"
+
+msgid "Go to RSS feed"
+msgstr "Go to RSS feed"
+
+msgid "RSS"
+msgstr "RSS"
+
+msgid "RSS Feed"
+msgstr "RSS Feed"
+
+, python-brace-format
+msgid "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
+msgstr "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
