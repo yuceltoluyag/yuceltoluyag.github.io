@@ -9,7 +9,6 @@ Summary: Learn the reasons and step-by-step solution for the frequently encounte
 Template: article
 Series: Waydroid
 Series_index: 3
-Image: images/weston-waydroid-xl.webp
 Lang: en
 
 ---

@@ -291,19 +291,16 @@ def install_templates_translations(generator):
         if localedir is None:
             localedir = os.path.join(generator.theme, "translations")
         current_lang = generator.settings["DEFAULT_LANG"]
-        if current_lang == generator.settings.get("I18N_TEMPLATES_LANG", _MAIN_LANG):
+        langs = [current_lang]
+        try:
+            translations = gettext.translation(domain, localedir, langs)
+        except OSError:
+            _LOGGER.exception(
+                f"Cannot find translations for language '{langs[0]}' in "
+                f"'{localedir}' with "
+                f"domain '{domain}'. Installing NullTranslations."
+            )
             translations = gettext.NullTranslations()
-        else:
-            langs = [current_lang]
-            try:
-                translations = gettext.translation(domain, localedir, langs)
-            except OSError:
-                _LOGGER.exception(
-                    f"Cannot find translations for language '{langs[0]}' in "
-                    f"'{localedir}' with "
-                    f"domain '{domain}'. Installing NullTranslations."
-                )
-                translations = gettext.NullTranslations()
         newstyle = generator.settings.get("I18N_GETTEXT_NEWSTYLE", True)
         generator.env.install_gettext_translations(translations, newstyle)
 

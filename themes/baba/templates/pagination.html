@@ -11,7 +11,7 @@
         <li><span role="button" class="secondary outline disabled" aria-label="Önceki Sayfa"><i class="fa-solid fa-angle-left"></i></span></li>
         {% endif %}
 
-        <li><span class="current-page">Sayfa {{ articles_page.number }} / {{ articles_paginator.num_pages }}</span></li>
+        <li><span class="current-page">{{ _('Sayfa') }} {{ articles_page.number }} / {{ articles_paginator.num_pages }}</span></li>
 
         {% if articles_page.has_next() %}
         <li><a href="{{ SITEURL }}/{{ articles_next_page.url }}" role="button" class="secondary outline" aria-label="Sonraki Sayfa"><i class="fa-solid fa-angle-right"></i></a></li>

@@ -52,7 +52,9 @@ jobs:
           ls -l $DOCUTILS_PATH/docutils/parsers/rst/languages/tr.py
 
       - name: Compile translations
-        run: msgfmt themes/baba/translations/en/LC_MESSAGES/messages.po -o themes/baba/translations/en/LC_MESSAGES/messages.mo
+        run: |
+          msgfmt themes/baba/translations/en/LC_MESSAGES/messages.po -o themes/baba/translations/en/LC_MESSAGES/messages.mo
+          msgfmt themes/baba/translations/tr/LC_MESSAGES/messages.po -o themes/baba/translations/tr/LC_MESSAGES/messages.mo
       - name: Build Pelican site
         run: |
           pelican --settings publishconf.py \
