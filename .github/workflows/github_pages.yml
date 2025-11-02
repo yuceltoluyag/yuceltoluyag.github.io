@@ -46,17 +46,9 @@ jobs:
           LANG: tr_TR.UTF-8
           LC_ALL: tr_TR.UTF-8
         run: |
-          import subprocess
-          cmd = "pelican"
-          cmd += " --settings publishconf.py"
-          cmd += " --extra-settings"
-          cmd += f""" SITEURL='"{github.event.inputs.siteurl || steps.pages.outputs.base_url }}"'"""
-          cmd += f""" FEED_DOMAIN='"{github.event.inputs.feed_domain || steps.pages.outputs.base_url }}"'"""
-          cmd += " --output output/"
-          if '' != '':
-              cmd += " --theme-path .theme"
-          subprocess.run(cmd, shell=True, check=True)
-        shell: python {0}
+          SITEURL_VALUE="${{ github.event.inputs.siteurl || steps.pages.outputs.base_url }}"
+          FEED_DOMAIN_VALUE="${{ github.event.inputs.feed_domain || steps.pages.outputs.base_url }}"
+          pelican --settings publishconf.py --extra-settings "SITEURL='$SITEURL_VALUE'" "FEED_DOMAIN='$FEED_DOMAIN_VALUE'" --output output/
       - name: Fix permissions
         run: |
           find "output/" -type d -exec chmod 755 {} \;
