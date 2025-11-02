@@ -41,13 +41,24 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
 
-      - name: Reinstall docutils from source and verify locale data
+      - name: Manually restore docutils locale data
         run: |
-          pip uninstall -y docutils
-          pip install --no-binary :all: --force-reinstall docutils==0.21.2
           DOCUTILS_PATH=$(pip show docutils | grep Location | awk '{print $2}')
           echo "Docutils path: $DOCUTILS_PATH"
-          ls -l $DOCUTILS_PATH/docutils/locale
+          if [ -d "$DOCUTILS_PATH/docutils/locale" ]; then
+            echo "Locale directory already exists."
+            ls -l "$DOCUTILS_PATH/docutils/locale"
+          else
+            echo "Locale directory not found. Manually restoring it."
+            curl -L -o docutils.tar.gz https://files.pythonhosted.org/packages/source/d/docutils/docutils-0.21.2.tar.gz
+            tar -xzf docutils.tar.gz
+            # The locale directory might not exist at all, so create it first
+            mkdir -p "$DOCUTILS_PATH/docutils/locale"
+            # Copy the contents of the locale directory
+            cp -r docutils-0.21.2/docutils/locale/* "$DOCUTILS_PATH/docutils/locale/"
+            echo "Locale directory restored. Verifying..."
+            ls -l "$DOCUTILS_PATH/docutils/locale"
+          fi
 
       - name: Compile translations
         run: msgfmt themes/baba/translations/en/LC_MESSAGES/messages.po -o themes/baba/translations/en/LC_MESSAGES/messages.mo
