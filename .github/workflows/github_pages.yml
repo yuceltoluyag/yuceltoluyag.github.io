@@ -41,23 +41,26 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
 
-      - name: Manually restore docutils locale data
+      - name: Debug docutils tarball structure
         run: |
           DOCUTILS_PATH=$(pip show docutils | grep Location | awk '{print $2}')
           echo "Docutils path: $DOCUTILS_PATH"
-          if [ -d "$DOCUTILS_PATH/docutils/locale" ]; then
-            echo "Locale directory already exists."
-            ls -l "$DOCUTILS_PATH/docutils/locale"
-          else
-            echo "Locale directory not found. Manually restoring it."
-            curl -L -o docutils.tar.gz https://files.pythonhosted.org/packages/source/d/docutils/docutils-0.21.2.tar.gz
-            tar -xzf docutils.tar.gz
-            # The locale directory might not exist at all, so create it first
+          echo "Attempting to manually restore locale data..."
+          curl -L -o docutils.tar.gz https://files.pythonhosted.org/packages/source/d/docutils/docutils-0.21.2.tar.gz
+          tar -xzf docutils.tar.gz
+          echo "Contents of extracted tarball:"
+          ls -lR docutils-0.21.2
+
+          # Now, let's try to copy the directory if it exists
+          if [ -d "docutils-0.21.2/docutils/locale" ]; then
+            echo "Locale directory found in tarball. Copying..."
             mkdir -p "$DOCUTILS_PATH/docutils/locale"
-            # Copy the contents of the locale directory
             cp -r docutils-0.21.2/docutils/locale/* "$DOCUTILS_PATH/docutils/locale/"
             echo "Locale directory restored. Verifying..."
             ls -l "$DOCUTILS_PATH/docutils/locale"
+          else
+            echo "ERROR: Locale directory not found in docutils-0.21.2 tarball."
+            exit 1
           fi
 
       - name: Compile translations
