@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 import os
@@ -440,9 +444,9 @@ REDIRECTS = {
 }
 
 # Cache Settings
-CACHE_CONTENT = True
+CACHE_CONTENT = False
 CHECK_MODIFIED_METHOD = "sha1"
-LOAD_CONTENT_CACHE = True
+LOAD_CONTENT_CACHE = False
 GZIP_CACHE = False
 VERSION = "1.0.0"
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True

@@ -21,6 +21,7 @@ super() }} {% if article.translations -%}
       {% import 'translations.html' as translations with context %}
       {{ translations.translations_for(article) }}
     {% endif %}
+
   <div class="article-hero cyberpunk-hero-glow">
     {% if article.image %}
     <div class="hero-image-container cyberpunk-image-glow">
