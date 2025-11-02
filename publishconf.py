@@ -25,6 +25,7 @@ CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 CATEGORY_FEED_RSS = "feeds/{slug}.rss.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
+CACHE_CONTENT = False
 
 # Following items are often useful when publishing
 
