@@ -16,7 +16,7 @@ msgstr ""
 msgid "Series:"
 msgstr "Series:"
 
-, python-format
+#, python-format
 msgid "This article is part %(index)s of the '%(name)s' series."
 msgstr "This article is part %(index)s of the '%(name)s' series."
 
@@ -104,6 +104,6 @@ msgstr "RSS"
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-, python-brace-format
+#, python-brace-format
 msgid "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
 msgstr "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
