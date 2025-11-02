@@ -54,7 +54,11 @@ jobs:
       - name: Compile translations
         run: msgfmt themes/baba/translations/en/LC_MESSAGES/messages.po -o themes/baba/translations/en/LC_MESSAGES/messages.mo
       - name: Build Pelican site
-        run: pelican --settings publishconf.py --output output --verbose
+        run: |
+          pelican --settings publishconf.py \
+                  --extra-settings "SITEURL='https://yuceltoluyag.github.io'" \
+                  --extra-settings "FEED_DOMAIN='https://yuceltoluyag.github.io'" \
+                  --output output
       - name: Fix permissions
         run: |
           find "output/" -type d -exec chmod 755 {} \;
