@@ -53,13 +53,20 @@ msgstr ""
 msgid "Paylaş:"
 msgstr ""
 
-#: themes/baba/templates/article.html:360
-msgid "Önceki:"
-msgstr ""
+msgid "Previous:"
+msgstr "Önceki:"
 
-#: themes/baba/templates/article.html:368
-msgid "Sonraki:"
-msgstr ""
+msgid "Next:"
+msgstr "Sonraki:"
+
+msgid "Article navigation"
+msgstr "Makale navigasyonu"
+
+msgid "Previous article:"
+msgstr "Önceki makale:"
+
+msgid "Next article:"
+msgstr "Sonraki makale:"
 
 #: themes/baba/templates/includes/footer.html:6
 msgid "Tüm hakları saklıdır."

@@ -11,3 +11,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Previous:"
+msgstr "Previous:"
+
+msgid "Next:"
+msgstr "Next:"
+
+msgid "Article navigation"
+msgstr "Article navigation"
+
+msgid "Previous article:"
+msgstr "Previous article:"
+
+msgid "Next article:"
+msgstr "Next article:"

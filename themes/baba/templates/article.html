@@ -349,23 +349,23 @@ super() }} {% if article.translations -%}
   </div>
 
   {% if article.prev_article or article.next_article %}
-  <nav class="article-nav-arrows" aria-label="Makale navigasyonu">
+  <nav class="article-nav-arrows" aria-label="{{ _('Article navigation') }}">
     {% if article.prev_article %}
     <a
       href="{{ SITEURL }}/{{ article.prev_article.url }}"
       class="article-nav-arrow secondary outline prev"
-      aria-label="Önceki makale: {{ article.prev_article.title }}"
+      aria-label="{{ _('Previous article:') }} {{ article.prev_article.title }}"
     >
       <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-      <span>{{ _('Önceki:') }} {{ article.prev_article.title|truncate(50, True) }}</span>
+      <span>{{ _('Previous:') }} {{ article.prev_article.title|truncate(50, True) }}</span>
     </a>
     {% endif %} {% if article.next_article %}
     <a
       href="{{ SITEURL }}/{{ article.next_article.url }}"
       class="article-nav-arrow secondary outline next"
-      aria-label="Sonraki makale: {{ article.next_article.title }}"
+      aria-label="{{ _('Next article:') }} {{ article.next_article.title }}"
     >
-      <span>{{ _('Sonraki:') }} {{ article.next_article.title|truncate(50, True) }}</span>
+      <span>{{ _('Next:') }} {{ article.next_article.title|truncate(50, True) }}</span>
       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
     </a>
     {% endif %}
