@@ -6,7 +6,6 @@ Slug: weston-ile-waydroid-modulenotfounderror-hatasi-cozumu
 Authors: yuceltoluyag
 Status: published
 Summary: Learn the reasons and step-by-step solution for the frequently encountered "ModuleNotFoundError" error during Waydroid installation. Run smoothly on Weston! ⚡
-Status: published
 Template: article
 Series: Waydroid
 Series_index: 3

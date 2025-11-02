@@ -15,6 +15,8 @@ PUBLISH = True
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 SITEURL = "https://yuceltoluyag.github.io"
+FEED_DOMAIN = SITEURL
+TIMEZONE = "Europe/Istanbul"
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = "feeds/all.atom.xml"
@@ -23,6 +25,7 @@ CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 CATEGORY_FEED_RSS = "feeds/{slug}.rss.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
+CACHE_CONTENT = False
 
 # Following items are often useful when publishing
 

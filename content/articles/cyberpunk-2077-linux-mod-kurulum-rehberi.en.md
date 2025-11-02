@@ -7,7 +7,6 @@ Slug: cyberpunk-2077-linux-mod-kurulum-rehberi
 Authors: yuceltoluyag  
 Status: published  
 Summary: Mod Cyberpunk 2077 on Linux! Detailed Cyber Engine Tweaks installation guide for packaged and unpackaged versions.  
-Status: published
 Template: article
 Lang: en
 

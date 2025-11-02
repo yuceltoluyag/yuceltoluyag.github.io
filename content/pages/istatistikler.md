@@ -53,7 +53,7 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
   <ul>
     {% for category, count in statistics.categories.items() %}
     <li>
-      <a href="{{ SITEURL }}/kategori/{{ category.slug }}/">{{ category.name }}</a>
+      <a href="{{SITEURL}}/kategori/{{ category.slug }}/">{{ category.name }}</a>
       <span style="float: right; color: var(--pico-muted-color);">{{ count }} makale</span>
     </li>
     {% endfor %}
@@ -70,7 +70,7 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
   <ul>
     {% for author, count in statistics.authors.items() %}
     <li>
-      <a href="{{ SITEURL }}/yazar/{{ author.slug }}/">{{ author.name }}</a>
+      <a href="{{SITEURL}}/yazar/{{ author.slug }}/">{{ author.name }}</a>
       <span style="float: right; color: var(--pico-muted-color);">{{ count }} makale</span>
     </li>
     {% endfor %}
@@ -87,7 +87,7 @@ Bu sayfa sitenin genel istatistiklerini göstermektedir.
   <ol>
     {% for article in statistics.longest_articles %}
     <li>
-      <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+      <a href="{{SITEURL}}/{{ article.url }}">{{ article.title }}</a>
       <span style="float: right; color: var(--pico-muted-color);">{{ article.word_count }} kelime</span>
     </li>
     {% endfor %}

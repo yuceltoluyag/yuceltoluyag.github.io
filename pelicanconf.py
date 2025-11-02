@@ -31,8 +31,8 @@ DEFAULT_DATE_FORMAT = "%d %B %Y"
 DEFAULT_LANG = "tr"
 TIMEZONE = "Europe/Istanbul"
 LOCALE = (
-    "tr_TR",
-    "en_US",
+    "tr_TR.UTF-8",
+    "en_US.UTF-8",
 )
 # Feed generation is usually not desired when developing
 # Geliştirme sırasında da beslemeleri göstermek için ayarladık
