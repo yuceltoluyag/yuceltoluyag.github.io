@@ -41,6 +41,12 @@ jobs:
       - name: Install requirements
         run: pip install -r requirements.txt
 
+      - name: Investigate docutils locale path
+        run: |
+          DOCUTILS_PATH=$(pip show docutils | grep Location | awk '{print $2}')
+          echo "Docutils path: $DOCUTILS_PATH"
+          ls -l $DOCUTILS_PATH/docutils/locale
+
       - name: Compile translations
         run: msgfmt themes/baba/translations/en/LC_MESSAGES/messages.po -o themes/baba/translations/en/LC_MESSAGES/messages.mo
       - name: Build Pelican site
@@ -48,7 +54,35 @@ jobs:
           GITHUB_PAGES: true
           LANG: tr_TR.UTF-8
           LC_ALL: tr_TR.UTF-8
-        run: pelican --settings publishconf.py --output output/
+          SITEURL_VALUE: ${{ github.event.inputs.siteurl || steps.pages.outputs.base_url }}
+          FEED_DOMAIN_VALUE: ${{ github.event.inputs.feed_domain || steps.pages.outputs.base_url }}
+        run: |
+          import subprocess
+          import os
+          import json
+
+          siteurl = os.environ.get('SITEURL_VALUE')
+          feed_domain = os.environ.get('FEED_DOMAIN_VALUE')
+
+          settings = {
+              "SITEURL": siteurl,
+              "FEED_DOMAIN": feed_domain,
+              "TIMEZONE": "Europe/Istanbul"
+          }
+
+          pelican_args = [
+              "pelican",
+              "--settings",
+              "publishconf.py",
+              "--output",
+              "output/"
+          ]
+
+          for key, value in settings.items():
+              pelican_args.extend(["--extra-settings", f"{key}={json.dumps(value)}"])
+
+          subprocess.run(pelican_args, check=True)
+        shell: python {0}
       - name: Fix permissions
         run: |
           find "output/" -type d -exec chmod 755 {} \;
