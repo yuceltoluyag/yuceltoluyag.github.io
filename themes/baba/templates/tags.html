@@ -1,150 +1,148 @@
-{% extends "base.html" %} {% block title %}{{ _('Etiketler') }} - {{ SITENAME }}{% endblock title %} {% block head %} {{ super() }}
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tags.css">
+{% extends "base.html" %} {% block title %}{{ _('Etiketler') }} - {{ SITENAME
+}}{% endblock title %} {% block head %} {{ super() }}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tags.css"
+/>
 {% endblock %} {% block seo %}
 <meta
-    name="description"
-    content="{{ _('{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz.').format(sitename=SITENAME) }}" />
+  name="description"
+  content="{{ _('{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz.').format(sitename=SITENAME) }}"
+/>
 <link rel="canonical" href="{{ SITEURL }}/etiketler/" />
 <meta property="og:title" content="{{ _('Etiketler') }} - {{ SITENAME }}" />
 <meta
-    property="og:description"
-    content="{{ _('{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz.').format(sitename=SITENAME) }}" />
+  property="og:description"
+  content="{{ _('{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz.').format(sitename=SITENAME) }}"
+/>
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/etiketler/" />
-{% endblock seo %}
-{% block content %}
-    <div class="tags-all-container">
-        <!-- Hero Bölümü -->
-        <div class="tags-hero text-center">
-            <h1>
-                <i class="fa-solid fa-tags" style="color: #3498db;"></i> {{ _('Etiketler') }}
-            </h1>
-            <p>
-                {{ _('{sitename} sitesindeki tüm konulara ait etiketler. İlgilendiğiniz konulara göre yazılara kolayca ulaşabilirsiniz.').format(sitename=SITENAME) }}
-            </p>
-        </div>
+{% endblock seo %} {% block content %}
+<div class="tags-all-container">
+  <!-- Hero Bölümü -->
+  <div class="tags-hero text-center">
+    <h1>
+      <i class="fa-solid fa-tags" style="color: #3498db"></i> {{ _('Etiketler')
+      }}
+    </h1>
+    <p>
+      {{ _('{sitename} sitesindeki tüm konulara ait etiketler. İlgilendiğiniz
+      konulara göre yazılara kolayca
+      ulaşabilirsiniz.').format(sitename=SITENAME) }}
+    </p>
+  </div>
 
+  {% set max_count = 1 %} {% for tag, articles in tags %} {% if articles|length
+  > max_count %} {% set max_count = articles|length %} {% endif %} {% endfor %}
+  {% set sorted_tags = [] %} {% for tag, articles in tags %} {% if
+  articles|length > 1 %} {% set _ = sorted_tags.append((tag, articles,
+  articles|length)) %} {% endif %} {% endfor %} {% set sorted_tags =
+  sorted_tags|sort(attribute=2, reverse=true) %}
 
+  <!-- Etiket Bulutu -->
+  <section class="tags-section">
+    <h2><i class="fa-solid fa-cloud"></i> {{ _('Etiket Bulutu') }}</h2>
+    <div class="tags-cloud-container">
+      {% for tag, articles, count in sorted_tags %} {% set tag_size = 1 %} {% if
+      max_count > 1 %} {% set size_ratio = count / max_count %} {% if size_ratio
+      < 0.2 %} {% set tag_size = 1 %} {% elif size_ratio < 0.4 %} {% set
+      tag_size = 2 %} {% elif size_ratio < 0.6 %} {% set tag_size = 3 %} {% elif
+      size_ratio < 0.8 %} {% set tag_size = 4 %} {% else %} {% set tag_size = 5
+      %} {% endif %} {% endif %}
 
-        {% set max_count = 1 %}
-        {% for tag, articles in tags %}
-            {% if articles|length > max_count %}
-                {% set max_count = articles|length %}
-            {% endif %}
-        {% endfor %}
-        {% set sorted_tags = [] %}
-        {% for tag, articles in tags %}
-            {% if articles|length > 1 %}
-                {% set _ = sorted_tags.append((tag, articles, articles|length)) %}
-            {% endif %}
-        {% endfor %}
-        {% set sorted_tags = sorted_tags|sort(attribute=2, reverse=true) %}
-
-        <!-- Etiket Bulutu -->
-        <section class="tags-section">
-            <h2><i class="fa-solid fa-cloud"></i> {{ _('Etiket Bulutu') }}</h2>
-            <div class="tags-cloud-container">
-                {% for tag, articles, count in sorted_tags %}
-                    {% set tag_size = 1 %}
-                    {% if max_count > 1 %}
-                        {% set size_ratio = count / max_count %}
-                        {% if size_ratio < 0.2 %}
-                            {% set tag_size = 1 %}
-                        {% elif size_ratio < 0.4 %}
-                            {% set tag_size = 2 %}
-                        {% elif size_ratio < 0.6 %}
-                            {% set tag_size = 3 %}
-                        {% elif size_ratio < 0.8 %}
-                            {% set tag_size = 4 %}
-                        {% else %}
-                            {% set tag_size = 5 %}
-                        {% endif %}
-                    {% endif %}
-
-                    <a
-                        href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
-                        class="tags-item tag-size-{{ tag_size }} pico-tag"
-                        data-tag="{{ tag|string|lower }}"
-                        aria-label="{{ _('{tag} etiketli {count} yazıya git').format(tag=tag, count=count) }}">
-                        #{{ tag }}
-                        <span class="tags-count">{{ count }}</span>
-                    </a>
-                {% endfor %}
-            </div>
-        </section>
-
-        <!-- En Çok Kullanılan Etiketler -->
-        <article class="tags-popular-card pico-card">
-            <h2><i class="fa-solid fa-fire"></i> {{ _('En Çok Kullanılan Etiketler') }}</h2>
-            <div class="tags-grid">
-                {% for tag, articles, count in sorted_tags[:10] %}
-                <article class="tags-summary-card pico-card">
-                    <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/" class="tags-summary-link">
-                        <i class="fa-solid fa-tag" aria-hidden="true"></i>
-                        <h3>#{{ tag }}</h3>
-                        <span class="tags-summary-count">{{ count }} {{ _('yazı') }}</span>
-                    </a>
-                </article>
-                {% endfor %}
-            </div>
-        </article>
+      <a
+        href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
+        class="tags-item tag-size-{{ tag_size }} pico-tag"
+        data-tag="{{ tag|string|lower }}"
+        aria-label="{{ _('{tag} etiketli {count} yazıya git').format(tag=tag, count=count) }}"
+      >
+        #{{ tag }}
+        <span class="tags-count">{{ count }}</span>
+      </a>
+      {% endfor %}
     </div>
+  </section>
 
-    <script>
-        // Etiket arama işlevi
-        (function() {
-            'use strict';
-            
-            function initTagsSearch() {
-                const tagsSearchInput = document.getElementById('tags-search');
-                if (tagsSearchInput) {  // Element varsa çalıştır
-                    const tags = document.querySelectorAll('.pico-tag');
-                    
-                    tagsSearchInput.addEventListener('input', function() {
-                        const searchTerm = this.value.toLowerCase();
-                        
-                        tags.forEach(tag => {
-                            const tagName = tag.getAttribute('data-tag');
-                            if (tagName.includes(searchTerm)) {
-                                tag.style.display = 'inline-flex';
-                            } else {
-                                tag.style.display = 'none';
-                            }
-                        });
-                    });
-                }
-            }
-            
-            // DOM yüklendiğinde çalıştır
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initTagsSearch);
+  <!-- En Çok Kullanılan Etiketler -->
+  <article class="tags-popular-card pico-card">
+    <h2>
+      <i class="fa-solid fa-fire"></i> {{ _('En Çok Kullanılan Etiketler') }}
+    </h2>
+    <div class="tags-grid">
+      {% for tag, articles, count in sorted_tags[:10] %}
+      <article class="tags-summary-card pico-card">
+        <a
+          href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
+          class="tags-summary-link"
+        >
+          <i class="fa-solid fa-tag" aria-hidden="true"></i>
+          <h3>#{{ tag }}</h3>
+          <span class="tags-summary-count">{{ count }} {{ _('yazı') }}</span>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </article>
+</div>
+
+<script>
+  // Etiket arama işlevi
+  (function () {
+    "use strict";
+
+    function initTagsSearch() {
+      const tagsSearchInput = document.getElementById("tags-search");
+      if (tagsSearchInput) {
+        // Element varsa çalıştır
+        const tags = document.querySelectorAll(".pico-tag");
+
+        tagsSearchInput.addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+
+          tags.forEach((tag) => {
+            const tagName = tag.getAttribute("data-tag");
+            if (tagName.includes(searchTerm)) {
+              tag.style.display = "inline-flex";
             } else {
-                initTagsSearch();
+              tag.style.display = "none";
             }
-        })();
-    </script>
+          });
+        });
+      }
+    }
+
+    // DOM yüklendiğinde çalıştır
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initTagsSearch);
+    } else {
+      initTagsSearch();
+    }
+  })();
+</script>
 
 {% endblock content %}
 
 <script>
-    // Etiket arama işlevi
-    document.addEventListener('DOMContentLoaded', function() {
-        const tagsSearchInput = document.getElementById('tags-search');
-        if (tagsSearchInput) {  // Element varsa çalıştır
-            const tags = document.querySelectorAll('.pico-tag');
-            
-            tagsSearchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                
-                tags.forEach(tag => {
-                    const tagName = tag.getAttribute('data-tag');
-                    if (tagName.includes(searchTerm)) {
-                        tag.style.display = 'inline-flex';
-                    } else {
-                        tag.style.display = 'none';
-                    }
-                });
-            });
-        }
-    });
+  // Etiket arama işlevi
+  document.addEventListener("DOMContentLoaded", function () {
+    const tagsSearchInput = document.getElementById("tags-search");
+    if (tagsSearchInput) {
+      // Element varsa çalıştır
+      const tags = document.querySelectorAll(".pico-tag");
+
+      tagsSearchInput.addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase();
+
+        tags.forEach((tag) => {
+          const tagName = tag.getAttribute("data-tag");
+          if (tagName.includes(searchTerm)) {
+            tag.style.display = "inline-flex";
+          } else {
+            tag.style.display = "none";
+          }
+        });
+      });
+    }
+  });
 </script>

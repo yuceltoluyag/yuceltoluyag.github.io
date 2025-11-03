@@ -56,12 +56,7 @@
       />
     </noscript>
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/back-to-top.css"
-    />
-
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/webmentions.css">
     <link
       rel="preload"
       href="https://kit.fontawesome.com/1669dfc729.js"
@@ -140,7 +135,9 @@
     <link rel="me" href="https://github.com/{{ SOCIAL.github }}" />
     {% if SOCIAL.mastodon %}
     <link rel="me" href="{{ SOCIAL.mastodon }}" />
-    {% endif %} {% endblock head %}
+    {% endif %}
+    <link rel="webmention" href="https://webmention.io/yuceltoluyag.github.io/webmention" />
+    <link rel="pingback" href="https://webmention.io/yuceltoluyag.github.io/xmlrpc" /> {% endblock head %}
   </head>
 
   <body class="{% block body_class %}{% endblock %}">

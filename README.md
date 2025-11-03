@@ -1,73 +1,94 @@
-# Introduction
+# My Personal Blog & Pelican Theme
 
-This is my personal blog using the [pelican project](https://docs.getpelican.com/en/latest/).
+Welcome to the repository for my personal blog, built with [Pelican](https://docs.getpelican.com/en/latest/). This project not only hosts my content but also features a custom theme I designed, named **Minel**.
 
-I designed the theme using [pico.css](https://picocss.com/), [font-awesome](https://fontawesome.com/), and the [simple template](https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates) from [pelican](https://docs.getpelican.com/en/latest/).
+The live site is hosted on GitHub Pages and is available at [yuceltoluyag.github.io](https://yuceltoluyag.github.io).
 
-I host the site right [here](https://yuceltoluyag.github.io) on GitHub pages.
+---
 
-# Theme Features
+## ✨ Features
 
-- **Çoklu Dil Desteği**: Pelican'ın `i18n_subsites` eklentisi ile tam çoklu dil desteği.
-- **Duyarlı Tasarım**: `pico.css` ile mobil uyumlu ve duyarlı tasarım.
-- **SEO Dostu**: Gelişmiş SEO meta etiketleri ve yapılandırması.
-- **Sosyal Medya Paylaşım Butonları**: Makaleleri kolayca paylaşmak için entegre sosyal medya butonları.
-- **Sayfalama**: Makaleler ve diğer içerikler için gelişmiş sayfalama.
-- **Arama Özelliği**: Site içi arama fonksiyonu.
-- **Tema Değiştirme (Açık/Koyu Mod)**: Kullanıcıların tercihine göre açık ve koyu tema arasında geçiş yapabilme.
-- **Geri Dön Butonu**: Sayfanın başına hızlıca dönmek için buton.
-- **Okuma İlerleme Çubuğu**: Makale okurken ilerlemeyi gösteren çubuk.
-- **İçindekiler Tablosu (TOC)**: Makaleler için otomatik içindekiler tablosu.
-- **İlgili Yazılar**: Okuyucuların ilgisini çekebilecek benzer makaleleri gösterir.
-- **Yorum Sistemi**: Staticman veya benzeri bir sistemle yorum desteği.
+The custom **Minel** theme is built with responsiveness and user experience in mind, using [Pico.css](https://picocss.com/) as a lightweight foundation.
 
-# Run Locally
+### Content & SEO
+- **Full i18n Support**: Utilizes Pelican's `i18n_subsites` for complete multi-language capabilities (Turkish & English).
+- **SEO Optimized**: Advanced meta tags and structured data for better search engine visibility.
+- **Related Posts**: Suggests similar articles to keep readers engaged.
+- **Article Statistics**: Displays word count and estimated reading time for each article.
 
-To run the site locally, you will want to have podman installed.
+### User Experience
+- **Responsive Design**: Mobile-first design that looks great on all devices.
+- **Dark/Light Mode**: A theme switcher allows users to choose their preferred mode.
+- **Search**: Built-in, client-side search functionality.
+- **Code Highlighting**: Syntax highlighting for code blocks using Pygments.
+- **Social Sharing**: Easily share articles on various social media platforms.
+- **Table of Contents (TOC)**: Automatically generated, collapsible TOC for long-form articles.
+- **Reading Progress Bar**: A visual indicator of reading progress on articles.
+- **Back to Top Button**: Smoothly scroll back to the top of the page.
 
-Build the container to run the site:
+---
 
-```bash
-make build
-```
+## 🚀 Getting Started
 
-And run the container:
+To run this project locally, you will need `make` and a container engine like [Podman](https://podman.io/) or [Docker](https://www.docker.com/).
 
-```bash
-make run
-```
+1.  **Build the Container Image:**
+    This command will build the container image that runs the Pelican development server.
+    ```bash
+    make build
+    ```
 
-You can now view the site at [http://localhost:8000](http://localhost:8000).
+2.  **Run the Container:**
+    This command starts the container and serves the site.
+    ```bash
+    make run
+    ```
+    You can now view the site at **[http://localhost:8000](http://localhost:8000)**. The server will automatically reload when you make changes to the content or theme.
 
-You can use `make clean` to remove the output directory and `make run` to start it up again.
+3.  **Create a New Post:**
+    Use the following command to scaffold a new article using a template.
+    ```bash
+    make post
+    ```
 
-To make a post using the template, run:
+---
 
-```bash
-make post
-```
+## 🎨 Asset Management
 
-# CSS Bundle ve Küçültme
+This project uses [LightningCSS](https://lightningcss.dev/) to bundle and minify CSS files for optimal performance.
 
-Bu projede CSS dosyalarını birleştirip küçültmek için LightningCSS kullanılmaktadır.
-
-## Kurulum
-
+### Setup
+First, install the necessary CLI tool via `npm`:
 ```bash
 npm install lightningcss-cli
 ```
 
-## Kullanım
+### Usage
+The bundling process is a two-step procedure:
 
-Tüm CSS dosyalarını birleştirip küçültmek için:
+1.  **Combine CSS Files:**
+    Concatenate all source CSS files into a single `combined.css` file.
+    ```bash
+    cat themes/baba/static/css/pico.indigo.min.css \
+        themes/baba/static/css/custom.css \
+        themes/baba/static/css/modern-styles.css \
+        themes/baba/static/css/pygments.css \
+        themes/baba/static/css/copy.css \
+        themes/baba/static/css/toc.css \
+        themes/baba/static/css/language-switcher.css \
+        themes/baba/static/css/social-share.css \
+        themes/baba/static/css/back-to-top.css \
+        themes/baba/static/css/donate.css \
+        themes/baba/static/css/tags.css \
+        themes/baba/static/css/video.css \
+        themes/baba/static/css/scroll-progress.css \
+        themes/baba/static/css/webmentions.css \
+        themes/baba/static/css/footer.css > themes/baba/static/css/combined.css
+    ```
 
-cat themes/baba/static/css/pico.indigo.min.css themes/baba/static/css/custom.css themes/baba/static/css/modern-styles.css themes/baba/static/css/pygments.css themes/baba/static/css/copy.css themes/baba/static/css/toc.css themes/baba/static/css/language-switcher.css themes/baba/static/css/social-share.css themes/baba/static/css/back-to-top.css themes/baba/static/css/donate.css themes/baba/static/css/tags.css themes/baba/static/css/video.css themes/baba/static/css/scroll-progress.css themes/baba/static/css/footer.css > themes/baba/static/css/combined.css
-
-# CSS dosyasını küçült
-npx lightningcss-cli --minify themes/baba/static/css/combined.css -o themes/baba/static/css/bundle.min.css
-
-# Gereksiz combined.css dosyasını sil (opsiyonel)
-rm themes/baba/static/css/combined.css
-```
-
-Bu işlem sonucunda oluşan `bundle.min.css` dosyası tüm stilleri içerir ve performansı artırır.
+2.  **Minify the Bundle:**
+    Use LightningCSS to minify the combined file into the final `bundle.min.css`.
+    ```bash
+    npx lightningcss-cli --minify themes/baba/static/css/combined.css -o themes/baba/static/css/bundle.min.css
+    ```
+This process should be run whenever you make changes to the source CSS files.

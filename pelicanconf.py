@@ -117,7 +117,7 @@ I18N_FILTER_SIGNALS = [tmpsig]
 
 I18N_SUBSITES = {
     'en': {
-        'SITENAME': "Yucel's Tech Blog",
+        'SITENAME': "Baba Tech Blog",
         'AUTHOR': 'yuceltoluyag',
         'LOCALE': 'en_US.UTF-8',
         'STATIC_PATHS': ["images", "extra", "files"],
@@ -299,6 +299,13 @@ SOCIAL = {
     "github_sponsor": "yuceltoluyag",
     "bluesky": "yuceltoluyag.bsky.social",
 }
+
+MASTODON = {
+    'username': 'yuceltoluyag',
+    'instance': 'mastodon.social',
+}
+
+WEBMENTION_IO_TOKEN = 'Ap4Pb-YQo7Ne68a7rpJ0qA'
 
 
 # Admin araçları ayarları
