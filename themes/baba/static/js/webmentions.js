@@ -35,6 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     case "mention-of":
                         comments.push(mention); // Add mentions to comments section
                         break;
+                    case "bookmark-of":
+                        comments.push(mention); // Add bookmarks to comments section
+                        break;
                 }
             });
 
