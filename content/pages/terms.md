@@ -2,6 +2,7 @@ Title: Kullanım Koşulları
 Date: 2024-03-21
 Modified: 2024-03-21
 Slug: terms
+Lang: tr
 Template: legal
 
 # Kullanım Koşulları

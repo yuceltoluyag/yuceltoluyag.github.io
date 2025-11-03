@@ -122,6 +122,10 @@ I18N_SUBSITES = {
         'LOCALE': 'en_US.UTF-8',
         'STATIC_PATHS': ["images", "extra", "files"],
         'OUTPUT_PATH': 'output/en',
+        'CATEGORIES_URL': 'categories/',
+        'CATEGORIES_SAVE_AS': 'categories/index.html',
+        'TAGS_URL': 'tags/',
+        'TAGS_SAVE_AS': 'tags/index.html',
         },
     }
 DISABLE_URL_HASH = True
@@ -190,6 +194,7 @@ common_plugins = [
     "plugins.comments",
     "plugins.pelican-toc", 
     "plugins.related_posts",
+    "plugins.baba_stats",
 ]
 
 dev_plugins = common_plugins.copy()

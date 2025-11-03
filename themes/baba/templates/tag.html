@@ -1,13 +1,13 @@
-{% extends "base.html" %} {% block title %}#{{ tag }} Etiketli Yazılar - {{ SITENAME }}{% endblock title %} {% block seo
+{% extends "base.html" %} {% block title %}#{{ tag }} {{ _('Etiketli Yazılar') }} - {{ SITENAME }}{% endblock title %} {% block seo
 %}
 <meta
     name="description"
-    content="#{{ tag }} etiketi ile ilgili tüm yazılar. Bu etikette toplam {{ articles|length }} yazı bulunuyor." />
+    content="#{{ tag }} {{ _('etiketi ile ilgili tüm yazılar. Bu etikette toplam {articles_length} yazı bulunuyor.').format(articles_length=articles|length) }}" />
 <link rel="canonical" href="{{ SITEURL }}/etiket/{{ tag.slug }}/" />
-<meta property="og:title" content="#{{ tag }} Etiketli Yazılar - {{ SITENAME }}" />
+<meta property="og:title" content="#{{ tag }} {{ _('Etiketli Yazılar') }} - {{ SITENAME }}" />
 <meta
     property="og:description"
-    content="#{{ tag }} etiketi ile ilgili tüm yazılar. Bu etikette toplam {{ articles|length }} yazı bulunuyor." />
+    content="#{{ tag }} {{ _('etiketi ile ilgili tüm yazılar. Bu etikette toplam {articles_length} yazı bulunuyor.').format(articles_length=articles|length) }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/etiket/{{ tag.slug }}/" />
 {% endblock seo %} {% block content %}
@@ -17,8 +17,8 @@
             <span class="iconify" data-icon="tabler:hash" width="28" height="28"></span>
         </div>
         <div class="tag-info">
-            <h1 class="tag-title">#{{ tag }} Etiketli Yazılar</h1>
-            <p class="tag-count">Bu etikete sahip {{ articles|length }} yazı bulundu</p>
+            <h1 class="tag-title">#{{ tag }} {{ _('Etiketli Yazılar') }}</h1>
+            <p class="tag-count">{{ _('Bu etikete sahip {articles_length} yazı bulundu').format(articles_length=articles|length) }}</p>
         </div>
     </div>
 
@@ -53,17 +53,17 @@
         <a
             href="{{ SITEURL }}/{{ articles_previous_page.url }}"
             class="btn btn-outline"
-            aria-label="Önceki sayfa">
+            aria-label="{{ _('Önceki sayfa') }}">
             <span class="iconify" data-icon="tabler:chevron-left" width="20" height="20"></span>
-            Önceki
+            {{ _('Önceki') }}
         </a>
         {% endif %}
         {% if articles_page.has_next() %}
         <a
             href="{{ SITEURL }}/{{ articles_next_page.url }}"
             class="btn btn-outline"
-            aria-label="Sonraki sayfa">
-            Sonraki
+            aria-label="{{ _('Sonraki sayfa') }}">
+            {{ _('Sonraki') }}
             <span class="iconify" data-icon="tabler:chevron-right" width="20" height="20"></span>
         </a>
         {% endif %}
