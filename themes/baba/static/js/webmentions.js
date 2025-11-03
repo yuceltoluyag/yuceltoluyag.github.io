@@ -54,6 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
             webmentionsContainer.style.display = "none";
         });
 
+    function escapeHTML(str) {
+        return str
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
     function renderLikes(mentions, container) {
         if (mentions.length === 0) {
             container.innerHTML = "<li class='webmentions__empty'>No likes yet.</li>";
@@ -92,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </a>
                         <span class="webmention__meta">
                             <a href="${mention.url}" target="_blank" rel="noopener noreferrer nofollow">
-                                ${webmentionsContainer.getAttribute("data-original-post-text")}
+                                ${escapeHTML(webmentionsContainer.getAttribute("data-original-post-text") || "")}
                             </a>
                         </span>
                     </div>
