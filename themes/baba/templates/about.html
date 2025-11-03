@@ -10,7 +10,7 @@
           class="about-avatar"
         />
       </div>
-      <h1>Yücel Toluyağ Kimdir ?</h1>
+      <h1>{{ _('Yücel Toluyağ Kimdir ?') }}</h1>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
     </div>
     <div class="about-contact-column">
       <div class="about-contact-card pico-card">
-        <h3>İletişim</h3>
+        <h3>{{ _('İletişim') }}</h3>
         <div class="about-social-links">
           {% for platform, username in SOCIAL.items() %} {% set href = {
           'github': 'https://github.com/', 'matrix': 'https://matrix.to/#/@',
