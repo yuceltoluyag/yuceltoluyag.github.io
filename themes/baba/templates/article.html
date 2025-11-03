@@ -1,8 +1,8 @@
 {% extends "base.html" %} 
 {% block body_class %}type-article{% endblock %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
-{% block title %}{{ article.title|striptags }}{% endblock %} {% block head %} {{
-super() }} {% if article.translations -%}
+{% block title %}{{ article.title|striptags }}{% endblock %} {% block head %} {{ 
+super() }} {% if article.translations -%} 
 <link rel="alternate" href="{{ SITEURL }}/{{ article.url }}" hreflang="{{ article.lang }}" />
 {% for a in article.translations %}
 <link rel="alternate" href="{{ SITEURL }}/{{ a.url }}" hreflang="{{ a.lang }}" />
@@ -405,4 +405,113 @@ super() }} {% if article.translations -%}
   </nav>
   {% endif %}
 
+<!-- Collapsible TOC -->
+{% if article.toc %}
+<div class="toc-fab-container">
+    <button id="toc-fab-btn" aria-label="İçindekiler Menüsü">
+        <i class="fa-solid fa-list" aria-hidden="true"></i>
+        <span class="sr-only">İçindekiler Menüsü</span>
+    </button>
+    <nav id="toc-collapsible-menu" class="pico-card">{{ article.toc }}</nav>
+</div>
+{% endif %}
+
+<script>
+  // Close series contents details by default
+  document.addEventListener('DOMContentLoaded', function() {
+    const seriesDetails = document.querySelector('.series-contents');
+    if (seriesDetails && seriesDetails.hasAttribute('open')) {
+      seriesDetails.removeAttribute('open');
+    }
+  });
+</script>
+
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy.js" data-copy="Kopyala" data-copied="Kopyalandı!"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const tocFabBtn = document.getElementById('toc-fab-btn');
+    const tocMenu = document.getElementById('toc-collapsible-menu');
+    const articleContent = document.getElementById('article-content'); // Added for scrollspy
+
+    // --- TOC Toggle Logic ---
+    if (tocFabBtn && tocMenu) {
+        // Hide button if TOC is empty
+        if (!tocMenu.querySelector('#toc ul li')) {
+            tocFabBtn.style.display = 'none';
+        }
+
+        // Logic to toggle the main menu visibility
+        tocFabBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            tocMenu.classList.toggle('active');
+        });
+
+        // Logic to handle clicks on collapsible buttons inside the TOC
+        tocMenu.addEventListener('click', function (e) {
+            const button = e.target.closest('button');
+            // Ensure the click is on a button inside the TOC, not the FAB itself
+            if (button && tocMenu.contains(button)) {
+                const parentLi = button.parentElement;
+                if (parentLi && parentLi.tagName === 'LI') {
+                    parentLi.classList.toggle('expanded');
+                }
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (e) {
+            if (tocMenu.classList.contains('active') && !tocMenu.contains(e.target) && e.target !== tocFabBtn) {
+                tocMenu.classList.remove('active');
+            }
+        });
+    }
+
+    // --- NEW Scrollspy Logic ---
+    if (articleContent && tocMenu) { // Check if articleContent exists
+        const headings = Array.from(articleContent.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+        const tocLinks = Array.from(tocMenu.querySelectorAll('a[href^="#"]')); // Select links with hash href
+
+        const onScroll = () => {
+            let activeHeadingId = null;
+
+            // Find the last heading that is above the middle of the screen
+            for (const heading of headings) {
+                if (heading.getBoundingClientRect().top < window.innerHeight / 2) {
+                    activeHeadingId = heading.id;
+                } else {
+                    break; // Stop when we find one that is not in view
+                }
+            }
+
+            // Update classes on all links
+            tocLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && href.startsWith('#')) { // Ensure href is valid for ID
+                    if (href === `#${activeHeadingId}`) {
+                        link.classList.add('active');
+                        link.classList.add('readed'); // The active one is also read
+                        // Scroll the active link into view within the menu if it's not visible
+                        link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+                    } else {
+                        link.classList.remove('active');
+                    }
+                    // Mark as read if its heading is out of view at the top
+                    const correspondingHeading = document.getElementById(href.substring(1));
+                    if (correspondingHeading && correspondingHeading.getBoundingClientRect().top < 0) {
+                        link.classList.add('readed');
+                    } else if (link.classList.contains('readed') && correspondingHeading && correspondingHeading.getBoundingClientRect().top > window.innerHeight) {
+                        // If it's below the viewport and was marked read, unmark it.
+                        link.classList.remove('readed');
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll(); // Initial check
+    }
+});
+</script>
 {% endblock %}
