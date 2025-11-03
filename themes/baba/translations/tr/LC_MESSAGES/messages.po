@@ -119,4 +119,191 @@ msgid "Arama sorgusu giriniz"
 msgstr "Arama sorgusu giriniz"
 
 msgid "için sonuç bulunamadı"
+
 msgstr "için sonuç bulunamadı"
+
+
+
+msgid "Bağış Yap"
+
+msgstr "Bağış Yap"
+
+
+
+msgid "Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
+
+msgstr "Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
+
+
+
+msgid "Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz."
+
+msgstr "Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz."
+
+
+
+msgid "Neden Bağış?"
+
+msgstr "Neden Bağış?"
+
+
+
+msgid "Daha fazla içerik üretebiliyorum"
+
+msgstr "Daha fazla içerik üretebiliyorum"
+
+
+
+msgid "Daha kaliteli eğitim videoları hazırlayabiliyorum"
+
+msgstr "Daha kaliteli eğitim videoları hazırlayabiliyorum"
+
+
+
+msgid "Açık kaynak projelere daha fazla zaman ayırabiliyorum"
+
+msgstr "Açık kaynak projelere daha fazla zaman ayırabiliyorum"
+
+
+
+msgid "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"
+
+msgstr "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"
+
+
+
+msgid "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"
+
+msgstr "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"
+
+
+
+msgid "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
+
+msgstr "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
+
+
+
+msgid "Bağış Seçenekleri"
+
+msgstr "Bağış Seçenekleri"
+
+
+
+msgid "Hızlı ve Güvenli Bağış"
+
+msgstr "Hızlı ve Güvenli Bağış"
+
+
+
+msgid "Türk lirası ile hızlı bağış"
+
+msgstr "Türk lirası ile hızlı bağış"
+
+
+
+msgid "Aylık Destek"
+
+msgstr "Aylık Destek"
+
+
+
+msgid "Aylık düzenli destek"
+
+msgstr "Aylık düzenli destek"
+
+
+
+msgid "Kripto Para Bağışları"
+
+msgstr "Kripto Para Bağışları"
+
+
+
+msgid "Ağ bilgisi"
+
+msgstr "Ağ bilgisi"
+
+
+
+msgid "Önemli:"
+
+msgstr "Önemli:"
+
+
+
+msgid "Tüm adresler"
+
+msgstr "Tüm adresler"
+
+
+
+msgid "ağını kullanır."
+
+msgstr "ağını kullanır."
+
+
+
+msgid "Farklı ağlar için lütfen"
+
+msgstr "Farklı ağlar için lütfen"
+
+
+
+msgid "iletişime geçin"
+
+msgstr "iletişime geçin"
+
+
+
+msgid "Cüzdan Adresini Göster"
+
+msgstr "Cüzdan Adresini Göster"
+
+
+
+msgid "Kopyala"
+
+msgstr "Kopyala"
+
+
+
+msgid "Kopyalandı!"
+
+msgstr "Kopyalandı!"
+
+
+
+msgid "Kopyalama başarısız:"
+
+
+
+msgstr "Kopyalama başarısız:"
+
+
+
+
+
+
+
+msgid "Yücel Toluyağ Kimdir ?"
+
+
+
+msgstr "Yücel Toluyağ Kimdir ?"
+
+
+
+
+
+
+
+msgid "İletişim"
+
+
+
+msgstr "İletişim"
+
+
+
+

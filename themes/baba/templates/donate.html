@@ -1,10 +1,10 @@
-{% extends "base.html" %} {% block title %}Bağış Yap{% endblock title %} {%
+{% extends "base.html" %} {% block title %}{{ _('Bağış Yap') }}{% endblock title %} {%
 block head %} {{ super() }} 
 <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/donate.css">
 {% endblock %} {% block seo %}
 <meta
   name="description"
-  content="Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
+  content="{{ _('Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz.') }}"
 />
 <link rel="canonical" href="{{ SITEURL }}/bagis/" />
 {% endblock %} {% block content %}
@@ -14,11 +14,10 @@ block head %} {{ super() }}
     <div class="donate-container">
       <div class="donate-headings">
         <h1>
-          <i class="fa-solid fa-heart" style="color: #e74c3c;"></i> Bağış Yap
+          <i class="fa-solid fa-heart" style="color: #e74c3c;"></i> {{ _('Bağış Yap') }}
         </h1>
         <p>
-          Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek
-          istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz.
+          {{ _('Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz.') }}
         </p>
       </div>
 
@@ -26,15 +25,15 @@ block head %} {{ super() }}
         <!-- Neden Bağış? -->
         <article class="donate-section pico-card">
           <header>
-            <h2><i class="fa-solid fa-question-circle"></i> Neden Bağış?</h2>
+            <h2><i class="fa-solid fa-question-circle"></i> {{ _('Neden Bağış?') }}</h2>
           </header>
           {% for item in [
-            "Daha fazla içerik üretebiliyorum",
-            "Daha kaliteli eğitim videoları hazırlayabiliyorum", 
-            "Açık kaynak projelere daha fazla zaman ayırabiliyorum",
-            "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum",
-            "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum",
-            "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
+            _("Daha fazla içerik üretebiliyorum"),
+            _("Daha kaliteli eğitim videoları hazırlayabiliyorum"), 
+            _("Açık kaynak projelere daha fazla zaman ayırabiliyorum"),
+            _("Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"),
+            _("Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"),
+            _("Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum")
           ] %}
           <figure class="donate-figure">
             <div class="donate-figure-grid">
@@ -48,32 +47,32 @@ block head %} {{ super() }}
         <!-- Bağış Seçenekleri -->
         <article class="donate-options pico-card">
           <header>
-            <h2><i class="fa-solid fa-hand-holding-heart"></i> Bağış Seçenekleri</h2>
+            <h2><i class="fa-solid fa-hand-holding-heart"></i> {{ _('Bağış Seçenekleri') }}</h2>
           </header>
           <div class="donate-options-grid">
             {% if SOCIAL.bynogame %}
             <a
               href="{{ SOCIAL.bynogame }}"
               class="donate-option papara-option"
-              data-tooltip="Hızlı ve Güvenli Bağış"
-              aria-label="Hızlı ve Güvenli Bağış"
+              data-tooltip="{{ _('Hızlı ve Güvenli Bağış') }}"
+              aria-label="{{ _('Hızlı ve Güvenli Bağış') }}"
             >
               <article class="donate-option-card">
                 <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
                 <h3>ByNoGame</h3>
-                <p>Türk lirası ile hızlı bağış</p>
+                <p>{{ _('Türk lirası ile hızlı bağış') }}</p>
               </article>
             </a>
             {% endif %} {% if SOCIAL.github_sponsor %}
             <a
               href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}"
               class="donate-option github-option"
-              data-tooltip="Aylık Destek"
+              data-tooltip="{{ _('Aylık Destek') }}"
             >
               <article class="donate-option-card">
                 <i class="fa-brands fa-github" aria-hidden="true"></i>
                 <h3>GitHub Sponsors</h3>
-                <p>Aylık düzenli destek</p>
+                <p>{{ _('Aylık düzenli destek') }}</p>
               </article>
             </a>
             {% endif %}
@@ -84,19 +83,19 @@ block head %} {{ super() }}
       <!-- Kripto Bölümü -->
       <article class="crypto-section pico-card">
         <header>
-          <h2><i class="fa-solid fa-coins"></i> Kripto Para Bağışları</h2>
+          <h2><i class="fa-solid fa-coins"></i> {{ _('Kripto Para Bağışları') }}</h2>
         </header>
 
-        <article class="crypto-notice" aria-label="Ağ bilgisi">
+        <article class="crypto-notice" aria-label="{{ _('Ağ bilgisi') }}">
           <div class="crypto-notice-content">
             <i class="fa-solid fa-circle-info"></i>
             <div>
-              <strong> <i class="fa-solid fa-exclamation-circle"></i> Önemli:</strong>
-              <span>Tüm adresler <kbd>BSC / BEP20</kbd> ağını kullanır.</span>
+              <strong> <i class="fa-solid fa-exclamation-circle"></i> {{ _('Önemli:') }}</strong>
+              <span>{{ _('Tüm adresler') }} <kbd>BSC / BEP20</kbd> {{ _('ağını kullanır.') }}</span>
               <footer>
-                Farklı ağlar için lütfen
+                {{ _('Farklı ağlar için lütfen') }}
                 <a href="/hakkimda" role="button" class="outline"
-                  >iletişime geçin</a>
+                  >{{ _('iletişime geçin') }}</a>
               </footer>
             </div>
           </div>
@@ -148,14 +147,14 @@ block head %} {{ super() }}
         </div>
 
         <details class="crypto-details">
-          <summary><i class="fa-solid fa-wallet"></i> Cüzdan Adresini Göster</summary>
+          <summary><i class="fa-solid fa-wallet"></i> {{ _('Cüzdan Adresini Göster') }}</summary>
           <div class="crypto-address-container">
             <kbd class="crypto-address">0x012e2a56828990ef0aa97de827297456aabccc63</kbd>
             <button
               class="outline copy-button"
               onclick="copyToClipboard('0x012e2a56828990ef0aa97de827297456aabccc63')"
             >
-              <i class="fa-solid fa-copy"></i> Kopyala
+              <i class="fa-solid fa-copy"></i> {{ _('Kopyala') }}
             </button>
           </div>
         </details>
@@ -187,12 +186,12 @@ block head %} {{ super() }}
       // Kopyalama işlemi başarılı
       const button = event.target.closest('.copy-button');
       const originalHTML = button.innerHTML;
-      button.innerHTML = '<i class="fa-solid fa-check"></i> Kopyalandı!';
+      button.innerHTML = '<i class="fa-solid fa-check"></i> ' + '{{ _("Kopyalandı!") }}';
       setTimeout(() => {
         button.innerHTML = originalHTML;
       }, 2000);
     }).catch(err => {
-      console.error('Kopyalama başarısız: ', err);
+      console.error('{{ _("Kopyalama başarısız:") }}', err);
     });
   }
 </script>

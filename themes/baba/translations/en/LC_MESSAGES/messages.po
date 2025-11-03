@@ -122,3 +122,87 @@ msgstr "Page"
 
 msgid "Son Makaleler"
 msgstr "Recent Articles"
+
+msgid "Bağış Yap"
+msgstr "Donate"
+
+msgid "Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
+msgstr "You can support my work and content by making a donation. You can contribute with Papara, GitHub Sponsors, and cryptocurrency options."
+
+msgid "Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz."
+msgstr "If you find my content useful and want to support my work, you can donate using the methods below."
+
+msgid "Neden Bağış?"
+msgstr "Why Donate?"
+
+msgid "Daha fazla içerik üretebiliyorum"
+msgstr "I can produce more content"
+
+msgid "Daha kaliteli eğitim videoları hazırlayabiliyorum"
+msgstr "I can prepare higher quality educational videos"
+
+msgid "Açık kaynak projelere daha fazla zaman ayırabiliyorum"
+msgstr "I can dedicate more time to open source projects"
+
+msgid "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"
+msgstr "I can improve my technological infrastructure and equipment"
+
+msgid "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"
+msgstr "I can organize more events and projects for the community"
+
+msgid "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
+msgstr "I can spend more time researching and experiencing new technologies"
+
+msgid "Bağış Seçenekleri"
+msgstr "Donation Options"
+
+msgid "Hızlı ve Güvenli Bağış"
+msgstr "Fast and Secure Donation"
+
+msgid "Türk lirası ile hızlı bağış"
+msgstr "Fast donation with Turkish Lira"
+
+msgid "Aylık Destek"
+msgstr "Monthly Support"
+
+msgid "Aylık düzenli destek"
+msgstr "Regular monthly support"
+
+msgid "Kripto Para Bağışları"
+msgstr "Cryptocurrency Donations"
+
+msgid "Ağ bilgisi"
+msgstr "Network information"
+
+msgid "Önemli:"
+msgstr "Important:"
+
+msgid "Tüm adresler"
+msgstr "All addresses"
+
+msgid "ağını kullanır."
+msgstr "use the network."
+
+msgid "Farklı ağlar için lütfen"
+msgstr "For different networks, please"
+
+msgid "iletişime geçin"
+msgstr "contact us"
+
+msgid "Cüzdan Adresini Göster"
+msgstr "Show Wallet Address"
+
+msgid "Kopyala"
+msgstr "Copy"
+
+msgid "Kopyalandı!"
+msgstr "Copied!"
+
+msgid "Kopyalama başarısız:"
+msgstr "Copy failed:"
+
+msgid "Yücel Toluyağ Kimdir ?"
+msgstr "Who is Yücel Toluyağ?"
+
+msgid "İletişim"
+msgstr "Contact"
