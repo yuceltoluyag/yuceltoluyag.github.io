@@ -6,6 +6,21 @@ I designed the theme using [pico.css](https://picocss.com/), [font-awesome](http
 
 I host the site right [here](https://yuceltoluyag.github.io) on GitHub pages.
 
+# Theme Features
+
+- **Çoklu Dil Desteği**: Pelican'ın `i18n_subsites` eklentisi ile tam çoklu dil desteği.
+- **Duyarlı Tasarım**: `pico.css` ile mobil uyumlu ve duyarlı tasarım.
+- **SEO Dostu**: Gelişmiş SEO meta etiketleri ve yapılandırması.
+- **Sosyal Medya Paylaşım Butonları**: Makaleleri kolayca paylaşmak için entegre sosyal medya butonları.
+- **Sayfalama**: Makaleler ve diğer içerikler için gelişmiş sayfalama.
+- **Arama Özelliği**: Site içi arama fonksiyonu.
+- **Tema Değiştirme (Açık/Koyu Mod)**: Kullanıcıların tercihine göre açık ve koyu tema arasında geçiş yapabilme.
+- **Geri Dön Butonu**: Sayfanın başına hızlıca dönmek için buton.
+- **Okuma İlerleme Çubuğu**: Makale okurken ilerlemeyi gösteren çubuk.
+- **İçindekiler Tablosu (TOC)**: Makaleler için otomatik içindekiler tablosu.
+- **İlgili Yazılar**: Okuyucuların ilgisini çekebilecek benzer makaleleri gösterir.
+- **Yorum Sistemi**: Staticman veya benzeri bir sistemle yorum desteği.
+
 # Run Locally
 
 To run the site locally, you will want to have podman installed.

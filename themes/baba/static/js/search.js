@@ -1,78 +1,108 @@
-/**
- * Arama fonksiyonalitesi
- */
-
 // Arama verileri ve index için global değişkenler
 let searchData = [];
 let searchIndex = null;
 
-// DOM elementleri
-const searchModal = document.getElementById("search-modal");
-const searchForm = document.getElementById("search-form");
-const searchInput = document.getElementById("search-input");
-const searchResults = document.getElementById("search-results");
-const searchTriggers = document.querySelectorAll(".search-trigger");
-const searchModalClose = document.querySelector(".search-modal-close");
+// Arama gecikmesi için değişken
+let searchTimeout = null;
 
 // Arama verilerini yükle
 async function loadSearchData() {
-    try {
-        const response = await fetch("/search.json");
-        if (!response.ok) {
-            throw new Error("Arama verileri yüklenemedi");
-        }
-        searchData = await response.json();
-        // Arama verileri önbelleğe alınabilir
-        initSearchIndex();
-    } catch (error) {
-        // Hata durumunda sessizce devam et
+  try {
+    const currentLang = document.documentElement.lang || "tr"; // Sayfanın mevcut dilini al, varsayılan tr
+    // Eğer dil varsayılan dil değilse, yolu /dil_kodu/search.dil_kodu.json şeklinde oluştur
+    const searchJsonPath =
+      currentLang === "tr"
+        ? `/search.tr.json`
+        : `/${currentLang}/search.${currentLang}.json`; // Bu satırı değiştirelim
+
+    const response = await fetch(searchJsonPath);
+    if (!response.ok) {
+      throw new Error("Arama verileri yüklenemedi");
     }
+    searchData = await response.json();
+    // Arama verileri önbelleğe alınabilir
+    initSearchIndex();
+  } catch (error) {
+    // Hata durumunda sessizce devam et
+    console.error("Arama verileri yüklenirken hata oluştu:", error);
+  }
 }
 
 // Arama indeksini başlat
 function initSearchIndex() {
-    // Sonraki aramaları hızlandırmak için veri önişleme
-    searchData.forEach((item) => {
-        // Arama için gereken alanları küçük harfe çevir
-        item._searchTitle = item.title?.toLowerCase() || "";
-        item._searchCategory = item.category?.toLowerCase() || "";
-        item._searchTags = item.tags?.join(" ").toLowerCase() || "";
-    });
+  // Sonraki aramaları hızlandırmak için veri önişleme
+  searchData.forEach((item) => {
+    // Arama için gereken alanları küçük harfe çevir
+    item._searchTitle = item.title?.toLowerCase() || "";
+    item._searchCategory = item.category?.toLowerCase() || "";
+    item._searchTags = item.tags?.join(" ").toLowerCase() || "";
+  });
 }
 
-// Arama modalını aç
-function openSearchModal() {
+// Metinde sorgu terimini vurgula
+function highlightText(text, query) {
+  if (!text) return "";
+
+  const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
+  return text.replace(regex, "<mark>$1</mark>");
+}
+
+// Regex için özel karakterleri escape et
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\\]/g, "\\$& ");
+}
+
+// HTML meta-karakterleri için escaping
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // DOM elementleri
+  const searchModal = document.getElementById("search-modal");
+  const searchForm = document.getElementById("search-form");
+  const searchInput = document.getElementById("search-input");
+  const searchResults = document.getElementById("search-results");
+  const searchTriggers = document.querySelectorAll(".search-trigger");
+  const searchModalClose = document.querySelector(".search-modal-close");
+
+  // Arama modalını aç
+  function openSearchModal() {
     searchModal.classList.add("show");
     document.body.classList.add("search-modal-open");
     setTimeout(() => {
-        searchInput.focus();
+      searchInput.focus();
     }, 100);
-}
+  }
 
-// Arama modalını kapat
-function closeSearchModal() {
+  // Arama modalını kapat
+  function closeSearchModal() {
     searchModal.classList.remove("show");
     document.body.classList.remove("search-modal-open");
     searchInput.value = "";
     searchResults.innerHTML = "";
-}
+  }
 
-// Modalın dışına tıklandığında kapat
-function handleOutsideClick(event) {
+  // Modalın dışına tıklandığında kapat
+  function handleOutsideClick(event) {
     if (event.target === searchModal) {
-        closeSearchModal();
+      closeSearchModal();
     }
-}
+  }
 
-// Arama gecikmesi için değişken
-let searchTimeout = null;
-
-// Arama işlemi
-function performSearch(query) {
+  // Arama işlemi
+  function performSearch(query) {
+    const searchNoQueryText =
+      searchModal.dataset.searchNoQuery || "Arama sorgusu giriniz";
     // Boş sorgu kontrolü
     if (!query.trim()) {
-        searchResults.innerHTML = '<p class="search-no-results">Arama sorgusu giriniz</p>';
-        return;
+      searchResults.innerHTML = `<p class="search-no-results">${searchNoQueryText}</p>`;
+      return;
     }
 
     // Optimize edilmiş arama
@@ -80,159 +110,148 @@ function performSearch(query) {
 
     // Arama algoritması - önişlenmiş verileri kullan
     const results = searchData.filter((item) => {
-        return (
-            item._searchTitle.includes(queryLower) ||
-            item._searchCategory.includes(queryLower) ||
-            item._searchTags.includes(queryLower)
-        );
+      return (
+        item._searchTitle.includes(queryLower) ||
+        item._searchCategory.includes(queryLower) ||
+        item._searchTags.includes(queryLower)
+      );
     });
 
     // Sonuçları görüntüle
     displayResults(results, query);
-}
+  }
 
-// Sonuçları göster
-function displayResults(results, query) {
+  // Sonuçları göster
+  function displayResults(results, query) {
+    const searchNoResultsText =
+      searchModal.dataset.searchNoResults || "için sonuç bulunamadı";
+
     searchResults.innerHTML = "";
 
     if (results.length === 0) {
-        const safeQuery = escapeHTML(query);
-        searchResults.innerHTML = `<p class="search-no-results">"${safeQuery}" için sonuç bulunamadı</p>`;
-        return;
+      const safeQuery = escapeHTML(query);
+      searchResults.innerHTML = `<p class="search-no-results">"${safeQuery}" ${searchNoResultsText}</p>`;
+      return;
     }
 
     const resultsFragment = document.createDocumentFragment();
     const resultsContainer = document.createElement("div");
     resultsContainer.className = "search-results-container";
 
+    const currentLang = document.documentElement.lang || "tr"; // Sayfanın mevcut dilini al
+
     results.forEach((result) => {
-        const resultItem = document.createElement("article");
-        resultItem.className = "search-result-item";
+      const resultItem = document.createElement("article");
+      resultItem.className = "search-result-item";
 
-        // Sonuç içeriği oluştur
-        const date = new Date(result.date);
-        const formattedDate = date.toLocaleDateString("tr-TR", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-        });
+      // Sonuç içeriği oluştur
+      const date = new Date(result.date);
+      const formattedDate = date.toLocaleDateString(currentLang, {
+        // Mevcut dile göre formatla
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
 
-        // URL yolunu düzgün şekilde oluştur
-        const baseUrl = window.location.origin;
-        // URL'nin ana siteye göre olduğundan emin ol
-        let resultUrl = result.url;
+      // URL yolunu düzgün şekilde oluştur
+      let fullUrl = result.url;
 
-        // Eğer URL / ile başlamıyorsa, başına ekle
-        if (!resultUrl.startsWith("/")) {
-            resultUrl = "/" + resultUrl;
-        }
-
-        // Tam URL'yi oluştur
-        const fullUrl = baseUrl + resultUrl;
-
-        resultItem.innerHTML = `
-            <h3 class="search-result-title">
-                <a href="${fullUrl}" class="search-result-link">${highlightText(result.title, query)}</a>
-            </h3>
-            <div class="search-result-meta">
-                <span class="search-result-date">${formattedDate}</span>
-                ${result.category ? `<span class="search-result-category">${result.category}</span>` : ""}
-            </div>
-            ${
-                result.tags && result.tags.length > 0
+      resultItem.innerHTML = `
+                <h3 class="search-result-title">
+                    <a href="${fullUrl}" class="search-result-link">${highlightText(
+        result.title,
+        query,
+      )}</a>
+                </h3>
+                <div class="search-result-meta">
+                    <span class="search-result-date">${formattedDate}</span>
+                    ${
+                      result.category
+                        ? `<span class="search-result-category">${result.category}</span>`
+                        : ""
+                    }
+                </div>
+                ${
+                  result.tags && result.tags.length > 0
                     ? `<div class="search-result-tags">
-                    ${result.tags.map((tag) => `<span class="search-result-tag">${tag}</span>`).join("")}
+                    ${result.tags
+                      .map(
+                        (tag) =>
+                          `<span class="search-result-tag">${tag}</span>`,
+                      )
+                      .join("")}
                 </div>`
                     : ""
-            }
-        `;
+                }
+            `;
 
-        resultsContainer.appendChild(resultItem);
+      resultsContainer.appendChild(resultItem);
     });
 
     resultsFragment.appendChild(resultsContainer);
     searchResults.appendChild(resultsFragment);
-}
+  }
 
-// Metinde sorgu terimini vurgula
-function highlightText(text, query) {
-    if (!text) return "";
+  // Arama verilerini yükle
+  loadSearchData();
 
-    const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
-    return text.replace(regex, "<mark>$1</mark>");
-}
-
-// Regex için özel karakterleri escape et
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-// HTML meta-karakterleri için escaping
-function escapeHTML(str) {
-    return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-}
-
-// Olay dinleyicileri
-document.addEventListener("DOMContentLoaded", () => {
-    // Arama verilerini yükle
-    loadSearchData();
-
-    // Arama butonları
-    if (searchTriggers.length > 0) {
-        searchTriggers.forEach((trigger) => {
-            trigger.addEventListener("click", (e) => {
-                e.preventDefault();
-                openSearchModal();
-            });
-        });
-    } else {
-        // Eğer search-trigger bulunamazsa, manuel olarak kontrol et
-        const fallbackTriggers = document.querySelectorAll("a[href='#'][aria-label='Search'], .search-trigger");
-        fallbackTriggers.forEach((trigger) => {
-            trigger.addEventListener("click", (e) => {
-                e.preventDefault();
-                openSearchModal();
-            });
-        });
-    }
-
-    // Kapat butonu
-    if (searchModalClose) {
-        searchModalClose.addEventListener("click", closeSearchModal);
-    }
-
-    // Modalın dışına tıklama
-    if (searchModal) {
-        searchModal.addEventListener("click", handleOutsideClick);
-    }
-
-    // Form gönderimi
-    if (searchForm) {
-        searchForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            performSearch(searchInput.value);
-        });
-    }
-
-    // Debounce ile anlık arama
-    if (searchInput) {
-        searchInput.addEventListener("input", (e) => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                performSearch(e.target.value);
-            }, 200); // 200ms gecikme ekle
-        });
-    }
-
-    // ESC tuşu ile kapatma
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && searchModal && searchModal.classList.contains("show")) {
-            closeSearchModal();
-        }
+  // Arama butonları
+  if (searchTriggers.length > 0) {
+    searchTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSearchModal();
+      });
     });
+  } else {
+    // Eğer search-trigger bulunamazsa, manuel olarak kontrol et
+    const fallbackTriggers = document.querySelectorAll(
+      "a[href='#'][aria-label='Search'], .search-trigger",
+    );
+    fallbackTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSearchModal();
+      });
+    });
+  }
+
+  // Kapat butonu
+  if (searchModalClose) {
+    searchModalClose.addEventListener("click", closeSearchModal);
+  }
+
+  // Modalın dışına tıklama
+  if (searchModal) {
+    searchModal.addEventListener("click", handleOutsideClick);
+  }
+
+  // Form gönderimi
+  if (searchForm) {
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      performSearch(searchInput.value);
+    });
+  }
+
+  // Debounce ile anlık arama
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      clearTimeout(searchTimeout);
+      searchTimeout = setTimeout(() => {
+        performSearch(e.target.value);
+      }, 200); // 200ms gecikme ekle
+    });
+  }
+
+  // ESC tuşu ile kapatma
+  document.addEventListener("keydown", (e) => {
+    if (
+      e.key === "Escape" &&
+      searchModal &&
+      searchModal.classList.contains("show")
+    ) {
+      closeSearchModal();
+    }
+  });
 });

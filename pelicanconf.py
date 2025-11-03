@@ -121,6 +121,7 @@ I18N_SUBSITES = {
         'AUTHOR': 'yuceltoluyag',
         'LOCALE': 'en_US.UTF-8',
         'STATIC_PATHS': ["images", "extra", "files"],
+        'OUTPUT_PATH': 'output/en',
         },
     }
 DISABLE_URL_HASH = True

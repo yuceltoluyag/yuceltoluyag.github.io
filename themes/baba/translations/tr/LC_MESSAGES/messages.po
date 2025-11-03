@@ -111,3 +111,12 @@ msgstr "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" ta
 
 msgid "Sayfa"
 msgstr "Sayfa"
+
+msgid "Arama..."
+msgstr "Arama..."
+
+msgid "Arama sorgusu giriniz"
+msgstr "Arama sorgusu giriniz"
+
+msgid "için sonuç bulunamadı"
+msgstr "için sonuç bulunamadı"

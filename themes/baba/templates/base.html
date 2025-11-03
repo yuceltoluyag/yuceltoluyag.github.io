@@ -220,11 +220,21 @@
       </div>
     </div>
 
-    <div id="search-modal" class="search-modal">
+    <div
+      id="search-modal"
+      class="search-modal"
+      data-search-placeholder="{{ _('Arama...') }}"
+      data-search-no-query="{{ _('Arama sorgusu giriniz') }}"
+      data-search-no-results="{{ _('için sonuç bulunamadı') }}"
+    >
       <div class="search-modal-content">
         <span class="search-modal-close">&times;</span>
         <form id="search-form">
-          <input type="search" id="search-input" placeholder="Arama..." />
+          <input
+            type="search"
+            id="search-input"
+            placeholder="{{ _('Arama...') }}"
+          />
         </form>
         <div id="search-results"></div>
       </div>

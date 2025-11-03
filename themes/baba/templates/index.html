@@ -48,7 +48,7 @@ endblock %}
     </article>
     {% endfor %} {% endif %}
     <div class="articles-list-container">
-      <h2 class="list-section-title">Son Makaleler</h2>
+      <h2 class="list-section-title">{{ _('Son Makaleler') }}</h2>
       <div class="articles-list">
         {% for article in articles_page.object_list %}
         <article class="article-list-item-glow pico-card">
