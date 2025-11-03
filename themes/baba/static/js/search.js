@@ -155,21 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // URL yolunu düzgün şekilde oluştur
       let fullUrl = result.url;
-      
-      // Eğer result.url zaten tam URL ise (http:// veya https:// ile başlıyorsa), olduğu gibi kullan
-      if (!result.url.startsWith('http://') && !result.url.startsWith('https://')) {
-        // Değilse, site origin'i ile birleştir
-        const baseUrl = window.location.origin;
-        // URL'nin ana siteye göre olduğundan emin ol
-        let resultUrl = result.url;
-
-        // Eğer URL / ile başlamıyorsa, başına ekle
-        if (!resultUrl.startsWith("/")) {
-          resultUrl = "/" + resultUrl;
-        }
-
-        fullUrl = baseUrl + resultUrl;
-      }
 
       resultItem.innerHTML = `
                 <h3 class="search-result-title">

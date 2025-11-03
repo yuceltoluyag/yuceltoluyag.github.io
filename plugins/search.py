@@ -22,16 +22,6 @@ def create_search_index(generator, writer):
     current_lang = getattr(generator, 'lang', generator.settings.get("DEFAULT_LANG", "tr")) # Mevcut dili al
     base_site_url = generator.settings.get("SITEURL", "")
     
-    # Dil bazlı SITEURL belirleme
-    if current_lang == 'en':
-        # İngilizce içerikler için, generator'daki ayarlara göre SITEURL zaten doğru olmalı
-        # Ama eğer gerekirse manuel olarak /en ekleyebiliriz
-        site_url = base_site_url
-        if not base_site_url.endswith('/en'):
-            site_url = base_site_url.rstrip('/') + '/en'
-    else:
-        site_url = base_site_url
-    
     # URL normalize etme fonksiyonu
     def normalize_url(url, site_url, current_lang):
         """
@@ -59,7 +49,7 @@ def create_search_index(generator, writer):
 
     logger.debug(f"Search index output path: {output_path}")
     logger.debug(f"Search index current language: {current_lang}")
-    logger.debug(f"Site URL: {site_url}")
+    logger.debug(f"Site URL: {base_site_url}")
 
     # Create search index
     search_index = []
@@ -80,22 +70,23 @@ def create_search_index(generator, writer):
         # Örneğin en için: en/arch-linux-waydroid-kurulumu/
         # Bu durumda, sadece base_site_url ile birleştirmemiz yeterli
         
+        # Debug: article.url'in içeriğini görelim
+        logger.debug(f"Article URL for {article.title}: {article.url}")
+        logger.debug(f"Base site URL: {base_site_url}")
+        logger.debug(f"Current language: {current_lang}")
+        
+        # article.url zaten tam URL mi?
         if article.url.startswith('http'):
             # Zaten tam URL ise olduğu gibi kullan
             final_url = article.url
-        elif current_lang == 'en':
-            # İngilizce için, article.url zaten "en/some-slug" formatında olabilir
-            if article.url.startswith('en/'):
-                final_url = base_site_url.rstrip('/') + '/' + article.url
-            else:
-                # Aksi halde "en/" prefix'iyle birleştir
-                final_url = base_site_url.rstrip('/') + '/en/' + article.url.lstrip('/')
+            logger.debug(f"Using full URL as is: {final_url}")
         else:
-            # Türkçe için sadece base_site_url ile birleştir
             final_url = base_site_url.rstrip('/') + '/' + article.url.lstrip('/')
+            logger.debug(f"Constructed URL: {final_url}")
 
         # URL'yi normalize et (tekrar eden URL'leri temizle)
-        final_url = normalize_url(final_url, base_site_url + '/en' if current_lang == 'en' else base_site_url, current_lang)
+        final_url = normalize_url(final_url, base_site_url, current_lang)
+        logger.debug(f"After normalization: {final_url}")
         
         record = {
             "id": final_url,
@@ -130,23 +121,15 @@ def create_search_index(generator, writer):
                 
             logger.debug(f"Indexing page: {page.url} ({page_lang})")
 
-            # page.url muhtemelen zaten doğru formatta
+            # page.url zaten tam URL mi?
             if page.url.startswith('http'):
                 # Zaten tam URL ise olduğu gibi kullan
                 final_url = page.url
-            elif current_lang == 'en':
-                # İngilizce için, page.url zaten "en/some-slug" formatında olabilir
-                if page.url.startswith('en/'):
-                    final_url = base_site_url.rstrip('/') + '/' + page.url
-                else:
-                    # Aksi halde "en/" prefix'iyle birleştir
-                    final_url = base_site_url.rstrip('/') + '/en/' + page.url.lstrip('/')
             else:
-                # Türkçe için sadece base_site_url ile birleştir
                 final_url = base_site_url.rstrip('/') + '/' + page.url.lstrip('/')
 
             # URL'yi normalize et (tekrar eden URL'leri temizle)
-            final_url = normalize_url(final_url, base_site_url + '/en' if current_lang == 'en' else base_site_url, current_lang)
+            final_url = normalize_url(final_url, base_site_url, current_lang)
             
             record = {
                 "id": final_url,
