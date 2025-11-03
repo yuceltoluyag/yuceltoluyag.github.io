@@ -269,3 +269,27 @@ msgstr "Next page"
 
 msgid "Sonraki"
 msgstr "Next"
+
+msgid "Webmentions"
+msgstr "Webmentions"
+
+msgid "Likes"
+msgstr "Likes"
+
+msgid "Loading likes..."
+msgstr "Loading likes..."
+
+msgid "Comments & Replies"
+msgstr "Comments & Replies"
+
+msgid "Loading comments..."
+msgstr "Loading comments..."
+
+msgid "No likes yet."
+msgstr "No likes yet."
+
+msgid "No comments yet."
+msgstr "No comments yet."
+
+msgid "Orijinal gönderi"
+msgstr "Original post"

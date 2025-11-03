@@ -1,0 +1,158 @@
+/* Main container */
+.webmentions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--pico-border-color); /* Use Pico's border color */
+}
+
+.webmentions__title {
+    font-size: var(--pico-h2-font-size); /* Use Pico's heading size */
+    margin-bottom: 1.5rem;
+    color: var(--pico-h1-color);
+}
+
+/* Section titles (Likes, Reposts, Comments) */
+.webmentions__section h3 {
+    font-size: var(--pico-h3-font-size); /* Use Pico's heading size */
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+    padding-bottom: 0.5rem;
+    color: var(--pico-h2-color);
+}
+
+/* General list styling */
+.webmentions__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Likes & Reposts (Facepile) --- */
+.webmentions__faces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center; /* Vertically align avatars */
+}
+
+.webmention--like,
+.webmention--repost {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.webmention--like a,
+.webmention--repost a {
+    display: block;
+    position: relative;
+    line-height: 0; /* Remove extra space below image */
+}
+
+.webmention--like .webmention__author-photo,
+.webmention--repost .webmention__author-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 2px solid var(--pico-background-color); /* Border to match background */
+    box-shadow: var(--pico-card-box-shadow); /* Subtle shadow */
+}
+
+.webmention--like a:hover .webmention__author-photo,
+.webmention--repost a:hover .webmention__author-photo {
+    transform: scale(1.1);
+    box-shadow: var(--pico-box-shadow); /* More prominent shadow on hover */
+}
+
+/* --- Comments --- */
+.webmention--comment {
+    background-color: var(--pico-card-background-color);
+    border: 1px solid var(--pico-card-border-color);
+    border-radius: var(--pico-border-radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--pico-card-box-shadow);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.webmention--comment .webmention__author-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition */
+    border: 2px solid var(--pico-background-color);
+    box-shadow: var(--pico-card-box-shadow);
+}
+
+.webmention--comment .webmention__author-photo:hover {
+    transform: scale(1.1);
+    box-shadow: var(--pico-box-shadow);
+}
+
+.webmention--comment .webmention__content-wrapper {
+    flex-grow: 1;
+}
+
+.webmention--comment .webmention__author-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.webmention--comment .webmention__author-name {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.webmention--comment .webmention__meta {
+    font-size: 0.875rem;
+    color: var(--pico-muted-color);
+}
+
+.webmention--comment .webmention__content {
+    line-height: var(--pico-line-height);
+    color: var(--pico-color);
+}
+
+.webmention--comment .webmention__content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .webmentions__title {
+        font-size: var(--pico-h3-font-size);
+    }
+    .webmentions__section h3 {
+        font-size: var(--pico-h4-font-size);
+    }
+    .webmention--comment {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .webmention--comment .webmention__author-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
+
+/* Loading/Empty states */
+.webmentions__list li.webmentions__loading,
+.webmentions__list li.webmentions__empty {
+    font-style: italic;
+    color: var(--pico-muted-color);
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--pico-card-background-color);
+    border-radius: var(--pico-border-radius);
+}
