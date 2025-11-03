@@ -116,3 +116,9 @@ msgstr "Enter search query"
 
 msgid "için sonuç bulunamadı"
 msgstr "no results found for"
+
+msgid "Sayfa"
+msgstr "Page"
+
+msgid "Son Makaleler"
+msgstr "Recent Articles"
