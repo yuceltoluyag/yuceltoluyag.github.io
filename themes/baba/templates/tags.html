@@ -1,14 +1,14 @@
-{% extends "base.html" %} {% block title %}Etiketler - {{ SITENAME }}{% endblock title %} {% block head %} {{ super() }}
+{% extends "base.html" %} {% block title %}{{ _('Etiketler') }} - {{ SITENAME }}{% endblock title %} {% block head %} {{ super() }}
 <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/tags.css">
 {% endblock %} {% block seo %}
 <meta
     name="description"
-    content="{{ SITENAME }} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz." />
+    content="{{ _('{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz.').format(sitename=SITENAME) }}" />
 <link rel="canonical" href="{{ SITEURL }}/etiketler/" />
-<meta property="og:title" content="Etiketler - {{ SITENAME }}" />
+<meta property="og:title" content="{{ _('Etiketler') }} - {{ SITENAME }}" />
 <meta
     property="og:description"
-    content="{{ SITENAME }} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz." />
+    content="{{ _('{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz.').format(sitename=SITENAME) }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/etiketler/" />
 {% endblock seo %}
@@ -17,11 +17,10 @@
         <!-- Hero Bölümü -->
         <div class="tags-hero text-center">
             <h1>
-                <i class="fa-solid fa-tags" style="color: #3498db;"></i> Etiketler
+                <i class="fa-solid fa-tags" style="color: #3498db;"></i> {{ _('Etiketler') }}
             </h1>
             <p>
-                {{ SITENAME }} sitesindeki tüm konulara ait etiketler. 
-                İlgilendiğiniz konulara göre yazılara kolayca ulaşabilirsiniz.
+                {{ _('{sitename} sitesindeki tüm konulara ait etiketler. İlgilendiğiniz konulara göre yazılara kolayca ulaşabilirsiniz.').format(sitename=SITENAME) }}
             </p>
         </div>
 
@@ -43,7 +42,7 @@
 
         <!-- Etiket Bulutu -->
         <section class="tags-section">
-            <h2><i class="fa-solid fa-cloud"></i> Etiket Bulutu</h2>
+            <h2><i class="fa-solid fa-cloud"></i> {{ _('Etiket Bulutu') }}</h2>
             <div class="tags-cloud-container">
                 {% for tag, articles, count in sorted_tags %}
                     {% set tag_size = 1 %}
@@ -66,7 +65,7 @@
                         href="{{ SITEURL }}/etiket/{{ tag.slug }}/"
                         class="tags-item tag-size-{{ tag_size }} pico-tag"
                         data-tag="{{ tag|string|lower }}"
-                        aria-label="{{ tag }} etiketli {{ count }} yazıya git">
+                        aria-label="{{ _('{tag} etiketli {count} yazıya git').format(tag=tag, count=count) }}">
                         #{{ tag }}
                         <span class="tags-count">{{ count }}</span>
                     </a>
@@ -76,14 +75,14 @@
 
         <!-- En Çok Kullanılan Etiketler -->
         <article class="tags-popular-card pico-card">
-            <h2><i class="fa-solid fa-fire"></i> En Çok Kullanılan Etiketler</h2>
+            <h2><i class="fa-solid fa-fire"></i> {{ _('En Çok Kullanılan Etiketler') }}</h2>
             <div class="tags-grid">
                 {% for tag, articles, count in sorted_tags[:10] %}
                 <article class="tags-summary-card pico-card">
                     <a href="{{ SITEURL }}/etiket/{{ tag.slug }}/" class="tags-summary-link">
                         <i class="fa-solid fa-tag" aria-hidden="true"></i>
                         <h3>#{{ tag }}</h3>
-                        <span class="tags-summary-count">{{ count }} yazı</span>
+                        <span class="tags-summary-count">{{ count }} {{ _('yazı') }}</span>
                     </a>
                 </article>
                 {% endfor %}

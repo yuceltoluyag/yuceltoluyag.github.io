@@ -60,6 +60,14 @@ super() }} {% if article.translations -%}
           >
         </span>
         {% endif %}
+        {% if article.stats %}
+        <span class="word-count">
+          <i class="fa-solid fa-book-open"></i> {{ article.stats.wc }} {{ _('words') }}
+        </span>
+        <span class="reading-time">
+          <i class="fa-solid fa-clock"></i> {{ article.stats.read_mins }} {{ _('min read') }}
+        </span>
+        {% endif %}
       </div>
     </div>
   </div>

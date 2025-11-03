@@ -1,16 +1,15 @@
-{% extends "base.html" %} {% block title %}Kategoriler - {{ SITENAME }}{%
+{% extends "base.html" %} {% block title %}{{ _('Kategoriler') }} - {{ SITENAME }}{%
 endblock title %} {% block seo %}
 <meta
   name="description"
-  content="Bu sayfada {{ SITENAME }} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz."
+  content="{{ _('Bu sayfada {sitename} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz.').format(sitename=SITENAME) }}"
 />
 <link rel="canonical" href="{{ SITEURL }}/kategoriler.html" />
 {% endblock seo %} {% block content %}
 <div style="text-align: center; margin-bottom: 2rem">
-  <h1>Kategoriler</h1>
+  <h1>{{ _('Kategoriler') }}</h1>
   <p>
-    Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz
-    kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz.
+    {{ _('Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz.') }}
   </p>
 </div>
 
@@ -35,7 +34,7 @@ endblock title %} {% block seo %}
       </div>
     </div>
     <footer>
-      <span class="article-count">{{ articles|length }} yazı</span>
+      <span class="article-count">{{ articles|length }} {{ _('yazı') }}</span>
     </footer>
   </article>
   {% endfor %}

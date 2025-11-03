@@ -6,22 +6,22 @@
         <a href="{{ SITEURL }}">{{ SITENAME }}</a>. {{ _('All rights reserved.') }}
       </p>
       <div class="footer-links">
-        <a href="/kategoriler/" aria-label="{{ _('Go to Categories page') }}">
+        <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}" aria-label="{{ _('Go to Categories page') }}">
           <span class="icon"><i class="fa-solid fa-folder" aria-hidden="true"></i></span>
           <span class="text">{{ _('Categories') }}</span>
           <span class="sr-only">{{ _('Categories') }}</span>
         </a>
-        <a href="/etiketler/" aria-label="{{ _('Go to Tags page') }}">
+        <a href="{{ SITEURL }}/{{ TAGS_URL }}" aria-label="{{ _('Go to Tags page') }}">
           <span class="icon"><i class="fa-solid fa-tags" aria-hidden="true"></i></span>
           <span class="text">{{ _('Tags') }}</span>
           <span class="sr-only">{{ _('Tags') }}</span>
         </a>
-        <a href="/terms/" aria-label="{{ _('Go to Terms of Use page') }}">
+        <a href="{{ SITEURL }}/terms/" aria-label="{{ _('Go to Terms of Use page') }}">
           <span class="icon"><i class="fa-solid fa-file-contract" aria-hidden="true"></i></span>
           <span class="text">{{ _('Terms of Use') }}</span>
           <span class="sr-only">{{ _('Terms of Use') }}</span>
         </a>
-        <a href="/privacy-policy/" aria-label="{{ _('Go to Privacy Policy page') }}">
+        <a href="{{ SITEURL }}/privacy-policy/" aria-label="{{ _('Go to Privacy Policy page') }}">
           <span class="icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
           <span class="text">{{ _('Privacy') }}</span>
           <span class="sr-only">{{ _('Privacy Policy') }}</span>

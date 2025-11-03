@@ -206,3 +206,66 @@ msgstr "Who is Yücel Toluyağ?"
 
 msgid "İletişim"
 msgstr "Contact"
+
+msgid "words"
+msgstr "words"
+
+msgid "min read"
+msgstr "min read"
+
+msgid "Kategoriler"
+msgstr "Categories"
+
+msgid "Bu sayfada {sitename} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz."
+msgstr "On this page, you can find all the categories of {sitename} content and easily access the articles on the topics you are interested in."
+
+msgid "Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz."
+msgstr "All content on our site is divided into categories. You can access the relevant articles by clicking on the category you are interested in."
+
+msgid "yazı"
+msgstr "post"
+
+msgid "Etiketler"
+msgstr "Tags"
+
+msgid "{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz."
+msgstr "You can find all the tags used on the {sitename} site and easily access articles by topic."
+
+msgid "{sitename} sitesindeki tüm konulara ait etiketler. İlgilendiğiniz konulara göre yazılara kolayca ulaşabilirsiniz."
+msgstr "Tags for all topics on the {sitename} site. You can easily access articles according to the topics you are interested in."
+
+msgid "Etiket Bulutu"
+msgstr "Tag Cloud"
+
+msgid "{tag} etiketli {count} yazıya git"
+msgstr "Go to {count} posts tagged with {tag}"
+
+msgid "En Çok Kullanılan Etiketler"
+msgstr "Most Used Tags"
+
+msgid "{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz."
+msgstr "All posts in the {category} category. You can find {articles_length} posts in this category."
+
+msgid "Bu kategoride {articles_length} yazı bulunuyor"
+msgstr "There are {articles_length} posts in this category"
+
+msgid "Etiketli Yazılar"
+msgstr "Posts Tagged"
+
+msgid "etiketi ile ilgili tüm yazılar. Bu etikette toplam {articles_length} yazı bulunuyor."
+msgstr "All posts related to the tag. There are a total of {articles_length} posts with this tag."
+
+msgid "Bu etikete sahip {articles_length} yazı bulundu"
+msgstr "Found {articles_length} posts with this tag"
+
+msgid "Önceki sayfa"
+msgstr "Previous page"
+
+msgid "Önceki"
+msgstr "Previous"
+
+msgid "Sonraki sayfa"
+msgstr "Next page"
+
+msgid "Sonraki"
+msgstr "Next"

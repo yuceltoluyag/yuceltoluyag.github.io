@@ -1,12 +1,12 @@
 {% extends "base.html" %} {% block title %}{{ category }} - {{ SITENAME }}{% endblock title %} {% block seo %}
 <meta
     name="description"
-    content="{{ category }} kategorisindeki tüm yazılar. Bu kategoride {{ articles|length }} adet yazı bulabilirsiniz." />
+    content="{{ _('{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz.').format(category=category, articles_length=articles|length) }}" />
 <link rel="canonical" href="{{ SITEURL }}/kategori/{{ category.slug }}/" />
 <meta property="og:title" content="{{ category }} - {{ SITENAME }}" />
 <meta
     property="og:description"
-    content="{{ category }} kategorisindeki tüm yazılar. Bu kategoride {{ articles|length }} adet yazı bulabilirsiniz." />
+    content="{{ _('{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz.').format(category=category, articles_length=articles|length) }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ SITEURL }}/kategori/{{ category.slug }}/" />
 {% endblock seo %} {% block content %}
@@ -18,7 +18,7 @@
         </div>
         <div class="category-info">
             <h1 class="category-title">{{ category }}</h1>
-            <p class="category-count">Bu kategoride {{ articles|length }} yazı bulunuyor</p>
+            <p class="category-count">{{ _('Bu kategoride {articles_length} yazı bulunuyor').format(articles_length=articles|length) }}</p>
         </div>
     </div>
 

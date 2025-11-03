@@ -2,6 +2,7 @@ Title: Gizlilik Politikası
 Date: 2024-03-21 10:00
 Modified: 2025-03-08 12:00
 Slug: privacy-policy
+Lang: tr
 Template: legal
 
 # Gizlilik Politikası

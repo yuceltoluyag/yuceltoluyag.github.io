@@ -1,6 +1,5 @@
-{% extends "minimal.html" %} {% block head %} {{ super() }} {% endblock %} {% block content %}
+{% extends "minimal.html" %} {% block content %}
 <div class="legal-container container">
-    <!-- Hero Bölümü -->
     <div class="legal-hero">
         <div class="legal-icon-container">
             <div class="legal-icon-ping"></div>
@@ -8,144 +7,12 @@
                 <span class="iconify" data-icon="tabler:settings" width="32" height="32"></span>
             </div>
         </div>
-        <h1 class="legal-title">Yasal Bilgiler</h1>
+        <h1 class="legal-title">{{ page.title }}</h1>
     </div>
 
-    <!-- İçerik Bölümü -->
     <div class="legal-content-wrapper">
-        <div class="legal-content pico-card">
-            <!-- Kullanım Şartları -->
-            <section class="legal-section">
-                <h2 class="legal-section-title">Kullanım Şartları</h2>
-                <div class="legal-section-content">
-                    <p class="legal-section-intro">
-                        Bu web sitesi ve içeriği, bireysel kullanım için paylaşılmış olup, aşağıdaki şartlara tabidir:
-                    </p>
-                    <ul class="legal-list">
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Telif Hakkı:</span>
-                                Bu sitedeki tüm içerikler, aksi belirtilmedikçe, site sahibinin telif hakkına tabidir ve
-                                her hakkı saklıdır.
-                            </p>
-                        </li>
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">İçerik Kullanımı:</span>
-                                Site içeriği, eğitim ve kişisel bilgi amaçlı referans olarak kullanılabilir. Kaynak
-                                gösterilmesi şartıyla, sınırlı alıntılar yapılabilir.
-                            </p>
-                        </li>
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Yeniden Yayın:</span>
-                                İçeriğin tamamen veya kısmen ticari amaçla yeniden yayınlanması, ancak site sahibinin
-                                yazılı izni ile mümkündür.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Gizlilik Politikası -->
-            <section class="legal-section">
-                <h2 class="legal-section-title">Gizlilik Politikası</h2>
-                <div class="legal-section-content">
-                    <p class="legal-section-intro">
-                        Kişisel bilgilerinizin korunmasına önem veriyoruz. Sitemizde aşağıdaki gizlilik uygulamaları
-                        bulunmaktadır:
-                    </p>
-                    <ul class="legal-list">
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Veri Toplama:</span>
-                                Bu site, analitik amaçlarla anonim kullanım verileri toplamaktadır. Bu verilerde kişisel
-                                tanımlayıcı bilgiler yer almaz.
-                            </p>
-                        </li>
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Çerezler:</span>
-                                Sitede çerezler kullanılmaktadır. Bunlar, site deneyiminizi geliştirmek ve anonim
-                                kullanım istatistikleri toplamak için gereklidir.
-                            </p>
-                        </li>
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Üçüncü Taraf Hizmetleri:</span>
-                                Site, Google Analytics gibi üçüncü taraf analitik hizmetlerini kullanmaktadır. Bu
-                                hizmetlerin kendi gizlilik politikaları bulunmaktadır.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Sorumluluk Reddi -->
-            <section class="legal-section">
-                <h2 class="legal-section-title">Sorumluluk Reddi</h2>
-                <div class="legal-section-content">
-                    <p class="legal-section-intro">
-                        Lütfen aşağıdaki sorumluluk reddi bildirimini dikkate alınız:
-                    </p>
-                    <ul class="legal-list">
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Doğruluk:</span>
-                                Sitedeki bilgilerin doğruluğu ve güncelliği için her türlü çaba gösterilmekle birlikte,
-                                bilgilerin kesinliği garanti edilmemektedir.
-                            </p>
-                        </li>
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Kullanım Sorumluluğu:</span>
-                                Site içeriğinin kullanımından doğabilecek herhangi bir zarar veya kayıptan site sahibi
-                                sorumlu değildir.
-                            </p>
-                        </li>
-                        <li class="legal-list-item">
-                            <p class="legal-list-text">
-                                <span class="legal-bold">Dış Bağlantılar:</span>
-                                Sitede yer alan dış bağlantılar, yalnızca bilgi amaçlıdır. Bu sitelerin içeriğinden ve
-                                güvenliğinden site sahibi sorumlu değildir.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- İletişim -->
-            <section class="legal-section">
-                <h2 class="legal-section-title">İletişim</h2>
-                <div class="legal-section-content">
-                    <p class="legal-section-intro">
-                        Yasal konularla ilgili sorularınız veya talepleriniz için aşağıdaki kanallardan iletişime
-                        geçebilirsiniz:
-                    </p>
-                    <div class="legal-contact-info">
-                        <div class="legal-contact-item">
-                            <div class="legal-contact-icon">
-                                <span class="iconify" data-icon="tabler:mail" width="20" height="20"></span>
-                            </div>
-                            <span class="legal-contact-text">legal@example.com</span>
-                        </div>
-                        <div class="legal-contact-item">
-                            <div class="legal-contact-icon">
-                                <span class="iconify" data-icon="tabler:phone" width="20" height="20"></span>
-                            </div>
-                            <span class="legal-contact-text">+90 XXX XXX XX XX</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Son Güncelleme -->
-            <div class="legal-last-updated">
-                <p>
-                    Son güncelleme:
-                    <time datetime="2023-09-01" class="legal-date">1 Eylül 2023</time>
-                </p>
-            </div>
+        <div class="legal-content pico-card pico-prose">
+            {{ page.content }}
         </div>
     </div>
 </div>
