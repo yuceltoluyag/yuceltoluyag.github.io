@@ -29,6 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
                     case "in-reply-to":
                         comments.push(mention);
                         break;
+                    case "repost-of":
+                        comments.push(mention); // Add reposts to comments section
+                        break;
+                    case "mention-of":
+                        comments.push(mention); // Add mentions to comments section
+                        break;
+                    case "bookmark-of":
+                        comments.push(mention); // Add bookmarks to comments section
+                        break;
                 }
             });
 
