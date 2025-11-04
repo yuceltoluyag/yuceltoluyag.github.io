@@ -364,6 +364,9 @@ msgid "min read"
 
 msgstr "dk okuma"
 
+msgid "Likes"
+msgstr "Beğeniler"
+
 
 
 
