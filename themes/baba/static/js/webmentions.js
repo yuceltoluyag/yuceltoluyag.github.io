@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         comments.push(mention);
                         break;
                     case "repost-of":
-                        // comments.push(mention); // Exclude reposts from comments section
+                        comments.push(mention); // Add reposts to comments section
                         break;
                     case "mention-of":
                         comments.push(mention); // Add mentions to comments section
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </span>
                     </div>
                     <div class="webmention__content">
-                        ${mention.content ? (mention.content.html || mention.content.text) : ''}
+                        ${mention.content.html || mention.content.text}
                     </div>
                 </div>
             `;

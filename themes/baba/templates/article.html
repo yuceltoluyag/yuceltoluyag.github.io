@@ -375,8 +375,7 @@ super() }} {% if article.translations -%}
 {% if article.lang != DEFAULT_LANG %}
   {% set canonical_path = article.lang ~ '/' ~ article.url %}
 {% endif %}
-<p class="webmentions-original-post-text">{{ _('Orijinal gönderi') }}</p>
-<div id="webmentions" data-url="{{ CANONICAL_URL.rstrip('/') }}/{{ canonical_path.lstrip('/') }}">
+<div id="webmentions" data-url="{{ CANONICAL_URL.rstrip('/') }}/{{ canonical_path.lstrip('/') }}" data-original-post-text="{{ _('Orijinal gönderi') }}">
     {% include 'partials/webmentions.html' %}
 </div>
 <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
