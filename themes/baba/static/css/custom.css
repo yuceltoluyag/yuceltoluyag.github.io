@@ -44,7 +44,6 @@ article.hentry {
   padding: 25px;
   border-radius: 20px;
 }
-ul,
 h1.page-title {
   margin-bottom: 0.75em;
 }
@@ -748,13 +747,11 @@ h6:hover .headerlink {
   padding: 0;
   margin: 0;
 }
-.related-posts-list,
-.related-posts-list li,
-.series-list li,
-li {
-  list-style: none !important;
-}
-.series-list li::-webkit-details-marker,
+    .related-posts-list,
+    .related-posts-list li,
+    .series-list li {
+      list-style: none !important;
+    }.series-list li::-webkit-details-marker,
 .series-list li::marker {
   content: "" !important;
   display: none !important;
@@ -1597,16 +1594,13 @@ article.article {
   flex-wrap: wrap;
   gap: var(--pico-grid-column-gap, 1.5rem);
 }
-.related-posts-list li::-webkit-details-marker,
-.related-posts-list li::marker,
-.series-list li::-webkit-details-marker,
-.series-list li::marker,
-li::-webkit-details-marker,
-li::marker {
-  content: "" !important;
-  display: none !important;
-}
-.article-nav-arrows,
+    .related-posts-list li::-webkit-details-marker,
+    .related-posts-list li::marker,
+    .series-list li::-webkit-details-marker,
+    .series-list li::marker {
+      content: "" !important;
+      display: none !important;
+    }.article-nav-arrows,
 .nav-arrows {
   display: grid;
   grid-template-columns: 1fr 1fr;

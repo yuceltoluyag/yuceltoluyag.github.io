@@ -1,0 +1,14 @@
+/* Article Typography for lists */
+article.article ul {
+  margin-bottom: 0.75em;
+}
+article.article :where(ol, ul) li {
+  margin-bottom: calc(var(--pico-typography-spacing-vertical) * 0.25);
+}
+article.article :where(dl, ol, ul) :where(dl, ol, ul) {
+  margin: 0;
+  margin-top: calc(var(--pico-typography-spacing-vertical) * 0.25);
+}
+article.article ul li {
+  list-style: square;
+}
