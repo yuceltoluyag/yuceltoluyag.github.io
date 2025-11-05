@@ -1,8 +1,48 @@
 # Robots.txt for yuceltoluyag.github.io
+# Amaç: Arama motorlarına izin ver, yapay zekâ veri toplayıcılarını engelle
 
 Sitemap: https://yuceltoluyag.github.io/sitemap.xml
 
-# Tüm botlar için yönergeler
+###########################################
+# 🚫 Yapay Zekâ / Veri Toplama Botlarını Engelle
+###########################################
+User-agent: AI2Bot
+User-agent: Ai2Bot-Dolma
+User-agent: aiHitBot
+User-agent: Amazonbot
+User-agent: anthropic-ai
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Brightbot
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: Diffbot
+User-agent: DuckAssistBot
+User-agent: Factset_spyderbot
+User-agent: FirecrawlAgent
+User-agent: FriendlyCrawler
+User-agent: Google-CloudVertexBot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
+User-agent: MistralAI-User
+User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: cohere-training-data-crawler
+User-agent: YouBot
+Disallow: /
+
+###########################################
+# ✅ Arama Motorlarına ve Sosyal Medyaya İzin Ver
+###########################################
 User-agent: *
 Allow: /
 
@@ -38,7 +78,9 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-# Agresif botlar için sınırlamalar
+###########################################
+# ⚠️ Agresif SEO Botları için Kısıtlama
+###########################################
 User-agent: SemrushBot
 Disallow: /etiket/
 Disallow: /kategori/
@@ -52,7 +94,9 @@ Allow: /
 User-agent: MJ12bot
 Disallow: /
 
-# Sosyal medya önbellekleme
+###########################################
+# 📱 Sosyal Medya Önbellekleme
+###########################################
 User-agent: Twitterbot
 Allow: /
 
