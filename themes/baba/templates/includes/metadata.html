@@ -75,11 +75,11 @@
 <meta name="description" content="{{ page.summary|striptags|truncate(160) }}" />
 <meta property="og:description" content="{{ page.summary|striptags|truncate(160) }}" />
 {% elif category %}
-<meta name="description" content="{{ category }} kategorisindeki tüm yazılar ve makaleler. {{ SITENAME }} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin." />
-<meta property="og:description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
+<meta name="description" content="{{ _('{category} kategorisindeki tüm yazılar ve makaleler. {sitename} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin.').format(category=category, sitename=SITENAME) }}" />
+<meta property="og:description" content="{{ _('{category} kategorisindeki tüm yazılar ve makaleler. {sitename} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin.').format(category=category, sitename=SITENAME) }}" />
 {% elif tag %}
-<meta name="description" content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. {{ SITENAME }} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin." />
-<meta property="og:description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
+<meta name="description" content="{{ _('#{tag} etiketi ile ilgili tüm yazılar ve rehberler. {sitename} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin.').format(tag=tag, sitename=SITENAME) }}" />
+<meta property="og:description" content="{{ _('#{tag} etiketi ile ilgili tüm yazılar ve rehberler. {sitename} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin.').format(tag=tag, sitename=SITENAME) }}" />
 {% else %}
 <meta name="description" content="{{ DESCRIPTION }}" />
 <meta property="og:description" content="{{ DESCRIPTION }}" />

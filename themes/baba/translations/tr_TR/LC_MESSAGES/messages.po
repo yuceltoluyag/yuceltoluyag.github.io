@@ -10,133 +10,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Flex 2.1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-11-01 23:30+0300\n"
+"POT-Creation-Date: 2025-11-06 10:27+0300\n"
 "PO-Revision-Date: 2016-08-25 02:15+0000\n"
 "Last-Translator: İlker Yürüyen <i.ilker.yuruyen@gmail.com>, 2019\n"
 "Language: tr_TR\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/alexandrevicenzi/teams/66327/tr_TR/)\n"
+"Language-Team: Turkish (Turkey) "
+"(https://www.transifex.com/alexandrevicenzi/teams/66327/tr_TR/)\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
-
-#: themes/baba/templates/article.html:92
-msgid "Series:"
-msgstr ""
-
-#: themes/baba/templates/article.html:106
-#, python-format
-msgid "This article is part %(index)s of the '%(name)s' series."
-msgstr ""
-
-#: themes/baba/templates/article.html:110
-msgid "Series Contents"
-msgstr ""
-
-#: themes/baba/templates/article.html:160
-msgid "Related Posts"
-msgstr ""
-
-#: themes/baba/templates/article.html:178
-msgid "Destek Olun"
-msgstr ""
-
-#: themes/baba/templates/article.html:181
-msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
-msgstr ""
-
-#: themes/baba/templates/article.html:184
-msgid "Destek Ol"
-msgstr ""
-
-#: themes/baba/templates/article.html:194
-msgid "Düzenle"
-msgstr ""
-
-#: themes/baba/templates/article.html:205
-msgid "Paylaş:"
-msgstr ""
-
-#: themes/baba/templates/article.html:360
-msgid "Önceki:"
-msgstr ""
-
-#: themes/baba/templates/article.html:368
-msgid "Sonraki:"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:6
-msgid "Tüm hakları saklıdır."
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:9
-msgid "Kategoriler sayfasına git"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:11
-#: themes/baba/templates/includes/footer.html:12
-msgid "Kategoriler"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:14
-msgid "Etiketler sayfasına git"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:16
-#: themes/baba/templates/includes/footer.html:17
-msgid "Etiketler"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:19
-msgid "Kullanım Koşulları sayfasına git"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:21
-#: themes/baba/templates/includes/footer.html:22
-msgid "Kullanım Koşulları"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:24
-msgid "Gizlilik Politikası sayfasına git"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:26
-msgid "Gizlilik"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:27
-msgid "Gizlilik Politikası"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:30
-msgid "Atom beslemesine git"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:32
-msgid "Atom"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:33
-msgid "Atom Beslemesi"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:37
-msgid "RSS beslemesine git"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:39
-msgid "RSS"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:40
-msgid "RSS Beslemesi"
-msgstr ""
-
-#: themes/baba/templates/includes/footer.html:48
-#, python-brace-format
-msgid "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube kanalıma</a> abone olarak destek olabilirsiniz."
-msgstr ""
 
 #~ msgid "Archives"
 #~ msgstr "Arşivler"
@@ -166,10 +50,10 @@ msgstr ""
 #~ msgstr "Ana Sayfa"
 
 #~ msgid "Atom"
-#~ msgstr "Atom"
+#~ msgstr ""
 
 #~ msgid "RSS"
-#~ msgstr "RSS"
+#~ msgstr ""
 
 #~ msgid "Categories"
 #~ msgstr "Kategoriler"
@@ -215,4 +99,86 @@ msgstr ""
 
 #~ msgid "Newer Posts"
 #~ msgstr "Yeni Paylaşımlar"
+
+#~ msgid "Series:"
+#~ msgstr ""
+
+#~ msgid "This article is part %(index)s of the '%(name)s' series."
+#~ msgstr ""
+
+#~ msgid "Series Contents"
+#~ msgstr ""
+
+#~ msgid "Related Posts"
+#~ msgstr ""
+
+#~ msgid "Destek Olun"
+#~ msgstr ""
+
+#~ msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
+#~ msgstr ""
+
+#~ msgid "Destek Ol"
+#~ msgstr ""
+
+#~ msgid "Düzenle"
+#~ msgstr ""
+
+#~ msgid "Paylaş:"
+#~ msgstr ""
+
+#~ msgid "Önceki:"
+#~ msgstr ""
+
+#~ msgid "Sonraki:"
+#~ msgstr ""
+
+#~ msgid "Tüm hakları saklıdır."
+#~ msgstr ""
+
+#~ msgid "Kategoriler sayfasına git"
+#~ msgstr ""
+
+#~ msgid "Kategoriler"
+#~ msgstr ""
+
+#~ msgid "Etiketler sayfasına git"
+#~ msgstr ""
+
+#~ msgid "Etiketler"
+#~ msgstr ""
+
+#~ msgid "Kullanım Koşulları sayfasına git"
+#~ msgstr ""
+
+#~ msgid "Kullanım Koşulları"
+#~ msgstr ""
+
+#~ msgid "Gizlilik Politikası sayfasına git"
+#~ msgstr ""
+
+#~ msgid "Gizlilik"
+#~ msgstr ""
+
+#~ msgid "Gizlilik Politikası"
+#~ msgstr ""
+
+#~ msgid "Atom beslemesine git"
+#~ msgstr ""
+
+#~ msgid "Atom Beslemesi"
+#~ msgstr ""
+
+#~ msgid "RSS beslemesine git"
+#~ msgstr ""
+
+#~ msgid "RSS Beslemesi"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Bağış yapamıyorsanız, <a "
+#~ "href=\"https://youtube.com/@{youtube}\" "
+#~ "target=\"_blank\">YouTube kanalıma</a> abone olarak"
+#~ " destek olabilirsiniz."
+#~ msgstr ""
 

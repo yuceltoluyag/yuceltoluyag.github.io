@@ -1,295 +1,358 @@
 # English translations for Pelican
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version:  1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 14:00+0300\n"
+"POT-Creation-Date: 2025-11-06 10:27+0300\n"
 "PO-Revision-Date: 2025-11-02 14:00+0300\n"
 "Last-Translator: Automatically generated\n"
-"Language-Team: English\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
+"Language-Team: English\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
 
-msgid "Series:"
-msgstr "Series:"
+#~ msgid "Series:"
+#~ msgstr "Series:"
 
-#, python-format
-msgid "This article is part %(index)s of the '%(name)s' series."
-msgstr "This article is part %(index)s of the '%(name)s' series."
+#~ msgid "This article is part %(index)s of the '%(name)s' series."
+#~ msgstr "This article is part %(index)s of the '%(name)s' series."
 
-msgid "Series Contents"
-msgstr "Series Contents"
+#~ msgid "Series Contents"
+#~ msgstr "Series Contents"
 
-msgid "Related Posts"
-msgstr "Related Posts"
+#~ msgid "Related Posts"
+#~ msgstr "Related Posts"
 
-msgid "Share:"
-msgstr "Share:"
+#~ msgid "Share:"
+#~ msgstr "Share:"
 
-msgid "Support Me"
-msgstr "Support Me"
+#~ msgid "Support Me"
+#~ msgstr "Support Me"
 
-msgid "If you find this content useful, you can support my work."
-msgstr "If you find this content useful, you can support my work."
+#~ msgid "If you find this content useful, you can support my work."
+#~ msgstr "If you find this content useful, you can support my work."
 
-msgid "Support"
-msgstr "Support"
+#~ msgid "Support"
+#~ msgstr "Support"
 
-msgid "Edit"
-msgstr "Edit"
+#~ msgid "Edit"
+#~ msgstr "Edit"
 
-msgid "Previous:"
-msgstr "Previous:"
+#~ msgid "Previous:"
+#~ msgstr "Previous:"
 
-msgid "Next:"
-msgstr "Next:"
+#~ msgid "Next:"
+#~ msgstr "Next:"
 
-msgid "Article navigation"
-msgstr "Article navigation"
+#~ msgid "Article navigation"
+#~ msgstr "Article navigation"
 
-msgid "Previous article:"
-msgstr "Previous article:"
+#~ msgid "Previous article:"
+#~ msgstr "Previous article:"
 
-msgid "Next article:"
-msgstr "Next article:"
+#~ msgid "Next article:"
+#~ msgstr "Next article:"
 
-msgid "All rights reserved."
-msgstr "All rights reserved."
+#~ msgid "All rights reserved."
+#~ msgstr "All rights reserved."
 
-msgid "Go to Categories page"
-msgstr "Go to Categories page"
+#~ msgid "Go to Categories page"
+#~ msgstr "Go to Categories page"
 
-msgid "Categories"
-msgstr "Categories"
+#~ msgid "Categories"
+#~ msgstr "Categories"
 
-msgid "Go to Tags page"
-msgstr "Go to Tags page"
+#~ msgid "Go to Tags page"
+#~ msgstr "Go to Tags page"
 
-msgid "Tags"
-msgstr "Tags"
+#~ msgid "Tags"
+#~ msgstr "Tags"
 
-msgid "Go to Terms of Use page"
-msgstr "Go to Terms of Use page"
+#~ msgid "Go to Terms of Use page"
+#~ msgstr "Go to Terms of Use page"
 
-msgid "Terms of Use"
-msgstr "Terms of Use"
+#~ msgid "Terms of Use"
+#~ msgstr "Terms of Use"
 
-msgid "Go to Privacy Policy page"
-msgstr "Go to Privacy Policy page"
+#~ msgid "Go to Privacy Policy page"
+#~ msgstr "Go to Privacy Policy page"
 
-msgid "Privacy"
-msgstr "Privacy"
+#~ msgid "Privacy"
+#~ msgstr "Privacy"
 
-msgid "Privacy Policy"
-msgstr "Privacy Policy"
+#~ msgid "Privacy Policy"
+#~ msgstr "Privacy Policy"
 
-msgid "Go to Atom feed"
-msgstr "Go to Atom feed"
+#~ msgid "Go to Atom feed"
+#~ msgstr "Go to Atom feed"
 
-msgid "Atom"
-msgstr "Atom"
+#~ msgid "Atom"
+#~ msgstr "Atom"
 
-msgid "Atom Feed"
-msgstr "Atom Feed"
+#~ msgid "Atom Feed"
+#~ msgstr "Atom Feed"
 
-msgid "Go to RSS feed"
-msgstr "Go to RSS feed"
+#~ msgid "Go to RSS feed"
+#~ msgstr "Go to RSS feed"
 
-msgid "RSS"
-msgstr "RSS"
+#~ msgid "RSS"
+#~ msgstr "RSS"
 
-msgid "RSS Feed"
-msgstr "RSS Feed"
+#~ msgid "RSS Feed"
+#~ msgstr "RSS Feed"
 
-#, python-brace-format
-msgid "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
-msgstr "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
+#~ msgid ""
+#~ "If you can't donate, you can "
+#~ "support by subscribing to my <a "
+#~ "href=\"https://youtube.com/@{youtube}\" "
+#~ "target=\"_blank\">YouTube channel</a>."
+#~ msgstr ""
+#~ "If you can't donate, you can "
+#~ "support by subscribing to my <a "
+#~ "href=\"https://youtube.com/@{youtube}\" "
+#~ "target=\"_blank\">YouTube channel</a>."
 
-msgid "Arama..."
-msgstr "Search..."
+#~ msgid "Arama..."
+#~ msgstr "Search..."
 
-msgid "Arama sorgusu giriniz"
-msgstr "Enter search query"
+#~ msgid "Arama sorgusu giriniz"
+#~ msgstr "Enter search query"
 
-msgid "için sonuç bulunamadı"
-msgstr "no results found for"
+#~ msgid "için sonuç bulunamadı"
+#~ msgstr "no results found for"
 
-msgid "Sayfa"
-msgstr "Page"
+#~ msgid "Sayfa"
+#~ msgstr "Page"
 
-msgid "Son Makaleler"
-msgstr "Recent Articles"
+#~ msgid "Son Makaleler"
+#~ msgstr "Recent Articles"
 
-msgid "Bağış Yap"
-msgstr "Donate"
+#~ msgid "Bağış Yap"
+#~ msgstr "Donate"
 
-msgid "Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
-msgstr "You can support my work and content by making a donation. You can contribute with Papara, GitHub Sponsors, and cryptocurrency options."
+#~ msgid ""
+#~ "Çalışmalarımı ve içeriklerimi desteklemek için"
+#~ " bağış yapabilirsiniz. Papara, GitHub "
+#~ "Sponsors ve kripto para seçenekleri ile"
+#~ " katkıda bulunabilirsiniz."
+#~ msgstr ""
+#~ "You can support my work and "
+#~ "content by making a donation. You "
+#~ "can contribute with Papara, GitHub "
+#~ "Sponsors, and cryptocurrency options."
 
-msgid "Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz."
-msgstr "If you find my content useful and want to support my work, you can donate using the methods below."
+#~ msgid ""
+#~ "Eğer içeriklerimi faydalı buluyorsanız ve "
+#~ "çalışmalarımı desteklemek istiyorsanız, aşağıdaki"
+#~ " yöntemlerle bağış yapabilirsiniz."
+#~ msgstr ""
+#~ "If you find my content useful and"
+#~ " want to support my work, you "
+#~ "can donate using the methods below."
 
-msgid "Neden Bağış?"
-msgstr "Why Donate?"
+#~ msgid "Neden Bağış?"
+#~ msgstr "Why Donate?"
 
-msgid "Daha fazla içerik üretebiliyorum"
-msgstr "I can produce more content"
+#~ msgid "Daha fazla içerik üretebiliyorum"
+#~ msgstr "I can produce more content"
 
-msgid "Daha kaliteli eğitim videoları hazırlayabiliyorum"
-msgstr "I can prepare higher quality educational videos"
+#~ msgid "Daha kaliteli eğitim videoları hazırlayabiliyorum"
+#~ msgstr "I can prepare higher quality educational videos"
 
-msgid "Açık kaynak projelere daha fazla zaman ayırabiliyorum"
-msgstr "I can dedicate more time to open source projects"
+#~ msgid "Açık kaynak projelere daha fazla zaman ayırabiliyorum"
+#~ msgstr "I can dedicate more time to open source projects"
 
-msgid "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"
-msgstr "I can improve my technological infrastructure and equipment"
+#~ msgid "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"
+#~ msgstr "I can improve my technological infrastructure and equipment"
 
-msgid "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"
-msgstr "I can organize more events and projects for the community"
+#~ msgid "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"
+#~ msgstr "I can organize more events and projects for the community"
 
-msgid "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
-msgstr "I can spend more time researching and experiencing new technologies"
+#~ msgid ""
+#~ "Yeni teknolojileri araştırıp deneyimlemeye "
+#~ "daha fazla vakit ayırabiliyorum"
+#~ msgstr "I can spend more time researching and experiencing new technologies"
 
-msgid "Bağış Seçenekleri"
-msgstr "Donation Options"
+#~ msgid "Bağış Seçenekleri"
+#~ msgstr "Donation Options"
+
+#~ msgid "Hızlı ve Güvenli Bağış"
+#~ msgstr "Fast and Secure Donation"
+
+#~ msgid "Türk lirası ile hızlı bağış"
+#~ msgstr "Fast donation with Turkish Lira"
+
+#~ msgid "Aylık Destek"
+#~ msgstr "Monthly Support"
+
+#~ msgid "Aylık düzenli destek"
+#~ msgstr "Regular monthly support"
+
+#~ msgid "Kripto Para Bağışları"
+#~ msgstr "Cryptocurrency Donations"
 
-msgid "Hızlı ve Güvenli Bağış"
-msgstr "Fast and Secure Donation"
+#~ msgid "Ağ bilgisi"
+#~ msgstr "Network information"
+
+#~ msgid "Önemli:"
+#~ msgstr "Important:"
+
+#~ msgid "Tüm adresler"
+#~ msgstr "All addresses"
+
+#~ msgid "ağını kullanır."
+#~ msgstr "use the network."
+
+#~ msgid "Farklı ağlar için lütfen"
+#~ msgstr "For different networks, please"
+
+#~ msgid "iletişime geçin"
+#~ msgstr "contact us"
+
+#~ msgid "Cüzdan Adresini Göster"
+#~ msgstr "Show Wallet Address"
+
+#~ msgid "Kopyala"
+#~ msgstr "Copy"
+
+#~ msgid "Kopyalandı!"
+#~ msgstr "Copied!"
+
+#~ msgid "Kopyalama başarısız:"
+#~ msgstr "Copy failed:"
+
+#~ msgid "Yücel Toluyağ Kimdir ?"
+#~ msgstr "Who is Yücel Toluyağ?"
+
+#~ msgid "İletişim"
+#~ msgstr "Contact"
+
+#~ msgid "words"
+#~ msgstr "words"
+
+#~ msgid "min read"
+#~ msgstr "min read"
+
+#~ msgid "Kategoriler"
+#~ msgstr "Categories"
+
+#~ msgid ""
+#~ "Bu sayfada {sitename} içeriklerinin tüm "
+#~ "kategorilerini bulabilir ve ilgilendiğiniz "
+#~ "konudaki yazılara kolayca ulaşabilirsiniz."
+#~ msgstr ""
+#~ "On this page, you can find all "
+#~ "the categories of {sitename} content and"
+#~ " easily access the articles on the"
+#~ " topics you are interested in."
 
-msgid "Türk lirası ile hızlı bağış"
-msgstr "Fast donation with Turkish Lira"
+#~ msgid ""
+#~ "Sitemizdeki tüm içerikler kategorilere "
+#~ "ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak"
+#~ " ilgili yazılara ulaşabilirsiniz."
+#~ msgstr ""
+#~ "All content on our site is divided"
+#~ " into categories. You can access the"
+#~ " relevant articles by clicking on the"
+#~ " category you are interested in."
 
-msgid "Aylık Destek"
-msgstr "Monthly Support"
+#~ msgid "yazı"
+#~ msgstr "post"
 
-msgid "Aylık düzenli destek"
-msgstr "Regular monthly support"
+#~ msgid "Etiketler"
+#~ msgstr "Tags"
 
-msgid "Kripto Para Bağışları"
-msgstr "Cryptocurrency Donations"
+#~ msgid ""
+#~ "{sitename} sitesinde kullanılan tüm etiketleri"
+#~ " bulabilir ve konulara göre yazılara "
+#~ "kolayca erişebilirsiniz."
+#~ msgstr ""
+#~ "You can find all the tags used "
+#~ "on the {sitename} site and easily "
+#~ "access articles by topic."
 
-msgid "Ağ bilgisi"
-msgstr "Network information"
+#~ msgid ""
+#~ "{sitename} sitesindeki tüm konulara ait "
+#~ "etiketler. İlgilendiğiniz konulara göre "
+#~ "yazılara kolayca ulaşabilirsiniz."
+#~ msgstr ""
+#~ "Tags for all topics on the "
+#~ "{sitename} site. You can easily access"
+#~ " articles according to the topics you"
+#~ " are interested in."
 
-msgid "Önemli:"
-msgstr "Important:"
+#~ msgid "Etiket Bulutu"
+#~ msgstr "Tag Cloud"
 
-msgid "Tüm adresler"
-msgstr "All addresses"
+#~ msgid "{tag} etiketli {count} yazıya git"
+#~ msgstr "Go to {count} posts tagged with {tag}"
 
-msgid "ağını kullanır."
-msgstr "use the network."
+#~ msgid "En Çok Kullanılan Etiketler"
+#~ msgstr "Most Used Tags"
 
-msgid "Farklı ağlar için lütfen"
-msgstr "For different networks, please"
+#~ msgid ""
+#~ "{category} kategorisindeki tüm yazılar. Bu "
+#~ "kategoride {articles_length} adet yazı "
+#~ "bulabilirsiniz."
+#~ msgstr ""
+#~ "All posts in the {category} category."
+#~ " You can find {articles_length} posts "
+#~ "in this category."
 
-msgid "iletişime geçin"
-msgstr "contact us"
+#~ msgid "Bu kategoride {articles_length} yazı bulunuyor"
+#~ msgstr "There are {articles_length} posts in this category"
 
-msgid "Cüzdan Adresini Göster"
-msgstr "Show Wallet Address"
+#~ msgid "Etiketli Yazılar"
+#~ msgstr "Posts Tagged"
 
-msgid "Kopyala"
-msgstr "Copy"
+#~ msgid ""
+#~ "etiketi ile ilgili tüm yazılar. Bu "
+#~ "etikette toplam {articles_length} yazı "
+#~ "bulunuyor."
+#~ msgstr ""
+#~ "All posts related to the tag. "
+#~ "There are a total of {articles_length}"
+#~ " posts with this tag."
 
-msgid "Kopyalandı!"
-msgstr "Copied!"
+#~ msgid "Bu etikete sahip {articles_length} yazı bulundu"
+#~ msgstr "Found {articles_length} posts with this tag"
 
-msgid "Kopyalama başarısız:"
-msgstr "Copy failed:"
+#~ msgid "Önceki sayfa"
+#~ msgstr "Previous page"
 
-msgid "Yücel Toluyağ Kimdir ?"
-msgstr "Who is Yücel Toluyağ?"
+#~ msgid "Önceki"
+#~ msgstr "Previous"
 
-msgid "İletişim"
-msgstr "Contact"
+#~ msgid "Sonraki sayfa"
+#~ msgstr "Next page"
 
-msgid "words"
-msgstr "words"
+#~ msgid "Sonraki"
+#~ msgstr "Next"
 
-msgid "min read"
-msgstr "min read"
+#~ msgid "Webmentions"
+#~ msgstr "Webmentions"
 
-msgid "Kategoriler"
-msgstr "Categories"
+#~ msgid "Likes"
+#~ msgstr "Likes"
 
-msgid "Bu sayfada {sitename} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz."
-msgstr "On this page, you can find all the categories of {sitename} content and easily access the articles on the topics you are interested in."
+#~ msgid "Loading likes..."
+#~ msgstr "Loading likes..."
 
-msgid "Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz."
-msgstr "All content on our site is divided into categories. You can access the relevant articles by clicking on the category you are interested in."
+#~ msgid "Comments & Replies"
+#~ msgstr "Comments & Replies"
 
-msgid "yazı"
-msgstr "post"
+#~ msgid "Loading comments..."
+#~ msgstr "Loading comments..."
 
-msgid "Etiketler"
-msgstr "Tags"
+#~ msgid "No likes yet."
+#~ msgstr "No likes yet."
 
-msgid "{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz."
-msgstr "You can find all the tags used on the {sitename} site and easily access articles by topic."
+#~ msgid "No comments yet."
+#~ msgstr "No comments yet."
 
-msgid "{sitename} sitesindeki tüm konulara ait etiketler. İlgilendiğiniz konulara göre yazılara kolayca ulaşabilirsiniz."
-msgstr "Tags for all topics on the {sitename} site. You can easily access articles according to the topics you are interested in."
+#~ msgid "Orijinal gönderi"
+#~ msgstr "Original post"
 
-msgid "Etiket Bulutu"
-msgstr "Tag Cloud"
-
-msgid "{tag} etiketli {count} yazıya git"
-msgstr "Go to {count} posts tagged with {tag}"
-
-msgid "En Çok Kullanılan Etiketler"
-msgstr "Most Used Tags"
-
-msgid "{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz."
-msgstr "All posts in the {category} category. You can find {articles_length} posts in this category."
-
-msgid "Bu kategoride {articles_length} yazı bulunuyor"
-msgstr "There are {articles_length} posts in this category"
-
-msgid "Etiketli Yazılar"
-msgstr "Posts Tagged"
-
-msgid "etiketi ile ilgili tüm yazılar. Bu etikette toplam {articles_length} yazı bulunuyor."
-msgstr "All posts related to the tag. There are a total of {articles_length} posts with this tag."
-
-msgid "Bu etikete sahip {articles_length} yazı bulundu"
-msgstr "Found {articles_length} posts with this tag"
-
-msgid "Önceki sayfa"
-msgstr "Previous page"
-
-msgid "Önceki"
-msgstr "Previous"
-
-msgid "Sonraki sayfa"
-msgstr "Next page"
-
-msgid "Sonraki"
-msgstr "Next"
-
-msgid "Webmentions"
-msgstr "Webmentions"
-
-msgid "Likes"
-msgstr "Likes"
-
-msgid "Loading likes..."
-msgstr "Loading likes..."
-
-msgid "Comments & Replies"
-msgstr "Comments & Replies"
-
-msgid "Loading comments..."
-msgstr "Loading comments..."
-
-msgid "No likes yet."
-msgstr "No likes yet."
-
-msgid "No comments yet."
-msgstr "No comments yet."
-
-msgid "Orijinal gönderi"
-msgstr "Original post"
