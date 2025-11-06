@@ -76,3 +76,5 @@ Have you set up this system or are you considering setting it up? Feel free to s
 
 - [Guide: How to use Google Indexing API](/google-indexing-api-nasil-kullanilir/)
 - [GitHub Project Page](https://github.com/yuceltoluyag/google-indexing-tool)
+
+[responsive_img src="/images/bing-indexnow-otomatik-dizinleme-seo-sonuc-xl.webp" alt="Add your site to search results instantly with Bing IndexNow automatic indexing." /]
