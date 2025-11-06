@@ -59,7 +59,7 @@ A **service account** is required to call the API.
 
 Add this service account email address (example: `indexer@project-id.iam.gserviceaccount.com`) as a **user** to the **Search Console** property of your relevant website.
 
-- You can do this as follows: Search Console > Settings > Users and permissions > Add new user. In this step, enter this email address and grant "Full" permission. In the English interface, it is referred to as "owner." If you skip this step, API calls will fail.
+- You can do this as follows: Search Console > Settings > Users and permissions > Add new user. In this step, enter this email address and grant "owner" permission. In the English interface, it is referred to as "owner." If you skip this step, API calls will fail.
 
 ---
 

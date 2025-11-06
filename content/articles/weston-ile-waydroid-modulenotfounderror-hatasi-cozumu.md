@@ -286,4 +286,4 @@ Linux üzerinde Android deneyimin keyfini çıkar! 🎯
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
-<lite-youtube videoid="HVQBmWN5ZaU"></lite-youtube>
+<lite-youtube videoid="HVQBmWN5ZaU" use-nocookie></lite-youtube>
