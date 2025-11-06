@@ -79,3 +79,5 @@ Siz de bu sistemi kurdunuz mu veya kurmayı düşünüyor musunuz? Yorumlarda de
 
 - [Rehber: Google Indexing API kullanımı](/google-indexing-api-nasil-kullanilir/)
 - [GitHub Proje Sayfası](https://github.com/yuceltoluyag/google-indexing-tool)
+
+[responsive_img src="/images/bing-indexnow-otomatik-dizinleme-seo-sonuc-xl.webp" alt="Bing IndexNow otomatik dizinleme ile sitenizi anında arama sonuçlarına ekleyin." /]
