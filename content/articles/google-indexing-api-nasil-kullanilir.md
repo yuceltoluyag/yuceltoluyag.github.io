@@ -211,4 +211,6 @@ Bu yöntemi bir **otomatik cron scripti**yle birleştirerek blog güncellemeleri
 
 **Bunu Biliyor musunuz ?** [Git sparse-checkout rehberi](/github-sadece-bir-klasor-indirme/)
 
+- [Bing IndexNow kullanımı rehberi](/otomatik-bing-indexnow-kullanimi)
+
 ---
