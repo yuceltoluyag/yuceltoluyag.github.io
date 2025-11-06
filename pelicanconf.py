@@ -7,7 +7,9 @@ from blinker import signal
 # SITE SETTINGS
 # =============================================================================
 PUBLISH = os.environ.get("PUBLISH")
-SITEURL = "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8080"
+SITEURL = (
+    "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8080"
+)
 CANONICAL_URL = "https://yuceltoluyag.github.io/"
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
@@ -35,6 +37,9 @@ EXTRA_PATH_METADATA = {
     "extra/manifest.json": {"path": "manifest.json"},
     "extra/site.webmanifest": {"path": "site.webmanifest"},
     "extra/BingSiteAuth.xml": {"path": "BingSiteAuth.xml"},
+    "extra/acf21962677a48049a6a234640504902.txt": {
+        "path": "acf21962677a48049a6a234640504902.txt"
+    },
     "extra/CNAME": {"path": "CNAME"},
 }
 
@@ -47,18 +52,18 @@ LOCALE = (
     "tr_TR.UTF-8",
     "en_US.UTF-8",
 )
-I18N_UNTRANSLATED_ARTICLES_LANG = 'tr'
+I18N_UNTRANSLATED_ARTICLES_LANG = "tr"
 I18N_SUBSITES = {
-    'en': {
-        'SITENAME': "Baba Tech Blog",
-        'AUTHOR': 'yuceltoluyag',
-        'LOCALE': 'en_US.UTF-8',
-        'STATIC_PATHS': ["images", "extra", "files"],
-        'OUTPUT_PATH': 'output/en',
-        'CATEGORIES_URL': 'categories/',
-        'CATEGORIES_SAVE_AS': 'categories/index.html',
-        'TAGS_URL': 'tags/',
-        'TAGS_SAVE_AS': 'tags/index.html',
+    "en": {
+        "SITENAME": "Baba Tech Blog",
+        "AUTHOR": "yuceltoluyag",
+        "LOCALE": "en_US.UTF-8",
+        "STATIC_PATHS": ["images", "extra", "files"],
+        "OUTPUT_PATH": "output/en",
+        "CATEGORIES_URL": "categories/",
+        "CATEGORIES_SAVE_AS": "categories/index.html",
+        "TAGS_URL": "tags/",
+        "TAGS_SAVE_AS": "tags/index.html",
     },
 }
 
@@ -89,10 +94,10 @@ PAGE_LANG_URL = "{slug}-{lang}/"
 PAGE_LANG_SAVE_AS = "{slug}-{lang}/index.html"
 DRAFT_URL = "drafts/{slug}/"
 DRAFT_SAVE_AS = "drafts/{slug}/index.html"
-DRAFT_LANG_URL = 'drafts/{slug}-{lang}.html'
-DRAFT_LANG_SAVE_AS = 'drafts/{slug}-{lang}.html'
-DRAFT_PAGE_LANG_URL = 'drafts/pages/{slug}-{lang}.html'
-DRAFT_PAGE_LANG_SAVE_AS = 'drafts/pages/{slug}-{lang}.html'
+DRAFT_LANG_URL = "drafts/{slug}-{lang}.html"
+DRAFT_LANG_SAVE_AS = "drafts/{slug}-{lang}.html"
+DRAFT_PAGE_LANG_URL = "drafts/pages/{slug}-{lang}.html"
+DRAFT_PAGE_LANG_SAVE_AS = "drafts/pages/{slug}-{lang}.html"
 REDIRECT_URL = "{slug}/"
 REDIRECT_SAVE_AS = "{slug}/index.html"
 
@@ -121,7 +126,7 @@ CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 CATEGORY_FEED_RSS = "feeds/{slug}.rss.xml"
 AUTHOR_FEED_ATOM = "feeds/{slug}.atom.xml"
 AUTHOR_FEED_RSS = "feeds/{slug}.rss.xml"
-TRANSLATION_FEED_ATOM = 'feeds/all-{lang}.atom.xml'
+TRANSLATION_FEED_ATOM = "feeds/all-{lang}.atom.xml"
 FEED_JSON = "feed.json"
 FEED_SAVE_AS = "feed.json"
 
@@ -215,7 +220,7 @@ prod_plugins = common_plugins + prod_extra_plugins
 PLUGINS = prod_plugins if PUBLISH else dev_plugins
 
 # Series plugin settings
-SERIES_DEFAULT_INDEXING = ("date")
+SERIES_DEFAULT_INDEXING = "date"
 SERIES_PAGE_INDEXING = "title"
 
 # Search plugin settings
@@ -299,10 +304,10 @@ SOCIAL = {
     "bluesky": "yuceltoluyag.bsky.social",
 }
 MASTODON = {
-    'username': 'yuceltoluyag',
-    'instance': 'mastodon.social',
+    "username": "yuceltoluyag",
+    "instance": "mastodon.social",
 }
-WEBMENTION_IO_TOKEN = 'Ap4Pb-YQo7Ne68a7rpJ0qA'
+WEBMENTION_IO_TOKEN = "Ap4Pb-YQo7Ne68a7rpJ0qA"
 LINKS = {
     "Pelican": "https://getpelican.com/",
     "Python.org": "https://www.python.org/",
@@ -317,8 +322,8 @@ CACHE_CONTENT = False
 CHECK_MODIFIED_METHOD = "sha1"
 LOAD_CONTENT_CACHE = False
 GZIP_CACHE = False
-JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-tmpsig = signal('tmpsig')
+JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
+tmpsig = signal("tmpsig")
 I18N_FILTER_SIGNALS = [tmpsig]
 WITH_FUTURE_DATES = True
 USE_FOLDER_AS_CATEGORY = True
