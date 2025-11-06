@@ -210,4 +210,6 @@ By combining this method with an **automatic cron script**, you can instantly an
 
 **Did you know?** [Git sparse-checkout guide](/github-sadece-bir-klasor-indirme/)
 
+- [Bing IndexNow usage guide](/en/otomatik-bing-indexnow-kullanimi)
+
 ---
