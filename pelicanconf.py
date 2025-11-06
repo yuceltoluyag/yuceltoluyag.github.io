@@ -292,7 +292,6 @@ ROBOTS = "index, follow"
 # =============================================================================
 DISQUS_SITENAME = "yuceltoluyag"
 SOCIAL = {
-    "matrix": "fatpip:matrix.org",
     "discord": "188034964879573003",
     "github": "yuceltoluyag",
     "instagram": "yuceltoluyag",
@@ -302,6 +301,8 @@ SOCIAL = {
     "bynogame": "https://donate.bynogame.com/yuceltoluyag",
     "github_sponsor": "yuceltoluyag",
     "bluesky": "yuceltoluyag.bsky.social",
+    "reddit": "dolorisback",
+    "x": "yuceltoluyag",
 }
 MASTODON = {
     "username": "yuceltoluyag",

@@ -9,11 +9,10 @@ def add_video_schemas(article_generator):
     if article_generator.settings.get("VIDEO_SCHEMA_ENABLED", True):
         try:
             for article in getattr(article_generator, "articles", []):
-                # Debug mesajları
-                # print(f"Makale inceleniyor: {article.title}")
+                soup = BeautifulSoup(article._content, "html.parser")
+                video_ids = []
 
                 # YouTube iframe'lerini içerikte ara
-                soup = BeautifulSoup(article._content, "html.parser")
                 iframes = soup.find_all(
                     "iframe",
                     src=lambda s: s
@@ -22,44 +21,48 @@ def add_video_schemas(article_generator):
                         or "youtube-nocookie.com/embed/" in s
                     ),
                 )
+                for iframe in iframes:
+                    src = iframe.get("src", "")
+                    match = re.search(r"embed/([^/?]+)", src)
+                    if match:
+                        video_ids.append(match.group(1))
 
-                if iframes:
+                # lite-youtube öğelerini ara
+                lite_youtubes = soup.find_all("lite-youtube")
+                for lite_yt in lite_youtubes:
+                    video_id = lite_yt.get("videoid")
+                    if video_id:
+                        video_ids.append(video_id)
+
+                if video_ids:
+                    # Benzersiz video ID'leri üzerinden yinelenir
+                    unique_video_ids = set(video_ids)
                     print(
-                        f"Makalede {len(iframes)} YouTube iframe'i bulundu: {article.title}"
+                        f"Makalede {len(unique_video_ids)} YouTube videosu bulundu: {article.title}"
                     )
                     schema_html = ""
-                    for iframe in iframes:
-                        src = iframe.get("src", "")
-                        # print(f"YouTube URL: {src}")
-                        match = re.search(r"embed/([^/?]+)", src)
-                        if match:
-                            video_id = match.group(1)
-                            # print(f"Video ID: {video_id}")
+                    for video_id in unique_video_ids:
+                        # Video şeması oluştur
+                        schema = {
+                            "@context": "https://schema.org",
+                            "@type": "VideoObject",
+                            "name": article.title,
+                            "description": (
+                                article.summary
+                                if hasattr(article, "summary")
+                                else article.title
+                            ),
+                            "thumbnailUrl": f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg",
+                            "uploadDate": article.date.isoformat(),
+                            "embedUrl": f"https://www.youtube.com/embed/{video_id}",
+                        }
 
-                            # Video şeması oluştur
-                            schema = {
-                                "@context": "https://schema.org",
-                                "@type": "VideoObject",
-                                "name": article.title,
-                                "description": (
-                                    article.summary
-                                    if hasattr(article, "summary")
-                                    else article.title
-                                ),
-                                "thumbnailUrl": f"https://i.ytimg.com/vi/{video_id}/hqdefault.jpg",
-                                "uploadDate": article.date.isoformat(),
-                                "embedUrl": f"https://www.youtube.com/embed/{video_id}",
-                            }
-
-                            # JSON-LD olarak ekle
-                            schema_html += f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>\n'
+                        # JSON-LD olarak ekle
+                        schema_html += f'<script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>\n'
 
                     # Şemaları makale içeriğine ekle
                     if schema_html:
-                        # print(f"Video şeması ekleniyor: {article.title}")
                         article._content = schema_html + article._content
-                                # else:
-                                #     print(f"Makalede YouTube iframe'i bulunamadı: {article.title}")
         except Exception as e:
             print(f"Video şema eklentisi hata verdi: {e}")
 

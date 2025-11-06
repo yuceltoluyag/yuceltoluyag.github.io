@@ -60,7 +60,7 @@ API’yi çağırmak için bir **service account** gerekiyor.
 
 İlgili web sitenin **Search Console** mülküne bu service account e-posta adresini (örnek: `indexer@project-id.iam.gserviceaccount.com`) **kullanıcı olarak ekle.**
 
-- Bu adımı şöyle yapabilirsin: Search Console > Ayarlar > Kullanıcı ve izinler > Yeni kullanıcı ekle.Bu adımda bu eposta adresini gir ve “Tam” yetkisi ver.İngilizce arayüzde owner olarak geçiyor. Eğer bu adımı atladıysan API çağrıları başarısız olur.
+- Bu adımı şöyle yapabilirsin: Search Console > Ayarlar > Kullanıcı ve izinler > Yeni kullanıcı ekle.Bu adımda bu eposta adresini gir ve “Sahibi” yetkisi ver.İngilizce arayüzde owner olarak geçiyor. Eğer bu adımı atladıysan API çağrıları başarısız olur.
 
 ---
 
