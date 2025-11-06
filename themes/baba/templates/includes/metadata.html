@@ -75,10 +75,10 @@
 <meta name="description" content="{{ page.summary|striptags|truncate(160) }}" />
 <meta property="og:description" content="{{ page.summary|striptags|truncate(160) }}" />
 {% elif category %}
-<meta name="description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
+<meta name="description" content="{{ category }} kategorisindeki tüm yazılar ve makaleler. Bu kategoride güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin." />
 <meta property="og:description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
 {% elif tag %}
-<meta name="description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
+<meta name="description" content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. Bu etikette güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin." />
 <meta property="og:description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
 {% else %}
 <meta name="description" content="{{ DESCRIPTION }}" />
