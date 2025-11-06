@@ -7,7 +7,7 @@ Slug: laravel-ide-helper-kullanimi
 Authors: yuceltoluyag
 Series: phpstorm
 Series_index: 3
-Summary: Laravel IDE Helper paketi ile PHPStorm'da otomatik tamamlama ve kod yardımcısı nasıl geliştirilir?
+Summary: Laravel IDE Helper paketi ile PHPStorm gibi IDE'lerde otomatik tamamlama ve kod yardımını nasıl geliştireceğinizi öğrenin. Geliştirme sürecinizi hızlandırın ve daha verimli kod yazın. Adım adım kurulum rehberi.
 Lang: tr
 Translation: false
 Status: published

@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Lang: tr
 Translation: false
 Status: published
-Summary: Bu yazıda, Continue Eklentisinde mcp kurulumu
+Summary: MCP (Model Context Protocol) kullanarak tarayıcı otomasyonuna başlamak artık çok kolay! Bu rehberde, tek bir npx komutuyla Puppeteer destekli bir MCP sunucusunun nasıl çalıştırılacağını adım adım öğrenin.
 Template: article
 Image: images/mcp-puppeteer-sunucusu-kurulumu-xl.webp
 

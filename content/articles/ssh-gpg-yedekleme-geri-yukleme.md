@@ -7,7 +7,7 @@ Slug: ssh-gpg-yedekleme-geri-yukleme
 Authors: yuceltoluyag  
 Series: Git
 Series_index: 3
-Summary: SSH ve GPG anahtarlarını güvenli bir şekilde yedekleme ve geri yükleme adımlarını öğrenin.
+Summary: SSH ve GPG anahtarlarınızı güvenli bir şekilde yedekleme ve geri yükleme adımlarını öğrenin. Kimlik doğrulama ve veri güvenliği için kritik olan bu anahtarları nasıl koruyacağınızı keşfedin.
 Lang: tr
 Translation: false
 Status: published  

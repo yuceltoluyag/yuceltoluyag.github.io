@@ -5,7 +5,7 @@ Category: Geliştirme Araçları
 Tags: ipucu, sublime
 Slug: sublime-text-eklentileri
 Authors: yuceltoluyag
-Summary: Kullandığım en faydalı Sublime Text eklentilerini ve temalarını tanıtıyorum.
+Summary: Sublime Text editörünüzü daha verimli hale getirin! Bu rehberde, kod yazma deneyiminizi geliştirecek en faydalı eklentileri, temaları ve kurulum adımlarını keşfedin. Hızınızı artırın.
 Lang: tr
 Translation: false
 Status: published

@@ -7,7 +7,7 @@ Series: Facebook
 Series_index: 1
 Slug: facebook-toplu-arkadas-ekleme
 Authors: yuceltoluyag
-Summary: Facebook gruplarında arkadaş ekleme sürecini hızlandırmak ve belirli sürelerde ekleme yaparak spam filtresine takılmamak için ipuçları.
+Summary: Facebook gruplarında arkadaş ekleme sürecini hızlandırmak ve spam filtresine takılmadan güvenli bir şekilde toplu davetler göndermek için etkili ipuçları ve yöntemler öğrenin.
 Lang: tr
 Translation: false
 Status: published
