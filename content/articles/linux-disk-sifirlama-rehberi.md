@@ -8,7 +8,7 @@ Authors: yuceltoluyag
 Lang: tr
 Translation: false
 Status: published
-Summary: Bu yazıda, Linux üzerinde disk sıfırlamayı öğreneceksiniz..
+Summary: Linux sistemlerde diskleri güvenli ve kalıcı bir şekilde nasıl sıfırlayacağınızı öğrenin. `dd`, `shred` ve `wipefs` komutlarıyla verilerinizi koruyun ve disklerinizi yeni kullanıma hazırlayın. Adım adım rehber.
 Template: article
 Image: images/Linux-uzerinde-disk-sifirlama-xl.webp
 Series: Linux-disk

@@ -15,7 +15,7 @@ AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
 SITETAGLINE = ">| Linux gamer, Python lover, and technology enthusiast |<"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
-DESCRIPTION = "Linux, Python ve Web Geliştirme Rehberleri"
+DESCRIPTION = "Yücel Toluyag'ın kişisel blogu. Linux, Python, web geliştirme, programlama, açık kaynak ve teknoloji konularında rehberler, ipuçları ve güncel bilgiler bulabilirsiniz."
 DEFAULT_DATE_FORMAT = "%d %B %Y"
 COPYRIGHT_YEAR = 1989
 
@@ -330,7 +330,7 @@ USE_FOLDER_AS_CATEGORY = True
 WEBASSETS_DEBUG = False
 MAIN_MENU = True
 RELATED_POSTS_MAX = 4
-SUMMARY_MAX_LENGTH = 50
+SUMMARY_MAX_LENGTH = 160
 DEFAULT_CATEGORY = "duyurular"
 ARTICLE_EDIT_LINK = (
     "https://github.com/yuceltoluyag/yuceltoluyag.github.io/edit/main/content/articles/"

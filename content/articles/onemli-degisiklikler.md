@@ -5,7 +5,7 @@ Category: Haberler
 Tags: site,Haberler
 Slug: onemli-degisiklikler
 Authors: yuceltoluyag
-Summary: Site hakkında önemli gelişmeleri ve yenilikleri bu sayfadan takip edebilirsiniz.
+Summary: Sitemizdeki önemli gelişmeleri, yenilikleri ve güncellemeleri bu sayfadan takip edebilirsiniz. Yeni özellikler, içerik güncellemeleri ve site iyileştirmeleri hakkında detaylı bilgi edinin.
 Lang: tr
 Translation: false
 Status: published

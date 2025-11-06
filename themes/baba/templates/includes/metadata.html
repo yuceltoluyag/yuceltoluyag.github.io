@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Language" content="{{ DEFAULT_LANG|default('tr') }}" />
 <meta name="language" content="{{ DEFAULT_LANG|default('tr') }}" />
-<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale" content="{% if DEFAULT_LANG == 'en' %}en_US{% else %}tr_TR{% endif %}" />
 <meta content="{{ SITENAME }}" property="og:site_name" />
 <meta name="siteurl" content="{{ SITEURL }}" />
 <meta name="theme-static-dir" content="{{ THEME_STATIC_DIR }}" />
@@ -75,11 +75,38 @@
 <meta name="description" content="{{ page.summary|striptags|truncate(160) }}" />
 <meta property="og:description" content="{{ page.summary|striptags|truncate(160) }}" />
 {% elif category %}
+{% if DEFAULT_LANG == 'tr' %}
+<meta name="description" content="{{ category }} kategorisindeki tüm yazılar ve makaleler. {{ SITENAME }} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin."|truncate(160) }} />
+<meta property="og:description" content="{{ category }} kategorisindeki tüm yazılar ve makaleler. {{ SITENAME }} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin."|truncate(160) }} />
+{% elif DEFAULT_LANG == 'en' %}
+<meta name="description" content="Explore all articles and posts in the {{ category }} category. Discover up-to-date and detailed content on the {{ SITENAME }} blog. Dive deeper into your areas of interest." />
+<meta property="og:description" content="Explore all articles and posts in the {{ category }} category. Discover up-to-date and detailed content on the {{ SITENAME }} blog. Dive deeper into your areas of interest." />
+{% else %}
 <meta name="description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
 <meta property="og:description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
+{% endif %}
 {% elif tag %}
+{% if DEFAULT_LANG == 'tr' %}
+<meta name="description" content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. {{ SITENAME }} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin."|truncate(160) }} />
+<meta property="og:description" content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. {{ SITENAME }} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin."|truncate(160) }} />
+{% elif DEFAULT_LANG == 'en' %}
+<meta name="description" content="Discover all articles and guides related to the #{{ tag }} tag. Find current and informative content on the {{ SITENAME }} blog. Explore this topic in depth." />
+<meta property="og:description" content="Discover all articles and guides related to the #{{ tag }} tag. Find current and informative content on the {{ SITENAME }} blog. Explore this topic in depth." />
+{% else %}
 <meta name="description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
 <meta property="og:description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
+{% endif %}
+{% elif articles_page and articles_page.number > 1 %}
+{% if DEFAULT_LANG == 'tr' %}
+<meta name="description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}. Linux, Python, web geliştirme ve teknoloji konularında güncel içerikler." />
+<meta property="og:description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}. Linux, Python, web geliştirme ve teknoloji konularında güncel içerikler." />
+{% elif DEFAULT_LANG == 'en' %}
+<meta name="description" content="All articles and posts on {{ SITENAME }} blog - Page {{ articles_page.number }}. Up-to-date content on Linux, Python, web development, and technology." />
+<meta property="og:description" content="All articles and posts on {{ SITENAME }} blog - Page {{ articles_page.number }}. Up-to-date content on Linux, Python, web development, and technology." />
+{% else %}
+<meta name="description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}." />
+<meta property="og:description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}." />
+{% endif %}
 {% else %}
 <meta name="description" content="{{ DESCRIPTION }}" />
 <meta property="og:description" content="{{ DESCRIPTION }}" />

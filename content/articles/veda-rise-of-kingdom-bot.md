@@ -5,7 +5,7 @@ Category: Haberler
 Tags: oyun, bot, geliştirme, veda
 Slug: veda-rise-of-kingdom-bot
 Authors: yuceltoluyag
-Summary: Rise of Kingdom Bot'un geliştirilmesine artık devam edemeyeceğimi üzülerek duyuruyorum. Hem yeni hayatımın getirdiği sorumluluklar hem de teknik yetersizlikler bu kararı almamı zorunlu kıldı.
+Summary: Rise of Kingdom Bot'un geliştirilmesine son verdiğimi üzülerek duyuruyorum. Yeni hayatımın getirdiği sorumluluklar ve teknik yetersizlikler nedeniyle bu kararı almak zorunda kaldım. Detaylar için okuyun.
 Lang: tr
 Translation: false
 Status: published

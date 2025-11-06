@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title %}{{ category }} - {{ SITENAME }}{% endblock title %} {% block seo %}
 <meta
     name="description"
-    content="{{ _('{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz.').format(category=category, articles_length=articles|length) }}" />
+    content="{{ category }} kategorisindeki tüm yazılar ve makaleler. Bu kategoride {{ articles|length }} adet güncel ve detaylı içerik bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin." />
 <link rel="canonical" href="{{ SITEURL }}/kategori/{{ category.slug }}/" />
 <meta property="og:title" content="{{ category }} - {{ SITENAME }}" />
 <meta
