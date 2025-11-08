@@ -147,12 +147,19 @@
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
-        "headline": "{{ article.title }}",
+        "headline": "{{ article.title|striptags }}",
         "description": "{{ article.summary|striptags|truncate(160) }}",
         "author": {
             "@type": "Person",
-            "name": "{{ AUTHOR }}",
-            "url": "{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/"
+            "name": "{{ AUTHORS_INFO[article.author.slug].name }}",
+            "url": "{{ SITEURL }}/yazar/{{ article.author.slug }}/",
+            "image": "{{ SITEURL }}{{ AUTHORS_INFO[article.author.slug].image }}",
+            "sameAs": [
+                {% if AUTHORS_INFO[article.author.slug].social.github %}"https://github.com/{{ AUTHORS_INFO[article.author.slug].social.github }}",{% endif %}
+                {% if AUTHORS_INFO[article.author.slug].social.twitter %}"https://twitter.com/{{ AUTHORS_INFO[article.author.slug].social.twitter }}",{% endif %}
+                {% if AUTHORS_INFO[article.author.slug].social.linkedin %}"https://linkedin.com/in/{{ AUTHORS_INFO[article.author.slug].social.linkedin }}"{% endif %}
+            ],
+            "description": "{{ AUTHORS_INFO[article.author.slug].bio }}"
         },
         "datePublished": "{{ article.date.isoformat() }}",
         {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}

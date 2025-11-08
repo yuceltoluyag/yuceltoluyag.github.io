@@ -5,10 +5,33 @@
 {% block content %}
 <h1>{{ SITENAME }} Arşivleri</h1>
 
-<dl>
-    {% for article in dates %}
-    <dt>{{ article.locale_date }}</dt>
-    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
-    {% endfor %}
-</dl>
+{% set last_year = [0] %}
+{% set last_month = [0] %}
+
+{% for article in dates %}
+    {% if article.date.year != last_year[0] %}
+        {% if not loop.first %}
+            </div>
+        {% endif %}
+        <div class="archive-year">
+        <h2>{{ article.date.year }}</h2>
+        {% if last_year.__setitem__(0, article.date.year) %}{% endif %}
+    {% endif %}
+
+    {% if article.date.month != last_month[0] %}
+        {% if not loop.first %}
+            </ul>
+        {% endif %}
+        <h3>{{ article.date.strftime('%B') }}</h3>
+        <ul>
+        {% if last_month.__setitem__(0, article.date.month) %}{% endif %}
+    {% endif %}
+
+    <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+
+    {% if loop.last %}
+        </ul>
+        </div>
+    {% endif %}
+{% endfor %}
 {% endblock %}
