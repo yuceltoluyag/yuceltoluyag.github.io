@@ -11,8 +11,10 @@
     },
     "galipdede": {
         "name": "Galip Dede",
-        "bio": "Misafir yazar.",
-        "image": "/images/default-author.jpg",
-        "social": {}
+        "bio": "Yapay zeka teknolojileriyle uğraşmayı seven, görsel video üretme konusunda uzman, dizi film tutkunu ve 0 A.D oyuncusu.",
+        "image": "/images/galipdede.png",
+        "social": {
+            "reddit": "GalipDede"
+        }
     }
 }
