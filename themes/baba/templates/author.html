@@ -1,11 +1,37 @@
 {% extends "base.html" %}
 
-{% block title %}{{ SITENAME }} - {{ author }} tarafından yazılan makaleler{% endblock %}
+{% block title %}{{ SITENAME }} - Articles by {{ author }}{% endblock %}
 
 {% block content %}
-{% block content_title %}
-<h1 class="author-category-tags-title">Yazar: {{ author }}</h2>
-{% endblock %}
+{% if author.slug in AUTHORS_INFO %}
+    {% set author_info = AUTHORS_INFO[author.slug] %}
+    <div class="author-profile">
+        <img src="{{ SITEURL }}{{ author_info.image }}" alt="{{ author_info.name }}">
+        <div class="author-details">
+            <h1>{{ author_info.name }}</h1>
+            <p>{{ author_info.bio }}</p>
+            <div class="author-social">
+                {% if author_info.social.github %}
+                <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                {% endif %}
+                {% if author_info.social.twitter %}
+                <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                {% endif %}
+                {% if author_info.social.linkedin %}
+                <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% else %}
+    <h1 class="author-category-tags-title">Author: {{ author }}</h1>
+{% endif %}
 
 <section id="content">
   <div>
@@ -17,7 +43,7 @@
                           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
                   <div style="margin-bottom: 1em" class="entry-content"><strong>{{ article.description }}</strong> </div>
                   <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
-                  <address class="vcard author">Yazan:
+                  <address class="vcard author">By
                       {% for author in article.authors %}
                       <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
                       {% endfor %}

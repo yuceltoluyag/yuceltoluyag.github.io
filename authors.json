@@ -1,0 +1,20 @@
+{
+    "yuceltoluyag": {
+        "name": "Yücel Toluyag",
+        "bio": "Linux, Python ve açık kaynak teknolojileriyle ilgilenen bir yazılım geliştirici.",
+        "image": "/images/16064131.jpeg",
+        "social": {
+            "github": "yuceltoluyag",
+            "twitter": "yuceltoluyag",
+            "linkedin": "yuceltoluyag"
+        }
+    },
+    "galipdede": {
+        "name": "Galip Dede",
+        "bio": "Yapay zeka teknolojileriyle uğraşmayı seven, görsel video üretme konusunda uzman, dizi film tutkunu ve 0 A.D oyuncusu.",
+        "image": "/images/galipdede.png",
+        "social": {
+            "reddit": "GalipDede"
+        }
+    }
+}

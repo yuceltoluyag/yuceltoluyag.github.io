@@ -343,6 +343,34 @@ super() }} {% if article.translations -%}
               <span class="sr-only">URL'yi Kopyala</span>
           </button>
       </div>
+
+      {% if article.author %}
+      {% set author_info = AUTHORS_INFO[article.author.slug] %}
+      <div class="author-box">
+          <img src="{{ SITEURL }}{{ author_info.image }}" alt="{{ author_info.name }}">
+          <div class="author-info">
+              <h3>{{ author_info.name }}</h3>
+              <p>{{ author_info.bio }}</p>
+              <div class="author-social">
+                  {% if author_info.social.github %}
+                  <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer">
+                      <i class="fa-brands fa-github"></i>
+                  </a>
+                  {% endif %}
+                  {% if author_info.social.twitter %}
+                  <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer">
+                      <i class="fa-brands fa-x-twitter"></i>
+                  </a>
+                  {% endif %}
+                  {% if author_info.social.linkedin %}
+                  <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank" rel="noopener noreferrer">
+                      <i class="fa-brands fa-linkedin"></i>
+                  </a>
+                  {% endif %}
+              </div>
+          </div>
+      </div>
+      {% endif %}
     </article>
 
     <aside class="article-sidebar">
@@ -415,6 +443,8 @@ super() }} {% if article.translations -%}
     <nav id="toc-collapsible-menu" class="pico-card">{{ article.toc }}</nav>
 </div>
 {% endif %}
+
+</script>
 
 <script>
   // Close series contents details by default

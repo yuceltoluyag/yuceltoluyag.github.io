@@ -1,5 +1,5 @@
-import sys
 import os
+import json
 from datetime import date
 from blinker import signal
 
@@ -18,6 +18,13 @@ KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloj
 DESCRIPTION = "Yücel Toluyag'ın kişisel blogu. Linux, Python, web geliştirme, programlama, açık kaynak ve teknoloji konularında rehberler, ipuçları ve güncel bilgiler bulabilirsiniz."
 DEFAULT_DATE_FORMAT = "%d %B %Y"
 COPYRIGHT_YEAR = 1989
+
+
+with open("authors.json") as f:
+    AUTHORS_INFO = json.load(f)
+
+JINJA_GLOBALS = {"AUTHORS_INFO": AUTHORS_INFO}
+
 
 # =============================================================================
 # PATH SETTINGS
