@@ -11,6 +11,7 @@ Series: Git
 Series_index: 9
 Lang: tr
 Translation: false
+Image: images/git-sparse-checkout-rehberi-xl.webp
 
 ---
 
@@ -100,3 +101,5 @@ pico-v2/v2-sass-customized-design-system/
 - [Git Sparse Checkout Documentation](https://git-scm.com/docs/git-sparse-checkout){: target="\_blank" rel="noopener noreferrer"}
 
 Bu özellik gitlab ui'inde var,github ui'inde neden yok acaba? 🤔
+
+[responsive_img src="/images/git-sparse-checkout-rehberi-xl.webp" alt="Git Sparse Kullanımı" /]

@@ -11,35 +11,88 @@ from pelican import signals
 logger = logging.getLogger(__name__)
 
 
-# This function called when all_generators_finalized signal sent
 def main(generators):
     """
-    Remove .html from sitemap
+    Corrects the sitemap.xml file.
     """
-    sitemap_path = "output/sitemap.xml"
-    
-    # Check if sitemap exists
-    if not os.path.exists(sitemap_path):
-        logger.info(f"Sitemap file not found: {sitemap_path} - This is normal if sitemap plugin is not generating it")
-        return
-    
-    corrected = None
-    
+    logger.info("--- Running fix_sitemap plugin ---")
     try:
-        with open(sitemap_path, "r", encoding="utf-8") as file:
-            original = file.read()
-            corrected = original.replace(".html", "")
-    except Exception as error:
-        logger.critical(f"Opening sitemap failed with error: {error}")
+        from bs4 import BeautifulSoup
+    except ImportError:
+        logger.warning("BeautifulSoup4 is not installed, skipping sitemap correction.")
         return
 
-    if corrected is not None:
-        try:
-            with open(sitemap_path, "w", encoding="utf-8") as file:
-                file.write(corrected)
-            logger.info("Sitemap successfully updated (removed .html extensions)")
-        except Exception as error:
-            logger.critical(f"Saving sitemap failed with error: {error}")
+    sitemap_path = os.path.join(generators.output_path, "sitemap.xml")
+
+    if not os.path.exists(sitemap_path):
+        logger.info(f"Sitemap file not found: {sitemap_path}")
+        return
+
+    with open(sitemap_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    logger.info("--- Original sitemap content ---")
+    logger.info(content)
+
+    # Replace localhost with SITEURL
+    siteurl = generators.settings.get("SITEURL", "")
+    logger.info(f"SITEURL: {siteurl}")
+    content = content.replace("http://localhost:8080", siteurl)
+
+    # Replace  ref= with  href=
+    content = content.replace(' ref=', ' href=')
+
+    # Add xsi:schemaLocation to the <urlset> element
+    content = content.replace(
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">'
+    )
+
+    logger.info("--- Content after replacements ---")
+    logger.info(content)
+
+    # Remove duplicate URLs
+    try:
+        soup = BeautifulSoup(content, "lxml-xml")
+    except Exception:
+        soup = BeautifulSoup(content, "xml")
+
+    urls = {}
+    for url_element in soup.find_all("url"):
+        loc = url_element.find("loc").text
+        if loc not in urls:
+            urls[loc] = {"element": url_element, "xhtml_links": []}
+        for xhtml_link in url_element.find_all("xhtml:link"):
+            href = xhtml_link.get("href")
+            if href:
+                xhtml_link["href"] = href.replace("../", "")
+            urls[loc]["xhtml_links"].append(xhtml_link)
+            xhtml_link.extract()
+
+    # Create a new soup to hold the corrected sitemap
+    new_soup = BeautifulSoup(
+        '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"></urlset>',
+        "xml",
+    )
+
+    # Add the corrected urls to the new soup
+    for loc, data in urls.items():
+        url_element = data["element"]
+        # Remove all existing xhtml:link elements from the original url_element
+        for xhtml_link in url_element.find_all("xhtml:link"):
+            xhtml_link.extract()
+        # Add the new xhtml:link elements
+        for xhtml_link in data["xhtml_links"]:
+            url_element.append(xhtml_link)
+        new_soup.urlset.append(url_element)
+
+    corrected_content = str(new_soup)
+    logger.info("--- Corrected sitemap content ---")
+    logger.info(corrected_content)
+
+    # Write the corrected sitemap
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write(corrected_content)
 
 
 def register():

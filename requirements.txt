@@ -36,3 +36,4 @@ pelican-statistics
 pelican-series
 nltk
 
+lxml
