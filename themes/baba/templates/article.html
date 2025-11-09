@@ -350,7 +350,7 @@ super() }} {% if article.translations -%}
           <img src="{{ SITEURL }}{{ author_info.image }}" alt="{{ author_info.name }}">
           <div class="author-info">
               <h3>{{ author_info.name }}</h3>
-              <p>{{ author_info.bio }}</p>
+              <p>{{ author_info.bio[article.lang] or author_info.bio['tr'] }}</p>
               <div class="author-social">
                   {% if author_info.social.github %}
                   <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer">

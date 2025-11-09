@@ -123,6 +123,7 @@ Linux üzerinde DaVinci Resolve kullanmak bazen ekstra adımlar gerektirse de, d
 - Hata, Resolve’un eski kütüphanelerinden kaynaklanıyor.
 - `libglib`, `libgio`, `libgmodule` dosyalarını taşıyarak çözüm bulabilirsiniz.
 - Artık Resolve sistemdeki güncel kütüphaneleri kullanacak ve sorunsuz açılacak. 🎉
+- Extra Download sorunları için ise **[DaVinci Resolve Extras İndirme Sorunu Çözümü](/davinci-resolve-extras-download-failed/)** makalemize göz atabilirsiniz.
 
 Eğer bu rehber sana yardımcı olduysa, Linux üzerinde DaVinci Resolve kurulumlarıyla ilgili daha fazla içerik için blogumuzdaki **[Linux kategorisine](/kategori/linux/)** göz atmayı unutma. 🐧
 [responsive_img src="/images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp" alt="Davinci Resolve Linux" /]
