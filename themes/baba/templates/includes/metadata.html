@@ -159,7 +159,7 @@
                 {% if AUTHORS_INFO[article.author.slug].social.twitter %}"https://twitter.com/{{ AUTHORS_INFO[article.author.slug].social.twitter }}",{% endif %}
                 {% if AUTHORS_INFO[article.author.slug].social.linkedin %}"https://linkedin.com/in/{{ AUTHORS_INFO[article.author.slug].social.linkedin }}"{% endif %}
             ],
-            "description": "{{ AUTHORS_INFO[article.author.slug].bio }}"
+            "description": "{{ AUTHORS_INFO[article.author.slug].bio[article.lang] or AUTHORS_INFO[article.author.slug].bio['tr'] }}"
         },
         "datePublished": "{{ article.date.isoformat() }}",
         {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}
