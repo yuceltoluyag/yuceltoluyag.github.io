@@ -7,6 +7,7 @@ Authors: yuceltoluyag
 Summary: A step-by-step guide to solving the DaVinci Resolve "Extras in the Download Manager" and AI Voice Training download issues on Arch Linux.
 Image: images/davinci-resolve-extras-ai-voice-xl.webp
 Lang: en
+Status: published
 
 ## AI Voice Training and Extras Download Issue 🎤
 

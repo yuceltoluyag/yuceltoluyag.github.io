@@ -6,6 +6,7 @@ Slug: usb-bellekten-iso-onyukleme-rehberi
 Summary: If you want to make an ISO file bootable by correctly writing it to a USB drive, this guide will walk you through it step by step.
 Image: images/usb-bellekten-iso-onyukleme-rehberi-xl.webp
 Lang: en
+Status: published
 
 Creating a bootable USB drive is a fundamental skill for both IT professionals and tech enthusiasts.
 In this article, you will learn step-by-step how to create a **Windows bootable USB drive** on Linux using only terminal commands.

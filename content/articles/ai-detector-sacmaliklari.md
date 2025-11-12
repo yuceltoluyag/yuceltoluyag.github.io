@@ -8,6 +8,7 @@ Summary: AI dedektörleri bazen o kadar şaşkın ki, düzgün yazınca bile rob
 Image: images/ai-detector-sacmaliklari-xl.webp
 Lang: tr
 Translation: false
+Status: published
 
 Yeni çağın komedisine hoş geldin.
 Artık çok düzgün yazarsan **suçlusun.**

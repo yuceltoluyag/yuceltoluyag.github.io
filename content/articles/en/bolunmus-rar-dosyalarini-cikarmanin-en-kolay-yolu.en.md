@@ -7,6 +7,7 @@ Authors: yuceltoluyag
 Summary: The modern way to quickly and safely extract split RAR archives like .part1.rar, .part2.rar on Linux systems using unrar and 7-Zip tools.
 Image: images/bolunmus-rar-dosyalarini-cikarma-xl.webp
 Lang: en
+Status: published
 
 ## Introduction
 

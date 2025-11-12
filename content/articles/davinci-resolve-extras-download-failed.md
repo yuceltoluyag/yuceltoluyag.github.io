@@ -8,6 +8,7 @@ Summary: Arch Linux üzerinde DaVinci Resolve Extras in the Download Manager ve 
 Image: images/davinci-resolve-extras-ai-voice-xl.webp
 Lang: tr
 Translation: false
+Status: published
 
 ---
 
