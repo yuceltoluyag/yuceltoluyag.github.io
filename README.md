@@ -83,7 +83,6 @@ The bundling process is a two-step procedure:
         themes/baba/static/css/video.css \
         themes/baba/static/css/scroll-progress.css \
         themes/baba/static/css/webmentions.css \
-        themes/baba/static/css/archives.css \
         themes/baba/static/css/author.css \
         themes/baba/static/css/footer.css > themes/baba/static/css/combined.css
     ```

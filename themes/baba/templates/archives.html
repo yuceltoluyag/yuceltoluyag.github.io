@@ -3,35 +3,25 @@
 {% block title %}{{ SITENAME }} - Archives{% endblock %}
 
 {% block content %}
-<h1>{{ SITENAME }} Arşivleri</h1>
+<h1>{{ SITENAME }} {{ _('Archives') }}</h1>
 
-{% set last_year = [0] %}
-{% set last_month = [0] %}
-
-{% for article in dates %}
-    {% if article.date.year != last_year[0] %}
-        {% if not loop.first %}
+<div>
+{% for year, articles_in_year in dates|groupby('date.year')|sort(reverse=True) %}
+    <details>
+        <summary>{{ year }}</summary>
+        <div>
+        {% for month, articles_in_month in articles_in_year|groupby('date.month')|sort(reverse=True) %}
+            <div>
+                <h4>{{ articles_in_month[0].date.strftime('%B') }}</h4>
+                <ul>
+                {% for article in articles_in_month %}
+                    <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+                {% endfor %}
+                </ul>
             </div>
-        {% endif %}
-        <div class="archive-year">
-        <h2>{{ article.date.year }}</h2>
-        {% if last_year.__setitem__(0, article.date.year) %}{% endif %}
-    {% endif %}
-
-    {% if article.date.month != last_month[0] %}
-        {% if not loop.first %}
-            </ul>
-        {% endif %}
-        <h3>{{ article.date.strftime('%B') }}</h3>
-        <ul>
-        {% if last_month.__setitem__(0, article.date.month) %}{% endif %}
-    {% endif %}
-
-    <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
-
-    {% if loop.last %}
-        </ul>
+        {% endfor %}
         </div>
-    {% endif %}
+    </details>
 {% endfor %}
+</div>
 {% endblock %}

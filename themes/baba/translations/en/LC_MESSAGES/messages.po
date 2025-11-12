@@ -104,6 +104,15 @@ msgstr "RSS"
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
+msgid "Go to Archive page"
+msgstr "Go to Archive page"
+
+msgid "Archive"
+msgstr "Archive"
+
+msgid "Archives"
+msgstr "Archives"
+
 #, python-brace-format
 msgid "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
 msgstr "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
