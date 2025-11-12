@@ -71,6 +71,8 @@ I18N_SUBSITES = {
         "CATEGORIES_SAVE_AS": "categories/index.html",
         "TAGS_URL": "tags/",
         "TAGS_SAVE_AS": "tags/index.html",
+        "ARCHIVES_URL": "archive/",
+        "ARCHIVES_SAVE_AS": "archive/index.html",
     },
 }
 
@@ -197,7 +199,7 @@ MENUITEMS = [
     ("Ana Sayfa", "/"),
     ("Kategoriler", "/kategoriler/"),
     ("Etiketler", "/etiketler/"),
-    ("Arşiv", "/arsiv/"),
+    ("Arşiv", ARCHIVES_URL),
     ("Yazarlar", "/yazarlar/"),
 ]
 

@@ -1,218 +1,302 @@
-# Turkish (Türkiye) translations for Flex.
-# Copyright (C) 2020 Alexandre Vicenzi
-# This file is distributed under the same license as the Flex project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
-#
-# Translators:
-# İlker Yürüyen <i.ilker.yuruyen@gmail.com>, 2019
-#, fuzzy
+# Turkish translations for Pelican
 msgid ""
 msgstr ""
-"Project-Id-Version: Flex 2.1.0\n"
+"Project-Id-Version:  1.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-11-01 23:30+0300\n"
-"PO-Revision-Date: 2016-08-25 02:15+0000\n"
-"Last-Translator: İlker Yürüyen <i.ilker.yuruyen@gmail.com>, 2019\n"
-"Language: tr_TR\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/alexandrevicenzi/teams/66327/tr_TR/)\n"
+"POT-Creation-Date: 2025-11-02 14:00+0300\n"
+"PO-Revision-Date: 2025-11-02 14:00+0300\n"
+"Last-Translator: Yucel Toluyag\n"
+"Language: tr\n"
+"Language-Team: Turkish\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: themes/baba/templates/article.html:92
 msgid "Series:"
-msgstr ""
+msgstr "Seri:"
 
-#: themes/baba/templates/article.html:106
-#, python-format
+, python-format
 msgid "This article is part %(index)s of the '%(name)s' series."
-msgstr ""
+msgstr "Bu makale, '%(name)s' serisinin %(index)s. bölümüdür."
 
-#: themes/baba/templates/article.html:110
 msgid "Series Contents"
-msgstr ""
+msgstr "Seri İçeriği"
 
-#: themes/baba/templates/article.html:160
 msgid "Related Posts"
-msgstr ""
+msgstr "Benzer Yazılar"
 
-#: themes/baba/templates/article.html:178
-msgid "Destek Olun"
-msgstr ""
+msgid "Share:"
+msgstr "Paylaş:"
 
-#: themes/baba/templates/article.html:181
-msgid "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
-msgstr ""
+msgid "Support Me"
+msgstr "Destek Olun"
 
-#: themes/baba/templates/article.html:184
-msgid "Destek Ol"
-msgstr ""
+msgid "If you find this content useful, you can support my work."
+msgstr "Bu içeriği faydalı bulduysanız, çalışmalarımı destekleyebilirsiniz."
 
-#: themes/baba/templates/article.html:194
-msgid "Düzenle"
-msgstr ""
+msgid "Support"
+msgstr "Destek Ol"
 
-#: themes/baba/templates/article.html:205
-msgid "Paylaş:"
-msgstr ""
+msgid "Edit"
+msgstr "Düzenle"
 
-#: themes/baba/templates/article.html:360
-msgid "Önceki:"
-msgstr ""
+msgid "Previous:"
+msgstr "Önceki:"
 
-#: themes/baba/templates/article.html:368
-msgid "Sonraki:"
-msgstr ""
+msgid "Next:"
+msgstr "Sonraki:"
 
-#: themes/baba/templates/includes/footer.html:6
-msgid "Tüm hakları saklıdır."
-msgstr ""
+msgid "Article navigation"
+msgstr "Makale navigasyonu"
 
-#: themes/baba/templates/includes/footer.html:9
-msgid "Kategoriler sayfasına git"
-msgstr ""
+msgid "Previous article:"
+msgstr "Önceki makale:"
 
-#: themes/baba/templates/includes/footer.html:11
-#: themes/baba/templates/includes/footer.html:12
-msgid "Kategoriler"
-msgstr ""
+msgid "Next article:"
+msgstr "Sonraki makale:"
 
-#: themes/baba/templates/includes/footer.html:14
-msgid "Etiketler sayfasına git"
-msgstr ""
+msgid "All rights reserved."
+msgstr "Tüm hakları saklıdır."
 
-#: themes/baba/templates/includes/footer.html:16
-#: themes/baba/templates/includes/footer.html:17
-msgid "Etiketler"
-msgstr ""
+msgid "Go to Categories page"
+msgstr "Kategoriler sayfasına git"
 
-#: themes/baba/templates/includes/footer.html:19
-msgid "Kullanım Koşulları sayfasına git"
-msgstr ""
+msgid "Categories"
+msgstr "Kategoriler"
 
-#: themes/baba/templates/includes/footer.html:21
-#: themes/baba/templates/includes/footer.html:22
-msgid "Kullanım Koşulları"
-msgstr ""
+msgid "Go to Tags page"
+msgstr "Etiketler sayfasına git"
 
-#: themes/baba/templates/includes/footer.html:24
-msgid "Gizlilik Politikası sayfasına git"
-msgstr ""
+msgid "Tags"
+msgstr "Etiketler"
 
-#: themes/baba/templates/includes/footer.html:26
-msgid "Gizlilik"
-msgstr ""
+msgid "Go to Terms of Use page"
+msgstr "Kullanım Koşulları sayfasına git"
 
-#: themes/baba/templates/includes/footer.html:27
-msgid "Gizlilik Politikası"
-msgstr ""
+msgid "Terms of Use"
+msgstr "Kullanım Koşulları"
 
-#: themes/baba/templates/includes/footer.html:30
-msgid "Atom beslemesine git"
-msgstr ""
+msgid "Go to Privacy Policy page"
+msgstr "Gizlilik Politikası sayfasına git"
 
-#: themes/baba/templates/includes/footer.html:32
+msgid "Privacy"
+msgstr "Gizlilik"
+
+msgid "Privacy Policy"
+msgstr "Gizlilik Politikası"
+
+msgid "Go to Atom feed"
+msgstr "Atom beslemesine git"
+
 msgid "Atom"
-msgstr ""
+msgstr "Atom"
 
-#: themes/baba/templates/includes/footer.html:33
-msgid "Atom Beslemesi"
-msgstr ""
+msgid "Atom Feed"
+msgstr "Atom Beslemesi"
 
-#: themes/baba/templates/includes/footer.html:37
-msgid "RSS beslemesine git"
-msgstr ""
+msgid "Go to RSS feed"
+msgstr "RSS beslemesine git"
 
-#: themes/baba/templates/includes/footer.html:39
 msgid "RSS"
-msgstr ""
+msgstr "RSS"
 
-#: themes/baba/templates/includes/footer.html:40
-msgid "RSS Beslemesi"
-msgstr ""
+msgid "RSS Feed"
+msgstr "RSS Beslemesi"
 
-#: themes/baba/templates/includes/footer.html:48
-#, python-brace-format
-msgid "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube kanalıma</a> abone olarak destek olabilirsiniz."
-msgstr ""
+msgid "Go to Archive page"
+msgstr "Arşiv sayfasına git"
 
-#~ msgid "Archives"
-#~ msgstr "Arşivler"
+msgid "Archive"
+msgstr "Arşiv"
 
-#~ msgid "Posted on %(when)s in %(category)s"
-#~ msgstr "%(when)s tarihinde %(category)s kategorisinde paylaşıldı"
+msgid "Archives"
+msgstr "Arşivler"
 
-#~ msgid "%(minutes)s min read"
-#~ msgstr ""
+, python-brace-format
+msgid "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
+msgstr "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube kanalıma</a> abone olarak destek olabilirsiniz."
 
-#~ msgid "Like this article? Share it with your friends!"
-#~ msgstr "Bu makaleyi sevdiniz mi? Arkadaşlarınızla paylaşın!"
+msgid "Sayfa"
+msgstr "Sayfa"
 
-#~ msgid "You might enjoy"
-#~ msgstr "Sevebilirsiniz"
+msgid "Arama..."
+msgstr "Arama..."
 
-#~ msgid "Posts by %(name)s"
-#~ msgstr "%(name)s kişisinin paylaşımları"
+msgid "Arama sorgusu giriniz"
+msgstr "Arama sorgusu giriniz"
 
-#~ msgid "Authors"
-#~ msgstr "Yazarlar"
+msgid "için sonuç bulunamadı"
+msgstr "için sonuç bulunamadı"
 
-#~ msgid "Search..."
-#~ msgstr ""
+msgid "Bağış Yap"
+msgstr "Bağış Yap"
 
-#~ msgid "Home"
-#~ msgstr "Ana Sayfa"
+msgid "Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
+msgstr "Çalışmalarımı ve içeriklerimi desteklemek için bağış yapabilirsiniz. Papara, GitHub Sponsors ve kripto para seçenekleri ile katkıda bulunabilirsiniz."
 
-#~ msgid "Atom"
-#~ msgstr "Atom"
+msgid "Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz."
+msgstr "Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz."
 
-#~ msgid "RSS"
-#~ msgstr "RSS"
+msgid "Neden Bağış?"
+msgstr "Neden Bağış?"
 
-#~ msgid "Categories"
-#~ msgstr "Kategoriler"
+msgid "Daha fazla içerik üretebiliyorum"
+msgstr "Daha fazla içerik üretebiliyorum"
 
-#~ msgid "Category %(name)s"
-#~ msgstr "%(name)s Kategorisi"
+msgid "Daha kaliteli eğitim videoları hazırlayabiliyorum"
+msgstr "Daha kaliteli eğitim videoları hazırlayabiliyorum"
 
-#~ msgid "Tagged with"
-#~ msgstr "Etiket:"
+msgid "Açık kaynak projelere daha fazla zaman ayırabiliyorum"
+msgstr "Açık kaynak projelere daha fazla zaman ayırabiliyorum"
 
-#~ msgid "Continue reading"
-#~ msgstr "Okumaya devam et"
+msgid "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"
+msgstr "Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"
 
-#~ msgid "Search"
-#~ msgstr ""
+msgid "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"
+msgstr "Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"
 
-#~ msgid "Search Results"
-#~ msgstr ""
+msgid "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
+msgstr "Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum"
 
-#~ msgid "Tag %(name)s"
-#~ msgstr "%(name)s Etiketi"
+msgid "Bağış Seçenekleri"
+msgstr "Bağış Seçenekleri"
 
-#~ msgid "Tags"
-#~ msgstr "Etiketler"
+msgid "Hızlı ve Güvenli Bağış"
+msgstr "Hızlı ve Güvenli Bağış"
 
-#~ msgid "Please enable JavaScript to view comments."
-#~ msgstr "Yorumları görüntülemek için lütfen JavaScript'i etkinleştirin."
+msgid "Türk lirası ile hızlı bağış"
+msgstr "Türk lirası ile hızlı bağış"
 
-#~ msgid "Built with %(pelican_url)s using %(flex_url)s theme"
-#~ msgstr "%(flex_url)s teması kullanılarak %(pelican_url)s ile yapılmıştır"
+msgid "Aylık Destek"
+msgstr "Aylık Destek"
 
-#~ msgid "Switch to the %(dark_url)s | %(light_url)s | %(browser_url)s theme"
-#~ msgstr ""
+msgid "Aylık düzenli destek"
+msgstr "Aylık düzenli destek"
 
-#~ msgid "Previous Post"
-#~ msgstr "Önceki Paylaşım"
+msgid "Kripto Para Bağışları"
+msgstr "Kripto Para Bağışları"
 
-#~ msgid "Next Post"
-#~ msgstr "Sonraki Paylaşım"
+msgid "Ağ bilgisi"
+msgstr "Ağ bilgisi"
 
-#~ msgid "Older Posts"
-#~ msgstr "Eski Paylaşımlar"
+msgid "Önemli:"
+msgstr "Önemli:"
 
-#~ msgid "Newer Posts"
-#~ msgstr "Yeni Paylaşımlar"
+msgid "Tüm adresler"
+msgstr "Tüm adresler"
 
+msgid "ağını kullanır."
+msgstr "ağını kullanır."
+
+msgid "Farklı ağlar için lütfen"
+msgstr "Farklı ağlar için lütfen"
+
+msgid "iletişime geçin"
+msgstr "iletişime geçin"
+
+msgid "Cüzdan Adresini Göster"
+msgstr "Cüzdan Adresini Göster"
+
+msgid "Kopyala"
+msgstr "Kopyala"
+
+msgid "Kopyalandı!"
+msgstr "Kopyalandı!"
+
+msgid "Kopyalama başarısız:"
+msgstr "Kopyalama başarısız:"
+
+msgid "Yücel Toluyağ Kimdir ?"
+msgstr "Yücel Toluyağ Kimdir ?"
+
+msgid "İletişim"
+msgstr "İletişim"
+
+msgid "words"
+msgstr "kelime"
+
+msgid "min read"
+msgstr "dk okuma"
+
+msgid "Kategoriler"
+msgstr "Kategoriler"
+
+msgid "Bu sayfada {sitename} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz."
+msgstr "Bu sayfada {sitename} içeriklerinin tüm kategorilerini bulabilir ve ilgilendiğiniz konudaki yazılara kolayca ulaşabilirsiniz."
+
+msgid "Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz."
+msgstr "Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz."
+
+msgid "yazı"
+msgstr "yazı"
+
+msgid "Etiketler"
+msgstr "Etiketler"
+
+msgid "{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz."
+msgstr "{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz."
+
+msgid "{sitename} sitesindeki tüm konulara ait etiketler. İlgilendiğiniz konulara göre yazılara kolayca ulaşabilirsiniz."
+msgstr "{sitename} sitesindeki tüm konulara ait etiketler. İlgilendiğiniz konulara göre yazılara kolayca ulaşabilirsiniz."
+
+msgid "Etiket Bulutu"
+msgstr "Etiket Bulutu"
+
+msgid "{tag} etiketli {count} yazıya git"
+msgstr "{tag} etiketli {count} yazıya git"
+
+msgid "En Çok Kullanılan Etiketler"
+msgstr "En Çok Kullanılan Etiketler"
+
+msgid "{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz."
+msgstr "{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz."
+
+msgid "Bu kategoride {articles_length} yazı bulunuyor"
+msgstr "Bu kategoride {articles_length} yazı bulunuyor"
+
+msgid "Etiketli Yazılar"
+msgstr "Etiketli Yazılar"
+
+msgid "etiketi ile ilgili tüm yazılar. Bu etikette toplam {articles_length} yazı bulunuyor."
+msgstr "etiketi ile ilgili tüm yazılar. Bu etikette toplam {articles_length} yazı bulunuyor."
+
+msgid "Bu etikete sahip {articles_length} yazı bulundu"
+msgstr "Bu etikete sahip {articles_length} yazı bulundu"
+
+msgid "Önceki sayfa"
+msgstr "Önceki sayfa"
+
+msgid "Önceki"
+msgstr "Önceki"
+
+msgid "Sonraki sayfa"
+msgstr "Sonraki sayfa"
+
+msgid "Sonraki"
+msgstr "Sonraki"
+
+msgid "Webmentions"
+msgstr "Webmentions"
+
+msgid "Likes"
+msgstr "Beğeniler"
+
+msgid "Loading likes..."
+msgstr "Beğeniler yükleniyor..."
+
+msgid "Comments & Replies"
+msgstr "Yorumlar & Yanıtlar"
+
+msgid "Loading comments..."
+msgstr "Yorumlar yükleniyor..."
+
+msgid "No likes yet."
+msgstr "Henüz beğeni yok."
+
+msgid "No comments yet."
+msgstr "Henüz yorum yok."
+
+msgid "Orijinal gönderi"
+msgstr "Orijinal gönderi"

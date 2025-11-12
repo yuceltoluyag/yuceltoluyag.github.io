@@ -105,6 +105,15 @@ msgstr "RSS"
 msgid "RSS Feed"
 msgstr "RSS Beslemesi"
 
+msgid "Go to Archive page"
+msgstr "Arşiv sayfasına git"
+
+msgid "Archive"
+msgstr "Arşiv"
+
+msgid "Archives"
+msgstr "Arşivler"
+
 #, python-brace-format
 msgid "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
 msgstr "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube kanalıma</a> abone olarak destek olabilirsiniz."

@@ -1,13 +1,25 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Content-Language" content="{{ DEFAULT_LANG|default('tr') }}" />
+<meta
+  http-equiv="Content-Language"
+  content="{{ DEFAULT_LANG|default('tr') }}"
+/>
 <meta name="language" content="{{ DEFAULT_LANG|default('tr') }}" />
-<meta property="og:locale" content="{% if DEFAULT_LANG == 'en' %}en_US{% else %}tr_TR{% endif %}" />
+<meta
+  property="og:locale"
+  content="{% if DEFAULT_LANG == 'en' %}en_US{% else %}tr_TR{% endif %}"
+/>
 <meta content="{{ SITENAME }}" property="og:site_name" />
 <meta name="siteurl" content="{{ SITEURL }}" />
 <meta name="theme-static-dir" content="{{ THEME_STATIC_DIR }}" />
-<meta name="is-homepage" content="{% if output_file == 'index.html' %}true{% else %}false{% endif %}" />
-<meta name="google-site-verification" content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc" />
+<meta
+  name="is-homepage"
+  content="{% if output_file == 'index.html' %}true{% else %}false{% endif %}"
+/>
+<meta
+  name="google-site-verification"
+  content="ob8_FqKQlIxhp5eRJIvaR-bbkV_6kD7D9l_0TkzxMqc"
+/>
 <meta name="cookie-consent-default" content="denied" />
 {% include 'includes/tagmanager_head.html' %}
 <!-- Open Graph Resim Etiketi -->
@@ -40,11 +52,20 @@
 <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
 <meta property="og:title" content="{{ article.title }}" />
 <!-- Article Özel Etiketleri -->
-<meta property="article:published_time" content="{{ article.date.isoformat() }}" />
+<meta
+  property="article:published_time"
+  content="{{ article.date.isoformat() }}"
+/>
 {% if article.modified %}
-<meta property="article:modified_time" content="{{ article.modified.isoformat() }}" />
+<meta
+  property="article:modified_time"
+  content="{{ article.modified.isoformat() }}"
+/>
 {% endif %}
-<meta property="article:author" content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/" />
+<meta
+  property="article:author"
+  content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/"
+/>
 {% if article.category %}
 <meta property="article:section" content="{{ article.category }}" />
 {% endif %} {% if article.tags %} {% for tag in article.tags %}
@@ -56,133 +77,214 @@
 {% if page.date %}
 <meta property="article:published_time" content="{{ page.date.isoformat() }}" />
 {% endif %} {% if page.modified %}
-<meta property="article:modified_time" content="{{ page.modified.isoformat() }}" />
+<meta
+  property="article:modified_time"
+  content="{{ page.modified.isoformat() }}"
+/>
 {% endif %}
-<meta property="article:author" content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/" />
+<meta
+  property="article:author"
+  content="{{ SITEURL }}/yazar/{{ AUTHOR|lower }}/"
+/>
 {% if page.tags %} {% for tag in page.tags %}
 <meta property="article:tag" content="{{ tag }}" />
 {% endfor %} {% endif %} {% else %}
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ SITEURL }}{% if output_file != 'index.html' %}/{{ output_file }}{% endif %}" />
-<meta property="og:title" content="{{ SITENAME }}{% if page_name %} - {{ page_name }}{% endif %}" />
+<meta
+  property="og:url"
+  content="{{ SITEURL }}{% if output_file != 'index.html' %}/{{ output_file }}{% endif %}"
+/>
+<meta
+  property="og:title"
+  content="{{ SITENAME }}{% if page_name %} - {{ page_name }}{% endif %}"
+/>
 {% endif %}
 
 <!-- Meta Description -->
 {% if article %}
-<meta name="description" content="{{ article.summary|striptags|truncate(160) }}" />
-<meta property="og:description" content="{{ article.summary|striptags|truncate(160) }}" />
+<meta
+  name="description"
+  content="{{ article.summary|striptags|truncate(160) }}"
+/>
+<meta
+  property="og:description"
+  content="{{ article.summary|striptags|truncate(160) }}"
+/>
 {% elif page %}
 <meta name="description" content="{{ page.summary|striptags|truncate(160) }}" />
-<meta property="og:description" content="{{ page.summary|striptags|truncate(160) }}" />
-{% elif category %}
-{% if DEFAULT_LANG == 'tr' %}
-<meta name="description" content="{{ category }} kategorisindeki tüm yazılar ve makaleler. {{ SITENAME }} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin."|truncate(160) }} />
-<meta property="og:description" content="{{ category }} kategorisindeki tüm yazılar ve makaleler. {{ SITENAME }} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin."|truncate(160) }} />
+<meta
+  property="og:description"
+  content="{{ page.summary|striptags|truncate(160) }}"
+/>
+{% elif category %} {% if DEFAULT_LANG == 'tr' %}
+<meta
+  name="description"
+  content="{{ category }} kategorisindeki tüm yazılar ve makaleler. {{ SITENAME }} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin."
+  |truncate(160)
+  }}
+/>
+<meta
+  property="og:description"
+  content="{{ category }} kategorisindeki tüm yazılar ve makaleler. {{ SITENAME }} blogunda bu kategoriye ait güncel ve detaylı içerikler bulabilirsiniz. İlgilendiğiniz konuda daha fazla bilgi edinin."
+  |truncate(160)
+  }}
+/>
 {% elif DEFAULT_LANG == 'en' %}
-<meta name="description" content="Explore all articles and posts in the {{ category }} category. Discover up-to-date and detailed content on the {{ SITENAME }} blog. Dive deeper into your areas of interest." />
-<meta property="og:description" content="Explore all articles and posts in the {{ category }} category. Discover up-to-date and detailed content on the {{ SITENAME }} blog. Dive deeper into your areas of interest." />
+<meta
+  name="description"
+  content="Explore all articles and posts in the {{ category }} category. Discover up-to-date and detailed content on the {{ SITENAME }} blog. Dive deeper into your areas of interest."
+/>
+<meta
+  property="og:description"
+  content="Explore all articles and posts in the {{ category }} category. Discover up-to-date and detailed content on the {{ SITENAME }} blog. Dive deeper into your areas of interest."
+/>
 {% else %}
-<meta name="description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
-<meta property="og:description" content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları." />
-{% endif %}
-{% elif tag %}
-{% if DEFAULT_LANG == 'tr' %}
-<meta name="description" content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. {{ SITENAME }} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin."|truncate(160) }} />
-<meta property="og:description" content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. {{ SITENAME }} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin."|truncate(160) }} />
+<meta
+  name="description"
+  content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları."
+/>
+<meta
+  property="og:description"
+  content="{{ category }} kategorisindeki tüm yazılar. {{ SITENAME }} blog yazıları."
+/>
+{% endif %} {% elif tag %} {% if DEFAULT_LANG == 'tr' %}
+<meta
+  name="description"
+  content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. {{ SITENAME }} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin."
+  |truncate(160)
+  }}
+/>
+<meta
+  property="og:description"
+  content="#{{ tag }} etiketi ile ilgili tüm yazılar ve rehberler. {{ SITENAME }} blogunda bu etikete sahip güncel ve bilgilendirici içerikler bulabilirsiniz. Konuyla ilgili derinlemesine bilgi edinin."
+  |truncate(160)
+  }}
+/>
 {% elif DEFAULT_LANG == 'en' %}
-<meta name="description" content="Discover all articles and guides related to the #{{ tag }} tag. Find current and informative content on the {{ SITENAME }} blog. Explore this topic in depth." />
-<meta property="og:description" content="Discover all articles and guides related to the #{{ tag }} tag. Find current and informative content on the {{ SITENAME }} blog. Explore this topic in depth." />
+<meta
+  name="description"
+  content="Discover all articles and guides related to the #{{ tag }} tag. Find current and informative content on the {{ SITENAME }} blog. Explore this topic in depth."
+/>
+<meta
+  property="og:description"
+  content="Discover all articles and guides related to the #{{ tag }} tag. Find current and informative content on the {{ SITENAME }} blog. Explore this topic in depth."
+/>
 {% else %}
-<meta name="description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
-<meta property="og:description" content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları." />
-{% endif %}
-{% elif articles_page and articles_page.number > 1 %}
-{% if DEFAULT_LANG == 'tr' %}
-<meta name="description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}. Linux, Python, web geliştirme ve teknoloji konularında güncel içerikler." />
-<meta property="og:description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}. Linux, Python, web geliştirme ve teknoloji konularında güncel içerikler." />
+<meta
+  name="description"
+  content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları."
+/>
+<meta
+  property="og:description"
+  content="{{ tag }} etiketi ile ilgili tüm yazılar. {{ SITENAME }} blog yazıları."
+/>
+{% endif %} {% elif articles_page and articles_page.number > 1 %} {% if
+DEFAULT_LANG == 'tr' %}
+<meta
+  name="description"
+  content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}. Linux, Python, web geliştirme ve teknoloji konularında güncel içerikler."
+/>
+<meta
+  property="og:description"
+  content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}. Linux, Python, web geliştirme ve teknoloji konularında güncel içerikler."
+/>
 {% elif DEFAULT_LANG == 'en' %}
-<meta name="description" content="All articles and posts on {{ SITENAME }} blog - Page {{ articles_page.number }}. Up-to-date content on Linux, Python, web development, and technology." />
-<meta property="og:description" content="All articles and posts on {{ SITENAME }} blog - Page {{ articles_page.number }}. Up-to-date content on Linux, Python, web development, and technology." />
+<meta
+  name="description"
+  content="All articles and posts on {{ SITENAME }} blog - Page {{ articles_page.number }}. Up-to-date content on Linux, Python, web development, and technology."
+/>
+<meta
+  property="og:description"
+  content="All articles and posts on {{ SITENAME }} blog - Page {{ articles_page.number }}. Up-to-date content on Linux, Python, web development, and technology."
+/>
 {% else %}
-<meta name="description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}." />
-<meta property="og:description" content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}." />
-{% endif %}
-{% else %}
+<meta
+  name="description"
+  content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}."
+/>
+<meta
+  property="og:description"
+  content="{{ SITENAME }} blogunda tüm makaleler ve yazılar - Sayfa {{ articles_page.number }}."
+/>
+{% endif %} {% else %}
 <meta name="description" content="{{ DESCRIPTION }}" />
 <meta property="og:description" content="{{ DESCRIPTION }}" />
 {% endif %}
-
+<meta name="fediverse:creator" content="@yuceltoluyag@mastodon.social" />
 <!-- Schema.org markup -->
 <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "{{ SITENAME }}",
-        "description": "{{ DESCRIPTION }}",
-        "url": "{{ SITEURL }}"
-    }
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ SITENAME }}",
+    "description": "{{ DESCRIPTION }}",
+    "url": "{{ SITEURL }}"
+  }
 </script>
 
 <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "{{ SITENAME }}",
-        "url": "{{ SITEURL }}",
-        "logo": "{{ SITEURL }}/images/logo-lg.webp",
-        "sameAs": [
-            {% if SOCIAL.github %}"https://github.com/{{ SOCIAL.github }}",{% endif %}
-            {% if SOCIAL.instagram %}"https://instagram.com/{{ SOCIAL.instagram }}",{% endif %}
-            {% if SOCIAL.youtube %}"https://youtube.com/@{{ SOCIAL.youtube }}",{% endif %}
-            {% if SOCIAL.twitch %}"https://twitch.tv/{{ SOCIAL.twitch }}",{% endif %}
-            {% if SOCIAL.discord %}"https://discord.com/users/{{ SOCIAL.discord }}",{% endif %}
-            {% if SOCIAL.matrix %}"https://matrix.to/#/@{{ SOCIAL.matrix }}:matrix.org",{% endif %}
-            {% if SOCIAL.kick %}"https://kick.com/{{ SOCIAL.kick }}"{% endif %}
-        ]
-    }
+  {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{ SITENAME }}",
+      "url": "{{ SITEURL }}",
+      "logo": "{{ SITEURL }}/images/logo-lg.webp",
+      "sameAs": [
+          {% if SOCIAL.github %}"https://github.com/{{ SOCIAL.github }}",{% endif %}
+          {% if SOCIAL.instagram %}"https://instagram.com/{{ SOCIAL.instagram }}",{% endif %}
+          {% if SOCIAL.youtube %}"https://youtube.com/@{{ SOCIAL.youtube }}",{% endif %}
+          {% if SOCIAL.twitch %}"https://twitch.tv/{{ SOCIAL.twitch }}",{% endif %}
+          {% if SOCIAL.discord %}"https://discord.com/users/{{ SOCIAL.discord }}",{% endif %}
+          {% if SOCIAL.matrix %}"https://matrix.to/#/@{{ SOCIAL.matrix }}:matrix.org",{% endif %}
+          {% if SOCIAL.kick %}"https://kick.com/{{ SOCIAL.kick }}"{% endif %}
+      ]
+  }
 </script>
 
 {% if article %}
 <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "headline": "{{ article.title|striptags }}",
-        "description": "{{ article.summary|striptags|truncate(160) }}",
-        "author": {
-            "@type": "Person",
-            "name": "{{ AUTHORS_INFO[article.author.slug].name }}",
-            "url": "{{ SITEURL }}/yazar/{{ article.author.slug }}/",
-            "image": "{{ SITEURL }}{{ AUTHORS_INFO[article.author.slug].image }}",
-            "sameAs": [
-                {% if AUTHORS_INFO[article.author.slug].social.github %}"https://github.com/{{ AUTHORS_INFO[article.author.slug].social.github }}",{% endif %}
-                {% if AUTHORS_INFO[article.author.slug].social.twitter %}"https://twitter.com/{{ AUTHORS_INFO[article.author.slug].social.twitter }}",{% endif %}
-                {% if AUTHORS_INFO[article.author.slug].social.linkedin %}"https://linkedin.com/in/{{ AUTHORS_INFO[article.author.slug].social.linkedin }}"{% endif %}
-            ],
-            "description": "{{ AUTHORS_INFO[article.author.slug].bio[article.lang] or AUTHORS_INFO[article.author.slug].bio['tr'] }}"
-        },
-        "datePublished": "{{ article.date.isoformat() }}",
-        {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}
-        "publisher": {
-            "@type": "Organization",
-            "name": "{{ SITENAME }}",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "{{ SITEURL }}/images/logo-lg.webp"
-            }
-        },
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "{{ SITEURL }}/{{ article.url }}"
-        },
-        {% if article.category %}"articleSection": "{{ article.category }}",{% endif %}
-        {% if article.tags %}"keywords": "{{ article.tags|join(', ') }}",{% endif %}
-        "url": "{{ SITEURL }}/{{ article.url }}",
-        {% if article.image %}"image": "{{ SITEURL }}/{{ article.image }}",{% endif %}
-        "homepage": "{{ SITEURL }}/"
-    }
+  {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ article.title|striptags }}",
+      "description": "{{ article.summary|striptags|truncate(160) }}",
+      "author": {
+          "@type": "Person",
+          "name": "{{ AUTHORS_INFO[article.author.slug].name }}",
+          "url": "{{ SITEURL }}/yazar/{{ article.author.slug }}/",
+          "image": "{{ SITEURL }}{{ AUTHORS_INFO[article.author.slug].image }}",
+          "sameAs": [
+              {% if AUTHORS_INFO[article.author.slug].social.github %}"https://github.com/{{ AUTHORS_INFO[article.author.slug].social.github }}",{% endif %}
+              {% if AUTHORS_INFO[article.author.slug].social.twitter %}"https://twitter.com/{{ AUTHORS_INFO[article.author.slug].social.twitter }}",{% endif %}
+              {% if AUTHORS_INFO[article.author.slug].social.linkedin %}"https://linkedin.com/in/{{ AUTHORS_INFO[article.author.slug].social.linkedin }}"{% endif %}
+          ],
+          "description": "{{ AUTHORS_INFO[article.author.slug].bio[article.lang] or AUTHORS_INFO[article.author.slug].bio['tr'] }}"
+      },
+      "datePublished": "{{ article.date.isoformat() }}",
+      {% if article.modified %}"dateModified": "{{ article.modified.isoformat() }}",{% endif %}
+      "publisher": {
+          "@type": "Organization",
+          "name": "{{ SITENAME }}",
+          "logo": {
+              "@type": "ImageObject",
+              "url": "{{ SITEURL }}/images/logo-lg.webp"
+          }
+      },
+      "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{ SITEURL }}/{{ article.url }}"
+      },
+      {% if article.category %}"articleSection": "{{ article.category }}",{% endif %}
+      {% if article.tags %}"keywords": "{{ article.tags|join(', ') }}",{% endif %}
+      "url": "{{ SITEURL }}/{{ article.url }}",
+      {% if article.image %}"image": "{{ SITEURL }}/{{ article.image }}",{% endif %}
+      "homepage": "{{ SITEURL }}/"
+  }
 </script>
 {% endif %}
 
 <!-- Canonical URL -->
-<link rel="canonical" href="{% if article %}{{ SITEURL }}/{{ article.url }}{% elif page %}{{ SITEURL }}/{{ page.url }}{% elif category %}{{ SITEURL }}/{{ category.url }}{% elif tag %}{{ SITEURL }}/{{ tag.url }}{% elif author %}{{ SITEURL }}/{{ author.url }}{% else %}{{ SITEURL }}{% endif %}" />
+<link
+  rel="canonical"
+  href="{% if article %}{{ SITEURL }}/{{ article.url }}{% elif page %}{{ SITEURL }}/{{ page.url }}{% elif category %}{{ SITEURL }}/{{ category.url }}{% elif tag %}{{ SITEURL }}/{{ tag.url }}{% elif author %}{{ SITEURL }}/{{ author.url }}{% else %}{{ SITEURL }}{% endif %}"
+/>
