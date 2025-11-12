@@ -8,6 +8,7 @@ status: published
 summary: Set up dnsmasq and dnscrypt-proxy on Arch Linux, check for port conflicts, and test DNS resolution.
 template: article
 Lang: en
+Status: published
 
 ---
 

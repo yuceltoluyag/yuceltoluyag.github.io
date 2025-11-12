@@ -7,6 +7,7 @@ Authors: yuceltoluyag
 Summary: AI detectors are sometimes so confused that you're mistaken for a robot even when you write properly. This is the comedy of the modern age.
 Image: images/ai-detector-sacmaliklari-xl.webp
 Lang: en
+Status: published
 
 Welcome to the comedy of the new age.
 Now, if you write too well, **you're guilty.**

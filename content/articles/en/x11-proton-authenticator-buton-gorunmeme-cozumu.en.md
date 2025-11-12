@@ -10,6 +10,7 @@ summary: "If you're experiencing the issue of Proton Authenticator buttons not a
 template: article
 Image: images/x11-proton-authenticator-buton-gorunmeme-cozumu-xl.webp
 Lang: en
+Status: published
 
 ## 1. Introduction 🌟
 
