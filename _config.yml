@@ -1,2 +1,10 @@
+# Disable Jekyll
+plugins: []
+
+# Include well-known directory
 include:
+  - .well-known
+
+# Ensure all files are included
+keep_files:
   - .well-known
