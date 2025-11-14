@@ -362,6 +362,8 @@ HOME_HIDE_TAGS = True
 # REDIRECTS
 # =============================================================================
 REDIRECTS = {
+    "/.well-known/host-meta": "https://fed.brid.gy/.well-known/host-meta",
+    "/.well-known/webfinger": "https://fed.brid.gy/.well-known/webfinger",
     "/tags/facebook.html": "/etiket/facebook/",
     "/tags/facebook": "/etiket/facebook/",
     "/tags/github.html": "/etiket/github/",
