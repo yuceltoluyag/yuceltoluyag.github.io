@@ -1,9 +1,20 @@
 {
   "links": [
     {
-      "rel": "lrdd",
-      "type": "application/jrd+json",
-      "template": "https://brid.gy/webfinger?q={uri}"
+      "rel": "self",
+      "type": "application/activity+json",
+      "href": "https://yuceltoluyag.github.io"
+    },
+    {
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html",
+      "href": "https://yuceltoluyag.github.io"
+    },
+    {
+      "rel": "http://schemas.google.com/g/2010#updates-from",
+      "type": "application/atom+xml",
+      "href": "https://yuceltoluyag.github.io/feeds/all.atom.xml"
     }
-  ]
+  ],
+  "subject": "acct:yuceltoluyag.github.io"
 }
