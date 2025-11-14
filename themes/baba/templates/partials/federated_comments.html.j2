@@ -1,0 +1,24 @@
+<div class="comments">
+  {% if lobsters %}
+    Discuss this post on <a href="{{ lobsters }}">lobste.rs</a>.
+  {% endif %}
+  <p>You can reply to <a href="https://{{toot.domain}}/{{toot.username}}/{{toot.id}}">this post via Mastodon</a>: <button id="replyButton" href="https://{{ toot.domain }}/{{ toot.username }}/{{ toot.id }}">Reply</button></p>
+  <p id="mastodon-comments-list" data-domain="{{ toot.domain }}" data-id="{{ toot.id }}">Waiting to load comments</p>
+  <dialog id="toot-reply" class="mastodon" data-component="dialog">
+    <h3>Reply to {{ toot.username }}'s post</h3>
+    <p>
+      With an account on the Fediverse or Mastodon, you
+      can respond to this post. Since Mastodon is
+      decentralized, you can use your existing account
+      hosted by another Mastodon server or compatible
+      platform if you don't have an account on this one.
+    </p>
+    <p>Copy and paste this URL into the search field of your favourite Fediverse app or the web interface of your Mastodon server.</p>
+    <div class="copypaste">
+      <input type="text" readonly="" value="https://{{ toot.domain }}/{{ toot.username }}/{{ toot.id }}">
+      <button class="button" id="copyButton">Copy</button>
+      <button class="button" id="cancelButton">Close</button>
+    </div>
+  </dialog>
+  <noscript><p>You need JavaScript to view the comments.</p></noscript>
+</div>
