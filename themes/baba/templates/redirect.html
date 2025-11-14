@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <link rel="canonical" href="{{ page.location }}" />
-    <meta http-equiv="refresh" content="{{ page.delay }}; URL={{ page.location }}" />
+    <script>
+        window.location.replace("{{ page.location }}" + window.location.search);
+    </script>
 </head>
 <body>
     <p>You are being redirected to <a href="{{ page.location }}">{{ page.title }}</a></p>
