@@ -48,7 +48,7 @@ EXTRA_PATH_METADATA = {
         "path": "acf21962677a48049a6a234640504902.txt"
     },
     "extra/CNAME": {"path": "CNAME"},
-    ".well-known/webfinger": {"path": ".well-known/webfinger"},
+    "extra/.well-known/webfinger": {"path": ".well-known/webfinger"},
 }
 
 # =============================================================================
@@ -355,7 +355,7 @@ THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 USE_LESS = True
 JINJA_GLOBALS = {"current_year": date.today().year}
-IGNORE_FILES = ["404.html"]
+IGNORE_FILES = ["404.html", ".#*"]
 DEFAULT_PAGESCHEMA = "article"
 HOME_HIDE_TAGS = True
 

@@ -224,17 +224,13 @@ def livereload(ctx: Context):
         # Clean cache and output directories before building to avoid EOFError
         clean_cache(ctx)
         clean_output(ctx)
-        
+
         pelican_args = [
             "-s",
             SETTINGS_FILE_BASE,
-            "--debug"  # Always use debug mode to get more detailed error info
+            "--debug",  # Always use debug mode to get more detailed error info
         ]
-        ctx.run(
-            run_pelican(pelican_args)
-        )
-        # Copy .well-known directory after Pelican build
-        ctx.run(f"rsync -av ./.well-known/ {SETTINGS['OUTPUT_PATH']}/.well-known/")
+        ctx.run(run_pelican(pelican_args))
 
     theme_path = SETTINGS["THEME"]
     watched_globs = [
@@ -338,4 +334,3 @@ def lint(ctx: Context) -> None:
         title=pyprefix("pre-commit hooks"),
         command="SKIP=typos,djlint pre-commit run --all-files",
     )
-
