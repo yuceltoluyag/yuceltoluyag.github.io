@@ -33,7 +33,7 @@ PATH = "content"
 ARTICLE_PATHS = ["articles"]
 PAGE_PATHS = ["pages"]
 OUTPUT_PATH = "output"
-STATIC_PATHS = ["images", "extra", "files"]
+STATIC_PATHS = ["images", "extra", "files", ".well-known"]
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt", "template": True},
     "extra/humans.txt": {"path": "humans.txt", "template": True},
@@ -48,6 +48,7 @@ EXTRA_PATH_METADATA = {
         "path": "acf21962677a48049a6a234640504902.txt"
     },
     "extra/CNAME": {"path": "CNAME"},
+    ".well-known/webfinger": {"path": ".well-known/webfinger"},
 }
 
 # =============================================================================
