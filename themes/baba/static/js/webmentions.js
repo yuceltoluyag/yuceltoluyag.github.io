@@ -70,6 +70,25 @@ document.addEventListener("DOMContentLoaded", () => {
             .replace(/'/g, '&#39;');
     }
 
+    function processCommentContent(contentHtml, contentText) {
+        if (!contentHtml && !contentText) {
+            return '';
+        }
+
+        let processedContent = contentHtml || escapeHTML(contentText);
+
+        // Regex to find an <a> tag where href points to an image and text is also the URL
+        // This regex is specifically tailored for the <p><a href="URL">URL</a></p> pattern
+        const imageLinkRegex = /<p><a href="(https?:\/\/[^\s"]+\.(?:png|jpg|jpeg|gif|webp|svg)(?:\?[^\s"]*)?)">https?:\/\/[^\s"]+\.(?:png|jpg|jpeg|gif|webp|svg)(?:\?[^\s"]*)?<\/a><\/p>/gi;
+
+        // Replace image links with <img> tags
+        processedContent = processedContent.replace(imageLinkRegex, (match, url) => {
+            return `<p><img src="${url}" alt="Embedded image from webmention" style="max-width: 100%; height: auto;"></p>`;
+        });
+
+        return processedContent;
+    }
+
     function renderLikes(mentions, container) {
         if (mentions.length === 0) {
             container.innerHTML = "<li class='webmentions__empty'>No likes yet.</li>";
@@ -97,6 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
         mentions.forEach((mention) => {
             const li = document.createElement("li");
             li.classList.add("webmention", "webmention--comment");
+            let photosHtml = '';
+            if (mention.photo && Array.isArray(mention.photo)) {
+                photosHtml = mention.photo.map(photoUrl => {
+                    return `<img src="${photoUrl}" alt="Attached image" class="webmention__attached-photo" style="max-width: 100%; height: auto; margin-bottom: 10px;">`;
+                }).join('');
+            }
+
             li.innerHTML = `
                 <a href="${mention.author.url}" target="_blank" rel="noopener noreferrer nofollow">
                     <img src="${mention.author.photo}" alt="${mention.author.name}" class="webmention__author-photo">
@@ -112,8 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             </a>
                         </span>
                     </div>
+                    ${photosHtml} <!-- Insert attached photos here -->
                     <div class="webmention__content">
-                        ${(mention.content && (mention.content.html || mention.content.text)) || ''}
+                        ${processCommentContent(mention.content.html, mention.content.text)}
                     </div>
                 </div>
             `;

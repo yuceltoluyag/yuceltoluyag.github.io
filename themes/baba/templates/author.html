@@ -12,17 +12,17 @@
             <p>{{ author_info.bio[lang] or author_info.bio['tr'] }}</p>
             <div class="author-social">
                 {% if author_info.social.github %}
-                <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s GitHub profile">
                     <i class="fa-brands fa-github"></i>
                 </a>
                 {% endif %}
                 {% if author_info.social.twitter %}
-                <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s Twitter profile">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
                 {% endif %}
                 {% if author_info.social.linkedin %}
-                <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank" rel="noopener noreferrer">
+                <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s LinkedIn profile">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
                 {% endif %}

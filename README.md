@@ -26,6 +26,11 @@ The custom **Minel** theme is built with responsiveness and user experience in m
 - **Reading Progress Bar**: A visual indicator of reading progress on articles.
 - **Back to Top Button**: Smoothly scroll back to the top of the page.
 
+### Integrations
+- **Google Indexing Tool**: Integrates with [Google Indexing Tool](https://github.com/yuceltoluyag/google-indexing-tool) for efficient content indexing.
+- **Image Responsive**: Uses [Image Responsive](https://github.com/yuceltoluyag/image-responsive) for optimized image delivery.
+- **Markdown IG Story**: Leverages [Markdown IG Story](https://github.com/yuceltoluyag/markdown-ig-story) for creating engaging content.
+
 ---
 
 ## 🚀 Getting Started
@@ -70,6 +75,7 @@ The bundling process is a two-step procedure:
     Concatenate all source CSS files into a single `combined.css` file.
     ```bash
     cat themes/baba/static/css/pico.indigo.min.css \
+        themes/baba/static/css/gruvbox-light.css \
         themes/baba/static/css/custom.css \
         themes/baba/static/css/modern-styles.css \
         themes/baba/static/css/pygments.css \
