@@ -64,7 +64,7 @@ jobs:
       - name: Copy .well-known directory
         run: rsync -av content/.well-known/ output/.well-known/
       - name: Create _config.yml for .well-known
-        run: echo "include: [\".well-known\"]" > output/_config.yml
+        run: echo 'include: [".well-known"]' > output/_config.yml
       - name: Fix permissions
         run: |
           find "output/" -type d -exec chmod 755 {} \;
