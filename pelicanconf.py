@@ -33,7 +33,7 @@ PATH = "content"
 ARTICLE_PATHS = ["articles"]
 PAGE_PATHS = ["pages"]
 OUTPUT_PATH = "output"
-STATIC_PATHS = ["images", "extra", "files"]
+STATIC_PATHS = ["images", "extra", "files", ".well-known"]
 EXTRA_PATH_METADATA = {
     "extra/robots.txt": {"path": "robots.txt", "template": True},
     "extra/humans.txt": {"path": "humans.txt", "template": True},
