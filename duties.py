@@ -234,7 +234,7 @@ def livereload(ctx: Context):
             run_pelican(pelican_args)
         )
         # Copy .well-known directory after Pelican build
-        ctx.run(f"rsync -av {SETTINGS['PATH']}/.well-known/ {SETTINGS['OUTPUT_PATH']}/.well-known/")
+        ctx.run(f"rsync -av ./.well-known/ {SETTINGS['OUTPUT_PATH']}/.well-known/")
 
     theme_path = SETTINGS["THEME"]
     watched_globs = [

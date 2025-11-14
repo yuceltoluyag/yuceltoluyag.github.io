@@ -1,9 +1,0 @@
-{
-  "links": [
-    {
-      "rel": "lrdd",
-      "type": "application/jrd+json",
-      "template": "https://brid.gy/webfinger?q={uri}"
-    }
-  ]
-}

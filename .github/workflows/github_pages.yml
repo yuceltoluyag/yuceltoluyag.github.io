@@ -29,7 +29,7 @@ jobs:
         if: github.repository != 'getpelican/pelican-themes' && '' != ''
         uses: actions/checkout@v5
         with:
-          repository: ''
+          repository: ""
           path: .theme
       - name: Configure GitHub Pages
         id: pages
@@ -61,8 +61,6 @@ jobs:
                   --extra-settings "SITEURL=\"https://yuceltoluyag.github.io\"" \
                   --extra-settings "FEED_DOMAIN=\"https://yuceltoluyag.github.io\"" \
                   --output output
-      - name: Copy .well-known directory
-        run: rsync -av content/.well-known/ output/.well-known/
       - name: Fix permissions
         run: |
           find "output/" -type d -exec chmod 755 {} \;
