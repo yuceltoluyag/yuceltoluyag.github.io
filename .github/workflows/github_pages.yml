@@ -61,6 +61,8 @@ jobs:
                   --extra-settings "SITEURL=\"https://yuceltoluyag.github.io\"" \
                   --extra-settings "FEED_DOMAIN=\"https://yuceltoluyag.github.io\"" \
                   --output output
+      - name: Copy .well-known directory
+        run: cp -R content/.well-known output/
       - name: Debug output directory
         run: ls -lR output
       - name: Fix permissions
