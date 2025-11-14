@@ -55,6 +55,9 @@ EXTRA_PATH_METADATA = {
     "extra/.well-known/webfinger": {
         "path": ".well-known/webfinger",
     },
+    "extra/.well-known/host-meta": {
+        "path": ".well-known/host-meta",
+    },
 }
 
 # =============================================================================
