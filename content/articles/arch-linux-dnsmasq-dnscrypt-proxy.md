@@ -1,12 +1,12 @@
-title: Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu
-date: 2025-10-13 18:00
-category: Linux
-tags: dnsmasq,dnscrypt-proxy,Arch Linux,DNS güvenliği,DNS önbellekleme
-slug: arch-linux-dnsmasq-dnscrypt-proxy
+Title: Arch Linux'ta dnsmasq ve dnscrypt-proxy ile Güvenli DNS Kurulumu
+Date: 2025-10-13 18:00
+Category: Linux
+Tags: dnsmasq,dnscrypt-proxy,Arch Linux,DNS güvenliği,DNS önbellekleme
+Slug: arch-linux-dnsmasq-dnscrypt-proxy
 authors: yuceltoluyag
-status: published
-summary: Arch Linux üzerinde dnsmasq ve dnscrypt-proxy kurulumunu yapın, port çakışmasını kontrol edin ve DNS çözümlemeyi test edin.
-template: article
+Status: published
+Summary: Arch Linux üzerinde dnsmasq ve dnscrypt-proxy kurulumunu yapın, port çakışmasını kontrol edin ve DNS çözümlemeyi test edin.
+Template: article
 Lang: tr
 Translation: false
 

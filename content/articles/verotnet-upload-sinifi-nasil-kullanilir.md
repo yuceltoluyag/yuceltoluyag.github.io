@@ -8,6 +8,7 @@ Tags: php, upload, verot, file upload, resim yükleme
 Lang: tr
 Translation: false
 Image: images/verotnetsinifikullanimi-xl.webp
+Status: published
 
 ## Verot.net Upload Sınıfı Nasıl Kullanılır
 

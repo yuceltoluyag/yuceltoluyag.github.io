@@ -8,6 +8,7 @@ Tags: jekyll, github pages, ruby, blog, web geliştirme
 Lang: tr
 Translation: false
 Image: images/bundleexecjekyllserve-xl.webp
+Status: published
 
 ## Jekyll Blog Kurulumu
 

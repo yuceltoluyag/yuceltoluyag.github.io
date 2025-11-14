@@ -8,6 +8,7 @@ Summary: Linux sistemlerde .part1.rar, .part2.rar gibi bölünmüş RAR arşivle
 Image: images/bolunmus-rar-dosyalarini-cikarma-xl.webp
 Lang: tr
 Translation: false
+Status: published
 
 ## Giriş
 

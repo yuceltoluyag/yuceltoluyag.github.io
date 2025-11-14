@@ -8,6 +8,7 @@ Tags: bootstrap, jquery, form, responsive, web geliştirme
 Lang: tr
 Translation: false
 Image: images/bootstrap-jquery-kayit-formu-xl.webp
+Status: published
 
 ## Bootstrap Kullanarak jQuery Kayıt Formu Oluşturalım (Responsive)
 

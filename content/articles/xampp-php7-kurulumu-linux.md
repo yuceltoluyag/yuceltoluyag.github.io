@@ -8,6 +8,7 @@ Tags: xampp, lampp, php7, linux, ubuntu, apache
 Lang: tr
 Translation: false
 Image: images/php7-ubuntu-xampp-xl.webp
+Status: published
 
 ## Xampp PHP 7 Kurulumu [Linux]
 

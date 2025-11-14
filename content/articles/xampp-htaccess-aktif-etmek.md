@@ -8,6 +8,7 @@ Tags: xampp, apache, htaccess, seo, localhost
 Lang: tr
 Translation: false
 Image: images/xampp-config-httpconf-xl.webp
+Status: published
 
 ## XAMPP .htaccess Aktif Etmek (Resimli Anlatım)
 

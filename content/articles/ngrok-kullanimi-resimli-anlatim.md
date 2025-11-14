@@ -8,6 +8,7 @@ Tags: ngrok, localhost, xampp, linux, web geliştirme
 Lang: tr
 Translation: false
 Image: images/ngroknasilkullanilir-xl.webp
+Status: published
 
 ## Ngrok Kullanımı Resimli Anlatım
 
