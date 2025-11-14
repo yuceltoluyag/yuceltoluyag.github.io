@@ -3050,12 +3050,68 @@ textarea {
     transition-duration: 0s !important;
   }
 }
+:root:not([data-theme="dark"]),
+[data-theme="light"] {
+  /* Gruvbox Light Palette */
+  --pico-background-color: #fbf1c7;
+  --pico-color: #3c3836;
+  --pico-text-selection-color: rgba(69, 133, 136, 0.25); /* Blue with transparency */
+  --pico-muted-color: #928374;
+  --pico-muted-border-color: #d5c4a1; /* Lighter background for borders */
+
+  --pico-primary: #458588; /* Blue */
+  --pico-primary-background: #458588;
+  --pico-primary-border: var(--pico-primary-background);
+  --pico-primary-underline: rgba(69, 133, 136, 0.5);
+  --pico-primary-hover: #076678; /* Darker Blue */
+  --pico-primary-hover-background: #076678;
+  --pico-primary-hover-border: var(--pico-primary-hover-background);
+  --pico-primary-hover-underline: var(--pico-primary-hover);
+  --pico-primary-focus: rgba(69, 133, 136, 0.5); /* Blue with transparency */
+  --pico-primary-inverse: #fbf1c7; /* Background color for inverse text */
+
+  --pico-secondary: #98971a; /* Green */
+  --pico-secondary-background: #98971a;
+  --pico-secondary-border: var(--pico-secondary-background);
+  --pico-secondary-underline: rgba(152, 151, 26, 0.5);
+  --pico-secondary-hover: #797403; /* Darker Green */
+  --pico-secondary-hover-background: #797403;
+  --pico-secondary-hover-border: var(--pico-secondary-hover-background);
+  --pico-secondary-hover-underline: var(--pico-secondary-hover);
+  --pico-secondary-focus: rgba(152, 151, 26, 0.25); /* Green with transparency */
+  --pico-secondary-inverse: #fbf1c7; /* Background color for inverse text */
+
+  --pico-contrast: #af3a03; /* Orange */
+  --pico-contrast-background: #af3a03;
+  --pico-contrast-border: var(--pico-contrast-background);
+  --pico-contrast-underline: rgba(175, 58, 3, 0.5);
+  --pico-contrast-hover: #8a2a00; /* Darker Orange */
+  --pico-contrast-hover-background: #8a2a00;
+  --pico-contrast-hover-border: var(--pico-contrast-hover-background);
+  --pico-contrast-hover-underline: var(--pico-contrast-hover);
+  --pico-contrast-focus: rgba(175, 58, 3, 0.25); /* Orange with transparency */
+  --pico-contrast-inverse: #fbf1c7; /* Background color for inverse text */
+
+  /* Other elements */
+  --pico-card-background-color: #ebdbb2; /* Lighter background for cards */
+  --pico-card-border-color: #d5c4a1;
+  --pico-code-background-color: #f9f5d7; /* Even lighter background for code */
+  --pico-code-color: #3c3836;
+  --pico-form-element-background-color: #f9f5d7;
+  --pico-form-element-border-color: #d5c4a1;
+  --pico-form-element-color: #3c3836;
+  --pico-table-border-color: #d5c4a1;
+  --pico-table-row-stripped-background-color: rgba(213, 196, 161, 0.2); /* Lighter background for stripped rows */
+}a {
+  text-decoration: underline;
+}
+
 .article-link:hover,
 a,
 a.url,
 article.article a,
 h2.entry-title a {
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 main img {
   height: auto;
@@ -3200,7 +3256,7 @@ article.article h3 {
 .article-list-title a,
 .tag-item {
   color: var(--pico-color);
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 .tag-cloud-container {
   display: flex;
@@ -3596,7 +3652,7 @@ pre {
 }
 .article-list-meta a {
   color: var(--pico-muted-color);
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 .article-body-row {
   padding: 0 1.5rem 1.5rem;
@@ -3633,9 +3689,16 @@ code {
   border-radius: 0.25em;
   max-width: 100%;
 }
+[data-theme="dark"] code {
+  color: #eeeeee; /* Daha açık metin rengi */
+  background-color: #333333; /* Daha koyu arka plan rengi */
+}
 .highlight code {
   padding: 0;
   border-radius: 0;
+}
+[data-theme="dark"] .highlight code {
+  background-color: transparent; /* Arka planı şeffaf yap */
 }
 .highlight {
   width: 100%;
@@ -3866,7 +3929,7 @@ h6:hover .headerlink {
   display: none !important;
 }
 .related-posts-list a {
-  text-decoration: none;
+  /* text-decoration: none; */
   color: var(--pico-color);
   display: flex;
   align-items: center;
@@ -4484,7 +4547,7 @@ article.article {
   margin-bottom: 2em;
   padding-top: 45px;
   overflow-x: auto;
-  background: #232323;
+  background: #1a1a1a;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -4495,7 +4558,7 @@ article.article {
   left: 0;
   right: 0;
   height: 45px;
-  background-color: #191919;
+  background-color: #1a1a1a; /* Yeni arka plan rengiyle aynı */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   z-index: 1;
@@ -4518,7 +4581,7 @@ article.article {
   margin: 0;
   padding: 1.5em 1.5em 1.5em 2.5em;
   background-color: transparent !important;
-  color: #f8f8f2;
+  color: #ffffff;
 }
 [data-theme="dark"] .highlight pre::before {
   left: 1em;
@@ -4800,7 +4863,7 @@ article.article {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .article-link {
-  text-decoration: none;
+  /* text-decoration: none; */
   color: inherit;
   display: block;
   transition: 0.3s;
@@ -4876,7 +4939,7 @@ article.article {
   display: flex;
 }
 .article-category {
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 .legal-hero {
   text-align: center;
