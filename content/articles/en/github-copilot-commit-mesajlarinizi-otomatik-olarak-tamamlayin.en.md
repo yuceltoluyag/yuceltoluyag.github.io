@@ -12,7 +12,6 @@ Image: images/copilot-commit-xl.webp
 Series: Git
 Series_index: 6
 Lang: en
-Status: published
 
 There's a challenge we constantly face in software development: **writing meaningful commit messages**. Have you ever thought whether you could automate this routine? Good news: **GitHub Copilot** can now analyze your changes and suggest meaningful commit messages! 🚀
 
@@ -52,7 +51,7 @@ After installation is complete:
 3. Approve the required permissions
 4. When you return to VS Code, you'll see a message indicating Copilot is active
 
-> **Note**: There's a free version of GitHub Copilot! In the free version, you have 2,000 completions and 50 chat requests per month. You can switch to the paid plan for more usage. If you're a student, you can apply for free access through [GitHub Student Developer Pack](https://education.github.com/pack){: target="_blank" rel="noopener noreferrer"}.
+> **Note**: There's a free version of GitHub Copilot! In the free version, you have 2,000 completions and 50 chat requests per month. You can switch to the paid plan for more usage. If you're a student, you can apply for free access through [GitHub Student Developer Pack](https://education.github.com/pack){: target="\_blank" rel="noopener noreferrer"}.
 
 ## Creating Custom Coding and Commit Instructions (Current Method)
 
@@ -108,7 +107,7 @@ Open the `.github/copilot-instructions.md` file and specify your coding preferen
 
 ## Commit Style Guide
 
-We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/){: target="_blank" rel="noopener noreferrer"} style for our commit messages. Here are some examples:
+We follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/){: target="\_blank" rel="noopener noreferrer"} style for our commit messages. Here are some examples:
 
 - `feat: add new user authentication module`
 - `fix: resolve issue with data fetching.`
@@ -140,7 +139,7 @@ Open the `.vscode/settings.json` file and add the following code block:
 
 > **NOTE**: The old settings `github.copilot.chat.codeGeneration.instructions` and `github.copilot.chat.commitMessageGeneration.instructions` are no longer used. You need to remove these settings.
 
-This configuration will teach GitHub Copilot your coding style and commit message format. 🎯 For detailed review, see [GitHub Copilot's official documentation](https://aka.ms/vscode-ghcp-custom-instructions){: target="_blank" rel="noopener noreferrer"}.
+This configuration will teach GitHub Copilot your coding style and commit message format. 🎯 For detailed review, see [GitHub Copilot's official documentation](https://aka.ms/vscode-ghcp-custom-instructions){: target="\_blank" rel="noopener noreferrer"}.
 
 ## Enable Verbose Mode
 

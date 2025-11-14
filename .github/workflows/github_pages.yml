@@ -61,12 +61,8 @@ jobs:
                   --extra-settings "SITEURL=\"https://yuceltoluyag.github.io\"" \
                   --extra-settings "FEED_DOMAIN=\"https://yuceltoluyag.github.io\"" \
                   --output output
-      - name: Check content directory before copy
-        run: ls -lR content
       - name: Copy .well-known directory
-        run: cp -R content/.well-known output/
-      - name: Debug output directory
-        run: ls -lR output
+        run: rsync -av content/.well-known/ output/.well-known/
       - name: Fix permissions
         run: |
           find "output/" -type d -exec chmod 755 {} \;
