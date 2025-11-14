@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <link rel="canonical" href="https://fed.brid.gy/.well-known/host-meta">
+    <script>
+        window.location.replace("https://fed.brid.gy/.well-known/host-meta" + window.location.search);
+    </script>
+</head>
+<body>
+    <p>Redirecting to <a id="target" href="https://fed.brid.gy/.well-known/host-meta">https://fed.brid.gy/.well-known/host-meta</a>.</p>
+    <script>
+        document.getElementById("target").href += window.location.search;
+    </script>
+</body>
+</html>
