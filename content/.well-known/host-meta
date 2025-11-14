@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <link rel="canonical" href="https://fed.brid.gy/.well-known/host-meta">
-    <script>
-        window.location.replace("https://fed.brid.gy/.well-known/host-meta" + window.location.search);
-    </script>
-</head>
-<body>
-    <p>Redirecting to <a id="target" href="https://fed.brid.gy/.well-known/host-meta">https://fed.brid.gy/.well-known/host-meta</a>.</p>
-    <script>
-        document.getElementById("target").href += window.location.search;
-    </script>
-</body>
-</html>
+<?xml version='1.0' encoding='UTF-8'?>
+<XRD xmlns='http://docs.oasis-open.org/ns/xri/xrd-1.0'>
+  <Link rel='lrdd' type='application/xrd+xml' template='https://brid.gy/webfinger?q={uri}'/>
+</XRD>
