@@ -187,3 +187,4 @@ yarn-debug.log*
 *.env.local
 *.env.*
 !*.env.example
+.venv/
