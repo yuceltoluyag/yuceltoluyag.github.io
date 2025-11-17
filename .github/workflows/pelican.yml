@@ -48,11 +48,12 @@ jobs:
                   --output output
 
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        # Sürümü v3'e düşürdük
+        uses: actions/upload-pages-artifact@v3
         with:
           path: output
-          include-hidden-files: true  # .well-known ve .nojekyll gibi gizli dosyaları dahil etmek için
 
       - name: Deploy to GitHub Pages
         id: deployment
+        # deploy-pages action'ının v4 olması sorun değil
         uses: actions/deploy-pages@v4
