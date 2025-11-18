@@ -48,4 +48,6 @@ Step 4: [My YouTube Channel](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N
 
 You can visit my channel for more guides and videos.
 
+- Did you read this? Now you can check out the [wget website downloading guide](/en/wget-ile-web-sitesi-indirme).
+
 [responsive_img src="/images/httrack-xl.webp" alt="httrack" /]
