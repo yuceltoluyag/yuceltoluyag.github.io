@@ -150,3 +150,5 @@ Yukarıdaki parametre kombinasyonu sayesinde, elinizde tamamen gezinebilir, yere
 Umarım bu yazı işinize yarar, bol indirmeler
 
 [^1]: Aslında bu yöntemi ilk keşfettiğimde çok sevinmiştim. Çünkü çok büyük bir sitede sadece belirli bir kategorideki sayfaları indirmem gerekiyordu ve bu beni saatlerce sürebilecek bir işten kurtardı.
+
+- Daha fazla bilgi için [Linux’ta HTTrack kullanımı rehberine](/linux-ta-httrack-kullanimi) göz atabilirsiniz.

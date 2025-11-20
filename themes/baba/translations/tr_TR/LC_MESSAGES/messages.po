@@ -17,7 +17,7 @@ msgstr ""
 msgid "Series:"
 msgstr "Seri:"
 
-, python-format
+#, python-format
 msgid "This article is part %(index)s of the '%(name)s' series."
 msgstr "Bu makale, '%(name)s' serisinin %(index)s. bölümüdür."
 
@@ -114,7 +114,7 @@ msgstr "Arşiv"
 msgid "Archives"
 msgstr "Arşivler"
 
-, python-brace-format
+#, python-brace-format
 msgid "If you can't donate, you can support by subscribing to my <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube channel</a>."
 msgstr "Bağış yapamıyorsanız, <a href=\"https://youtube.com/@{youtube}\" target=\"_blank\">YouTube kanalıma</a> abone olarak destek olabilirsiniz."
 
@@ -297,6 +297,34 @@ msgstr "Henüz beğeni yok."
 
 msgid "No comments yet."
 msgstr "Henüz yorum yok."
+
+msgid "You can reply to this post via Mastodon:"
+msgstr "Bu gönderiye Mastodon aracılığıyla yanıt verebilirsiniz:"
+
+msgid "Reply"
+msgstr "Yanıtla"
+
+#, python-format
+msgid "Reply to %(username)s's post"
+msgstr "%(username)s kullanıcısının gönderisini yanıtla"
+
+msgid "With an account on the Fediverse or Mastodon, you can respond to this post."
+msgstr "Fediverse veya Mastodon'da bir hesabınız varsa, bu gönderiye yanıt verebilirsiniz."
+
+msgid "Since Mastodon is decentralized, you can use your existing account hosted by another Mastodon server or compatible platform if you don't have an account on this one."
+msgstr "Mastodon merkezi olmayan bir yapıda olduğu için, bu sunucuda hesabınız yoksa başka bir Mastodon sunucusunda veya uyumlu bir platformda barındırılan mevcut hesabınızı kullanabilirsiniz."
+
+msgid "Copy and paste this URL into the search field of your favourite Fediverse app or the web interface of your Mastodon server."
+msgstr "Bu URL'yi favori Fediverse uygulamanızın arama alanına veya Mastodon sunucunuzun web arayüzüne kopyalayıp yapıştırın."
+
+msgid "You need JavaScript to view the comments."
+msgstr "Yorumları görüntülemek için JavaScript gereklidir."
+
+msgid "No comments found. I'd love to hear from you!"
+msgstr "Yorum bulunamadı. Sizden haber bekliyoruz!"
+
+msgid "Error loading comments. Please try again later."
+msgstr "Yorumlar yüklenirken hata oluştu. Lütfen daha sonra tekrar deneyin."
 
 msgid "Orijinal gönderi"
 msgstr "Orijinal gönderi"

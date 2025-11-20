@@ -49,4 +49,6 @@ Adım 4: [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8
 
 Daha fazla rehber ve video için kanalımı ziyaret edebilirsiniz.
 
+Bunu okudunuz mu? Şimdi [wget ile web sitesi indirme rehberi](/wget-ile-web-sitesi-indirme)'de göz atabilirsiniz.
+
 [responsive_img src="/images/httrack-xl.webp" alt="httrack" /]

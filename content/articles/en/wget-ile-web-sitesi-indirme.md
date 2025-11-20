@@ -149,3 +149,5 @@ Thanks to the parameter combination above, you'll have a fully browsable, local 
 I hope this article is useful to you, happy downloading!
 
 [^1]: Actually, when I first discovered this method, I was very happy. Because I needed to download only specific pages in a very large site, and this saved me from a job that could have taken hours.
+
+- For more information, you can check out the [Using HTTrack on Linux](/en/linux-ta-httrack-kullanimi/) guide.
