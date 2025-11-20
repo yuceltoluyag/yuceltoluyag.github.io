@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
               allLinks.forEach(link => {
                 if (link.textContent.startsWith('@')) {
                   // It's likely a mention, replace it with its text content.
-                  link.outerHTML = link.textContent;
+                  link.outerHTML = escapeHtml(link.textContent);
                 }
               });
               reply.content = tempDiv.innerHTML;
