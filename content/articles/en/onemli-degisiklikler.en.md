@@ -10,6 +10,7 @@ Lang: en
 Status: published
 Template: article
 Image: images/duyuru-lg.webp
+toot: https://mastodon.social/@yuceltoluyag/115001034011754786
 
 This article tests various elements in Markdown format. Below are different components such as headings, paragraphs, lists, footnotes, quotes, admonitions, tables, and code blocks.
 

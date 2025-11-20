@@ -123,6 +123,34 @@ msgstr "Search..."
 msgid "Arama sorgusu giriniz"
 msgstr "Enter search query"
 
+msgid "You can reply to this post via Mastodon:"
+msgstr "You can reply to this post via Mastodon:"
+
+msgid "Reply"
+msgstr "Reply"
+
+#, python-format
+msgid "Reply to %(username)s's post"
+msgstr "Reply to %(username)s's post"
+
+msgid "With an account on the Fediverse or Mastodon, you can respond to this post."
+msgstr "With an account on the Fediverse or Mastodon, you can respond to this post."
+
+msgid "Since Mastodon is decentralized, you can use your existing account hosted by another Mastodon server or compatible platform if you don't have an account on this one."
+msgstr "Since Mastodon is decentralized, you can use your existing account hosted by another Mastodon server or compatible platform if you don't have an account on this one."
+
+msgid "Copy and paste this URL into the search field of your favourite Fediverse app or the web interface of your Mastodon server."
+msgstr "Copy and paste this URL into the search field of your favourite Fediverse app or the web interface of your Mastodon server."
+
+msgid "You need JavaScript to view the comments."
+msgstr "You need JavaScript to view the comments."
+
+msgid "No comments found. I'd love to hear from you!"
+msgstr "No comments found. I'd love to hear from you!"
+
+msgid "Error loading comments. Please try again later."
+msgstr "Error loading comments. Please try again later."
+
 msgid "için sonuç bulunamadı"
 msgstr "no results found for"
 

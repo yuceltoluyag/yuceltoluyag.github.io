@@ -7586,7 +7586,342 @@ video[autoplay][loop][muted][playsinline] {
     font-size: 1.1rem;
     color: var(--muted-color);
 }
-/* Footer Styles */
+/* Federated Comments Styling - Compatible with Pico CSS */
+
+.comments {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.25rem);
+  background-color: var(--background-color, #f8f9fa);
+  font-family: var(--font-family, system-ui, -apple-system, sans-serif);
+}
+
+.comments p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color, #dee2e6);
+}
+
+.comment-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mastodon-comment {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: var(--border-radius, 0.25rem);
+  background-color: var(--card-background-color, #ffffff);
+  box-shadow: var(--card-box-shadow, 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1));
+  transition: box-shadow 0.3s ease;
+}
+
+.mastodon-comment:hover {
+  box-shadow: var(--card-hover-box-shadow, 0 0.2rem 0.6rem rgba(0, 0, 0, 0.15));
+}
+
+.mastodon-comment + .mastodon-comment {
+  margin-top: 1rem;
+}
+
+.comment-avatar {
+  float: left;
+  margin-right: 1rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+.comment-content {
+  overflow: hidden;
+}
+
+.comment-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.comment-author a {
+  text-decoration: none;
+}
+
+.comment-author a:hover {
+  text-decoration: underline;
+}
+
+.comment-username {
+  font-weight: normal;
+  font-size: 0.9em;
+  color: var(--muted-color, #6c757d);
+  margin-left: 0.5rem;
+}
+
+.comment-date {
+  font-size: 0.85em;
+  color: var(--muted-color, #6c757d);
+  margin-left: auto;
+}
+
+.comment-text {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.comment-text p {
+  margin: 0.5rem 0;
+}
+
+.comment-text img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 0.05em 0 0.1em;
+  vertical-align: -0.1em;
+}
+
+.mastodon-comment-replies {
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.comment-reply-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--card-background-color, #f8f9fa);
+  border-radius: var(--border-radius, 0.25rem);
+}
+
+.comment-reply-form textarea {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #ced4da);
+  border-radius: var(--border-radius, 0.25rem);
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.comment-reply-form button {
+  margin-right: 0.5rem;
+}
+
+.comment-reply-form .button {
+  margin-right: 0.5rem;
+}
+
+/* Thread depth indicators */
+.mastodon-comment[data-depth="1"] {
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+.mastodon-comment[data-depth="2"] {
+  margin-left: 2rem;
+  padding-left: 1rem;
+}
+.mastodon-comment[data-depth="3"] {
+  margin-left: 3rem;
+  padding-left: 1rem;
+}
+.mastodon-comment[data-depth="4"] {
+  margin-left: 4rem;
+  padding-left: 1rem;
+}
+.mastodon-comment[data-depth="5"] {
+  margin-left: 5rem;
+  padding-left: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .comments {
+    padding: 0.75rem;
+  }
+  
+  .mastodon-comment {
+    padding: 0.75rem;
+  }
+  
+  .comment-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mastodon-comment-replies {
+    padding-left: 1rem;
+  }
+}
+
+/* Dark mode support */
+[data-theme="dark"] .comments {
+  background-color: var(--background-color, #212529);
+  color: var(--color, #e9ecef);
+}
+
+[data-theme="dark"] .mastodon-comment {
+  background-color: var(--card-background-color, #212529);
+  color: var(--color, #e9ecef);
+}
+
+[data-theme="dark"] .comment-username {
+  color: var(--muted-color, #adb5bd);
+}
+
+[data-theme="dark"] .comment-date {
+  color: var(--muted-color, #adb5bd);
+}
+
+/* Button styling to match Pico CSS */
+.comments button,
+.comments .button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius, 0.25rem);
+  transition: all 0.2s ease-in-out;
+}
+
+.comments button.primary,
+.comments .button.primary {
+  color: #fff;
+  background-color: var(--primary-color, #0d6efd);
+  border-color: var(--primary-color, #0d6efd);
+}
+
+.comments button.secondary,
+.comments .button.secondary {
+  color: #fff;
+  background-color: var(--secondary-color, #6c757d);
+  border-color: var(--secondary-color, #6c757d);
+}
+
+.comments button.outline,
+.comments .button.outline {
+  color: var(--primary-color, #0d6efd);
+  background-color: transparent;
+  border-color: var(--primary-color, #0d6efd);
+}
+
+.comments button.outline:hover,
+.comments .button.outline:hover {
+  background-color: var(--primary-color, #0d6efd);
+  color: #fff;
+}
+
+/* Super Minimal Dialog styling */
+dialog.mastodon {
+  width: 500px;
+  max-width: 90%;
+  height: fit-content;
+  min-width: unset !important; /* Override pico.css */
+  min-height: unset !important; /* Override pico.css */
+  padding: 1.5rem;
+  border: 1px solid var(--border-color, #dee2e6);
+  border-radius: var(--border-radius, 0.25rem);
+  box-shadow: var(--card-box-shadow, 0 5px 15px rgba(0,0,0,0.1));
+  background: var(--card-background-color, #fff);
+  color: var(--card-color, #212529);
+  z-index: 1050;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+}
+
+dialog.mastodon::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+dialog.mastodon h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+dialog.mastodon p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+dialog.mastodon .copypaste {
+  display: flex;
+  margin-top: 1rem;
+}
+
+dialog.mastodon .copypaste input {
+  flex-grow: 1;
+  border: 1px solid var(--border-color, #dee2e6);
+  border-radius: var(--border-radius, 0.25rem) 0 0 var(--border-radius, 0.25rem);
+  padding: 0.4rem 0.6rem;
+  background: var(--background-color, #f8f9fa);
+  color: var(--color, #212529);
+  border-right: none;
+  font-size: 0.9rem;
+}
+
+dialog.mastodon .copypaste button {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--primary, #3366cc);
+    border-radius: 0 var(--border-radius, 0.25rem) var(--border-radius, 0.25rem) 0;
+    background-color: var(--primary, #3366cc);
+    color: #fff;
+    cursor: pointer;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+dialog.mastodon .close-btn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--muted-color, #909090);
+  padding: 0.25rem;
+}
+
+/* Dark Mode for Super Minimal Dialog */
+[data-theme="dark"] dialog.mastodon {
+  background: #282c34;
+  color: #abb2bf;
+  border-color: #3f444f;
+}
+
+[data-theme="dark"] dialog.mastodon .copypaste input {
+  background: #21252b;
+  color: #abb2bf;
+  border-color: #3f444f;
+}
+
+[data-theme="dark"] dialog.mastodon .copypaste button {
+    background-color: var(--primary, #528bff);
+    border-color: var(--primary, #528bff);
+}
+
+[data-theme="dark"] dialog.mastodon .close-btn {
+  color: #6b7280;
+}/* Footer Styles */
 .site-footer {
   margin-top: 4rem;
   padding: 2rem 0 1rem;

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const copyButton = document.getElementById('copyButton');
   const cancelButton = document.getElementById('cancelButton');
   const commentsList = document.getElementById('mastodon-comments-list');
-  
+
   // Initialize the dialog event listeners if the dialog exists
   if (dialog) {
     if (replyButton) {
@@ -19,30 +19,39 @@ document.addEventListener("DOMContentLoaded", function() {
         dialog.showModal();
       });
     }
-    
+
     if (copyButton) {
       copyButton.addEventListener('click', () => {
         const input = copyButton.closest('.copypaste').querySelector('input');
         const url = input.value;
         navigator.clipboard.writeText(url);
-        
+
         // Visual feedback that the URL was copied
-        const originalText = copyButton.textContent;
-        copyButton.textContent = "Copied!";
+        const copiedText = dialog.dataset.copiedText || 'Copied!';
+        const originalText = dialog.dataset.copyText || 'Copy';
+        copyButton.textContent = copiedText;
+        
         setTimeout(() => {
           copyButton.textContent = originalText;
         }, 2000);
       });
     }
-    
+
     if (cancelButton) {
       cancelButton.addEventListener('click', () => {
         dialog.close();
       });
     }
-    
+
     dialog.addEventListener('keydown', e => {
       if (e.key === 'Escape') dialog.close();
+    });
+
+    // Also handle clicks on backdrop (outside dialog area)
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) {
+        dialog.close();
+      }
     });
   }
   
@@ -63,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const tootId = commentsList.getAttribute('data-id');
     
     if (tootDomain && tootId) {
-      commentsList.innerHTML = "Loading comments...";
-      
+      commentsList.innerHTML = commentsList.dataset.waiting;
+
       fetch(`https://${tootDomain}/api/v1/statuses/${tootId}/context`)
         .then(function(response) {
           return response.json();
@@ -72,11 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(function(data) {
           console.log('API response:', data);
           
-          if (data && 
-              data['descendants'] && 
-              Array.isArray(data['descendants']) && 
+          if (data &&
+              data['descendants'] &&
+              Array.isArray(data['descendants']) &&
               data['descendants'].length > 0) {
-            
+
             commentsList.innerHTML = "";
             
             // Build a map of comments by ID for quick lookup
@@ -90,33 +99,44 @@ document.addEventListener("DOMContentLoaded", function() {
                 reply.account.display_name = reply.account.display_name.replace(`:${emoji.shortcode}:`, 
                   `<img src="${escapeHtml(emoji.static_url)}" alt="Emoji ${emoji.shortcode}" height="20" width="20" />`);
               });
+
+              // Remove links from mentions
+              const tempDiv = document.createElement('div');
+              tempDiv.innerHTML = reply.content;
+              const allLinks = tempDiv.querySelectorAll('a');
+              allLinks.forEach(link => {
+                if (link.textContent.startsWith('@')) {
+                  // It's likely a mention, replace it with its text content.
+                  link.outerHTML = link.textContent;
+                }
+              });
+              reply.content = tempDiv.innerHTML;
               
               // Create the comment element
               const commentEl = document.createElement('div');
               commentEl.className = 'mastodon-comment post-comment';
               commentEl.dataset.id = reply.id;
-              
+
+              // Add data attribute for thread depth (initially 0 for root comments)
+              commentEl.dataset.depth = '0';
+
               // Add debug information and ensure element is visible
               commentEl.setAttribute('title', `Comment ID: ${reply.id}, Reply to: ${reply.in_reply_to_id || 'none'}`);
-              commentEl.style.marginBottom = '10px';
-              
+
               // Create the comment HTML
+              const locale = commentsList.getAttribute('data-locale') || 'tr-TR';
               commentEl.innerHTML = `
-                <div class="avatar">
-                  <img src="${escapeHtml(reply.account.avatar_static)}" height=60 width=60 alt="">
-                </div>
-                <div class="content">
-                  <div class="author">
-                    <a href="${reply.account.url}" rel="nofollow">
-                      <span>${reply.account.display_name}</span>
-                      <span class="disabled">${escapeHtml(reply.account.acct)}</span>
-                    </a>
-                    <a class="date" href="${reply.uri}" rel="nofollow">
-                      ${reply.created_at.substr(0, 10)}
+                <img src="${escapeHtml(reply.account.avatar_static)}" class="comment-avatar" alt="">
+                <div class="comment-content">
+                  <div class="comment-author">
+                    <span>${reply.account.display_name}</span>
+                    <span class="comment-username">${escapeHtml(reply.account.acct)}</span>
+                    <a class="comment-date" href="${reply.uri}" rel="nofollow noopener noreferrer" target="_blank">
+                      ${new Date(reply.created_at).toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' })}
                     </a>
                   </div>
-                  <div class="mastodon-comment-content">${reply.content}</div>
-                  <div class="mastodon-comment-replies" style="margin-left: 10px; border-left: 1px solid rgba(128, 128, 128, 0.3); padding-left: 8px;"></div>
+                  <div class="comment-text">${reply.content}</div>
+                  <div class="mastodon-comment-replies"></div>
                 </div>`;
               
               // Store in our map
@@ -147,13 +167,20 @@ document.addEventListener("DOMContentLoaded", function() {
               if (reply.in_reply_to_id && commentsById[reply.in_reply_to_id]) {
                 // Find the parent
                 const parent = commentsById[reply.in_reply_to_id];
-                
+
+                // Get the parent's depth and increment it for the child
+                const parentDepth = parseInt(parent.element.dataset.depth) || 0;
+                const childDepth = parentDepth + 1;
+
+                // Set the depth for the child comment
+                commentsById[reply.id].element.dataset.depth = childDepth.toString();
+
                 // Add this comment to the parent's replies
                 const repliesContainer = parent.element.querySelector('.mastodon-comment-replies');
                 repliesContainer.appendChild(commentsById[reply.id].element);
-                
-                console.log(`Nested comment ${reply.id} under parent ${reply.in_reply_to_id}`);
-              } 
+
+                console.log(`Nested comment ${reply.id} under parent ${reply.in_reply_to_id} at depth ${childDepth}`);
+              }
               // Check if this is a reply to the original post
               else if (reply.in_reply_to_id && reply.in_reply_to_id.toString() === tootId.toString()) {
                 // This is a direct reply to the original post
@@ -171,6 +198,14 @@ document.addEventListener("DOMContentLoaded", function() {
             rootComments.forEach(function(rootComment) {
               try {
                 if (typeof DOMPurify !== 'undefined') {
+                  // Add a hook to force all links to open in a new tab
+                  DOMPurify.addHook('afterSanitizeAttributes', function(node) {
+                    // set all elements owning target to target=_blank
+                    if ('target' in node) {
+                      node.setAttribute('target', '_blank');
+                      node.setAttribute('rel', 'noopener noreferrer');
+                    }
+                  });
                   // There's an issue with DOMPurify.sanitize returning a non-Node object
                   // Let's create a wrapper for the sanitized content
                   const tempDiv = document.createElement('div');
@@ -208,11 +243,11 @@ document.addEventListener("DOMContentLoaded", function() {
             document.head.appendChild(inlineStyles);
             
           } else {
-            commentsList.innerHTML = "<p>No comments found. I'd love to hear from you!</p>";
+            commentsList.innerHTML = "<p>" + commentsList.dataset.noComments + "</p>";
           }
         })
         .catch(function(error) {
-          commentsList.innerHTML = "<p>Error loading comments. Please try again later.</p>";
+          commentsList.innerHTML = "<p>" + commentsList.dataset.errorLoading + "</p>";
           console.error("Error fetching comments:", error);
         });
     }

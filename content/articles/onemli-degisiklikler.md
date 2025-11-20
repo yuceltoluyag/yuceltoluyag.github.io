@@ -11,6 +11,7 @@ Translation: false
 Status: published
 Template: article
 Image: images/duyuru-lg.webp
+toot: https://mastodon.social/@yuceltoluyag/115001034011754786
 
 Burada, Markdown formatında çeşitli öğeleri test eden bir makale bulunmaktadır. Aşağıda başlıklar, paragraflar, listeler, dipnotlar, alıntılar, not kutuları (admonitions), tablolar ve kod blokları gibi farklı bileşenler yer almaktadır.
 
@@ -77,3 +78,13 @@ class Kisi:
 ```
 
 [responsive_img src="/images/duyuru-lg.webp" alt="Duyuru" /]
+
+## Tweet Gömme Testi
+
+Aşağıda tweet gömme eklentisinin çalıştığını göstermek için örnek bir tweet bağlantısı:
+
+@yuceltoluyag/status/1990894538311770187
+
+Ayrıca bir Twitter kullanıcı bağlantısı da test edebiliriz:
+
+@yuceltoluyag

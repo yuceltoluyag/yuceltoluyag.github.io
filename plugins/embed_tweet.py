@@ -37,7 +37,7 @@ def embed_tweet(instance):
                 instance._content,
             ),
         )
-        + '<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>'
+        + '<script src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
     )
 
 
