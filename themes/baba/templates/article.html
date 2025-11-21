@@ -99,7 +99,7 @@ super() }} {% if article.translations -%}
       <div class="series-navigation-card pico-card">
         <div class="series-header">
           <h2><i class="fa-solid fa-bookmark"></i> {{ _('Series:') }} {{ article.series.name }}</h2>
-          <span class="series-progress">Bölüm {{ article.series.index }}/{{ article.series.all|length }}</span>
+          <span class="series-progress">{{ _('Part') }} {{ article.series.index }}/{{ article.series.all|length }}</span>
         </div>
         
         {% if article.series.all|length > 0 %}
