@@ -403,10 +403,11 @@ super() }} {% if article.translations -%}
 {% if article.lang != DEFAULT_LANG %}
   {% set canonical_path = article.lang ~ '/' ~ article.url %}
 {% endif %}
-{% if article.toot %}
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.0/dist/purify.min.js"></script>
-  {% include 'partials/federated_comments.html' %}
-  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/federated-comments.js"></script>
+
+
+{% if article.toot or article.bluesky %}
+  {% include 'partials/unified_comments.html' %}
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-comments.js"></script>
 {% endif %}
 
 <div id="webmentions" data-url="{{ CANONICAL_URL.rstrip('/') }}/{{ canonical_path.lstrip('/') }}" data-original-post-text="{{ _('Orijinal gönderi') }}">

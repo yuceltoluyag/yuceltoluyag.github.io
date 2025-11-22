@@ -1,0 +1,453 @@
+/* ============================================================================
+   Unified Comments Styling
+   ========================================================================= */
+
+/* General comment container */
+.unified-comments-container .bsky-embed-container {
+    margin-top: 0.75rem;
+}
+
+.comments-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.mastodon-reply-button, .bluesky-reply-button {
+    /* mimic pico.css secondary button */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid var(--secondary);
+    border-radius: var(--border-radius, 0.25rem);
+    background-color: var(--secondary);
+    color: var(--secondary-inverse, #fff);
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.mastodon-reply-button:hover, .bluesky-reply-button:hover {
+    background-color: var(--secondary-hover);
+    border-color: var(--secondary-hover);
+}
+
+.bluesky-reply-button.button-outline {
+    background-color: transparent;
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+.bluesky-reply-button.button-outline:hover {
+    background-color: var(--secondary);
+    color: var(--secondary-inverse, #fff);
+}
+
+
+.unified-comment {
+    background-color: var(--card-background-color, #ffffff); /* Default light mode background */
+    /* border removed to reduce visual clutter */
+    border-radius: var(--border-radius, 6px);
+    margin-top: 1rem;
+    padding: 1.25rem;
+    box-shadow: var(--card-box-shadow, 0 1px 3px rgba(0,0,0,0.05));
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.unified-comment:hover {
+    box-shadow: var(--card-hover-box-shadow, 0 3px 8px rgba(0,0,0,0.08));
+}
+
+/* Dynamic indentation classes */
+.unified-comment.comment-depth-0 { margin-left: 0; }
+.unified-comment.comment-depth-1 { margin-left: 20px; }
+.unified-comment.comment-depth-2 { margin-left: 40px; }
+.unified-comment.comment-depth-3 { margin-left: 60px; }
+.unified-comment.comment-depth-4 { margin-left: 80px; }
+.unified-comment.comment-depth-5 { margin-left: 100px; } /* Max depth from JS is 5 */
+
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure avatars look good */
+}
+
+.comment-author {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.comment-author a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color, #24292e);
+}
+.comment-author a:hover {
+    text-decoration: underline;
+}
+
+.comment-author .author-name {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color, #24292e);
+    cursor: default; /* Remove pointer cursor since it's not clickable */
+}
+.comment-author .author-name:hover {
+    text-decoration: none; /* Remove underline on hover since it's not clickable */
+}
+
+.author-handle {
+    font-size: 0.9em;
+    color: var(--muted-color, #586069);
+}
+
+.comment-date {
+    font-size: 0.85em;
+    color: var(--muted-color, #586069);
+    white-space: nowrap;
+    text-decoration: none;
+}
+.comment-date:hover {
+    text-decoration: underline;
+}
+
+.comment-body {
+    line-height: 1.6;
+    color: var(--color, #24292e);
+    word-wrap: break-word; /* Ensure long words break */
+}
+.comment-body p:last-child {
+    margin-bottom: 0;
+}
+
+.comment-source-badge {
+    font-size: 0.7em;
+    padding: 0.2em 0.6em;
+    border-radius: 2em;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+.via-mastodon { background-color: #6364FF; }
+.via-bluesky { background-color: #0078FF; }
+
+.comment-replies {
+    margin-top: 1.25rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--card-border-color, #e1e4e8); /* Use card border color */
+}
+
+/* Standalone stats/feedback container */
+.unified-feedback-container {
+    padding: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: var(--card-background-color, #f6f8fa); /* Default light background */
+    border: 1px solid var(--card-border-color, #e1e4e8); /* Default light border */
+    border-radius: var(--border-radius, 6px);
+}
+
+.bsky-stats-standalone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.9em;
+    color: var(--color);
+}
+.bsky-stats-standalone a {
+    text-decoration: none;
+    color: var(--primary); /* Use primary color for links */
+}
+.bsky-stats-standalone a:hover {
+    text-decoration: underline;
+}
+
+.bsky-no-engagement-prompt a {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary); /* Use primary color for links */
+}
+.bsky-no-engagement-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================================
+   Dark Mode Styles
+   ========================================================================= */
+
+[data-theme="dark"] .unified-comment {
+    background-color: var(--background-color); /* Use Pico's background var for dark */
+    border-color: var(--border-color); /* Use Pico's border var for dark */
+}
+
+[data-theme="dark"] .comment-author a,
+[data-theme="dark"] .comment-body {
+    color: var(--color); /* Use Pico's color var for dark */
+}
+
+[data-theme="dark"] .author-handle,
+[data-theme="dark"] .comment-date {
+    color: var(--muted-color); /* Use Pico's muted-color var for dark */
+}
+
+[data-theme="dark"] .comment-replies {
+    border-left-color: var(--border-color); /* Use Pico's border var for dark */
+}
+
+[data-theme="dark"] .unified-feedback-container {
+    background-color: var(--background-color); /* Use Pico's background var for dark */
+    border-color: var(--border-color); /* Use Pico's border var for dark */
+}
+[data-theme="dark"] .bsky-stats-standalone a,
+[data-theme="dark"] .bsky-no-engagement-prompt a {
+    color: var(--primary); /* Use Pico's primary var for dark */
+}
+
+
+/* ============================================================================
+   Mastodon Dialog Styles
+   ========================================================================= */
+
+dialog.mastodon-dialog {
+  width: 500px;
+  max-width: 90%;
+  height: fit-content;
+  min-width: unset !important; /* Override pico.css */
+  min-height: unset !important; /* Override pico.css */
+  padding: 1.5rem;
+  border: 1px solid var(--card-border-color, #dee2e6);
+  border-radius: var(--border-radius, 0.25rem);
+  box-shadow: var(--card-box-shadow, 0 5px 15px rgba(0,0,0,0.1));
+  background: var(--card-background-color, #fff);
+  color: var(--card-color, #212529);
+  z-index: 1050;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+}
+
+dialog.mastodon-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+dialog.mastodon-dialog h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+dialog.mastodon-dialog p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+dialog.mastodon-dialog .copypaste {
+  display: flex;
+  margin-top: 1rem;
+}
+
+dialog.mastodon-dialog .copypaste input {
+  flex-grow: 1;
+  border: 1px solid var(--form-element-border-color, #ced4da);
+  border-radius: var(--border-radius, 0.25rem) 0 0 var(--border-radius, 0.25rem);
+  padding: 0.4rem 0.6rem;
+  background: var(--form-element-background-color, #f8f9fa);
+  color: var(--form-element-color, #212529);
+  border-right: none;
+  font-size: 0.9rem;
+}
+
+dialog.mastodon-dialog .copypaste button {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--primary, #0d6efd);
+    border-radius: 0 var(--border-radius, 0.25rem) var(--border-radius, 0.25rem) 0;
+    background-color: var(--primary, #0d6efd);
+    color: var(--primary-inverse, #fff);
+    cursor: pointer;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+dialog.mastodon-dialog .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--muted-color, #909090);
+  padding: 0.25rem;
+}
+
+/* ============================================================================
+   Dark Mode for Mastodon Dialog
+   ========================================================================= */
+[data-theme="dark"] dialog.mastodon-dialog {
+  background: var(--background-color);
+  color: var(--color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] dialog.mastodon-dialog .copypaste input {
+  background: var(--form-element-background-color);
+  color: var(--form-element-color);
+  border-color: var(--form-element-border-color);
+}
+
+[data-theme="dark"] dialog.mastodon-dialog .copypaste button {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+[data-theme="dark"] dialog.mastodon-dialog .close-btn {
+  color: var(--muted-color);
+}
+
+
+/* ============================================================================
+   Embed Styles (from bluesky-comments.css, adapted)
+   ========================================================================= */
+
+.bsky-embed {
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--card-border-color, #dee2e6); /* Use card border color */
+  border-radius: var(--border-radius, 0.25rem);
+  overflow: hidden;
+  max-width: 100%; /* Ensure embeds don't overflow */
+}
+[data-theme="dark"] .bsky-embed {
+    border-color: var(--border-color);
+}
+
+.bsky-embed-external { padding: 0.5rem; }
+
+.bsky-embed-external a { 
+    text-decoration: none; 
+    display: block; /* Make the whole area clickable */
+    color: inherit; /* Inherit text color */
+}
+.bsky-embed-external a:hover {
+    text-decoration: underline;
+}
+
+.bsky-embed-external img {
+  margin-bottom: 0.5rem;
+  border-radius: var(--border-radius, 0.25rem);
+  max-width: 100%; /* Control image size */
+  height: auto;
+  display: block; /* Remove extra space below image */
+  object-fit: cover; /* Ensure image covers the area */
+  max-height: 12rem; /* Limit height for external embed thumbnails */
+}
+
+.bsky-embed-external h3 {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 0.25rem;
+  color: var(--color);
+}
+
+.bsky-embed-external p {
+  font-size: 0.9em;
+  color: var(--muted-color);
+}
+
+
+.bsky-embed-images .image-grid {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+}
+.bsky-embed-images .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.bsky-embed-images .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+/* Specific grid layouts for 3 and 4 images (from original TSX logic) */
+.bsky-embed-images .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
+.bsky-embed-images .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+
+
+.bsky-embed-images .image-container {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--border-radius, 0.25rem);
+  max-height: 12rem; /* Reduced max-height for images */
+}
+
+.bsky-embed-images .image-container.col-span-2 { grid-column: span 2 / span 2; }
+
+.bsky-embed-images .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  /* Remove aspect-ratio: 1/1 here for flexibility, controlled by max-height on container */
+}
+/* If a single image, allow it to be taller */
+.bsky-embed-images .grid-cols-1 .image-container {
+  max-height: 16rem; 
+}
+.bsky-embed-images .image-container:hover img { transform: scale(1.05); }
+
+
+/* Image Modal */
+.bsky-image-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.bsky-image-modal img {
+  max-height: 90vh;
+  max-width: 90vw;
+  object-fit: contain;
+}
+
+.bsky-image-modal .alt-text {
+  color: white;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.bsky-image-modal-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 101;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 2rem;
+  background: none;
+  border: none;
+}
+.bsky-image-modal-close:hover {
+  color: #fff;
+}

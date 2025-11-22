@@ -1,0 +1,69 @@
+{#
+  Unified Comments Partial
+  This sets up a single container for both Mastodon and Bluesky comments.
+#}
+{% if article.toot or article.bluesky or lobsters %}
+<div class="comments unified-comments-container">
+  {% if lobsters %}
+    <p class="lobsters-discussion">{{ _('Discuss this post on') }} <a href="{{ lobsters }}" target="_blank" rel="noopener noreferrer">lobste.rs</a>.</p>
+  {% endif %}
+
+  <h3 class="comments-title">
+    {{ _('Yorumlar') }}
+    {% if article.toot %}
+    <button id="replyButton" class="mastodon-reply-button"
+            data-dialog-title-format="{{ _('Reply to %(username)s\'s post', username=article.toot.username | default('')) }}"
+            data-dialog-username="{{ article.toot.username | default('') }}"
+            data-copy-text="{{ _('Copy') }}"
+            data-copied-text="{{ _('Copied!') }}">
+        {{ _('Reply') }}
+    </button>
+    {% endif %}
+    {% if article.bluesky %}
+    <a href="https://bsky.app/profile/{{ article.bluesky.did }}/post/{{ article.bluesky.post_cid }}"
+       target="_blank" rel="noopener noreferrer"
+       class="bluesky-reply-button button-outline">
+        {{ _('Reply via Bluesky') }}
+    </a>
+    {% endif %}
+  </h3>
+
+  <dialog id="toot-reply-dialog" class="mastodon-dialog"
+          data-mastodon-domain="{{ article.toot.domain }}"
+          data-mastodon-username="{{ article.toot.username }}"
+          data-mastodon-id="{{ article.toot.id }}">
+    <button class="close-btn" id="cancelButton" aria-label="{{ _('Close') }}">&times;</button>
+    <main>
+      <h3 id="dialogTitle"></h3>
+      <p>{{ _('With an account on the Fediverse or Mastodon, you can respond to this post.') }}</p>
+      <p>{{ _('Since Mastodon is decentralized, you can use your existing account hosted by another Mastodon server or compatible platform if you don\'t have an account on this one.') }}</p>
+      <p>{{ _('Copy and paste this URL into the search field of your favourite Fediverse app or the web interface of your Mastodon server.') }}</p>
+      <div class="copypaste">
+        <input type="text" readonly="" id="mastodonPostUrl">
+        <button class="button" id="copyButton">{{ _('Copy') }}</button>
+      </div>
+    </main>
+  </dialog>
+
+  {# This container will be used for stats or 'be the first' prompts #}
+  <div id="unified-main-post-feedback"></div>
+
+  {# This container will be filled with the combined and sorted comment list #}
+  <div id="unified-comments-list"
+       {% if article.toot %}
+       data-mastodon-domain="{{ article.toot.domain }}"
+       data-mastodon-id="{{ article.toot.id }}"
+       {% endif %}
+       {% if article.bluesky %}
+       data-bluesky-did="{{ article.bluesky.did }}"
+       data-bluesky-post-cid="{{ article.bluesky.post_cid }}"
+       {% endif %}
+       data-locale="{{ article.lang or 'tr' }}"
+       data-first-comment-prompt="{{ _('İlk yorumu siz yapın!') }}"
+       data-error-loading="{{ _('Yorumlar yüklenirken bir hata oluştu.') }}"
+       data-loading-text="{{ _('Yorumlar yükleniyor...') }}">
+    <p>{{ _('Yorumlar yükleniyor...') }}</p>
+  </div>
+  <noscript><p>{{ _('Yorumları görüntülemek için JavaScript\'i etkinleştirmeniz gerekir.') }}</p></noscript>
+</div>
+{% endif %}
