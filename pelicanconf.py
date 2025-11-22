@@ -234,6 +234,7 @@ common_plugins = [
     "plugins.related_posts",
     "plugins.baba_stats",
     "plugins.extract_linked_metadata",
+    "plugins.bluesky_metadata",
     "plugins.embed_tweet",
 ]
 dev_plugins = common_plugins.copy()

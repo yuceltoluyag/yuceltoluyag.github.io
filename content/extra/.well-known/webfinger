@@ -1,15 +1,62 @@
 {
-  "subject": "acct:yuceltoluyag.github.io@yuceltoluyag.github.io",
+  "aliases": [
+    "https://yuceltoluyag.github.io/"
+  ],
   "links": [
     {
-      "rel": "self",
-      "type": "application/activity+json",
-      "href": "https://yuceltoluyag.github.io"
+      "href": "https://yuceltoluyag.github.io/",
+      "rel": "http://webfinger.net/rel/profile-page",
+      "type": "text/html"
     },
     {
-      "rel": "http://webfinger.net/rel/profile-page",
-      "type": "text/html",
-      "href": "https://yuceltoluyag.github.io"
+      "href": "https://yuceltoluyag.github.io/images/favicon-96x96-xl.webp",
+      "rel": "http://webfinger.net/rel/avatar"
+    },
+    {
+      "href": "https://yuceltoluyag.github.io/images/favicon.ico",
+      "rel": "http://webfinger.net/rel/avatar"
+    },
+    {
+      "href": "https://yuceltoluyag.github.io/images/favicon.svg",
+      "rel": "http://webfinger.net/rel/avatar"
+    },
+    {
+      "href": "https://yuceltoluyag.github.io/images/animated.ico",
+      "rel": "http://webfinger.net/rel/avatar"
+    },
+    {
+      "href": "https://yuceltoluyag.github.io/images/logo-lg.webp",
+      "rel": "http://webfinger.net/rel/avatar"
+    },
+    {
+      "href": "https://yuceltoluyag.github.io/",
+      "rel": "canonical_uri",
+      "type": "text/html"
+    },
+    {
+      "href": "https://web.brid.gy/yuceltoluyag.github.io",
+      "rel": "self",
+      "type": "application/ld+json; profile=\"https://www.w3.org/ns/activitystreams\""
+    },
+    {
+      "href": "https://web.brid.gy/yuceltoluyag.github.io",
+      "rel": "self",
+      "type": "application/activity+json"
+    },
+    {
+      "href": "https://web.brid.gy/yuceltoluyag.github.io/inbox",
+      "rel": "inbox",
+      "type": "application/ld+json; profile=\"https://www.w3.org/ns/activitystreams\""
+    },
+    {
+      "href": "https://web.brid.gy/ap/sharedInbox",
+      "rel": "sharedInbox",
+      "type": "application/ld+json; profile=\"https://www.w3.org/ns/activitystreams\""
+    },
+    {
+      "rel": "http://ostatus.org/schema/1.0/subscribe",
+      "template": "https://fed.brid.gy/web/yuceltoluyag.github.io?url={uri}"
     }
-  ]
+  ],
+  "subject": "acct:yuceltoluyag.github.io@web.brid.gy"
 }

@@ -130,6 +130,9 @@ msgstr "Bu gönderiye Mastodon aracılığıyla yanıt verebilirsiniz:"
 msgid "Reply"
 msgstr "Yanıtla"
 
+msgid "Reply via Bluesky"
+msgstr "Bluesky ile Yanıtla"
+
 #, python-format
 msgid "Reply to %(username)s's post"
 msgstr "%(username)s kullanıcısının gönderisini yanıtla"
