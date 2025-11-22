@@ -11,7 +11,7 @@ Status: published
 Template: article
 Image: images/duyuru-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/115001034011754786
-bluesky: https://bsky.app/profile/kiralynx.bsky.social/post/3m63dstives2d
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io.web.brid.gy/post/3m5nzg4yhirg2
 
 This article tests various elements in Markdown format. Below are different components such as headings, paragraphs, lists, footnotes, quotes, admonitions, tables, and code blocks.
 

@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const mastodonPostId = tootReplyDialog.dataset.mastodonId; // Get mastodon ID from dialog data
         const mastodonDomainFromDialog = tootReplyDialog.dataset.mastodonDomain; // Get mastodon domain from dialog data
 
-        const fullTootUrl = `https://${mastodonDomainFromDialog}/@${dialogUsername}/${mastodonPostId}`;
+        const fullTootUrl = `https://${mastodonDomainFromDialog}/${dialogUsername.startsWith('@') ? '' : '@'}${dialogUsername}/${mastodonPostId}`;
         mastodonPostUrlInput.value = fullTootUrl;
         
         // Format the dialog title
@@ -203,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- DATA FETCHING ---
     const fetchMastodon = async () => {
         if (!mastodonDomain || !mastodonId) return [];
+        console.log(`Fetching Mastodon comments from: https://${mastodonDomain}/api/v1/statuses/${mastodonId}/context`);
         const response = await fetch(`https://${mastodonDomain}/api/v1/statuses/${mastodonId}/context`);
         if (!response.ok) throw new Error(`Mastodon API error: ${response.status}`);
         const data = await response.json();
