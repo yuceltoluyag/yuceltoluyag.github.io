@@ -9,6 +9,8 @@ Lang: tr
 Translation: false
 Image: images/verotnetsinifikullanimi-xl.webp
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115601184646837095
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3m6dbrhcxxs2s
 
 ## Verot.net Upload Sınıfı Nasıl Kullanılır
 

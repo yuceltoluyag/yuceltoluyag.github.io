@@ -9,6 +9,8 @@ Lang: tr
 Translation: false
 Image: images/bundleexecjekyllserve-xl.webp
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115601400903399600
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3m6des5yyvs26
 
 ## Jekyll Blog Kurulumu
 

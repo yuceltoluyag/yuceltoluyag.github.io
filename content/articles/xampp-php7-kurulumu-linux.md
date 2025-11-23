@@ -9,6 +9,8 @@ Lang: tr
 Translation: false
 Image: images/php7-ubuntu-xampp-xl.webp
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115601098200369463
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6dajyy66k2c
 
 ## Xampp PHP 7 Kurulumu [Linux]
 

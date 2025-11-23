@@ -9,6 +9,8 @@ Lang: tr
 Translation: false
 Image: images/xampp-config-httpconf-xl.webp
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115600621290151146
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3m6czu4n3tc26
 
 ## XAMPP .htaccess Aktif Etmek (Resimli Anlatım)
 

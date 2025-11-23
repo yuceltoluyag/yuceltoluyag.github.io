@@ -9,6 +9,8 @@ Lang: tr
 Translation: false
 Image: images/bootstrap-jquery-kayit-formu-xl.webp
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115601046039837814
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3m6d7twu7uk2p
 
 ## Bootstrap Kullanarak jQuery Kayıt Formu Oluşturalım (Responsive)
 
