@@ -58,6 +58,9 @@ EXTRA_PATH_METADATA = {
     "extra/.well-known/host-meta": {
         "path": ".well-known/host-meta",
     },
+    "extra/.well-known/atproto-did": {
+        "path": ".well-known/atproto-did",
+    },
 }
 
 # =============================================================================
