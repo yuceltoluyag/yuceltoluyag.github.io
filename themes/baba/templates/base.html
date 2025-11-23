@@ -3,315 +3,227 @@
 
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
-  <head>
-    {% block head %} {% include 'includes/metadata.html' %}
-    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-    <meta name="generator" content="Pelican" />
-    <!-- Favicon -->
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="{{ SITEURL }}/images/favicon.ico"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      href="{{ SITEURL }}/images/favicon-96x96-xl.webp"
-      sizes="96x96"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="{{ SITEURL }}/images/favicon.svg"
-    />
-    <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{{ SITEURL }}/images/apple-touch-icon-xl.webp"
-    />
-    <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
-    <link rel="manifest" href="{{ SITEURL }}/site.webmanifest" />
-    <link
-      rel="shortcut icon"
-      href="{{ SITEURL }}/images/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="icon"
-      href="{{ SITEURL }}/images/animated.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="preload"
-      href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css"
-      />
-    </noscript>
 
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/webmentions.css">
-    <link
-      rel="preload"
-      href="https://kit.fontawesome.com/1669dfc729.js"
-      as="script"
-      onload="this.onload=null;this.remove()"
-    />
-    <script
-      src="https://kit.fontawesome.com/1669dfc729.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
+<head>
+  {% block head %} {% include 'includes/metadata.html' %}
+  <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+  <meta name="generator" content="Pelican" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="{{ SITEURL }}/images/favicon.ico" />
+  <link rel="icon" type="image/png" href="{{ SITEURL }}/images/favicon-96x96-xl.webp" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="{{ SITEURL }}/images/favicon.svg" />
+  <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ SITEURL }}/images/apple-touch-icon-xl.webp" />
+  <meta name="apple-mobile-web-app-title" content="Yücel Blog" />
+  <link rel="manifest" href="{{ SITEURL }}/site.webmanifest" />
+  <link rel="shortcut icon" href="{{ SITEURL }}/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="{{ SITEURL }}/images/animated.ico" type="image/x-icon" />
+  <link rel="preload" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css" />
+  </noscript>
 
-    {% if FEED_ALL_ATOM %}
-    <link
-      href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
-      type="application/atom+xml"
-      rel="alternate"
-      title="{{ SITENAME }} Full Atom Feed"
-    />
-    {% endif %} {% if FEED_ALL_RSS %}
-    <link
-      href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
-      type="application/rss+xml"
-      rel="alternate"
-      title="{{ SITENAME }} Full RSS Feed"
-    />
-    {% endif %} {% if FEED_ATOM %}
-    <link
-      href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}"
-      type="application/atom+xml"
-      rel="alternate"
-      title="{{ SITENAME }} Atom Feed"
-    />
-    {% endif %} {% if FEED_RSS %}
-    <link
-      href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
-      type="application/rss+xml"
-      rel="alternate"
-      title="{{ SITENAME }} RSS Feed"
-    />
-    {% endif %} {% if CATEGORY_FEED_ATOM and category %}
-    <link
-      href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}"
-      type="application/atom+xml"
-      rel="alternate"
-      title="{{ SITENAME }} Kategoriler Atom Beslemesi"
-    />
-    {% endif %} {% if CATEGORY_FEED_RSS and category %}
-    <link
-      href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}"
-      type="application/rss+xml"
-      rel="alternate"
-      title="{{ SITENAME }} Kategoriler RSS Beslemesi"
-    />
-    {% endif %} {% if TAG_FEED_ATOM and tag %}
-    <link
-      href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}"
-      type="application/atom+xml"
-      rel="alternate"
-      title="{{ SITENAME }} Etiketler Atom Beslemesi"
-    />
-    {% endif %} {% if TAG_FEED_RSS and tag %}
-    <link
-      href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}"
-      type="application/rss+xml"
-      rel="alternate"
-      title="{{ SITENAME }} Etiketler RSS Beslemesi"
-    />
-    {% endif %}
+  <!-- <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/webmentions.css"> -->
+  <link rel="preload" href="https://kit.fontawesome.com/1669dfc729.js" as="script"
+    onload="this.onload=null;this.remove()" />
+  <script src="https://kit.fontawesome.com/1669dfc729.js" crossorigin="anonymous" defer></script>
 
-    <!-- IndieWeb -->
+  {% if FEED_ALL_ATOM %}
+  <link
+    href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
+    type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+  {% endif %} {% if FEED_ALL_RSS %}
+  <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
+    type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+  {% endif %} {% if FEED_ATOM %}
+  <link href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}"
+    type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+  {% endif %} {% if FEED_RSS %}
+  <link href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}"
+    type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+  {% endif %} {% if CATEGORY_FEED_ATOM and category %}
+  <link
+    href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}"
+    type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Kategoriler Atom Beslemesi" />
+  {% endif %} {% if CATEGORY_FEED_RSS and category %}
+  <link
+    href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}"
+    type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Kategoriler RSS Beslemesi" />
+  {% endif %} {% if TAG_FEED_ATOM and tag %}
+  <link
+    href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}"
+    type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Etiketler Atom Beslemesi" />
+  {% endif %} {% if TAG_FEED_RSS and tag %}
+  <link
+    href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}"
+    type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Etiketler RSS Beslemesi" />
+  {% endif %}
 
-    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
-    <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
-    <!-- Bridgy -->
-    {% for name, value in SOCIAL.items() %}
-        {% set url = '' %}
-        {% if name == 'github' %}
-            {% set url = 'https://github.com/' + value %}
-        {% elif name == 'youtube' %}
-            {% set url = 'https://www.youtube.com/@' + value %}
-        {% elif name == 'bluesky' %}
-            {% set url = 'https://bsky.app/profile/' + value %}
-        {% elif name == 'instagram' %}
-            {% set url = 'https://instagram.com/' + value %}
-        {% elif name == 'twitch' %}
-            {% set url = 'https://twitch.tv/' + value %}
-        {% elif name == 'reddit' %}
-            {% set url = 'https://www.reddit.com/user/' + value + '/' %}
-        {% elif name == 'kick' %}
-            {% set url = 'https://kick.com/' + value %}
-        {% elif name == 'x' %}
-            {% set url = 'https://x.com/' + value %}
-        {% endif %}
-        {% if url %}
-    <link rel="me" href="{{ url }}" />
-        {% endif %}
-    {% endfor %}
-    {% if MASTODON and MASTODON.username and MASTODON.instance %}
-    <link rel="me" href="https://{{ MASTODON.instance }}/@{{ MASTODON.username }}" />
-    {% endif %}
-    <link rel="webmention" href="https://webmention.io/yuceltoluyag.github.io/webmention" />
-    <link rel="pingback" href="https://webmention.io/yuceltoluyag.github.io/xmlrpc" /> {% endblock head %}
-  </head>
+  <!-- IndieWeb -->
 
-  <body class="{% block body_class %}{% endblock %}">
-    <a href="#" class="back-to-top-button" aria-label="Sayfanın başına dön">
-      <i class="fa-solid fa-arrow-up"></i>
-    </a>
-    <div class="wrapper">
-      <aside class="sidebar">
-        <section id="nav">
-          <nav class="navbar">
-            <ul>
-              {% for item in NAVBAR_LINKS %}
-              <li id="fadeshow2">
-                <a
-                  href="{{ SITEURL }}{{ item.url }}"
-                  target="{{ item.target }}"
-                  class="contrast"
-                  aria-label="{{ item.name }}"
-                  ><i class="{{ item.icon }} fa-2x"></i
-                ></a>
-              </li>
-              {% endfor %} {% if SOCIAL %} {% for name, value in SOCIAL.items()
-              %} {% if name in ['github', 'youtube', 'bluesky', 'kick'] %} {%
-              set icon_class = '' %} {% set url = '' %} {% if name == 'github'
-              %} {% set icon_class = 'fa-brands fa-github-alt' %} {% set url =
-              'https://github.com/' + value %} {% elif name == 'youtube' %} {%
-              set icon_class = 'fa-brands fa-youtube' %} {% set url =
-              'https://www.youtube.com/@' + value %} {% elif name == 'bluesky'
-              %} {% set icon_class = 'fa-brands fa-bluesky' %} {% set url =
-              'https://bsky.app/profile/' + value %} {% elif name == 'instagram'
-              %} {% set icon_class = 'fa-brands fa-instagram' %} {% set url =
-              'https://instagram.com/' + value %} {% elif name == 'twitch' %} {%
-              set icon_class = 'fa-brands fa-twitch' %} {% set url =
-              'https://twitch.tv/' + value %} {% elif name == 'matrix' %} {% set
-              icon_class = 'fa-brands fa-matrix-org' %} {% set url =
-              'https://matrix.to/#/' + value %} {% elif name == 'discord' %} {%
-              set icon_class = 'fa-brands fa-discord' %} {% set url =
-              'https://discord.com/users/' + value %} {% elif name == 'kick' %}
-              {% set icon_class = 'fa-brands fa-kickstarter' %} {% set url =
-              'https://kick.com/' + value %} {% elif name == 'bynogame' %} {%
-              set icon_class = 'fa-solid fa-wallet' %} {% set url = '#' %} {%
-              elif name == 'github_sponsor' %} {% set icon_class = 'fa-solid
-              fa-heart' %} {% set url = 'https://github.com/sponsors/' + value
-              %} {% endif %} {% if url %}
-              <li>
-                <a
-                  href="{{ url }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="contrast"
-                  aria-label="Social media link"
-                  ><i class="{{ icon_class }} fa-2x"></i
-                ></a>
-              </li>
-              {% endif %} {% endif %} {% endfor %} {% endif %}
-              <li>
-                <a href="#" class="search-trigger" aria-label="Search"
-                  ><i class="fa-solid fa-search fa-2x"></i
-                ></a>
-              </li>
-              <li>
-                <a href="#" id="theme-switcher" aria-label="Toggle theme">
-                  <i id="theme-icon" class="fa-solid fa-sun fa-lg"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </section>
-      </aside>
-      <div class="content-wrapper">
-        <div>
-          <main id="main-content" class="content container">
-            {% block content %} {% endblock %}
-          </main>
-          {% include 'includes/footer.html' %}
-        </div>
+  <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+  <!-- Bridgy -->
+  {% for name, value in SOCIAL.items() %}
+  {% set url = '' %}
+  {% if name == 'github' %}
+  {% set url = 'https://github.com/' + value %}
+  {% elif name == 'youtube' %}
+  {% set url = 'https://www.youtube.com/@' + value %}
+  {% elif name == 'bluesky' %}
+  {% set url = 'https://bsky.app/profile/' + value %}
+  {% elif name == 'instagram' %}
+  {% set url = 'https://instagram.com/' + value %}
+  {% elif name == 'twitch' %}
+  {% set url = 'https://twitch.tv/' + value %}
+  {% elif name == 'reddit' %}
+  {% set url = 'https://www.reddit.com/user/' + value + '/' %}
+  {% elif name == 'kick' %}
+  {% set url = 'https://kick.com/' + value %}
+  {% elif name == 'x' %}
+  {% set url = 'https://x.com/' + value %}
+  {% endif %}
+  {% if url %}
+  <link rel="me" href="{{ url }}" />
+  {% endif %}
+  {% endfor %}
+  {% if MASTODON and MASTODON.username and MASTODON.instance %}
+  <link rel="me" href="https://{{ MASTODON.instance }}/@{{ MASTODON.username }}" />
+  {% endif %}
+  <!-- <link rel="webmention" href="https://webmention.io/yuceltoluyag.github.io/webmention" />
+    <link rel="pingback" href="https://webmention.io/yuceltoluyag.github.io/xmlrpc" /> --> {% endblock head %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+  <a href="#" class="back-to-top-button" aria-label="Sayfanın başına dön">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+  <div class="wrapper">
+    <aside class="sidebar">
+      <section id="nav">
+        <nav class="navbar">
+          <ul>
+            {% for item in NAVBAR_LINKS %}
+            <li id="fadeshow2">
+              <a href="{{ SITEURL }}{{ item.url }}" target="{{ item.target }}" class="contrast"
+                aria-label="{{ item.name }}"><i class="{{ item.icon }} fa-2x"></i></a>
+            </li>
+            {% endfor %} {% if SOCIAL %} {% for name, value in SOCIAL.items()
+            %} {% if name in ['github', 'youtube', 'bluesky', 'kick'] %} {%
+            set icon_class = '' %} {% set url = '' %} {% if name == 'github'
+            %} {% set icon_class = 'fa-brands fa-github-alt' %} {% set url =
+            'https://github.com/' + value %} {% elif name == 'youtube' %} {%
+            set icon_class = 'fa-brands fa-youtube' %} {% set url =
+            'https://www.youtube.com/@' + value %} {% elif name == 'bluesky'
+            %} {% set icon_class = 'fa-brands fa-bluesky' %} {% set url =
+            'https://bsky.app/profile/' + value %} {% elif name == 'instagram'
+            %} {% set icon_class = 'fa-brands fa-instagram' %} {% set url =
+            'https://instagram.com/' + value %} {% elif name == 'twitch' %} {%
+            set icon_class = 'fa-brands fa-twitch' %} {% set url =
+            'https://twitch.tv/' + value %} {% elif name == 'matrix' %} {% set
+            icon_class = 'fa-brands fa-matrix-org' %} {% set url =
+            'https://matrix.to/#/' + value %} {% elif name == 'discord' %} {%
+            set icon_class = 'fa-brands fa-discord' %} {% set url =
+            'https://discord.com/users/' + value %} {% elif name == 'kick' %}
+            {% set icon_class = 'fa-brands fa-kickstarter' %} {% set url =
+            'https://kick.com/' + value %} {% elif name == 'bynogame' %} {%
+            set icon_class = 'fa-solid fa-wallet' %} {% set url = '#' %} {%
+            elif name == 'github_sponsor' %} {% set icon_class = 'fa-solid
+            fa-heart' %} {% set url = 'https://github.com/sponsors/' + value
+            %} {% endif %} {% if url %}
+            <li>
+              <a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="contrast"
+                aria-label="Social media link"><i class="{{ icon_class }} fa-2x"></i></a>
+            </li>
+            {% endif %} {% endif %} {% endfor %} {% endif %}
+            <li>
+              <a href="#" class="search-trigger" aria-label="Search"><i class="fa-solid fa-search fa-2x"></i></a>
+            </li>
+            <li>
+              <a href="#" id="theme-switcher" aria-label="Toggle theme">
+                <i id="theme-icon" class="fa-solid fa-sun fa-lg"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </aside>
+    <div class="content-wrapper">
+      <div>
+        <main id="main-content" class="content container">
+          {% block content %} {% endblock %}
+        </main>
+        {% include 'includes/footer.html' %}
       </div>
     </div>
+  </div>
 
-    <div
-      id="search-modal"
-      class="search-modal"
-      data-search-placeholder="{{ _('Arama...') }}"
-      data-search-no-query="{{ _('Arama sorgusu giriniz') }}"
-      data-search-no-results="{{ _('için sonuç bulunamadı') }}"
-    >
-      <div class="search-modal-content">
-        <span class="search-modal-close">&times;</span>
-        <form id="search-form">
-          <input
-            type="search"
-            id="search-input"
-            placeholder="{{ _('Arama...') }}"
-          />
-        </form>
-        <div id="search-results"></div>
-      </div>
+  <div id="search-modal" class="search-modal" data-search-placeholder="{{ _('Arama...') }}"
+    data-search-no-query="{{ _('Arama sorgusu giriniz') }}" data-search-no-results="{{ _('için sonuç bulunamadı') }}">
+    <div class="search-modal-content">
+      <span class="search-modal-close">&times;</span>
+      <form id="search-form">
+        <input type="search" id="search-input" placeholder="{{ _('Arama...') }}" />
+      </form>
+      <div id="search-results"></div>
     </div>
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
+  </div>
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/search.js"></script>
 
-    <script>
-      const themeSwitcher = document.getElementById("theme-switcher");
-      const themeIcon = document.getElementById("theme-icon");
-      const html = document.documentElement;
+  <script>
+    const themeSwitcher = document.getElementById("theme-switcher");
+    const themeIcon = document.getElementById("theme-icon");
+    const html = document.documentElement;
 
-      // Set initial theme from localStorage or default to dark
-      const currentTheme = localStorage.getItem("theme") || "dark";
-      html.setAttribute("data-theme", currentTheme);
+    // Set initial theme from localStorage or default to dark
+    const currentTheme = localStorage.getItem("theme") || "dark";
+    html.setAttribute("data-theme", currentTheme);
+    themeIcon.className =
+      currentTheme === "dark"
+        ? "fa-solid fa-moon fa-2x"
+        : "fa-solid fa-sun fa-2x";
+
+    themeSwitcher.addEventListener("click", function (e) {
+      e.preventDefault();
+      const newTheme =
+        html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      html.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
       themeIcon.className =
-        currentTheme === "dark"
+        newTheme === "dark"
           ? "fa-solid fa-moon fa-2x"
           : "fa-solid fa-sun fa-2x";
+    });
 
-      themeSwitcher.addEventListener("click", function (e) {
-        e.preventDefault();
-        const newTheme =
-          html.getAttribute("data-theme") === "dark" ? "light" : "dark";
-        html.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        themeIcon.className =
-          newTheme === "dark"
-            ? "fa-solid fa-moon fa-2x"
-            : "fa-solid fa-sun fa-2x";
-      });
+    // Back to top functionality
+    document.addEventListener("DOMContentLoaded", function () {
+      const backToTopButton = document.querySelector(".back-to-top-button");
 
-      // Back to top functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const backToTopButton = document.querySelector(".back-to-top-button");
-
-        // Show/hide back to top button based on scroll position
-        window.addEventListener("scroll", function () {
-          if (backToTopButton) {
-            if (window.pageYOffset > 300) {
-              backToTopButton.classList.add("show");
-            } else {
-              backToTopButton.classList.remove("show");
-            }
-          }
-        });
-
-        // Smooth scroll to top
+      // Show/hide back to top button based on scroll position
+      window.addEventListener("scroll", function () {
         if (backToTopButton) {
-          backToTopButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          });
+          if (window.pageYOffset > 300) {
+            backToTopButton.classList.add("show");
+          } else {
+            backToTopButton.classList.remove("show");
+          }
         }
       });
-    </script>
-    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/scroll-progress.js"></script>
-  </body>
+
+      // Smooth scroll to top
+      if (backToTopButton) {
+        backToTopButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      }
+    });
+  </script>
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/scroll-progress.js"></script>
+</body>
+
 </html>

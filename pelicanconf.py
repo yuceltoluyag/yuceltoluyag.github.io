@@ -334,7 +334,7 @@ MASTODON = {
     "username": "yuceltoluyag",
     "instance": "mastodon.social",
 }
-WEBMENTION_IO_TOKEN = "Ap4Pb-YQo7Ne68a7rpJ0qA"
+# WEBMENTION_IO_TOKEN = "Ap4Pb-YQo7Ne68a7rpJ0qA"
 LINKS = {
     "Pelican": "https://getpelican.com/",
     "Python.org": "https://www.python.org/",

@@ -1,8 +1,8 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% block body_class %}type-article{% endblock %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
-{% block title %}{{ article.title|striptags }}{% endblock %} {% block head %} {{ 
-super() }} {% if article.translations -%} 
+{% block title %}{{ article.title|striptags }}{% endblock %} {% block head %} {{
+super() }} {% if article.translations -%}
 <link rel="alternate" href="{{ SITEURL }}/{{ article.url }}" hreflang="{{ article.lang }}" />
 {% for a in article.translations %}
 <link rel="alternate" href="{{ SITEURL }}/{{ a.url }}" hreflang="{{ a.lang }}" />
@@ -17,23 +17,16 @@ super() }} {% if article.translations -%}
 {% endblock %} {% block content %}
 
 <main class="article-content-container container pico-container">
-    {% if not ARTICLE_HIDE_TRANSLATION %}
-      {% import 'translations.html' as translations with context %}
-      {{ translations.translations_for(article) }}
-    {% endif %}
+  {% if not ARTICLE_HIDE_TRANSLATION %}
+  {% import 'translations.html' as translations with context %}
+  {{ translations.translations_for(article) }}
+  {% endif %}
 
   <div class="article-hero cyberpunk-hero-glow">
     {% if article.image %}
     <div class="hero-image-container cyberpunk-image-glow">
-      <img
-        src="{{ SITEURL_ROOT }}/{{ article.image }}"
-        class="hero-background cyberpunk-hero-image"
-        alt="Hero Background"
-        width="1200"
-        height="630"
-        fetchpriority="high"
-        decoding="async"
-      />
+      <img src="{{ SITEURL_ROOT }}/{{ article.image }}" class="hero-background cyberpunk-hero-image"
+        alt="Hero Background" width="1200" height="630" fetchpriority="high" decoding="async" />
       <div class="hero-overlay-gradient cyberpunk-glow-effect"></div>
     </div>
     {% endif %}
@@ -47,17 +40,13 @@ super() }} {% if article.translations -%}
         <address class="vcard author cyberpunk-author">
           <i class="fa-solid fa-user" aria-hidden="true"></i>
           {% for author in article.authors %}
-          <a class="url fn cyberpunk-author-link" href="{{ SITEURL }}/{{ author.url }}"
-            >{{ author }}</a
-          >
+          <a class="url fn cyberpunk-author-link" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
           {% endfor %}
         </address>
         {% endif %} {% if article.category %}
         <span class="category cyberpunk-category">
           <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
-          <a href="{{ SITEURL }}/{{ article.category.url }}" class="cyberpunk-category-link"
-            >{{ article.category }}</a
-          >
+          <a href="{{ SITEURL }}/{{ article.category.url }}" class="cyberpunk-category-link">{{ article.category }}</a>
         </span>
         {% endif %}
         {% if article.stats %}
@@ -74,19 +63,10 @@ super() }} {% if article.translations -%}
 
   <div class="article-ad-container" style="min-height: 280px;">
     {% if GOOGLE_ADSENSE and PUBLISH %}
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
-      crossorigin="anonymous"
-    ></script>
-    <ins
-      class="adsbygoogle"
-      style="display: block; text-align: center"
-      data-ad-layout="in-article"
-      data-ad-format="fluid"
-      data-ad-client="ca-pub-6089943780218266"
-      data-ad-slot="4064563622"
-    ></ins>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+      crossorigin="anonymous"></script>
+    <ins class="adsbygoogle" style="display: block; text-align: center" data-ad-layout="in-article"
+      data-ad-format="fluid" data-ad-client="ca-pub-6089943780218266" data-ad-slot="4064563622"></ins>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
@@ -99,27 +79,30 @@ super() }} {% if article.translations -%}
       <div class="series-navigation-card pico-card">
         <div class="series-header">
           <h2><i class="fa-solid fa-bookmark"></i> {{ _('Series:') }} {{ article.series.name }}</h2>
-          <span class="series-progress">{{ _('Part') }} {{ article.series.index }}/{{ article.series.all|length }}</span>
+          <span class="series-progress">{{ _('Part') }} {{ article.series.index }}/{{ article.series.all|length
+            }}</span>
         </div>
-        
+
         {% if article.series.all|length > 0 %}
         <div class="series-progress-bar">
-          <div class="progress-fill" style="width: {{ ((article.series.index|float) / (article.series.all|length|float) * 100)|int }}%"></div>
+          <div class="progress-fill"
+            style="width: {{ ((article.series.index|float) / (article.series.all|length|float) * 100)|int }}%"></div>
         </div>
         {% else %}
         <div class="series-progress-bar">
           <div class="progress-fill" style="width: 100%"></div>
         </div>
         {% endif %}
-        
-        <p class="series-description">{{ _('This article is part %(index)s of the \'%(name)s\' series.', index=article.series.index, name=article.series.name) }}</p>
-        
+
+        <p class="series-description">{{ _('This article is part %(index)s of the \'%(name)s\' series.',
+          index=article.series.index, name=article.series.name) }}</p>
+
         <!-- Series Index -->
         <details class="series-contents">
           <summary><i class="fa-solid fa-list"></i> {{ _('Series Contents') }}</summary>
           <ol class="series-list">
             {% for part_article in article.series.all %}
-            <li {% if part_article == article %}class="active"{% endif %}>
+            <li {% if part_article==article %}class="active" {% endif %}>
               {% if part_article == article %}
               <span class="current-article">
                 <i class="fa-solid fa-circle-check" aria-hidden="true"></i> {{ part_article.title }}
@@ -135,31 +118,24 @@ super() }} {% if article.translations -%}
         </details>
       </div>
       {% endif %}
-      
+
       <div id="article-content" class="article-content-wrapper pico-prose">
         {{ article.content }}
       </div>
-      
+
       <div class="article-ad-section" style="min-height: 400px;">
         {% if GOOGLE_ADSENSE and PUBLISH %}
-        <script
-          async
+        <script async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
-          crossorigin="anonymous"
-        ></script>
-        <ins
-          class="adsbygoogle"
-          style="display: block"
-          data-ad-format="autorelaxed"
-          data-ad-client="ca-pub-6089943780218266"
-          data-ad-slot="6307583586"
-        ></ins>
+          crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display: block" data-ad-format="autorelaxed"
+          data-ad-client="ca-pub-6089943780218266" data-ad-slot="6307583586"></ins>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
         {% endif %}
       </div>
-      
+
       <!-- Related Posts and Support Section Side by Side -->
       <div class="article-bottom-section">
         {% if article.related_posts %}
@@ -180,7 +156,7 @@ super() }} {% if article.translations -%}
           </div>
         </div>
         {% endif %}
-        
+
         <div class="support-section">
           <div class="support-card pico-card">
             <hgroup>
@@ -192,14 +168,10 @@ super() }} {% if article.translations -%}
             <a href="{{ SITEURL }}/bagis/" role="button" class="primary">
               <i class="fa-solid fa-heart" aria-hidden="true"></i> {{ _('Support') }}
             </a>
-            
+
             {% if ARTICLE_EDIT_LINK %}
-            <a href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}" 
-               role="button" 
-               class="secondary"
-               style="margin-top: 0.5rem;"
-               target="_blank"
-               rel="noopener noreferrer nofollow">
+            <a href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}" role="button" class="secondary"
+              style="margin-top: 0.5rem;" target="_blank" rel="noopener noreferrer nofollow">
               <i class="fa-solid fa-edit" aria-hidden="true"></i> {{ _('Edit') }}
             </a>
             {% endif %}
@@ -209,166 +181,129 @@ super() }} {% if article.translations -%}
 
       <!-- Sosyal Medya Paylaşım Butonları -->
       <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
-          <span class="text-sm text-base-content/70 flex items-center mr-2">
-              <i class="fa-solid fa-share mr-1"></i>
-              {{ _('Share:') }}
-          </span>
+        <span class="text-sm text-base-content/70 flex items-center mr-2">
+          <i class="fa-solid fa-share mr-1"></i>
+          {{ _('Share:') }}
+        </span>
 
-          <!-- Twitter/X Paylaşım -->
-          <a
-              href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn twitter-share"
-              aria-label="Twitter'da Paylaş">
-              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-              <span class="sr-only">Twitter'da Paylaş</span>
-          </a>
+        <!-- Twitter/X Paylaşım -->
+        <a href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
+          target="_blank" rel="noopener noreferrer" class="social-share-btn twitter-share"
+          aria-label="Twitter'da Paylaş">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          <span class="sr-only">Twitter'da Paylaş</span>
+        </a>
 
-          <!-- Facebook Paylaşım -->
-          <a
-              href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn facebook-share"
-              aria-label="Facebook'ta Paylaş">
-              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
-              <span class="sr-only">Facebook'ta Paylaş</span>
-          </a>
+        <!-- Facebook Paylaşım -->
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" target="_blank"
+          rel="noopener noreferrer" class="social-share-btn facebook-share" aria-label="Facebook'ta Paylaş">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          <span class="sr-only">Facebook'ta Paylaş</span>
+        </a>
 
-          <!-- LinkedIn Paylaşım -->
-          <a
-              href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn linkedin-share"
-              aria-label="LinkedIn'de Paylaş">
-              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-              <span class="sr-only">LinkedIn'de Paylaş</span>
-          </a>
+        <!-- LinkedIn Paylaşım -->
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url }}" target="_blank"
+          rel="noopener noreferrer" class="social-share-btn linkedin-share" aria-label="LinkedIn'de Paylaş">
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          <span class="sr-only">LinkedIn'de Paylaş</span>
+        </a>
 
-          <!-- Reddit Paylaşım -->
-          <a
-              href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn reddit-share"
-              aria-label="Reddit'te Paylaş">
-              <i class="fa-brands fa-reddit" aria-hidden="true"></i>
-              <span class="sr-only">Reddit'te Paylaş</span>
-          </a>
+        <!-- Reddit Paylaşım -->
+        <a href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+          target="_blank" rel="noopener noreferrer" class="social-share-btn reddit-share" aria-label="Reddit'te Paylaş">
+          <i class="fa-brands fa-reddit" aria-hidden="true"></i>
+          <span class="sr-only">Reddit'te Paylaş</span>
+        </a>
 
-          <!-- Telegram Paylaşım -->
-          <a
-              href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn telegram-share"
-              aria-label="Telegram'da Paylaş">
-              <i class="fa-brands fa-telegram" aria-hidden="true"></i>
-              <span class="sr-only">Telegram'da Paylaş</span>
-          </a>
+        <!-- Telegram Paylaşım -->
+        <a href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}" target="_blank"
+          rel="noopener noreferrer" class="social-share-btn telegram-share" aria-label="Telegram'da Paylaş">
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+          <span class="sr-only">Telegram'da Paylaş</span>
+        </a>
 
-          <!-- WhatsApp Paylaşım -->
-          <a
-              href="https://api.whatsapp.com/send?text={{ article.title }} {{ SITEURL }}/{{ article.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn whatsapp-share"
-              aria-label="WhatsApp'ta Paylaş">
-              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              <span class="sr-only">WhatsApp'ta Paylaş</span>
-          </a>
+        <!-- WhatsApp Paylaşım -->
+        <a href="https://api.whatsapp.com/send?text={{ article.title }} {{ SITEURL }}/{{ article.url }}" target="_blank"
+          rel="noopener noreferrer" class="social-share-btn whatsapp-share" aria-label="WhatsApp'ta Paylaş">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <span class="sr-only">WhatsApp'ta Paylaş</span>
+        </a>
 
-          <!-- Email Paylaşım -->
-          <a
-              href="mailto:?subject={{ article.title }}&body={{ SITEURL }}/{{ article.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn email-share"
-              aria-label="Email ile Paylaş">
-              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-              <span class="sr-only">Email ile Paylaş</span>
-          </a>
+        <!-- Email Paylaşım -->
+        <a href="mailto:?subject={{ article.title }}&body={{ SITEURL }}/{{ article.url }}" target="_blank"
+          rel="noopener noreferrer" class="social-share-btn email-share" aria-label="Email ile Paylaş">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <span class="sr-only">Email ile Paylaş</span>
+        </a>
 
-          <!-- Pinterest Paylaşım -->
-          <a
-              href="https://pinterest.com/pin/create/button/?url={{ SITEURL }}/{{ article.url }}&description={{ article.title }}{% if article.image %}&media={{ SITEURL }}/{{ article.image }}{% endif %}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn pinterest-share"
-              aria-label="Pinterest'te Paylaş">
-              <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
-              <span class="sr-only">Pinterest'te Paylaş</span>
-          </a>
+        <!-- Pinterest Paylaşım -->
+        <a href="https://pinterest.com/pin/create/button/?url={{ SITEURL }}/{{ article.url }}&description={{ article.title }}{% if article.image %}&media={{ SITEURL }}/{{ article.image }}{% endif %}"
+          target="_blank" rel="noopener noreferrer" class="social-share-btn pinterest-share"
+          aria-label="Pinterest'te Paylaş">
+          <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
+          <span class="sr-only">Pinterest'te Paylaş</span>
+        </a>
 
-          <!-- Tumblr Paylaşım -->
-          <a
-              href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn tumblr-share"
-              aria-label="Tumblr'da Paylaş">
-              <i class="fa-brands fa-tumblr" aria-hidden="true"></i>
-              <span class="sr-only">Tumblr'da Paylaş</span>
-          </a>
+        <!-- Tumblr Paylaşım -->
+        <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
+          target="_blank" rel="noopener noreferrer" class="social-share-btn tumblr-share" aria-label="Tumblr'da Paylaş">
+          <i class="fa-brands fa-tumblr" aria-hidden="true"></i>
+          <span class="sr-only">Tumblr'da Paylaş</span>
+        </a>
 
-          <!-- Bluesky Paylaşım -->
-          <a
-              href="https://bsky.app/intent/compose?text={{ article.title }}%20-%20{{ SITEURL }}/{{ article.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn bluesky-share"
-              aria-label="Bluesky'da Paylaş">
-              <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
-              <span class="sr-only">Bluesky'da Paylaş</span>
-          </a>
+        <!-- Bluesky Paylaşım -->
+        <a href="https://bsky.app/intent/compose?text={{ article.title }}%20-%20{{ SITEURL }}/{{ article.url }}"
+          target="_blank" rel="noopener noreferrer" class="social-share-btn bluesky-share"
+          aria-label="Bluesky'da Paylaş">
+          <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
+          <span class="sr-only">Bluesky'da Paylaş</span>
+        </a>
 
-          <!-- Mastodon Paylaşım -->
-          {% if MASTODON %}
-          <a
-              href="https://{{ MASTODON.instance }}/share?text={{ article.title }}&url={{ SITEURL }}/{{ article.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-share-btn mastodon-share"
-              aria-label="Mastodon'da Paylaş">
-              <i class="fa-brands fa-mastodon" aria-hidden="true"></i>
-              <span class="sr-only">Mastodon'da Paylaş</span>
-          </a>
-          {% endif %}
+        <!-- Mastodon Paylaşım -->
+        {% if MASTODON %}
+        <a href="https://{{ MASTODON.instance }}/share?text={{ article.title }}&url={{ SITEURL }}/{{ article.url }}"
+          target="_blank" rel="noopener noreferrer" class="social-share-btn mastodon-share"
+          aria-label="Mastodon'da Paylaş">
+          <i class="fa-brands fa-mastodon" aria-hidden="true"></i>
+          <span class="sr-only">Mastodon'da Paylaş</span>
+        </a>
+        {% endif %}
 
-          <!-- Kopyala Butonu -->
-          <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
-              <i class="fa-solid fa-copy" aria-hidden="true"></i>
-              <span class="sr-only">URL'yi Kopyala</span>
-          </button>
+        <!-- Kopyala Butonu -->
+        <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
+          <i class="fa-solid fa-copy" aria-hidden="true"></i>
+          <span class="sr-only">URL'yi Kopyala</span>
+        </button>
       </div>
 
       {% if article.author %}
       {% set author_info = AUTHORS_INFO[article.author.slug] %}
       <div class="author-box">
-          <img src="{{ SITEURL }}{{ author_info.image }}" alt="{{ author_info.name }}">
-          <div class="author-info">
-              <h3>{{ author_info.name }}</h3>
-              <p>{{ author_info.bio[article.lang] or author_info.bio['tr'] }}</p>
-              <div class="author-social">
-                  {% if author_info.social.github %}
-                  <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s GitHub profile">
-                      <i class="fa-brands fa-github"></i>
-                  </a>
-                  {% endif %}
-                  {% if author_info.social.twitter %}
-                  <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s Twitter profile">
-                      <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                  {% endif %}
-                  {% if author_info.social.linkedin %}
-                  <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s LinkedIn profile">
-                      <i class="fa-brands fa-linkedin"></i>
-                  </a>
-                  {% endif %}
-              </div>
+        <img src="{{ SITEURL }}{{ author_info.image }}" alt="{{ author_info.name }}">
+        <div class="author-info">
+          <h3>{{ author_info.name }}</h3>
+          <p>{{ author_info.bio[article.lang] or author_info.bio['tr'] }}</p>
+          <div class="author-social">
+            {% if author_info.social.github %}
+            <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer"
+              aria-label="{{ author_info.name }}'s GitHub profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            {% endif %}
+            {% if author_info.social.twitter %}
+            <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer"
+              aria-label="{{ author_info.name }}'s Twitter profile">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            {% endif %}
+            {% if author_info.social.linkedin %}
+            <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank"
+              rel="noopener noreferrer" aria-label="{{ author_info.name }}'s LinkedIn profile">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            {% endif %}
           </div>
+        </div>
       </div>
       {% endif %}
     </article>
@@ -378,61 +313,46 @@ super() }} {% if article.translations -%}
   </div>
   <div class="article-ad-container" style="min-height: 100px;">
     {% if GOOGLE_ADSENSE and PUBLISH %}
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
-      crossorigin="anonymous"
-    ></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6089943780218266"
+      crossorigin="anonymous"></script>
     <!-- YucelBaba-Yatay -->
-    <ins
-      class="adsbygoogle"
-      style="display: block"
-      data-ad-client="ca-pub-6089943780218266"
-      data-ad-slot="7534662243"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    ></ins>
+    <ins class="adsbygoogle" style="display: block" data-ad-client="ca-pub-6089943780218266" data-ad-slot="7534662243"
+      data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
     {% endif %}
   </div>
 
-{% if article.url %}
-{% set canonical_path = article.url %}
-{% if article.lang != DEFAULT_LANG %}
+  {% if article.url %}
+  {% set canonical_path = article.url %}
+  {% if article.lang != DEFAULT_LANG %}
   {% set canonical_path = article.lang ~ '/' ~ article.url %}
-{% endif %}
+  {% endif %}
 
 
-{% if article.toot or article.bluesky %}
+  {% if article.toot or article.bluesky %}
   {% include 'partials/unified_comments.html' %}
   <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/unified-comments.js"></script>
-{% endif %}
+  {% endif %}
 
-<div id="webmentions" data-url="{{ CANONICAL_URL.rstrip('/') }}/{{ canonical_path.lstrip('/') }}" data-original-post-text="{{ _('Orijinal gönderi') }}">
+  <!-- <div id="webmentions" data-url="{{ CANONICAL_URL.rstrip('/') }}/{{ canonical_path.lstrip('/') }}" data-original-post-text="{{ _('Orijinal gönderi') }}">
     {% include 'partials/webmentions.html' %}
 </div>
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
-{% endif %}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script> -->
+  {% endif %}
 
   {% if article.prev_article or article.next_article %}
   <nav class="article-nav-arrows" aria-label="{{ _('Article navigation') }}">
     {% if article.prev_article %}
-    <a
-      href="{{ SITEURL }}/{{ article.prev_article.url }}"
-      class="article-nav-arrow secondary outline prev"
-      aria-label="{{ _('Previous article:') }} {{ article.prev_article.title }}"
-    >
+    <a href="{{ SITEURL }}/{{ article.prev_article.url }}" class="article-nav-arrow secondary outline prev"
+      aria-label="{{ _('Previous article:') }} {{ article.prev_article.title }}">
       <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
       <span>{{ _('Previous:') }} {{ article.prev_article.title|truncate(50, True) }}</span>
     </a>
     {% endif %} {% if article.next_article %}
-    <a
-      href="{{ SITEURL }}/{{ article.next_article.url }}"
-      class="article-nav-arrow secondary outline next"
-      aria-label="{{ _('Next article:') }} {{ article.next_article.title }}"
-    >
+    <a href="{{ SITEURL }}/{{ article.next_article.url }}" class="article-nav-arrow secondary outline next"
+      aria-label="{{ _('Next article:') }} {{ article.next_article.title }}">
       <span>{{ _('Next:') }} {{ article.next_article.title|truncate(50, True) }}</span>
       <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
     </a>
@@ -440,115 +360,115 @@ super() }} {% if article.translations -%}
   </nav>
   {% endif %}
 
-<!-- Collapsible TOC -->
-{% if article.toc %}
-<div class="toc-fab-container">
+  <!-- Collapsible TOC -->
+  {% if article.toc %}
+  <div class="toc-fab-container">
     <button id="toc-fab-btn" aria-label="İçindekiler Menüsü">
-        <i class="fa-solid fa-list" aria-hidden="true"></i>
-        <span class="sr-only">İçindekiler Menüsü</span>
+      <i class="fa-solid fa-list" aria-hidden="true"></i>
+      <span class="sr-only">İçindekiler Menüsü</span>
     </button>
     <nav id="toc-collapsible-menu" class="pico-card">{{ article.toc }}</nav>
-</div>
-{% endif %}
+  </div>
+  {% endif %}
 
-</script>
+  </script>
 
-<script>
-  // Close series contents details by default
-  document.addEventListener('DOMContentLoaded', function() {
-    const seriesDetails = document.querySelector('.series-contents');
-    if (seriesDetails && seriesDetails.hasAttribute('open')) {
-      seriesDetails.removeAttribute('open');
-    }
-  });
-</script>
+  <script>
+    // Close series contents details by default
+    document.addEventListener('DOMContentLoaded', function () {
+      const seriesDetails = document.querySelector('.series-contents');
+      if (seriesDetails && seriesDetails.hasAttribute('open')) {
+        seriesDetails.removeAttribute('open');
+      }
+    });
+  </script>
 
-<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy.js" data-copy="Kopyala" data-copied="Kopyalandı!"></script>
+  <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/copy.js" data-copy="Kopyala" data-copied="Kopyalandı!"></script>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const tocFabBtn = document.getElementById('toc-fab-btn');
-    const tocMenu = document.getElementById('toc-collapsible-menu');
-    const articleContent = document.getElementById('article-content'); // Added for scrollspy
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const tocFabBtn = document.getElementById('toc-fab-btn');
+      const tocMenu = document.getElementById('toc-collapsible-menu');
+      const articleContent = document.getElementById('article-content'); // Added for scrollspy
 
-    // --- TOC Toggle Logic ---
-    if (tocFabBtn && tocMenu) {
+      // --- TOC Toggle Logic ---
+      if (tocFabBtn && tocMenu) {
         // Hide button if TOC is empty
         if (!tocMenu.querySelector('#toc ul li')) {
-            tocFabBtn.style.display = 'none';
+          tocFabBtn.style.display = 'none';
         }
 
         // Logic to toggle the main menu visibility
         tocFabBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            tocMenu.classList.toggle('active');
+          e.stopPropagation();
+          tocMenu.classList.toggle('active');
         });
 
         // Logic to handle clicks on collapsible buttons inside the TOC
         tocMenu.addEventListener('click', function (e) {
-            const button = e.target.closest('button');
-            // Ensure the click is on a button inside the TOC, not the FAB itself
-            if (button && tocMenu.contains(button)) {
-                const parentLi = button.parentElement;
-                if (parentLi && parentLi.tagName === 'LI') {
-                    parentLi.classList.toggle('expanded');
-                }
+          const button = e.target.closest('button');
+          // Ensure the click is on a button inside the TOC, not the FAB itself
+          if (button && tocMenu.contains(button)) {
+            const parentLi = button.parentElement;
+            if (parentLi && parentLi.tagName === 'LI') {
+              parentLi.classList.toggle('expanded');
             }
+          }
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function (e) {
-            if (tocMenu.classList.contains('active') && !tocMenu.contains(e.target) && e.target !== tocFabBtn) {
-                tocMenu.classList.remove('active');
-            }
+          if (tocMenu.classList.contains('active') && !tocMenu.contains(e.target) && e.target !== tocFabBtn) {
+            tocMenu.classList.remove('active');
+          }
         });
-    }
+      }
 
-    // --- NEW Scrollspy Logic ---
-    if (articleContent && tocMenu) { // Check if articleContent exists
+      // --- NEW Scrollspy Logic ---
+      if (articleContent && tocMenu) { // Check if articleContent exists
         const headings = Array.from(articleContent.querySelectorAll('h1, h2, h3, h4, h5, h6'));
         const tocLinks = Array.from(tocMenu.querySelectorAll('a[href^="#"]')); // Select links with hash href
 
         const onScroll = () => {
-            let activeHeadingId = null;
+          let activeHeadingId = null;
 
-            // Find the last heading that is above the middle of the screen
-            for (const heading of headings) {
-                if (heading.getBoundingClientRect().top < window.innerHeight / 2) {
-                    activeHeadingId = heading.id;
-                } else {
-                    break; // Stop when we find one that is not in view
-                }
+          // Find the last heading that is above the middle of the screen
+          for (const heading of headings) {
+            if (heading.getBoundingClientRect().top < window.innerHeight / 2) {
+              activeHeadingId = heading.id;
+            } else {
+              break; // Stop when we find one that is not in view
             }
+          }
 
-            // Update classes on all links
-            tocLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && href.startsWith('#')) { // Ensure href is valid for ID
-                    if (href === `#${activeHeadingId}`) {
-                        link.classList.add('active');
-                        link.classList.add('readed'); // The active one is also read
-                        // Scroll the active link into view within the menu if it's not visible
-                        link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          // Update classes on all links
+          tocLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) { // Ensure href is valid for ID
+              if (href === `#${activeHeadingId}`) {
+                link.classList.add('active');
+                link.classList.add('readed'); // The active one is also read
+                // Scroll the active link into view within the menu if it's not visible
+                link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-                    } else {
-                        link.classList.remove('active');
-                    }
-                    // Mark as read if its heading is out of view at the top
-                    const correspondingHeading = document.getElementById(href.substring(1));
-                    if (correspondingHeading && correspondingHeading.getBoundingClientRect().top < 0) {
-                        link.classList.add('readed');
-                    } else if (link.classList.contains('readed') && correspondingHeading && correspondingHeading.getBoundingClientRect().top > window.innerHeight) {
-                        // If it's below the viewport and was marked read, unmark it.
-                        link.classList.remove('readed');
-                    }
-                }
-            });
+              } else {
+                link.classList.remove('active');
+              }
+              // Mark as read if its heading is out of view at the top
+              const correspondingHeading = document.getElementById(href.substring(1));
+              if (correspondingHeading && correspondingHeading.getBoundingClientRect().top < 0) {
+                link.classList.add('readed');
+              } else if (link.classList.contains('readed') && correspondingHeading && correspondingHeading.getBoundingClientRect().top > window.innerHeight) {
+                // If it's below the viewport and was marked read, unmark it.
+                link.classList.remove('readed');
+              }
+            }
+          });
         };
 
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll(); // Initial check
-    }
-});
-</script>
-{% endblock %}
+      }
+    });
+  </script>
+  {% endblock %}
