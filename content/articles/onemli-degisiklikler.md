@@ -12,7 +12,7 @@ Status: published
 Template: article
 Image: images/duyuru-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/115001034011754786
-bluesky: https://bsky.app/profile/yuceltoluyag.github.io.web.brid.gy/post/3m5nzg4yhirg2
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6bvlonkns24
 
 Burada, Markdown formatında çeşitli öğeleri test eden bir makale bulunmaktadır. Aşağıda başlıklar, paragraflar, listeler, dipnotlar, alıntılar, not kutuları (admonitions), tablolar ve kod blokları gibi farklı bileşenler yer almaktadır.
 
