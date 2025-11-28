@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/retroarch-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114985335068268101
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrrvi56r22d
 
 ## RetroArch Installation and Configuration 🎮
 

@@ -13,6 +13,8 @@ Translation: false
 Status: published  
 Template: article  
 Image: images/ssh-gpg-yedekleme-geri-yukleme-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985374923504182
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrshibzbk27
 
 ## SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme 🔑
 

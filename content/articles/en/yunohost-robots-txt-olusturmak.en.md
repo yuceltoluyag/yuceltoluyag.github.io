@@ -10,6 +10,8 @@ Image: images/yunohost-robotstxt-xl.webp
 Lang: en
 Summary: Learn step by step how to create a robots.txt file on Yunohost to control how search engines crawl your website.
 Template: article
+toot: https://mastodon.social/@yuceltoluyag/114987831204439588
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsve4rjq22f
 
 🚀 **Do you want to control how search engines crawl your website?** By creating a custom `robots.txt` file for applications hosted on Yunohost, you can take complete control of this process.
 

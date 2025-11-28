@@ -12,6 +12,8 @@ Lang: tr
 Status: published
 Template: article
 Image: images/git-chery-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987704187596338
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvstjdqpsk25
 
 ## Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı 🎯
 

@@ -10,6 +10,8 @@ Summary: In this article, installing mcp in Continue Plugin
 Template: article
 Image: images/mcp-puppeteer-sunucusu-kurulumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987857795740048
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsvqk5rnk2n
 
 **Want to start *browser automation* using MCP (Model Context Protocol)? Forget confusing setup steps! In this guide, I'll show you step by step how to **run an MCP server with Puppeteer support** with just a single `npx` command. And all this on Windows environment! 💻
 

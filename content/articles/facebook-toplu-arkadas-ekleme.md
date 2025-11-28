@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/facebook-5000-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982701980625018
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqmh35ngk2x
 
 Merhaba, Facebook **grup kasma yöntemi** olarak bilinen bazı **JavaScript** kodları paylaşılırdı. Bu kodları tarayıcı konsoluna yapıştırarak arkadaşlarınızı gruba davet edebilirdiniz. Ancak, Facebook ekibi bu durumu engellemek için günlük arkadaş ekleme sınırını **1000**, toplu mesaj gönderme sınırını ise **50** olarak belirlemiştir.
 

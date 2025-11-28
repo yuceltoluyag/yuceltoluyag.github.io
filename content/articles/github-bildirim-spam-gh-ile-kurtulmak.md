@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Series: Git
 Series_index: 10
+toot: https://mastodon.social/@yuceltoluyag/115629659438859595
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6pwf7kn5s2o
 
 Yine o sabahlardan biri... Bir kalkıyorsun, kahveni almışsın, güne hazırsın sanıyorsun. Sonra bir bakıyorsun GitHub'da kıpkırmızı bir bildirim noktası parlıyor. Tıklıyorsun. Ve evet, 30 yeni bildirim. Şöyle bir göz gezdirince anlıyorsun ki bunların belki sadece biri önemli, geri kalan 29'u ise alakasız bir projede adının geçtiği, artık hiçbir ilgin olmayan bir "issue" takibi. Tam bir baş ağrısı. 🤯
 

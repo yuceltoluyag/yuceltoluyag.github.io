@@ -12,6 +12,8 @@ Summary: How to control CPU frequency and optimize power management with modern 
 Template: article
 Lang: en
 Image: images/arch-linux-cpu-performans-ayarlari-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114989591406409896
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtoeddyik2j
 
 ## CPU Power Management and Performance Settings on Arch Linux
 

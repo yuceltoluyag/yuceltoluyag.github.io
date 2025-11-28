@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/claws-sonic-v1-rgb-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987790374839792
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsurrgaj22p
 
 !!! warning "Not an Advertisement, This content does not contain sponsorship, paid promotion or advertising. I bought the product with my own money and paid the tax, and I'm sharing my experiences. There is no advertising or partnership with the Claw's brand. It's completely my own experience."
 

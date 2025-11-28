@@ -9,6 +9,8 @@ Image: images/arch-linux-pacsave-dosyalari-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115553534312259706
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6psml5kks2e
 
 Daha önceki bir yazıda `.pacnew` dosyalarının ne kadar baş ağrıtabileceğini konuşmuştuk, değil mi? O dosyalar genelde "Dikkat et, yeni ayar geldi" diye bağırır. Ama bu `.pacsave` dosyaları? Onlar tam tersi bir durumda ortaya çıkıyor ve genelde iyi ki oradalar.
 

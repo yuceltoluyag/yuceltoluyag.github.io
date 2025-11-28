@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/spotify-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114978651581920868
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqcduquak24
 
 ## Neden?
 

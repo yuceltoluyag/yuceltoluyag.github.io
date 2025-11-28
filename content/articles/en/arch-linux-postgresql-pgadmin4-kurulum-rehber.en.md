@@ -9,6 +9,8 @@ summary: A sincere and understandable guide for beginners that explains the proc
 template: article
 Image: images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115036508906982668
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwikaknsa22l
 
 🚀 **Introduction**
 

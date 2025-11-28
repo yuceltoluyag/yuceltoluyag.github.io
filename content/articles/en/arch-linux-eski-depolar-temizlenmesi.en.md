@@ -9,6 +9,8 @@ Status: published
 Summary: Everything You Need to Know About Cleaning Up Old Repositories for Arch Linux Users
 Image: images/arch-linux-yeni-pacman-ayarlari-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987844204512704
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsvklbvis2e
 
 ## Everything You Need to Know About Cleaning Up Old Arch Linux Repositories
 

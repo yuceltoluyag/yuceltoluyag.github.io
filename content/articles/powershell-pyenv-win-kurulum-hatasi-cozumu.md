@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/Microsoft-PowerShell-Archive-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987643401547407
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvssmcklmk2t
 
 ## PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü 🎯
 

@@ -10,8 +10,9 @@ Summary: In this guide, we explain step by step how to analyze USB device power 
 Template: article
 Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989692214124173
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtovhjtec25
 
----
 
 ## 🖥️ USB Power Management and Kernel Module Analysis Guide on Arch Linux
 

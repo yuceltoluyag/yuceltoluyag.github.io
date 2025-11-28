@@ -12,6 +12,8 @@ Series: Docker
 Series_index: 1
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989772931815244
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqxwlfyk2p
 
 **Docker**, modern yazılım geliştirme ve dağıtım dünyasının vazgeçilmez araçlarından biri.
 Peki, **Arch Linux’ta Docker nasıl kurulur ve yapılandırılır?** Bu rehberde hem **kurulum adımlarını** hem de **temel kullanım ipuçlarını** adım adım öğreneceksiniz.

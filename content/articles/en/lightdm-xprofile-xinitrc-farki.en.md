@@ -10,6 +10,8 @@ Summary: If you're using a display manager like LightDM, why doesn't your `.xini
 Template: article
 Image: images/xinitvsxprofile-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989004771704509
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtg2l2sts2z
 
 
 ## Why Should You Use `.xprofile` If You're Using LightDM?

@@ -9,6 +9,8 @@ Image: images/ai-detector-sacmaliklari-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115537111582575198
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m5gt5v5br22b
 
 Yeni çağın komedisine hoş geldin.
 Artık çok düzgün yazarsan **suçlusun.**

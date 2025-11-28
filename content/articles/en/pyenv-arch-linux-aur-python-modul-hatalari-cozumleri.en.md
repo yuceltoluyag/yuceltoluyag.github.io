@@ -9,6 +9,8 @@ Status: published
 Summary: We explain step by step the Python module errors encountered when compiling AUR packages with pyenv on Arch Linux and their solutions.
 Template: article
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989740616828598
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqjb27e222
 
 Python development environments made easier by **pyenv** can cause some problems when installing AUR packages on Arch Linux. Especially when you change the system Python version with the `pyenv global` command, you are likely to get missing module errors in Python packages you are trying to install from AUR.
 

@@ -12,8 +12,10 @@ Status: published
 Template: article
 Image: images/archlinuxlampp-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982780512488089
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqnjoikgc27
 
----
+
 
 Hello! A long time ago, I switched to Arch Linux. However, I never had the opportunity to transfer my notes to my blog. My future articles will be about Arch Linux. If there are questions, I will occasionally share articles for distributions like Ubuntu and Linux Mint.
 

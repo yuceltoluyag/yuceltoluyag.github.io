@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/linux_samba-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982722753677108
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqmq6nzak2x
 
 Hello! I've prepared a guide explaining how to access resources such as shared files and printers from Windows through Linux. This topic was asked to me about 2-3 months ago, but I couldn't answer it yet due to workload. Now, I'll cover the topic from start to finish and collect all settings in a single article. Don't worry, everything will be explained step by step!
 

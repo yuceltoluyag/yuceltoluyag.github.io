@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/linux_windows10_uefi_format-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114994518552013527
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6nroew2i22m
 
 ## Creating UEFI Windows 10 Format USB on Linux
 
@@ -61,6 +63,9 @@ After the process is complete, restart your computer and **boot with USB disk fr
 
 ## 5. Conclusion
 
-As you can see, we created a UEFI supported Windows 10 format USB through Linux. If you're new to Linux, instead of making a sudden complete transition, using a dual operating system for a gradual transition may be better. **For more information, you can read this article:** [Linux for Beginners](/yeni-baslayanlar-linux-surumu/){: target="\_blank" rel="noopener noreferrer"}
+As you can see, we created a UEFI supported Windows 10 format USB through Linux. If you're new to Linux, instead of making a sudden complete transition, using a dual operating system for a gradual transition may be better. **For more information, you can read this article:** 
+
+- [Linux for Beginners](/en/yeni-baslayanlar-linux-surumu/)
+- [Guide to Booting ISO from a USB Stick](/en/usb-bellekten-iso-onyukleme-rehberi)
 
 If you have questions or errors you received during installation, you can leave a comment. Good work!

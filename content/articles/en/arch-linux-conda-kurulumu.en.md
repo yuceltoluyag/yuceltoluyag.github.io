@@ -10,6 +10,8 @@ Status: published
 Template: article
 Lang: en
 Image: images/conda-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985320597394764
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrrnueaus2k
 
 ## Arch Linux Conda Installation and Management
 

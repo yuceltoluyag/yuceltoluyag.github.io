@@ -13,6 +13,8 @@ Series: Git
 Series_index: 6
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114987992573967805
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvswrrlrmc27
 
 Yazılım geliştirmede sürekli karşılaştığımız bir zorluk var: **anlamlı commit mesajları yazmak**. Hiç düşündünüz mü, bu rutini otomatikleştirebilir misiniz? İyi haber: **GitHub Copilot** artık yaptığınız değişiklikleri analiz edip anlamlı commit mesajları önerebiliyor! 🚀
 

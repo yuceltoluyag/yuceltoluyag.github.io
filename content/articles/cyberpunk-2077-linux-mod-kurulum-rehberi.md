@@ -10,6 +10,8 @@ Summary: Cyberpunk 2077'yi Linux'ta modlayın! Paketlenmiş ve paketlenmemiş s�
 Template: article
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989718619228793
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtq6xfrkc2z
 
 ## 🚀 Giriş
 

@@ -13,6 +13,8 @@ Template: article
 Series: Android Rehberleri
 Series_index: 1
 Image: images/crDroid-95-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/115011891140145918
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lw5vf4k4wk2t
 
 ## MediaTek IMEI Yedek Alma - Onarma Rehberi 📱
 

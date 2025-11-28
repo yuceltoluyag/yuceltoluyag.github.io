@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/yunohost-hata-cozumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987804407152808
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsuxvsm4k2w
 
 ## 🚀 Introduction
 

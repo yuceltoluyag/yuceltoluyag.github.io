@@ -10,6 +10,8 @@ Summary: We explain step by step what the C++17 compilation error encountered wh
 Template: article
 Image: images/fckthisnodejsharp-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114988895289770969
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvteh6tzyk2j
 
 ## C++17 Compilation Error and Solution When Installing Sharp Module in Node.js
 

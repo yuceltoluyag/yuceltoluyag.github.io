@@ -9,6 +9,8 @@ Summary: We explain step by step the necessary steps, dependencies and solutions
 Template: article
 Image: images/playwright-report-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115039808506283062
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwjxyjgoss2t
 
 **Playwright** has become very popular in recent years for end-to-end (E2E) testing of web applications. Being able to test different browsers such as Chromium, Firefox and WebKit with a single API provides great convenience. However, when it comes to installing Playwright on **Arch Linux**, things may not always go smoothly. Various dependencies, missing libraries and frequent package changes on AUR can prolong the installation process.
 

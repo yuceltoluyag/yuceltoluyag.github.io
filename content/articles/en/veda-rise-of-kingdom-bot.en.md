@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/rokbot-gui-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114985410694158553
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrssnqnfs2v
 
 🚨 **The End of a Journey: Farewell to Rise of Kingdom Bot** 🚨
 

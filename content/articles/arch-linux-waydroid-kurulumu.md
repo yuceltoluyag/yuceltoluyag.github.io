@@ -11,6 +11,8 @@ Series: Waydroid
 Series_index: 1
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115487290533303352
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k522v5c2s
 
 ## Giriş
 

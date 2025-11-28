@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/her-turk-gencinin-izlemesi-gereken-belgeseller-1-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984443173742176
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrf7pqs2s2p
 
 📽️ **Her Türk Gencinin İzlemesi Gereken Belgeseller Serisi 1**
 

@@ -11,6 +11,8 @@ Status: published
 summary: "X11 ortamında Proton Authenticator butonlarının görünmemesi sorununu yaşıyorsanız, `WEBKIT_DISABLE_DMABUF_RENDERER` parametresi ile kesin çözümü bu yazıda bulabilirsiniz."
 Template: article
 Image: images/x11-proton-authenticator-buton-gorunmeme-cozumu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/115001784626415130
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvz55y7ds22s
 
 ## 1. Giriş 🌟
 

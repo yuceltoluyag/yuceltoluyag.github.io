@@ -10,6 +10,8 @@ Summary: Arch Linux Kullanıcıları İçin Eski Depoların Temizlenmesi Hakkın
 Image: images/arch-linux-yeni-pacman-ayarlari-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114987844204512704
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsvklbvis2e
 
 ## Arch Linux Eski Depoların Temizlenmesi Hakkında Bilmeniz Gereken Her Şey
 

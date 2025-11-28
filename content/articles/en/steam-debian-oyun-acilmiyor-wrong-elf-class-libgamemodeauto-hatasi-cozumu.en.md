@@ -9,6 +9,8 @@ Summary: Are your Steam games not opening on Debian? Learn two different methods
 Template: article
 Image: images/linux-girl-steam-debian-elf-class-gamemode-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115141057835929402
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lxwxi6wcj22i
 
 For Linux users, Steam is the indispensable gateway to the gaming world. However, when trying to open games on Debian, you may encounter **"wrong ELF class: ELFCLASS32/64"**, **"libgamemodeauto.so preload cannot be preloaded"** or **FMOD preload errors**.
 

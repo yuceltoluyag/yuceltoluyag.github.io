@@ -10,8 +10,10 @@ Summary: Is your disk space looking low in Arch Linux? Why does the system show 
 Template: article
 Image: images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989568251575864
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtnzyjgxk2a
 
----
+
 
 ## 🎯 Introduction
 

@@ -8,6 +8,8 @@ Status: published
 Summary: A step-by-step guide to safely installing Clair Obscur: Expedition 33 mods using Vortex and Proton on Linux environments.
 Template: article
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115364084679074024
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m2zyajubwc2h
 
 Linux gaming modding is often a more challenging process compared to Windows users, especially for games running through Proton or Wine. Due to differences in file paths, mod managers like **Vortex** can encounter errors such as **ENOTDIR**.
 In this guide, we'll show you step-by-step how to install mods using **Vortex** and **Nexus Mods** for the game **Clair Obscur: Expedition 33** in a **smooth manner on Linux**.

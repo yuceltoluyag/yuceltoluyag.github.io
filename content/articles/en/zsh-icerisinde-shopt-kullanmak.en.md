@@ -12,6 +12,9 @@ Status: published
 Template: article
 Image: images/shopt-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984474656779593
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrfm53rx22k
+
 
 Hello! 😊
 

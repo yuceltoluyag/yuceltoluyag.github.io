@@ -9,6 +9,8 @@ Summary: GhostMirror is an intelligent mirror repository management tool develop
 Template: article
 Image: images/ghostmirror-arch-linux-kullanimi-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115018950335960240
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwaqjc6hps2i
 
 ## 1. Introduction 📌
 

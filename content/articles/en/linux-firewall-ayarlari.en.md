@@ -8,6 +8,8 @@ Status: published
 Summary: Learn firewall configuration on Arch Linux step by step. Increase your security with nftables and ufw! ⚡
 Template: article
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115487284825769650
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k3m47mk2v
 
 ## Guide: Arch Linux Firewall Settings
 

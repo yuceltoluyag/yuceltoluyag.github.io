@@ -11,6 +11,9 @@ Translation: false
 Status: published
 Template: article
 Image: images/ol_vbox_vagrant-min-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984431326966294
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrez76yk22n
+
 
 2019-12-11'da VirtualBox'un yeni sürümü yayınlandı. Ancak bu güncellemeyle birlikte Vagrant ile VirtualBox arasında bir uyumsuzluk sorunu ortaya çıktı. Vagrant'ı çalıştırdığınızda aşağıdaki hata mesajını alabilirsiniz:
 

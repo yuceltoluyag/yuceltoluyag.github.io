@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/vlsub0-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984286254678578
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrcw23trs2g
 
 ## End Subtitle Search with VLSub (Illustrated Guide) 🎬
 

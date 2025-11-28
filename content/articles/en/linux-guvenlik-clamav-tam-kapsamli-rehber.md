@@ -8,6 +8,8 @@ Summary: Forget the previous guide. This time, we're NOT just installing a daemo
 Image: images/linux-clamav-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115553349825156285
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6prd6b42227
 
 ## Introduction: Why Are We Still Dealing With This?
 

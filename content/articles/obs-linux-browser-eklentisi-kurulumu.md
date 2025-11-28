@@ -11,6 +11,9 @@ Translation: false
 Status: published
 Template: article
 Image: images/linux_browser_kaynaklar-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982751660270155
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqn5u3be22w
+
 
 Merhaba! 🎥 Open Broadcaster Software (OBS), video kaydetme ve canlı yayın yapma konusunda en iyi uygulamalardan biridir. Ancak Linux ortamında eklenti ekleme süreci hakkında yeterince Türkçe kaynak bulunmadığı için bu rehberi hazırladım. OBS'nin nasıl kullanılacağını anlatmayacağım, çünkü bu konuda yeterince içerik mevcut. Bu yazıda, **OBS'e Linux Browser eklentisinin nasıl ekleneceğini ve Discord StreamKit entegrasyonunun nasıl yapılacağını** öğreneceğiz.
 

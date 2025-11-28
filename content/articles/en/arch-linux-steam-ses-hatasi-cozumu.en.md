@@ -10,6 +10,8 @@ Summary: A step-by-step guide to fix audio errors in Steam games with Wayland on
 Template: article
 Image: images/Tannenberg-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114988449539697338
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvt5rasgjk24
 
 ## Fixing Steam Audio Errors on Arch Linux
 

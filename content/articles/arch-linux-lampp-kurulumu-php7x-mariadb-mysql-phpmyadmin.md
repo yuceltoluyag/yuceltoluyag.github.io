@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/archlinuxlampp-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982780512488089
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqnjoikgc27
 
 Merhaba! Çok uzun bir süre önce Arch Linux'a geçiş yaptım. Ancak notlarımı bir türlü bloguma aktarma fırsatım olmadı. Bundan sonraki yazılarım, Arch Linux üzerine olacaktır. Sorular gelirse Ubuntu, Linux Mint gibi dağıtımlar için de ara ara yazılar paylaşacağım.
 

@@ -9,6 +9,8 @@ Image: images/bolunmus-rar-dosyalarini-cikarma-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115537092347551990
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m5gsv6cjgs2d
 
 ## Giriş
 

@@ -11,6 +11,8 @@ Series_index: 8
 Template: article
 Image: images/git-gpg-imzali-commit-vscode-arch-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115091931044294738
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lxb5eio2xc27
 
 ## Guide to Solving GPG Signed Commit Problems on VSCode and Arch Linux
 

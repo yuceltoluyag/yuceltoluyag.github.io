@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/amazon-openvpn-kurulumu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985150173003019
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrpblsntc27
 
 ## Merhaba
 

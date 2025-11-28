@@ -9,6 +9,8 @@ Lang: tr
 Translation: false
 Image: images/ngroknasilkullanilir-xl.webp
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115601341245788252
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3m6ddz5wsfk2z
 
 ## Ngrok Kullanımı Resimli Anlatım
 

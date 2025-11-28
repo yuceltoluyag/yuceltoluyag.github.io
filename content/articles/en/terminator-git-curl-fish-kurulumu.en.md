@@ -10,6 +10,9 @@ Status: published
 Template: article
 Image: images/terminator-git-curl-fish-kurulumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982841774461789
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqog6hfyc2i
+
 
 Hello! One of the areas we spend the most time on in Linux is the terminal. So how can we make our terminal more functional and aesthetic? This guide is perfect for you! 💪🚀
 

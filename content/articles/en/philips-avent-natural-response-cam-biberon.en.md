@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/philips-biberon-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987769521620838
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsuifesg22y
 
 !!! warning "Not an Advertisement This content does not contain sponsorship, paid promotion or advertising. I bought the product with my own money, paid the tax and I'm sharing my experiences. There is no advertisement or cooperation with Philips brand. These are completely my own experiences."
 

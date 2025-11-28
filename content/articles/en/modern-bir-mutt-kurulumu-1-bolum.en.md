@@ -12,6 +12,10 @@ Status: published
 Template: article
 Image: images/neomutt_senkron-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984516082310221
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrgaol5pk2k
+
+
 
 Hello! In the first part of this article, we will configure our Mutt settings, which is a great email client. 😊
 

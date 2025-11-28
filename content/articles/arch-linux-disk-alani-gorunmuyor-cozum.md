@@ -11,6 +11,8 @@ Template: article
 Image: images/arch-linux-disk-alani-gorunmuyor-cozum-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989568251575864
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtnzyjgxk2a
 
 ## 🎯 Giriş
 

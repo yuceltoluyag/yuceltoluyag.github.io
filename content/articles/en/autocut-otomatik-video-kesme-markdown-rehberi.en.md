@@ -9,8 +9,10 @@ Summary: Step-by-step guide to automatically cut your videos using Python-based 
 Template: article
 Image: images/autocut-otomatik-video-kesme-markdown-rehberi-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115175811703255586
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6nxfmq3fk2x
 
----
+
 
 ## Automatic Video Cutting with Autocut 🎬
 

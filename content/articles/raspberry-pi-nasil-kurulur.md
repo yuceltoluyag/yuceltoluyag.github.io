@@ -11,6 +11,8 @@ Status: published
 Summary: Raspberry Pi kurulumu adım adım nasıl yapılır? microSD kartı hazırlamaktan SSH ile uzaktan bağlantıya kadar tüm detayları bu rehberde bulabilirsiniz.
 Template: article
 Image: images/raspberry-pi-nasil-kurulur-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987887086983086
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsw5nevtc2j
 
 ## Raspberry Pi Nasıl Kurulur? 🛠️
 

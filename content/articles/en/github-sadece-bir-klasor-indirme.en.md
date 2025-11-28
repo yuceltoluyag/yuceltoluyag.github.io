@@ -11,8 +11,9 @@ Series: Git
 Series_index: 9
 Lang: en
 Image: images/git-sparse-checkout-rehberi-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/115487292715622222
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k66a4fc2d
 
----
 
 ## Introduction
 

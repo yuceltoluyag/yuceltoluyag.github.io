@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/babatest-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982815369929909
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqo2slbok2d
 
 Merhaba! Bloguma uzun bir aradan sonra yazı yazarken, proje oluştururken sıkça kullandığım bir yöntemin **Türkçe Dökümantasyonu**nu yazmak istedim. Bu yöntemin adı **Virtual Host** olarak bilinir. Her projeye bir domain atayarak, kodlama ve proje isimlerinin akılda kalmasını sağlar. Bu yöntem, CSS, JS gibi dosyaların entegrasyonu sırasında rahatlık da sağlar.
 

@@ -10,6 +10,8 @@ Summary: Secure your Linux system by having the screen automatically lock when w
 Template: article
 Image: images/wake-up-lock-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987898406460144
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvswclazsc2e
 
 ## How to Set Automatic Lock Screen When Waking from Sleep Mode with i3lock?
 

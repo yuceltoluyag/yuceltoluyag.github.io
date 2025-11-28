@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/windows-terminal-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985306515279329
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrrio6wlc2s
 
 ## **Merhaba**
 

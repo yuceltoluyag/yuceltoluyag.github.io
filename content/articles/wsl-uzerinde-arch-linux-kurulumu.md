@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/wls-archlinux-kurulumu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985269244740877
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrqxpp7tk2m
 
 ## **Merhaba**
 

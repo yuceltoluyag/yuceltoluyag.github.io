@@ -10,8 +10,10 @@ Template: article
 Image: images/arch-linux-ddos-hizmet-kesintisi-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115091936430498581
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lxb6cglea22c
 
----
+
 
 ### 1. Giriş Bölümü
 

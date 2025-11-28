@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/philips-biberon-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987769521620838
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsuifesg22y
 
 !!! warning "Reklam Değildir Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Philips markasıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir."
 

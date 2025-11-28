@@ -8,6 +8,8 @@ Summary: A step-by-step guide to solving the DaVinci Resolve "Extras in the Down
 Image: images/davinci-resolve-extras-ai-voice-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115520935226400842
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57njhe4vk2g
 
 ## AI Voice Training and Extras Download Issue 🎤
 

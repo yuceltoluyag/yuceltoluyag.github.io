@@ -11,6 +11,8 @@ Status: published
 Summary: MCP (Model Context Protocol) kullanarak tarayıcı otomasyonuna başlamak artık çok kolay! Bu rehberde, tek bir npx komutuyla Puppeteer destekli bir MCP sunucusunun nasıl çalıştırılacağını adım adım öğrenin.
 Template: article
 Image: images/mcp-puppeteer-sunucusu-kurulumu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987857795740048
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsvqk5rnk2n
 
 **MCP (Model Context Protocol)** kullanarak _tarayıcı otomasyonuna_ başlamak mı istiyorsun? Kafa karıştırıcı kurulum adımlarını unut! Bu rehberde, sadece tek bir `npx` komutuyla **Puppeteer destekli bir MCP sunucusunun nasıl çalıştırılacağını** adım adım göstereceğim. Üstelik tüm işlemler Windows ortamında! 💻
 

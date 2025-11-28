@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/AFileIcon-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114978632312203694
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqcbh6xds2m
 
 Merhaba! Bugün, Sublime Text editörü üzerinde kullandığım bazı harika eklenti ve temaları sizlerle paylaşacağım. 🥳
 

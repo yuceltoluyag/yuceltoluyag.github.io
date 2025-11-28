@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/audacious-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114983963606574479
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvr6fcr2jk2m
 
 Years of legendary music 🎵 players **Winamp** and **AIMP** were indispensable for Windows users. However, **Audacious** became one of the best alternatives that offers a similar experience in Linux environment. After trying many MP3 players in the market, I chose Audacious because it offers the most customization.
 

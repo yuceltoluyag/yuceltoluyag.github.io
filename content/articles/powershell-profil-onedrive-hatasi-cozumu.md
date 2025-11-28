@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/windows11-onedrive-sorunu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985346729844921
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrs2mxzok2q
 
 ## Bir Windows 11 Kullanıcısının Hikayesi
 

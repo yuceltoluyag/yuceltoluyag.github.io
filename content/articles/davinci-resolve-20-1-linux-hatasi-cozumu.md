@@ -10,8 +10,9 @@ Template: article
 Image: images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115132940215693139
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lxtdptsnrk2a
 
----
 
 ## 🎬 Giriş: Linux’ta DaVinci Resolve Kullanmak
 

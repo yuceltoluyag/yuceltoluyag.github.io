@@ -11,6 +11,8 @@ Series: Waydroid
 Series_index: 2
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115487280919204708
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k2ofbwk2f
 
 ## Arch Linux'ta Waydroid İnternet ve Boot Sorununun Çözümü
 

@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/ol_vbox_vagrant-min-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984431326966294
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrez76yk22n
 
 On December 11, 2019, the new version of VirtualBox was released. However, with this update, an incompatibility issue arose between Vagrant and VirtualBox. When you run Vagrant, you may receive the following error message:
 

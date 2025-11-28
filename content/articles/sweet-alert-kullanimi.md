@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/sweetalert-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114978582840667535
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqcabumls2o
 
 ## Sweet Alert Nedir?
 

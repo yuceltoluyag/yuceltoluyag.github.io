@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/git_bash-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982170415333865
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqdwttkpk22
 
 In this guide for those experiencing problems creating SSH keys while working with Git, we'll cover the SSH key creation process step by step for both Windows and Linux users. 🛠️
 

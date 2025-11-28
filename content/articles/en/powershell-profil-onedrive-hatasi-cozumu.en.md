@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/windows11-onedrive-sorunu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114985346729844921
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrs2mxzok2q
 
 ## A Windows 11 User's Story
 

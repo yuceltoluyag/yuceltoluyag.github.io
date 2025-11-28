@@ -11,6 +11,8 @@ Series: Git
 Series_index: 7
 Image: images/github-commit-atma-rehberi-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115036480228308801
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwil5efmgs2x
 
 > "Making a Git commit" is like bread and water in the programmer's world. If you're writing code, you have to know how to save your changes to version control system. In this guide, I'll explain the process of **committing** to a project on **GitHub** from scratch, step by step with plenty of examples.
 > **Important update:** We don't send directly to the main repository, instead we work on **our own branch** and always send with **Pull Request (PR)**. I'll also explain how to set up with **virtualenv + duty** to view and test the project locally.

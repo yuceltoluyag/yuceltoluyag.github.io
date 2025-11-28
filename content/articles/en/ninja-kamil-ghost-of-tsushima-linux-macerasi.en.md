@@ -9,8 +9,10 @@ Summary: A humorous look at Ninja Kamil's chaotic, fun-filled and technically pr
 Image: images/ninja_qamil-xl.webp
 Template: article
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115381874559253419
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6nxra5pak2u
 
----
+
 
 ## 🎮 Ninja Kamil's Chaotic Adventure
 

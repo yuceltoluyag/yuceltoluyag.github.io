@@ -10,8 +10,9 @@ Template: article
 Image: images/bing-indexnow-otomatik-dizinleme-seo-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115520882505254523
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57mjuzqn22z
 
----
 
 Harika bir içerik hazırladınız, yayınladınız ama Bing'in sitenizi ziyaret edip bu yeni yazıyı keşfetmesi günler, hatta haftalar mı sürüyor? Ya size "anında" dizine eklenmenin bir yolu var desem?
 

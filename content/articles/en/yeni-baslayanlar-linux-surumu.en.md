@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/ubuntu-logo-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114979001407047632
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqcft5fvc26
 
 ## Best Linux Distributions for Beginners
 

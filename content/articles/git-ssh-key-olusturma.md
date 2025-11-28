@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/git_bash-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982170415333865
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqdwttkpk22
 
 Git üzerinde çalışırken SSH anahtarı oluşturma konusunda sorun yaşayanlar için bu rehberde, Windows ve Linux kullanıcıları için adım adım SSH anahtarı oluşturma sürecini ele alacağız. 🛠️
 

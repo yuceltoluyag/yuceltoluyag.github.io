@@ -11,8 +11,10 @@ Template: article
 Image: images/nvidia-linux-performans-ayari-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114984688481336401
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvripfzduk2y
 
----
+
 
 ## 👋 Merhaba
 

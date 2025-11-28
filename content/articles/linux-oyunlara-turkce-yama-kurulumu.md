@@ -11,6 +11,8 @@ Status: published
 Summary: Linux kullanıcıları için hazırladığımız bu kapsamlı rehberde, oyunlara nasıl Türkçe yama kurulacağını adım adım anlatıyoruz. Wine, Lutris ve yerelleştirme araçlarının nasıl kullanılacağını öğrenin.
 Template: article
 Image: images/linux-oyunlara-turkce-yama-kurulumu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114989499659165818
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtn2ludi22j
 
 ## Giriş
 

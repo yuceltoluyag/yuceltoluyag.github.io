@@ -13,6 +13,8 @@ Template: article
 Image: images/Linux-uzerinde-disk-sifirlama-xl.webp
 Series: Linux-disk
 Series_index: 3
+toot: https://mastodon.social/@yuceltoluyag/114987873115464671
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsvx53tm223
 
 💣 **Linux'ta disk sıfırlama** işlemi, sistem yöneticileri ve teknik kullanıcılar için zaman zaman kaçınılmazdır. Yeni bir kurulum öncesi, eski verileri silerken veya diskleri geri dönüşü olmayacak şekilde temizlerken, doğru yöntemlerle ilerlemek çok önemlidir.
 

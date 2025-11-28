@@ -10,6 +10,8 @@ Template: article
 Series: Waydroid
 Series_index: 2
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115487280919204708
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k2ofbwk2f
 
 ## Waydroid Internet and Boot Problem Solution on Arch Linux
 

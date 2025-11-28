@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/hosts-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984196579615973
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrbokyqnk23
 
 Linux tarafında kullanmak isteyenleri böyle alalım: [Arch Linux](/arch-linux-apache-lampp-sanal-sunucu-kurulumu/){: target="\_blank" rel="noopener noreferrer"} + [Debian](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="\_blank" rel="noopener noreferrer"}
 

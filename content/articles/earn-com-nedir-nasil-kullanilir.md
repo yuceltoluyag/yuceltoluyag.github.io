@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/earncom-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982579879193708
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqkpddpec2s
 
 !!! warning "Önemli Güncelleme; <a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" rel="noopener noreferrer" target="_blank">Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı</a> bu sebeple bu makalenin artık geçerli olmadığını unutmayın. Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil. Yeni sistemde yatırım yap kazan-kaybet mantığı ile çalışıyor."
 

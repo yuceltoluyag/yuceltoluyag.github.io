@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/claws-sonic-v1-rgb-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987790374839792
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsurrgaj22p
 
 !!! warning "Reklam Değildir, Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Claw's markasıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir."
 

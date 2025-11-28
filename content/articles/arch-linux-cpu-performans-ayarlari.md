@@ -13,6 +13,8 @@ Template: article
 Image: images/arch-linux-cpu-performans-ayarlari-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989591406409896
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtoeddyik2j
 
 Arch Linux kullanıyorsan ve özellikle GNOME ya da KDE gibi masaüstü ortamlarından uzak durup i3wm gibi hafif çözümler tercih ediyorsan, sistem performansını kontrol etmek tamamen senin elinde! 💪
 

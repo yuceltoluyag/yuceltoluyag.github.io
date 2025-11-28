@@ -11,6 +11,8 @@ Template: article
 Image: images/Tannenberg-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114988449539697338
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvt5rasgjk24
 
 ## Arch Linux Üzerinde Steam Ses Hatalarını Çözme
 

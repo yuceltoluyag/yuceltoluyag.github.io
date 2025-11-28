@@ -12,8 +12,10 @@ Status: published
 Template: article
 Image: images/laravel-valet-kurulumu-linux-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984831738660096
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrkqgach22k
 
----
+
 
 ## Hello 👋
 

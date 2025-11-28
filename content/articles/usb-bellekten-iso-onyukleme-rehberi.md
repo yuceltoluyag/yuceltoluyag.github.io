@@ -8,6 +8,8 @@ Image: images/usb-bellekten-iso-onyukleme-rehberi-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115537037823483801
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m5gs4pjj3c2q
 
 Önyüklenebilir bir USB sürücü oluşturmak, hem BT uzmanları hem de meraklı kullanıcılar için temel bir beceridir.  
 Bu yazıda, yalnızca terminal komutlarını kullanarak Linux üzerinde **Windows önyüklenebilir USB sürücüsü** nasıl oluşturulur adım adım öğreneceksiniz.  

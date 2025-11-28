@@ -10,6 +10,8 @@ Summary: How do you install and use Transmission on Arch Linux? In this guide, y
 Template: article
 Image: images/Transmission-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114988995540919447
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtfvwbmh22c
 
 ## How to Install and Use Transmission on Arch Linux?
 

@@ -9,8 +9,9 @@ Summary: Quickly notify Google about new or deleted pages with Google Indexing A
 Template: article
 Image: images/google-indexing-api-python-kullanim-rehberi-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115520725904142412
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57kcm5ses2g
 
----
 
 ## 🚀 What is Google Indexing API?
 

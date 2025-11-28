@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/linux_windows10_uefi_format-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114994518552013527
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6nroew2i22m
 
 ## Linux'ta UEFI Windows 10 Format USB Oluşturma
 
@@ -62,6 +64,9 @@ WoeUSB'yi açın ve şu adımları takip edin:
 
 ## 5. Sonuç
 
-Gördüğünüz gibi, Linux üzerinden UEFI destekli Windows 10 format USB'si oluşturduk. Eğer Linux'a yeni başladıysanız, aniden tam geçiş yapmak yerine çift işletim sistemi kullanarak aşamalı bir geçiş yapmanız daha iyi olabilir. **Daha fazla bilgi için şu makaleyi okuyabilirsiniz:** [Yeni Başlayanlar İçin Linux](/yeni-baslayanlar-linux-surumu/){: target="\_blank" rel="noopener noreferrer"}
+Gördüğünüz gibi, Linux üzerinden UEFI destekli Windows 10 format USB'si oluşturduk. Eğer Linux'a yeni başladıysanız, aniden tam geçiş yapmak yerine çift işletim sistemi kullanarak aşamalı bir geçiş yapmanız daha iyi olabilir. **Daha fazla bilgi için şu makaleyi okuyabilirsiniz:** 
+
+- [Yeni Başlayanlar İçin Linux](/yeni-baslayanlar-linux-surumu/)
+- [USB Bellekten ISO Önyükleme Rehberi](/usb-bellekten-iso-onyukleme-rehberi)
 
 Eğer sorularınız veya kurulum sırasında aldığınız hatalar varsa yorum bırakabilirsiniz. İyi çalışmalar!

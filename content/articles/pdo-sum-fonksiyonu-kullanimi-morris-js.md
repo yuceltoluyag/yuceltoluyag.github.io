@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/php_morris-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114983987991038402
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvr6ofrqf22y
 
 Merhaba! MySQL (phpMyAdmin) üzerinde bir tablodaki belirli sütunların toplamını almak için keşfettiğim basit ve etkili bir fonksiyonun kullanımını ele alacağız. Ayrıca, en sevdiğim grafik kütüphanelerinden biri olan [morris.js](http://morrisjs.github.io/morris.js/){: target="\_blank" rel="noopener noreferrer"} ile bu verileri görselleştireceğiz. 🎨📊
 

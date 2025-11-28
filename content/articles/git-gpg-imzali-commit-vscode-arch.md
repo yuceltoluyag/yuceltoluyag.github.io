@@ -12,6 +12,8 @@ Template: article
 Image: images/git-gpg-imzali-commit-vscode-arch-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115091931044294738
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lxb5eio2xc27
 
 ## VSCode ve Arch Linux Üzerinde GPG İmzalı Commit Sorunlarını Çözme Rehberi
 

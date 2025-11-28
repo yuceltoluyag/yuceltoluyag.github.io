@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/facebook-5000-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984312882757495
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrdek6ta22e
 
 Facebook Toplu Arkadaş Ekleme (Gruba + Süreli) videosundan sonra **"Arkadaş ekleme kodu var mı?"** şeklinde çok sayıda soru aldım. Bu yazıyı ve taslağı daha önce hazırlamıştım, ancak dalgınlığıma ve iş yoğunluğuna bağlı olarak unuttum. 😅
 
