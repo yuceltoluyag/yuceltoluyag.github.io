@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/laravel_7x_ide_helper-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984850205763176
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrkyu6vyk2k
 
 ## Laravel IDE Helper Nedir? 🚀
 

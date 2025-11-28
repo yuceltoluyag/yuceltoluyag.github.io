@@ -10,6 +10,8 @@ Status: published
 Summary: Qwen 3 ve Qwen3-Coder-Plus üzerinde MCP server’ları nasıl aktif edeceğinizi adım adım anlatıyoruz. Ayar dosyası düzenleme, CLI kullanımı ve test etme sürecini bu rehberde bulabilirsiniz.
 Template: article
 Image: images/qwen-active-mcp-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/115039835284478632
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwjye7uqls27
 
 Yapay zekâ destekli geliştirme araçlarının yükselişiyle birlikte **Model Context Protocol (MCP)** server’ları da hayatımıza girdi. Bu protokol sayesinde farklı servisleri Qwen gibi büyük dil modellerine kolayca entegre edebiliyor, tarayıcı otomasyonu, bağlamsal analizler ve hatta sihirli API bağlantıları kurabiliyoruz.
 

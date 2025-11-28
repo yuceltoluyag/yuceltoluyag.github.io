@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/comodo_firewall-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114994909881292851
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6ntptgoks2e
 
 ## Merhaba! 👋
 

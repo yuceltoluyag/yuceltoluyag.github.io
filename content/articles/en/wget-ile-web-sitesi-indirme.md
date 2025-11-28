@@ -8,6 +8,8 @@ Summary: Downloading a site with Wget is an art. With the wrong command, the sit
 Image: images/wget-ile-web-sitesi-indirme-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115553477990222016
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6ps6v5lt22d
 
 Downloading a site on Linux... `wget` immediately comes to mind. Everyone recommends it, you know. But that command, when used with the wrong parameters, turns what you download into a complete mess. Broken links, empty images... it happened to me recently, and I got annoyed. 😤 That's why I'm here to explain that magical combination.
 

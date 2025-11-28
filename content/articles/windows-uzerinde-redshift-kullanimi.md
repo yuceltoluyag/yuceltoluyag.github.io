@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/redshift_windows-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984403055247067
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvren7oujs2e
 
 ## 🌙 Redshift Nedir?
 

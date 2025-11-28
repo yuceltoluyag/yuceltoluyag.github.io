@@ -10,6 +10,8 @@ Summary: How to set up Raspberry Pi step by step? You can find all the details f
 Template: article
 Image: images/raspberry-pi-nasil-kurulur-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987887086983086
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsw5nevtc2j
 
 ## How to Set Up Raspberry Pi? 🛠️
 

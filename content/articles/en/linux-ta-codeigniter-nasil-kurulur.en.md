@@ -10,6 +10,8 @@ Summary: Looking to install CodeIgniter on your Linux server? Learn CodeIgniter 
 Template: article
 Image: images/codeigniter-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114983947794837501
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvr65ip5y22q
 
 ## First Step When Starting a New Project: Installing CodeIgniter 💻
 

@@ -11,6 +11,8 @@ Status: published
 Summary: Linux sunucuna CodeIgniter kurulumu mu arıyorsun? Bu rehberde adım adım, kolayca CodeIgniter kurulumunu öğrenerek projene hemen başla!
 Template: article
 Image: images/codeigniter-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114983947794837501
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvr65ip5y22q
 
 ## Yeni Bir Projeye Başlarken İlk Adım: CodeIgniter'ı Kurmak 💻
 

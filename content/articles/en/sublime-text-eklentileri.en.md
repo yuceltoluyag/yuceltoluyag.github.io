@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/AFileIcon-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114978632312203694
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqcbh6xds2m
 
 Hello! Today I'll share some amazing plugins and themes I use on the Sublime Text editor with you. 🥳
 

@@ -11,6 +11,8 @@ Status: published
 Summary: LightDM gibi bir display manager kullanıyorsanız `.xinitrc` dosyanız neden çalışmaz? Doğru başlangıç dosyasının `.xprofile` olduğunu anlatan bu rehber, kafa karışıklığını ortadan kaldırıyor.
 Template: article
 Image: images/xinitvsxprofile-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114989004771704509
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtg2l2sts2z
 
 ## LightDM Kullanıyorsan Neden `.xprofile` Kullanmalısın?
 

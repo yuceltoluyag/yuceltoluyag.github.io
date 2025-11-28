@@ -7,8 +7,12 @@ Slug: yunohost-robots-txt-olusturmak
 Authors: yuceltoluyag
 Status: published
 Image: images/yunohost-robotstxt-xl.webp
+Summary: Yunohost'ta arama motorlarının web sitenizi nasıl taradığını kontrol etmek için robots.txt dosyasının nasıl oluşturulacağını adım adım öğrenin.
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114987831204439588
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsve4rjq22f
+
 
 🚀 **Web sitenizin arama motorları tarafından nasıl tarandığını kontrol etmek ister misiniz?** Yunohost üzerinde barındırdığınız uygulamalara özel `robots.txt` dosyası oluşturarak bu kontrolü tamamen elinize alabilirsiniz.
 

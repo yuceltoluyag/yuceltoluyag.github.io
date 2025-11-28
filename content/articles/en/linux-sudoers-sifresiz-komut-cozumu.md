@@ -10,6 +10,8 @@ Lang: en
 Status: published
 Template: article
 Image: images/linux-sudoers-sifresiz-komut-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/115520919386793284
+bluesky:https://bsky.app/profile/yuceltoluyag.github.io/post/3m57n2hvd6c2y
 
 ## Introduction
 

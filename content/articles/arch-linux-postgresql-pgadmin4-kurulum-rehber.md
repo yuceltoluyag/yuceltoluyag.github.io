@@ -10,8 +10,10 @@ Template: article
 Image: images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115036508906982668
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwikaknsa22l
 
----
+
 
 🚀 **Giriş**
 

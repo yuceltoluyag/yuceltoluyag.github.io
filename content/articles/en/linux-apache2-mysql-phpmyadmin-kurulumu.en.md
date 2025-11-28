@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982042077615978
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqd2nnyk22r
 
 
 We explain step by step how to install Apache2, MySQL and PhpMyAdmin on Debian and its derivatives. It serves as a guide for those who want to install Apache directly instead of using XAMPP.

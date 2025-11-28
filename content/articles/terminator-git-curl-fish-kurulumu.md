@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/terminator-git-curl-fish-kurulumu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982841774461789
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqog6hfyc2i
 
 Merhaba! Linux’ta en çok vakit geçirdiğimiz alanlardan biri terminaldir. Peki terminalimizi nasıl daha işlevsel ve estetik hale getirebiliriz? İşte bu rehber tam size göre! 💪🚀
 

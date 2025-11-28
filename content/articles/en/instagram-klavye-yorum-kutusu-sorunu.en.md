@@ -10,6 +10,8 @@ Summary: Keyboard covering the comment box in Instagram can be frustrating on An
 Template: article
 Image: images/instagram-klavye-yorum-kutusu-sorunu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989547479517088
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtnqxa6k22q
 
 ---
 

@@ -10,6 +10,8 @@ Summary: In this comprehensive guide prepared for Linux users, we explain step b
 Template: article
 Image: images/linux-oyunlara-turkce-yama-kurulumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989499659165818
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtn2ludi22j
 
 ## Introduction
 

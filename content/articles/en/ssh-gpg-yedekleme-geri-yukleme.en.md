@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/ssh-gpg-yedekleme-geri-yukleme-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114985374923504182
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrshibzbk27
 
 ## Backing Up and Restoring SSH and GPG Keys 🔑
 

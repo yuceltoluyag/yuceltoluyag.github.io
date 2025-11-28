@@ -11,6 +11,8 @@ Series: Linux-disk
 Series_index: 2
 Template: article
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989756718275526
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqqee2zk2w
 
 ## 💽 Mounting and Unmounting Disks in Linux: Basic Information
 

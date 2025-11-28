@@ -9,8 +9,8 @@ Summary: DaVinci Resolve 20.1 not opening on Linux? Learn the easy solution to t
 Template: article
 Image: images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp
 Lang: en
-
----
+toot: https://mastodon.social/@yuceltoluyag/115132940215693139
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lxtdptsnrk2a
 
 ## 🎬 Introduction: Using DaVinci Resolve on Linux
 

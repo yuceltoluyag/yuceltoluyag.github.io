@@ -11,8 +11,10 @@ Template: article
 Lang: en
 Series: Docker
 Series_index: 1
+toot: https://mastodon.social/@yuceltoluyag/114989772931815244
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqxwlfyk2p
 
----
+
 
 **Docker** is one of the indispensable tools in the modern software development and distribution world.
 So, **how to install and configure Docker on Arch Linux?** In this guide, you will learn both **installation steps** and **basic usage tips** step by step.

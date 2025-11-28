@@ -13,6 +13,8 @@ Series: Docker
 Series_index: 2
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989785173302285
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtr4xflq22m
 
 ## Arch Linux'ta Ollama ve WebUI Kurulumu (Docker ile) 🤖
 

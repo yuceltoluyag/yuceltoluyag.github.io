@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/pelican-redirect-eklentisi-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114985388328975051
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrsnkpo2c2r
 
 One of the biggest problems encountered when using static site generators is that old links stop working after changes to site structure or URLs. 🤔 This can be very harmful for SEO and can cause you to lose your visitors. Especially external links to your content that ranks high on search engines like Google will result in "404 Page Not Found" errors after URL changes.
 

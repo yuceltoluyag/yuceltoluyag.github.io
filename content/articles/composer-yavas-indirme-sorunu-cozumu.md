@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/composer-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984413472275351
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvresit6uk2o
 
 ## Composer Yavaş İndirme Sorunu ve Çözümleri ⚡
 

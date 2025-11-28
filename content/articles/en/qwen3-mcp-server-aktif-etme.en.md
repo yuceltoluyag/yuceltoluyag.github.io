@@ -9,6 +9,8 @@ Summary: We explain step by step how to activate MCP servers on Qwen 3 and Qwen3
 Template: article
 Image: images/qwen-active-mcp-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115039835284478632
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwjye7uqls27
 
 With the rise of AI-assisted development tools, **Model Context Protocol (MCP)** servers have also entered our lives. Thanks to this protocol, we can easily integrate different services with large language models like Qwen, perform browser automation, contextual analyses, and even create magical API connections.
 

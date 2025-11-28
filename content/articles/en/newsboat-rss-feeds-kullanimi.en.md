@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/newsboat-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984877153539510
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrley45ms2n
 
 [responsive_img src="/images/newsboat-xl.webp" alt="Newsboat" /]
 

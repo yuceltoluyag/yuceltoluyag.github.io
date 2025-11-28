@@ -12,6 +12,8 @@ Series_index: 7
 Image: images/github-commit-atma-rehberi-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115036480228308801
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwil5efmgs2x
 
 > “Git commit atmak" yazılımcı dünyasının ekmek-su ikilisi gibi bir şeydir. Eğer kod yazıyorsan, değişikliklerini versiyon kontrol sistemine kaydetmeyi bilmek zorundasın. Bu rehberde sana, **GitHub** üzerinde bir projeye **commit atma** sürecini sıfırdan, adım adım ve bol örnekle anlatacağım.
 > **Önemli güncelleme:** Ana repoya doğrudan değil, **kendi branch’inde** çalışıp her zaman **Pull Request (PR)** ile gönderiyoruz. Ayrıca projeyi lokalde görüp test etmek için **virtualenv + duty** ile nasıl ayağa kaldıracağını da anlatıyorum.

@@ -12,6 +12,8 @@ Image: images/copilot-commit-xl.webp
 Series: Git
 Series_index: 6
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987992573967805
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvswrrlrmc27
 
 There's a challenge we constantly face in software development: **writing meaningful commit messages**. Have you ever thought whether you could automate this routine? Good news: **GitHub Copilot** can now analyze your changes and suggest meaningful commit messages! 🚀
 

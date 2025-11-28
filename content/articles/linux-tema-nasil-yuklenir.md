@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982081917153180
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqdfn5qbk2f
 
 Merhaba, uzun süredir bloga bir şeyler yazmıyordum. Daha önce Unity kullanırken video çekmiştim, ancak sabit diskimin bozulması ve sıcak hava derken günler hızla geçti. 😃 Linux'ta tema yükleme işlemi oldukça kolaydır. Hangi dağıtımı veya masaüstü ortamını kullanıyor olursanız olun, süreç genellikle benzerdir. Örneğin, Unity için `unity-tweak-tool` kullanılırken, Gnome için `gnome-tweak-tool` tercih edilmektedir. XFCE kullandığım dönemde, özelleştirmeleri doğrudan yapabiliyorduk (yanılıyor olabilirim 🤔).
 

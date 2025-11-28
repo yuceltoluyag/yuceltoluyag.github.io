@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/babatest-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982815369929909
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqo2slbok2d
 
 Hello! After a long break, I'm writing on my blog to document the **English Documentation** of a method I frequently use when creating projects. This method is called **Virtual Host**. By assigning a domain to each project, it helps in remembering coding and project names. This method also provides convenience during integration of files like CSS and JS.
 

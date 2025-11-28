@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/linux_samba-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114982722753677108
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqmq6nzak2x
 
 Merhaba! Windows üzerinden paylaşılan dosya, yazıcı gibi kaynaklara Linux üzerinden nasıl erişebileceğinizi anlatan bir rehber hazırladım. Bu konu bana yaklaşık 2-3 ay önce sorulmuştu, ancak yoğunluk nedeniyle henüz yanıtlayamamıştım. Şimdi, konuyu baştan sona ele alacağım ve tüm ayarları tek bir yazıda toplayacağım. Korkmanıza gerek yok, her şey adım adım açıklanacak!
 

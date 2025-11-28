@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/comment-worker-kurulumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987818064535152
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsv5xredc2e
 
 ## Static Comment System with Pelican: comment-worker Installation ✨
 

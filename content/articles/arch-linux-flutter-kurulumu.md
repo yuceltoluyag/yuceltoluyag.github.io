@@ -11,6 +11,8 @@ Template: article
 Image: images/arch-linux-flutter-kurulumu-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989730580607107
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqdlvgbs2y
 
 ## Arch Linux'ta Flutter Kurulumu: Android Studio Olmadan Tam Kurulum Rehberi
 

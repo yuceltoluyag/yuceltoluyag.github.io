@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/staticman-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985225233044622
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrqd3c6ys24
 
 ## **Merhaba** 😄
 

@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/ucretsiz-oyunlar-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984814860970146
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrkdtzsy223
 
 ## Güncel Ücretsiz Oyunlar 🎮🚀
 

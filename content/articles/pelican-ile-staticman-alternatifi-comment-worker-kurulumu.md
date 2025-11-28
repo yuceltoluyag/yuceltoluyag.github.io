@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/comment-worker-kurulumu-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987818064535152
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsv5xredc2e
 
 ## Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu ✨
 

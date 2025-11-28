@@ -7,7 +7,7 @@ Slug: wineprefix-nedir-nasil-kullanilir
 Authors: yuceltoluyag
 Status: published
 Summary: What is WinePrefix, how is it created and used for different games? Learn the necessary steps to run Windows games smoothly on Linux with Wine in this guide.
-Images: images/wineprefix-nedir-nasil-kullanilir-xl.webp
+Image: images/wineprefix-nedir-nasil-kullanilir-xl.webp
 Lang: en
 
 ## 🍷 What is WinePrefix and Why is it Important?

@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/php_morris-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114983987991038402
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvr6ofrqf22y
 
 Hello! We will discuss the use of a simple and effective function I discovered to get the sum of specific columns in a table on MySQL (phpMyAdmin). In addition, we will visualize this data using [morris.js](http://morrisjs.github.io/morris.js/){: target="\_blank" rel="noopener noreferrer"}, one of my favorite chart libraries. 🎨📊
 

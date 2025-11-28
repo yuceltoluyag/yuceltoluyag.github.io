@@ -10,6 +10,8 @@ Lang: en
 Status: published
 Series: Git
 Series_index: 10
+toot: https://mastodon.social/@yuceltoluyag/115629659438859595
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6pwf7kn5s2o
 
 Another one of those mornings... You wake up, grab your coffee, thinking you're ready for the day. Then you see a bright red notification dot on GitHub. You click it. And yes, 30 new notifications. A quick glance tells you only one of them is perhaps important, the other 29 are "mentions" from irrelevant projects you no longer care about. A total headache. 🤯
 

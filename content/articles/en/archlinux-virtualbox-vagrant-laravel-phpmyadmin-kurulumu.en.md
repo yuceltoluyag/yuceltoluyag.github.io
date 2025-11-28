@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/pic-selected-190916-0747-49-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984353173118702
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrdwpytls2g
 
 ## Installing VirtualBox 🚀
 

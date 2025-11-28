@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/linux_browser_kaynaklar-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982751660270155
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqn5u3be22w
 
 Hello! 🎥 Open Broadcaster Software (OBS) is one of the best applications for video recording and live streaming. However, since there aren't enough Turkish resources about the plugin installation process on Linux environment, I prepared this guide. I won't explain how to use OBS, because there's already enough content about this topic. In this article, we'll learn **how to add the Linux Browser plugin to OBS and how to integrate Discord StreamKit**.
 

@@ -9,6 +9,8 @@ Summary: Learn step by step how to install, configure and solve common issues wi
 Template: article
 Image: images/archlinux-valkey-redis-kurulumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115042524487259369
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwl7fttjh22q
 
 ## Introduction: Redis or Valkey? 🤔
 

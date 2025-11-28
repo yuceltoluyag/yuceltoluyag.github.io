@@ -10,8 +10,10 @@ Summary: Flutter development environment setup on Arch Linux without Android Stu
 Template: article
 Image: images/arch-linux-flutter-kurulumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989730580607107
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqdlvgbs2y
 
----
+
 
 ## Flutter Installation on Arch Linux: Complete Installation Guide Without Android Studio
 

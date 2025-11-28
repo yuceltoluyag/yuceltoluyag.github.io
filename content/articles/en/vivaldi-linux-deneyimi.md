@@ -8,6 +8,8 @@ Summary: As someone who suffered through Internet Explorer, I give Chrome its du
 Image: images/vivaldi-linux-deneyim-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115629467635264628
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6ptnywkmk26
 
 ## Why Vivaldi on Linux? What's the Big Deal?
 

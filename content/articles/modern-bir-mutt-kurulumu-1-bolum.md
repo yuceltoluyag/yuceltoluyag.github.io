@@ -13,6 +13,9 @@ Translation: false
 Status: published
 Template: article
 Image: images/neomutt_senkron-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984516082310221
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrgaol5pk2k
+
 
 Merhaba! Bu yazımızın ilk bölümünde, harika bir e-posta istemcisi olan Mutt ayarlarımızı yapılandıracağız. 😊
 

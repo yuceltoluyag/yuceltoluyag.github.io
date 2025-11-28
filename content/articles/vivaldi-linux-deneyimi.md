@@ -9,6 +9,8 @@ Image: images/vivaldi-linux-deneyim-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115629467635264628
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6ptnywkmk26
 
 ## Linux'ta Neden Vivaldi? Olayı Ne?
 

@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/imap_openssl_terminal-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984629648133106
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrhur7z3c2l
 
 [# Modern mutt setup part 1](/modern-bir-mutt-kurulumu-1-bolum){: target="\_blank" rel="noopener noreferrer"} while explaining the **remote** parts, I mentioned how important they are. When each email has its own interface, its own remote tag, and tags that change by language, how will we learn them? We can learn this using IMAP and OpenSSL.
 

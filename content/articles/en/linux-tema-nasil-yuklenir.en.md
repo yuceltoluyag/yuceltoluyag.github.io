@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982081917153180
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqdfn5qbk2f
 
 Hello, I hadn't written anything to the blog for a long time. I had recorded a video while using Unity before, but time passed quickly with my hard disk breaking down and the hot weather. 😃 Installing themes on Linux is quite easy. Regardless of which distribution or desktop environment you use, the process is usually similar. For example, while `unity-tweak-tool` is used for Unity, `gnome-tweak-tool` is preferred for Gnome. During my XFCE period, we could make customizations directly (I may be wrong 🤔).
 

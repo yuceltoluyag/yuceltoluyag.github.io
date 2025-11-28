@@ -9,6 +9,8 @@ Image: images/wget-ile-web-sitesi-indirme-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115553477990222016
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6ps6v5lt22d
 
 Linux'ta bir siteyi indirmek... aklıma direkt `wget` geliyor. Herkes tavsiye eder, biliyorsun. Ama o komut, yanlış parametrelerle kullanılınca indirdiğin şey resmen bir çöplüğe döner. Kırık linkler, boş resimler... geçenlerde başıma geldi, sinir oldum. 😤 İşte o yüzden buradayım, o sihirli kombinasyonu anlatmak için.
 

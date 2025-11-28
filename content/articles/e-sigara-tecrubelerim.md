@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/esigara-yararlimi-zararlimi-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984893645827636
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrlmj5pmc23
 
 ## Merhaba
 

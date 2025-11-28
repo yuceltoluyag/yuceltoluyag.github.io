@@ -8,6 +8,8 @@ Summary: The modern way to quickly and safely extract split RAR archives like .p
 Image: images/bolunmus-rar-dosyalarini-cikarma-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115537092347551990
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m5gsv6cjgs2d
 
 ## Introduction
 

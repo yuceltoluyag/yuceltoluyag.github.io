@@ -10,8 +10,10 @@ Template: article
 Image: images/autocut-otomatik-video-kesme-markdown-rehberi-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115175811703255586
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6nxfmq3fk2x
 
----
+
 
 ## Autocut ile Otomatik Video Kesme 🎬
 

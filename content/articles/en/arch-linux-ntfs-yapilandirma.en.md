@@ -12,6 +12,8 @@ Image: images/ntfs_yetki_hatasi-xl.webp
 Lang: en
 Series: Linux-disk
 Series_index: 1
+toot: https://mastodon.social/@yuceltoluyag/114984863338075066
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrl737jvc2p
 
 ## What is the Problem? ⚠️
 

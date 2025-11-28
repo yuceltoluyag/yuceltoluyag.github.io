@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/audacious-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114983963606574479
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvr6fcr2jk2m
 
 Yılların efsane müzik 🎵 oynatıcıları **Winamp** ve **AIMP**, Windows kullanıcıları için vazgeçilmezdi. Ancak Linux ortamında benzer bir deneyim sunan en iyi alternatiflerden biri **Audacious** oldu. Piyasadaki birçok MP3 oynatıcıyı denedikten sonra, en fazla özelleştirme sunanı Audacious olduğu için tercih ettim.
 

@@ -11,6 +11,8 @@ Template: article
 Image: images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989705482412461
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtpyvvytc2n
 
 Arch Linux kullanıyorsanız ve son güncellemeleri yaparken `linux-firmware` paketine dair can sıkıcı bir hata mesajıyla karşılaştıysanız, yalnız değilsiniz. Özellikle NVIDIA donanımına sahip sistemlerde, `linux-firmware-nvidia` ile ilgili dosya çakışmaları (`exists in filesystem`) birçok kullanıcının sistemini yükseltmesini engelliyor. Bu makalede, bu sorunun nedenini ve kalıcı çözümünü adım adım açıklıyoruz. ✅
 

@@ -10,6 +10,8 @@ Summary: Manage all your movies, series and video content from one place with St
 Template: article
 Image: images/kesfet-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115023937993071542
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwcwymam5s2z
 
 ## Comprehensive Stremio Guide 🚀
 

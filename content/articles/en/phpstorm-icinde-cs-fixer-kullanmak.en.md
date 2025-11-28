@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/php_phpstorm_csfixer-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984674025445306
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrihew5ec2v
 
 ## What is PSR Standard?
 

@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/phpstorm_terminal-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984367613976899
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvre53v7uk27
 
 ## PHPStorm İçerisinde Cmder Kullanmak 🚀
 

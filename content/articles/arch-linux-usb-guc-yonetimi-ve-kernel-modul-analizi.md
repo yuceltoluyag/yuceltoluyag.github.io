@@ -11,8 +11,10 @@ Template: article
 Image: images/arch-linux-usb-guc-yonetimi-ve-kernel-modul-analizi-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989692214124173
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtovhjtec25
 
----
+
 
 ## 🖥️ Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi Rehberi
 

@@ -11,6 +11,8 @@ Status: published
 Summary: i3lock kullanarak Linux sisteminiz uyku modundan uyandığında ekranın otomatik olarak kilitlenmesini sağlayın. Bu rehber, systemd servisleriyle nasıl yapılandırılacağını adım adım gösteriyor.
 Template: article
 Image: images/wake-up-lock-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987898406460144
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvswclazsc2e
 
 ## i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?
 

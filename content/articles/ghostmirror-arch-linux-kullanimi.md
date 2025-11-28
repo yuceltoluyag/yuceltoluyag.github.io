@@ -10,6 +10,8 @@ Template: article
 Image: images/ghostmirror-arch-linux-kullanimi-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115018950335960240
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwaqjc6hps2i
 
 ## 1. Giriş 📌
 

@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/phpstorm_terminal-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114984367613976899
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvre53v7uk27
 
 ## Using Cmder in PHPStorm 🚀
 

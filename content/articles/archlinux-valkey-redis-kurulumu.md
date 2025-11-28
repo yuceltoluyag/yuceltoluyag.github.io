@@ -10,6 +10,8 @@ Template: article
 Image: images/archlinux-valkey-redis-kurulumu-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115042524487259369
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwl7fttjh22q
 
 ## Giriş: Redis mi, Valkey mi? 🤔
 

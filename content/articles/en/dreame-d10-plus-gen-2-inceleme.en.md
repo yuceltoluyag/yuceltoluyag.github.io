@@ -10,6 +10,9 @@ Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114987742998718327
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsu3jdsik2q
+
 
 !!! warning "Not an Advertisement This content does not contain sponsorship, paid promotion or advertising. I bought the product with my own money and paid the tax, and I'm sharing my experiences. There is no advertising or partnership with Dreame and Roborge brands. It's completely my own experience."
 

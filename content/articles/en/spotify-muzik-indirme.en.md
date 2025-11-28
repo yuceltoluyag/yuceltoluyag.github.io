@@ -2,7 +2,7 @@ Title: How to Download Music from Spotify? (Illustrated Guide - Updated)
 Date: 2018-09-10 13:45 10:00
 Modified: 2025-08-11 22:59
 Category: Medya
-Tags: ipucu, spotify
+Tags: ipucu, spotify,youtube-dl
 Slug: spotify-muzik-indirme
 Authors: yuceltoluyag
 Summary: Discover how to download music from Spotify with illustrated and updated explanations.
@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/spotify-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114978651581920868
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqcduquak24
 
 ## Why?
 

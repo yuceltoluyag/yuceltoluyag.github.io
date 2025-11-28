@@ -11,6 +11,8 @@ Template: article
 Image: images/Transmission-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114988995540919447
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtfvwbmh22c
 
 ## Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
 

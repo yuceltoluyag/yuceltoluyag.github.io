@@ -13,6 +13,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/imap_openssl_terminal-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114984629648133106
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrhur7z3c2l
 
 [# Modern bir mutt kurulumu 1. bölüm](/modern-bir-mutt-kurulumu-1-bolum){: target="\_blank" rel="noopener noreferrer"} anlatırken **remote** kısımlarının çok önemli olduğunu söylemiştim. Her e-postanın kendi arayüzü, kendi remote tag'ı hatta dile göre değişen tag'lar varken, biz bunları nasıl öğreneceğiz? IMAP ve OpenSSL kullanarak bunu öğrenebileceğiz.
 

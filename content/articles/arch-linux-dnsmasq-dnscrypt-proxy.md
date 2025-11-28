@@ -9,6 +9,8 @@ Summary: Arch Linux üzerinde dnsmasq ve dnscrypt-proxy kurulumunu yapın, port 
 Template: article
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/115364056455751216
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m2zxtdzots2l
 
 İnternet performansınızın temel taşlarından biri DNS’tir.  
 Bu makalede **Arch Linux üzerinde dnsmasq ve dnscrypt-proxy** kullanarak hem hızlı hem güvenli bir DNS altyapısı kuracak ve **çakışmaları, logları ve DNS çözümlemeyi test etmeyi** öğreneceksiniz.

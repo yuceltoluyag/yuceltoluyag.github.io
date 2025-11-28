@@ -10,6 +10,8 @@ Summary: Monitor system performance information like FPS, temperature, usage in 
 Template: article
 Image: images/mangohud_linux-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114988969674382671
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtfk4iey22v
 
 ## Guide: Monitor Your Game Performance with MangoHud 🎮
 

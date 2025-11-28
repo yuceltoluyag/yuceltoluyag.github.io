@@ -8,6 +8,8 @@ Summary: What are .pacsave files in Arch Linux? I explain why your settings aren
 Image: images/arch-linux-pacsave-dosyalari-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115553534312259706
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6psml5kks2e
 
 In a previous post, we talked about how much of a headache `.pacnew` files can be, right? Those files usually scream, "Watch out, new settings are here!" But what about these `.pacsave` files? They appear in the opposite situation and are usually a good thing.
 

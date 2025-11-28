@@ -8,6 +8,8 @@ Summary: AI detectors are sometimes so confused that you're mistaken for a robot
 Image: images/ai-detector-sacmaliklari-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115537111582575198
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m5gt5v5br22b
 
 Welcome to the comedy of the new age.
 Now, if you write too well, **you're guilty.**

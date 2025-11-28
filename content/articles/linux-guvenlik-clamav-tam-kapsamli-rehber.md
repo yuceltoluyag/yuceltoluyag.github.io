@@ -9,6 +9,8 @@ Image: images/linux-clamav-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/115553349825156285
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6prd6b42227
 
 ## Giriş: Neden Hâlâ Bunlarla Uğraşıyoruz?
 

@@ -13,6 +13,8 @@ Translation: false
 Status: published  
 Template: article  
 Image: images/git-gpg-imzali-etiket-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985361471375070
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrsb7cwe22m
 
 ## Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme 🔐
 

@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/dreame-d10-plus-gen-2-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114987742998718327
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsu3jdsik2q
 
 !!! warning "Reklam Değildir Bu içerik sponsorluk, ücretli tanıtım veya reklam içermez. Ürünü kendi paramla alıp vergisini ödedim ve deneyimlerimi paylaşıyorum. Dreame ve Roborge markalarıyla reklam veya işbirliği yoktur. Tamamen kendi deneyimlerimdir."
 

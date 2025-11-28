@@ -11,6 +11,8 @@ Status: published
 Summary: MangoHud ile oyunlarınızda FPS, sıcaklık, kullanım gibi sistem performansı bilgilerini anlık olarak izleyin. Arch Linux üzerinde kurulum ve yapılandırma rehberi.
 Template: article
 Image: images/mangohud_linux-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114988969674382671
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtfk4iey22v
 
 ## Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin 🎮
 

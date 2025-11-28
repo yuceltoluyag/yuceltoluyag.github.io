@@ -11,6 +11,8 @@ Translation: false
 Status: published
 Template: article
 Image: images/rokbot-gui-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985410694158553
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrssnqnfs2v
 
 🚨 **Bir Yolun Sonu: Rise of Kingdom Bot'a Veda** 🚨
 

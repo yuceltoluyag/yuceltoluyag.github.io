@@ -11,6 +11,8 @@ Template: article
 Image: images/rok-lutris-fps-test-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114989018351105207
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtg6okjdc27
 
 ## 🧐 Giriş: Neden Rise of Kingdoms'u Linux'ta Oynamalısınız?
 

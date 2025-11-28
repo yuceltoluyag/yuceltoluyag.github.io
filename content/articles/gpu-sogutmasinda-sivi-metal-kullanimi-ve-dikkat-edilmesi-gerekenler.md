@@ -11,6 +11,8 @@ Template: article
 Image: images/rtx-4060-sivi-metal-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/114988983481909917
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtfq25nrk2o
 
 !!! warning "<strong>Dikkat:</strong> Sıvı metal kullanımı doğru yapılırsa GPU'nuzda %10-20'ye kadar sıcaklık iyileştirmesi sağlayabilirsiniz. Ancak yanlış bir adım tüm kartınızı geri dönüşümsüz şekilde bozabilir. Riski yüksek bir işlem,buna göre düşünün.Sorumluluk size aittir."
 

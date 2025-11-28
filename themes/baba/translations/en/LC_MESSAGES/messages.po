@@ -330,3 +330,27 @@ msgstr "No comments yet."
 
 msgid "Orijinal gönderi"
 msgstr "Original post"
+
+msgid "Yorumlar"
+msgstr "Comments"
+
+msgid "İlk yorumu siz yapın!"
+msgstr "Be the first to comment!"
+
+msgid "Yorumlar yüklenirken bir hata oluştu."
+msgstr "An error occurred while loading comments."
+
+msgid "Yorumlar yükleniyor..."
+msgstr "Loading comments..."
+
+msgid "Yorumları görüntülemek için JavaScript'i etkinleştirmeniz gerekir."
+msgstr "You need to enable JavaScript to view comments."
+
+msgid "Reply via Bluesky"
+msgstr "Reply via Bluesky"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Copy"
+msgstr "Copy"

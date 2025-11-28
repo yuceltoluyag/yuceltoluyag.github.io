@@ -12,6 +12,8 @@ Image: images/Linux-uzerinde-disk-sifirlama-xl.webp
 Lang: en
 Series: Linux-disk
 Series_index: 3
+toot: https://mastodon.social/@yuceltoluyag/114987873115464671
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvsvx53tm223
 
 💣 **Disk reset in Linux** is sometimes inevitable for system administrators and technical users. Whether it's before a new installation, while deleting old data, or cleaning disks in a way that can't be reversed, it's very important to proceed with the correct methods.
 

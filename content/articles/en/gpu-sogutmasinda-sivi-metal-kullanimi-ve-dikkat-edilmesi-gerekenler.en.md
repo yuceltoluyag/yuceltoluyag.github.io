@@ -10,6 +10,8 @@ Summary: Everything you need to know about using liquid metal for GPU cooling. A
 Template: article
 Image: images/rtx-4060-sivi-metal-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114988983481909917
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtfq25nrk2o
 
 !!! warning "<strong>Attention:</strong> When done correctly, liquid metal usage can provide up to 10-20% temperature improvement on your GPU. However, a wrong step can irreversibly damage your entire card. This is a high-risk operation, consider accordingly. Responsibility lies with you."
 

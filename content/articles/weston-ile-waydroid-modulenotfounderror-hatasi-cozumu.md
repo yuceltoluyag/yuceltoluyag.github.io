@@ -11,6 +11,8 @@ Summary: Waydroid kurulumu sırasında sıkça görülen “ModuleNotFoundError�
 Template: article
 Series: Waydroid
 Series_index: 3
+toot: https://mastodon.social/@yuceltoluyag/115487288365868924
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k4adw6k2z
 
 ---
 

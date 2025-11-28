@@ -10,8 +10,10 @@ Status: published
 Summary: Linux'ta Ghost of Tsushima oynayan Ninja Kamil’in kaotik, eğlenceli ve teknik sorunlarla dolu macerasına mizahi bir bakış.
 Image: images/ninja_qamil-xl.webp
 Template: article
+toot: https://mastodon.social/@yuceltoluyag/115381874559253419
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6nxra5pak2u
 
----
+
 
 ## 🎮 Ninja Kamil'in Kaotik Macerası
 

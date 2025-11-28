@@ -10,6 +10,8 @@ Status: published
 Template: article
 Image: images/httrack-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114982912012327637
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqpgkmt3s27
 
 Hello! HTTrack is a software that allows you to use websites even when you don't have an internet connection. I wanted to prepare a document explaining how to use this software, which I frequently use on Windows, through the Linux terminal.
 

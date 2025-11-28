@@ -9,8 +9,10 @@ Summary: Arch Linux has been struggling with an ongoing DDoS attack since August
 Template: article
 Image: images/arch-linux-ddos-hizmet-kesintisi-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115091936430498581
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lxb6cglea22c
 
----
+
 
 ### 1. Introduction
 

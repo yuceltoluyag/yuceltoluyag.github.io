@@ -10,8 +10,10 @@ Summary: NVIDIA firmware conflict error encountered after updating the linux-fir
 Template: article
 Image: images/arch-linux-linux-firmware-nvidia-hatasi-cozumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/114989705482412461
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtpyvvytc2n
 
----
+
 
 ## NVIDIA Error and Solution During linux-firmware Update in Arch Linux
 

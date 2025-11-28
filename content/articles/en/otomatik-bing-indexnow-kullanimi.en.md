@@ -9,6 +9,8 @@ Summary: Do you want your content to appear instantly on Bing? With automatic Bi
 Template: article
 Image: images/bing-indexnow-otomatik-dizinleme-seo-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/115520882505254523
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57mjuzqn22z
 
 You've prepared and published great content, but does it take days or even weeks for Bing to visit your site and discover this new article? What if I told you there's a way to get indexed "instantly"?
 
