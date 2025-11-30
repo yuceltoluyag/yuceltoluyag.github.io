@@ -1,0 +1,50 @@
+/* Modern footnote reference styles */
+sup[id^="fnref:"] {
+    line-height: 1;
+    margin-left: 3px;
+    vertical-align: super;
+}
+
+sup[id^="fnref:"] a {
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    background-color: var(--pico-muted-background-color);
+    border-radius: var(--pico-border-radius);
+    color: var(--pico-muted-color);
+    font-size: 0.8em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+sup[id^="fnref:"] a:hover,
+sup[id^="fnref:"] a:focus {
+    background-color: var(--pico-primary-background);
+    color: var(--pico-primary-inverse);
+    outline: none;
+}
+
+/* Styling for the footnote definitions at the bottom */
+.footnote ol {
+    padding-left: 1.5em;
+}
+
+.footnote li {
+    margin-bottom: 0.5em;
+}
+
+.footnote li p {
+    display: inline; /* Keep the paragraph and back-reference on the same line */
+}
+
+/* Style for the back-reference arrow */
+.footnote-backref {
+    margin-left: 0.5em;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--pico-primary);
+}
+
+.footnote-backref:hover {
+    text-decoration: underline;
+}
