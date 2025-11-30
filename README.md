@@ -77,6 +77,7 @@ The bundling process is a two-step procedure:
     cat themes/baba/static/css/pico.indigo.min.css \
         themes/baba/static/css/gruvbox-light.css \
         themes/baba/static/css/custom.css \
+        themes/baba/static/css/footnotes.css \
         themes/baba/static/css/modern-styles.css \
         themes/baba/static/css/pygments.css \
         themes/baba/static/css/copy.css \
