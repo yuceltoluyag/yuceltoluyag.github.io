@@ -52,8 +52,7 @@
     <div class="footer-section">
       <p class="footer-support">
         {% if DEFAULT_LANG == 'tr' %}
-        {{ _('If you can\'t donate, you can support by subscribing to my <a href="https://youtube.com/@{youtube}"
-          target="_blank">YouTube channel</a>.').format(youtube=SOCIAL.youtube) | safe }}
+        Bağış yapamıyorsanız, <a href="https://youtube.com/@{{ SOCIAL.youtube }}" target="_blank">YouTube kanalıma</a> abone olarak destek olabilirsiniz.
         {% else %}
         If you can't donate, you can support by subscribing to <a href="https://youtube.com/@{{ SOCIAL.youtube }}"
           target="_blank">my YouTube channel</a>.
@@ -62,7 +61,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-credit">Designed with ❤️ using Pelican</p>
+    <p class="footer-credit">Pelican kullanılarak ❤️ ile tasarlandı</p>
     <span style="display:none;">#nobridge</span>
   </div>
 </footer>
