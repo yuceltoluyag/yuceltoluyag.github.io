@@ -5,7 +5,7 @@ Tags: proxmox, home assistant, haos, zfs, tteck, vm,linux,disk
 Slug: proxmox-zfs-home-assistant
 Authors: yuceltoluyag
 Summary: Hazır scriptlerin arkasına sığınmadan, Proxmox üzerinde ZFS ve SSD optimizasyonlarıyla (q35, ssd=1) manuel Home Assistant kurulum rehberi.
-Image: /images/proxmox-zfs-home-assistant-xl.webp
+Image: images/proxmox-zfs-home-assistant-xl.webp
 Lang: tr
 Translation: false
 Status: published
