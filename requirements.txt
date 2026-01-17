@@ -1,7 +1,7 @@
 pelican==4.11.0.post0
 Markdown==3.10
 beautifulsoup4==4.14.3
-PyYAML==6.0.2
+PyYAML==6.0.3
 lxml==5.3.0
 pelican-sitemap==1.2.2
 pelican-neighbors==1.2.0
