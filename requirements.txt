@@ -5,7 +5,7 @@ PyYAML==6.0.3
 lxml==6.0.2
 pelican-sitemap==1.2.2
 pelican-neighbors==1.2.0
-nltk==3.9.2
+nltk==3.9.3
 duty
 pytz
 livereload
