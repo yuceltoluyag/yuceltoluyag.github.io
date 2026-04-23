@@ -51,6 +51,7 @@ jobs:
         # Sürümü v3'e düşürdük
         uses: actions/upload-pages-artifact@v5
         with:
+          include-hidden-files: true 
           path: output
 
       - name: Deploy to GitHub Pages
