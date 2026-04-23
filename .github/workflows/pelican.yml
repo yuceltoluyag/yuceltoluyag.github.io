@@ -58,3 +58,6 @@ jobs:
         id: deployment
         # deploy-pages action'ının v4 olması sorun değil
         uses: actions/deploy-pages@v5
+        with:
+          path: output
+          include-hidden-files: true
