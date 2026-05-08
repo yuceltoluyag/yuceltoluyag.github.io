@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Subsites:** Fixed a bug where English subsite links incorrectly pointed to `localhost:8080` by explicitly setting `SITEURL` and improving `PUBLISH` mode detection.
 - **Plugins:** Improved `pelican_redirect` plugin robustness with a better locale-aware initialization fallback.
 - **Ads:** Resolved AdSense `TagError: availableWidth=0` by ensuring ad containers have `width: 100%` and `min-height`.
+- **Content:** Added a new deep-dive article about `act` (nektos/act) for local GitHub Actions testing.
 - **Documentation:** Fixed broken absolute file paths and outdated build process references in `README.md`.
 
 
