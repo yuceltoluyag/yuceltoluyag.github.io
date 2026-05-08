@@ -32,6 +32,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y language-pack-tr gettext
+          sudo localedef -i tr_TR -f UTF-8 tr_TR.UTF-8
 
       - name: Inject Turkish language files into docutils
         run: |
@@ -41,6 +42,9 @@ jobs:
           cp tr_rst_lang.py $DOCUTILS_PATH/docutils/parsers/rst/languages/tr.py
 
       - name: Build site
+        env:
+          LANG: tr_TR.UTF-8
+          LC_ALL: tr_TR.UTF-8
         run: |
           pelican --settings publishconf.py \
                   --extra-settings "SITEURL=\"https://yuceltoluyag.github.io\"" \
