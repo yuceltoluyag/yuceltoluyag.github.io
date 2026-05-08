@@ -6,9 +6,9 @@
     border-radius: 16px;
     border: 1px solid var(--border);
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block; /* Changed from flex to block to ensure proper width calculation */
+    width: 100%;    /* Explicitly set width to 100% */
+    min-height: 280px; /* Pre-allocate space for ads */
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
