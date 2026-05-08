@@ -37,27 +37,15 @@
             class="about-social-link"
           >
             <span class="about-social-icon">
-              {% if platform == 'github' %}<i class="fa-brands fa-github"></i>
-              {% elif platform == 'matrix' %}<i
-                class="fa-solid fa-comments"
-              ></i>
-              {% elif platform == 'discord' %}<i
-                class="fa-brands fa-discord"
-              ></i>
-              {% elif platform == 'instagram' %}<i
-                class="fa-brands fa-instagram"
-              ></i>
-              {% elif platform == 'youtube' %}<i
-                class="fa-brands fa-youtube"
-              ></i>
-              {% elif platform == 'twitch' %}<i class="fa-brands fa-twitch"></i>
-              {% elif platform == 'bynogame' %}<i
-                class="fa-solid fa-credit-card"
-              ></i>
-              {% elif platform == 'github_sponsor' %}<i
-                class="fa-solid fa-heart"
-              ></i>
-              {% elif platform == 'kick' %}<i class="fa-solid fa-gamepad"></i>
+              {% if platform == 'github' %}<svg class="icon"><use href="/theme/images/icons.svg#github"></use></svg>
+              {% elif platform == 'matrix' %}<svg class="icon"><use href="/theme/images/icons.svg#rss"></use></svg>
+              {% elif platform == 'discord' %}<svg class="icon"><use href="/theme/images/icons.svg#discord"></use></svg>
+              {% elif platform == 'instagram' %}<svg class="icon"><use href="/theme/images/icons.svg#instagram"></use></svg>
+              {% elif platform == 'youtube' %}<svg class="icon"><use href="/theme/images/icons.svg#youtube"></use></svg>
+              {% elif platform == 'twitch' %}<svg class="icon"><use href="/theme/images/icons.svg#twitch"></use></svg>
+              {% elif platform == 'bynogame' %}<svg class="icon"><use href="/theme/images/icons.svg#credit-card"></use></svg>
+              {% elif platform == 'github_sponsor' %}<svg class="icon"><use href="/theme/images/icons.svg#heart"></use></svg>
+              {% elif platform == 'kick' %}<svg class="icon"><use href="/theme/images/icons.svg#kickstarter"></use></svg>
               {% endif %}
             </span>
             <span class="about-social-username">{% if platform == 'bynogame' %}ByNoGame{% else %}@{{ username }}{% endif %}</span>

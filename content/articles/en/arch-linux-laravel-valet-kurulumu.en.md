@@ -19,7 +19,7 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrkqgach22k
 
 ## Hello 👋
 
-Valet Linux is a Laravel development environment for those who prefer a minimalist development setup. There is no need to configure [Vagrant](/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu){: target="\_blank" rel="noopener noreferrer"} or `/etc/hosts`. You can easily share your sites publicly using local tunnels (Ngrok, etc.). 🚀
+Valet Linux is a Laravel development environment for those who prefer a minimalist development setup. There is no need to configure [Vagrant](/en/archlinux-virtualbox-vagrant-laravel-phpmyadmin-kurulumu/){: target="\_blank" rel="noopener noreferrer"} or `/etc/hosts`. You can easily share your sites publicly using local tunnels (Ngrok, etc.). 🚀
 
 Valet configures your system to run **Nginx in the background** when the machine starts. Then, it directs your `*.test` domains to the relevant directories using **DnsMasq**. **It offers a fast and lightweight Laravel development environment that runs using only 7MB of RAM.** 🎯
 

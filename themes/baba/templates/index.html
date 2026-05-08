@@ -20,15 +20,14 @@ endblock %}
           <div class="article-meta-glow">
             {% if article.category %}
             <span class="category-glow">
-              <i class="fa-solid fa-folder-open"></i>
+              <svg class="icon"><use href="/theme/images/icons.svg#folder-open"></use></svg>
               <a href="{{ SITEURL }}/{{ article.category.url }}"
                 >{{ article.category }}</a
               >
             </span>
             {% endif %}
             <time class="published" datetime="{{ article.date.isoformat() }}">
-              <i class="fa-solid fa-calendar-days"></i> {{ article.locale_date
-              }}
+              <svg class="icon"><use href="/theme/images/icons.svg#calendar-days"></use></svg> {{ article.locale_date }}
             </time>
           </div>
           <h1 class="featured-article-title">

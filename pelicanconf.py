@@ -10,6 +10,7 @@ PUBLISH = os.environ.get("PUBLISH")
 SITEURL = (
     "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8080"
 )
+SITEURL_MAIN = SITEURL
 CANONICAL_URL = "https://yuceltoluyag.github.io/"
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
@@ -20,7 +21,7 @@ DEFAULT_DATE_FORMAT = "%d %B %Y"
 COPYRIGHT_YEAR = 1989
 
 
-with open("authors.json") as f:
+with open("authors.json", encoding="utf-8") as f:
     AUTHORS_INFO = json.load(f)
 
 JINJA_GLOBALS = {"AUTHORS_INFO": AUTHORS_INFO}
@@ -68,16 +69,20 @@ EXTRA_PATH_METADATA = {
 # =============================================================================
 DEFAULT_LANG = "tr"
 TIMEZONE = "Europe/Istanbul"
-LOCALE = (
-    "tr_TR.UTF-8",
-    "en_US.UTF-8",
-)
+LOCALE = [
+    "tr_TR.UTF-8", "tr-TR", "Turkish_Turkey.1254",
+    "en_US.UTF-8", "en-US", "English_United States.1252",
+]
+DATE_FORMATS = {
+    "tr": ("tr-TR", "%d %B %Y"),
+    "en": ("en-US", "%d %B %Y"),
+}
 I18N_UNTRANSLATED_ARTICLES_LANG = "tr"
 I18N_SUBSITES = {
     "en": {
         "SITENAME": "Baba Tech Blog",
         "AUTHOR": "yuceltoluyag",
-        "LOCALE": "en_US.UTF-8",
+        "LOCALE": ["en_US.UTF-8", "en-US", "English_United States.1252"],
         "STATIC_PATHS": ["images", "extra", "files"],
         "OUTPUT_PATH": "output/en",
         "CATEGORIES_URL": "categories/",
@@ -86,6 +91,26 @@ I18N_SUBSITES = {
         "TAGS_SAVE_AS": "tags/index.html",
         "ARCHIVES_URL": "archive/",
         "ARCHIVES_SAVE_AS": "archive/index.html",
+        "NAVBAR_LINKS": [
+            {
+                "name": "Home",
+                "url": "/",
+                "target": "_self",
+                "icon": "fa-solid fa-house",
+            },
+            {
+                "name": "About Me",
+                "url": "/hakkimda",
+                "target": "_self",
+                "icon": "fa-solid fa-user",
+            },
+            {
+                "name": "Donate",
+                "url": "/bagis",
+                "target": "_self",
+                "icon": "fa-solid fa-hand-holding-heart",
+            },
+        ],
     },
 }
 
@@ -155,7 +180,7 @@ FEED_SAVE_AS = "feed.json"
 # =============================================================================
 # THEME SETTINGS
 # =============================================================================
-THEME = "themes/baba"
+THEME = "themes/AliBaba"
 THEME_STATIC_PATHS = ["static"]
 TEMPLATE_EXTENSIONS = [".html.j2", ".html"]
 BROWSER_COLOR = "#333333"
@@ -370,7 +395,11 @@ VERSION = "1.0.0"
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 USE_LESS = True
-JINJA_GLOBALS = {"current_year": date.today().year}
+JINJA_GLOBALS = {
+    "AUTHORS_INFO": AUTHORS_INFO,
+    "current_year": date.today().year,
+    "current_date": date.today()
+}
 IGNORE_FILES = ["404.html", ".#&", "flycheck_*", "flymake_*"]
 DEFAULT_PAGESCHEMA = "article"
 HOME_HIDE_TAGS = True

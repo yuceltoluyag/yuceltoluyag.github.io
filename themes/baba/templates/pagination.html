@@ -4,21 +4,21 @@
 <nav class="pagination-container" aria-label="Sayfalama">
     <ul class="pagination">
         {% if articles_page.has_previous() %}
-        <li><a href="{{ SITEURL }}/{{ first_page.url }}" role="button" class="secondary outline" aria-label="İlk Sayfa"><i class="fa-solid fa-angles-left"></i></a></li>
-        <li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}" role="button" class="secondary outline" aria-label="Önceki Sayfa"><i class="fa-solid fa-angle-left"></i></a></li>
+        <li><a href="{{ SITEURL }}/{{ first_page.url }}" role="button" class="secondary outline" aria-label="İlk Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angles-left"></use></svg></a></li>
+        <li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}" role="button" class="secondary outline" aria-label="Önceki Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angle-left"></use></svg></a></li>
         {% else %}
-        <li><span role="button" class="secondary outline disabled" aria-label="İlk Sayfa"><i class="fa-solid fa-angles-left"></i></span></li>
-        <li><span role="button" class="secondary outline disabled" aria-label="Önceki Sayfa"><i class="fa-solid fa-angle-left"></i></span></li>
+        <li><span role="button" class="secondary outline disabled" aria-label="İlk Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angles-left"></use></svg></span></li>
+        <li><span role="button" class="secondary outline disabled" aria-label="Önceki Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angle-left"></use></svg></span></li>
         {% endif %}
 
-        <li><span class="current-page">{{ _('Sayfa') }} {{ articles_page.number }} / {{ articles_paginator.num_pages }}</span></li>
+        <li><span role="button" class="secondary outline disabled">{{ articles_page.number }} / {{ articles_paginator.num_pages }}</span></li>
 
         {% if articles_page.has_next() %}
-        <li><a href="{{ SITEURL }}/{{ articles_next_page.url }}" role="button" class="secondary outline" aria-label="Sonraki Sayfa"><i class="fa-solid fa-angle-right"></i></a></li>
-        <li><a href="{{ SITEURL }}/{{ last_page.url }}" role="button" class="secondary outline" aria-label="Son Sayfa"><i class="fa-solid fa-angles-right"></i></a></li>
+        <li><a href="{{ SITEURL }}/{{ articles_next_page.url }}" role="button" class="secondary outline" aria-label="Sonraki Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angle-right"></use></svg></a></li>
+        <li><a href="{{ SITEURL }}/{{ last_page.url }}" role="button" class="secondary outline" aria-label="Son Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angles-right"></use></svg></a></li>
         {% else %}
-        <li><span role="button" class="secondary outline disabled" aria-label="Sonraki Sayfa"><i class="fa-solid fa-angle-right"></i></span></li>
-        <li><span role="button" class="secondary outline disabled" aria-label="Son Sayfa"><i class="fa-solid fa-angles-right"></i></span></li>
+        <li><span role="button" class="secondary outline disabled" aria-label="Sonraki Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angle-right"></use></svg></span></li>
+        <li><span role="button" class="secondary outline disabled" aria-label="Son Sayfa"><svg class="icon"><use href="/theme/images/icons.svg#angles-right"></use></svg></span></li>
         {% endif %}
     </ul>
 </nav>

@@ -76,7 +76,7 @@ Have you set up this system or are you considering setting it up? Feel free to s
 
 [^1]: **Ping:** In computer networks, it is the process of sending a small data packet to a target and waiting for its response to test whether that target is reachable.
 
-- [Guide: How to use Google Indexing API](/google-indexing-api-nasil-kullanilir/)
+- [Guide: How to use Google Indexing API](/en/google-indexing-api-nasil-kullanilir/)
 - [GitHub Project Page](https://github.com/yuceltoluyag/google-indexing-tool)
 
 [responsive_img src="/images/bing-indexnow-otomatik-dizinleme-seo-sonuc-xl.webp" alt="Add your site to search results instantly with Bing IndexNow automatic indexing." /]

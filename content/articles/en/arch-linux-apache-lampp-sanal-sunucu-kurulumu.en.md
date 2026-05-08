@@ -17,7 +17,7 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqo2slbok2d
 
 Hello! After a long break, I'm writing on my blog to document the **English Documentation** of a method I frequently use when creating projects. This method is called **Virtual Host**. By assigning a domain to each project, it helps in remembering coding and project names. This method also provides convenience during integration of files like CSS and JS.
 
-1. [Arch Linux XAMPP/LAMPP Installation](/tr/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin){: target="\_blank" rel="noopener noreferrer"} should be performed.
+1. [Arch Linux XAMPP/LAMPP Installation](/en/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/){: target="\_blank" rel="noopener noreferrer"} should be performed.
 
 We will create a domain named **baba.test**.
 

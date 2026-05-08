@@ -34,27 +34,27 @@ super() }} {% if article.translations -%}
       <h1 class="hero-title cyberpunk-hero-title">{{ article.title }}</h1>
       <div class="hero-meta cyberpunk-hero-meta">
         <time class="published cyberpunk-published" datetime="{{ article.date.isoformat() }}">
-          <i class="fa-solid fa-calendar-days"></i> {{ article.locale_date }}
+          <svg class="icon"><use href="/theme/images/icons.svg#calendar-days"></use></svg> {{ article.locale_date }}
         </time>
         {% if article.authors %}
         <address class="vcard author cyberpunk-author">
-          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#user"></use></svg>
           {% for author in article.authors %}
           <a class="url fn cyberpunk-author-link" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
           {% endfor %}
         </address>
         {% endif %} {% if article.category %}
         <span class="category cyberpunk-category">
-          <i class="fa-solid fa-folder-open" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#folder-open"></use></svg>
           <a href="{{ SITEURL }}/{{ article.category.url }}" class="cyberpunk-category-link">{{ article.category }}</a>
         </span>
         {% endif %}
         {% if article.stats %}
         <span class="word-count">
-          <i class="fa-solid fa-book-open"></i> {{ article.stats.wc }} {{ _('words') }}
+          <svg class="icon"><use href="/theme/images/icons.svg#book-open"></use></svg> {{ article.stats.wc }} {{ _('words') }}
         </span>
         <span class="reading-time">
-          <i class="fa-solid fa-clock"></i> {{ article.stats.read_mins }} {{ _('min read') }}
+          <svg class="icon"><use href="/theme/images/icons.svg#clock"></use></svg> {{ article.stats.read_mins }} {{ _('min read') }}
         </span>
         {% endif %}
       </div>
@@ -78,7 +78,7 @@ super() }} {% if article.translations -%}
       {% if article.series %}
       <div class="series-navigation-card pico-card">
         <div class="series-header">
-          <h2><i class="fa-solid fa-bookmark"></i> {{ _('Series:') }} {{ article.series.name }}</h2>
+          <h2><svg class="icon"><use href="/theme/images/icons.svg#bookmark"></use></svg> {{ _('Series:') }} {{ article.series.name }}</h2>
           <span class="series-progress">{{ _('Part') }} {{ article.series.index }}/{{ article.series.all|length
             }}</span>
         </div>
@@ -99,17 +99,17 @@ super() }} {% if article.translations -%}
 
         <!-- Series Index -->
         <details class="series-contents">
-          <summary><i class="fa-solid fa-list"></i> {{ _('Series Contents') }}</summary>
+          <summary><svg class="icon"><use href="/theme/images/icons.svg#list"></use></svg> {{ _('Series Contents') }}</summary>
           <ol class="series-list">
             {% for part_article in article.series.all %}
             <li {% if part_article==article %}class="active" {% endif %}>
               {% if part_article == article %}
               <span class="current-article">
-                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> {{ part_article.title }}
+                <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#circle-check"></use></svg> {{ part_article.title }}
               </span>
               {% else %}
               <a href="{{ SITEURL }}/{{ part_article.url }}">
-                <i class="fa-solid fa-file-alt" aria-hidden="true"></i> {{ part_article.title }}
+                <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#file-alt"></use></svg> {{ part_article.title }}
               </a>
               {% endif %}
             </li>
@@ -142,13 +142,13 @@ super() }} {% if article.translations -%}
         <div class="related-posts-section">
           <div class="related-posts-card pico-card">
             <hgroup>
-              <h3><i class="fa-solid fa-star"></i> {{ _('Related Posts') }}</h3>
+              <h3><svg class="icon"><use href="/theme/images/icons.svg#star"></use></svg> {{ _('Related Posts') }}</h3>
             </hgroup>
             <ul class="related-posts-list">
               {% for related_article in article.related_posts %}
               <li>
                 <a href="{{ SITEURL }}/{{ related_article.url }}">
-                  <i class="fa-solid fa-file-alt" aria-hidden="true"></i> {{ related_article.title }}
+                  <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#file-alt"></use></svg> {{ related_article.title }}
                 </a>
               </li>
               {% endfor %}
@@ -160,19 +160,19 @@ super() }} {% if article.translations -%}
         <div class="support-section">
           <div class="support-card pico-card">
             <hgroup>
-              <h3><i class="fa-solid fa-heart" aria-hidden="true"></i> {{ _('Support Me') }}</h3>
+              <h3><svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#heart"></use></svg> {{ _('Support Me') }}</h3>
             </hgroup>
             <p>
               {{ _('If you find this content useful, you can support my work.') }}
             </p>
             <a href="{{ SITEURL }}/bagis/" role="button" class="primary">
-              <i class="fa-solid fa-heart" aria-hidden="true"></i> {{ _('Support') }}
+              <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#heart"></use></svg> {{ _('Support') }}
             </a>
 
             {% if ARTICLE_EDIT_LINK %}
             <a href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}" role="button" class="secondary"
               style="margin-top: 0.5rem;" target="_blank" rel="noopener noreferrer nofollow">
-              <i class="fa-solid fa-edit" aria-hidden="true"></i> {{ _('Edit') }}
+              <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#edit"></use></svg> {{ _('Edit') }}
             </a>
             {% endif %}
           </div>
@@ -182,7 +182,7 @@ super() }} {% if article.translations -%}
       <!-- Sosyal Medya Paylaşım Butonları -->
       <div class="social-share-container flex flex-wrap gap-2 mt-8 mb-6">
         <span class="text-sm text-base-content/70 flex items-center mr-2">
-          <i class="fa-solid fa-share mr-1"></i>
+          <svg class="icon mr-1"><use href="/theme/images/icons.svg#share"></use></svg>
           {{ _('Share:') }}
         </span>
 
@@ -190,49 +190,49 @@ super() }} {% if article.translations -%}
         <a href="https://twitter.com/intent/tweet?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}"
           target="_blank" rel="noopener noreferrer" class="social-share-btn twitter-share"
           aria-label="Twitter'da Paylaş">
-          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#x-twitter"></use></svg>
           <span class="sr-only">Twitter'da Paylaş</span>
         </a>
 
         <!-- Facebook Paylaşım -->
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" target="_blank"
           rel="noopener noreferrer" class="social-share-btn facebook-share" aria-label="Facebook'ta Paylaş">
-          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#facebook"></use></svg>
           <span class="sr-only">Facebook'ta Paylaş</span>
         </a>
 
         <!-- LinkedIn Paylaşım -->
         <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ SITEURL }}/{{ article.url }}" target="_blank"
           rel="noopener noreferrer" class="social-share-btn linkedin-share" aria-label="LinkedIn'de Paylaş">
-          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#linkedin"></use></svg>
           <span class="sr-only">LinkedIn'de Paylaş</span>
         </a>
 
         <!-- Reddit Paylaşım -->
         <a href="https://www.reddit.com/submit?url={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
           target="_blank" rel="noopener noreferrer" class="social-share-btn reddit-share" aria-label="Reddit'te Paylaş">
-          <i class="fa-brands fa-reddit" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#reddit"></use></svg>
           <span class="sr-only">Reddit'te Paylaş</span>
         </a>
 
         <!-- Telegram Paylaşım -->
         <a href="https://t.me/share/url?url={{ SITEURL }}/{{ article.url }}&text={{ article.title }}" target="_blank"
           rel="noopener noreferrer" class="social-share-btn telegram-share" aria-label="Telegram'da Paylaş">
-          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#telegram"></use></svg>
           <span class="sr-only">Telegram'da Paylaş</span>
         </a>
 
         <!-- WhatsApp Paylaşım -->
         <a href="https://api.whatsapp.com/send?text={{ article.title }} {{ SITEURL }}/{{ article.url }}" target="_blank"
           rel="noopener noreferrer" class="social-share-btn whatsapp-share" aria-label="WhatsApp'ta Paylaş">
-          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#whatsapp"></use></svg>
           <span class="sr-only">WhatsApp'ta Paylaş</span>
         </a>
 
         <!-- Email Paylaşım -->
         <a href="mailto:?subject={{ article.title }}&body={{ SITEURL }}/{{ article.url }}" target="_blank"
           rel="noopener noreferrer" class="social-share-btn email-share" aria-label="Email ile Paylaş">
-          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#envelope"></use></svg>
           <span class="sr-only">Email ile Paylaş</span>
         </a>
 
@@ -240,14 +240,14 @@ super() }} {% if article.translations -%}
         <a href="https://pinterest.com/pin/create/button/?url={{ SITEURL }}/{{ article.url }}&description={{ article.title }}{% if article.image %}&media={{ SITEURL }}/{{ article.image }}{% endif %}"
           target="_blank" rel="noopener noreferrer" class="social-share-btn pinterest-share"
           aria-label="Pinterest'te Paylaş">
-          <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#pinterest"></use></svg>
           <span class="sr-only">Pinterest'te Paylaş</span>
         </a>
 
         <!-- Tumblr Paylaşım -->
         <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ SITEURL }}/{{ article.url }}&title={{ article.title }}"
           target="_blank" rel="noopener noreferrer" class="social-share-btn tumblr-share" aria-label="Tumblr'da Paylaş">
-          <i class="fa-brands fa-tumblr" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#tumblr"></use></svg>
           <span class="sr-only">Tumblr'da Paylaş</span>
         </a>
 
@@ -255,7 +255,7 @@ super() }} {% if article.translations -%}
         <a href="https://bsky.app/intent/compose?text={{ article.title }}%20-%20{{ SITEURL }}/{{ article.url }}"
           target="_blank" rel="noopener noreferrer" class="social-share-btn bluesky-share"
           aria-label="Bluesky'da Paylaş">
-          <i class="fa-brands fa-bluesky" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#bluesky"></use></svg>
           <span class="sr-only">Bluesky'da Paylaş</span>
         </a>
 
@@ -264,14 +264,14 @@ super() }} {% if article.translations -%}
         <a href="https://{{ MASTODON.instance }}/share?text={{ article.title }}&url={{ SITEURL }}/{{ article.url }}"
           target="_blank" rel="noopener noreferrer" class="social-share-btn mastodon-share"
           aria-label="Mastodon'da Paylaş">
-          <i class="fa-brands fa-mastodon" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#mastodon"></use></svg>
           <span class="sr-only">Mastodon'da Paylaş</span>
         </a>
         {% endif %}
 
         <!-- Kopyala Butonu -->
         <button class="social-share-btn copy-share" id="copy-url-btn" aria-label="URL'yi Kopyala">
-          <i class="fa-solid fa-copy" aria-hidden="true"></i>
+          <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#copy"></use></svg>
           <span class="sr-only">URL'yi Kopyala</span>
         </button>
       </div>
@@ -287,19 +287,19 @@ super() }} {% if article.translations -%}
             {% if author_info.social.github %}
             <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer"
               aria-label="{{ author_info.name }}'s GitHub profile">
-              <i class="fa-brands fa-github"></i>
+              <svg class="icon"><use href="/theme/images/icons.svg#github"></use></svg>
             </a>
             {% endif %}
             {% if author_info.social.twitter %}
             <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer"
               aria-label="{{ author_info.name }}'s Twitter profile">
-              <i class="fa-brands fa-x-twitter"></i>
+              <svg class="icon"><use href="/theme/images/icons.svg#x-twitter"></use></svg>
             </a>
             {% endif %}
             {% if author_info.social.linkedin %}
             <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank"
               rel="noopener noreferrer" aria-label="{{ author_info.name }}'s LinkedIn profile">
-              <i class="fa-brands fa-linkedin"></i>
+              <svg class="icon"><use href="/theme/images/icons.svg#linkedin"></use></svg>
             </a>
             {% endif %}
           </div>
@@ -347,14 +347,14 @@ super() }} {% if article.translations -%}
     {% if article.prev_article %}
     <a href="{{ SITEURL }}/{{ article.prev_article.url }}" class="article-nav-arrow secondary outline prev"
       aria-label="{{ _('Previous article:') }} {{ article.prev_article.title }}">
-      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#chevron-left"></use></svg>
       <span>{{ _('Previous:') }} {{ article.prev_article.title|truncate(50, True) }}</span>
     </a>
     {% endif %} {% if article.next_article %}
     <a href="{{ SITEURL }}/{{ article.next_article.url }}" class="article-nav-arrow secondary outline next"
       aria-label="{{ _('Next article:') }} {{ article.next_article.title }}">
       <span>{{ _('Next:') }} {{ article.next_article.title|truncate(50, True) }}</span>
-      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#chevron-right"></use></svg>
     </a>
     {% endif %}
   </nav>
@@ -364,7 +364,7 @@ super() }} {% if article.translations -%}
   {% if article.toc %}
   <div class="toc-fab-container">
     <button id="toc-fab-btn" aria-label="İçindekiler Menüsü">
-      <i class="fa-solid fa-list" aria-hidden="true"></i>
+      <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#list"></use></svg>
       <span class="sr-only">İçindekiler Menüsü</span>
     </button>
     <nav id="toc-collapsible-menu" class="pico-card">{{ article.toc }}</nav>

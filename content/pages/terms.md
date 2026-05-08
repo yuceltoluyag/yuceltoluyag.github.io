@@ -5,7 +5,7 @@ Slug: terms
 Lang: tr
 Template: legal
 
-# Kullanım Koşulları
+
 
 Bu kullanım koşulları, **{{ yuceltoluyag }}** web sitesini kullanırken uymanız gereken kuralları ve şartları belirtir.
 

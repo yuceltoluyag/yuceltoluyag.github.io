@@ -39,7 +39,7 @@ This blog post aims to summarize the situation for Turkish Arch users and offer 
 - **Website Access**:
 
   - If access to the mirror list endpoint used by tools like `reflector` is cut off, mirrors located in the `pacman-mirrorlist` package should be used.
-  - I do not recommend using Reflector. Instead, [Use Ghost Mirror](/ghostmirror-arch-linux-kullanimi/)
+  - I do not recommend using Reflector. Instead, [Use Ghost Mirror](/en/ghostmirror-arch-linux-kullanimi/)
 
   <blockquote class="reddit-embed-bq" data-embed-theme="dark" data-embed-height="548"><a href="https://www.reddit.com/r/Kanunsuzlar/comments/1mxfde9/comment/na8fh8q/">Comment</a><br> by<a href="https://www.reddit.com/user/dolorisback/">u/dolorisback</a> from discussion<a href="https://www.reddit.com/r/Kanunsuzlar/comments/1mxfde9/son_hizmet_kesintileri_aur_arch_linux/"></a><br> in<a href="https://www.reddit.com/r/Kanunsuzlar/">Kanunsuzlar</a></blockquote><script async="" src="https://embed.reddit.com/widgets.js" charset="UTF-8"></script>
 

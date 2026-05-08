@@ -170,7 +170,7 @@ Both methods solve the problem, but **the first is more practical**, while the s
 
 Now you can run Steam games seamlessly on Debian. 🎮🐧
 
-👉 If the game is working but there's no sound, you can check our Steam sound error solution guide for Linux: [Steam Linux Sound Error Solution](/arch-linux-steam-ses-hatasi-cozumu)
+👉 If the game is working but there's no sound, you can check our Steam sound error solution guide for Linux: [Steam Linux Sound Error Solution](/en/arch-linux-steam-ses-hatasi-cozumu/)
 
 ---
 

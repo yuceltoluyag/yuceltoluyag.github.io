@@ -21,8 +21,8 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lwil5efmgs2x
 
 If you haven't added an SSH key with Git before, or haven't looked at GPG signed commit/tag topics, definitely read these two articles first:
 
-- [Creating Git SSH-Key (Windows & Linux)](/git-ssh-key-olusturma/) 🔑
-- [Creating GPG Signed Tags with Git](/git-gpg-imzali-etiket/) ✍️
+- [Creating Git SSH-Key (Windows & Linux)](/en/git-ssh-key-olusturma/) 🔑
+- [Creating GPG Signed Tags with Git](/en/git-gpg-imzali-etiket/) ✍️
 
 !!! note "For this guide to proceed smoothly, Git must be installed, your SSH key should be added to GitHub, your GPG key must be defined for commit signatures, and Python must be installed (we'll use virtualenv and <code>duty</code>)."
 

@@ -172,9 +172,9 @@ When you follow these steps, you can have a smooth mod experience in the game **
 
 ## 📎 Helpful Articles
 
-- [How to Install Turkish Patches for Games on Linux?](/linux-oyunlara-turkce-yama-kurulumu/)
-- [Cyberpunk 2077 Linux Mod Installation Guide](/cyberpunk-2077-linux-mod-kurulum-rehberi)
-- [What is WinePrefix and How to Use It?](/wineprefix-nedir-nasil-kullanilir)
+- [How to Install Turkish Patches for Games on Linux?](/en/linux-oyunlara-turkce-yama-kurulumu/)
+- [Cyberpunk 2077 Linux Mod Installation Guide](/en/cyberpunk-2077-linux-mod-kurulum-rehberi/)
+- [What is WinePrefix and How to Use It?](/en/wineprefix-nedir-nasil-kullanilir/)
 
 ---
 

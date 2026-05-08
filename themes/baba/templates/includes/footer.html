@@ -7,34 +7,34 @@
       </p>
       <div class="footer-links">
         <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}" aria-label="{{ _('Go to Categories page') }}">
-          <span class="icon"><i class="fa-solid fa-folder" aria-hidden="true"></i></span>
+          <span class="icon"><svg class="icon"><use href="/theme/images/icons.svg#folder"></use></svg></span>
           <span class="text">{{ _('Categories') }}</span>
           <span class="sr-only">{{ _('Categories') }}</span>
         </a>
         <a href="{{ SITEURL }}/{{ TAGS_URL }}" aria-label="{{ _('Go to Tags page') }}">
-          <span class="icon"><i class="fa-solid fa-tags" aria-hidden="true"></i></span>
+          <span class="icon"><svg class="icon"><use href="/theme/images/icons.svg#tags"></use></svg></span>
           <span class="text">{{ _('Tags') }}</span>
           <span class="sr-only">{{ _('Tags') }}</span>
         </a>
         <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}" aria-label="{{ _('Go to Archive page') }}">
-          <span class="icon"><i class="fa-solid fa-archive" aria-hidden="true"></i></span>
+          <span class="icon"><svg class="icon"><use href="/theme/images/icons.svg#archive"></use></svg></span>
           <span class="text">{{ _('Archive') }}</span>
           <span class="sr-only">{{ _('Archive') }}</span>
         </a>
         <a href="{{ SITEURL }}/terms/" aria-label="{{ _('Go to Terms of Use page') }}">
-          <span class="icon"><i class="fa-solid fa-file-contract" aria-hidden="true"></i></span>
+          <span class="icon"><svg class="icon"><use href="/theme/images/icons.svg#file-contract"></use></svg></span>
           <span class="text">{{ _('Terms of Use') }}</span>
           <span class="sr-only">{{ _('Terms of Use') }}</span>
         </a>
         <a href="{{ SITEURL }}/privacy-policy/" aria-label="{{ _('Go to Privacy Policy page') }}">
-          <span class="icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+          <span class="icon"><svg class="icon"><use href="/theme/images/icons.svg#shield-halved"></use></svg></span>
           <span class="text">{{ _('Privacy') }}</span>
           <span class="sr-only">{{ _('Privacy Policy') }}</span>
         </a>
         {% if FEED_ALL_ATOM %}
         <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}"
           type="application/atom+xml" rel="alternate" aria-label="{{ _('Go to Atom feed') }}">
-          <span class="icon"><i class="fa-solid fa-rss" aria-hidden="true"></i></span>
+          <span class="icon"><svg class="icon"><use href="/theme/images/icons.svg#rss"></use></svg></span>
           <span class="text">{{ _('Atom') }}</span>
           <span class="sr-only">{{ _('Atom Feed') }}</span>
         </a>
@@ -42,7 +42,7 @@
         {% if FEED_ALL_RSS %}
         <a href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}"
           type="application/rss+xml" rel="alternate" aria-label="{{ _('Go to RSS feed') }}">
-          <span class="icon"><i class="fa-solid fa-wifi" aria-hidden="true"></i></span>
+          <span class="icon"><svg class="icon"><use href="/theme/images/icons.svg#wifi"></use></svg></span>
           <span class="text">{{ _('RSS') }}</span>
           <span class="sr-only">{{ _('RSS Feed') }}</span>
         </a>

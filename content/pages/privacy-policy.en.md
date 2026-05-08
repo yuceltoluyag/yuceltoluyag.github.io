@@ -5,7 +5,7 @@ Slug: privacy-policy
 Lang: en
 Template: legal
 
-# Privacy Policy
+
 
 The privacy of your personal data is important to us. This privacy policy explains the information collected when using the **yuceltoluyag** website and how it is used.
 

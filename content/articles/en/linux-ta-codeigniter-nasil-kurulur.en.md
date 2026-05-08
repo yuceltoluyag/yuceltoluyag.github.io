@@ -23,7 +23,7 @@ So, how will we install this beautiful framework on our Linux system? Don't worr
 
 Before moving on to the actual installation steps, let's make sure our ingredients are ready in the kitchen. For CodeIgniter to run, you need a web server and PHP installed on your computer. This is generally called the LAMP (Linux, Apache, MySQL, PHP) stack.
 
-!!! note "Note: If Apache and PHP are not installed on your computer, you first need to install these components that form the basis of your project. For installing Apache, MySQL and phpMyAdmin on Linux, you can [access my detailed guide here](/linux-apache2-mysql-phpmyadmin-kurulumu/). For Arch Linux users, [this guide](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/) will do the job. "
+!!! note "Note: If Apache and PHP are not installed on your computer, you first need to install these components that form the basis of your project. For installing Apache, MySQL and phpMyAdmin on Linux, you can [access my detailed guide here](/en/linux-apache2-mysql-phpmyadmin-kurulumu/). For Arch Linux users, [this guide](/en/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/) will do the job. "
 
 ## Step-by-Step CodeIgniter Installation
 

@@ -27,9 +27,9 @@ Bu kod, yaklaşık **3 yıl** boyunca ücretsiz olarak kullanıldı ve birçok o
 
 İlk paylaştığım konuda belirttiğim noktaları kesinlikle unutmayın! Facebook'un son güncellemeleriyle birlikte sistem, üçüncü taraf uygulamalara karşı daha hassas hale geldi. Bunun sebebi ise **Cambridge Analytica skandalı** .
 
-!!! warning "Facebook'un son güncellemesiyle birlikte, bu tür uygulamaları kullanırken dikkatli olun. Eğer hesabınız kapanır, kitlenir ya da IP adresiniz kara listeye alınırsa, yeni açtığınız hesaplarınız da <b>anında kapatılabilir</b>."
+!!! warning "Facebook'un son güncellemesiyle birlikte, bu tür uygulamaları kullanırken dikkatli olun. Eğer hesabınız kapanır, kitlenir ya da IP adresiniz kara listeye alınırsa, yeni açtığınız hesaplarınız da anında kapatılabilir."
 
-!!! danger "<b>Abartmadan kullanın.</b> Kullanımdan doğacak sorumluluk tamamen kullanıcıya aittir. Bu kod yalnızca <b>eğitim</b> amaçlı paylaşılmıştır. 📌"
+!!! danger "Abartmadan kullanın. Kullanımdan doğacak sorumluluk tamamen kullanıcıya aittir. Bu kod yalnızca eğitim amaçlı paylaşılmıştır. 📌"
 
 Önerilen yazıyı mutlaka okuyun, sonra buraya dönün:
 [Facebook Otomatik Arkadaş Ekleme + Süreli + Seçimli](/facebook-otomatik-arkadas-ekleme-sureli-secimli){: target="\_blank" rel="noopener noreferrer"}

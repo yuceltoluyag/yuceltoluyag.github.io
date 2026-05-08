@@ -5,14 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-- **Dependency Management:** Created `pipupdate.py` for automated Python dependency upgrades.
-- **Documentation:** Implemented a granular, 900+ commit-backed historical `changelog.md`.
+## [2.3.0] - 2026-05-08 20:15
+### Added
+- **Dependency Management:** Created `pipupdate.py` for automated Python dependency upgrades, featuring venv-aware execution and `requirements.txt` sanitization.
+- **Documentation:** Implemented a granular, 900+ commit-backed historical `changelog.md` tracing the project from Jekyll inception to Pelican 4.12.0.
+- **Maintenance:** Standardized article statuses and improved English translation directory structure.
 
 ## [2.2.0] - 2026-05-03
 ### Added
-- **Pelican Core:** Upgraded to Pelican 4.12.0 for enhanced site generation performance.
-- **Dependency Maintenance:** Updated `markdown`, `nltk`, `beautifulsoup4`, `lxml`, and `pyyaml` to their latest versions via automated workflows.
+- **Pelican Core:** Upgraded to **Pelican 4.12.0** for enhanced site generation performance.
+- **Dependency Maintenance:** Updated `markdown`, `nltk`, `beautifulsoup4`, `lxml`, and `pyyaml` via automated Dependabot workflows.
 - **Workflow Security:** Enabled hidden files upload and corrected indentation in GitHub Pages deployment workflow.
 - **Theme Assets:** Updated `postcss`, `tar`, `yaml`, and `minimatch` within the Minel theme.
 
@@ -27,9 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Implemented **Author SEO** and standardized article status reporting.
   - Added multi-language SEO-friendly meta descriptions for categories and tags.
   - Added canonical link support to the redirect template.
-- **Technical Improvements:**
-  - Standardized article status and generated comprehensive reports.
-  - Refactored English articles into a dedicated sub-directory structure.
 
 ### Fixed
 - **Security:** Resolved DOM-based XSS vulnerabilities and client-side scripting alerts in the comment system.
@@ -39,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] - 2025-03-10
 ### Added
 - **Core Engine Migration:**
-  - **Major Transition:** Migrated from Jekyll to **Pelican**.
+  - **Major Transition:** Migrated from **Jekyll** to **Pelican**.
   - Integrated **uv** for deterministic Python environment and dependency management.
   - Implemented `duties.py` for automated task execution.
 - **SEO & Search Indexing:**
@@ -68,7 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2022-01-27
 ### Added
-- Initial project release using Jekyll.
+- Initial project release using **Jekyll**.
 - Base **Minel** theme implementation.
 - Basic RSS and blog functionality.
 

@@ -24,10 +24,7 @@
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/bundle.min.css" />
   </noscript>
 
-  <!-- <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/webmentions.css"> -->
-  <link rel="preload" href="https://kit.fontawesome.com/1669dfc729.js" as="script"
-    onload="this.onload=null;this.remove()" />
-  <script src="https://kit.fontawesome.com/1669dfc729.js" crossorigin="anonymous" defer></script>
+
 
   {% if FEED_ALL_ATOM %}
   <link
@@ -97,7 +94,7 @@
 
 <body class="{% block body_class %}{% endblock %}">
   <a href="#" class="back-to-top-button" aria-label="Sayfanın başına dön">
-    <i class="fa-solid fa-arrow-up"></i>
+    <svg class="icon"><use href="/theme/images/icons.svg#arrow-up"></use></svg>
   </a>
   <div class="wrapper">
     <aside class="sidebar">
@@ -107,42 +104,38 @@
             {% for item in NAVBAR_LINKS %}
             <li id="fadeshow2">
               <a href="{{ SITEURL }}{{ item.url }}" target="{{ item.target }}" class="contrast"
-                aria-label="{{ item.name }}"><i class="{{ item.icon }} fa-2x"></i></a>
+                aria-label="{{ item.name }}"><svg class="icon icon-2x"><use href="/theme/images/icons.svg#{{ item.icon.split(' ')[-1].replace('fa-', '') }}"></use></svg></a>
             </li>
-            {% endfor %} {% if SOCIAL %} {% for name, value in SOCIAL.items()
-            %} {% if name in ['github', 'youtube', 'bluesky', 'kick'] %} {%
-            set icon_class = '' %} {% set url = '' %} {% if name == 'github'
-            %} {% set icon_class = 'fa-brands fa-github-alt' %} {% set url =
-            'https://github.com/' + value %} {% elif name == 'youtube' %} {%
-            set icon_class = 'fa-brands fa-youtube' %} {% set url =
-            'https://www.youtube.com/@' + value %} {% elif name == 'bluesky'
-            %} {% set icon_class = 'fa-brands fa-bluesky' %} {% set url =
-            'https://bsky.app/profile/' + value %} {% elif name == 'instagram'
-            %} {% set icon_class = 'fa-brands fa-instagram' %} {% set url =
-            'https://instagram.com/' + value %} {% elif name == 'twitch' %} {%
-            set icon_class = 'fa-brands fa-twitch' %} {% set url =
-            'https://twitch.tv/' + value %} {% elif name == 'matrix' %} {% set
-            icon_class = 'fa-brands fa-matrix-org' %} {% set url =
-            'https://matrix.to/#/' + value %} {% elif name == 'discord' %} {%
-            set icon_class = 'fa-brands fa-discord' %} {% set url =
-            'https://discord.com/users/' + value %} {% elif name == 'kick' %}
-            {% set icon_class = 'fa-brands fa-kickstarter' %} {% set url =
-            'https://kick.com/' + value %} {% elif name == 'bynogame' %} {%
-            set icon_class = 'fa-solid fa-wallet' %} {% set url = '#' %} {%
-            elif name == 'github_sponsor' %} {% set icon_class = 'fa-solid
-            fa-heart' %} {% set url = 'https://github.com/sponsors/' + value
-            %} {% endif %} {% if url %}
+            {% endfor %}
+            {% if SOCIAL %} 
+            {% for name, value in SOCIAL.items() %} 
+              {% set icon_id = name.replace('_sponsor', '').replace('x', 'x-twitter') %}
+              {% set url = '' %}
+              {% if name == 'github' %}{% set url = 'https://github.com/' + value %}
+              {% elif name == 'youtube' %}{% set url = 'https://www.youtube.com/@' + value %}
+              {% elif name == 'bluesky' %}{% set url = 'https://bsky.app/profile/' + value %}
+              {% elif name == 'instagram' %}{% set url = 'https://instagram.com/' + value %}
+              {% elif name == 'twitch' %}{% set url = 'https://twitch.tv/' + value %}
+              {% elif name == 'reddit' %}{% set url = 'https://www.reddit.com/user/' + value + '/' %}
+              {% elif name == 'kick' %}{% set url = 'https://kick.com/' + value %}
+              {% elif name == 'x' %}{% set url = 'https://x.com/' + value %}
+              {% elif name == 'github_sponsor' %}{% set url = 'https://github.com/sponsors/' + value %}{% set icon_id = 'heart' %}
+              {% endif %}
+              
+              {% if url %}
+              <li>
+                <a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="contrast"
+                  aria-label="{{ name }} link"><svg class="icon icon-2x"><use href="/theme/images/icons.svg#{{ icon_id }}"></use></svg></a>
+              </li>
+              {% endif %}
+            {% endfor %} 
+            {% endif %}
             <li>
-              <a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="contrast"
-                aria-label="Social media link"><i class="{{ icon_class }} fa-2x"></i></a>
-            </li>
-            {% endif %} {% endif %} {% endfor %} {% endif %}
-            <li>
-              <a href="#" class="search-trigger" aria-label="Search"><i class="fa-solid fa-search fa-2x"></i></a>
+              <a href="#" class="search-trigger" aria-label="Search"><svg class="icon icon-2x"><use href="/theme/images/icons.svg#search"></use></svg></a>
             </li>
             <li>
               <a href="#" id="theme-switcher" aria-label="Toggle theme">
-                <i id="theme-icon" class="fa-solid fa-sun fa-lg"></i>
+                <svg id="theme-icon" class="icon icon-2x"><use href="/theme/images/icons.svg#sun"></use></svg>
               </a>
             </li>
           </ul>
@@ -179,10 +172,10 @@
     // Set initial theme from localStorage or default to dark
     const currentTheme = localStorage.getItem("theme") || "dark";
     html.setAttribute("data-theme", currentTheme);
-    themeIcon.className =
+    themeIcon.querySelector("use").setAttribute("href", 
       currentTheme === "dark"
-        ? "fa-solid fa-moon fa-2x"
-        : "fa-solid fa-sun fa-2x";
+        ? "/theme/images/icons.svg#moon"
+        : "/theme/images/icons.svg#sun");
 
     themeSwitcher.addEventListener("click", function (e) {
       e.preventDefault();
@@ -190,10 +183,10 @@
         html.getAttribute("data-theme") === "dark" ? "light" : "dark";
       html.setAttribute("data-theme", newTheme);
       localStorage.setItem("theme", newTheme);
-      themeIcon.className =
+      themeIcon.querySelector("use").setAttribute("href", 
         newTheme === "dark"
-          ? "fa-solid fa-moon fa-2x"
-          : "fa-solid fa-sun fa-2x";
+          ? "/theme/images/icons.svg#moon"
+          : "/theme/images/icons.svg#sun");
     });
 
     // Back to top functionality

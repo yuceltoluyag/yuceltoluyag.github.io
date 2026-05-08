@@ -148,6 +148,6 @@ Lutris is a great blessing for Linux users. Although running a non-native game l
 
 -- Working smoothly at 60 FPS or higher.
 
--- [/rise-of-kingdom-bot ](/veda-rise-of-kingdom-bot)
+-- [/rise-of-kingdom-bot ](/en/veda-rise-of-kingdom-bot/)
 
 Live Stream Replay: [Click to watch live stream replay](https://kick.com/babapy/videos/2063d6f8-eba5-44af-8877-2ba34dd2d9c9){: target="\_blank" rel="noopener noreferrer"}

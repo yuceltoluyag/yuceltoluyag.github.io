@@ -209,7 +209,7 @@ This command will show you step by step what happens during startup and allow yo
 
 **Making NAT rules permanent:**
 
-The NAT rules you establish may disappear after system restart. To make them permanent, you can use the `iptables-save` command. For more detailed information, it's recommended to read our [Linux firewall configuration article](/linux-firewall-ayarlari).
+The NAT rules you establish may disappear after system restart. To make them permanent, you can use the `iptables-save` command. For more detailed information, it's recommended to read our [Linux firewall configuration article](/en/linux-firewall-ayarlari/).
 
 ```bash
 sudo iptables-save > /etc/iptables/iptables.rules

@@ -217,4 +217,4 @@ mbsync -a
 ```
 
 [responsive_img src="/images/neomutt_senkron-xl.webp" alt="neomutt_senkron" /]
-In [Part 2](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="\_blank" rel="noopener noreferrer"} of this article series, we will continue configuring your email client in more detail. 🙂
+In [Part 2](/en/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin/){: target="\_blank" rel="noopener noreferrer"} of this article series, we will continue configuring your email client in more detail. 🙂

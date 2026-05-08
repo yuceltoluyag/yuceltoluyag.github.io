@@ -5,7 +5,7 @@ Category: Web Geliştirme
 Tags: pelican, mastodon, yorumlar, webcomponent, blog
 Slug: pelican-bloguna-mastodon-yorumlari-ekleme
 Author: yuceltoluyag
-Translation: false
+Lang: tr
 Status: published
 Summary: Pelican statik blog sistemine Mastodon yorumlarını nasıl ekleyeceğinizi adım adım öğrenin.
 Image: images/pelican-bloguna-mastodon-yorumlari-ekleme-xl.webp

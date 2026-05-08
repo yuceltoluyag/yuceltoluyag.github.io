@@ -3,7 +3,9 @@
 import os
 import re
 import shutil
+import stat
 import sys
+import time
 import uuid
 from datetime import datetime
 from pathlib import Path
@@ -84,6 +86,15 @@ def slugify(s):
     return s
 
 
+def remove_readonly(func, path, excinfo):
+    """Error handler for shutil.rmtree to handle read-only files on Windows."""
+    try:
+        os.chmod(path, stat.S_IWRITE)
+        func(path)
+    except Exception:
+        pass
+
+
 @duty
 def cache_bust(ctx: Context) -> None:
     """Cache bust links to CSS files within the HEAD by appending a unique ID to the URL."""
@@ -123,13 +134,15 @@ def clean(ctx: Context) -> None:
         SETTINGS["OUTPUT_PATH"],
     ):
         if Path(path).is_dir():
-            shutil.rmtree(path)
+            shutil.rmtree(path, onerror=remove_readonly)
+            time.sleep(0.1)
         elif Path(path).is_file():
             Path(path).unlink()
 
     ctx.run("find . -type d -name __pycache__ | xargs rm -rf")
     ctx.run("find . -name '.DS_Store' -delete")
-    os.makedirs(SETTINGS["OUTPUT_PATH"])
+    if not Path(SETTINGS["OUTPUT_PATH"]).exists():
+        os.makedirs(SETTINGS["OUTPUT_PATH"])
 
 
 @duty(silent=True)
@@ -137,7 +150,7 @@ def clean_cache(ctx: Context) -> None:
     """Clean only the cache directory."""
     cache_path = SETTINGS.get("CACHE_PATH", "cache")
     if Path(cache_path).is_dir():
-        shutil.rmtree(cache_path)
+        shutil.rmtree(cache_path, onerror=remove_readonly)
     # Also remove potential cache files in the output directory
     for cache_file in Path(SETTINGS["OUTPUT_PATH"]).glob("**/*.cache"):
         cache_file.unlink()
@@ -148,8 +161,10 @@ def clean_output(ctx: Context) -> None:
     """Clean only the output directory."""
     output_path = SETTINGS["OUTPUT_PATH"]
     if Path(output_path).is_dir():
-        shutil.rmtree(output_path)
-        os.makedirs(output_path)
+        shutil.rmtree(output_path, onerror=remove_readonly)
+        time.sleep(0.1)
+        if not Path(output_path).exists():
+            os.makedirs(output_path)
 
 
 @duty(post=[cache_bust])
@@ -215,7 +230,7 @@ def publish(ctx: Context) -> None:
     ctx.run(run_pelican(["-s", SETTINGS_FILE_PUBLISH]))
 
 
-@duty
+@duty(capture=False)
 def livereload(ctx: Context):
     """Automatically reload browser tab upon file modification."""
     from livereload import Server

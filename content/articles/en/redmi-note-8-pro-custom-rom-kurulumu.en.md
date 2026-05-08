@@ -59,7 +59,7 @@ If your device appears in the list, the connection is successful. 🟢
 
 ### Learning IMEI Information
 
-You can learn your IMEI number by running the following commands in terminal: [MediaTek IMEI Repair Guide](/mediatek-imei-onarma-rehberi/) is explained in detail here. It automatically backs up, but you can also take manual backup. It may be needed in the future.
+You can learn your IMEI number by running the following commands in terminal: [MediaTek IMEI Repair Guide](/en/mediatek-imei-onarma-rehberi/) is explained in detail here. It automatically backs up, but you can also take manual backup. It may be needed in the future.
 
 ```bash
 adb shell
@@ -90,7 +90,7 @@ Sample output:
 
 ### Taking NVRAM Backup (Root Required)
 
-Taking NVRAM backup usually requires root access. If you don't have root access, you can backup by noting your IMEI numbers. You can examine the article at [MediaTek IMEI Repair Guide](/mediatek-imei-onarma-rehberi/) address.
+Taking NVRAM backup usually requires root access. If you don't have root access, you can backup by noting your IMEI numbers. You can examine the article at [MediaTek IMEI Repair Guide](/en/mediatek-imei-onarma-rehberi/) address.
 
 ## 🔓 Unlocking Bootloader
 
@@ -274,7 +274,7 @@ adb push "/path/to/rom.zip" /data/media/0/
 **Solution:**
 
 1. First complete ROM installation
-2. Download a special zip file for IMEI repair (mtk_imei script) [MediaTek IMEI Repair Guide](/mediatek-imei-onarma-rehberi/)
+2. Download a special zip file for IMEI repair (mtk_imei script) [MediaTek IMEI Repair Guide](/en/mediatek-imei-onarma-rehberi/)
 3. Flash this zip file from TWRP
 4. Restart device and check your IMEI numbers
 

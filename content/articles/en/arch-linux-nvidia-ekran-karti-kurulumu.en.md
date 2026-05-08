@@ -171,7 +171,7 @@ Then open the **NVIDIA Settings** application:
 
 ## 🔗 Related Articles
 
-- [Waydroid Installation and Android Apps](/arch-linux-waydroid-kurulumu)
-- [Oh My ZSH Installation (Themes and Plugins Included)](/oh-my-zsh-kurulumu-temel-ayarlar/)
-- [Arch Linux NTFS Disk Configuration](/arch-linux-ntfs-yapilandirma)
-- [NVIDIA Error and Solution in Arch Linux linux-firmware Update](/arch-linux-linux-firmware-nvidia-hatasi-cozumu/)
+- [Waydroid Installation and Android Apps](/en/arch-linux-waydroid-kurulumu/)
+- [Oh My ZSH Installation (Themes and Plugins Included)](/en/oh-my-zsh-kurulumu-temel-ayarlar/)
+- [Arch Linux NTFS Disk Configuration](/en/arch-linux-ntfs-yapilandirma/)
+- [NVIDIA Error and Solution in Arch Linux linux-firmware Update](/en/arch-linux-linux-firmware-nvidia-hatasi-cozumu/)

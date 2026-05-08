@@ -96,7 +96,7 @@ So I'm sorry, I was only updating to keep my promise, but I guess we hit a wall.
 Thank you for everything. 🙏
 
 Stay with love,
-**[@yuceltoluyag](/hakkimda/)**
+**[@yuceltoluyag](/en/hakkimda/)**
 
 I received too many emails and [Instagram](https://www.instagram.com/yuceltoluyag/){: target="\_blank" rel="noopener noreferrer"} messages. All details about the project are available at the link.
 

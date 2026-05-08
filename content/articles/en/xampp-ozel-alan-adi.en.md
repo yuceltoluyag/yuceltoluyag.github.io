@@ -13,7 +13,7 @@ Lang: en
 toot: https://mastodon.social/@yuceltoluyag/114984196579615973
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrbokyqnk23
 
-Let's take those who want to use it on the Linux side like this: [Arch Linux](/arch-linux-apache-lampp-sanal-sunucu-kurulumu/){: target="\_blank" rel="noopener noreferrer"} + [Debian](/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="\_blank" rel="noopener noreferrer"}
+Let's take those who want to use it on the Linux side like this: [Arch Linux](/en/arch-linux-apache-lampp-sanal-sunucu-kurulumu/){: target="\_blank" rel="noopener noreferrer"} + [Debian](/en/linux-apache2-mysql-phpmyadmin-kurulumu/){: target="\_blank" rel="noopener noreferrer"}
 
 ## Step 1: Editing the Hosts File
 

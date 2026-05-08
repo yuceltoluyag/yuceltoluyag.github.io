@@ -133,7 +133,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 After this installation is complete:
 
-- You can read the article [Using Shopt in Zsh](/zsh-icerisinde-shopt-kullanmak/)
+- You can read the article [Using Shopt in Zsh](/en/zsh-icerisinde-shopt-kullanmak/)
 - You can add your custom aliases
 - You can customize themes and plugins
 

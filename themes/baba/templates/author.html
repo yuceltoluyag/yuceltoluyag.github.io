@@ -13,17 +13,17 @@
             <div class="author-social">
                 {% if author_info.social.github %}
                 <a href="https://github.com/{{ author_info.social.github }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s GitHub profile">
-                    <i class="fa-brands fa-github"></i>
+                    <svg class="icon"><use href="/theme/images/icons.svg#github"></use></svg>
                 </a>
                 {% endif %}
                 {% if author_info.social.twitter %}
                 <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s Twitter profile">
-                    <i class="fa-brands fa-x-twitter"></i>
+                    <svg class="icon"><use href="/theme/images/icons.svg#x-twitter"></use></svg>
                 </a>
                 {% endif %}
                 {% if author_info.social.linkedin %}
                 <a href="https://linkedin.com/in/{{ author_info.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="{{ author_info.name }}'s LinkedIn profile">
-                    <i class="fa-brands fa-linkedin"></i>
+                    <svg class="icon"><use href="/theme/images/icons.svg#linkedin"></use></svg>
                 </a>
                 {% endif %}
             </div>

@@ -5,7 +5,7 @@ Slug: hakkimda
 Template: about
 Lang: tr
 
-# Hakkımda
+
 
 1989'da doğduğum söyleniyor ama bilinçli bir şekilde şahitlik edemediğim için biraz şüpheyle yaklaşıyorum. İçimde, sanki yüz yıllardır yaşıyormuşum gibi garip bir hissiyat var. Beni tanıyanların bir kısmı kaldırım mühendisi, diğer bir kısmı ise developer olduğumu söyler. Bunlar, ekmek kapım elbette; ama asıl mesleğim üşengeçlik. Fazla detay bünyeye zarar, o yüzden burada noktalıyorum.
 

@@ -306,8 +306,8 @@ After completing this article:
 
 ## 📚 Series Contents
 
-1. [Oh My Zsh Installation and Basic Settings](/oh-my-zsh-kurulumu-temel-ayarlar/)
-2. [Using Shopt in Zsh](/zsh-icerisinde-shopt-kullanmak/)
+1. [Oh My Zsh Installation and Basic Settings](/en/oh-my-zsh-kurulumu-temel-ayarlar/)
+2. [Using Shopt in Zsh](/en/zsh-icerisinde-shopt-kullanmak/)
 3. **Oh My Zsh Custom Aliases and Functions** (This article)
 
 ---

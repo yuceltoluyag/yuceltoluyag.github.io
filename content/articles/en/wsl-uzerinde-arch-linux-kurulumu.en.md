@@ -40,7 +40,7 @@ It allows us to run Linux under Windows without third-party software. What's the
 
 - If your **version is old**, you can follow the steps here. [Install Linux on Windows with WSL](https://docs.microsoft.com/en-us/windows/wsl/install-manual){: target="\_blank" rel="noopener noreferrer"}
 
-- [Customizing Windows Terminal](/windows-terminalimi-nasil-ozellestiriyorum){: target="\_blank" rel="noopener noreferrer"}
+- [Customizing Windows Terminal](/en/windows-terminalimi-nasil-ozellestiriyorum/){: target="\_blank" rel="noopener noreferrer"}
 
 - WSL
 

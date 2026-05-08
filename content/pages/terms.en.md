@@ -5,7 +5,7 @@ Slug: terms
 Lang: en
 Template: legal
 
-# Terms of Use
+
 
 These terms of use specify the rules and conditions you must comply with when using the **{{ yuceltoluyag }}** website.
 

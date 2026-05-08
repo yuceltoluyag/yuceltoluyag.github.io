@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 e.preventDefault();
                 navigator.clipboard.writeText(window.location.href).then(() => {
                     const originalHTML = socialCopyButton.innerHTML;
-                    socialCopyButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+                    socialCopyButton.innerHTML = '<svg class="icon"><use href="/theme/images/icons.svg#check"></use></svg>';
                     socialCopyButton.classList.add('copied');
                     
                     setTimeout(() => {

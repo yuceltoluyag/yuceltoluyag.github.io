@@ -86,6 +86,6 @@ sudo mv libglib* libgio* libgmodule* disabled-libraries/
 - Since Resolve includes its own libraries, conflicts with system libraries can sometimes occur.
 - Temporarily disabling conflicting libraries resolves download and operational problems.
 - These steps have been tested on Arch Linux and similar distributions; similar solutions can be applied on other distributions.
-- If Davinci Resolve does not open, you can also read our article on this topic: [DaVinci Resolve 20.1 Not Opening on Linux: Error and Solution](/davinci-resolve-20-1-linux-hatasi-cozumu/)
+- If Davinci Resolve does not open, you can also read our article on this topic: [DaVinci Resolve 20.1 Not Opening on Linux: Error and Solution](/en/davinci-resolve-20-1-linux-hatasi-cozumu/)
 
 [responsive_img src="/images/davinci-resolve-extras-ai-voice-xl.webp" alt="DaVinci Resolve Extras Download Issue Solution" /]

@@ -276,6 +276,6 @@ Happy booting! 💻
 [^El-Torito]: [https://en.wikipedia.org/wiki/ISO_9660#El_Torito](https://en.wikipedia.org/wiki/ISO_9660#El_Torito){: target="\_blank" rel="noopener noreferrer"}
 [^Rufus]: [https://rufus.ie/en/](https://rufus.ie/en/){: target="\_blank" rel="noopener noreferrer"}
 
-- For more information, you can check out the [guide on creating a UEFI-supported Windows 10 USB on Linux](/linux-uefi-windows10-usb/).
+- For more information, you can check out the [guide on creating a UEFI-supported Windows 10 USB on Linux](/en/linux-uefi-windows10-usb/).
 
 [responsive_img src="/images/usb-bellekten-iso-onyukleme-rehberi-xl.webp" alt="Guide to Booting ISO from a USB Stick" /]

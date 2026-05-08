@@ -340,7 +340,7 @@ sudo systemctl enable --now httpd
 
 After configuring Apache, you can access phpPgAdmin from your browser.
 
-- If you need a detailed guide for Apache and PHP installation for phpPgAdmin, you can check the [Arch Linux Apache (LAMPP) Virtual Host Setup](/arch-linux-apache-lampp-sanal-sunucu-kurulumu/) page.
+- If you need a detailed guide for Apache and PHP installation for phpPgAdmin, you can check the [Arch Linux Apache (LAMPP) Virtual Host Setup](/en/arch-linux-apache-lampp-sanal-sunucu-kurulumu/) page.
 
 ---
 
@@ -363,7 +363,7 @@ sudo -u postgres psql crm_db_restore < ~/backups/crm_db_2025-08-15.sql
 
 !!! tip "Using different database names for different environments (e.g. <code>crm_db_dev</code>, <code>crm_db_prod</code>) prevents confusion."
 
-- If you are working with MySQL or MariaDB, for similar backup and restore operations you can check the [Arch Linux LAMPP Installation (PHP7x + MariaDB + MySQL + PhpMyAdmin)](/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/) guide.
+- If you are working with MySQL or MariaDB, for similar backup and restore operations you can check the [Arch Linux LAMPP Installation (PHP7x + MariaDB + MySQL + PhpMyAdmin)](/en/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/) guide.
 
 ---
 

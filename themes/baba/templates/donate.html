@@ -14,7 +14,7 @@ block head %} {{ super() }}
     <div class="donate-container">
       <div class="donate-headings">
         <h1>
-          <i class="fa-solid fa-heart" style="color: #e74c3c;"></i> {{ _('Bağış Yap') }}
+          <svg class="icon" style="color: #e74c3c;"><use href="/theme/images/icons.svg#heart"></use></svg> {{ _('Bağış Yap') }}
         </h1>
         <p>
           {{ _('Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz.') }}
@@ -25,7 +25,7 @@ block head %} {{ super() }}
         <!-- Neden Bağış? -->
         <article class="donate-section pico-card">
           <header>
-            <h2><i class="fa-solid fa-question-circle"></i> {{ _('Neden Bağış?') }}</h2>
+            <h2><svg class="icon"><use href="/theme/images/icons.svg#question-circle"></use></svg> {{ _('Neden Bağış?') }}</h2>
           </header>
           {% for item in [
             _("Daha fazla içerik üretebiliyorum"),
@@ -37,7 +37,7 @@ block head %} {{ super() }}
           ] %}
           <figure class="donate-figure">
             <div class="donate-figure-grid">
-              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#check"></use></svg>
               <p>{{ item }}</p>
             </div>
           </figure>
@@ -47,7 +47,7 @@ block head %} {{ super() }}
         <!-- Bağış Seçenekleri -->
         <article class="donate-options pico-card">
           <header>
-            <h2><i class="fa-solid fa-hand-holding-heart"></i> {{ _('Bağış Seçenekleri') }}</h2>
+            <h2><svg class="icon"><use href="/theme/images/icons.svg#hand-holding-heart"></use></svg> {{ _('Bağış Seçenekleri') }}</h2>
           </header>
           <div class="donate-options-grid">
             {% if SOCIAL.bynogame %}
@@ -58,7 +58,7 @@ block head %} {{ super() }}
               aria-label="{{ _('Hızlı ve Güvenli Bağış') }}"
             >
               <article class="donate-option-card">
-                <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#credit-card"></use></svg>
                 <h3>ByNoGame</h3>
                 <p>{{ _('Türk lirası ile hızlı bağış') }}</p>
               </article>
@@ -70,7 +70,7 @@ block head %} {{ super() }}
               data-tooltip="{{ _('Aylık Destek') }}"
             >
               <article class="donate-option-card">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                <svg class="icon" aria-hidden="true"><use href="/theme/images/icons.svg#github"></use></svg>
                 <h3>GitHub Sponsors</h3>
                 <p>{{ _('Aylık düzenli destek') }}</p>
               </article>
@@ -83,14 +83,14 @@ block head %} {{ super() }}
       <!-- Kripto Bölümü -->
       <article class="crypto-section pico-card">
         <header>
-          <h2><i class="fa-solid fa-coins"></i> {{ _('Kripto Para Bağışları') }}</h2>
+          <h2><svg class="icon"><use href="/theme/images/icons.svg#coins"></use></svg> {{ _('Kripto Para Bağışları') }}</h2>
         </header>
 
         <article class="crypto-notice" aria-label="{{ _('Ağ bilgisi') }}">
           <div class="crypto-notice-content">
-            <i class="fa-solid fa-circle-info"></i>
+            <svg class="icon"><use href="/theme/images/icons.svg#circle-info"></use></svg>
             <div>
-              <strong> <i class="fa-solid fa-exclamation-circle"></i> {{ _('Önemli:') }}</strong>
+              <strong> <svg class="icon"><use href="/theme/images/icons.svg#exclamation-circle"></use></svg> {{ _('Önemli:') }}</strong>
               <span>{{ _('Tüm adresler') }} <kbd>BSC / BEP20</kbd> {{ _('ağını kullanır.') }}</span>
               <footer>
                 {{ _('Farklı ağlar için lütfen') }}
@@ -131,7 +131,7 @@ block head %} {{ super() }}
                     aria-label="Close dialog"
                     onclick="closeModal('modal-{{ coin.id }}')"
                   >
-                    <i class="fa-solid fa-xmark"></i>
+                    <svg class="icon"><use href="/theme/images/icons.svg#xmark"></use></svg>
                   </button>
                   <h3>{{ coin.name }}</h3>
                 </header>
@@ -147,14 +147,14 @@ block head %} {{ super() }}
         </div>
 
         <details class="crypto-details">
-          <summary><i class="fa-solid fa-wallet"></i> {{ _('Cüzdan Adresini Göster') }}</summary>
+          <summary><svg class="icon"><use href="/theme/images/icons.svg#wallet"></use></svg> {{ _('Cüzdan Adresini Göster') }}</summary>
           <div class="crypto-address-container">
             <kbd class="crypto-address">0x012e2a56828990ef0aa97de827297456aabccc63</kbd>
             <button
               class="outline copy-button"
               onclick="copyToClipboard('0x012e2a56828990ef0aa97de827297456aabccc63')"
             >
-              <i class="fa-solid fa-copy"></i> {{ _('Kopyala') }}
+              <svg class="icon"><use href="/theme/images/icons.svg#copy"></use></svg> {{ _('Kopyala') }}
             </button>
           </div>
         </details>
@@ -186,7 +186,7 @@ block head %} {{ super() }}
       // Kopyalama işlemi başarılı
       const button = event.target.closest('.copy-button');
       const originalHTML = button.innerHTML;
-      button.innerHTML = '<i class="fa-solid fa-check"></i> ' + '{{ _("Kopyalandı!") }}';
+      button.innerHTML = '<svg class="icon"><use href="/theme/images/icons.svg#check"></use></svg> ' + '{{ _("Kopyalandı!") }}';
       setTimeout(() => {
         button.innerHTML = originalHTML;
       }, 2000);

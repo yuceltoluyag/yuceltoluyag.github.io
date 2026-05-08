@@ -177,7 +177,7 @@ p10k configure
 Now you have **Oh My Zsh** installed on your system, with themes and plugins enabled!
 Your terminal has become both more powerful and much more aesthetic. ✨
 
-In the next step, you can enhance your Zsh experience by adding [custom aliases and functions](/oh-my-zsh-ozel-aliaslar-fonksiyonlar/).
+In the next step, you can enhance your Zsh experience by adding [custom aliases and functions](/en/oh-my-zsh-ozel-aliaslar-fonksiyonlar/).
 
 ---
 
@@ -193,7 +193,7 @@ In the next step, you can enhance your Zsh experience by adding [custom aliases 
 This article is the first part of the **Oh My Zsh Series**:
 
 1. **Oh My Zsh Installation (Including Themes and Plugins)** ✅
-2. [Using Shopt in Zsh](/zsh-icerisinde-shopt-kullanmak/)
-3. [Oh My Zsh Custom Aliases and Functions](/oh-my-zsh-ozel-aliaslar-fonksiyonlar/)
+2. [Using Shopt in Zsh](/en/zsh-icerisinde-shopt-kullanmak/)
+3. [Oh My Zsh Custom Aliases and Functions](/en/oh-my-zsh-ozel-aliaslar-fonksiyonlar/)
 
 ---

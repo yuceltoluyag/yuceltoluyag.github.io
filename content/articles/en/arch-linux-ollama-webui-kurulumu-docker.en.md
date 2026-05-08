@@ -21,7 +21,7 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtr4xflq22m
 **Open WebUI** provides a visual interface to easily use these models through your browser.
 In this article, you will learn step-by-step **Ollama and Open WebUI installation using Docker on Arch Linux**, including all methods including GPU acceleration, single container bundle installation, and automatic updates.
 
-> 💡 If Docker is not installed on your system, first check our [Docker Installation on Arch Linux](/arch-linux-docker-kurulumu) guide.
+> 💡 If Docker is not installed on your system, first check our [Docker Installation on Arch Linux](/en/arch-linux-docker-kurulumu/) guide.
 
 ---
 

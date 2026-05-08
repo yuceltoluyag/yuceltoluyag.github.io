@@ -209,7 +209,7 @@ compdef '_dispatch redis-cli_completion redis-cli' valkey-cli
 
 Add this to your `~/.zshrc` file.
 
-If you don't know what zsh is, you can check out this article: [Oh My ZSH Installation (Including Themes and Plugins)](/oh-my-zsh-kurulumu-tema-ve-eklentiler/)
+If you don't know what zsh is, you can check out this article: [Oh My ZSH Installation (Including Themes and Plugins)](/en/oh-my-zsh-kurulumu-tema-ve-eklentiler/)
 
 ---
 

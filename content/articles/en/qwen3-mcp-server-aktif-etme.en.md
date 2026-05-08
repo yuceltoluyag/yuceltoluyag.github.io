@@ -27,7 +27,7 @@ MCP (Model Context Protocol) allows language models to communicate with external
 - 📊 You can add extra context and memory with services like **Context7**.
 - ✨ You can produce API-based solutions with special plugins like **Magic**.
 
-> If you haven't read it before, check out our related article: [Easily Start Browser Automation with MCP: Puppeteer Server Installation](/mcp-puppeteer-sunucusu-kurulumu/)
+> If you haven't read it before, check out our related article: [Easily Start Browser Automation with MCP: Puppeteer Server Installation](/en/mcp-puppeteer-sunucusu-kurulumu/)
 
 ---
 

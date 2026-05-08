@@ -124,7 +124,7 @@ To summarize:
 - Now Resolve will use the updated system libraries and open without problems. 🎉
 - For extra download issues, you can also check our **[DaVinci Resolve Extras Download Issue Solution](/en/davinci-resolve-extras-download-failed/)** article.
 
-If this guide helped you, don't forget to check our **[Linux category](/kategori/linux/)** for more content about DaVinci Resolve installations on Linux. 🐧
+If this guide helped you, don't forget to check our **[Linux category](/en/categories/linux/)** for more content about DaVinci Resolve installations on Linux. 🐧
 [responsive_img src="/images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp" alt="Davinci Resolve Linux" /]
 
 ---

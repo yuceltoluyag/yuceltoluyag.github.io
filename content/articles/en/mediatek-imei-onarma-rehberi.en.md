@@ -222,7 +222,7 @@ Always remember to take backups before the process and follow the steps carefull
 - **TWRP Installation**: You can find the appropriate TWRP version for your device from your ROM's official telegram channel or XDA Developers forum. [ROM UNOFFICIAL begonia 13 crDroidAndroid
   ](https://xdaforums.com/t/rom-unofficial-begonia-13-crdroidandroid.4558845/){: target="\_blank" rel="noopener noreferrer"}
 - **ADB/Fastboot Installation**: [Android Developer Site](https://developer.android.com/studio/command-line/adb){: target="\_blank" rel="noopener noreferrer"}
-- **Other Troubleshooting Guides**: [Our Troubleshooting Category](/kategori/sorun-giderme)
+- **Other Troubleshooting Guides**: [Our Troubleshooting Category](/en/categories/sorun-giderme/)
 
 ### 📞 Share Your Experiences Too!
 

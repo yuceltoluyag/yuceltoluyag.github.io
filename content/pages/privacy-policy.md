@@ -5,7 +5,7 @@ Slug: privacy-policy
 Lang: tr
 Template: legal
 
-# Gizlilik Politikası
+
 
 Kişisel verilerinizin gizliliği bizim için önemlidir. Bu gizlilik politikası, **yuceltoluyag**  web sitesini kullanırken toplanan bilgileri ve bunların nasıl kullanıldığını açıklar.
 

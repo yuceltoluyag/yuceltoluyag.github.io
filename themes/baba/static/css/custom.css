@@ -3226,3 +3226,8 @@ article.article {
     max-width: 100%;
   }
 }
+
+/* SVG Icon System */
+.icon { width: 1em; height: 1em; stroke: currentColor; fill: none; vertical-align: -0.125em; display: inline-block; }
+.icon-2x { width: 2.2em; height: 2.2em; }
+.icon-lg { width: 1.5em; height: 1.5em; }

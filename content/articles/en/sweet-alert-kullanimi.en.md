@@ -16,7 +16,7 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqcabumls2o
 
 ## What is Sweet Alert?
 
-If you're tired of classic alert windows, you can use the **SweetAlert** library, a modern and mobile-compatible alternative. If you're curious about how to use it with PHP, you can check out the [PHP Morris Js](/pdo-sum-fonksiyonu-kullanimi-morris-js/){: target="\_blank" rel="noopener noreferrer"} article.
+If you're tired of classic alert windows, you can use the **SweetAlert** library, a modern and mobile-compatible alternative. If you're curious about how to use it with PHP, you can check out the [PHP Morris Js](/en/pdo-sum-fonksiyonu-kullanimi-morris-js/){: target="\_blank" rel="noopener noreferrer"} article.
 
 First of all, you need to include the library in your project.
 
