@@ -1,4 +1,5 @@
 import os
+import sys
 import json
 from datetime import date
 from blinker import signal
@@ -6,12 +7,12 @@ from blinker import signal
 # =============================================================================
 # SITE SETTINGS
 # =============================================================================
-PUBLISH = os.environ.get("PUBLISH")
+PUBLISH = os.environ.get("PUBLISH") == "true" or "publishconf.py" in sys.argv
 SITEURL = (
-    "https://yuceltoluyag.github.io/" if PUBLISH else "http://localhost:8080"
+    "https://yuceltoluyag.github.io" if PUBLISH else "http://localhost:8080"
 )
 SITEURL_MAIN = SITEURL
-CANONICAL_URL = "https://yuceltoluyag.github.io/"
+CANONICAL_URL = "https://yuceltoluyag.github.io"
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
 SITETAGLINE = ">| Linux gamer, Python lover, and technology enthusiast |<"
@@ -82,6 +83,8 @@ I18N_SUBSITES = {
     "en": {
         "SITENAME": "Baba Tech Blog",
         "AUTHOR": "yuceltoluyag",
+        "SITEURL": f"{SITEURL}/en",
+        "SITEURL_MAIN": SITEURL,
         "LOCALE": [
             "en_US.UTF-8", "en_US.utf8", "en_US", "en-US",
             "English_United States.1252",
