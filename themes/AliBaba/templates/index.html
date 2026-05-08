@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="home-bento" aria-label="Ana Sayfa Vitrini">
+    {% set featured_slug = FEATURED_ARTICLE.slug if FEATURED_ARTICLE else '' %}
+    
+    {% if FEATURED_ARTICLE %}
+    {% for article in articles if article.slug == featured_slug %}
+    <article class="bento-card hero-bento" style="grid-area: hero;">
+        <div class="bento-badge">{{ _('ÖNE ÇIKAN') }}</div>
+        <div class="bento-content">
+            <h2 class="bento-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                {% if (current_date - article.date.date()).days < 7 %}
+                <span class="new-badge">{{ _('YENİ') if article.lang == 'tr' else 'NEW' }}</span>
+                {% endif %}
+            </h2>
+            <div class="bento-summary">{{ article.summary }}</div>
+            <div class="bento-footer">
+                <span class="bento-cat">{{ article.category }}</span>
+                <a href="{{ SITEURL }}/{{ article.url }}" class="bento-btn">{{ _('Oku') }} <span>&rarr;</span></a>
+            </div>
+        </div>
+        <div class="bento-glow"></div>
+    </article>
+    {% endfor %}
+    {% endif %}
+
+    <div class="bento-side-column" style="grid-area: side;">
+        {% set latest_count = namespace(value=0) %}
+        {% for article in articles if article.slug != featured_slug and latest_count.value < 2 %}
+        <article class="bento-card mini-bento">
+            <span class="mini-cat">{{ article.category }}</span>
+            <h2 class="mini-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                {% if (current_date - article.date.date()).days < 7 %}
+                <span class="new-badge">{{ _('YENİ') if article.lang == 'tr' else 'NEW' }}</span>
+                {% endif %}
+            </h2>
+            <time class="mini-date">{{ article.locale_date }}</time>
+            {% set latest_count.value = latest_count.value + 1 %}
+        </article>
+        {% endfor %}
+    </div>
+
+    <div class="bento-bottom-row" style="grid-area: bottom;">
+        <div class="explore-header">
+            <h2>{{ _('Keşfet') }}</h2>
+            <div class="header-line"></div>
+        </div>
+        <div class="bento-categories">
+            {% for category, cat_articles in categories|sort %}
+            {% if loop.index0 < 4 %}
+            <a href="{{ SITEURL }}/{{ category.url }}" class="cat-pill">
+                <span class="cat-pill-icon">
+                    {% set cat_name = category|string|lower %}
+                    {% if 'linux' in cat_name %}🐧{% elif 'python' in cat_name %}🐍{% elif 'web' in cat_name %}🌐{% else %}📁{% endif %}
+                </span>
+                <span class="cat-pill-name">{{ category }}</span>
+                <span class="cat-pill-count">{{ cat_articles|length }}</span>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="feed-section">
+    <div class="section-header">
+        <h2 class="section-title">{{ _('Tüm Yazılar') }}</h2>
+        <div class="section-line"></div>
+    </div>
+    
+    <div class="articles-feed">
+        {% for article in articles if article.slug != featured_slug %}
+        {% if loop.index0 >= 2 and loop.index0 < 8 %}
+        <article class="feed-item">
+            <div class="feed-date">
+                <span class="day">{{ article.date.strftime('%d') }}</span>
+                <span class="month">{{ article.date.strftime('%b') }}</span>
+            </div>
+            <div class="feed-content">
+                <div class="feed-meta-top">
+                    <span class="feed-cat-badge">{{ article.category }}</span>
+                    {% if article.stats %}
+                    <span class="feed-stats">
+                        <svg class="icon"><use href="/theme/images/icons.svg#clock"></use></svg>
+                        {{ article.stats.read_mins }} {% if article.lang == 'en' %}min{% else %}dk{% endif %}
+                        <span class="stats-sep"></span>
+                        <svg class="icon"><use href="/theme/images/icons.svg#file-alt"></use></svg>
+                        {{ article.stats.wc }} {% if article.lang == 'en' %}words{% else %}kelime{% endif %}
+                    </span>
+                    {% endif %}
+                </div>
+                <h3 class="feed-title">
+                    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                    {% if (current_date - article.date.date()).days < 7 %}
+                    <span class="new-badge">{{ _('YENİ') if article.lang == 'tr' else 'NEW' }}</span>
+                    {% endif %}
+                </h3>
+                <p class="feed-summary">{{ article.summary|striptags|truncate(150) }}</p>
+            </div>
+            <div class="feed-arrow">&rarr;</div>
+        </article>
+        {% if loop.index == 2 and GOOGLE_ADSENSE and PUBLISH %}
+        <div class="feed-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-format="fluid"
+                 data-ad-layout-key="-fb+5w+4e-db+86"
+                 data-ad-client="{{ GOOGLE_ADSENSE }}"
+                 data-ad-slot="4390516236"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+    <div class="feed-more">
+        <a href="{{ SITEURL }}/{{ _('arsiv/') }}" class="outline-button">{{ _('Arşive Göz At') }}</a>
+    </div>
+</section>
+{% endblock %}

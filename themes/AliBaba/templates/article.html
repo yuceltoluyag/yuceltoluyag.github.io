@@ -1,0 +1,412 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article class="article-detail">
+    <header class="article-header">
+        <h1 class="article-title">{{ article.title }}</h1>
+    </header>
+
+    <!-- Collapsible TOC FAB -->
+    {% if article.toc %}
+    <div class="toc-fab-container">
+        <button id="toc-fab-btn" aria-label="{{ _('Table of Contents') }}">
+            <svg class="icon"><use href="/theme/images/icons.svg#list"></use></svg>
+        </button>
+        <nav id="toc-collapsible-menu" class="toc-menu-card">
+            <div class="toc-menu-header">{{ _('Table of Contents') }}</div>
+            <div class="toc-menu-content">
+                {{ article.toc }}
+            </div>
+        </nav>
+    </div>
+    {% endif %}
+
+    <div class="article-content">
+        {% if GOOGLE_ADSENSE and PUBLISH %}
+        <div class="article-ad top-ad">
+            <ins class="adsbygoogle"
+                 style="display:block; text-align:center;"
+                 data-ad-layout="in-article"
+                 data-ad-format="fluid"
+                 data-ad-client="{{ GOOGLE_ADSENSE }}"
+                 data-ad-slot="4064563622"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        {% endif %}
+
+        {% if current_year - article.date.year >= 2 %}
+        <div class="outdated-warning">
+            <svg class="icon"><use href="/theme/images/icons.svg#circle-info"></use></svg>
+            <span>
+                {% if article.lang == 'tr' %}
+                    Bu makale 2 yıldan daha eski. Bazı bilgiler güncelliğini yitirmiş olabilir.
+                {% else %}
+                    This article is older than 2 years. Some information might be outdated.
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+        
+        <!-- Series Navigation -->
+        {% if article.series %}
+        <div class="series-nav-card">
+            <div class="series-header">
+                <h2>
+                    <svg class="icon"><use href="/theme/images/icons.svg#book-open"></use></svg>
+                    {{ _('Series:') }} {{ article.series.name }}
+                </h2>
+                <span class="series-badge">{{ _('Part') }} {{ article.series.index }}/{{ article.series.all|length }}</span>
+            </div>
+            
+            <div class="series-progress-container">
+                <div class="series-progress-bar" style="width: {% if article.series.all|length > 0 %}{{ ((article.series.index|float) / (article.series.all|length|float) * 100)|int }}{% else %}0{% endif %}%"></div>
+            </div>
+
+            <nav class="series-list">
+                {% for part in article.series.all %}
+                <a href="{{ SITEURL }}/{{ part.url }}" class="series-item {% if part == article %}active{% endif %}">
+                    {% if part == article %}
+                    <svg class="icon"><use href="/theme/images/icons.svg#circle-check"></use></svg>
+                    {% else %}
+                    <svg class="icon"><use href="/theme/images/icons.svg#circle"></use></svg>
+                    {% endif %}
+                    {{ part.title }}
+                </a>
+                {% endfor %}
+            </nav>
+        </div>
+        {% endif %}
+
+        {{ article.content }}
+    </div>
+
+    <footer class="article-footer">
+        <div class="article-metadata-footer">
+            <div class="meta-item">
+                <svg class="icon"><use href="/theme/images/icons.svg#folder"></use></svg>
+                <span><a href="{{ SITEURL }}/{{ article.category.url }}" aria-label="{{ _('View all posts in') }} {{ article.category }}">{{ article.category }}</a></span>
+            </div>
+            <div class="meta-item">
+                <svg class="icon"><use href="/theme/images/icons.svg#calendar"></use></svg>
+                <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+            </div>
+            {% if article.stats %}
+            <div class="meta-item">
+                <svg class="icon"><use href="/theme/images/icons.svg#book-open"></use></svg>
+                <span>{{ article.stats.wc }} {{ _('words') }}</span>
+            </div>
+            <div class="meta-item">
+                <svg class="icon"><use href="/theme/images/icons.svg#clock"></use></svg>
+                <span>{{ article.stats.read_mins }} {{ _('min read') }}</span>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if article.tags %}
+        <div class="article-tags">
+            {% for tag in article.tags %}
+            <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">#{{ tag }}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="sharing-edit-wrapper">
+            <div class="social-sharing">
+                <span class="share-label">{{ _('Share:') }}</span>
+                <a href="https://twitter.com/intent/tweet?text={{ article.title|urlencode }}&url={{ (SITEURL + '/' + article.url)|urlencode }}"
+                    class="share-btn x" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
+                    <svg class="icon"><use href="/theme/images/icons.svg#x-twitter"></use></svg>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ (SITEURL + '/' + article.url)|urlencode }}"
+                    class="share-btn facebook" target="_blank" rel="noopener noreferrer" title="Facebook">
+                    <svg class="icon"><use href="/theme/images/icons.svg#facebook"></use></svg>
+                </a>
+                <a href="https://bsky.app/intent/compose?text={{ article.title|urlencode }}%20{{ (SITEURL + '/' + article.url)|urlencode }}"
+                    class="share-btn bluesky" target="_blank" rel="noopener noreferrer" title="Bluesky">
+                    <svg class="icon"><use href="/theme/images/icons.svg#bluesky"></use></svg>
+                </a>
+                <a href="https://{{ MASTODON.instance }}/share?text={{ article.title|urlencode }}&url={{ (SITEURL + '/' + article.url)|urlencode }}"
+                    class="share-btn mastodon" target="_blank" rel="noopener noreferrer" title="Mastodon">
+                    <svg class="icon"><use href="/theme/images/icons.svg#mastodon"></use></svg>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ (SITEURL + '/' + article.url)|urlencode }}"
+                    class="share-btn linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <svg class="icon"><use href="/theme/images/icons.svg#linkedin"></use></svg>
+                </a>
+                <a href="https://www.reddit.com/submit?url={{ (SITEURL + '/' + article.url)|urlencode }}&title={{ article.title|urlencode }}"
+                    class="share-btn reddit" target="_blank" rel="noopener noreferrer" title="Reddit">
+                    <svg class="icon"><use href="/theme/images/icons.svg#reddit"></use></svg>
+                </a>
+                <a href="https://t.me/share/url?url={{ (SITEURL + '/' + article.url)|urlencode }}&text={{ article.title|urlencode }}"
+                    class="share-btn telegram" target="_blank" rel="noopener noreferrer" title="Telegram">
+                    <svg class="icon"><use href="/theme/images/icons.svg#telegram"></use></svg>
+                </a>
+                <a href="https://api.whatsapp.com/send?text={{ article.title|urlencode }}%20{{ (SITEURL + '/' + article.url)|urlencode }}"
+                    class="share-btn whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                    <svg class="icon"><use href="/theme/images/icons.svg#whatsapp"></use></svg>
+                </a>
+                <a href="https://t.me/share/url?url={{ (SITEURL + '/' + article.url)|urlencode }}&text={{ article.title|urlencode }}"
+                    class="share-btn telegram" target="_blank" rel="noopener noreferrer" title="Telegram">
+                    <svg class="icon"><use href="/theme/images/icons.svg#telegram"></use></svg>
+                </a>
+                <a href="https://pinterest.com/pin/create/button/?url={{ (SITEURL + '/' + article.url)|urlencode }}&description={{ article.title|urlencode }}{% if article.image %}&media={{ (SITEURL + '/' + article.image)|urlencode }}{% endif %}"
+                    class="share-btn pinterest" target="_blank" rel="noopener noreferrer" title="Pinterest">
+                    <svg class="icon"><use href="/theme/images/icons.svg#pinterest"></use></svg>
+                </a>
+                <a href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={{ (SITEURL + '/' + article.url)|urlencode }}&title={{ article.title|urlencode }}"
+                    class="share-btn tumblr" target="_blank" rel="noopener noreferrer" title="Tumblr">
+                    <svg class="icon"><use href="/theme/images/icons.svg#tumblr"></use></svg>
+                </a>
+                <a href="mailto:?subject={{ article.title|urlencode }}&body={{ (SITEURL + '/' + article.url)|urlencode }}"
+                    class="share-btn email" title="Email">
+                    <svg class="icon"><use href="/theme/images/icons.svg#envelope"></use></svg>
+                </a>
+                <button class="share-btn copy-btn" id="copy-url-btn" title="{{ _('Copy') }}">
+                    <svg class="icon"><use href="/theme/images/icons.svg#copy"></use></svg>
+                    <span class="copy-success-check" style="display: none;">✅</span>
+                </button>
+            </div>
+
+            {% if ARTICLE_EDIT_LINK %}
+            <div class="footer-edit-link">
+                <a href="{{ ARTICLE_EDIT_LINK|format(slug=article.slug) }}" class="edit-link-btn" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon"><use href="/theme/images/icons.svg#edit"></use></svg>
+                    {{ _('Edit') }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="article-footer-columns">
+            {% if article.author %}
+            {% set author_info = AUTHORS_INFO[article.author.slug] %}
+            <div class="author-support-wrapper">
+                <div class="author-card">
+                    <div class="author-avatar">
+                        <img src="{{ SITEURL }}{{ author_info.image }}" alt="{{ author_info.name }}">
+                    </div>
+                    <div class="author-content">
+                        <div class="author-header">
+                            <h3 class="author-name">{{ author_info.name }}</h3>
+                            <div class="author-social-icons">
+                                {% if author_info.social.github %}
+                                <a href="https://github.com/{{ author_info.social.github }}" target="_blank"
+                                    rel="noopener noreferrer" aria-label="GitHub">
+                                    <svg class="icon"><use href="/theme/images/icons.svg#github"></use></svg>
+                                </a>
+                                {% endif %}
+                                {% if author_info.social.twitter %}
+                                <a href="https://twitter.com/{{ author_info.social.twitter }}" target="_blank"
+                                    rel="noopener noreferrer" aria-label="Twitter">
+                                    <svg class="icon"><use href="/theme/images/icons.svg#x-twitter"></use></svg>
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p class="author-bio">{{ author_info.bio[article.lang] or author_info.bio['tr'] }}</p>
+                    </div>
+                </div>
+                
+                <div class="support-card">
+                    <div class="support-card-content">
+                        <div class="support-top-row">
+                            <div class="support-icon">
+                                <svg class="icon"><use href="/theme/images/icons.svg#hand-holding-heart"></use></svg>
+                            </div>
+                            <div class="support-text">
+                                <h3>{{ _('Support Me') }}</h3>
+                                <p>{{ _('If you find this content useful, you can support my work.') }}</p>
+                            </div>
+                        </div>
+                        <a href="{{ SITEURL }}/bagis/" class="support-btn">{{ _('Support') }}</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if article.related_posts %}
+            <div class="related-posts-card">
+                <h2>{{ _('Related Posts') }}</h2>
+                <div class="related-posts-grid">
+                    {% for related in article.related_posts %}
+                    <a href="{{ SITEURL }}/{{ related.url }}" class="related-post-item">
+                        <div class="related-post-info">
+                            <h3 class="related-post-title">{{ related.title }}</h3>
+                        </div>
+                        <div class="related-post-arrow">
+                            <svg class="icon"><use href="/theme/images/icons.svg#chevron-right"></use></svg>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        {% if GOOGLE_ADSENSE and PUBLISH %}
+        <div class="article-ad bottom-ad">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="{{ GOOGLE_ADSENSE }}"
+                 data-ad-slot="6307583586"
+                 data-ad-format="autorelaxed"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        {% endif %}
+
+    </footer>
+
+    {% if article.next_article or article.prev_article %}
+    <nav class="article-nav-bento">
+        <div class="nav-bento-grid">
+            {% if article.prev_article %}
+            <a href="{{ SITEURL }}/{{ article.prev_article.url }}" class="nav-card prev">
+                <div class="nav-label">
+                    <svg class="icon"><use href="/theme/images/icons.svg#chevron-left"></use></svg>
+                    {{ _('Önceki Yazı') if article.lang == 'tr' else _('Previous Post') }}
+                </div>
+                <h3 class="nav-title">{{ article.prev_article.title }}</h3>
+            </a>
+            {% else %}
+            <div class="nav-card empty"></div>
+            {% endif %}
+
+            {% if article.next_article %}
+            <a href="{{ SITEURL }}/{{ article.next_article.url }}" class="nav-card next">
+                <div class="nav-label">
+                    {{ _('Sonraki Yazı') if article.lang == 'tr' else _('Next Post') }}
+                    <svg class="icon"><use href="/theme/images/icons.svg#chevron-right"></use></svg>
+                </div>
+                <h3 class="nav-title">{{ article.next_article.title }}</h3>
+            </a>
+            {% else %}
+            <div class="nav-card empty"></div>
+            {% endif %}
+        </div>
+    </nav>
+    {% endif %}
+    <section class="article-webmentions">
+        {% include 'partials/webmentions.html' %}
+    </section>
+
+    {% if article.toot or article.bluesky %}
+    <section class="article-comments">
+        {% include 'partials/unified_comments.html' %}
+    </section>
+    {% endif %}
+</article>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/webmentions.js"></script>
+<script>
+    (function () {
+        const tocFabBtn = document.getElementById('toc-fab-btn');
+        const tocMenu = document.getElementById('toc-collapsible-menu');
+        const articleContent = document.querySelector('.article-content');
+        const copyBtn = document.getElementById('copy-url-btn');
+
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                const url = window.location.href;
+                navigator.clipboard.writeText(url).then(() => {
+                    const check = copyBtn.querySelector('.copy-success-check');
+                    if (check) {
+                        check.style.display = 'inline';
+                        setTimeout(() => {
+                            check.style.display = 'none';
+                        }, 2000);
+                    }
+                });
+            });
+        }
+
+        if (tocFabBtn && tocMenu) {
+            tocFabBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                tocMenu.classList.toggle('active');
+                tocFabBtn.classList.toggle('active');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (tocMenu.classList.contains('active') && !tocMenu.contains(e.target) && !tocFabBtn.contains(e.target)) {
+                    tocMenu.classList.remove('active');
+                    tocFabBtn.classList.remove('active');
+                }
+            });
+
+            if (tocMenu && articleContent) {
+                const tocLinks = Array.from(tocMenu.querySelectorAll('a[href^="#"]'));
+                const headings = Array.from(articleContent.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+                let headingOffsets = [];
+
+                const calculateOffsets = () => {
+                    headingOffsets = headings.map(heading => ({
+                        id: heading.id,
+                        offset: heading.offsetTop - 150 // Adjust for sticky header
+                    }));
+                };
+
+                let ticking = false;
+                const onScroll = () => {
+                    if (ticking) return;
+                    ticking = true;
+                    
+                    window.requestAnimationFrame(() => {
+                        const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
+                        let activeHeadingId = null;
+
+                        for (let i = 0; i < headingOffsets.length; i++) {
+                            if (scrollPos >= headingOffsets[i].offset) {
+                                activeHeadingId = headingOffsets[i].id;
+                            } else {
+                                break;
+                            }
+                        }
+
+                        tocLinks.forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href && href.startsWith('#')) {
+                                const targetId = href.substring(1);
+
+                                if (targetId === activeHeadingId) {
+                                    link.classList.add('active');
+                                    link.classList.add('readed');
+                                    if (tocMenu.classList.contains('active')) {
+                                        link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                                    }
+                                } else {
+                                    link.classList.remove('active');
+                                }
+                                
+                                // Mark as readed if we passed it
+                                const offsetObj = headingOffsets.find(o => o.id === targetId);
+                                if (offsetObj && scrollPos > offsetObj.offset) {
+                                    link.classList.add('readed');
+                                }
+                            }
+                        });
+                        ticking = false;
+                    });
+                };
+
+                window.addEventListener('resize', () => {
+                    calculateOffsets();
+                    onScroll();
+                });
+                
+                // Initialize
+                calculateOffsets();
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+        }
+    })();
+</script>
+{% if article.toot or article.bluesky %}
+<script src="/theme/js/unified-comments.js"></script>
+{% endif %}
+{% endblock %}

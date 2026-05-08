@@ -1,0 +1,25 @@
+{% if article and article.translations %}
+<div class="translations">
+    <h4>{{ _('Diğer Diller:') }}</h4>
+    <ul>
+        {% for translation in article.translations %}
+        <li>
+            <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if page and page.translations %}
+<div class="translations">
+    <h4>{{ _('Diğer Diller:') }}</h4>
+    <ul>
+        {% for translation in page.translations %}
+        <li>
+            <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

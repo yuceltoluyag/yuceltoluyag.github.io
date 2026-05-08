@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category }} Kategorisindeki Yazılar - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header class="category-hero-section">
+    <div class="bento-card hero-bento">
+        <span class="bento-badge">{{ _('Kategori') }}</span>
+        <h1 class="bento-title">{{ category }}</h1>
+        <p class="bento-summary">
+            {{ _('{category} kategorisindeki tüm yazılar. Bu kategoride {articles_length} adet yazı bulabilirsiniz.').format(category=category, articles_length=articles|length) }}
+        </p>
+    </div>
+</header>
+
+<div class="section-header">
+    <h2 class="section-title">{{ _('Yazılar') }}</h2>
+    <div class="section-line"></div>
+</div>
+
+<section class="articles-feed">
+    {% for article in articles_page.object_list %}
+    <a href="{{ SITEURL }}/{{ article.url }}" class="feed-item">
+        <div class="feed-date">
+            <span class="day">{{ article.date.strftime('%d') }}</span>
+            <span class="month">{{ article.locale_date.split()[1] if article.locale_date.split()|length > 1 else article.date.strftime('%b') }}</span>
+        </div>
+        <div class="feed-content">
+            <h2 class="feed-title">{{ article.title }}</h2>
+            <p class="feed-summary">{{ article.summary|striptags|truncate(160) }}</p>
+        </div>
+        <div class="feed-arrow">
+            <svg class="icon"><use href="/theme/images/icons.svg#arrow-right"></use></svg>
+        </div>
+    </a>
+    {% endfor %}
+</section>
+
+{% if articles_page.has_other_pages() %}
+<nav class="pagination-bento">
+    {% if articles_page.has_previous() %}
+    <a href="{{ SITEURL }}/{{ articles_previous_page.url }}" class="pagination-btn">
+        <svg class="icon"><use href="/theme/images/icons.svg#arrow-left"></use></svg>
+        {{ _('Yeni Yazılar') }}
+    </a>
+    {% endif %}
+    
+    <span class="page-indicator">{{ _('Sayfa') }} {{ articles_page.number }} / {{ articles_page.paginator.num_pages }}</span>
+    
+    {% if articles_page.has_next() %}
+    <a href="{{ SITEURL }}/{{ articles_next_page.url }}" class="pagination-btn">
+        {{ _('Eski Yazılar') }}
+        <svg class="icon"><use href="/theme/images/icons.svg#arrow-right"></use></svg>
+    </a>
+    {% endif %}
+</nav>
+{% endif %}
+{% endblock %}

@@ -5,11 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.3.0] - 2026-05-08 20:15
+## [2.3.0] - 2026-05-08 20:21
 ### Added
 - **Dependency Management:** Created `pipupdate.py` for automated Python dependency upgrades, featuring venv-aware execution and `requirements.txt` sanitization.
-- **Documentation:** Implemented a granular, 900+ commit-backed historical `changelog.md` tracing the project from Jekyll inception to Pelican 4.12.0.
-- **Maintenance:** Standardized article statuses and improved English translation directory structure.
+- **Documentation:** Implemented a granular, 900+ commit-backed historical `changelog.md`. Added `Tema.md` for theme structure and `translaterules.md` for translation guidelines.
+- **Content & Translations:** Integrated multiple new English article translations (AnyDesk, ntsync, Jekyll blog, etc.) and standardized sub-directory routing.
+- **Theme Assets:** Added new `AliBaba` theme templates, localized message catalogs (`.po`/`.mo`), and updated SVG icon sprites.
 
 ## [2.2.0] - 2026-05-03
 ### Added

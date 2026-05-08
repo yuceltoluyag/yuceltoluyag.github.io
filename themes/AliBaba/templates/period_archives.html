@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ period | join(' ') }} Arşivi - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header class="list-header">
+    <h1 class="list-title">{{ period | join(' ') }} Arşivi</h1>
+</header>
+
+<section class="articles-list">
+    {% for article in articles_page.object_list %}
+    <article class="article-card">
+        <header class="article-header">
+            <div class="article-meta">
+                <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+            </div>
+            <h2 class="article-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            </h2>
+        </header>
+        <div class="article-summary">
+            {{ article.summary }}
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
+{% if articles_page.has_other_pages() %}
+<nav class="pagination">
+    {% if articles_page.has_previous() %}
+    <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&larr; Yeni Yazılar</a>
+    {% endif %}
+    <span class="page-number">Sayfa {{ articles_page.number }} / {{ articles_page.paginator.num_pages }}</span>
+    {% if articles_page.has_next() %}
+    <a href="{{ SITEURL }}/{{ articles_next_page.url }}">Eski Yazılar &rarr;</a>
+    {% endif %}
+</nav>
+{% endif %}
+{% endblock %}

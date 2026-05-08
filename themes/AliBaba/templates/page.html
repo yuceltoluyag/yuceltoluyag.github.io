@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title|striptags }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="static-page-container">
+    <article class="page-card">
+        <header class="page-card-header">
+            <div class="page-icon">
+                {% if page.slug == 'privacy-policy' %}
+                    <svg class="icon"><use href="/theme/images/icons.svg#shield-halved"></use></svg>
+                {% elif page.slug == 'terms' %}
+                    <svg class="icon"><use href="/theme/images/icons.svg#file-contract"></use></svg>
+                {% else %}
+                    <svg class="icon"><use href="/theme/images/icons.svg#file-alt"></use></svg>
+                {% endif %}
+            </div>
+            <h1 class="page-card-title">{{ page.title }}</h1>
+            {% if page.modified %}
+            <div class="page-modified">
+                <svg class="icon"><use href="/theme/images/icons.svg#clock-rotate-left"></use></svg> {{ _('Son Güncelleme:') }} {{ page.modified.strftime('%d %B %Y') }}
+            </div>
+            {% endif %}
+        </header>
+
+        {% import 'includes/translations.html' as translations with context %}
+        {% if translations.translations_for is defined %}
+            {{ translations.translations_for(page) }}
+        {% endif %}
+
+        <div class="page-card-content article-content">
+            {{ page.content }}
+        </div>
+    </article>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Etiketler') }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="tags-container">
+    <header class="list-header text-center">
+        <h1 class="list-title"><svg class="icon"><use href="/theme/images/icons.svg#tags"></use></svg> {{ _('Etiketler') }}</h1>
+        <p class="list-subtitle">{{ _('{sitename} sitesinde kullanılan tüm etiketleri bulabilir ve konulara göre yazılara kolayca erişebilirsiniz.').format(sitename=SITENAME) }}</p>
+    </header>
+
+    <!-- Tag Search -->
+    <div class="tag-search-container">
+        <div class="search-input-wrapper">
+            <svg class="icon"><use href="/theme/images/icons.svg#search"></use></svg>
+            <input type="text" id="tag-search-input" placeholder="{{ _('Etiket ara...') }}">
+        </div>
+    </div>
+
+    {% set max_count = 1 %}
+    {% for tag, articles in tags %}
+        {% if articles|length > max_count %}
+            {% set max_count = articles|length %}
+        {% endif %}
+    {% endfor %}
+
+    <!-- Tag Cloud -->
+    <div class="tag-cloud" id="tag-cloud">
+        {% for tag, articles in tags|sort %}
+            {% set count = articles|length %}
+            {% set tag_size = 1 %}
+            {% if max_count > 1 %}
+                {% set size_ratio = count / max_count %}
+                {% if size_ratio < 0.2 %}{% set tag_size = 1 %}
+                {% elif size_ratio < 0.4 %}{% set tag_size = 2 %}
+                {% elif size_ratio < 0.6 %}{% set tag_size = 3 %}
+                {% elif size_ratio < 0.8 %}{% set tag_size = 4 %}
+                {% else %}{% set tag_size = 5 %}{% endif %}
+            {% endif %}
+            <a href="{{ SITEURL }}/{{ tag.url }}" class="tag-cloud-item size-{{ tag_size }}" data-tag="{{ tag|lower }}">
+                #{{ tag }} <span class="tag-count">{{ count }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('tag-search-input');
+        const tags = document.querySelectorAll('.tag-cloud-item');
+
+        searchInput?.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            tags.forEach(tag => {
+                const tagName = tag.dataset.tag;
+                if (tagName.includes(query)) {
+                    tag.style.display = 'inline-flex';
+                } else {
+                    tag.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,65 @@
+{#
+  Unified Comments Partial
+  This sets up a single container for both Mastodon and Bluesky comments.
+#}
+{% if article.toot or article.bluesky or lobsters %}
+<div class="comments-section-wrapper">
+  <h3 class="comments-title">
+    <svg class="icon"><use href="/theme/images/icons.svg#message-square"></use></svg>
+    {{ _('Yorumlar') }}
+    
+    <div class="reply-buttons">
+        {% if article.toot %}
+        <button id="replyButton" class="comment-button mastodon"
+                data-dialog-title-format="{{ _('Reply to %(username)s\'s post', username=article.toot.username | default('')) }}"
+                data-dialog-username="{{ article.toot.username | default('') }}"
+                data-copy-text="{{ _('Copy') }}"
+                data-copied-text="{{ _('Copied!') }}">
+            {{ _('Reply via Mastodon') }}
+        </button>
+        {% endif %}
+        {% if article.bluesky %}
+        <a href="https://bsky.app/profile/{{ article.bluesky.did }}/post/{{ article.bluesky.post_cid }}"
+           target="_blank" rel="noopener noreferrer"
+           class="comment-button bluesky">
+            {{ _('Reply via Bluesky') }}
+        </a>
+        {% endif %}
+    </div>
+  </h3>
+
+  <dialog id="toot-reply-dialog" class="mastodon-dialog"
+          data-mastodon-domain="{{ article.toot.domain }}"
+          data-mastodon-username="{{ article.toot.username }}"
+          data-mastodon-id="{{ article.toot.id }}">
+    <button class="close-btn" id="cancelButton" aria-label="{{ _('Close') }}">&times;</button>
+    <main>
+      <h3 id="dialogTitle"></h3>
+      <p>{{ _('With an account on the Fediverse or Mastodon, you can respond to this post.') }}</p>
+      <p>{{ _('Copy and paste this URL into the search field of your favourite Fediverse app or the web interface of your Mastodon server.') }}</p>
+      <div class="copypaste">
+        <input type="text" readonly="" id="mastodonPostUrl">
+        <button class="button" id="copyButton">{{ _('Kopyala') }}</button>
+      </div>
+    </main>
+  </dialog>
+
+  <div id="unified-main-post-feedback"></div>
+
+  <div id="unified-comments-list"
+       {% if article.toot %}
+       data-mastodon-domain="{{ article.toot.domain }}"
+       data-mastodon-id="{{ article.toot.id }}"
+       {% endif %}
+       {% if article.bluesky %}
+       data-bluesky-did="{{ article.bluesky.did }}"
+       data-bluesky-post-cid="{{ article.bluesky.post_cid }}"
+       {% endif %}
+       data-locale="{{ article.lang or 'tr' }}"
+       data-first-comment-prompt="{{ _('İlk yorumu siz yapın!') }}"
+       data-error-loading="{{ _('Yorumlar yüklenirken bir hata oluştu.') }}"
+       data-loading-text="{{ _('Yorumlar yükleniyor...') }}">
+    <div class="loading-spinner">{{ _('Yorumlar yükleniyor...') }}</div>
+  </div>
+</div>
+{% endif %}

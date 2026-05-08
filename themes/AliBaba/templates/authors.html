@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Yazarlar - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header class="list-header text-center">
+    <h1 class="list-title">Yazarlar</h1>
+    <p class="list-subtitle">Bu platformun arkasındaki kalemler.</p>
+</header>
+
+<div class="authors-grid">
+    {% for author, articles in authors|sort %}
+    {% set info = AUTHORS_INFO.get(author.slug, AUTHORS_INFO.get(author.name, {})) %}
+    <div class="author-card">
+        <a href="{{ SITEURL }}/{{ author.url }}" class="author-card-link">
+            <div class="author-avatar-wrapper">
+                {% if info.image %}
+                <img src="{{ info.image }}" alt="{{ author }}" class="author-avatar">
+                {% else %}
+                <div class="author-avatar-placeholder">{{ author.name[0]|upper if author.name else author[0]|upper }}</div>
+                {% endif %}
+            </div>
+            <div class="author-info">
+                <h3 class="author-name">{{ info.name or author }}</h3>
+                <p class="author-bio">
+                    {% if DEFAULT_LANG == 'tr' %}
+                        {{ info.bio.tr if info.bio else '' }}
+                    {% else %}
+                        {{ info.bio.en if info.bio else '' }}
+                    {% endif %}
+                </p>
+                <div class="author-meta">
+                    <span class="author-count">
+                        <svg class="icon"><use href="/theme/images/icons.svg#file-alt"></use></svg>
+                        {{ articles|length }} {{ _('Yazı') }}
+                    </span>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

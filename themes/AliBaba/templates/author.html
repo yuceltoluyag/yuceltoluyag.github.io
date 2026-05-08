@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}{{ author }} Tarafından Yazılan Yazılar - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<header class="list-header">
+    <h1 class="list-title">{{ author }}</h1>
+    <p class="list-count">{{ _('Bu yazar tarafından {articles_length} yazı bulundu').format(articles_length=articles|length) }}</p>
+</header>
+
+<section class="articles-list">
+    {% for article in articles_page.object_list %}
+    <article class="article-card">
+        <header class="article-header">
+            <div class="article-meta">
+                <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
+                <span class="category"><a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></span>
+            </div>
+            <h2 class="article-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            </h2>
+        </header>
+        <div class="article-summary">
+            {{ article.summary }}
+        </div>
+    </article>
+    {% endfor %}
+</section>
+
+{% if articles_page.has_other_pages() %}
+<nav class="pagination">
+    {% if articles_page.has_previous() %}
+    <a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&larr; {{ _('Yeni Yazılar') }}</a>
+    {% endif %}
+    <span class="page-number">{{ _('Sayfa') }} {{ articles_page.number }} / {{ articles_page.paginator.num_pages }}</span>
+    {% if articles_page.has_next() %}
+    <a href="{{ SITEURL }}/{{ articles_next_page.url }}">{{ _('Eski Yazılar') }} &rarr;</a>
+    {% endif %}
+</nav>
+{% endif %}
+{% endblock %}

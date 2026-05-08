@@ -1,0 +1,64 @@
+<div class="lang-switcher">
+    {% if article %}
+        {# Current Language #}
+        {% if article.lang == 'tr' %}
+            <a href="{{ SITEURL_MAIN }}/{{ article.url }}" class="active">TR</a>
+            {% if article.translations %}
+                {% for translation in article.translations %}
+                    {% if translation.lang == 'en' %}
+                        <a href="{{ SITEURL_MAIN }}/{{ translation.url }}">EN</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <a href="{{ SITEURL_MAIN }}/en/" class="disabled">EN</a>
+            {% endif %}
+        {% else %}
+            {% if article.translations %}
+                {% for translation in article.translations %}
+                    {% if translation.lang == 'tr' %}
+                        <a href="{{ SITEURL_MAIN }}/{{ translation.url }}">TR</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <a href="{{ SITEURL_MAIN }}/" class="disabled">TR</a>
+            {% endif %}
+            <a href="{{ SITEURL_MAIN }}/{{ article.url }}" class="active">EN</a>
+        {% endif %}
+
+    {% elif page %}
+        {# Same logic for pages #}
+        {% if page.lang == 'tr' %}
+            <a href="{{ SITEURL_MAIN }}/{{ page.url }}" class="active">TR</a>
+            {% if page.translations %}
+                {% for translation in page.translations %}
+                    {% if translation.lang == 'en' %}
+                        <a href="{{ SITEURL_MAIN }}/{{ translation.url }}">EN</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <a href="{{ SITEURL_MAIN }}/en/" class="disabled">EN</a>
+            {% endif %}
+        {% else %}
+            {% if page.translations %}
+                {% for translation in page.translations %}
+                    {% if translation.lang == 'tr' %}
+                        <a href="{{ SITEURL_MAIN }}/{{ translation.url }}">TR</a>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <a href="{{ SITEURL_MAIN }}/" class="disabled">TR</a>
+            {% endif %}
+            <a href="{{ SITEURL_MAIN }}/{{ page.url }}" class="active">EN</a>
+        {% endif %}
+
+    {% else %}
+        {# Home, Category, Tag etc. #}
+        {% if lang_en %}
+            <a href="{{ SITEURL_MAIN }}/">TR</a>
+            <a href="{{ SITEURL_MAIN }}/en/" class="active">EN</a>
+        {% else %}
+            <a href="{{ SITEURL_MAIN }}/" class="active">TR</a>
+            <a href="{{ SITEURL_MAIN }}/en/">EN</a>
+        {% endif %}
+    {% endif %}
+</div>

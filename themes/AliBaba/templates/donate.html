@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Bağış Yap') }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article class="donate-page">
+    <header class="donate-hero">
+        <h1><svg class="icon" style="color: #f38ba8;"><use href="/theme/images/icons.svg#heart"></use></svg> {{ _('Bağış Yap') }}</h1>
+        <p>{{ _('Eğer içeriklerimi faydalı buluyorsanız ve çalışmalarımı desteklemek istiyorsanız, aşağıdaki yöntemlerle bağış yapabilirsiniz.') }}</p>
+    </header>
+
+    <div class="donate-grid">
+        <!-- Neden Bağış? -->
+        <section class="donate-card">
+            <h2><svg class="icon"><use href="/theme/images/icons.svg#question-circle"></use></svg> {{ _('Neden Bağış?') }}</h2>
+            <ul class="donate-why-list">
+                {% for item in [
+                    _("Daha fazla içerik üretebiliyorum"),
+                    _("Daha kaliteli eğitim videoları hazırlayabiliyorum"), 
+                    _("Açık kaynak projelere daha fazla zaman ayırabiliyorum"),
+                    _("Teknolojik altyapımı ve ekipmanlarımı geliştirebiliyorum"),
+                    _("Topluluk için daha fazla etkinlik ve proje düzenleyebiliyorum"),
+                    _("Yeni teknolojileri araştırıp deneyimlemeye daha fazla vakit ayırabiliyorum")
+                ] %}
+                <li class="donate-why-item">
+                    <svg class="icon"><use href="/theme/images/icons.svg#circle-check"></use></svg>
+                    <span>{{ item }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Bağış Seçenekleri -->
+        <section class="donate-card">
+            <h2><svg class="icon"><use href="/theme/images/icons.svg#hand-holding-heart"></use></svg> {{ _('Bağış Seçenekleri') }}</h2>
+            <div class="donate-options-list">
+                {% if SOCIAL.bynogame %}
+                <a href="{{ SOCIAL.bynogame }}" target="_blank" rel="noopener noreferrer" class="donate-method-link">
+                    <div class="donate-method-icon"><svg class="icon"><use href="/theme/images/icons.svg#credit-card"></use></svg></div>
+                    <div class="donate-method-info">
+                        <h3>ByNoGame</h3>
+                        <p>{{ _('Türk lirası ile hızlı bağış') }}</p>
+                    </div>
+                </a>
+                {% endif %}
+
+                {% if SOCIAL.github_sponsor %}
+                <a href="https://github.com/sponsors/{{ SOCIAL.github_sponsor }}" target="_blank" rel="noopener noreferrer" class="donate-method-link">
+                    <div class="donate-method-icon"><svg class="icon"><use href="/theme/images/icons.svg#github"></use></svg></div>
+                    <div class="donate-method-info">
+                        <h3>GitHub Sponsors</h3>
+                        <p>{{ _('Aylık düzenli destek') }}</p>
+                    </div>
+                </a>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
+    <!-- Kripto Bölümü -->
+    <section class="crypto-section">
+        <h2><svg class="icon"><use href="/theme/images/icons.svg#coins"></use></svg> {{ _('Kripto Para Bağışları') }}</h2>
+        
+        <div class="crypto-notice">
+            <svg class="icon"><use href="/theme/images/icons.svg#circle-info"></use></svg>
+            <div class="crypto-notice-text">
+                <strong>{{ _('Önemli:') }}</strong>
+                <span>{{ _('Tüm adresler') }} <kbd>BSC / BEP20</kbd> {{ _('ağını kullanır.') }}</span>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                    {{ _('Farklı ağlar için lütfen') }} <a href="{{ SITEURL }}/hakkimda" style="color: var(--accent); font-weight: 600;">{{ _('iletişime geçin') }}</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="crypto-grid">
+            {% for coin in [ 
+                {'name': 'Bitcoin (BTC)', 'id': 'btc', 'qr': 'btc.jpg'},
+                {'name': 'Ethereum (ETH)', 'id': 'eth', 'qr': 'eth.jpg'},
+                {'name': 'Litecoin (LTC)', 'id': 'ltc', 'qr': 'lite.jpg'},
+                {'name': 'Dogecoin (DOGE)', 'id': 'doge', 'qr': 'doge.jpg'},
+                {'name': 'Solana (SOL)', 'id': 'sol', 'qr': 'sol.jpg'},
+                {'name': 'Binance Coin (BNB)', 'id': 'bnb', 'qr': 'bnb.jpg'},
+                {'name': 'Tether (USDT)', 'id': 'usdt', 'qr': 'usdt.jpg'},
+                {'name': 'Ripple (XRP)', 'id': 'xrp', 'qr': 'xrp.jpg'},
+                {'name': 'Basic Attention Token (BAT)', 'id': 'bat', 'qr': 'bat.jpg'} 
+            ] %}
+            <figure class="crypto-item" onclick="openCryptoModal('modal-{{ coin.id }}')">
+                <img src="{{ SITEURL }}/images/{{ coin.qr }}" alt="{{ coin.name }}" class="crypto-qr" loading="lazy">
+                <figcaption>{{ coin.name }}</figcaption>
+            </figure>
+
+            <dialog id="modal-{{ coin.id }}" class="crypto-dialog">
+                <div class="crypto-dialog-content">
+                    <div class="crypto-dialog-header">
+                        <h3 style="margin:0">{{ coin.name }}</h3>
+                        <button class="crypto-dialog-close" onclick="closeCryptoModal('modal-{{ coin.id }}')">&times;</button>
+                    </div>
+                    <img src="{{ SITEURL }}/images/{{ coin.qr }}" alt="{{ coin.name }}" class="crypto-dialog-image">
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--muted);">BSC / BEP20 Network Only</p>
+                </div>
+            </dialog>
+            {% endfor %}
+        </div>
+
+        <div class="crypto-wallet-box">
+            <div class="crypto-wallet-info">
+                <span style="font-size: 0.8rem; color: var(--muted); display: block; margin-bottom: 0.25rem;">{{ _('Cüzdan Adresini Göster') }}</span>
+                <code class="crypto-address" id="wallet-address">0x012e2a56828990ef0aa97de827297456aabccc63</code>
+            </div>
+            <button class="button copy-btn" onclick="copyWalletAddress('0x012e2a56828990ef0aa97de827297456aabccc63', this)">
+                <svg class="icon"><use href="/theme/images/icons.svg#copy"></use></svg> {{ _('Kopyala') }}
+            </button>
+        </div>
+    </section>
+</article>
+
+<script>
+    function openCryptoModal(id) {
+        document.getElementById(id).showModal();
+    }
+    function closeCryptoModal(id) {
+        document.getElementById(id).close();
+    }
+    // Close on click outside
+    document.querySelectorAll('.crypto-dialog').forEach(dialog => {
+        dialog.addEventListener('click', (e) => {
+            if (e.target === dialog) dialog.close();
+        });
+    });
+
+    function copyWalletAddress(text, btn) {
+        navigator.clipboard.writeText(text).then(() => {
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<svg class="icon"><use href="/theme/images/icons.svg#check"></use></svg> {{ _("Kopyalandı!") }}';
+            btn.classList.add('success');
+            setTimeout(() => {
+                btn.innerHTML = originalContent;
+                btn.classList.remove('success');
+            }, 2000);
+        });
+    }
+</script>
+{% endblock %}

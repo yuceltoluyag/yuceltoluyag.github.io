@@ -1,0 +1,38 @@
+/* AdSense Styles */
+.article-ad, .feed-ad {
+    margin: 2rem 0;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.article-ad::before, .feed-ad::before {
+    content: "ADVERTISEMENT";
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 0.6rem;
+    color: var(--fg);
+    opacity: 0.3;
+    letter-spacing: 0.1em;
+}
+
+.top-ad {
+    margin-bottom: 3rem;
+}
+
+.bottom-ad {
+    margin-top: 3rem;
+}
+
+.feed-ad {
+    grid-column: 1 / -1; /* Take full width in grid if applicable */
+    margin: 1.5rem 0;
+}

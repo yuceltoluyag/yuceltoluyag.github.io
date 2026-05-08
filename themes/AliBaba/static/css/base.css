@@ -1,0 +1,125 @@
+:root {
+  /* Gruvbox Light Palette - Maximum Contrast */
+  --bg-light: #fbf1c7;
+  --fg-light: #1d2021; /* Deepest dark for text */
+  --accent-light: #076678;
+  --muted-light: #504945; /* Darker for guaranteed accessibility pass */
+  --border-light: #d5c4a1;
+  --card-bg-light: #f9f5d7;
+  --heading-light: #1d2021;
+  
+  /* Premium Deep Dark Palette (Inspired by Baba Theme) */
+  --bg-dark: #13171f;
+  --fg-dark: #c2c7d0;
+  --accent-dark: #c79400;
+  --muted-dark: #7b8495;
+  --border-dark: #202632;
+  --card-bg-dark: #181c25;
+  --heading-dark: #c2c7d0;
+  --glow-dark: #6464ff26;
+  --selection-dark: rgba(199, 148, 0, 0.2);
+
+  /* Typography */
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "Outfit", var(--font-body);
+  --font-code: "JetBrains Mono", monospace;
+
+  /* Fluid Typography Scale */
+  --step--2: clamp(0.69rem, 0.67rem + 0.13vw, 0.77rem);
+  --step--1: clamp(0.83rem, 0.79rem + 0.22vw, 0.96rem);
+  --step-0: clamp(1rem, 0.93rem + 0.35vw, 1.2rem);
+  --step-1: clamp(1.2rem, 1.09rem + 0.54vw, 1.5rem);
+  --step-2: clamp(1.44rem, 1.28rem + 0.81vw, 1.88rem);
+  --step-3: clamp(1.73rem, 1.5rem + 1.17vw, 2.34rem);
+  --step-4: clamp(2.07rem, 1.74rem + 1.66vw, 2.93rem);
+  --step-5: clamp(2.49rem, 2.02rem + 2.33vw, 3.66rem);
+
+  /* Transition */
+  --transition-speed: 0.3s;
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root, [data-theme="light"] {
+  --bg: var(--bg-light);
+  --fg: var(--fg-light);
+  --accent: var(--accent-light);
+  --muted: var(--muted-light);
+  --border: var(--border-light);
+  --card-bg: var(--card-bg-light);
+  --heading: var(--heading-light);
+  --selection: rgba(7, 102, 120, 0.1);
+  --accent-fg: #ffffff;
+  --glow: transparent;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: var(--bg-dark);
+  --fg: var(--fg-dark);
+  --accent: var(--accent-dark);
+  --muted: var(--muted-dark);
+  --border: var(--border-dark);
+  --card-bg: var(--card-bg-dark);
+  --heading: var(--heading-dark);
+  --selection: var(--selection-dark);
+  --accent-fg: #000000;
+  --glow: var(--glow-dark);
+  color-scheme: dark;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@layer base {
+  ::selection {
+    background-color: var(--selection);
+    color: var(--accent-fg);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+    border: 2px solid var(--bg);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    hyphens: auto;
+    text-wrap: pretty;
+    transition: background-color var(--transition-speed) var(--transition-ease), 
+                color var(--transition-speed) var(--transition-ease);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--heading);
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  h1 { font-size: var(--step-5); }
+  h2 { font-size: var(--step-4); }
+  h3 { font-size: var(--step-3); }
+  h4 { font-size: var(--step-2); }
+  h5 { font-size: var(--step-1); }
+  h6 { font-size: var(--step-0); }
+}

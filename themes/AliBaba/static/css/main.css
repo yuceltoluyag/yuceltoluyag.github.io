@@ -1,0 +1,36 @@
+/**
+ * AliBaba Theme - Main CSS Entry Point
+ * Modular structure using CSS Layers and Imports
+ */
+
+@import "reset.css";
+@import "base.css";
+@import "layout.css";
+/* Modular Components */
+@import "modules/article.css";
+@import "modules/404.css";
+@import "modules/cards.css";
+@import "modules/code.css";
+@import "modules/elements.css";
+@import "modules/listing.css";
+@import "modules/pages.css";
+@import "modules/toc.css";
+@import "modules/ui.css";
+@import "modules/ads.css";
+@import "syntax.css";
+@import "unified-comments.css";
+
+/* Additional utilities or overrides can go here */
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}

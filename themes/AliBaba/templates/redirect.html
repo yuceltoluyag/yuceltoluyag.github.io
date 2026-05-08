@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    <meta charset="utf-8">
+    <title>Yönlendiriliyorsunuz / Redirecting...</title>
+    <link rel="canonical" href="{{ page.location }}" />
+    <meta http-equiv="refresh" content="0; url={{ page.location }}">
+    <script>
+        window.location.replace("{{ page.location }}" + window.location.search);
+    </script>
+</head>
+<body>
+    <p>Yönlendiriliyorsunuz: <a href="{{ page.location }}">{{ page.title }}</a></p>
+</body>
+</html>

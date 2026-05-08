@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Hakkımda - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<article class="about-page">
+    <header class="about-header">
+        <div class="about-hero">
+            <img src="{{ SITEURL }}/images/16064131.jpeg" alt="Avatar" class="about-avatar">
+            <h1 class="about-title">{{ _('Yücel Toluyağ Kimdir ?') }}</h1>
+        </div>
+    </header>
+
+    <div class="about-grid">
+        <div class="about-main-content article-content">
+            {{ page.content }}
+        </div>
+        
+        <aside class="about-sidebar">
+            <div class="about-card">
+                <h3>{{ _('İletişim') }}</h3>
+                <ul class="about-social-list">
+                    {% for platform, username in SOCIAL.items() %}
+                        {% set href_map = {
+                            'github': 'https://github.com/',
+                            'instagram': 'https://instagram.com/',
+                            'youtube': 'https://youtube.com/@',
+                            'twitch': 'https://twitch.tv/',
+                            'kick': 'https://kick.com/',
+                            'discord': 'https://discord.com/users/',
+                            'github_sponsor': 'https://github.com/sponsors/'
+                        } %}
+                        
+                        {% if platform in href_map or platform == 'bynogame' %}
+                        <li>
+                            <a href="{% if platform == 'bynogame' %}{{ username }}{% else %}{{ href_map[platform] }}{{ username }}{% endif %}" target="_blank" rel="noopener noreferrer" class="about-social-item">
+                                <svg class="icon"><use href="/theme/images/icons.svg#{{ 'credit-card' if platform == 'bynogame' else platform.replace('_sponsor', '') }}"></use></svg>
+                                <span>{% if platform == 'bynogame' %}ByNoGame{% else %}@{{ username }}{% endif %}</span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</article>
+{% endblock %}

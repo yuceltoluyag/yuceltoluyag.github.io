@@ -1,0 +1,17 @@
+{% macro translations_for(entry) %}
+{% if entry.translations %}
+<div class="page-translations">
+    <span class="translations-label">{{ _('Dil Seçenekleri:') }}</span>
+    <div class="translations-links">
+        <a href="{{ SITEURL }}/{{ entry.url }}" class="translation-link active">
+            <svg class="icon" style="width: 14px; height: 14px;"><use href="/theme/images/icons.svg#check"></use></svg> {{ entry.lang|upper }}
+        </a>
+        {% for translation in entry.translations %}
+        <a href="{{ SITEURL }}/{{ translation.url }}" class="translation-link">
+            {{ translation.lang|upper }}
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Arşiv') }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="archives-container">
+    <header class="list-header text-center">
+        <h1 class="list-title"><svg class="icon"><use href="/theme/images/icons.svg#calendar-days"></use></svg> {{ _('Arşiv') }}</h1>
+        <p class="list-subtitle">{{ _('Bugüne kadar yayınlanmış tüm yazılarımızı burada kronolojik olarak bulabilirsiniz.') }}</p>
+    </header>
+
+    <div class="archives-timeline">
+        {% for year, date_year in (archives or dates or articles)|groupby('date.year')|reverse %}
+        <div class="archive-year-group">
+            <h2 class="archive-year-header"><svg class="icon"><use href="/theme/images/icons.svg#clock-rotate-left"></use></svg> {{ year }}</h2>
+            <div class="archive-articles">
+                {% for article in date_year %}
+                <article class="archive-item">
+                    <time class="archive-date" datetime="{{ article.date.isoformat() }}">
+                        <span class="day">{{ article.date.strftime('%d') }}</span>
+                        <span class="month">{{ article.date.strftime('%b') }}</span>
+                    </time>
+                    <div class="archive-content">
+                        <h3 class="archive-title">
+                            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                        </h3>
+                        <div class="archive-meta">
+                            <span class="meta-item"><svg class="icon"><use href="/theme/images/icons.svg#folder-open"></use></svg> {{ article.category }}</span>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

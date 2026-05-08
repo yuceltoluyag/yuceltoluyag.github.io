@@ -1,0 +1,20 @@
+<div id="webmentions" class="webmentions-section" data-url="{{ CANONICAL_URL }}{{ article.url }}" data-original-post-text="{{ _('View original post') }}">
+    <div class="webmentions-header">
+        <h2 id="webmentions-title">{{ _('Webmentions') }}</h2>
+        <div class="header-line"></div>
+    </div>
+
+    <div id="webmentions-likes-container" class="webmentions-subsection">
+        <h3>{{ _('Likes') }}</h3>
+        <ul id="webmentions-likes" class="webmentions-likes-list">
+            <li class="webmentions-loading">{{ _('Loading likes...') }}</li>
+        </ul>
+    </div>
+
+    <div id="webmentions-comments-container" class="webmentions-subsection">
+        <h3>{{ _('Comments & Replies') }}</h3>
+        <ul id="webmentions-comments" class="webmentions-comments-list">
+            <li class="webmentions-loading">{{ _('Loading comments...') }}</li>
+        </ul>
+    </div>
+</div>

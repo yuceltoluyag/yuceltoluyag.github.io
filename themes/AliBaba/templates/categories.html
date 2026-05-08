@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Kategoriler') }} - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="categories-container">
+    <header class="list-header text-center">
+        <h1 class="list-title"><svg class="icon"><use href="/theme/images/icons.svg#folder"></use></svg> {{ _('Kategoriler') }}</h1>
+        <p class="list-subtitle">{{ _('Sitemizdeki tüm içerikler kategorilere ayrılmıştır. İlgilendiğiniz kategoriye tıklayarak ilgili yazılara ulaşabilirsiniz.') }}</p>
+    </header>
+
+    <div class="categories-grid">
+        {% for category, articles in categories|sort %}
+        <article class="category-card">
+            <a href="{{ SITEURL }}/{{ category.url }}" class="category-card-link">
+                <div class="category-icon"><svg class="icon"><use href="/theme/images/icons.svg#folder"></use></svg></div>
+                <div class="category-info">
+                    <h3 class="category-name">{{ category }}</h3>
+                    <span class="category-count">{{ articles|length }} {{ _('yazı') }}</span>
+                </div>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

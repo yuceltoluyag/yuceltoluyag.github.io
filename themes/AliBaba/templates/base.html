@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}" data-theme="light">
+<head>
+    {% block head %}
+    {% include 'includes/metadata.html' %}
+    <title>{% block title %}{{ SITENAME }}{% if SITETAGLINE %} - {{ SITETAGLINE }}{% endif %}{% endblock %}</title>
+    {% endblock %}
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ SITEURL_MAIN }}/theme/css/main.css?v=25">
+
+    <!-- PWA & Mobile -->
+    <link rel="manifest" href="{{ SITEURL_MAIN }}/site.webmanifest">
+    <meta name="apple-mobile-web-app-title" content="{{ SITENAME }}">
+    <meta name="application-name" content="{{ SITENAME }}">
+    <meta name="msapplication-TileColor" content="#333333">
+    <meta name="theme-color" content="#333333">
+    
+    {% if GOOGLE_ADSENSE and PUBLISH %}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ GOOGLE_ADSENSE }}" crossorigin="anonymous"></script>
+    {% endif %}
+    
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <div class="scroll-progress-container">
+        <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="site-title"><a href="{{ SITEURL }}/" aria-label="{{ SITENAME }} - {{ _('Home') }}">{{ SITENAME }}</a></h1>
+                <p class="site-tagline">{{ SITETAGLINE }}</p>
+                <div style="margin-top: 1rem; display: flex; justify-content: center;">
+                    {% include 'partials/lang_switcher.html' %}
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    {% for item in NAVBAR_LINKS %}
+                    <li>
+                        <a href="{{ SITEURL }}{{ item.url }}" aria-label="{{ _(item.name) }}">
+                            <svg class="icon"><use href="/theme/images/icons.svg#{{ item.icon.split(' ')[-1].replace('fa-', '') }}"></use></svg>
+                            <span>{{ _(item.name) }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                    
+                    <li>
+                        <a href="{{ SITEURL }}/{{ CATEGORIES_URL|default('kategoriler/') }}">
+                            <svg class="icon"><use href="/theme/images/icons.svg#folder"></use></svg>
+                            <span>{{ _('Categories') }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITEURL }}/{{ TAGS_URL|default('etiketler/') }}">
+                            <svg class="icon"><use href="/theme/images/icons.svg#tags"></use></svg>
+                            <span>{{ _('Tags') }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITEURL }}/{{ ARCHIVES_URL|default('arsiv/') }}">
+                            <svg class="icon"><use href="/theme/images/icons.svg#archive"></use></svg>
+                            <span>{{ _('Archives') }}</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="search-trigger">
+                            <svg class="icon"><use href="/theme/images/icons.svg#search"></use></svg>
+                            <span>{{ _('Arama...') }}</span>
+                            <kbd class="search-kbd">Ctrl K</kbd>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" id="theme-toggle-btn">
+                            <svg id="theme-icon-sun" class="icon" style="display: none;"><use href="/theme/images/icons.svg#sun"></use></svg>
+                            <svg id="theme-icon-moon" class="icon"><use href="/theme/images/icons.svg#moon"></use></svg>
+                            <span class="theme-text">{{ _('Appearance') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="social-links">
+                    {% if SOCIAL %}
+                    {% for name, value in SOCIAL.items() %}
+                    {% set icon_id = name.replace('_sponsor', '').replace('x', 'x-twitter') %}
+                    {% set href_prefix = {
+                        'github': 'https://github.com/',
+                        'discord': 'https://discord.com/users/',
+                        'instagram': 'https://instagram.com/',
+                        'youtube': 'https://www.youtube.com/@',
+                        'twitch': 'https://twitch.tv/',
+                        'kick': 'https://kick.com/',
+                        'github_sponsor': 'https://github.com/sponsors/',
+                        'bluesky': 'https://bsky.app/profile/',
+                        'reddit': 'https://www.reddit.com/user/',
+                        'x': 'https://x.com/',
+                        'mastodon': 'https://' + (MASTODON.instance if MASTODON else 'mastodon.social') + '/@'
+                    }.get(name, '') %}
+                    
+                    <a href="{% if name == 'bynogame' %}{{ value }}{% elif name == 'mastodon' %}{{ href_prefix }}{{ MASTODON.username if MASTODON else value }}{% else %}{{ href_prefix }}{{ value }}{% endif %}" 
+                       title="{{ name }}" target="_blank" rel="noopener noreferrer">
+                        <svg class="icon"><use href="/theme/images/icons.svg#{{ 'credit-card' if name == 'bynogame' else icon_id }}"></use></svg>
+                    </a>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="mobile-header">
+                <button id="menu-toggle" aria-label="Open Menu">
+                    <svg class="icon"><use href="/theme/images/icons.svg#menu"></use></svg>
+                </button>
+                <h2 class="mobile-title" style="margin: 0 auto 0 1rem; font-size: 1.2rem;">{{ SITENAME }}</h2>
+                {% include 'partials/lang_switcher.html' %}
+            </header>
+
+            {% block content %}{% endblock %}
+
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-copyright">
+                        <p>&copy; {{ current_year }} <strong>{{ AUTHOR }}</strong>. {{ _('Tüm hakları saklıdır.') }}</p>
+                        <p class="footer-tech">{{ _('Pelican') }} {{ _('ile geliştirildi.') }}</p>
+                    </div>
+                    <div class="footer-nav">
+                        <a href="{{ SITEURL }}/{{ _('yazarlar/') }}">{{ _('Yazarlar') }}</a>
+                        <span class="footer-sep"></span>
+                        <a href="{{ SITEURL }}/{{ _('gizlilik-politikasi/') }}">{{ _('Gizlilik Politikası') }}</a>
+                        <span class="footer-sep"></span>
+                        <a href="{{ SITEURL }}/{{ _('kullanim-kosullari/') }}">{{ _('Kullanım Koşulları') }}</a>
+                        <span class="footer-sep"></span>
+                        <a href="{{ SITEURL }}/feeds/all.atom.xml" target="_blank">{{ _('Atom Feed') }}</a>
+                        <span class="footer-sep"></span>
+                        <a href="{{ SITEURL }}/feeds/all.rss.xml" target="_blank">{{ _('RSS') }}</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <svg class="icon"><use href="/theme/images/icons.svg#chevron-up"></use></svg>
+    </button>
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="search-modal" data-search-placeholder="{{ _('Arama...') }}" data-search-no-query="{{ _('Arama sorgusu giriniz') }}" data-search-no-results="{{ _('için sonuç bulunamadı') }}">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <svg class="icon"><use href="/theme/images/icons.svg#search"></use></svg>
+                <input type="search" id="search-input" placeholder="{{ _('Arama...') }}" autocomplete="off">
+                <button class="search-modal-close">&times;</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+        </div>
+    </div>
+
+    {% include 'includes/translations.html' %}
+    <script src="/theme/js/main.js" defer></script>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

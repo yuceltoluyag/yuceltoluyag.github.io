@@ -1,0 +1,157 @@
+@layer components {
+  /* Code Blocks with Window Controls */
+  .article-content .highlight {
+    margin: 2.5rem 0;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 20px var(--glow);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background-color: var(--card-bg);
+    overflow: hidden;
+  }
+
+  .article-content .highlight pre {
+    padding: 3rem 1.25rem 1.25rem;
+    margin: 0;
+    background-color: inherit !important;
+    overflow-x: auto;
+  }
+
+  .article-content .highlight::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ff5f56;
+    box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27c93f;
+    z-index: 2;
+  }
+
+  /* Language Labels */
+  .highlight.python::after { content: "Python"; }
+  .highlight.javascript::after, .highlight.js::after { content: "JS"; }
+  .highlight.css::after { content: "CSS"; }
+  .highlight.html::after { content: "HTML"; }
+  .highlight.bash::after, .highlight.sh::after { content: "Bash"; }
+  .highlight.sql::after { content: "SQL"; }
+  .highlight.json::after { content: "JSON"; }
+
+  .highlight::after {
+    position: absolute;
+    top: 0.85rem;
+    right: 1.25rem;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 1;
+  }
+
+  .highlight:hover::after {
+    opacity: 0;
+  }
+
+  .article-content .highlight pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    color: inherit;
+    font-family: var(--font-code);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Inline Code */
+  .article-content :not(pre) > code {
+    font-family: var(--font-code);
+    font-size: 0.85em;
+    background-color: var(--glow);
+    color: var(--accent);
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+
+  /* Copy Button */
+  .copy-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-button::before {
+    content: "\f0c5"; /* Font Awesome copy icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+.highlight:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+.copy-button.copied {
+    background: #27c93f;
+    border-color: #27c93f;
+    color: #fff;
+}
+
+  /* Long Code Truncation */
+  .highlight.long-highlight {
+    max-height: 400px;
+  }
+
+  .highlight.long-highlight:not(.expanded) pre {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .highlight.long-highlight.expanded {
+    max-height: none;
+  }
+
+  .code-expand-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 1rem 0.75rem;
+    background: linear-gradient(transparent, var(--card-bg));
+    color: var(--fg);
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 20;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+}
