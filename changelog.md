@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.1] - 2026-05-08
+### Fixed
+- **CI/CD:** Resolved `locale.Error: unsupported locale setting` in GitHub Actions and `act` by standardizing Linux-compatible locale names (`tr_TR.UTF-8`, `en_US.UTF-8`) in `pelicanconf.py`.
+- **Plugins:** Improved `pelican_redirect` plugin robustness with a better locale-aware initialization fallback.
+- **Documentation:** Fixed broken absolute file paths and outdated build process references in `README.md`.
+
+### Changed
+- **Workflow:** Added English language pack installation and `en_US` locale generation to `pelican.yml`.
+- **Local Dev:** Updated `README.md` to prioritize `duty` commands over legacy `make` commands.
+
+
 ## [2.3.0] - 2026-05-08 20:21
 ### Added
 - **Dependency Management:** Created `pipupdate.py` for automated Python dependency upgrades, featuring venv-aware execution and `requirements.txt` sanitization.

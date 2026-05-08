@@ -34,7 +34,7 @@ The **AliBaba** theme is a state-of-the-art, high-performance theme built from t
 
 ## 🚀 Getting Started
 
-To run this project locally, you will need `Python 3.12+` and `make`.
+To run this project locally, you will need `Python 3.12+` and `duty`.
 
 1.  **Clone & Install:**
     ```bash
@@ -45,13 +45,13 @@ To run this project locally, you will need `Python 3.12+` and `make`.
 
 2.  **Run Development Server:**
     ```bash
-    make dev
+    duty livereload
     ```
-    View the site at **[http://localhost:8000](http://localhost:8000)**.
+    View the site at **[http://localhost:8080](http://localhost:8080)**.
 
 3.  **Create a New Post:**
     ```bash
-    make post
+    duty new title="My New Post"
     ```
 
 ---
@@ -60,9 +60,9 @@ To run this project locally, you will need `Python 3.12+` and `make`.
 
 For more detailed information about the theme architecture and project evolution:
 
-- **Theme Details**: [Tema.md](file:///c:/Users/baba/Desktop/Work/yuceltoluyag.github.io/Tema.md) - Deep dive into AliBaba's design system.
-- **Changelog**: [changelog.md](file:///c:/Users/baba/Desktop/Work/yuceltoluyag.github.io/changelog.md) - Full version history and release notes.
-- **Translation Rules**: [translaterules.md](file:///c:/Users/baba/Desktop/Work/yuceltoluyag.github.io/translaterules.md) - Guidelines for localized content.
+- **Theme Details**: [Tema.md](Tema.md) - Deep dive into AliBaba's design system.
+- **Changelog**: [changelog.md](changelog.md) - Full version history and release notes.
+- **Translation Rules**: [translaterules.md](translaterules.md) - Guidelines for localized content.
 
 ---
 
@@ -71,4 +71,4 @@ For more detailed information about the theme architecture and project evolution
 CSS management is handled natively to ensure zero dependencies on external builders where possible, prioritizing performance and maintainability.
 
 - **Source CSS**: Located in `themes/baba/static/css/`
-- **Build Process**: Managed via `Makefile` for deployment.
+- **Build Process**: Managed via `duties.py` for deployment.

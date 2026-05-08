@@ -20,14 +20,17 @@ class Redirect(Content):
         try:
             super().__init__(*args, **kwargs)
         except locale.Error:
-            # Fallback for CI environments where the requested locale might fail
-            # even after generation. We temporarily force 'C' locale during init.
-            orig_locale = locale.setlocale(locale.LC_ALL)
+            # Fallback for environments where the requested locale might fail.
+            # We temporarily remove LOCALE from settings to allow super().__init__ to proceed.
+            settings = kwargs.get('settings', {}).copy()
+            if 'LOCALE' in settings:
+                del settings['LOCALE']
+            kwargs['settings'] = settings
             try:
-                locale.setlocale(locale.LC_ALL, 'C')
                 super().__init__(*args, **kwargs)
-            finally:
-                locale.setlocale(locale.LC_ALL, orig_locale)
+            except Exception as e:
+                logger.error(f"Failed to initialize Redirect even with fallback: {e}")
+                raise
 
 
 class RedirectReader(BaseReader):

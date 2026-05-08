@@ -70,19 +70,22 @@ EXTRA_PATH_METADATA = {
 DEFAULT_LANG = "tr"
 TIMEZONE = "Europe/Istanbul"
 LOCALE = [
-    "tr_TR.UTF-8", "tr-TR", "Turkish_Turkey.1254",
-    "en_US.UTF-8", "en-US", "English_United States.1252",
+    "tr_TR.UTF-8", "tr_TR.utf8", "tr_TR", "tr-TR", "Turkish_Turkey.1254",
+    "en_US.UTF-8", "en_US.utf8", "en_US", "en-US", "English_United States.1252",
 ]
 DATE_FORMATS = {
-    "tr": ("tr-TR", "%d %B %Y"),
-    "en": ("en-US", "%d %B %Y"),
+    "tr": ("tr_TR.UTF-8", "%d %B %Y"),
+    "en": ("en_US.UTF-8", "%d %B %Y"),
 }
 I18N_UNTRANSLATED_ARTICLES_LANG = "tr"
 I18N_SUBSITES = {
     "en": {
         "SITENAME": "Baba Tech Blog",
         "AUTHOR": "yuceltoluyag",
-        "LOCALE": ["en_US.UTF-8", "en-US", "English_United States.1252"],
+        "LOCALE": [
+            "en_US.UTF-8", "en_US.utf8", "en_US", "en-US",
+            "English_United States.1252",
+        ],
         "STATIC_PATHS": ["images", "extra", "files"],
         "OUTPUT_PATH": "output/en",
         "CATEGORIES_URL": "categories/",
