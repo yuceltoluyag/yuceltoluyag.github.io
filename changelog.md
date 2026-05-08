@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CI/CD:** Resolved `locale.Error: unsupported locale setting` in GitHub Actions and `act` by standardizing Linux-compatible locale names (`tr_TR.UTF-8`, `en_US.UTF-8`) in `pelicanconf.py`.
 - **Subsites:** Fixed a bug where English subsite links incorrectly pointed to `localhost:8080` by explicitly setting `SITEURL` and improving `PUBLISH` mode detection.
 - **Plugins:** Improved `pelican_redirect` plugin robustness with a better locale-aware initialization fallback.
+- **Ads:** Resolved AdSense `TagError: availableWidth=0` by ensuring ad containers have `width: 100%` and `min-height`.
 - **Documentation:** Fixed broken absolute file paths and outdated build process references in `README.md`.
 
 
