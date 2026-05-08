@@ -6,7 +6,7 @@ Tags: github actions, act, docker, devops, git
 Slug: github-actions-yerelde-test-etme-act
 Authors: yuceltoluyag
 Summary: Tired of committing with "test" every time you write GitHub Actions? An in-depth guide on how to test your workflows locally via Docker using act. (Guide)
-Image: /images/github-actions-yerelde-test-etme-act.webp
+Image: images/github-actions-yerelde-test-etme-act-lg.webp
 Lang: en
 Status: published
 ---

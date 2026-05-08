@@ -6,11 +6,13 @@ Tags: github actions, act, docker, devops, git
 Slug: github-actions-yerelde-test-etme-act
 Authors: yuceltoluyag
 Summary: GitHub Actions yazarken her seferinde "test" diye commit atmaktan bıktınız mı? act ile yerelde Docker üzerinden workflow'larınızı nasıl test edeceğinizi anlatan derinlemesine bir rehber. (Rehber)
-Image: /images/github-actions-yerelde-test-etme-act.webp
+Image: images/github-actions-yerelde-test-etme-act-lg.webp
 Lang: tr
 Translation: false
 Status: published
 ---
+
+
 
 Mahalle baskısı mı dersiniz, yoksa o sinir bozucu "test 1", "test 2", "lütfen çalış artık" diye giden commit mesajları mı? Bazen kendime soruyorum, neden kolayı varken zoru seçiyoruz? Bir yaml dosyası yazıyorsun, ufacık bir syntax hatası var mı yok mu anlamak için illa ki o `git push` komutuna basman gerekiyor. Sonra ne oluyor? GitHub amca orada dönüyor, dönüyor, hop "Failed". Hadi baştan... Resmen teknolojik bir işkence bu.
 

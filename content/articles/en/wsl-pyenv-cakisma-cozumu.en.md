@@ -7,7 +7,7 @@ Authors: yuceltoluyag
 Lang: en
 Status: published
 Summary: I disabled the Windows pyenv-win PATH conflict that broke the Python environment in WSL and set up a clean, isolated Linux dev setup.
-Image: /images/wsl-pyenv-cakisma-cozumu.webp
+Image: images/wsl-pyenv-cakisma-cozumu-xl.webp
 
 ## The "Why is Python broken again?" moment
 

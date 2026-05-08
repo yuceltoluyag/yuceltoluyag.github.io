@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Plugins:** Improved `pelican_redirect` plugin robustness with a better locale-aware initialization fallback.
 - **Ads:** Resolved AdSense `TagError: availableWidth=0` by ensuring ad containers have `width: 100%` and `min-height`.
 - **Content:** Added a new deep-dive article about `act` (nektos/act) for local GitHub Actions testing.
+- **Theme:** Fixed broken footer links for Privacy Policy and Terms of Use by updating slugs in `base.html`.
+- **Documentation:** Restored and updated the Integrations section in `README.md` with repository links.
 - **Documentation:** Fixed broken absolute file paths and outdated build process references in `README.md`.
 
 

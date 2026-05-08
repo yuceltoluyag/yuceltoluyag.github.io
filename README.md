@@ -30,6 +30,11 @@ The **AliBaba** theme is a state-of-the-art, high-performance theme built from t
 - **Automation**: GitHub Actions (CI/CD) with custom locale support.
 - **Optimization**: WebP image delivery and CSS bundling.
 
+### 🔗 Integrations
+- **Google Indexing Tool**: Integrates with [Google Indexing Tool](https://github.com/yuceltoluyag/google-indexing-tool) for efficient content indexing.
+- **Image Responsive**: Uses [Image Responsive](https://github.com/yuceltoluyag/image-responsive) for optimized image delivery.
+- **Markdown IG Story**: Leverages [Markdown IG Story](https://github.com/yuceltoluyag/markdown-ig-story) for creating engaging content.
+
 ---
 
 ## 🚀 Getting Started

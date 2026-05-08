@@ -6,7 +6,7 @@ Tags: llama.cpp, turboquant, openssl, cuda, ai
 Slug: turboquant-sessiz-cokme-cozumu
 Authors: yuceltoluyag
 Summary: TurboQuant kullanırken llama-server sessizce mi kapanıyor? Meğer OpenSSL dosyaları unutulmuş. İşte o sinir bozucu sorunun basit çözümü.
-Image: /images/turboquant-sessiz-cokme-cozumu.webp
+Image: images/turboquant-sessiz-cokme-cozumu-lg.webp
 Lang: tr
 Translation: false
 Status: published

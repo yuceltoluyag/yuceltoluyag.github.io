@@ -6,7 +6,7 @@ Tags: llama.cpp, turboquant, openssl, cuda, ai
 Slug: turboquant-sessiz-cokme-cozumu
 Authors: yuceltoluyag
 Summary: Is llama-server closing silently while using TurboQuant? It turns out OpenSSL files were forgotten. Here is the simple solution to that annoying problem.
-Image: /images/turboquant-sessiz-cokme-cozumu.webp
+Image: images/turboquant-sessiz-cokme-cozumu-lg.webp
 Lang: en
 Status: published
 ---

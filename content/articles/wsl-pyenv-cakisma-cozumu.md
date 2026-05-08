@@ -5,7 +5,7 @@ Tags: wsl, pyenv, windows, linux, path, python
 Slug: wsl-pyenv-cakisma-cozumu
 Authors: yuceltoluyag
 Summary: WSL içinde Windows pyenv-win PATH çakışması yüzünden bozulan python ortamını kapattım, sistemi izole ederek temiz bir Linux dev setup kurdum.
-Image: /images/wsl-pyenv-cakisma-cozumu.webp
+Image: images/wsl-pyenv-cakisma-cozumu-xl.webp
 Lang: tr
 Translation: false
 Status: published
