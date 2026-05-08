@@ -33,6 +33,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y language-pack-tr gettext
           sudo localedef -i tr_TR -f UTF-8 tr_TR.UTF-8
+          sudo localedef -i tr_TR -f UTF-8 tr_TR.utf8
 
       - name: Inject Turkish language files into docutils
         run: |

@@ -10,9 +10,24 @@ import os.path
 logger = logging.getLogger(__name__)
 
 
+import locale
+
 class Redirect(Content):
     mandatory_properties = ("location",)
     default_template = "redirect"
+
+    def __init__(self, *args, **kwargs):
+        try:
+            super().__init__(*args, **kwargs)
+        except locale.Error:
+            # Fallback for CI environments where the requested locale might fail
+            # even after generation. We temporarily force 'C' locale during init.
+            orig_locale = locale.setlocale(locale.LC_ALL)
+            try:
+                locale.setlocale(locale.LC_ALL, 'C')
+                super().__init__(*args, **kwargs)
+            finally:
+                locale.setlocale(locale.LC_ALL, orig_locale)
 
 
 class RedirectReader(BaseReader):
