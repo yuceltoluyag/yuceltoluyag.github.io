@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **SEO:** Resolved a "double prefix" bug where English links were incorrectly generated as `/en/en/` by switching to standard Pelican `SITEURL` pathing.
 - **UI/Accessibility:** Fixed low contrast issues in dark mode for `lang-switcher` and `mobile-header` by adjusting the dark mode color palette and component styles.
 - **UI:** Extensively refined dark mode colors for headings (H1-H6) and text to provide a "low-glare" experience, using matte silver-grey tones (`#b8bec9`) for maximum visual comfort.
+- **Security:** Resolved a DOM-based XSS vulnerability in the search functionality (CodeQL alert #18) by implementing HTML escaping for user-controlled input.
 
 ## [2.3.1] - 2026-05-08
 ### Fixed

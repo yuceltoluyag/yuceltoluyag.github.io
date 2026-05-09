@@ -192,6 +192,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 250);
     });
 
+    const escapeHTML = (str) => {
+        if (!str) return '';
+        return str.replace(/[&<>"']/g, m => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[m]);
+    };
+
     const displaySearchResults = (results, query) => {
         if (results.length === 0) {
             searchResults.innerHTML = '';
@@ -204,8 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         searchResults.innerHTML = results.map(item => `
             <article class="search-item">
-                <a href="${item.url}">
-                    <span class="search-item-cat">${item.category || ''}</span>
+                <a href="${escapeHTML(item.url)}">
+                    <span class="search-item-cat">${escapeHTML(item.category || '')}</span>
                     <h4 class="search-item-title">${highlight(item.title, query)}</h4>
                 </a>
             </article>
@@ -213,8 +224,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const highlight = (text, query) => {
-        const regex = new RegExp(`(${query})`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
+        const escapedText = escapeHTML(text);
+        const escapedQuery = escapeHTML(query);
+        if (!escapedQuery) return escapedText;
+        
+        const regex = new RegExp(`(${escapedQuery})`, 'gi');
+        return escapedText.replace(regex, '<mark>$1</mark>');
     };
 
     // --- 6. Code Block Enhancements (Copy & Expand) ---
