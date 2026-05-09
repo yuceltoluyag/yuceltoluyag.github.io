@@ -165,6 +165,42 @@
 <!-- Canonical URL -->
 <link rel="canonical" href="{% if article %}{{ SITEURL }}/{{ article.url }}{% elif page %}{{ SITEURL }}/{{ page.url }}{% elif category %}{{ SITEURL }}/{{ category.url }}{% elif tag %}{{ SITEURL }}/{{ tag.url }}{% elif author %}{{ SITEURL }}/{{ author.url }}{% else %}{{ SITEURL }}{% endif %}" />
 
+<!-- Hreflang Tags -->
+{% if article %}
+    <link rel="alternate" hreflang="{{ article.lang }}" href="{{ SITEURL }}/{{ article.url }}" />
+    {% for translation in article.translations %}
+        <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ SITEURL }}/{{ translation.url }}" />
+    {% endfor %}
+    {% if article.lang == main_lang %}
+        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/{{ article.url }}" />
+    {% else %}
+        {% for translation in article.translations %}
+            {% if translation.lang == main_lang %}
+                <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/{{ translation.url }}" />
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% elif page %}
+    <link rel="alternate" hreflang="{{ page.lang }}" href="{{ SITEURL }}/{{ page.url }}" />
+    {% for translation in page.translations %}
+        <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ SITEURL }}/{{ translation.url }}" />
+    {% endfor %}
+    {% if page.lang == main_lang %}
+        <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/{{ page.url }}" />
+    {% else %}
+        {% for translation in page.translations %}
+            {% if translation.lang == main_lang %}
+                <link rel="alternate" hreflang="x-default" href="{{ SITEURL }}/{{ translation.url }}" />
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% elif output_file == 'index.html' %}
+    {% for lang, url in lang_siteurls.items() %}
+        <link rel="alternate" hreflang="{{ lang }}" href="{{ url }}/" />
+    {% endfor %}
+    <link rel="alternate" hreflang="x-default" href="{{ main_siteurl }}/" />
+{% endif %}
+
 <!-- IndieWeb & Bridgy -->
 <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
 <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />

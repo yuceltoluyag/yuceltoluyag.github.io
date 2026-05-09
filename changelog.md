@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.2] - 2026-05-09
+### Added
+- **SEO:** Implemented `hreflang` attributes in `metadata.html` to improve search engine discovery for multi-language content (Turkish and English).
+- **SEO:** Added `x-default` support, pointing to the Turkish version as the primary fallback for search engines.
+### Fixed
+- **SEO:** Resolved a "double prefix" bug where English links were incorrectly generated as `/en/en/` by switching to standard Pelican `SITEURL` pathing.
+- **UI/Accessibility:** Fixed low contrast issues in dark mode for `lang-switcher` and `mobile-header` by adjusting the dark mode color palette and component styles.
+- **UI:** Extensively refined dark mode colors for headings (H1-H6) and text to provide a "low-glare" experience, using matte silver-grey tones (`#b8bec9`) for maximum visual comfort.
+
 ## [2.3.1] - 2026-05-08
 ### Fixed
 - **CI/CD:** Resolved `locale.Error: unsupported locale setting` in GitHub Actions and `act` by standardizing Linux-compatible locale names (`tr_TR.UTF-8`, `en_US.UTF-8`) in `pelicanconf.py`.

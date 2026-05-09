@@ -9,13 +9,13 @@
   --heading-light: #1d2021;
   
   /* Premium Deep Dark Palette (Inspired by Baba Theme) */
-  --bg-dark: #13171f;
-  --fg-dark: #c2c7d0;
-  --accent-dark: #c79400;
+  --bg-dark: #0f1218;
+  --fg-dark: #9da5b4;
+  --accent-dark: #ffc107;
   --muted-dark: #7b8495;
-  --border-dark: #202632;
-  --card-bg-dark: #181c25;
-  --heading-dark: #c2c7d0;
+  --border-dark: #242b38;
+  --card-bg-dark: #161a23;
+  --heading-dark: #b8bec9;
   --glow-dark: #6464ff26;
   --selection-dark: rgba(199, 148, 0, 0.2);
 

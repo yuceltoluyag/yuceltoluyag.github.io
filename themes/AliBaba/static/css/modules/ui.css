@@ -375,7 +375,8 @@
   }
 
   [data-theme="dark"] .lang-switcher {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
   }
 
   .lang-switcher a {
@@ -390,8 +391,16 @@
     letter-spacing: 0.05em;
   }
 
+  [data-theme="dark"] .lang-switcher a {
+    color: var(--fg); /* Brighter for better contrast in dark mode */
+  }
+
   .lang-switcher a:hover {
     color: var(--fg);
+  }
+
+  [data-theme="dark"] .lang-switcher a:hover {
+    color: var(--accent);
   }
 
   .lang-switcher a.active {
@@ -401,7 +410,8 @@
   }
 
   [data-theme="dark"] .lang-switcher a.active {
-    background: var(--border);
+    background: var(--accent);
+    color: var(--accent-fg);
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   }
 
