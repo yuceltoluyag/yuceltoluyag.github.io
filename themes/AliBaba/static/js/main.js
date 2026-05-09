@@ -194,7 +194,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displaySearchResults = (results, query) => {
         if (results.length === 0) {
-            searchResults.innerHTML = `<p class="no-results">${searchModal.dataset.searchNoResults} "${query}"</p>`;
+            searchResults.innerHTML = '';
+            const noResults = document.createElement('p');
+            noResults.className = 'no-results';
+            noResults.textContent = `${searchModal.dataset.searchNoResults} "${query}"`;
+            searchResults.appendChild(noResults);
             return;
         }
 
