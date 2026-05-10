@@ -254,7 +254,7 @@ MENUITEMS = [
 PLUGIN_PATHS = ["plugins"]
 common_plugins = [
     "plugins.i18n_subsites",
-    "pelican.plugins.sitemap",
+    "plugins.sitemap",
     "pelican.plugins.neighbors",
     "plugins.series",
     "plugins.fix_sitemap",
@@ -334,12 +334,13 @@ SITEMAP = {
         "pages": "monthly",
     },
     "exclude": [
-        "^noindex/",
-        "^tag/",
+        r"page/",
+        r"^noindex/",
+        r"^tag/",
         r"\.json$",
         r"\.txt$",
-        "_redirects",
-        "404.html",
+        r"_redirects",
+        r"404\.html",
     ],
 }
 ROBOTS = "index, follow"
