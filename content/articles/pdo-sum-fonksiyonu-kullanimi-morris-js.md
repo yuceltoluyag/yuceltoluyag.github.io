@@ -1,7 +1,7 @@
-Title: PDO Sum Fonksiyonu Kullanımı (morris.js İçerir)
+﻿Title: PDO Sum Fonksiyonu Kullanımı (morris.js İçerir)
 Date: 2018-12-07 14:00 10:00
 Modified: 2025-08-11 22:59
-Category: PHP Geliştirme
+Category: PHP
 Tags: php, pdo
 Slug: pdo-sum-fonksiyonu-kullanimi-morris-js
 Authors: yuceltoluyag
@@ -57,3 +57,6 @@ Kodun çalıştırılmasıyla birlikte aşağıdaki gibi bir grafik elde edeceks
 [responsive_img src="/images/php_morris_grafik-xl.webp" alt="Morris.js Grafik Örneği" /]
 
 Eğer herhangi bir sorunuz olursa yorum bırakabilirsiniz! 💬😊
+
+
+

@@ -1,4 +1,4 @@
-Title: Xampp PHP 7 Kurulumu [Linux]
+﻿Title: Xampp PHP 7 Kurulumu [Linux]
 Date: 2017-01-21
 Category: Linux
 Author: yuceltoluyag
@@ -81,3 +81,6 @@ sudo ./manager-linux-x64.run
 Artık Linux üzerinde PHP 7 destekli XAMPP (LAMPP) kurulumunuz hazır! 🎉
 
 [responsive_img src="/images/php7-ubuntu-xampp-xl.webp" alt="XAMPP PHP 7 Kurulumu Linux" /]
+
+
+

@@ -1,6 +1,6 @@
 Title: LinkedIn İş Görüşmelerindeki Sinsi Tehlike: BeaverTail ve Lazarus Grubu
 Date: 2026-05-11 19:57
-Category: Güvenlik
+Category: Haberler
 Tags: linkedin scam, beavertail, malware, lazarus group, siber guvenlik, arch linux, reverse engineering
 Slug: linkedin-is-gorusmesi-dolandiriciligi-beavertail
 Authors: yuceltoluyag
@@ -62,8 +62,8 @@ Stay paranoid, stay safe!
 
 Bu makaledeki teknik analizin temelini oluşturan ve zararlı repo koleksiyonunu derleyen **Bogdan**'a teşekkürler. Emek hırsızlığına gerek yok; bu sinsi yapıları ilk deşifre edenlerden biri kendisidir.
 
-- [Bogdan'ın Orijinal Analizi](https://xndbogdan.com/linkedin-interview-scams/)
-- [Zararlı Repo Koleksiyonu (GitHub)](https://github.com/xndbogdan/malicious-repositories)
+- [Bogdan'ın Orijinal Analizi](https://www.himthe.dev/blog/linkedin-interview-scams){: target="\_blank" rel="noopener noreferrer"}
+- [İfşa Edilen Zararlı GitHub Repoları (Liste)](https://github.com/xndbogdan/malicious-repositories){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 

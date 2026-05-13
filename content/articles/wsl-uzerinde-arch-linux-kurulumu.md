@@ -1,4 +1,4 @@
-Title: WSL Üzerinde Arch Linux Kurulumu
+﻿Title: WSL Üzerinde Arch Linux Kurulumu
 Date: 2022-06-26 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Windows
@@ -364,3 +364,6 @@ yay -Syyu
 ```
 
 Ayarlarıma **[Github](https://github.com/yuceltoluyag/WindowsTerminal){: target="\_blank" rel="noopener noreferrer"}** Sayfamdan ulaşabilirsiniz.
+
+
+

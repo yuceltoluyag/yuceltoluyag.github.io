@@ -1,4 +1,4 @@
-Title: Arch Linux'ta ntsync Nasıl Aktif Edilir?
+﻿Title: Arch Linux'ta ntsync Nasıl Aktif Edilir?
 Date: 2025-11-30 09:45
 Category: Linux
 Tags: arch linux, ntsync, gaming, zen kernel, wine, proton
@@ -122,3 +122,5 @@ Kısacası, eğer siz de benim gibi "Oyunlarda performans artsın" diye özel Wi
 
 [^1]:
     LTS kernel, kararlılık için eski teknolojileri barındırır. Oyun ve yeni donanım özellikleri için genellikle Mainline veya Zen kernel tercih edilir.
+
+

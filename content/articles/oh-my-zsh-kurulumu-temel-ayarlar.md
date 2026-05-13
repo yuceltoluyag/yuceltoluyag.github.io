@@ -1,4 +1,4 @@
-Title: Oh My Zsh Kurulumu ve Temel Ayarlar
+﻿Title: Oh My Zsh Kurulumu ve Temel Ayarlar
 Date: 2020-01-20 12:00
 Modified: 2024-01-01
 Category: Terminal
@@ -155,3 +155,6 @@ Bu kurulum tamamlandıktan sonra:
 ---
 
 Bu makale **Oh My Zsh** serisinin ilk bölümüdür. Serinin devamı için diğer makaleleri takip edebilirsiniz.
+
+
+

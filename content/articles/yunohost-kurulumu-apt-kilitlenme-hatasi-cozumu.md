@@ -1,4 +1,4 @@
-Title: YunoHost Kurulumu Sırasında Karşılaşılan APT Kilitlenme Hatası ve Çözümü
+﻿Title: YunoHost Kurulumu Sırasında Karşılaşılan APT Kilitlenme Hatası ve Çözümü
 Date: 2025-04-11 15:45
 Modified: 2025-08-11 22:59
 Category: Sunucu
@@ -107,3 +107,6 @@ Bu rehberde, YunoHost kurulum sürecinde sıkça karşılaşılan `dpkg lock` ha
 Yorumlarınızı aşağıya bırakın 💬, başka bir rehberde görüşmek üzere! 👋
 
 [responsive_img src="/images/yunohost-hata-cozumu-xl.webp" alt="yunohost-hata-cozumu" /]
+
+
+

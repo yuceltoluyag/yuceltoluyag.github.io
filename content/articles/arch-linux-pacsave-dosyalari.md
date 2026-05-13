@@ -1,4 +1,4 @@
-Title: Arch Linux'ta .pacsave Dosyaları Nedir? (Güvenli Kullanım)
+﻿Title: Arch Linux'ta .pacsave Dosyaları Nedir? (Güvenli Kullanım)
 Date: 2025-11-15 17:13
 Category: Linux
 Tags: pacsave, pacman, arch linux, sorun giderme
@@ -125,3 +125,6 @@ Hızlıca birkaç klasik soruyu da cevaplayalım:
 ### İşin Özü...
 
 Kısacası, `.pacsave` dosyaları Pacman'in en akıllı özelliklerinden biri. Senin için bir güvenlik ağı 🕸️. Her paket kaldırdıktan sonra bir `pacdiff` komutu çalıştırmak (veya `find` komutu) ve bu dosyalara bir göz atmak, `/etc` dizinini temiz tutar ve değerli yapılandırmalarını kaybetmemeni sağlar.
+
+
+

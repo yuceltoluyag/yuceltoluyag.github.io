@@ -1,4 +1,4 @@
-Title: PHPStorm içerisinde Cmder Kullanmak
+﻿Title: PHPStorm içerisinde Cmder Kullanmak
 Date: 2019-11-06 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Geliştirme Araçları
@@ -57,3 +57,6 @@ Ayarları uyguladıktan sonra PHPStorm'u yeniden başlatın. Yeniden açıldığ
 Cmder terminali, Windows kullanıcıları için oldukça pratik bir araçtır. Full sürümünü [buradan](https://cmder.app/){: target="\_blank" rel="noopener noreferrer"} indirerek istediğiniz dizine çıkarabilirsiniz. 😊
 
 Bir sonraki rehberde görüşmek üzere! 🚀
+
+
+

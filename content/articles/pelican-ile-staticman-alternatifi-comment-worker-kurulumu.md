@@ -1,4 +1,4 @@
-Title: Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu
+﻿Title: Pelican ile Statik Yorum Sistemi: comment-worker Kurulumu
 Date: 2025-04-12 15:30
 Modified: 2025-08-11 22:59
 Category: Web Geliştirme
@@ -206,3 +206,6 @@ kullaniciadi=ahmet&sifre=123456
 comment-worker ile Pelican blogunuza dinamik yorum sistemi entegre etmek artık hem kolay hem de modern bir çözüm sunuyor. Cloudflare Workers sayesinde dünya genelinde hızlı, ölçeklenebilir ve ücretsiz bir yapı elde edebilirsiniz.
 
 Okuyucularınızdan gelen yorumlarla blogunuzu daha interaktif hale getirin ve topluluğunuzu büyütün! 🚀💬
+
+
+

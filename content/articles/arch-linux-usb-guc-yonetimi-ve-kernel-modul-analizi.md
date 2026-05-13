@@ -1,4 +1,4 @@
-Title: Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi
+﻿Title: Arch Linux Üzerinde USB Güç Yönetimi ve Kernel Modül Analizi
 Date: 2025-07-30 21:15
 Modified: 2025-08-11 22:59
 Category: Donanım
@@ -192,3 +192,6 @@ echo enabled | sudo tee /sys/bus/usb/devices/1-3/power/wakeup
 ✅ Kernel modül parametrelerini analiz ederek performans veya uyumluluk artırabilirsiniz.
 
 ---
+
+
+

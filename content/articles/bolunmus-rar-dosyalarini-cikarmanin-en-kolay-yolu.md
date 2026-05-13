@@ -1,4 +1,4 @@
-Title: Bölünmüş RAR Dosyalarını Çıkarmanın En Kolay Yolu
+﻿Title: Bölünmüş RAR Dosyalarını Çıkarmanın En Kolay Yolu
 Date: 2025-11-12 16:00
 Category: Linux
 Tags: rar, linux, unrar, 7zip, arşiv
@@ -119,3 +119,6 @@ Eğer kendi arşivlerinizi oluşturuyorsanız, `.zip`, `.tar.gz`, `.tar.xz` veya
 Bölünmüş RAR dosyaları artık Linux’ta bir engel değil. `unrar` ya da `7zz` gibi araçlarla birkaç komutla açabilirsiniz. Arşiv oluştururken ise açık sıkıştırma biçimlerini tercih etmek hem taşınabilirliği hem sorunsuz uyumluluğu artırır.
 
 [responsive_img src="/images/bolunmus-rar-dosyalarini-cikarma-xl.webp" alt="Bölünmüş RAR Dosyalarını Çıkarmanın En Kolay Yolu" /]
+
+
+

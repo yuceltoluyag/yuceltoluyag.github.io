@@ -1,4 +1,4 @@
-Title: Arch Linux Üzerinde Playwright Kurulumu: Adım Adım Rehber 🐧
+﻿Title: Arch Linux Üzerinde Playwright Kurulumu: Adım Adım Rehber 🐧
 Date: 2025-08-16 17:00
 Category: Linux
 Tags: playwright, arch linux, e2e test, web test otomasyonu, playwright kurulumu, aur
@@ -176,3 +176,6 @@ Peki siz Arch Linux üzerinde Playwright kurarken hangi sorunlarla karşılaşt�
 </div>
 
 [responsive_img src="/images/playwright-report-xl.webp" alt="Playwright Aktif" /]
+
+
+

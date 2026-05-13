@@ -1,4 +1,4 @@
-Title: Rehber: Google Indexing API kullanımı
+﻿Title: Rehber: Google Indexing API kullanımı
 Date: 2025-11-05 20:45
 Category: Web Geliştirme
 Tags: google indexing api, seo, python, google search console, url indexleme
@@ -215,3 +215,6 @@ Bu yöntemi bir **otomatik cron scripti**yle birleştirerek blog güncellemeleri
 - [Bing IndexNow kullanımı rehberi](/otomatik-bing-indexnow-kullanimi)
 
 ---
+
+
+

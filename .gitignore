@@ -188,3 +188,5 @@ yarn-debug.log*
 *.env.*
 !*.env.example
 .venv/
+
+makale-humanity.md

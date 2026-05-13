@@ -1,4 +1,4 @@
-Title: Linux Üzerinde Apache2, MySQL ve PhpMyAdmin Kurulumu (Debian ve Türevleri)
+﻿Title: Linux Üzerinde Apache2, MySQL ve PhpMyAdmin Kurulumu (Debian ve Türevleri)
 Date: 2018-09-14 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Sunucu
@@ -108,3 +108,6 @@ sudo service apache2 restart
 Kurulum sırasında herhangi bir hata alırsanız yorum bırakabilirsiniz. İyi çalışmalar!
 
 [responsive_img src="/images/linux-apache2-mysql-phpmyadmin-kurulumu-xl.webp" alt="linux-apache2-mysql-phpmyadmin-kurulumu" /]
+
+
+

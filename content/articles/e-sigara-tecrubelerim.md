@@ -1,4 +1,4 @@
-Title: E-Sigara Tecrübelerim
+﻿Title: E-Sigara Tecrübelerim
 Date: 2020-10-24 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Ürün İnceleme
@@ -90,3 +90,6 @@ Ağız kuruluğu yapar, bol bol su içersiniz. Olur olmadık yerde gaz çıkarta
 ## Sezon Finali
 
 Eğer ki ben yanımda taşırım, çok içerim, ikide bir şarjı ve tankıyla uğraşamam diyorsanız, şarjı ve tankı büyük olan modellere yönelmenizi tavsiye ederim. Dolar kurundan ve artan yasaklardan dolayı bu tip cihazlardan bulmak biraz zor. Kaliteli ve kullanılabilir sıfır cihazlar 700 TL'den başlıyor. İkinci el bulabilirseniz alabilirsiniz. Sonuçta ağzın değdiği yeri (dilerseniz bu kısmı sıfır alabilirsiniz) ve tankı sirkeli suyla güzelce temizleyip kullanabilirsiniz. Şu anda bu sektörde tabletli (Juul) tarzı olanlar revaçta, yanmalı olanlara talep yavaş yavaş azalıyor. Eğer e-sigaraya başlayacaksanız ve aklınızda deli sorular varsa, yorum bırakın, bildiğim kadarıyla yardımcı olmaya çalışırım.
+
+
+

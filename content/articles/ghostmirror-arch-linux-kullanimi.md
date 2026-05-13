@@ -1,4 +1,4 @@
-Title: Rehber: Arch Linux'ta GhostMirror Kullanımı
+﻿Title: Rehber: Arch Linux'ta GhostMirror Kullanımı
 Date: 2025-08-13 09:30
 Category: Linux
 Tags: Arch Linux, mirror management, package synchronization, Python aracı, sistem optimizasyonu
@@ -478,3 +478,6 @@ NEXT LEFT LAST                         PASSED UNiT              ACTiVATES
 1 timers listed.
 Pass --all to see loaded but inactive timers, too.
 ```
+
+
+

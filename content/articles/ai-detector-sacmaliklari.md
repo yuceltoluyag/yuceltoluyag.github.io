@@ -1,4 +1,4 @@
-Title: AI Detector Saçmalıkları: İnsan Gibi Yazınca Şüpheli Olmak
+﻿Title: AI Detector Saçmalıkları: İnsan Gibi Yazınca Şüpheli Olmak
 Date: 2025-11-12 18:45
 Category: Yazılım Geliştirme
 Tags: ai, detector, insanlık, yapayzeka, mizah
@@ -94,3 +94,6 @@ Aynı sistem kendi içinde tutarsız, her defasında başka sonuç veriyor.
 Yoksa seni kendi kadar dengesiz bir yazılım, fazla mantıklı olduğun için suçlayacak.
 
 [responsive_img src="/images/ai-detector-sacmaliklari-xl.webp" alt="AI Dedektörleri ve İnsan Yazısı" /]
+
+
+

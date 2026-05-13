@@ -1,4 +1,4 @@
-Title: Bootstrap Kullanarak jQuery Kayıt Formu Oluşturalım (Responsive)
+﻿Title: Bootstrap Kullanarak jQuery Kayıt Formu Oluşturalım (Responsive)
 Date: 2017-01-20
 Category: Web Geliştirme
 Author: yuceltoluyag
@@ -117,3 +117,6 @@ Dersin kaynak dosyalarını indirebilirsiniz:
 👉 **Dersin Kaynak Dosyalarını İndir**
 
 [responsive_img src="/images/bootstrap-jquery-kayit-formu-xl.webp" alt="Responsive Kayıt Formu" /]
+
+
+

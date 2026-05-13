@@ -1,4 +1,4 @@
-Title: Vivaldi'yi Neden Seviyorum
+﻿Title: Vivaldi'yi Neden Seviyorum
 Date: 2025-11-18 22:55
 Category: Linux
 Tags: vivaldi, linux, tarayıcı, gizlilik, kde, performans
@@ -94,3 +94,6 @@ Burada biraz gerçekçi olalım:
 Benim için Vivaldi; dürüstlüğü, özelleştirilebilirliği ve KDE ile olan uyumuyla şu anlık kazanan tarafta. 😎
 
 [^1]: Bu, FOSS (Özgür ve Açık Kaynak Kodlu Yazılım) topluluğunda en çok tartışılan konu. Chromium temeli açık kaynak, ama o güzel arayüz... değil.
+
+
+

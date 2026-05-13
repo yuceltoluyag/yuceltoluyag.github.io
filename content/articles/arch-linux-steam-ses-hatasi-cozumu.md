@@ -1,4 +1,4 @@
-Title: Arch Linux Üzerinde Steam Ses Hatalarını Çözme
+﻿Title: Arch Linux Üzerinde Steam Ses Hatalarını Çözme
 Date: 2025-05-06 10:00
 Modified: 2025-08-11 22:59
 Category: Oyun
@@ -267,3 +267,6 @@ Bu rehberde, Arch Linux üzerinde Steam oyunlarında karşılaşılan ses proble
 > Daha fazla Linux rehberi için takipte kalın!
 
 [responsive_img src="/images/Tannenberg-sonuc-xl.webp" alt="Tannenberg Sonuç Mutlu Sonuç" /]
+
+
+

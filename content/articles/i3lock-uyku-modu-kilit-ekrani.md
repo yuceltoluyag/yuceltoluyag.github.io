@@ -1,4 +1,4 @@
-Title: i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?
+﻿Title: i3lock ile Uyku Modundan Uyanırken Otomatik Kilit Ekranı Nasıl Ayarlanır?
 Date: 2025-04-24 14:00
 Modified: 2025-08-11 22:59
 Category: Masaüstü Ortamları
@@ -130,3 +130,6 @@ Bu yazıda, i3lock ve systemd kullanarak Linux sisteminizi daha güvenli hale ge
 💬 Eğer bu rehber işinize yaradıysa, yorum bırakarak bana destek olabilirsiniz. Sorularınız ya da önerileriniz varsa duymaktan memnuniyet duyarım!
 
 ---
+
+
+

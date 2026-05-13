@@ -1,4 +1,4 @@
-Title: Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin
+﻿Title: Rehber: MangoHud Kullanımı ile Oyun Performansınızı İzleyin
 Date: 2025-05-06 15:00
 Modified: 2025-08-11 22:59
 Category: Oyun
@@ -161,3 +161,6 @@ Bu rehber Arch Linux içindir. Debian/Ubuntu sistemlerinde `apt install mangohud
 <lite-youtube videoid="foUosbS6p_A"></lite-youtube>
 
 ---
+
+
+

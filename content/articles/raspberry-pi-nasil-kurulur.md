@@ -1,4 +1,4 @@
-Title: Raspberry Pi Nasıl Kurulur
+﻿Title: Raspberry Pi Nasıl Kurulur
 Date: 2025-04-24 12:00
 Modified: 2025-08-11 22:59
 Category: Donanım
@@ -291,3 +291,6 @@ Bu yazıda, **Raspberry Pi kurulumu** için ihtiyacınız olan tüm adımları d
 💡
 
 [responsive_img src="/images/raspberry-pi-nasil-kurulur-xl.webp" alt="raspberry-pi-nasil-kurulur" /]
+
+
+

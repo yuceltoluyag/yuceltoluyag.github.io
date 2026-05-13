@@ -1,4 +1,4 @@
-Title: Pelican Bloguna Mastodon Yorumları Ekleme
+﻿Title: Pelican Bloguna Mastodon Yorumları Ekleme
 Date: 2025-05-01 14:00
 Modified: 2025-08-11 22:59
 Category: Web Geliştirme
@@ -263,3 +263,5 @@ Herhangi bir sorunla karşılaşırsanız, aşağıdaki kaynaklara göz atabilir
 - Bu commit'te yapılan değişiklikler'de yanlışlıkla makale ve dosyaları sildiğim için hangi dosyada değişiklik yapmanız gerektiğini daha iyi anlarsınız. [Silinen Dosyalar](https://github.com/yuceltoluyag/yuceltoluyag.github.io/commit/000d8f82224ee41cb8376a32cffb1c226a93b4a7#diff-ed9fd3788490d83eb73b87a062eaa272fed26103d850ad1828440137e3267540){: target="_blank" rel="noopener noreferrer"}
 
 [responsive_img src="/images/pelican-bloguna-mastodon-yorumlari-ekleme-xl.webp" alt="pelican-bloguna-mastodon-yorumlari-ekleme" /]
+
+

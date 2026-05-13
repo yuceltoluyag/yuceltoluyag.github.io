@@ -1,4 +1,4 @@
-Title: Arch Linux'ta Conda Kurulumu ve Yönetimi
+﻿Title: Arch Linux'ta Conda Kurulumu ve Yönetimi
 Date: 2025-02-28 10:00 10:00
 Modified: 2025-08-11 22:59
 Category: Yazılım Geliştirme
@@ -433,3 +433,6 @@ Thank you for installing Miniconda3!
 ```
 
 [responsive_img src="/images/conda-xl.webp" alt="arch-linux-conda-kurulumu" /]
+
+
+

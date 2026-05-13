@@ -1,4 +1,4 @@
-Title: Newsboat RSS Feeds Kullanımı
+﻿Title: Newsboat RSS Feeds Kullanımı
 Date: 2020-07-17 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Terminal
@@ -218,3 +218,6 @@ alias youtubebotu="newsboat -u ~/.config/newsboat/yturls -C ~/.config/newsboat/y
 Bu şekilde terminalde `haberbotu` veya `youtubebotu` komutlarını kullanarak doğrudan belirli RSS beslemelerine erişebilirsiniz.
 
 Daha fazla bilgi için [Newsboat Belgeleri](https://newsboat.org/releases/2.19/docs/newsboat.html){: target="\_blank" rel="noopener noreferrer"} sayfasına göz atabilirsiniz. 📖
+
+
+

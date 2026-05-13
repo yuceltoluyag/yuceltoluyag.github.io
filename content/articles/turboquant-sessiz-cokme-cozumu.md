@@ -1,4 +1,4 @@
----
+﻿---
 Title: TurboQuant Sessiz Çökme Sorunu ve Çözümü
 Date: 2026-05-03 01:46
 Category: Sorun Giderme
@@ -45,3 +45,6 @@ OpenSSL 3.x sürümünü kurduktan sonra o sessizce kapanan terminal bir anda ca
 İşin özü; teknoloji bazen böyle küçük oyunlar oynuyor bize. Ama pes etmeyince, o son `--version` komutunun çıktısını ekranda görünce insan bir rahatlıyor, hani dünya varmış diyorsun. Şimdi bu TurboQuant'ın tadını çıkarma vakti! 🚀
 
 [^1]: Github üzerinde açılan [109 numaralı issue](https://github.com/TheTom/llama-cpp-turboquant/issues/109){: target="_blank" rel="noopener noreferrer"} olmasa hala AVX-512 peşinde koşuyordum herhalde.
+
+
+

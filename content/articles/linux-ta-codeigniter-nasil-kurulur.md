@@ -1,4 +1,4 @@
-Title: Linux'ta CodeIgniter Kurulumu: Adım Adım Rehber
+﻿Title: Linux'ta CodeIgniter Kurulumu: Adım Adım Rehber
 Date: 2018-12-01 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Web Geliştirme
@@ -110,3 +110,6 @@ Kurulum sırasında bir sorunla mı karşılaştın veya aklına takılan bir so
   Burada daha fazla video ve rehber bulabilirsiniz.
 
 [responsive_img src="/images/codeigniter-xl.webp" alt="codeigniter" /]
+
+
+

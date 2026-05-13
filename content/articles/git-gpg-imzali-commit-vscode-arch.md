@@ -1,4 +1,4 @@
-Title: VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀
+﻿Title: VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀
 Date: 2025-08-27 21:30
 Category: Git
 Tags: git, gpg, vscode, archlinux, i3wm, ssh, commit, imzalı commit
@@ -168,3 +168,6 @@ Artık VSCode üzerinde, Arch Linux + i3wm ortamında GPG imzalı commit atarken
 Bundan sonra GitHub’da commitlerinizin yanında gururla duran "Verified" etiketini göreceksiniz. 🎉
 
 [responsive_img src="/images/git-gpg-imzali-commit-vscode-arch-xl.webp" alt="Vscode Şifre Sorunu" /]
+
+
+

@@ -1,4 +1,4 @@
-Title: Proxmox + ZFS Üzerinde Home Assistant (HAOS) Kurulumu
+﻿Title: Proxmox + ZFS Üzerinde Home Assistant (HAOS) Kurulumu
 Date: 2025-11-30 14:15
 Category: Sunucu
 Tags: proxmox, home assistant, haos, zfs, tteck, vm,linux,disk
@@ -150,3 +150,5 @@ Yani, script kullanmak kötü değil ama elle kurunca insan kendini bir "Mr. Rob
 
 [^1]:
     Bir keresinde discard açmayı unuttuğum bir VM, 100GB verisi olmamasına rağmen ZFS üzerinde 500GB yer kaplamıştı. Temizlemesi tam bir işkenceydi.
+
+

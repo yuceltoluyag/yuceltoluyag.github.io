@@ -1,4 +1,4 @@
-Title: Arch Linux'tan MikroTik'e WireGuard: DNS Belası ve Temiz Kurulum
+﻿Title: Arch Linux'tan MikroTik'e WireGuard: DNS Belası ve Temiz Kurulum
 Date: 2026-05-10 23:05
 Category: Linux
 Tags: arch linux, mikrotik, wireguard, vpn, dns
@@ -123,3 +123,6 @@ Hadi eyvallah, bir sonraki teknik krizde görüşmek üzere!
 - [Arch Linux CPU Performans Ayarları](/arch-linux-cpu-performans-ayarlari/)
 - [Arch Linux Disk Alanı Görünmuyor Çözümü](/arch-linux-disk-alani-gorunmuyor-cozum/)
 - [PNG Dosyalarıyla İmtihanım: Mogrify ve Chunk Hataları](/png-mogrify-chunk-hatalari-cozumu/)
+
+
+

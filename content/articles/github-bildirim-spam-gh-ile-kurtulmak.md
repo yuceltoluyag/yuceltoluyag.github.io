@@ -1,4 +1,4 @@
-Title: GitHub Bildirim Spam'inden 'gh' ile Nasıl Kurtulunur?
+﻿Title: GitHub Bildirim Spam'inden 'gh' ile Nasıl Kurtulunur?
 Date: 2025-11-21 16:30
 Category: Git
 Tags: github, gh, cli, bildirim, terminal
@@ -101,3 +101,6 @@ Tabii bu, o projenin size bir daha bildirim göndermeyeceği anlamına gelmiyor.
 ---
 
 [responsive_img src="/images/github-bildirim-spam-gh-ile-kurtulmak-xl.webp" alt="Github Görünmeyen bildirim" /]
+
+
+

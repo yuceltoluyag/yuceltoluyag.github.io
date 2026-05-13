@@ -1,4 +1,4 @@
-Title: Phpstorm içerisinde CS Fixer Kullanmak
+﻿Title: Phpstorm içerisinde CS Fixer Kullanmak
 Date: 2020-02-06 14:30 10:00
 Modified: 2025-08-11 22:59
 Category: Geliştirme Araçları
@@ -72,3 +72,6 @@ Seçeneğini kullanabilirsiniz. Bu sayede, diğer projelerde de CS Fixer işlemi
 PhpStorm'u yeniden başlatın. `Tools -> External Tools` menüsünde, eklediğiniz araç ismini göreceksiniz. Kısayol eklemek isterseniz, `Settings -> Keymap -> External Tools` menüsünden istediğiniz kısayolu ekleyebilirsiniz. Ben `Alt + F` kısayolunu ekledim, siz dilediğinizi ekleyebilirsiniz.
 
 [responsive_img src="/images/php_phpstorm_csfixer5-xl.webp" alt="phpstorm_inside_phpcsfixer" /]
+
+
+

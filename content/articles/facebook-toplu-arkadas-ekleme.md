@@ -1,4 +1,4 @@
-Title: Facebook Toplu Arkadaş Ekleme (Gruba + Süreli)
+﻿Title: Facebook Toplu Arkadaş Ekleme (Gruba + Süreli)
 Date: 2018-10-11 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Sosyal Medya
@@ -41,3 +41,6 @@ Test aşamasında **1K, 2K ve 5K** hesaplar kullanarak en uygun süreleri belirl
 <lite-youtube videoid="G_oDPhADUso"></lite-youtube>
 
 [responsive_img src="/images/facebook-5000-xl.webp" alt="facebook-5000" /]
+
+
+

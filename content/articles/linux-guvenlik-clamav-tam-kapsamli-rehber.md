@@ -1,4 +1,4 @@
-Title: Linux'ta Tam Kapsamlı Paranoya: ClamAV ile A'dan Z'ye Güvenlik
+﻿Title: Linux'ta Tam Kapsamlı Paranoya: ClamAV ile A'dan Z'ye Güvenlik
 Date: 2025-11-14 02:30
 Category: Linux
 Tags: clamav, güvenlik, linux, on-access, clamd, freshclam, milter, sorun giderme, tech-sohbetçi
@@ -529,3 +529,6 @@ milter_default_action = tempfail
 Bu rehber, kaynaktaki her bir detayı içeriyor. Artık sadece `clamscan` çalıştıran biri değilsiniz. Arka planda çalışan, RAM'de hazır bekleyen, çoklu çekirdekle tarama yapan, yeni dosyaları anında yakalayan, size masaüstü bildirimi atan, e-postalarınızı filtreleyen ve ekstra veritabanlarıyla güçlendirilmiş bir ClamAV canavarınız var.
 
 Yine de unutmayın: En iyi antivirüs, o torrent'in yorumlarını okuyan sizsiniz.
+
+
+

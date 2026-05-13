@@ -1,4 +1,4 @@
-Title: Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme  
+﻿Title: Git ile GPG İmzalı Etiket Oluşturma ve Sorun Giderme  
 Date: 2025-03-03 10:00 10:00
 Modified: 2025-08-11 22:59
 Category: Git  
@@ -147,3 +147,6 @@ GPG imzaları, **açık kaynak projelerinde, güvenlik gerektiren kurumsal proje
 📌 **Ekstra Bilgi**: Eğer GPG anahtarınızı kaybederseniz, yeni bir anahtar oluşturmanız ve projelerde bu yeni anahtarı kullanmaya başlamanız gerekir. **Eski anahtarınızı iptal etmeyi unutmayın!** 🚨
 
 [responsive_img src="/images/git-gpg-imzali-etiket-xl.webp" alt="git-gpg-imzali-etiket" /]
+
+
+

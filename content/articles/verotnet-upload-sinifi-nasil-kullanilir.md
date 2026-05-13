@@ -1,6 +1,6 @@
-Title: Verot.net Upload Sınıfı Nasıl Kullanılır
+﻿Title: Verot.net Upload Sınıfı Nasıl Kullanılır
 Date: 2017-02-15
-Category: PHP Geliştirme
+Category: PHP
 Author: yuceltoluyag
 Slug: verotnet-upload-sinifi-nasil-kullanilir
 Summary: Verot.net tarafından geliştirilen class.upload.php dosyası ile PHP projelerinde dosya ve resim yüklemeyi kolayca gerçekleştirebilirsiniz.
@@ -156,3 +156,6 @@ Daha fazla bilgi için resmi dökümantasyonu inceleyebilirsiniz:
 👉 [https://github.com/verot/class.upload.php/blob/master/README.md](https://github.com/verot/class.upload.php/blob/master/README.md){: target="\_blank" rel="noopener noreferrer"}
 
 [responsive_img src="/images/verotnetsinifikullanimi-xl.webp" alt="Verotnet Nasıl Kullanılır." /]
+
+
+

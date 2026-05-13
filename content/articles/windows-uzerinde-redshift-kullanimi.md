@@ -1,4 +1,4 @@
-Title: Windows Üzerinde Redshift Kullanımı
+﻿Title: Windows Üzerinde Redshift Kullanımı
 Date: 2019-12-04 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Windows
@@ -85,3 +85,6 @@ Redshift, ekranınızı göz dostu hale getirerek gece çalışmalarınızı dah
 Sorularınızı veya deneyimlerinizi yorumlarda paylaşabilirsiniz! 🎤
 
 [responsive_img src="/images/redshift_windows-xl.webp" alt="Redshift Windows" /]
+
+
+

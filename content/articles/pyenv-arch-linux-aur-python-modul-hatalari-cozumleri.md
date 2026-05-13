@@ -1,4 +1,4 @@
-Title: Pyenv ile Arch Linux AUR Paketlerinde Python Modül Hataları ve Çözümleri  
+﻿Title: Pyenv ile Arch Linux AUR Paketlerinde Python Modül Hataları ve Çözümleri  
 Date: 2025-08-04 12:00  
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme  
@@ -131,3 +131,6 @@ işe yarayacaktır. Böylece sorunsuz ve hızlı bir kurulum deneyimi elde eders
 Pyenv ile Python sürüm yönetiminde karşılaştığınız sorunları ve çözümlerini öğrendiniz. Siz de deneyimlerinizi ve sorularınızı yorumlarda paylaşabilirsiniz! 🚀
 
 ---
+
+
+

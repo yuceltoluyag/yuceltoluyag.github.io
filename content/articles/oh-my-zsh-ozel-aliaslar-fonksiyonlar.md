@@ -1,4 +1,4 @@
-Title: Oh My Zsh Özel Alias'lar ve Fonksiyonlar
+﻿Title: Oh My Zsh Özel Alias'lar ve Fonksiyonlar
 Date: 2020-02-05 12:00
 Modified: 2025-10-26
 Category: Terminal
@@ -323,3 +323,6 @@ Bu makaleyi tamamladıktan sonra:
 
 Bu makale **Oh My Zsh** serisinin üçüncü bölümüdür.
 Serinin diğer makalelerini de okuyarak Zsh’i profesyonel seviyede kullanmayı öğrenebilirsiniz.
+
+
+

@@ -1,4 +1,4 @@
-Title: Autocut ile Otomatik Video Kesme Rehberi
+﻿Title: Autocut ile Otomatik Video Kesme Rehberi
 Date: 2025-09-08 14:00
 Category: Medya
 Tags: Autocut, MoviePy, Python video kesme, SRT, Markdown video edit, otomatik video düzenleme
@@ -178,3 +178,6 @@ Bu linkten indirebilirsiniz https://github.com/mli/autocut
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 ## <lite-youtube videoid="tS3Iw2WhCJI"></lite-youtube>
+
+
+

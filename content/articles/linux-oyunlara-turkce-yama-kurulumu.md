@@ -1,4 +1,4 @@
-Title: Linux’ta Oyunlara Türkçe Yama Nasıl Kurulur? (Detaylı Rehber)
+﻿Title: Linux’ta Oyunlara Türkçe Yama Nasıl Kurulur? (Detaylı Rehber)
 Date: 2025-05-13 14:00
 Modified: 2025-08-11 22:59
 Category: Oyun
@@ -162,3 +162,6 @@ Yedek dosyadan geri dönün veya Wine/Proton sürümünüzü değiştirerek yeni
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="mdyl6kkFTGQ"></lite-youtube>
+
+
+

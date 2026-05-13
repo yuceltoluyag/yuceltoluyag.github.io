@@ -1,4 +1,4 @@
-Title: Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)
+﻿Title: Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)
 Date: 2018-11-18 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Sunucu
@@ -173,3 +173,6 @@ Bu iki yöntemle genelde dosya erişim sorunları çözülür. Ancak bazen, yük
 <lite-youtube videoid="SElIrg0owl8"></lite-youtube>
 
 [responsive_img src="/images/archlinuxlampp.webp" alt="arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin" /]
+
+
+

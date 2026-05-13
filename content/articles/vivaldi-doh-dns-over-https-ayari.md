@@ -1,4 +1,4 @@
-Title: Vivaldi'de DoH Ayarı Nasıl Yapılır? (Cloudflare ile Özgürlük)
+﻿Title: Vivaldi'de DoH Ayarı Nasıl Yapılır? (Cloudflare ile Özgürlük)
 Date: 2025-11-30 16:30
 Category: Ağ ve İnternet
 Tags: vivaldi, doh, dns over https, cloudflare, gizlilik, sansür
@@ -62,3 +62,5 @@ Eğer **"Using DNS over HTTPS (DoH)"** kısmında **"Yes"** yazıyorsa, tebrikle
 Bazen bu ayar şirket içi ağlarda veya bazı kafe wifi'larında interneti kesebilir. Öyle bir durumda "Güvenli DNS" kutucuğunu kapatıp tekrar deneyin. Teknoloji işte, bazen aç-kapa yapmak gerekiyor.
 
 Güle güle, özgürce kullanın!
+
+

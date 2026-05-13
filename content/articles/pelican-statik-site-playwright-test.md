@@ -1,6 +1,6 @@
-Title: Pelican Statik Sitenizi Playwright ile Test Edin: Hatalara Elveda
+﻿Title: Pelican Statik Sitenizi Playwright ile Test Edin: Hatalara Elveda
 Date: 2026-05-11 01:48
-Category: Geliştirme
+Category: Geliştirme Araçları
 Tags: playwright, python, pelican, testing, static-site, uv
 Slug: pelican-statik-site-playwright-test
 Authors: yuceltoluyag
@@ -135,3 +135,6 @@ Hadi eyvallah!
 - [Playwright Arch Linux Kurulum](/playwright-arch-linux-kurulum/)
 - [Arch Linux CPU Performans Ayarları](/arch-linux-cpu-performans-ayarlari/)
 - [Diskleri Çöpe Atın: Raspberry Pi Zero ile RAM Üstünde Site Barındırmak](/raspberry-pi-zero-ram-diskless-web-server/)
+
+
+

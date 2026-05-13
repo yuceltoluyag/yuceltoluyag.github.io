@@ -1,4 +1,4 @@
-Title: PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü
+﻿Title: PowerShell 7.5.0'da Pyenv-Win Kurulum Hatası ve Çözümü
 Date: 2025-03-28 17:30
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme
@@ -104,3 +104,6 @@ PowerShell 7.5.0'da Pyenv-Win kurulumu sırasında `Expand-Archive` hatası alı
 Başka hata veya sorularınız olursa yorum bırakabilirsiniz. Happy coding! 🚀
 
 [responsive_img src="/images/Microsoft-PowerShell-Archive-xl.webp" alt="Microsoft-PowerShell-Archive" /]
+
+
+

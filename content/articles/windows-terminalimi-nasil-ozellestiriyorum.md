@@ -1,4 +1,4 @@
-Title: Windows Terminalimi Nasıl Özelleştiriyorum
+﻿Title: Windows Terminalimi Nasıl Özelleştiriyorum
 Date: 2022-06-26 10:00
 Modified: 2025-08-11 22:59
 Category: Windows
@@ -386,3 +386,6 @@ scoop install gpg4win
 ```
 
 [Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="\_blank" rel="noopener noreferrer"} ayarlarıma buradan ulaşabilir ve kendinize göre düzenleyebilirsiniz.
+
+
+

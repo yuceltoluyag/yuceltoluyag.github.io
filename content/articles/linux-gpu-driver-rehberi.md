@@ -1,4 +1,4 @@
-Title: Linux GPU Sürücü Rehberi: AMD, Intel ve Nvidia İçin Stabil ve Temiz Kurulum
+﻿Title: Linux GPU Sürücü Rehberi: AMD, Intel ve Nvidia İçin Stabil ve Temiz Kurulum
 Date: 2025-11-30 11:15
 Category: Donanım
 Tags: linux, gpu driver, nvidia, amd, intel, mesa, steamos, oyun, debian
@@ -187,3 +187,5 @@ Yani durum bu. Linux'ta sürücü işi ilk başta korkutucu görünse de, bir ke
 
 [^1]:
 RADV sürücüsü, Valve mühendisleri tarafından Steam Deck ve Linux oyunculuğu için sürekli optimize ediliyor. AMDVLK ise daha kurumsal odaklı kalabiliyor.
+
+

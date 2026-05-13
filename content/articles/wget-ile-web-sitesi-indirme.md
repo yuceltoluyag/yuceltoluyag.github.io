@@ -1,4 +1,4 @@
-Title: Wget ile Bir Web Sitesini Doğru Yöntemle İndirme
+﻿Title: Wget ile Bir Web Sitesini Doğru Yöntemle İndirme
 Date: 2025-11-14 11:59
 Category: Linux
 Tags: wget, komut satırı, linux, sorun giderme
@@ -154,3 +154,6 @@ Umarım bu yazı işinize yarar, bol indirmeler
 [^1]: Aslında bu yöntemi ilk keşfettiğimde çok sevinmiştim. Çünkü çok büyük bir sitede sadece belirli bir kategorideki sayfaları indirmem gerekiyordu ve bu beni saatlerce sürebilecek bir işten kurtardı.
 
 - Daha fazla bilgi için [Linux’ta HTTrack kullanımı rehberine](/linux-ta-httrack-kullanimi) göz atabilirsiniz.
+
+
+

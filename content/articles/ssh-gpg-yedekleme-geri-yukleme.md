@@ -1,4 +1,4 @@
-Title: SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme  
+﻿Title: SSH ve GPG Anahtarlarını Yedekleme ve Geri Yükleme  
 Date: 2025-03-04 10:00 10:00
 Modified: 2025-08-11 22:59
 Category: Git  
@@ -98,3 +98,6 @@ gpg --import my-private-key.asc
 
 Bu adımları takip ederek **SSH ve GPG anahtarlarınızı güvenli bir şekilde yedekleyebilir ve gerektiğinde geri yükleyebilirsiniz**. 🔒 Yedeklerinizi **güvenli bir ortamda** sakladığınızdan emin olun ve yetkisiz kişilerin erişimini engelleyin! 🚀
 [responsive_img src="/images/ssh-gpg-yedekleme-geri-yukleme-xl.webp" alt="ssh-gpg-yedekleme-geri-yukleme" /]
+
+
+

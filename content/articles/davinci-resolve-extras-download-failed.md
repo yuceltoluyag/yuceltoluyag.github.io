@@ -1,4 +1,4 @@
-Title: DaVinci Resolve Extras Download Failed Sorunu ve Çözümü
+﻿Title: DaVinci Resolve Extras Download Failed Sorunu ve Çözümü
 Date: 2025-11-09 18:00
 Category: Linux
 Tags: DaVinci Resolve, AI Voice Training, Extras, Arch Linux, Hata Çözümü
@@ -91,3 +91,6 @@ sudo mv libglib* libgio* libgmodule* disabled-libraries/
 - Eğer Davinci Resolve Açılmıyorsa bu yazımızıda okuyabilirsiniz.[Linux’ta DaVinci Resolve 20.1 Açılmıyor Hatası ve Çözümü](/davinci-resolve-20-1-linux-hatasi-cozumu/)
 
 [responsive_img src="/images/davinci-resolve-extras-ai-voice-xl.webp" alt="DaVinci Resolve Extras İndirme Sorunu Çözümü" /]
+
+
+

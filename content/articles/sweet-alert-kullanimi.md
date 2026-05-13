@@ -1,4 +1,4 @@
-Title: Sweet Alert Sınıfı Kullanımı: Detaylı Anlatım ve Tüm Argümanları
+﻿Title: Sweet Alert Sınıfı Kullanımı: Detaylı Anlatım ve Tüm Argümanları
 Date: 2018-09-10 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Web Geliştirme
@@ -97,3 +97,6 @@ Bir butona tıklandığında uyarı penceresinin açılmasını sağlayalım:
 ## İndirme Bağlantısı
 
 [Örnek Dosyayı İndirin](http://www.mediafire.com/file/aelw1zkhwcv17b7/sweetalertadamcoder.zip){: target="\_blank" rel="noopener noreferrer"}
+
+
+

@@ -1,4 +1,4 @@
-Title: Arch Linux'ta dnsmasq ve dnscrypt-proxy Kurulum Rehberi
+﻿Title: Arch Linux'ta dnsmasq ve dnscrypt-proxy Kurulum Rehberi
 Date: 2025-10-13 18:00
 Modified: 2025-11-30 17:56
 Category: Linux
@@ -244,4 +244,7 @@ Sisteminiz artık şu zinciri kullanıyor, ki bence çok havalı:
   **Port Çakışması Ne?** Port çakışması, bir makinede aynı port numarasını birden fazla servis tarafından kullanmaya çalıştığında ortaya çıkan bir durumdur. Genellikle bir port sadece bir servis tarafından kullanılabilmeli. Port çakışması sorunları genellikle ağ bağlantısını bozabilir, hatta sistemi kapatmasına neden olabilir.
 
 ---
+
+
+
 

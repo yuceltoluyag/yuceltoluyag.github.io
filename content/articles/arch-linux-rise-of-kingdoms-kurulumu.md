@@ -1,4 +1,4 @@
-Title: Arch Linux Üzerinde Rise of Kingdoms Kurulumu (Lutris ile)
+﻿Title: Arch Linux Üzerinde Rise of Kingdoms Kurulumu (Lutris ile)
 Date: 2025-05-10 21:00
 Modified: 2025-08-11 22:59
 Category: Oyun
@@ -152,3 +152,6 @@ Linux kullanıcıları için Lutris büyük bir nimet. Rise of Kingdoms gibi nat
 -- [/rise-of-kingdom-bot ](/veda-rise-of-kingdom-bot)
 
 Canlı Yayın Tekrarı : [Canlı Yayın tekrarını izlemek için dıkla](https://kick.com/babapy/videos/2063d6f8-eba5-44af-8877-2ba34dd2d9c9){: target="\_blank" rel="noopener noreferrer"}
+
+
+

@@ -1,6 +1,6 @@
-Title: Linux'ta Nostalji Rüzgarı: Space Cadet Pinball ve O Gizli Sabahlar
+﻿Title: Linux'ta Nostalji Rüzgarı: Space Cadet Pinball ve O Gizli Sabahlar
 Date: 2026-05-11 19:12
-Category: Yaşam/Teknoloji
+Category: Oyun
 Tags: linux, space cadet pinball, nostalji, windows xp, arch linux, flatpak, aur
 Slug: linux-space-cadet-pinball-kurulumu
 Authors: yuceltoluyag
@@ -66,3 +66,6 @@ Hadi eyvallah kardaş!
 - [Pelican Statik Sitenizi Playwright ile Test Edin](/pelican-statik-site-playwright-test/)
 - [Arch Linux CPU Performans Ayarları](/arch-linux-cpu-performans-ayarlari/)
 - [Diskleri Çöpe Atın: Raspberry Pi Zero ile RAM Üstünde Site Barındırmak](/raspberry-pi-zero-ram-diskless-web-server/)
+
+
+

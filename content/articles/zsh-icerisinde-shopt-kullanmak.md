@@ -1,4 +1,4 @@
-Title: Zsh İçerisinde Shopt Kullanmak
+﻿Title: Zsh İçerisinde Shopt Kullanmak
 Date: 2020-01-28 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Terminal
@@ -93,3 +93,6 @@ shopt -s cdspell 2> /dev/null
 [Zsh Ayarlarım!](https://github.com/yuceltoluyag/WindowsTerminal/blob/main/WSL/.zshrc){: target="\_blank" rel="noopener noreferrer"} + [Script Oluşturucu!](https://github.com/yuceltoluyag/otoscript){: target="\_blank" rel="noopener noreferrer"}
 
 [responsive_img src="/images/shopt-xl.webp" alt="shopt" /]
+
+
+

@@ -1,4 +1,4 @@
-Title: Nesine.com: Veraset ve İntikal Vergisi ne anlama geliyor?
+﻿Title: Nesine.com: Veraset ve İntikal Vergisi ne anlama geliyor?
 Date: 2025-05-17 10:30
 Modified: 2025-08-11 22:59
 Category: Haberler
@@ -111,3 +111,6 @@ Evet, Veraset ve İntikal Vergisi istisna tutarı her yıl yeniden değerleme or
 ---
 
 [responsive_img src="/images/nesine-vergi-degisikligi-xl.webp" alt="2025 Veraset ve İntikal Vergisi İstisna Limiti Artışı" /]
+
+
+

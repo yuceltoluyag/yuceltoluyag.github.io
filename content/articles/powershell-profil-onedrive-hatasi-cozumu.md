@@ -1,4 +1,4 @@
-Title: PowerShell Profil Sorunları ve OneDrive Kaldırma Sonrası Dizin Hatası Çözümü
+﻿Title: PowerShell Profil Sorunları ve OneDrive Kaldırma Sonrası Dizin Hatası Çözümü
 Date: 2025-03-02 10:00
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme
@@ -241,3 +241,6 @@ Bu komut:
 
 Bilgisayarı yeniden başlattıktan sonra düzelip düzelmediğini kontrol et. 🚀
 ![Hosts Dosyası Düzenleme](/images/windows11-onedrive-sorunu-xl.webp)
+
+
+

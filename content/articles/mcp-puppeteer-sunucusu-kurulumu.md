@@ -1,4 +1,4 @@
-Title: MCP ile Tarayıcı Otomasyonunu Kolayca Başlatın: Puppeteer Sunucusu Kurulumu
+﻿Title: MCP ile Tarayıcı Otomasyonunu Kolayca Başlatın: Puppeteer Sunucusu Kurulumu
 Date: 2025-04-17 14:00
 Modified: 2025-08-11 22:59
 Category: Geliştirme Araçları
@@ -196,3 +196,6 @@ Keyifli kodlamalar! 🚀
 ---
 
 [responsive_img src="/images/mcp-puppeteer-sunucusu-kurulumu-xl.webp" alt="Puppeteer Sunucusu Kurulumu" /]
+
+
+

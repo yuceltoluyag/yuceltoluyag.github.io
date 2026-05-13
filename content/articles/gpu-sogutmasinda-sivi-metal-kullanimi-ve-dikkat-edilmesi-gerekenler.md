@@ -1,4 +1,4 @@
-Title: GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler
+﻿Title: GPU Soğutmasında Sıvı Metal Kullanımı ve Dikkat Edilmesi Gerekenler
 Date: 2025-05-07 12:00
 Modified: 2025-08-11 22:59
 Category: Donanım
@@ -152,3 +152,6 @@ Bu rehberi adım adım uygularsanız, en yüksek performansı güvenli bir şeki
 Unutmayın: **Alüminyum yüzeylerde sıvı metal kullanmayın!**
 
 ---
+
+
+

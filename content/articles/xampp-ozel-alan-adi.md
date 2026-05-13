@@ -1,4 +1,4 @@
-Title: XAMPP Kullanarak Localhost'a Özel Alan Adı Oluşturma
+﻿Title: XAMPP Kullanarak Localhost'a Özel Alan Adı Oluşturma
 Date: 2019-03-06 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Geliştirme Araçları
@@ -66,3 +66,6 @@ Yaptığınız değişikliklerin aktif olması için XAMPP'yi yeniden başlatın
 3. Tarayıcınızda `http://eticaret.test` adresine giderek ayarlarınızı test edin.
 
 Artık kendi lokal alan adınız ile projelerinizi çalıştırabilirsiniz! 🚀
+
+
+

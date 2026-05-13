@@ -1,4 +1,4 @@
-Title: AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir
+﻿Title: AWS EC2'de OpenVPN Nasıl Kurulur ve DNS Leak Nasıl Düzeltilir
 Date: 2022-01-28 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Ağ ve İnternet
@@ -140,3 +140,6 @@ Arkadaşım hep ücretli VPN'ler kullanırdı.😍 Bir gün kendisinden denemek 
 ```
 
 Hemen Türk Telekom'daki arkadaşlara ulaştım, ancak derdimi bir türlü anlatamadım. Neyse ki saldırı başladığında modemi kapatarak sorunu çözdüm. Bu olaydan sonra şunu öğrendim: Ücretli veya ücretsiz VPN kullanın, DNS Leak'e yakalanmayın. Bol VPN'siz günler!
+
+
+

@@ -1,4 +1,4 @@
-Title: USB Bellekten ISO Önyükleme Rehberi
+﻿Title: USB Bellekten ISO Önyükleme Rehberi
 Date: 2025-11-11 17:00
 Category: Linux
 Tags: iso, usb, önyükleme, el-torito, rehber, windows10, windows11, format, uefi
@@ -280,3 +280,6 @@ Yeni kurulumlar, sistem onarımları veya acil durumlar için bu yöntem her zam
 - Daha fazla bilgi için [Linux’ta UEFI destekli Windows 10 USB oluşturma rehberine](/linux-uefi-windows10-usb/) göz atabilirsiniz.
 
 [responsive_img src="/images/usb-bellekten-iso-onyukleme-rehberi-xl.webp" alt="USB Bellekten ISO Önyükleme Rehberi" /]
+
+
+

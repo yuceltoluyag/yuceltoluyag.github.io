@@ -1,4 +1,4 @@
-Title: Linux Tema Nasıl Yüklenir (Gnome Shell ve Eklentileri)
+﻿Title: Linux Tema Nasıl Yüklenir (Gnome Shell ve Eklentileri)
 Date: 2018-09-21 12:30 10:00
 Modified: 2025-08-11 22:59
 Category: Masaüstü Ortamları
@@ -68,3 +68,6 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 🚀 Bu rehber ile Linux'ta tema yükleme sürecini rahatça tamamlayabilirsiniz!
 
 [responsive_img src="/images/linux-tema-nasil-yuklenir-gnome-shell-ve-xl.webp" alt="linux-tema-nasil-yuklenir-gnome-shell-ve" /]
+
+
+

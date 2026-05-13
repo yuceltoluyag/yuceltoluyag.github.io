@@ -1,4 +1,4 @@
-Title: Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
+﻿Title: Arch Linux'ta Transmission Nasıl Kurulur ve Kullanılır?
 Date: 2025-05-08 12:00
 Modified: 2025-08-11 22:59
 Category: Ağ ve İnternet
@@ -173,3 +173,6 @@ Arch Linux üzerinde Transmission'ı kurmak ve yapılandırmak oldukça basit bi
 Eğer başka bir sorunuz varsa veya adımlarda takıldığınız bir nokta olduysa, yorum kısmında sorularınızı sorabilirsiniz!
 
 ---
+
+
+

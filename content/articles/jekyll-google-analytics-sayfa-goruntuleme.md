@@ -1,4 +1,4 @@
-Title: Jekyll ile Google Analytics Sayfa Görüntüleme Sayısı Takibi
+﻿Title: Jekyll ile Google Analytics Sayfa Görüntüleme Sayısı Takibi
 Date: 2022-01-30 09:00 10:00
 Modified: 2025-10-12 18:28
 Category: Web Geliştirme
@@ -162,3 +162,6 @@ google_analytics:
 Bu çözümü blogumda kullanıyorum. **Google Console** servisi, **Amazon** gibi ücretsiz deyip de ay sonunda kartınızdan para çekmeye **çalışmıyor**, **yedi aydır** sorunsuz kullanıyorum. Yine de, tedbir amaçlı ödeme alarmı kurabilirsiniz. Ödemeler kısmından alarmlara tıklayıp **1 TL**'yi aşınca beni uyar diye ayarlayabilirsiniz. 😉
 
 [responsive_img src="/images/superproxy11-xl.webp" alt="GA-superproxy-kurulumu" /]
+
+
+

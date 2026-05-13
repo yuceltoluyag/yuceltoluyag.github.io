@@ -1,4 +1,4 @@
-Title: Arch Linux'ta Waydroid Kurulumu: Binder Modülleri ve Gelişmiş Ayarlar
+﻿Title: Arch Linux'ta Waydroid Kurulumu: Binder Modülleri ve Gelişmiş Ayarlar
 Date: 2025-10-26 03:00
 Category: Linux
 Tags: linux, waydroid, arch-linux, lxc, oyun, gamepad
@@ -275,3 +275,6 @@ Android oyunları, gamepad, sahte Wi-Fi ve tuş eşlemeleri ile optimize bir den
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="HVQBmWN5ZaU"></lite-youtube>
+
+
+

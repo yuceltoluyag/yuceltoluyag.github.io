@@ -1,4 +1,4 @@
-Title: Ngrok Kullanımı Resimli Anlatım
+﻿Title: Ngrok Kullanımı Resimli Anlatım
 Date: 2017-02-22
 Category: Web Geliştirme
 Author: yuceltoluyag
@@ -88,3 +88,6 @@ http://bb10ad8c.ngrok.io/sosyalagprojesi
 !!! tip "İpucu ⚡ Belirli bir klasör paylaşırsanız, yalnızca o dizin altındaki dosyalar erişilebilir olur."
 
 İyi çalışmalar! 😊
+
+
+

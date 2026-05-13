@@ -1,4 +1,4 @@
-Title: Yunohost'ta robots.txt Dosyası Oluşturmak
+﻿Title: Yunohost'ta robots.txt Dosyası Oluşturmak
 Date: 2025-04-14 10:00
 Modified: 2025-08-11 22:59
 Category: Sunucu
@@ -137,3 +137,6 @@ Dosya düzgün görüntüleniyorsa, yapılandırmanız başarıyla tamamlanmış
 ## ✍️ Sonuç
 
 Yunohost'ta `robots.txt` dosyası oluşturmak oldukça kolay bir işlemdir ama doğru yapılandırıldığında sitenizin SEO stratejisini ciddi şekilde etkileyebilir. Özellikle belirli dizinleri gizlemek veya sadece belirli botlara izin vermek isteyenler için vazgeçilmezdir.
+
+
+

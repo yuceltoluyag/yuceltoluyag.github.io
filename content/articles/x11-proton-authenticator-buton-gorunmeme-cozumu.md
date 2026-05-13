@@ -1,4 +1,4 @@
-Title: X11’de Proton Authenticator Butonlarının Görünmemesi Sorunu ve Kesin Çözümü
+﻿Title: X11’de Proton Authenticator Butonlarının Görünmemesi Sorunu ve Kesin Çözümü
 Date: 2025-08-10 15:00
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme
@@ -152,3 +152,6 @@ Bu fix, yalnızca Proton Authenticator değil, WebKitGTK tabanlı diğer uygulam
 Umarım bu çözüm sayesinde Linux deneyiminiz daha sorunsuz hale gelir! 🐧❤️
 
 [responsive_img src="/images/x11-proton-authenticator-buton-gorunmeme-cozumu-xl.webp" alt="X11 Proton Authenticator Butonlar Görünmüyor" /]
+
+
+

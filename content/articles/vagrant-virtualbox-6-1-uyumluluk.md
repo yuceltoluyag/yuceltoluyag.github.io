@@ -1,4 +1,4 @@
-Title: Vagrant'ı VirtualBox 6.1 ile Uyumlu Hale Getirmek
+﻿Title: Vagrant'ı VirtualBox 6.1 ile Uyumlu Hale Getirmek
 Date: 2020-01-04 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme
@@ -84,3 +84,6 @@ end
 Yukarıdaki işlemleri tamamladıktan sonra Vagrant'ı tekrar çalıştırın. Artık VirtualBox 6.1 ile uyumlu bir şekilde çalışması gerekiyor. Eğer hala hata alıyorsanız, yorumlarda paylaşmaktan çekinmeyin! 👍💗
 
 [responsive_img src="/images/ol_vbox_vagrant-min-xl.webp" alt="Vagrant VirtualBox Windows Linux Güncelleme" /]
+
+
+

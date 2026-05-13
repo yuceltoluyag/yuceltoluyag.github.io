@@ -1,4 +1,4 @@
-Title: MediaTek IMEI Onarma Rehberi  
+﻿Title: MediaTek IMEI Onarma Rehberi  
 Date: 2025-08-11 10:30  
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme  
@@ -234,3 +234,6 @@ Bu rehber işine yaradıysa veya takıldığın noktalar olduysa, yorumlarda sor
 [responsive_img src="/images/crDroid-95-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
 
 [responsive_img src="/images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
+
+
+

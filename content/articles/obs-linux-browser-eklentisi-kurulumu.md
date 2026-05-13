@@ -1,7 +1,7 @@
-Title: OBS Linux Browser Eklentisi Kurulumu ve Discord Chat Entegrasyonu
+﻿Title: OBS Linux Browser Eklentisi Kurulumu ve Discord Chat Entegrasyonu
 Date: 2018-11-17 12:00 10:00
 Modified: 2025-08-11 22:59
-Category: linux
+Category: Linux
 Tags: linux, obs, discord
 Slug: obs-linux-browser-eklentisi-kurulumu
 Authors: yuceltoluyag
@@ -85,3 +85,6 @@ Linux ile ilgili sohbet etmek ve destek almak için **Discord sunucumuza katıla
 👉 [Discord Sunucumuza Katılın](https://discordapp.com/invite/da3Su8s){: target="\_blank" rel="noopener noreferrer"}
 
 Bu rehberin Linux kullanıcıları için faydalı olacağını umuyorum. Herhangi bir sorunuz varsa yorumlarda belirtebilirsiniz! 📢
+
+
+

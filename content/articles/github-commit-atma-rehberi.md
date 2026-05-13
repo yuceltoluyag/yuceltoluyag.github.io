@@ -1,4 +1,4 @@
-Title: GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀
+﻿Title: GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀
 Date: 2025-08-15 09:15
 Category: Git
 Tags: git commit, github, versiyon kontrol, ssh, gpg, açık kaynak
@@ -342,3 +342,6 @@ Artık “GitHub’ta bir projeye nasıl commit atılır?" sorusunun cevabını 
 - Değişikliklerini güvenle test edip doğrulamanı sağlar.
 
 Kısacası, profesyonel bir katılım için ihtiyaç duyduğun tüm yapı taşları bu rehberde. Şimdi sıra sende: Kendi branch’ini aç, lokalde çalıştır, açıklayıcı commit mesajları yaz ve <b>her zaman PR</b> ile gönder. 🚀
+
+
+

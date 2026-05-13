@@ -1,4 +1,4 @@
-Title: Arch Linux'ta Waydroid İnternet Sorunu Çözümü
+﻿Title: Arch Linux'ta Waydroid İnternet Sorunu Çözümü
 Date: 2025-10-17 14:30
 Category: Sorun Giderme
 Tags: waydroid, arch linux, android, linux, iptables, konteyner, ağ yapılandırması
@@ -235,3 +235,6 @@ Başarılar dilerim! Waydroid'in tam olarak çalışmaya başlamışsa, Linux ü
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="HVQBmWN5ZaU"></lite-youtube>
+
+
+

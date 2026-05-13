@@ -1,4 +1,4 @@
-Title: Linux'ta UEFI Windows 10 Format USB Oluşturma - Resimli Anlatım
+﻿Title: Linux'ta UEFI Windows 10 Format USB Oluşturma - Resimli Anlatım
 Date: 2018-09-14 12:45 10:00
 Modified: 2025-08-11 22:59
 Category: Linux
@@ -70,3 +70,6 @@ Gördüğünüz gibi, Linux üzerinden UEFI destekli Windows 10 format USB'si ol
 - [USB Bellekten ISO Önyükleme Rehberi](/usb-bellekten-iso-onyukleme-rehberi)
 
 Eğer sorularınız veya kurulum sırasında aldığınız hatalar varsa yorum bırakabilirsiniz. İyi çalışmalar!
+
+
+

@@ -1,4 +1,4 @@
-Title: Yeni Başlayanlar Hangi Linux Sürümünü Kurmalı?
+﻿Title: Yeni Başlayanlar Hangi Linux Sürümünü Kurmalı?
 Date: 2018-09-13 12:30 10:00
 Modified: 2025-08-11 22:59
 Category: Linux
@@ -76,3 +76,6 @@ Linux Mint ve Fedora, geniş ve yardımsever bir destek topluluğuna sahiptir. F
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="IDjtbPEDk3w"></lite-youtube>
+
+
+

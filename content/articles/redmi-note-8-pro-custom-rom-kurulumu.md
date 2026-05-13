@@ -1,4 +1,4 @@
-Title: Redmi Note 8 Pro Custom ROM Yükleme Rehberi
+﻿Title: Redmi Note 8 Pro Custom ROM Yükleme Rehberi
 Date: 2025-08-12 14:30
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme
@@ -314,3 +314,6 @@ Vendor ID burada 18d1 (Google Inc.) olarak gözüküyor
 [responsive_img src="/images/crDroid-95-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
 
 [responsive_img src="/images/crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro-xl.webp" alt="crDroiAndroid-13-for-the-Xiaomi-Redmi-Note-8-Pro" /]
+
+
+

@@ -1,4 +1,4 @@
-Title: Arch Linux Güvenlik Duvarı Ayarları
+﻿Title: Arch Linux Güvenlik Duvarı Ayarları
 Date: 2025-10-24 03:00
 Category: Linux
 Tags: arch linux, firewall, nftables, ufw, güvenlik
@@ -134,3 +134,6 @@ Arch Linux’ta güvenlik duvarı yapılandırması, sisteminizi dış tehditler
 !!! note "Firewall kurallarınızı düzenli olarak gözden geçirin ve sistem ihtiyaçlarınıza göre özelleştirin 💡"
 
 Arch Linux ile güvenliğinizi artırabilir ve ağ yönetimini daha kontrollü hâle getirebilirsiniz. 🚀
+
+
+

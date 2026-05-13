@@ -1,6 +1,6 @@
-Title: Arch Linux'ta AnyDesk Kurulumu: Neden RustDesk Değil de Bu?
+﻿Title: Arch Linux'ta AnyDesk Kurulumu: Neden RustDesk Değil de Bu?
 Date: 2025-11-30 11:45
-Category: Araçlar
+Category: Geliştirme Araçları
 Tags: arch linux, anydesk, aur, yay, rustdesk, uzak masaüstü
 Slug: arch-linux-anydesk-kurulumu-rehberi
 Authors: yuceltoluyag
@@ -91,3 +91,5 @@ sudo reboot
 Evet, gönlümüz RustDesk'ten yana olsa da, hayatın gerçekleri bazen bizi AnyDesk kurmaya zorluyor. Artık Arch Linux sisteminiz, şirketteki Windows makinelerle veya akrabalarınızın bilgisayarlarıyla "onların dilinden" konuşmaya hazır.
 
 Bir gün herkesin özgür yazılımın kıymetini anlaması dileğiyle... O güne kadar ID numaranızı kimseyle paylaşmayın! 😎
+
+

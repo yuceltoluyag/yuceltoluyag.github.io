@@ -1,4 +1,4 @@
-Title: Pelican Redirect Eklentisi: Eski URL'leri Sorunsuz Yönlendirin 🔄
+﻿Title: Pelican Redirect Eklentisi: Eski URL'leri Sorunsuz Yönlendirin 🔄
 Date: 2025-03-26 08:00 10:00
 Modified: 2025-08-11 22:59
 Category: Web Geliştirme
@@ -139,3 +139,6 @@ Pelican Redirect eklentisi, statik sitenizde URL yapısını değiştirmeniz ger
 Eklentiyi kendi projenizde kullanarak geri bildirimde bulunmaktan çekinmeyin. Açık kaynak topluluğuna katkıda bulunmak ve projelerinizi geliştirmek için her zaman yeni özellikler ve iyileştirmeler üzerinde çalışıyoruz. 💪
 
 **Not**: Bu eklenti, Pelican 4.x ve üzeri sürümlerle test edilmiştir. Daha eski sürümlerde bazı uyumluluk sorunları yaşanabilir.
+
+
+

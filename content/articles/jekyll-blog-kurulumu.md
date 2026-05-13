@@ -1,4 +1,4 @@
-Title: Jekyll Blog Kurulumu
+﻿Title: Jekyll Blog Kurulumu
 Date: 2017-03-12
 Category: Web Geliştirme
 Author: yuceltoluyag
@@ -111,3 +111,6 @@ Ancak Markdown yazmayı öğrendikten sonra bunlara pek gerek kalmıyor.
 “Abi ben WordPress’çiyim, yok mu bize bir şeyler?” diyenler için güzel bir haber var:
 **Mert Kahyaoğlu’nun geliştirmiş olduğu Jekyll Admin eklentisini** kullanabilirsiniz.
 Ayrıca **Ngrok** kullanarak lokalden yayın yapmanız da mümkündür.
+
+
+

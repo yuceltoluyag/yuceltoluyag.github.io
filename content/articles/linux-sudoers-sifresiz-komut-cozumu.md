@@ -1,4 +1,4 @@
-Title: Linux’ta Sudoers ile Şifresiz Komut Çalıştırma
+﻿Title: Linux’ta Sudoers ile Şifresiz Komut Çalıştırma
 Date: 2025-11-09 16:30
 Modified: 2025-11-09 16:45
 Category: Linux
@@ -125,3 +125,6 @@ Denediğinde sonucu veya hangi komutlara izin verdiğini yorumlara yaz — berab
 [^1]: Sistem üzerindeki kritik dosya ve ayarlara erişim izni anlamına gelir.
 
 [responsive_img src="/images/linux-sudoers-sifresiz-komut-xl.webp" alt="Linux Sudoers Şifre istemeden işlem yapma" /]
+
+
+

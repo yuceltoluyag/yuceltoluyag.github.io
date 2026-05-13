@@ -1,4 +1,4 @@
-Title: Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları
+﻿Title: Arch Linux Üzerinde CPU Güç Yönetimi ve Performans Ayarları
 Date: 2025-07-28 09:30
 Modified: 2025-08-11 22:59
 Category: Donanım
@@ -339,3 +339,6 @@ Bu rehberde, masaüstü ortamı kullanmadan, sadece terminal ve `cpupower` arac�
   gibi adımlarla sisteminiz daha verimli çalışacaktır.
 
 ---
+
+
+

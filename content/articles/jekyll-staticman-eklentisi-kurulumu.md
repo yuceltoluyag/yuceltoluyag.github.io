@@ -1,4 +1,4 @@
-Title: Jekyll Staticman Eklentisi Kurulumu
+﻿Title: Jekyll Staticman Eklentisi Kurulumu
 Date: 2022-01-29 00:00 10:00
 Modified: 2025-10-12 18:28
 Category: Web Geliştirme
@@ -211,3 +211,6 @@ Bu dosyaları inceleyin arkadaşlar, kafanızda ışıkların patlayacağından 
 Artık Disqus kullanmak zorunda değilsiniz! Staticman, eksiklikleri olsa da oldukça kullanışlı ve özelleştirilebilir bir sistem. Geliştirilmesi gereken alanlar olsa da, şimdilik statik sitelerinizde yorumları rahatça yönetebilirsiniz. ✨
 
 [Kaynak Dosyalar](https://github.com/yuceltoluyag/jekyll-staticman){: target="\_blank" rel="noopener noreferrer"}
+
+
+

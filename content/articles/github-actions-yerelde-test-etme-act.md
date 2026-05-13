@@ -1,4 +1,4 @@
----
+﻿---
 Title: GitHub Actions'ı Yerelde Koşturmak: act ile "Deneme-Yanılma" Devrini Kapatıyoruz
 Date: 2026-05-08 22:45
 Category: Geliştirme Araçları
@@ -114,3 +114,6 @@ Yani bazen çözüm, buluta güvenmek değil, o gücü kendi bilgisayarına indi
 
 [^1]: Nektos act projesinin orijinal dokümanlarına [buradan](https://nektosact.com/usage/index.html){: target="_blank" rel="noopener noreferrer"} ulaşabilirsiniz.
 [^2]: Eğer konteyner içinde "Permission Denied" hatası alıyorsanız, docker grubuna dahil olup olmadığınızı kontrol edin.
+
+
+

@@ -1,4 +1,4 @@
-Title: Veda Zamanı: Rise of Kingdom Bot'un Sonu
+﻿Title: Veda Zamanı: Rise of Kingdom Bot'un Sonu
 Date: 2025-03-28 12:00
 Modified: 2025-08-11 22:59
 Category: Haberler
@@ -102,3 +102,6 @@ Sevgiyle kalın,
 Çok fazla mail ve [Instagram](https://www.instagram.com/yuceltoluyag/){: target="\_blank" rel="noopener noreferrer"} mesajı aldım. Projeyle ilgili tüm detaylar linkte mevcut.
 
 [Rise Of Kingdom Bot](https://github.com/yuceltoluyag/Rise-of-Kingdoms-Bot/issues/24){: target="\_blank" rel="noopener noreferrer"}
+
+
+

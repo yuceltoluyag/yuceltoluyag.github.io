@@ -1,4 +1,4 @@
-Title: Diskleri Çöpe Atın: Raspberry Pi Zero ile Tamamen RAM Üstünde Site Barındırmak
+﻿Title: Diskleri Çöpe Atın: Raspberry Pi Zero ile Tamamen RAM Üstünde Site Barındırmak
 Date: 2026-05-11 00:05
 Category: Linux
 Tags: raspberry pi, pi zero, alpine linux, ram, diskless, self-hosting
@@ -113,3 +113,6 @@ Hadi kalın sağlıcakla, RAM'iniz bol olsun!
 - [Arch Linux CPU Performans Ayarları](/arch-linux-cpu-performans-ayarlari/)
 - [Arch Linux'tan MikroTik'e WireGuard: DNS Belası ve Temiz Kurulum](/arch-linux-mikrotik-wireguard-kurulumu/)
 - [PNG Dosyalarıyla İmtihanım: Mogrify ve Chunk Hataları](/png-mogrify-chunk-hatalari-cozumu/)
+
+
+

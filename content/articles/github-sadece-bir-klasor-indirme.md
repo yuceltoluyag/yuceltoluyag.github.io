@@ -1,4 +1,4 @@
-Title: GitHub'dan Sadece Belirli Bir Klasörü İndirme: Sparse Checkout
+﻿Title: GitHub'dan Sadece Belirli Bir Klasörü İndirme: Sparse Checkout
 Date: 2025-10-27 03:15
 Category: Git
 Tags: git, github, sparse-checkout, linux, rehber
@@ -104,3 +104,6 @@ pico-v2/v2-sass-customized-design-system/
 Bu özellik gitlab ui'inde var,github ui'inde neden yok acaba? 🤔
 
 [responsive_img src="/images/git-sparse-checkout-rehberi-xl.webp" alt="Git Sparse Kullanımı" /]
+
+
+

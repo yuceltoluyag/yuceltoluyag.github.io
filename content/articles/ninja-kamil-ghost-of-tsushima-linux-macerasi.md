@@ -1,4 +1,4 @@
-Title: Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası
+﻿Title: Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası
 Date: 2025-10-16 22:00
 Category: Oyun
 Tags: ghost-of-tsushima, linux, ninja-kamil, oyun-izlenimleri, oyun-performans, mizah, oyun-inceleme
@@ -153,3 +153,6 @@ Yani aklınızdaki "Neden kasıyor?", "Nasıl daha akıcı oynarım?" gibi sorul
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
 <lite-youtube videoid="R4zbnIoE5hk"></lite-youtube>
+
+
+

@@ -1,4 +1,4 @@
-Title: WSL'de pyenv-win Çakışması ve PATH Kaosu Nasıl Çözüldü
+﻿Title: WSL'de pyenv-win Çakışması ve PATH Kaosu Nasıl Çözüldü
 Date: 2026-05-04 18:40
 Category: Sorun Giderme
 Tags: wsl, pyenv, windows, linux, path, python
@@ -227,4 +227,7 @@ Ve garip bir şekilde… her şey düzeldi 😄 WSL güzel araç ama ya onu Linu
 - [Arch Linux'ta ntsync Nasıl Aktif Edilir?](/arch-linux-ntsync-aktif-etme-zen-kernel-rehberi/){: target="_blank" rel="noopener noreferrer"}
 - [Vivaldi'de DoH Ayarı Nasıl Yapılır?](/vivaldi-doh-dns-over-https-ayari/){: target="_blank" rel="noopener noreferrer"}
 - [Proxmox + ZFS Üzerinde Home Assistant Kurulumu](/proxmox-zfs-home-assistant/){: target="_blank" rel="noopener noreferrer"}
+
+
+
 

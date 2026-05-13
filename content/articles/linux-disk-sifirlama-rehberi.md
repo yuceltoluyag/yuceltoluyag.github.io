@@ -1,4 +1,4 @@
-Title: Linux'ta Disk Nasıl Sıfırlanır? Herhangi Bir Diski Güvenli Şekilde Silme Rehberi
+﻿Title: Linux'ta Disk Nasıl Sıfırlanır? Herhangi Bir Diski Güvenli Şekilde Silme Rehberi
 Date: 2025-04-18 12:00
 Modified: 2025-08-11 22:59
 Category: Disk Yönetimi
@@ -157,3 +157,6 @@ Eğer bu rehber işine yaradıysa paylaşabilir, aşağıya yorum bırakabilir v
 Senin de kullandığın başka yöntemler varsa yorumlarda paylaş, birlikte büyüyelim! 🙌
 
 [responsive_img src="/images/Linux-uzerinde-disk-sifirlama-xl.webp" alt="Linux üzerinde disk sıfırlama" /]
+
+
+

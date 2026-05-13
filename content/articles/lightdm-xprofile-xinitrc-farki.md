@@ -1,4 +1,4 @@
-Title: Linux’ta Oturum Ayarları: .xinitrc mi .xprofile mı?
+﻿Title: Linux’ta Oturum Ayarları: .xinitrc mi .xprofile mı?
 Date: 2025-05-09 16:30
 Modified: 2025-08-11 22:59
 Category: Masaüstü Ortamları
@@ -127,3 +127,6 @@ Bu sayede başlatılamayan servisler, çalışmayan tema ayarları, eksik ikonla
 👇
 **Sen de `.xinitrc` mi yoksa `.xprofile` mi kullanıyorsun? Deneyimlerini yorum olarak paylaş!**
 Soruların varsa da çekinmeden yaz! 💬
+
+
+

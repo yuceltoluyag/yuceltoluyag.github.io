@@ -1,4 +1,4 @@
-Title: Arch Linux’ta Nvidia Ekran Kartı Kurulumu (Optimus, Prime, Bumblebee Rehberi)
+﻿Title: Arch Linux’ta Nvidia Ekran Kartı Kurulumu (Optimus, Prime, Bumblebee Rehberi)
 Date: 2020-04-18 10:00
 Modified: 2025-10-29 10:41
 Category: Donanım
@@ -180,3 +180,6 @@ Daha sonra **NVIDIA Settings** uygulamasını açıp:
 - [Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü)](/arch-linux-linux-firmware-nvidia-hatasi-cozumu/)
 
 ---
+
+
+

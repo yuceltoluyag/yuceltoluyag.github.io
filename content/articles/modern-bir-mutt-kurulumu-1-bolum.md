@@ -1,4 +1,4 @@
-Title: Modern Bir Mutt Kurulumu 1. Bölüm
+﻿Title: Modern Bir Mutt Kurulumu 1. Bölüm
 Date: 2020-02-03 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Linux
@@ -220,3 +220,6 @@ mbsync -a
 
 [responsive_img src="/images/neomutt_senkron-xl.webp" alt="neomutt_senkron" /]
 Bu yazı dizisinin [2.Bölüm](/imap-sunucusuna-openssl-kullanarak-terminal-ile-erisin){: target="\_blank" rel="noopener noreferrer"}'ünde, e-posta istemcinizi daha ayrıntılı olarak yapılandırmaya devam edeceğiz. 🙂
+
+
+

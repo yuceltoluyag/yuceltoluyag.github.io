@@ -1,4 +1,4 @@
-Title: Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı
+﻿Title: Git'te Belirli Bir Commit'e Geri Dönme ve Cherry-Pick Kullanımı
 Date: 2025-03-28 18:00
 Modified: 2025-08-11 22:59
 Category: Git
@@ -131,3 +131,6 @@ Git'te belirli bir commit'e geri dönmek veya belirli commit'leri farklı branch
 Eğer Git ile ilgili başka sorularınız varsa yorum bırakabilirsiniz! Happy coding! 🎉
 
 [responsive_img src="/images/git-chery-xl.webp" alt="git-commit-geri-donme-cherry-pick" /]
+
+
+

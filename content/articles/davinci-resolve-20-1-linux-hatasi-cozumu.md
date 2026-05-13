@@ -1,4 +1,4 @@
-Title: Linux’ta DaVinci Resolve 20.1 Açılmıyor Hatası ve Çözümü
+﻿Title: Linux’ta DaVinci Resolve 20.1 Açılmıyor Hatası ve Çözümü
 Date: 2025-09-02 06:30
 Category: Sorun Giderme
 Tags: davinci resolve linux, davinci resolve 20.1, arch linux, endeavouros, libglib hatası
@@ -130,3 +130,6 @@ Eğer bu rehber sana yardımcı olduysa, Linux üzerinde DaVinci Resolve kurulum
 [responsive_img src="/images/davinci-resolve-20-1-linux-hatasi-cozumu-xl.webp" alt="Davinci Resolve Linux" /]
 
 ---
+
+
+

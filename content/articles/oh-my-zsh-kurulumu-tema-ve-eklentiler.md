@@ -1,4 +1,4 @@
-Title: Oh My Zsh Kurulumu (Tema ve Eklentiler Dahil)
+﻿Title: Oh My Zsh Kurulumu (Tema ve Eklentiler Dahil)
 Date: 2018-12-07 12:00
 Modified: 2025-10-26 03:00
 Category: Terminal
@@ -198,3 +198,6 @@ Bu makale **Oh My Zsh Serisi**’nin ilk bölümüdür:
 3. [Oh My Zsh Özel Alias’lar ve Fonksiyonlar](/oh-my-zsh-ozel-aliaslar-fonksiyonlar/)
 
 ---
+
+
+

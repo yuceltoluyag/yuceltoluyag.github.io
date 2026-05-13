@@ -1,4 +1,4 @@
-Title: WinePrefix Nedir ve Nasıl Kullanılır?
+﻿Title: WinePrefix Nedir ve Nasıl Kullanılır?
 Date: 2025-07-29
 Modified: 2025-08-11 22:59
 Category: Oyun
@@ -264,3 +264,6 @@ Bu rehberle artık:
 - Kayıt defteri düzenleyebilir,
 - Lutris ve Steam ile entegre kullanabilir,
 - Farklı oyunları sorunsuz şekilde çalıştırabilirsiniz. ✅
+
+
+

@@ -1,4 +1,4 @@
-Title: Arch Linux Eski Depoların Temizlenmesi: Ne Yapmanız Gerekiyor?
+﻿Title: Arch Linux Eski Depoların Temizlenmesi: Ne Yapmanız Gerekiyor?
 Date: 2025-04-15 12:00  
 Modified: 2025-08-11 22:59
 Category: Linux
@@ -85,3 +85,6 @@ Arch Linux kullanıcıları için, eski depoların kaldırılması önemli bir a
 Bu yazıyı beğendiniz mi? **Yorumlarınızı** aşağıda bizimle paylaşabilirsiniz! Ayrıca, Arch Linux ile ilgili daha fazla ipucu ve rehber için **sosyal medya hesaplarımızı** takip edebilirsiniz. Eğer bu yazıyı faydalı bulduysanız, arkadaşlarınızla paylaşmayı unutmayın!
 
 Eğer bu tür içerikler ilginizi çekiyorsa, **e-posta bültenimize abone olmayı** unutmayın!
+
+
+

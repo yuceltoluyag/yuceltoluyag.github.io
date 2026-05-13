@@ -1,4 +1,4 @@
-Title: PNG Dosyalarıyla İmtihanım: Mogrify ve O Sinir Bozucu Chunk Hataları
+﻿Title: PNG Dosyalarıyla İmtihanım: Mogrify ve O Sinir Bozucu Chunk Hataları
 Date: 2026-05-10 21:40
 Category: Linux
 Tags: imagemagick, mogrify, png, linux, terminal
@@ -96,5 +96,8 @@ Kalın sağlıcakla, ben artık uyumaya gidiyorum kardaş!
 
 [^1]: `mogrify` dosyaların üzerine yazar. Yedek almayan yolda kalır hacı. Ayrıca ImageMagick v7 ile komutların başına `magick` eklemeniz gerekebilir; sisteminizde `magick mogrify` şeklinde deneyin.
  uykuya ihtiyacım var, gözlerim kapanıyor kardaş. Hadi kalın sağlıcakla! [Arch Linux Disk Alanı Görünmuyor Çözümü](/arch-linux-disk-alani-gorunmuyor-cozum/) yazıma da bi' bakın bi' ara, o da dertlidir. Hadi eyvallah kardaş!
+
+
+
 
 

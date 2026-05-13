@@ -1,4 +1,4 @@
-Title: Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü
+﻿Title: Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü
 Date: 2025-07-31 10:00
 Modified: 2025-08-11 22:59
 Category: Donanım
@@ -142,3 +142,6 @@ Ayrıca arkadaşların da benzer bir sorun yaşıyorsa paylaşarak onlara da yar
 - [Arch Linux News – linux-firmware >= 20250613.12fe085f-5 upgrade requires manual intervention](https://archlinux.org/news/linux-firmware-2025061312fe085f-5-upgrade-requires-manual-intervention/){: target="\_blank" rel="noopener noreferrer"}
 
 ---
+
+
+

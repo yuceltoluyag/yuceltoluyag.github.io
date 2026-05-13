@@ -1,4 +1,4 @@
-Title: XAMPP Üzerinde .htaccess Dosyasını Aktif Etmek (Resimli Anlatım)
+﻿Title: XAMPP Üzerinde .htaccess Dosyasını Aktif Etmek (Resimli Anlatım)
 Date: 2017-01-19
 Category: Web Geliştirme
 Author: yuceltoluyag
@@ -95,3 +95,6 @@ RewriteRule ^(.*)$ http://www.example.com/$1 [L,R=301]
 
 Kolay gelsin 😉
 Artık XAMPP üzerinde `.htaccess` dosyanız **tam fonksiyonlu şekilde** çalışıyor.
+
+
+
