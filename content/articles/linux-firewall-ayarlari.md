@@ -9,6 +9,7 @@ Translation: false
 Status: published
 Summary: Arch Linux’ta firewall yapılandırmasını adım adım öğren. nftables ve ufw ile güvenliğinizi artırın! ⚡
 Template: article
+Image: images/linux-firewall-ayarlari-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/115487284825769650
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k3m47mk2v
 

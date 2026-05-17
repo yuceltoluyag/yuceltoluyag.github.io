@@ -5,7 +5,7 @@ Tags: playwright, python, pelican, testing, static-site, uv
 Slug: pelican-statik-site-playwright-test
 Authors: yuceltoluyag
 Summary: Pelican ile ürettiğiniz statik sitenizi yayına almadan önce Playwright ve Python kullanarak nasıl otomatik testlerden geçireceğinizi anlatıyorum.
-Image: /images/pelican-playwright-test.webp
+Image: images/pelican-playwright-test-xl.webp
 Lang: tr
 Status: published
 

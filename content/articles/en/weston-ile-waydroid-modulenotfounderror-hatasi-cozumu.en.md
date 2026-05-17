@@ -10,6 +10,7 @@ Template: article
 Series: Waydroid
 Series_index: 3
 Lang: en
+Image: images/weston-ile-waydroid-modulenotfounderror-hatasi-cozumu-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/115487288365868924
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57k4adw6k2z
 

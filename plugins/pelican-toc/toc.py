@@ -62,7 +62,7 @@ class HtmlTreeNode(object):
             new_string = new_header.find_all(
                 text=lambda t: not isinstance(t, Comment), recursive=True
             )
-            new_string = "".join(new_string)
+            new_string = "".join(new_string).strip().rstrip("#").rstrip("¶").strip()
 
         if not new_id:
             settings = read_settings()
@@ -88,18 +88,20 @@ class HtmlTreeNode(object):
 
     def __str__(self):
         ret = ""
-        # Create the main clickable element (button or anchor)
-        if self.children:
-            # It has children, so it's a button
-            level = self.level[1:] if self.level and self.level.startswith('h') else '1'
-            ret = "<button class='h{}-btn'><span class='arrow'>▶</span>{}</button>".format(level, self.header.replace("¶", ""))
-        else:
-            # No children, so it's a link
-            if self.parent or self.include_title:
-                ret = "<a class='toc-href' href='#{0}' title='{1}'>{1}</a>".format(
-                    self.id.replace("¶", ""),
-                    self.header.replace("¶", ""),
-                )
+        # Create the main clickable element (always an anchor now for consistency)
+        level_class = "h{}-btn".format(self.level[1:] if self.level and self.level.startswith('h') else '1')
+        
+        # If it has children, add the arrow icon but keep it as a link
+        arrow = "<span class='arrow'>▶</span>" if self.children else ""
+        
+        if self.parent or self.include_title:
+            ret = "<a class='toc-href {}' href='#{}' title='{}'>{}{}</a>".format(
+                level_class,
+                self.id.replace("¶", "").replace("#", ""),
+                self.header.replace("¶", "").replace("#", "").strip(),
+                arrow,
+                self.header.replace("¶", "").replace("#", "").strip()
+            )
 
         # Add the nested list of children, if any
         if self.children:
@@ -114,10 +116,12 @@ class HtmlTreeNode(object):
         # If this is the root node, wrap it in the final container.
         if not self.parent:
             if self.include_title:
-                # The root is the title, which should also be a collapsible button
-                title_button = "<button class='h1-btn'><span class='arrow'>▶</span>{}</button>".format(self.header.replace("¶", ""))
-                # The 'ret' here contains the list of children from the first part of the function
-                title_li = "<li class='expanded'>{}{}</li>".format(title_button, ret)
+                # The root is the title
+                title_link = "<a class='toc-href h1-btn' href='#{}'>{}</a>".format(
+                    self.id.replace("¶", "").replace("#", ""),
+                    self.header.replace("¶", "").replace("#", "").strip()
+                )
+                title_li = "<li class='expanded'>{}{}</li>".format(title_link, ret)
                 ret = "<div id='toc'><ul>{}</ul></div>".format(title_li)
             else:
                 # No title, just the list of items

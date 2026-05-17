@@ -1,4 +1,4 @@
-﻿---
+---
 Title: TurboQuant Sessiz Çökme Sorunu ve Çözümü
 Date: 2026-05-03 01:46
 Category: Sorun Giderme
@@ -22,7 +22,7 @@ Kurulumu yaptım, her şey yerli yerinde duruyor. Ama o meşhur `llama-server.ex
 
 İşin ilginç yanı, terminalden çalıştırdığımda bile hiçbir çıktı vermiyordu. Sadece sessizce bir alt satıra geçiyor. "Acaba işlemci mi yemedi (AVX-512 mi istiyor acaba?)" diye düşünürken kendimi GitHub Issues sayfalarında buldum. Meğer bu bir "kusur" değil, resmen bir unutkanlık hikayesiymiş.
 
-`TheTom/llama-cpp-turboquant` fork'unun Windows CUDA 12.4 sürümünde (tqp-v0.1.1) birileri çok kritik iki dosyayı paketlemeyi unutmuş. Hani bir evi inşa edersin de anahtarını içeride unutursun ya, tam olarak öyle bir durum. 🤦‍♂️
+`TheTom/llama-cpp-turboquant` fork'unun Windows CUDA 12.4 sürümünde (tqp-v0.1.1) birileri çok kritik iki dosyayı paketlemeyi unutmuş. Hani bir evi inşa edersin de anahtarını içeride unutursun ya, tam olarak öyle bir durum. [^1] 🤦‍♂️
 
 !!! warning "Dikkat! ⚠️"
     Eğer sizde de hiçbir hata vermeden program kapanıyorsa, muhtemelen sisteminizde OpenSSL dosyaları eksik demektir. Bu hata Windows'un komut satırında genelde sessizce gerçekleşir.

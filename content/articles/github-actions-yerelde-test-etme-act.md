@@ -1,4 +1,4 @@
-﻿---
+---
 Title: GitHub Actions'ı Yerelde Koşturmak: act ile "Deneme-Yanılma" Devrini Kapatıyoruz
 Date: 2026-05-08 22:45
 Category: Geliştirme Araçları
@@ -16,7 +16,7 @@ Status: published
 
 Mahalle baskısı mı dersiniz, yoksa o sinir bozucu "test 1", "test 2", "lütfen çalış artık" diye giden commit mesajları mı? Bazen kendime soruyorum, neden kolayı varken zoru seçiyoruz? Bir yaml dosyası yazıyorsun, ufacık bir syntax hatası var mı yok mu anlamak için illa ki o `git push` komutuna basman gerekiyor. Sonra ne oluyor? GitHub amca orada dönüyor, dönüyor, hop "Failed". Hadi baştan... Resmen teknolojik bir işkence bu.
 
-Neyse ki geçen gün bu işkenceye bir son verdim. Hani şu meşhur **act** (nektos/act) olayı var ya, meğer kurtarıcımız oymuş. Meğer biz boşuna GitHub'ın sunucularını yoruyormuşuz (ve kendi commit geçmişimizi çöp ediyormuşuz).
+Neyse ki geçen gün bu işkenceye bir son verdim. Hani şu meşhur **act** (nektos/act) [^1] olayı var ya, meğer kurtarıcımız oymuş. Meğer biz boşuna GitHub'ın sunucularını yoruyormuşuz (ve kendi commit geçmişimizi çöp ediyormuşuz).
 
 ## Nedir Bu "act" ve Neden Şimdiye Kadar Kullanmadım?
 
@@ -58,7 +58,7 @@ Eğer hiçbir parametre vermezseniz, `act` gidip `push` event'ine bağlı olan t
 *   **Micro (Mikro):** 200MB altı. Sadece NodeJS var. Çok kısıtlı, her Actions'da yemez.
 
 !!! warning "Docker Soket Uyarısı"
-    Eğer `Couldn't get a valid docker connection` gibi bir uyarı alırsanız korkmayın. Bu genelde `DOCKER_HOST` değişkeninin veya soket erişiminin tam oturmamasından olur. Docker'ın çalıştığından emin olun, gerisi hallolur.
+    Eğer `Couldn't get a valid docker connection` gibi bir uyarı alırsanız korkmayın. [^2] Bu genelde `DOCKER_HOST` değişkeninin veya soket erişiminin tam oturmamasından olur. Docker'ın çalıştığından emin olun, gerisi hallolur.
 
 !!! tip "İpucu ⚡"
     Bu seçimlerinizi sonradan değiştirmek isterseniz Windows'ta `C:\Users\KullanıcıAdı\AppData\Local\act\actrc` dosyasını (Linux'ta `~/.actrc`) açıp elle müdahale edebilirsiniz.

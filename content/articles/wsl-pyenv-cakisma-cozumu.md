@@ -1,4 +1,4 @@
-﻿Title: WSL'de pyenv-win Çakışması ve PATH Kaosu Nasıl Çözüldü
+Title: WSL'de pyenv-win Çakışması ve PATH Kaosu Nasıl Çözüldü
 Date: 2026-05-04 18:40
 Category: Sorun Giderme
 Tags: wsl, pyenv, windows, linux, path, python
@@ -213,11 +213,6 @@ Ve garip bir şekilde… her şey düzeldi 😄 WSL güzel araç ama ya onu Linu
 
 !!! note "Küçük bir itiraf Bunu ilk çözerken baya "neden python bana düşman oldu" moduna girmiştim. Meğer olay python değilmiş, ortammış. İnterop denen şeyi o gün öğrendim. Ve o günden beri WSL'i hep izole kullanıyorum."
 
-
----
-
-[^1]: `appendWindowsPath=false` sadece PATH'i etkiler, dosya sistemini değil. `/mnt/c/` hâlâ erişilebilir.
-[^2]: VS Code'un WSL eklentisi Remote - WSL ile bağlanabilirsiniz, interop gerektirmez.
 
 ---
 

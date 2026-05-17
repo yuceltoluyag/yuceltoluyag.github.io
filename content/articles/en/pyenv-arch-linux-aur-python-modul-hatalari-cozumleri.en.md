@@ -9,6 +9,7 @@ Status: published
 Summary: We explain step by step the Python module errors encountered when compiling AUR packages with pyenv on Arch Linux and their solutions.
 Template: article
 Lang: en
+Image: images/pyenv-arch-linux-aur-python-modul-hatalari-cozumleri-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/114989740616828598
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqjb27e222
 

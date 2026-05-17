@@ -11,6 +11,7 @@ Template: article
 Lang: en
 Series: Docker
 Series_index: 1
+Image: images/arch-linux-docker-kurulumu-xl.webp
 toot: https://mastodon.social/@yuceltoluyag/114989772931815244
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqxwlfyk2p
 

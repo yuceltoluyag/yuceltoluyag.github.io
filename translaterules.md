@@ -29,6 +29,10 @@ Dosyanın en başındaki metadata bloğunda şu kuralları uygula:
 | **Status** | **SABİT TUT** | `published` veya `draft` durumunu koru. |
 | **toot/bluesky**| **SABİT TUT** | Sosyal medya linklerini koru. |
 
+!!! important "Çakışma Hatasını Önlemek İçin Dil Metadata Kuralları"
+    - **Türkçe (Orijinal) Makale:** Orijinal Türkçe makalenin en başındaki metadata bloğunda mutlaka `Lang: tr` ve `Translation: false` tanımlanmış olmalıdır. Aksi takdirde, Pelican alt siteyi derlerken Türkçe makaleyi de varsayılan dil (`en`) olarak algılayıp dosya çakışması (`FileOverwriteFailedError`) hatası verir.
+    - **İngilizce (Çeviri) Makale:** Çeviri dosyasında ise `Lang: en` değeri kullanılmalıdır.
+
 ## ✍️ 3. İçerik Çeviri Kuralları
 - **Başlıklar (`#`, `##`, `###`):** Hepsini İngilizce'ye çevir.
 - **Metin:** Orijinal Türkçe metne sadık kalarak, içeriği akıcı ve profesyonel bir İngilizce'ye çevir. Kendi yorumunu ekleme, içeriği genişletme veya anlamı değiştirme.

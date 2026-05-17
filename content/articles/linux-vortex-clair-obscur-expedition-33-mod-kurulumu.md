@@ -9,6 +9,7 @@ Translation: false
 Status: published
 Summary: Linux'ta Vortex ve Proton kullanarak Clair Obscur: Expedition 33 modlarını güvenli ve sorunsuz bir şekilde kurmanın adım adım rehberi. ENOTDIR hatalarını çözün, oyun dosyalarını taşıyın ve konsol sorunlarını giderin.
 Template: article
+Image: images/linux-vortex-clair-obscur-expedition-33-mod-kurulumu-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/115364084679074024
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m2zyajubwc2h
 

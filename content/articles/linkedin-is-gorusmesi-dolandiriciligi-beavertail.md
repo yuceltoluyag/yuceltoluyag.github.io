@@ -5,7 +5,7 @@ Tags: linkedin scam, beavertail, malware, lazarus group, siber guvenlik, arch li
 Slug: linkedin-is-gorusmesi-dolandiriciligi-beavertail
 Authors: yuceltoluyag
 Summary: LinkedIn'de karşınıza çıkan "çok tatlı" iş tekliflerinin arkasındaki Kuzey Koreli hackerları ve test projesi adı altında sisteminize sızan BeaverTail zararlısını analiz ediyoruz.
-Image: /images/linkedin-scam-security.webp
+Image: images/linkedin-scam-security-xl.webp
 Lang: tr
 Status: published
 
@@ -60,7 +60,7 @@ Stay paranoid, stay safe!
 
 ## 🔗 Kaynaklar ve Teşekkür
 
-Bu makaledeki teknik analizin temelini oluşturan ve zararlı repo koleksiyonunu derleyen **Bogdan**'a teşekkürler. Emek hırsızlığına gerek yok; bu sinsi yapıları ilk deşifre edenlerden biri kendisidir.
+Bu tür sinsi operasyonları deşifre etmek gerçekten büyük bir sabır ve teknik takip gerektiriyor. Analiz sürecinde Bogdan'ın (himthe.dev) derlediği veri setleri oldukça ufuk açıcıydı. Kendisine bu şeffaf tutumu için bir teşekkür borçluyuz.
 
 - [Bogdan'ın Orijinal Analizi](https://www.himthe.dev/blog/linkedin-interview-scams){: target="\_blank" rel="noopener noreferrer"}
 - [İfşa Edilen Zararlı GitHub Repoları (Liste)](https://github.com/xndbogdan/malicious-repositories){: target="\_blank" rel="noopener noreferrer"}

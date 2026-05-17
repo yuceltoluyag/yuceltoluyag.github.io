@@ -5,7 +5,7 @@ Tags: raspberry pi, pi zero, alpine linux, ram, diskless, self-hosting
 Slug: raspberry-pi-zero-ram-diskless-web-server
 Authors: yuceltoluyag
 Summary: 512MB RAM'li bir Pi Zero'yu tamamen diskless bir Alpine Linux sunucusuna çevirip, üzerinde nasıl web sitesi barındıracağınızı anlatan çılgın bir rehber.
-Image: /images/raspberry-pi-zero-ram-diskless-web-server.webp
+Image: images/raspberry-pi-zero-ram-diskless-web-server-xl.webp
 Lang: tr
 Status: published
 

@@ -5,7 +5,7 @@ Tags: arch linux, mikrotik, wireguard, vpn, dns
 Slug: arch-linux-mikrotik-wireguard-kurulumu
 Authors: yuceltoluyag
 Summary: Arch Linux üzerinde WireGuard kurup MikroTik'e bağlanırken karşınıza çıkacak o meşhur DNS 'signature mismatch' hatasını ve en doğru çözüm yolunu anlatıyorum.
-Image: /images/arch-linux-mikrotik-wireguard-kurulumu.webp
+Image: images/arch-linux-mikrotik-wireguard-kurulumu-xl.webp
 Lang: tr
 Status: published
 

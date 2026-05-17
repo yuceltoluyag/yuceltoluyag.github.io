@@ -10,6 +10,7 @@ Translation: false
 Status: published  
 Summary: Arch Linux’ta pyenv kullandığınızda AUR paketleri derlerken karşılaşılan Python modül hatalarını ve çözümlerini adım adım anlatıyoruz.  
 Template: article
+Image: images/pyenv-arch-linux-aur-python-modul-hatalari-cozumleri-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/114989740616828598
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtqjb27e222
 

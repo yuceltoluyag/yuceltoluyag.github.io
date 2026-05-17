@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.4] - 2026-05-17 14:52
+### Added
+- **Translations:** Fully translated 16 key Turkish articles into English under `content/articles/en/` with aligned slugs to maintain robust language switcher functionality.
+- **Guidelines:** Documented strict multi-language metadata rules (requiring `Lang: tr` and `Translation: false` for originals, and `Lang: en` for translations) in `translaterules.md` to guarantee conflict-free site builds.
+- **Media Assets:** Designed and generated responsive cover assets (WebP in xl, lg, md, sm sizes, and high-performance AVIF) for 16 articles, correctly mapping them in their respective metadata headers.
+- **Git Config:** Added `.opencode` configuration directory to `.gitignore` to keep local development environments clean and secure.
+
+### Fixed
+- **Plugins (TOC):** Completely refactored `plugins/pelican-toc/toc.py` by converting collapsible `<button>` elements into consistent, accessible `<a>` anchors. Standardized class mappings (e.g. `toc-href h{}-btn`), integrated arrow icons, and stripped duplicate `#` and `¶` symbols from parsed header strings to ensure pristine TOC renders.
+- **SEO & File Naming:** Resolved file system pathing issues and boosted SEO by converting non-ASCII Turkish characters in cover filenames (e.g. `rtx-4060-sıvı-metal.avif` -> `rtx-4060-sivi-metal.avif`).
+- **Pelican Build:** Resolved a critical compilation path conflict (`FileOverwriteFailedError`) by explicitly declaring `Lang: tr` and `Translation: false` in `2025-veraset-intikal-vergisi-bilgilendirme.md`.
+- **Verification:** Verified complete English translation coverage using automated script checks and achieved a flawless, clean production-ready Pelican build.
+
 ## [2.3.3] - 2026-05-10
 ### Added
 - **Plugins:** Migrated from remote `pelican-sitemap` to a local, multi-language optimized version in `plugins/sitemap` to better handle TR/EN content relationships.

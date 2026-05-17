@@ -5,7 +5,7 @@ Tags: linux, space cadet pinball, nostalji, windows xp, arch linux, flatpak, aur
 Slug: linux-space-cadet-pinball-kurulumu
 Authors: yuceltoluyag
 Summary: Windows XP döneminin efsanesi Space Cadet Pinball'u Linux'a getiriyoruz. Hem duygusal bir yolculuk hem de 1024x768 çözünürlük artırma rehberi.
-Image: /images/space-cadet-pinball-linux.webp
+Image: images/space-cadet-pinball-linux-xl.webp
 Lang: tr
 Status: published
 

@@ -8,6 +8,7 @@ Status: published
 Summary: A step-by-step guide to safely installing Clair Obscur: Expedition 33 mods using Vortex and Proton on Linux environments.
 Template: article
 Lang: en
+Image: images/linux-vortex-clair-obscur-expedition-33-mod-kurulumu-lg.webp
 toot: https://mastodon.social/@yuceltoluyag/115364084679074024
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m2zyajubwc2h
 
