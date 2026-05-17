@@ -147,10 +147,6 @@
                     class="share-btn whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp">
                     <svg class="icon"><use href="/theme/images/icons.svg#whatsapp"></use></svg>
                 </a>
-                <a href="https://t.me/share/url?url={{ (SITEURL + '/' + article.url)|urlencode }}&text={{ article.title|urlencode }}"
-                    class="share-btn telegram" target="_blank" rel="noopener noreferrer" title="Telegram">
-                    <svg class="icon"><use href="/theme/images/icons.svg#telegram"></use></svg>
-                </a>
                 <a href="https://pinterest.com/pin/create/button/?url={{ (SITEURL + '/' + article.url)|urlencode }}&description={{ article.title|urlencode }}{% if article.image %}&media={{ (SITEURL + '/' + article.image)|urlencode }}{% endif %}"
                     class="share-btn pinterest" target="_blank" rel="noopener noreferrer" title="Pinterest">
                     <svg class="icon"><use href="/theme/images/icons.svg#pinterest"></use></svg>

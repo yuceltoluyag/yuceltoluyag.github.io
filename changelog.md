@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Git Config:** Added `.opencode` configuration directory to `.gitignore` to keep local development environments clean and secure.
 
 ### Fixed
+- **Theme (AliBaba):** Fixed a duplicate Telegram sharing button in `article.html` template under the social sharing block.
 - **Plugins (TOC):** Completely refactored `plugins/pelican-toc/toc.py` by converting collapsible `<button>` elements into consistent, accessible `<a>` anchors. Standardized class mappings (e.g. `toc-href h{}-btn`), integrated arrow icons, and stripped duplicate `#` and `¶` symbols from parsed header strings to ensure pristine TOC renders.
 - **SEO & File Naming:** Resolved file system pathing issues and boosted SEO by converting non-ASCII Turkish characters in cover filenames (e.g. `rtx-4060-sıvı-metal.avif` -> `rtx-4060-sivi-metal.avif`).
 - **Pelican Build:** Resolved a critical compilation path conflict (`FileOverwriteFailedError`) by explicitly declaring `Lang: tr` and `Translation: false` in `2025-veraset-intikal-vergisi-bilgilendirme.md`.
