@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.3.4] - 2026-05-17 14:52
 ### Added
+- **Content & Translations:** Added a new deep-dive troubleshooting article (`lutris-installed-file-impact-ttf-not-found-cozumu.md`) detailing the Lutris "impact.ttf not found" font error and return code 256 crash, along with its English translation under `content/articles/en/`.
 - **Translations:** Fully translated 16 key Turkish articles into English under `content/articles/en/` with aligned slugs to maintain robust language switcher functionality.
 - **Guidelines:** Documented strict multi-language metadata rules (requiring `Lang: tr` and `Translation: false` for originals, and `Lang: en` for translations) in `translaterules.md` to guarantee conflict-free site builds.
 - **Media Assets:** Designed and generated responsive cover assets (WebP in xl, lg, md, sm sizes, and high-performance AVIF) for 16 articles, correctly mapping them in their respective metadata headers.
