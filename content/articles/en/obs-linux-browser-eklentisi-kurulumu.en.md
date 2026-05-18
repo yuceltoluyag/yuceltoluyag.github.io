@@ -1,7 +1,7 @@
 Title: Installing OBS Linux Browser Plugin and Discord Chat Integration
 Date: 2018-11-17 12:00 10:00
 Modified: 2025-08-11 22:59
-Category: linux
+Category: Linux
 Tags: linux, obs, discord
 Slug: obs-linux-browser-eklentisi-kurulumu
 Authors: yuceltoluyag

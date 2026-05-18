@@ -8,6 +8,8 @@ Authors: yuceltoluyag
 Status: published
 Summary: What is WinePrefix, how is it created and used for different games? Learn the necessary steps to run Windows games smoothly on Linux with Wine in this guide.
 Image: images/wineprefix-nedir-nasil-kullanilir-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114989615830305083
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvtolvnmpc26
 Lang: en
 
 ## 🍷 What is WinePrefix and Why is it Important?

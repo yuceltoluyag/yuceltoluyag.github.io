@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: Linux'ta sürücü kurmak Windows'taki gibi değil. Mesa 25.1 güncellemesi, Nvidia DKMS modülleri ve Debian inatçıları için özel rehber burada.
 Image: images/linux-ve-steamos-grafik-surucusu-yukleme-guncelleme-rehberi-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116591967113098345
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3bijdjek26
 Translation: false
 Status: published
 

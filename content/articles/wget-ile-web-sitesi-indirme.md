@@ -1,4 +1,4 @@
-﻿Title: Wget ile Bir Web Sitesini Doğru Yöntemle İndirme
+Title: Wget ile Bir Web Sitesini Doğru Yöntemle İndirme
 Date: 2025-11-14 11:59
 Category: Linux
 Tags: wget, komut satırı, linux, sorun giderme
@@ -49,7 +49,7 @@ Peki ya sayfanın resimleri, CSS'leri? İşte `--page-requisites` burada devreye
 
 `--no-clobber` ise kopyaları engelliyor. Yani bir dosyayı indirdin, sonra tekrar çalıştırırsın, wget eskinin üzerine yazmaz, "bu var" deyip geçer. Bazen işe yarar.
 
-!!! note "İpucu ⚡ Hemen şurada küçük bir not bırakayım: `-e robots=off` parametresi, sitenin `robots.txt` dosyasını umursamasını engeller. Yani "ben bir botum ama kurallarına uymayacağım" demiş olursun. Bunu dikkatli kullan, bazı siteler bunu sevmeyebilir."
+!!! note "İpucu ⚡ Hemen şurada küçük bir not bırakayım: `-e robots=off` parametresi, sitenin `robots.txt` dosyasını umursamasını engeller. Yani 'ben bir botum ama kurallarına uymayacağım' demiş olursun. Bunu dikkatli kullan, bazı siteler bunu sevmeyebilir."
 
 ### Peki, Bu Komutun Son Hali Nasıl Olmalı?
 
@@ -101,7 +101,7 @@ example.com/
 
 Bakın ne kadar detaylı rapor veriyor, her adımı söylüyor. Bu, hata ayıklamak için çok güzel.
 
-!!! tip "Kısa Yol: Wget Mirror Şimdi diyeceksiniz ki "Ay bunları hepsini yazmak çok uzun, kısa yolu yok mu?". Var tabii `wget` zaten kullanışlı bir `--mirror` parametresiyle gelir. Bu parametre, `-r -l inf -N` kullanmakla aynı anlama gelir. Yani recursive, sonsuz derinlikte ve zaman damgalı indirme yapar."
+!!! tip "Kısa Yol: Wget Mirror Şimdi diyeceksiniz ki 'Ay bunları hepsini yazmak çok uzun, kısa yolu yok mu?'. Var tabii `wget` zaten kullanışlı bir `--mirror` parametresiyle gelir. Bu parametre, `-r -l inf -N` kullanmakla aynı anlama gelir. Yani recursive, sonsuz derinlikte ve zaman damgalı indirme yapar."
 
 ## 2. Yöntem: Daha Zeki Olmak (Sitemap Kullanımı)
 
@@ -147,7 +147,7 @@ Yani, işin özü, wget gerçekten bir hazine. Başka bir GUI aracı kullanmanı
 
 Yukarıdaki parametre kombinasyonu sayesinde, elinizde tamamen gezinebilir, yerel bir kopya olur.
 
-!!! warning "Dikkat ⚠️ Bir uyarı yapayım, `.html` uzantıları her işe yaramayabilir. Bazen wget'in Content Type'a göre uzantı üretmesini isteyebilirsiniz, bazen de "pretty URL"ler (güzel URL'ler) kullandığınızda wget'in uzantı üretmesini önlemeniz gerekebilir. Bu duruma göre ayarlamanız gerekir."
+!!! warning "Dikkat ⚠️ Bir uyarı yapayım, `.html` uzantıları her işe yaramayabilir. Bazen wget'in Content Type'a göre uzantı üretmesini isteyebilirsiniz, bazen de 'pretty URL'ler (güzel URL'ler) kullandığınızda wget'in uzantı üretmesini önlemeniz gerekebilir. Bu duruma göre ayarlamanız gerekir."
 
 Umarım bu yazı işinize yarar, bol indirmeler
 

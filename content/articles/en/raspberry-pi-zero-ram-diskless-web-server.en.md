@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: A crazy guide on how to turn a Pi Zero with 512MB RAM into a completely diskless Alpine Linux server and host a website on it.
 Image: images/raspberry-pi-zero-ram-diskless-web-server-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592407757986945
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3hrh7on22m
 Status: published
 
 If you have a Raspberry Pi Zero (v1.3 or W) in your hand, you actually have the most durable micro server in the world. Of course, only if you use the SD card just for "booting" and run the rest of the system entirely on RAM. Today, we are setting up an Alpine Linux-based static web server that runs diskless and fits inside only 512MB of RAM.

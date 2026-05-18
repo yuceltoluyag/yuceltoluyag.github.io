@@ -195,7 +195,7 @@ Make sure the IMEI numbers are displayed correctly.
 
 ## ⚠️ Troubleshooting Tips
 
-!!! warning "IMEI Not Visible? If IMEI is not visible, try setting the <code>"imei_1"</code> value in <code>config.txt</code> to <code>"000000000000000"</code> and writing only the real IMEI to the <code>"imei_2"</code> field."
+!!! warning "IMEI Not Visible? If IMEI is not visible, try setting the <code>'imei_1'</code> value in <code>config.txt</code> to <code>'000000000000000'</code> and writing only the real IMEI to the <code>'imei_2'</code> field."
 
 !!! warning "Bootloader Warning <strong>It may not be possible to re-lock the bootloader</strong> after this operation."
 

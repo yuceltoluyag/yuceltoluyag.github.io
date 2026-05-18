@@ -1,12 +1,14 @@
 Title: Installation of Home Assistant (HAOS) on Proxmox + ZFS
 Date: 2025-11-30 14:15
-Category: Server
+Category: Sunucu
 Tags: proxmox, home assistant, haos, zfs, tteck, vm, linux, disk
 Slug: proxmox-zfs-home-assistant
 Authors: yuceltoluyag
 Lang: en
 Status: published
 Summary: A manual Home Assistant installation guide on Proxmox with ZFS and SSD optimizations (q35, ssd=1), without hiding behind ready-made scripts.
+toot: https://mastodon.social/@yuceltoluyag/116592117157065184
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3dlmjqvs2y
 Image: images/proxmox-zfs-home-assistant-xl.webp
 
 Sometimes I ask myself, "Why do you choose the hard way when there's an easy one?" The internet is full of "install Home Assistant with a single line of code" scripts. Tteck's scripts, for example, are legendary, no doubt about it. But that control freak inside me won't stay quiet. I can't sleep thinking, "What if this script mounts my disk to the wrong place?" or "What is it actually doing in the background?"

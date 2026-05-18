@@ -1,12 +1,14 @@
 Title: Solving the pyenv-win Conflict and PATH Chaos in WSL
 Date: 2026-05-04 18:40
-Category: Troubleshooting
+Category: Sorun Giderme
 Tags: wsl, pyenv, windows, linux, path, python
 Slug: wsl-pyenv-cakisma-cozumu
 Authors: yuceltoluyag
 Lang: en
 Status: published
 Summary: I disabled the Windows pyenv-win PATH conflict that broke the Python environment in WSL and set up a clean, isolated Linux dev setup.
+toot: https://mastodon.social/@yuceltoluyag/116592278889480025
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3fx46zjs2j
 Image: images/wsl-pyenv-cakisma-cozumu-xl.webp
 
 ## The "Why is Python broken again?" moment
@@ -206,11 +208,11 @@ I think the real lesson here is this: if you use WSL as "Linux attached to Windo
 - I disabled interop.
 - I isolated the system.
 
-And strangely enough… everything was fixed 😄 WSL is a great tool, but you either use it like Linux or you get lost in the Windows mess. I left the second way and moved to the first. And I'm glad I did.
+And strangely enough… everything was fixed 😄 WSL is a great tool, but you either use it like Linux or you get lost in the Windows mess. I left the second way and moved to the first. And I'm glad I did. If you've run into a similar pyenv dead end on the Windows side, my guide on [Powershell pyenv-win Installation Error Solution](/en/powershell-pyenv-win-kurulum-hatasi-cozumu/) is exactly what you need!
 
 ---
 
-!!! note "A small confession: When I first solved this, I was quite in the mode of "why did Python become my enemy?" It turns out it wasn't Python; it was the environment. I learned about this thing called interop that day. And I've been using WSL isolated ever since."
+!!! note "A small confession: When I first solved this, I was quite in the mode of 'why did Python become my enemy?' It turns out it wasn't Python; it was the environment. I learned about this thing called interop that day. And I've been using WSL isolated ever since."
 
 ---
 
@@ -221,6 +223,7 @@ And strangely enough… everything was fixed 😄 WSL is a great tool, but you e
 
 ## Related Posts
 
+- [Powershell pyenv-win Installation Error Solution](/en/powershell-pyenv-win-kurulum-hatasi-cozumu/)
 - [Linux GPU Driver Guide: Stable and Clean Installation for AMD, Intel, and Nvidia](/en/linux-gpu-driver-rehberi/){: target="_blank" rel="noopener noreferrer"}
 - [How to Enable ntsync on Arch Linux?](/en/arch-linux-ntsync-aktif-etme-zen-kernel-rehberi/){: target="_blank" rel="noopener noreferrer"}
 - [How to Configure DoH in Vivaldi?](/en/vivaldi-doh-dns-over-https-ayari/){: target="_blank" rel="noopener noreferrer"}

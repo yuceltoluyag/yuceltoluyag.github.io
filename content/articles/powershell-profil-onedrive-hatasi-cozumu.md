@@ -1,4 +1,4 @@
-﻿Title: PowerShell Profil Sorunları ve OneDrive Kaldırma Sonrası Dizin Hatası Çözümü
+Title: PowerShell Profil Sorunları ve OneDrive Kaldırma Sonrası Dizin Hatası Çözümü
 Date: 2025-03-02 10:00
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme
@@ -14,215 +14,50 @@ Image: images/windows11-onedrive-sorunu-xl.webp
 toot: https://mastodon.social/@yuceltoluyag/114985346729844921
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrs2mxzok2q
 
-## Bir Windows 11 Kullanıcısının Hikayesi
+## Microsoft'un Dayatması ve Bir "Temiz Kurulum" Kabusu 😠
 
-Yeni bir başlangıç yapmak için bilgisayarıma temiz bir Windows 11 yükledim. Her şey oldukça hızlı ve akıcı görünüyordu, ancak kullanmadığım araçlardan biri olan **OneDrive**'ı kaldırmaya karar verdim. Bulut depolama hizmetleriyle pek aram yoktu ve her dosyanın otomatik olarak senkronize edilmesi yerine yerel olarak saklanmasını istiyordum.
+Selamlar yoldaşlar, terminalin başında Windows'u yola getirmeye çalışan azimli geliştiriciler! ⚡
 
-Ancak, OneDrive'ı kaldırdıktan sonra fark ettim ki, **Belgeler (Documents) klasörümün yolu hâlâ C:\Users\KullanıcıAdı\OneDrive\Belgeler olarak görünüyordu.** Üstelik PowerShell açtığımda, profil dosyamın yüklenemediğini ve birçok modülün eksik olduğunu fark ettim. Bu noktada, Windows'un bazı ayarları eski hâliyle tutmaya devam ettiğini ve bu yüzden manuel olarak düzeltmem gerektiğini anladım. Eğer siz de benzer bir sorun yaşıyorsanız, aşağıdaki adımları takip ederek bu hatalardan kurtulabilirsiniz.
+Geçen gün bizzat kendi sistemimde sıfırdan temiz bir Windows 11 kurulumu yaptım. Her şey jet gibi akıyor, sistem tereyağından kıl çeker gibi çalışıyordu. Ancak Windows kullanan her aklı başında insan gibi benim de ilk işim, Microsoft'un arka planda her şeyimizi gizlice dikizleyen ve sormadan masaüstümüzü buluta yedekleyen o sinsi **OneDrive** belasını denetim masasından tekme tokat fırlatıp atmak oldu. Bulut depolamayı kendi sunucularımda barındırmayı seven bir adam olarak OneDrive'a zerre tahammülüm yok!
 
----
+Fakat OneDrive'ı sistemden tamamen kaldırdığımı sanırken, arka planda bıraktığı o pislikle karşılaştım. Belgeler (Documents) klasörümün yolu hâlâ inatla `C:\Users\KullanıcıAdı\OneDrive\Belgeler` olarak kalmıştı! 
 
-## OneDrive Kaldırıldıktan Sonra Belgeler Dizininin Hâlâ Görünmesi Sorunu
+Daha da kötüsü, terminal aşkıyla PowerShell'i her açtığımda karşıma profil dosyamın yüklenemediğine dair kırmızı kırmızı hata satırları fırlıyordu. Oh My Posh temam kırılmış, terminal ikonlarım uçmuş, sistem adeta can çekişiyordu. 
 
-Eğer OneDrive'ı kaldırmış olmanıza rağmen PowerShell gibi uygulamalar hâlâ **C:\Users\KullanıcıAdı\OneDrive\Belgeler** yolunu kullanıyorsa, sisteminizde varsayılan **Belgeler** dizini eski konumda tanımlı olabilir.
-
-### Çözüm 1: Kayıt Defteri Üzerinden Dizin Yolunu Düzeltme
-
-1. **Windows + R** tuşlarına basın ve **regedit** yazıp **Enter** tuşuna basın.
-2. Aşağıdaki yolu açın:
-
-```powershell
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
-```
-
-3. **"Personal"** anahtarına çift tıklayın ve değeri şu şekilde değiştirin:
-
-```powershell
-C:\Users\KullanıcıAdı\Documents
-```
-
-4. **Bilgisayarı yeniden başlatın.**
-
-### Çözüm 2: PowerShell Profil Yolunu Güncelleme
-
-PowerShell, eski **OneDrive** yolunu kullanıyor olabilir. Yeni bir profil oluşturmak için şu komutları çalıştırın:
-
-```powershell
-$newProfilePath = "C:\Users\KullanıcıAdı\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
-New-Item -ItemType File -Path $newProfilePath -Force
-```
-
-Ardından `$PROFILE` değişkenini yeni konuma yönlendirin:
-
-```powershell
-[System.Environment]::SetEnvironmentVariable("PROFILE", $newProfilePath, "User")
-```
-
-PowerShell'i kapatıp tekrar açarak `$PROFILE` değişkenini kontrol edin:
-
-```powershell
-echo $PROFILE
-```
+Eğer siz de OneDrive'ı kaldırma cesareti gösterip Windows'un bu intikamıyla karşılaştıysanız sakin olun hacı. Şimdi bu sinsi dizin hatasını ve PowerShell profil çökmelerini adım adım bizzat test edip çözdüğüm yöntemlerle kökten hallediyoruz!
 
 ---
 
-## PowerShell Profil Dosyası Çalıştırılamıyor Hatası
+## 📂 OneDrive Kaldırıldıktan Sonra Belgeler Dizininin Düzeltilmesi
 
-Eğer **PowerShell profil dosyanızın imzalanmadığı** için çalıştırılamadığına dair bir hata alıyorsanız, aşağıdaki yöntemleri deneyebilirsiniz.
+OneDrive'ı silseniz bile Windows kayıt defteri inatla Belgeler ve Masaüstü konumlarını o silinen OneDrive klasörünün içinde aramaya devam eder. Bunu düzeltmek için iki harika yolumuz var.
 
-### Çözüm 1: Execution Policy'yi Değiştirme
+### Yöntem 1: Kayıt Defteri (Registry) Üzerinden Düzeltme (Kesin Çözüm)
 
-PowerShell'i **Yönetici olarak** açarak şu komutu çalıştırın:
+Windows'un beynine doğrudan müdahale ederek bu inatçı yolu düzelteceğiz:
 
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-```
+1. **Windows + R** tuşlarına basın, açılan kutuya `regedit` yazıp Enter'layın.
+2. Sol taraftaki ağaçtan şu konuma gidin:
+   ```powershell
+   HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+   ```
+3. Sağ tarafta **Personal** (Belgeler) ve **Desktop** (Masaüstü) gibi anahtarları göreceksiniz. Bunların yollarında hâlâ OneDrive kelimesi geçiyorsa çift tıklayarak yolları şu şekilde güncelleyin:
 
-Eğer güvenlik nedeniyle tüm betikleri serbest bırakmak istemiyorsanız, yalnızca imzalanmamış betiklere izin vermek için:
+| Anahtar Adı | Düzgün Değer (OneDrive Olmayan) |
+| :--- | :--- |
+| **Desktop** | `C:\Users\KullanıcıAdı\Desktop` |
+| **Personal** | `C:\Users\KullanıcıAdı\Documents` |
+| **My Pictures** | `C:\Users\KullanıcıAdı\Pictures` |
+| **My Video** | `C:\Users\KullanıcıAdı\Videos` |
+| **My Music** | `C:\Users\KullanıcıAdı\Music` |
 
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-```
-
-**Geçici çözüm** olarak sadece mevcut oturum için şu komut kullanılabilir:
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-
-### Çözüm 2: Dosyanın Engellemesini Kaldırma
-
-Eğer dosya internetten indirilmişse, PowerShell bunu engelleyebilir. Engeli kaldırmak için:
-
-```powershell
-Unblock-File -Path $PROFILE
-```
-
-Alternatif olarak, dosyaya sağ tıklayıp **Özellikler > Genel** sekmesinden **Engellemeyi Kaldır** seçeneğini işaretleyin.
+4. Kaydettikten sonra **Bilgisayarı yeniden başlatın.**
 
 ---
 
-## PowerShell Modül Eksikliklerini Giderme
+### Yöntem 2: PowerShell ile Otomatik Yolları Onarma (Tembel İşi 🚀)
 
-PowerShell profilinizde **Oh My Posh, Terminal-Icons veya PSFzf gibi modüller eksikse**, bunları manuel olarak yüklemeniz gerekir.
-
-### 1. Oh My Posh Kurulumu
-
-```powershell
-winget install JanDeDobbeleer.OhMyPosh -s winget
-```
-
-Kurulum tamamlandıktan sonra doğrulamak için:
-
-```powershell
-oh-my-posh --version
-```
-
-Eğer `oh-my-posh` hâlâ tanınmıyorsa, şu yolu manuel olarak `$PATH` değişkenine ekleyin:
-
-```powershell
-$env:Path += ";C:\Program Files\oh-my-posh\bin"
-```
-
-### 2. Terminal-Icons Modülünü Yükleme
-
-```powershell
-Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
-Import-Module Terminal-Icons
-```
-
-### 3. PSFzf Modülünü Yükleme
-
-```powershell
-Install-Module -Name PSFzf -Scope CurrentUser -Force
-Import-Module PSFzf
-```
-
-Eğer yükleme sırasında **NuGet hatası** alırsanız, önce NuGet sağlayıcısını yükleyin:
-
-```powershell
-Install-PackageProvider -Name NuGet -Force
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-```
-
-Sonrasında `Install-Module` komutunu tekrar çalıştırın.
-
----
-
-## PowerShell Profilini Güncelleme
-
-Eğer modüller yüklendiği halde hâlâ otomatik olarak çalışmıyorsa, `$PROFILE` dosyanıza aşağıdaki satırları ekleyin:
-
-```powershell
-# Oh My Posh yükleme
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/amro.omp.json" | Invoke-Expression
-
-# Terminal-Icons modülünü yükle
-Import-Module Terminal-Icons
-
-# PSFzf modülünü yükle
-Import-Module PSFzf
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
-```
-
-Sonrasında `$PROFILE` dosyanızı çalıştırarak değişiklikleri test edin:
-
-```powershell
-. $PROFILE
-```
-
-PowerShell'i kapatıp tekrar açarak hataların giderildiğini kontrol edin. 🚀
-
----
-
-## 📌 Çözüm: Klasör Yollarını Manuel Olarak Düzeltme
-
-## 1️⃣ Kayıt Defteri (Registry) Üzerinden Yolları Güncelleme
-
-Windows, özel klasör yollarını Kayıt Defteri (Registry) üzerinden yönetir. Eski OneDrive yollarını değiştirmek için:
-
-### 📌 Adım 1: Kayıt Defterini Aç
-
-- Windows + R tuşlarına bas
-- `regedit` yaz ve Enter tuşuna bas
-
-### 📌 Adım 2: Aşağıdaki Yolu Aç
-
-```powershell
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
-```
-
-Burada, aşağıdaki anahtarları göreceksin. OneDrive ile başlayan yolları düzeltmelisin:
-
-| Anahtar Adı | Varsayılan Yol                  |
-| ----------- | ------------------------------- |
-| Desktop     | C:\Users\KullanıcıAdı\Desktop   |
-| Personal    | C:\Users\KullanıcıAdı\Documents |
-| My Pictures | C:\Users\KullanıcıAdı\Pictures  |
-| My Video    | C:\Users\KullanıcıAdı\Videos    |
-| My Music    | C:\Users\KullanıcıAdı\Music     |
-
-### 📌 Adım 3: Yanlış Olan Yolları Düzelt
-
-- OneDrive içeren yolları bulun. (Örneğin: `C:\Users\KullanıcıAdı\OneDrive\Belgeler`)
-- Çift tıklayın ve `C:\Users\KullanıcıAdı` şeklinde değiştirin.
-- Bilgisayarı yeniden başlatın.
-
-## 2️⃣ Klasörleri Elle Taşı ve Konumu Değiştir
-
-Eğer yukarıdaki yöntem sorunu çözmezse, aşağıdaki manuel yöntemi dene:
-
-### 📌 Adım 1: Varsayılan Konumları Değiştir
-
-- Belgeler, Masaüstü, Resimler vb. klasörlerine sağ tıkla.
-- Özellikler > Konum sekmesine gir.
-- "Taşı" butonuna bas ve uygun dizini seç (`C:\Users\KullanıcıAdı\Documents` vb.).
-- Uygula ve Tamam butonlarına bas.
-- Bu adımları Masaüstü, Belgeler, Müzikler, Videolar ve Resimler için tekrar et.
-
-## 3️⃣ PowerShell ile Klasör Yollarını Onarma (Otomatik)
-
-Eğer yukarıdaki adımları elle yapmak istemiyorsan, aşağıdaki PowerShell betiğini çalıştırarak yolları otomatik düzeltebilirsin:
+Kayıt defterinde tek tek satır değiştirmekle uğraşmak istemiyorsanız, yönetici olarak açtığınız bir PowerShell terminalinde şu tek satırlık mucizevi betiği çalıştırın:
 
 ```powershell
 $folders = @("Desktop", "Documents", "Pictures", "Videos", "Music")
@@ -233,14 +68,97 @@ foreach ($folder in $folders) {
 }
 ```
 
-Bu komut:
+!!! tip "İpucu: Bu script, eksik olan lokal klasörlerinizi (Masaüstü, Belgeler vb.) otomatik olarak oluşturur ve Kayıt Defterindeki tüm OneDrive kalıntılarını tek hamlede temizler."
 
-- Masaüstü, Belgeler, Resimler, Videolar ve Müzik için doğru yolları atar.
-- Eksik klasörleri oluşturur.
-- Windows kayıt defterindeki yanlış yolları düzeltir.
+---
 
-Bilgisayarı yeniden başlattıktan sonra düzelip düzelmediğini kontrol et. 🚀
-![Hosts Dosyası Düzenleme](/images/windows11-onedrive-sorunu-xl.webp)
+## 🛠️ PowerShell Profil Dosyası Çalıştırılamıyor Hatası
 
+OneDrive'ı temizledikten sonra PowerShell'i açtığınızda *"script.ps1 is not digitally signed"* tarzında kırmızı bir hata alabilirsiniz. Bu, Windows'un güvenlik paronoyasından kaynaklanır.
 
+### Çözüm: Execution Policy'yi Serbest Bırakma
 
+PowerShell'i **Yönetici Olarak** açın ve şu komutla betik çalıştırma iznini verin:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
+```
+
+Eğer sadece kendi yazdığınız lokal betikleri sıfır engel ile çalıştırmak isterseniz:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted -Force
+```
+
+---
+
+## 🎨 PowerShell Modül Eksikliklerini Giderme (Oh My Posh & PSFzf)
+
+Madem terminalimizi temizledik, o zaman powershell terminalimizi adeta Arch Linux'taki o havalı terminal gibi süslemenin vaktidir. Profil dosyanızda eksik olan popüler modülleri kuruyoruz:
+
+### 1. Oh My Posh Kurulumu
+Terminalinizi rengarenk yapacak o muazzam prompt motorunu yükleyelim:
+
+```powershell
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```
+
+Kurulum bitince terminali kapatıp açıp kontrol edin: `oh-my-posh --version`.
+
+---
+
+### 2. Terminal-Icons (Şık Simgeler) Kurulumu
+Klasör ve dosya tiplerine göre terminalde tatlı ikonlar görünmesini sağlarız:
+
+```powershell
+Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
+```
+
+---
+
+### 3. PSFzf (Terminal Hızlı Arama) Kurulumu
+Terminal geçmişinde `Ctrl + R` ile jet hızında arama yapmak için PSFzf kuruyoruz:
+
+```powershell
+Install-Module -Name PSFzf -Scope CurrentUser -Force
+```
+
+!!! warning "NuGet Hatası Alırsanız Panik Yok! Paket yüklerken NuGet bulunamadı gibi hatalar alırsanız, önce şu sağlayıcıyı terminale yükleyin: `Install-PackageProvider -Name NuGet -Force` ardından `Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted` komutunu çalıştırın."
+
+---
+
+## 🚀 PowerShell Profilini (`$PROFILE`) Güncelleme ve Sonuç
+
+Tüm bu kurulumlardan sonra, yeni temiz Belgeler klasörünüzde profil dosyanızı oluşturup yapılandırmayı ekleyelim:
+
+```powershell
+# Eğer profil dosyası yoksa sıfırdan oluştur
+if (!(Test-Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force }
+notepad $PROFILE
+```
+
+Açılan not defterinin içine şu sihirli satırları yapıştırın ve kaydedin:
+
+```powershell
+# Oh My Posh Başlatma
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/amro.omp.json" | Invoke-Expression
+
+# Terminal İkonlarını Aktif Et
+Import-Module Terminal-Icons
+
+# PSFzf (Hızlı Arama) Tuş Kombinasyonları
+Import-Module PSFzf
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
+```
+
+Kaydedip kapattıktan sonra profilinizi yükleyin:
+
+```powershell
+. $PROFILE
+```
+
+Artık karşınızda OneDrive belasından tamamen arınmış, modülleri tıkır tıkır çalışan, jet hızında ve son derece şık bir PowerShell terminali var! 🚀
+
+Kafanıza takılan veya kayıt defterinde patlayan bir yer olursa yorumlarda benimle paylaşın, terminalin gücü adına beraber çözeriz! 😉
+
+![PowerShell OneDrive Sorun Giderme](/images/windows11-onedrive-sorunu-xl.webp)

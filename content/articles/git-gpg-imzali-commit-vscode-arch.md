@@ -1,4 +1,4 @@
-﻿Title: VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀
+Title: VSCode’da GPG Şifre Ekranı Çalışmıyor mu? İşte Çözümü 🚀
 Date: 2025-08-27 21:30
 Category: Git
 Tags: git, gpg, vscode, archlinux, i3wm, ssh, commit, imzalı commit
@@ -27,7 +27,7 @@ Bu yazıda, tam da bu senaryoda yaşanan sorunu nasıl çözdüğümü, neden ka
 
 Git commit’lerinizi GPG ile imzalamak, yaptığınız değişikliklerin gerçekten size ait olduğunu kanıtlar. Projelerde güvenilirlik sağlar ve özellikle açık kaynak dünyasında "kim yazdı bu kodu?" sorusunu ortadan kaldırır.
 
-!!! note "Önemli : GitHub ve GitLab gibi platformlar, imzalı commit’leri otomatik olarak doğrular ve “Verified" etiketiyle işaretler. Bu, güvenilirliğinizi artırır."
+!!! note "Önemli : GitHub ve GitLab gibi platformlar, imzalı commit’leri otomatik olarak doğrular ve “Verified' etiketiyle işaretler. Bu, güvenilirliğinizi artırır."
 
 ---
 

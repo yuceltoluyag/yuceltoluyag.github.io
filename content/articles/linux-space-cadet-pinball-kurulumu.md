@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: Windows XP döneminin efsanesi Space Cadet Pinball'u Linux'a getiriyoruz. Hem duygusal bir yolculuk hem de 1024x768 çözünürlük artırma rehberi.
 Image: images/space-cadet-pinball-linux-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592461704487992
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3ijvcrt227
 Status: published
 
 İnternetin Türkiye’de henüz bu kadar yaygın olmadığı, her sabah okula gitmeden önce ailenin "elektronik eşya" alerjisine rağmen gizli saklı bilgisayarı açtığımız o büyülü günleri hatırlar mısınız? CRT monitörün o hafif cızırtılı sesi eşliğinde, hoparlörün sesini en kısığa getirip, Windows XP’nin o meşhur `Space Cadet Pinball` oyununu başlatırdık. Solitaire çok sıkıcıydı, Mayın Tarlası ise o yaşlarda fazla karmaşıktı; ama o topun sesi, o ışıklar... İşte o gerçek bir kaçıştı.

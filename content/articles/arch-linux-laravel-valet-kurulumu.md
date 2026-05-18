@@ -1,4 +1,4 @@
-﻿Title: Arch Linux Laravel Valet Kurulumu
+Title: Arch Linux Laravel Valet Kurulumu
 Date: 2020-06-15 14:00 10:00
 Modified: 2025-08-11 22:59
 Category: Laravel
@@ -22,7 +22,7 @@ Valet Linux, minimalist bir geliştirme ortamını tercih edenler için Laravel 
 
 Valet, sisteminizi makine açıldığında **Nginx'i arka planda çalıştıracak şekilde yapılandırır**. Ardından, **DnsMasq** kullanarak `*.test` uzantılı domainlerinizi ilgili dizinlere yönlendirir. **Sadece 7MB RAM kullanarak çalışan, hızlı ve hafif bir Laravel geliştirme ortamı sunar.** 🎯
 
-!!! warning "Önceki Kurulumlar Daha önce <a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" rel="noopener noreferrer" target="_blank">Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir."
+!!! warning "Önceki Kurulumlar Daha önce <a href='https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/' rel='noopener noreferrer' target='_blank'>Arch Linux Lampp Kurulumu (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> veya benzeri kurulumlar yaptıysanız, devre dışı bırakmalı ya da kaldırmalısınız. Aksi takdirde çakışmalar yaşanabilir."
 
 ## 🛠 Kurulum
 

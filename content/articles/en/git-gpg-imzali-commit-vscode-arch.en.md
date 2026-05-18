@@ -26,7 +26,7 @@ In this article, I'll explain step by step how I solved this problem, what cause
 
 Signing your Git commits with GPG proves that the changes you made truly belong to you. It provides reliability in projects and especially eliminates the "who wrote this code?" question in the open source world.
 
-!!! note "Important : Platforms like GitHub and GitLab automatically verify signed commits and mark them with the "Verified" tag. This increases your reliability."
+!!! note "Important : Platforms like GitHub and GitLab automatically verify signed commits and mark them with the 'Verified' tag. This increases your reliability."
 
 ---
 

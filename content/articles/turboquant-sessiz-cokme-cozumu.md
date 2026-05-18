@@ -9,6 +9,8 @@ Summary: TurboQuant kullanırken llama-server sessizce mi kapanıyor? Meğer Ope
 Image: images/turboquant-sessiz-cokme-cozumu-lg.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/116592244806481821
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3fgzts7s2b
 Status: published
 ---
 

@@ -1,4 +1,4 @@
-﻿Title: Laravel IDE Helper Kullanımı
+Title: Laravel IDE Helper Kullanımı
 Date: 2020-07-03 14:00 10:00
 Modified: 2025-08-11 22:59
 Category: Laravel
@@ -103,7 +103,7 @@ Bu işlemin sonunda, **User.php** gibi model dosyalarının başında şu şekil
 
 **Laravel IDE Helper**, **PHPStorm** gibi IDE'lerde kod tamamlama ve otomatik önerileri iyileştirerek geliştirme deneyimini çok daha verimli hale getirir. Daha fazla bilgi için [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){: target="\_blank" rel="noopener noreferrer"} sayfasını ziyaret edebilirsiniz.
 
-PhpStorm ile ilgili daha fazla yazıya [buradan ulaşabilirsiniz](/etiket/phpstorm/). 🚀
+Ayrıca PhpStorm üzerinde kod standartlarını otomatik düzeltmek ve kod kalitesini artırmak için hazırladığım [PhpStorm İçinde PHP CS Fixer Kullanımı](/phpstorm-icinde-cs-fixer-kullanmak/) rehberime de mutlaka göz atın. 🚀
 
 [responsive_img src="/images/laravel_7x_ide_helper-xl.webp" alt="Laravel IDE Helper" /]
 

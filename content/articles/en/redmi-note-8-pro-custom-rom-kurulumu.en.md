@@ -23,7 +23,7 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lw5vnk7gms2d
 
 !!! tip "🔧 I am a <strong>Redmi Note 8 Pro</strong> user and I applied this guide on my own device."
 
-!!! warning "Critical Warning <a href="/mediatek-imei-onarma-rehberi/" style="color: #dc2626; font-weight: bold;">/mediatek-imei-onarma-rehberi/</a> Complete the steps at this address without missing any before proceeding with this operation! IMEI backup/repair operations must be done before ROM installation."
+!!! warning "Critical Warning <a href='/mediatek-imei-onarma-rehberi/' style='color: #dc2626; font-weight: bold;'>/mediatek-imei-onarma-rehberi/</a> Complete the steps at this address without missing any before proceeding with this operation! IMEI backup/repair operations must be done before ROM installation."
 
 ## 🔍 Introduction
 

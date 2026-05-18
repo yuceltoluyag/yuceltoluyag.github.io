@@ -1,7 +1,7 @@
 Title: Arch Linux Laravel Valet Installation
 Date: 2020-06-15 14:00 10:00
 Modified: 2025-08-11 22:59
-Category: Laravel Geliştirme
+Category: Laravel
 Tags: linux, laravel
 Slug: arch-linux-laravel-valet-kurulumu
 Authors: yuceltoluyag
@@ -23,7 +23,7 @@ Valet Linux is a Laravel development environment for those who prefer a minimali
 
 Valet configures your system to run **Nginx in the background** when the machine starts. Then, it directs your `*.test` domains to the relevant directories using **DnsMasq**. **It offers a fast and lightweight Laravel development environment that runs using only 7MB of RAM.** 🎯
 
-!!! warning "Previous Installations If you have previously performed installations like <a href="https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/" rel="noopener noreferrer" target="_blank">Arch Linux Lampp Installation (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> or similar, you should disable or uninstall them. Otherwise, conflicts may occur."
+!!! warning "Previous Installations If you have previously performed installations like <a href='https://yuceltoluyag.github.io/arch-linux-lampp-kurulumu-php7x-mariadb-mysql-phpmyadmin/' rel='noopener noreferrer' target='_blank'>Arch Linux Lampp Installation (PHP7x + MariaDB + MySQL + PhpMyAdmin)</a> or similar, you should disable or uninstall them. Otherwise, conflicts may occur."
 
 ## 🛠 Installation
 

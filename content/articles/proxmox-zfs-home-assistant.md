@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: Hazır scriptlerin arkasına sığınmadan, Proxmox üzerinde ZFS ve SSD optimizasyonlarıyla (q35, ssd=1) manuel Home Assistant kurulum rehberi.
 Image: images/proxmox-zfs-home-assistant-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592117157065184
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3dlmjqvs2y
 Translation: false
 Status: published
 

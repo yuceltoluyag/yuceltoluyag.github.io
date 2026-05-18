@@ -1,4 +1,4 @@
-﻿Title: Autocut ile Otomatik Video Kesme Rehberi
+Title: Autocut ile Otomatik Video Kesme Rehberi
 Date: 2025-09-08 14:00
 Category: Medya
 Tags: Autocut, MoviePy, Python video kesme, SRT, Markdown video edit, otomatik video düzenleme
@@ -118,7 +118,7 @@ autocut -c /home/friday13/Videos/editle.mp4 /home/friday13/Videos/editle.srt /ho
 - Örnek çıktı: `/home/friday13/Videos/editle_cut.mp4`
 - Orijinal süre: 317.8 sn → Kesilmiş süre: 181 sn
 
-!!! note "Kesilen video, sadece işaretlenen cümleleri içerir. Gereksiz boşluklar ve "No Speech" kısımları atılmış olur."
+!!! note "Kesilen video, sadece işaretlenen cümleleri içerir. Gereksiz boşluklar ve 'No Speech' kısımları atılmış olur."
 
 ---
 

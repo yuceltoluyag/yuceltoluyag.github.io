@@ -8,6 +8,8 @@ Authors: yuceltoluyag
 Summary: Is llama-server closing silently while using TurboQuant? It turns out OpenSSL files were forgotten. Here is the simple solution to that annoying problem.
 Image: images/turboquant-sessiz-cokme-cozumu-lg.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592244806481821
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3fgzts7s2b
 Status: published
 ---
 

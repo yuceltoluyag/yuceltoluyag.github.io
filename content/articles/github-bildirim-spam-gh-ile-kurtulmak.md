@@ -1,4 +1,4 @@
-﻿Title: GitHub Bildirim Spam'inden 'gh' ile Nasıl Kurtulunur?
+Title: GitHub Bildirim Spam'inden 'gh' ile Nasıl Kurtulunur?
 Date: 2025-11-21 16:30
 Category: Git
 Tags: github, gh, cli, bildirim, terminal
@@ -26,11 +26,11 @@ Bu bildirimleri web arayüzünden tek tek bulup, "Done" demek de bir seçenek ta
 
 Bu `gh` denen şey, doğrudan GitHub özellikleriyle konuşuyor. Pull Request açmak, Issue'ları listelemek... ve evet, bildirimleri yönetmek gibi işler yapıyor. Bunu ilk duyduğumda "Ne gerek vardı ki?" dediğimi hatırlıyorum ama bazı durumlarda hayat kurtarıyor cidden.
 
-!!! note "Küçük Bir Yanlış Anlama Aslında az önce de bahsettik ya, bazıları bu 'gh' denen şeyi "grafik arayüzü" zannediyor. Halbuki alakası yok. Bu tamamen terminalden çalışan bir araç. Yani klavye delikanlılığına devam! ⌨️"
+!!! note "Küçük Bir Yanlış Anlama Aslında az önce de bahsettik ya, bazıları bu 'gh' denen şeyi 'grafik arayüzü' zannediyor. Halbuki alakası yok. Bu tamamen terminalden çalışan bir araç. Yani klavye delikanlılığına devam! ⌨️"
 
 Eğer sisteminizde kurulu değilse, `gh` komutunu çalıştırdığınızda "command not found" gibi bir hata alırsınız. Kurulumu basit. Eğer Arch Linux gibi bir şey kullanıyorsanız `sudo pacman -S github-cli` ile, macOS kullanıyorsanız `brew install gh` ile halledebilirsiniz. Diğer sistemler için de [resmi sitesinde](https://cli.github.com/){: target="\_blank" rel="noopener noreferrer"} gayet net anlatmışlar.
 
-!!! tip "Unutma! `gh` aracını kullanmadan önce terminalde `gh auth login` komutuyla hesabınıza bir kere giriş yapmanız gerekiyor. Yoksa "Git abim beni tanımıyor" diye ağlamayın."
+!!! tip "Unutma! `gh` aracını kullanmadan önce terminalde `gh auth login` komutuyla hesabınıza bir kere giriş yapmanız gerekiyor. Yoksa 'Git abim beni tanımıyor' diye ağlamayın."
 
 ## Hadi Şu Spam'i Temizleyelim: Adım Adım `gh` Kullanımı
 
@@ -96,7 +96,7 @@ API dünyası da bir garip yani. Bir şeyi "okundu" yapmak için `DELETE` (Sil) 
 
 Tabii bu, o projenin size bir daha bildirim göndermeyeceği anlamına gelmiyor. Bu döngü maalesef hiç bitmiyor. Ama en azından artık o anlık sinir bozukluğunu terminalden hızlıca çözmek için bir silahımız var. Aklıma geldi de, bunu toplu yapmak için küçük bir `bash` script'i yazılabilir aslında... Neyse, o da başka bir günün konusu.
 
-!!! tip "Daha Fazlası İçin GitHub API'sinin diğer nimetlerini merak ediyorsanız, GitHub'ın [REST API dokümanları](https://docs.github.com/en/rest){: target="\_blank" rel="noopener noreferrer"} derya deniz. Ama dikkat, içinde kaybolabilirsiniz."
+!!! tip "Daha Fazlası İçin GitHub API'sinin diğer nimetlerini merak ediyorsanız, GitHub'ın [REST API dokümanları](https://docs.github.com/en/rest){: target='\_blank' rel='noopener noreferrer'} derya deniz. Ama dikkat, içinde kaybolabilirsiniz."
 
 ---
 

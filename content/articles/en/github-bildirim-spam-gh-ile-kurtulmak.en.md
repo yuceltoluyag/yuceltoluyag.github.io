@@ -25,7 +25,7 @@ Now, let's not get confused here. Everyone's familiar `git` commands (`push`, `p
 
 This `gh` thing talks directly to GitHub's features. Opening Pull Requests, listing Issues... and yes, managing notifications. I remember thinking, "What's the point?" when I first heard about it, but it's a real lifesaver in some situations.
 
-!!! note "A Small Misconception As we just mentioned, some people mistake this 'gh' thing for a "graphical interface." But that's not the case at all. It's a tool that works entirely from the terminal. So you can continue your command-line heroics! ⌨️"
+!!! note "A Small Misconception As we just mentioned, some people mistake this 'gh' thing for a 'graphical interface.' But that's not the case at all. It's a tool that works entirely from the terminal. So you can continue your command-line heroics! ⌨️"
 
 If it's not installed on your system, you'll get an error like "command not found" when you try to run `gh`. Installation is simple. If you're on something like Arch Linux, you can do it with `sudo pacman -S github-cli`; if you're on macOS, `brew install gh`. For other systems, they've explained it clearly on their [official website](https://cli.github.com/){: target="\_blank" rel="noopener noreferrer"}.
 
@@ -95,7 +95,7 @@ So there you have it. We got rid of that annoying notification with a single com
 
 Of course, this doesn't mean that project won't send you notifications again. This cycle, unfortunately, never ends. But at least now we have a weapon to quickly resolve that momentary annoyance from the terminal. It just occurred to me, a small `bash` script could actually be written to do this in bulk... Anyway, that's a topic for another day.
 
-!!! tip "For More If you're curious about the other blessings of the GitHub API, GitHub's [REST API documentation](https://docs.github.com/en/rest){: target="\_blank" rel="noopener noreferrer"} is a vast ocean. But be careful, you might get lost in it."
+!!! tip "For More If you're curious about the other blessings of the GitHub API, GitHub's [REST API documentation](https://docs.github.com/en/rest){: target='\_blank' rel='noopener noreferrer'} is a vast ocean. But be careful, you might get lost in it."
 
 ---
 

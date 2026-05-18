@@ -1,4 +1,4 @@
-﻿Title: Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası
+Title: Stres Giderici Oyun: Ninja Kamil'in Kaotik Macerası
 Date: 2025-10-16 22:00
 Category: Oyun
 Tags: ghost-of-tsushima, linux, ninja-kamil, oyun-izlenimleri, oyun-performans, mizah, oyun-inceleme
@@ -96,7 +96,7 @@ Bir düşman burnunun dibine kadar geliyor ama duymuyor; diğeri duvardan fısı
 Karanlıkta yön bulmakta zorlanıyor, ışık arıyor, kılıç istiyor…
 Derken: “Biri bana meşale verin, hiçbir şey göremiyorum!"
 
-!!! warning "Linux'ta bazı grafik motorları düşük gamma değerleriyle çalışabilir. Oyun içi “Brightness" ayarını %60 üzerine çıkarın."
+!!! warning "Linux'ta bazı grafik motorları düşük gamma değerleriyle çalışabilir. Oyun içi “Brightness' ayarını %60 üzerine çıkarın."
 
 ---
 

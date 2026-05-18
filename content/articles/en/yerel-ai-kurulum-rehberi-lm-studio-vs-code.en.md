@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: Tired of shelling out money in dollars to ChatGPT and Claude every month? We are setting up an AI ecosystem on your own hardware that runs completely privately and for free. (Masterclass Guide)
 Image: images/yerel-ai-kurulum-rehberi-lm-studio-vs-code-lg.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592522870749506
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3jfw7xd22f
 Status: published
 
 Let's be honest; AI subscription prices have now gone off the rails. Paying 20-30 dollars every month to ChatGPT, Claude, or for API fees is literally a headache, especially for our people struggling with the exchange rate. Moreover, what is being done with your data on those distant servers is a complete mystery. 🤯

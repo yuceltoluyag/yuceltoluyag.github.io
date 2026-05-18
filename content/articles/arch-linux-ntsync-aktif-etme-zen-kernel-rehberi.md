@@ -9,6 +9,8 @@ Image: images/arch-linux-ntsync-aktif-etme-zen-kernel-rehberi-xl.webp
 Lang: tr
 Translation: false
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/116590713894345292
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm2qvmacis23
 
 Her şey masum bir performans sevdasıyla başladı. Linux'ta oyun oynarken o "micro-stuttering" denilen takılmaları bilirsiniz, adamı deli eder. Ben de "Şu meşhur `ntsync` olayını bir deneyeyim, Windows NT senkronizasyonunu kernel seviyesinde yapıyormuş, FPS uçar gider" dedim.
 

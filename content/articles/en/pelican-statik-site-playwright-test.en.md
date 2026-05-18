@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: I explain how to put your static site produced with Pelican through automatic tests using Playwright and Python before taking it live.
 Image: images/pelican-playwright-test-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592437621738522
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3i6th2h227
 Status: published
 
 In my previous [Playwright Arch Linux Installation](/en/playwright-arch-linux-kurulum/) post, I explained how to install this beast on our system. Now it's time to put that power into action to debug errors on our own blog (Pelican).

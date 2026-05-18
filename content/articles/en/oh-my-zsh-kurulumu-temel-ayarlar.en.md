@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/oh-my-zsh-setup-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592762057110477
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3mv6z2ic24
 
 Hello! 😊
 

@@ -9,6 +9,8 @@ Summary: A guide explaining how to track page view counts with Google Analytics 
 Status: published
 Template: article
 Image: images/superproxy-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/114985257871113523
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrqrzdlm224
 Lang: en
 
 ## **Hello!** 🌟

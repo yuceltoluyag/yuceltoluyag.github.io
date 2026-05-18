@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.5] - 2026-05-18
+### Added
+- **Metadata:** Integrated `toot` (Mastodon) and `bluesky` social links in the front matter of numerous Turkish and English articles to enable direct social media references.
+- **Git Config:** Added `social-share-humanity.md` to `.gitignore` to prevent temporary social sharing helper assets from being tracked.
+
+### Changed
+- **Content & Tone:** Extensively revised dozens of Turkish and English article files, rewriting dry technical sections into highly engaging, warm, and friendly conversational content ("humanity" rewrites) to build a better connection with readers.
+
 ## [2.3.4] - 2026-05-17 14:52
 ### Added
 - **Content & Translations:** Added a new deep-dive troubleshooting article (`lutris-installed-file-impact-ttf-not-found-cozumu.md`) detailing the Lutris "impact.ttf not found" font error and return code 256 crash, along with its English translation under `content/articles/en/`.

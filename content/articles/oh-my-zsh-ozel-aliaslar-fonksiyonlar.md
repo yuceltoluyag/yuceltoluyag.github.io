@@ -1,4 +1,4 @@
-﻿Title: Oh My Zsh Özel Alias'lar ve Fonksiyonlar
+Title: Oh My Zsh Özel Alias'lar ve Fonksiyonlar
 Date: 2020-02-05 12:00
 Modified: 2025-10-26
 Category: Terminal
@@ -13,48 +13,57 @@ Translation: false
 Status: published
 Template: article
 Image: images/zsh-alias-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/116592774069232627
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3my7dzr22s
 
-Merhaba! 😊
+Selamlar tayfa! 🚀
 
-Bu makale, **Oh My Zsh** serisinin üçüncü bölümüdür.  
-Bu yazıda Oh My Zsh’de **özel alias’lar (kısayollar)** ve **fonksiyonlar (komut grupları)** oluşturarak terminal deneyiminizi nasıl hızlandırabileceğinizi öğreneceğiz.
+Serinin üçüncü bölümüyle terminali parmaklarımızın ucunda uçurmaya kaldığımız yerden devam ediyoruz! 
+
+Dürüst olalım; her gün terminali açıp aynı komutları, o upuzun git, docker ya da sistem yönetim dizilimlerini tekrar tekrar yazmaktan parmakları yorulan, içten içe isyan eden kim var? Hepimiz! Tıpkı her gün aynı yoldan işe gidip gelmek gibi, bir süre sonra rutin işkenceye dönüşüyor. 
+
+İşte bu yazıda, terminale hükmetmenin iki harika formülünü ele alıyoruz: **Özel alias'lar (kısayollar)** ve **akıllı fonksiyonlar (komut grupları)**. Kendi Arch Linux sistemimde komut yazma hızımı adeta 5 katına çıkaran, parmaklarımı nasır tutmaktan kurtaran tüm o gizli hazineleri, alias ve fonksiyon anayasamı makarna-yoğurt samimiyetinde paylaşıyorum. Çaylar tazelendiyse, terminalin sınırlarını zorlamaya başlayalım! 🔥
 
 ---
 
 ## 🔹 Alias Nedir?
 
-Alias, uzun komutları kısa isimlerle çağırmamızı sağlayan bir özelliktir.  
-Örneğin `ls -la` komutunu `ll` olarak kısaltabiliriz.
+Basitçe söylemek gerekirse alias, upuzun ve yazması işkence olan komutları kendi belirlediğimiz kısacık takma isimlerle çağırmamızı sağlayan can dostumuzdur.  
 
-Alias’lar sayesinde zamandan tasarruf eder, hata olasılığını azaltırsınız.
+Örneğin her defasında gizli dosyaları da göstererek detaylı liste almak için `ls -la` yazmak yerine sadece `ll` yazıp geçebilmemizi sağlar. 
+
+Alias'lar sayesinde zamandan deli gibi tasarruf eder, uzun komutları yanlış yazıp Return Code hatalarıyla monitörü yumruklama olasılığınızı sıfıra indirirsiniz.
 
 ---
 
 ## 🧩 Alias ve Fonksiyon Arasındaki Fark
 
-Alias genellikle **tek satırlık kısayollar** içindir.  
-Fonksiyonlar ise **birden fazla komut** veya **koşullu işlem** içerir.
+Çok sorulan o meşhur soru: *"Hocam, ne zaman alias, ne zaman fonksiyon kullanmalıyız?"*
 
-| Kullanım                                   | Önerilen Yapı |
+Hacı, mantık çok basit:
+*   **Alias:** Genellikle parametre almayan, tek satırlık basit kısayollar içindir. (Örn: `gs` yazınca `git status` çalışması).
+*   **Fonksiyon:** İşin içine parametreler, mantıksal sorgular (if-else), döngüler veya birden fazla komut zinciri girdiğinde devreye giren akıllı yapılardır.
+
+| Kullanım Durumu                            | Önerilen Yapı |
 | ------------------------------------------ | ------------- |
-| Basit tekrar eden komutlar                 | `alias`       |
+| Basit, parametresiz ve tekrar eden komutlar | `alias`       |
 | Parametre alan veya mantık içeren işlemler | `function`    |
 
 ---
 
-## ⚙️ Temel Alias'lar
+## ⚙️ Kendi Sistemimde Kullandığım Temel Alias'lar
 
-### .zshrc Dosyasına Ekleme
+Mabedimiz olan `.zshrc` dosyasını açalım ve o hayatı kolaylaştıran kısayolları dosyanın en altına eklemeye başlayalım:
 
 ```bash
-# 🧭 Dosyayı düzenlemek için
+# 🧭 Mabedimizi düzenlemek için açıyoruz
 nano ~/.zshrc
 ```
 
-### Faydalı Alias'lar
+Aşağıdaki alias blokları, benim sistemimde olmazsa olmaz dediğim, eli ayağı hızlandıran kısayollardır. Aynen yapıştırabilirsiniz:
 
 ```bash
-# 📁 Dosya işlemleri
+# 📁 Dosya ve Dizin İşlemleri
 alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -CF'
@@ -62,7 +71,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# 🧩 Git alias'ları
+# 🧩 Git Kısayolları (Dahili Git eklentisiyle çakışmaz, hayat kurtarır)
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
@@ -72,79 +81,78 @@ alias gd='git diff'
 alias gb='git branch'
 alias gco='git checkout'
 
-# ⚙️ Sistem alias'ları
+# ⚙️ Sistem İzleme ve Bilgi (htop favorimizdir)
 alias df='df -h'
 alias du='du -h'
 alias free='free -h'
 alias ps='ps aux'
 alias top='htop'
 
-# 📝 Editör alias'ları
+# 📝 Editör Kısayolları
 alias v='vim'
 alias n='nano'
 alias c='code'
 ```
 
+!!! tip "İpucu ⚡ Kendi özel alias'larınızı oluştururken mevcut sistem komutlarıyla çakışmamasına dikkat edin. Örneğin `tar` adında bir alias oluşturursanız, orijinal sıkıştırma aracını bozarsınız!"
+
 ---
 
-## 🧠 Özel Fonksiyonlar
+## 🧠 Sınırları Zorlayan Özel Fonksiyonlar
 
-### 1. Dizin Oluşturma ve Gitme
+Şimdi işi bir adım öteye taşıyalım. Sadece kısayol değil, adeta terminale zeka katacak o akıllı fonksiyonlarımızı `.zshrc` dosyamızın içine tanımlayalım.
+
+### 1. Dizin Oluşturup İçine Girme (`mkcd`)
+Bir klasör oluşturup ardından içine girmek için önce `mkdir klasor` sonra `cd klasor` yazmaktan bıkanlar için tek hamlede çözüm:
 
 ```bash
-# 📂 Dizin oluşturup içine gir
+# 📂 Dizin oluştur ve anında içine gir
 mkcd() {
     mkdir -p "$1" && cd "$1"
 }
 ```
 
-Kullanım:
-
+**Kullanım:**
 ```bash
-mkcd yeni-klasor
+mkcd yeni-projem
 ```
 
----
-
-### 2. Dosya Arama ve Düzenleme
+### 2. Dosya Arama ve Düzenleme (`findedit`)
+Sistemde aradığınız bir dosyayı bulup anında Vim veya seçtiğiniz editörle açmak için harika bir fonksiyon:
 
 ```bash
-# 🔍 Dosya bulup düzenleme
+# 🔍 Dosyayı bul ve editörle aç
 findedit() {
     find . -name "*$1*" -type f | head -1 | xargs vim
 }
 ```
 
-Kullanım:
-
+**Kullanım:**
 ```bash
 findedit config
 ```
 
----
-
-### 3. Git Commit Mesajı ile Dosya Ekleme
+### 3. Git Commit Mesajı ile Dosya Ekleme (`gac`)
+Değişiklikleri hızlıca ekleyip commit mesajı girmek için harika bir pratik kısayol:
 
 ```bash
-# 💬 Git add ve commit
+# 💬 Git add ve commit tek komutta
 gac() {
     git add .
     git commit -m "$1"
 }
 ```
 
-Kullanım:
-
+**Kullanım:**
 ```bash
-gac "Yeni özellik eklendi"
+gac "Zsh konfigürasyonu güncellendi"
 ```
 
----
-
-### 4. Sistem Bilgileri
+### 4. Sistem Bilgilerini Şık Gösterme (`sysinfo`)
+Sisteminizin ne durumda olduğunu hızlıca görebilmek için temiz bir fonksiyon:
 
 ```bash
-# 🖥️ Sistem bilgilerini göster
+# 🖥️ Detaylı sistem özeti
 sysinfo() {
     echo "=== Sistem Bilgileri ==="
     echo "İşletim Sistemi: $(uname -s)"
@@ -159,12 +167,13 @@ sysinfo() {
 
 ---
 
-## 🔌 Oh My Zsh Eklentileri ile Alias'lar
+## 🔌 Oh My Zsh Eklentileri ile Gelen Hazır Alias'lar
 
-### Git Eklentisi Alias'ları
+Oh My Zsh kullanmanın en güzel yanı, popüler eklentileri aktif ettiğinizde yüzlerce hazır alias'ın otomatik olarak tanımlanmasıdır. İşte en popüler iki eklentinin sunduğu nimetler:
+
+### 1. Git Eklentisi Kısayolları (En Sık Kullanılanlar)
 
 ```bash
-# Git alias'ları
 g=git
 gaa=git add --all
 gcmsg=git commit -m
@@ -176,15 +185,12 @@ gd=git diff
 gfa=git fetch --all --prune
 gl=git pull
 glg=git log --oneline --decorate --graph
-glgg=git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-gp=git push
 gst=git status
 ```
 
-### Docker Eklentisi Alias'ları
+### 2. Docker Eklentisi Kısayolları
 
 ```bash
-# Docker alias'ları
 d=docker
 dbl=docker build
 dc=docker-compose
@@ -199,43 +205,41 @@ dcud=docker-compose up -d
 
 ---
 
-## 🎨 Özel Tema ile Alias Gösterimi (Powerlevel10k)
+## 🎨 Temalar ve Dizin Kısaltma (Powerlevel10k)
+
+Eğer terminalde dizin yollarının çok uzun olup ekranı kaplamasından rahatsız oluyorsanız, `.zshrc` dosyanıza şu satırları ekleyerek terminali tertemiz yapabilirsiniz:
 
 ```bash
-# .zshrc dosyasına ekleyin
+# Uzun dizin yollarını ortadan kısaltır
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 ```
 
-Bu ayarlar uzun dizin yollarını kısaltır ve terminali daha temiz gösterir.
-
 ---
 
-## 🧰 Alias Yönetimi
+## 🧰 Alias Yönetimi ve İpuçları
 
 ### Mevcut Alias'ları Görme
+Sisteminizde o an aktif olan tüm alias'ları listelemek veya belirli bir alias'ın neye karşılık geldiğini öğrenmek için:
 
 ```bash
-alias       # Tüm alias'ları listele
-alias ll    # Belirli bir alias'ı kontrol et
+alias       # Tüm alias'ları listeler
+alias ll    # Sadece ll alias'ını kontrol eder
 ```
 
-### Alias'ı Kaldırma
+### Alias'ı Geçici Olarak Kaldırma
+Tanımlı bir alias'ı o anki terminal oturumu için iptal etmek isterseniz:
 
 ```bash
-unalias ll  # Geçici olarak kaldır
-alias ll='ls -la'  # Yeniden tanımla
+unalias ll  # ll alias'ını geçici olarak siler
 ```
-
-### Kalıcı Olarak Silme
-
-`.zshrc` dosyasını açıp ilgili satırı silmeniz yeterli.
 
 ---
 
-## 🧪 İleri Seviye Teknikler
+## 🧪 İleri Seviye Teknikler ve Performans
 
-### 1. Koşullu Alias'lar
+### 1. İşletim Sistemine Göre Koşullu Alias Tanımlama
+Hem Linux hem macOS kullanan dostlar için harika bir yöntem:
 
 ```bash
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -245,63 +249,31 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 ```
 
-### 2. Parametreli Alias'lar
-
-```bash
-mkfile() {
-    mkdir -p "$(dirname "$1")" && touch "$1"
-}
-```
-
-### 3. Alias Zincirleme
-
-```bash
-alias llp='ll | grep -E "\.(py|js|html|css)$"'
-```
-
----
-
-## 🚀 Performans İpuçları
-
-### 1. Lazy Loading
+### 2. Lazy Loading (Performans Canavarı)
+Eğer sisteminizde NVM (Node Version Manager) gibi yavaş açılan araçlar varsa, terminal açılışını geciktirmemek için onları lazy load yapabilirsiniz:
 
 ```bash
 alias nvm='unalias nvm && source /usr/share/nvm/nvm.sh && nvm'
 ```
 
-### 2. Fonksiyon vs Alias
+### 3. Zsh Profiler ile Açılış Süresini Ölçme
+Terminalinizin ne kadar sürede açıldığını ve hangi eklentinin terminali yavaşlattığını milisaniye cinsinden ölçmek için şu muazzam aracı kullanın:
 
 ```bash
-alias ll='ls -la'  # Basit
-
-ll() {              # Karmaşık
-    if [[ $# -eq 0 ]]; then
-        ls -la
-    else
-        ls -la "$@"
-    fi
-}
-```
-
-### 3. Zsh Profiler ile Başlangıç Süresi Ölçme
-
-```bash
-# Zsh başlatma süresini analiz et
+# Başlangıç süresini analiz et
 zmodload zsh/zprof
 zprof
 ```
+
+!!! warning "Dikkat! `zprof` analiz aracı işiniz bittiğinde `.zshrc` dosyasından kaldırılmalıdır, aksi halde her terminal açılışında karşınıza devasa bir rapor dökerek sinirlerinizi bozabilir."
 
 ---
 
 ## 🎯 Sonraki Adımlar
 
-Bu makaleyi tamamladıktan sonra:
+Kendi özel alias ve fonksiyonlarınızı tanımlayarak terminali tamamen kendinize ait, profesyonel bir çalışma alanına dönüştürdünüz. Artık klavyede yazarken zaman kaybetmek yok!
 
-- Kendi alias ve fonksiyonlarınızı oluşturabilirsiniz
-- Oh My Zsh eklentilerini keşfedebilirsiniz
-- Terminalinizi kişisel bir araç haline getirebilirsiniz
-
-👉 Sıradaki yazı: _“Oh My Zsh ile Plugin Yönetimi ve Tema Özelleştirme”_
+👉 Serinin sıradaki yazısı: _“Oh My Zsh ile Plugin Yönetimi ve Tema Özelleştirme”_
 
 ---
 
@@ -315,14 +287,13 @@ Bu makaleyi tamamladıktan sonra:
 
 ## 🔗 Kaynaklar
 
-- [Oh My Zsh Alias Dokümantasyonu](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet){: target="\_blank" rel="noopener noreferrer"}
-- [Zsh Fonksiyon Dokümantasyonu](https://zsh.sourceforge.io/Doc/Release/Functions.html){: target="\_blank" rel="noopener noreferrer"}
-- [Git Alias'ları](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases){: target="\_blank" rel="noopener noreferrer"}
+- [Oh My Zsh Alias Wiki Cheatsheet](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet){: target="\_blank" rel="noopener noreferrer"}
+- [Zsh Resmi Fonksiyon Kılavuzu](https://zsh.sourceforge.io/Doc/Release/Functions.html){: target="\_blank" rel="noopener noreferrer"}
+- [Git Resmi Alias Dokümantasyonu](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases){: target="\_blank" rel="noopener noreferrer"}
 
 ---
 
-Bu makale **Oh My Zsh** serisinin üçüncü bölümüdür.
-Serinin diğer makalelerini de okuyarak Zsh’i profesyonel seviyede kullanmayı öğrenebilirsiniz.
+Bu makale **Oh My Zsh** serisinin üçüncü bölümüydü. Siz de kendi kullandığınız, hayat kurtaran özel fonksiyonlarınızı yorumlarda paylaşın, listeyi beraber büyütelim! Sorunuz veya Arch Linux üzerinde takıldığınız bir nokta olursa çekinmeden sorun kardaşlar! 😉
 
 
 

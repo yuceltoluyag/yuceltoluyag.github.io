@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: I explain the annoying case-sensitivity cause behind the "installed file .../Fonts/impact.ttf not found" error when installing EA App, Origin, or Plutonium launcher in Lutris, along with the prefix-resetting trick.
 Image: images/lutris-installed-file-impact-ttf-not-found-cozumu-lg.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592561433887012
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3jx44n3227
 Status: published
 
 Playing games on Linux can sometimes literally turn into a detective story, my friends. Yesterday was one of those infamous mornings again: cold coffee, bloodshot eyes from lack of sleep... I decided to install a game based on EA App, Origin, or Plutonium Launcher (especially the Battlefield crowd knows this well) via Lutris and play a couple of rounds. The installation went smooth as butter, and it said "completed". But just as I was about to launch the game, that red slap landed in the terminal: `Initial process has exited (return code: 256)`.
@@ -65,7 +67,7 @@ Restart Lutris and try running the game again. Your issue should be solved!
 
 If the manual copy method above didn't work, or if the installation script completely locked up due to the inability to override libraries, let me share a legendary trick that I personally applied on my live stream with definitive results.
 
-!!! warning "Warning! This process resets the settings under the prefix, but does not harm your installed game files. Still, it's always wise to have a backup, brother."
+!!! warning "Warning! This process resets the settings under the prefix, but does not harm your installed game files. To better understand how the Wineprefix architecture works, you can check out my guide on [What is Wineprefix and How to Use It?](/en/wineprefix-nedir-nasil-kullanilir/). Still, it's always wise to have a backup, brother."
 
 The logic is simple: we will break the complex library override loop that Lutris got stuck in. But while doing this, we will preserve the precious `Fonts` folder we found or created.
 

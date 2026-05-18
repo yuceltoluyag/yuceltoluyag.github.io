@@ -17,7 +17,7 @@ Let's be honest, when you talk about browsers on Linux, two names usually come t
 
 So where does Vivaldi fit into this picture?
 
-When I first installed Vivaldi, I thought it was less of a browser and more of an "airplane cockpit." Its purpose isn't simplicity, but the exact opposite: **Control**. Vivaldi is made for the "power user" who wants to "manage" their browser and loves to tweak every corner to their liking.
+When I first installed Vivaldi, I thought it was less of a browser and more of an "airplane cockpit." Its purpose isn't simplicity, but the exact opposite: **Control**. Vivaldi is made for the "power user" who wants to "manage" their browser and loves to tweak every corner to their liking. (In fact, if you want to make your browser more secure, be sure to check out my [How to Configure DoH in Vivaldi](/en/vivaldi-doh-dns-over-https-ayari/) guide).
 
 - **Tab Management:** Grouping tabs (stacking), viewing two tabs at once in a split screen (tiling)... these are fantastic features. They are lifesavers, especially when you have 20+ tabs open.
 - **Sidebar:** This is like Vivaldi's signature feature. You can pin downloads, notes, bookmarks, and even sites like WhatsApp Web to that panel.
@@ -35,7 +35,7 @@ This is where the rubber meets the road.
 
 This is its biggest "sin" in the Linux world. Yes, Vivaldi's foundation (Chromium) is open source, but its user interface (UI), the layer that provides all the features we love, is **closed source** (proprietary).[^1]
 
-!!! warning "Warning! ⚠️ Not Fully FOSS! For most Linux users, "free software" is a philosophy. If you can't see a software's code, you can't fully know what it's doing inside. Because Vivaldi doesn't fully adhere to this philosophy, it crosses a red line for many "old-school" Linux users."
+!!! warning "Warning! ⚠️ Not Fully FOSS! For most Linux users, 'free software' is a philosophy. If you can't see a software's code, you can't fully know what it's doing inside. Because Vivaldi doesn't fully adhere to this philosophy, it crosses a red line for many 'old-school' Linux users."
 
 ### 2. Is It "A Bit Sluggish"? (Myths and Realities)
 
@@ -59,10 +59,10 @@ So what's Vivaldi's situation? Let me tell you straight: No. It doesn't have a m
 
 But... (yes, there's a 'but'):
 
-- **Default Settings:** Some privacy tests (like those conducted by sites such as Avoid the Hack) have shown that Vivaldi's default settings aren't the "most secure." This means you need to do some tweaking right after installation.
+- **Default Settings:** Some privacy tests (like those conducted by sites such as [Avoid the Hack](https://avoidthehack.com){: target="\_blank" rel="noopener noreferrer"}) have shown that Vivaldi's default settings aren't the "most secure." This means you need to do some tweaking right after installation.
 - **The Google Feud:** Years ago, its founder (also the former CEO of Opera) had a spat with Google. They claimed Google stopped their AdWords ads "without a valid reason." That's competition for you, not too surprising.
 
-!!! tip "Tip ⚡ Do This Right After Installing: After installing Vivaldi, immediately go to `Settings > Privacy and Security > Tracker and Ad Blocking`. By default, it comes with "No Blocking" or "Block Trackers" selected. Change this to **"Block Trackers and Ads."** It will change your world."
+!!! tip "Tip ⚡ Do This Right After Installing: After installing Vivaldi, immediately go to `Settings > Privacy and Security > Tracker and Ad Blocking`. By default, it comes with 'No Blocking' or 'Block Trackers' selected. Change this to **'Block Trackers and Ads.'** It will change your world."
 
 ## Confessions of a Dinosaur: IE, Chrome, and the Return Home
 

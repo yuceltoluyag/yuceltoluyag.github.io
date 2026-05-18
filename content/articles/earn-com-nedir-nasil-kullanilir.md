@@ -1,4 +1,4 @@
-﻿Title: Earn.com Nedir ve Nasıl Kullanılır?
+Title: Earn.com Nedir ve Nasıl Kullanılır?
 Date: 2018-09-25 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: İnternetten Para Kazanma
@@ -14,7 +14,7 @@ Image: images/earncom-xl.webp
 toot: https://mastodon.social/@yuceltoluyag/114982579879193708
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqkpddpec2s
 
-!!! warning "Önemli Güncelleme; <a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" rel="noopener noreferrer" target="_blank">Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı</a> bu sebeple bu makalenin artık geçerli olmadığını unutmayın. Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil. Yeni sistemde yatırım yap kazan-kaybet mantığı ile çalışıyor."
+!!! warning "Önemli Güncelleme; <a href='https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer' rel='noopener noreferrer' target='_blank'>Coinbase, Earn.com'u Satın Aldı ve CEO'yu Teknoloji Sorumlusu Olarak İşe Aldı</a> bu sebeple bu makalenin artık geçerli olmadığını unutmayın. Coinbase üzerinden kazanç elde edebilirsiniz ancak eskisi gibi değil. Yeni sistemde yatırım yap kazan-kaybet mantığı ile çalışıyor."
 
 Merhaba, internet üzerinden **para kazanmak** isteyenler için benim de kullandığım bir sistemden bahsedeceğim. Earn.com, yatırım yapmadan kazanç sağlayabileceğiniz bir platformdur. Kullanıcılara, anket doldurarak veya gruplara katılarak para kazanma fırsatı sunar.
 

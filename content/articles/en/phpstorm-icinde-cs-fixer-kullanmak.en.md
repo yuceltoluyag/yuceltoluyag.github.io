@@ -19,7 +19,7 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrihew5ec2v
 
 PSR stands for "PHP Standards Recommendations" and are standards that ensure PHP code is written in a specific format. Since today's IDEs make this process **automatic** under **code refactor**, most developers may be unaware of these standards (this situation is generally valid for freelancers). Initially, IDEs could leave the automatic process to the user as standards changed.
 
-!!! note "Deprecated <b>Deprecated</b> - As of August 10, 2019, PSR-2 standards have been deprecated. <a href="https://www.php-fig.org/psr/psr-12/" rel="noopener noreferrer" target="_blank">PSR-12 </a> is currently recommended as an alternative."
+!!! note "Deprecated <b>Deprecated</b> - As of August 10, 2019, PSR-2 standards have been deprecated. <a href='https://www.php-fig.org/psr/psr-12/' rel='noopener noreferrer' target='_blank'>PSR-12 </a> is currently recommended as an alternative."
 
 [PSR-2](https://www.php-fig.org/psr/psr-2/){: target="\_blank" rel="noopener noreferrer"} code standards are no longer recommended for use. However, if you're doing this process with an IDE, I don't recommend directly switching to [PSR-12](https://www.php-fig.org/psr/psr-12/){: target="\_blank" rel="noopener noreferrer"} standards, as some problems still seem to exist. You can get more information about PSR-12 [here](https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues/4502){: target="\_blank" rel="noopener noreferrer"}.
 

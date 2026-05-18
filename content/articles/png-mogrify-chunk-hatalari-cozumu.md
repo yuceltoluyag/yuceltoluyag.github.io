@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: Mogrify ile PNG işlerken karşınıza çıkan 'sBIT: bad length' hatalarının gerçek nedenini ve bu chunk belasından kurtulmanın en hızlı yolunu paylaşıyorum.
 Image: images/png-mogrify-chunk-hatalari-cozumu-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592350013446878
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3gwx677s2c
 Status: published
 
 Dün gece yine o meşhur sabahlardan biriydi; uykusuzluktan gözler kan çanağı, kahve buz gibi... Sırf 500 tane ekran görüntüsünü hızlıca küçültüp siteye atmak için terminalin başına geçtim. "İki satır `mogrify` yazar, uyurum" diyordum. Ama terminal o kırmızı yazılarla bana bağırmaya başlayınca işin rengi değişti: `libpng warning: sBIT: bad length`. 

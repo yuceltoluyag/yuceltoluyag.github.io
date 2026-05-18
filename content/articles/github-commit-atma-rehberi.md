@@ -1,4 +1,4 @@
-﻿Title: GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀
+Title: GitHub’ta Bir Projeye Nasıl Commit Atılır? – Adım Adım Rehber 🚀
 Date: 2025-08-15 09:15
 Category: Git
 Tags: git commit, github, versiyon kontrol, ssh, gpg, açık kaynak
@@ -134,7 +134,7 @@ duty livereload
 
 Terminal çıktısında <b>lokal URL</b> görürsün (çoğunlukla <code>[http://127.0.0.1:8000](http://127.0.0.1:8000)</code> veya <code>[http://localhost:8000](http://localhost:8000)</code>). Tarayıcıda bu adrese giderek yaptığın değişiklikleri anlık görebilirsin. Sunucuyu durdurmak için terminalde <code>ctrl c</code> tuşlarına bas.
 
-!!! warning "Sanal ortam (<code>venv</code>) <b>aktif edilmeden</b> <code>duty</code> komutlarını çalıştırırsan uygulama açılmayacaktır. Doğru komut: <code>source venv/bin/activate</code> (Linux/Mac). Yanlış: <code>source venv/bin/active</code> (sonu “activate" olmalı)."
+!!! warning "Sanal ortam (<code>venv</code>) <b>aktif edilmeden</b> <code>duty</code> komutlarını çalıştırırsan uygulama açılmayacaktır. Doğru komut: <code>source venv/bin/activate</code> (Linux/Mac). Yanlış: <code>source venv/bin/active</code> (sonu “activate' olmalı)."
 
 ---
 

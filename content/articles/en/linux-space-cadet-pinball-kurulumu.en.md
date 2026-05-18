@@ -6,6 +6,8 @@ Slug: linux-space-cadet-pinball-kurulumu
 Authors: yuceltoluyag
 Summary: We bring the legend of the Windows XP era, Space Cadet Pinball, to Linux. Both a sentimental journey and a 1024x768 resolution upgrade guide.
 Image: images/space-cadet-pinball-linux-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/116592461704487992
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3ijvcrt227
 Lang: en
 Status: published
 

@@ -1,4 +1,4 @@
-﻿Title: MediaTek IMEI Onarma Rehberi  
+Title: MediaTek IMEI Onarma Rehberi  
 Date: 2025-08-11 10:30  
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme  
@@ -196,7 +196,7 @@ IMEI numaralarının doğru göründüğünden emin olun.
 
 ## ⚠️ Sorun Giderme İpuçları
 
-!!! warning "IMEI Görünmüyor mu ? Eğer IMEI görünmüyorsa, <code>config.txt</code> içindeki <code>"imei_1"</code> değerini <code>"000000000000000"</code> yapıp sadece gerçek IMEI'yi <code>"imei_2"</code> alanına yazmayı deneyin."
+!!! warning "IMEI Görünmüyor mu ? Eğer IMEI görünmüyorsa, <code>config.txt</code> içindeki <code>'imei_1'</code> değerini <code>'000000000000000'</code> yapıp sadece gerçek IMEI'yi <code>'imei_2'</code> alanına yazmayı deneyin."
 
 !!! warning "Bootloader Uyarısı Bu işlemden sonra <strong>bootloader kilidini tekrar kapatmak mümkün olmayabilir.</strong>"
 

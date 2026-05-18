@@ -1,4 +1,4 @@
-﻿Title: Ngrok Kullanımı Resimli Anlatım
+Title: Ngrok Kullanımı Resimli Anlatım
 Date: 2017-02-22
 Category: Web Geliştirme
 Author: yuceltoluyag
@@ -86,6 +86,8 @@ http://bb10ad8c.ngrok.io/sosyalagprojesi
 ```
 
 !!! tip "İpucu ⚡ Belirli bir klasör paylaşırsanız, yalnızca o dizin altındaki dosyalar erişilebilir olur."
+
+Eğer yerel geliştirme ortamınızda IP adresleri ve klasör yolları yerine şık, özel yerel alan adları kullanmak isterseniz, [XAMPP Özel Alan Adı Tanımlama](/xampp-ozel-alan-adi/) rehberim tam aradığınız şey!
 
 İyi çalışmalar! 😊
 

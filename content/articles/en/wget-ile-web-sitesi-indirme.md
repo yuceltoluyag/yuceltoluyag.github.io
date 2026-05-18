@@ -48,7 +48,7 @@ What if the links break after the download is complete? That's exactly what `--c
 
 `--no-clobber` prevents duplicates. So if you download a file and then run it again, wget won't overwrite the old one, it will just say "this exists." Sometimes it's useful.
 
-!!! note "Tip ⚡ Let me quickly drop a small note here: The `-e robots=off` parameter prevents wget from respecting the site's `robots.txt` file. This means you're saying, "I'm a bot, but I won't follow your rules." Use this carefully, some sites might not like it."
+!!! note "Tip ⚡ Let me quickly drop a small note here: The `-e robots=off` parameter prevents wget from respecting the site's `robots.txt` file. This means you're saying, 'I'm a bot, but I won't follow your rules.' Use this carefully, some sites might not like it."
 
 ### So, What Should the Final Form of This Command Be?
 
@@ -100,7 +100,7 @@ example.com/
 
 See how detailed the report is, it tells every step. This is great for debugging.
 
-!!! tip "Shortcut: Wget Mirror Now you might say, "Oh, writing all this is too long, isn't there a shortcut?" Of course there is. `wget` already comes with a useful `--mirror` parameter. This parameter means the same as using `-r -l inf -N`. That is, it performs recursive, infinite depth, and timestamped downloading."
+!!! tip "Shortcut: Wget Mirror Now you might say, 'Oh, writing all this is too long, isn't there a shortcut?' Of course there is. `wget` already comes with a useful `--mirror` parameter. This parameter means the same as using `-r -l inf -N`. That is, it performs recursive, infinite depth, and timestamped downloading."
 
 ## Method 2: Being Smarter (Using Sitemap)
 
@@ -146,7 +146,7 @@ So, the bottom line is, wget is truly a treasure. You won't need to use any othe
 
 Thanks to the parameter combination above, you'll have a fully browsable, local copy.
 
-!!! warning "Attention ⚠️ A warning: `.html` extensions might not always work. Sometimes you might want wget to generate extensions based on Content Type, and sometimes you might need to prevent wget from generating extensions when using "pretty URLs". You need to adjust this according to the situation."
+!!! warning "Attention ⚠️ A warning: `.html` extensions might not always work. Sometimes you might want wget to generate extensions based on Content Type, and sometimes you might need to prevent wget from generating extensions when using 'pretty URLs'. You need to adjust this according to the situation."
 
 I hope this article is useful to you, happy downloading!
 

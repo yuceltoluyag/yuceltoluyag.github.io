@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: Gönül RustDesk ister ama şirketler ve akrabalar AnyDesk der. Toplumsal baskıya boyun eğip Arch Linux'ta AnyDesk'i en sorunsuz nasıl kurarız?
 Image: images/arch-linux-anydesk-kurulumu-rehberi-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592056165025421
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3mm3cr6cfts2k
 Translation: false
 Status: published
 

@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: LinkedIn'de karşınıza çıkan "çok tatlı" iş tekliflerinin arkasındaki Kuzey Koreli hackerları ve test projesi adı altında sisteminize sızan BeaverTail zararlısını analiz ediyoruz.
 Image: images/linkedin-scam-security-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592488328711310
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3iw6fnb22l
 Status: published
 
 2026 iş piyasası tam anlamıyla "pişmiş" durumda. Bir yanda binlerce aday, diğer yanda boş hayaller satan dolandırıcılar. Ama bu seferki dolandırıcılar, sadece paranızın peşinde olan amatörler değil; arkalarında devlet desteği (Kuzey Kore - Lazarus Group) olan profesyonel siber saldırganlar. 

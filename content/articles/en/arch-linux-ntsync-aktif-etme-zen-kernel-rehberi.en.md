@@ -8,6 +8,8 @@ Summary: I installed ntsync-supported Wine and Proton to boost gaming performanc
 Image: images/arch-linux-ntsync-aktif-etme-zen-kernel-rehberi-xl.webp
 Lang: en
 Status: published
+toot: https://mastodon.social/@yuceltoluyag/116590713894345292
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm2qvmacis23
 
 It all started with an innocent passion for performance. You know those "micro-stuttering" hiccups while gaming on Linux—they can drive a person crazy. So I said, "Let me try this famous `ntsync` thing; it handles Windows NT synchronization at the kernel level, FPS will soar."
 

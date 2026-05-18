@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: I share the real reason for the 'sBIT: bad length' errors encountered while processing PNGs with Mogrify and the fastest way to get rid of this chunk pain.
 Image: images/png-mogrify-chunk-hatalari-cozumu-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592350013446878
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3gwx677s2c
 Status: published
 
 Last night was one of those famous mornings again; eyes bloodshot from sleeplessness, coffee ice-cold... I got in front of the terminal just to quickly resize 500 screenshots and upload them to the site. I was saying, "I'll write two lines of `mogrify` and go to sleep." But when the terminal started screaming at me in red letters, the color of the game changed: `libpng warning: sBIT: bad length`. 

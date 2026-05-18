@@ -1,7 +1,7 @@
 Title: Adding Mastodon Comments to Pelican Blog
 Date: 2025-05-01 14:00
 Modified: 2025-08-11 22:59
-Category: Web Development
+Category: Web Geliştirme
 Tags: pelican, mastodon, comments, webcomponent, blog
 Slug: pelican-bloguna-mastodon-yorumlari-ekleme
 Author: yuceltoluyag
@@ -215,7 +215,7 @@ If you are going to use a different Mastodon post for each post, you can define 
 ```markdown
 Title: Post Title
 Date: 2025-05-01
-Category: Category
+Category: Web Geliştirme
 Tags: tag1, tag2
 Mastodon_TootId: 123456789012345678
 ```

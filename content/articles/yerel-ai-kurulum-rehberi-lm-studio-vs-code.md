@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: ChatGPT ve Claude'a her ay dolarla para bayılmaktan bıktınız mı? Kendi donanımınızda, tamamen gizli ve bedava çalışan bir AI ekosistemi kuruyoruz. (Masterclass Rehber)
 Image: images/yerel-ai-kurulum-rehberi-lm-studio-vs-code-lg.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592522870749506
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3jfw7xd22f
 Status: published
 
 Hadi dürüst olalım; AI abonelik fiyatları artık şirazesinden çıktı. Her ay 20-30 doları ChatGPT'ye, Claude'a veya API ücretlerine bayılmak, özellikle bizim gibi kur farkıyla boğuşan memleket insanı için resmen bir baş ağrısı. Üstelik verilerinizin o uzak sunucularda ne yapıldığı da tam bir muamma. 🤯

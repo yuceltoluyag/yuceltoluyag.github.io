@@ -1,7 +1,7 @@
 Title: Using Laravel IDE Helper
 Date: 2020-07-03 14:00 10:00
 Modified: 2025-08-11 22:59
-Category: Laravel Geliştirme
+Category: Laravel
 Tags: phpstorm, cmder
 Slug: laravel-ide-helper-kullanimi
 Authors: yuceltoluyag
@@ -102,6 +102,6 @@ By adding the following scripts to your `composer.json` file, you can ensure tha
 
 **Laravel IDE Helper** significantly improves the development experience by enhancing code completion and auto-suggestions in IDEs like **PHPStorm**. For more information, you can visit the [Laravel IDE Helper Wiki](https://github.com/barryvdh/laravel-ide-helper/blob/master/README.md){: target="\_blank" rel="noopener noreferrer"} page.
 
-You can access more articles about PhpStorm [from here](/etiket/phpstorm/). 🚀
+Also, be sure to check out my guide on [Using PHP CS Fixer inside PhpStorm](/en/phpstorm-icinde-cs-fixer-kullanmak/) to automatically fix coding standards and boost code quality. 🚀
 
 [responsive_img src="/images/laravel_7x_ide_helper-xl.webp" alt="Laravel IDE Helper" /]

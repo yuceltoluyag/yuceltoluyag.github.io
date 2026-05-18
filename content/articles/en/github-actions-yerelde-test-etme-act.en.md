@@ -8,6 +8,8 @@ Authors: yuceltoluyag
 Summary: Tired of committing with "test" every time you write GitHub Actions? An in-depth guide on how to test your workflows locally via Docker using act. (Guide)
 Image: images/github-actions-yerelde-test-etme-act-lg.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592318710524886
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3giuby3s2v
 Status: published
 ---
 

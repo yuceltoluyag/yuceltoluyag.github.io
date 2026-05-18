@@ -1,4 +1,4 @@
-﻿Title: Linux'ta Tam Kapsamlı Paranoya: ClamAV ile A'dan Z'ye Güvenlik
+Title: Linux'ta Tam Kapsamlı Paranoya: ClamAV ile A'dan Z'ye Güvenlik
 Date: 2025-11-14 02:30
 Category: Linux
 Tags: clamav, güvenlik, linux, on-access, clamd, freshclam, milter, sorun giderme, tech-sohbetçi
@@ -212,7 +212,7 @@ OnAccessExtraScanning yes
 
 !!! danger "Engelleme (Prevention) Ayarı: ÇOK KRİTİK `OnAccessPrevention no` ayarını **MUTLAKA `no`** olarak bırakın."
 
-!!! note "`OnAccessMountPath` ile engelleme (`yes`) zaten çalışmaz. `OnAccessIncludePath` ile çalışır ama `/usr`, `/etc` veya `/var` gibi sistem dizinlerini izlerken bunu `yes` yaparsanız, Arch Wiki'nin de uyardığı gibi, **paket kurulumlarınızı 1000 kat yavaşlatabilirsiniz.** Bizim amacımız "engellemek" değil, "tespit edip haberdar olmak""
+!!! note "`OnAccessMountPath` ile engelleme (`yes`) zaten çalışmaz. `OnAccessIncludePath` ile çalışır ama `/usr`, `/etc` veya `/var` gibi sistem dizinlerini izlerken bunu `yes` yaparsanız, Arch Wiki'nin de uyardığı gibi, **paket kurulumlarınızı 1000 kat yavaşlatabilirsiniz.** Bizim amacımız 'engellemek' değil, 'tespit edip haberdar olmak'"
 
 #### B. `fdpass` ile İzin Sorununu Aşmak (İleri Seviye)
 

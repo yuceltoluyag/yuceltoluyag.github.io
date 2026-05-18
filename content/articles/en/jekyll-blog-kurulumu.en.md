@@ -1,6 +1,6 @@
 Title: Jekyll Blog Installation
 Date: 2017-03-12
-Category: Web Development
+Category: Web Geliştirme
 Author: yuceltoluyag
 Slug: jekyll-blog-kurulumu
 Summary: A guide to creating a fast and database-free blog with Jekyll. Setup steps via terminal and GitHub Pages integration.

@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: We analyze the North Korean hackers behind the "too sweet" job offers you encounter on LinkedIn and the BeaverTail malware that sneaks into your system under the guise of a test project.
 Image: images/linkedin-scam-security-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592488328711310
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3iw6fnb22l
 Status: published
 
 The 2026 job market is literally "cooked". On one hand, thousands of candidates; on the other hand, scammers selling empty dreams. But these scammers are not just amateurs chasing your money; they are professional cyber attackers with state backing (North Korea - Lazarus Group) behind them.

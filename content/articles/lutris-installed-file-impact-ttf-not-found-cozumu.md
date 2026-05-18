@@ -8,6 +8,8 @@ Summary: Lutris'te EA App, Origin veya Plutonium launcher kurarken karşılaşı
 Image: images/lutris-installed-file-impact-ttf-not-found-cozumu-lg.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/116592561433887012
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3jx44n3227
 Status: published
 
 Linux'ta oyun oynamak bazen kelimenin tam anlamıyla bir dedektiflik hikayesine dönüşüyor kardaş. Dün yine o meşhur sabahlardan biriydi; kahve buz gibi olmuş, gözler uykusuzluktan kan çanağı... Sırf EA App, Origin veya Plutonium Launcher tabanlı bir oyunu (özellikle Battlefield tayfası iyi bilir) Lutris üzerinden kurup iki el atayım dedim. Kurulum tıkır tıkır ilerledi, "tamamlandı" dedi. Ama tam oyunu başlatacakken terminalden o kırmızı tokat indi: `Initial process has exited (return code: 256)`.
@@ -66,7 +68,7 @@ Lutris'i kapatıp açtıktan sonra oyunu yeniden başlatmayı deneyin. Sorununuz
 
 Eğer yukarıdaki manuel kopyalama işe yaramadıysa veya kütüphanelerin override edilememesi yüzünden kurulum scripti tamamen kilitlendiyse, size kendi canlı yayınımda da uygulayıp kesin sonuç aldığım o efsane yöntemi anlatayım. 
 
-!!! warning "Dikkat! Bu işlem prefix altındaki ayarları sıfırlar, ancak kurulu oyun dosyalarınıza zarar vermez. Yine de her ihtimale karşı yedekli gitmekte fayda var hacı."
+!!! warning "Dikkat! Bu işlem prefix altındaki ayarları sıfırlar, ancak kurulu oyun dosyalarınıza zarar vermez. Wineprefix yapısının çalışma mantığını daha iyi anlamak için [Wineprefix Nedir ve Nasıl Kullanılır?](/wineprefix-nedir-nasil-kullanilir/) rehberime göz atabilirsiniz. Yine de her ihtimale karşı yedekli gitmekte fayda var hacı."
 
 Mantık şu: Lutris'in yarım bıraktığı o karmaşık kütüphane override döngüsünü kıracağız. Ama bunu yaparken bulduğumuz veya indirdiğimiz o değerli `Fonts` klasörünü koruyacağız.
 

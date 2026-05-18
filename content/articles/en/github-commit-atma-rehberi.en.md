@@ -133,7 +133,7 @@ duty livereload
 
 You'll see the <b>local URL</b> in terminal output (usually <code>[http://127.0.0.1:8000](http://127.0.0.1:8000)</code> or <code>[http://localhost:8000](http://localhost:8000)</code>). Visit this address in your browser to see your changes instantly. To stop the server, press <code>ctrl c</code> in the terminal.
 
-!!! warning "If you run <code>duty</code> commands <b>without activating</b> the virtual environment (<code>venv</code>), the application won't start. Correct command: <code>source venv/bin/activate</code> (Linux/Mac). Wrong: <code>source venv/bin/active</code> (should end with "activate")."
+!!! warning "If you run <code>duty</code> commands <b>without activating</b> the virtual environment (<code>venv</code>), the application won't start. Correct command: <code>source venv/bin/activate</code> (Linux/Mac). Wrong: <code>source venv/bin/active</code> (should end with 'activate')."
 
 ---
 

@@ -9,6 +9,8 @@ Summary: GitHub Actions yazarken her seferinde "test" diye commit atmaktan bıkt
 Image: images/github-actions-yerelde-test-etme-act-lg.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/116592318710524886
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3giuby3s2v
 Status: published
 ---
 

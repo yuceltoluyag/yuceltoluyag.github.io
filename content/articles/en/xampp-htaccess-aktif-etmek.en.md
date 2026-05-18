@@ -1,6 +1,6 @@
 Title: Activating .htaccess on XAMPP (Illustrated Guide)
 Date: 2017-01-19
-Category: Web Development
+Category: Web Geliştirme
 Author: yuceltoluyag
 Slug: xampp-htaccess-aktif-etmek
 Summary: Learn step-by-step (with images) how to activate the .htaccess file for settings like SEO, redirection, or custom error pages while using XAMPP.

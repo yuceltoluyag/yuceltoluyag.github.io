@@ -12,6 +12,8 @@ Status: published
 Template: article
 Image: images/zsh-alias-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116592774069232627
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3my7dzr22s
 
 Hello! 😊
 

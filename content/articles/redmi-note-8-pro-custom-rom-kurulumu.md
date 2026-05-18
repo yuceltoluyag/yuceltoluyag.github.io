@@ -1,4 +1,4 @@
-﻿Title: Redmi Note 8 Pro Custom ROM Yükleme Rehberi
+Title: Redmi Note 8 Pro Custom ROM Yükleme Rehberi
 Date: 2025-08-12 14:30
 Modified: 2025-08-11 22:59
 Category: Sorun Giderme
@@ -24,7 +24,7 @@ bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lw5vnk7gms2d
 
 !!! tip "🔧 Ben <strong>Redmi Note 8 Pro</strong> kullanıcısıyım ve bu rehberi kendi cihazımda uyguladım."
 
-!!! warning "Kritik Uyarı <a href="/mediatek-imei-onarma-rehberi/" style="color: #dc2626; font-weight: bold;">/mediatek-imei-onarma-rehberi/</a> adresindeki adımları eksiksiz tamamlamadan bu işleme geçmeyin! IMEI yedekleme/onarma işlemleri ROM kurulumundan önce mutlaka yapılmalıdır."
+!!! warning "Kritik Uyarı <a href='/mediatek-imei-onarma-rehberi/' style='color: #dc2626; font-weight: bold;'>/mediatek-imei-onarma-rehberi/</a> adresindeki adımları eksiksiz tamamlamadan bu işleme geçmeyin! IMEI yedekleme/onarma işlemleri ROM kurulumundan önce mutlaka yapılmalıdır."
 
 ## 🔍 Giriş
 

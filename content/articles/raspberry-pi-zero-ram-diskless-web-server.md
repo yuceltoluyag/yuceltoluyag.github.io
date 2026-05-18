@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: 512MB RAM'li bir Pi Zero'yu tamamen diskless bir Alpine Linux sunucusuna çevirip, üzerinde nasıl web sitesi barındıracağınızı anlatan çılgın bir rehber.
 Image: images/raspberry-pi-zero-ram-diskless-web-server-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592407757986945
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3hrh7on22m
 Status: published
 
 Elinizde bir Raspberry Pi Zero (v1.3 veya W) varsa, aslında elinizde dünyanın en dayanıklı mikro sunucusu var demektir. Tabii eğer SD kartı sadece "açılış" için kullanıp, sistemin geri kalanını tamamen RAM üzerinde koşturursanız. Bugün, diskless (disksiz) çalışan ve sadece 512MB RAM'in içine sığan Alpine Linux tabanlı bir web sunucusu kuruyoruz.

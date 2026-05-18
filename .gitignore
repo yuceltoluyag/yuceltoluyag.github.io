@@ -190,6 +190,7 @@ yarn-debug.log*
 .venv/
 
 makale-humanity.md
+social-share-humanity.md
 .opencode/
 translaterules.md
 .agents/

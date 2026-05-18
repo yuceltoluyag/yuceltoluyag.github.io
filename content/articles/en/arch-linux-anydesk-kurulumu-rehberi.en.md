@@ -1,11 +1,13 @@
 Title: AnyDesk Installation on Arch Linux: Why This Instead of RustDesk?
 Date: 2025-11-30 11:45
-Category: Araçlar
+Category: Geliştirme Araçları
 Tags: arch linux, anydesk, aur, yay, rustdesk, uzak masaüstü
 Slug: arch-linux-anydesk-kurulumu-rehberi
 Authors: yuceltoluyag
 Summary: The heart wants RustDesk, but companies and relatives say AnyDesk. How do we bow to social pressure and install AnyDesk on Arch Linux as smoothly as possible?
 Image: images/arch-linux-anydesk-kurulumu-rehberi-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/116592056165025421
+bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3mm3cr6cfts2k
 Lang: en
 Status: published
 

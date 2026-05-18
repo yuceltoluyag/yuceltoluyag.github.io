@@ -1,6 +1,6 @@
 Title: How to Use Verot.net Upload Class
 Date: 2017-02-15
-Category: PHP Development
+Category: PHP
 Author: yuceltoluyag
 Slug: verotnet-upload-sinifi-nasil-kullanilir
 Summary: With the class.upload.php file developed by Verot.net, you can easily perform file and image uploads in PHP projects.

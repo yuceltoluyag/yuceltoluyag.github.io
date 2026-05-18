@@ -117,7 +117,7 @@ autocut -c /home/friday13/Videos/editle.mp4 /home/friday13/Videos/editle.srt /ho
 - Example output: `/home/friday13/Videos/editle_cut.mp4`
 - Original duration: 317.8 sec → Cut duration: 181 sec
 
-!!! note "The cut video contains only the marked sentences. Unnecessary spaces and "No Speech" parts are removed."
+!!! note "The cut video contains only the marked sentences. Unnecessary spaces and 'No Speech' parts are removed."
 
 ---
 

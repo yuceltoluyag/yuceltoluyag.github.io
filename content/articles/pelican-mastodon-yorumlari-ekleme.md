@@ -1,4 +1,4 @@
-﻿Title: Pelican Bloguna Mastodon Yorumları Ekleme
+Title: Pelican Bloguna Mastodon Yorumları Ekleme
 Date: 2025-05-01 14:00
 Modified: 2025-08-11 22:59
 Category: Web Geliştirme
@@ -13,27 +13,33 @@ Template: article
 toot: https://mastodon.social/@yuceltoluyag/114987917469252302
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvswl6omxc24
 
-Statik bloglar için yorum sistemi bulmak her zaman zor olmuştur. Disqus gibi üçüncü taraf hizmetler gizlilik endişeleri oluşturabilir, kendi kendine barındırılan çözümler ise bakımı zor olabilir. Neyse ki Fediverse ve özellikle Mastodon, bloglarımıza entegre edebileceğimiz harika bir yorum sistemi sunuyor.
+Selamlar yoldaşlar, özgür web'in ve Fediverse'ün yılmaz savunucuları! 🚀
 
-Bu yazıda, Pelican tabanlı statik blog sitenize Mastodon yorumlarını nasıl ekleyeceğinizi adım adım anlatacağım.
+Statik bir blog (özellikle Pelican) kullanmanın en güzel yanı, sitenin jet gibi hızlı açılması ve arkada veritabanı belasıyla uğraşmamaktır. Ancak iş okuyucularla etkileşime gelip bir yorum sistemi kurmaya dayandığında, o meşhur statik duvarına toslarız. Yıllarca bu iş için Disqus gibi hazır araçlar kullanıldı. Ama Disqus demek; sitenize giren her okuyucuyu adım adım izleyen, reklam fırlatan sinsi bir tracker ordusunu sitenize buyur etmek demektir. Benim gibi gizlilik paronoyağı ve özgür yazılım aşığı bir adama bunu kabul ettiremezsiniz! 
 
-## Mastodon Yorumları Nedir?
+Kendi sunucumuzda barındırdığımız yorum sistemleri (Commento, Schnack vb.) ise arkada sürekli bakım ve güncelleme ister. 
 
-Mastodon, merkeziyetsiz bir sosyal ağdır ve her gönderi benzersiz bir URL'ye sahiptir. Bu URL'yi kullanarak, gönderiye yapılan yanıtları blogunuza entegre edebilirsiniz. Böylece okuyucularınız, Mastodon hesaplarını kullanarak yazılarınıza yorum yapabilirler.
+Neyse ki Fediverse imdadımıza yetişti! Mastodon, merkeziyetsiz yapısıyla bloglarımıza entegre edebileceğimiz harika bir yorum altyapısı sunuyor. Bu yazıda, Pelican tabanlı statik blog sitenize Mastodon yorumlarını bizzat kendi siteme kurup günlerce hata ayıkladığım o meşhur maceralı yöntemle nasıl ekleyeceğinizi adım adım anlatıyorum. 
 
-Bu yöntemin avantajları:
-- Üçüncü taraf tracker ve reklam içermez
-- Kullanıcılar kendi Mastodon hesaplarıyla yorum yapabilir
-- Merkezi olmayan bir yapı kullanır
-- Kurulumu ve bakımı kolaydır
+Çayınızı koyun, terminalinizi açın; blogumuzu Fediverse yollarına bağlayalım! 🖥️
 
-## Gereksinimler
+---
 
-- Pelican blog sistemi
-- Mastodon hesabı
-- Blog yazılarınızı paylaşabileceğiniz bir Mastodon gönderisi
+## 🧠 Mastodon Yorumları Nasıl Çalışır?
 
-## Kurulum Adımları
+Mastodon'da paylaştığınız her gönderinin benzersiz bir kimliği (toot ID) vardır. Bizim yapacağımız iş ise çok basit: Blog yazımızı Mastodon'da paylaşıyoruz, ardından o paylaşımın altına gelen yanıtları cımbızla çekip blog yazımızın altına sanki klasik bir yorum alanındaymış gibi şık bir tasarımla diziyoruz.
+
+### Bu Yöntemin Güzellikleri:
+
+*   **Sıfır Reklam, Sıfır İzleyici:** Okuyucularınızın verileri üçüncü parti şirketlere satılmaz.
+*   **Doğal Spam Koruması:** Mastodon'un kendi spam filtreleri sayesinde bot yorumlarından kurtulursunuz.
+*   **Fediverse Etkileşimi:** Yazılarınıza yapılan her yorum aynı zamanda Mastodon üzerinde yayılır, sitenizin etkileşimi tavan yapar!
+
+---
+
+## 🛠️ Kurulum Adımları
+
+Adım adım gidelim hacı, aceleye gerek yok. Sistemi çökertmeden yavaş yavaş inşa edelim.
 
 ### 1. Mastodon Comments Webcomponent'i İndirme
 
@@ -42,6 +48,8 @@ Bu yöntemin avantajları:
 ```bash
 curl -s https://raw.githubusercontent.com/dpecos/mastodon-comments/master/mastodon-comments.js -o themes/TEMA_ADINIZ/static/js/mastodon-comments.js
 ```
+
+---
 
 ### 2. HTML Şablonunu Düzenleme
 
@@ -94,6 +102,8 @@ curl -s https://raw.githubusercontent.com/dpecos/mastodon-comments/master/mastod
 </div>
 ```
 
+---
+
 ### 3. JavaScript Dosyasını Eklemek
 
 Şimdi, şablonun script bölümüne JavaScript dosyasını ekleyelim:
@@ -105,9 +115,11 @@ curl -s https://raw.githubusercontent.com/dpecos/mastodon-comments/master/mastod
 {% endblock %}
 ```
 
+---
+
 ### 4. Mastodon-Comments.js Dosyasını Özelleştirme
 
-Bazı durumlarda, orijinal mastodon-comments.js dosyasında sorunlar yaşayabilirsiniz. Aşağıdaki değişiklikleri yaparak, yorumların doğru görüntülenmesini sağlayabilirsiniz:
+Orijinal script dosyasında bazı sinir bozucu hatalar ve eksikler vardı. Ben bizzat gecelerce uğraşarak bunları çözdüm ve stabil hale getirdim. İndirdiğiniz `mastodon-comments.js` dosyasını açıp şu güncellemeleri yapın yoldaşlar:
 
 #### a) Yorumları Filtreleme Sorununu Çözme
 
@@ -125,11 +137,9 @@ render_toots(toots, in_reply_to, depth) {
 
     // Sadece kök yorumları göster, diğerlerini rekürsif olarak işle
     if (depth === 0) {
-        // İlk seviye - filtreleme olmadan tüm yorumları göster
         var tootsToRender = toots;
         console.log(`MastodonComments: İlk seviye yorumlar - toplam: ${tootsToRender.length}`);
     } else {
-        // Alt seviyeler - sadece belirli yoruma yanıt olanları göster
         var tootsToRender = toots.filter((toot) => toot.in_reply_to_id === in_reply_to);
         console.log(`MastodonComments: Alt seviye yorumlar - in_reply_to: ${in_reply_to}, bulunan: ${tootsToRender.length}`);
     }
@@ -139,13 +149,11 @@ render_toots(toots, in_reply_to, depth) {
 
     // Her bir yorum için render işlemi yap
     tootsToRender.forEach((toot) => {
-        // Bu yorum daha önce render edilmiş mi?
         if (toot._rendered) {
             console.log(`MastodonComments: Toot zaten render edilmiş, atlanıyor - id: ${toot.id}`);
             return;
         }
 
-        // Bu yorumu render edildi olarak işaretle
         toot._rendered = true;
 
         this.render_toot(toots, toot, depth);
@@ -159,7 +167,6 @@ render_toots(toots, in_reply_to, depth) {
 
 ```javascript
 render_toot(toots, toot, depth) {
-    // İsim içindeki emojileri işle
     toot.account.display_name = this.escapeHtml(toot.account.display_name);
     toot.account.emojis.forEach((emoji) => {
         toot.account.display_name = toot.account.display_name.replace(
@@ -170,7 +177,6 @@ render_toot(toots, toot, depth) {
         );
     });
 
-    // İçerik içindeki emojileri işle
     let processedContent = toot.content;
     if (toot.emojis && toot.emojis.length > 0) {
         toot.emojis.forEach((emoji) => {
@@ -179,24 +185,21 @@ render_toot(toots, toot, depth) {
                 emoji.shortcode
             }" height="20" width="20" />`;
 
-            // Emoji kodunu, emoji resmiyle değiştir (tüm eşleşmeleri bul)
             processedContent = processedContent.split(emojiCode).join(emojiImg);
         });
     }
 
-    // Mastodon yorumunu oluştur
     const mastodonComment = `<div class="mastodon-comment" style="margin-left: calc(var(--comment-indent) * ${depth})">
         <!-- Yorum içeriği -->
         <div class="author">
             <!-- Yazar bilgileri -->
         </div>
         <div class="content">${processedContent}</div>
-        <!-- Diğer içerikler -->
     </div>`;
-
-    // ...devamı...
 }
 ```
+
+---
 
 ### 5. Mastodon Gönderisi Oluşturma
 
@@ -208,60 +211,50 @@ Yorumların görüntülenebilmesi için, her blog yazınız için bir Mastodon g
 4. Gönderiyi yayınlayın
 5. Gönderi URL'sinden `tootId` parametresini alın (örn: `https://mastodon.social/@kullanici/123456789012345678` -> tootId: `123456789012345678`)
 
+---
+
 ### 6. Her Yazı İçin Mastodon Yorumlarını Yapılandırma
 
 Her yazı için farklı bir Mastodon gönderisi kullanacaksanız, tootId'yi yazı meta verilerinde tanımlayabilirsiniz:
 
 ```markdown
-Title: Yazı Başlığı
+Title: Harika Bir Arch Linux Yazısı
 Date: 2025-05-01
-Category: Kategori
-Tags: etiket1, etiket2
-Mastodon_TootId: 123456789012345678
+Category: Linux
+Tags: arch, linux, terminal
+Mastodon_TootId: 114987917469252302
 ```
 
-Sonra, şablonunuzda bunu şu şekilde kullanabilirsiniz:
+Şablonunuzda (`article.html`) ise bu değeri dynamic olarak çağırıyoruz:
 
 ```html
 <mastodon-comments
     host="mastodon.social"
-    user="kullanici_adi"
+    user="yuceltoluyag"
     tootId="{{ article.mastodon_tootid|default('DEFAULT_TOOT_ID') }}"
     style="width: 100%; max-width: 800px; margin: 0 auto;"></mastodon-comments>
 ```
 
-## Sorun Giderme
+---
 
-### Yorumlar Görünmüyor
+## 🛠️ Sorun Giderme Paronoyası
 
-Yorumların görünmemesinin birkaç nedeni olabilir:
+Yorumlar görünmüyorsa sakin olun yoldaşlar:
 
-1. **DOMPurify Sorunu**: DOMPurify kütüphanesinin doğru yüklendiğinden emin olun. Tarayıcı konsolunda hata mesajlarını kontrol edin.
-
+1. **DOMPurify Eksikliği**: DOMPurify kütüphanesinin doğru yüklendiğinden emin olun. Tarayıcı konsolunda hata mesajlarını kontrol edin.
 2. **Mastodon API Kısıtlamaları**: Bazı durumlarda, Mastodon API'si "private" veya "unlisted" görünürlüğüne sahip yanıtları göstermeyebilir.
-
 3. **CORS Sorunları**: Tarayıcınızın geliştirici araçlarında CORS hatası olup olmadığını kontrol edin.
-
 4. **JavaScript Hataları**: Console'da JavaScript hatalarını kontrol edin ve gerektiğinde debug bilgileri ekleyin.
 
-### Stack Overflow Hatası
+---
 
-Sonsuz bir döngü oluşuyorsa, `render_toots` ve `render_toot` fonksiyonları arasında döngüsel bir çağrı olabilir. Bu durumu önlemek için her toot'u yalnızca bir kez render etmek için `_rendered` bayrağı kullanılır.
+## 🎯 Sonuç ve O Meşhur Hata
 
-## Sonuç
+Fediverse yorumları statik sitelerin geleceğidir hacı! Hem özgür hem reklamsız hem de tamamen kontrol senin elinde. 
 
-Mastodon yorumları, statik bloglar için mükemmel bir yorum sistemi sağlar. Merkezi olmayan yapısı, kullanım kolaylığı ve gizliliğe saygısı ile hem blog sahipleri hem de okuyucular için harika bir deneyim sunar.
+!!! warning "Benim O Meşhur Sakarlığım 🤣"
+    Bu entegrasyonu kodlarken, git deposuna yanlışlıkla boş bir commit gönderip bazı makale dosyalarımı silmiştim! Neyse ki Git'in gücüyle hepsini kurtardım. Merak edenler ve benim bu tatlı hatamdan ders çıkarmak isteyenler [Silinen Dosyaları Kurtardığım Commit Detayı](https://github.com/yuceltoluyag/yuceltoluyag.github.io/commit/000d8f82224ee41cb8376a32cffb1c226a93b4a7#diff-ed9fd3788490d83eb73b87a062eaa272fed26103d850ad1828440137e3267540){: target="_blank" rel="noopener noreferrer"} linkinden yaptığım o çılgınlığı inceleyebilir. Ayrıca yazdığım Javascript dosyasının tam modifiye haline de [mastodon-comments.js](/files/mastodon-comments.js) dosyasından ulaşabilirsiniz.
 
-Bu entegrasyonu kullanarak, okuyucularınıza Mastodon üzerinden yorumlarını paylaşma imkanı sunabilir ve blog içeriğinizi Fediverse'e bağlayabilirsiniz.
-
-Herhangi bir sorunla karşılaşırsanız, aşağıdaki kaynaklara göz atabilirsiniz:
-
-- [GitHub - dpecos/mastodon-comments](https://github.com/dpecos/mastodon-comments){: target="_blank" rel="noopener noreferrer"}
-- [Daniel Pecos Martinez'in blog yazısı](https://danielpecos.com/2022/12/25/mastodon-as-comment-system-for-your-static-blog/){: target="_blank" rel="noopener noreferrer"}
-- Javascriptin değiştirilmiş versiyonuna buradan ulaşabilirsiniz [mastodon-comments.js](/files/mastodon-comments.js)
-- [Bu projede yapılan değişiklikler](https://github.com/yuceltoluyag/yuceltoluyag.github.io/tree/09c310d49750c2a646056482995c8268bb35b0ae){: target="_blank" rel="noopener noreferrer"} burada dosyalarımın silinmemiş olduğunu görebilirsiniz.
-- Bu commit'te yapılan değişiklikler'de yanlışlıkla makale ve dosyaları sildiğim için hangi dosyada değişiklik yapmanız gerektiğini daha iyi anlarsınız. [Silinen Dosyalar](https://github.com/yuceltoluyag/yuceltoluyag.github.io/commit/000d8f82224ee41cb8376a32cffb1c226a93b4a7#diff-ed9fd3788490d83eb73b87a062eaa272fed26103d850ad1828440137e3267540){: target="_blank" rel="noopener noreferrer"}
+Kafanıza takılan bir yer olursa Mastodon üzerinden bana yazın yoldaşlar, sistemi beraber ayağa kaldırırız! 😉
 
 [responsive_img src="/images/pelican-bloguna-mastodon-yorumlari-ekleme-xl.webp" alt="pelican-bloguna-mastodon-yorumlari-ekleme" /]
-
-

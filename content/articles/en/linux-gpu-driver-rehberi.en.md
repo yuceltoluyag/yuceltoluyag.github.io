@@ -6,6 +6,8 @@ Slug: linux-gpu-driver-rehberi
 Authors: yuceltoluyag
 Summary: Installing drivers on Linux isn't like on Windows. The Mesa 25.1 update, Nvidia DKMS modules, and a special guide for stubborn Debian users are all here.
 Image: images/linux-ve-steamos-grafik-surucusu-yukleme-guncelleme-rehberi-xl.webp
+toot: https://mastodon.social/@yuceltoluyag/116591967113098345
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3bijdjek26
 Lang: en
 Status: published
 

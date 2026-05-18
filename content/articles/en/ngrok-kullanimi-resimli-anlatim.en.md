@@ -1,6 +1,6 @@
 Title: Ngrok Usage Illustrated Guide
 Date: 2017-02-22
-Category: Web Development
+Category: Web Geliştirme
 Author: yuceltoluyag
 Slug: ngrok-kullanimi-resimli-anlatim
 Summary: Share your local projects easily on the internet with Ngrok and share live demos. Updated installation and usage guide for Linux.
@@ -86,5 +86,7 @@ http://bb10ad8c.ngrok.io/socialnetworkproject
 ```
 
 !!! tip "Tip ⚡ If you share a specific folder, only the files under that directory will be accessible."
+
+If you want to use stylish, custom local domain names instead of IP addresses and folder paths in your local development environment, my guide on [XAMPP Custom Domain Definition](/en/xampp-ozel-alan-adi/) is exactly what you are looking for!
 
 Good luck with your work! 😊

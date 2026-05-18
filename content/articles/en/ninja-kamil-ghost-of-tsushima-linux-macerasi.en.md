@@ -95,7 +95,7 @@ One enemy comes right up to his nose but doesn't hear; another hears whispering 
 Struggles to find direction in darkness, looks for light, wants a sword...
 Suddenly: "Someone give me a torch, I can't see anything!"
 
-!!! warning "Some graphics engines on Linux may work with low gamma values. Increase the in-game "Brightness" setting above 60%."
+!!! warning "Some graphics engines on Linux may work with low gamma values. Increase the in-game 'Brightness' setting above 60%."
 
 ---
 

@@ -62,7 +62,7 @@ Now we need to move this folder to the main directory where the web server serve
 sudo cp -R codeigniter /var/www/html/
 ```
 
-!!! danger "Critical Warning! Permissions It's very important to set the folder ownership and permissions so the web server can correctly access the files. Otherwise, you may encounter "Permission Denied" errors. Don't forget to replace `your_username` in the command below with your own Linux username!"
+!!! danger "Critical Warning! Permissions It's very important to set the folder ownership and permissions so the web server can correctly access the files. Otherwise, you may encounter 'Permission Denied' errors. Don't forget to replace `your_username` in the command below with your own Linux username!"
 
 ```bash
 sudo chown -R your_username:www-data /var/www/html/codeigniter
@@ -103,7 +103,7 @@ Did you encounter a problem during installation or do you have a question in min
 
 - You can access my tests related to [Codeigniter 4](https://github.com/Baba-Project/ci4){: target="\_blank" rel="noopener noreferrer"} version from here.
 
-!!!note "Note: After installation is complete, you can access CodeIgniter from [http://localhost/codeigniter](http://localhost/codeigniter){: target="\_blank" rel="noopener noreferrer"} address."
+!!!note "Note: After installation is complete, you can access CodeIgniter from [http://localhost/codeigniter](http://localhost/codeigniter){: target='\_blank' rel='noopener noreferrer'} address."
 
 - [My YouTube Channel](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber){: target="\_blank" rel="noopener noreferrer"}
   You can find more videos and guides here.

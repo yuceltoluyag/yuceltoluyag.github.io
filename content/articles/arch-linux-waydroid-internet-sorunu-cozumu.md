@@ -1,4 +1,4 @@
-﻿Title: Arch Linux'ta Waydroid İnternet Sorunu Çözümü
+Title: Arch Linux'ta Waydroid İnternet Sorunu Çözümü
 Date: 2025-10-17 14:30
 Category: Sorun Giderme
 Tags: waydroid, arch linux, android, linux, iptables, konteyner, ağ yapılandırması
@@ -145,7 +145,7 @@ ip a
 
 Çıktıda internet bağlantınız olan arayüzü bulun. Genellikle `eth0`, `en0`, `wlan0` veya `wlp` ile başlayan isimler olabilir. Bu adımı doğru yapmazsanız Waydroid yine internete çıkamayacaktır.
 
-!!! tip "<strong>Ağ arayüzünü bulma:</strong> Eğer WiFi kullanıyorsanız genellikle "wlan" ile başlayan isim vardır. Kablolu ağ kullanıyorsanız "eth" veya "enp" ile başlayan isim ararsınız. Her durumda `ip a` komutu size tüm arayüzleri gösterecektir."
+!!! tip "<strong>Ağ arayüzünü bulma:</strong> Eğer WiFi kullanıyorsanız genellikle 'wlan' ile başlayan isim vardır. Kablolu ağ kullanıyorsanız 'eth' veya 'enp' ile başlayan isim ararsınız. Her durumda `ip a` komutu size tüm arayüzleri gösterecektir."
 
 ### Adım 6: IP Yönlendirmesini Etkinleştir
 

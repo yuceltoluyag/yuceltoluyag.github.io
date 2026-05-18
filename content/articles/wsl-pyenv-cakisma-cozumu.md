@@ -8,6 +8,8 @@ Summary: WSL içinde Windows pyenv-win PATH çakışması yüzünden bozulan pyt
 Image: images/wsl-pyenv-cakisma-cozumu-xl.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/116592278889480025
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3fx46zjs2j
 Status: published
 
 ## "neden python bozuldu ya?" anı
@@ -207,17 +209,18 @@ Bence burada asıl ders şu: WSL'i "Windows'a bağlı Linux" gibi kullanırsan, 
 - İnterop'u kapattım
 - Sistemi izole ettim
 
-Ve garip bir şekilde… her şey düzeldi 😄 WSL güzel araç ama ya onu Linux gibi kullanırsın ya da Windows karmaşasında kaybolursun. Ben ikinci yolu bırakıp ilkine geçtim. Ve iyi ki de geçmişim.
+Ve garip bir şekilde… her şey düzeldi 😄 WSL güzel araç ama ya onu Linux gibi kullanırsın ya da Windows karmaşasında kaybolursun. Ben ikinci yolu bırakıp ilkine geçtim. Ve iyi ki de geçmişim. Eğer Windows tarafında da benzer bir pyenv çıkmazına girdiyseniz, [Powershell pyenv-win Kurulum Hatası Çözümü](/powershell-pyenv-win-kurulum-hatasi-cozumu/) rehberim tam size göre!
 
 ---
 
-!!! note "Küçük bir itiraf Bunu ilk çözerken baya "neden python bana düşman oldu" moduna girmiştim. Meğer olay python değilmiş, ortammış. İnterop denen şeyi o gün öğrendim. Ve o günden beri WSL'i hep izole kullanıyorum."
+!!! note "Küçük bir itiraf Bunu ilk çözerken baya 'neden python bana düşman oldu' moduna girmiştim. Meğer olay python değilmiş, ortammış. İnterop denen şeyi o gün öğrendim. Ve o günden beri WSL'i hep izole kullanıyorum."
 
 
 ---
 
 ## İlgili Yazılar
 
+- [Powershell pyenv-win Kurulum Hatası Çözümü](/powershell-pyenv-win-kurulum-hatasi-cozumu/)
 - [Linux GPU Sürücü Rehberi: AMD, Intel ve Nvidia İçin Stabil ve Temiz Kurulum](/linux-gpu-driver-rehberi/){: target="_blank" rel="noopener noreferrer"}
 - [Arch Linux'ta ntsync Nasıl Aktif Edilir?](/arch-linux-ntsync-aktif-etme-zen-kernel-rehberi/){: target="_blank" rel="noopener noreferrer"}
 - [Vivaldi'de DoH Ayarı Nasıl Yapılır?](/vivaldi-doh-dns-over-https-ayari/){: target="_blank" rel="noopener noreferrer"}

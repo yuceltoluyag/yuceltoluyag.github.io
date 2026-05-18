@@ -7,6 +7,8 @@ Authors: yuceltoluyag
 Summary: Pelican ile ürettiğiniz statik sitenizi yayına almadan önce Playwright ve Python kullanarak nasıl otomatik testlerden geçireceğinizi anlatıyorum.
 Image: images/pelican-playwright-test-xl.webp
 Lang: tr
+toot: https://mastodon.social/@yuceltoluyag/116592437621738522
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3i6th2h227
 Status: published
 
 Daha önce [Playwright Arch Linux Kurulum](/playwright-arch-linux-kurulum/) yazımda bu canavarı sistemimize nasıl kuracağımızı anlatmıştım. Şimdi o gücü, kendi blogumuzdaki (Pelican) hataları ayıklamak için sahaya sürme vakti. 

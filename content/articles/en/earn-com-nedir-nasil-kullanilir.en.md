@@ -14,7 +14,7 @@ Image: images/earncom-xl.webp
 toot: https://mastodon.social/@yuceltoluyag/114982579879193708
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvqkpddpec2s
 
-!!! warning "Important Update: <a href="https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer" rel="noopener noreferrer" target="_blank">Coinbase Acquired Earn.com and Hired the CEO as Chief Technology Officer</a>; therefore, please note that this article is no longer valid. You can earn through Coinbase, but not like before. In the new system, it operates on an invest-earn-lose logic."
+!!! warning "Important Update: <a href='https://cointelegraph.com/news/coinbase-acquires-earncom-and-hires-ceo-as-chief-technology-officer' rel='noopener noreferrer' target='_blank'>Coinbase Acquired Earn.com and Hired the CEO as Chief Technology Officer</a>; therefore, please note that this article is no longer valid. You can earn through Coinbase, but not like before. In the new system, it operates on an invest-earn-lose logic."
 
 Hello, for those who want to **make money** on the internet, I am going to talk about a system that I also use. Earn.com is a platform where you can earn money without making any investment. It offers users the opportunity to make money by filling out surveys or joining groups.
 

@@ -1,4 +1,4 @@
-﻿Title: Linux'ta CodeIgniter Kurulumu: Adım Adım Rehber
+Title: Linux'ta CodeIgniter Kurulumu: Adım Adım Rehber
 Date: 2018-12-01 12:00 10:00
 Modified: 2025-08-11 22:59
 Category: Web Geliştirme
@@ -63,7 +63,7 @@ Artık elimizde `codeigniter` adında temiz bir klasör var.
 sudo cp -R codeigniter /var/www/html/
 ```
 
-!!! danger "Kritik Uyarı! İzinler Web sunucusunun dosyalarına doğru bir şekilde erişebilmesi için klasörün sahipliğini ve izinlerini ayarlamak çok önemlidir. Aksi takdirde "Permission Denied" (Erişim Reddedildi) hatalarıyla karşılaşabilirsin. Aşağıdaki komutta `kullanici_adin` yazan yeri kendi Linux kullanıcı adınla değiştirmeyi unutma!"
+!!! danger "Kritik Uyarı! İzinler Web sunucusunun dosyalarına doğru bir şekilde erişebilmesi için klasörün sahipliğini ve izinlerini ayarlamak çok önemlidir. Aksi takdirde 'Permission Denied' (Erişim Reddedildi) hatalarıyla karşılaşabilirsin. Aşağıdaki komutta `kullanici_adin` yazan yeri kendi Linux kullanıcı adınla değiştirmeyi unutma!"
 
 ```bash
 sudo chown -R kullanici_adin:www-data /var/www/html/codeigniter
@@ -104,7 +104,7 @@ Kurulum sırasında bir sorunla mı karşılaştın veya aklına takılan bir so
 
 - [Codeigniter 4](https://github.com/Baba-Project/ci4){: target="\_blank" rel="noopener noreferrer"} sürümüyle ilgili yaptığım testlere buradan ulaşabilirsiniz.
 
-!!!note "Not: Kurulum tamamlandıktan sonra, [http://localhost/codeigniter](http://localhost/codeigniter){: target="\_blank" rel="noopener noreferrer"} adresinden CodeIgniter’a ulaşabilirsiniz."
+!!!note "Not: Kurulum tamamlandıktan sonra, [http://localhost/codeigniter](http://localhost/codeigniter){: target='\_blank' rel='noopener noreferrer'} adresinden CodeIgniter’a ulaşabilirsiniz."
 
 - [YouTube Kanalım](https://www.youtube.com/channel/UCJyK4D5BcoPXjV5T8N8-liA?view_as=subscriber){: target="\_blank" rel="noopener noreferrer"}
   Burada daha fazla video ve rehber bulabilirsiniz.

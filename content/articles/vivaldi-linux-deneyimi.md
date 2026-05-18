@@ -1,4 +1,4 @@
-﻿Title: Vivaldi'yi Neden Seviyorum
+Title: Vivaldi'yi Neden Seviyorum
 Date: 2025-11-18 22:55
 Category: Linux
 Tags: vivaldi, linux, tarayıcı, gizlilik, kde, performans
@@ -18,7 +18,7 @@ Hadi dürüst olalım, Linux'ta tarayıcı deyince akla genelde iki isim gelir: 
 
 Peki Vivaldi bu resimde nerede duruyor?
 
-Ben Vivaldi'yi ilk kurduğumda, bunun bir tarayıcıdan çok, bir "uçak kokpiti" olduğunu düşünmüştüm. Olayı basitlik değil, tam tersi: **Kontrol**. Vivaldi, tarayıcısını "yönetmek" isteyen, her köşesini kendine göre ayarlamayı seven "power user" (güçlü kullanıcı) için yapılmış.
+Ben Vivaldi'yi ilk kurduğumda, bunun bir tarayıcıdan çok, bir "uçak kokpiti" olduğunu düşünmüştüm. Olayı basitlik değil, tam tersi: **Kontrol**. Vivaldi, tarayıcısını "yönetmek" isteyen, her köşesini kendine göre ayarlamayı seven "power user" (güçlü kullanıcı) için yapılmış. (Hatta tarayıcınızı daha güvenli hale getirmek istiyorsanız [Vivaldi'de DoH Ayarı Nasıl Yapılır](/vivaldi-doh-dns-over-https-ayari/) rehberime de mutlaka göz atın).
 
 - **Sekme Yönetimi:** Sekmeleri gruplama (stacking), bölünmüş ekranda iki sekmeyi aynı anda görme (tiling)... bunlar harika özellikler. Özellikle 20+ sekme açınca hayat kurtarıyor.
 - **Yan Panel (Sidebar):** Bu, Vivaldi'nin imzası gibi bir şey. İndirilenler, notlar, yer imleri, hatta WhatsApp Web gibi siteleri o panele sabitleyebiliyorsun.
@@ -36,7 +36,7 @@ Bu kadar övdük, peki neden tüm Linux dağıtımları Vivaldi ile gelmiyor? Ne
 
 Bu, Linux dünyasındaki en büyük "günahı". Evet, Vivaldi'nin temeli (Chromium) açık kaynak, ama arayüzü (UI), yani o sevdiğimiz tüm özellikleri sunan katman, **kapalı kaynak** (proprietary).[^1]
 
-!!! warning "Dikkat! ⚠️ Tam FOSS Değil! Linux kullanıcılarının çoğu için "özgür yazılım" bir felsefedir. Bir yazılımın kodunu göremiyorsan, içinde ne yaptığını tam olarak bilemezsin. İşte Vivaldi, bu felsefeye tam uymadığı için birçok "eski toprak" Linux kullanıcısının kırmızı çizgisini geçiyor."
+!!! warning "Dikkat! ⚠️ Tam FOSS Değil! Linux kullanıcılarının çoğu için 'özgür yazılım' bir felsefedir. Bir yazılımın kodunu göremiyorsan, içinde ne yaptığını tam olarak bilemezsin. İşte Vivaldi, bu felsefeye tam uymadığı için birçok 'eski toprak' Linux kullanıcısının kırmızı çizgisini geçiyor."
 
 ### 2. "Biraz Hantal" mı? (Efsaneler ve Gerçekler)
 
@@ -60,10 +60,10 @@ Peki Vivaldi'nin durumu ne? Hemen söyleyeyim: Hayır. Öyle "Milyonlarca kullan
 
 Ama... (evet, bir 'ama' var):
 
-- **Varsayılan Ayarlar:** Bazı gizlilik testlerinde (Avoid the Hack gibi sitelerin yaptığı) Vivaldi'nin varsayılan ayarlarının "en güvenli" olmadığı görülmüş. Yani kurar kurmaz biraz kurcalaman gerekiyor.
+- **Varsayılan Ayarlar:** Bazı gizlilik testlerinde ([Avoid the Hack](https://avoidthehack.com){: target="\_blank" rel="noopener noreferrer"} gibi sitelerin yaptığı) Vivaldi'nin varsayılan ayarlarının "en güvenli" olmadığı görülmüş. Yani kurar kurmaz biraz kurcalaman gerekiyor.
 - **Google Kavgası:** Yıllar önce kurucusu (Opera'nın da eski CEO'su) Google ile bir atışma yaşadı. Google'ın, Vivaldi'nin AdWords reklamlarını "haklı bir sebep olmadan" durdurduğunu iddia ettiler. Rekabet işte, pek de şaşırtıcı değil.
 
-!!! tip "İpucu ⚡ Kurar Kurmaz Şunu Yapın: Vivaldi'yi kurduktan sonra hemen `Ayarlar > Gizlilik ve Güvenlik > İzleyici ve Reklam Engelleme` yoluna gidin. Varsayılan olarak "Engelleme Yok" veya "İzleyicileri Engelle" seçili gelir. Bunu **"İzleyicileri ve Reklamları Engelle"** olarak değiştirin. Dünyanız değişecek."
+!!! tip "İpucu ⚡ Kurar Kurmaz Şunu Yapın: Vivaldi'yi kurduktan sonra hemen `Ayarlar > Gizlilik ve Güvenlik > İzleyici ve Reklam Engelleme` yoluna gidin. Varsayılan olarak 'Engelleme Yok' veya 'İzleyicileri Engelle' seçili gelir. Bunu **'İzleyicileri ve Reklamları Engelle'** olarak değiştirin. Dünyanız değişecek."
 
 ## Bir Dinozorun İtirafları: IE, Chrome ve Eve Dönüş
 
