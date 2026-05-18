@@ -44,10 +44,24 @@ Disallow: /
 # ✅ Arama Motorlarına ve Sosyal Medyaya İzin Ver
 ###########################################
 User-agent: *
+Disallow: /etiket/
+Disallow: /kategori/
+Disallow: /yazar/
+Disallow: /arsiv/
+Disallow: /etiketler/
+Disallow: /kategoriler/
+Disallow: /yazarlar/
 Allow: /
 
 # Google botları
 User-agent: Googlebot
+Disallow: /etiket/
+Disallow: /kategori/
+Disallow: /yazar/
+Disallow: /arsiv/
+Disallow: /etiketler/
+Disallow: /kategoriler/
+Disallow: /yazarlar/
 Allow: /
 
 # Google Image
@@ -60,22 +74,57 @@ Allow: /
 
 # Google Mobile
 User-agent: Googlebot-Mobile
+Disallow: /etiket/
+Disallow: /kategori/
+Disallow: /yazar/
+Disallow: /arsiv/
+Disallow: /etiketler/
+Disallow: /kategoriler/
+Disallow: /yazarlar/
 Allow: /
 
 # Bing botları
 User-agent: Bingbot
+Disallow: /etiket/
+Disallow: /kategori/
+Disallow: /yazar/
+Disallow: /arsiv/
+Disallow: /etiketler/
+Disallow: /kategoriler/
+Disallow: /yazarlar/
 Allow: /
 
 # Yandex
 User-agent: Yandex
+Disallow: /etiket/
+Disallow: /kategori/
+Disallow: /yazar/
+Disallow: /arsiv/
+Disallow: /etiketler/
+Disallow: /kategoriler/
+Disallow: /yazarlar/
 Allow: /
 
 # Yahoo
 User-agent: Slurp
+Disallow: /etiket/
+Disallow: /kategori/
+Disallow: /yazar/
+Disallow: /arsiv/
+Disallow: /etiketler/
+Disallow: /kategoriler/
+Disallow: /yazarlar/
 Allow: /
 
 # DuckDuckGo
 User-agent: DuckDuckBot
+Disallow: /etiket/
+Disallow: /kategori/
+Disallow: /yazar/
+Disallow: /arsiv/
+Disallow: /etiketler/
+Disallow: /kategoriler/
+Disallow: /yazarlar/
 Allow: /
 
 ###########################################
