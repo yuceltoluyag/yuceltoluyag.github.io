@@ -12,71 +12,121 @@ Lang: en
 toot: https://mastodon.social/@yuceltoluyag/115520882505254523
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57mjuzqn22z
 
-You've prepared and published great content, but does it take days or even weeks for Bing to visit your site and discover this new article? What if I told you there's a way to get indexed "instantly"?
 
-In today's fast-paced world, the delay between when your content is published and when it becomes visible in search engines can cause you to lose valuable traffic and engagement. Especially if you're writing about current topics, this delay can cause your content to lose all its impact. This is where **Bing IndexNow usage** comes into play and completely changes the game.
+So you've just published a brand new blog post, but Bing takes ages to visit your site and index it? 😤 Waiting days for search engine spiders to discover your content feels as painfully slow as waiting for your turn to play Space Cadet Pinball in the morning freeze back in high school.
+
+If you are a paranoid developer like me, running Arch Linux and wanting to control every single piece of your system, sitting around and waiting for search engines to crawl you is absolute torture. But what if you could notify Bing of any changes on your site "instantly"? That is where **Bing IndexNow usage** comes in to change the game.
+
+---
 
 ## What is Bing IndexNow? 🤔
 
-IndexNow, a simple protocol that allows you to instantly "ping"[^1] search engines when there's a change on your website (new article, update, deletion, etc.). Instead of passively waiting for sitemaps to be crawled, it's the fastest way to say, "Hey Bing, I have new content, come take a look!"
+IndexNow is a super simple yet powerful protocol that lets you instantly "ping"[^1] search engines when a change occurs on your site (like publishing a new post, updating an old one, or deleting a page). Instead of submitting a sitemap and waiting for their crawlers' convenience, you knock on their door and say: "New content is ready, come crawl it now!"
 
-So, will we do this process manually every time? Of course not! We will completely automate this with the simple Python project we developed.
+And no, we won't be doing this process manually every time. We are going to completely automate this using a modern, smart CLI utility.
 
 !!! note "Note: Not Just Bing!"
-When you use the IndexNow protocol, the URLs you submit are automatically forwarded not only to Bing but also to other participating search engines like Yandex. You reach multiple targets with a single action!
+    When you use the IndexNow protocol, the URLs you submit are automatically shared not just with Bing, but also Yandex and other participating search engines. You reach multiple search engines with a single action!
 
-## Setup and Usage of the Automatic System
+---
 
-Let's see how we can get this amazing system up and running step by step. Our project manages the entire process for you with a few simple scripts. We previously set up a similar structure for Google in our [How to Use Google Indexing API] article, now it's Bing's turn!
+## 🔧 A Modern Solution: Google & Bing Indexing Tool
 
-### Step 1: Preparing the Necessary Files
+We previously set up a similar structure for Google in our [Google Indexing API Guide](/en/google-indexing-api-nasil-kullanilir/) article. Now it's Bing's turn!
 
-Our project is based on two main scripts:
+Dealing with raw scripts or running manual commands every day is a cheap student meal solution. Since we aim for professional workflows, we should do things in a clean and organized way.
 
-1.  `export_article_links.py`: Scans all published articles on your site and creates a list named `article_links.csv`.
-2.  `run_bing_submission.py`: Reads this CSV file and notifies Bing of new URLs that have not been submitted before.
+To resolve indexing issues across all my projects, I developed the open-source [Google Indexing Tool](https://github.com/yuceltoluyag/google-indexing-tool){: target="\_blank" rel="noopener noreferrer"}. It automates the whole process and handles both Google and Bing IndexNow submissions out-of-the-box.
 
-### Step 2: Creating the URL List
+The best part? You can install this tool **globally** on your system and run it across all your different blog directories with a single command.
 
-The first thing you need to do is run the following command in the terminal:
+### 📦 Global Installation and Setup
 
-```bash
-python export_article_links.py
-```
-
-This command writes all current URLs on your site to the `article_links.csv` file. This file acts as a simple database that tracks when each URL was submitted to Google or Bing.
-
-!!! tip "Tip ⚡ The Power of Automation"
-You can add this command to a "deployment script" that runs every time you update your site. This way, your URL list is automatically updated whenever you publish a new article.
-
-### Step 3: Submitting to Bing
-
-Now that your list is ready, it's time for the magic touch. The following command sends all new URLs waiting to be submitted to Bing in a single request.
+Open your terminal and install the tool directly from GitHub:
 
 ```bash
-python run_bing_submission.py
+pip install git+https://github.com/yuceltoluyag/google-indexing-tool.git
 ```
 
-That's it! When you see a `Status Code: 200` or `202` response and the "CSV file updated" message in the terminal, your URLs have been successfully submitted to Bing and marked not to be submitted again.
+This command installs a global `google-indexer` command. Now, you can manage indexing from any of your blog folders.
 
-## In Summary
+Create a `config.ini` file in your blog's root directory and fill it out:
 
-The biggest advantages this system provides you are:
+```ini
+[PELICAN]
+ARTICLES_PATH = content/articles
+SITE_URL = https://yuceltoluyag.github.io/
 
-- **Instant Notification:** Search engines are notified the moment your content is published.
-- **Full Automation:** You send all your new URLs with a single command.
-- **Easy Setup:** The system is ready to go with a few Python scripts and a simple configuration.
-- **Efficient Operation:** The system does not overload the API by not resubmitting previously submitted URLs.
+[DEFAULT]
+CSV_FILE = article_links.csv
+SERVICE_ACCOUNT_FILE = service-account.json
+LOG_FILE = indexing.log
 
-## Conclusion
+[API]
+URL = https://indexing.googleapis.com/v3/urlNotifications:publish
+REQUEST_DELAY_SECONDS = 10
+COOLDOWN_DAYS = 3
 
-As you can see, thanks to **automatic Bing IndexNow usage**, you don't have to wait for your content to be discovered by search engines. With this simple yet powerful automation, you can make a significant contribution to your site's SEO performance and timeliness.
+[BING]
+API_KEY = your_bing_indexnow_api_key
+KEY_LOCATION = https://yuceltoluyag.github.io/your_bing_indexnow_api_key.txt
+```
 
-Have you set up this system or are you considering setting it up? Feel free to share your experiences and questions in the comments! 👇
+!!! tip "Tip ⚡ API Key and Verification"
+    In the `API_KEY` field, enter the IndexNow API key generated from your Bing Webmaster Tools dashboard. The `KEY_LOCATION` is the public URL of the `.txt` file containing your key. Bing reads this file to verify that you actually own the domain.
 
-[^1]: **Ping:** In computer networks, it is the process of sending a small data packet to a target and waiting for its response to test whether that target is reachable.
+---
+
+### ⚙️ Step-by-Step Automation Workflow
+
+Once configuration is set, navigate to your blog directory and execute the following commands:
+
+#### Step 1: Export Pelican Posts to the Tracking DB
+
+Scan all published articles on your site and append any new entries to the tracking file `article_links.csv`:
+
+```bash
+google-indexer export
+```
+
+This file serves as a simple database tracking when each URL was sent to Google or Bing. Run this command whenever you update your site to keep the records updated.
+
+#### Step 2: Batch Submit to Bing IndexNow
+
+Here is a critical detail: instead of sending requests one by one, Bing accepts all your new URLs in a single batch package:
+
+```bash
+# Run a dry-run simulation first to see what gets submitted:
+google-indexer bing --dry-run
+
+# Submit to Bing for real:
+google-indexer bing
+```
+
+That's all! Once you receive a `Status Code: 200` or `202` response and see the "CSV file updated" message in your terminal, your URLs have successfully reached Bing and are marked with a timestamp to avoid redundant submissions.
+
+---
+
+## 📋 What We Learned
+
+- **Instant Ping:** Search engines learn about new posts instantly via the IndexNow protocol.
+- **Single-command Automation:** The `google-indexer` tool lets you submit all new posts to Bing in one go.
+- **Multi-engine Reach:** Pinging Bing automatically shares the update with other participating engines.
+- **Smart Database:** The tool keeps track of sent URLs to avoid wasting API limits.
+
+---
+
+## 🎯 Conclusion
+
+As you can see, using **automatic Bing IndexNow** means you no longer have to wait on search spiders to find your content. With this simple yet robust automation, you can give your site's SEO performance a massive boost.
+
+Have you tried this system or are you planning to set it up? Share your thoughts and questions in the comments below! 👇
+
+---
+
+[^1]: **Ping:** In computer networks, sending a small data packet to a destination to verify if it is reachable, or notifying a service of status updates instantly.
 
 - [Guide: How to use Google Indexing API](/en/google-indexing-api-nasil-kullanilir/)
-- [GitHub Project Page](https://github.com/yuceltoluyag/google-indexing-tool)
+- [GitHub Project Page](https://github.com/yuceltoluyag/google-indexing-tool){: target="\_blank" rel="noopener noreferrer"}
 
 [responsive_img src="/images/bing-indexnow-otomatik-dizinleme-seo-sonuc-xl.webp" alt="Add your site to search results instantly with Bing IndexNow automatic indexing." /]

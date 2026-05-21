@@ -1,4 +1,4 @@
-﻿Title: Otomatik Bing IndexNow Kullanımı: Siteniz Saniyeler İçinde Dizine Eklensin!
+Title: Otomatik Bing IndexNow Kullanımı: Siteniz Saniyeler İçinde Dizine Eklensin!
 Date: 2025-11-06 19:00
 Category: Web Geliştirme
 Tags: Bing IndexNow, SEO, Otomasyon, Python, Indexing API
@@ -14,74 +14,120 @@ toot: https://mastodon.social/@yuceltoluyag/115520882505254523
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m57mjuzqn22z
 
 
-Harika bir içerik hazırladınız, yayınladınız ama Bing'in sitenizi ziyaret edip bu yeni yazıyı keşfetmesi günler, hatta haftalar mı sürüyor? Ya size "anında" dizine eklenmenin bir yolu var desem?
+Yeni bir blog yazısı patlattın, heyecanla yayına aldın ama Google yetmezmiş gibi Bing de sitene günlerce uğramıyor mu? 😤 Sırf robotların keyfi yetip de yeni yazıyı keşfetsin diye günlerce beklemek, sabah ayazında okul formasıyla Space Cadet Pinball oynamak için jeton sırası beklemek kadar sabır gerektirir. 
 
-Günümüzün hızlı dünyasında, içeriğinizin yayınlandığı an ile arama motorunda görünür olduğu an arasındaki gecikme, değerli trafiği ve etkileşimi kaybetmenize neden olabilir. Özellikle güncel konular hakkında yazıyorsanız, bu gecikme içeriğinizin tüm etkisini yitirmesine yol açabilir. İşte bu noktada **Bing IndexNow kullanımı** devreye giriyor ve oyunu tamamen değiştiriyor.
+Benim gibi Arch Linux kullanan, sisteminin her hücresini kontrol altında tutmak isteyen paronayak bir geliştiriciysen, arama motorlarının siteni ne zaman ziyaret edeceğini pasif şekilde beklemek tam bir işkencedir. Peki ya sana sitende yaptığın en ufak değişikliği Bing'e "anında" bildirebileceğini söylesem? İşte bu noktada **Bing IndexNow kullanımı** devreye giriyor ve oyunu tamamen değiştiriyor.
+
+---
 
 ## Bing IndexNow Nedir? 🤔
 
-IndexNow, web sitenizde bir değişiklik olduğunda (yeni yazı, güncelleme, silme vb.) arama motorlarına anında "ping"[^1] göndermenizi sağlayan basit bir protokoldür. Sitemap göndermek gibi pasif bir şekilde beklemek yerine, "Hey Bing, yeni bir içeriğim var, gel bir bak!" demenin en hızlı yoludur.
+IndexNow, web sitende bir değişiklik olduğunda (yeni yazı eklediğinde, eskiyi güncellediğinde ya da bir sayfayı sildiğinde) arama motorlarına anında bir "ping"[^1] fırlatmanı sağlayan aşırı basit ama etkili bir protokoldür. Sitemap gönderip arama motorlarının keyfini beklemek yerine, kapılarına dayanıp "Yeni içerik hazır, hemen gel bak!" demenin en hızlı yoludur.
 
-Peki, bu süreci her seferinde manuel olarak mı yapacağız? Elbette hayır! Geliştirdiğimiz basit Python projesi ile bu işi tamamen otomatikleştireceğiz.
+Peki, bu süreci her seferinde manuel olarak mı yapacağız? Elbette hayır! Geliştirdiğimiz yeni nesil akıllı araç ile bu işi tamamen otomatikleştireceğiz.
 
 !!! note "Not: Sadece Bing Değil!"
-IndexNow protokolünü kullandığınızda, gönderdiğiniz URL'ler sadece Bing'e değil, Yandex gibi diğer katılımcı arama motorlarına da otomatik olarak iletilir. Tek bir işlemle birden çok hedefe ulaşırsınız!
+    IndexNow protokolünü kullandığında, gönderdiğin URL'ler sadece Bing'e değil, Yandex gibi diğer katılımcı arama motorlarına da otomatik olarak iletilir. Tek bir ping ile birden çok arama motorunu harekete geçirirsin!
 
-## Otomatik Sistemin Kurulumu ve Kullanımı
+---
 
-Gelin, bu harika sistemi adım adım nasıl çalışır hale getireceğimize bakalım. Projemiz, birkaç basit script ile tüm süreci sizin için yönetiyor. Daha önce [Google Indexing API Nasıl Kullanılır] yazımızda benzer bir yapıyı Google için kurmuştuk, şimdi sıra Bing'de!
+## 🔧 Çoklu Projeler İçin Modern Çözüm: Google & Bing Indexing Tool
 
-### Adım 1: Gerekli Dosyaların Hazırlanması
+Daha önce [Google Indexing API kullanımı](/google-indexing-api-nasil-kullanilir/) yazımızda benzer bir yapıyı Google için kurmuştuk. Şimdi sıra Bing'de!
 
-Projemizin temelinde iki ana script bulunuyor:
+Yukarıdaki gibi ham kodlarla uğraşmak, her gün elle betik çalıştırmak tam bir makarna-yoğurt öğrenci yemeği çözümü olurdu. Profesyonel çalışıyorsak, işi daha temiz halletmeliyiz.
 
-1.  `export_article_links.py`: Sitenizdeki tüm yayınlanmış makaleleri tarar ve `article_links.csv` adında bir liste oluşturur.
-2.  `run_bing_submission.py`: Bu CSV dosyasını okur ve daha önce gönderilmemiş yeni URL'leri Bing'e bildirir.
+Kendi projelerimde yaşadığım dizin sorunlarını tek elden çözmek için geliştirdiğim açık kaynaklı [Google Indexing Tool](https://github.com/yuceltoluyag/google-indexing-tool){: target="\_blank" rel="noopener noreferrer"} projesi, tüm bu süreci otomatik ve akıllı hale getiriyor. Üstelik sadece Google ile sınırlı kalmayıp Bing IndexNow entegrasyonu da sunuyor.
 
-### Adım 2: URL Listesini Oluşturma
+En tatlı tarafı ne biliyor musun? Bu aracı sistemine **global** olarak kurup, bilgisayarındaki tüm farklı blog projelerinde tek bir komutla çalıştırabiliyorsun.
 
-Yapmanız gereken ilk şey, terminalde aşağıdaki komutu çalıştırmak:
+### 📦 Global Kurulum ve Hazırlık
 
-```bash
-python export_article_links.py
-```
-
-Bu komut, sitenizdeki tüm güncel URL'leri `article_links.csv` dosyasına yazar. Bu dosya, hangi URL'nin Google'a veya Bing'e ne zaman gönderildiğini takip eden basit bir veritabanı görevi görür.
-
-!!! tip "İpucu ⚡ Otomasyonun Gücü"
-Bu komutu, sitenizi her güncellediğinizde çalışan bir "deployment script" içine ekleyebilirsiniz. Böylece yeni bir yazı yayınladığınızda URL listeniz de otomatik olarak güncellenir.
-
-### Adım 3: Bing'e Bildirim Gönderme
-
-Listeniz hazır olduğuna göre, şimdi sıra sihirli dokunuşu yapmaya geldi. Aşağıdaki komut, gönderilmeyi bekleyen tüm yeni URL'leri tek bir istekte Bing'e gönderir.
+Terminale geçip şu komutla aracı doğrudan GitHub üzerinden sistemine kurabilirsin:
 
 ```bash
-python run_bing_submission.py
+pip install git+https://github.com/yuceltoluyag/google-indexing-tool.git
 ```
 
-İşlem bu kadar! Terminalde `Status Code: 200` veya `202` yanıtını ve "CSV file updated" mesajını gördüğünüzde, URL'leriniz başarıyla Bing'e iletilmiş ve tekrar gönderilmemek üzere işaretlenmiş demektir.
+Bu komut sistemine `google-indexer` adında global bir CLI komutu tanımlar. Artık hangi blog klasöründe olursan ol, bu komutla dizin yönetimini yapabilirsin.
 
-## Kısaca Özetlemek Gerekirse
+Blog projenin ana dizininde bir adet `config.ini` dosyası oluştur ve içeriğini sitene göre doldur:
 
-Bu sistemin size sağladığı en büyük avantajlar şunlar:
+```ini
+[PELICAN]
+ARTICLES_PATH = content/articles
+SITE_URL = https://yuceltoluyag.github.io/
 
-- **Anında Bildirim:** İçerikleriniz yayınlandığı an arama motorlarının haberi olur.
-- **Tam Otomasyon:** Tek bir komutla tüm yeni URL'lerinizi gönderirsiniz.
-- **Kolay Kurulum:** Birkaç Python scripti ve basit bir yapılandırma ile sistem çalışmaya hazırdır.
-- **Verimli Çalışma:** Sistem, daha önce gönderilmiş URL'leri tekrar göndermeyerek API'yi yormaz.
+[DEFAULT]
+CSV_FILE = article_links.csv
+SERVICE_ACCOUNT_FILE = service-account.json
+LOG_FILE = indexing.log
 
-## Sonuç
+[API]
+URL = https://indexing.googleapis.com/v3/urlNotifications:publish
+REQUEST_DELAY_SECONDS = 10
+COOLDOWN_DAYS = 3
 
-Gördüğünüz gibi, **otomatik Bing IndexNow kullanımı** sayesinde içeriğinizin arama motorları tarafından keşfedilmesini beklemek zorunda değilsiniz. Bu basit ama güçlü otomasyon ile sitenizin SEO performansına ve güncelliğine önemli bir katkı sağlayabilirsiniz.
+[BING]
+API_KEY = senin_bing_indexnow_api_anahtarin
+KEY_LOCATION = https://yuceltoluyag.github.io/senin_bing_indexnow_api_anahtarin.txt
+```
+
+!!! tip "İpucu ⚡ API Anahtarı ve Doğrulama"
+    `API_KEY` kısmına Bing Webmaster Tools üzerinden aldığın IndexNow API anahtarını yazmalısın. `KEY_LOCATION` ise bu anahtarı içeren `.txt` dosyasının web sitendeki URL'sidir. Bing, isteği gönderen kişinin sitenin gerçek sahibi olup olmadığını bu dosya aracılığıyla doğrular.
+
+---
+
+### ⚙️ Adım Adım Otomatik Çalışma Düzeni
+
+Her şey hazırsa, terminalde projenin dizinine geçip şu komutları sırasıyla koşturmaya başla:
+
+#### Adım 1: Pelican Yazılarını Veritabanına Aktar
+
+Sitenizdeki tüm yayınlanmış makaleleri tarar ve takip listesi olan `article_links.csv` dosyasına ekler.
+
+```bash
+google-indexer export
+```
+
+Bu dosya, hangi URL'nin Google'a veya Bing'e ne zaman gönderildiğini takip eden basit bir veritabanı görevi görür. Siteni her güncellediğinde bu komutu koşturarak listeni tazeleyebilirsin.
+
+#### Adım 2: Bing IndexNow ile Toplu Gönderim Yap
+
+Hacı bura çok kritik: Bing, tek tek uğraşmak yerine tüm yeni linkleri tek bir paket halinde kabul eder. Bu yüzden oldukça pratiktir:
+
+```bash
+# Önce simülasyon yapıp ne gideceğine bak:
+google-indexer bing --dry-run
+
+# Canlı olarak Bing'e gönder:
+google-indexer bing
+```
+
+İşlem bu kadar! Terminalde `Status Code: 200` veya `202` yanıtını ve "CSV file updated" mesajını gördüğünde, yeni URL'leriniz başarıyla Bing'e iletilmiş ve tekrar gönderilmemek üzere zaman damgasıyla işaretlenmiş demektir.
+
+---
+
+## 📋 Neler Öğrendik?
+
+- **Anında Bildirim:** İçeriklerin yayınlandığı an IndexNow protokolü ile arama motorlarının haberi olur.
+- **Tek Komutla Otomasyon:** `google-indexer` sayesinde tüm yeni yazıları tek tıkla Bing'e bildirebiliriz.
+- **Çoklu Arama Motoru Desteği:** Bing'e gönderdiğimiz ping, katılımcı diğer arama motorlarına da otomatik olarak dağıtılır.
+- **Verimli Veritabanı:** Araç, daha önce gönderilen URL'leri tekrar tekrar göndermeyerek API limitlerini yormaz.
+
+---
+
+## 🎯 Son Söz
+
+Gördüğün gibi, **otomatik Bing IndexNow kullanımı** sayesinde içeriğinin arama motorları tarafından keşfedilmesini pasif bir şekilde beklemek zorunda değilsin. Bu basit ama güçlü otomasyon ile sitenin SEO performansını tavan yaptırabilirsin.
 
 Siz de bu sistemi kurdunuz mu veya kurmayı düşünüyor musunuz? Yorumlarda deneyimlerinizi ve sorularınızı paylaşmaktan çekinmeyin! 👇
 
-[^1]: **Ping:** Bilgisayar ağlarında, bir hedefe küçük bir veri paketi gönderip yanıtını bekleyerek o hedefin ulaşılabilir olup olmadığını test etme işlemidir.
+---
+
+[^1]: **Ping:** Bilgisayar ağlarında, bir hedefe küçük bir veri paketi gönderip yanıtını bekleyerek o hedefin ulaşılabilir olup olmadığını test etme veya bir servise durum değişikliğini anlık olarak bildirme işlemidir.
 
 - [Rehber: Google Indexing API kullanımı](/google-indexing-api-nasil-kullanilir/)
-- [GitHub Proje Sayfası](https://github.com/yuceltoluyag/google-indexing-tool)
+- [GitHub Proje Sayfası](https://github.com/yuceltoluyag/google-indexing-tool){: target="\_blank" rel="noopener noreferrer"}
 
 [responsive_img src="/images/bing-indexnow-otomatik-dizinleme-seo-sonuc-xl.webp" alt="Bing IndexNow otomatik dizinleme ile sitenizi anında arama sonuçlarına ekleyin." /]
-
-
-
