@@ -10,6 +10,9 @@ Summary: We solve DNS conflicts on Arch Linux when multiple VPNs are active by c
 Template: article
 Image: images/arch-linux-dns-vpn-systemd-resolved-unbound-xl.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116668690407931263
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mn5dsne63k2w
+
 
 In my spare time, I absolutely love playing around with my own systems, building things on my homelab, and experimenting with new technologies. The other night, while working on a new configuration in my homelab, I opened the terminal to check pod statuses on my AWS EKS (Elastic Kubernetes Service) cluster. I ran the usual `kubectl get pod` command. I wait... I wait... And bam:
 

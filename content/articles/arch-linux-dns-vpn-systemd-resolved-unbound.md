@@ -11,6 +11,8 @@ Template: article
 Image: images/arch-linux-dns-vpn-systemd-resolved-unbound-lg.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/116668690407931263
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mn5dsne63k2w
 
 Boş zamanlarımda kendi sistemlerimi kurcalamayı, yerel sunucumda (homelab) bir şeyler inşa edip yeni teknolojiler denemeyi acayip seviyorum. Geçen akşam yine evde kendi lab ortamımda yeni bir yapılandırma üzerinde çalışırken, AWS EKS (Elastic Kubernetes Service) kümesindeki pod durumlarını kontrol etmek için terminali açtım. Rutin bir şekilde `kubectl get pod` komutunu yapıştırdım. Bekliyorum... Bekliyorum... Ve bam:
 

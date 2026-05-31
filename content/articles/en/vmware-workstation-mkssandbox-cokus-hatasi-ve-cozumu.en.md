@@ -8,8 +8,10 @@ Authors: yuceltoluyag
 Status: published
 Summary: We analyze the causes of the mksSandbox or ISBRendererComm connection loss crash in VMware Workstation and provide step-by-step solutions.
 Template: article
-Image: images/vmware-workstation-mkssandbox-cokus-hatasi-ve-cozumu-xl.webp
+Image: images/vmware-workstation-mkssandbox-cokus-hatasi-ve-cozumu-lg.webp
 Lang: en
+toot: https://mastodon.social/@yuceltoluyag/116668648379106647
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mn5d6kktdk2a
 
 The other day, I was sitting at my computer, hacking away at some Docker containers with my usual local tea and snacks. On my main Windows 11 host (Ryzen CPU and an Nvidia RTX card running like a beast), I was writing some database migrations inside an Ubuntu virtual machine that I spun up for a Laravel project. I pasted a long command into the terminal and was just about to hit Enter, when suddenly, the screen froze. Then, the most annoying, blood-pressure-raising dialog box popped up:
 

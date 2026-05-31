@@ -11,6 +11,8 @@ Template: article
 Image: images/vmware-workstation-mkssandbox-cokus-hatasi-ve-cozumu-lg.webp
 Lang: tr
 Translation: false
+toot: https://mastodon.social/@yuceltoluyag/116668648379106647
+bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mn5d6kktdk2a
 
 Geçen gün bilgisayar başında, arkada simit-ayran eşliğinde Docker konteynerleriyle boğuşuyorum. Windows 11 kurulu ana makinede (Ryzen işlemci, altında Nvidia RTX kart canavar gibi çalışıyor) Laravel projesi için ayağa kaldırdığım Ubuntu sanal makinesinde veritabanı taşımalarını (migrations) yazıyorum. Tam terminale uzunca bir komut yapıştırdım, "Enter"a basacağım, o da ne? Ekran dondu. Ardından karşımda şu meşhur, insanın asabını bozan kutucuk belirdi:
 
