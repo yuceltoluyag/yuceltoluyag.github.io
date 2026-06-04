@@ -5,7 +5,7 @@ Category: Git
 Tags: GitHub Copilot, Commit Messages, Git, Software Development, Automation, VS Code, GitHub
 Slug: github-copilot-commit-mesajlarinizi-otomatik-olarak-tamamlayin
 Authors: yuceltoluyag
-Status: Published
+Status: published
 Summary: In this article, you'll learn step by step how to use GitHub Copilot to automatically complete your commit messages and how to make your software development process more efficient.
 Template: article
 Image: images/copilot-commit-xl.webp

@@ -11,17 +11,17 @@ toot: https://mastodon.social/@yuceltoluyag/116592522870749506
 bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3jfw7xd22f
 Status: published
 
-Let's be honest; AI subscription prices have now gone off the rails. Paying 20-30 dollars every month to ChatGPT, Claude, or for API fees is literally a headache, especially for our people struggling with the exchange rate. Moreover, what is being done with your data on those distant servers is a complete mystery. 🤯
+Let's be honest; AI subscription prices have now gone off the rails. Paying 20-30 dollars every month to ChatGPT, Claude, or for API fees is literally a headache, especially for our people struggling with the exchange rate, my friend. 🤯 Moreover, what is being done with your data on those distant servers is a complete mystery.
 
 Recently, I dove down a rabbit hole, saying, "Why don't I do this in my own kitchen?" The result: an AI assistant running completely privately on my computer, requiring no internet, and most importantly, **free of charge**. Not just chat, either; with autocomplete inside VS Code and a full-fledged agent mode.
 
-Today I will tell you the details of this work in a "Masterclass" flavor. Regardless of what your hardware is, once you grasp the logic of this work, you can run a smooth AI on any system.
+Today I will tell you the details of this work in a "Masterclass" flavor. Regardless of what your hardware is, once you grasp the logic of this work, you can run a smooth AI on any system. If you prefer to set up your own server and work through the terminal instead of using desktop apps, you can also check out my more detailed guide, [Self-Hosted LLMs in 2026](/en/yerel-llm-kurulum-rehberi-2026/).
 
 ## 🧠 Section 1: How Does Local AI Work? (The VRAM Matter)
 
-There are two main elements that determine the performance of a model: **number of parameters** (brain size) and **Context Size** (memory capacity). You cannot run an 862-billion-parameter beast on a home computer, but you can work wonders with properly optimized models.
+There are two main elements that determine the performance of a model: **number of parameters** (brain size) and **Context Size** (memory capacity). You cannot run an 862-billion-parameter beast on a home computer, but you can work wonders with properly configured models.
 
-The secret lies in the amount of **VRAM** on your graphics card (GPU). ⚡
+The secret lies in the amount of **VRAM** on your graphics card (GPU). If you are unsure which card to choose, you can check my guide on the [Best GPUs for Local LLMs (2026)](/en/yerel-llmler-icin-en-iyi-gpu-2026/). ⚡
 
 !!! tip "Tip: VRAM vs. System RAM"
     When you run the model, all parameters crowd into your graphics card's VRAM. If you have 16 GB VRAM and the model requires 17 GB, the remaining 1 GB overflows into regular system RAM. [^2] When this overflow occurs, your speed drops from 120 km/h to a snail's pace (20-30 tokens/sec). So the main rule: Fit the model into the VRAM!
@@ -33,7 +33,7 @@ If you are using a Mac (M1/M2/M3), your job is easier because Apple uses "Unifie
 I recommend **LM Studio** for the fastest and cleanest start. The user interface is so successful that it clearly shows you how much space which model will occupy on your system (GPU offload).
 
 1. **Download LM Studio:** [LM Studio Official Site](https://lmstudio.ai/){: target="\_blank" rel="noopener noreferrer"}
-2. **Search for Models:** Type `Qwen` or `Llama` in the search section.
+2. **Search for Models:** Type `Qwen` or `Llama` in the search section. If you are unsure which model to choose, check out my [Best Local LLM Models (2026)](/en/en-iyi-yerel-llm-modelleri-2026/) guide for the latest comparisons.
 3. **Choose Quantization (Compression):** This is the crucial point. Do not download models in their "raw" state (FP16). Choose compressed versions like **Q4** or **Q6**. [^1]
 
 !!! note "Note: What is Quantization?"
@@ -58,11 +58,11 @@ Many people ask, "Are local models as smart as Claude?" In the **Sudoku Applicat
 
 Is there a speed difference? Yes, cloud models respond faster on huge server farms, but local AI has already passed the "good enough" level for debugging and general coding tasks.
 
-## 🏁 Conclusion
+## 🏁 To Wrap Up
 
 You can cancel your monthly subscriptions, save that money, and buy yourself a solid graphics card (for example, an RTX 4060 Ti or 4070 with 16GB VRAM) in 2-3 months. This card opens the door to **free and unlimited** AI use for life.
 
-Keep your data on your computer and the money in your wallet. There is no better time than today to launch your own local AI masterclass.
+Keep your data on your computer and the money in your wallet. There is no better time than today to launch your own local AI masterclass, my friend.
 
 [^1]: For more technical details on the subject, you can check the model cards on [HuggingFace](https://huggingface.co/){: target="\_blank" rel="noopener noreferrer"}.
 [^2]: For "out of memory" errors you encounter while setting up local AI, try closing other programs using your GPU (browser, etc.) on your system.

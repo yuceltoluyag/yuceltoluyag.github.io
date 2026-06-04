@@ -5,7 +5,7 @@ category: Sorun Giderme
 tags: linux, x11, proton-authenticator, webkit, dmabuf, hata-cozumu
 Slug: x11-proton-authenticator-buton-gorunmeme-cozumu
 authors: yuceltoluyag
-status: published
+Status: published
 summary: "If you're experiencing the issue of Proton Authenticator buttons not appearing in X11 environment, you can find the definitive solution with the `WEBKIT_DISABLE_DMABUF_RENDERER` parameter in this article."
 template: article
 Image: images/x11-proton-authenticator-buton-gorunmeme-cozumu-xl.webp

@@ -4,7 +4,7 @@ category: Linux
 tags: archlinux, postgresql, pgadmin4, veritabanı, kurulum, rehber
 slug: arch-linux-postgresql-pgadmin4-kurulum-rehber
 authors: yuceltoluyag
-status: published
+Status: published
 summary: A sincere and understandable guide for beginners that explains the process of installing, configuring, and using PostgreSQL database with pgAdmin4 GUI tool on Arch Linux from start to finish.
 template: article
 Image: images/arch-linux-postgresql-pgadmin4-kurulum-rehber-xl.webp

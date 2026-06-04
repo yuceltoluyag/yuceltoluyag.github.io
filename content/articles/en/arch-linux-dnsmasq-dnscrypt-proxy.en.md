@@ -4,7 +4,7 @@ category: Linux
 tags: dnsmasq,dnscrypt-proxy,Arch Linux,DNS güvenliği,DNS önbellekleme
 slug: arch-linux-dnsmasq-dnscrypt-proxy
 authors: yuceltoluyag
-status: published
+Status: published
 summary: Set up dnsmasq and dnscrypt-proxy on Arch Linux, check for port conflicts, and test DNS resolution.
 template: article
 Lang: en
