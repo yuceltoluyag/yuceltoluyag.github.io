@@ -8,7 +8,6 @@ Status: published
 Summary: We analyze the ways of running AI models on your own system in 2026, hardware requirements, and the most efficient software tools (Ollama, llama.cpp, vLLM).
 Template: article
 Lang: en
-Translation: true
 
 Last night, after putting the kids to sleep, I took a sip from my tea on the desk and started tweaking my local AI setups. 💻 The privacy of data sent to cloud services and monthly rising API bills had been bothering me for a while. I asked myself, "Why don't we handle all this assistant work on our own local server?"
 
