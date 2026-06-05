@@ -8,7 +8,6 @@ Status: published
 Summary: We compare GitHub Copilot and Google Gemini Code Assist, the two giants of the software world in 2026, across all dimensions. Details on prices, model quality, and context window.
 Template: article
 Lang: en
-Translation: true
 
 Last night at my desk, with some light jazz music playing in the background, I was trying to clean up the code of one of our old Python projects. 💻 Looking at the spaghetti-like folder structure that had piled up over the years, my heart sank. I activated GitHub Copilot, which has been my right hand for years; but no matter what I did, I couldn't get it to grasp the entire project at once. Right at that moment, I decided to give Google Gemini Code Assist a shot, which had been sitting installed on my computer for a while. The feeling I had when I loaded the project into Gemini's famous, massive 1-million-token memory was something else. Let's lay this silent battle in the developer world on the table and see which one deserves your money, my friend. 🚀
 

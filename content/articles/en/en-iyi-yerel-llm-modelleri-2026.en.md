@@ -8,7 +8,6 @@ Status: published
 Summary: In 2026, we examine the models dominating the local AI world (DeepSeek R1, Llama 4, Qwen 3, Gemma 4) based on different use cases and hardware requirements.
 Template: article
 Lang: en
-Translation: true
 
 The other morning, while sipping my coffee at my desk, I decided to clean up the local models on my disk. 💻 When I went into the Ollama folder, I couldn't believe my eyes: dozens of different Llama, Qwen, and Gemma versions were taking up gigabytes of space, filling up my drive. I asked myself, "Yücel, why are you keeping all of these, which one actually works?" Then I thought; many developers like me are also experiencing confusion about which model to choose in the local AI world.
 

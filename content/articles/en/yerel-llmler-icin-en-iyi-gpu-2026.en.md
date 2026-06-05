@@ -8,7 +8,6 @@ Status: published
 Summary: We analyze the most logical hardware choices for running models like Llama 4 or Qwen 3.5 on your local system in 2026. A guide from budget setups to beastly workstations.
 Template: article
 Lang: en
-Translation: true
 
 Last night, after the kids fell asleep, in the sweet silence of the house, I sat down at my desk. 💻 As I refreshed my tea and checked the bills for cloud services, I got annoyed. The money I paid to OpenAI and Anthropic APIs just for basic automations, testing, and daily assistant tasks was growing like a mountain. I asked myself: "Yücel, we are in the kitchen of this business, why don't we dump all this load onto our own local hardware?"
 
