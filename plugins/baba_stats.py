@@ -4,6 +4,13 @@ import re
 import collections
 import bs4
 import nltk.tokenize
+# NLTK path traversal zafiyetine karşı (nltk.data.load) önlem olarak sıkı yol denetimini aktif ediyoruz
+try:
+    import nltk.pathsec
+    nltk.pathsec.ENFORCE = True
+except ImportError:
+    pass
+
 from pelican import signals
 
 logger = logging.getLogger(__name__)

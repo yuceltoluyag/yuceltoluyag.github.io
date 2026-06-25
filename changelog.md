@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.6] - 2026-06-25
+### Added
+- **Content & Translations:** Added a step-by-step crDroid Custom ROM installation guide for the Redmi Note 12 Pro 5G (`ruby/rubyx`), including critical warnings about baseband spoofing and IMEI/EFS restoration on imported devices.
+- **Content:** Added new articles on local AI, local coding assistants, VMware, Unbound, and Instagram bulk delete processes.
+- **Translations:** Translated 6 missing Turkish articles to English and resolved language switcher relationships.
+
+### Fixed
+- **Security:** Enabled strict path validation (`ENFORCE=True`) for NLTK in the stats plugin (`plugins/baba_stats.py`) to block potential URL-encoded path traversal attacks.
+- **SEO & Search Indexing:** Optimized crawler budget in `robots.txt` and updated article tags for the `google-indexing-tool` CLI.
+- **Translations:** Fixed 404 rendering errors in English translations by correctly setting metadata attributes.
+
+### Changed
+- **Dependency Upgrades:** Bumped multiple dependencies including `lxml`, `shell-quote`, `tar`, `@babel/core`, and GitHub Actions checkout.
+
+
 ## [2.3.5] - 2026-05-18
 ### Added
 - **Metadata:** Integrated `toot` (Mastodon) and `bluesky` social links in the front matter of numerous Turkish and English articles to enable direct social media references.
