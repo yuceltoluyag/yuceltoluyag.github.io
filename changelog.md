@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.3.6] - 2026-06-25
 ### Added
 - **Content & Translations:** Added a step-by-step crDroid Custom ROM installation guide for the Redmi Note 12 Pro 5G (`ruby/rubyx`), including critical warnings about baseband spoofing and IMEI/EFS restoration on imported devices.
-- **Content:** Added new articles on local AI, local coding assistants, VMware, Unbound, and Instagram bulk delete processes.
+- **Content:** Added new articles on Docker Node.js container security, local AI, local coding assistants, VMware, Unbound, and Instagram bulk delete processes.
 - **Translations:** Translated 6 missing Turkish articles to English and resolved language switcher relationships.
 
 ### Fixed
