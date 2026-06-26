@@ -10,7 +10,7 @@ Template: article
 Lang: tr
 Translation: false
 
-Dün gece çocuklar uyuduktan sonra, eski bir projenin Dockerfile'ını incelerken birden sırtımdan aşağı soğuk sular boşaldı. Yıllar önce hızlıca ayağa kaldırıp yayına aldığımız o Node.js sunucusunda ne bir `USER` komutu vardı ne de bir yetki sınırlandırması. Konteyner doğrudan root olarak çalışıyordu. Yani o dönem `lodash` veya `express` üzerinde çıkacak tek bir RCE (uzaktan kod çalıştırma) açığı, saldırgana konteyner içinde tam root yetkisi vermeye yetecekti. Oradan sonrası ise kernel zafiyetleri veya yanlış yapılandırılmış seccomp ayarları üzerinden ana makineye (host) sızmaya bakıyordu.
+Geçen gün eski bir projenin Dockerfile'ını incelerken birden sırtımdan aşağı soğuk sular boşaldı. Yıllar önce hızlıca ayağa kaldırıp yayına aldığımız o Node.js sunucusunda ne bir `USER` komutu vardı ne de bir yetki sınırlandırması. Konteyner doğrudan root olarak çalışıyordu. Yani o dönem `lodash` veya `express` üzerinde çıkacak tek bir RCE (uzaktan kod çalıştırma) açığı, saldırgana konteyner içinde tam root yetkisi vermeye yetecekti. Oradan sonrası ise kernel zafiyetleri veya yanlış yapılandırılmış seccomp ayarları üzerinden ana makineye (host) sızmaya bakıyordu.
 
 İnternetteki rehberlerin yarısından fazlasında göreceğin o meşhur Dockerfile şablonu tam olarak şöyledir:
 
@@ -121,11 +121,12 @@ EXPOSE 3000
 CMD ["node", "server.js"]
 ```
 
-**Root olmayan kullanıcıya geçildiğinde neler kırılabilir?**
-
-*   **Log dosyaları:** Uygulamanız `/var/log` altına yazmaya çalışıyorsa yetki hatası alırsınız. Logları stdout/stderr akışlarına yönlendirin veya `/app` içinde izin verdiğiniz bir alt klasöre yazın.
-*   **Unix soket dosyaları:** Eğer `/var/run` altında soket dosyası oluşturuyorsanız, sahipliği `appuser` olan bir dizin tercih edin.
-*   **Lifecycle scriptleri içeren paketler:** Bazı npm paketleri kurulum sırasında root yetkisi gerektiren komutlar çalıştırabilir. Bu yüzden paket kurulumlarını (`npm ci`) root kullanıcısı ile yapıp, sonrasında dosyaları `chown` ile taşıyarak çalıştırmak en temiz yöntemdir.
+!!! warning "Kritik Bilgi: Root Olmayan Kullanıcıya Geçildiğinde Kırılabilecek Yapılar! ⚠️"
+    Root olmayan bir kullanıcıya geçtiğinizde şu alanlarda yetki ve çalışma hataları alabilirsiniz:
+    
+    *   **Log dosyaları:** Uygulamanız `/var/log` gibi sistem dizinlerine yazmaya çalışıyorsa yetki hatası alırsınız. Logları stdout/stderr akışlarına yönlendirin veya `/app` içinde izin verdiğiniz bir alt klasöre yazın.
+    *   **Unix soket dosyaları:** Eğer `/var/run` altında soket dosyası oluşturuyorsanız, sahipliği `appuser` olan bir dizin tercih edin.
+    *   **Lifecycle scriptleri içeren paketler:** Bazı npm paketleri kurulum sırasında root yetkisi gerektiren komutlar çalıştırabilir. Bu yüzden paket kurulumlarını (`npm ci`) root kullanıcısı ile yapıp, sonrasında dosyaları `chown` ile taşıyarak çalıştırmak en temiz yöntemdir.
 
 ---
 
@@ -290,6 +291,11 @@ CMD ["node", "server.js"]
 ```
 
 Konteyner güvenliği, başımıza bir olay gelene kadar ertelediğimiz ama başımıza geldiğinde geriye dönük düzeltmesi en sancılı olan konulardan biridir. Konsept kurulum aşamasında bu dört adımı (root olmayan kullanıcı, yeteneklerin düşürülmesi, salt okunur dosya sistemi ve seccomp) uygulamak sıfır maliyetlidir ve sonrasında yaşanacak güvenlik sancılarının önüne geçer.
+
+## 🔗 İlgili Yazılar
+- [Nginx'i Ters Vekil Sunucu Olarak Yapılandırmak](/nginx-ters-vekil-sunucu-yapilandirmak/)
+- [Şişko Docker İmajlarına Diyet: 1.2 GB'tan 78 MB'a Yolculuk](/docker-imaj-boyutu-kucultme-rehberi/)
+- [Node.js Mikroservisleri İçin Linux TCP Tuning ve Kernel Ayarları](/linux-tcp-tuning-node-js-microservices/)
 
 [^1]: Linux yetenekleri, root yetkilerini daha küçük parçalara bölerek işlemlere dağıtan güvenlik mekanizmasıdır.
 [^2]: Secure Computing Mode; sistem çağrılarını filtreleyerek çekirdek düzeyinde kısıtlamalar uygulayan Linux güvenlik modülüdür.

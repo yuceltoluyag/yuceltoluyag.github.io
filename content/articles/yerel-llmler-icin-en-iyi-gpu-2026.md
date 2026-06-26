@@ -10,7 +10,7 @@ Template: article
 Lang: tr
 Translation: false
 
-Dün gece çocuklar uyuduktan sonra, evin o tatlı sessizliğinde çalışma masamın başına geçtim. 💻 Çayımı tazeleyip bulut servislerinin faturalarını kontrol ederken canım sıkıldı. Sırf basit otomasyonlar, testler ve günlük asistanlık işleri için OpenAI ve Anthropic API'lerine ödediğim para çığ gibi büyüyordu. Kendi kendime sordum: "Yücel, biz bu işin mutfağındayız, neden tüm bu yükü kendi yerel donanımımıza yıkmıyoruz?"
+Çayımı tazeleyip bulut servislerinin faturalarını kontrol ederken canım sıkıldı. Sırf basit otomasyonlar, testler ve günlük asistanlık işleri için OpenAI ve Anthropic API'lerine ödediğim para çığ gibi büyüyordu. Kendi kendime sordum: "Yücel, biz bu işin mutfağındayız, neden tüm bu yükü kendi yerel donanımımıza yıkmıyoruz?"
 
 Tabii ki gerçekçi olalım: Masamızın altındaki bilgisayar, buluttaki devasa veri merkezleriyle, yüz milyarlarca parametreli canavar modellerle aşık atamaz dostum. 🧠 Bulutun gücü her zaman apayrı bir seviyede kalacak. Ama bizim amacımız da ChatGPT üretmek değil; işimizi görecek, kod yazarken elimiz ayağımız olacak tatmin edici bir yerel yapay zeka asistanı ayağa kaldırmak. 
 

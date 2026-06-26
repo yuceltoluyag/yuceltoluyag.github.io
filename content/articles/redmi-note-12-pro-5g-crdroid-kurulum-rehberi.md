@@ -1,6 +1,6 @@
 Title: Redmi Note 12 Pro 5G (ruby) için crDroid Kurulum Rehberi
 Date: 2026-06-14 00:22
-Category: Mobil
+Category: Sorun Giderme
 Tags: Android, Custom ROM, crDroid, Xiaomi, Root, Redmi Note 12 Pro
 Slug: redmi-note-12-pro-5g-crdroid-kurulum-rehberi
 Authors: yuceltoluyag

@@ -11,7 +11,7 @@ toot: https://mastodon.social/@yuceltoluyag/116592350013446878
 bluesky: https://bsky.app/profile/did:plc:lu4xdq66ovwpakyavsmdvqbc/post/3mm3gwx677s2c
 Status: published
 
-Dün gece yine o meşhur sabahlardan biriydi; uykusuzluktan gözler kan çanağı, kahve buz gibi... Sırf 500 tane ekran görüntüsünü hızlıca küçültüp siteye atmak için terminalin başına geçtim. "İki satır `mogrify` yazar, uyurum" diyordum. Ama terminal o kırmızı yazılarla bana bağırmaya başlayınca işin rengi değişti: `libpng warning: sBIT: bad length`. 
+Bazen uykusuz geçen gecelerin sabahı oldukça yorucu olabiliyor; kahve buz gibi, gözler kan çanağı... Geçen gün sırf 500 tane ekran görüntüsünü hızlıca küçültüp siteye atmak için terminalin başına geçtim. "İki satır `mogrify` yazar, uyurum" diyordum. Ama terminal o kırmızı yazılarla bana bağırmaya başlayınca işin rengi değişti: `libpng warning: sBIT: bad length`. 
 
 Özellikle Windows'un ekran alıntısı aracıyla alınan PNG'lerde bu chunk (veri bloğu) hatası tam bir baş belası. Eğer siz de benim gibi terminal üzerinden bir boks maçına çıkmış hissediyorsanız, gelin bu ImageMagick canavarını nasıl dizginleyeceğimize bakalım.
 

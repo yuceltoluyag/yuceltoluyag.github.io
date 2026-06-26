@@ -10,7 +10,7 @@ Template: article
 Lang: tr
 Translation: false
 
-Dün gece masamda, eski bir projenin Nginx konfigürasyonunu düzenlerken o meşhur `proxy_pass http://127.0.0.1:3000/;` satırının sonundaki slaş (`/`) karakteri yüzünden tüm API rotalarının 404 verdiğini fark ettim. Nedenini anlamak için gece 3'e kadar saç baş yoldum. Hatta bir ara eşim içeriden seslenip "Yücel, yine o ufacık slaş karakteri yüzünden mi uyumuyorsun?" dedi. O an hem güldüm hem de web geliştirme dünyasındaki bu unglamorous (gösterişsiz ama hayati) detayların bizi nasıl uykusuz bıraktığını tekrar hatırladım.
+Geçen hafta eski bir projenin Nginx konfigürasyonunu düzenlerken o meşhur `proxy_pass http://127.0.0.1:3000/;` satırının sonundaki slaş (`/`) karakteri yüzünden tüm API rotalarının 404 verdiğini fark ettim. Nedenini anlamak için saatlerce saç baş yoldum. Hatta bir ara eşim içeriden seslenip "Yücel, yine o ufacık slaş karakteri yüzünden mi uyumuyorsun?" dedi. O an hem güldüm hem de web geliştirme dünyasındaki bu unglamorous (gösterişsiz ama hayati) detayların bizi nasıl uykusuz bıraktığını tekrar hatırladım.
 
 Bilgisayarımızda çalışırken her şey basittir. Node.js uygulamamız 3000 portunu dinler, biz de tarayıcıdan `localhost:3000` yazıp işimize bakarız. Ancak canlıya çıkış (production) anı geldiğinde işin rengi tamamen değişir. Artık bir alan adımız, 443 portundan HTTPS trafiğimiz ve tüm internetten gelebilecek binlerce kullanıcı vardır. 
 
@@ -29,7 +29,7 @@ Uygulama sunucuları (Node.js, Python, Go vb.) iş mantığını çalıştırmak
 *   İstek sınırlandırma (rate limiting) ile kötü niyetli taramaları engellemek.
 *   Uygulama yeniden başlatılırken gelen istekleri kuyruğa alıp kesinti yaşatmamak.
 
-Nginx tüm bu halka açık işleri üzerine alır, arkasındaki uygulama ise sadece kendi kodunu çalıştırmaya odaklanır.
+Nginx tüm bu halka açık işleri üzerine alır, arkasındaki uygulama ise sadece kendi kodunu çalıştırmaya odaklanır. (Örneğin, Node.js uygulamanızı Docker konteynerlerinde güvenli bir şekilde çalıştırmak ve yapılandırmak için [Docker ve Node.js: Root Olmadan Çalıştırmak](/docker-node-js-root-olmadan-calistirmak/) rehberime göz atabilirsiniz.)
 
 ---
 
@@ -113,8 +113,6 @@ location /api/ {
 }
 ```
 
-Eğer `proxy_pass` satırının sonunda `/` varsa, Nginx eşleşen `/api/` önekini kırpar. `/api/users` isteği uygulamaya `/users` olarak iletilir.
-
 ```nginx
 # Durum B: Slaş yok
 location /api/ {
@@ -122,7 +120,10 @@ location /api/ {
 }
 ```
 
-Eğer sonda `/` yoksa, Nginx yolu değiştirmeden aynen iletir. `/api/users` isteği uygulamaya yine `/api/users` olarak gider.
+!!! warning "Kritik Detay: proxy_pass Satırındaki Slaş (/) Ayrıntısı! ⚠️"
+    Eğer `proxy_pass` satırının sonunda `/` varsa (Durum A), Nginx eşleşen `/api/` önekini kırpar ve `/api/users` isteği uygulamaya `/users` olarak iletilir.
+    
+    Eğer sonda `/` yoksa (Durum B), Nginx yolu değiştirmeden aynen iletir ve `/api/users` isteği uygulamaya yine `/api/users` olarak gider. Bu ufacık karakter farkı API rotalarınızın 404 vermesine neden olabilir!
 
 ---
 
@@ -191,7 +192,7 @@ client_body_timeout   10s;
 keepalive_timeout     65s;
 ```
 
-`proxy_connect_timeout` süresini düşük tutarak (örneğin 5 saniye) çöken bir uygulamada hızlıca hata yanıtı (502) dönmesini sağlayabiliriz.
+`proxy_connect_timeout` süresini düşük tutarak (örneğin 5 saniye) çöken bir uygulamada hızlıca hata yanıtı (502) dönmesini sağlayabiliriz. (Eğer sunucunuzun genel ağ performansını ve TCP limitlerini daha da yukarı çekmek isterseniz [Linux TCP Tuning & Node.js Microservices](/linux-tcp-tuning-node-js-microservices/) yazıma göz atabilirsiniz.)
 
 ---
 
@@ -357,6 +358,10 @@ $ tail -f /var/log/nginx/error.log
 ```
 
 Nginx'i uygulamanın önüne koymak, işleri birbirinden ayırmaktır. Uygulamanız sadece kodunu çalıştırır; geri kalan tüm ağır dış dünya işlerini Nginx sırtlanır ve sistemin nefes almasını sağlar.
+
+## 🔗 İlgili Yazılar
+- [Docker ve Node.js: Root Olmadan Çalıştırmak](/docker-node-js-root-olmadan-calistirmak/)
+- [Linux TCP Tuning & Node.js Microservices](/linux-tcp-tuning-node-js-microservices/)
 
 [^1]: İstemciler ile sunucular arasında durarak dışarıdan gelen istekleri karşılayan ve arka plandaki sunuculara yönlendiren aracı sunucudur.
 [^2]: Linux çekirdeğinin giriş/çıkış (I/O) olaylarını izlemek için kullandığı yüksek performanslı olay bildirim mekanizmasıdır.

@@ -10,7 +10,7 @@ Template: article
 Lang: tr
 Translation: false
 
-Dün gece çocuklar uyuduktan sonra masamda kahvemi yudumlarken ☕ eski arşivleri karıştırıyordum. Gözüm bir ara yıllar önce yazdığım o meşhur Instagram botunun kodlarına ve o dönem çektiğim demo videosuna [^1] takıldı. O zamanlar Instagram'ın toplam üye sayısı zaten topu topu 2 milyon falandı, bizim bot da sağ olsun 1.9 milyonuna bizzat dokundu 😂 İşin komik tarafı, o dönem bot kullanan herkes çatır çatır ban yerken bana merakla soruyordu: "Ulan herkes banlanırken sen nasıl ban yemiyorsun?" diye 😎 O dönem botu Selenium'dan çıkarıp mobil cihazlarda UI Automator ile çalışacak seviyeye getirmiştim. 📱
+Geçen gün bilgisayarımdaki eski arşivleri karıştırırken gözüm yıllar önce yazdığım o meşhur Instagram botunun kodlarına ve o dönem çektiğim demo videosuna [^1] takıldı. O zamanlar Instagram'ın toplam üye sayısı zaten topu topu 2 milyon falandı, bizim bot da sağ olsun 1.9 milyonuna bizzat dokundu 😂 İşin komik tarafı, o dönem bot kullanan herkes çatır çatır ban yerken bana merakla soruyordu: "Ulan herkes banlanırken sen nasıl ban yemiyorsun?" diye 😎 O dönem botu Selenium'dan çıkarıp mobil cihazlarda UI Automator ile çalışacak seviyeye getirmiştim. 📱
 
 
 <script async src="//www.instagram.com/embed.js"></script>
