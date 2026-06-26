@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.7] - 2026-06-26
+### Added
+- **Translations:** Translated 7 recent Turkish articles to English (`bu-blogdaki-yazilari-yapay-zeka-mi-yaziyor`, `curl-olmayan-konteynerde-bash-ile-http-istegi-dev-tcp`, `docker-node-js-root-olmadan-calistirmak`, `git-sadece-gitignore-degil-dosya-yok-sayma`, `nginx-ters-vekil-sunucu-yapilandirmak`, `nvidia-vram-swap-alani-nbd-vram`, `redmi-note-12-pro-5g-crdroid-kurulum-rehberi`).
+
+### Changed
+- **Content & Formatting:** Audited last 20 articles and updated the recent articles to use compliant admonition blocks (`!!! warning`, `!!! note`, `!!! tip`) and refined introduction clichés to strictly adhere to the writing guidelines.
+
 ## [2.3.6] - 2026-06-25
 ### Added
 - **Content & Translations:** Added a step-by-step crDroid Custom ROM installation guide for the Redmi Note 12 Pro 5G (`ruby/rubyx`), including critical warnings about baseband spoofing and IMEI/EFS restoration on imported devices.
