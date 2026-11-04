@@ -1,6 +1,6 @@
 Title: Dwarfed by Giant MoE Models: Local Qwen3.6-27B Setup
 Date: 2026-05-29 04:25
-Category: Development Tools
+Category: Geliştirme Araçları
 Tags: qwen, local llm, sglang, vllm, apple silicon, rtx 3090, rtx 5090, openclaw, artificial intelligence
 Slug: qwen-3-6-27b-yerel-kod-modeli-kurulumu
 Authors: yuceltoluyag
