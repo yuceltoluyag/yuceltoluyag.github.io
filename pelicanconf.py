@@ -8,16 +8,14 @@ from blinker import signal
 # SITE SETTINGS
 # =============================================================================
 PUBLISH = os.environ.get("PUBLISH") == "true" or "publishconf.py" in sys.argv
-SITEURL = (
-    "https://yuceltoluyag.github.io" if PUBLISH else "http://localhost:8080"
-)
+SITEURL = "https://yuceltoluyag.github.io" if PUBLISH else "http://localhost:8080"
 SITEURL_MAIN = SITEURL
 CANONICAL_URL = "https://yuceltoluyag.github.io"
 AUTHOR = "yuceltoluyag"
 SITENAME = "Ortaya Karışık"
 SITETAGLINE = ">| Linux gamer, Python lover, and technology enthusiast |<"
 KEYWORDS = "linux, python, web geliştirme, programlama, açık kaynak, teknoloji, yazılım geliştirme, django, flask, pelican, git, github, terminal komutları, sistem yönetimi, web tasarım, backend development"
-DESCRIPTION = "Yücel Toluyag'ın kişisel blogu. Linux, Python, web geliştirme, programlama, açık kaynak ve teknoloji konularında rehberler, ipuçları ve güncel bilgiler bulabilirsiniz."
+DESCRIPTION = "Yücel Toluyağ'ın kişisel blogu. Linux, Python, web geliştirme, programlama, açık kaynak ve teknoloji konularında rehberler, ipuçları ve güncel bilgiler bulabilirsiniz."
 DEFAULT_DATE_FORMAT = "%d %B %Y"
 COPYRIGHT_YEAR = 1989
 
@@ -71,8 +69,16 @@ EXTRA_PATH_METADATA = {
 DEFAULT_LANG = "tr"
 TIMEZONE = "Europe/Istanbul"
 LOCALE = [
-    "tr_TR.UTF-8", "tr_TR.utf8", "tr_TR", "tr-TR", "Turkish_Turkey.1254",
-    "en_US.UTF-8", "en_US.utf8", "en_US", "en-US", "English_United States.1252",
+    "tr_TR.UTF-8",
+    "tr_TR.utf8",
+    "tr_TR",
+    "tr-TR",
+    "Turkish_Turkey.1254",
+    "en_US.UTF-8",
+    "en_US.utf8",
+    "en_US",
+    "en-US",
+    "English_United States.1252",
 ]
 DATE_FORMATS = {
     "tr": ("tr_TR.UTF-8", "%d %B %Y"),
@@ -86,7 +92,10 @@ I18N_SUBSITES = {
         "SITEURL": f"{SITEURL}/en",
         "SITEURL_MAIN": SITEURL,
         "LOCALE": [
-            "en_US.UTF-8", "en_US.utf8", "en_US", "en-US",
+            "en_US.UTF-8",
+            "en_US.utf8",
+            "en_US",
+            "en-US",
             "English_United States.1252",
         ],
         "STATIC_PATHS": ["images", "extra", "files"],
@@ -318,8 +327,8 @@ SEO_ENHANCER_OPEN_GRAPH = False
 SEO_ENHANCER_TWITTER_CARDS = False
 SEO_ARTICLES_LIMIT = 10
 SEO_PAGES_LIMIT = 10
-GOOGLE_ANALYTICS = "G-JLZ9JH5GKD"
-GTM_ID = "GTM-KPLBQPPJ"
+# GOOGLE_ANALYTICS = "G-JLZ9JH5GKD"
+# GTM_ID = "GTM-KPLBQPPJ"
 GOOGLE_ADSENSE = "ca-pub-6089943780218266"
 SITEMAP = {
     "format": "xml",
@@ -405,7 +414,7 @@ USE_LESS = True
 JINJA_GLOBALS = {
     "AUTHORS_INFO": AUTHORS_INFO,
     "current_year": date.today().year,
-    "current_date": date.today()
+    "current_date": date.today(),
 }
 IGNORE_FILES = ["404.html", ".#&", "flycheck_*", "flymake_*"]
 DEFAULT_PAGESCHEMA = "article"

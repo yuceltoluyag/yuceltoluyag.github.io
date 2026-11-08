@@ -9,6 +9,8 @@ Summary: Redmi Note 12 Pro 5G (ruby/rubyx) cihazınıza OrangeFox Recovery kulla
 Template: article
 Lang: tr
 Translation: false
+Series: 12 Pro 5G
+Series_index: 1
 
 Daha önce kendim için [Redmi Note 8 Pro Custom ROM Kurulumu](/redmi-note-8-pro-custom-rom-kurulumu/)[^4] rehberi hazırlamıştım. Yılların emektarı Redmi Note 8'imde severek kullandığım crDroid dünyasına öyle alışmıştım ki, sıradaki maceranın bu kadar "ıslak" olacağını tahmin etmezdim. 
 
@@ -235,5 +237,5 @@ Gözün aydın dostum, artık Redmi Note 12 Pro 5G cihazında en güncel ve hafi
 [^1]: Ruby, Redmi Note 12 Pro 5G modelinin kod adıdır; rubyx ise custom ROM dünyasında Note 12 Pro 5G, Pro+ 5G ve Discovery modellerini birleştiren ortak ağaç adıdır.
 [^2]: GApps (Google Apps), Google Play Store ve ilişkili servisleri barındıran paketlerdir.
 [^3]: Magisk, sistem dosyalarını kalıcı olarak bozmadan cihazı rootlamaya yarayan açık kaynaklı bir araçtır.
-[^4]: Yücel Toluyag'ın daha önce kaleme aldığı [Redmi Note 8 Pro Custom ROM Kurulumu](/redmi-note-8-pro-custom-rom-kurulumu/) rehberi.
+[^4]: Yücel Toluyağ'ın daha önce kaleme aldığı [Redmi Note 8 Pro Custom ROM Kurulumu](/redmi-note-8-pro-custom-rom-kurulumu/) rehberi.
 [^5]: Bootloader durumunu kilitli göstererek modem/baseband kilidini aşmayı sağlayan Roger Ortiz imzalı özel yama dosyalarıdır.

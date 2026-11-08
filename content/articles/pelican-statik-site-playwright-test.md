@@ -41,6 +41,7 @@ yuceltoluyag@archlinux:~$ uv run playwright install webkit
 import pytest
 from playwright.sync_api import sync_playwright
 
+
 @pytest.fixture(scope="session")
 def browser():
     with sync_playwright() as p:
@@ -48,18 +49,21 @@ def browser():
         yield browser
         browser.close()
 
+
 @pytest.fixture
 def page(browser):
     context = browser.new_context()
     page = context.new_page()
-    
+
     # Konsol hatalarını biriktirelim
     errors = []
     page.on("pageerror", lambda exc: errors.append(exc))
-    page.on("console", lambda msg: errors.append(msg.text) if msg.type == "error" else None)
-    
+    page.on(
+        "console", lambda msg: errors.append(msg.text) if msg.type == "error" else None
+    )
+
     yield page
-    
+
     # Test bittiğinde hata varsa patlat!
     assert not errors, f"Sayfada JavaScript hataları bulundu: {errors}"
     context.close()
@@ -75,10 +79,11 @@ from pathlib import Path
 from urllib.request import pathname2url
 from playwright.sync_api import expect
 
+
 def test_home_page_loads(page):
     index_path = Path("output/index.html").absolute()
     page.goto(f"file://{pathname2url(str(index_path))}")
-    expect(page).to_have_title("Yücel Toluyag")
+    expect(page).to_have_title("Yücel Toluyağ")
 ```
 
 ### 2. JavaScript Devre Dışıyken Test Etme (Expert Tip)
@@ -93,7 +98,7 @@ def test_no_js_fallback(browser):
     
     # Eğer <noscript> içinde bir hata mesajı gösteriyorsanız onu kontrol edin
     # Veya kritik içeriğin hala orada olduğunu doğrulayın
-    expect(page.get_by_text("Yücel Toluyag")).to_be_visible()
+    expect(page.get_by_text("Yücel Toluyağ")).to_be_visible()
     context.close()
 ```
 
@@ -111,7 +116,9 @@ Bazen CSS selector'ları yetmez. Örneğin, belirli bir başlığın hemen yanı
 ```python
 def test_article_sibling_button(page):
     # 'Makaleler' başlığının hemen ardından gelen 'Devamını oku' butonunu bul
-    button = page.locator("xpath=//h2[contains(text(), 'Makaleler')]/following-sibling::a[1]")
+    button = page.locator(
+        "xpath=//h2[contains(text(), 'Makaleler')]/following-sibling::a[1]"
+    )
     expect(button).to_have_attribute("href", "/makaleler/")
 ```
 

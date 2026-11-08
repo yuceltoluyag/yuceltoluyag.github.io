@@ -223,5 +223,5 @@ Good news, my friend! You are now ready to experience the latest and lightweight
 [^1]: Ruby is the code-name for the Redmi Note 12 Pro 5G model; rubyx is the common tree name in the custom ROM world that merges the Note 12 Pro 5G, Pro+ 5G, and Discovery models.
 [^2]: GApps (Google Apps) are packages containing the Google Play Store and associated services.
 [^3]: Magisk is an open-source tool used to root devices without permanently altering system files.
-[^4]: The [Redmi Note 8 Pro Custom ROM Installation](/en/redmi-note-8-pro-custom-rom-kurulumu/) guide previously written by Yücel Toluyag.
+[^4]: The [Redmi Note 8 Pro Custom ROM Installation](/en/redmi-note-8-pro-custom-rom-kurulumu/) guide previously written by Yücel Toluyağ.
 [^5]: Special patch files signed by Roger Ortiz that spoof the bootloader status as locked to bypass the modem/baseband lock.

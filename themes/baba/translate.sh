@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function extract_pot() {
-    pybabel extract -s --no-wrap --project="Baba" --copyright-holder="Yücel Toluyag" --version="2.1.0" --mapping themes/baba/babel.cfg --output themes/baba/messages.pot ./
+    pybabel extract -s --no-wrap --project="Baba" --copyright-holder="Yücel Toluyağ" --version="2.1.0" --mapping themes/baba/babel.cfg --output themes/baba/messages.pot ./
 }
 
 function new_translation() {
