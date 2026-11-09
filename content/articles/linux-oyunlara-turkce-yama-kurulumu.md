@@ -87,7 +87,7 @@ Linux'ta bu işlemi manuel olarak yapmanız mümkündür:
 
 Yamayı Wine ya da bir dosya yöneticisiyle açarak içerikleri geçici bir klasöre çıkarın.
 
-![Linux'ta Türkçe yama kurulumu](/images/linux-oyunlara-turkce-yama-kurulumu-xl.webp)
+
 
 ### 🔧 Kurulum Adımları:
 

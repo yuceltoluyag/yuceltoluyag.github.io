@@ -52,8 +52,8 @@ Don't let changing the kernel on Arch Linux intimidate you; it's actually no dif
 !!! tip "Don't Forget the Headers Package ⚡ If you're using Nvidia or have other modules compiled with dkms (VirtualBox, etc.), your graphics card might not work when the system boots if you don't install the `linux-zen-headers` package. Be careful."
 
 - [Arch Linux NVIDIA Graphics Card Installation](/en/arch-linux-nvidia-ekran-karti-kurulumu/)
-- [Arch Linux Linux Firmware NVIDIA Error Solution](/en/arch-linux-linux-firmware-nvidia-hatasi-cozumu/)
-- [Linux and SteamOS Graphics Driver Installation and Update Guide](/en/linux-gpu-driver-rehberi/)
+
+
 
 ## Step 2: Bootloader Configuration (Systemd-boot)
 

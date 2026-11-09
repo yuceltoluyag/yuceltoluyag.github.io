@@ -31,7 +31,7 @@ In most practical tasks, the gap between cloud services and local models has alm
 
 ### DeepSeek R1 — The Pinnacle of Reasoning
 
-DeepSeek R1 caused an earthquake in the AI world in early 2025. It offered GPT-o1 level reasoning skills at a much lower training cost. Its biggest plus: when you ask the model a question, you can see how it thinks behind the scenes (chain-of-thought) step-by-step. To learn how to run this model on your local system in the most efficient way, you can follow my [Self-Hosted AI (2026)](/en/yerel-llm-kurulum-rehberi-2026/) setup guide.
+DeepSeek R1 caused an earthquake in the AI world in early 2025. It offered GPT-o1 level reasoning skills at a much lower training cost. Its biggest plus: when you ask the model a question, you can see how it thinks behind the scenes (chain-of-thought) step-by-step. To learn how to run this model on your local system in the most efficient way, you can follow my  setup guide.
 
 Thanks to distilled versions, we can also run this power on our home computers:
 

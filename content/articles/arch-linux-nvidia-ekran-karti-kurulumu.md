@@ -174,10 +174,9 @@ Daha sonra **NVIDIA Settings** uygulamasını açıp:
 
 ## 🔗 İlgili Yazılar
 
-- [Waydroid Kurulumu ve Android Uygulamaları](/arch-linux-waydroid-kurulumu)
 - [Oh My ZSH Kurulumu (Tema ve Eklentiler Dahil)](/oh-my-zsh-kurulumu-temel-ayarlar/)
 - [Arch Linux’ta NTFS Disk Yapılandırması](/arch-linux-ntfs-yapilandirma)
-- [Arch Linux'ta linux-firmware Güncellemesinde NVIDIA Hatası ve Çözümü)](/arch-linux-linux-firmware-nvidia-hatasi-cozumu/)
+
 
 ---
 

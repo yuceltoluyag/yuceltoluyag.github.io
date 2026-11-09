@@ -53,8 +53,8 @@ Arch Linux'ta kernel değiştirmek gözünüzü korkutmasın, aslında bir paket
 !!! tip "Headers Paketini Unutma ⚡ Eğer Nvidia kullanıyorsan veya dkms ile derlenen başka modüllerin varsa (VirtualBox vs.), `linux-zen-headers` paketini kurmazsan sistem açıldığında ekran kartın çalışmayabilir. Aman dikkat."
 
 - [Arch Linux NVIDIA Ekran Kartı Kurulumu](/arch-linux-nvidia-ekran-karti-kurulumu/)
-- [Arch Linux Linux Firmware NVIDIA Hatası Çözümü](/arch-linux-linux-firmware-nvidia-hatasi-cozumu/)
-- [Linux ve Steamos Grafik Surucusu Yüklemesi ve Güncelleme Rehberi](/linux-gpu-driver-rehberi/)
+
+
 
 ## Adım 2: Bootloader Ayarı (Systemd-boot)
 

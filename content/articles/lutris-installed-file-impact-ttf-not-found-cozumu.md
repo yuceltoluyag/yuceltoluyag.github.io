@@ -123,6 +123,5 @@ Hadi kalın sağlıcakla, ben artık hak edilmiş bir uykunun kollarına kendimi
 - [Linux Oyunlara Türkçe Yama Kurulumu](/linux-oyunlara-turkce-yama-kurulumu/)
 - [Wineprefix Nedir ve Nasıl Kullanılır?](/wineprefix-nedir-nasil-kullanilir/)
 - [Arch Linux Steam Ses Hatası Çözümü](/arch-linux-steam-ses-hatasi-cozumu/)
-- [Davinci Resolve 20.1 Linux Hatası Çözümü](/davinci-resolve-20-1-linux-hatasi-cozumu/)
 
 [^1]: Lutris, runner yapılandırması sırasında kurulu paketlerin üzerine yazılmasını engelleyen katı güvenlik kurallarına sahiptir. Bu durum bir font eksikliğinde dahi tüm kurulumu kilitleyebilir.

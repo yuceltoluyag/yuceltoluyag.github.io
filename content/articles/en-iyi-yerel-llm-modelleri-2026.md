@@ -32,7 +32,7 @@ Pratik işlerin çoğunda bulut servisleri ile yerel modeller arasındaki uçuru
 
 ### DeepSeek R1 — Akıl Yürütme (Reasoning) Zirvesi
 
-DeepSeek R1, 2025'in başlarında yapay zeka dünyasında deprem etkisi yarattı. GPT-o1 seviyesindeki akıl yürütme becerisini çok daha düşük eğitim maliyetiyle sundu. En büyük artısı: Modele bir soru sorduğunuzda arkada nasıl düşündüğünü (chain-of-thought) adım adım görebiliyorsunuz. Bu modeli yerel sisteminizde en verimli şekilde nasıl çalıştıracağınızı öğrenmek için [Kendi Sunucunda Yapay Zeka (2026)](/yerel-llm-kurulum-rehberi-2026/) kurulum rehberimi takip edebilirsiniz.
+DeepSeek R1, 2025'in başlarında yapay zeka dünyasında deprem etkisi yarattı. GPT-o1 seviyesindeki akıl yürütme becerisini çok daha düşük eğitim maliyetiyle sundu. En büyük artısı: Modele bir soru sorduğunuzda arkada nasıl düşündüğünü (chain-of-thought) adım adım görebiliyorsunuz. 
 
 Damıtılmış (distilled) sürümleri sayesinde bu gücü evimizdeki bilgisayarlarda da çalıştırabiliyoruz:
 

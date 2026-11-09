@@ -67,7 +67,6 @@ WoeUSB'yi açın ve şu adımları takip edin:
 Gördüğünüz gibi, Linux üzerinden UEFI destekli Windows 10 format USB'si oluşturduk. Eğer Linux'a yeni başladıysanız, aniden tam geçiş yapmak yerine çift işletim sistemi kullanarak aşamalı bir geçiş yapmanız daha iyi olabilir. **Daha fazla bilgi için şu makaleyi okuyabilirsiniz:** 
 
 - [Yeni Başlayanlar İçin Linux](/yeni-baslayanlar-linux-surumu/)
-- [USB Bellekten ISO Önyükleme Rehberi](/usb-bellekten-iso-onyukleme-rehberi)
 
 Eğer sorularınız veya kurulum sırasında aldığınız hatalar varsa yorum bırakabilirsiniz. İyi çalışmalar!
 

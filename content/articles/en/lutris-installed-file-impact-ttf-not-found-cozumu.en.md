@@ -122,6 +122,6 @@ Stay safe, and I am finally off to leave myself in the arms of a well-deserved s
 - [How to Install Turkish Patches for Linux Games](/en/linux-oyunlara-turkce-yama-kurulumu/)
 - [What is Wineprefix and How to Use It?](/en/wineprefix-nedir-nasil-kullanilir/)
 - [Arch Linux Steam Audio Error Fix](/en/arch-linux-steam-ses-hatasi-cozumu/)
-- [Davinci Resolve 20.1 Linux Error Fix](/en/davinci-resolve-20-1-linux-hatasi-cozumu/)
+
 
 [^1]: Lutris has strict security rules that prevent overwriting already installed packages during runner configuration. This situation can lock up the entire installation even for a single missing font.
