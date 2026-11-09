@@ -36,7 +36,7 @@ Kendi adıma iş hayatında da biçimden ziyade işleve önem veririm. Eğer yar
 
 ## 💻 Kod Yazmak ve Yazı Yazmak Neden Farklı?
 
-Yazı yazarken yapay zekaya sınır çiziyorum ama kod yazarken işler değişiyor. Tabii ki projelerimdeki veya bu blogdaki kodları körü körüne yapay zekaya teslim edip, ne olduğunu anlamadığım deneme-yanılma (vibe-coding) yöntemiyle yazılmış geçici yamalarla doldurmuyorum. Kodun mimarisini, mantığını ve her satırını kendim tasarlıyorum. Yapay zeka burada benim için sadece işleri hızlandıran akıllı bir asistan. (Eğer kendi kod asistanınızı kurup yerel modellerle çalışmak isterseniz, [Yerel AI Kurulum Rehberi (LM Studio & VS Code)](/yerel-ai-kurulum-rehberi-lm-studio-vs-code/) rehberime göz atabilirsiniz.)
+Yazı yazarken yapay zekaya sınır çiziyorum ama kod yazarken işler değişiyor. Tabii ki projelerimdeki veya bu blogdaki kodları körü körüne yapay zekaya teslim edip, ne olduğunu anlamadığım deneme-yanılma (vibe-coding) yöntemiyle yazılmış geçici yamalarla doldurmuyorum. Kodun mimarisini, mantığını ve her satırını kendim tasarlıyorum. Yapay zeka burada benim için sadece işleri hızlandıran akıllı bir asistan.
 
 Peki kod yazmakla yazı yazmak neden farklı? Kodun asıl amacı bilgisayara komut vermektir; mantık doğru kurulup çalıştıktan sonra arka plandaki süreç işler. Ancak yazının amacı doğrudan insana dokunmak, onunla fikir paylaşmaktır. Yazıda yapay zekaya ham metinler yazdırmak aramızdaki samimiyeti zedelerken, kod yazarken asistan kullanmak sadece işimizi kolaylaştıran teknik bir destektir.
 

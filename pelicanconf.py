@@ -333,14 +333,14 @@ GOOGLE_ADSENSE = "ca-pub-6089943780218266"
 SITEMAP = {
     "format": "xml",
     "priorities": {
-        "articles": 0.7,
-        "indexes": 0.5,
+        "articles": 0.8,
+        "indexes": 0.3,
         "pages": 0.5,
     },
     "changefreqs": {
         "articles": "monthly",
-        "indexes": "daily",
-        "pages": "monthly",
+        "indexes": "monthly",
+        "pages": "yearly",
     },
     "exclude": [
         r"page/",
@@ -350,6 +350,12 @@ SITEMAP = {
         r"\.txt$",
         r"_redirects",
         r"404\.html",
+        r"(^|/)kategoriler/",
+        r"(^|/)etiketler/",
+        r"(^|/)kategori/",
+        r"(^|/)etiket/",
+        r"(^|/)categories/",
+        r"(^|/)tags/",
     ],
 }
 ROBOTS = "index, follow"

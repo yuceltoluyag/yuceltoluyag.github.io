@@ -1,177 +1,385 @@
-Title: Guide to Automatic Video Cutting with Autocut
+Title: A Guide to Automatically Cutting Videos with AutoCut
 Date: 2025-09-08 14:00
+Modified: 2026-11-09 21:42
 Category: Medya
-Tags: Autocut, MoviePy, Python video kesme, SRT, Markdown video edit, otomatik video düzenleme
+Tags: Autocut, Whisper, MoviePy, Python video kesme, FFmpeg, SRT, Markdown, otomatik video düzenleme
 Slug: autocut-otomatik-video-kesme-markdown-rehberi
 Authors: yuceltoluyag
 Status: published
-Summary: Step-by-step guide to automatically cut your videos using Python-based Autocut with SRT and Markdown markings.
+Summary: Transcribe your videos with Whisper, select the sentences you want to keep using SRT and Markdown files, and cut your video automatically. I explain how to install the open-source AutoCut project and share my experience using it.
 Template: article
 Image: images/autocut-otomatik-video-kesme-markdown-rehberi-xl.webp
 Lang: en
 toot: https://mastodon.social/@yuceltoluyag/115175811703255586
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3m6nxfmq3fk2x
 
+When creating videos for YouTube, recording is only part of the job. Especially with tutorials and long-form videos, editing after recording is one of the most time-consuming tasks.
 
+Repeating a sentence several times, constantly saying "um" while speaking, pausing unnecessarily, or removing long silences... Doing all of this by hand is exhausting. Audio editing adds another layer of work, too. When you are dealing with normalization, a limiter, volume levels, and other settings, you can sometimes spend more time editing than you spent making the video.
 
-## Automatic Video Cutting with Autocut 🎬
+I ran into these problems myself, so I started looking into different automatic video editing tools. I even demonstrated the process live on YouTube.
 
-## Introduction 📝
+One of the solutions I found was the open-source [AutoCut project](https://github.com/mli/autocut){: target="_blank" rel="noopener noreferrer"}, which uses OpenAI Whisper.
 
-Video content creation becomes more intense and competitive day by day. Especially on YouTube and social media platforms, removing unnecessary parts from long recordings is critical to improve content quality and viewer experience. However, manual video editing is a time-consuming process with a high risk of errors.
+This tool takes a different approach: first, it transcribes the speech in your video, then lets you choose which sentences to keep in a Markdown file. In the final step, it combines the selected sections to create a new video.
 
-In this guide, you'll learn step-by-step how to automatically cut your videos with the **Python-based Autocut tool**, and how to manage them with SRT subtitles and Markdown-based markings. We'll also explain the video and audio merging process with **MoviePy** in detail. Throughout the guide, you'll be able to easily follow the process with example commands, tips, and information boxes.
+In other words, instead of constantly making cuts on a video editor's timeline, you can edit a text file to cut your video.
 
----
+## 1. Which AutoCut project are we talking about?
 
-## 1️⃣ What is Autocut? 🛠️
+There is a small but important naming confusion here. You may come across several different tools called AutoCut. The tools I mentioned during my livestream are not the same as the software we'll install in this guide.
 
-Autocut is a video editing tool written in Python and offers the following features:
+Here are the tools I compared during my research:
 
-- **Automatic video cutting** and removing unnecessary scenes
-- SRT subtitles for **transcription** and editing
-- **Markup system** based on Markdown to determine which sentences to keep
-- **Automatic video and audio merging** with MoviePy
-- Fast processing with GPU (CUDA) support
+| Tool | How it works | Main approach |
+|---|---|---|
+| [FireCut](https://firecut.ai/){: target="_blank" rel="noopener noreferrer"} | Plugin for Premiere Pro and DaVinci Resolve | Editing tasks such as removing silences, filler words, and repetitions |
+| [AutoCut](https://www.autocut.com/){: target="_blank" rel="noopener noreferrer"} | Plugin for Premiere Pro and DaVinci Resolve | Automatic video editing and editing features |
+| [Auto-Editor](https://github.com/WyattBlue/auto-editor){: target="_blank" rel="noopener noreferrer"} | Open-source command-line tool | Automatic cuts based on factors such as audio levels and visual motion |
+| [AutoCut (mli/autocut)](https://github.com/mli/autocut){: target="_blank" rel="noopener noreferrer"} | Open-source Python application | Whisper transcription and manual selection through Markdown |
 
-!!! tip "Autocut is especially ideal for saving time and improving content quality in long videos."
+FireCut and autocut.com are commercial alternatives that I looked at as paid solutions. Auto-Editor is another open-source tool you can consider.
 
-[responsive_img src="/images/autocut-otomatik-video-kesme-markdown-rehberi-xl.webp" alt="Automatic noise cancellation with AutoCut "/]
+The project we'll use in this article is the last one in the table: the [mli/autocut](https://github.com/mli/autocut){: target="_blank" rel="noopener noreferrer"} repository.
 
----
+What sets it apart from the other tools is that the program does not decide entirely on its own which sections to cut. It transcribes the speech first, then puts you in control.
 
-## 2️⃣ Installation and Preparation ⚙️
+That was exactly what I was looking for. Automatic cutting is useful, but sometimes it can mistake a word you actually said for silence or an unintelligible section. Being able to make the final decision is important for this reason.
 
-First, create a **Python virtual environment** and install the necessary packages:
+## 2. How does AutoCut work?
+
+We can think of AutoCut's workflow in three steps:
+
+1. Whisper transcribes the video.
+2. You choose which sentences to keep using the generated SRT and Markdown files.
+3. The selected sections are combined to create a new video.
+
+The two files have different purposes:
+
+- **SRT:** Stores the timestamps and subtitle text for the speech.
+- **Markdown:** Lets you mark which speech segments should be kept.
+
+Before transcription, the project also performs voice activity detection (VAD) using Silero VAD. This identifies sections without speech and makes the transcription process more efficient.
+
+Long pauses in subtitles generated by Whisper may also appear as `< No Speech >`.
+
+This lets you work with text instead of making individual cuts on a video editor's timeline.
+
+## 3. Installation and preparation
+
+Since AutoCut is written in Python, we first need to prepare a Python environment.
+
+One thing I pay particular attention to is not installing Python packages system-wide. Different projects may need different library versions. Using a virtual environment is much more sensible so that one project's dependencies do not break another.
+
+### Required dependency: FFmpeg
+
+First, FFmpeg needs to be installed on your system.
+
+If you are using Arch Linux:
 
 ```bash
-python -m venv venv
-source venv/bin/activate
-pip install moviepy autocut
+sudo pacman -S ffmpeg
 ```
 
-To check:
-
-```bash
-which python
-which pip
-which autocut
-```
-
-Your system should have **FFmpeg** installed:
+To check the installation:
 
 ```bash
 which ffmpeg
+ffmpeg -version
 ```
 
----
+FFmpeg is used to read and export audio and video files.
 
-## 3️⃣ Video Transcription and Markdown Creation ✍️
+### Create a Python virtual environment
 
-With Autocut, you can first transcribe your video and generate a Markdown output:
+Let's assume your video files are in your working directory:
 
 ```bash
-autocut -t -c -m --lang Turkish --device cuda /home/friday13/Videos/editle.mp4
+mkdir autocut-work
+cd autocut-work
 ```
 
-- `-t` → Transcription
-- `-c` → Cutting
-- `-m` → Create Markdown
-- `--lang Turkish` → Language selection
-- `--device cuda` → Process with GPU
+Let's create a virtual environment:
 
-!!! note "The Markdown output allows you to mark which sentences to keep. This way, unnecessary parts are skipped during cutting."
-
----
-
-## 4️⃣ Markdown Editing
-
-Each line in the Markdown file should be in the following format:
-
-```
-- [x] [index,time] sentence
-- [ ] [index,time] <No Speech>
+```bash
+python -m venv .venv
 ```
 
-- `[x]` → Sentence to remain in video
-- `[ ]` → Section to be deleted
+To activate it on Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+You should be able to see that the virtual environment is active in your terminal. Python packages you install from now on will be installed in this environment.
+
+### Prepare PyTorch and GPU support
+
+AutoCut uses PyTorch for local Whisper processing. If you have an NVIDIA graphics card, you need a suitable CUDA-enabled version of PyTorch.
+
+Since PyTorch installation commands vary depending on the operating system and CUDA compatibility, choose the option for your system from the [official PyTorch installation page](https://pytorch.org/get-started/locally/){: target="_blank" rel="noopener noreferrer"}.
+
+If you plan to use a GPU, install the appropriate PyTorch package into the virtual environment you created before installing AutoCut.
+
+If you want to use the CPU, you do not need to prepare CUDA separately.
+
+### Install AutoCut
+
+The installation method provided in the project's GitHub repository is:
+
+```bash
+python -m pip install git+https://github.com/mli/autocut.git
+```
+
+There is an important MoviePy compatibility issue to be aware of.
+
+The cutting code in the project's current main branch uses the older MoviePy API. Some import and method names changed in MoviePy 2.x. As a result, you may run into compatibility errors if you try to run it directly with the latest MoviePy version.
+
+To install a dependency compatible with the older API in the project's current main branch, pin the MoviePy version after installing AutoCut:
+
+```bash
+python -m pip install "moviepy<2"
+```
+
+After installation, check the dependencies:
+
+```bash
+python -m pip check
+```
+
+Then verify that the command-line tool is available:
+
+```bash
+autocut --help
+```
+
+!!! warning "Pay attention to the MoviePy version!"
+    The `setup.py` file in AutoCut's main branch does not specify an upper version limit for MoviePy. As a result, dependency installation may bring in the latest MoviePy version. This is why the second command above is particularly important. This version pin is a compatibility measure for the older API used in the current main branch; it is not a guarantee of an installation tested with every Python version.
+
+The project's [PR #139](https://github.com/mli/autocut/pull/139){: target="_blank" rel="noopener noreferrer"} for MoviePy 2 compatibility has not yet been merged into the main branch. Keep this in mind with current installations.
+
+## 4. Check the GPU and choose a Whisper model
+
+AutoCut uses OpenAI Whisper for transcription.
+
+There are several model options:
+
+- `tiny`
+- `base`
+- `small`
+- `medium`
+- `large`
+- `large-v2`
+- `large-v3`
+- `large-v3-turbo`
+
+The default model is `small`. Larger models may improve transcription quality, but depending on your hardware they may require more memory and processing power.
+
+If you have an NVIDIA graphics card, you can check PyTorch's CUDA support:
+
+```bash
+python -c "import torch; print(torch.cuda.is_available())"
+```
+
+If the result is `True`, PyTorch can see the CUDA device.
+
+To use a GPU, you need to have a suitable version of PyTorch installed. If your graphics card is not supported or you have CUDA issues, you can also run the process on the CPU.
+
+AutoCut's command line accepts `cuda` and `cpu` as values for the `--device` option. The current CLI version of the project does not have a separately defined device option for AMD.
+
+!!! tip "Choosing a model"
+    Smaller models use fewer resources, while larger models may need more processing power and memory. Choose based on your hardware. For longer videos in particular, consider how your model choice affects processing time.
+
+## 5. Transcribe the video and create a Markdown file
+
+Now we can get to the main process.
+
+Let's say our example video is named `video.mp4`.
+
+To start transcription:
+
+```bash
+autocut -t video.mp4 --lang Turkish --device cuda
+```
+
+Here:
+
+- `-t`: Transcribes a video or audio file.
+- `--lang Turkish`: Sets Turkish as the spoken language.
+- `--device cuda`: Forces CUDA to be used for transcription.
+
+If you do not want to use CUDA, you can select `--device cpu`. If you omit the `--device` parameter entirely, the program will try to select a suitable device automatically.
+
+This process creates two files:
+
+```text
+video.srt
+video.md
+```
+
+The SRT file contains timestamps for the speech, while the Markdown file is prepared so you can edit that speech.
+
+There is an important detail here: the `-t` option already creates the SRT and Markdown files. Therefore, you do not need to add `-c` and `-m` to the transcription command.
+
+If you later want to create a Markdown file using only an SRT file you already have, you can use the `-m` option:
+
+```bash
+autocut -m video.srt video.mp4
+```
+
+This option does not cut the video; it converts the SRT file into an editable Markdown format.
+
+## 6. Edit the Markdown file
+
+I think this is where AutoCut gets really useful.
+
+You can open the generated `video.md` file with any Markdown editor. VS Code, Typora, or another text editor will do.
+
+The lines in the file are formatted as checkboxes.
 
 Example:
 
 ```markdown
-- [x] [1,00:00] Yes, dear friends...
-- [ ] [6,00:23] <No Speech>
+- [ ] <-- Mark if you are done editing.
+
+- [ ] [1,00:00] Today, I'm going to tell you about a new piece of software.
+- [ ] [2,00:08] First, let's see how the program works.
+- [ ] [3,00:15] There is an unnecessarily long pause.
+- [ ] [4,00:24] Now let's move on to the installation.
 ```
 
----
+There are two different markers:
 
-## 5️⃣ Cutting Video and Getting Output 🎬
+- `[x]`: The relevant sentence or section will remain in the video.
+- `[ ]`: The relevant section will be cut.
 
-Once Markdown and SRT are ready, you can cut your video:
+For example, if you want to keep the first, second, and last sentences and remove the third:
+
+```markdown
+- [ ] <-- Mark if you are done editing.
+
+- [x] [1,00:00] Today, I'm going to tell you about a new piece of software.
+- [x] [2,00:08] First, let's see how the program works.
+- [ ] [3,00:15] There is an unnecessarily long pause.
+- [x] [4,00:24] Now let's move on to the installation.
+```
+
+### Don't forget to mark the editing as complete
+
+The following line at the top of the file is especially important:
+
+```markdown
+- [ ] <-- Mark if you are done editing.
+```
+
+When you finish editing, you must check this box, too:
+
+```markdown
+- [x] <-- Mark if you are done editing.
+```
+
+This marker tells AutoCut that you have finished editing the Markdown file. The cutting process will not start if it is not checked.
+
+Another important point is the numbers at the beginning of the lines. These correspond to subtitle indices in the SRT file. Do not reorder or change these numbers yourself. Only edit the checkboxes.
+
+!!! tip "A method to make editing easier"
+    First, scan through the entire file quickly. Mark the sentences you definitely want to keep. Then check the sections where the audio was misrecognized, speech was cut off, or unnecessary content appears. This helps you work faster without having to listen to every line one by one.
+
+## 7. Cut the video and get the output
+
+Once you have finished editing the Markdown file, we can create the video.
+
+In our example, we have three files:
+
+```text
+video.mp4
+video.srt
+video.md
+```
+
+The cutting command:
 
 ```bash
-autocut -c /home/friday13/Videos/editle.mp4 /home/friday13/Videos/editle.srt /home/friday13/Videos/editle.md
+autocut -c video.mp4 video.srt video.md
 ```
 
-- MoviePy combines video and audio into a new file.
-- Example output: `/home/friday13/Videos/editle_cut.mp4`
-- Original duration: 317.8 sec → Cut duration: 181 sec
+Here:
 
-!!! note "The cut video contains only the marked sentences. Unnecessary spaces and 'No Speech' parts are removed."
+- `-c`: Cuts the video based on the subtitle and Markdown markers.
+- `video.mp4`: The original video file.
+- `video.srt`: Contains the timestamps for the speech.
+- `video.md`: Specifies which sections to keep.
 
----
+When the process is complete, a new video file is created:
 
-## 6️⃣ Autocut Workflow Diagram
-
-<ul class="steps">
-  <li class="step step-info">Start: Original video</li>
-  <li class="step step-info">Transcription and cutting command with Autocut</li>
-  <li class="step step-info">Create Markdown and SRT</li>
-  <li class="step step-info">Mark "to keep" sentences on Markdown</li>
-  <li class="step step-info">Cut with Autocut</li>
-  <li class="step step-info">Combine video and audio with MoviePy</li>
-  <li class="step step-info">Result: editle_cut.mp4</li>
-</ul>
-
----
-
-## 7️⃣ Markdown Example
-
-## Autocut Video Cutting Flow
-
-## 1️⃣ Original Video
-
-- Video file:
-
-`/home/friday13/Videos/editle.mp4`
-
-## 2️⃣ Transcription and Cutting Process
-
-```bash
-autocut -t -c -m --lang Turkish --device cuda /home/friday13/Videos/editle.mp4
+```text
+video_cut.mp4
 ```
 
-## 3️⃣ Cutting via Markdown and SRT
+Your original video is not modified. The cut video is saved as a separate file.
 
-```bash
-autocut -c /home/friday13/Videos/editle.mp4 /home/friday13/Videos/editle.srt /home/friday13/Videos/editle.md
-```
+The project uses MoviePy to combine the selected sections and creates the video output using FFmpeg. Audio normalization is also applied during output.
 
-## 4️⃣ Result
+## 8. My real-world test: a five-minute video became three minutes
 
-- Video duration 317.8 sec → 181 sec
-- Cut video: `/home/friday13/Videos/editle_cut.mp4`
+One of the example videos I showed during my livestream was about five minutes long.
 
----
+It contained repetitions, pauses, filler words, and unnecessary gaps in speech. Instead of cleaning them up manually, I used the SRT and Markdown files generated by AutoCut.
 
-## 8️⃣ Conclusion and Summary ✅
+The results of my test:
 
-Autocut is a powerful tool that **saves time and accelerates workflow** for video creators. Thanks to its Markdown-based marking system, you can easily manage which parts should remain. With MoviePy integration, the cut video and audio are seamlessly merged.
+| Operation | Duration |
+|---|---:|
+| Original video | 317.8 seconds |
+| Cut video | 181 seconds |
+| Time saved | 136.8 seconds |
 
-🎯 **Download and try this tool:** Test your own videos right away and automatically clean up unnecessary parts!
+**A video that was about 43% shorter.**
 
-You can download from this link https://github.com/mli/autocut
+Of course, there is an important detail: not every cut the program makes is correct.
+
+For example, in some sections where the microphone level was low or there were other sounds in the background, it marked parts where I was actually speaking as sections that should be cut.
+
+For this reason, I recommend checking the generated video one last time. Especially when preparing a tutorial, losing a word or part of a sentence can disrupt the flow of the explanation.
+
+## 9. What AutoCut does not do
+
+We should avoid setting the wrong expectations here.
+
+AutoCut is not audio restoration or noise cancellation software. It is not designed to remove background noise from your microphone, repair clipped audio, apply EQ, or perform comprehensive limiter processing.
+
+The project's cutting code includes audio normalization. However, this is not the same as noise reduction or professional audio processing.
+
+The tool's main strength is transcribing speech and letting you select unwanted sections to remove from the video.
+
+So do not expect it to make a poor microphone recording perfect on its own. It is still important to get the recording quality right from the start as much as possible.
+
+## 10. Conclusion: can it be an alternative to paid plugins?
+
+AutoCut is an interesting alternative for anyone who only wants to remove silences, unnecessary speech, and repetitions while editing video.
+
+Commercial plugins such as FireCut and autocut.com bring more extensive editing features directly into video editors. Auto-Editor is a separate command-line tool that can perform automatic cuts based on different criteria.
+
+The `mli/autocut` project we used takes a different approach: it transcribes speech with Whisper, then leaves the final decision to you through a Markdown file.
+
+That was what I liked about it. Instead of a bunch of effects or automatic editing features I do not need, it offers a workflow where I can edit my speech and remove unnecessary sections.
+
+It is also useful that you can run it in a Python virtual environment, that it is open source, and that you can edit through text.
+
+However, you need to pay attention to MoviePy version compatibility and always do a final review after automatic cutting.
+
+If you want to explore or install the project:
+
+[AutoCut GitHub repository](https://github.com/mli/autocut){: target="_blank" rel="noopener noreferrer"}
+
+[MoviePy 2 migration guide](https://zulko.github.io/moviepy/getting_started/updating_to_v2.html){: target="_blank" rel="noopener noreferrer"}
+
+[OpenAI Whisper](https://github.com/openai/whisper){: target="_blank" rel="noopener noreferrer"}
+
+[Auto-Editor GitHub repository](https://github.com/WyattBlue/auto-editor){: target="_blank" rel="noopener noreferrer"}
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"></script>
 
-## <lite-youtube videoid="tS3Iw2WhCJI"></lite-youtube>
+## Installation and usage explained in my livestream
+
+<lite-youtube videoid="tS3Iw2WhCJI"></lite-youtube>
