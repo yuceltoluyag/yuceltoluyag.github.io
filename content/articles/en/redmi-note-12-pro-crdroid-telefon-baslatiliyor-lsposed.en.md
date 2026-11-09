@@ -11,6 +11,8 @@ Template: article
 Lang: en
 Series: 12 Pro 5G
 Series_index: 5
+Translation: false
+
 
 Sometimes you don't need to install the wrong ROM or write a file to the wrong partition to break a phone. In my case, I didn't write to any partition at all. I only checked a few things through Fastboot and restarted the device. But the phone could not complete a normal startup.
 

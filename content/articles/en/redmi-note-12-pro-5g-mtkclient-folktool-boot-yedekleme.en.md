@@ -8,6 +8,7 @@ Status: published
 Summary: I backed up the original boot partitions on my Xiaomi Redmi Note 12 Pro 5G (ruby) with MTKClient. Then I patched the boot image with FolkTool 1.7.1 and flashed it through Fastboot. This guide covers the actual steps I took, including checking the slot with ADB and verifying root access.
 Template: article
 Lang: en
+Translation: false
 Series: 12 Pro 5G
 Series_index: 3
 

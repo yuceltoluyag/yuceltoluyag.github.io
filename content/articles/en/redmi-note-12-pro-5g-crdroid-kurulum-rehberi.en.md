@@ -8,6 +8,9 @@ Status: published
 Summary: Step-by-step guide to installing crDroid Custom ROM on your Redmi Note 12 Pro 5G (ruby/rubyx) using OrangeFox Recovery.
 Template: article
 Lang: en
+Translation: false
+Series: 12 Pro 5G
+Series_index: 1
 
 I had previously written a [Redmi Note 8 Pro Custom ROM Installation](/en/redmi-note-8-pro-custom-rom-kurulumu/)[^4] guide for myself. I had grown so used to the crDroid world that I loved using on my old Redmi Note 8 that I didn't expect the next adventure to be this "wet".
 
