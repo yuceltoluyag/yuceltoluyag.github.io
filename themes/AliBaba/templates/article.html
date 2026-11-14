@@ -36,14 +36,28 @@
         </div>
         {% endif %}
 
-        {% if current_year - article.date.year >= 2 %}
+        {% set article_last_updated = article.modified if article.modified and article.modified > article.date else article.date %}
+        {% if article.modified and article.modified > article.date %}
+        <div class="article-updated-note">
+            <svg class="icon"><use href="/theme/images/icons.svg#clock-rotate-left"></use></svg>
+            <span>
+                {% if article.lang == 'tr' %}
+                    Bu makale en son <time datetime="{{ article.modified.isoformat() }}">{{ article.modified.strftime('%d %B %Y') }}</time> tarihinde güncellendi.
+                {% else %}
+                    This article was last updated on <time datetime="{{ article.modified.isoformat() }}">{{ article.modified.strftime('%d %B %Y') }}</time>.
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
+
+        {% if (current_date - article_last_updated.date()).days >= OUTDATED_ARTICLE_YEARS * 365 %}
         <div class="outdated-warning">
             <svg class="icon"><use href="/theme/images/icons.svg#circle-info"></use></svg>
             <span>
                 {% if article.lang == 'tr' %}
-                    Bu makale 2 yıldan daha eski. Bazı bilgiler güncelliğini yitirmiş olabilir.
+                    Bu makale en az {{ OUTDATED_ARTICLE_YEARS }} yıldır güncellenmedi. Bazı bilgiler güncelliğini yitirmiş olabilir.
                 {% else %}
-                    This article is older than 2 years. Some information might be outdated.
+                    This article has not been updated for at least {{ OUTDATED_ARTICLE_YEARS }} years. Some information might be outdated.
                 {% endif %}
             </span>
         </div>

@@ -1,387 +1,518 @@
-Title: How Do I Customize My Windows Terminal?
+Title: How to Customize Windows Terminal and PowerShell
 Date: 2022-06-26 10:00
-Modified: 2025-08-11 22:59
+Modified: 2026-11-14 18:05
 Category: Windows
-Tags: windows10, linux
+Tags: Windows Terminal, PowerShell, Oh My Posh, Nerd Fonts, Scoop, PSReadLine, PSFzf, Terminal-Icons
 Slug: windows-terminalimi-nasil-ozellestiriyorum
 Authors: yuceltoluyag
-Series: Git
-Series_index: 2
-Summary: Discover step by step how to customize your Windows Terminal.
+Summary: Customize your Windows Terminal and PowerShell environment to suit your workflow with Nerd Fonts, Oh My Posh, PSReadLine, Terminal-Icons, and PSFzf. Create your own PowerShell profile and manage terminal tools with Scoop.
+Lang: en
 Status: published
 Template: article
 Image: images/windows-terminal-xl.webp
-Lang: en
 toot: https://mastodon.social/@yuceltoluyag/114985306515279329
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrrio6wlc2s
 
-## **Hello**
+## Let's Personalize Windows Terminal and PowerShell
 
-Those who follow my stories on Instagram were asking how I customize my **Windows Terminal**. 🙄 I said wait for my blog post about this topic and that awaited moment has come 😂🥱
+Windows Terminal is a useful terminal application that lets us use command-line tools on Windows through a single interface. But for me, being a window where I can only run commands is not enough. I like to customize the tools I use, shortcuts, font, and terminal appearance to match my workflow.
 
-## Ingredients 🥗
+When I wanted to create a Windows setup similar to the terminal environment I use on Linux, I used tools such as Nerd Fonts, Oh My Posh, PSReadLine, and PSFzf.
 
-- Nerd Fonts
-- Windows Terminal Preview
-- Windows PowerShell
-- Scoop
-- Git
-- Oh My Posh
-- Terminal Icons
-- PSReadLine
-- Z
-- PSFzf
+In this guide, we'll configure Windows Terminal with PowerShell 7, change the terminal's appearance, and add modules that make everyday use easier. We'll also keep our configuration in a single PowerShell profile file so it can be edited easily when needed.
 
-## Font
+> **Note:** The first version of this article was based on the Windows configuration I used in 2022. I updated it by comparing the old installation steps with current official documentation. The example configuration reflects the current usage of the tools I use. Minor differences may occur with different Windows versions or installation methods.
 
-If you want **icons** to be displayed correctly in your terminal:
+## Install Windows Terminal and PowerShell
 
-- You **must use** [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts){: target="\_blank" rel="noopener noreferrer"}.
-- The full Nerd Fonts collection is more than 2 GB. You don't need to download all of them; you can select and install the font you like. Enjoy! =)
+First, let's distinguish between two concepts.
 
-## Microsoft Store
+**Windows Terminal** is a terminal application that lets us use different command-line environments, such as PowerShell, Command Prompt (CMD), and WSL, through tabs and panes.
 
-- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701){: target="\_blank" rel="noopener noreferrer"}
-- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D){: target="\_blank" rel="noopener noreferrer"}
+**PowerShell** is the shell where we run commands, scripts, and system administration tasks.
 
-Install these two applications. After installation, **open** our **Windows Terminal** application and **go to settings**.
+In other words, Windows Terminal does not replace PowerShell by itself. We'll use them together.
 
-[responsive_img src="/images/windows-terminal-xl.webp" alt="windows-terminal" /]
+### Install Windows Terminal
 
-After going to settings, your settings in the **appearance** tab should be as follows.
+First, let's install the stable release of Windows Terminal. We will use the regular version rather than Windows Terminal Preview.
 
-[responsive_img src="/images/windows-terminal2-xl.webp" alt="windows-terminal2" /]
+Using the Windows Package Manager (WinGet):
 
-After **saving** the settings, click on the **Startup** section. Set the **Powershell** we installed as **default**.
-[responsive_img src="/images/windows-terminal3-xl.webp" alt="windows-terminal3" /]
-**Save** the settings and go to the **Defaults** tab, then make your **Font** settings from the **Appearance** section there.
-
-[responsive_img src="/images/windows-terminal4-xl.webp" alt="windows-terminal4" /]
-After making your **Font** settings, activate "**Enable Acrylic**" which is on the same screen and **save** the settings.
-
-[responsive_img src="/images/windows-terminal5-xl.webp" alt="windows-terminal5" /]
-
-After doing all these, **close** your **Terminal** and reopen it.
-
-## Scoop
-
-To install Scoop, type the following commands in order:
-
-```shell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh | iex
+```powershell
+winget install --id Microsoft.WindowsTerminal --exact
 ```
 
-After installing Scoop, run the following commands to avoid **package not found** errors:
+You can also install Windows Terminal from the Microsoft Store.
 
-```shell
-scoop bucket add main
-scoop bucket add extras
+When the installation is complete, open Windows Terminal.
+
+### Install PowerShell 7
+
+Windows PowerShell 5.1, which is built into Windows, is still available. However, this guide uses the current PowerShell 7.
+
+To install PowerShell 7:
+
+```powershell
+winget install --id Microsoft.PowerShell --source winget
 ```
 
-It will **update the database**. This process may take some **time**.
+After installation, you can open PowerShell 7 from the profile list in Windows Terminal.
 
-After installation is complete:
+Windows PowerShell 5.1 and PowerShell 7 are not simply two names for the same version. They can both be installed on the same computer and used as separate profiles in Windows Terminal.
 
-```shell
-scoop install curl sudo jq
+Microsoft's [PowerShell 7 installation documentation](https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.6){: target="_blank" rel="noopener noreferrer"} describes the different installation options.
+
+### Set PowerShell as the default terminal profile
+
+After opening Windows Terminal:
+
+1. Open Settings with `Ctrl + ,`.
+2. Go to the **Startup** section.
+3. Select PowerShell in the **Default profile** field.
+4. If you are using Windows 11, you can select Windows Terminal in the **Default terminal application** field.
+5. Save your settings.
+
+Now PowerShell 7 will start directly when you open Windows Terminal.
+
+## Install Nerd Fonts
+
+We need to take care of the font before customizing the terminal's appearance.
+
+Tools such as Oh My Posh and Terminal-Icons use special icons and characters in the terminal. These characters may not display correctly in a standard font. You may see empty boxes or nonsensical characters instead of icons.
+
+To address this, we'll use [Nerd Fonts](https://www.nerdfonts.com/font-downloads){: target="_blank" rel="noopener noreferrer"}.
+
+Nerd Fonts is a project that adds various icon and character sets to developer-focused fonts.
+
+You do not need to download every font. Just choose a font family you like.
+
+To install one:
+
+1. Open the Nerd Fonts download page.
+2. Choose the font family you want to use.
+3. Download the relevant font archive.
+4. Extract the archive.
+5. Open the `.ttf` file you want to use and install it in Windows.
+
+My GitHub configuration uses `Agave Nerd Font Propo`. If you choose a different font, you also need to use its exact name in the Windows Terminal settings.
+
+After installing your font, open Windows Terminal and go to Settings.
+
+Select the Nerd Font you installed under **Profiles → PowerShell → Appearance → Font face**.
+
+This step is important so that Terminal-Icons and Oh My Posh can display their icons correctly.
+
+For more font options, see the [Nerd Fonts GitHub repository](https://github.com/ryanoasis/nerd-fonts){: target="_blank" rel="noopener noreferrer"}.
+
+## Customize the Windows Terminal Appearance
+
+Now let's customize the appearance of our terminal.
+
+In Windows Terminal settings, open the **Appearance** section for the relevant PowerShell profile.
+
+Here you can change settings such as the font, font size, color scheme, background, and opacity.
+
+I manage an important part of my configuration through `settings.json`.
+
+To find the Windows Terminal settings file:
+
+1. Open Windows Terminal.
+2. Go to Settings.
+3. Select **Open JSON file**.
+
+I recommend backing up your current settings before changing the file.
+
+The following example shows the basic appearance section of a profile:
+
+```json
+{
+    "profiles": {
+        "defaults": {
+            "font": {
+                "face": "Agave Nerd Font Propo",
+                "size": 16
+            },
+            "opacity": 100,
+            "useAcrylic": true
+        }
+    }
+}
 ```
 
-output:
+You should adapt this example inside your existing `profiles` object. Do not replace your entire `settings.json` file with this small example.
 
-```shell
+There are two settings to pay attention to here:
 
-Installing '7zip'  (21.07)  [64bit]
+- `font`: Sets the font and font size used in the terminal.
+- `useAcrylic`: Enables the acrylic background effect.
 
-7z2107-x64.msi (1.8 MB)  [=========================================] 100%
+When `opacity` is set to 100, the window is fully opaque. If you want the background to look more transparent, you can lower this value to, for example, 85 or 90.
 
-Checking hash of 7z2107-x64.msi ... ok.
+Microsoft explains all of these options in its [Windows Terminal profile appearance settings](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/profile-appearance){: target="_blank" rel="noopener noreferrer"}.
 
-Extracting 7z2107-x64.msi ... done.
+If you want to use a color scheme, you can edit the `schemes` field in the same file. My GitHub configuration also includes a custom color scheme named `Baba`.
 
-Linking ~\scoop\apps\7zip\current =>  ~\scoop\apps\7zip\21.07
+## Install Scoop
 
-Creating shim for  '7z'.
+I use Scoop to manage command-line tools on Windows.
 
-Creating shortcut for 7-Zip (7zFM.exe)
+Scoop is a command-line package manager that can install applications mostly in the user's directory and makes it easier to update packages.
 
-Persisting Codecs
+First, open PowerShell as a regular user.
 
-Persisting Formats
+Set the required execution policy:
 
-Running post-install script...
-
-'7zip'  (21.07) was installed successfully!
-
-Notes
-
------
-
-Add 7-Zip as a context menu option by running:
-
-"C:\Users\Friday13\scoop\apps\7zip\current\install-context.reg"
-
-Installing 'curl'  (7.83.1_1)  [64bit]
-
-curl-7.83.1_1-win64-mingw.tar.xz (2.6 MB)  [=======================] 100%
-
-Checking hash of curl-7.83.1_1-win64-mingw.tar.xz ... ok.
-
-Extracting curl-7.83.1_1-win64-mingw.tar.xz ... done.
-
-Linking ~\scoop\apps\curl\current =>  ~\scoop\apps\curl\7.83.1_1
-
-Creating shim for  'curl'.
-
-'curl'  (7.83.1_1) was installed successfully!
-
-Installing 'jq'  (1.6)  [64bit]
-
-jq-win64.exe (3.4 MB)  [===========================================] 100%
-
-Checking hash of jq-win64.exe ... ok.
-
-Linking ~\scoop\apps\jq\current =>  ~\scoop\apps\jq\1.6
-
-Creating shim for  'jq'.
-
-'jq'  (1.6) was installed successfully!
-
-Installing 'sudo'  (0.2020.01.26)  [64bit]
-
-sudo.ps1 (2.2 KB)  [===============================================] 100%
-
-Checking hash of sudo.ps1 ... ok.
-
-Linking ~\scoop\apps\sudo\current =>  ~\scoop\apps\sudo\0.2020.01.26
-
-Creating shim for  'sudo'.
-
-'sudo'  (0.2020.01.26) was installed successfully!
-
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Then install **neovim** and **gcc** packages:
+Then install Scoop:
 
-```shell
-scoop install neovim gcc
+```powershell
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ```
 
-output:
+When installation is complete, you can use Scoop commands.
 
-```shell
+For example, to install `fzf`:
 
-Installing 'gcc'  (11.2.0)  [64bit]
-
-components-18.0.7z (96.4 MB)  [====================================] 100%
-
-Checking hash of components-18.0.7z ... ok.
-
-Extracting components-18.0.7z ... done.
-
-Running pre-install script...
-
-Linking ~\scoop\apps\gcc\current =>  ~\scoop\apps\gcc\11.2.0
-
-'gcc'  (11.2.0) was installed successfully!
-
-Installing 'neovim'  (0.7.0)  [64bit]
-
-nvim-win64.zip (36.4 MB)  [========================================] 100%
-
-Checking hash of nvim-win64.zip ... ok.
-
-Extracting nvim-win64.zip ... done.
-
-Linking ~\scoop\apps\neovim\current =>  ~\scoop\apps\neovim\0.7.0
-
-Creating shim for  'nvim'.
-
-Creating shim for  'nvim-qt'.
-
-Creating shortcut for Neovim (nvim-qt.exe)
-
-'neovim'  (0.7.0) was installed successfully!
-
-'neovim' suggests installing 'extras/vcredist2022'.
-
-```
-
-## Git Installation
-
-```shell
-winget install -e --id Git.Git
-```
-
-output:
-
-```shell
-
-winget install -e --id Git.Git
-
-The `msstore`  source requires that you view the following agreements before using.
-
-Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
-
-The source requires the current machine's 2-letter geographic region to be sent to the backend service to function properly (ex. "US").
-
-
-
-Do you agree to all the source agreements terms?
-
-[Y] Yes [N] No: Y
-
-Found Git [Git.Git] Version 2.36.1
-
-This application is licensed to you by its owner.
-
-Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
-
-Downloading https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe
-
-██████████████████████████████ 47.3 MB / 47.3 MB
-
-Successfully verified installer hash
-
-Starting package install...
-
-Successfully installed
-
-```
-
-After installation is complete, set up your **Git** settings. **If you don't know**, you can check the [Creating Git ssh-key (windows&linux)](https://yuceltoluyag.github.io/git-ssh-key-olusturma-windows/) article.
-
-## Powershell Config
-
-Make sure you are in your **user directory**: `C:\Users\YourUsername`. Do the operations in this directory. **When you open Terminal**, it opens this directory by default, I'm saying this in case you **changed it**. Then don't say "oh my god it doesn't work for us" :)
-
-```shell
-mkdir .config/powershell
-```
-
-Then we **create a file named user_profile** under this directory we created.
-
-```shell
-nvim .\.config\powershell\user_profile.ps1
-```
-
-Write the following lines inside:
-
-```shell
-# set PowerShell to UTF-8
-[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
-
-Import-Module posh-git
-$omp_config = ".\material.omp.json"
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\$omp_config"  | Invoke-Expression
-
-Import-Module -Name Terminal-Icons
-Set-PSReadLineOption -EditMode Vi
-...
-```
-
-After making these settings:
-
-```shell
-nvim $PROFILE.CurrentUserCurrentHost
-```
-
-Write the following inside:
-
-```shell
-.  $env:USERPROFILE\.config\powershell\user_profile.ps1
-```
-
-Close and open your Terminal. Let's test:
-
-```shell
-ll
-```
-
-Write and it will give you the directory output in a colorful way.
-
-## Packages
-
-Let's install our **Oh My Posh** package. Paste the two commands in order to the **terminal** and press enter 😏
-
-```shell
-Install-Module posh-git -Scope CurrentUser -Force
-winget install oh-my-posh
-```
-
-Close and open Terminal.
-
-**NVM (NodeJS Version Manager)**
-
-```shell
-scoop install nvm # after installation, close and open terminal
-nvm install lts
-nvm use lts # If it gives an error
-```
-
-If you get the following warning when you write `nvm use lts`:
-
-```shell
-exit status 1: You do not have sufficient privilege to perform this operation.
-```
-
-Close the terminal and run it as administrator. Write `nvm use lts` again and start the terminal normally.
-
-**Terminal Icons**
-
-```shell
-Install-Module -Name Terminal-Icons -Repository PSGallery -Force
-```
-
-Close and open Terminal, to **test**:
-
-```shell
-ll
-```
-
-Write the **ll** command and you should see **icons** next to the **file** names.
-
-**Z**
-
-```shell
-Install-Module -Name z -Force
-```
-
-**PSReadLine**
-
-```shell
-Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
-```
-
-**FZF**
-
-```shell
+```powershell
 scoop install fzf
 ```
 
-output:
+The Scoop `main` bucket is enabled by default. If you need an application from another bucket, you can add that bucket separately:
 
-```shell
-Installing 'fzf'  (0.30.0)  [64bit]
-...
+```powershell
+scoop bucket add extras
 ```
 
-**PSFzf**
+It is important to distinguish between `main` and `extras`. You do not need to add both buckets repeatedly during installation.
 
-```shell
-Install-Module -Name PSFzf -Scope CurrentUser -Force
+For more information about Scoop, see its [official GitHub repository](https://github.com/ScoopInstaller/Scoop){: target="_blank" rel="noopener noreferrer"}.
+
+## Install Oh My Posh
+
+One of the most important parts of the terminal's appearance is Oh My Posh.
+
+Oh My Posh lets you customize the PowerShell prompt. Depending on the theme, it can show the Git branch, working directory, process status, and various system details in the terminal prompt.
+
+We'll use WinGet for installation:
+
+```powershell
+winget install JanDeDobbeleer.OhMyPosh --source winget
 ```
 
-## Result
+After installation, check the version:
 
-[responsive_img src="/images/windows-terminal-son-xl.webp" alt="windows-terminal6" /]
-
-## Don't Teach Me How to Fish, Give Me the Fish
-
-If you're reading this article, you probably know what **Git** is 👊 Tools that work seamlessly on Linux sometimes have problems on **Windows**. For example, if you're not having problems using **GPG**, continue using it 🧠 But if you are having problems, I recommend using "**gpg4win**".
-
-```shell
-scoop install gpg4win
+```powershell
+oh-my-posh version
 ```
 
-You can access my [Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="\_blank" rel="noopener noreferrer"} settings from here and customize them according to yourself.
+Now we can add Oh My Posh to our PowerShell profile.
+
+### Use the Material theme
+
+Oh My Posh comes with many ready-to-use themes. I prefer the Material theme in my own configuration.
+
+To display the theme, first we'll create our PowerShell profile file. I'll explain how to prepare the profile in the next section.
+
+You can add this line to the profile file:
+
+```powershell
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\material.omp.json" | Invoke-Expression
+```
+
+Here, `material.omp.json` refers to the theme file being used. If you prefer a different theme, you can change the filename.
+
+You can browse the Oh My Posh themes on the [official themes page](https://ohmyposh.dev/docs/themes){: target="_blank" rel="noopener noreferrer"}.
+
+The [Oh My Posh Windows documentation](https://ohmyposh.dev/docs/installation/windows){: target="_blank" rel="noopener noreferrer"} is also useful for installation, updates, and theme configuration.
+
+## Prepare the PowerShell Profile File
+
+Now we'll create a profile that automatically loads the tools we installed whenever PowerShell starts.
+
+The PowerShell profile file is a script that runs when the terminal starts. You can use this file to import modules, define aliases, add custom functions, and manage terminal settings.
+
+To find the profile file location:
+
+```powershell
+$PROFILE
+```
+
+PowerShell 7 and Windows PowerShell 5.1 use different default profile directories.
+
+| Version | User profile directory |
+|---|---|
+| Windows PowerShell 5.1 | `Documents\WindowsPowerShell` |
+| PowerShell 7 | `Documents\PowerShell` |
+
+For this reason, it is better to use the `$PROFILE` variable rather than a fixed location.
+
+### Create our own configuration directory
+
+I prefer to keep my settings in a `.config/powershell` directory under the user directory.
+
+First, let's create this directory:
+
+```powershell
+$configDirectory = Join-Path $HOME '.config\powershell'
+
+New-Item -ItemType Directory -Path $configDirectory -Force
+```
+
+Now let's prepare our main configuration file:
+
+```powershell
+notepad (Join-Path $configDirectory 'user_profile.ps1')
+```
+
+We'll add the commands we prepare in a moment to this file.
+
+### Configure the main PowerShell profile
+
+First, let's create the directory that contains PowerShell's default profile file:
+
+```powershell
+$profileDirectory = Split-Path -Parent $PROFILE
+
+New-Item -ItemType Directory -Path $profileDirectory -Force
+
+if (-not (Test-Path -LiteralPath $PROFILE)) {
+    New-Item -ItemType File -Path $PROFILE -Force
+}
+```
+
+Then open the main profile file:
+
+```powershell
+notepad $PROFILE
+```
+
+Add the following line to it:
+
+```powershell
+. "$HOME\.config\powershell\user_profile.ps1"
+```
+
+This line runs the `user_profile.ps1` file we created earlier when PowerShell starts.
+
+This way, the main profile file only calls our configuration, while the actual settings stay under `.config/powershell`.
+
+The nice thing about this approach is that we can manage multiple settings from one place.
+
+## Install PowerShell Modules
+
+Now let's add modules that make our terminal more useful for everyday work.
+
+This guide uses three basic modules: Terminal-Icons, PSReadLine, and PSFzf.
+
+We can install modules from the PowerShell Gallery in the current user's scope.
+
+### 1. Terminal-Icons
+
+Terminal-Icons is a PowerShell module that displays icons for files and folders when listing them.
+
+Used with Nerd Fonts, it makes file listings in the terminal easier to understand.
+
+Install it:
+
+```powershell
+Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
+```
+
+Add this command to the profile file:
+
+```powershell
+Import-Module Terminal-Icons
+```
+
+Icons can now be displayed when listing files and folders.
+
+### 2. PSReadLine
+
+PSReadLine lets us customize editing, history, and keyboard behavior in the PowerShell command line.
+
+For example, we can use Vi key bindings, get suggestions from previously run commands, and change keyboard shortcuts.
+
+If the version of PSReadLine included with PowerShell meets your needs, you do not need to install it separately. If you want to use a newer version:
+
+```powershell
+Install-Module -Name PSReadLine -Repository PSGallery -Scope CurrentUser
+```
+
+Let's add these settings to our profile file:
+
+```powershell
+Import-Module PSReadLine
+
+Set-PSReadLineOption -EditMode Vi
+
+Set-PSReadLineOption -BellStyle None
+
+Set-PSReadLineOption -PredictionSource History
+
+Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
+```
+
+These settings:
+
+- `Vi`: Enables Vi editing mode in the command line.
+- `BellStyle None`: Disables unnecessary audio or visual alerts.
+- `PredictionSource History`: Provides suggestions from command history.
+- `Ctrl+d`: Deletes the character at the cursor.
+
+For more information about PSReadLine, see [Microsoft's PSReadLine documentation](https://learn.microsoft.com/en-us/powershell/module/psreadline){: target="_blank" rel="noopener noreferrer"}.
+
+### 3. fzf and PSFzf
+
+We'll use fzf to make searching in the terminal easier.
+
+fzf is a standalone command-line tool that lets us perform fuzzy searches through content such as files, directories, and command history.
+
+Install it through Scoop:
+
+```powershell
+scoop install fzf
+```
+
+PSFzf is a module that integrates this search tool with PowerShell.
+
+Install it:
+
+```powershell
+Install-Module -Name PSFzf -Repository PSGallery -Scope CurrentUser
+```
+
+There is an important detail here: PSFzf registers keyboard shortcuts through PSReadLine. Therefore, we need to load the PSReadLine module before PSFzf.
+
+Add the following to the profile file:
+
+```powershell
+Import-Module PSReadLine
+
+Import-Module PSFzf
+
+Set-PsFzfOption `
+    -PSReadlineChordProvider 'Ctrl+f' `
+    -PSReadlineChordReverseHistory 'Ctrl+r'
+```
+
+This way:
+
+- `Ctrl+f`: Lets us search file and directory paths.
+- `Ctrl+r`: Lets us search command history.
+
+When you select a search result, it is inserted into the command line. This saves you from having to retype long commands you used previously.
+
+For fzf's Windows installation and other features, see its [GitHub repository](https://github.com/junegunn/fzf){: target="_blank" rel="noopener noreferrer"}. For PSFzf configuration, see the [PSFzf documentation](https://github.com/kelleyma49/PSFzf){: target="_blank" rel="noopener noreferrer"}.
+
+### 4. Z module (optional)
+
+You can also use the Z module to move more quickly between frequently used directories.
+
+Z tracks directories you have visited before and lets you jump to them quickly from the command line.
+
+Install it:
+
+```powershell
+Install-Module -Name z -Repository PSGallery -Scope CurrentUser
+```
+
+Add this to your configuration file:
+
+```powershell
+Import-Module z
+```
+
+The module builds a history of the directories you visit. Once it has enough usage history, you can use part of a directory name to jump to the relevant location.
+
+This module is not required for basic terminal customization. Use it if it suits your needs.
+
+## The Completed PowerShell Configuration File
+
+Now let's combine the tools we've installed into one file.
+
+The basic contents of `C:\Users\YourUsername\.config\powershell\user_profile.ps1` could look like this:
+
+```powershell
+# UTF-8 encoding
+[console]::InputEncoding = [console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+# Oh My Posh
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\material.omp.json" | Invoke-Expression
+
+# Terminal Icons
+Import-Module Terminal-Icons
+
+# PSReadLine
+Import-Module PSReadLine
+
+Set-PSReadLineOption -EditMode Vi
+Set-PSReadLineOption -BellStyle None
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
+
+# PSFzf
+Import-Module PSFzf
+
+Set-PsFzfOption `
+    -PSReadlineChordProvider 'Ctrl+f' `
+    -PSReadlineChordReverseHistory 'Ctrl+r'
+
+# Z - Optional
+# Import-Module z
+```
+
+Save the file and reload the PowerShell profile:
+
+```powershell
+. $PROFILE
+```
+
+If you do not see any errors, you can close and reopen the terminal to check whether the settings load automatically.
+
+You can also add your own aliases and functions to this configuration file.
+
+For example, a short alias for Git:
+
+```powershell
+Set-Alias -Name g -Value git
+```
+
+This way, your commands and preferences will be ready in every new PowerShell session.
+
+## My Windows Terminal Settings on GitHub
+
+I created a GitHub repository for anyone who wants to look at my configuration instead of setting everything up one by one.
+
+[Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="_blank" rel="noopener noreferrer"}
+
+The repository contains the `settings.json` and PowerShell configuration files I use for Windows Terminal.
+
+The settings in the repository include:
+
+- Agave Nerd Font Propo font.
+- Baba color scheme.
+- Acrylic appearance settings.
+- Windows Terminal profile definitions.
+- Oh My Posh configuration for PowerShell.
+- PSReadLine and PSFzf shortcuts.
+- Personal aliases and helper functions.
+
+I recommend adapting the files to your own computer before using them.
+
+In particular, locations such as `C:\Arch\Arch.png`, Git tool installation directories, and the Oh My Posh theme path will not be the same on every computer. Instead of directly overwriting your existing settings with the repository's `settings.json`, make a backup first and merge the necessary sections.
+
+## Conclusion
+
+Personalizing Windows Terminal is about more than changing colors or fonts.
+
+We can customize the terminal prompt with Oh My Posh, use special icons with Nerd Fonts, improve the command-line experience with PSReadLine, and speed up searches with PSFzf.
+
+What matters to me is that the terminal I use fits my workflow. For this reason, I collect the settings in one configuration directory instead of scattering them across different files. This makes it much easier to recreate my settings and change personal preferences after a new Windows installation.
+
+You do not need to install every tool when building your own terminal setup. Choose what you need, configure your profile accordingly, and avoid cluttering your terminal with unnecessary modules.
+
+[responsive_img src="/images/windows-terminal-son-xl.webp" alt="My personalized Windows Terminal and PowerShell setup" /]

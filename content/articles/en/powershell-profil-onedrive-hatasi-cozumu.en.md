@@ -1,242 +1,322 @@
-Title: PowerShell Profile Issues and Directory Error Solution After Removing OneDrive
+Title: Fixing Documents and PowerShell Profile Issues After Removing OneDrive
 Date: 2025-03-02 10:00
-Modified: 2025-08-11 22:59
+Modified: 2026-11-14 18:05
 Category: Sorun Giderme
-Tags: PowerShell, OneDrive, Execution Policy, Modül Kurulumu
+Tags: PowerShell, OneDrive, Windows 11, Execution Policy,oh my posh, terminal-icons, psfzf
 Slug: powershell-profil-onedrive-hatasi-cozumu
 Authors: yuceltoluyag
-Summary: Solution to error messages related to PowerShell profile file, directories still appearing after OneDrive removal, and errors due to missing modules.
+Summary: A guide to diagnosing and fixing a Documents folder that remains in its old location after removing OneDrive, and PowerShell profiles that fail to load, using registry and PowerShell commands.
+Lang: en
 Status: published
 Template: article
 Image: images/windows11-onedrive-sorunu-xl.webp
-Lang: en
 toot: https://mastodon.social/@yuceltoluyag/114985346729844921
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrs2mxzok2q
 
-## A Windows 11 User's Story
+When I was using Windows 11, I ran into an unexpected problem after removing OneDrive from my system. The app was no longer on my computer, but Windows was still trying to open the Documents folder through the OneDrive directory.
 
-I installed a fresh Windows 11 on my computer for a new start. Everything seemed quite fast and smooth, but I decided to remove **OneDrive**, a tool I wasn't using. I didn't have much use for cloud storage services and wanted my files to be stored locally instead of being automatically synchronized.
+At first, it looked like a simple folder location problem. But every time I opened PowerShell, I started seeing errors saying that the profile file could not be loaded. My Oh My Posh theme was not loading correctly, and some of the modules I used in the terminal were not working as expected.
 
-However, after removing OneDrive, I noticed that **my Documents folder path still appeared as C:\Users\Username\OneDrive\Documents.** Moreover, when I opened PowerShell, I realized that my profile file couldn't be loaded and many modules were missing. At this point, I understood that Windows continued to keep some settings in their old state and I needed to correct them manually. If you're experiencing a similar problem, you can get rid of these errors by following the steps below.
+I realized that a significant part of the problem was related to old locations Windows had stored for user folders. Since the PowerShell profile that runs at startup is also connected to these folders, several seemingly unrelated errors appeared around the same time.
 
----
+In this guide, I cover folder redirection that can remain after removing OneDrive, how to fix the Documents directory, and how to recreate the PowerShell profile. I also discuss errors caused by the Execution Policy separately.
 
-## Problem of Documents Directory Still Appearing After Removing OneDrive
+> **Update note:** This article is based on a problem I personally encountered while using Windows 11. I no longer use Windows daily, so I am not claiming to have retested these steps on a current Windows installation. I reviewed the technical explanations and commands against Microsoft's current documentation before publication. I especially recommend making a backup before changing the registry.
 
-If you've removed OneDrive but applications like PowerShell are still using the **C:\Users\Username\OneDrive\Documents** path, your system's default **Documents** directory may be defined at the old location.
+## Why Does the Documents Folder Still Point to OneDrive After OneDrive Is Removed?
 
-### Solution 1: Correcting Directory Path via Registry
+OneDrive can back up known Windows user folders such as Desktop, Documents, and Pictures through its cloud directory. When this feature is enabled, the locations of those folders are redirected to the OneDrive directory.
 
-1. Press **Windows + R** and type **regedit** and press **Enter**.
-2. Open the following path:
+Removing the OneDrive app does not always automatically restore folder redirection to its previous state. Windows may continue to use the old location it has stored for user folders.
 
-```powershell
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
-```
+For example, the expected location of your Documents folder should be:
 
-3. Double-click on the **"Personal"** key and change the value as follows:
-
-```powershell
+```text
 C:\Users\Username\Documents
 ```
 
-4. **Restart your computer.**
+but it may still be set to:
 
-### Solution 2: Updating PowerShell Profile Path
-
-PowerShell may be using the old **OneDrive** path. To create a new profile, run the following commands:
-
-```powershell
-$newProfilePath = "C:\Users\Username\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
-New-Item -ItemType File -Path $newProfilePath -Force
+```text
+C:\Users\Username\OneDrive\Documents
 ```
 
-Then redirect the `$PROFILE` variable to the new location:
+In this situation, even after removing the app, Windows may try to access the Documents folder using a location that no longer exists or cannot be accessed.
+
+### If OneDrive has not been removed yet
+
+If OneDrive is still installed on your computer, it is better to stop folder backup before uninstalling the app.
+
+1. Open the OneDrive cloud icon in the notification area.
+2. Go to Settings.
+3. Open **Sync and backup**.
+4. Click **Manage backup**.
+5. Select the folder whose backup you want to stop.
+6. Choose the option to keep the files on your computer.
+
+If some files are only in the cloud, they need to be downloaded to your computer first. After stopping OneDrive backup, files may not automatically move to the local Documents folder. Check and move the necessary files separately.
+
+This process is explained in Microsoft's [guide to managing OneDrive folder backup](https://support.microsoft.com/en-us/onedrive/back-up-your-folders-with-onedrive?country=us&culture=en-us){: target="_blank" rel="noopener noreferrer"}.
+
+If you have already removed OneDrive, you can check the current folder location with the steps below.
+
+## Check the Old Location of the Documents Folder
+
+First, let's find out which Documents directory Windows is currently using.
+
+Open PowerShell and run the following command:
 
 ```powershell
-[System.Environment]::SetEnvironmentVariable("PROFILE", $newProfilePath, "User")
+[Environment]::GetFolderPath('MyDocuments')
 ```
 
-Close and reopen PowerShell and check the `$PROFILE` variable:
+This command shows the location of the Documents folder Windows is using.
+
+Next, check the path to the PowerShell profile file:
 
 ```powershell
-echo $PROFILE
+$PROFILE
 ```
 
----
-
-## PowerShell Profile File Cannot Be Run Error
-
-If you're getting an error that your **PowerShell profile file cannot be run because it's not signed**, you can try the following methods.
-
-### Solution 1: Changing Execution Policy
-
-Open PowerShell **as Administrator** and run the following command:
+Finally, find out whether the profile file actually exists:
 
 ```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+Test-Path -LiteralPath $PROFILE
 ```
 
-If you don't want to release all scripts for security reasons, you can allow only unsigned scripts:
+If the last command returns `False`, the profile file for the current PowerShell session is not present at the specified location. This alone does not prove that the problem is caused by OneDrive, but it is an important clue when checking for old folder redirection.
+
+## Fix the Documents Folder Through the Windows Registry
+
+Windows stores the locations of known user folders in the registry. If the old location remains there after OneDrive is removed, Windows needs to be pointed to the correct folder.
+
+For this, we will use the following registry key:
+
+```text
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
+```
+
+### Back up the registry first
+
+Create a backup of the current values before making changes to the registry.
+
+You can run this command in PowerShell:
+
+```powershell
+reg.exe export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" "$env:TEMP\User-Shell-Folders-backup.reg" /y
+```
+
+This command exports the relevant registry key to the temporary folder.
+
+### Check the folder locations
+
+1. Press `Windows + R`.
+2. Type `regedit` in the window that opens, then press Enter.
+3. Go to the registry location above.
+4. Check the values on the right.
+
+The values Windows uses for the default user folders are:
+
+| Folder | Registry value | Default location |
+|---|---|---|
+| Desktop | `Desktop` | `%USERPROFILE%\Desktop` |
+| Documents | `Personal` | `%USERPROFILE%\Documents` |
+| Pictures | `My Pictures` | `%USERPROFILE%\Pictures` |
+| Videos | `My Video` | `%USERPROFILE%\Videos` |
+| Music | `My Music` | `%USERPROFILE%\Music` |
+
+For example, if the `Personal` value for the Documents folder still points to the OneDrive directory, it needs to be changed back to the default location.
+
+Double-click the `Personal` value and change its data to:
+
+```text
+%USERPROFILE%\Documents
+```
+
+If other folders are also redirected to the OneDrive directory, correct only the affected values using the corresponding entries in the table. Do not unnecessarily change folder locations that are already working.
+
+Microsoft explains these values in detail in its [document on changing personal folder locations and troubleshooting registry issues](https://learn.microsoft.com/tr-tr/troubleshoot/windows-client/shell-experience/change-personal-folder-location-fails){: target="_blank" rel="noopener noreferrer"}.
+
+### Automatically fix the Documents folder with PowerShell
+
+If you do not want to make the change manually in the registry, you can perform the same operation through PowerShell.
+
+Make sure you created a registry backup in the previous section. Then open PowerShell in your regular user session and run:
+
+```powershell
+$registryPath = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
+
+$documentsPath = Join-Path $env:USERPROFILE 'Documents'
+
+New-Item -ItemType Directory -Path $documentsPath -Force | Out-Null
+
+New-ItemProperty `
+    -Path $registryPath `
+    -Name 'Personal' `
+    -Value '%USERPROFILE%\Documents' `
+    -PropertyType ExpandString `
+    -Force | Out-Null
+```
+
+This script:
+
+- Creates the `Documents` folder in the user profile.
+- Points the registry's `Personal` value to the correct location.
+- Does not tie the path to a fixed username or profile directory.
+
+**Important:** This does not automatically move or delete old files in the OneDrive folder. You need to check the files in your Documents folder separately.
+
+When the operation is complete, sign out of your Windows session and sign back in. Alternatively, you can restart File Explorer through Task Manager.
+
+## Why Is the PowerShell Profile File Not Loading?
+
+After fixing the folder location, we need to check the PowerShell profile file.
+
+PowerShell can automatically run a profile script when it starts. This file loads user-specific commands, aliases, modules, and terminal customizations.
+
+For example, if an Oh My Posh configuration or modules such as Terminal-Icons are started through the profile file, the file being unavailable can affect your terminal appearance and startup settings.
+
+The location of the PowerShell profile file can vary depending on the version in use and the terminal environment.
+
+| PowerShell version | Default user profile path |
+|---|---|
+| Windows PowerShell 5.1 | `Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1` |
+| PowerShell 7 | `Documents\PowerShell\Microsoft.PowerShell_profile.ps1` |
+
+These are default locations. If the Documents folder has been redirected elsewhere, the actual profile path may also be different.
+
+For this reason, we should use the `$PROFILE` variable rather than a fixed directory.
+
+To see the profile path and other profile locations for the current session:
+
+```powershell
+$PROFILE | Select-Object *
+```
+
+### Recreate a missing PowerShell profile file
+
+After correcting the Documents folder location, check whether the `$PROFILE` file exists.
+
+If the file or its parent directory does not exist, you can create them with these commands:
+
+```powershell
+$profileDirectory = Split-Path -Parent $PROFILE
+
+New-Item -ItemType Directory -Path $profileDirectory -Force | Out-Null
+
+if (-not (Test-Path -LiteralPath $PROFILE)) {
+    New-Item -ItemType File -Path $PROFILE -Force | Out-Null
+}
+```
+
+Then open the profile file in Notepad:
+
+```powershell
+notepad $PROFILE
+```
+
+If you had profile settings before, you can restore them from your backup. For example, Oh My Posh startup lines and module import commands may be in this file.
+
+Creating the profile file does not automatically restore customizations you saved before. You need to configure them separately.
+
+## Fix a PowerShell Execution Policy Error
+
+Even when the PowerShell profile file is in the correct location, some scripts may not run because of the security policy.
+
+For example, you may see an error like:
+
+```text
+File cannot be loaded because running scripts is disabled on this system.
+```
+
+or:
+
+```text
+The file is not digitally signed.
+You cannot run this script on the current system.
+```
+
+These messages do not always indicate the same cause. First, let's view the current Execution Policy settings:
+
+```powershell
+Get-ExecutionPolicy -List
+```
+
+### The RemoteSigned policy
+
+If you want to run scripts you created locally on your personal computer, `RemoteSigned` is generally a suitable choice.
+
+To change the setting for the current user only:
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ```
 
-**Temporary solution** for current session only:
+You do not need to open PowerShell as an administrator for this.
+
+The `RemoteSigned` policy allows locally created scripts to run without a signature. Scripts downloaded from the internet and marked by Windows may require a valid digital signature.
+
+If a downloaded script is blocked even though you trust its source and have checked its contents, you can unblock that file with `Unblock-File`:
 
 ```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+Unblock-File -LiteralPath 'C:\Scripts\script.ps1'
 ```
 
-### Solution 2: Removing File Block
+Use this command only on files whose source you have verified.
 
-If the file was downloaded from the internet, PowerShell may block it. To remove the block:
+**Why don't I recommend Unrestricted?**
 
-```powershell
-Unblock-File -Path $PROFILE
-```
+`Unrestricted` allows unsigned scripts to run more broadly. Such a wide permission is not necessary just to load a profile file.
 
-Alternatively, right-click on the file, go to **Properties > General** tab and check **Unblock** option.
+Also, if your computer has `MachinePolicy` or `UserPolicy` settings defined by Group Policy, changes you make at the user level cannot override them.
 
----
+For more details, see Microsoft's [PowerShell Execution Policy documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.5){: target="_blank" rel="noopener noreferrer"}.
 
-## Fixing PowerShell Module Deficiencies
+## Why Aren't Oh My Posh and Terminal Modules Working?
 
-If **modules like Oh My Posh, Terminal-Icons or PSFzf are missing** in your PowerShell profile, you need to install them manually.
+One problem I encountered was that the appearance of my PowerShell terminal was broken. The Oh My Posh theme was not loading correctly, and the terminal modules I used were not working as expected.
 
-### 1. Installing Oh My Posh
+The important thing to remember is that the PowerShell profile runs during startup.
 
-```powershell
-winget install JanDeDobbeleer.OhMyPosh -s winget
-```
-
-After installation, verify with:
+For example, your profile file may contain commands like these:
 
 ```powershell
-oh-my-posh --version
-```
+oh-my-posh init pwsh --config amro | Invoke-Expression
 
-If `oh-my-posh` is still not recognized, manually add the following path to your `$PATH` variable:
-
-```powershell
-$env:Path += ";C:\Program Files\oh-my-posh\bin"
-```
-
-### 2. Installing Terminal-Icons Module
-
-```powershell
-Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
 Import-Module Terminal-Icons
-```
 
-### 3. Installing PSFzf Module
-
-```powershell
-Install-Module -Name PSFzf -Scope CurrentUser -Force
 Import-Module PSFzf
 ```
 
-If you get a **NuGet error** during installation, first install the NuGet provider:
+If the profile file does not load, these commands may not run either. As a result, it may look as though your Oh My Posh theme, terminal icons, and other customizations have disappeared.
 
-```powershell
-Install-PackageProvider -Name NuGet -Force
-Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-```
+For this reason, I do not recommend immediately uninstalling and reinstalling all modules just because the profile is not loading.
 
-Then run the `Install-Module` command again.
+First:
 
----
+1. Verify that the Documents folder is in the correct location.
+2. Check that the file referenced by the `$PROFILE` variable exists.
+3. Review the contents of the profile file.
+4. Check whether an Execution Policy restriction is blocking it.
+5. Only after these steps, investigate any missing modules separately.
 
-## Updating PowerShell Profile
+Microsoft's [PowerShell Profiles documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.5){: target="_blank" rel="noopener noreferrer"} is useful for learning about the profile execution order and the purpose of different profiles.
 
-If the modules are installed but still don't work automatically, add the following lines to your `$PROFILE` file:
+## Conclusion: Properly Diagnose PowerShell Problems After Removing OneDrive
 
-```powershell
-# Install Oh My Posh
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/amro.omp.json" | Invoke-Expression
+Do not assume that every PowerShell error you encounter after removing OneDrive is directly caused by OneDrive.
 
-# Load Terminal-Icons module
-Import-Module Terminal-Icons
+Several separate issues may arise during this process:
 
-# Load PSFzf module
-Import-Module PSFzf
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
-```
+- Windows may still try to open the Documents folder through OneDrive.
+- The PowerShell profile file may remain at an old or inaccessible location.
+- Module import commands inside the profile file may not run.
+- Execution Policy may block a script or the profile file.
 
-Then run your `$PROFILE` file to test the changes:
+The best way to resolve these problems is to first verify the folder location, then check the profile file, and finally review the security policies.
 
-```powershell
-. $PROFILE
-```
+In my case, the terminal problems that initially seemed unrelated were also connected to folder locations and the PowerShell startup configuration.
 
-Close and reopen PowerShell to check if the errors are fixed. 🚀
+**Keep in mind:** Back up the registry before making changes, check your files in the old OneDrive directory, and identify the actual location of a profile file that is not working before unnecessarily rebuilding it from scratch.
 
----
-
-## 📌 Solution: Manually Correcting Folder Paths
-
-## 1️⃣ Updating Paths via Registry
-
-Windows manages special folder paths through the Registry. To change old OneDrive paths:
-
-### 📌 Step 1: Open Registry
-
-- Press Windows + R
-- Type `regedit` and press Enter
-
-### 📌 Step 2: Open the Following Path
-
-```powershell
-HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders
-```
-
-Here you will see the following keys. You should correct paths starting with OneDrive:
-
-| Key Name | Default Path                  |
-| ----------- | ------------------------------- |
-| Desktop     | C:\Users\Username\Desktop   |
-| Personal    | C:\Users\Username\Documents |
-| My Pictures | C:\Users\Username\Pictures  |
-| My Video    | C:\Users\Username\Videos    |
-| My Music    | C:\Users\Username\Music     |
-
-### 📌 Step 3: Correct Wrong Paths
-
-- Find paths containing OneDrive. (For example: `C:\Users\Username\OneDrive\Documents`)
-- Double-click and change to `C:\Users\Username` format.
-- Restart your computer.
-
-## 2️⃣ Move Folders Manually and Change Location
-
-If the above method doesn't solve the problem, try the following manual method:
-
-### 📌 Step 1: Change Default Locations
-
-- Right-click on your Documents, Desktop, Pictures etc. folders.
-- Go to Properties > Location tab.
-- Click "Move" button and select appropriate directory (`C:\Users\Username\Documents` etc.).
-- Apply and click OK.
-- Repeat these steps for Desktop, Documents, Music, Videos and Pictures.
-
-## 3️⃣ Repairing Folder Paths with PowerShell (Automatic)
-
-If you don't want to do the above steps manually, you can automatically correct the paths by running the following PowerShell script:
-
-```powershell
-$folders = @("Desktop", "Documents", "Pictures", "Videos", "Music")
-foreach ($folder in $folders) {
-    $path = "C:\Users\$env:USERNAME\$folder"
-    if (!(Test-Path $path)) { New-Item -ItemType Directory -Path $path -Force }
-    New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders" -Name $folder -Value $path -PropertyType ExpandString -Force
-}
-```
-
-This command:
-
-- Assigns correct paths for Desktop, Documents, Pictures, Videos and Music.
-- Creates missing folders.
-- Corrects wrong paths in Windows registry.
-
-Restart your computer and check if it's corrected. 🚀
-![Editing Hosts File](/images/windows11-onedrive-sorunu-xl.webp)
+The best way to prevent one problem from causing another is to identify the cause step by step instead of changing everything at once.

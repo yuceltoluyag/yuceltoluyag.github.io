@@ -1,13 +1,11 @@
-﻿Title: Windows Terminalimi Nasıl Özelleştiriyorum
+﻿Title: Windows Terminal ve PowerShell Nasıl Özelleştirilir?
 Date: 2022-06-26 10:00
-Modified: 2025-08-11 22:59
+Modified: 2026-11-14 18:05
 Category: Windows
-Tags: windows10, linux
+Tags: Windows Terminal, PowerShell, Oh My Posh, Nerd Fonts, Scoop, PSReadLine, PSFzf, Terminal-Icons
 Slug: windows-terminalimi-nasil-ozellestiriyorum
 Authors: yuceltoluyag
-Series: Git
-Series_index: 2
-Summary: Windows Terminal'inizi özelleştirmenin adım adım nasıl yapılacağını keşfedin.
+Summary: Windows Terminal ve PowerShell ortamınızı Nerd Fonts, Oh My Posh, PSReadLine, Terminal-Icons ve PSFzf ile kişisel çalışma düzeninize göre özelleştirin. Kendi PowerShell profilinizi oluşturun ve Scoop ile terminal araçlarını yönetin.
 Lang: tr
 Translation: false
 Status: published
@@ -16,376 +14,509 @@ Image: images/windows-terminal-xl.webp
 toot: https://mastodon.social/@yuceltoluyag/114985306515279329
 bluesky: https://bsky.app/profile/yuceltoluyag.github.io/post/3lvrrio6wlc2s
 
-## **Merhaba**
+## Windows Terminal ve PowerShell'i Kişiselleştirelim
 
-Instagram üzerinden **hikaye**lerimi takip edenler, **Windows Terminal**imi nasıl özelleştirdiğimi soruyordu. 🙄 Bu konu hakkında blog yazımı bekleyin dedim ve o beklenen an geldi 😂🥱
+Windows Terminal, Windows üzerindeki komut satırı araçlarını tek bir arayüzde kullanmamızı sağlayan oldukça kullanışlı bir terminal uygulaması. Ancak benim için yalnızca komut çalıştırabildiğim bir pencere olması yeterli değil. Kullandığım araçları, kısayolları, yazı tipini ve terminal görünümünü kendi çalışma alışkanlıklarıma göre düzenlemeyi seviyorum.
 
-## Malzemeler 🥗
+Linux tarafında kullandığım terminal ortamına benzer bir düzeni Windows'ta da oluşturmak istediğimde Nerd Fonts, Oh My Posh, PSReadLine ve PSFzf gibi araçlardan yararlanmıştım.
 
-- Nerd Fonts
-- Windows Terminal Preview
-- Windows PowerShell
-- Scoop
-- Git
-- Oh My Posh
-- Terminal Icons
-- PSReadLine
-- Z
-- PSFzf
+Bu rehberde Windows Terminal'i PowerShell 7 ile yapılandıracak, terminal görünümünü değiştirecek ve günlük kullanımda işimizi kolaylaştıran modülleri ekleyeceğiz. Ayrıca kendi yapılandırmamı tek bir PowerShell profil dosyasında tutarak gerektiğinde kolayca düzenleyebileceğiz.
 
-## Font
+> **Not:** Bu makalenin ilk sürümü 2022 yılında kullandığım Windows yapılandırmasına dayanıyor. Eski kurulum adımlarını güncel resmi belgelerle karşılaştırarak yeniledim. Örnek yapılandırma, kullandığım araçların güncel kullanımına göre düzenlenmiştir. Farklı Windows sürümlerinde veya kurulum yöntemlerinde küçük farklılıklar görülebilir.
 
-Eğer terminalinizde **ikon**ların doğru şekilde **görüntülenmesini** istiyorsanız:
+## Windows Terminal ve PowerShell Kurulumu
 
-- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts){: target="\_blank" rel="noopener noreferrer"} **kullanmalısınız**.
-- Nerd Fonts'un tamamı 2 GB'dan daha fazladır. Hepsini indirmenize gerek yok; beğendiğiniz fontu seçip kurabilirsiniz. Keyfinize bakın! =)
+Öncelikle iki kavramı birbirinden ayıralım.
 
-## Microsoft Mağaza
+**Windows Terminal**, PowerShell, Komut İstemi (CMD) ve WSL gibi farklı komut satırı ortamlarını sekmeler ve paneller üzerinden kullanmamızı sağlayan terminal uygulamasıdır.
 
-- [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701){: target="\_blank" rel="noopener noreferrer"}
-- [PowerShell](https://www.microsoft.com/store/productId/9MZ1SNWT0N5D){: target="\_blank" rel="noopener noreferrer"}
+**PowerShell** ise komutları, betikleri ve sistem yönetimi işlemlerini çalıştırdığımız kabuktur.
 
-Bu iki uygulamayı **kuruyoruz**. Kurduktan sonra **Windows Terminal** uygulamamızı **açıyoruz** ve **ayarlara** giriyoruz.
+Yani Windows Terminal tek başına PowerShell'in yerini tutmaz. İkisini birlikte kullanacağız.
 
-[responsive_img src="/images/windows-terminal-xl.webp" alt="windows-terminal" /]
+### Windows Terminal kurulumu
 
-Ayarlara girdikten sonra **görünüm** sekmesindeki ayarlarınız şu şekilde **olmalı**.
+İlk olarak kararlı Windows Terminal sürümünü yükleyelim. Windows Terminal Preview yerine normal sürümü tercih ediyoruz.
 
-[responsive_img src="/images/windows-terminal2-xl.webp" alt="windows-terminal2" /]
+Windows Paket Yöneticisi (WinGet) üzerinden:
 
-Ayarları **kaydettikten** sonra **Startup** kısmına tıklayın. Yüklemiş olduğumuz **Powershell**'i **varsayılan** olarak ayarlayın.
-[responsive_img src="/images/windows-terminal3-xl.webp" alt="windows-terminal3" /]
-Ayarları **kaydedin** ve **Defaults** sekmesine gelin, oradan **Appearance** kısmından **Font** ayarlarınızı yapın.
-
-[responsive_img src="/images/windows-terminal4-xl.webp" alt="windows-terminal4" /]
-**Font** ayarlarınızı yaptıktan sonra aynı ekranda bulunan "**Enable Acrylic**"i **aktif** hale getirin ve ayarları **kaydedin**.
-
-[responsive_img src="/images/windows-terminal5-xl.webp" alt="windows-terminal5" /]
-
-Tüm bunları yaptıktan sonra **Terminal**inizi **kapatıp** yeniden **açın**.
-
-## Scoop
-
-Scoop'u kurmak için sırasıyla aşağıdaki komutları yazın:
-
-```shell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh | iex
+```powershell
+winget install --id Microsoft.WindowsTerminal --exact
 ```
 
-Scoop'u kurduktan sonra, paket **bulunamadı** gibi **hatalarla** karşılaşmamak için şu komutları çalıştırın:
+Microsoft Store üzerinden de Windows Terminal'i yükleyebilirsiniz.
 
-```shell
-scoop bucket add main
-scoop bucket add extras
+Kurulum tamamlandığında Windows Terminal'i açın.
+
+### PowerShell 7 kurulumu
+
+Windows'un yerleşik Windows PowerShell 5.1 sürümü hâlâ kullanılabilir. Ancak bu rehberde güncel PowerShell 7 üzerinden ilerleyeceğiz.
+
+PowerShell 7'yi kurmak için:
+
+```powershell
+winget install --id Microsoft.PowerShell --source winget
 ```
 
-Veritabanını **güncelleyecektir**. Bu işlem biraz **zaman** alabilir.
+Kurulumdan sonra PowerShell 7'yi Windows Terminal içerisindeki profil listesinden açabilirsiniz.
 
-Kurulum tamamlandıktan sonra:
+Windows PowerShell 5.1 ile PowerShell 7 birbirinin yerine geçen tek bir sürüm değildir. İki sürüm aynı bilgisayarda bulunabilir ve Windows Terminal içerisinde ayrı profiller olarak kullanılabilir.
 
-```shell
-scoop install curl sudo jq
+Microsoft'un [PowerShell 7 kurulum belgesi](https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.6){: target="_blank" rel="noopener noreferrer"} farklı kurulum seçeneklerini açıklıyor.
+
+### PowerShell'i varsayılan terminal profili yapma
+
+Windows Terminal'i açtıktan sonra:
+
+1. `Ctrl + ,` tuşlarıyla ayarları açın.
+2. **Startup** bölümüne girin.
+3. **Default profile** alanından PowerShell'i seçin.
+4. Windows 11 kullanıyorsanız **Default terminal application** alanında Windows Terminal'i tercih edebilirsiniz.
+5. Ayarları kaydedin.
+
+Böylece Windows Terminal'i açtığınızda doğrudan PowerShell 7 başlayacaktır.
+
+## Nerd Fonts Kurulumu
+
+Terminal görünümünü özelleştirmeden önce yazı tipini halletmemiz gerekiyor.
+
+Oh My Posh ve Terminal-Icons gibi araçlar, terminalde özel simgeler ve karakterler kullanır. Standart bir yazı tipinde bu karakterler düzgün görüntülenmeyebilir. Bunun sonucunda simgelerin yerine boş kutular veya anlamsız karakterler görebilirsiniz.
+
+Bu sorunu çözmek için [Nerd Fonts](https://www.nerdfonts.com/font-downloads){: target="_blank" rel="noopener noreferrer"} kullanacağız.
+
+Nerd Fonts, geliştirici odaklı yazı tiplerine çeşitli simge ve karakter kümeleri ekleyen bir projedir.
+
+Bütün yazı tiplerini indirmenize gerek yok. Beğendiğiniz bir font ailesini seçmeniz yeterli.
+
+Kurulum için:
+
+1. Nerd Fonts indirme sayfasını açın.
+2. Kullanmak istediğiniz font ailesini seçin.
+3. İlgili font arşivini indirin.
+4. Arşivi çıkartın.
+5. Kullanacağınız `.ttf` dosyasını açarak Windows'a yükleyin.
+
+Benim GitHub yapılandırmamda `Agave Nerd Font Propo` kullanılıyor. Farklı bir font tercih ederseniz Windows Terminal ayarlarında da seçtiğiniz fontun tam adını kullanmanız gerekiyor.
+
+Fontunuzu yükledikten sonra Windows Terminal'i açın ve ayarlara girin.
+
+**Profiles → PowerShell → Appearance → Font face** bölümünden yüklediğiniz Nerd Font'u seçin.
+
+Terminal-Icons ve Oh My Posh'un simgeleri düzgün gösterebilmesi için bu adım önemli.
+
+Daha fazla font seçeneği için [Nerd Fonts GitHub deposunu](https://github.com/ryanoasis/nerd-fonts){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
+
+## Windows Terminal Görünümünü Özelleştirme
+
+Şimdi terminalimizin görünümünü düzenleyelim.
+
+Windows Terminal ayarlarında ilgili PowerShell profilinin **Appearance** bölümünü açın.
+
+Burada yazı tipi, yazı boyutu, renk şeması, arka plan ve saydamlık gibi ayarları değiştirebilirsiniz.
+
+Benim kullandığım yapılandırmanın önemli bir kısmını `settings.json` üzerinden yönetiyorum.
+
+Windows Terminal'in ayar dosyasını bulmak için:
+
+1. Windows Terminal'i açın.
+2. Ayarlar menüsüne girin.
+3. **Open JSON file** seçeneğini kullanın.
+
+Mevcut ayarlarınızı değiştirmeden önce dosyanın yedeğini almanızı öneririm.
+
+Aşağıdaki örnek, profil ayarlarının temel görünüm bölümünü gösteriyor:
+
+```json
+{
+    "profiles": {
+        "defaults": {
+            "font": {
+                "face": "Agave Nerd Font Propo",
+                "size": 16
+            },
+            "opacity": 100,
+            "useAcrylic": true
+        }
+    }
+}
 ```
 
-output:
+Bu örneği mevcut `profiles` nesnenizin içine uyarlamalısınız. Bütün `settings.json` dosyanızı bu küçük örnekle değiştirmeyin.
 
-```shell
+Burada dikkat etmeniz gereken iki ayar var:
 
-Installing '7zip'  (21.07)  [64bit]
+- `font`: Terminalde kullanılacak yazı tipini ve boyutunu belirler.
+- `useAcrylic`: Acrylic arka plan efektini etkinleştirir.
 
-7z2107-x64.msi (1,8 MB)  [=========================================] 100%
+`opacity` değeri 100 olduğunda pencere tamamen opaktır. Arka planın daha saydam görünmesini istiyorsanız bu değeri örneğin 85 veya 90 seviyesine düşürebilirsiniz.
 
-Checking hash of 7z2107-x64.msi ... ok.
+Microsoft'un [Windows Terminal profil görünümü ayarları](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/profile-appearance){: target="_blank" rel="noopener noreferrer"} belgesinde bu seçeneklerin tamamı açıklanıyor.
 
-Extracting 7z2107-x64.msi ... done.
+Renk şeması kullanmak istiyorsanız yine aynı dosyada `schemes` alanını düzenleyebilirsiniz. Kendi GitHub yapılandırmamda `Baba` adında özel bir renk şeması da bulunuyor.
 
-Linking ~\scoop\apps\7zip\current =>  ~\scoop\apps\7zip\21.07
+## Scoop Kurulumu
 
-Creating shim for  '7z'.
+Windows üzerinde komut satırı araçlarını yönetmek için Scoop kullanıyorum.
 
-Creating shortcut for 7-Zip (7zFM.exe)
+Scoop, uygulamaları çoğunlukla kullanıcı dizinine kurabilen ve paketlerin güncellenmesini kolaylaştıran bir komut satırı paket yöneticisi.
 
-Persisting Codecs
+Öncelikle PowerShell'i normal kullanıcı olarak açın.
 
-Persisting Formats
+Gerekli yürütme politikasını ayarlayın:
 
-Running post-install script...
-
-'7zip'  (21.07) was installed successfully!
-
-Notes
-
------
-
-Add 7-Zip as a context menu option by running:
-
-"C:\Users\Friday13\scoop\apps\7zip\current\install-context.reg"
-
-Installing 'curl'  (7.83.1_1)  [64bit]
-
-curl-7.83.1_1-win64-mingw.tar.xz (2,6 MB)  [=======================] 100%
-
-Checking hash of curl-7.83.1_1-win64-mingw.tar.xz ... ok.
-
-Extracting curl-7.83.1_1-win64-mingw.tar.xz ... done.
-
-Linking ~\scoop\apps\curl\current =>  ~\scoop\apps\curl\7.83.1_1
-
-Creating shim for  'curl'.
-
-'curl'  (7.83.1_1) was installed successfully!
-
-Installing 'jq'  (1.6)  [64bit]
-
-jq-win64.exe (3,4 MB)  [===========================================] 100%
-
-Checking hash of jq-win64.exe ... ok.
-
-Linking ~\scoop\apps\jq\current =>  ~\scoop\apps\jq\1.6
-
-Creating shim for  'jq'.
-
-'jq'  (1.6) was installed successfully!
-
-Installing 'sudo'  (0.2020.01.26)  [64bit]
-
-sudo.ps1 (2,2 KB)  [===============================================] 100%
-
-Checking hash of sudo.ps1 ... ok.
-
-Linking ~\scoop\apps\sudo\current =>  ~\scoop\apps\sudo\0.2020.01.26
-
-Creating shim for  'sudo'.
-
-'sudo'  (0.2020.01.26) was installed successfully!
-
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-Daha sonra **neovim** ve **gcc** paketlerini kurun:
+Ardından Scoop'u yükleyin:
 
-```shell
-scoop install neovim gcc
+```powershell
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ```
 
-output:
+Kurulum tamamlandığında Scoop komutlarını kullanabilirsiniz.
 
-```shell
+Örneğin `fzf` aracını kurmak için:
 
-Installing 'gcc'  (11.2.0)  [64bit]
-
-components-18.0.7z (96,4 MB)  [====================================] 100%
-
-Checking hash of components-18.0.7z ... ok.
-
-Extracting components-18.0.7z ... done.
-
-Running pre-install script...
-
-Linking ~\scoop\apps\gcc\current =>  ~\scoop\apps\gcc\11.2.0
-
-'gcc'  (11.2.0) was installed successfully!
-
-Installing 'neovim'  (0.7.0)  [64bit]
-
-nvim-win64.zip (36,4 MB)  [========================================] 100%
-
-Checking hash of nvim-win64.zip ... ok.
-
-Extracting nvim-win64.zip ... done.
-
-Linking ~\scoop\apps\neovim\current =>  ~\scoop\apps\neovim\0.7.0
-
-Creating shim for  'nvim'.
-
-Creating shim for  'nvim-qt'.
-
-Creating shortcut for Neovim (nvim-qt.exe)
-
-'neovim'  (0.7.0) was installed successfully!
-
-'neovim' suggests installing 'extras/vcredist2022'.
-
-```
-
-## Git Kurulumu
-
-```shell
-winget install -e --id Git.Git
-```
-
-output:
-
-```shell
-
-winget install -e --id Git.Git
-
-The `msstore`  source requires that you view the following agreements before using.
-
-Terms of Transaction: https://aka.ms/microsoft-store-terms-of-transaction
-
-The source requires the current machine's 2-letter geographic region to be sent to the backend service to function properly (ex. "US").
-
-
-
-Do you agree to all the source agreements terms?
-
-[Y] Yes [N] No: Y
-
-Found Git [Git.Git] Version 2.36.1
-
-This application is licensed to you by its owner.
-
-Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
-
-Downloading https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/Git-2.36.1-64-bit.exe
-
-██████████████████████████████ 47.3 MB / 47.3 MB
-
-Successfully verified installer hash
-
-Starting package install...
-
-Successfully installed
-
-```
-
-Kurulum tamamlandıktan sonra **Git** ayarlarınızı yapınız. **Bilmiyorsanız**, [Git ssh-key oluşturma (windows&linux)](https://yuceltoluyag.github.io/git-ssh-key-olusturma-windows/) yazısını inceleyebilirsiniz.
-
-## Powershell Config
-
-**Kullanıcı dizininde** olduğunuzdan emin olun: `C:\Users\KullanıcıAdınız`. Bu dizindeyken işlemleri yapın. **Terminal**i açtığınızda varsayılan olarak bu dizin açılır, eğer **değiştirdiyseniz** diye söylüyorum. Sonra vay efendim bizde **olmuyor** **demeyin** :)
-
-```shell
-mkdir .config/powershell
-```
-
-Sonra oluşturduğumuz bu dizin altında **user_profile** adında dosya **oluşturuyoruz**.
-
-```shell
-nvim .\.config\powershell\user_profile.ps1
-```
-
-İçerisine şu satırları yazın:
-
-```shell
-# set PowerShell to UTF-8
-[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
-
-Import-Module posh-git
-$omp_config = ".\material.omp.json"
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\$omp_config"  | Invoke-Expression
-
-Import-Module -Name Terminal-Icons
-Set-PSReadLineOption -EditMode Vi
-...
-```
-
-Daha sonra bu ayarları yaptıktan sonra:
-
-```shell
-nvim $PROFILE.CurrentUserCurrentHost
-```
-
-İçerisine şunu yazın:
-
-```shell
-.  $env:USERPROFILE\.config\powershell\user_profile.ps1
-```
-
-Terminalinizi kapatıp açın. Test edelim:
-
-```shell
-ll
-```
-
-Yazın ve size renkli bir biçimde dizinin çıktısını verecektir.
-
-## Paketler
-
-**Oh My Posh** paketimizi kuralım. Sırasıyla iki komutla **terminal**e yapıştırıp entere basın 😏
-
-```shell
-Install-Module posh-git -Scope CurrentUser -Force
-winget install oh-my-posh
-```
-
-Terminali kapatıp açın.
-
-**NVM (NodeJS Version Manager)**
-
-```shell
-scoop install nvm # kurduktan sonra terminali kapatıp açın
-nvm install lts
-nvm use lts # Hata verirse
-```
-
-`nvm use lts` yazdığınızda şöyle bir uyarı alıyorsanız:
-
-```shell
-exit status 1: You do not have sufficient privilege to perform this operation.
-```
-
-Terminali kapatıp yönetici olarak çalıştırın. Tekrar `nvm use lts` yazın ve terminali normal olarak başlatın.
-
-**Terminal Icons**
-
-```shell
-Install-Module -Name Terminal-Icons -Repository PSGallery -Force
-```
-
-Terminali kapatıp açın, **test** etmek için:
-
-```shell
-ll
-```
-
-Komutunu yazın ve **dosya** isimlerinin yanında **ikonlar** görmelisiniz.
-
-**Z**
-
-```shell
-Install-Module -Name z -Force
-```
-
-**PSReadLine**
-
-```shell
-Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
-```
-
-**FZF**
-
-```shell
+```powershell
 scoop install fzf
 ```
 
-output:
+Scoop'un `main` paketi varsayılan olarak etkin gelir. Başka bir bucket içerisindeki uygulamaya ihtiyaç duyduğunuzda ilgili bucket'ı ayrıca ekleyebilirsiniz:
 
-```shell
-Installing 'fzf'  (0.30.0)  [64bit]
-...
+```powershell
+scoop bucket add extras
 ```
 
-**PSFzf**
+Burada `main` ve `extras` ayrımına dikkat etmek gerekiyor. Her iki bucket'ı da kurulum sırasında tekrar tekrar eklemeniz gerekmez.
 
-```shell
-Install-Module -Name PSFzf -Scope CurrentUser -Force
+Scoop hakkında daha fazla bilgi için [resmî GitHub deposunu](https://github.com/ScoopInstaller/Scoop){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
+
+## Oh My Posh Kurulumu
+
+Terminal görünümünün en önemli parçalarından biri Oh My Posh.
+
+Oh My Posh, PowerShell istemini (prompt) özelleştirmenizi sağlar. Kullanılan temaya bağlı olarak Git dalı, çalışma dizini, işlem durumu ve çeşitli sistem bilgilerini terminal isteminde gösterebilir.
+
+Kurulum için WinGet kullanacağız:
+
+```powershell
+winget install JanDeDobbeleer.OhMyPosh --source winget
 ```
+
+Kurulum tamamlandıktan sonra sürümü kontrol edin:
+
+```powershell
+oh-my-posh version
+```
+
+Artık Oh My Posh'u PowerShell profilimize ekleyebiliriz.
+
+### Material temasını kullanma
+
+Oh My Posh birçok hazır tema ile birlikte geliyor. Ben kendi yapılandırmamda Material temasını tercih ediyorum.
+
+Temayı görüntülemek için öncelikle PowerShell profil dosyamızı oluşturacağız. Profil dosyasının hazırlanmasını bir sonraki bölümde anlatıyorum.
+
+Profil dosyasına şu satırı ekleyebilirsiniz:
+
+```powershell
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\material.omp.json" | Invoke-Expression
+```
+
+Burada `material.omp.json` kullanılan tema dosyasını ifade ediyor. Farklı bir tema tercih ederseniz dosya adını değiştirebilirsiniz.
+
+Oh My Posh temalarının listesini [resmî tema sayfasından](https://ohmyposh.dev/docs/themes){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
+
+Kurulum, güncelleme ve tema yapılandırması için [Oh My Posh Windows belgeleri](https://ohmyposh.dev/docs/installation/windows){: target="_blank" rel="noopener noreferrer"} de oldukça faydalı.
+
+## PowerShell Profil Dosyasını Hazırlama
+
+Şimdi kurduğumuz araçları PowerShell her açıldığında otomatik yükleyecek bir profil oluşturacağız.
+
+PowerShell profil dosyası, terminal başladığında çalıştırılan bir betiktir. Bu dosya üzerinden modülleri içeri aktarabilir, alias tanımlayabilir, özel fonksiyonlar ekleyebilir ve terminal ayarlarını yönetebilirsiniz.
+
+Profil dosyasının konumunu öğrenmek için:
+
+```powershell
+$PROFILE
+```
+
+PowerShell 7 ve Windows PowerShell 5.1 farklı varsayılan profil dizinleri kullanır.
+
+| Sürüm | Kullanıcı profil dizini |
+|---|---|
+| Windows PowerShell 5.1 | `Documents\WindowsPowerShell` |
+| PowerShell 7 | `Documents\PowerShell` |
+
+Bu nedenle sabit bir konum kullanmak yerine `$PROFILE` değişkenini kullanmak daha doğru.
+
+### Kendi yapılandırma dizinimizi oluşturalım
+
+Ben ayarlarımı kullanıcı dizini altında `.config/powershell` klasöründe toplamayı tercih ediyorum.
+
+Öncelikle bu dizini oluşturalım:
+
+```powershell
+$configDirectory = Join-Path $HOME '.config\powershell'
+
+New-Item -ItemType Directory -Path $configDirectory -Force
+```
+
+Şimdi ana yapılandırma dosyamızı hazırlayalım:
+
+```powershell
+notepad (Join-Path $configDirectory 'user_profile.ps1')
+```
+
+Bu dosyanın içine birazdan hazırlayacağımız komutları ekleyeceğiz.
+
+### PowerShell'in ana profilini yapılandırma
+
+Öncelikle PowerShell'in varsayılan profil dosyasının bulunduğu dizini oluşturalım:
+
+```powershell
+$profileDirectory = Split-Path -Parent $PROFILE
+
+New-Item -ItemType Directory -Path $profileDirectory -Force
+
+if (-not (Test-Path -LiteralPath $PROFILE)) {
+    New-Item -ItemType File -Path $PROFILE -Force
+}
+```
+
+Ardından ana profil dosyasını açın:
+
+```powershell
+notepad $PROFILE
+```
+
+İçerisine aşağıdaki satırı ekleyin:
+
+```powershell
+. "$HOME\.config\powershell\user_profile.ps1"
+```
+
+Bu satır, daha önce oluşturduğumuz `user_profile.ps1` dosyasını PowerShell başlangıcında çalıştıracaktır.
+
+Böylece ana profil dosyası yalnızca yapılandırmamızı çağıracak, asıl ayarlarımız ise `.config/powershell` altında kalacaktır.
+
+Bu yaklaşımın güzel tarafı, birden fazla ayarı tek bir merkezden yönetebilmemizdir.
+
+## PowerShell Modüllerini Kurma
+
+Sıra terminalimizi günlük kullanımda daha işlevsel hâle getirecek modüllere geldi.
+
+Bu rehberde üç temel modül kullanacağız: Terminal-Icons, PSReadLine ve PSFzf.
+
+Modülleri PowerShell Gallery üzerinden kullanıcı kapsamına yükleyebiliriz.
+
+### 1. Terminal-Icons
+
+Terminal-Icons, dosya ve klasörleri listelerken türlerine göre simgeler gösteren bir PowerShell modülüdür.
+
+Nerd Fonts ile birlikte kullanıldığında terminaldeki dosya listelerini daha anlaşılır hâle getirir.
+
+Kurulum:
+
+```powershell
+Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
+```
+
+Profil dosyamıza ekleyeceğimiz komut:
+
+```powershell
+Import-Module Terminal-Icons
+```
+
+Artık dosya ve klasörleri listelerken simgeler görüntülenebilir.
+
+### 2. PSReadLine
+
+PSReadLine, PowerShell komut satırındaki düzenleme, geçmiş ve klavye davranışlarını özelleştirmemizi sağlar.
+
+Örneğin Vi tuş düzenini kullanabilir, daha önce çalıştırdığımız komutlardan öneriler alabilir ve klavye kısayollarını değiştirebiliriz.
+
+PowerShell ile birlikte gelen PSReadLine sürümü ihtiyaçlarınızı karşılıyorsa ayrıca kurulum yapmanız gerekmez. Daha yeni bir sürüm kullanmak isterseniz:
+
+```powershell
+Install-Module -Name PSReadLine -Repository PSGallery -Scope CurrentUser
+```
+
+Profil dosyamıza şu ayarları ekleyelim:
+
+```powershell
+Import-Module PSReadLine
+
+Set-PSReadLineOption -EditMode Vi
+
+Set-PSReadLineOption -BellStyle None
+
+Set-PSReadLineOption -PredictionSource History
+
+Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
+```
+
+Burada yaptığımız ayarlar:
+
+- `Vi`: Komut satırında Vi düzenleme modunu etkinleştirir.
+- `BellStyle None`: Gereksiz sesli veya görsel uyarıları kapatır.
+- `PredictionSource History`: Komut geçmişinden öneriler sunar.
+- `Ctrl+d`: İmlecin bulunduğu karakteri siler.
+
+PSReadLine hakkında daha fazla bilgi için [Microsoft'un PSReadLine belgelerini](https://learn.microsoft.com/en-us/powershell/module/psreadline){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
+
+### 3. fzf ve PSFzf
+
+Terminalde arama işlemlerini kolaylaştırmak için fzf kullanacağız.
+
+fzf, dosyalar, klasörler ve komut geçmişi gibi içerikler arasında bulanık arama (fuzzy search) yapmamızı sağlayan bağımsız bir komut satırı aracıdır.
+
+Scoop üzerinden kurulum:
+
+```powershell
+scoop install fzf
+```
+
+PSFzf ise bu arama aracını PowerShell ile bütünleştiren modüldür.
+
+Kurulum:
+
+```powershell
+Install-Module -Name PSFzf -Repository PSGallery -Scope CurrentUser
+```
+
+Burada önemli bir ayrıntı var: PSFzf, klavye kısayollarını PSReadLine üzerinden kaydeder. Bu nedenle PSReadLine modülünü PSFzf'den önce yüklemeliyiz.
+
+Profil dosyamıza ekleyelim:
+
+```powershell
+Import-Module PSReadLine
+
+Import-Module PSFzf
+
+Set-PsFzfOption `
+    -PSReadlineChordProvider 'Ctrl+f' `
+    -PSReadlineChordReverseHistory 'Ctrl+r'
+```
+
+Böylece:
+
+- `Ctrl+f`: Dosya ve klasör yollarını aramamızı sağlar.
+- `Ctrl+r`: Komut geçmişinde arama yapmamızı sağlar.
+
+Arama sonucunu seçtiğinizde komut satırına aktarılır. Böylece geçmişte kullandığınız uzun komutları yeniden yazmak zorunda kalmazsınız.
+
+fzf'nin Windows kurulumu ve diğer özellikleri için [kendi GitHub deposunu](https://github.com/junegunn/fzf){: target="_blank" rel="noopener noreferrer"}, PSFzf yapılandırması için de [PSFzf belgelerini](https://github.com/kelleyma49/PSFzf){: target="_blank" rel="noopener noreferrer"} inceleyebilirsiniz.
+
+### 4. Z modülü (İsteğe bağlı)
+
+Sık kullandığınız klasörler arasında daha hızlı geçiş yapmak için Z modülünü de kullanabilirsiniz.
+
+Z, daha önce ziyaret ettiğiniz dizinleri takip ederek komut satırından hızlıca o konumlara geçmenizi sağlar.
+
+Kurulum:
+
+```powershell
+Install-Module -Name z -Repository PSGallery -Scope CurrentUser
+```
+
+Yapılandırma dosyanıza ekleyin:
+
+```powershell
+Import-Module z
+```
+
+Modül, ziyaret ettiğiniz klasörlerin geçmişini oluşturur. Yeterli kullanım geçmişi oluştuktan sonra klasör adının bir kısmını kullanarak ilgili konuma geçebilirsiniz.
+
+Bu modül temel terminal özelleştirmesi için zorunlu değildir. İhtiyacınıza göre kullanabilirsiniz.
+
+## PowerShell Yapılandırma Dosyasının Son Hâli
+
+Şimdiye kadar kurduğumuz araçları tek bir dosyada birleştirelim.
+
+`C:\Users\KullanıcıAdınız\.config\powershell\user_profile.ps1` dosyasının temel içeriği şöyle olabilir:
+
+```powershell
+# UTF-8 encoding
+[console]::InputEncoding = [console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+# Oh My Posh
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\material.omp.json" | Invoke-Expression
+
+# Terminal Icons
+Import-Module Terminal-Icons
+
+# PSReadLine
+Import-Module PSReadLine
+
+Set-PSReadLineOption -EditMode Vi
+Set-PSReadLineOption -BellStyle None
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
+
+# PSFzf
+Import-Module PSFzf
+
+Set-PsFzfOption `
+    -PSReadlineChordProvider 'Ctrl+f' `
+    -PSReadlineChordReverseHistory 'Ctrl+r'
+
+# Z - Optional
+# Import-Module z
+```
+
+Dosyayı kaydedin ve PowerShell profilini yeniden yükleyin:
+
+```powershell
+. $PROFILE
+```
+
+Herhangi bir hata almıyorsanız terminalinizi kapatıp yeniden açarak ayarların otomatik yüklenip yüklenmediğini kontrol edebilirsiniz.
+
+Kendi alias ve fonksiyonlarınızı da bu yapılandırma dosyasına ekleyebilirsiniz.
+
+Örneğin Git için kısa bir alias:
+
+```powershell
+Set-Alias -Name g -Value git
+```
+
+Bu şekilde her yeni PowerShell oturumunda kendi komutlarınız ve tercihleriniz hazır olacaktır.
+
+## GitHub Üzerinden Kendi Windows Terminal Ayarlarım
+
+Yukarıdaki işlemleri tek tek yapmak yerine kendi yapılandırmamı incelemek isteyenler için GitHub üzerinde bir depo oluşturdum.
+
+[Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="_blank" rel="noopener noreferrer"}
+
+Bu depoda Windows Terminal için kullandığım `settings.json` ve PowerShell yapılandırma dosyalarım bulunuyor.
+
+Depodaki ayarlar arasında:
+
+- Agave Nerd Font Propo yazı tipi.
+- Baba renk şeması.
+- Acrylic görünüm ayarları.
+- Windows Terminal profil tanımları.
+- PowerShell için Oh My Posh yapılandırması.
+- PSReadLine ve PSFzf kısayolları.
+- Kişisel alias ve yardımcı fonksiyonlar.
+
+bulunuyor.
+
+Dosyaları kullanmadan önce kendi bilgisayarınıza göre düzenlemenizi öneririm.
+
+Özellikle `C:\Arch\Arch.png`, Git araçlarının kurulum dizinleri ve Oh My Posh tema yolu gibi konumlar her bilgisayarda aynı olmayacaktır. Depodaki `settings.json` dosyasını mevcut ayarlarınızın üzerine doğrudan yazmak yerine önce yedek alın ve gerekli bölümleri birleştirin.
 
 ## Sonuç
 
-[responsive_img src="/images/windows-terminal-son-xl.webp" alt="windows-terminal6" /]
+Windows Terminal'i kişiselleştirmek yalnızca renkleri veya yazı tipini değiştirmekten ibaret değil.
 
-## Bana Balık Tutmasını Öğretme, Bana Balık Ver
+Oh My Posh ile terminal istemini düzenleyebilir, Nerd Fonts sayesinde özel simgeler kullanabilir, PSReadLine ile komut satırı deneyimini geliştirebilir ve PSFzf ile arama işlemlerini hızlandırabiliriz.
 
-Bu yazımı okuyorsanız, muhtemelen **Git** nedir biliyorsunuzdur 👊 Linux tarafında sorunsuz çalışan araçlar **Windows**ta bazen sorunlu olabiliyor. Örneğin, **GPG** kullanırken sorun yaşamıyorsanız, kullanmaya devam edin 🧠 Ancak sorun yaşıyorsanız, "**gpg4win**" kullanmanızı tavsiye ederim.
+Benim için önemli olan, kullandığım terminalin çalışma alışkanlıklarıma uyum sağlaması. Bu nedenle ayarları farklı dosyalara dağıtmak yerine bir yapılandırma dizininde topluyorum. Böylece yeni bir Windows kurulumunda ayarlarımı tekrar oluşturmak ve kişisel tercihlerimi değiştirmek çok daha kolay oluyor.
 
-```shell
-scoop install gpg4win
-```
+Kendi terminalinizi oluştururken bütün araçları kurmanız gerekmiyor. İhtiyacınız olanları seçin, profil dosyanızı buna göre düzenleyin ve gereksiz modüllerle terminalinizi kalabalıklaştırmayın.
 
-[Windows Terminal DotFiles](https://github.com/yuceltoluyag/WindowsTerminal){: target="\_blank" rel="noopener noreferrer"} ayarlarıma buradan ulaşabilir ve kendinize göre düzenleyebilirsiniz.
-
-
+[responsive_img src="/images/windows-terminal-son-xl.webp" alt="Windows Terminal ve PowerShell kişisel terminal yapılandırmam" /]
 

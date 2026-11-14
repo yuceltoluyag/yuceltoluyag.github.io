@@ -24,6 +24,20 @@
     color: #f59e0b;
   }
 
+  .article-updated-note {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .article-updated-note svg {
+    flex-shrink: 0;
+    color: var(--accent);
+  }
+
   /* Article Detail Header & Meta */
   .article-header { 
     margin-bottom: 3rem; 
